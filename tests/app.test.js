@@ -158,10 +158,16 @@ test('grand personnage : lettres au crayon sur ses cases, puis appui long ; form
   assert.match(d.querySelector('.toast').textContent, /occupe/);
   for (const rc of cells.slice(1)) cell(...rc).click();
   await hold(...cells[1]);
-  assert.ok(cell(...cells[0]).querySelector('.token'), 'portrait sur sa première case');
-  assert.equal(d.querySelectorAll('.body').length, cells.length, 'un corps sur chacune de ses cases');
+  if (d.getElementById('big-' + big.archetype)) {
+    // image entière : posée une fois sur ses cases, pastille de lettre sur la première
+    assert.equal(d.querySelectorAll('.bigart').length, 1, 'image entière sur ses cases');
+    assert.ok(cell(...cells[0]).querySelector('.bigbadge'), 'pastille de lettre sur sa première case');
+  } else {
+    assert.ok(cell(...cells[0]).querySelector('.token'), 'portrait sur sa première case');
+    assert.equal(d.querySelectorAll('.body').length, cells.length, 'un corps sur chacune de ses cases');
+  }
   cell(...cells[1]).click(); cell(...cells[1]).click();
-  assert.equal(d.querySelectorAll('.body').length, 0, 'touché : retour au crayon');
+  assert.equal(d.querySelectorAll('.body, .bigart').length, 0, 'touché : retour au crayon');
   assert.equal(d.querySelectorAll('.pencil').length, cells.length);
   assert.deepEqual(errors, []);
 });

@@ -87,7 +87,7 @@ Reconstruire : `npm run build` (= `node build-puzzles.js && node build-app.js &&
 - **Déployer une mise à jour** :
   ```sh
   npm run build && npm test
-  COPYFILE_DISABLE=1 tar -C deploy/grimdoku -czf - --exclude .DS_Store . | ssh fserver "ssh vps 'tar -xzf - -C ~/grimdoku && ~/grimdoku/update.sh'"
+  sh tools/deploy.sh   # tests (arrêt si échec), envoi, vérification du site public
   ```
 - **Mise en ligne systématique** (François, 2026-10-16, tant qu'il ne dit pas le contraire ; adresse connue de lui seul) : après chaque livraison (tests verts + commit), lancer la commande ci-dessus sans redemander, puis vérifier que le site public est identique au build. Toute autre commande sur le VPS se montre et se demande.
 - Zero Trust → Networks → Tunnels → vps-ovh → Public Hostname : `grimdoku.fcold.org` → `HTTP` `grimdoku:80`.
