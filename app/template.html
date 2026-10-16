@@ -87,9 +87,8 @@ header.top { display: flex; align-items: center; gap: 10px; }
   container-type: inline-size;
   width: 100%; max-width: 100%;
   display: grid; grid-template-columns: repeat(var(--n), 1fr);
-  border: 0; border-radius: 6px; overflow: hidden; position: relative;
+  border: 0; overflow: visible; position: relative; /* seul le cadre dessiné à la main (wallsSvg) borde la carte */
   background: var(--parch);
-  box-shadow: 0 10px 30px rgba(0,0,0,.45), 0 0 0 6px #3a2c1f, 0 0 0 7px #5a4530;
   margin: 8px 7px 4px; width: calc(100% - 14px);
   user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;
 }
@@ -472,7 +471,7 @@ const PUZZLES = /*__PUZZLES__*/;
       const r0 = r; while (r < n && L[r][c] !== L[r][c - 1]) r++;
       lines.push([c, r0, c, r]);
     }
-    // cadre : centré sur le bord de la carte ; sa moitié extérieure est coupée, d'où un trait deux fois plus large
+    // cadre : centré sur le bord de la carte, tremblé des deux côtés (la carte ne coupe pas ce qui dépasse)
     const frame = [[0, 0, n, 0], [n, 0, n, n], [n, n, 0, n], [0, n, 0, 0]];
     // une ligne tremblée : points intermédiaires décalés perpendiculairement, reliés par des courbes
     const wobbly = ([x1, y1, x2, y2], amp) => {
@@ -498,7 +497,7 @@ const PUZZLES = /*__PUZZLES__*/;
     wallsSvg.for = P.id;
     wallsSvg.html = `<svg class="walls" viewBox="0 0 ${n} ${n}" preserveAspectRatio="none" aria-hidden="true">
       <path d="${main}" stroke-width="0.09"/><path d="${second}" stroke-width="0.06"/>
-      <path d="${frameMain}" stroke-width="0.18"/><path d="${frameSecond}" stroke-width="0.13"/></svg>`;
+      <path d="${frameMain}" stroke-width="0.09"/><path d="${frameSecond}" stroke-width="0.06"/></svg>`;
     return wallsSvg.html;
   }
 
