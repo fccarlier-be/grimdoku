@@ -19,7 +19,7 @@ ROOT = Path(__file__).resolve().parent.parent / 'assets'
 DIR = ROOT / 'characters'
 OBJ_DIR = ROOT / 'objects'
 # noms de fichiers tolérés pour un type d'objet (accents retirés automatiquement)
-OBJ_ALIAS = {'champignon': 'champi'}
+OBJ_ALIAS = {'champignon': 'champi', 'roseau': 'roseaux'}
 # idem pour les personnages (fautes de frappe dans les noms de fichiers)
 CHAR_ALIAS = {'bibliothequaire': 'bibliothecaire'}
 OBJ_MARGIN = 0.06                      # marge autour de l'objet, en fraction du carré
