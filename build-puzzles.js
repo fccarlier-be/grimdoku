@@ -1,7 +1,7 @@
 'use strict';
 const fs = require('fs');
 const E = require('./engine');
-const { resolve, loadScene, withVictim, ARCHETYPES } = require('./cast');
+const { resolve, loadScene, withVictim, withBig, ARCHETYPES } = require('./cast');
 // Énigmes publiées : identifiant → scène (plan, personnages, intro, épilogue(s)) + solution (sortie de gen.js).
 // Une variante de scène (« extends ») réutilise un décor avec une autre victime ; son « subtitle » complète le titre.
 // Intro et épilogue : {victime} et {coupable} sont remplacés par les noms (qui dépendent des lettres) ;
@@ -37,6 +37,10 @@ for (const f of fs.readdirSync('scenes').sort()) {
     MANIFEST.push({ id, scene: name, victim: c.archetype });
   }
 }
+
+// Affaires à grands personnages (4–5 crânes) : big-cases.json, dès que leur solution existe.
+for (const c of JSON.parse(fs.readFileSync('big-cases.json', 'utf8')).cases)
+  if (fs.existsSync(`solutions/${c.id}.json`)) MANIFEST.push(c);
 
 const NOMBRES = ['zéro', 'un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit'];
 const cap = (t) => t[0].toUpperCase() + t.slice(1);
@@ -89,8 +93,8 @@ function checkConventions(p) {
   const v = chars.find(c => c.role === 'victim');
   if (p.clues.some(cl => cl.who === v.id)) throw new Error(p.id + ' : la victime ne doit pas avoir d\'indice');
   // qui est sur un meuble a un indice qui le dit
-  for (const [id, [r, c]] of Object.entries(p.solution.positions)) {
-    const o = ctx.objAt[r + ',' + c];
+  for (const [id, v] of Object.entries(p.solution.positions)) {
+    const o = E.cellsOf(v).map(([r, c]) => ctx.objAt[r + ',' + c]).find(Boolean);
     if (o && !p.clues.some(cl => cl.who === id && cl.logic.type === 'onObject' && cl.logic.object === o.type))
       throw new Error(`${p.id} : ${ctx.chars[id].name} est sur ${E.OBJECTS[o.type].the} sans indice qui le dise`);
   }
@@ -106,12 +110,13 @@ for (const entry of MANIFEST) {
   if (!fs.existsSync(`solutions/${entry.id}.json`)) { console.log(`⏳ ${entry.id} : pas encore de solution (node tools/batch.js)`); continue; }
   const s = JSON.parse(fs.readFileSync(`solutions/${entry.id}.json`, 'utf8'));
   const base = loadScene(`scenes/${entry.scene}.json`);
-  const scene = entry.victim ? withVictim(base, entry.victim) : base;
+  const scene = entry.big ? withBig(base, entry.victim, entry.big) : entry.victim ? withVictim(base, entry.victim) : base;
   const texts = entry.victim ? scene.auto : scene;
   // noms d'après la lettre (cast.json) ; s.cast : lettres réattribuées par gen.js
   const p = resolve(scene, s.cast);
   delete p.epilogues; delete p.scene; delete p.subtitle; // seuls intro et epilogue (remplis) vont dans l'énigme
   p.id = entry.id;
+  if (entry.hidden) p.hiddenShapes = true; // 5 crânes : le joueur ne connaît pas la forme des grands
   delete p.auto;
   const nameOf = (id) => p.characters.find(c => c.id === id).name;
   const victim = p.characters.find(c => c.role === 'victim');
@@ -125,7 +130,9 @@ for (const entry of MANIFEST) {
     .replace(/\{il\}/g, f ? 'elle' : 'il').replace(/\{Il\}/g, f ? 'Elle' : 'Il').replace(/\{lui\}/g, f ? 'elle' : 'lui')
     .replace(/\{nombre\}/g, nb).replace(/\{Nombre\}/g, cap(nb));
   p.intro = fill(texts.intro);
-  p.epilogue = fill(texts.epilogue || texts.epilogues[p.characters.find(c => c.id === s.murderer).archetype]);
+  // un grand personnage coupable n'est pas un habitué du décor : épilogue générique de son type (cast.json)
+  const mType = p.characters.find(c => c.id === s.murderer).archetype;
+  p.epilogue = fill(texts.epilogue || (texts.epilogues || {})[mType] || ARCHETYPES[mType].epilogue);
   // texte généré : le nom ouvre la première phrase de chaque personnage, le pronom les suivantes
   const seen = new Set();
   p.clues = s.clues.map(cl => {
@@ -144,11 +151,11 @@ for (const entry of MANIFEST) {
   const human = E.humanSolve(p, p.clues, 2);
   if (!human.solved) throw new Error(p.id + ' non résoluble par déduction');
   p.rating = E.rateDifficulty(human.steps);
-  p.difficulty = p.rating.skulls;
+  p.difficulty = E.skullsOf(p, human.steps); // 4–5 avec des grands personnages ; rating reste la difficulté de base
   if (p.characters.some(c => String(sols[0].positions[c.id]) !== String(p.solution.positions[c.id]))) throw new Error('solution différente');
   checkConventions(p);
   fs.writeFileSync('puzzles/' + p.id + '.json', JSON.stringify(p, null, 2));
   const r = p.rating;
   // pas de nom de coupable dans la sortie : François joue aussi aux énigmes (cf. CLAUDE.md §9)
-  console.log(`${p.id} OK — ${'💀'.repeat(r.skulls) || '0 crâne'} (score ${r.score} : la plus dure « ${r.hardest} », ${r.hardSteps} étape(s) difficile(s), ${r.directStart} placement(s) direct(s) au départ)`);
+  console.log(`${p.id} OK — ${'💀'.repeat(p.difficulty) || '0 crâne'} (score ${r.score} : la plus dure « ${r.hardest} », ${r.hardSteps} étape(s) difficile(s), ${r.directStart} placement(s) direct(s) au départ)`);
 }

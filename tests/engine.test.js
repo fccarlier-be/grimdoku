@@ -18,7 +18,7 @@ for (const p of PUZZLES) {
 
     const h = E.humanSolve(p, p.clues, 2);
     assert.ok(h.solved, 'résoluble sans essai-erreur');
-    assert.equal(p.difficulty, E.rateDifficulty(h.steps).skulls, 'crânes = difficulté calculée');
+    assert.equal(p.difficulty, E.skullsOf(p, h.steps), 'crânes = difficulté calculée');
 
     const victim = p.characters.find(c => c.role === 'victim');
     assert.equal(p.characters[p.characters.length - 1].id, victim.id, 'victime en dernier');
@@ -67,4 +67,59 @@ test('difficulté : un départ sans placement direct coûte 2 points', () => {
   assert.equal(easy.skulls, 0, 'que des indices et des cases uniques → 0 crâne (initiation)');
   assert.equal(noStart.score, easy.score + 2);
   assert.equal(E.rateDifficulty([{ ids: ['a'], tech: 0 }, { ids: ['b'], tech: 6 }]).skulls, 3, 'groupes → 3 crânes');
+});
+
+// grands personnages (4–5 crânes) : carte 4×4, deux pièces A | B, une table en (0,1)
+const bigMini = {
+  size: 4, rooms: { A: { name: 'A' }, B: { name: 'B' } },
+  layout: ['AABB', 'AABB', 'AABB', 'AABB'],
+  objects: [{ type: 'table', at: [0, 1] }, { type: 'chaise', at: [3, 0] }],
+  characters: [{ id: 'a', name: 'Ardent', role: 'suspect', shape: 'L3' }, { id: 'b', name: 'Bob', role: 'suspect' }, { id: 'v', name: 'Victor', role: 'victim' }]
+};
+
+test('grands personnages : orientations des formes', () => {
+  assert.equal(E.orientations('I2').length, 2);
+  assert.equal(E.orientations('I3').length, 2);
+  assert.equal(E.orientations('L3').length, 4);
+});
+
+test('grands personnages : jamais sur un meuble (même praticable), jamais à cheval sur deux pièces', () => {
+  const ctx = E.prepare(bigMini);
+  const pls = E.placementsOf(ctx, 'a');
+  assert.ok(pls.length > 0);
+  for (const pl of pls) {
+    assert.equal(pl.length, 3);
+    assert.ok(pl.every(([r, c]) => !ctx.objAt[r + ',' + c]), 'aucune case sur un meuble');
+    assert.equal(new Set(pl.map(([r, c]) => ctx.roomOf(r, c))).size, 1, 'une seule pièce');
+  }
+  assert.equal(E.isPlacement(ctx, 'a', [[1, 1], [1, 2], [2, 1]]), false, 'à cheval sur A et B');
+  assert.equal(E.isPlacement(ctx, 'a', [[2, 0], [1, 0], [1, 1]]), true, 'ordre des cases indifférent');
+});
+
+test('grands personnages : chaque case prend sa ligne et sa colonne', () => {
+  const pos = { a: [[1, 0], [1, 1], [2, 0]], b: [[0, 1]] };
+  assert.ok(E.checkPlacement(bigMini, { a: pos.a, b: [3, 1] }).some(e => e.kind === 'col'), 'colonne de sa 2e case');
+  assert.ok(E.checkPlacement(bigMini, { a: pos.a, b: [2, 3] }).some(e => e.kind === 'row'), 'ligne de sa 3e case');
+  assert.ok(E.checkPlacement(bigMini, { a: [[1, 0], [1, 1], [1, 2]] }).some(e => e.kind === 'shape'), 'mauvaise forme');
+  assert.deepEqual(E.checkPlacement(bigMini, { a: pos.a, b: [3, 3] }), []);
+});
+
+test('grands personnages : « au nord de » = toutes ses cases plus haut, « à côté » = n\'importe laquelle', () => {
+  const ctx = E.prepare(bigMini);
+  const a = [[1, 0], [2, 0], [2, 1]];
+  const ev = (logic, b) => E.evalClue(ctx, { who: 'a', logic }, { a, b });
+  assert.equal(ev({ type: 'northOf', other: 'b' }, [3, 3]), true);
+  assert.equal(ev({ type: 'northOf', other: 'b' }, [2, 3]), false, 'même ligne que sa case du bas');
+  assert.equal(ev({ type: 'southOf', other: 'b' }, [0, 3]), true);
+  assert.equal(E.evalClue(ctx, { who: 'a', logic: { type: 'adjacentTo', object: 'chaise' } }, { a }), true, 'sa case (2,0) touche la chaise');
+  assert.equal(E.evalClue(ctx, { who: 'a', logic: { type: 'sameColAs', object: 'table' } }, { a }), true, 'sa case (2,1)');
+});
+
+test('forme cachée : toutes les formes sont envisagées', () => {
+  const known = E.placementsOf(E.prepare(bigMini), 'a').length;
+  const hidden = E.placementsOf(E.prepare({ ...bigMini, hiddenShapes: true }), 'a');
+  assert.ok(hidden.length > known);
+  assert.deepEqual([...new Set(hidden.map(pl => pl.length))].sort(), [2, 3]);
+  assert.equal(E.skullsOf({ ...bigMini, hiddenShapes: true }, []), 5);
+  assert.equal(E.skullsOf(bigMini, []), 4);
 });

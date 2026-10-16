@@ -1,0 +1,323 @@
+{
+  "formatVersion": 1,
+  "title": "La Forge du Dragon — l'affaire Filon",
+  "size": 7,
+  "rooms": {
+    "D": {
+      "name": "Antre du dragon",
+      "the": "l'antre du dragon"
+    },
+    "F": {
+      "name": "Forge",
+      "the": "la forge"
+    },
+    "A": {
+      "name": "Armurerie",
+      "the": "l'armurerie"
+    },
+    "O": {
+      "name": "Fonderie",
+      "the": "la fonderie"
+    },
+    "C": {
+      "name": "Réserve de charbon",
+      "the": "la réserve de charbon"
+    },
+    "T": {
+      "name": "Atelier",
+      "the": "l'atelier"
+    },
+    "Y": {
+      "name": "Cour",
+      "the": "la cour"
+    }
+  },
+  "layout": [
+    "DDDFFFA",
+    "DDFFFAA",
+    "DDOOFAA",
+    "CCOOTTA",
+    "CCOOTTT",
+    "CYYYTTT",
+    "YYYYYTT"
+  ],
+  "objects": [
+    {
+      "type": "coffre",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        1,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        4
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        2,
+        6
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        2,
+        2
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        5,
+        0
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        5
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        4
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        6,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        5,
+        2
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Ardent",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragon adulte, toujours lové dans un coin",
+      "archetype": "dragon",
+      "shape": "L3"
+    },
+    {
+      "id": "b",
+      "name": "Bedaine",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👹",
+      "desc": "Ogre, végétarien depuis mardi",
+      "archetype": "ogre"
+    },
+    {
+      "id": "c",
+      "name": "Chaparde",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "d",
+      "name": "Durandal",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
+    },
+    {
+      "id": "e",
+      "name": "Engloutor",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    },
+    {
+      "id": "f",
+      "name": "Filon",
+      "gender": "m",
+      "role": "victim",
+      "icon": "⛏️",
+      "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
+      "archetype": "mineur"
+    }
+  ],
+  "id": "forge--mineur--dragon",
+  "intro": "Le mineur Filon a été retrouvé sans vie à la Forge du Dragon, encore tiède. Cinq artisans et clients s'y pressaient cette nuit-là. Un seul était avec lui.",
+  "epilogue": "Bedaine avoue, rouge de honte : Filon lui avait forgé une fourchette géante. Il était végétarien depuis mardi.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Ardent était à côté d'un arbre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bedaine était au nord d'Engloutor.",
+      "logic": {
+        "type": "northOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était à côté d'un tonneau.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Chaparde était sur la même ligne qu'une table.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Durandal était à l'ouest de Bedaine.",
+      "logic": {
+        "type": "westOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était au nord de Chaparde.",
+      "logic": {
+        "type": "northOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Engloutor était à l'est de Chaparde.",
+      "logic": {
+        "type": "eastOf",
+        "other": "c"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        0,
+        5
+      ],
+      "a": [
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          2
+        ]
+      ],
+      "d": [
+        2,
+        0
+      ],
+      "c": [
+        3,
+        3
+      ],
+      "e": [
+        4,
+        6
+      ],
+      "b": [
+        1,
+        4
+      ]
+    },
+    "murderer": "b"
+  },
+  "rating": {
+    "skulls": 1,
+    "score": 2,
+    "hardest": "position relative",
+    "hardSteps": 0,
+    "directStart": 1
+  },
+  "difficulty": 4
+}

@@ -24,6 +24,7 @@ function resolve(scene, cast = {}) {
     if (!name) throw new Error(`${scene.id} : pas de nom en ${slot.id.toUpperCase()} pour le type ${src.archetype}`);
     const ch = { id: slot.id, name, gender: a.gender, role: src.role, icon: a.icon, desc: a.desc, archetype: src.archetype };
     if (a.traits) ch.traits = a.traits;
+    if (a.shape) ch.shape = a.shape; // grand personnage (4–5 crânes) : I2, I3 ou L3 (engine.js, SHAPES)
     return ch;
   });
   return { ...scene, characters };
@@ -49,4 +50,23 @@ function withVictim(scene, victimType) {
   return { ...scene, characters };
 }
 
-module.exports = { ARCHETYPES, resolve, loadScene, withVictim };
+// Affaires à grands personnages (4–5 crânes) : les habitués d'un décor, `bigTypes` en plus (types de cast.json qui ont
+// une forme), `victimType` comme victime (habitué ou grand). Chaque case prend sa ligne et sa colonne : on garde le plus
+// grand nombre d'habitués pour lequel une orientation des grands tient dans la carte (lignes ≤ N et colonnes ≤ N).
+const SPANS = { I2: [[1, 2], [2, 1]], I3: [[1, 3], [3, 1]], L3: [[2, 2]] }; // [lignes, colonnes] par orientation
+function withBig(scene, victimType, bigTypes) {
+  const n = scene.size;
+  const shapes = [...new Set([...bigTypes, victimType])].filter(t => ARCHETYPES[t].shape).map(t => ARCHETYPES[t].shape);
+  // toutes les sommes [lignes, colonnes] possibles pour les grands
+  let sums = [[0, 0]];
+  for (const s of shapes) sums = sums.flatMap(([r, c]) => SPANS[s].map(([dr, dc]) => [r + dr, c + dc]));
+  const small = Math.max(...sums.map(([r, c]) => n - Math.max(r, c))); // personnages d'une case (victime comprise)
+  const smallSuspects = small - (ARCHETYPES[victimType].shape ? 0 : 1);
+  const pool = scene.characters.map(c => c.archetype).filter(t => t !== victimType && !bigTypes.includes(t));
+  if (pool.length < smallSuspects) throw new Error(`décor trop petit : ${smallSuspects} habitués demandés, ${pool.length} disponibles`);
+  const order = bigTypes.filter(t => t !== victimType).concat(pool.slice(0, smallSuspects), victimType);
+  const characters = order.map((t, i) => ({ id: String.fromCharCode(97 + i), archetype: t, role: t === victimType ? 'victim' : 'suspect' }));
+  return { ...scene, characters };
+}
+
+module.exports = { ARCHETYPES, resolve, loadScene, withVictim, withBig };

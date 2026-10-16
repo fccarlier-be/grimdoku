@@ -1,0 +1,87 @@
+{
+ "positions": {
+  "e": [
+   0,
+   1
+  ],
+  "b": [
+   [
+    4,
+    3
+   ],
+   [
+    5,
+    3
+   ],
+   [
+    6,
+    3
+   ]
+  ],
+  "d": [
+   2,
+   2
+  ],
+  "a": [
+   3,
+   6
+  ],
+  "c": [
+   1,
+   0
+  ]
+ },
+ "murderer": "c",
+ "cast": {
+  "b": "a",
+  "d": "b",
+  "a": "c",
+  "c": "d"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "d",
+   "logic": {
+    "type": "eastOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "northOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "eastOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "tapis"
+   }
+  }
+ ]
+}

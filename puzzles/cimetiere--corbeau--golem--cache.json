@@ -1,0 +1,387 @@
+{
+  "formatVersion": 1,
+  "title": "Le Cimetière de Minuit — l'affaire Griffon",
+  "size": 8,
+  "rooms": {
+    "G": {
+      "name": "Maison du gardien",
+      "the": "la maison du gardien"
+    },
+    "C": {
+      "name": "Chapelle",
+      "the": "la chapelle"
+    },
+    "A": {
+      "name": "Allée des ifs",
+      "the": "l'allée des ifs"
+    },
+    "K": {
+      "name": "Caveau",
+      "the": "le caveau"
+    },
+    "P": {
+      "name": "Carré des pauvres",
+      "the": "le carré des pauvres"
+    },
+    "J": {
+      "name": "Jardin du souvenir",
+      "the": "le jardin du souvenir"
+    },
+    "O": {
+      "name": "Ossuaire",
+      "the": "l'ossuaire"
+    },
+    "Y": {
+      "name": "Crypte",
+      "the": "la crypte"
+    }
+  },
+  "layout": [
+    "GGGAACCC",
+    "GGGAACCC",
+    "PPAAAAKK",
+    "PPAAAAKK",
+    "PPJJJOOK",
+    "YYJJJOOO",
+    "YYJJJOOO",
+    "YYYYJOOO"
+  ],
+  "objects": [
+    {
+      "type": "lit",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        3,
+        5
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        2,
+        7
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        5,
+        3
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        6,
+        2
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        7,
+        4
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        7,
+        5
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        6,
+        1
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        7,
+        3
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Albâtre",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ]
+    },
+    {
+      "id": "b",
+      "name": "Berce",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧙‍♀️",
+      "desc": "Sorcière des marais, cuisine tout ce qui coasse",
+      "archetype": "sorciere"
+    },
+    {
+      "id": "c",
+      "name": "Clovis",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
+    },
+    {
+      "id": "d",
+      "name": "Draculine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
+    },
+    {
+      "id": "e",
+      "name": "Épitaphe",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "⚰️",
+      "desc": "Fossoyeur, creuse en sifflotant",
+      "archetype": "fossoyeur"
+    },
+    {
+      "id": "f",
+      "name": "Fondation",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🪨",
+      "desc": "Golem de pierre, lent mais très appliqué",
+      "archetype": "golem",
+      "shape": "I2"
+    },
+    {
+      "id": "g",
+      "name": "Griffon",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🐦‍⬛",
+      "desc": "Corbeau, écrit des lettres anonymes",
+      "archetype": "corbeau"
+    }
+  ],
+  "id": "cimetiere--corbeau--golem--cache",
+  "hiddenShapes": true,
+  "intro": "Le corbeau Griffon a été retrouvé sans vie au Cimetière de Minuit, ce qui, admettons-le, simplifie les démarches. Six habitués rôdaient entre les tombes. Un seul était avec lui.",
+  "epilogue": "On avait gravé une consigne sur le front de Fondation : « Range la pièce. » Il a rangé Griffon aussi, très soigneusement.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Albâtre était dans le jardin du souvenir.",
+      "logic": {
+        "type": "inRoom",
+        "room": "J"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était à côté d'un arbre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Berce était sur la même ligne qu'une statue.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Elle était allongée sur un lit.",
+      "logic": {
+        "type": "onObject",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Clovis était à l'est de Fondation.",
+      "logic": {
+        "type": "eastOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Draculine était dans la même colonne qu'une statue.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Épitaphe était à l'est de Berce.",
+      "logic": {
+        "type": "eastOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Fondation était au nord de Draculine.",
+      "logic": {
+        "type": "northOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Il était à côté d'un arbre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Il était au nord de Clovis.",
+      "logic": {
+        "type": "northOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Il était sur la même ligne qu'une tombe.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "tombe"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "g": [
+        1,
+        3
+      ],
+      "f": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "e": [
+        5,
+        1
+      ],
+      "a": [
+        6,
+        4
+      ],
+      "c": [
+        4,
+        7
+      ],
+      "d": [
+        7,
+        6
+      ],
+      "b": [
+        0,
+        0
+      ]
+    },
+    "murderer": "f"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 3,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 2
+  },
+  "difficulty": 5
+}

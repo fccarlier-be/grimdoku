@@ -1,15 +1,20 @@
 // Grimdoku — générateur d'indices pour une scène donnée (prototype).
-// Usage : node gen.js scenes/<décor>.json [seed] [--victim=<type>] [--level=1|2] [--portal-murder] [--murderer=<id>] [--skulls=0|1|2|3] [--tries=N]
+// Usage : node gen.js scenes/<décor>.json [seed] [--victim=<type>] [--big=<type>[,<type>]] [--hidden] [--level=1|2] [--portal-murder] [--murderer=<id>] [--skulls=0|1|2|3] [--tries=N]
+// --big : grands personnages (4 crânes) ; --hidden : leur forme est cachée (5 crânes). --skulls filtre alors la difficulté
+// « de base » (déroulé du solveur), qui sert à ordonner les grilles à l'intérieur du niveau.
 // Conventions imposées : suspects dans des pièces différentes, aucun indice pour la victime (ni meuble sous elle),
 // indice pour qui est sur un meuble, ordre de facilité = ordre alphabétique des suspects (A le plus facile).
 'use strict';
 const fs = require('fs');
 const E = require('./engine');
 
-const { resolve, loadScene, withVictim } = require('./cast');
+const { resolve, loadScene, withVictim, withBig } = require('./cast');
 const victimArg = (process.argv.find(a => a.startsWith('--victim=')) || '').split('=')[1];
-// --victim=<type> : affaire automatique, ce type d'habitué est la victime
-const scene = resolve(victimArg ? withVictim(loadScene(process.argv[2]), victimArg) : loadScene(process.argv[2]));
+const bigArg = (process.argv.find(a => a.startsWith('--big=')) || '').split('=')[1];
+// --victim=<type> : affaire automatique, ce type d'habitué est la victime ; --big : avec des grands personnages
+const base = loadScene(process.argv[2]);
+const scene = resolve(bigArg ? withBig(base, victimArg, bigArg.split(',')) : victimArg ? withVictim(base, victimArg) : base);
+if (process.argv.includes('--hidden')) scene.hiddenShapes = true;
 let seed = Number(process.argv[3] || 1);
 const portalMurder = process.argv.includes('--portal-murder');
 const arg = (name, def) => (process.argv.find(a => a.startsWith(`--${name}=`)) || `=${def}`).split('=')[1];
@@ -26,20 +31,39 @@ const victim = ids.find(id => scene.characters.find(c => c.id === id).role === '
 const suspects = ids.filter(id => id !== victim);
 
 // 1. tirer une solution valide au hasard
-function randomSolution() {
-  for (let t = 0; t < 20000; t++) {
+const hasBig = scene.characters.some(c => c.shape);
+// la vraie forme de chaque grand (même si le joueur ne la connaît pas : --hidden)
+const truth = E.prepare({ ...scene, hiddenShapes: false });
+const PL = Object.fromEntries(ids.map(id => [id, E.placementsOf(truth, id)]));
+function randomPositions() {
+  if (!hasBig) {
     const rows = shuffle([...Array(n).keys()]), cols = shuffle([...Array(n).keys()]);
     const pos = {}; let ok = true;
     ids.forEach((id, i) => { pos[id] = [rows[i], cols[i]]; if (!E.canStand(ctx, id, rows[i], cols[i])) ok = false; });
-    if (!ok) continue;
+    return ok ? pos : null;
+  }
+  // grands d'abord (les plus encombrants), chacun sur une position libre tirée au hasard
+  const pos = {}, used = [new Set(), new Set()];
+  for (const id of [...ids].sort((a, b) => !!ctx.chars[b].shape - !!ctx.chars[a].shape)) {
+    const free = PL[id].filter(v => E.linesOf(v).every((ls, ax) => ls.every(x => !used[ax].has(x))));
+    if (!free.length) return null;
+    pos[id] = free[Math.floor(rnd() * free.length)];
+    E.linesOf(pos[id]).forEach((ls, ax) => ls.forEach(x => used[ax].add(x)));
+  }
+  return pos;
+}
+function randomSolution() {
+  for (let t = 0; t < 20000; t++) {
+    const pos = randomPositions();
+    if (!pos) continue;
     if (E.sharedRooms(ctx, pos).length) continue;
-    if (ctx.objAt[pos[victim].join(',')]) continue; // la victime n'a pas d'indice, donc pas de meuble
+    if (E.cellsOf(pos[victim]).some(rc => ctx.objAt[rc.join(',')])) continue; // la victime n'a pas d'indice, donc pas de meuble
     const m = E.murdererOf(ctx, pos);
     if (!m) continue;
     if (wantMurderer && m !== wantMurderer) continue;
     if (portalMurder) {
       const v = ids.find(id => ctx.chars[id].role === 'victim');
-      if (ctx.roomOf(...pos[v]) === ctx.roomOf(...pos[m])) continue;
+      if (ctx.roomOf(...E.cellsOf(pos[v])[0]) === ctx.roomOf(...E.cellsOf(pos[m])[0])) continue;
       // le spectre doit être sur un objet bloquant pour que sa règle compte
       const sp = ids.find(id => (ctx.chars[id].traits || []).includes('spectre'));
       const o = sp && ctx.objAt[pos[sp].join(',')];
@@ -55,6 +79,7 @@ function candidates(pos) {
   const out = [];
   const types = [...new Set(scene.objects.map(o => o.type))];
   for (const id of suspects) {
+    if (ctx.chars[id].shape) { out.push(...bigCandidates(pos, id, types)); continue; }
     const [r, c] = pos[id];
     const room = ctx.roomOf(r, c);
     out.push({ who: id, logic: { type: 'inRoom', room } });
@@ -68,14 +93,26 @@ function candidates(pos) {
       if (scene.objects.some(x => x.type === t && x.at[1] === c)) out.push({ who: id, logic: { type: 'sameColAs', object: t } });
     }
     // positions relatives entre suspects (jamais par rapport à la victime, qui n'a pas d'indice)
-    for (const o of suspects) if (o !== id) {
+    for (const o of suspects) if (o !== id && !ctx.chars[o].shape) {
       out.push({ who: id, logic: { type: r < pos[o][0] ? 'northOf' : 'southOf', other: o } });
       out.push({ who: id, logic: { type: c < pos[o][1] ? 'westOf' : 'eastOf', other: o } });
     }
+    for (const o of suspects) if (o !== id && ctx.chars[o].shape) for (const type of E.RELATIVE) out.push({ who: id, logic: { type, other: o } });
     // pas de « même pièce que » ni de « seul » : avec des suspects dans des pièces différentes,
     // ils ne parleraient que de la victime et livreraient le meurtrier
   }
   return out.filter(cl => E.evalClue(ctx, cl, pos));
+}
+
+// Indices d'un grand personnage : mêmes types, évalués sur toutes ses cases (gardés seulement s'ils sont vrais)
+function bigCandidates(pos, id, types) {
+  const out = [];
+  const room = ctx.roomOf(...E.cellsOf(pos[id])[0]);
+  out.push({ who: id, logic: { type: 'inRoom', room } });
+  for (const k of Object.keys(scene.rooms)) if (k !== room) out.push({ who: id, logic: { type: 'notInRoom', room: k } });
+  for (const object of types) for (const type of ['adjacentTo', 'notAdjacentTo', 'sameRowAs', 'sameColAs']) out.push({ who: id, logic: { type, object } });
+  for (const o of suspects) if (o !== id) for (const type of E.RELATIVE) out.push({ who: id, logic: { type, other: o } });
+  return out;
 }
 
 // Associe chaque suspect (identifiant d'origine) à une lettre pour que l'ordre de facilité suive l'alphabet.
@@ -133,7 +170,7 @@ for (let attempt = 0; attempt < tries; attempt++) {
   }
   // convention : qui se tient sur un meuble (chaise, tapis, lit…) a un indice qui le dit
   for (const id of suspects) {
-    const o = ctx.objAt[pos[id].join(',')];
+    const o = !ctx.chars[id].shape && ctx.objAt[pos[id].join(',')];
     if (o && !chosen.some(cl => cl.who === id && cl.logic.type === 'onObject'))
       chosen.push({ who: id, logic: { type: 'onObject', object: o.type } });
   }

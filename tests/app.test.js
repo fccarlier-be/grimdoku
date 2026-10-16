@@ -142,3 +142,25 @@ test('indice : désigne le prochain personnage à déduire, ou signale une erreu
     assert.match(d.querySelector('.toast').textContent, /pas à sa place/);
   }
 });
+
+test('grand personnage : lettres au crayon sur ses cases, puis appui long ; forme incomplète refusée', async () => {
+  const { PUZZLES } = open();
+  const p = PUZZLES.find(q => q.characters.some(c => c.shape) && !q.hiddenShapes);
+  const big = p.characters.find(c => c.shape);
+  const cells = p.solution.positions[big.id];
+  const { d, cell, pick, hold, openCase, errors } = open();
+  openCase(p.id);
+  pick(big.id);
+  cell(...cells[0]).click();
+  await hold(...cells[0]);
+  assert.equal(cell(...cells[0]).querySelector('.token'), null, 'une seule case : pas placé');
+  assert.match(d.querySelector('.toast').textContent, /occupe/);
+  for (const rc of cells.slice(1)) cell(...rc).click();
+  await hold(...cells[1]);
+  assert.ok(cell(...cells[0]).querySelector('.token'), 'portrait sur sa première case');
+  assert.equal(d.querySelectorAll('.body').length, cells.length, 'un corps sur chacune de ses cases');
+  cell(...cells[1]).click(); cell(...cells[1]).click();
+  assert.equal(d.querySelectorAll('.body').length, 0, 'touché : retour au crayon');
+  assert.equal(d.querySelectorAll('.pencil').length, cells.length);
+  assert.deepEqual(errors, []);
+});

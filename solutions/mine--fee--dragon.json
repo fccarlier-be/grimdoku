@@ -1,0 +1,111 @@
+{
+ "positions": {
+  "g": [
+   5,
+   2
+  ],
+  "a": [
+   [
+    0,
+    5
+   ],
+   [
+    1,
+    5
+   ],
+   [
+    1,
+    6
+   ]
+  ],
+  "c": [
+   2,
+   1
+  ],
+  "b": [
+   4,
+   7
+  ],
+  "d": [
+   3,
+   3
+  ],
+  "e": [
+   7,
+   0
+  ],
+  "f": [
+   6,
+   4
+  ]
+ },
+ "murderer": "f",
+ "cast": {
+  "a": "a",
+  "c": "b",
+  "b": "c",
+  "d": "d",
+  "e": "e",
+  "f": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chariot"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chariot"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "enclume"
+   }
+  }
+ ]
+}

@@ -1,0 +1,95 @@
+{
+ "positions": {
+  "f": [
+   1,
+   2
+  ],
+  "c": [
+   [
+    5,
+    0
+   ],
+   [
+    6,
+    0
+   ]
+  ],
+  "d": [
+   3,
+   1
+  ],
+  "a": [
+   0,
+   6
+  ],
+  "e": [
+   2,
+   3
+  ],
+  "b": [
+   4,
+   4
+  ]
+ },
+ "murderer": "b",
+ "cast": {
+  "c": "a",
+  "d": "b",
+  "a": "c",
+  "e": "d",
+  "b": "e"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "c",
+   "logic": {
+    "type": "southOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "sarcophage"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameColAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "chaise"
+   }
+  }
+ ]
+}

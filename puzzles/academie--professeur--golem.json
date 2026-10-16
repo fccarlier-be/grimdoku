@@ -1,0 +1,325 @@
+{
+  "formatVersion": 1,
+  "title": "L'Académie de Magie — l'affaire Fiolius",
+  "size": 7,
+  "rooms": {
+    "A": {
+      "name": "Tour d'astronomie",
+      "the": "la tour d'astronomie"
+    },
+    "X": {
+      "name": "Salle de cours",
+      "the": "la salle de cours"
+    },
+    "B": {
+      "name": "Bureau du directeur",
+      "the": "le bureau du directeur"
+    },
+    "D": {
+      "name": "Dortoir",
+      "the": "le dortoir"
+    },
+    "L": {
+      "name": "Laboratoire",
+      "the": "le laboratoire"
+    },
+    "R": {
+      "name": "Réfectoire",
+      "the": "le réfectoire"
+    },
+    "S": {
+      "name": "Serre",
+      "the": "la serre"
+    }
+  },
+  "layout": [
+    "AAXXXBB",
+    "AAXXXBB",
+    "DDXXXLL",
+    "DDRRRLL",
+    "DDRRRLL",
+    "SSSRRRL",
+    "SSSSRRR"
+  ],
+  "objects": [
+    {
+      "type": "cristal",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        0,
+        3
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        1,
+        6
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        2,
+        6
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        3,
+        5
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        4,
+        6
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        2
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        6,
+        0
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        6,
+        3
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Azimut",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage"
+    },
+    {
+      "id": "b",
+      "name": "Braise",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
+      "id": "c",
+      "name": "Cannelle",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧙‍♀️",
+      "desc": "Apprentie sorcière, a déjà fait exploser trois chaudrons",
+      "archetype": "apprentie"
+    },
+    {
+      "id": "d",
+      "name": "Dalle",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🪨",
+      "desc": "Golem de pierre, lent mais très appliqué",
+      "archetype": "golem",
+      "shape": "I2"
+    },
+    {
+      "id": "e",
+      "name": "Églantine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
+    },
+    {
+      "id": "f",
+      "name": "Fiolius",
+      "gender": "m",
+      "role": "victim",
+      "icon": "👨‍🏫",
+      "desc": "Professeur de potions, note à l'odeur",
+      "archetype": "professeur"
+    }
+  ],
+  "id": "academie--professeur--golem",
+  "intro": "Le professeur Fiolius a été retrouvé sans vie un soir d'examens à l'Académie de Magie. Cinq élèves et professeurs révisaient encore. Un seul était avec lui.",
+  "epilogue": "On avait gravé une consigne sur le front de Dalle : « Range la pièce. » Il a rangé Fiolius aussi, très soigneusement.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Azimut était à l'ouest d'Églantine.",
+      "logic": {
+        "type": "westOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était assis dans un fauteuil.",
+      "logic": {
+        "type": "onObject",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Braise était assis dans un fauteuil.",
+      "logic": {
+        "type": "onObject",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Cannelle était à côté d'un chaudron.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dalle était à côté d'une chaise.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Églantine était dans la salle de cours.",
+      "logic": {
+        "type": "inRoom",
+        "room": "X"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        6,
+        4
+      ],
+      "d": [
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          3
+        ]
+      ],
+      "c": [
+        3,
+        6
+      ],
+      "a": [
+        1,
+        1
+      ],
+      "e": [
+        2,
+        2
+      ],
+      "b": [
+        0,
+        5
+      ]
+    },
+    "murderer": "d"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "position relative",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 4
+}

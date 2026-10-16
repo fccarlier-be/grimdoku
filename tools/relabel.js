@@ -6,20 +6,23 @@
 const fs = require('fs');
 const path = require('path');
 const E = require('../engine');
-const { resolve, loadScene, withVictim } = require('../cast');
+const { resolve, loadScene, withVictim, withBig } = require('../cast');
 const ROOT = path.join(__dirname, '..');
 
 let fixed = 0;
 const MANIFEST = eval(fs.readFileSync(path.join(ROOT, 'build-puzzles.js'), 'utf8').match(/const MANIFEST = (\[[\s\S]*?\n\]);/)[1]);
 const sceneOf = Object.fromEntries(MANIFEST.map(e => [e.id, e.scene]));
+const BIG = Object.fromEntries(JSON.parse(fs.readFileSync(path.join(ROOT, 'big-cases.json'), 'utf8')).cases.map(c => [c.id, c]));
 for (const file of fs.readdirSync(path.join(ROOT, 'solutions'))) {
   const id = file.replace(/\.json$/, '');
-  const [scene, victim] = id.includes('--') ? id.split('--') : [sceneOf[id], null];
+  const big = BIG[id];
+  const [scene, victim] = big ? [big.scene, big.victim] : id.includes('--') ? id.split('--') : [sceneOf[id], null];
   if (!scene) continue;
   const sol = JSON.parse(fs.readFileSync(path.join(ROOT, 'solutions', file), 'utf8'));
   const loaded = loadScene(path.join(ROOT, 'scenes', scene + '.json'));
-  const raw = victim ? withVictim(loaded, victim) : loaded;
+  const raw = big ? withBig(loaded, victim, big.big) : victim ? withVictim(loaded, victim) : loaded;
   const p = resolve(raw, sol.cast);
+  if (big && big.hidden) p.hiddenShapes = true;
   const ids = p.characters.map(c => c.id);
   const vic = p.characters.find(c => c.role === 'victim').id;
   const suspects = ids.filter(x => x !== vic);

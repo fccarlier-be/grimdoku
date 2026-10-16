@@ -1,0 +1,356 @@
+{
+  "formatVersion": 1,
+  "title": "La Mine des Nains — l'affaire Glycine",
+  "size": 8,
+  "rooms": {
+    "E": {
+      "name": "Entrée",
+      "the": "l'entrée"
+    },
+    "G": {
+      "name": "Galerie",
+      "the": "la galerie"
+    },
+    "F": {
+      "name": "Forge",
+      "the": "la forge"
+    },
+    "P": {
+      "name": "Puits",
+      "the": "le puits"
+    },
+    "V": {
+      "name": "Filon",
+      "the": "le filon"
+    },
+    "D": {
+      "name": "Dortoir",
+      "the": "le dortoir"
+    },
+    "C": {
+      "name": "Cantine",
+      "the": "la cantine"
+    },
+    "T": {
+      "name": "Salle des coffres",
+      "the": "la salle des coffres"
+    }
+  },
+  "layout": [
+    "EEEGGFFF",
+    "EEEGGFFF",
+    "DDGGGPPF",
+    "DDGGGPPV",
+    "DDCCCPVV",
+    "TTCCCVVV",
+    "TTCCCVVV",
+    "TTTTCVVV"
+  ],
+  "objects": [
+    {
+      "type": "tonneau",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        1,
+        7
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        6,
+        7
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        2
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        7,
+        2
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        7,
+        6
+      ]
+    }
+  ],
+  "intro": "La fée Glycine a été retrouvée au fond de la Mine des Nains, aussi froide que le granit. Six ouvriers étaient descendus pour l'équipe de nuit. Un seul était avec elle.",
+  "characters": [
+    {
+      "id": "a",
+      "name": "Ardent",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragon adulte, toujours lové dans un coin",
+      "archetype": "dragon",
+      "shape": "L3"
+    },
+    {
+      "id": "b",
+      "name": "Bâfrin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    },
+    {
+      "id": "c",
+      "name": "Caillou",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "⛏️",
+      "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
+      "archetype": "mineur"
+    },
+    {
+      "id": "d",
+      "name": "Dîme",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "e",
+      "name": "Étincel",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
+      "id": "f",
+      "name": "Foulques",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
+    },
+    {
+      "id": "g",
+      "name": "Glycine",
+      "gender": "f",
+      "role": "victim",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
+    }
+  ],
+  "id": "mine--fee--dragon",
+  "epilogue": "Foulques cherchait un trésor maudit dans la mine. Glycine voulait lui faire payer l'entrée. On ne fait pas payer un chevalier en quête.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Ardent était à côté d'un chaudron.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bâfrin était sur la même ligne qu'une chaise.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était dans la même colonne qu'une enclume.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "enclume"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Caillou était sur la même ligne qu'un lit.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était à côté d'un lit.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dîme était à côté d'un chariot de mine.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chariot"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Étincel était sur la même ligne qu'un chariot de mine.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chariot"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Foulques était dans la même colonne qu'une statue.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "statue"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "g": [
+        5,
+        2
+      ],
+      "a": [
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ]
+      ],
+      "c": [
+        2,
+        1
+      ],
+      "b": [
+        4,
+        7
+      ],
+      "d": [
+        3,
+        3
+      ],
+      "e": [
+        7,
+        0
+      ],
+      "f": [
+        6,
+        4
+      ]
+    },
+    "murderer": "f"
+  },
+  "rating": {
+    "skulls": 1,
+    "score": 2,
+    "hardest": "ligne réservée",
+    "hardSteps": 0,
+    "directStart": 1
+  },
+  "difficulty": 4
+}

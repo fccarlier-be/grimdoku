@@ -1,0 +1,359 @@
+{
+  "formatVersion": 1,
+  "title": "La Mine des Nains — l'affaire Filon",
+  "size": 8,
+  "rooms": {
+    "E": {
+      "name": "Entrée",
+      "the": "l'entrée"
+    },
+    "G": {
+      "name": "Galerie",
+      "the": "la galerie"
+    },
+    "F": {
+      "name": "Forge",
+      "the": "la forge"
+    },
+    "P": {
+      "name": "Puits",
+      "the": "le puits"
+    },
+    "V": {
+      "name": "Filon",
+      "the": "le filon"
+    },
+    "D": {
+      "name": "Dortoir",
+      "the": "le dortoir"
+    },
+    "C": {
+      "name": "Cantine",
+      "the": "la cantine"
+    },
+    "T": {
+      "name": "Salle des coffres",
+      "the": "la salle des coffres"
+    }
+  },
+  "layout": [
+    "EEEGGFFF",
+    "EEEGGFFF",
+    "DDGGGPPF",
+    "DDGGGPPV",
+    "DDCCCPVV",
+    "TTCCCVVV",
+    "TTCCCVVV",
+    "TTTTCVVV"
+  ],
+  "objects": [
+    {
+      "type": "tonneau",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        1,
+        7
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        6,
+        7
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        2
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        7,
+        2
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        7,
+        6
+      ]
+    }
+  ],
+  "intro": "Le mineur Filon a été retrouvé au fond de la Mine des Nains, aussi froid que le granit. Cinq ouvriers étaient descendus pour l'équipe de nuit. Un seul était avec lui.",
+  "characters": [
+    {
+      "id": "a",
+      "name": "Ardent",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragon adulte, toujours lové dans un coin",
+      "archetype": "dragon",
+      "shape": "L3"
+    },
+    {
+      "id": "b",
+      "name": "Bakchich",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "c",
+      "name": "Caillasse",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🪨",
+      "desc": "Golem de pierre, lent mais très appliqué",
+      "archetype": "golem",
+      "shape": "I2"
+    },
+    {
+      "id": "d",
+      "name": "Dardafeu",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
+      "id": "e",
+      "name": "Engloutor",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    },
+    {
+      "id": "f",
+      "name": "Filon",
+      "gender": "m",
+      "role": "victim",
+      "icon": "⛏️",
+      "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
+      "archetype": "mineur"
+    }
+  ],
+  "id": "mine--mineur--golem-dragon--cache",
+  "hiddenShapes": true,
+  "epilogue": "Dardafeu servait de lampe et de soufflet sans être payé. Filon a ri quand il a demandé une augmentation. Le dragonnet n'a pas ri.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Ardent était dans la même colonne qu'un chaudron.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était sur la même ligne qu'un chariot de mine.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chariot"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était dans la même colonne qu'un chariot de mine.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chariot"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bakchich était sur la même ligne qu'un chaudron.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était à côté d'un tonneau.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Caillasse était sur la même ligne qu'un coffre.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dardafeu était sur la même ligne qu'un chariot de mine.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chariot"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Engloutor était à l'est de Dardafeu.",
+      "logic": {
+        "type": "eastOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était sur la même ligne qu'une table.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "table"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        0,
+        3
+      ],
+      "c": [
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ],
+      "a": [
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          7
+        ]
+      ],
+      "e": [
+        5,
+        4
+      ],
+      "b": [
+        1,
+        0
+      ],
+      "d": [
+        2,
+        2
+      ]
+    },
+    "murderer": "d"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 3,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 2
+  },
+  "difficulty": 5
+}

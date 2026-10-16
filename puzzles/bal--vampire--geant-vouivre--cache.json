@@ -1,0 +1,375 @@
+{
+  "formatVersion": 1,
+  "title": "Le Bal Masqué — l'affaire Funestine",
+  "size": 8,
+  "rooms": {
+    "B": {
+      "name": "Balcon",
+      "the": "le balcon"
+    },
+    "S": {
+      "name": "Salle de bal",
+      "the": "la salle de bal"
+    },
+    "E": {
+      "name": "Escalier d'honneur",
+      "the": "l'escalier d'honneur"
+    },
+    "V": {
+      "name": "Vestiaire",
+      "the": "le vestiaire"
+    },
+    "F": {
+      "name": "Buffet",
+      "the": "le buffet"
+    },
+    "M": {
+      "name": "Salon des miroirs",
+      "the": "le salon des miroirs"
+    },
+    "J": {
+      "name": "Jardin d'hiver",
+      "the": "le jardin d'hiver"
+    },
+    "O": {
+      "name": "Boudoir",
+      "the": "le boudoir"
+    }
+  },
+  "layout": [
+    "BBBSSSSE",
+    "BBSSSSSE",
+    "VVSSSSEE",
+    "VVSSSSFF",
+    "MMMSSFFF",
+    "MMMJJJFF",
+    "OOJJJJFF",
+    "OOOJJJJF"
+  ],
+  "objects": [
+    {
+      "type": "statue",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        1,
+        6
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        7
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        7
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        4,
+        6
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        7
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        5,
+        2
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        4
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        7,
+        5
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        6,
+        3
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        6,
+        0
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        7,
+        2
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Albâtre",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ]
+    },
+    {
+      "id": "b",
+      "name": "Bertrand",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
+    },
+    {
+      "id": "c",
+      "name": "Couleuvrette",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🐍",
+      "desc": "Vouivre, serpent ailé, très longue à se retourner",
+      "archetype": "vouivre",
+      "shape": "I3"
+    },
+    {
+      "id": "d",
+      "name": "Dagobert",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤴",
+      "desc": "Roi, avare de compliments et de tout le reste",
+      "archetype": "roi"
+    },
+    {
+      "id": "e",
+      "name": "Escabeau",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🦶",
+      "desc": "Géant, toujours couché : aucun plafond n'est assez haut",
+      "archetype": "geant",
+      "shape": "I2"
+    },
+    {
+      "id": "f",
+      "name": "Funestine",
+      "gender": "f",
+      "role": "victim",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
+    }
+  ],
+  "id": "bal--vampire--geant-vouivre--cache",
+  "hiddenShapes": true,
+  "intro": "La comtesse Funestine a été retrouvée sans vie au Bal Masqué, sous un loup de velours. Cinq invités dansaient encore. Un seul était avec elle.",
+  "epilogue": "Dagobert avoue, outré : Funestine lui avait marché sur la traîne pendant la valse royale. Trois fois.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Albâtre était allongé sur un lit.",
+      "logic": {
+        "type": "onObject",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bertrand était dans l'escalier d'honneur.",
+      "logic": {
+        "type": "inRoom",
+        "room": "E"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Couleuvrette était sur la même ligne qu'un coffre.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Elle était à côté d'une statue.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Elle était sur la même ligne qu'une chaise.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dagobert était au sud d'Albâtre.",
+      "logic": {
+        "type": "southOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était dans la même colonne qu'une table.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Escabeau était dans le salon des miroirs.",
+      "logic": {
+        "type": "inRoom",
+        "room": "M"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        5,
+        3
+      ],
+      "e": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "c": [
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "a": [
+        6,
+        0
+      ],
+      "d": [
+        7,
+        6
+      ],
+      "b": [
+        0,
+        7
+      ]
+    },
+    "murderer": "d"
+  },
+  "rating": {
+    "skulls": 1,
+    "score": 2,
+    "hardest": "ligne réservée",
+    "hardSteps": 0,
+    "directStart": 1
+  },
+  "difficulty": 5
+}

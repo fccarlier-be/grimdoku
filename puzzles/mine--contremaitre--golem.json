@@ -1,0 +1,360 @@
+{
+  "formatVersion": 1,
+  "title": "La Mine des Nains — l'affaire Granit",
+  "size": 8,
+  "rooms": {
+    "E": {
+      "name": "Entrée",
+      "the": "l'entrée"
+    },
+    "G": {
+      "name": "Galerie",
+      "the": "la galerie"
+    },
+    "F": {
+      "name": "Forge",
+      "the": "la forge"
+    },
+    "P": {
+      "name": "Puits",
+      "the": "le puits"
+    },
+    "V": {
+      "name": "Filon",
+      "the": "le filon"
+    },
+    "D": {
+      "name": "Dortoir",
+      "the": "le dortoir"
+    },
+    "C": {
+      "name": "Cantine",
+      "the": "la cantine"
+    },
+    "T": {
+      "name": "Salle des coffres",
+      "the": "la salle des coffres"
+    }
+  },
+  "layout": [
+    "EEEGGFFF",
+    "EEEGGFFF",
+    "DDGGGPPF",
+    "DDGGGPPV",
+    "DDCCCPVV",
+    "TTCCCVVV",
+    "TTCCCVVV",
+    "TTTTCVVV"
+  ],
+  "objects": [
+    {
+      "type": "tonneau",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        1,
+        7
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        6,
+        7
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        2
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        7,
+        2
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        7,
+        6
+      ]
+    }
+  ],
+  "intro": "Le contremaître Granit a été retrouvé au fond de la Mine des Nains, aussi froid que le granit. Six ouvriers étaient descendus pour l'équipe de nuit. Un seul était avec lui.",
+  "characters": [
+    {
+      "id": "a",
+      "name": "Agrifol",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "⛏️",
+      "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
+      "archetype": "mineur"
+    },
+    {
+      "id": "b",
+      "name": "Bertrand",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
+    },
+    {
+      "id": "c",
+      "name": "Cramoisi",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
+      "id": "d",
+      "name": "Dentdur",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    },
+    {
+      "id": "e",
+      "name": "Éboulis",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🪨",
+      "desc": "Golem de pierre, lent mais très appliqué",
+      "archetype": "golem",
+      "shape": "I2"
+    },
+    {
+      "id": "f",
+      "name": "Filou",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "g",
+      "name": "Granit",
+      "gender": "m",
+      "role": "victim",
+      "icon": "👷",
+      "desc": "Contremaître nain, compte les pépites et les pauses",
+      "archetype": "contremaitre"
+    }
+  ],
+  "id": "mine--contremaitre--golem",
+  "epilogue": "Agrifol avoue : Granit lui avait volé sa plus belle pépite. C'était devenu une question de principe.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Agrifol était dans la même colonne qu'une table.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était sur la même ligne qu'un chaudron.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bertrand était sur un champignon géant.",
+      "logic": {
+        "type": "onObject",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Cramoisi était dans la cantine.",
+      "logic": {
+        "type": "inRoom",
+        "room": "C"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était dans la même colonne qu'un coffre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dentdur était à l'ouest de Cramoisi.",
+      "logic": {
+        "type": "westOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était sur la même ligne qu'un lit.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Éboulis était dans la même colonne qu'un tonneau.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Filou était dans la même colonne qu'un chaudron.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chaudron"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "g": [
+        3,
+        4
+      ],
+      "e": [
+        [
+          6,
+          0
+        ],
+        [
+          7,
+          0
+        ]
+      ],
+      "a": [
+        1,
+        3
+      ],
+      "d": [
+        2,
+        1
+      ],
+      "f": [
+        0,
+        7
+      ],
+      "c": [
+        4,
+        2
+      ],
+      "b": [
+        5,
+        6
+      ]
+    },
+    "murderer": "a"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 3,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 2
+  },
+  "difficulty": 4
+}

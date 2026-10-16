@@ -1,0 +1,102 @@
+{
+ "positions": {
+  "f": [
+   4,
+   5
+  ],
+  "c": [
+   [
+    2,
+    3
+   ],
+   [
+    2,
+    4
+   ]
+  ],
+  "e": [
+   3,
+   2
+  ],
+  "d": [
+   6,
+   1
+  ],
+  "a": [
+   1,
+   0
+  ],
+  "b": [
+   5,
+   6
+  ]
+ },
+ "murderer": "b",
+ "cast": {
+  "c": "a",
+  "e": "b",
+  "d": "c",
+  "a": "d",
+  "b": "e"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "c",
+   "logic": {
+    "type": "westOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "southOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "southOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tonneau"
+   }
+  }
+ ]
+}

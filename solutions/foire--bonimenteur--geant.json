@@ -1,0 +1,109 @@
+{
+ "positions": {
+  "f": [
+   4,
+   4
+  ],
+  "e": [
+   [
+    5,
+    2
+   ],
+   [
+    6,
+    2
+   ]
+  ],
+  "d": [
+   2,
+   1
+  ],
+  "a": [
+   0,
+   0
+  ],
+  "b": [
+   1,
+   5
+  ],
+  "c": [
+   3,
+   3
+  ]
+ },
+ "murderer": "c",
+ "cast": {
+  "e": "a",
+  "d": "b",
+  "a": "c",
+  "b": "d",
+  "c": "e"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "southOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameColAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "southOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "onObject",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "inRoom",
+    "room": "B"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "onObject",
+    "object": "chaise"
+   }
+  }
+ ]
+}

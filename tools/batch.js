@@ -9,7 +9,7 @@ const path = require('path');
 const os = require('os');
 const { spawn } = require('child_process');
 const E = require('../engine');
-const { resolve, loadScene, withVictim } = require('../cast');
+const { resolve, loadScene, withVictim, withBig } = require('../cast');
 
 const ROOT = path.join(__dirname, '..');
 const arg = (name, def) => (process.argv.find(a => a.startsWith(`--${name}=`)) || `=${def}`).split('=')[1];
@@ -46,6 +46,12 @@ for (const f of fs.readdirSync(path.join(ROOT, 'scenes')).sort()) {
     jobs.push({ id, scene: name, victim: c.archetype, size: scene.size, target: TARGETS[scene.size][i % TARGETS[scene.size].length] });
   });
 }
+// affaires à grands personnages (big-cases.json) : difficulté de base visée, pour une progression dans le niveau 4 / 5
+const BIG_TARGETS = { false: [1, 2, 1, 2, 2], true: [1, 2, 2, 3, 2] };
+JSON.parse(fs.readFileSync(path.join(ROOT, 'big-cases.json'), 'utf8')).cases.forEach((c, i) => {
+  const size = loadScene(scenePath(c.scene)).size;
+  jobs.push({ id: c.id, scene: c.scene, victim: c.victim, big: c.big, hidden: !!c.hidden, size, target: BIG_TARGETS[!!c.hidden][i % 5] });
+});
 const todo = jobs.filter(j => !fs.existsSync(path.join(ROOT, 'solutions', j.id + '.json')) && (!ONLY || j.scene === ONLY || j.scene.startsWith(ONLY + '-')));
 console.log(`${todo.length} affaire(s) à produire, ${JOBS} en parallèle`);
 
@@ -53,6 +59,8 @@ function runGen(job, seed, skulls) {
   return new Promise((done) => {
     const args = ['gen.js', `scenes/${job.scene}.json`, String(seed), '--level=1', `--skulls=${skulls}`, `--tries=${TRIES[job.size]}`];
     if (job.victim) args.push(`--victim=${job.victim}`);
+    if (job.big) args.push(`--big=${job.big.join(',')}`);
+    if (job.hidden) args.push('--hidden');
     const child = spawn(process.execPath, args, { cwd: ROOT });
     let out = '';
     child.stdout.on('data', d => (out += d));
@@ -70,14 +78,16 @@ async function produce(job) {
       const out = await runGen(job, seed, skulls);
       if (!out) continue;
       const sol = JSON.parse(out);
-      const scene = job.victim ? withVictim(loadScene(scenePath(job.scene)), job.victim) : loadScene(scenePath(job.scene));
+      const base = loadScene(scenePath(job.scene));
+      const scene = job.big ? withBig(base, job.victim, job.big) : job.victim ? withVictim(base, job.victim) : base;
       const p = resolve(scene, sol.cast);
+      if (job.hidden) p.hiddenShapes = true;
       const h = E.humanSolve(p, sol.clues, 2);
       if (!h.solved || E.solve(p, sol.clues, 2).length !== 1) continue;
       fs.writeFileSync(path.join(ROOT, 'solutions', job.id + '.json'), JSON.stringify(sol, null, 1) + '\n');
-      const r = E.rateDifficulty(h.steps);
+      const r = { skulls: E.skullsOf(p, h.steps) };
       const techs = [...new Set(h.steps.map(s => E.TECH[s.tech]))].join(', ');
-      console.log(`✔ ${job.id.padEnd(26)} ${'💀'.repeat(r.skulls) || '0 crâne'}${skulls !== job.target ? ` (visé ${job.target})` : ''} · ${sol.clues.length} indices · ${techs}`);
+      console.log(`✔ ${job.id.padEnd(26)} ${'💀'.repeat(r.skulls) || '0 crâne'}${job.big ? ` (base ${skulls})` : ''}${skulls !== job.target ? ` (visé ${job.target})` : ''} · ${sol.clues.length} indices · ${techs}`);
       return true;
     }
   }

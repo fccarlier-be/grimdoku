@@ -546,5 +546,77 @@
       "G": "Griffon",
       "H": "Hiboulet"
     }
+  },
+  "geant": {
+    "icon": "🦶",
+    "gender": "m",
+    "title": "le géant",
+    "shape": "I2",
+    "desc": "Géant, toujours couché : aucun plafond n'est assez haut",
+    "epilogue": "{coupable} jure qu'il s'est seulement retourné dans son sommeil. Hélas, {victime} faisait la sieste juste à côté.",
+    "names": {
+      "A": "Armoire",
+      "B": "Bastion",
+      "C": "Colosse",
+      "D": "Dolmen",
+      "E": "Escabeau",
+      "F": "Falaise",
+      "G": "Gigantor",
+      "H": "Hautbois"
+    }
+  },
+  "golem": {
+    "icon": "🪨",
+    "gender": "m",
+    "title": "le golem",
+    "shape": "I2",
+    "desc": "Golem de pierre, lent mais très appliqué",
+    "epilogue": "On avait gravé une consigne sur le front de {coupable} : « Range la pièce. » Il a rangé {victime} aussi, très soigneusement.",
+    "names": {
+      "A": "Argile",
+      "B": "Basalte",
+      "C": "Caillasse",
+      "D": "Dalle",
+      "E": "Éboulis",
+      "F": "Fondation",
+      "G": "Granit",
+      "H": "Hématite"
+    }
+  },
+  "vouivre": {
+    "icon": "🐍",
+    "gender": "f",
+    "title": "la vouivre",
+    "shape": "I3",
+    "desc": "Vouivre, serpent ailé, très longue à se retourner",
+    "epilogue": "{coupable} voulait juste faire un câlin à {victime}. Avec trois cases de longueur, un câlin finit vite en nœud.",
+    "names": {
+      "A": "Aspicia",
+      "B": "Boucline",
+      "C": "Couleuvrette",
+      "D": "Déroulée",
+      "E": "Écailline",
+      "F": "Fourchelangue",
+      "G": "Glissandra",
+      "H": "Hélicia"
+    }
+  },
+  "dragon": {
+    "icon": "🐉",
+    "gender": "m",
+    "title": "le dragon",
+    "shape": "L3",
+    "desc": "Dragon adulte, toujours lové dans un coin",
+    "epilogue": "{coupable} gardait son trésor dans un coin, comme tout dragon qui se respecte. {victime} a eu le tort de compter les pièces à voix haute.",
+    "names": {
+      "A": "Ardent",
+      "B": "Braisier",
+      "C": "Cendrebrune",
+      "D": "Draconyx",
+      "E": "Embrasor",
+      "F": "Fournaise",
+      "G": "Grillepoil",
+      "H": "Hautefournaise"
+    }
   }
 }

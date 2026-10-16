@@ -74,3 +74,14 @@ New character:
 | `ogre.png` | a huge friendly ogre with greyish-brown skin, a tiny head on huge shoulders, a bib around his neck, holding a single carrot with an embarrassed vegetarian smile |
 | `fossoyeur.png` | a thin cheerful gravedigger with a flat cap, a long scarf, hollow cheeks, whistling, a shovel resting on his shoulder and a lantern in his hand |
 | `corbeau.png` | a large black raven with glossy blue-black feathers, a monocle, a quill pen in its beak, looking sly and secretive |
+
+## Grands personnages (4–5 crânes) — même méthode, joindre le tavernier validé
+
+Ils occupent plusieurs cases sur la carte, mais leur portrait reste un buste rond comme les autres.
+
+| Fichier | Description |
+|---|---|
+| `geant.png` | a sleepy giant with a huge round head, tiny bored eyes, a stubby nose, a patched brown tunic and a big bump on his forehead from low ceilings, yawning |
+| `golem.png` | a stone golem made of mossy grey blocks with glowing amber eyes and a rune carved on its forehead, a very earnest, focused expression, a small feather duster in one hand |
+| `vouivre.png` | a long winged serpent woman (wyvern-like) with olive-green scales, small feathered wings, a single ruby on her forehead, coiled around herself, a smug knowing smile (no pink) |
+| `dragon.png` | a large adult dragon with dark red scales and a cream belly, curled tail, two big curved horns, smoke rising from the nostrils, one claw resting protectively on a small pile of gold coins, suspicious eyes |

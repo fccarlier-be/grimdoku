@@ -1,0 +1,99 @@
+{
+ "positions": {
+  "f": [
+   0,
+   3
+  ],
+  "a": [
+   [
+    3,
+    5
+   ],
+   [
+    4,
+    5
+   ],
+   [
+    4,
+    6
+   ]
+  ],
+  "d": [
+   2,
+   2
+  ],
+  "e": [
+   5,
+   1
+  ],
+  "c": [
+   6,
+   4
+  ],
+  "b": [
+   1,
+   0
+  ]
+ },
+ "murderer": "d",
+ "cast": {
+  "a": "a",
+  "d": "b",
+  "e": "c",
+  "c": "d",
+  "b": "e"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "inRoom",
+    "room": "H"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tapis"
+   }
+  }
+ ]
+}

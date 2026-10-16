@@ -1,0 +1,211 @@
+{
+  "_doc": "Affaires à grands personnages (4 crânes ; hidden = forme cachée, 5 crânes). Produites par tools/batch.js, assemblées par build-puzzles.js.",
+  "cases": [
+    {
+      "id": "chateau--roi--dragon",
+      "scene": "chateau",
+      "victim": "roi",
+      "big": [
+        "dragon"
+      ]
+    },
+    {
+      "id": "chateau--barde--golem",
+      "scene": "chateau",
+      "victim": "barde",
+      "big": [
+        "golem"
+      ]
+    },
+    {
+      "id": "forge--mineur--dragon",
+      "scene": "forge",
+      "victim": "mineur",
+      "big": [
+        "dragon"
+      ]
+    },
+    {
+      "id": "forge--ogre--golem",
+      "scene": "forge",
+      "victim": "ogre",
+      "big": [
+        "golem"
+      ]
+    },
+    {
+      "id": "mine--contremaitre--golem",
+      "scene": "mine",
+      "victim": "contremaitre",
+      "big": [
+        "golem"
+      ]
+    },
+    {
+      "id": "mine--fee--dragon",
+      "scene": "mine",
+      "victim": "fee",
+      "big": [
+        "dragon"
+      ]
+    },
+    {
+      "id": "cimetiere--fossoyeur--geant",
+      "scene": "cimetiere",
+      "victim": "fossoyeur",
+      "big": [
+        "geant"
+      ]
+    },
+    {
+      "id": "bal--roi--vouivre",
+      "scene": "bal",
+      "victim": "roi",
+      "big": [
+        "vouivre"
+      ]
+    },
+    {
+      "id": "tour--archimage--vouivre",
+      "scene": "tour",
+      "victim": "archimage",
+      "big": [
+        "vouivre"
+      ]
+    },
+    {
+      "id": "academie--professeur--golem",
+      "scene": "academie",
+      "victim": "professeur",
+      "big": [
+        "golem"
+      ]
+    },
+    {
+      "id": "palais--djinn--vouivre",
+      "scene": "palais",
+      "victim": "djinn",
+      "big": [
+        "vouivre"
+      ]
+    },
+    {
+      "id": "foire--bonimenteur--geant",
+      "scene": "foire",
+      "victim": "bonimenteur",
+      "big": [
+        "geant"
+      ]
+    },
+    {
+      "id": "navire--dragon--dragon",
+      "scene": "navire",
+      "victim": "dragon",
+      "big": [
+        "dragon"
+      ]
+    },
+    {
+      "id": "bibliotheque--golem--golem",
+      "scene": "bibliotheque",
+      "victim": "golem",
+      "big": [
+        "golem"
+      ]
+    },
+    {
+      "id": "mine--mineur--golem-dragon--cache",
+      "scene": "mine",
+      "victim": "mineur",
+      "big": [
+        "golem",
+        "dragon"
+      ],
+      "hidden": true
+    },
+    {
+      "id": "bal--vampire--geant-vouivre--cache",
+      "scene": "bal",
+      "victim": "vampire",
+      "big": [
+        "geant",
+        "vouivre"
+      ],
+      "hidden": true
+    },
+    {
+      "id": "cimetiere--corbeau--golem--cache",
+      "scene": "cimetiere",
+      "victim": "corbeau",
+      "big": [
+        "golem"
+      ],
+      "hidden": true
+    },
+    {
+      "id": "chateau--elfe--dragon--cache",
+      "scene": "chateau",
+      "victim": "elfe",
+      "big": [
+        "dragon"
+      ],
+      "hidden": true
+    },
+    {
+      "id": "forge--chevalier--dragon-golem--cache",
+      "scene": "forge",
+      "victim": "chevalier",
+      "big": [
+        "dragon",
+        "golem"
+      ],
+      "hidden": true
+    },
+    {
+      "id": "tour--sirene--golem--cache",
+      "scene": "tour",
+      "victim": "sirene",
+      "big": [
+        "golem"
+      ],
+      "hidden": true
+    },
+    {
+      "id": "academie--djinn--geant--cache",
+      "scene": "academie",
+      "victim": "djinn",
+      "big": [
+        "geant"
+      ],
+      "hidden": true
+    },
+    {
+      "id": "palais--roi--dragon--cache",
+      "scene": "palais",
+      "victim": "roi",
+      "big": [
+        "dragon"
+      ],
+      "hidden": true
+    },
+    {
+      "id": "navire--capitaine--geant--cache",
+      "scene": "navire",
+      "victim": "capitaine",
+      "big": [
+        "geant"
+      ],
+      "hidden": true
+    },
+    {
+      "id": "bibliotheque--bibliothecaire--golem-dragon--cache",
+      "scene": "bibliotheque",
+      "victim": "bibliothecaire",
+      "big": [
+        "golem",
+        "dragon"
+      ],
+      "hidden": true
+    }
+  ]
+}

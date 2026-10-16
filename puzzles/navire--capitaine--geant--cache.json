@@ -1,0 +1,338 @@
+{
+  "formatVersion": 1,
+  "title": "Le Navire Fantôme — l'affaire Frégaton",
+  "size": 7,
+  "rooms": {
+    "V": {
+      "name": "Vigie",
+      "the": "la vigie"
+    },
+    "P": {
+      "name": "Pont",
+      "the": "le pont"
+    },
+    "K": {
+      "name": "Cabine du capitaine",
+      "the": "la cabine du capitaine"
+    },
+    "E": {
+      "name": "Entrepont",
+      "the": "l'entrepont"
+    },
+    "Q": {
+      "name": "Coquerie",
+      "the": "la coquerie"
+    },
+    "C": {
+      "name": "Cale",
+      "the": "la cale"
+    },
+    "S": {
+      "name": "Soute à poudre",
+      "the": "la soute à poudre"
+    }
+  },
+  "layout": [
+    "VVPPPKK",
+    "VVPPPKK",
+    "EEPPPQK",
+    "EECCQQQ",
+    "EECCCQQ",
+    "SSCCCCQ",
+    "SSSCCCC"
+  ],
+  "objects": [
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "canon",
+      "at": [
+        0,
+        3
+      ]
+    },
+    {
+      "type": "canon",
+      "at": [
+        2,
+        2
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        1,
+        6
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        6
+      ]
+    },
+    {
+      "type": "hamac",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "hamac",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        3,
+        5
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        4,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        4
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        5
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        5,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        2
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Aquabelle",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene"
+    },
+    {
+      "id": "b",
+      "name": "Blafard",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ]
+    },
+    {
+      "id": "c",
+      "name": "Colosse",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🦶",
+      "desc": "Géant, toujours couché : aucun plafond n'est assez haut",
+      "archetype": "geant",
+      "shape": "I2"
+    },
+    {
+      "id": "d",
+      "name": "Dico",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🦜",
+      "desc": "Perroquet, répète tous les secrets",
+      "archetype": "perroquet"
+    },
+    {
+      "id": "e",
+      "name": "Écoutille",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🏴‍☠️",
+      "desc": "Pirate, a perdu une jambe, un œil et le sens de l'orientation",
+      "archetype": "pirate"
+    },
+    {
+      "id": "f",
+      "name": "Frégaton",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🧑‍✈️",
+      "desc": "Capitaine, n'a jamais quitté le port",
+      "archetype": "capitaine"
+    }
+  ],
+  "id": "navire--capitaine--geant--cache",
+  "hiddenShapes": true,
+  "intro": "Le capitaine Frégaton a été retrouvé sans vie à bord du Navire Fantôme, qui dérivait dans le brouillard. Cinq membres d'équipage étaient à bord. Un seul était avec lui.",
+  "epilogue": "Blafard hantait ce navire bien avant son équipage. Frégaton voulait le chasser par-dessus bord avec un seau d'eau bénite.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Aquabelle était sur la même ligne qu'un lit.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Elle était à côté d'un tonneau.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Blafard était dans la même colonne qu'un fauteuil.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était sur la même ligne qu'un coffre.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Colosse était à l'ouest de Blafard.",
+      "logic": {
+        "type": "westOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dico était au sud d'Écoutille.",
+      "logic": {
+        "type": "southOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Écoutille était au sud de Colosse.",
+      "logic": {
+        "type": "southOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était sur la même ligne qu'un chaudron.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaudron"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        4,
+        5
+      ],
+      "c": [
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "e": [
+        3,
+        2
+      ],
+      "d": [
+        6,
+        1
+      ],
+      "a": [
+        1,
+        0
+      ],
+      "b": [
+        5,
+        6
+      ]
+    },
+    "murderer": "b"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 3,
+    "hardest": "seul candidat",
+    "hardSteps": 1,
+    "directStart": 1
+  },
+  "difficulty": 5
+}

@@ -1,0 +1,88 @@
+{
+ "positions": {
+  "f": [
+   3,
+   6
+  ],
+  "c": [
+   [
+    6,
+    1
+   ],
+   [
+    6,
+    2
+   ]
+  ],
+  "e": [
+   2,
+   0
+  ],
+  "d": [
+   1,
+   5
+  ],
+  "a": [
+   4,
+   4
+  ],
+  "b": [
+   0,
+   3
+  ]
+ },
+ "murderer": "d",
+ "cast": {
+  "c": "a",
+  "e": "b",
+  "d": "c",
+  "a": "d",
+  "b": "e"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "e",
+   "logic": {
+    "type": "southOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "enclume"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "enclume"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaudron"
+   }
+  }
+ ]
+}
