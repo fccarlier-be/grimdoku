@@ -446,9 +446,14 @@ html, body { background: var(--desk-tex, none) center top / 640px, var(--night);
 /* ---------- affiche d'accueil ---------- */
 .hero { position: relative; isolation: isolate; display: flex; flex-direction: column; align-items: center; gap: 12px; }
 .heroimg {
-  width: 100%; aspect-ratio: 1376 / 768; border-radius: 3px;
+  position: relative; width: 100%; aspect-ratio: 1376 / 768; border-radius: 2px;
   background: var(--hero-wide, none) center / cover, #2a1f18;
-  box-shadow: 0 0 0 6px #e3cfa3, 0 0 0 7px rgba(43, 32, 22, .6), 0 14px 34px rgba(0, 0, 0, .6);
+}
+/* cadre de parchemin déchiré DERRIÈRE l'image : un filtre SVG sur l'image elle-même la rendrait floue */
+.heroimg::before {
+  content: ""; position: absolute; z-index: -1; inset: -8px; border-radius: 3px;
+  background: var(--parch-tex, none) center / 240px, linear-gradient(#efe0bd, #e0c99b);
+  box-shadow: inset 0 0 0 1.5px rgba(43, 32, 22, .5), 0 14px 34px rgba(0, 0, 0, .6);
   filter: url(#torn-s);
 }
 .herotitle { text-align: center; font-size: clamp(46px, 13vw, 64px); line-height: .9; color: var(--candle);

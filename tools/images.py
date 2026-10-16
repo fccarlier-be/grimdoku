@@ -245,7 +245,7 @@ def home():
         if img.width > HOME_WIDTH:
             img = img.resize((HOME_WIDTH, round(img.height * HOME_WIDTH / img.width)), Image.LANCZOS)
         out = HOME_DIR / (src.stem.lower() + '.webp')
-        img.save(out, 'WEBP', quality=80, method=6)
+        img.save(out, 'WEBP', quality=92, method=6)
         print(f'accueil {src.name} → {out.name} {img.size} ({out.stat().st_size // 1024} Ko)')
 
 
