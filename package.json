@@ -1,0 +1,12 @@
+{
+  "name": "grimdoku",
+  "private": true,
+  "description": "Grimdoku — jeu de logique fantasy humoristique",
+  "scripts": {
+    "build": "node build-puzzles.js && node build-app.js && cp dist/grimdoku.html deploy/grimdoku/site/index.html",
+    "test": "npm run build --silent && node --test \"tests/*.test.js\""
+  },
+  "devDependencies": {
+    "jsdom": "24.1.3"
+  }
+}

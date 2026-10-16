@@ -3,7 +3,9 @@ const fs = require('fs');
 const E = require('./engine');
 const t = fs.readFileSync('app/template.html', 'utf8');
 const engine = fs.readFileSync('engine.js', 'utf8');
-const puzzles = fs.readdirSync('puzzles').sort().map(f => JSON.parse(fs.readFileSync('puzzles/' + f, 'utf8')));
+// de la plus facile à la plus dure (accueil et « Affaire suivante »), puis par score, puis par identifiant
+const puzzles = fs.readdirSync('puzzles').sort().map(f => JSON.parse(fs.readFileSync('puzzles/' + f, 'utf8')))
+  .sort((a, b) => a.difficulty - b.difficulty || a.rating.score - b.rating.score || a.id.localeCompare(b.id));
 
 // mobilier : assets/objects/<type>.svg → un <symbol id="obj-<type>"> par objet, utilisé via <use href="#obj-…">
 const defs = [], symbols = [];
