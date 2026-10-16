@@ -72,6 +72,14 @@ for (const m of floorsUsed.concat('parchemin', 'bureau')) {
 // version légère pour les fiches et les fenêtres (bords à peine irréguliers, le texte n'est pas filtré)
 defs.push('<filter id="torn-s" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="2" seed="5" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G"/></filter>');
 defs.push('<filter id="torn" x="-4%" y="-4%" width="108%" height="108%"><feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="3" seed="11" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="11" xChannelSelector="R" yChannelSelector="G"/></filter>');
+// écran d'accueil : assets/home/accueil-large.webp (paysage) et accueil-haut.webp (portrait, téléphone), en variables CSS
+for (const [name, v] of [['accueil-large', '--hero-wide'], ['accueil-haut', '--hero-tall']]) {
+  const f = `assets/home/${name}.webp`;
+  if (fs.existsSync(f)) floorCss.push(`:root { ${v}: url(data:image/webp;base64,${fs.readFileSync(f).toString('base64')}); }`);
+  // version portrait : utilisée sur téléphone à la place du paysage
+  if (fs.existsSync(f) && name === 'accueil-haut') floorCss.push('@media (max-width: 699px) { .heroimg { background-image: var(--hero-tall); aspect-ratio: 9 / 16; max-height: 72vh; } }');
+  else missing.push('accueil ' + name);
+}
 const sprite = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>${defs.join('')}</defs>${symbols.join('')}</svg>`;
 
 const out = t.replace('/*__ENGINE__*/', () => engine)

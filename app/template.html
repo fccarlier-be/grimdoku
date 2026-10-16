@@ -442,6 +442,29 @@ html, body { background: var(--desk-tex, none) center top / 640px, var(--night);
 .sheet { border: 0; border-radius: 3px; }
 .sheet h2 { color: var(--red-ink); }
 .toggle input { accent-color: var(--red-ink); }
+
+/* ---------- affiche d'accueil ---------- */
+.hero { position: relative; isolation: isolate; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.heroimg {
+  width: 100%; aspect-ratio: 1376 / 768; border-radius: 3px;
+  background: var(--hero-wide, none) center / cover, #2a1f18;
+  box-shadow: 0 0 0 6px #e3cfa3, 0 0 0 7px rgba(43, 32, 22, .6), 0 14px 34px rgba(0, 0, 0, .6);
+  filter: url(#torn-s);
+}
+.herotitle { text-align: center; font-size: clamp(46px, 13vw, 64px); line-height: .9; color: var(--candle);
+  text-shadow: 0 2px 0 #2b1405, 0 0 18px rgba(240, 169, 58, .35); -webkit-text-stroke: 1px #2b1405; paint-order: stroke fill; }
+.herotitle small { font-size: 13px; letter-spacing: .14em; color: #e9d9b5; -webkit-text-stroke: 0; text-shadow: 0 1px 2px #000; margin-top: 8px; }
+.herohelp { position: absolute; top: 0; right: 0; }
+.herobtn { height: auto; padding: 14px 28px; font-size: 24px; margin-top: 6px; }
+@media (min-width: 700px) {
+  .hero { margin-top: 8px; }
+  /* le titre se pose sur les poutres, en haut de l'image */
+  .herotitle { position: absolute; z-index: 1; top: 3%; left: 0; right: 0; font-size: clamp(64px, 9vw, 104px); }
+  .herotitle::before { content: ""; position: absolute; z-index: -1; inset: -18% 10% -10%; background: radial-gradient(closest-side, rgba(15, 9, 5, .75), transparent); }
+  .herohelp { top: 14px; right: 14px; z-index: 2; }
+  /* le sceau à cheval sur le bas de l'affiche */
+  .herobtn { margin-top: -38px; z-index: 2; }
+}
 /*__FLOORS__*/
 </style>
 
@@ -503,16 +526,19 @@ const PUZZLES = /*__PUZZLES__*/;
   function home() {
     P = null;
     $app.classList.remove('game');
+    // affiche d'accueil : les suspects alignés sous la toise, le titre sur les poutres, le sceau « Ouvrir l'enquête »
     $app.innerHTML = `
-      <header class="top">
-        <h1 class="brand">Grimdoku<small>Meurtres en terres enchantées</small></h1>
-        <span class="spacer"></span>
-        <button class="iconbtn" id="rulesBtn" aria-label="Règles">?</button>
-      </header>
+      <section class="hero">
+        <h1 class="brand herotitle">Grimdoku<small>Meurtres en terres enchantées</small></h1>
+        <div class="heroimg" role="img" aria-label="Les suspects alignés sous une toise, dans une taverne, autour d'une silhouette tracée à la craie"></div>
+        <button class="iconbtn herohelp" id="rulesBtn" aria-label="Règles">?</button>
+        <button class="accuse herobtn" id="startBtn">Ouvrir l'enquête</button>
+      </section>
       <p class="lead">Place chaque suspect sur la carte grâce aux indices. Une personne par ligne, une par colonne. Le coupable est celui qui était seul avec la victime.</p>
       ${levels()}`;
     $app.querySelectorAll('.case').forEach(b => b.onclick = () => open(b.dataset.id));
     document.getElementById('rulesBtn').onclick = rules;
+    document.getElementById('startBtn').onclick = () => $app.querySelector('.level').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   // ---------- partie ----------

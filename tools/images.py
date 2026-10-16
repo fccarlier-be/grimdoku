@@ -21,6 +21,8 @@ ROOT = Path(__file__).resolve().parent.parent / 'assets'
 DIR = ROOT / 'characters'
 OBJ_DIR = ROOT / 'objects'
 FLOOR_DIR = ROOT / 'floors'
+HOME_DIR = ROOT / 'home'      # illustrations de l'écran d'accueil (accueil-large : paysage, accueil-haut : portrait)
+HOME_WIDTH = 1600
 FLOOR_SIZE = 320       # une texture = 2×2 cases
 FLOOR_SOFT = 0.45      # part de couleur moyenne mélangée à la texture (contraste adouci : meubles et pions lisibles)
 FLOOR_LIGHT = 1.12     # éclaircissement
@@ -235,10 +237,23 @@ def floors():
         print(f'sol {src.name} → {out.name} ({out.stat().st_size // 1024} Ko)')
 
 
+def home():
+    if not HOME_DIR.exists():
+        return
+    for src in sources(HOME_DIR):
+        img = Image.open(src).convert('RGB')
+        if img.width > HOME_WIDTH:
+            img = img.resize((HOME_WIDTH, round(img.height * HOME_WIDTH / img.width)), Image.LANCZOS)
+        out = HOME_DIR / (src.stem.lower() + '.webp')
+        img.save(out, 'WEBP', quality=80, method=6)
+        print(f'accueil {src.name} → {out.name} {img.size} ({out.stat().st_size // 1024} Ko)')
+
+
 def main():
     portraits()
     objects()
     floors()
+    home()
 
 
 if __name__ == '__main__':
