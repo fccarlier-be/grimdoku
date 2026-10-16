@@ -87,7 +87,7 @@ header.top { display: flex; align-items: center; gap: 10px; }
   container-type: inline-size;
   width: 100%; max-width: 100%;
   display: grid; grid-template-columns: repeat(var(--n), 1fr);
-  border: 3px solid var(--ink); border-radius: 6px; overflow: hidden;
+  border: 0; border-radius: 6px; overflow: hidden; position: relative;
   background: var(--parch);
   box-shadow: 0 10px 30px rgba(0,0,0,.45), 0 0 0 6px #3a2c1f, 0 0 0 7px #5a4530;
   margin: 8px 7px 4px; width: calc(100% - 14px);
@@ -100,8 +100,8 @@ header.top { display: flex; align-items: center; gap: 10px; }
   display: grid; place-items: center; overflow: visible;
   font-size: calc(100cqw / var(--n) * .5);
 }
-.cell.wt { border-top: 3px solid var(--ink); }
-.cell.wl { border-left: 3px solid var(--ink); }
+.walls { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; overflow: visible; }
+.walls path { fill: none; stroke: var(--ink); stroke-linecap: round; stroke-linejoin: round; }
 .cell.r0 { border-top-color: transparent; }
 .cell.c0 { border-left-color: transparent; }
 .cell.block::before {
@@ -118,7 +118,7 @@ header.top { display: flex; align-items: center; gap: 10px; }
 @keyframes spin { to { transform: rotate(360deg); } }
 .cell.has-char .obj { position: absolute; right: 3%; bottom: 3%; width: 38%; z-index: 4; animation: none; }
 .cell .roomlabel {
-  position: absolute; top: 2px; left: 3px; z-index: 2; pointer-events: none;
+  position: absolute; top: 6px; left: 7px; z-index: 3; pointer-events: none; /* dégagé des murs dessinés */
   font-size: 9px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap;
   color: rgba(43, 32, 22, .72); line-height: 1;
 }
@@ -453,6 +453,52 @@ const PUZZLES = /*__PUZZLES__*/;
   }
   const roomIdx = (k) => Object.keys(P.rooms).indexOf(k);
 
+  // Murs entre les pièces, dessinés à la main façon BD : traits épais et un peu irréguliers (même tracé à chaque
+  // affichage, tiré d'une graine propre à l'énigme). Deux passes d'encre de largeurs différentes font varier l'épaisseur.
+  function wallsSvg() {
+    if (wallsSvg.for === P.id) return wallsSvg.html;
+    const n = P.size, L = P.layout;
+    let seed = [...P.id].reduce((h, ch) => (h * 31 + ch.charCodeAt(0)) >>> 0, 7);
+    const rnd = () => { seed = (seed * 1103515245 + 12345) >>> 0; return (seed >>> 8) / 16777216; };
+    // segments de mur, fusionnés en lignes droites : [x1, y1, x2, y2] en unités de case
+    const lines = [];
+    for (let r = 1; r < n; r++) for (let c = 0; c < n;) {
+      if (L[r][c] === L[r - 1][c]) { c++; continue; }
+      const c0 = c; while (c < n && L[r][c] !== L[r - 1][c]) c++;
+      lines.push([c0, r, c, r]);
+    }
+    for (let c = 1; c < n; c++) for (let r = 0; r < n;) {
+      if (L[r][c] === L[r][c - 1]) { r++; continue; }
+      const r0 = r; while (r < n && L[r][c] !== L[r][c - 1]) r++;
+      lines.push([c, r0, c, r]);
+    }
+    const e = 0.05; // cadre : un peu à l'intérieur, sinon la moitié du trait est coupée
+    lines.push([e, e, n - e, e], [n - e, e, n - e, n - e], [n - e, n - e, e, n - e], [e, n - e, e, e]);
+    // une ligne tremblée : points intermédiaires décalés perpendiculairement, reliés par des courbes
+    const wobbly = ([x1, y1, x2, y2], amp) => {
+      const len = Math.hypot(x2 - x1, y2 - y1), k = Math.max(2, Math.round(len * 2.5));
+      const nx = -(y2 - y1) / len, ny = (x2 - x1) / len;
+      const pts = [];
+      for (let i = 0; i <= k; i++) {
+        const t = i / k, j = i === 0 || i === k ? amp * 0.3 : amp;
+        const d = (rnd() * 2 - 1) * j;
+        pts.push([x1 + (x2 - x1) * t + nx * d, y1 + (y2 - y1) * t + ny * d]);
+      }
+      let dpath = `M${pts[0][0].toFixed(3)} ${pts[0][1].toFixed(3)}`;
+      for (let i = 1; i < pts.length; i++) {
+        const [px, py] = pts[i - 1], [qx, qy] = pts[i];
+        dpath += ` Q${px.toFixed(3)} ${py.toFixed(3)} ${((px + qx) / 2).toFixed(3)} ${((py + qy) / 2).toFixed(3)}`;
+      }
+      return dpath + ` L${pts[pts.length - 1][0].toFixed(3)} ${pts[pts.length - 1][1].toFixed(3)}`;
+    };
+    const main = lines.map(l => wobbly(l, 0.028)).join(' ');
+    const second = lines.map(l => wobbly(l, 0.022)).join(' ');
+    wallsSvg.for = P.id;
+    wallsSvg.html = `<svg class="walls" viewBox="0 0 ${n} ${n}" preserveAspectRatio="none" aria-hidden="true">
+      <path d="${main}" stroke-width="0.09"/><path d="${second}" stroke-width="0.06"/></svg>`;
+    return wallsSvg.html;
+  }
+
   function conflicts() {
     const bad = new Set();
     for (const e of E.checkPlacement(P, S.pos)) e.ids.forEach(i => bad.add(i));
@@ -544,7 +590,7 @@ const PUZZLES = /*__PUZZLES__*/;
         <details><summary>L'affaire <span class="skulls">${skulls(P.difficulty)}</span></summary><p>${esc(P.intro)}</p></details>
       </div>
       <div class="boardwrap">
-        <div class="board" id="board" style="--n:${n}">${cells}</div>
+        <div class="board" id="board" style="--n:${n}">${cells}${wallsSvg()}</div>
         ${S.solved ? `<div class="stamp" aria-hidden="true"><span>Affaire<br>résolue</span></div>` : ''}
       </div>
       ${specials.length ? `<div class="special">${specials.join('')}</div>` : ''}
