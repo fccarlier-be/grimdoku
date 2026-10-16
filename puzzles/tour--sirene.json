@@ -227,6 +227,7 @@
       "archetype": "sirene"
     }
   ],
+  "decor": "tour",
   "id": "tour--sirene",
   "clues": [
     {

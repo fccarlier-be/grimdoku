@@ -180,6 +180,7 @@
       "archetype": "zombie"
     }
   ],
+  "decor": "moulin",
   "id": "moulin--zombie",
   "epilogue": "Aubépine avoue en battant des ailes : Fernand lui avait volé sa poudre de fée pour la mélanger à la farine.",
   "clues": [

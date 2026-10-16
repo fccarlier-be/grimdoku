@@ -213,6 +213,7 @@
       "archetype": "bonimenteur"
     }
   ],
+  "decor": "foire",
   "id": "foire--bonimenteur--geant",
   "epilogue": "Croquassiette, hercule de foire, avoue : Faconde l'avait traité de « gros caillou » devant les enfants.",
   "clues": [

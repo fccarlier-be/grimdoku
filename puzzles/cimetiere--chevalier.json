@@ -259,6 +259,7 @@
       "archetype": "chevalier"
     }
   ],
+  "decor": "cimetiere",
   "id": "cimetiere--chevalier",
   "intro": "Le chevalier Hardouin a été retrouvé sans vie au Cimetière de Minuit, ce qui, admettons-le, simplifie les démarches. Sept habitués rôdaient entre les tombes. Un seul était avec lui.",
   "epilogue": "Belladone avoue : Hardouin avait planté de l'ail sur toutes les tombes. Même la sienne.",

@@ -173,6 +173,7 @@
       "archetype": "zombie"
     }
   ],
+  "decor": "marais",
   "id": "marais--zombie",
   "epilogue": "Aquabelle avoue : Fernand pompait l'eau de sa mare pour ses petites affaires. Une sirène sans eau, c'est une sardine.",
   "clues": [

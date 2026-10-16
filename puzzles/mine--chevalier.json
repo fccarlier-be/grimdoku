@@ -250,6 +250,7 @@
       "archetype": "chevalier"
     }
   ],
+  "decor": "mine",
   "id": "mine--chevalier",
   "epilogue": "Capucine avoue : Hardouin la gardait dans un bocal pour éclairer la galerie. Elle a fini par trouver la sortie. Et un gros caillou.",
   "clues": [

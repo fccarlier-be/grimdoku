@@ -242,6 +242,7 @@
       "archetype": "fee"
     }
   ],
+  "decor": "mine",
   "id": "mine--fee--dragon",
   "epilogue": "Foulques cherchait un trésor maudit dans la mine. Glycine voulait lui faire payer l'entrée. On ne fait pas payer un chevalier en quête.",
   "clues": [

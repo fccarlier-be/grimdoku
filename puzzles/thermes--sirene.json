@@ -179,6 +179,7 @@
       "archetype": "sirene"
     }
   ],
+  "decor": "thermes",
   "id": "thermes--sirene",
   "intro": "La sirène Flottille a été retrouvée sans vie aux Thermes Enchantés, détendue pour toujours. Cinq curistes profitaient des bains. Un seul était avec elle.",
   "epilogue": "Écu avoue en comptant ses pièces : Flottille était entrée aux thermes sans payer. Deux fois.",

@@ -221,6 +221,7 @@
       "archetype": "troll"
     }
   ],
+  "decor": "foire",
   "id": "foire--troll",
   "epilogue": "Fougère avoue : Gloutor voulait l'enfermer dans un bocal pour le stand des merveilles. Elle s'est rebiffée. Pour de bon.",
   "clues": [

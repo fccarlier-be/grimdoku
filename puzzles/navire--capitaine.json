@@ -237,6 +237,7 @@
       "archetype": "capitaine"
     }
   ],
+  "decor": "navire",
   "id": "navire--capitaine",
   "intro": "Le capitaine Gouvernail a été retrouvé sans vie à bord du Navire Fantôme, qui dérivait dans le brouillard. Six membres d'équipage étaient à bord. Un seul était avec lui.",
   "epilogue": "Cacatoès avoue, et le répète trois fois : Gouvernail voulait le vendre au marché pour une poignée de graines.",

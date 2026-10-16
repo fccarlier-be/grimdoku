@@ -250,6 +250,7 @@
       "archetype": "contremaitre"
     }
   ],
+  "decor": "mine",
   "id": "grim-011",
   "epilogue": "Clodomir cherchait un trésor maudit dans la mine. Houille voulait lui faire payer l'entrée. On ne fait pas payer un chevalier en quête.",
   "clues": [

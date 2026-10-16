@@ -241,6 +241,7 @@
       "archetype": "capitaine"
     }
   ],
+  "decor": "port",
   "id": "port--capitaine",
   "intro": "Le capitaine Gouvernail a été retrouvé sans vie au Port des Contrebandiers, à l'heure où la marée se retire. Six habitués traînaient sur les quais. Un seul était avec lui.",
   "epilogue": "Écume avoue : Gouvernail jetait ses filets juste devant sa grotte.",

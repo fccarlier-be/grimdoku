@@ -221,6 +221,7 @@
       "archetype": "gobelin"
     }
   ],
+  "decor": "foire",
   "id": "foire--gobelin",
   "epilogue": "Églantine avoue : Grigou voulait l'enfermer dans un bocal pour le stand des merveilles. Elle s'est rebiffée. Pour de bon.",
   "clues": [

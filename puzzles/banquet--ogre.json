@@ -186,6 +186,7 @@
       "archetype": "ogre"
     }
   ],
+  "decor": "banquet",
   "id": "banquet--ogre",
   "intro": "L'ogre Festin a été retrouvé sans vie au beau milieu du Banquet des Gobelins, la serviette encore autour du cou. Cinq convives s'empiffraient. Un seul était avec lui.",
   "epilogue": "Bâfrin avoue la bouche pleine : Festin avait pris la dernière part de gâteau. Et l'assiette avec.",

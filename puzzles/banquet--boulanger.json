@@ -186,6 +186,7 @@
       "archetype": "boulanger"
     }
   ],
+  "decor": "banquet",
   "id": "banquet--boulanger",
   "intro": "Le boulanger Fougasse a été retrouvé sans vie au beau milieu du Banquet des Gobelins, la serviette encore autour du cou. Cinq convives s'empiffraient. Un seul était avec lui.",
   "epilogue": "Bâfrin avoue la bouche pleine : Fougasse avait pris la dernière part de gâteau. Et l'assiette avec.",

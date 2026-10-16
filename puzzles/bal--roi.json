@@ -273,6 +273,7 @@
       "archetype": "roi"
     }
   ],
+  "decor": "bal",
   "id": "bal--roi",
   "intro": "Le roi Hugues a été retrouvé sans vie au Bal Masqué, sous un loup de velours. Sept invités dansaient encore. Un seul était avec lui.",
   "epilogue": "Gontran avoue en grinçant : Hugues avait refusé de danser avec lui à cause du bruit de son armure.",

@@ -179,6 +179,7 @@
       "archetype": "zombie"
     }
   ],
+  "decor": "ferme",
   "id": "ferme--zombie",
   "intro": "Le zombie Fernand a été retrouvé au petit matin dans la Ferme Hantée, entre le potager et le fournil. Cinq voisins y avaient passé la nuit. Un seul était avec lui.",
   "epilogue": "Avaloir avoue la bouche pleine : Fernand lui avait interdit le potager. Il n'avait mangé que les citrouilles. Et l'épouvantail.",

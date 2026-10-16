@@ -227,6 +227,7 @@
       "archetype": "vampire"
     }
   ],
+  "decor": "tour",
   "id": "tour--vampire",
   "clues": [
     {

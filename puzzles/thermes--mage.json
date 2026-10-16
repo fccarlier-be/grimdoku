@@ -179,6 +179,7 @@
       "archetype": "mage"
     }
   ],
+  "decor": "thermes",
   "id": "thermes--mage",
   "intro": "Le mage Faribole a été retrouvé sans vie aux Thermes Enchantés, détendu pour toujours. Cinq curistes profitaient des bains. Un seul était avec lui.",
   "epilogue": "Églantine avoue : Faribole l'avait prise pour un moustique et avait tapé dessus. Elle a rendu la politesse.",

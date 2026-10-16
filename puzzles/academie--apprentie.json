@@ -241,6 +241,7 @@
       "archetype": "apprentie"
     }
   ],
+  "decor": "academie",
   "id": "academie--apprentie",
   "intro": "L'apprentie Grenadine a été retrouvée sans vie un soir d'examens à l'Académie de Magie. Six élèves et professeurs révisaient encore. Un seul était avec elle.",
   "epilogue": "Aubépine avoue : Grenadine l'avait utilisée comme marque-page. Toute une nuit.",

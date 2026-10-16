@@ -242,6 +242,7 @@
       "archetype": "contremaitre"
     }
   ],
+  "decor": "mine",
   "id": "mine--contremaitre--golem",
   "epilogue": "Agrifol avoue : Granit lui avait volé sa plus belle pépite. C'était devenu une question de principe.",
   "clues": [

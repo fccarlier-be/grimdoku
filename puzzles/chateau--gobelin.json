@@ -246,6 +246,7 @@
       "archetype": "gobelin"
     }
   ],
+  "decor": "chateau",
   "id": "chateau--gobelin",
   "clues": [
     {

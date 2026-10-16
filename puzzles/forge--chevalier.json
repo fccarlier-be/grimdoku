@@ -227,6 +227,7 @@
       "archetype": "chevalier"
     }
   ],
+  "decor": "forge",
   "id": "forge--chevalier",
   "intro": "Le chevalier Gontran a été retrouvé sans vie à la Forge du Dragon, encore tiède. Six artisans et clients s'y pressaient cette nuit-là. Un seul était avec lui.",
   "epilogue": "Étai avoue : Gontran avait fondu sa plus belle pépite pour en faire une cuillère.",

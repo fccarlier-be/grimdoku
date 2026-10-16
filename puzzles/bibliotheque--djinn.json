@@ -238,6 +238,7 @@
       "archetype": "djinn"
     }
   ],
+  "decor": "bibliotheque",
   "id": "bibliotheque--djinn",
   "epilogue": "Blafard hantait la réserve depuis des siècles. Génia voulait la transformer en salle de lecture « lumineuse et accueillante ». Insupportable.",
   "clues": [

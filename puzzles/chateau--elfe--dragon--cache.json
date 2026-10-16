@@ -238,6 +238,7 @@
       "archetype": "elfe"
     }
   ],
+  "decor": "chateau",
   "id": "chateau--elfe--dragon--cache",
   "hiddenShapes": true,
   "clues": [

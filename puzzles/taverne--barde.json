@@ -181,6 +181,7 @@
       "archetype": "barde"
     }
   ],
+  "decor": "taverne",
   "id": "taverne--barde",
   "clues": [
     {

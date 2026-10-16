@@ -273,6 +273,7 @@
       "archetype": "chevalier"
     }
   ],
+  "decor": "bal",
   "id": "bal--chevalier",
   "intro": "Le chevalier Hardouin a été retrouvé sans vie au Bal Masqué, sous un loup de velours. Sept invités dansaient encore. Un seul était avec lui.",
   "epilogue": "Aubépine avoue : Hardouin l'avait prise pour une décoration de lustre et voulait l'accrocher.",

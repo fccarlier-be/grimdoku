@@ -241,6 +241,7 @@
       "archetype": "dragonnet"
     }
   ],
+  "decor": "academie",
   "id": "academie--dragonnet",
   "intro": "Le dragonnet Gratin a été retrouvé sans vie un soir d'examens à l'Académie de Magie. Six élèves et professeurs révisaient encore. Un seul était avec lui.",
   "epilogue": "Azimut avoue en éternuant : Gratin avait remplacé sa tisane par une potion au houblon. En plein cours.",

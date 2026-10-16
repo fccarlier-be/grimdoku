@@ -38,6 +38,7 @@ SIZE = 256
 # « magenta-itude » d'un pixel : min(R, B) − G, de 0 (aucune) à 255 (magenta pur).
 # Au-dessus de HIGH : fond (transparent) ; en dessous de LOW : personnage (opaque) ; entre les deux : bord adouci.
 LOW, HIGH = 60, 150
+GLASS = 22  # titre et bouton : teinte rosée minimale d'un verre enfermé dans le dessin (key_out_outside)
 # Cadrage serré pour les pions ronds : carré de ZOOM × le côté de l'image, centré sur (CX, CY) en fraction de l'image
 # (les portraits générés montrent tête + buste ; la tête est dans la moitié haute).
 ZOOM, CX, CY = 0.68, 0.5, 0.42
@@ -89,6 +90,40 @@ def key_out(img):
             b2 = min(b, g + (b - g) // 3) if b > g else b
             px[x, y] = (r2, g, b2, alpha)
     return img
+
+
+def key_out_outside(img):
+    """Détourage pour le titre et le bouton : seul le magenta relié au bord de l'image est du fond.
+    Le magenta enfermé dans le dessin (verre de la loupe, que le générateur colore comme le fond) devient du verre bleu pâle."""
+    from PIL import ImageDraw
+    rgb = img.convert('RGB')
+    w, h = rgb.size
+    px = rgb.load()
+    zone = Image.new('L', (w, h))  # 255 : teinte magenta ; puis 128 : magenta relié au bord (fond)
+    zone.putdata([255 if min(r, b) - g > GLASS else 0 for r, g, b in rgb.getdata()])
+    zp = zone.load()
+    for x, y in [(x, 0) for x in range(w)] + [(x, h - 1) for x in range(w)] + [(0, y) for y in range(h)] + [(w - 1, y) for y in range(h)]:
+        if zp[x, y] == 255:
+            ImageDraw.floodfill(zone, (x, y), 128)
+    # magenta enfermé : pur (trou d'une lettre, comme la boucle du « d ») → fond ;
+    # atténué (verre de la loupe et ses reflets) → verre bleu pâle (on garde la luminosité, donc les reflets)
+    for y in range(h):
+        for x in range(w):
+            if zp[x, y] == 255 and min(px[x, y][0], px[x, y][2]) - px[x, y][1] >= HIGH:
+                zp[x, y] = 128
+    for y in range(h):
+        for x in range(w):
+            if zp[x, y] == 255:
+                r, g, b = px[x, y]
+                v = (r + g + b) / 3
+                px[x, y] = (round(min(255, v * .78)), round(min(255, v * .95)), round(min(255, v * 1.18 + 20)))
+    out = key_out(rgb)
+    op = out.load()
+    for y in range(h):
+        for x in range(w):
+            if zp[x, y] == 255:  # le verre reste opaque
+                op[x, y] = px[x, y] + (255,)
+    return out
 
 
 def type_name(stem):
@@ -246,8 +281,7 @@ def home():
         name = src.stem.lower()
         if name in HOME_CUTOUT:
             # titre et bouton : fond magenta détouré, recadré sur le dessin
-            img = Image.open(src)
-            img = key_out(img.resize((img.width, img.height), Image.LANCZOS))
+            img = key_out_outside(Image.open(src))
             box = img.getchannel('A').point(lambda a: 255 if a > 24 else 0).getbbox()
             if box:
                 img = img.crop(box)
@@ -268,11 +302,42 @@ def home():
     (HOME_DIR / 'sizes.json').write_text(json.dumps(sizes), encoding='utf-8')  # proportions, pour le build
 
 
+LEVEL_DIR = ROOT / 'levels'   # vignettes des niveaux : <0..5>.(png|jpeg), fond magenta → détourées
+DECOR_DIR = ROOT / 'decors'   # illustrations des décors : <décor>.(png|jpeg), scène entière (pas de magenta)
+
+
+def levels():
+    if not LEVEL_DIR.exists():
+        return
+    for src in sources(LEVEL_DIR):
+        img = key_out_outside(Image.open(src))
+        box = img.getchannel('A').point(lambda a: 255 if a > 24 else 0).getbbox()
+        if box:
+            img = img.crop(box)
+        img.thumbnail((360, 360), Image.LANCZOS)
+        out = LEVEL_DIR / (src.stem.lower() + '.webp')
+        img.save(out, 'WEBP', quality=88, method=6)
+        print(f'niveau {src.name} → {out.name} {img.size} ({out.stat().st_size // 1024} Ko)')
+
+
+def decors():
+    if not DECOR_DIR.exists():
+        return
+    for src in sources(DECOR_DIR):
+        img = Image.open(src).convert('RGB')
+        img.thumbnail((720, 720), Image.LANCZOS)
+        out = DECOR_DIR / (type_name(src.stem) + '.webp')
+        img.save(out, 'WEBP', quality=84, method=6)
+        print(f'décor {src.name} → {out.name} {img.size} ({out.stat().st_size // 1024} Ko)')
+
+
 def main():
     portraits()
     objects()
     floors()
     home()
+    levels()
+    decors()
 
 
 if __name__ == '__main__':

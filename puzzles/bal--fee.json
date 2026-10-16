@@ -273,6 +273,7 @@
       "archetype": "fee"
     }
   ],
+  "decor": "bal",
   "id": "bal--fee",
   "intro": "La fée Hortense a été retrouvée sans vie au Bal Masqué, sous un loup de velours. Sept invités dansaient encore. Un seul était avec elle.",
   "epilogue": "Godefroy avoue, outré : Hortense lui avait marché sur la traîne pendant la valse royale. Trois fois.",

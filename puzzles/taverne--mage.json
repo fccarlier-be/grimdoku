@@ -181,6 +181,7 @@
       "archetype": "mage"
     }
   ],
+  "decor": "taverne",
   "id": "taverne--mage",
   "clues": [
     {

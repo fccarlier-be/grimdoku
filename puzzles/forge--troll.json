@@ -227,6 +227,7 @@
       "archetype": "troll"
     }
   ],
+  "decor": "forge",
   "id": "forge--troll",
   "intro": "Le troll Gloutor a été retrouvé sans vie à la Forge du Dragon, encore tiède. Six artisans et clients s'y pressaient cette nuit-là. Un seul était avec lui.",
   "epilogue": "Étai avoue : Gloutor avait fondu sa plus belle pépite pour en faire une cuillère.",

@@ -257,6 +257,7 @@
       "archetype": "vampire"
     }
   ],
+  "decor": "bal",
   "id": "bal--vampire--geant-vouivre--cache",
   "hiddenShapes": true,
   "intro": "La comtesse Funestine a été retrouvée sans vie au Bal Masqué, sous un loup de velours. Cinq invités dansaient encore. Un seul était avec elle.",

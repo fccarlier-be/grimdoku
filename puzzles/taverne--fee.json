@@ -181,6 +181,7 @@
       "archetype": "fee"
     }
   ],
+  "decor": "taverne",
   "id": "taverne--fee",
   "clues": [
     {

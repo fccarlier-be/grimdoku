@@ -115,6 +115,7 @@ for (const entry of MANIFEST) {
   // noms d'après la lettre (cast.json) ; s.cast : lettres réattribuées par gen.js
   const p = resolve(scene, s.cast);
   delete p.epilogues; delete p.scene; delete p.subtitle; // seuls intro et epilogue (remplis) vont dans l'énigme
+  p.decor = baseOf(entry.scene); // illustration du décor sur la fiche d'enquête (assets/decors/<décor>)
   p.id = entry.id;
   if (entry.hidden) p.hiddenShapes = true; // 5 crânes : le joueur ne connaît pas la forme des grands
   delete p.auto;

@@ -180,6 +180,7 @@
       "archetype": "troll"
     }
   ],
+  "decor": "moulin",
   "id": "moulin--troll",
   "epilogue": "Aubépine avoue en battant des ailes : Fringale lui avait volé sa poudre de fée pour la mélanger à la farine.",
   "clues": [

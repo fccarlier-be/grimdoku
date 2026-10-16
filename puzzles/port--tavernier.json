@@ -241,6 +241,7 @@
       "archetype": "tavernier"
     }
   ],
+  "decor": "port",
   "id": "port--tavernier",
   "intro": "Le tavernier Grippesou a été retrouvé sans vie au Port des Contrebandiers, à l'heure où la marée se retire. Six habitués traînaient sur les quais. Un seul était avec lui.",
   "epilogue": "Bakchich avoue : Grippesou avait découvert ses faux droits de douane. Il en avait inventé quarante.",

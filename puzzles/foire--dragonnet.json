@@ -221,6 +221,7 @@
       "archetype": "dragonnet"
     }
   ],
+  "decor": "foire",
   "id": "foire--dragonnet",
   "epilogue": "Fringale, hercule de foire, avoue : Gratin l'avait traité de « gros caillou » devant les enfants.",
   "clues": [

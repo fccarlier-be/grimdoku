@@ -238,6 +238,7 @@
       "archetype": "gobelin"
     }
   ],
+  "decor": "bibliotheque",
   "id": "bibliotheque--gobelin",
   "epilogue": "Draculine avoue : Grigou avait ouvert les rideaux de la galerie « pour lire plus confortablement ».",
   "clues": [

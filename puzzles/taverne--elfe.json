@@ -181,6 +181,7 @@
       "archetype": "elfe"
     }
   ],
+  "decor": "taverne",
   "id": "taverne--elfe",
   "clues": [
     {

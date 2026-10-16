@@ -227,6 +227,7 @@
       "archetype": "dragonnet"
     }
   ],
+  "decor": "forge",
   "id": "forge--dragonnet",
   "intro": "Le dragonnet Gratin a été retrouvé sans vie à la Forge du Dragon, encore tiède. Six artisans et clients s'y pressaient cette nuit-là. Un seul était avec lui.",
   "epilogue": "Arnak avoue : Gratin avait remarqué que les épées vendues étaient en fer-blanc peint.",

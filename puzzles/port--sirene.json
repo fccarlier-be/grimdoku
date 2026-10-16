@@ -241,6 +241,7 @@
       "archetype": "sirene"
     }
   ],
+  "decor": "port",
   "id": "port--sirene",
   "intro": "La sirène Goémone a été retrouvée sans vie au Port des Contrebandiers, à l'heure où la marée se retire. Six habitués traînaient sur les quais. Un seul était avec elle.",
   "epilogue": "Écho-Écho avoue, et le répète : Goémone voulait le vendre à la taverne comme horloge parlante.",

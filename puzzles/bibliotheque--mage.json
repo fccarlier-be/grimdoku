@@ -238,6 +238,7 @@
       "archetype": "mage"
     }
   ],
+  "decor": "bibliotheque",
   "id": "bibliotheque--mage",
   "epilogue": "Encensia avoue : Gribouille avait rangé sa lampe au rayon « Objets trouvés ». Il y a quatre-vingts ans.",
   "clues": [

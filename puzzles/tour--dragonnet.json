@@ -227,6 +227,7 @@
       "archetype": "dragonnet"
     }
   ],
+  "decor": "tour",
   "id": "tour--dragonnet",
   "clues": [
     {

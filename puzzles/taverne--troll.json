@@ -181,6 +181,7 @@
       "archetype": "troll"
     }
   ],
+  "decor": "taverne",
   "id": "taverne--troll",
   "clues": [
     {

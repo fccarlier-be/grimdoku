@@ -259,6 +259,7 @@
       "archetype": "vampire"
     }
   ],
+  "decor": "cimetiere",
   "id": "cimetiere--vampire",
   "intro": "La comtesse Hémoglobine a été retrouvée sans vie au Cimetière de Minuit, ce qui, admettons-le, simplifie les démarches. Sept habitués rôdaient entre les tombes. Un seul était avec elle.",
   "epilogue": "Anatole avoue, lentement : Hémoglobine l'avait réveillé à minuit pile. Il venait juste de s'endormir.",

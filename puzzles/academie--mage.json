@@ -241,6 +241,7 @@
       "archetype": "mage"
     }
   ],
+  "decor": "academie",
   "id": "academie--mage",
   "intro": "Le mage Gribouille a été retrouvé sans vie un soir d'examens à l'Académie de Magie. Six élèves et professeurs révisaient encore. Un seul était avec lui.",
   "epilogue": "Aubépine avoue : Gribouille l'avait utilisée comme marque-page. Toute une nuit.",

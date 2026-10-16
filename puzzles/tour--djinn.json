@@ -227,6 +227,7 @@
       "archetype": "djinn"
     }
   ],
+  "decor": "tour",
   "id": "tour--djinn",
   "clues": [
     {

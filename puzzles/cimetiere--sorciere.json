@@ -259,6 +259,7 @@
       "archetype": "sorciere"
     }
   ],
+  "decor": "cimetiere",
   "id": "cimetiere--sorciere",
   "intro": "La sorcière Houx a été retrouvée sans vie au Cimetière de Minuit, ce qui, admettons-le, simplifie les démarches. Sept habitués rôdaient entre les tombes. Un seul était avec elle.",
   "epilogue": "Belladone avoue : Houx avait planté de l'ail sur toutes les tombes. Même la sienne.",

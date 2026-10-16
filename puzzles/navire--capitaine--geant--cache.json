@@ -229,6 +229,7 @@
       "archetype": "capitaine"
     }
   ],
+  "decor": "navire",
   "id": "navire--capitaine--geant--cache",
   "hiddenShapes": true,
   "intro": "Le capitaine Frégaton a été retrouvé sans vie à bord du Navire Fantôme, qui dérivait dans le brouillard. Cinq membres d'équipage étaient à bord. Un seul était avec lui.",

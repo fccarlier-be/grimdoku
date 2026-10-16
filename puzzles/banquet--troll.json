@@ -186,6 +186,7 @@
       "archetype": "troll"
     }
   ],
+  "decor": "banquet",
   "id": "banquet--troll",
   "intro": "Le troll Fringale a été retrouvé sans vie au beau milieu du Banquet des Gobelins, la serviette encore autour du cou. Cinq convives s'empiffraient. Un seul était avec lui.",
   "epilogue": "Croc avoue, rouge de honte : Fringale l'avait vu manger de la viande. Il était végétarien depuis mardi.",

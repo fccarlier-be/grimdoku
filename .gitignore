@@ -7,3 +7,4 @@ deploy/grimdoku/site/index.html
 # archives de départ et fichiers système
 *.zip
 .DS_Store
+deploy/grimdoku/site/media/

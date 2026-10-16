@@ -227,6 +227,7 @@
       "archetype": "mineur"
     }
   ],
+  "decor": "forge",
   "id": "forge--mineur",
   "intro": "Le mineur Grisou a été retrouvé sans vie à la Forge du Dragon, encore tiède. Six artisans et clients s'y pressaient cette nuit-là. Un seul était avec lui.",
   "epilogue": "Avaloir avoue : Grisou se servait de sa tête comme enclume de secours.",

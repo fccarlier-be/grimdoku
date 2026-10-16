@@ -179,6 +179,7 @@
       "archetype": "troll"
     }
   ],
+  "decor": "ferme",
   "id": "ferme--troll",
   "intro": "Le troll Fringale a été retrouvé au petit matin dans la Ferme Hantée, entre le potager et le fournil. Cinq voisins y avaient passé la nuit. Un seul était avec lui.",
   "epilogue": "Anatole avoue, lentement : Fringale l'avait planté au milieu du potager pour faire peur aux corbeaux.",

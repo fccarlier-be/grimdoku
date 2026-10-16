@@ -87,13 +87,41 @@ for (const [name, sel] of [['titre', '.herotitle .logo'], ['jouer', '.herobtn']]
   const [w, h] = homeSizes[name];
   const url = `url(data:image/webp;base64,${fs.readFileSync(f).toString('base64')})`;
   floorCss.push(name === 'titre'
-    ? `${sel} { display: block; margin: 0 auto; width: min(80%, 460px); aspect-ratio: ${w} / ${h}; background: ${url} center / contain no-repeat; font-size: 0; color: transparent; -webkit-text-stroke: 0; text-shadow: none; filter: drop-shadow(0 4px 10px rgba(0, 0, 0, .55)); }`
+    ? `${sel} { display: block; margin: 0 auto; width: min(92%, 520px); aspect-ratio: ${w} / ${h}; background: ${url} center / contain no-repeat; font-size: 0; color: transparent; -webkit-text-stroke: 0; text-shadow: none; filter: drop-shadow(0 4px 10px rgba(0, 0, 0, .55)); }`
     : `${sel} { width: min(46vw, 170px); aspect-ratio: ${w} / ${h}; padding: 0; background: ${url} center / contain no-repeat; box-shadow: none; border-radius: 0; filter: drop-shadow(0 6px 12px rgba(0, 0, 0, .55)); } ${sel} span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); } ${sel}:hover { transform: scale(1.04); }`);
+}
+// Médias servis à côté de la page (dossier media/, pas en base64 : la page reste légère) :
+// sons d'ambiance (assets/audio/menu|carte.*), vignettes des niveaux (assets/levels/<n>.webp), décors (assets/decors/<décor>.webp)
+const { execFileSync } = require('child_process');
+const MEDIA = ['dist/media', 'deploy/grimdoku/site/media'];
+MEDIA.forEach(d => { fs.rmSync(d, { recursive: true, force: true }); fs.mkdirSync(d, { recursive: true }); }); // vidé : rien de périmé en ligne
+const media = { audio: {}, levels: [], decors: [] };
+const copyMedia = (src, name) => MEDIA.forEach(d => fs.copyFileSync(src, `${d}/${name}`));
+for (const track of ['menu', 'carte']) {
+  const src = ['m4a', 'mp3', 'ogg', 'wav'].map(e => `assets/audio/${track}.${e}`).find(f => fs.existsSync(f));
+  if (!src) { missing.push('son ' + track); continue; }
+  let file = src;
+  if (src.endsWith('.wav')) { // trop lourd : converti en AAC (afconvert, macOS)
+    file = `dist/${track}.m4a`;
+    execFileSync('afconvert', ['-f', 'm4af', '-d', 'aac', src, file]);
+  }
+  const name = `${track}.${file.split('.').pop()}`;
+  copyMedia(file, name);
+  media.audio[track] = `media/${name}`;
+}
+for (let d = 0; d <= 5; d++) {
+  const f = `assets/levels/${d}.webp`;
+  if (fs.existsSync(f)) { copyMedia(f, `niveau-${d}.webp`); media.levels[d] = `media/niveau-${d}.webp`; } else missing.push('vignette niveau ' + d);
+}
+for (const decor of [...new Set(puzzles.map(p => p.decor).filter(Boolean))].sort()) {
+  const f = `assets/decors/${decor}.webp`;
+  if (fs.existsSync(f)) { copyMedia(f, `decor-${decor}.webp`); media.decors.push(decor); } else missing.push('décor ' + decor);
 }
 const sprite = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>${defs.join('')}</defs>${symbols.join('')}</svg>`;
 
 const out = t.replace('/*__ENGINE__*/', () => engine)
   .replace('/*__PUZZLES__*/', () => JSON.stringify(puzzles))
+  .replace('/*__MEDIA__*/', () => JSON.stringify(media))
   .replace('<!--__SPRITE__-->', () => sprite)
   .replace('/*__FLOORS__*/', () => floorCss.join('\n'));
 fs.mkdirSync('dist', { recursive: true });

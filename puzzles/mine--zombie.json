@@ -250,6 +250,7 @@
       "archetype": "zombie"
     }
   ],
+  "decor": "mine",
   "id": "mine--zombie",
   "epilogue": "Clodomir cherchait un trésor maudit dans la mine. Hubert voulait lui faire payer l'entrée. On ne fait pas payer un chevalier en quête.",
   "clues": [

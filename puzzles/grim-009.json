@@ -238,6 +238,7 @@
       "archetype": "bibliothecaire"
     }
   ],
+  "decor": "bibliotheque",
   "id": "grim-009",
   "epilogue": "Blafard hantait la réserve depuis des siècles. Gutenberga voulait la transformer en salle de lecture « lumineuse et accueillante ». Insupportable.",
   "clues": [

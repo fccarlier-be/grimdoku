@@ -219,6 +219,7 @@
       "archetype": "ogre"
     }
   ],
+  "decor": "forge",
   "id": "forge--ogre--golem",
   "intro": "L'ogre Festin a été retrouvé sans vie à la Forge du Dragon, encore tiède. Cinq artisans et clients s'y pressaient cette nuit-là. Un seul était avec lui.",
   "epilogue": "Durandal avoue en grinçant : Festin lui avait forgé une armure encore plus petite que l'ancienne.",

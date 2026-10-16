@@ -250,6 +250,7 @@
       "archetype": "dragonnet"
     }
   ],
+  "decor": "mine",
   "id": "mine--dragonnet",
   "epilogue": "Anatole avoue, après réflexion : Haleine l'avait laissé sous un éboulement « pour gagner du temps ». Il a mis du temps, mais il est revenu.",
   "clues": [

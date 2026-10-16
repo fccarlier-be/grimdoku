@@ -211,6 +211,7 @@
       "archetype": "chevalier"
     }
   ],
+  "decor": "forge",
   "id": "forge--chevalier--dragon-golem--cache",
   "hiddenShapes": true,
   "intro": "Le chevalier Enguerrand a été retrouvé sans vie à la Forge du Dragon, encore tiède. Quatre artisans et clients s'y pressaient cette nuit-là. Un seul était avec lui.",

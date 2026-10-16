@@ -210,6 +210,7 @@
       "archetype": "archimage"
     }
   ],
+  "decor": "tour",
   "id": "tour--archimage--vouivre",
   "clues": [
     {

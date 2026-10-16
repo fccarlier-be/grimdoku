@@ -250,6 +250,7 @@
       "archetype": "gobelin"
     }
   ],
+  "decor": "mine",
   "id": "mine--gobelin",
   "epilogue": "Capucine avoue : Harpagnol la gardait dans un bocal pour éclairer la galerie. Elle a fini par trouver la sortie. Et un gros caillou.",
   "clues": [

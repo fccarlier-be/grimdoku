@@ -259,6 +259,7 @@
       "archetype": "crapaud"
     }
   ],
+  "decor": "cimetiere",
   "id": "cimetiere--crapaud",
   "intro": "Le crapaud Hector a été retrouvé sans vie au Cimetière de Minuit, ce qui, admettons-le, simplifie les démarches. Sept habitués rôdaient entre les tombes. Un seul était avec lui.",
   "epilogue": "Anatole avoue, lentement : Hector l'avait réveillé à minuit pile. Il venait juste de s'endormir.",

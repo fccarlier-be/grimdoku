@@ -246,6 +246,7 @@
       "archetype": "chevalier"
     }
   ],
+  "decor": "chateau",
   "id": "chateau--chevalier",
   "clues": [
     {

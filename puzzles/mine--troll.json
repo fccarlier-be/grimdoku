@@ -250,6 +250,7 @@
       "archetype": "troll"
     }
   ],
+  "decor": "mine",
   "id": "mine--troll",
   "epilogue": "Anatole avoue, après réflexion : Happeur l'avait laissé sous un éboulement « pour gagner du temps ». Il a mis du temps, mais il est revenu.",
   "clues": [

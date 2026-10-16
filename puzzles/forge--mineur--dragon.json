@@ -219,6 +219,7 @@
       "archetype": "mineur"
     }
   ],
+  "decor": "forge",
   "id": "forge--mineur--dragon",
   "intro": "Le mineur Filon a été retrouvé sans vie à la Forge du Dragon, encore tiède. Cinq artisans et clients s'y pressaient cette nuit-là. Un seul était avec lui.",
   "epilogue": "Bedaine avoue, rouge de honte : Filon lui avait forgé une fourchette géante. Il était végétarien depuis mardi.",

@@ -233,6 +233,7 @@
       "archetype": "roi"
     }
   ],
+  "decor": "palais",
   "id": "palais--roi--dragon--cache",
   "hiddenShapes": true,
   "intro": "Le roi Ferdinand a été retrouvé sans vie au Palais des Mille Vœux, sous un tapis volant qui ne volait plus. Cinq invités avaient fait un vœu ce soir-là. Un seul était avec lui.",

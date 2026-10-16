@@ -259,6 +259,7 @@
       "archetype": "zombie"
     }
   ],
+  "decor": "cimetiere",
   "id": "cimetiere--zombie",
   "intro": "Le zombie Hubert a été retrouvé sans vie au Cimetière de Minuit, ce qui, admettons-le, simplifie les démarches. Sept habitués rôdaient entre les tombes. Un seul était avec lui.",
   "epilogue": "Berce avoue sans remords : Hubert cueillait ses herbes de cimetière avant elle.",

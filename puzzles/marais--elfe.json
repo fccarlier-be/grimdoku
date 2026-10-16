@@ -173,6 +173,7 @@
       "archetype": "elfe"
     }
   ],
+  "decor": "marais",
   "id": "marais--elfe",
   "epilogue": "Dentdur avoue : Faëlys avait transformé son pont en plongeoir. Personne ne touche au pont d'un troll.",
   "clues": [

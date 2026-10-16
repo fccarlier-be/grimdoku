@@ -238,6 +238,7 @@
       "archetype": "vampire"
     }
   ],
+  "decor": "bibliotheque",
   "id": "bibliotheque--vampire",
   "epilogue": "Dédale avoue en éternuant : Grenat avait caché son grimoire de recettes de bière au rayon « Interdit aux mages ».",
   "clues": [

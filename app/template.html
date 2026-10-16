@@ -464,7 +464,7 @@ html, body { background: var(--desk-tex, none) center top / 640px, var(--night);
   .hero { margin-top: 8px; }
   /* le titre se pose sur les poutres, en haut de l'image */
   .herotitle { position: absolute; z-index: 1; top: 2.5%; left: 0; right: 0; font-size: clamp(64px, 9vw, 104px); }
-  .herotitle .logo { width: min(46%, 470px) !important; }
+  .herotitle .logo { width: min(58%, 600px) !important; }
   .herobtn { width: min(24vw, 240px) !important; }
   .herotitle::before { content: ""; position: absolute; z-index: -1; inset: -18% 10% -10%; background: radial-gradient(closest-side, rgba(15, 9, 5, .75), transparent); }
   /* le sceau à cheval sur le bas de l'affiche */
@@ -502,6 +502,18 @@ html, body { background: var(--desk-tex, none) center top / 640px, var(--night);
 }
 #app:not(.game) .cases { display: grid; gap: 10px; }
 @media (min-width: 900px) { #app:not(.game) .cases { grid-template-columns: 1fr 1fr; } }
+
+/* ---------- son, vignettes des niveaux, décors des enquêtes ---------- */
+.herosound { position: absolute; top: 0; right: 0; z-index: 3; }
+@media (min-width: 700px) { .herosound { top: 14px; right: 14px; } }
+.lvlimg { width: 58%; max-width: 150px; aspect-ratio: 1; object-fit: contain; margin: -4px 0 -2px; filter: drop-shadow(0 3px 3px rgba(60, 30, 5, .35)); }
+.lvl:hover .lvlimg { transform: rotate(-3deg) scale(1.05); transition: transform .2s; }
+.case.has-decor { padding-top: 0; grid-template-rows: auto auto; row-gap: 10px; }
+.case .decorimg {
+  grid-column: 1 / -1; height: 104px; margin: 0 -12px; border-radius: 3px 3px 0 0;
+  background-size: cover; background-position: center 40%; box-shadow: inset 0 -2px 0 rgba(43, 32, 22, .45);
+}
+.case.has-decor .seal { margin-top: -38px; box-shadow: 0 0 0 3px #efe0bd, 0 0 0 4px rgba(43, 32, 22, .6), 0 4px 8px rgba(0, 0, 0, .35); }
 /*__FLOORS__*/
 </style>
 
@@ -514,6 +526,7 @@ html, body { background: var(--desk-tex, none) center top / 640px, var(--night);
 </script>
 <script>
 const PUZZLES = /*__PUZZLES__*/;
+const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vignettes des niveaux, décors
 (function () {
   'use strict';
   const E = window.GrimEngine;
@@ -539,7 +552,8 @@ const PUZZLES = /*__PUZZLES__*/;
     const done = st && st.solved;
     const started = st && Object.keys(st.pos || {}).length;
     const v = p.characters.find(c => c.role === 'victim');
-    return `<button class="case" data-id="${p.id}">
+    const decor = MEDIA.decors.includes(p.decor) ? `<span class="decorimg" style="background-image:url(media/decor-${p.decor}.webp)"></span>` : '';
+    return `<button class="case ${decor ? 'has-decor' : ''}" data-id="${p.id}">${decor}
           <span class="seal" aria-hidden="true">${face(v)}</span>
           <span><h3>${esc(p.title)}</h3><span class="meta">${p.size}×${p.size} · ${p.characters.length - 1} suspects</span></span>
           <span class="state ${done ? 'done' : started ? 'started' : ''}">${done ? 'Résolue' : started ? 'En cours' : 'Nouvelle'}</span>
@@ -560,6 +574,7 @@ const PUZZLES = /*__PUZZLES__*/;
         <button class="iconbtn" id="back" aria-label="${backAria}">‹</button>
         <h1 class="pagetitle">${title}</h1>
         <span class="spacer"></span>
+        ${soundBtn()}
         <button class="iconbtn" id="rulesBtn" aria-label="Règles">?</button>
       </header>`;
   // page des niveaux : un parchemin par niveau de difficulté
@@ -572,6 +587,7 @@ const PUZZLES = /*__PUZZLES__*/;
         if (!list.length) return '';
         const solved = solvedIn(list);
         return `<button class="lvl" data-level="${d}">
+          ${MEDIA.levels[d] ? `<img class="lvlimg" src="${MEDIA.levels[d]}" alt="" loading="lazy">` : ''}
           <span class="skulls">${skulls(d)}</span>
           <b>${name}</b>
           <span class="blurb">${LEVEL_BLURB[d]}</span>
@@ -604,14 +620,63 @@ const PUZZLES = /*__PUZZLES__*/;
         <h1 class="brand herotitle"><span class="logo">Grimdoku</span><small>Meurtres en terres enchantées</small></h1>
         <div class="heroimg" role="img" aria-label="Les suspects alignés sous une toise, dans une taverne, autour d'une silhouette tracée à la craie"></div>
         <button class="accuse herobtn" id="playBtn"><span>Jouer</span></button>
+        ${sound.available ? `<span class="herosound">${soundBtn()}</span>` : ''}
       </section>`;
     document.getElementById('playBtn').onclick = () => go('niveaux');
   }
+
+  // Ambiance sonore : une boucle pour l'accueil et les menus (menu), une pour les cartes (carte), en fondu.
+  // Les navigateurs bloquent le son avant le premier geste : il démarre au premier toucher. Volume par Web Audio
+  // (sur iPhone, le volume d'un élément audio ne se règle pas). 🔊 / 🔇 sur chaque écran ; réglage gardé.
+  const sound = (() => {
+    const tracks = {}, gains = {};
+    for (const [k, src] of Object.entries(MEDIA.audio || {})) {
+      try { const a = new Audio(src); a.loop = true; a.preload = 'auto'; tracks[k] = a; } catch (e) { /* pas de son */ }
+    }
+    const LEVEL = 0.32;
+    let want = null, ac = null;
+    const on = () => settings.sound !== false;
+    function apply() {
+      if (!ac) return;
+      for (const [k, a] of Object.entries(tracks)) {
+        const target = on() && k === want ? LEVEL : 0;
+        const g = gains[k].gain;
+        g.cancelScheduledValues(ac.currentTime);
+        g.setTargetAtTime(target, ac.currentTime, 0.5);
+        if (target > 0) a.play().catch(() => {});
+        else setTimeout(() => { if (!(on() && k === want)) a.pause(); }, 2500);
+      }
+    }
+    return {
+      available: Object.keys(tracks).length > 0,
+      icon: () => (on() ? '🔊' : '🔇'),
+      set(k) { want = tracks[k] ? k : null; apply(); },
+      unlock() {
+        if (ac || !this.available) return;
+        try {
+          ac = new (window.AudioContext || window.webkitAudioContext)();
+          for (const [k, a] of Object.entries(tracks)) {
+            gains[k] = ac.createGain(); gains[k].gain.value = 0;
+            ac.createMediaElementSource(a).connect(gains[k]).connect(ac.destination);
+          }
+        } catch (e) { ac = null; return; }
+        apply();
+      },
+      toggle() { settings.sound = !on(); store.set('settings', settings); this.unlock(); apply(); }
+    };
+  })();
+  const soundBtn = () => sound.available ? `<button class="iconbtn soundbtn" aria-label="Couper ou remettre le son">${sound.icon()}</button>` : '';
+  ['pointerdown', 'keydown'].forEach(ev => document.addEventListener(ev, () => sound.unlock(), { once: true }));
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest('.soundbtn'); if (!b) return;
+    sound.toggle(); document.querySelectorAll('.soundbtn').forEach(x => (x.textContent = sound.icon()));
+  });
 
   // Navigation : une adresse par écran (#/, #/niveaux, #/niveau/2, #/affaire/<id>), le bouton retour du navigateur
   // (ou du téléphone) revient à l'écran précédent.
   function show(route) {
     const [page, arg] = route.split('/');
+    sound.set(page === 'affaire' ? 'carte' : 'menu');
     if (page === 'niveaux') levelsPage();
     else if (page === 'niveau' && LEVEL_NAMES[+arg]) levelPage(+arg);
     else if (page === 'affaire' && PUZZLES.some(p => p.id === arg)) open(arg);
@@ -873,6 +938,7 @@ const PUZZLES = /*__PUZZLES__*/;
         <button class="iconbtn" id="back" aria-label="Retour aux affaires">‹</button>
         <button class="hdtitle" id="introBtn" aria-label="Lire l'affaire">${esc(P.title)} <span class="skulls">${skulls(P.difficulty)}</span></button>
         <span class="spacer"></span>
+        ${soundBtn()}
         <button class="iconbtn" id="opts" aria-label="Options">⚙︎</button>
         <button class="iconbtn" id="rulesBtn" aria-label="Règles">?</button>
       </header>

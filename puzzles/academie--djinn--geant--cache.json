@@ -233,6 +233,7 @@
       "archetype": "djinn"
     }
   ],
+  "decor": "academie",
   "id": "academie--djinn--geant--cache",
   "hiddenShapes": true,
   "intro": "La djinn Fumerolle a été retrouvée sans vie un soir d'examens à l'Académie de Magie. Cinq élèves et professeurs révisaient encore. Un seul était avec elle.",

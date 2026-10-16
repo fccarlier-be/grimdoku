@@ -227,6 +227,7 @@
       "archetype": "ogre"
     }
   ],
+  "decor": "forge",
   "id": "forge--ogre",
   "intro": "L'ogre Goinfre a été retrouvé sans vie à la Forge du Dragon, encore tiède. Six artisans et clients s'y pressaient cette nuit-là. Un seul était avec lui.",
   "epilogue": "Eustache avoue en éternuant : Goinfre avait trempé une lame enchantée dans un tonneau de bière.",

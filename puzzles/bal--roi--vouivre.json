@@ -256,6 +256,7 @@
       "archetype": "roi"
     }
   ],
+  "decor": "bal",
   "id": "bal--roi--vouivre",
   "intro": "Le roi Ferdinand a été retrouvé sans vie au Bal Masqué, sous un loup de velours. Cinq invités dansaient encore. Un seul était avec lui.",
   "epilogue": "Bertrand avoue en grinçant : Ferdinand avait refusé de danser avec lui à cause du bruit de son armure.",

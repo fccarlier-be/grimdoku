@@ -227,6 +227,7 @@
       "archetype": "gobelin"
     }
   ],
+  "decor": "forge",
   "id": "forge--gobelin",
   "intro": "Le gobelin Grigou a été retrouvé sans vie à la Forge du Dragon, encore tiède. Six artisans et clients s'y pressaient cette nuit-là. Un seul était avec lui.",
   "epilogue": "Avaloir avoue : Grigou se servait de sa tête comme enclume de secours.",

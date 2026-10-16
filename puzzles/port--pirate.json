@@ -241,6 +241,7 @@
       "archetype": "pirate"
     }
   ],
+  "decor": "port",
   "id": "port--pirate",
   "intro": "Le pirate Grappin a été retrouvé sans vie au Port des Contrebandiers, à l'heure où la marée se retire. Six habitués traînaient sur les quais. Un seul était avec lui.",
   "epilogue": "Bâfrin avoue : Grappin avait amarré sa barque à son pont. Il n'y a qu'un troll par pont.",

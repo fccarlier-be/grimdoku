@@ -224,6 +224,7 @@
       "archetype": "djinn"
     }
   ],
+  "decor": "palais",
   "id": "palais--djinn--vouivre",
   "intro": "La djinn Encensia a été retrouvée sans vie au Palais des Mille Vœux, sous un tapis volant qui ne volait plus. Quatre invités avaient fait un vœu ce soir-là. Un seul était avec elle.",
   "epilogue": "Clinquant avoue d'une voix de stentor : Encensia vendait de fausses lampes magiques au bazar. C'était SON commerce.",

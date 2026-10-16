@@ -186,6 +186,7 @@
       "archetype": "chef"
     }
   ],
+  "decor": "banquet",
   "id": "banquet--chef",
   "intro": "Le chef Fricot a été retrouvé sans vie au beau milieu du Banquet des Gobelins, la serviette encore autour du cou. Cinq convives s'empiffraient. Un seul était avec lui.",
   "epilogue": "Croquassiette avoue la bouche pleine : Fricot avait pris la dernière part de gâteau. Et l'assiette avec.",

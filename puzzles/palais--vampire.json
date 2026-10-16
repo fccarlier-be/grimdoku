@@ -241,6 +241,7 @@
       "archetype": "vampire"
     }
   ],
+  "decor": "palais",
   "id": "palais--vampire",
   "intro": "La comtesse Grenat a été retrouvée sans vie au Palais des Mille Vœux, sous un tapis volant qui ne volait plus. Six invités avaient fait un vœu ce soir-là. Un seul était avec elle.",
   "epilogue": "Clairvoya l'avait lu dans les cartes : Grenat allait vider le trésor. Elle a préféré prendre les devants.",

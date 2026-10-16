@@ -179,6 +179,7 @@
       "archetype": "boulanger"
     }
   ],
+  "decor": "ferme",
   "id": "ferme--boulanger",
   "intro": "Le boulanger Fougasse a été retrouvé au petit matin dans la Ferme Hantée, entre le potager et le fournil. Cinq voisins y avaient passé la nuit. Un seul était avec lui.",
   "epilogue": "Anatole avoue, lentement : Fougasse l'avait planté au milieu du potager pour faire peur aux corbeaux.",

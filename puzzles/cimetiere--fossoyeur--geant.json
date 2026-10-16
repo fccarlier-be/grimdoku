@@ -251,6 +251,7 @@
       "archetype": "fossoyeur"
     }
   ],
+  "decor": "cimetiere",
   "id": "cimetiere--fossoyeur--geant",
   "intro": "Le fossoyeur Glas a été retrouvé sans vie au Cimetière de Minuit, ce qui, admettons-le, simplifie les démarches. Six habitués rôdaient entre les tombes. Un seul était avec lui.",
   "epilogue": "Croassant avoue, et l'écrit dans une lettre anonyme : Glas avait découvert qui écrivait les lettres anonymes.",

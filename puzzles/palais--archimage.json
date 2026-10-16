@@ -241,6 +241,7 @@
       "archetype": "archimage"
     }
   ],
+  "decor": "palais",
   "id": "palais--archimage",
   "intro": "L'archimage Grisebarbe a été retrouvé sans vie au Palais des Mille Vœux, sous un tapis volant qui ne volait plus. Six invités avaient fait un vœu ce soir-là. Un seul était avec lui.",
   "epilogue": "Dagobert avoue, la couronne de travers : Grisebarbe avait souhaité devenir roi à sa place. Le vœu a été annulé.",

@@ -237,6 +237,7 @@
       "archetype": "perroquet"
     }
   ],
+  "decor": "navire",
   "id": "navire--perroquet",
   "intro": "Le perroquet Gazouille a été retrouvé sans vie à bord du Navire Fantôme, qui dérivait dans le brouillard. Six membres d'équipage étaient à bord. Un seul était avec lui.",
   "epilogue": "Frisson hantait ce navire bien avant son équipage. Gazouille voulait le chasser par-dessus bord avec un seau d'eau bénite.",

@@ -180,6 +180,7 @@
       "archetype": "meunier"
     }
   ],
+  "decor": "moulin",
   "id": "grim-004",
   "epilogue": "Dentdur avoue la bouche pleine : Farinard lui facturait chaque miette tombée du moulin. Les miettes, c'était tout ce qu'il mangeait.",
   "clues": [

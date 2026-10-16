@@ -179,6 +179,7 @@
       "archetype": "troll"
     }
   ],
+  "decor": "thermes",
   "id": "thermes--troll",
   "intro": "Le troll Fringale a été retrouvé sans vie aux Thermes Enchantés, détendu pour toujours. Cinq curistes profitaient des bains. Un seul était avec lui.",
   "epilogue": "Écu avoue en comptant ses pièces : Fringale était entré aux thermes sans payer. Deux fois.",

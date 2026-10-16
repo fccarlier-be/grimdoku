@@ -227,6 +227,7 @@
       "archetype": "zombie"
     }
   ],
+  "decor": "tour",
   "id": "tour--zombie",
   "clues": [
     {

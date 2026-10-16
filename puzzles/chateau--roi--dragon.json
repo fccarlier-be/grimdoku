@@ -235,6 +235,7 @@
       "archetype": "roi"
     }
   ],
+  "decor": "chateau",
   "id": "chateau--roi--dragon",
   "clues": [
     {

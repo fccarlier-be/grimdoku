@@ -241,6 +241,7 @@
       "archetype": "troll"
     }
   ],
+  "decor": "port",
   "id": "port--troll",
   "intro": "Le troll Gloutor a été retrouvé sans vie au Port des Contrebandiers, à l'heure où la marée se retire. Six habitués traînaient sur les quais. Un seul était avec lui.",
   "epilogue": "Écho-Écho avoue, et le répète : Gloutor voulait le vendre à la taverne comme horloge parlante.",

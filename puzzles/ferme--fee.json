@@ -179,6 +179,7 @@
       "archetype": "fee"
     }
   ],
+  "decor": "ferme",
   "id": "ferme--fee",
   "intro": "La fée Fougère a été retrouvée au petit matin dans la Ferme Hantée, entre le potager et le fournil. Cinq voisins y avaient passé la nuit. Un seul était avec elle.",
   "epilogue": "Avaloir avoue la bouche pleine : Fougère lui avait interdit le potager. Il n'avait mangé que les citrouilles. Et l'épouvantail.",

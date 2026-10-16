@@ -180,6 +180,7 @@
       "archetype": "sirene"
     }
   ],
+  "decor": "moulin",
   "id": "moulin--sirene",
   "epilogue": "Bâfrin avoue la bouche pleine : Flottille lui avait reproché de manger les sacs de grain. Avec le sac.",
   "clues": [

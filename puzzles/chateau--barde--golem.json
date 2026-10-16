@@ -238,6 +238,7 @@
       "archetype": "barde"
     }
   ],
+  "decor": "chateau",
   "id": "chateau--barde--golem",
   "clues": [
     {

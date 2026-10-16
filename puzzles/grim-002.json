@@ -227,6 +227,7 @@
       "archetype": "archimage"
     }
   ],
+  "decor": "tour",
   "id": "grim-002",
   "clues": [
     {

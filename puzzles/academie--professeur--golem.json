@@ -233,6 +233,7 @@
       "archetype": "professeur"
     }
   ],
+  "decor": "academie",
   "id": "academie--professeur--golem",
   "intro": "Le professeur Fiolius a été retrouvé sans vie un soir d'examens à l'Académie de Magie. Cinq élèves et professeurs révisaient encore. Un seul était avec lui.",
   "epilogue": "On avait gravé une consigne sur le front de Dalle : « Range la pièce. » Il a rangé Fiolius aussi, très soigneusement.",

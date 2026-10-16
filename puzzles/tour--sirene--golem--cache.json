@@ -219,6 +219,7 @@
       "archetype": "sirene"
     }
   ],
+  "decor": "tour",
   "id": "tour--sirene--golem--cache",
   "hiddenShapes": true,
   "clues": [

@@ -259,6 +259,7 @@
       "archetype": "fossoyeur"
     }
   ],
+  "decor": "cimetiere",
   "id": "cimetiere--fossoyeur",
   "intro": "Le fossoyeur Humus a été retrouvé sans vie au Cimetière de Minuit, ce qui, admettons-le, simplifie les démarches. Sept habitués rôdaient entre les tombes. Un seul était avec lui.",
   "epilogue": "Draculine avoue : Humus avait planté de l'ail sur toutes les tombes. Même la sienne.",

@@ -241,6 +241,7 @@
       "archetype": "elfe"
     }
   ],
+  "decor": "academie",
   "id": "academie--elfe",
   "intro": "L'elfe Galwë a été retrouvée sans vie un soir d'examens à l'Académie de Magie. Six élèves et professeurs révisaient encore. Un seul était avec elle.",
   "epilogue": "Azimut avoue en éternuant : Galwë avait remplacé sa tisane par une potion au houblon. En plein cours.",

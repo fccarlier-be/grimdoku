@@ -241,6 +241,7 @@
       "archetype": "professeur"
     }
   ],
+  "decor": "academie",
   "id": "academie--professeur",
   "intro": "Le professeur Gramme a été retrouvé sans vie un soir d'examens à l'Académie de Magie. Six élèves et professeurs révisaient encore. Un seul était avec lui.",
   "epilogue": "Azimut avoue en éternuant : Gramme avait remplacé sa tisane par une potion au houblon. En plein cours.",
