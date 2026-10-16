@@ -47,6 +47,17 @@ for (const type of Object.keys(ARCHETYPES)) {
   const viewBox = (svg.match(/viewBox="([^"]+)"/) || [])[1] || '0 0 64 64';
   symbols.push(`<symbol id="chr-${type}" viewBox="${viewBox}">${svg.replace(/^<svg[^>]*>/, '').replace(/<\/svg>$/, '')}</symbol>`);
 }
+// grands personnages : image entière <type>-full.webp → <symbol id="big-<type>"> au format de sa forme (en cases)
+const BOX = { I2: [2, 1], I3: [3, 1], L3: [2, 2] };
+let bigImages = 0;
+for (const [type, a] of Object.entries(ARCHETYPES)) {
+  const full = `assets/characters/${type}-full.webp`;
+  if (!a.shape) continue;
+  if (!fs.existsSync(full)) { missing.push('grand personnage entier ' + type); continue; }
+  const [w, h] = BOX[a.shape];
+  symbols.push(`<symbol id="big-${type}" viewBox="0 0 ${w * 64} ${h * 64}"><image href="data:image/webp;base64,${fs.readFileSync(full).toString('base64')}" width="${w * 64}" height="${h * 64}"/></symbol>`);
+  bigImages++;
+}
 const sprite = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>${defs.join('')}</defs>${symbols.join('')}</svg>`;
 
 const out = t.replace('/*__ENGINE__*/', () => engine)
@@ -54,5 +65,5 @@ const out = t.replace('/*__ENGINE__*/', () => engine)
   .replace('<!--__SPRITE__-->', () => sprite);
 fs.mkdirSync('dist', { recursive: true });
 fs.writeFileSync('dist/grimdoku.html', out);
-console.log('dist/grimdoku.html', out.length, 'octets,', symbols.length, 'dessins, dont', objImages, 'objet(s) et', images, 'portrait(s) illustrés');
+console.log('dist/grimdoku.html', out.length, 'octets,', symbols.length, 'dessins, dont', objImages, 'objet(s) et', images, 'portrait(s) illustrés,', bigImages, 'grand(s) personnage(s) en entier');
 if (missing.length) console.log('⚠️  sans image (emoji provisoire) :', missing.join(', '));

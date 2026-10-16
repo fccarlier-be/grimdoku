@@ -75,13 +75,25 @@ New character:
 | `fossoyeur.png` | a thin cheerful gravedigger with a flat cap, a long scarf, hollow cheeks, whistling, a shovel resting on his shoulder and a lantern in his hand |
 | `corbeau.png` | a large black raven with glossy blue-black feathers, a monocle, a quill pen in its beak, looking sly and secretive |
 
-## Grands personnages (4–5 crânes) — même méthode, joindre le tavernier validé
+## Grands personnages (4–5 crânes) — image du corps entier, à sa taille sur la carte
 
-Ils occupent plusieurs cases sur la carte, mais leur portrait reste un buste rond comme les autres.
+Ils occupent plusieurs cases : leur image couvre toutes leurs cases et **tourne avec eux** sur la carte.
+Le buste rond (cartes d'indices, verdict) est découpé automatiquement autour de la tête : **la tête doit être à l'endroit indiqué**.
+Fichier : `assets/characters/<type>.png` ou `.jpeg`, fond magenta pur uni, au **format indiqué** (si l'outil ne sait faire
+que du carré ou du 16:9, garder le corps bien centré : le script recadre sur la silhouette puis le met au bon format).
+Joindre le tavernier validé, et envoyer le bloc ci-dessous suivi de la ligne du personnage.
 
-| Fichier | Description |
-|---|---|
-| `geant.png` | a sleepy giant with a huge round head, tiny bored eyes, a stubby nose, a patched brown tunic and a big bump on his forehead from low ceilings, yawning |
-| `golem.png` | a stone golem made of mossy grey blocks with glowing amber eyes and a rune carved on its forehead, a very earnest, focused expression, a small feather duster in one hand |
-| `vouivre.png` | a long winged serpent woman (wyvern-like) with olive-green scales, small feathered wings, a single ruby on her forehead, coiled around herself, a smug knowing smile (no pink) |
-| `dragon.png` | a large adult dragon with dark red scales and a cream belly, curled tail, two big curved horns, smoke rising from the nostrils, one claw resting protectively on a small pile of gold coins, suspicious eyes |
+```
+Same art style, same line weight, same lighting and the same flat pure magenta (#FF00FF) background as the attached image, but this time the WHOLE BODY of the creature, seen from directly above (top-down view, as if lying on a game board), so that the image still makes sense when rotated. The creature fills the frame edge to edge in the exact shape described, with no part outside it and nothing else in the image. No floor, no cast shadow. Do not use magenta or hot pink on the creature. No text, no frame.
+Creature: 
+```
+
+| Fichier | Format | Description (à coller après « Creature: ») |
+|---|---|---|
+| `geant.png` | **2:1 paysage** | a sleepy giant lying flat on his back, stretched horizontally across the whole image, HEAD ON THE LEFT END (left quarter of the image), feet on the right end, huge round head with tiny bored eyes and a bump on the forehead, patched brown tunic, arms along the body, yawning |
+| `golem.png` | **2:1 paysage** | a stone golem made of mossy grey blocks lying flat on its back, stretched horizontally across the whole image, HEAD ON THE LEFT END (left quarter of the image) with glowing amber eyes and a rune on the forehead, a feather duster held on its chest, very earnest face |
+| `vouivre.png` | **3:1 paysage** | a long winged serpent (wyvern-like) with olive-green scales stretched straight and horizontally across the whole image, HEAD ON THE LEFT END (left sixth of the image) with a ruby on the forehead and a smug smile, small feathered wings folded along the body, tail tip on the right end (no pink) |
+| `dragon.png` | **1:1 carré, en L** | a large adult dark-red dragon curled in an L shape that fills exactly three quarters of the square: its HEAD in the TOP-LEFT quarter, its body going down through the BOTTOM-LEFT quarter, and its tail stretched through the BOTTOM-RIGHT quarter; the TOP-RIGHT quarter is completely EMPTY (only magenta background). Cream belly, two big curved horns, smoke from the nostrils, one claw on a small pile of gold coins, suspicious eyes |
+
+Puis `.venv/bin/python tools/images.py && npm run build` : le script produit `<type>-full.webp` (corps entier) et `<type>.webp` (buste).
+Si le buste est mal cadré, régler `BIG_HEAD_TYPE` dans `tools/images.py`.

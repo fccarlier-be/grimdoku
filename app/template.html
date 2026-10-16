@@ -161,6 +161,11 @@ header.top { display: flex; align-items: center; gap: 10px; }
 .body.sel { box-shadow: 0 0 0 3px var(--candle), 0 0 12px var(--candle); }
 .body.bad { box-shadow: 0 0 0 3px var(--blood); }
 .cell .bodyletter { position: relative; z-index: 3; color: var(--cc); font: 800 .8em/1 var(--f-body); -webkit-text-stroke: .09em var(--ink); paint-order: stroke fill; }
+.bigart { position: absolute; z-index: 3; pointer-events: none; }
+.bigart svg { position: absolute; left: 50%; top: 50%; overflow: visible; filter: drop-shadow(0 2px 0 rgba(0,0,0,.25)); }
+.bigart.sel svg { filter: drop-shadow(0 0 3px var(--candle)) drop-shadow(0 0 6px var(--candle)); }
+.bigart.bad svg { filter: drop-shadow(0 0 3px var(--blood)) drop-shadow(0 0 5px var(--blood)); }
+.cell .letter.bigbadge { top: 6%; left: 6%; z-index: 5; }
 .shape { display: inline-grid; gap: 1px; vertical-align: -2px; margin-left: 4px; }
 .shape i { width: 7px; height: 7px; background: var(--cc); box-shadow: 0 0 0 1px var(--ink); border-radius: 1px; }
 .cell.hint::after { content: ""; position: absolute; inset: 0; background: rgba(90, 150, 255, .38); box-shadow: inset 0 0 0 2px rgba(50, 110, 230, .85); pointer-events: none; }
@@ -442,6 +447,35 @@ const PUZZLES = /*__PUZZLES__*/;
   const snapshot = () => { undo.push(JSON.stringify(S)); if (undo.length > 100) undo.shift(); };
   const charAt = (r, c) => Object.keys(S.pos).find(id => E.cellsOf(S.pos[id]).some(([a, b]) => a === r && b === c));
   const isBig = (id) => !!ctx.chars[id].shape;
+  // Image entière d'un grand personnage : tournée de k quarts de tour (sens horaire) pour coller à ses cases.
+  // -1 si les cases n'ont pas sa vraie forme (forme cachée mal devinée) ou s'il n'a pas encore d'image.
+  function artTurn(id) {
+    const ch = ctx.chars[id], v = S.pos[id];
+    if (!ch.shape || !v || !document.getElementById('big-' + ch.archetype)) return -1;
+    const want = E.posKey(norm(E.cellsOf(v)));
+    let cs = E.SHAPES[ch.shape].cells;
+    for (let k = 0; k < 4; k++) {
+      if (E.posKey(norm(cs)) === want) return k;
+      const h = Math.max(...cs.map(x => x[0])) + 1;
+      cs = cs.map(([r, c]) => [c, h - 1 - r]);
+    }
+    return -1;
+  }
+  const norm = (cs) => { const r0 = Math.min(...cs.map(x => x[0])), c0 = Math.min(...cs.map(x => x[1])); return cs.map(([r, c]) => [r - r0, c - c0]).sort((a, b) => a[0] - b[0] || a[1] - b[1]); };
+  function bigArtHtml(n, bad) {
+    let out = '';
+    for (const id of Object.keys(S.pos)) {
+      const k = artTurn(id);
+      if (k < 0) continue;
+      const cs = E.cellsOf(S.pos[id]);
+      const r0 = Math.min(...cs.map(x => x[0])), c0 = Math.min(...cs.map(x => x[1]));
+      const bh = Math.max(...cs.map(x => x[0])) - r0 + 1, bw = Math.max(...cs.map(x => x[1])) - c0 + 1;
+      const [iw, ih] = k % 2 ? [bh, bw] : [bw, bh]; // taille de l'image avant rotation, en cases
+      out += `<div class="bigart ${selected === id ? 'sel' : ''} ${bad.has(id) ? 'bad' : ''}" style="left:${c0 / n * 100}%;top:${r0 / n * 100}%;width:${bw / n * 100}%;height:${bh / n * 100}%">`
+        + `<svg viewBox="0 0 ${iw * 64} ${ih * 64}" style="width:${iw / bw * 100}%;height:${ih / bh * 100}%;transform:translate(-50%,-50%) rotate(${k * 90}deg)"><use href="#big-${ctx.chars[id].archetype}" width="${iw * 64}" height="${ih * 64}"/></svg></div>`;
+    }
+    return out;
+  }
   // forme d'un grand personnage : dessin de la forme connue, ou « 2 ou 3 cases » si elle est cachée (5 crânes)
   function shapeHtml(ch) {
     if (!ch.shape) return '';
@@ -549,11 +583,14 @@ const PUZZLES = /*__PUZZLES__*/;
       if (!labelled.has(room)) { labelled.add(room); label = `<span class="roomlabel">${esc(P.rooms[room].name)}</span>`; }
       const objHtml = def ? `<span class="obj" aria-hidden="true">${ico(o.type)}</span>` : '';
       // grand personnage : un corps sur chaque case (joint à ses voisines), portrait sur la première
-      const bodyCells = ch && isBig(who) ? E.cellsOf(S.pos[who]) : null;
+      const art = ch && isBig(who) && artTurn(who) >= 0;
+      const bodyCells = ch && isBig(who) && !art ? E.cellsOf(S.pos[who]) : null;
+      const isFirstOf = (id) => { const c0 = E.cellsOf(S.pos[id])[0]; return c0[0] === r && c0[1] === c; };
       const joins = bodyCells ? [[-1, 0, 'jn'], [1, 0, 'js'], [0, -1, 'jw'], [0, 1, 'je']].filter(([dr, dc]) => bodyCells.some(([a, b]) => a === r + dr && b === c + dc)).map(x => x[2]).join(' ') : '';
       const body = bodyCells ? `<span class="body ${joins} ${selected === who ? 'sel' : ''} ${bad.has(who) ? 'bad' : ''}" style="--cc:${colorOf(ch)}"></span>` : '';
       const first = !bodyCells || (bodyCells[0][0] === r && bodyCells[0][1] === c);
-      const tok = ch && !first ? `${body}<span class="bodyletter" style="--cc:${colorOf(ch)}">${letterOf(ch)}</span>` : ch ? `${body}<span class="token ${ch.role === 'victim' ? 'victim' : ''} ${selected === who ? 'sel' : ''} ${bad.has(who) ? 'bad' : ''}">${face(ch)}<span class="letter" style="--cc:${colorOf(ch)}">${letterOf(ch)}</span></span>` : '';
+      const tok = art ? (isFirstOf(who) ? `<span class="letter bigbadge" style="--cc:${colorOf(ch)}">${letterOf(ch)}</span>` : '')
+        : ch && !first ? `${body}<span class="bodyletter" style="--cc:${colorOf(ch)}">${letterOf(ch)}</span>` : ch ? `${body}<span class="token ${ch.role === 'victim' ? 'victim' : ''} ${selected === who ? 'sel' : ''} ${bad.has(who) ? 'bad' : ''}">${face(ch)}<span class="letter" style="--cc:${colorOf(ch)}">${letterOf(ch)}</span></span>` : '';
       const pencils = pens.length ? `<span class="pencils ${pens.length > 1 ? 'many' : ''}">${pens.map(x => `<span class="pencil ${selected === x.id ? 'sel' : ''}" style="--cc:${colorOf(x)}">${letterOf(x)}</span>`).join('')}</span>` : '';
       // croix automatiques (lignes/colonnes des personnages confirmés) à l'encre : certaines ;
       // croix manuelles au crayon : simples hypothèses du joueur
@@ -592,7 +629,7 @@ const PUZZLES = /*__PUZZLES__*/;
         <details><summary>L'affaire <span class="skulls">${skulls(P.difficulty)}</span></summary><p>${esc(P.intro)}</p></details>
       </div>
       <div class="boardwrap">
-        <div class="board" id="board" style="--n:${n}">${cells}${wallsSvg()}</div>
+        <div class="board" id="board" style="--n:${n}">${cells}${wallsSvg()}${bigArtHtml(n, bad)}</div>
         ${S.solved ? `<div class="stamp" aria-hidden="true"><span>Affaire<br>résolue</span></div>` : ''}
       </div>
       ${specials.length ? `<div class="special">${specials.join('')}</div>` : ''}
