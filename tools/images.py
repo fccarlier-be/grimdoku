@@ -24,6 +24,7 @@ FLOOR_DIR = ROOT / 'floors'
 FLOOR_SIZE = 320       # une texture = 2×2 cases
 FLOOR_SOFT = 0.45      # part de couleur moyenne mélangée à la texture (contraste adouci : meubles et pions lisibles)
 FLOOR_LIGHT = 1.12     # éclaircissement
+FLOOR_EDGE = 0.04      # bord rogné avant traitement
 # noms de fichiers tolérés pour un type d'objet (accents retirés automatiquement)
 OBJ_ALIAS = {'champignon': 'champi', 'roseau': 'roseaux', 'stones': 'roche'}
 # idem pour les personnages (fautes de frappe dans les noms de fichiers)
@@ -221,10 +222,10 @@ def floors():
     for src in sources(FLOOR_DIR):
         name = type_name(src.stem)
         img = Image.open(src).convert('RGB')
-        side = min(img.size)
+        side = round(min(img.size) * (1 - 2 * FLOOR_EDGE))  # sans les bords (traits ou bandes que les générateurs y laissent)
         img = img.crop(((img.width - side) // 2, (img.height - side) // 2, (img.width + side) // 2, (img.height + side) // 2))
         img = seamless(img.resize((FLOOR_SIZE * 3, FLOOR_SIZE * 3), Image.LANCZOS))
-        if name != 'parchemin':  # le parchemin du cadre garde ses tons (rien n'est posé dessus)
+        if name not in ('parchemin', 'bureau'):  # le parchemin du cadre et le bureau du fond gardent leurs tons
             mean = tuple(round(v) for v in ImageStat.Stat(img).mean)
             img = Image.blend(img, Image.new('RGB', img.size, mean), FLOOR_SOFT)
             img = ImageEnhance.Brightness(img).enhance(FLOOR_LIGHT)

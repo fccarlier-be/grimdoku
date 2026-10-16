@@ -62,13 +62,15 @@ for (const [type, a] of Object.entries(ARCHETYPES)) {
 // parchemin.webp → fond du cadre de la carte. Sans texture : couleur unie de la pièce (repli).
 const floorsUsed = [...new Set(puzzles.flatMap(p => Object.values(p.rooms).map(r => r.floor)).filter(Boolean))].sort();
 const floorCss = [];
-for (const m of floorsUsed.concat('parchemin')) {
+for (const m of floorsUsed.concat('parchemin', 'bureau')) {
   const f = `assets/floors/${m}.webp`;
-  if (!fs.existsSync(f)) { missing.push('sol ' + m); continue; }
+  if (!fs.existsSync(f)) { missing.push((m === 'bureau' ? 'fond ' : 'sol ') + m); continue; }
   const url = `url(data:image/webp;base64,${fs.readFileSync(f).toString('base64')})`;
-  floorCss.push(m === 'parchemin' ? `:root { --parch-tex: ${url}; }` : `.cell.fl-${m} { --floor: ${url}; }`);
+  floorCss.push(m === 'parchemin' ? `:root { --parch-tex: ${url}; }` : m === 'bureau' ? `:root { --desk-tex: ${url}; }` : `.cell.fl-${m} { --floor: ${url}; }`);
 }
 // bords déchirés du parchemin (cadre de la carte) : bruit fractal qui déplace le contour
+// version légère pour les fiches et les fenêtres (bords à peine irréguliers, le texte n'est pas filtré)
+defs.push('<filter id="torn-s" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="2" seed="5" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G"/></filter>');
 defs.push('<filter id="torn" x="-4%" y="-4%" width="108%" height="108%"><feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="3" seed="11" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="11" xChannelSelector="R" yChannelSelector="G"/></filter>');
 const sprite = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>${defs.join('')}</defs>${symbols.join('')}</svg>`;
 

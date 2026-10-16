@@ -45,3 +45,11 @@ New floor:
 | `paves.png` | cour, marché | rounded cobblestones in grey and ochre tones, tightly packed |
 | `boue.png` | mare, tourbière, roselière | wet muddy marsh ground in olive-brown with small puddles and a few reed stems lying flat |
 | `parchemin.png` | cadre de la carte | an old parchment paper texture, warm cream with faint stains, fibres and slight discoloration (no writing, no drawing) |
+
+## Fond de l'appli : le bureau de l'enquêteur (même méthode, joindre le parquet validé)
+
+Contrairement aux sols, cette texture **reste sombre** (le texte clair des titres est posé dessus) et n'est pas adoucie.
+
+| Fichier | Rôle | Description |
+|---|---|---|
+| `bureau.png` | fond de toutes les pages | a dark walnut wooden desk top seen from directly above, deep brown planks running horizontally with subtle grain, a few faint ink stains and old scratches, very dark and low contrast overall (it is a background behind light text), even lighting, no objects |

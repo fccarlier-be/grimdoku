@@ -276,7 +276,8 @@ header.top { display: flex; align-items: center; gap: 10px; }
   #app.game > header.top { grid-area: top; }
   #app.game > .clues {
     grid-area: clues; position: sticky; top: 12px;
-    max-height: calc(100vh - 24px); overflow-y: auto; padding-right: 4px;
+    max-height: calc(100vh - 24px); overflow-y: auto; overflow-x: hidden; padding: 4px 10px 8px 6px;
+    scrollbar-width: thin; scrollbar-color: rgba(234, 217, 181, .25) transparent;
   }
   #app.game > .clues h3 { display: none; } /* carte, outils et indices alignés en haut */
   #app.game .casehead { display: none; }     /* titre déplacé dans la barre du haut */
@@ -298,7 +299,7 @@ header.top { display: flex; align-items: center; gap: 10px; }
   #app.game .special { grid-area: special; }
   #app.game .dock, #app.game .verdictcard { grid-area: tools; }
   #app.game .dock {
-    position: static; margin-inline: 0; padding: 10px; backdrop-filter: none; -webkit-backdrop-filter: none;
+    position: relative; margin-inline: 0; padding: 10px; backdrop-filter: none; -webkit-backdrop-filter: none;
     background: var(--board); border: 1px solid var(--line); border-radius: var(--radius);
   }
   #app.game .tools { flex-direction: column; align-items: stretch; gap: 8px; }
@@ -334,6 +335,95 @@ header.top { display: flex; align-items: center; gap: 10px; }
 .toggle input { width: 22px; height: 22px; accent-color: var(--candle); }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+/* ================= habillage parchemin : fiches, outils, verdict, fenêtres =================
+   Dans ces éléments, les couleurs de base passent de « clair sur nuit » à « encre sur parchemin » :
+   les règles plus haut s'adaptent sans être réécrites. Le papier est dessiné par ::before (bords
+   un peu déchirés par le filtre #torn-s), pour que le filtre ne touche pas le texte. */
+.clue, .dock, .verdictcard, .special, .sheet, .chip, .case {
+  --fg: var(--ink); --muted: #6e5434; --line: rgba(43, 32, 22, .38);
+  --board: transparent; --board-2: rgba(43, 32, 22, .08); --red-ink: #a3312a; --sepia: #8a4b12;
+  position: relative; isolation: isolate; color: var(--ink); background: transparent; border-color: transparent;
+}
+.clue::before, .dock::before, .verdictcard::before, .special::before, .sheet::before, .chip::before, .case::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; border-radius: 3px;
+  background: var(--parch-tex, none) center / 240px, linear-gradient(#f1e3c2, #e3cfa3);
+  box-shadow: inset 0 0 0 1.5px rgba(43, 32, 22, .5), inset 0 0 12px rgba(120, 66, 18, .35), 0 3px 8px rgba(0, 0, 0, .45);
+  filter: url(#torn-s);
+}
+.chip::before { border-radius: 99px; filter: none; }
+.case { border: 0; }
+.case:nth-child(odd) { transform: rotate(-.4deg); }
+.case:nth-child(even) { transform: rotate(.3deg); }
+.case:hover::before { box-shadow: inset 0 0 0 2px var(--candle), inset 0 0 12px rgba(120, 66, 18, .35), 0 6px 14px rgba(0, 0, 0, .5); }
+/* fond : bureau d'enquêteur en bois sombre (texture « bureau ») ; sans texture, la nuit violette */
+html, body { background: var(--desk-tex, none) center top / 520px, var(--night); }
+/* fiches de suspect : posées un peu de travers ; la fiche choisie se redresse et se soulève */
+.clue { border: 0; transition: transform .15s; }
+.clue:nth-child(3n+1) { transform: rotate(-.7deg); }
+.clue:nth-child(3n+2) { transform: rotate(.5deg); }
+.clue:nth-child(3n) { transform: rotate(-.2deg); }
+.clue.sel { transform: rotate(0) translateY(-2px); }
+.clue.sel::before { box-shadow: inset 0 0 0 2px var(--candle), inset 0 0 12px rgba(120, 66, 18, .35), 0 0 0 2px rgba(240, 169, 58, .5), 0 8px 18px rgba(0, 0, 0, .55); }
+.clue.violated::before { box-shadow: inset 0 0 0 2.5px var(--blood), inset 0 0 12px rgba(120, 66, 18, .35), 0 3px 8px rgba(0, 0, 0, .45); }
+.clue .em, .chip .em { background: #fff8e8; box-shadow: 0 0 0 2px var(--ink); }
+.clue.victim .em, .chip.victim .em { box-shadow: 0 0 0 2.5px var(--red-ink); }
+.clue .who { font-family: var(--f-display); font-weight: 400; font-size: 20px; line-height: 1.05; }
+.clue .who small { font-family: var(--f-body); font-size: 13px; color: var(--muted); }
+.clue .who .bigtag { font-family: var(--f-body); color: var(--sepia); }
+.clue p { color: var(--ink); }
+/* mots-clés : soulignés à l'encre rouge, comme des annotations */
+.clue p b { color: var(--ink); font-weight: 700; text-decoration: underline; text-decoration-color: var(--red-ink); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.clue p b.lead-victim, .lead-victim { color: var(--red-ink); text-decoration: none; }
+/* case cochée à la plume ; indice exploité : fiche pâlie et tampon « Classé » */
+.clue .tick { border: 1.5px solid var(--line); border-radius: 6px; color: transparent; font-weight: 700; transform: rotate(-3deg); }
+.clue.done .tick { background: transparent; color: var(--red-ink); font-size: 22px; }
+.clue.done p { text-decoration: none; }
+.clue.done::after {
+  content: "Classé"; position: absolute; right: 50px; bottom: 6px; transform: rotate(-10deg); pointer-events: none;
+  font-family: var(--f-display); font-size: 16px; line-height: 1; color: var(--red-ink); border: 2px solid currentColor; border-radius: 4px; padding: 2px 6px; opacity: .8;
+}
+.clue.done, .clue.placed { opacity: .62; }
+/* victime : cachet de cire rouge */
+.clue.victim::after {
+  content: "†"; position: absolute; right: 8px; top: 8px; width: 34px; height: 34px; display: grid; place-items: center;
+  font: 700 18px/1 var(--f-display); color: #f6d9c0; border-radius: 47% 53% 50% 50% / 52% 48% 52% 48%;
+  background: radial-gradient(circle at 35% 30%, #d4473b, #8e1f17 70%); box-shadow: inset 0 -2px 4px rgba(0, 0, 0, .35), 0 2px 4px rgba(0, 0, 0, .4);
+}
+/* outils */
+.tbtn { background: transparent; border: 1.5px solid var(--line); color: var(--ink); border-radius: 8px; }
+.tbtn:hover:not(:disabled) { background: var(--board-2); }
+/* Accuser : un sceau de cire rouge */
+.accuse {
+  background: radial-gradient(circle at 35% 30%, #d4473b, #8e1f17 72%); color: #fbe7cf;
+  font-family: var(--f-display); font-weight: 400; font-size: 20px; letter-spacing: .02em;
+  border-radius: 47% 53% 50% 50% / 52% 48% 52% 48%; box-shadow: inset 0 -3px 6px rgba(0, 0, 0, .35), 0 3px 6px rgba(0, 0, 0, .4);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .35);
+}
+.accuse:disabled { background: radial-gradient(circle at 35% 30%, #b9a58a, #85735b 72%); color: #efe3cc; opacity: .7; }
+.chip { border: 0; color: var(--ink); }
+.chip[aria-pressed="true"]::before { box-shadow: inset 0 0 0 2px var(--candle), 0 0 0 2px rgba(240, 169, 58, .45); }
+.chip[aria-pressed="true"] { box-shadow: none; }
+.dock { border-top: 0; backdrop-filter: none; -webkit-backdrop-filter: none; }
+.dock::before { border-radius: 0; }
+.special b { color: var(--sepia); font-weight: 700; }
+/* verdict : avis placardé « COUPABLE » */
+.verdictcard { border: 0; text-align: center; align-items: center; }
+.verdictcard .wanted { font-family: var(--f-display); font-size: 30px; line-height: 1; letter-spacing: .08em; color: var(--red-ink); text-transform: uppercase; }
+.verdictcard .em.big { width: 96px; height: 96px; border-radius: 50%; position: relative; display: block; background: #fff8e8; box-shadow: 0 0 0 3px var(--red-ink), 0 0 0 7px rgba(163, 49, 42, .18); }
+.verdictcard .culprit { font-family: var(--f-display); font-weight: 400; font-size: 34px; line-height: 1; }
+.verdictcard .why { color: var(--muted); font-style: italic; }
+.verdictcard .epi { text-align: left; }
+.verdictcard .row { width: 100%; justify-content: center; }
+.btn { color: var(--fg); }
+.sheet .btn, .verdictcard .btn { background: transparent; border: 1.5px solid var(--line); border-radius: 8px; color: var(--ink); }
+.sheet .btn.primary, .verdictcard .btn.primary {
+  background: radial-gradient(circle at 35% 30%, #d4473b, #8e1f17 75%); color: #fbe7cf; border: 0;
+  font-family: var(--f-display); font-weight: 400; font-size: 18px; box-shadow: inset 0 -2px 5px rgba(0, 0, 0, .3), 0 2px 5px rgba(0, 0, 0, .35);
+}
+.sheet { border: 0; border-radius: 3px; }
+.sheet h2 { color: var(--red-ink); }
+.toggle input { accent-color: var(--red-ink); }
 /*__FLOORS__*/
 </style>
 
@@ -670,7 +760,7 @@ const PUZZLES = /*__PUZZLES__*/;
       ${specials.length ? `<div class="special">${specials.join('')}</div>` : ''}
       ${S.solved ? verdictHtml() : `<div class="dock">
         <div class="tools">
-          <button class="tbtn" id="hintBtn" aria-label="Indice">💡<span class="lbl"> Indice</span></button>
+          <button class="tbtn" id="hintBtn" aria-label="Indice">🕯️<span class="lbl"> Indice</span></button>
           <span class="spacer"></span>
           <button class="tbtn" id="undo" aria-label="Annuler" ${undo.length ? '' : 'disabled'}>↶<span class="lbl"> Annuler</span></button>
           <button class="accuse" id="accuse" ${allPlaced ? '' : 'disabled'}>Accuser</button>
@@ -892,9 +982,11 @@ const PUZZLES = /*__PUZZLES__*/;
     const v = P.characters.find(c => c.role === 'victim');
     const next = PUZZLES[PUZZLES.indexOf(P) + 1];
     return `<div class="verdictcard">
-        <div class="verdict"><span class="em">${face(k)}</span><div><div class="sect" style="margin:0">Coupable</div><b>${esc(k.name)}</b></div></div>
+        <div class="wanted">Coupable</div>
+        <span class="em big">${face(k)}</span>
+        <b class="culprit">${esc(k.name)}</b>
         <p class="why">Seul suspect dans la pièce de ${esc(v.name)}.</p>
-        <p>${esc(P.epilogue)}</p>
+        <p class="epi">${esc(P.epilogue)}</p>
         <div class="row">
           <button class="btn" id="replayBtn">Rejouer</button>
           ${next ? `<button class="btn primary" id="nextBtn">Affaire suivante</button>` : `<button class="btn primary" id="homeBtn">Toutes les affaires</button>`}
