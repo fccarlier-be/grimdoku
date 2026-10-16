@@ -628,23 +628,44 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
   // Ambiance sonore : une boucle pour l'accueil et les menus (menu), une pour les cartes (carte), en fondu.
   // Les navigateurs bloquent le son avant le premier geste : il démarre au premier toucher. Volume par Web Audio
   // (sur iPhone, le volume d'un élément audio ne se règle pas). 🔊 / 🔇 sur chaque écran ; réglage gardé.
+  // Les morceaux n'ont pas besoin de boucler d'eux-mêmes : chaque piste a deux lecteurs, et 4 s avant la fin
+  // l'autre repart du début en fondu enchaîné (XFADE) — boucle sans coupure, quel que soit le morceau.
   const sound = (() => {
-    const tracks = {}, gains = {};
+    const XFADE = 4, LEVEL = 0.32;
+    const tracks = {};
     for (const [k, src] of Object.entries(MEDIA.audio || {})) {
-      try { const a = new Audio(src); a.loop = true; a.preload = 'auto'; tracks[k] = a; } catch (e) { /* pas de son */ }
+      try { tracks[k] = { els: [new Audio(src), new Audio(src)], cur: 0, gains: [], gain: null, timer: null }; }
+      catch (e) { /* pas de son */ }
     }
-    const LEVEL = 0.32;
     let want = null, ac = null;
     const on = () => settings.sound !== false;
+    // fondu enchaîné vers l'autre lecteur de la piste quand la fin approche
+    function watch(t) {
+      clearInterval(t.timer);
+      t.timer = setInterval(() => {
+        const a = t.els[t.cur];
+        if (!a.duration || a.currentTime < a.duration - XFADE) return;
+        const nxt = 1 - t.cur, b = t.els[nxt], now = ac.currentTime;
+        b.currentTime = 0; b.play().catch(() => {});
+        t.gains[nxt].gain.cancelScheduledValues(now); t.gains[nxt].gain.setValueAtTime(0, now); t.gains[nxt].gain.linearRampToValueAtTime(1, now + XFADE);
+        t.gains[t.cur].gain.cancelScheduledValues(now); t.gains[t.cur].gain.setValueAtTime(1, now); t.gains[t.cur].gain.linearRampToValueAtTime(0, now + XFADE);
+        setTimeout(() => a.pause(), XFADE * 1000 + 200);
+        t.cur = nxt;
+      }, 250);
+    }
     function apply() {
       if (!ac) return;
-      for (const [k, a] of Object.entries(tracks)) {
+      for (const [k, t] of Object.entries(tracks)) {
         const target = on() && k === want ? LEVEL : 0;
-        const g = gains[k].gain;
-        g.cancelScheduledValues(ac.currentTime);
-        g.setTargetAtTime(target, ac.currentTime, 0.5);
-        if (target > 0) a.play().catch(() => {});
-        else setTimeout(() => { if (!(on() && k === want)) a.pause(); }, 2500);
+        t.gain.gain.cancelScheduledValues(ac.currentTime);
+        t.gain.gain.setTargetAtTime(target, ac.currentTime, 0.5);
+        if (target > 0) {
+          const a = t.els[t.cur];
+          if (a.paused) { t.gains[t.cur].gain.setValueAtTime(1, ac.currentTime); a.play().catch(() => {}); }
+          watch(t);
+        } else {
+          setTimeout(() => { if (!(on() && k === want)) { clearInterval(t.timer); t.els.forEach(a => a.pause()); } }, 2500);
+        }
       }
     }
     return {
@@ -655,9 +676,9 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
         if (ac || !this.available) return;
         try {
           ac = new (window.AudioContext || window.webkitAudioContext)();
-          for (const [k, a] of Object.entries(tracks)) {
-            gains[k] = ac.createGain(); gains[k].gain.value = 0;
-            ac.createMediaElementSource(a).connect(gains[k]).connect(ac.destination);
+          for (const t of Object.values(tracks)) {
+            t.gain = ac.createGain(); t.gain.gain.value = 0; t.gain.connect(ac.destination);
+            t.els.forEach((a, i) => { a.preload = 'auto'; t.gains[i] = ac.createGain(); t.gains[i].gain.value = i === 0 ? 1 : 0; ac.createMediaElementSource(a).connect(t.gains[i]).connect(t.gain); });
           }
         } catch (e) { ac = null; return; }
         apply();
