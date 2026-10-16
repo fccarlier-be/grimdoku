@@ -1,0 +1,94 @@
+{
+ "positions": {
+  "g": [
+   2,
+   6
+  ],
+  "c": [
+   3,
+   1
+  ],
+  "f": [
+   0,
+   4
+  ],
+  "e": [
+   4,
+   3
+  ],
+  "d": [
+   6,
+   2
+  ],
+  "a": [
+   5,
+   5
+  ],
+  "b": [
+   1,
+   0
+  ]
+ },
+ "murderer": "a",
+ "cast": {
+  "c": "a",
+  "f": "b",
+  "e": "c",
+  "d": "d",
+  "a": "e",
+  "b": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "etagere"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "westOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "eastOf",
+    "other": "e"
+   }
+  }
+ ]
+}

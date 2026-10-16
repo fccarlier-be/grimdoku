@@ -1,0 +1,9 @@
+# environnements et dépendances
+.venv/
+node_modules/
+# fichiers produits par le build (node build-puzzles.js && node build-app.js)
+dist/
+deploy/grimdoku/site/index.html
+# archives de départ et fichiers système
+*.zip
+.DS_Store

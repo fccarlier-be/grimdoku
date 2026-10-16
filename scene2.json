@@ -1,0 +1,191 @@
+{
+  "id": "grim-002",
+  "formatVersion": 1,
+  "title": "La Tour de l'Archimage",
+  "size": 7,
+  "rooms": {
+    "L": {
+      "name": "Laboratoire",
+      "the": "le laboratoire"
+    },
+    "O": {
+      "name": "Observatoire",
+      "the": "l'observatoire"
+    },
+    "B": {
+      "name": "Bibliothèque",
+      "the": "la bibliothèque"
+    },
+    "H": {
+      "name": "Hall",
+      "the": "le hall"
+    },
+    "C": {
+      "name": "Crypte",
+      "the": "la crypte"
+    },
+    "J": {
+      "name": "Jardin",
+      "the": "le jardin"
+    },
+    "E": {
+      "name": "Escalier",
+      "the": "l'escalier"
+    }
+  },
+  "layout": [
+    "LLLOOOO",
+    "LLLOOOO",
+    "LLBBBOO",
+    "HHBBBJJ",
+    "HHHCCJJ",
+    "EEECCJJ",
+    "EEECCCJ"
+  ],
+  "objects": [
+    {
+      "type": "portail",
+      "at": [
+        0,
+        0
+      ],
+      "link": "p1"
+    },
+    {
+      "type": "portail",
+      "at": [
+        6,
+        5
+      ],
+      "link": "p1"
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        2,
+        2
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        2,
+        4
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        6,
+        2
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        5,
+        5
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "archetype": "spectre",
+      "role": "suspect"
+    },
+    {
+      "id": "b",
+      "archetype": "dragonnet",
+      "role": "suspect"
+    },
+    {
+      "id": "c",
+      "archetype": "zombie",
+      "role": "suspect"
+    },
+    {
+      "id": "d",
+      "archetype": "sirene",
+      "role": "suspect"
+    },
+    {
+      "id": "e",
+      "archetype": "vampire",
+      "role": "suspect"
+    },
+    {
+      "id": "f",
+      "archetype": "djinn",
+      "role": "suspect"
+    },
+    {
+      "id": "g",
+      "archetype": "archimage",
+      "role": "victim"
+    }
+  ]
+}

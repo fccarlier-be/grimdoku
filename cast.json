@@ -1,0 +1,276 @@
+{
+  "_doc": "Personnages types. Un nom par lettre (A…H) : le personnage qui reçoit la lettre X dans une énigme s'appelle names.X. desc/gender/icon/traits ne doivent pas dépendre de la position (cf. CLAUDE.md §3).",
+  "mage": {
+    "icon": "🧙‍♂️",
+    "gender": "m",
+    "desc": "Mage, allergique au houblon",
+    "names": {
+      "A": "Azimut",
+      "B": "Bricolin",
+      "C": "Cornélius",
+      "D": "Dédale",
+      "E": "Eustache",
+      "F": "Faribole",
+      "G": "Gribouille",
+      "H": "Hocus"
+    }
+  },
+  "barde": {
+    "icon": "🧑‍🎤",
+    "gender": "m",
+    "desc": "Barde, chante faux",
+    "names": {
+      "A": "Arpège",
+      "B": "Brann",
+      "C": "Couac",
+      "D": "Dièse",
+      "E": "Écho",
+      "F": "Fausset",
+      "G": "Gamme",
+      "H": "Hautbois"
+    }
+  },
+  "troll": {
+    "icon": "🧌",
+    "gender": "m",
+    "desc": "Troll, plongeur à mi-temps",
+    "names": {
+      "A": "Avaloir",
+      "B": "Bâfrin",
+      "C": "Croquassiette",
+      "D": "Dentdur",
+      "E": "Engloutor",
+      "F": "Fringale",
+      "G": "Gloutor",
+      "H": "Happeur"
+    }
+  },
+  "elfe": {
+    "icon": "🧝‍♀️",
+    "gender": "f",
+    "desc": "Elfe, critique gastronomique",
+    "names": {
+      "A": "Aëlys",
+      "B": "Bérénwë",
+      "C": "Célandra",
+      "D": "Daëlin",
+      "E": "Erwëlle",
+      "F": "Faëlys",
+      "G": "Galwë",
+      "H": "Hëlwyn"
+    }
+  },
+  "fee": {
+    "icon": "🧚",
+    "gender": "f",
+    "desc": "Fée, doit trois tournées",
+    "names": {
+      "A": "Aubépine",
+      "B": "Bruyère",
+      "C": "Capucine",
+      "D": "Digitale",
+      "E": "Églantine",
+      "F": "Fougère",
+      "G": "Glycine",
+      "H": "Hortense"
+    }
+  },
+  "tavernier": {
+    "icon": "🧔‍♂️",
+    "gender": "m",
+    "desc": "Tavernier nain, radin légendaire",
+    "names": {
+      "A": "Aspre",
+      "B": "Besant",
+      "C": "Centime",
+      "D": "Denier",
+      "E": "Écu",
+      "F": "Florin",
+      "G": "Grippesou",
+      "H": "Hardi"
+    }
+  },
+  "spectre": {
+    "icon": "👻",
+    "gender": "m",
+    "traits": [
+      "spectre"
+    ],
+    "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+    "names": {
+      "A": "Albâtre",
+      "B": "Blafard",
+      "C": "Chaînon",
+      "D": "Diaphane",
+      "E": "Ectoplasme",
+      "F": "Frisson",
+      "G": "Grisâtre",
+      "H": "Hulul"
+    }
+  },
+  "dragonnet": {
+    "icon": "🐉",
+    "gender": "m",
+    "desc": "Dragonnet, brûle tout ce qu'il touche",
+    "names": {
+      "A": "Ardent",
+      "B": "Braise",
+      "C": "Cramoisi",
+      "D": "Dardafeu",
+      "E": "Étincel",
+      "F": "Flammèche",
+      "G": "Gratin",
+      "H": "Haleine"
+    }
+  },
+  "zombie": {
+    "icon": "🧟",
+    "gender": "m",
+    "desc": "Zombie, ancien apprenti. Ancien tout court",
+    "names": {
+      "A": "Anatole",
+      "B": "Bob",
+      "C": "Clovis",
+      "D": "Désiré",
+      "E": "Edmond",
+      "F": "Fernand",
+      "G": "Gédéon",
+      "H": "Hubert"
+    }
+  },
+  "sirene": {
+    "icon": "🧜‍♀️",
+    "gender": "f",
+    "desc": "Sirène, venue pour l'aquarium",
+    "names": {
+      "A": "Aquabelle",
+      "B": "Bulle",
+      "C": "Corail",
+      "D": "Dorade",
+      "E": "Écume",
+      "F": "Flottille",
+      "G": "Goémone",
+      "H": "Houle"
+    }
+  },
+  "vampire": {
+    "icon": "🧛‍♀️",
+    "gender": "f",
+    "desc": "Comtesse vampire, végane (elle le jure)",
+    "names": {
+      "A": "Abysse",
+      "B": "Belladone",
+      "C": "Crépuscula",
+      "D": "Draculine",
+      "E": "Écarlate",
+      "F": "Funestine",
+      "G": "Grenat",
+      "H": "Hémoglobine"
+    }
+  },
+  "djinn": {
+    "icon": "🧞‍♀️",
+    "gender": "f",
+    "desc": "Djinn, a déjà exaucé deux vœux de trop",
+    "names": {
+      "A": "Amphora",
+      "B": "Bazarine",
+      "C": "Calebasse",
+      "D": "Djinnifer",
+      "E": "Encensia",
+      "F": "Fumerolle",
+      "G": "Génia",
+      "H": "Houka"
+    }
+  },
+  "archimage": {
+    "icon": "🧙‍♂️",
+    "gender": "m",
+    "desc": "Archimage, 412 ans, toujours pas de testament",
+    "names": {
+      "A": "Argentbarbe",
+      "B": "Blanchebarbe",
+      "C": "Cendrebarbe",
+      "D": "Doublebarbe",
+      "E": "Étoilebarbe",
+      "F": "Fizzlebarbe",
+      "G": "Grisebarbe",
+      "H": "Hirsutebarbe"
+    }
+  },
+  "chevalier": {
+    "icon": "🤺",
+    "gender": "m",
+    "desc": "Chevalier, armure trop petite depuis Noël",
+    "names": {
+      "A": "Aymeric",
+      "B": "Bertrand",
+      "C": "Clodomir",
+      "D": "Durandal",
+      "E": "Enguerrand",
+      "F": "Foulques",
+      "G": "Gontran",
+      "H": "Hardouin"
+    }
+  },
+  "gobelin": {
+    "icon": "👺",
+    "gender": "m",
+    "desc": "Gobelin, trésorier du royaume (non déclaré)",
+    "names": {
+      "A": "Arnak",
+      "B": "Bakchich",
+      "C": "Chaparde",
+      "D": "Dîme",
+      "E": "Escroquin",
+      "F": "Filou",
+      "G": "Grigou",
+      "H": "Harpagnol"
+    }
+  },
+  "roi": {
+    "icon": "🤴",
+    "gender": "m",
+    "desc": "Roi, avare de compliments et de tout le reste",
+    "names": {
+      "A": "Aldric",
+      "B": "Baudouin",
+      "C": "Childéric",
+      "D": "Dagobert",
+      "E": "Eudes",
+      "F": "Ferdinand",
+      "G": "Godefroy",
+      "H": "Hugues"
+    }
+  },
+  "meunier": {
+    "icon": "👨‍🌾",
+    "gender": "m",
+    "desc": "Meunier, pèse le grain avec le pouce",
+    "names": {
+      "A": "Amidon",
+      "B": "Boisseau",
+      "C": "Crêpin",
+      "D": "Dupain",
+      "E": "Épeautre",
+      "F": "Farinard",
+      "G": "Grainville",
+      "H": "Herbert"
+    }
+  },
+  "boulanger": {
+    "icon": "👨‍🍳",
+    "gender": "m",
+    "desc": "Boulanger, pétrit plus de ragots que de pâte",
+    "names": {
+      "A": "Amandin",
+      "B": "Briochon",
+      "C": "Croissant",
+      "D": "Dariole",
+      "E": "Échaudé",
+      "F": "Fougasse",
+      "G": "Gaufrin",
+      "H": "Honoré"
+    }
+  }
+}

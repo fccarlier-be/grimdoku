@@ -1,0 +1,154 @@
+{
+  "id": "grim-001",
+  "formatVersion": 1,
+  "title": "Meurtre au Sanglier Borgne",
+  "size": 6,
+  "rooms": {
+    "T": {
+      "name": "Salle commune",
+      "the": "la salle commune"
+    },
+    "C": {
+      "name": "Cuisine",
+      "the": "la cuisine"
+    },
+    "R": {
+      "name": "Cave",
+      "the": "la cave"
+    },
+    "B": {
+      "name": "Chambre",
+      "the": "la chambre"
+    },
+    "E": {
+      "name": "Écurie",
+      "the": "l'écurie"
+    }
+  },
+  "layout": [
+    "TTTCCC",
+    "TTTCCC",
+    "TTTRRC",
+    "BBTRRE",
+    "BBTEEE",
+    "BBBEEE"
+  ],
+  "objects": [
+    {
+      "type": "table",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        4,
+        4
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        5,
+        5
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "archetype": "mage",
+      "role": "suspect"
+    },
+    {
+      "id": "b",
+      "archetype": "barde",
+      "role": "suspect"
+    },
+    {
+      "id": "c",
+      "archetype": "troll",
+      "role": "suspect"
+    },
+    {
+      "id": "d",
+      "archetype": "elfe",
+      "role": "suspect"
+    },
+    {
+      "id": "e",
+      "archetype": "fee",
+      "role": "suspect"
+    },
+    {
+      "id": "f",
+      "archetype": "tavernier",
+      "role": "victim"
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "id": "grim-004",
+  "formatVersion": 1,
+  "title": "Le Moulin de Bois-Tordu",
+  "size": 6,
+  "rooms": {
+    "M": {
+      "name": "Moulin",
+      "the": "le moulin"
+    },
+    "G": {
+      "name": "Grange",
+      "the": "la grange"
+    },
+    "V": {
+      "name": "Verger",
+      "the": "le verger"
+    },
+    "P": {
+      "name": "Potager",
+      "the": "le potager"
+    },
+    "E": {
+      "name": "Mare",
+      "the": "la mare"
+    }
+  },
+  "layout": [
+    "MMMGGG",
+    "MMMGGG",
+    "VVMGPP",
+    "VVVPPP",
+    "VVEEPP",
+    "VEEEEP"
+  ],
+  "objects": [
+    {
+      "type": "coffre",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        2
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        1,
+        3
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        0
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        5
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        5,
+        3
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "archetype": "fee",
+      "role": "suspect"
+    },
+    {
+      "id": "b",
+      "archetype": "troll",
+      "role": "suspect"
+    },
+    {
+      "id": "c",
+      "archetype": "sirene",
+      "role": "suspect"
+    },
+    {
+      "id": "d",
+      "archetype": "zombie",
+      "role": "suspect"
+    },
+    {
+      "id": "e",
+      "archetype": "dragonnet",
+      "role": "suspect"
+    },
+    {
+      "id": "f",
+      "archetype": "meunier",
+      "role": "victim"
+    }
+  ]
+}

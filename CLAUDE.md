@@ -1,0 +1,93 @@
+# Grimdoku — reprise du projet
+
+Lis ce fichier en entier avant toute action. Réponds en français, de façon concise et concrète, étape par étape.
+
+## 1. Le projet
+- **Grimdoku** : jeu de logique, hommage à *Murdoku* (Manuel Garand), dans un univers **fantasy humoristique**.
+- Développeur unique : François (franky). Il héberge lui-même ses services (Docker, Cloudflare Tunnel, domaine `fcold.org` chez Cloudflare).
+- Cibles : **mobile d'abord**, jouable confortablement sur **iPhone 13 mini (375×812 pt)** ; plus tard **Google Play Store** (via TWA/Bubblewrap ou Capacitor).
+- Hommage, pas copie : ne jamais reprendre le nom « Murdoku », ses textes, ses illustrations ni ses énigmes. Seule la mécanique est reprise.
+
+## 2. Règles du jeu (validées)
+- Grille N×N, N personnages : N−1 suspects + 1 victime. Tailles prévues : 6×6 à 8×8.
+- **Une personne par ligne et par colonne.**
+- Chaque case appartient à une pièce. Objets **bloquants** (table, étagère, chaudron, statue, tonneau, arbre, coffre, botte de foin, boule de cristal, sarcophage) : personne dessus. Objets **praticables** (chaise, lit, tapis, champignon géant, portail) : autorisés.
+- **Seule la pièce du crime contient deux personnes** : chaque suspect était seul dans sa pièce, sauf le coupable, qui était avec la victime (écran des règles, mot pour mot). Moteur : `sharedRooms`, vérifiée par `solve`, `checkPlacement` (erreur `room`) et `humanSolve` (technique « pièces »). Une énigme doit donc avoir au moins autant de pièces (zones, portails fusionnés) que de suspects.
+- **La victime n'a pas d'indice** : on la déduit ; sa carte dit seulement « La victime. Elle était seule avec son meurtrier. » Elle n'est jamais sur un meuble (sinon un indice devrait le dire).
+- **Quand quelqu'un est sur un meuble (chaise, lit, tapis…), un indice le dit toujours.** (écran des règles, mot pour mot ; vérifié par `build-puzzles.js`, ajouté automatiquement par `gen.js`)
+- « À côté de » = **orthogonal uniquement** (4 voisins), **dans la même pièce : jamais à travers un mur** (`neighbors`). Idée future validée : une créature capable d'utiliser les diagonales, pour monter la difficulté plus tard.
+- Mécaniques fantasy v1 (validées) :
+  - **Spectre** (`traits: ["spectre"]`) : peut se tenir sur un objet bloquant ; respecte lignes/colonnes.
+  - **Portails** (`type: "portail"`, même `link`) : les deux pièces reliées comptent comme **une seule pièce** pour la règle du meurtre et l'indice « seul ».
+- En réserve (pas encore codé) : nains (pièces souterraines), métamorphe / identité secrète, donjons multi-étages, créature diagonale.
+
+## 3. Types d'indices (`logic.type`)
+`inRoom`, `notInRoom`, `onObject`, `adjacentTo`, `notAdjacentTo`, `sameRowAs` (objet), `sameColAs` (objet), `sameRoomAs` (autre personnage, via les zones/portails), `alone`, et positions relatives entre suspects `northOf` / `southOf` / `eastOf` / `westOf` (`other`) : **« au nord de X » = sur une ligne plus haute que X, n'importe quelle colonne** (nord = haut de la carte ; écran des règles, mot pour mot). Jamais d'indice relatif par rapport à la victime.
+Le texte affiché (`text`) est séparé de la logique (`logic`) : le solveur ne lit que `logic`. **Les textes d'indices sont générés depuis `logic`** (`clueText` dans `build-puzzles.js` : phrases sobres, accord via `gender` m/f du personnage, article de pièce `rooms.<k>.the`, article d'objet `OBJECTS.<type>.a`, élisions d'/qu'). Raison (retour de François) : un texte décoratif écrit à la main contredisait le lieu réel du personnage (objet d'une autre pièce, activité hors de sa pièce), et décrire le vrai lieu donnerait un indice en plus. L'humour vit dans `desc`, l'intro et l'épilogue, qui ne doivent pas dépendre de la position (sauf l'épilogue, écrit une fois la solution connue).
+`gen.js` ne produit plus `sameRoomAs` ni `alone` : avec des suspects dans des pièces différentes, ils ne parleraient que de la victime et livreraient le coupable.
+
+## 4. Format d'une énigme (`puzzles/*.json`, `formatVersion: 1`)
+Champs : `id`, `title`, `intro`, `epilogue`, `difficulty` (1–3), `size`, `rooms` {clé: {name}}, `layout` (N chaînes de N lettres = clés de pièces), `objects` [{type, at:[ligne,col], link?}], `characters` [{id, name, role: victim|suspect, icon (emoji provisoire), desc, traits?}], `clues` [{who, text, logic}] (plusieurs indices possibles par personnage : l'appli les réunit sur une seule carte), `solution` {positions:{id:[l,c]}, murderer}.
+Coordonnées `[ligne, colonne]` indexées à 0. Le catalogue d'objets (nom, article, bloquant, icône) est global, dans `engine.js` (`OBJECTS`).
+
+## 5. Arborescence
+- `engine.js` — moteur partagé (navigateur + Node) : `prepare`, `canStand`, `evalClue`, `murdererOf`, `solve` (exhaustif, compte les solutions), `humanSolve(p, clues, level)` (propagation sans essai-erreur, **technique la plus simple d'abord** ; techniques `TECH` : 0 indice, 1 case unique, 2 ligne réservée — un personnage confiné à une ligne/colonne la prend aux autres —, 3 seul candidat d'une ligne/colonne, 4 pièces/meurtre, 5 groupes de k ≥ 2 ; niveau 1 = 0 à 4, niveau 2 = + 5 ; renvoie `steps` [{ids, tech}] = ordre et technique de chaque placement, et `order`), `checkPlacement`.
+- `gen.js` — tire une solution aléatoire valide (suspects dans des pièces différentes, victime hors meuble) puis choisit des indices (aucun pour la victime) jusqu'à résolution par `humanSolve` au niveau demandé, élague, ajoute les indices de meubles, puis **réattribue les lettres** pour que l'ordre de facilité suive l'alphabet (`relabel` ; la sortie `cast` dit quelle fiche d'origine prend chaque lettre → renommer). Retire les indices de ligne/colonne impliqués par un indice « sur un meuble » du même type. Options : `--skulls=1|2|3` (ne garde que les grilles de cette difficulté), `--level=1|2`, `--portal-murder`, `--murderer=<id>` (garde ce coupable à sa lettre), `--tries=N`. Ex. `node gen.js scene2.json 1 --level=1 --portal-murder`
+- `scene1.json`, `scene2.json` — scènes (plan, objets, personnages) sans indices. Personnages : `{ id (lettre), archetype, role }` seulement.
+- `cast.json` — **catalogue des personnages types** (mage, barde, troll, elfe, fée, tavernier, spectre, dragonnet, zombie, sirène, vampire, djinn, archimage, chevalier, gobelin, roi, meunier, boulanger — 18 types, tous avec un portrait illustré) : icône, genre, description, pouvoirs (`traits`), et **un nom par lettre A…H**. Ajouter un type = lui donner 8 noms (vérifié au chargement : chaque nom commence par sa lettre).
+- `cast.js` — `resolve(scene, cast?)` : fiches complètes d'après `cast.json` ; le nom vient de la lettre, donc quand `gen.js` réattribue les lettres (`cast` dans `sol*.json`), les noms suivent sans rien réécrire.
+- `sol1.json`, `sol2.json` — sorties de `gen.js` retenues (voir §6).
+- `build-puzzles.js` — ajoute les textes humoristiques (tableau de textes si plusieurs indices pour un personnage), **vérifie unicité + résolubilité logique + conventions** (`checkConventions` : initiales, victime dernière, ordre de facilité, indices de meubles), écrit `puzzles/grim-001.json` et `grim-002.json`.
+- `app/template.html` — l'appli (HTML/CSS/JS vanilla, une seule page). Placeholders `/*__ENGINE__*/` et `/*__PUZZLES__*/`.
+- `assets/objects/<type>.(jpeg|jpg|png)` — **mobilier illustré** (même style BD, fond magenta), prompts dans `assets/objects/PROMPTS.md`. `tools/images.py` le détoure, recadre au plus près de la silhouette, centre dans un carré avec 6 % de marge (le tapis remplit sa case : `OBJ_FULL`), écrit `<type>.webp` ; noms de fichiers tolérés : accents retirés, alias `OBJ_ALIAS` (« champignon » → `champi`). Le build préfère ce `.webp` au `.svg`.
+- `assets/objects/<type>.svg` — dessin de secours par objet du catalogue `OBJECTS` (viewBox 64×64, contour encre #2b2016 2,5 px, aplats tons parchemin). Réutilisables sur toutes les cartes ; ajouter un objet au catalogue impose d'ajouter son SVG (le build échoue sinon).
+- `assets/characters/<type>.(jpeg|jpg|png)` — **portraits illustrés** (style BD encrée, fond magenta pur), générés par François avec les prompts de `assets/characters/PROMPTS.md`. `tools/images.py` (Pillow, venv `.venv` : `python3 -m venv .venv && .venv/bin/pip install pillow`) les détoure (magenta → transparence, liseré rose retiré), les recadre sur le visage (`ZOOM`, `CX`, `CY`, réglages par type dans `CROP` pour les images cadrées autrement), les réduit à 256 px et écrit `<type>.webp`. Le build préfère ce `.webp` au `.svg` (intégré en `<image>` base64 dans le symbole `chr-<type>`). Commande : `.venv/bin/python tools/images.py && node build-app.js`.
+- `assets/characters/<type>.svg` — dessin de secours (portrait en buste) par type de `cast.json` (même style que le mobilier : viewBox 64×64, contour encre, aplats ; cadré pour un pion rond). Ajouter un type au catalogue impose d'ajouter son portrait (le build échoue sinon).
+- `build-app.js` — assemble tout en `dist/grimdoku.html` (fichier unique, autonome) ; transforme les SVG d'objets et de portraits en `<symbol id="obj-<type>">` / `<symbol id="chr-<type>">` (placeholder `<!--__SPRITE__-->`), utilisés via `<use href="#…">` (portraits : `face(ch)` dans l'appli, découpés en rond).
+- `deploy/grimdoku/` — bundle de prod : `docker-compose.yml` (nginx:1.27-alpine, `127.0.0.1:8095:80`), `nginx.conf` (index en `no-cache`), `site/index.html`, `update.sh`.
+
+Reconstruire : `node build-puzzles.js && node build-app.js && cp dist/grimdoku.html deploy/grimdoku/site/index.html`
+
+## 6. État actuel (prototype v0.1)
+- 4 énigmes vérifiées (solutions dans `puzzles/*.json`, **à ne pas citer**, cf. §9) :
+  - `grim-001` « Meurtre au Sanglier Borgne » — 6×6, 5 pièces, 6 indices dont 2 relatifs. (`sol1.json` : graine 1, `--level=1 --murderer=c`.)
+  - `grim-002` « La Tour de l'Archimage » — 7×7, 7 pièces (Hall coupé en Hall + Escalier pour la règle des pièces), Spectre + Portail (Laboratoire ↔ Crypte, meurtre à travers le portail). 6 indices dont 1 relatif. (`sol2.json` : graine 1, `--level=1 --portal-murder`.)
+  - `grim-003` « Le Château de Mortebrune » — 7×7, 7 pièces, spectre, types chevalier / gobelin / roi. 7 indices dont 2 relatifs. (`sol3.json` : graine 3, `--level=1`.)
+  - `grim-004` « Le Moulin de Bois-Tordu » — 6×6, 5 pièces (moulin, grange, verger, potager, mare), type meunier. 1 crâne : 2 placements directs, techniques simples, 7 indices dont 1 relatif. (`sol4.json` : graine 3, `--level=1 --skulls=1`.) Épilogue choisi par le build parmi un par coupable possible (`epilogues` par type), pour ne pas avoir à connaître la solution.
+- **Difficulté calculée** (plus de champ `difficulty` dans les scènes) : `rateDifficulty(steps)` dans `engine.js` — score = poids de la technique la plus dure (indice 0, case unique 1, ligne réservée 2, position relative 2, seul candidat 3, pièces 3, groupes 5) + 1 par étape difficile (poids ≥ 3) au-delà de la première + 2 s'il n'y a aucun placement direct au départ ; crânes : ≤ 2 → 1, 3–4 → 2, ≥ 5 → 3. Écrit par le build dans `difficulty` et `rating`. Constat de François : une grille sans placement direct au départ est nettement plus dure, même si ses techniques sont simples.
+- **Noms (convention)** : les personnages s'appellent A…, B…, C… dans l'ordre ; la victime prend la lettre suivante (4 personnages → A, B, C, victime D). Identifiants `a`, `b`, `c`… = lettres. Les noms ne s'écrivent plus à la main : ils viennent de `cast.json` (type + lettre). Intro et épilogue utilisent `{victime}` et `{coupable}`. Dans les premières grilles, **A est le plus facile à placer, puis B, puis C** (d'après `humanSolve(...).steps` ; ex æquo = même étape). La lettre est affichée sur chaque pion.
+- Présentation (décision de François) : la **victime est toujours présentée en dernier** (barre des personnages et indices), quel que soit l'ordre du JSON — c'est en la plaçant qu'on démasque le coupable. Une carte d'indices par personnage, mots-clés de la logique en gras (pièce, objet, « à côté », « même ligne »…). Carte de la victime : « **La victime.** (en rouge) Elle était **seule avec son meurtrier**. » — aucun indice de position ; pas de règle du meurtre séparée sous les indices. Pas de légende des couleurs de pièces : la carte suffit. Victoire : tampon « Affaire résolue » posé sur la carte, puis le coupable (révélé seulement à ce moment-là), l'épilogue, « Rejouer » et « Affaire suivante » à la place du dock. Une sauvegarde faite sur une autre version d'une énigme (personnages ou indices changés) est ignorée (`sig`).
+- Appli : accueil (liste des affaires + état), plateau parchemin, dock collant en bas (outils Placer / ✕ Barrer, Annuler, Accuser, barre des personnages), indices avec ✓ « exploité », sélection d'un personnage depuis son indice, **toucher court = lettre au crayon** (plusieurs cases possibles par personnage, `S.pencil`), **appui long 1,5 s = jauge ronde puis placement définitif** (`HOLD_MS`, efface ses lettres ; marche aussi sans sélection sur une case à lettre unique), pion confirmé touché à nouveau = retour au crayon, lettres au crayon petites dans le coin de la case, couleur du personnage (`colorOf`, victime en rouge) ; croix automatiques (calculées, même aspect que les manuelles, y compris sur les meubles) **seulement** sur les lignes/colonnes des personnages confirmés ; personnage choisi → ce que nomment ses indices surligné en bleu (`compatible` : tous les objets du type cité, praticables ou non, ou toute la pièce citée ; jamais les cases déduites — ligne, colonne, voisines) ; la jauge de l'appui long s'affiche dans une bulle au-dessus du doigt (sinon le pouce la cache) ; carte d'indice grisée une fois le personnage confirmé ; croix manuelles via l'outil « Barrer », conflits en rouge, vérification à l'accusation avec indices contredits surlignés, options (ombrage, vérif en direct, recommencer), règles + légende du mobilier, sauvegarde `localStorage` (`grimdoku:p:<id>`, `grimdoku:settings`).
+- **Ordinateur** (largeur ≥ 900 px et souris, `@media (min-width: 900px) and (hover: hover)`) : indices dans une colonne à gauche (collante, défilante, sans titre « Indices ») ; au centre la carte, qui prend toute la hauteur disponible (`calc(100vh - 110px)`), alignée en haut avec les indices et les outils ; le titre de l'affaire et ses crânes sont dans la barre du haut (`.hdtitle`, clic = intro), l'intitulé au-dessus de la carte est masqué ; à droite une colonne verticale d'outils (Placer / Barrer, Annuler, Accuser) puis les règles spéciales — comme le jeu original ; une fois l'affaire résolue, le verdict (coupable, épilogue, Rejouer / Affaire suivante) remplace les outils. On choisit un personnage en cliquant sur sa carte d'indice ; la barre des personnages est masquée. Téléphone inchangé (`.play` en `display: contents`). L'outil Placer/Barrer est jugé superflu par François mais gardé pour l'instant.
+- Appui long : la jauge n'apparaît qu'après `HOLD_DELAY` (250 ms) pour qu'un clic normal ne la montre pas ; placement définitif à `HOLD_MS` (1,5 s) au total.
+- Direction visuelle : nuit violette (#16111d), parchemin, accent bougie (#f0a93a), titres « Pirata One », texte « Alegreya Sans ». Mobilier et personnages **illustrés** (images générées, style BD encrée, `.webp` intégrés au build) ; les SVG restent en secours ; le champ `icon` (emoji) de `cast.json` ne sert plus à l'affichage. Le fichier unique pèse ~850 Ko à cause des images (base64) : à sortir en fichiers séparés mis en cache lors du passage en PWA. Le tapis couvre toute sa case sous le pion ; un pion posé sur un meuble laisse voir le meuble en petit dans le coin.
+- Testé : syntaxe des scripts, et partie complète des 2 énigmes jusqu'à l'accusation via jsdom. Testé sur iPhone 13 mini le 2026-10-16 (en local) : lisible après ajout de doctype/charset/viewport (le template n'en avait pas → texte en mojibake et page non mise à l'échelle).
+
+## 7. Tâche immédiate : mise en ligne
+Servir le jeu sur **https://grimdoku.fcold.org** depuis le **VPS OVH** de François.
+1. Vérifier l'accès SSH au VPS (demander l'alias/hôte s'il n'est pas dans `~/.ssh/config`) et la présence de Docker + compose.
+2. Reconstruire (commande §5), envoyer `deploy/grimdoku/` dans `~/grimdoku` sur le VPS, `docker compose up -d`.
+3. Vérifier `curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:8095/` → 200.
+4. Cloudflare : vérifier si `cloudflared` tourne sur le VPS (`systemctl status cloudflared`).
+   - Oui : ajouter la Public Hostname `grimdoku.fcold.org` → `http://localhost:8095` (via API si François fournit un token avec Tunnel Edit + DNS Edit, sinon lui dire exactement quoi cliquer dans Zero Trust → Networks → Tunnels).
+   - Non : le guider pour créer un tunnel « ovh » et installer le connecteur (`cloudflared service install <token>`).
+   - **N'ouvrir aucun port** sur le VPS.
+5. Tester l'URL publique, faire un récap court.
+6. Ne rien modifier d'autre sur le VPS sans demander.
+
+## 8. Feuille de route
+1. ✅ Format JSON + mécaniques v1.
+2. ✅ Prototype jouable (2 énigmes). → En attente des retours de François sur iPhone 13 mini (taille des cases, lisibilité des noms de pièces, gestes).
+3. Générateur complet : générer aussi les **plans** (pièces, mobilier) et pas seulement les indices ; plusieurs indices par personnage (format, build et affichage prêts ; reste à les générer) ; ✅ noms par lettre (`cast.json`) ; textes d'indices générés depuis `logic` avec gabarits humoristiques, puis relus ; notation de difficulté (niveau humain requis, nombre d'étapes).
+4. Premier **pack de 20 énigmes**, difficulté progressive.
+5. **PWA** : sortir l'appli du fichier unique (fichiers séparés, `manifest.webmanifest`, service worker hors ligne, icônes), packs JSON chargés à la demande.
+6. Vrais visuels (remplacer les emojis), sons éventuels.
+7. **Play Store** : TWA (Bubblewrap + `assetlinks.json`) ou Capacitor. Compte développeur Google ; vérifier les exigences de test fermé au moment voulu.
+
+## 9. Conventions
+- **Ne jamais révéler le coupable ni la solution d'une énigme** dans les réponses (récaps, changelogs, sorties de build) : François y joue aussi. Seulement s'il le demande explicitement (« donne-moi la solution »).
+- JS vanilla, pas de framework ; Node pour les outils (`node --test` pour les tests à ajouter : moteur, solveurs, générateur).
+- Toute énigme publiée doit passer : **solution unique** (`solve` = 1) ET **résoluble par `humanSolve`** au niveau de sa difficulté.
+- À chaque changement de règle ou de mécanique : synchroniser mot pour mot l'écran des règles de l'appli et ce fichier, sans attendre qu'on le demande.
+- Changelog en 4 blocs : Fonctionnalités / Corrections / Technique / Vérification-déploiement.
+- Toujours donner les commandes de build + déploiement à chaque livraison.

@@ -1,0 +1,1 @@
+node -e 'let d="";process.stdin.on("data",x=>d+=x).on("end",()=>{const j=JSON.parse(d);console.log(j.nSolutions,"L2:",j.needsL2,j.murderer,JSON.stringify(j.positions));j.clues.forEach(c=>console.log(" ",c.who,JSON.stringify(c.logic)))})'

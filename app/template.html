@@ -1,0 +1,752 @@
+<!doctype html>
+<html lang="fr">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Grimdoku</title>
+<meta name="theme-color" content="#16111d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap">
+<style>
+/* Layout : appli une colonne. Carte-parchemin (la grille) posée sur une table de taverne la nuit,
+   barre des personnages collée en bas sous le pouce, indices en dessous. Thème sombre unique, assumé. */
+:root {
+  color-scheme: dark;
+  --night: #16111d;        /* fond : encre violette */
+  --board: #221a2b;        /* surfaces */
+  --board-2: #2d2337;
+  --line: #3d3148;
+  --fg: #efe6d6;           /* texte principal */
+  --muted: #a99bb4;
+  --candle: #f0a93a;       /* accent : flamme de bougie */
+  --candle-ink: #2a1a05;
+  --parch: #ead9b5;        /* parchemin */
+  --ink: #2b2016;          /* encre sur parchemin */
+  --ink-soft: rgba(43, 32, 22, .16);
+  --blood: #e2574c;
+  --ok: #86c98f;
+  --r0: #e8d39f; --r1: #c9d9a4; --r2: #b4d0d2; --r3: #dcbcd2;
+  --r4: #ecbf9c; --r5: #c3c0e6; --r6: #d9d1b4; --r7: #bcd6b9;
+  --f-display: "Pirata One", "Luminari", "Papyrus", Georgia, serif;
+  --f-body: "Alegreya Sans", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --radius: 10px;
+}
+html, body { background: var(--night); color: var(--fg); }
+body {
+  font-family: var(--f-body); font-size: 16px; line-height: 1.4;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  -webkit-tap-highlight-color: transparent;
+  background:
+    radial-gradient(120% 60% at 50% -10%, #2f2340 0%, transparent 60%),
+    var(--night);
+  min-height: 100%;
+}
+button { font: inherit; color: inherit; touch-action: manipulation; cursor: pointer; }
+button:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--candle); outline-offset: 2px; }
+.wrap { max-width: 520px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; padding-block: 12px 24px; }
+
+/* ---------- en-tête ---------- */
+header.top { display: flex; align-items: center; gap: 10px; }
+.brand { font-family: var(--f-display); font-size: 30px; line-height: 1; letter-spacing: .5px; color: var(--candle); margin: 0; }
+.brand small { display: block; font-family: var(--f-body); font-size: 12px; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; margin-top: 4px; }
+.top .spacer { flex: 1; }
+.iconbtn { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: var(--board); display: grid; place-items: center; font-size: 18px; }
+
+/* ---------- accueil ---------- */
+.lead { color: var(--muted); margin: 0; max-width: 60ch; }
+.cases { display: flex; flex-direction: column; gap: 10px; }
+.case {
+  display: grid; grid-template-columns: 56px 1fr auto; gap: 12px; align-items: center; text-align: left;
+  background: var(--board); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px;
+}
+.case .seal { width: 56px; height: 56px; border-radius: 8px; background: var(--parch); display: grid; place-items: center; font-size: 30px; }
+.case h3 { font-family: var(--f-display); font-weight: 400; font-size: 22px; margin: 0; line-height: 1.05; text-wrap: balance; }
+.case .meta { font-size: 13px; color: var(--muted); margin-top: 3px; }
+.case .state { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; padding: 4px 8px; border-radius: 99px; background: var(--board-2); color: var(--muted); }
+.case .state.done { background: rgba(134, 201, 143, .15); color: var(--ok); }
+.skulls { letter-spacing: 1px; }
+
+/* ---------- jeu ---------- */
+.casehead h2 { font-family: var(--f-display); font-weight: 400; font-size: 28px; margin: 0; line-height: 1; text-wrap: balance; }
+.casehead p { margin: 6px 0 0; color: var(--muted); font-size: 15px; }
+.casehead details summary { list-style: none; color: var(--candle); font-size: 14px; cursor: pointer; margin-top: 6px; }
+.casehead details summary::-webkit-details-marker { display: none; }
+
+.board {
+  --n: 6;
+  container-type: inline-size;
+  width: 100%; max-width: 100%;
+  display: grid; grid-template-columns: repeat(var(--n), 1fr);
+  border: 3px solid var(--ink); border-radius: 6px; overflow: hidden;
+  background: var(--parch);
+  box-shadow: 0 10px 30px rgba(0,0,0,.45), 0 0 0 6px #3a2c1f, 0 0 0 7px #5a4530;
+  margin: 8px 7px 4px; width: calc(100% - 14px);
+  user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;
+}
+.cell {
+  position: relative; aspect-ratio: 1; border: 0; padding: 0; margin: 0;
+  background: var(--room); color: var(--ink);
+  border-top: 1px solid var(--ink-soft); border-left: 1px solid var(--ink-soft);
+  display: grid; place-items: center; overflow: visible;
+  font-size: calc(100cqw / var(--n) * .5);
+}
+.cell.wt { border-top: 3px solid var(--ink); }
+.cell.wl { border-left: 3px solid var(--ink); }
+.cell.r0 { border-top-color: transparent; }
+.cell.c0 { border-left-color: transparent; }
+.cell.block::before {
+  content: ""; position: absolute; inset: 12%; border-radius: 6px;
+  background: rgba(43, 32, 22, .14); border: 1px dashed rgba(43, 32, 22, .35);
+}
+.cell .obj { position: relative; width: 78%; aspect-ratio: 1; display: block; }
+.ico { display: block; width: 100%; height: 100%; }
+.face { position: absolute; inset: 0; border-radius: 50%; overflow: hidden; display: block; }
+.portrait { display: block; width: 100%; height: 100%; }
+.seal, .verdict .em { position: relative; }
+.cell.tapis .obj, .cell.tapis.has-char .obj { position: absolute; inset: 4%; width: auto; z-index: 0; } /* le tapis couvre la case, sous le pion */
+.cell.portal .obj { filter: drop-shadow(0 0 4px rgba(60, 170, 255, .9)); animation: spin 8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.cell.has-char .obj { position: absolute; right: 3%; bottom: 3%; width: 38%; z-index: 4; animation: none; }
+.cell .roomlabel {
+  position: absolute; top: 2px; left: 3px; z-index: 2; pointer-events: none;
+  font-size: 9px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap;
+  color: rgba(43, 32, 22, .72); line-height: 1;
+}
+.cell .mark { position: absolute; inset: 0; z-index: 4; display: grid; place-items: center; color: var(--ink); font-size: 1.2em; font-weight: 700; line-height: 1; pointer-events: none; }
+/* lettres au crayon : dans le coin, couleur du personnage, le meuble reste visible */
+.pencils { position: absolute; top: 3%; left: 4%; right: 4%; z-index: 3; display: flex; flex-wrap: wrap; gap: 0 .12em; pointer-events: none; }
+.pencil {
+  color: var(--cc); font: 800 .78em/1 var(--f-body);
+  -webkit-text-stroke: .09em var(--ink); paint-order: stroke fill;
+}
+.pencils.many .pencil { font-size: .55em; }
+.pencil.sel { text-decoration: underline; text-decoration-color: var(--candle); text-decoration-thickness: .12em; }
+.charge {
+  position: fixed; z-index: 50; width: var(--s); height: var(--s); display: grid; place-items: center; pointer-events: none;
+  background: var(--parch); border-radius: 50%; box-shadow: 0 0 0 2px var(--ink), 0 8px 24px rgba(0,0,0,.5);
+}
+.charge svg { position: absolute; inset: 5%; width: 90%; height: 90%; transform: rotate(-90deg); }
+.charge circle { fill: none; stroke-width: 3.5; }
+.charge .track { stroke: rgba(43, 32, 22, .25); }
+.charge .fill { stroke: var(--cc, var(--candle)); stroke-linecap: round; stroke-dasharray: 100; stroke-dashoffset: 100; animation: charge var(--fill, 1.25s) linear forwards; }
+.charge b { color: var(--cc); font: 800 calc(var(--s) * .45)/1 var(--f-body); -webkit-text-stroke: .09em var(--ink); paint-order: stroke fill; }
+@keyframes charge { to { stroke-dashoffset: 0; } }
+.token {
+  position: relative; z-index: 3; width: 78%; aspect-ratio: 1; border-radius: 50%;
+  display: grid; place-items: center; line-height: 1; font-size: .95em;
+  background: #fff8e8; box-shadow: 0 2px 0 rgba(0,0,0,.25), 0 0 0 2px var(--ink);
+}
+.token.victim { box-shadow: 0 2px 0 rgba(0,0,0,.25), 0 0 0 2px var(--blood); background: #ffe9e4; }
+.token.sel { box-shadow: 0 0 0 3px var(--candle), 0 0 12px var(--candle); }
+.token.bad { box-shadow: 0 0 0 3px var(--blood); animation: wobble .4s; }
+@keyframes wobble { 25% { transform: rotate(-8deg); } 75% { transform: rotate(8deg); } }
+.cell.hint::after { content: ""; position: absolute; inset: 0; background: rgba(90, 150, 255, .38); box-shadow: inset 0 0 0 2px rgba(50, 110, 230, .85); pointer-events: none; }
+
+
+.special { background: var(--board); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 12px; font-size: 14px; display: flex; flex-direction: column; gap: 4px; }
+.special b { color: var(--candle); font-weight: 500; }
+
+/* outils + personnages : collés en bas */
+.dock {
+  position: sticky; bottom: 0; z-index: 5;
+  margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px)));
+  padding: 8px max(16px, env(safe-area-inset-right, 0px)) calc(8px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+  background: rgba(22, 17, 29, .94); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border-top: 1px solid var(--line);
+  display: flex; flex-direction: column; gap: 8px;
+}
+.tools { display: flex; gap: 6px; align-items: center; }
+.seg { display: inline-flex; background: var(--board); border: 1px solid var(--line); border-radius: 99px; padding: 2px; }
+.seg button { border: 0; background: transparent; padding: 6px 12px; border-radius: 99px; font-size: 14px; color: var(--muted); min-height: 34px; }
+.seg button[aria-pressed="true"] { background: var(--board-2); color: var(--fg); }
+.tools .spacer { flex: 1; }
+.tbtn .lbl { display: none; }
+.hdtitle { display: none; } /* titre de l'affaire dans la barre du haut : ordinateur seulement */
+.tbtn { border: 1px solid var(--line); background: var(--board); border-radius: 99px; min-width: 38px; height: 38px; padding: 0 10px; font-size: 15px; }
+.tbtn:disabled { opacity: .4; }
+.accuse { background: var(--candle); color: var(--candle-ink); border: 0; font-weight: 700; border-radius: 99px; height: 38px; padding: 0 14px; }
+.accuse:disabled { background: var(--board-2); color: var(--muted); }
+.tray { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+.tray::-webkit-scrollbar { display: none; }
+.chip {
+  flex: 0 0 auto; display: flex; align-items: center; gap: 6px; border: 1px solid var(--line); background: var(--board);
+  border-radius: 99px; padding: 4px 10px 4px 4px; min-height: 44px; font-size: 14px;
+}
+.chip .em { width: 34px; height: 34px; border-radius: 50%; background: #fff8e8; display: grid; place-items: center; font-size: 22px; line-height: 1; }
+.chip.victim .em { background: #ffe9e4; box-shadow: 0 0 0 2px var(--blood); }
+.chip[aria-pressed="true"] { border-color: var(--candle); box-shadow: 0 0 0 1px var(--candle) inset; }
+.chip.placed { opacity: .5; }
+.chip.placed[aria-pressed="true"] { opacity: 1; }
+
+/* indices */
+.clues { display: flex; flex-direction: column; gap: 8px; }
+.clues h3, .sect { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin: 6px 0 0; font-weight: 500; }
+.clue {
+  display: grid; grid-template-columns: 44px 1fr 36px; gap: 10px; align-items: start;
+  background: var(--board); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px;
+}
+.clue .em { width: 44px; height: 44px; border-radius: 50%; background: #fff8e8; display: grid; place-items: center; font-size: 26px; border: 0; padding: 0; }
+.clue.victim .em { background: #ffe9e4; box-shadow: 0 0 0 2px var(--blood); }
+.clue .who { font-weight: 700; }
+.clue .who small { font-weight: 400; color: var(--muted); font-style: italic; }
+.lead-victim { color: var(--blood); }
+.clue p { margin: 2px 0 0; min-width: 0; }
+.clue .tick { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); background: transparent; color: var(--muted); font-size: 16px; }
+.clue.done, .clue.placed { opacity: .5; }
+.clue.done p { text-decoration: line-through; text-decoration-color: var(--muted); }
+.clue.done .tick { background: var(--board-2); color: var(--ok); }
+.clue.violated { border-color: var(--blood); }
+.clue.violated .tick { border-color: var(--blood); color: var(--blood); }
+.clue.sel { border-color: var(--candle); }
+
+.toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(150px + env(safe-area-inset-bottom, 0px)); z-index: 30;
+  background: var(--board-2); border: 1px solid var(--line); color: var(--fg); padding: 10px 14px; border-radius: 12px; font-size: 14px; max-width: min(90vw, 420px); text-align: center; box-shadow: 0 8px 24px rgba(0,0,0,.4); }
+.toast.bad { border-color: var(--blood); }
+
+/* fenêtres */
+.overlay { position: fixed; inset: 0; z-index: 40; background: rgba(8, 5, 12, .7); display: grid; place-items: end center;
+  padding: 0 max(12px, env(safe-area-inset-right, 0px)) calc(12px + env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px)); }
+.sheet { width: 100%; max-width: 520px; max-height: 85vh; overflow-y: auto; background: var(--board); border: 1px solid var(--line); border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 10px; }
+.sheet h2 { font-family: var(--f-display); font-weight: 400; font-size: 28px; margin: 0; color: var(--candle); line-height: 1; }
+.sheet p, .sheet li { margin: 0; font-size: 15px; }
+.sheet ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+.sheet .row { display: flex; gap: 8px; justify-content: flex-end; flex-wrap: wrap; margin-top: 6px; }
+.btn { border: 1px solid var(--line); background: var(--board-2); border-radius: 99px; padding: 10px 16px; min-height: 44px; }
+.btn.primary { background: var(--candle); color: var(--candle-ink); border: 0; font-weight: 700; }
+.objgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 6px; font-size: 14px; }
+.objgrid span { display: flex; gap: 6px; align-items: center; }
+.objgrid em { width: 28px; height: 28px; flex: none; }
+.objgrid .tag { font-size: 11px; color: var(--muted); }
+.verdict { display: flex; align-items: center; gap: 12px; }
+.verdictcard { background: var(--board); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+.verdictcard p { margin: 0; }
+.verdictcard .why { color: var(--muted); }
+.verdictcard .row { display: flex; gap: 8px; justify-content: flex-end; flex-wrap: wrap; }
+.boardwrap { position: relative; }
+
+/* ---------- ordinateur : indices à gauche, carte et outils à droite ---------- */
+.play { display: contents; } /* sur téléphone : une seule colonne, comme avant */
+@media (min-width: 900px) and (hover: hover) {
+  #app.game {
+    max-width: 1440px; display: grid; gap: 14px 28px; align-items: start;
+    grid-template-columns: minmax(300px, 400px) minmax(0, 1fr);
+    grid-template-areas: "top top" "clues play";
+  }
+  #app.game > header.top { grid-area: top; }
+  #app.game > .clues {
+    grid-area: clues; position: sticky; top: 12px;
+    max-height: calc(100vh - 24px); overflow-y: auto; padding-right: 4px;
+  }
+  #app.game > .clues h3 { display: none; } /* carte, outils et indices alignés en haut */
+  #app.game .casehead { display: none; }     /* titre déplacé dans la barre du haut */
+  #app.game .hdtitle {
+    display: inline-flex; align-items: center; gap: 8px; border: 0; background: none; padding: 4px 6px;
+    font-family: var(--f-display); font-size: 24px; line-height: 1; color: var(--fg);
+  }
+  #app.game .hdtitle .skulls { font-family: var(--f-body); font-size: 15px; }
+  #app.game .hdtitle:hover { color: var(--candle); }
+  /* carte à gauche (toute la hauteur), outils puis règles spéciales dans une colonne à droite ;
+     une fois l'affaire résolue, le verdict remplace les outils */
+  #app.game > .play {
+    grid-area: play; display: grid; gap: 14px 16px; align-items: start; justify-content: center;
+    grid-template-columns: minmax(300px, calc(100vh - 110px)) 230px;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "board tools" "board special";
+  }
+  #app.game .boardwrap { grid-area: board; }
+  #app.game .special { grid-area: special; }
+  #app.game .dock, #app.game .verdictcard { grid-area: tools; }
+  #app.game .dock {
+    position: static; margin-inline: 0; padding: 10px; backdrop-filter: none; -webkit-backdrop-filter: none;
+    background: var(--board); border: 1px solid var(--line); border-radius: var(--radius);
+  }
+  #app.game .tools { flex-direction: column; align-items: stretch; gap: 8px; }
+  #app.game .tools .spacer { display: none; }
+  #app.game .seg { flex-direction: column; border-radius: 12px; }
+  #app.game .seg button { border-radius: 10px; }
+  #app.game .tbtn, #app.game .accuse { width: 100%; height: 42px; border-radius: 12px; }
+  #app.game .tbtn .lbl { display: inline; }
+  #app.game .verdictcard .row { justify-content: stretch; }
+  #app.game .verdictcard .row .btn { flex: 1; }
+  /* on choisit un personnage en cliquant sur sa carte d'indice : la barre ferait doublon */
+  #app.game .tray { display: none; }
+  #app.game .clue { cursor: pointer; }
+  #app.game .clue:hover { border-color: var(--muted); }
+}
+.stamp { position: absolute; inset: 0; z-index: 5; display: grid; place-items: center; background: rgba(22, 17, 29, .35); border-radius: 6px; }
+.stamp span {
+  font-family: var(--f-display); font-size: clamp(40px, 15vw, 72px); line-height: .9; text-align: center; color: var(--blood);
+  border: 5px solid currentColor; border-radius: 12px; padding: 8px 18px; transform: rotate(-14deg);
+  background: rgba(234, 217, 181, .88); box-shadow: 0 6px 24px rgba(0,0,0,.45); animation: stamp .35s cubic-bezier(.2, 1.6, .5, 1);
+}
+@keyframes stamp { from { transform: rotate(-14deg) scale(2.2); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .stamp span { animation: none; } }
+.token, .clue .em, .chip .em { position: relative; }
+.letter {
+  position: absolute; top: -3px; left: -3px; min-width: 15px; height: 15px; padding: 0 2px; border-radius: 99px;
+  background: var(--cc, var(--ink)); color: #fff; font: 700 10px/15px var(--f-body); text-align: center; letter-spacing: 0;
+}
+.clue p b { color: var(--fg); }
+.verdict .em { width: 64px; height: 64px; border-radius: 50%; background: #fff8e8; display: grid; place-items: center; font-size: 40px; box-shadow: 0 0 0 3px var(--blood); }
+.verdict b { font-family: var(--f-display); font-weight: 400; font-size: 30px; line-height: 1; }
+.toggle { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+.toggle input { width: 22px; height: 22px; accent-color: var(--candle); }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
+
+<div class="wrap" id="app"></div>
+<!--__SPRITE__-->
+<div id="layer"></div>
+
+<script>
+/*__ENGINE__*/
+</script>
+<script>
+const PUZZLES = /*__PUZZLES__*/;
+(function () {
+  'use strict';
+  const E = window.GrimEngine;
+  const $app = document.getElementById('app');
+  const $layer = document.getElementById('layer');
+  const esc = (s) => String(s).replace(/[&<>"]/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch]));
+  const store = {
+    get(k, d) { try { const v = localStorage.getItem('grimdoku:' + k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
+    set(k, v) { try { localStorage.setItem('grimdoku:' + k, JSON.stringify(v)); } catch (e) {} }
+  };
+  const settings = Object.assign({ shade: true, live: false }, store.get('settings', {}));
+  const skulls = (d) => '💀'.repeat(d) + '<span style="opacity:.25">' + '💀'.repeat(Math.max(0, 3 - d)) + '</span>';
+
+  let P = null, ctx = null, S = null, undo = [], selected = null, mode = 'place', toastT = null;
+
+  // ---------- accueil ----------
+  function home() {
+    P = null;
+    $app.classList.remove('game');
+    $app.innerHTML = `
+      <header class="top">
+        <h1 class="brand">Grimdoku<small>Meurtres en terres enchantées</small></h1>
+        <span class="spacer"></span>
+        <button class="iconbtn" id="rulesBtn" aria-label="Règles">?</button>
+      </header>
+      <p class="lead">Place chaque suspect sur la carte grâce aux indices. Une personne par ligne, une par colonne. Le coupable est celui qui était seul avec la victime.</p>
+      <div class="sect">Affaires en cours</div>
+      <div class="cases">${PUZZLES.map(p => {
+        const st = store.get('p:' + p.id, null);
+        const done = st && st.solved;
+        const started = st && Object.keys(st.pos || {}).length;
+        const v = p.characters.find(c => c.role === 'victim');
+        return `<button class="case" data-id="${p.id}">
+          <span class="seal" aria-hidden="true">${face(v)}</span>
+          <span><h3>${esc(p.title)}</h3><span class="meta"><span class="skulls">${skulls(p.difficulty)}</span> · ${p.size}×${p.size} · ${p.characters.length - 1} suspects</span></span>
+          <span class="state ${done ? 'done' : ''}">${done ? 'Résolue' : started ? 'En cours' : 'Nouvelle'}</span>
+        </button>`;
+      }).join('')}</div>`;
+    $app.querySelectorAll('.case').forEach(b => b.onclick = () => open(b.dataset.id));
+    document.getElementById('rulesBtn').onclick = rules;
+  }
+
+  // ---------- partie ----------
+  // signature d'une énigme : une sauvegarde faite sur une autre version est ignorée
+  const blank = () => ({ pos: {}, pencil: {}, marks: [], done: [], solved: false, sig: sigOf(P) });
+  const sigOf = (p) => p.characters.map(c => c.id + ':' + c.name).join('|') + '#' + p.clues.length;
+  function open(id) {
+    P = PUZZLES.find(p => p.id === id);
+    ctx = E.prepare(P);
+    S = store.get('p:' + id, null);
+    if (!S || S.sig !== sigOf(P)) S = blank();
+    S.pencil = S.pencil || {};
+    undo = []; selected = null; mode = 'place';
+    render();
+    window.scrollTo(0, 0);
+  }
+  const save = () => store.set('p:' + P.id, S);
+  const HOLD_MS = 1500;  // appui long : placement définitif au bout de HOLD_MS
+  const HOLD_DELAY = 250; // la jauge n'apparaît qu'après ce délai (un clic normal ne la montre pas)
+  // une couleur par personnage (lettres au crayon, pastilles) ; la victime en rouge
+  const PALETTE = ['#b5562e', '#3f8a3a', '#2f7f86', '#6a4c9c', '#b8862a', '#3d6db5', '#8a6a4a', '#9c4a7a'];
+  const colorOf = (ch) => ch.role === 'victim' ? 'var(--blood)' : PALETTE[P.characters.indexOf(ch) % PALETTE.length];
+  // ce que nomment les indices du personnage : chaque objet du type cité (praticable ou non), ou la pièce citée.
+  // Pas de cases déduites (ligne, colonne, voisines) : ce serait trop facile.
+  function compatible(id) {
+    const out = new Set();
+    for (const cl of P.clues) {
+      if (cl.who !== id) continue;
+      const L = cl.logic;
+      if (L.object) P.objects.filter(o => o.type === L.object).forEach(o => out.add(o.at.join(',')));
+      if (L.room) for (let r = 0; r < P.size; r++) for (let c = 0; c < P.size; c++) if (P.layout[r][c] === L.room) out.add(r + ',' + c);
+    }
+    return out;
+  }
+  // portrait d'un personnage (assets/characters), découpé en rond ; l'emoji ne sert plus qu'en secours
+  const face = (ch) => `<span class="face"><svg class="portrait" role="img" aria-label="${esc(ch.name)}"><use href="#chr-${ch.archetype}"/></svg></span>`;
+  const ico = (type) => `<svg class="ico"><use href="#obj-${type}"/></svg>`;
+  const letterOf = (ch) => ch.name.normalize('NFD')[0].toUpperCase();
+  // met en gras, dans le texte d'un indice, les mots qui portent sa logique
+  function emph(cl) {
+    const L = cl.logic, terms = [];
+    const obj = L.object && E.OBJECTS[L.object];
+    if (obj) terms.push(obj.name);
+    if (L.room) terms.push(P.rooms[L.room].name);
+    if (L.other) terms.push(ctx.chars[L.other].name);
+    terms.push({ adjacentTo: 'à côté', notAdjacentTo: 'à côté', sameRowAs: 'même ligne', sameColAs: 'même colonne', sameRoomAs: 'même pièce', alone: 'seule?',
+      northOf: 'au nord', southOf: 'au sud', eastOf: "à l'est", westOf: "à l'ouest" }[L.type] || '');
+    if (L.type.startsWith('not')) terms.push('pas');
+    const pats = terms.filter(Boolean).map(t => t === 'seule?' ? 'seule?' : esc(t).replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+    if (!pats.length) return esc(cl.text);
+    return esc(cl.text).replace(new RegExp(`(?<!\\p{L})(${pats.join('|')})(?!\\p{L})`, 'giu'), '<b>$1</b>');
+  }
+  const snapshot = () => { undo.push(JSON.stringify(S)); if (undo.length > 100) undo.shift(); };
+  const charAt = (r, c) => Object.keys(S.pos).find(id => S.pos[id][0] === r && S.pos[id][1] === c);
+  const roomIdx = (k) => Object.keys(P.rooms).indexOf(k);
+
+  function conflicts() {
+    const bad = new Set();
+    for (const e of E.checkPlacement(P, S.pos)) e.ids.forEach(i => bad.add(i));
+    return bad;
+  }
+  function violated() {
+    const out = new Set();
+    P.clues.forEach((cl, i) => {
+      const t = cl.logic.type;
+      // un indice qui cite un autre personnage (même pièce, nord/sud/est/ouest) attend qu'il soit placé aussi
+      const need = [cl.who].concat(cl.logic.other ? [cl.logic.other] : []);
+      if (t === 'alone') { if (Object.keys(S.pos).length < P.characters.length) return; }
+      else if (!need.every(id => S.pos[id])) return;
+      if (!E.evalClue(ctx, cl, S.pos)) out.add(i);
+    });
+    return out;
+  }
+
+  function render() {
+    $app.classList.add('game');
+    const n = P.size;
+    const bad = conflicts();
+    const viol = settings.live ? violated() : new Set();
+    // lignes et colonnes condamnées : celles des personnages confirmés (pas des lettres au crayon)
+    const hints = selected ? compatible(selected) : null;
+    const usedR = new Set(), usedC = new Set();
+    Object.values(S.pos).forEach(([r, c]) => { usedR.add(r); usedC.add(c); });
+    const labelled = new Set();
+    let cells = '';
+    for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) {
+      const room = P.layout[r][c];
+      const o = ctx.objAt[r + ',' + c];
+      const def = o && E.OBJECTS[o.type];
+      const who = charAt(r, c);
+      const ch = who && ctx.chars[who];
+      const cls = ['cell', 'r' + r, 'c' + c];
+      if (r > 0 && P.layout[r - 1][c] !== room) cls.push('wt');
+      if (c > 0 && P.layout[r][c - 1] !== room) cls.push('wl');
+      if (o && o.type === 'tapis') cls.push('tapis');
+      if (def && def.blocking) cls.push('block');
+      if (o && o.type === 'portail') cls.push('portal');
+      if (who) cls.push('has-char');
+      const pens = who ? [] : P.characters.filter(x => (S.pencil[x.id] || []).includes(r + ',' + c));
+      if (hints && hints.has(r + ',' + c)) cls.push('hint');
+      let label = '';
+      if (!labelled.has(room)) { labelled.add(room); label = `<span class="roomlabel">${esc(P.rooms[room].name)}</span>`; }
+      const objHtml = def ? `<span class="obj" aria-hidden="true">${ico(o.type)}</span>` : '';
+      const tok = ch ? `<span class="token ${ch.role === 'victim' ? 'victim' : ''} ${selected === who ? 'sel' : ''} ${bad.has(who) ? 'bad' : ''}">${face(ch)}<span class="letter" style="--cc:${colorOf(ch)}">${letterOf(ch)}</span></span>` : '';
+      const pencils = pens.length ? `<span class="pencils ${pens.length > 1 ? 'many' : ''}">${pens.map(x => `<span class="pencil ${selected === x.id ? 'sel' : ''}" style="--cc:${colorOf(x)}">${letterOf(x)}</span>`).join('')}</span>` : '';
+      const mark = who ? ''
+        : S.marks.includes(r + ',' + c) || (settings.shade && (usedR.has(r) || usedC.has(c))) ? '<span class="mark">✕</span>' : '';
+      const aria = `${P.rooms[room].name}, ligne ${r + 1}, colonne ${c + 1}${def ? ', ' + def.name : ''}${ch ? ', ' + ch.name : ''}`;
+      cells += `<button class="${cls.join(' ')}" style="--room: var(--r${roomIdx(room) % 8})" data-r="${r}" data-c="${c}" aria-label="${esc(aria)}">${label}${objHtml}${tok}${pencils}${mark}</button>`;
+    }
+
+    const specials = [];
+    if (P.characters.some(c => (c.traits || []).includes('spectre')))
+      specials.push(`<span><b>👻 Spectre</b> : peut se tenir sur les meubles bloquants (tables, statues…). Il respecte quand même lignes et colonnes.</span>`);
+    const links = {};
+    P.objects.filter(o => o.type === 'portail').forEach(o => (links[o.link] = links[o.link] || []).push(P.rooms[P.layout[o.at[0]][o.at[1]]].name));
+    Object.values(links).forEach(l => specials.push(`<span><b>🌀 Portail</b> : ${esc(l[0])} et ${esc(l[1])} comptent comme une seule pièce.</span>`));
+
+    // la victime est toujours présentée en dernier : c'est en la plaçant qu'on démasque le coupable
+    const lastIfVictim = (a, b) => (a.role === 'victim') - (b.role === 'victim');
+    const cast = [...P.characters].sort(lastIfVictim);
+    // une carte par personnage, dans l'ordre A, B, C… (ses indices bout à bout)
+    const cards = cast.map(ch => ({ ch, items: P.clues.map((cl, i) => ({ cl, i })).filter(x => x.cl.who === ch.id) })).filter(x => x.items.length || x.ch.role === 'victim');
+    const allPlaced = Object.keys(S.pos).length === P.characters.length;
+    $app.innerHTML = `
+      <header class="top">
+        <button class="iconbtn" id="back" aria-label="Retour aux affaires">‹</button>
+        <button class="hdtitle" id="introBtn" aria-label="Lire l'affaire">${esc(P.title)} <span class="skulls">${skulls(P.difficulty)}</span></button>
+        <span class="spacer"></span>
+        <button class="iconbtn" id="opts" aria-label="Options">⚙︎</button>
+        <button class="iconbtn" id="rulesBtn" aria-label="Règles">?</button>
+      </header>
+      <div class="play">
+      <div class="casehead">
+        <h2>${esc(P.title)}</h2>
+        <details><summary>L'affaire <span class="skulls">${skulls(P.difficulty)}</span></summary><p>${esc(P.intro)}</p></details>
+      </div>
+      <div class="boardwrap">
+        <div class="board" id="board" style="--n:${n}">${cells}</div>
+        ${S.solved ? `<div class="stamp" aria-hidden="true"><span>Affaire<br>résolue</span></div>` : ''}
+      </div>
+      ${specials.length ? `<div class="special">${specials.join('')}</div>` : ''}
+      ${S.solved ? verdictHtml() : `<div class="dock">
+        <div class="tools">
+          <div class="seg" role="group" aria-label="Outil">
+            <button id="mPlace" aria-pressed="${mode === 'place'}">Placer</button>
+            <button id="mMark" aria-pressed="${mode === 'mark'}">✕ Barrer</button>
+          </div>
+          <span class="spacer"></span>
+          <button class="tbtn" id="undo" aria-label="Annuler" ${undo.length ? '' : 'disabled'}>↶<span class="lbl"> Annuler</span></button>
+          <button class="accuse" id="accuse" ${allPlaced ? '' : 'disabled'}>Accuser</button>
+        </div>
+        <div class="tray" id="tray">${cast.map(ch => `
+          <button class="chip ${ch.role === 'victim' ? 'victim' : ''} ${S.pos[ch.id] ? 'placed' : ''}" data-id="${ch.id}" aria-pressed="${selected === ch.id}">
+            <span class="em" aria-hidden="true">${face(ch)}<span class="letter" style="--cc:${colorOf(ch)}">${letterOf(ch)}</span></span>${esc(ch.name)}
+          </button>`).join('')}</div>
+      </div>`}
+      </div>
+      <div class="clues">
+        <h3>Indices</h3>
+        ${cards.map(({ ch, items }) => {
+          const idx = items.map(x => x.i);
+          const done = idx.length > 0 && idx.every(i => S.done.includes(i));
+          const text = items.map(x => emph(x.cl)).join(' ');
+          return `<div class="clue ${ch.role === 'victim' ? 'victim' : ''} ${done ? 'done' : ''} ${S.pos[ch.id] ? 'placed' : ''} ${idx.some(i => viol.has(i)) ? 'violated' : ''} ${selected === ch.id ? 'sel' : ''}">
+            <button class="em" data-pick="${ch.id}" aria-label="Sélectionner ${esc(ch.name)}">${face(ch)}<span class="letter" style="--cc:${colorOf(ch)}">${letterOf(ch)}</span></button>
+            <div style="min-width:0"><div class="who">${esc(ch.name)} <small>${esc(ch.desc || '')}</small></div>${ch.role === 'victim'
+              ? `<p><b class="lead-victim">La victime.</b> ${text ? text + ' ' : ''}Elle était <b>seule avec son meurtrier</b>.</p>`
+              : `<p>${text}</p>`}</div>
+            ${idx.length ? `<button class="tick" data-done="${idx.join(',')}" aria-label="Marquer comme utilisé" aria-pressed="${done}">✓</button>` : ''}
+          </div>`;
+        }).join('')}
+      </div>`;
+    bind();
+    if (S.solved && !render.shownWin) { /* rien : la victoire s'affiche à l'accusation */ }
+  }
+
+  function bind() {
+    document.getElementById('back').onclick = home;
+    document.getElementById('rulesBtn').onclick = rules;
+    document.getElementById('opts').onclick = options;
+    document.getElementById('introBtn').onclick = () => sheet(`<h2>${esc(P.title)}</h2><p>${esc(P.intro)}</p><div class="row"><button class="btn primary" data-close>À l'enquête</button></div>`);
+    document.querySelectorAll('.clue').forEach(card => card.addEventListener('click', (e) => {
+      if (e.target.closest('button')) return;
+      const b = card.querySelector('[data-pick]'); if (b) pick(b.dataset.pick);
+    }));
+    document.querySelectorAll('[data-done]').forEach(b => b.onclick = () => {
+      const idx = b.dataset.done.split(',').map(Number); snapshot();
+      S.done = idx.every(i => S.done.includes(i)) ? S.done.filter(x => !idx.includes(x)) : [...new Set(S.done.concat(idx))]; save(); render();
+    });
+    if (S.solved) return bindVerdict();
+    document.getElementById('mPlace').onclick = () => { mode = 'place'; render(); };
+    document.getElementById('mMark').onclick = () => { mode = 'mark'; selected = null; render(); };
+    document.getElementById('undo').onclick = () => { if (!undo.length) return; S = JSON.parse(undo.pop()); save(); render(); };
+    document.getElementById('accuse').onclick = accuse;
+    document.querySelectorAll('.chip').forEach(b => b.onclick = () => pick(b.dataset.id));
+    document.querySelectorAll('[data-pick]').forEach(b => b.onclick = () => { pick(b.dataset.pick); document.getElementById('board').scrollIntoView({ behavior: 'smooth', block: 'center' }); });
+    const tray = document.getElementById('tray');
+    tray.scrollLeft = render.trayScroll || 0;
+    tray.onscroll = () => { render.trayScroll = tray.scrollLeft; };
+    document.querySelectorAll('.cell').forEach(el => {
+      let t = null, long = false, gauge = null, downAt = 0;
+      const r = +el.dataset.r, c = +el.dataset.c;
+      const stop = () => { clearTimeout(t); if (gauge) { gauge.remove(); gauge = null; } };
+      el.addEventListener('pointerdown', () => {
+        long = false; downAt = Date.now();
+        const id = holdTarget(r, c);
+        if (!id) return;
+        t = setTimeout(() => showGauge(id), HOLD_DELAY);
+      });
+      // jauge ronde autour de la lettre : elle démarre après HOLD_DELAY et se remplit jusqu'à HOLD_MS
+      const showGauge = (id) => {
+        gauge = document.createElement('span');
+        gauge.className = 'charge';
+        gauge.style.setProperty('--cc', colorOf(ctx.chars[id]));
+        gauge.innerHTML = `<svg viewBox="0 0 36 36"><circle class="track" cx="18" cy="18" r="15.9155"/><circle class="fill" cx="18" cy="18" r="15.9155"/></svg><b>${letterOf(ctx.chars[id])}</b>`;
+        // au-dessus de la case (le pouce cache la case elle-même) ; en dessous s'il n'y a pas la place
+        const box = el.getBoundingClientRect();
+        const size = Math.max(64, box.width * 1.4);
+        const above = box.top - size - 10 >= 0;
+        gauge.style.cssText += `--s:${size}px; --fill:${HOLD_MS - HOLD_DELAY}ms; left:${box.left + box.width / 2 - size / 2}px; top:${above ? box.top - size - 10 : box.bottom + 10}px;`;
+        document.body.appendChild(gauge);
+        t = setTimeout(() => { long = true; stop(); confirmAt(id, r, c); }, HOLD_MS - HOLD_DELAY);
+      };
+      ['pointerup', 'pointerleave', 'pointercancel'].forEach(ev => el.addEventListener(ev, stop));
+      el.addEventListener('contextmenu', e => e.preventDefault());
+      // un appui long abandonné en route n'est pas un toucher court
+      el.onclick = () => {
+        const abandoned = downAt && Date.now() - downAt > 350; // 0 = clic sans appui (clavier, VoiceOver)
+        downAt = 0;
+        if (long || abandoned) { long = false; return; }
+        tap(r, c);
+      };
+    });
+  }
+
+  function pick(id) {
+    mode = 'place';
+    selected = selected === id ? null : id;
+    render();
+  }
+
+  function toggleMark(r, c) {
+    if (charAt(r, c)) return;
+    snapshot();
+    const k = r + ',' + c;
+    S.marks = S.marks.includes(k) ? S.marks.filter(x => x !== k) : S.marks.concat(k);
+    if (navigator.vibrate) try { navigator.vibrate(10); } catch (e) {}
+    save(); render();
+  }
+
+  const pencilsAt = (r, c) => P.characters.filter(x => (S.pencil[x.id] || []).includes(r + ',' + c)).map(x => x.id);
+
+  // toucher court : lettre au crayon (plusieurs cases possibles par personnage)
+  function tap(r, c) {
+    const who = charAt(r, c);
+    const k = r + ',' + c;
+    if (mode === 'mark') return toggleMark(r, c);
+    if (who) {
+      if (who !== selected) { selected = who; return render(); }
+      // pion confirmé touché à nouveau : il redevient une lettre au crayon
+      snapshot(); delete S.pos[who]; S.pencil[who] = [k]; save(); return render();
+    }
+    if (!selected) {
+      const pens = pencilsAt(r, c);
+      if (pens.length) { selected = pens.includes(selected) ? selected : pens[0]; return render(); }
+      return;
+    }
+    if (!E.canStand(ctx, selected, r, c)) {
+      const o = ctx.objAt[k];
+      return toast(`${ctx.chars[selected].name} ne peut pas se tenir sur ${E.OBJECTS[o.type].the}.`, true);
+    }
+    snapshot();
+    const list = S.pencil[selected] || [];
+    S.pencil[selected] = list.includes(k) ? list.filter(x => x !== k) : list.concat(k);
+    S.marks = S.marks.filter(x => x !== k);
+    save(); render();
+  }
+
+  // appui long : confirme l'emplacement (le personnage choisi, ou la seule lettre de la case)
+  function holdTarget(r, c) {
+    if (mode !== 'place') return null;
+    const who = charAt(r, c);
+    const pens = pencilsAt(r, c);
+    const id = selected || (pens.length === 1 ? pens[0] : null);
+    if (!id || (who && who !== id) || !E.canStand(ctx, id, r, c)) return null;
+    return id;
+  }
+  function confirmAt(id, r, c) {
+    snapshot();
+    S.pos[id] = [r, c];
+    delete S.pencil[id];
+    S.marks = S.marks.filter(x => x !== r + ',' + c);
+    selected = null;
+    if (navigator.vibrate) try { navigator.vibrate(20); } catch (e) {}
+    save(); render();
+  }
+
+  function accuse() {
+    const errs = E.checkPlacement(P, S.pos);
+    if (errs.some(e => e.kind === 'row')) return toast('Deux personnes partagent une ligne. Une seule par ligne !', true);
+    if (errs.some(e => e.kind === 'col')) return toast('Deux personnes partagent une colonne. Une seule par colonne !', true);
+    if (errs.some(e => e.kind === 'room')) return toast('Deux suspects partagent une pièce : seule la pièce du crime abrite deux personnes.', true);
+    const m = E.murdererOf(ctx, S.pos);
+    if (!m) return toast('La victime doit être seule avec exactement un suspect dans sa pièce.', true);
+    const ok = Object.keys(P.solution.positions).every(id => S.pos[id] && S.pos[id][0] === P.solution.positions[id][0] && S.pos[id][1] === P.solution.positions[id][1]);
+    if (!ok) {
+      const v = violated();
+      if (v.size) { settings.live = true; store.set('settings', settings); render(); return toast(`${v.size} indice${v.size > 1 ? 's' : ''} ne colle${v.size > 1 ? 'nt' : ''} pas. Ils sont surlignés en rouge.`, true); }
+      return toast("Tout semble coller… mais ce n'est pas la bonne scène. Un indice t'a peut-être échappé.", true);
+    }
+    S.solved = true; selected = null; save(); render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // verdict affiché sous la carte une fois l'affaire résolue (remplace le dock)
+  function verdictHtml() {
+    const k = ctx.chars[P.solution.murderer];
+    const v = P.characters.find(c => c.role === 'victim');
+    const next = PUZZLES[PUZZLES.indexOf(P) + 1];
+    return `<div class="verdictcard">
+        <div class="verdict"><span class="em">${face(k)}</span><div><div class="sect" style="margin:0">Coupable</div><b>${esc(k.name)}</b></div></div>
+        <p class="why">Seul suspect dans la pièce de ${esc(v.name)}.</p>
+        <p>${esc(P.epilogue)}</p>
+        <div class="row">
+          <button class="btn" id="replayBtn">Rejouer</button>
+          ${next ? `<button class="btn primary" id="nextBtn">Affaire suivante</button>` : `<button class="btn primary" id="homeBtn">Toutes les affaires</button>`}
+        </div>
+      </div>`;
+  }
+  function bindVerdict() {
+    const next = PUZZLES[PUZZLES.indexOf(P) + 1];
+    document.getElementById('replayBtn').onclick = () => { S = blank(); undo = []; save(); render(); };
+    const nb = document.getElementById('nextBtn'); if (nb) nb.onclick = () => open(next.id);
+    const hb = document.getElementById('homeBtn'); if (hb) hb.onclick = home;
+  }
+
+  // ---------- fenêtres ----------
+  function sheet(html) {
+    $layer.innerHTML = `<div class="overlay" id="ov"><div class="sheet" role="dialog" aria-modal="true">${html}</div></div>`;
+    const ov = document.getElementById('ov');
+    ov.onclick = (e) => { if (e.target === ov || e.target.hasAttribute('data-close')) close(); };
+  }
+  function close() { $layer.innerHTML = ''; }
+
+  function rules() {
+    const objs = Object.entries(E.OBJECTS).filter(([k]) => k !== 'portail');
+    sheet(`
+      <h2>Comment enquêter</h2>
+      <ul>
+        <li>Place chaque personnage sur la carte, victime comprise.</li>
+        <li><b>Une seule personne par ligne et par colonne.</b></li>
+        <li>Les meubles hachurés sont <b>bloquants</b> : personne ne peut s'y tenir. Les autres (chaise, lit, tapis…) sont praticables.</li>
+        <li>Quand quelqu'un est sur un meuble (chaise, lit, tapis…), un indice le dit toujours.</li>
+        <li>« Au nord de X » veut dire sur une ligne plus haute que X, dans n'importe quelle colonne (sud : plus bas ; est : plus à droite ; ouest : plus à gauche).</li>
+        <li>« À côté de » veut dire juste au-dessus, en dessous, à gauche ou à droite, dans la même pièce. Pas en diagonale, ni à travers un mur.</li>
+        <li><b>Seule la pièce du crime contient deux personnes</b> : chaque suspect était seul dans sa pièce, sauf le coupable, qui était avec la victime.</li>
+        <li>La victime n'a pas d'indice : c'est à toi de la trouver.</li>
+      </ul>
+      <div class="sect">Gestes</div>
+      <ul>
+        <li>Touche un personnage, puis une case : sa <b>lettre</b> s'y inscrit au crayon. Tu peux noter plusieurs cases possibles ; touche une lettre à nouveau pour l'effacer.</li>
+        <li><b>Appui long</b> (1,5 s) sur une case : quand la jauge est pleine, le personnage y est placé pour de bon.</li>
+        <li>Quand un personnage est choisi, ce que nomment ses indices s'allume en bleu : les objets cités (tous ceux du même type) ou la pièce citée.</li>
+        <li>Une fois un personnage placé pour de bon, sa ligne et sa colonne se remplissent de croix.</li>
+        <li>Touche un personnage placé pour le remettre au crayon.</li>
+        <li>Outil « Barrer » : marque toi-même une case impossible.</li>
+        <li>Le ✓ d'un indice le grise quand tu l'as exploité.</li>
+      </ul>
+      <div class="sect">Mobilier</div>
+      <div class="objgrid">${objs.map(([k, o]) => `<span><em>${ico(k)}</em>${esc(o.name)} <span class="tag">${o.blocking ? 'bloquant' : 'praticable'}</span></span>`).join('')}</div>
+      <div class="row"><button class="btn primary" data-close>Compris</button></div>`);
+  }
+
+  function options() {
+    sheet(`
+      <h2>Options</h2>
+      <label class="toggle">Croix automatiques sur les lignes et colonnes des personnages placés <input type="checkbox" id="optShade" ${settings.shade ? 'checked' : ''}></label>
+      <label class="toggle">Signaler en direct les indices contredits <input type="checkbox" id="optLive" ${settings.live ? 'checked' : ''}></label>
+      <div class="row">
+        <button class="btn" id="resetBtn">Recommencer l'affaire</button>
+        <button class="btn primary" data-close>Fermer</button>
+      </div>`);
+    document.getElementById('optShade').onchange = (e) => { settings.shade = e.target.checked; store.set('settings', settings); render(); };
+    document.getElementById('optLive').onchange = (e) => { settings.live = e.target.checked; store.set('settings', settings); render(); };
+    document.getElementById('resetBtn').onclick = (e) => {
+      if (e.target.dataset.armed) { snapshot(); S = blank(); save(); close(); render(); return; }
+      e.target.dataset.armed = '1'; e.target.textContent = 'Sûr ? Tout effacer';
+    };
+  }
+
+  function toast(msg, isBad) {
+    let t = document.querySelector('.toast');
+    if (!t) { t = document.createElement('div'); t.className = 'toast'; t.setAttribute('role', 'status'); document.body.appendChild(t); }
+    t.textContent = msg; t.className = 'toast' + (isBad ? ' bad' : ''); t.hidden = false;
+    clearTimeout(toastT); toastT = setTimeout(() => { t.hidden = true; }, 3200);
+  }
+
+  // reprise après mise à jour de la page
+  const start = (data) => { if (data && data.open) open(data.open); else home(); };
+  if (window.claude && window.claude.hot) {
+    window.claude.hot.snapshot && window.claude.hot.snapshot(() => ({ open: P ? P.id : null }));
+    window.claude.hot.ready ? window.claude.hot.ready(start) : start(window.claude.hot.data || {});
+  } else start({});
+})();
+</script>
