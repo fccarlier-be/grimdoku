@@ -122,6 +122,7 @@ header.top { display: flex; align-items: center; gap: 10px; }
   font-size: 9px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap;
   color: rgba(43, 32, 22, .72); line-height: 1;
 }
+.cell .mark.manual { color: #4f6b8f; font-weight: 400; font-size: 1em; -webkit-text-stroke: 0; opacity: .9; }
 .cell .mark { position: absolute; inset: 0; z-index: 4; display: grid; place-items: center; color: var(--ink); font-size: 1.2em; font-weight: 700; line-height: 1; pointer-events: none; }
 /* lettres au crayon : dans le coin, couleur du personnage, le meuble reste visible */
 .pencils { position: absolute; top: 3%; left: 4%; right: 4%; z-index: 3; display: flex; flex-wrap: wrap; gap: 0 .12em; pointer-events: none; }
@@ -506,8 +507,10 @@ const PUZZLES = /*__PUZZLES__*/;
       const first = !bodyCells || (bodyCells[0][0] === r && bodyCells[0][1] === c);
       const tok = ch && !first ? `${body}<span class="bodyletter" style="--cc:${colorOf(ch)}">${letterOf(ch)}</span>` : ch ? `${body}<span class="token ${ch.role === 'victim' ? 'victim' : ''} ${selected === who ? 'sel' : ''} ${bad.has(who) ? 'bad' : ''}">${face(ch)}<span class="letter" style="--cc:${colorOf(ch)}">${letterOf(ch)}</span></span>` : '';
       const pencils = pens.length ? `<span class="pencils ${pens.length > 1 ? 'many' : ''}">${pens.map(x => `<span class="pencil ${selected === x.id ? 'sel' : ''}" style="--cc:${colorOf(x)}">${letterOf(x)}</span>`).join('')}</span>` : '';
-      const mark = who ? ''
-        : S.marks.includes(r + ',' + c) || (settings.shade && (usedR.has(r) || usedC.has(c))) ? '<span class="mark">✕</span>' : '';
+      // croix automatiques (lignes/colonnes des personnages confirmés) à l'encre : certaines ;
+      // croix manuelles au crayon : simples hypothèses du joueur
+      const auto = settings.shade && (usedR.has(r) || usedC.has(c));
+      const mark = who ? '' : auto ? '<span class="mark">✕</span>' : S.marks.includes(r + ',' + c) ? '<span class="mark manual">✕</span>' : '';
       const aria = `${P.rooms[room].name}, ligne ${r + 1}, colonne ${c + 1}${def ? ', ' + def.name : ''}${ch ? ', ' + ch.name : ''}`;
       cells += `<button class="${cls.join(' ')}" style="--room: var(--r${roomIdx(room) % 8})" data-r="${r}" data-c="${c}" aria-label="${esc(aria)}">${label}${objHtml}${tok}${pencils}${mark}</button>`;
     }
@@ -813,9 +816,9 @@ const PUZZLES = /*__PUZZLES__*/;
         <li>Touche un personnage, puis une case : sa <b>lettre</b> s'y inscrit au crayon. Tu peux noter plusieurs cases possibles ; touche une lettre à nouveau pour l'effacer.</li>
         <li><b>Appui long</b> (1,5 s) sur une case : quand la jauge est pleine, le personnage y est placé pour de bon. Un grand personnage : sa lettre au crayon sur chacune de ses cases, puis appui long sur l'une d'elles.</li>
         <li>Quand un personnage est choisi, ce que nomment ses indices s'allume en bleu : les objets cités (tous ceux du même type) ou la pièce citée.</li>
-        <li>Une fois un personnage placé pour de bon, sa ligne et sa colonne se remplissent de croix.</li>
+        <li>Une fois un personnage placé pour de bon, sa ligne et sa colonne se remplissent de croix <b>à l'encre noire</b> : ces cases sont condamnées.</li>
         <li>Touche un personnage placé pour le remettre au crayon.</li>
-        <li>Sans personnage choisi, touche une case vide pour la barrer (✕) ; touche-la encore pour effacer la croix.</li>
+        <li>Sans personnage choisi, touche une case vide pour la barrer d'une croix <b>au crayon gris-bleu</b> (ta propre hypothèse) ; touche-la encore pour l'effacer.</li>
         <li>Bouton 💡 <b>Indice</b> : signale une erreur, ou désigne le prochain personnage à déduire et le raisonnement à utiliser.</li>
         <li>Le ✓ d'un indice le grise quand tu l'as exploité.</li>
       </ul>

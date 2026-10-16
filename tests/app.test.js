@@ -89,6 +89,7 @@ test('gestes : lettre au crayon, appui abandonné, appui long, retour au crayon'
   await hold(r, c);
   assert.ok(cell(r, c).querySelector('.token'), 'appui long : personnage placé');
   assert.ok(d.querySelectorAll('.cell .mark').length > 0, 'croix automatiques sur sa ligne et sa colonne');
+  assert.equal(d.querySelectorAll('.cell .mark.manual').length, 0, 'croix automatiques à l\'encre, pas au crayon');
 
   cell(r, c).click(); cell(r, c).click();
   assert.ok(!cell(r, c).querySelector('.token') && cell(r, c).querySelector('.pencil'), 'touché deux fois : retour au crayon');
@@ -115,7 +116,7 @@ test('sans personnage choisi, toucher une case vide la barre ; encore une fois e
   const free = [...d.querySelectorAll('.cell')].find(el => !el.querySelector('.obj'));
   const [r, c] = [+free.dataset.r, +free.dataset.c];
   cell(r, c).click();
-  assert.ok(cell(r, c).querySelector('.mark'), 'croix posée');
+  assert.ok(cell(r, c).querySelector('.mark.manual'), 'croix posée, au crayon (hypothèse du joueur)');
   cell(r, c).click();
   assert.equal(cell(r, c).querySelector('.mark'), null, 'croix effacée');
 });
