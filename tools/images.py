@@ -25,7 +25,7 @@ FLOOR_SIZE = 320       # une texture = 2×2 cases
 FLOOR_SOFT = 0.45      # part de couleur moyenne mélangée à la texture (contraste adouci : meubles et pions lisibles)
 FLOOR_LIGHT = 1.12     # éclaircissement
 # noms de fichiers tolérés pour un type d'objet (accents retirés automatiquement)
-OBJ_ALIAS = {'champignon': 'champi', 'roseau': 'roseaux'}
+OBJ_ALIAS = {'champignon': 'champi', 'roseau': 'roseaux', 'stones': 'roche'}
 # idem pour les personnages (fautes de frappe dans les noms de fichiers)
 CHAR_ALIAS = {'bibliothequaire': 'bibliothecaire'}
 OBJ_MARGIN = 0.06                      # marge autour de l'objet, en fraction du carré
@@ -158,15 +158,61 @@ def objects():
         print(f'objet {src.name} → {out.name} ({out.stat().st_size // 1024} Ko)')
 
 
-def seamless(img):
-    """Texture raccordable : au centre l'image, vers les bords sa copie décalée d'une demi-taille (dont les bords
-    viennent du centre de l'image, donc se raccordent d'une tuile à l'autre), avec un fondu entre les deux."""
+def _diff(a, b):
+    return ImageStat.Stat(ImageChops.difference(a, b)).mean[0]
+
+
+def _shift_diff(img, ax, p):
+    """Écart moyen entre l'image et elle-même décalée de p pixels sur l'axe ax (0 : x, 1 : y)."""
     w, h = img.size
-    shifted = ImageChops.offset(img, w // 2, h // 2)
-    band = w * 0.28
+    if ax == 0:
+        return _diff(img.crop((0, 0, w - p, h)), img.crop((p, 0, w, h)))
+    return _diff(img.crop((0, 0, w, h - p)), img.crop((0, p, w, h)))
+
+
+def period(img, ax):
+    """Période du motif sur un axe (motif régulier : damier, mosaïque, ou image déjà répétée par le générateur),
+    ou None si le motif n'est pas périodique. Recherche à demi-résolution, puis affinée au pixel près."""
+    g = img.convert('L')
+    small = g.resize((g.width // 2, g.height // 2))
+    size = small.size[ax]
+    ref = _shift_diff(small, ax, size // 5)  # écart typique entre deux zones quelconques
+    best = min(range(size // 16, size // 2 + 1), key=lambda q: _shift_diff(small, ax, q))
+    if _shift_diff(small, ax, best) > 0.45 * ref:
+        return None
+    return min(range(best * 2 - 3, best * 2 + 4), key=lambda q: _shift_diff(g, ax, q))
+
+
+def blend_axis(img, ax, band=0.15):
+    """Raccord sur un axe sans motif régulier : vers les deux bords, fondu avec la copie décalée d'une demi-taille."""
+    w, h = img.size
+    shifted = ImageChops.offset(img, w // 2 if ax == 0 else 0, h // 2 if ax == 1 else 0)
+    size, b = (w, h)[ax], (w, h)[ax] * band
+    ramp = [round(255 * min(1, min(i, size - 1 - i) / b)) for i in range(size)]
     mask = Image.new('L', (w, h))
-    mask.putdata([round(255 * min(1, min(x, w - 1 - x, y, h - 1 - y) / band)) for y in range(h) for x in range(w)])
+    mask.putdata([ramp[x] if ax == 0 else ramp[y] for y in range(h) for x in range(w)])
     return Image.composite(img, shifted, mask)
+
+
+def seamless(img):
+    """Texture raccordable, axe par axe : recadrée sur une période exacte si le motif est régulier
+    (aucun fondu, donc pas d'image fantôme), sinon fondue sur une bande étroite près des bords."""
+    blend = []
+    for ax in (0, 1):
+        p = period(img, ax)
+        if p:
+            # une période exacte, répétée pour garder l'échelle d'origine du motif
+            size = img.size[ax]
+            tile = img.crop((0, 0, p, img.height) if ax == 0 else (0, 0, img.width, p))
+            k = max(1, round(size / p))
+            img = Image.new(img.mode, (p * k, img.height) if ax == 0 else (img.width, p * k))
+            for i in range(k):
+                img.paste(tile, (i * p, 0) if ax == 0 else (0, i * p))
+        else:
+            blend.append(ax)
+    for ax in blend:
+        img = blend_axis(img, ax)
+    return img
 
 
 def floors():
@@ -177,10 +223,11 @@ def floors():
         img = Image.open(src).convert('RGB')
         side = min(img.size)
         img = img.crop(((img.width - side) // 2, (img.height - side) // 2, (img.width + side) // 2, (img.height + side) // 2))
-        img = seamless(img.resize((FLOOR_SIZE * 2, FLOOR_SIZE * 2), Image.LANCZOS))
-        mean = tuple(round(v) for v in ImageStat.Stat(img).mean)
-        img = Image.blend(img, Image.new('RGB', img.size, mean), FLOOR_SOFT)
-        img = ImageEnhance.Brightness(img).enhance(FLOOR_LIGHT)
+        img = seamless(img.resize((FLOOR_SIZE * 3, FLOOR_SIZE * 3), Image.LANCZOS))
+        if name != 'parchemin':  # le parchemin du cadre garde ses tons (rien n'est posé dessus)
+            mean = tuple(round(v) for v in ImageStat.Stat(img).mean)
+            img = Image.blend(img, Image.new('RGB', img.size, mean), FLOOR_SOFT)
+            img = ImageEnhance.Brightness(img).enhance(FLOOR_LIGHT)
         out = FLOOR_DIR / (name + '.webp')
         img.resize((FLOOR_SIZE, FLOOR_SIZE), Image.LANCZOS).save(out, 'WEBP', quality=78, method=6)
         print(f'sol {src.name} → {out.name} ({out.stat().st_size // 1024} Ko)')
