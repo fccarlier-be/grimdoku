@@ -456,14 +456,16 @@ html, body { background: var(--desk-tex, none) center top / 640px, var(--night);
   box-shadow: inset 0 0 0 1.5px rgba(43, 32, 22, .5), 0 14px 34px rgba(0, 0, 0, .6);
   filter: url(#torn-s);
 }
-.herotitle { text-align: center; font-size: clamp(46px, 13vw, 64px); line-height: .9; color: var(--candle);
+.herotitle { width: 100%; text-align: center; font-size: clamp(46px, 13vw, 64px); line-height: .9; color: var(--candle);
   text-shadow: 0 2px 0 #2b1405, 0 0 18px rgba(240, 169, 58, .35); -webkit-text-stroke: 1px #2b1405; paint-order: stroke fill; }
-.herotitle small { font-size: 13px; letter-spacing: .14em; color: #e9d9b5; -webkit-text-stroke: 0; text-shadow: 0 1px 2px #000; margin-top: 8px; }
+.herotitle small { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); } /* lu par les lecteurs d'écran seulement */
 .herobtn { height: auto; padding: 14px 44px; font-size: 30px; margin-top: 6px; }
 @media (min-width: 700px) {
   .hero { margin-top: 8px; }
   /* le titre se pose sur les poutres, en haut de l'image */
-  .herotitle { position: absolute; z-index: 1; top: 3%; left: 0; right: 0; font-size: clamp(64px, 9vw, 104px); }
+  .herotitle { position: absolute; z-index: 1; top: 2.5%; left: 0; right: 0; font-size: clamp(64px, 9vw, 104px); }
+  .herotitle .logo { width: min(46%, 470px) !important; }
+  .herobtn { width: min(24vw, 240px) !important; }
   .herotitle::before { content: ""; position: absolute; z-index: -1; inset: -18% 10% -10%; background: radial-gradient(closest-side, rgba(15, 9, 5, .75), transparent); }
   /* le sceau à cheval sur le bas de l'affiche */
   .herobtn { margin-top: -42px; z-index: 2; }
