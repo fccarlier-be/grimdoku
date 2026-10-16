@@ -118,7 +118,7 @@ header.top { display: flex; align-items: center; gap: 10px; }
 @keyframes spin { to { transform: rotate(360deg); } }
 .cell.has-char .obj { position: absolute; right: 3%; bottom: 3%; width: 38%; z-index: 4; animation: none; }
 .cell .roomlabel {
-  position: absolute; top: 6px; left: 7px; z-index: 3; pointer-events: none; /* dégagé des murs dessinés */
+  position: absolute; top: calc(100cqw / var(--n) * .13); left: calc(100cqw / var(--n) * .12); z-index: 3; pointer-events: none; /* dégagé des murs dessinés (épaisseur proportionnelle à la case) */
   font-size: 9px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap;
   color: rgba(43, 32, 22, .72); line-height: 1;
 }
@@ -472,8 +472,8 @@ const PUZZLES = /*__PUZZLES__*/;
       const r0 = r; while (r < n && L[r][c] !== L[r][c - 1]) r++;
       lines.push([c, r0, c, r]);
     }
-    const e = 0.05; // cadre : un peu à l'intérieur, sinon la moitié du trait est coupée
-    lines.push([e, e, n - e, e], [n - e, e, n - e, n - e], [n - e, n - e, e, n - e], [e, n - e, e, e]);
+    // cadre : centré sur le bord de la carte ; sa moitié extérieure est coupée, d'où un trait deux fois plus large
+    const frame = [[0, 0, n, 0], [n, 0, n, n], [n, n, 0, n], [0, n, 0, 0]];
     // une ligne tremblée : points intermédiaires décalés perpendiculairement, reliés par des courbes
     const wobbly = ([x1, y1, x2, y2], amp) => {
       const len = Math.hypot(x2 - x1, y2 - y1), k = Math.max(2, Math.round(len * 2.5));
@@ -493,9 +493,12 @@ const PUZZLES = /*__PUZZLES__*/;
     };
     const main = lines.map(l => wobbly(l, 0.028)).join(' ');
     const second = lines.map(l => wobbly(l, 0.022)).join(' ');
+    const frameMain = frame.map(l => wobbly(l, 0.028)).join(' ');
+    const frameSecond = frame.map(l => wobbly(l, 0.022)).join(' ');
     wallsSvg.for = P.id;
     wallsSvg.html = `<svg class="walls" viewBox="0 0 ${n} ${n}" preserveAspectRatio="none" aria-hidden="true">
-      <path d="${main}" stroke-width="0.09"/><path d="${second}" stroke-width="0.06"/></svg>`;
+      <path d="${main}" stroke-width="0.09"/><path d="${second}" stroke-width="0.06"/>
+      <path d="${frameMain}" stroke-width="0.18"/><path d="${frameSecond}" stroke-width="0.13"/></svg>`;
     return wallsSvg.html;
   }
 
