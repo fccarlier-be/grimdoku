@@ -19,6 +19,14 @@ Lis ce fichier en entier avant toute action. Réponds en français, de façon co
 - Mécaniques fantasy v1 (validées) :
   - **Spectre** (`traits: ["spectre"]`) : peut se tenir sur un objet bloquant ; respecte lignes/colonnes.
   - **Portails** (`type: "portail"`, même `link`) : les deux pièces reliées comptent comme **une seule pièce** pour la règle du meurtre et l'indice « seul ».
+- **Grands personnages (4–5 crânes, validé, pas encore codé)** : un personnage peut occuper 2 cases, 3 cases en ligne ou 3 cases en angle.
+  - **Chaque case compte** pour « une personne par ligne et par colonne » : il prend toutes les lignes et colonnes qu'il touche (donc moins de personnages sur une carte N×N).
+  - **Jamais à cheval sur deux pièces** : toutes ses cases dans la même pièce.
+  - **Jamais sur un meuble**, même praticable ; « à côté de » = au moins une de ses cases.
+  - **4 crânes** : forme connue (sur sa carte), orientation à déduire. **5 crânes** : forme cachée (« grand », 2 ou 3 cases), à déduire aussi.
+  - **Nombre** : un seul grand à 4 crânes, un ou deux à 5. **La victime peut être grande.**
+  - **Qui** : des types dédiés de `cast.json`, grands par nature, avec une forme fixe par type.
+  - **Geste** : lettre au crayon sur chaque case qu'il occupe, puis appui long sur l'une d'elles ; l'appli confirme si la forme est valide (bonne taille, une seule pièce, hors meubles).
 - En réserve (pas encore codé) : nains (pièces souterraines), métamorphe / identité secrète, donjons multi-étages, créature diagonale.
 
 ## 3. Types d'indices (`logic.type`)
