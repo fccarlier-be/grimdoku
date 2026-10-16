@@ -100,3 +100,38 @@ test('régression : vérification en direct d\'un indice relatif dont l\'autre p
   assert.ok(cell(r, c).querySelector('.token'));
   assert.deepEqual(errors, [], 'pas d\'erreur JavaScript');
 });
+
+test('sans personnage choisi, toucher une case vide la barre ; encore une fois efface la croix', () => {
+  const { d, cell, openCase, PUZZLES } = open();
+  const p = PUZZLES[0];
+  openCase(p.id);
+  const free = [...d.querySelectorAll('.cell')].find(el => !el.querySelector('.obj'));
+  const [r, c] = [+free.dataset.r, +free.dataset.c];
+  cell(r, c).click();
+  assert.ok(cell(r, c).querySelector('.mark'), 'croix posée');
+  cell(r, c).click();
+  assert.equal(cell(r, c).querySelector('.mark'), null, 'croix effacée');
+});
+
+test('indice : désigne le prochain personnage à déduire, ou signale une erreur', () => {
+  const { PUZZLES } = open();
+  const p = PUZZLES[0];
+  {
+    const { d, openCase } = open();
+    openCase(p.id);
+    d.getElementById('hintBtn').click();
+    const sel = d.querySelector('.chip[aria-pressed="true"]');
+    assert.ok(sel, 'un personnage est sélectionné');
+    assert.match(d.querySelector('.toast').textContent, /💡/);
+    // l'indice ne donne pas la case : aucun pion ni lettre posés
+    assert.equal(d.querySelectorAll('.token, .pencil').length, 0);
+  }
+  {
+    const ids = Object.keys(p.solution.positions);
+    const pos = { [ids[0]]: p.solution.positions[ids[1]] };
+    const { d, openCase } = open({ saves: { [p.id]: { pos, pencil: {}, marks: [], done: [], solved: false, sig: sigOf(p) } } });
+    openCase(p.id);
+    d.getElementById('hintBtn').click();
+    assert.match(d.querySelector('.toast').textContent, /pas à sa place/);
+  }
+});

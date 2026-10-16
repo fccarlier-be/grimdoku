@@ -317,7 +317,7 @@ const PUZZLES = /*__PUZZLES__*/;
   const settings = Object.assign({ shade: true, live: false }, store.get('settings', {}));
   const skulls = (d) => '💀'.repeat(d) + '<span style="opacity:.25">' + '💀'.repeat(Math.max(0, 3 - d)) + '</span>';
 
-  let P = null, ctx = null, S = null, undo = [], selected = null, mode = 'place', toastT = null;
+  let P = null, ctx = null, S = null, undo = [], selected = null, toastT = null;
 
   // ---------- accueil ----------
   function home() {
@@ -356,7 +356,7 @@ const PUZZLES = /*__PUZZLES__*/;
     S = store.get('p:' + id, null);
     if (!S || S.sig !== sigOf(P)) S = blank();
     S.pencil = S.pencil || {};
-    undo = []; selected = null; mode = 'place';
+    undo = []; selected = null;
     render();
     window.scrollTo(0, 0);
   }
@@ -488,10 +488,7 @@ const PUZZLES = /*__PUZZLES__*/;
       ${specials.length ? `<div class="special">${specials.join('')}</div>` : ''}
       ${S.solved ? verdictHtml() : `<div class="dock">
         <div class="tools">
-          <div class="seg" role="group" aria-label="Outil">
-            <button id="mPlace" aria-pressed="${mode === 'place'}">Placer</button>
-            <button id="mMark" aria-pressed="${mode === 'mark'}">✕ Barrer</button>
-          </div>
+          <button class="tbtn" id="hintBtn" aria-label="Indice">💡<span class="lbl"> Indice</span></button>
           <span class="spacer"></span>
           <button class="tbtn" id="undo" aria-label="Annuler" ${undo.length ? '' : 'disabled'}>↶<span class="lbl"> Annuler</span></button>
           <button class="accuse" id="accuse" ${allPlaced ? '' : 'disabled'}>Accuser</button>
@@ -535,8 +532,7 @@ const PUZZLES = /*__PUZZLES__*/;
       S.done = idx.every(i => S.done.includes(i)) ? S.done.filter(x => !idx.includes(x)) : [...new Set(S.done.concat(idx))]; save(); render();
     });
     if (S.solved) return bindVerdict();
-    document.getElementById('mPlace').onclick = () => { mode = 'place'; render(); };
-    document.getElementById('mMark').onclick = () => { mode = 'mark'; selected = null; render(); };
+    document.getElementById('hintBtn').onclick = hint;
     document.getElementById('undo').onclick = () => { if (!undo.length) return; S = JSON.parse(undo.pop()); save(); render(); };
     document.getElementById('accuse').onclick = accuse;
     document.querySelectorAll('.chip').forEach(b => b.onclick = () => pick(b.dataset.id));
@@ -581,7 +577,6 @@ const PUZZLES = /*__PUZZLES__*/;
   }
 
   function pick(id) {
-    mode = 'place';
     selected = selected === id ? null : id;
     render();
   }
@@ -601,16 +596,16 @@ const PUZZLES = /*__PUZZLES__*/;
   function tap(r, c) {
     const who = charAt(r, c);
     const k = r + ',' + c;
-    if (mode === 'mark') return toggleMark(r, c);
     if (who) {
       if (who !== selected) { selected = who; return render(); }
       // pion confirmé touché à nouveau : il redevient une lettre au crayon
       snapshot(); delete S.pos[who]; S.pencil[who] = [k]; save(); return render();
     }
     if (!selected) {
+      // sans personnage choisi : une case à lettres sélectionne leur personnage, une case vide se barre
       const pens = pencilsAt(r, c);
-      if (pens.length) { selected = pens.includes(selected) ? selected : pens[0]; return render(); }
-      return;
+      if (pens.length) { selected = pens[0]; return render(); }
+      return toggleMark(r, c);
     }
     if (!E.canStand(ctx, selected, r, c)) {
       const o = ctx.objAt[k];
@@ -625,7 +620,6 @@ const PUZZLES = /*__PUZZLES__*/;
 
   // appui long : confirme l'emplacement (le personnage choisi, ou la seule lettre de la case)
   function holdTarget(r, c) {
-    if (mode !== 'place') return null;
     const who = charAt(r, c);
     const pens = pencilsAt(r, c);
     const id = selected || (pens.length === 1 ? pens[0] : null);
@@ -640,6 +634,32 @@ const PUZZLES = /*__PUZZLES__*/;
     selected = null;
     if (navigator.vibrate) try { navigator.vibrate(20); } catch (e) {}
     save(); render();
+  }
+
+  // 💡 Indice : signale d'abord une erreur parmi les personnages confirmés, sinon désigne le prochain
+  // personnage qu'on peut déduire et le raisonnement à utiliser (jamais la case).
+  const HINT_TEXT = [
+    (n) => `Relis l'indice de ${n} : il ne laisse qu'une seule case possible.`,
+    (n) => `${n} : une fois retirées les lignes et colonnes déjà prises, il ne reste qu'une case.`,
+    (n) => `Un personnage ne peut être que sur une seule ligne (ou colonne) : elle lui est réservée. Ça suffit pour placer ${n}.`,
+    (n) => `Utilise les positions relatives (nord, sud, est, ouest) : elles limitent les lignes ou colonnes possibles. Ça place ${n}.`,
+    (n) => `Cherche une ligne ou une colonne qu'un seul personnage peut encore occuper : c'est ${n}.`,
+    (n) => `Pense à la règle des pièces : un seul suspect par pièce, et la victime avec un seul. Ça place ${n}.`,
+    (n) => `Regarde les groupes : si deux personnages se partagent deux lignes, personne d'autre n'y va. Ça place ${n}.`
+  ];
+  function hint() {
+    const sol = P.solution.positions;
+    const wrong = Object.keys(S.pos).find(id => String(S.pos[id]) !== String(sol[id]));
+    if (wrong) { selected = wrong; render(); return toast(`Quelque chose cloche : ${ctx.chars[wrong].name} n'est pas à sa place.`, true, 5000); }
+    hint.steps = hint.steps && hint.for === P.id ? hint.steps : E.humanSolve(P, P.clues, 2).steps;
+    hint.for = P.id;
+    for (const st of hint.steps) {
+      const id = st.ids.find(x => !S.pos[x]);
+      if (!id) continue;
+      selected = id; render();
+      return toast('💡 ' + HINT_TEXT[st.tech](ctx.chars[id].name), false, 6000);
+    }
+    toast('Tout le monde est à sa place : il ne reste plus qu\'à accuser !', false, 4000);
   }
 
   function accuse() {
@@ -710,7 +730,8 @@ const PUZZLES = /*__PUZZLES__*/;
         <li>Quand un personnage est choisi, ce que nomment ses indices s'allume en bleu : les objets cités (tous ceux du même type) ou la pièce citée.</li>
         <li>Une fois un personnage placé pour de bon, sa ligne et sa colonne se remplissent de croix.</li>
         <li>Touche un personnage placé pour le remettre au crayon.</li>
-        <li>Outil « Barrer » : marque toi-même une case impossible.</li>
+        <li>Sans personnage choisi, touche une case vide pour la barrer (✕) ; touche-la encore pour effacer la croix.</li>
+        <li>Bouton 💡 <b>Indice</b> : signale une erreur, ou désigne le prochain personnage à déduire et le raisonnement à utiliser.</li>
         <li>Le ✓ d'un indice le grise quand tu l'as exploité.</li>
       </ul>
       <div class="sect">Mobilier</div>
@@ -735,11 +756,11 @@ const PUZZLES = /*__PUZZLES__*/;
     };
   }
 
-  function toast(msg, isBad) {
+  function toast(msg, isBad, ms = 3200) {
     let t = document.querySelector('.toast');
     if (!t) { t = document.createElement('div'); t.className = 'toast'; t.setAttribute('role', 'status'); document.body.appendChild(t); }
     t.textContent = msg; t.className = 'toast' + (isBad ? ' bad' : ''); t.hidden = false;
-    clearTimeout(toastT); toastT = setTimeout(() => { t.hidden = true; }, 3200);
+    clearTimeout(toastT); toastT = setTimeout(() => { t.hidden = true; }, ms);
   }
 
   // reprise après mise à jour de la page
