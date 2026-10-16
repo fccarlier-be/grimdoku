@@ -230,7 +230,8 @@ def floors():
             img = Image.blend(img, Image.new('RGB', img.size, mean), FLOOR_SOFT)
             img = ImageEnhance.Brightness(img).enhance(FLOOR_LIGHT)
         out = FLOOR_DIR / (name + '.webp')
-        img.resize((FLOOR_SIZE, FLOOR_SIZE), Image.LANCZOS).save(out, 'WEBP', quality=78, method=6)
+        size = FLOOR_SIZE * 2 if name == 'bureau' else FLOOR_SIZE  # le fond de page couvre de grandes surfaces
+        img.resize((size, size), Image.LANCZOS).save(out, 'WEBP', quality=78, method=6)
         print(f'sol {src.name} → {out.name} ({out.stat().st_size // 1024} Ko)')
 
 
