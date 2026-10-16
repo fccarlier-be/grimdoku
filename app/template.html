@@ -444,7 +444,7 @@ html, body { background: var(--desk-tex, none) center top / 640px, var(--night);
 .toggle input { accent-color: var(--red-ink); }
 
 /* ---------- affiche d'accueil ---------- */
-.hero { position: relative; isolation: isolate; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.hero { position: relative; isolation: isolate; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; min-height: calc(100svh - 40px); }
 .heroimg {
   position: relative; width: 100%; aspect-ratio: 1376 / 768; border-radius: 2px;
   background: var(--hero-wide, none) center / cover, #2a1f18;
@@ -459,17 +459,46 @@ html, body { background: var(--desk-tex, none) center top / 640px, var(--night);
 .herotitle { text-align: center; font-size: clamp(46px, 13vw, 64px); line-height: .9; color: var(--candle);
   text-shadow: 0 2px 0 #2b1405, 0 0 18px rgba(240, 169, 58, .35); -webkit-text-stroke: 1px #2b1405; paint-order: stroke fill; }
 .herotitle small { font-size: 13px; letter-spacing: .14em; color: #e9d9b5; -webkit-text-stroke: 0; text-shadow: 0 1px 2px #000; margin-top: 8px; }
-.herohelp { position: absolute; top: 0; right: 0; }
-.herobtn { height: auto; padding: 14px 28px; font-size: 24px; margin-top: 6px; }
+.herobtn { height: auto; padding: 14px 44px; font-size: 30px; margin-top: 6px; }
 @media (min-width: 700px) {
   .hero { margin-top: 8px; }
   /* le titre se pose sur les poutres, en haut de l'image */
   .herotitle { position: absolute; z-index: 1; top: 3%; left: 0; right: 0; font-size: clamp(64px, 9vw, 104px); }
   .herotitle::before { content: ""; position: absolute; z-index: -1; inset: -18% 10% -10%; background: radial-gradient(closest-side, rgba(15, 9, 5, .75), transparent); }
-  .herohelp { top: 14px; right: 14px; z-index: 2; }
   /* le sceau à cheval sur le bas de l'affiche */
-  .herobtn { margin-top: -38px; z-index: 2; }
+  .herobtn { margin-top: -42px; z-index: 2; }
 }
+
+/* ---------- page des niveaux et page d'un niveau ---------- */
+.pagetitle { font-family: var(--f-display); font-weight: 400; font-size: 28px; line-height: 1; margin: 0; color: var(--candle); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.pagetitle .skulls { font-family: var(--f-body); font-size: 15px; }
+.lead .count { white-space: nowrap; color: var(--candle); margin-left: 6px; }
+.lvls { display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 700px) { .lvls { grid-template-columns: repeat(3, 1fr); gap: 22px; } }
+.lvl {
+  --fg: var(--ink); --muted: #6e5434; --red-ink: #a3312a;
+  position: relative; isolation: isolate; border: 0; background: transparent; color: var(--ink); text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 22px 16px 18px; min-height: 190px;
+}
+.lvl::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; border-radius: 3px;
+  background: var(--parch-tex, none) center / 240px, linear-gradient(#f1e3c2, #e3cfa3);
+  box-shadow: inset 0 0 0 1.5px rgba(43, 32, 22, .5), inset 0 0 14px rgba(120, 66, 18, .4), 0 6px 14px rgba(0, 0, 0, .5);
+  filter: url(#torn);
+}
+.lvl:nth-child(odd) { transform: rotate(-.8deg); }
+.lvl:nth-child(even) { transform: rotate(.6deg); }
+.lvl:hover::before { box-shadow: inset 0 0 0 2px var(--candle), inset 0 0 14px rgba(120, 66, 18, .4), 0 0 0 2px rgba(240, 169, 58, .45), 0 10px 20px rgba(0, 0, 0, .55); }
+.lvl .skulls { font-size: 20px; filter: sepia(1) brightness(.5); }
+.lvl b { font-family: var(--f-display); font-weight: 400; font-size: 34px; line-height: 1; }
+.lvl .blurb { font-size: 15px; color: var(--ink); max-width: 30ch; }
+.lvl .count { margin-top: auto; font-size: 13px; color: var(--muted); }
+.lvldone {
+  position: absolute; top: 14px; right: 10px; transform: rotate(10deg);
+  font-family: var(--f-display); font-size: 17px; color: var(--red-ink); border: 2px solid currentColor; border-radius: 4px; padding: 1px 7px;
+}
+#app:not(.game) .cases { display: grid; gap: 10px; }
+@media (min-width: 900px) { #app:not(.game) .cases { grid-template-columns: 1fr 1fr; } }
 /*__FLOORS__*/
 </style>
 
@@ -513,38 +542,85 @@ const PUZZLES = /*__PUZZLES__*/;
           <span class="state ${done ? 'done' : started ? 'started' : ''}">${done ? 'Résolue' : started ? 'En cours' : 'Nouvelle'}</span>
         </button>`;
   }
-  function levels() {
-    let opened = false;
-    return LEVEL_NAMES.map((name, d) => {
-      const list = PUZZLES.filter(p => p.difficulty === d);
-      if (!list.length) return '';
-      const solved = list.filter(p => (store.get('p:' + p.id, null) || {}).solved).length;
-      const open = !opened && solved < list.length;
-      if (open) opened = true;
-      return `<details class="level" ${open ? 'open' : ''}>
-        <summary><span class="skulls">${skulls(d)}</span><b>${name}</b><span class="count">${solved}/${list.length}</span></summary>
-        <div class="cases">${list.map(caseHtml).join('')}</div>
-      </details>`;
-    }).join('');
+  // ce que réserve chaque niveau (page des niveaux et page d'un niveau)
+  const LEVEL_BLURB = [
+    'Pour apprendre les règles : chaque indice mène presque tout seul à sa case.',
+    'Quelques déductions simples, sur de petites cartes.',
+    'Il faut croiser les indices ; la règle des pièces entre en jeu.',
+    'Grandes cartes, et aucune prise facile au départ.',
+    'Des grands personnages occupent plusieurs cases.',
+    'Des grands personnages… dont tu ignores la forme.'
+  ];
+  const solvedIn = (list) => list.filter(p => (store.get('p:' + p.id, null) || {}).solved).length;
+  const pageHead = (backAria, title) => `
+      <header class="top">
+        <button class="iconbtn" id="back" aria-label="${backAria}">‹</button>
+        <h1 class="pagetitle">${title}</h1>
+        <span class="spacer"></span>
+        <button class="iconbtn" id="rulesBtn" aria-label="Règles">?</button>
+      </header>`;
+  // page des niveaux : un parchemin par niveau de difficulté
+  function levelsPage() {
+    P = null;
+    $app.classList.remove('game');
+    $app.innerHTML = pageHead("Retour à l'accueil", 'Choisis ton enquête') + `
+      <div class="lvls">${LEVEL_NAMES.map((name, d) => {
+        const list = PUZZLES.filter(p => p.difficulty === d);
+        if (!list.length) return '';
+        const solved = solvedIn(list);
+        return `<button class="lvl" data-level="${d}">
+          <span class="skulls">${skulls(d)}</span>
+          <b>${name}</b>
+          <span class="blurb">${LEVEL_BLURB[d]}</span>
+          <span class="count">${solved} / ${list.length} résolue${solved > 1 ? 's' : ''}</span>
+          ${solved === list.length ? '<span class="lvldone">Terminé</span>' : ''}
+        </button>`;
+      }).join('')}</div>`;
+    document.getElementById('back').onclick = () => go('');
+    document.getElementById('rulesBtn').onclick = rules;
+    $app.querySelectorAll('.lvl').forEach(b => b.onclick = () => go('niveau/' + b.dataset.level));
   }
-
+  // page d'un niveau : ses affaires
+  function levelPage(d) {
+    P = null;
+    $app.classList.remove('game');
+    const list = PUZZLES.filter(p => p.difficulty === d);
+    $app.innerHTML = pageHead('Retour aux niveaux', `${LEVEL_NAMES[d]} <span class="skulls">${skulls(d)}</span>`) + `
+      <p class="lead">${LEVEL_BLURB[d]} <span class="count">${solvedIn(list)} / ${list.length} résolues</span></p>
+      <div class="cases">${list.map(caseHtml).join('')}</div>`;
+    document.getElementById('back').onclick = () => go('niveaux');
+    document.getElementById('rulesBtn').onclick = rules;
+    $app.querySelectorAll('.case').forEach(b => b.onclick = () => go('affaire/' + b.dataset.id));
+  }
   function home() {
     P = null;
     $app.classList.remove('game');
-    // affiche d'accueil : les suspects alignés sous la toise, le titre sur les poutres, le sceau « Ouvrir l'enquête »
+    // accueil : l'affiche (les suspects alignés sous la toise), le titre sur les poutres, le sceau « Jouer »
     $app.innerHTML = `
       <section class="hero">
         <h1 class="brand herotitle">Grimdoku<small>Meurtres en terres enchantées</small></h1>
         <div class="heroimg" role="img" aria-label="Les suspects alignés sous une toise, dans une taverne, autour d'une silhouette tracée à la craie"></div>
-        <button class="iconbtn herohelp" id="rulesBtn" aria-label="Règles">?</button>
-        <button class="accuse herobtn" id="startBtn">Ouvrir l'enquête</button>
-      </section>
-      <p class="lead">Place chaque suspect sur la carte grâce aux indices. Une personne par ligne, une par colonne. Le coupable est celui qui était seul avec la victime.</p>
-      ${levels()}`;
-    $app.querySelectorAll('.case').forEach(b => b.onclick = () => open(b.dataset.id));
-    document.getElementById('rulesBtn').onclick = rules;
-    document.getElementById('startBtn').onclick = () => $app.querySelector('.level').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        <button class="accuse herobtn" id="playBtn">Jouer</button>
+      </section>`;
+    document.getElementById('playBtn').onclick = () => go('niveaux');
   }
+
+  // Navigation : une adresse par écran (#/, #/niveaux, #/niveau/2, #/affaire/<id>), le bouton retour du navigateur
+  // (ou du téléphone) revient à l'écran précédent.
+  function show(route) {
+    const [page, arg] = route.split('/');
+    if (page === 'niveaux') levelsPage();
+    else if (page === 'niveau' && LEVEL_NAMES[+arg]) levelPage(+arg);
+    else if (page === 'affaire' && PUZZLES.some(p => p.id === arg)) open(arg);
+    else home();
+    window.scrollTo(0, 0);
+  }
+  function go(route) {
+    try { history.pushState({ route }, '', '#/' + route); } catch (e) { /* page ouverte en fichier local : pas d'historique */ }
+    show(route);
+  }
+  window.addEventListener('popstate', () => show(location.hash.replace(/^#\/?/, '')));
+  window.grimGo = go; // tests
 
   // ---------- partie ----------
   // signature d'une énigme : une sauvegarde faite sur une autre version est ignorée
@@ -840,7 +916,7 @@ const PUZZLES = /*__PUZZLES__*/;
   }
 
   function bind() {
-    document.getElementById('back').onclick = home;
+    document.getElementById('back').onclick = () => go('niveau/' + P.difficulty);
     document.getElementById('rulesBtn').onclick = rules;
     document.getElementById('opts').onclick = options;
     document.getElementById('introBtn').onclick = () => sheet(`<h2>${esc(P.title)}</h2><p>${esc(P.intro)}</p><div class="row"><button class="btn primary" data-close>À l'enquête</button></div>`);
@@ -1038,15 +1114,15 @@ const PUZZLES = /*__PUZZLES__*/;
         <p class="epi">${esc(P.epilogue)}</p>
         <div class="row">
           <button class="btn" id="replayBtn">Rejouer</button>
-          ${next ? `<button class="btn primary" id="nextBtn">Affaire suivante</button>` : `<button class="btn primary" id="homeBtn">Toutes les affaires</button>`}
+          ${next ? `<button class="btn primary" id="nextBtn">Affaire suivante</button>` : `<button class="btn primary" id="homeBtn">Tous les niveaux</button>`}
         </div>
       </div>`;
   }
   function bindVerdict() {
     const next = PUZZLES[PUZZLES.indexOf(P) + 1];
     document.getElementById('replayBtn').onclick = () => { S = blank(); undo = []; save(); render(); };
-    const nb = document.getElementById('nextBtn'); if (nb) nb.onclick = () => open(next.id);
-    const hb = document.getElementById('homeBtn'); if (hb) hb.onclick = home;
+    const nb = document.getElementById('nextBtn'); if (nb) nb.onclick = () => go('affaire/' + next.id);
+    const hb = document.getElementById('homeBtn'); if (hb) hb.onclick = () => go('niveaux');
   }
 
   // ---------- fenêtres ----------
@@ -1113,7 +1189,7 @@ const PUZZLES = /*__PUZZLES__*/;
   }
 
   // reprise après mise à jour de la page
-  const start = (data) => { if (data && data.open) open(data.open); else home(); };
+  const start = (data) => { if (data && data.open) open(data.open); else show(location.hash.replace(/^#\/?/, '')); };
   if (window.claude && window.claude.hot) {
     window.claude.hot.snapshot && window.claude.hot.snapshot(() => ({ open: P ? P.id : null }));
     window.claude.hot.ready ? window.claude.hot.ready(start) : start(window.claude.hot.data || {});

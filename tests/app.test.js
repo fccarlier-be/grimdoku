@@ -31,14 +31,29 @@ function open({ settings, saves = {} } = {}) {
   const fire = (el, type) => el.dispatchEvent(new w.Event(type, { bubbles: true }));
   const pick = (id) => d.querySelector(`.chip[data-id="${id}"]`).click();
   const hold = async (r, c, ms = 1600) => { fire(cell(r, c), 'pointerdown'); await sleep(ms); fire(cell(r, c), 'pointerup'); };
-  const openCase = (id) => d.querySelector(`.case[data-id="${id}"]`).click();
+  // une affaire s'ouvre depuis la page de son niveau
+  const openCase = (id) => {
+    w.grimGo('niveau/' + w.eval('PUZZLES').find(p => p.id === id).difficulty);
+    d.querySelector(`.case[data-id="${id}"]`).click();
+  };
   opened.push(w);
   return { w, d, errors, cell, fire, pick, hold, openCase, PUZZLES: w.eval('PUZZLES') };
 }
 
-test('accueil : toutes les affaires, de la plus facile à la plus dure', () => {
+test('accueil → Jouer → niveaux → une page par niveau : toutes les affaires, de la plus facile à la plus dure', () => {
   const { d, PUZZLES, errors } = open();
-  const shown = [...d.querySelectorAll('.case')].map(b => b.dataset.id);
+  assert.equal(d.querySelectorAll('.case, .lvl').length, 0, 'accueil : seulement l\'affiche, le titre et Jouer');
+  d.getElementById('playBtn').click();
+  const lvls = [...d.querySelectorAll('.lvl')].map(b => b.dataset.level);
+  assert.deepEqual(lvls, ['0', '1', '2', '3', '4', '5'], 'un parchemin par niveau');
+  const shown = [];
+  for (const l of lvls) {
+    d.querySelector(`.lvl[data-level="${l}"]`).click();
+    const ids = [...d.querySelectorAll('.case')].map(b => b.dataset.id);
+    assert.ok(ids.every(id => PUZZLES.find(p => p.id === id).difficulty === +l), `niveau ${l} : seulement ses affaires`);
+    shown.push(...ids);
+    d.getElementById('back').click();
+  }
   assert.equal(shown.length, PUZZLES.length);
   const skulls = shown.map(id => PUZZLES.find(p => p.id === id).difficulty);
   assert.deepEqual(skulls, [...skulls].sort((a, b) => a - b));
