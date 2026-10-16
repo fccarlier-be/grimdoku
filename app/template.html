@@ -315,7 +315,9 @@ const PUZZLES = /*__PUZZLES__*/;
     set(k, v) { try { localStorage.setItem('grimdoku:' + k, JSON.stringify(v)); } catch (e) {} }
   };
   const settings = Object.assign({ shade: true, live: false }, store.get('settings', {}));
-  const skulls = (d) => '💀'.repeat(d) + '<span style="opacity:.25">' + '💀'.repeat(Math.max(0, 3 - d)) + '</span>';
+  // difficulté sur 5 crânes (0 = initiation) ; le libellé sert aux lecteurs d'écran
+  const MAX_SKULLS = 5;
+  const skulls = (d) => `<span aria-label="Difficulté ${d} sur ${MAX_SKULLS}">${'💀'.repeat(d)}<span style="opacity:.22">${'💀'.repeat(Math.max(0, MAX_SKULLS - d))}</span></span>`;
 
   let P = null, ctx = null, S = null, undo = [], selected = null, toastT = null;
 

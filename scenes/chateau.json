@@ -1,7 +1,9 @@
 {
-  "id": "grim-003",
+  "scene": "chateau",
   "formatVersion": 1,
   "title": "Le Château de Mortebrune",
+  "intro": "Le roi {victime} a été retrouvé sans vie au petit matin, dans son propre château. Ses invités jurent tous qu'ils dormaient. L'un d'eux ment : il était seul avec lui.",
+  "epilogue": "{coupable} hantait ces murs quatre siècles avant que {victime} ne s'y installe sans demander. Il n'a jamais digéré l'expropriation. Le fantôme avoue tout, puis traverse le mur pour éviter le procès.",
   "size": 7,
   "rooms": {
     "C": {

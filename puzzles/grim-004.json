@@ -1,7 +1,7 @@
 {
-  "id": "grim-004",
   "formatVersion": 1,
   "title": "Le Moulin de Bois-Tordu",
+  "intro": "Le meunier Farinard a été retrouvé ce matin, aussi raide qu'une meule. Cinq villageois rôdaient autour du moulin cette nuit. Un seul était avec lui.",
   "size": 6,
   "rooms": {
     "M": {
@@ -175,7 +175,7 @@
       "archetype": "meunier"
     }
   ],
-  "intro": "Le meunier Farinard a été retrouvé ce matin, aussi raide qu'une meule. Cinq villageois rôdaient autour du moulin cette nuit. Un seul était avec lui.",
+  "id": "grim-004",
   "epilogue": "Dentdur avoue la bouche pleine : Farinard lui facturait chaque miette tombée du moulin. Les miettes, c'était tout ce qu'il mangeait.",
   "clues": [
     {
@@ -265,11 +265,11 @@
     "murderer": "d"
   },
   "rating": {
-    "skulls": 1,
+    "skulls": 0,
     "score": 1,
     "hardest": "case unique",
     "hardSteps": 0,
     "directStart": 2
   },
-  "difficulty": 1
+  "difficulty": 0
 }

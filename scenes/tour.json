@@ -1,7 +1,9 @@
 {
-  "id": "grim-002",
+  "scene": "tour",
   "formatVersion": 1,
   "title": "La Tour de l'Archimage",
+  "intro": "L'archimage {victime}, 412 ans, a enfin rendu son dernier sortilège. Sa tour grouille d'invités douteux, et un portail runique relie le laboratoire à la crypte… Qui l'a envoyé ad patres ?",
+  "epilogue": "{coupable} a traversé le portail runique de la crypte pour surgir dans le laboratoire, juste derrière {victime}. Mobile : il lui avait vendu un élixir de bronzage. Garanti sans effet secondaire.",
   "size": 7,
   "rooms": {
     "L": {

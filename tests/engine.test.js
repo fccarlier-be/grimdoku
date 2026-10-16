@@ -64,7 +64,7 @@ test('règle des pièces : deux suspects ne partagent jamais une pièce', () => 
 test('difficulté : un départ sans placement direct coûte 2 points', () => {
   const easy = E.rateDifficulty([{ ids: ['a'], tech: 0 }, { ids: ['b'], tech: 1 }]);
   const noStart = E.rateDifficulty([{ ids: ['a'], tech: 1 }, { ids: ['b'], tech: 1 }]);
-  assert.equal(easy.skulls, 1);
+  assert.equal(easy.skulls, 0, 'que des indices et des cases uniques → 0 crâne (initiation)');
   assert.equal(noStart.score, easy.score + 2);
   assert.equal(E.rateDifficulty([{ ids: ['a'], tech: 0 }, { ids: ['b'], tech: 6 }]).skulls, 3, 'groupes → 3 crânes');
 });

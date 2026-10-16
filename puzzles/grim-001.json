@@ -1,7 +1,8 @@
 {
-  "id": "grim-001",
   "formatVersion": 1,
   "title": "Meurtre au Sanglier Borgne",
+  "intro": "Florin, tavernier nain et radin de compétition, a été retrouvé raide à l'aube. Personne ne le regrette, mais quelqu'un l'a aidé à partir. Place chaque client, trouve qui était seul avec lui.",
+  "epilogue": "Croquassiette craque : Florin voulait lui retenir trois mois de salaire pour UNE assiette mangée. « Elle était en terre cuite, elle avait l'air bonne ! »",
   "size": 6,
   "rooms": {
     "T": {
@@ -175,8 +176,7 @@
       "archetype": "tavernier"
     }
   ],
-  "intro": "Florin, tavernier nain et radin de compétition, a été retrouvé raide à l'aube. Personne ne le regrette, mais quelqu'un l'a aidé à partir. Place chaque client, trouve qui était seul avec lui.",
-  "epilogue": "Croquassiette craque : Florin voulait lui retenir trois mois de salaire pour UNE assiette mangée. « Elle était en terre cuite, elle avait l'air bonne ! »",
+  "id": "grim-001",
   "clues": [
     {
       "who": "a",

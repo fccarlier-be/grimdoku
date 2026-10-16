@@ -1,7 +1,8 @@
 {
-  "id": "grim-003",
   "formatVersion": 1,
   "title": "Le Château de Mortebrune",
+  "intro": "Le roi Godefroy a été retrouvé sans vie au petit matin, dans son propre château. Ses invités jurent tous qu'ils dormaient. L'un d'eux ment : il était seul avec lui.",
+  "epilogue": "Albâtre hantait ces murs quatre siècles avant que Godefroy ne s'y installe sans demander. Il n'a jamais digéré l'expropriation. Le fantôme avoue tout, puis traverse le mur pour éviter le procès.",
   "size": 7,
   "rooms": {
     "C": {
@@ -238,8 +239,7 @@
       "archetype": "roi"
     }
   ],
-  "intro": "Le roi Godefroy a été retrouvé sans vie au petit matin, dans son propre château. Ses invités jurent tous qu'ils dormaient. L'un d'eux ment : il était seul avec lui.",
-  "epilogue": "Albâtre hantait ces murs quatre siècles avant que Godefroy ne s'y installe sans demander. Il n'a jamais digéré l'expropriation. Le fantôme avoue tout, puis traverse le mur pour éviter le procès.",
+  "id": "grim-003",
   "clues": [
     {
       "who": "a",

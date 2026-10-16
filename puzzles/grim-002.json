@@ -1,7 +1,8 @@
 {
-  "id": "grim-002",
   "formatVersion": 1,
   "title": "La Tour de l'Archimage",
+  "intro": "L'archimage Grisebarbe, 412 ans, a enfin rendu son dernier sortilège. Sa tour grouille d'invités douteux, et un portail runique relie le laboratoire à la crypte… Qui l'a envoyé ad patres ?",
+  "epilogue": "Écarlate a traversé le portail runique de la crypte pour surgir dans le laboratoire, juste derrière Grisebarbe. Mobile : il lui avait vendu un élixir de bronzage. Garanti sans effet secondaire.",
   "size": 7,
   "rooms": {
     "L": {
@@ -219,8 +220,7 @@
       "archetype": "archimage"
     }
   ],
-  "intro": "L'archimage Grisebarbe, 412 ans, a enfin rendu son dernier sortilège. Sa tour grouille d'invités douteux, et un portail runique relie le laboratoire à la crypte… Qui l'a envoyé ad patres ?",
-  "epilogue": "Écarlate a traversé le portail runique de la crypte pour surgir dans le laboratoire, juste derrière Grisebarbe. Mobile : il lui avait vendu un élixir de bronzage. Garanti sans effet secondaire.",
+  "id": "grim-002",
   "clues": [
     {
       "who": "a",

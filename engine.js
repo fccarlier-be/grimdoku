@@ -340,7 +340,8 @@
   //   score = poids de la technique la plus dure
   //         + 1 par étape difficile (poids ≥ 3) au-delà de la première
   //         + 2 s'il n'y a aucun placement direct au départ (rien à quoi s'accrocher)
-  //   crânes : score ≤ 2 → 1, 3–4 → 2, ≥ 5 → 3
+  //   crânes (échelle 0–5) : score ≤ 1 → 0, 2 → 1, 3–4 → 2, ≥ 5 → 3.
+  //   4 et 5 crânes sont réservés aux grilles à nouvelles mécaniques (personnages sur plusieurs cases…).
   const TECH_WEIGHT = [0, 1, 2, 2, 3, 3, 5]; // indexé comme TECH
   function rateDifficulty(steps) {
     const w = steps.map(s => TECH_WEIGHT[s.tech]);
@@ -348,7 +349,7 @@
     const hardSteps = w.filter(x => x >= 3).length;
     const directStart = steps.length && steps[0].tech === 0 ? steps[0].ids.length : 0;
     const score = hardest + Math.max(0, hardSteps - 1) + (directStart ? 0 : 2);
-    const skulls = score <= 2 ? 1 : score <= 4 ? 2 : 3;
+    const skulls = score <= 1 ? 0 : score <= 2 ? 1 : score <= 4 ? 2 : 3;
     const top = steps[w.indexOf(hardest)];
     return { skulls, score, hardest: TECH[top ? top.tech : 0], hardSteps, directStart };
   }
