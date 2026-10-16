@@ -1,0 +1,122 @@
+{
+ "positions": {
+  "g": [
+   3,
+   2
+  ],
+  "f": [
+   5,
+   3
+  ],
+  "c": [
+   4,
+   5
+  ],
+  "a": [
+   1,
+   0
+  ],
+  "e": [
+   2,
+   4
+  ],
+  "b": [
+   0,
+   6
+  ],
+  "d": [
+   6,
+   1
+  ]
+ },
+ "murderer": "f",
+ "cast": {
+  "f": "a",
+  "c": "b",
+  "a": "c",
+  "e": "d",
+  "b": "e",
+  "d": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "f",
+   "logic": {
+    "type": "northOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "inRoom",
+    "room": "T"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "westOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "inRoom",
+    "room": "R"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "onObject",
+    "object": "tapis"
+   }
+  }
+ ]
+}

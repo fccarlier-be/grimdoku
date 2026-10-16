@@ -1,0 +1,246 @@
+{
+  "formatVersion": 1,
+  "title": "Le Bal Masqué",
+  "size": 8,
+  "rooms": {
+    "B": {
+      "name": "Balcon",
+      "the": "le balcon"
+    },
+    "S": {
+      "name": "Salle de bal",
+      "the": "la salle de bal"
+    },
+    "E": {
+      "name": "Escalier d'honneur",
+      "the": "l'escalier d'honneur"
+    },
+    "V": {
+      "name": "Vestiaire",
+      "the": "le vestiaire"
+    },
+    "F": {
+      "name": "Buffet",
+      "the": "le buffet"
+    },
+    "M": {
+      "name": "Salon des miroirs",
+      "the": "le salon des miroirs"
+    },
+    "J": {
+      "name": "Jardin d'hiver",
+      "the": "le jardin d'hiver"
+    },
+    "O": {
+      "name": "Boudoir",
+      "the": "le boudoir"
+    }
+  },
+  "layout": [
+    "BBBSSSSE",
+    "BBSSSSSE",
+    "VVSSSSEE",
+    "VVSSSSFF",
+    "MMMSSFFF",
+    "MMMJJJFF",
+    "OOJJJJFF",
+    "OOOJJJJF"
+  ],
+  "objects": [
+    {
+      "type": "statue",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        1,
+        6
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        7
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        7
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        4,
+        6
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        7
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        5,
+        2
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        4
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        7,
+        5
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        6,
+        3
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        6,
+        0
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        7,
+        2
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "archetype": "spectre",
+      "role": "suspect"
+    },
+    {
+      "id": "b",
+      "archetype": "roi",
+      "role": "suspect"
+    },
+    {
+      "id": "c",
+      "archetype": "chevalier",
+      "role": "suspect"
+    },
+    {
+      "id": "d",
+      "archetype": "elfe",
+      "role": "suspect"
+    },
+    {
+      "id": "e",
+      "archetype": "barde",
+      "role": "suspect"
+    },
+    {
+      "id": "f",
+      "archetype": "fee",
+      "role": "suspect"
+    },
+    {
+      "id": "g",
+      "archetype": "djinn",
+      "role": "suspect"
+    },
+    {
+      "id": "h",
+      "archetype": "vampire",
+      "role": "victim"
+    }
+  ],
+  "auto": {
+    "intro": "{Titre} {victime} a été retrouvé{e} sans vie au Bal Masqué, sous un loup de velours. {Nombre} invités dansaient encore. Un seul était avec {lui}.",
+    "epilogues": {
+      "vampire": "{coupable} avoue en ôtant son masque : {victime} avait servi du punch à l'ail. À SON bal.",
+      "spectre": "{coupable} avoue : {victime} l'avait pris pour un invité déguisé en drap et avait tiré dessus pour voir.",
+      "roi": "{coupable} avoue, outré : {victime} lui avait marché sur la traîne pendant la valse royale. Trois fois.",
+      "chevalier": "{coupable} avoue en grinçant : {victime} avait refusé de danser avec lui à cause du bruit de son armure.",
+      "elfe": "{coupable} avoue avec dédain : {victime} avait osé venir avec la même tenue qu'elle.",
+      "barde": "{coupable} avoue : {victime} avait demandé à l'orchestre de jouer plus fort pour couvrir sa chanson.",
+      "fee": "{coupable} avoue : {victime} l'avait prise pour une décoration de lustre et voulait l'accrocher.",
+      "djinn": "{coupable} avoue : {victime} avait souhaité « que ce bal ne finisse jamais ». Elle trouvait déjà le temps long."
+    }
+  }
+}

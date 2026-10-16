@@ -1,0 +1,414 @@
+{
+  "formatVersion": 1,
+  "title": "Le Bal Masqué — l'affaire Hardouin",
+  "size": 8,
+  "rooms": {
+    "B": {
+      "name": "Balcon",
+      "the": "le balcon"
+    },
+    "S": {
+      "name": "Salle de bal",
+      "the": "la salle de bal"
+    },
+    "E": {
+      "name": "Escalier d'honneur",
+      "the": "l'escalier d'honneur"
+    },
+    "V": {
+      "name": "Vestiaire",
+      "the": "le vestiaire"
+    },
+    "F": {
+      "name": "Buffet",
+      "the": "le buffet"
+    },
+    "M": {
+      "name": "Salon des miroirs",
+      "the": "le salon des miroirs"
+    },
+    "J": {
+      "name": "Jardin d'hiver",
+      "the": "le jardin d'hiver"
+    },
+    "O": {
+      "name": "Boudoir",
+      "the": "le boudoir"
+    }
+  },
+  "layout": [
+    "BBBSSSSE",
+    "BBSSSSSE",
+    "VVSSSSEE",
+    "VVSSSSFF",
+    "MMMSSFFF",
+    "MMMJJJFF",
+    "OOJJJJFF",
+    "OOOJJJJF"
+  ],
+  "objects": [
+    {
+      "type": "statue",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        1,
+        6
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        7
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        7
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        4,
+        6
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        7
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        5,
+        2
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        4
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        7,
+        5
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        6,
+        3
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        6,
+        0
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        7,
+        2
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Aubépine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
+    },
+    {
+      "id": "b",
+      "name": "Blafard",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ]
+    },
+    {
+      "id": "c",
+      "name": "Couac",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
+    },
+    {
+      "id": "d",
+      "name": "Djinnifer",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn"
+    },
+    {
+      "id": "e",
+      "name": "Écarlate",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
+    },
+    {
+      "id": "f",
+      "name": "Faëlys",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
+    },
+    {
+      "id": "g",
+      "name": "Godefroy",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤴",
+      "desc": "Roi, avare de compliments et de tout le reste",
+      "archetype": "roi"
+    },
+    {
+      "id": "h",
+      "name": "Hardouin",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
+    }
+  ],
+  "id": "bal--chevalier",
+  "intro": "Le chevalier Hardouin a été retrouvé sans vie au Bal Masqué, sous un loup de velours. Sept invités dansaient encore. Un seul était avec lui.",
+  "epilogue": "Aubépine avoue : Hardouin l'avait prise pour une décoration de lustre et voulait l'accrocher.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Aubépine était dans la même colonne qu'une chaise.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Elle était à côté d'un champignon géant.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Elle était au sud de Djinnifer.",
+      "logic": {
+        "type": "southOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Blafard était sur la même ligne qu'une statue.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était à côté d'une table.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "table"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Couac était assis dans un fauteuil.",
+      "logic": {
+        "type": "onObject",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était au nord de Faëlys.",
+      "logic": {
+        "type": "northOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Djinnifer était à l'ouest d'Aubépine.",
+      "logic": {
+        "type": "westOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Elle était assise dans un fauteuil.",
+      "logic": {
+        "type": "onObject",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Écarlate était à côté d'une chaise.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Faëlys était au nord d'Aubépine.",
+      "logic": {
+        "type": "northOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Godefroy était dans la même colonne qu'un arbre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "arbre"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "h": [
+        7,
+        3
+      ],
+      "b": [
+        4,
+        7
+      ],
+      "g": [
+        0,
+        5
+      ],
+      "f": [
+        2,
+        6
+      ],
+      "c": [
+        1,
+        1
+      ],
+      "a": [
+        6,
+        4
+      ],
+      "d": [
+        5,
+        2
+      ],
+      "e": [
+        3,
+        0
+      ]
+    },
+    "murderer": "a"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 3,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 1
+  },
+  "difficulty": 2
+}

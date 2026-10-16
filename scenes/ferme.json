@@ -1,0 +1,164 @@
+{
+  "formatVersion": 1,
+  "title": "La Ferme Hantée",
+  "size": 6,
+  "rooms": {
+    "G": {
+      "name": "Grange",
+      "the": "la grange"
+    },
+    "E": {
+      "name": "Étable",
+      "the": "l'étable"
+    },
+    "O": {
+      "name": "Poulailler",
+      "the": "le poulailler"
+    },
+    "F": {
+      "name": "Fournil",
+      "the": "le fournil"
+    },
+    "P": {
+      "name": "Potager",
+      "the": "le potager"
+    }
+  },
+  "layout": [
+    "GGGEEE",
+    "GGGEEO",
+    "FFGPOO",
+    "FFPPPO",
+    "FFPPPO",
+    "FPPPPO"
+  ],
+  "objects": [
+    {
+      "type": "foin",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        0,
+        2
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        3
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        4,
+        5
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        5,
+        2
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        4,
+        4
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "archetype": "boulanger",
+      "role": "suspect"
+    },
+    {
+      "id": "b",
+      "archetype": "troll",
+      "role": "suspect"
+    },
+    {
+      "id": "c",
+      "archetype": "zombie",
+      "role": "suspect"
+    },
+    {
+      "id": "d",
+      "archetype": "fee",
+      "role": "suspect"
+    },
+    {
+      "id": "e",
+      "archetype": "dragonnet",
+      "role": "suspect"
+    },
+    {
+      "id": "f",
+      "archetype": "meunier",
+      "role": "victim"
+    }
+  ],
+  "auto": {
+    "intro": "{Titre} {victime} a été retrouvé{e} au petit matin dans la Ferme Hantée, entre le potager et le fournil. {Nombre} voisins y avaient passé la nuit. Un seul était avec {lui}.",
+    "epilogues": {
+      "meunier": "{coupable} avoue : {victime} achetait sa farine ailleurs. Chez un concurrent. Qui a un moulin à vent, en plus.",
+      "boulanger": "{coupable} avoue en pétrissant nerveusement : {victime} avait mangé toutes les miches du fournil avant l'aube.",
+      "troll": "{coupable} avoue la bouche pleine : {victime} lui avait interdit le potager. Il n'avait mangé que les citrouilles. Et l'épouvantail.",
+      "zombie": "{coupable} avoue, lentement : {victime} l'avait planté au milieu du potager pour faire peur aux corbeaux.",
+      "fee": "{coupable} avoue : {victime} avait mis sa poussière de fée dans la pâte à crêpes. Les crêpes s'envolaient.",
+      "dragonnet": "{coupable} avoue en fumant : {victime} lui demandait de chauffer le four, puis de le refroidir, puis de le chauffer."
+    }
+  }
+}

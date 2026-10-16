@@ -1,0 +1,164 @@
+{
+  "formatVersion": 1,
+  "title": "Les Thermes Enchantés",
+  "size": 6,
+  "rooms": {
+    "V": {
+      "name": "Vestiaire",
+      "the": "le vestiaire"
+    },
+    "C": {
+      "name": "Bassin chaud",
+      "the": "le bassin chaud"
+    },
+    "F": {
+      "name": "Bassin froid",
+      "the": "le bassin froid"
+    },
+    "S": {
+      "name": "Sauna",
+      "the": "le sauna"
+    },
+    "M": {
+      "name": "Salle de massage",
+      "the": "la salle de massage"
+    }
+  },
+  "layout": [
+    "VVCCCC",
+    "VVCCCC",
+    "SSCCFF",
+    "SSMMFF",
+    "SSMMFF",
+    "SMMMFF"
+  ],
+  "objects": [
+    {
+      "type": "coffre",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        3
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        2
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "roseaux",
+      "at": [
+        4,
+        4
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        3,
+        2
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        1
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "archetype": "sirene",
+      "role": "suspect"
+    },
+    {
+      "id": "b",
+      "archetype": "elfe",
+      "role": "suspect"
+    },
+    {
+      "id": "c",
+      "archetype": "troll",
+      "role": "suspect"
+    },
+    {
+      "id": "d",
+      "archetype": "fee",
+      "role": "suspect"
+    },
+    {
+      "id": "e",
+      "archetype": "mage",
+      "role": "suspect"
+    },
+    {
+      "id": "f",
+      "archetype": "tavernier",
+      "role": "victim"
+    }
+  ],
+  "auto": {
+    "intro": "{Titre} {victime} a été retrouvé{e} sans vie aux Thermes Enchantés, détendu{e} pour toujours. {Nombre} curistes profitaient des bains. Un seul était avec {lui}.",
+    "epilogues": {
+      "sirene": "{coupable} avoue : {victime} avait versé des sels de bain dans SON bassin. Elle en a eu des écailles qui piquent pendant une semaine.",
+      "elfe": "{coupable} avoue avec dédain : {victime} avait trempé ses pieds dans le bassin chaud. Juste avant elle.",
+      "troll": "{coupable} avoue : {victime} l'avait comparé à un rocher décoratif.",
+      "fee": "{coupable} avoue : {victime} l'avait prise pour un moustique et avait tapé dessus. Elle a rendu la politesse.",
+      "mage": "{coupable} avoue en éternuant : {victime} avait parfumé le sauna à la bière.",
+      "tavernier": "{coupable} avoue en comptant ses pièces : {victime} était entré{e} aux thermes sans payer. Deux fois."
+    }
+  }
+}

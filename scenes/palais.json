@@ -1,0 +1,221 @@
+{
+  "formatVersion": 1,
+  "title": "Le Palais des Mille Vœux",
+  "size": 7,
+  "rooms": {
+    "O": {
+      "name": "Observatoire",
+      "the": "l'observatoire"
+    },
+    "T": {
+      "name": "Salle du trône",
+      "the": "la salle du trône"
+    },
+    "R": {
+      "name": "Trésor",
+      "the": "le trésor"
+    },
+    "L": {
+      "name": "Salle des lampes",
+      "the": "la salle des lampes"
+    },
+    "J": {
+      "name": "Jardins suspendus",
+      "the": "les jardins suspendus"
+    },
+    "B": {
+      "name": "Bazar",
+      "the": "le bazar"
+    },
+    "H": {
+      "name": "Hammam",
+      "the": "le hammam"
+    }
+  },
+  "layout": [
+    "OOTTTRR",
+    "OOTTTRR",
+    "LLTTTBB",
+    "LLJJJBB",
+    "HHJJJBB",
+    "HHHJJBB",
+    "HHHJJBB"
+  ],
+  "objects": [
+    {
+      "type": "cristal",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        1,
+        3
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        2
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        1,
+        6
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        4
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        4,
+        2
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        6,
+        6
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        6,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        0
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "archetype": "roi",
+      "role": "suspect"
+    },
+    {
+      "id": "b",
+      "archetype": "cartomancienne",
+      "role": "suspect"
+    },
+    {
+      "id": "c",
+      "archetype": "bonimenteur",
+      "role": "suspect"
+    },
+    {
+      "id": "d",
+      "archetype": "gobelin",
+      "role": "suspect"
+    },
+    {
+      "id": "e",
+      "archetype": "vampire",
+      "role": "suspect"
+    },
+    {
+      "id": "f",
+      "archetype": "archimage",
+      "role": "suspect"
+    },
+    {
+      "id": "g",
+      "archetype": "djinn",
+      "role": "victim"
+    }
+  ],
+  "auto": {
+    "intro": "{Titre} {victime} a été retrouvé{e} sans vie au Palais des Mille Vœux, sous un tapis volant qui ne volait plus. {Nombre} invités avaient fait un vœu ce soir-là. Un seul était avec {lui}.",
+    "epilogues": {
+      "djinn": "{coupable} avoue : {victime} réclamait un quatrième vœu. Il n'y a jamais de quatrième vœu.",
+      "roi": "{coupable} avoue, la couronne de travers : {victime} avait souhaité devenir roi à sa place. Le vœu a été annulé.",
+      "cartomancienne": "{coupable} l'avait lu dans les cartes : {victime} allait vider le trésor. Elle a préféré prendre les devants.",
+      "bonimenteur": "{coupable} avoue d'une voix de stentor : {victime} vendait de fausses lampes magiques au bazar. C'était SON commerce.",
+      "gobelin": "{coupable} avoue : {victime} avait compté les pièces du trésor. Il en manquait. Le gobelin savait où.",
+      "vampire": "{coupable} avoue : {victime} avait souhaité « un grand soleil sur le palais ». Le vœu a été exaucé. Elle, beaucoup moins.",
+      "archimage": "{coupable} avoue en lissant sa barbe : {victime} avait souhaité devenir un plus grand magicien que lui. Inacceptable."
+    }
+  }
+}

@@ -1,0 +1,267 @@
+{
+  "formatVersion": 1,
+  "title": "Les Thermes Enchantés — l'affaire Florin",
+  "size": 6,
+  "rooms": {
+    "V": {
+      "name": "Vestiaire",
+      "the": "le vestiaire"
+    },
+    "C": {
+      "name": "Bassin chaud",
+      "the": "le bassin chaud"
+    },
+    "F": {
+      "name": "Bassin froid",
+      "the": "le bassin froid"
+    },
+    "S": {
+      "name": "Sauna",
+      "the": "le sauna"
+    },
+    "M": {
+      "name": "Salle de massage",
+      "the": "la salle de massage"
+    }
+  },
+  "layout": [
+    "VVCCCC",
+    "VVCCCC",
+    "SSCCFF",
+    "SSMMFF",
+    "SSMMFF",
+    "SMMMFF"
+  ],
+  "objects": [
+    {
+      "type": "coffre",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        3
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        2
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "roseaux",
+      "at": [
+        4,
+        4
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        3,
+        2
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        1
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Avaloir",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    },
+    {
+      "id": "b",
+      "name": "Bruyère",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
+    },
+    {
+      "id": "c",
+      "name": "Corail",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene"
+    },
+    {
+      "id": "d",
+      "name": "Dédale",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage"
+    },
+    {
+      "id": "e",
+      "name": "Erwëlle",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
+    },
+    {
+      "id": "f",
+      "name": "Florin",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🧔‍♂️",
+      "desc": "Tavernier nain, radin légendaire",
+      "archetype": "tavernier"
+    }
+  ],
+  "id": "thermes--tavernier",
+  "intro": "Le tavernier Florin a été retrouvé sans vie aux Thermes Enchantés, détendu pour toujours. Cinq curistes profitaient des bains. Un seul était avec lui.",
+  "epilogue": "Avaloir avoue : Florin l'avait comparé à un rocher décoratif.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Avaloir était sur un tapis.",
+      "logic": {
+        "type": "onObject",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bruyère était allongée sur un lit.",
+      "logic": {
+        "type": "onObject",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Corail était à l'ouest de Bruyère.",
+      "logic": {
+        "type": "westOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Elle était sur la même ligne qu'une table.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dédale était à côté d'une chaise.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Erwëlle était à côté d'une statue.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "statue"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        1,
+        4
+      ],
+      "c": [
+        5,
+        0
+      ],
+      "e": [
+        3,
+        5
+      ],
+      "a": [
+        2,
+        2
+      ],
+      "b": [
+        4,
+        3
+      ],
+      "d": [
+        0,
+        1
+      ]
+    },
+    "murderer": "a"
+  },
+  "rating": {
+    "skulls": 1,
+    "score": 2,
+    "hardest": "position relative",
+    "hardSteps": 0,
+    "directStart": 1
+  },
+  "difficulty": 1
+}

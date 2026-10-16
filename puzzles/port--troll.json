@@ -1,0 +1,355 @@
+{
+  "formatVersion": 1,
+  "title": "Le Port des Contrebandiers — l'affaire Gloutor",
+  "size": 7,
+  "rooms": {
+    "P": {
+      "name": "Phare",
+      "the": "le phare"
+    },
+    "Q": {
+      "name": "Quai",
+      "the": "le quai"
+    },
+    "D": {
+      "name": "Douane",
+      "the": "la douane"
+    },
+    "T": {
+      "name": "Taverne du port",
+      "the": "la taverne du port"
+    },
+    "C": {
+      "name": "Chantier naval",
+      "the": "le chantier naval"
+    },
+    "E": {
+      "name": "Entrepôt",
+      "the": "l'entrepôt"
+    },
+    "M": {
+      "name": "Marché aux poissons",
+      "the": "le marché aux poissons"
+    }
+  },
+  "layout": [
+    "PPQQQQD",
+    "PPQQQDD",
+    "TTQCCDD",
+    "TTCCCEE",
+    "TTCCCEE",
+    "MMMCEEE",
+    "MMMMEEE"
+  ],
+  "objects": [
+    {
+      "type": "statue",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "canon",
+      "at": [
+        0,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "barque",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        1,
+        6
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        2,
+        6
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "barque",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        4,
+        4
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        6,
+        6
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        2
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Aspre",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧔‍♂️",
+      "desc": "Tavernier nain, radin légendaire",
+      "archetype": "tavernier"
+    },
+    {
+      "id": "b",
+      "name": "Bakchich",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "c",
+      "name": "Coutelas",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🏴‍☠️",
+      "desc": "Pirate, a perdu une jambe, un œil et le sens de l'orientation",
+      "archetype": "pirate"
+    },
+    {
+      "id": "d",
+      "name": "Dorade",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene"
+    },
+    {
+      "id": "e",
+      "name": "Écho-Écho",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🦜",
+      "desc": "Perroquet, répète tous les secrets",
+      "archetype": "perroquet"
+    },
+    {
+      "id": "f",
+      "name": "Frégaton",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍✈️",
+      "desc": "Capitaine, n'a jamais quitté le port",
+      "archetype": "capitaine"
+    },
+    {
+      "id": "g",
+      "name": "Gloutor",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    }
+  ],
+  "id": "port--troll",
+  "intro": "Le troll Gloutor a été retrouvé sans vie au Port des Contrebandiers, à l'heure où la marée se retire. Six habitués traînaient sur les quais. Un seul était avec lui.",
+  "epilogue": "Écho-Écho avoue, et le répète : Gloutor voulait le vendre à la taverne comme horloge parlante.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Aspre était au nord de Coutelas.",
+      "logic": {
+        "type": "northOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était à côté d'un tonneau.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était à l'ouest de Dorade.",
+      "logic": {
+        "type": "westOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bakchich était à côté d'une barque.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "barque"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Coutelas était au sud de Bakchich.",
+      "logic": {
+        "type": "southOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était assis sur une chaise.",
+      "logic": {
+        "type": "onObject",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dorade était sur la même ligne qu'un lit.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Écho-Écho était à côté d'un tonneau.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Frégaton était à l'est d'Aspre.",
+      "logic": {
+        "type": "eastOf",
+        "other": "a"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "g": [
+        6,
+        0
+      ],
+      "c": [
+        3,
+        1
+      ],
+      "f": [
+        4,
+        6
+      ],
+      "e": [
+        5,
+        2
+      ],
+      "d": [
+        1,
+        5
+      ],
+      "b": [
+        2,
+        3
+      ],
+      "a": [
+        0,
+        4
+      ]
+    },
+    "murderer": "e"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "position relative",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 2
+}

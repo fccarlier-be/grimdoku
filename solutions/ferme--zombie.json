@@ -1,0 +1,96 @@
+{
+ "positions": {
+  "f": [
+   4,
+   1
+  ],
+  "d": [
+   0,
+   3
+  ],
+  "a": [
+   5,
+   0
+  ],
+  "b": [
+   2,
+   2
+  ],
+  "e": [
+   3,
+   4
+  ],
+  "c": [
+   1,
+   5
+  ]
+ },
+ "murderer": "a",
+ "cast": {
+  "d": "a",
+  "a": "b",
+  "b": "c",
+  "e": "d",
+  "c": "e"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "inRoom",
+    "room": "P"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "foin"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "inRoom",
+    "room": "O"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "inRoom",
+    "room": "E"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "champi"
+   }
+  }
+ ]
+}

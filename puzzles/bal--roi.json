@@ -1,0 +1,406 @@
+{
+  "formatVersion": 1,
+  "title": "Le Bal Masqué — l'affaire Hugues",
+  "size": 8,
+  "rooms": {
+    "B": {
+      "name": "Balcon",
+      "the": "le balcon"
+    },
+    "S": {
+      "name": "Salle de bal",
+      "the": "la salle de bal"
+    },
+    "E": {
+      "name": "Escalier d'honneur",
+      "the": "l'escalier d'honneur"
+    },
+    "V": {
+      "name": "Vestiaire",
+      "the": "le vestiaire"
+    },
+    "F": {
+      "name": "Buffet",
+      "the": "le buffet"
+    },
+    "M": {
+      "name": "Salon des miroirs",
+      "the": "le salon des miroirs"
+    },
+    "J": {
+      "name": "Jardin d'hiver",
+      "the": "le jardin d'hiver"
+    },
+    "O": {
+      "name": "Boudoir",
+      "the": "le boudoir"
+    }
+  },
+  "layout": [
+    "BBBSSSSE",
+    "BBSSSSSE",
+    "VVSSSSEE",
+    "VVSSSSFF",
+    "MMMSSFFF",
+    "MMMJJJFF",
+    "OOJJJJFF",
+    "OOOJJJJF"
+  ],
+  "objects": [
+    {
+      "type": "statue",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        1,
+        6
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        7
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        7
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        4,
+        6
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        7
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        5,
+        2
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        4
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        7,
+        5
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        6,
+        3
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        6,
+        0
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        7,
+        2
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Aëlys",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
+    },
+    {
+      "id": "b",
+      "name": "Blafard",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ]
+    },
+    {
+      "id": "c",
+      "name": "Capucine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
+    },
+    {
+      "id": "d",
+      "name": "Dièse",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
+    },
+    {
+      "id": "e",
+      "name": "Écarlate",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
+    },
+    {
+      "id": "f",
+      "name": "Fumerolle",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn"
+    },
+    {
+      "id": "g",
+      "name": "Gontran",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
+    },
+    {
+      "id": "h",
+      "name": "Hugues",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🤴",
+      "desc": "Roi, avare de compliments et de tout le reste",
+      "archetype": "roi"
+    }
+  ],
+  "id": "bal--roi",
+  "intro": "Le roi Hugues a été retrouvé sans vie au Bal Masqué, sous un loup de velours. Sept invités dansaient encore. Un seul était avec lui.",
+  "epilogue": "Gontran avoue en grinçant : Hugues avait refusé de danser avec lui à cause du bruit de son armure.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Aëlys était au nord de Capucine.",
+      "logic": {
+        "type": "northOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Elle était à côté d'un lit.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Blafard était au sud d'Écarlate.",
+      "logic": {
+        "type": "southOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était dans le balcon.",
+      "logic": {
+        "type": "inRoom",
+        "room": "B"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Capucine était dans la même colonne qu'une statue.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dièse était au sud d'Écarlate.",
+      "logic": {
+        "type": "southOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était assis dans un fauteuil.",
+      "logic": {
+        "type": "onObject",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Écarlate était sur la même ligne qu'une chaise.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Fumerolle était à l'est de Gontran.",
+      "logic": {
+        "type": "eastOf",
+        "other": "g"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Gontran était sur la même ligne qu'une table.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Il était dans la même colonne qu'un champignon géant.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "champi"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "h": [
+        2,
+        4
+      ],
+      "b": [
+        1,
+        0
+      ],
+      "g": [
+        3,
+        3
+      ],
+      "a": [
+        6,
+        1
+      ],
+      "d": [
+        5,
+        2
+      ],
+      "c": [
+        7,
+        6
+      ],
+      "f": [
+        4,
+        5
+      ],
+      "e": [
+        0,
+        7
+      ]
+    },
+    "murderer": "g"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 0
+  },
+  "difficulty": 3
+}

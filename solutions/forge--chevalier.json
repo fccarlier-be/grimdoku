@@ -1,0 +1,101 @@
+{
+ "positions": {
+  "g": [
+   6,
+   2
+  ],
+  "e": [
+   5,
+   3
+  ],
+  "a": [
+   4,
+   4
+  ],
+  "c": [
+   3,
+   1
+  ],
+  "b": [
+   1,
+   6
+  ],
+  "f": [
+   0,
+   5
+  ],
+  "d": [
+   2,
+   0
+  ]
+ },
+ "murderer": "e",
+ "cast": {
+  "e": "a",
+  "a": "b",
+  "c": "c",
+  "b": "d",
+  "f": "e",
+  "d": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "enclume"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "enclume"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "northOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "southOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "notInRoom",
+    "room": "O"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "northOf",
+    "other": "c"
+   }
+  }
+ ]
+}

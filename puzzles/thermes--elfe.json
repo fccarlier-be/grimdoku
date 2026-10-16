@@ -1,0 +1,267 @@
+{
+  "formatVersion": 1,
+  "title": "Les Thermes Enchantés — l'affaire Faëlys",
+  "size": 6,
+  "rooms": {
+    "V": {
+      "name": "Vestiaire",
+      "the": "le vestiaire"
+    },
+    "C": {
+      "name": "Bassin chaud",
+      "the": "le bassin chaud"
+    },
+    "F": {
+      "name": "Bassin froid",
+      "the": "le bassin froid"
+    },
+    "S": {
+      "name": "Sauna",
+      "the": "le sauna"
+    },
+    "M": {
+      "name": "Salle de massage",
+      "the": "la salle de massage"
+    }
+  },
+  "layout": [
+    "VVCCCC",
+    "VVCCCC",
+    "SSCCFF",
+    "SSMMFF",
+    "SSMMFF",
+    "SMMMFF"
+  ],
+  "objects": [
+    {
+      "type": "coffre",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        3
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        2
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "roseaux",
+      "at": [
+        4,
+        4
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        3,
+        2
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        1
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Aubépine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
+    },
+    {
+      "id": "b",
+      "name": "Bricolin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage"
+    },
+    {
+      "id": "c",
+      "name": "Corail",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene"
+    },
+    {
+      "id": "d",
+      "name": "Denier",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧔‍♂️",
+      "desc": "Tavernier nain, radin légendaire",
+      "archetype": "tavernier"
+    },
+    {
+      "id": "e",
+      "name": "Engloutor",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    },
+    {
+      "id": "f",
+      "name": "Faëlys",
+      "gender": "f",
+      "role": "victim",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
+    }
+  ],
+  "id": "thermes--elfe",
+  "intro": "L'elfe Faëlys a été retrouvée sans vie aux Thermes Enchantés, détendue pour toujours. Cinq curistes profitaient des bains. Un seul était avec elle.",
+  "epilogue": "Aubépine avoue : Faëlys l'avait prise pour un moustique et avait tapé dessus. Elle a rendu la politesse.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Aubépine était sur un tapis.",
+      "logic": {
+        "type": "onObject",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bricolin était allongé sur un lit.",
+      "logic": {
+        "type": "onObject",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Corail était à l'ouest de Bricolin.",
+      "logic": {
+        "type": "westOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Elle était sur la même ligne qu'une table.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Denier était à côté d'une chaise.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Engloutor était à côté d'une statue.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "statue"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        1,
+        4
+      ],
+      "c": [
+        5,
+        0
+      ],
+      "e": [
+        3,
+        5
+      ],
+      "a": [
+        2,
+        2
+      ],
+      "b": [
+        4,
+        3
+      ],
+      "d": [
+        0,
+        1
+      ]
+    },
+    "murderer": "a"
+  },
+  "rating": {
+    "skulls": 1,
+    "score": 2,
+    "hardest": "position relative",
+    "hardSteps": 0,
+    "directStart": 1
+  },
+  "difficulty": 1
+}

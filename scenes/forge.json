@@ -1,0 +1,207 @@
+{
+  "formatVersion": 1,
+  "title": "La Forge du Dragon",
+  "size": 7,
+  "rooms": {
+    "D": {
+      "name": "Antre du dragon",
+      "the": "l'antre du dragon"
+    },
+    "F": {
+      "name": "Forge",
+      "the": "la forge"
+    },
+    "A": {
+      "name": "Armurerie",
+      "the": "l'armurerie"
+    },
+    "O": {
+      "name": "Fonderie",
+      "the": "la fonderie"
+    },
+    "C": {
+      "name": "Réserve de charbon",
+      "the": "la réserve de charbon"
+    },
+    "T": {
+      "name": "Atelier",
+      "the": "l'atelier"
+    },
+    "Y": {
+      "name": "Cour",
+      "the": "la cour"
+    }
+  },
+  "layout": [
+    "DDDFFFA",
+    "DDFFFAA",
+    "DDOOFAA",
+    "CCOOTTA",
+    "CCOOTTT",
+    "CYYYTTT",
+    "YYYYYTT"
+  ],
+  "objects": [
+    {
+      "type": "coffre",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        1,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        4
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        2,
+        6
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        2,
+        2
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        5,
+        0
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        5
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        4
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        6,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        5,
+        2
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "archetype": "mineur",
+      "role": "suspect"
+    },
+    {
+      "id": "b",
+      "archetype": "chevalier",
+      "role": "suspect"
+    },
+    {
+      "id": "c",
+      "archetype": "gobelin",
+      "role": "suspect"
+    },
+    {
+      "id": "d",
+      "archetype": "troll",
+      "role": "suspect"
+    },
+    {
+      "id": "e",
+      "archetype": "ogre",
+      "role": "suspect"
+    },
+    {
+      "id": "f",
+      "archetype": "mage",
+      "role": "suspect"
+    },
+    {
+      "id": "g",
+      "archetype": "dragonnet",
+      "role": "victim"
+    }
+  ],
+  "auto": {
+    "intro": "{Titre} {victime} a été retrouvé{e} sans vie à la Forge du Dragon, encore tiède. {Nombre} artisans et clients s'y pressaient cette nuit-là. Un seul était avec {lui}.",
+    "epilogues": {
+      "dragonnet": "{coupable} avoue en soufflant une volute : {victime} avait éteint sa forge avec un seau d'eau « pour économiser le charbon ».",
+      "mineur": "{coupable} avoue : {victime} avait fondu sa plus belle pépite pour en faire une cuillère.",
+      "chevalier": "{coupable} avoue en grinçant : {victime} lui avait forgé une armure encore plus petite que l'ancienne.",
+      "gobelin": "{coupable} avoue : {victime} avait remarqué que les épées vendues étaient en fer-blanc peint.",
+      "troll": "{coupable} avoue : {victime} se servait de sa tête comme enclume de secours.",
+      "ogre": "{coupable} avoue, rouge de honte : {victime} lui avait forgé une fourchette géante. Il était végétarien depuis mardi.",
+      "mage": "{coupable} avoue en éternuant : {victime} avait trempé une lame enchantée dans un tonneau de bière."
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{
+ "positions": {
+  "f": [
+   3,
+   4
+  ],
+  "d": [
+   0,
+   2
+  ],
+  "c": [
+   2,
+   1
+  ],
+  "a": [
+   1,
+   0
+  ],
+  "b": [
+   5,
+   3
+  ],
+  "e": [
+   4,
+   5
+  ]
+ },
+ "murderer": "e",
+ "cast": {
+  "d": "a",
+  "c": "b",
+  "a": "c",
+  "b": "d",
+  "e": "e"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "a",
+   "logic": {
+    "type": "inRoom",
+    "room": "V"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "roseaux"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "statue"
+   }
+  }
+ ]
+}
