@@ -3,8 +3,14 @@ services:
     image: nginx:1.27-alpine
     container_name: grimdoku
     restart: unless-stopped
-    ports:
-      - "127.0.0.1:8095:80"   # accessible uniquement en local (Cloudflare Tunnel)
+    # Pas de "ports" : uniquement joignable par cloudflared, sur le réseau Docker
+    # serveur_default (Zero Trust → tunnel vps-ovh → http://grimdoku:80).
     volumes:
       - ./site:/usr/share/nginx/html:ro
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    networks:
+      - serveur_default
+
+networks:
+  serveur_default:
+    external: true   # réseau de ~/serveur/docker-compose.yml, où tourne cloudflared

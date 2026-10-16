@@ -47,7 +47,7 @@ Coordonnées `[ligne, colonne]` indexées à 0. Le catalogue d'objets (nom, arti
 - `assets/characters/<type>.(jpeg|jpg|png)` — **portraits illustrés** (style BD encrée, fond magenta pur), générés par François avec les prompts de `assets/characters/PROMPTS.md`. `tools/images.py` (Pillow, venv `.venv` : `python3 -m venv .venv && .venv/bin/pip install pillow`) les détoure (magenta → transparence, liseré rose retiré), les recadre sur le visage (`ZOOM`, `CX`, `CY`, réglages par type dans `CROP` pour les images cadrées autrement), les réduit à 256 px et écrit `<type>.webp`. Le build préfère ce `.webp` au `.svg` (intégré en `<image>` base64 dans le symbole `chr-<type>`). Commande : `.venv/bin/python tools/images.py && node build-app.js`.
 - `assets/characters/<type>.svg` — dessin de secours (portrait en buste) par type de `cast.json` (même style que le mobilier : viewBox 64×64, contour encre, aplats ; cadré pour un pion rond). Ajouter un type au catalogue impose d'ajouter son portrait (le build échoue sinon).
 - `build-app.js` — assemble tout en `dist/grimdoku.html` (fichier unique, autonome) ; transforme les SVG d'objets et de portraits en `<symbol id="obj-<type>">` / `<symbol id="chr-<type>">` (placeholder `<!--__SPRITE__-->`), utilisés via `<use href="#…">` (portraits : `face(ch)` dans l'appli, découpés en rond).
-- `deploy/grimdoku/` — bundle de prod : `docker-compose.yml` (nginx:1.27-alpine, `127.0.0.1:8095:80`), `nginx.conf` (index en `no-cache`), `site/index.html`, `update.sh`.
+- `deploy/grimdoku/` — bundle de prod : `docker-compose.yml` (nginx:1.27-alpine, **aucun port publié**, branché sur le réseau Docker externe `serveur_default` où tourne cloudflared), `nginx.conf` (index en `no-cache`), `site/index.html`, `update.sh` (vérifie depuis l'intérieur du conteneur).
 
 Ajouter des énigmes : écrire un décor (`scenes/<décor>.json` avec `auto`), `node tools/batch.js`, `node tools/relabel.js`, `npm test`.
 Reconstruire : `npm run build` (= `node build-puzzles.js && node build-app.js && cp dist/grimdoku.html deploy/grimdoku/site/index.html`). Tester : `npm test`.
@@ -68,17 +68,16 @@ Reconstruire : `npm run build` (= `node build-puzzles.js && node build-app.js &&
 - Direction visuelle : nuit violette (#16111d), parchemin, accent bougie (#f0a93a), titres « Pirata One », texte « Alegreya Sans ». Images manquantes (9 meubles, 16 types de personnages ajoutés pour le pack) : le build affiche leur emoji et le signale ; prompts dans les deux `PROMPTS.md`. Mobilier et personnages **illustrés** (images générées, style BD encrée, `.webp` intégrés au build) ; les SVG restent en secours ; le champ `icon` (emoji) de `cast.json` ne sert plus à l'affichage. Le fichier unique pèse ~850 Ko à cause des images (base64) : à sortir en fichiers séparés mis en cache lors du passage en PWA. Le tapis couvre toute sa case sous le pion ; un pion posé sur un meuble laisse voir le meuble en petit dans le coin.
 - Testé : syntaxe des scripts, et partie complète des 2 énigmes jusqu'à l'accusation via jsdom. Testé sur iPhone 13 mini le 2026-10-16 (en local) : lisible après ajout de doctype/charset/viewport (le template n'en avait pas → texte en mojibake et page non mise à l'échelle).
 
-## 7. Tâche immédiate : mise en ligne
-Servir le jeu sur **https://grimdoku.fcold.org** depuis le **VPS OVH** de François.
-1. Vérifier l'accès SSH au VPS (demander l'alias/hôte s'il n'est pas dans `~/.ssh/config`) et la présence de Docker + compose.
-2. Reconstruire (commande §5), envoyer `deploy/grimdoku/` dans `~/grimdoku` sur le VPS, `docker compose up -d`.
-3. Vérifier `curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:8095/` → 200.
-4. Cloudflare : vérifier si `cloudflared` tourne sur le VPS (`systemctl status cloudflared`).
-   - Oui : ajouter la Public Hostname `grimdoku.fcold.org` → `http://localhost:8095` (via API si François fournit un token avec Tunnel Edit + DNS Edit, sinon lui dire exactement quoi cliquer dans Zero Trust → Networks → Tunnels).
-   - Non : le guider pour créer un tunnel « ovh » et installer le connecteur (`cloudflared service install <token>`).
-   - **N'ouvrir aucun port** sur le VPS.
-5. Tester l'URL publique, faire un récap court.
-6. Ne rien modifier d'autre sur le VPS sans demander.
+## 7. Mise en ligne (VPS OVH)
+- **Accès** : depuis le Mac, toujours **via fserver** : `ssh fserver ssh vps …` (sur fserver, l'alias `vps` = utilisateur `franky`, clé `~/.ssh/ovh_vps`, par Tailscale ; `vps-public` en secours). `franky` est dans le groupe `docker` (pas de sudo). L'alias `jungly` du Mac (utilisateur `ubuntu`) ne sert pas : pas de droits Docker.
+- **Piège des guillemets** : deux sauts SSH retirent une couche de guillemets ; ce qui suit `;`/`&&` s'exécuterait sur fserver. Utiliser `ssh fserver ssh vps bash -s <<'EOF' … EOF`, ou `ssh fserver "ssh vps '…'"` quand stdin sert à un envoi.
+- **Sur le VPS** : `~/grimdoku` (conteneur `grimdoku`), à côté de `~/serveur` (Jungly, Deducio, plantes, cloudflared) qu'on ne touche pas. cloudflared (conteneur, tunnel **vps-ovh**, géré dans Zero Trust) joint `http://grimdoku:80` par le réseau `serveur_default`. **N'ouvrir aucun port.** Ne rien modifier d'autre sans demander ; montrer chaque commande VPS avant de la lancer.
+- **Déployer une mise à jour** :
+  ```sh
+  npm run build && npm test
+  COPYFILE_DISABLE=1 tar -C deploy/grimdoku -czf - --exclude .DS_Store . | ssh fserver "ssh vps 'tar -xzf - -C ~/grimdoku && ~/grimdoku/update.sh'"
+  ```
+- Zero Trust → Networks → Tunnels → vps-ovh → Public Hostname : `grimdoku.fcold.org` → `HTTP` `grimdoku:80`.
 
 ## 8. Feuille de route
 1. ✅ Format JSON + mécaniques v1.
