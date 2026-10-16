@@ -1,0 +1,94 @@
+{
+ "positions": {
+  "e": [
+   4,
+   3
+  ],
+  "c": [
+   [
+    6,
+    4
+   ],
+   [
+    6,
+    5
+   ],
+   [
+    6,
+    6
+   ]
+  ],
+  "a": [
+   5,
+   1
+  ],
+  "b": [
+   2,
+   2
+  ],
+  "d": [
+   1,
+   0
+  ]
+ },
+ "murderer": "c",
+ "cast": {
+  "c": "a",
+  "a": "b",
+  "b": "c",
+  "d": "d"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "northOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "pupitre"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
+   }
+  }
+ ]
+}

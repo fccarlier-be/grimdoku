@@ -2,120 +2,85 @@
  "positions": {
   "g": [
    3,
-   2
-  ],
-  "f": [
-   5,
-   3
+   4
   ],
   "c": [
-   4,
+   1,
+   1
+  ],
+  "e": [
+   6,
    5
   ],
   "a": [
-   1,
-   0
-  ],
-  "e": [
-   2,
-   4
+   4,
+   2
   ],
   "b": [
+   2,
+   3
+  ],
+  "d": [
    0,
    6
   ],
-  "d": [
-   6,
-   1
+  "f": [
+   5,
+   0
   ]
  },
- "murderer": "f",
+ "murderer": "a",
  "cast": {
-  "f": "a",
-  "c": "b",
+  "c": "a",
+  "e": "b",
   "a": "c",
-  "e": "d",
-  "b": "e",
-  "d": "f"
+  "b": "d",
+  "d": "e",
+  "f": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "f",
-   "logic": {
-    "type": "northOf",
-    "other": "d"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "tapis"
-   }
-  },
-  {
    "who": "e",
    "logic": {
-    "type": "inRoom",
-    "room": "T"
-   }
-  },
-  {
-   "who": "d",
-   "logic": {
-    "type": "westOf",
-    "other": "c"
+    "type": "adjacentTo",
+    "object": "coffre"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "adjacentTo",
-    "object": "cristal"
+    "type": "onObject",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
    }
   },
   {
    "who": "b",
    "logic": {
-    "type": "inRoom",
-    "room": "R"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "chaise"
-   }
-  },
-  {
-   "who": "f",
-   "logic": {
-    "type": "sameColAs",
+    "type": "onObject",
     "object": "fauteuil"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "sameColAs",
-    "object": "arbre"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "sameColAs",
-    "object": "coffre"
    }
   },
   {
    "who": "d",
    "logic": {
-    "type": "onObject",
-    "object": "tapis"
+    "type": "sameRowAs",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "inRoom",
+    "room": "O"
    }
   }
  ]

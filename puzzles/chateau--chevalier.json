@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "title": "Le Château de Mortebrune — l'affaire Gontran",
   "intro": "Le chevalier Gontran a été retrouvé sans vie au petit matin, au Château de Mortebrune. Six invités juraient qu'ils dormaient. Un seul était avec lui.",
-  "epilogue": "Étincel avoue : Gontran voulait le mettre en cage dans la cour, comme attraction pour les visiteurs.",
+  "epilogue": "Aldric avoue, la couronne de travers : Gontran complotait pour s'asseoir sur son trône. Il l'a pris très personnellement.",
   "size": 7,
   "rooms": {
     "C": {
@@ -181,16 +181,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Arpège",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧑‍🎤",
-      "desc": "Barde, chante faux",
-      "archetype": "barde"
-    },
-    {
-      "id": "b",
-      "name": "Baudouin",
+      "name": "Aldric",
       "gender": "m",
       "role": "suspect",
       "icon": "🤴",
@@ -198,13 +189,22 @@
       "archetype": "roi"
     },
     {
-      "id": "c",
-      "name": "Chaparde",
+      "id": "b",
+      "name": "Bakchich",
       "gender": "m",
       "role": "suspect",
       "icon": "👺",
       "desc": "Gobelin, trésorier du royaume (non déclaré)",
       "archetype": "gobelin"
+    },
+    {
+      "id": "c",
+      "name": "Couac",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
     },
     {
       "id": "d",
@@ -251,108 +251,108 @@
   "clues": [
     {
       "who": "a",
-      "text": "Arpège était à côté d'un tonneau.",
+      "text": "Aldric était sur la même ligne qu'un lit.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "tonneau"
+        "type": "sameRowAs",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était dans la même colonne qu'un coffre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "coffre"
       }
     },
     {
       "who": "b",
-      "text": "Baudouin était sur la même ligne qu'un arbre.",
+      "text": "Bakchich était dans le donjon.",
+      "logic": {
+        "type": "inRoom",
+        "room": "D"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Couac était sur la même ligne qu'un arbre.",
       "logic": {
         "type": "sameRowAs",
         "object": "arbre"
       }
     },
     {
-      "who": "b",
-      "text": "Il était dans la même colonne qu'une botte de foin.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "foin"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Chaparde était à côté d'une boule de cristal.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "cristal"
-      }
-    },
-    {
       "who": "d",
-      "text": "Daëlin était à l'ouest d'Étincel.",
+      "text": "Daëlin était au nord d'Étincel.",
       "logic": {
-        "type": "westOf",
+        "type": "northOf",
         "other": "e"
       }
     },
     {
       "who": "d",
-      "text": "Elle était à côté d'un champignon géant.",
+      "text": "Elle était à côté d'une chaise.",
       "logic": {
         "type": "adjacentTo",
-        "object": "champi"
+        "object": "chaise"
       }
     },
     {
       "who": "e",
-      "text": "Étincel était au sud d'Arpège.",
+      "text": "Étincel était dans les cuisines.",
       "logic": {
-        "type": "southOf",
-        "other": "a"
+        "type": "inRoom",
+        "room": "K"
       }
     },
     {
       "who": "f",
-      "text": "Frisson était sur la même ligne qu'un sarcophage.",
+      "text": "Frisson était à l'est de Bakchich.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "sarcophage"
+        "type": "eastOf",
+        "other": "b"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        0,
+        2,
+        1
+      ],
+      "b": [
+        6,
         2
       ],
       "c": [
         5,
         6
       ],
-      "a": [
-        1,
-        5
-      ],
       "d": [
+        0,
+        4
+      ],
+      "f": [
         4,
         3
       ],
-      "f": [
-        6,
-        0
-      ],
       "e": [
-        2,
-        4
+        1,
+        5
       ],
-      "b": [
+      "a": [
         3,
-        1
+        0
       ]
     },
-    "murderer": "e"
+    "murderer": "a"
   },
   "rating": {
     "skulls": 1,
     "score": 2,
-    "hardest": "position relative",
+    "hardest": "ligne réservée",
     "hardSteps": 0,
-    "directStart": 2
+    "directStart": 1
   },
   "difficulty": 1
 }

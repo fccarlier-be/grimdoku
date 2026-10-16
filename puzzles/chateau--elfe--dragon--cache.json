@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "title": "Le Château de Mortebrune — l'affaire Faëlys",
   "intro": "L'elfe Faëlys a été retrouvée sans vie au petit matin, au Château de Mortebrune. Cinq invités juraient qu'ils dormaient. Un seul était avec elle.",
-  "epilogue": "Durandal avoue en grinçant de l'armure : Faëlys s'était moquée de sa cuirasse trop petite devant toute la cour.",
+  "epilogue": "Albâtre hantait ces murs quatre siècles avant tout le monde. Faëlys voulait le faire exorciser pour rénover l'aile ouest.",
   "size": 7,
   "rooms": {
     "C": {
@@ -181,26 +181,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Ardent",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🐉",
-      "desc": "Dragon adulte, toujours lové dans un coin",
-      "archetype": "dragon",
-      "shape": "L3"
-    },
-    {
-      "id": "b",
-      "name": "Brann",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧑‍🎤",
-      "desc": "Barde, chante faux",
-      "archetype": "barde"
-    },
-    {
-      "id": "c",
-      "name": "Chaînon",
+      "name": "Albâtre",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -211,8 +192,17 @@
       ]
     },
     {
-      "id": "d",
-      "name": "Durandal",
+      "id": "b",
+      "name": "Bakchich",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "c",
+      "name": "Clodomir",
       "gender": "m",
       "role": "suspect",
       "icon": "🤺",
@@ -220,13 +210,23 @@
       "archetype": "chevalier"
     },
     {
-      "id": "e",
-      "name": "Escroquin",
+      "id": "d",
+      "name": "Draconyx",
       "gender": "m",
       "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
+      "icon": "🐉",
+      "desc": "Dragon adulte, toujours lové dans un coin",
+      "archetype": "dragon",
+      "shape": "L3"
+    },
+    {
+      "id": "e",
+      "name": "Écho",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
     },
     {
       "id": "f",
@@ -241,109 +241,102 @@
   "decor": "chateau",
   "id": "chateau--elfe--dragon--cache",
   "hiddenShapes": true,
+  "hiddenMax": 3,
   "clues": [
     {
       "who": "a",
-      "text": "Ardent était sur la même ligne qu'une statue.",
+      "text": "Albâtre hantait un coffre.",
+      "logic": {
+        "type": "onObject",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bakchich était à côté d'une chaise.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Clodomir était sur la même ligne qu'une statue.",
       "logic": {
         "type": "sameRowAs",
         "object": "statue"
       }
     },
     {
-      "who": "a",
-      "text": "Il était dans la même colonne qu'une botte de foin.",
+      "who": "d",
+      "text": "Draconyx était sur la même ligne qu'un arbre.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était dans la même colonne qu'un tapis.",
       "logic": {
         "type": "sameColAs",
-        "object": "foin"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Brann était à côté d'un tonneau.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "tonneau"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Chaînon était sur la même ligne qu'un tonneau.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "tonneau"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Durandal était sur la même ligne qu'une boule de cristal.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "cristal"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Il était à l'ouest d'Escroquin.",
-      "logic": {
-        "type": "westOf",
-        "other": "e"
+        "object": "tapis"
       }
     },
     {
       "who": "e",
-      "text": "Escroquin était au nord de Chaînon.",
+      "text": "Écho était dans la même colonne qu'un tonneau.",
       "logic": {
-        "type": "northOf",
-        "other": "c"
+        "type": "sameColAs",
+        "object": "tonneau"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        5,
-        2
-      ],
-      "a": [
-        [
-          3,
-          0
-        ],
-        [
-          3,
-          1
-        ],
-        [
-          4,
-          0
-        ]
+        3,
+        1
       ],
       "d": [
-        6,
-        3
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          6,
+          4
+        ]
       ],
-      "e": [
-        0,
-        4
+      "c": [
+        4,
+        6
       ],
       "b": [
+        0,
+        2
+      ],
+      "e": [
         1,
         5
       ],
-      "c": [
+      "a": [
         2,
-        6
+        0
       ]
     },
-    "murderer": "d"
+    "murderer": "a"
   },
   "rating": {
     "skulls": 2,
-    "score": 4,
+    "score": 3,
     "hardest": "pièces",
-    "hardSteps": 2,
-    "directStart": 2
+    "hardSteps": 1,
+    "directStart": 1
   },
   "difficulty": 5
 }

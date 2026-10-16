@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "title": "Le Château de Mortebrune — l'affaire Galwë",
   "intro": "L'elfe Galwë a été retrouvée sans vie au petit matin, au Château de Mortebrune. Six invités juraient qu'ils dormaient. Un seul était avec elle.",
-  "epilogue": "Dardafeu avoue : Galwë voulait le mettre en cage dans la cour, comme attraction pour les visiteurs.",
+  "epilogue": "Clodomir avoue en grinçant de l'armure : Galwë s'était moquée de sa cuirasse trop petite devant toute la cour.",
   "size": 7,
   "rooms": {
     "C": {
@@ -181,21 +181,24 @@
   "characters": [
     {
       "id": "a",
-      "name": "Arnak",
+      "name": "Albâtre",
       "gender": "m",
       "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ]
     },
     {
       "id": "b",
-      "name": "Brann",
+      "name": "Braise",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧑‍🎤",
-      "desc": "Barde, chante faux",
-      "archetype": "barde"
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
     },
     {
       "id": "c",
@@ -208,33 +211,30 @@
     },
     {
       "id": "d",
-      "name": "Dardafeu",
+      "name": "Dièse",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐉",
-      "desc": "Dragonnet, brûle tout ce qu'il touche",
-      "archetype": "dragonnet"
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
     },
     {
       "id": "e",
-      "name": "Eudes",
+      "name": "Escroquin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "f",
+      "name": "Ferdinand",
       "gender": "m",
       "role": "suspect",
       "icon": "🤴",
       "desc": "Roi, avare de compliments et de tout le reste",
       "archetype": "roi"
-    },
-    {
-      "id": "f",
-      "name": "Frisson",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👻",
-      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
-      "archetype": "spectre",
-      "traits": [
-        "spectre"
-      ]
     },
     {
       "id": "g",
@@ -251,108 +251,100 @@
   "clues": [
     {
       "who": "a",
-      "text": "Arnak était à côté d'un tonneau.",
+      "text": "Albâtre était allongé sur un lit.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "tonneau"
+        "type": "onObject",
+        "object": "lit"
       }
     },
     {
       "who": "b",
-      "text": "Brann était à l'ouest de Dardafeu.",
+      "text": "Braise était dans la grande salle.",
       "logic": {
-        "type": "westOf",
-        "other": "d"
+        "type": "inRoom",
+        "room": "G"
       }
     },
     {
       "who": "b",
-      "text": "Il était à côté d'un champignon géant.",
+      "text": "Il était sur un tapis.",
+      "logic": {
+        "type": "onObject",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Clodomir était à côté d'un champignon géant.",
       "logic": {
         "type": "adjacentTo",
         "object": "champi"
       }
     },
     {
-      "who": "c",
-      "text": "Clodomir était sur la même ligne qu'une botte de foin.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "foin"
-      }
-    },
-    {
       "who": "d",
-      "text": "Dardafeu était sur la même ligne qu'un tonneau.",
+      "text": "Dièse était à côté d'un tapis.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "tonneau"
+        "type": "adjacentTo",
+        "object": "tapis"
       }
     },
     {
       "who": "e",
-      "text": "Eudes était sur la même ligne qu'un arbre.",
+      "text": "Escroquin était dans les cuisines.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "arbre"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Il était à l'est de Frisson.",
-      "logic": {
-        "type": "eastOf",
-        "other": "f"
+        "type": "inRoom",
+        "room": "K"
       }
     },
     {
       "who": "f",
-      "text": "Frisson était sur la même ligne qu'un sarcophage.",
+      "text": "Ferdinand était au nord de Clodomir.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "sarcophage"
+        "type": "northOf",
+        "other": "c"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        0,
-        2
+        6,
+        4
       ],
       "c": [
         5,
-        6
+        2
       ],
-      "a": [
+      "e": [
         1,
         5
       ],
+      "d": [
+        0,
+        1
+      ],
+      "a": [
+        3,
+        6
+      ],
       "b": [
-        4,
+        2,
         3
       ],
       "f": [
-        6,
+        4,
         0
-      ],
-      "d": [
-        2,
-        4
-      ],
-      "e": [
-        3,
-        1
       ]
     },
-    "murderer": "d"
+    "murderer": "c"
   },
   "rating": {
     "skulls": 2,
-    "score": 3,
-    "hardest": "pièces",
-    "hardSteps": 1,
-    "directStart": 1
+    "score": 4,
+    "hardest": "seul candidat",
+    "hardSteps": 2,
+    "directStart": 2
   },
   "difficulty": 2
 }

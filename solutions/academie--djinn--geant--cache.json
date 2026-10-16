@@ -2,46 +2,53 @@
  "positions": {
   "f": [
    3,
-   4
+   6
   ],
   "e": [
    [
-    6,
-    1
+    5,
+    3
    ],
    [
-    6,
-    2
+    5,
+    4
    ]
   ],
   "a": [
    0,
-   6
+   2
   ],
-  "c": [
+  "d": [
    4,
    5
   ],
-  "d": [
-   5,
-   3
-  ],
   "b": [
-   2,
+   1,
    0
+  ],
+  "c": [
+   6,
+   1
   ]
  },
  "murderer": "d",
  "cast": {
   "e": "a",
   "a": "b",
-  "c": "c",
-  "d": "d",
-  "b": "e"
+  "d": "c",
+  "b": "d",
+  "c": "e"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "arbre"
+   }
+  },
   {
    "who": "a",
    "logic": {
@@ -50,52 +57,38 @@
    }
   },
   {
-   "who": "c",
-   "logic": {
-    "type": "northOf",
-    "other": "d"
-   }
-  },
-  {
-   "who": "e",
+   "who": "a",
    "logic": {
     "type": "sameColAs",
-    "object": "champi"
+    "object": "chaise"
    }
   },
   {
-   "who": "c",
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "d",
    "logic": {
     "type": "sameRowAs",
     "object": "chaise"
    }
   },
   {
-   "who": "a",
-   "logic": {
-    "type": "sameColAs",
-    "object": "chaudron"
-   }
-  },
-  {
    "who": "c",
    "logic": {
-    "type": "notInRoom",
-    "room": "R"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "onObject",
-    "object": "lit"
+    "type": "adjacentTo",
+    "object": "arbre"
    }
   },
   {
    "who": "d",
    "logic": {
-    "type": "sameColAs",
-    "object": "table"
+    "type": "northOf",
+    "other": "e"
    }
   }
  ]

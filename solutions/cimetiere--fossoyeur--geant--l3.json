@@ -1,0 +1,118 @@
+{
+ "positions": {
+  "g": [
+   6,
+   7
+  ],
+  "e": [
+   [
+    2,
+    2
+   ],
+   [
+    3,
+    2
+   ],
+   [
+    3,
+    3
+   ]
+  ],
+  "a": [
+   0,
+   0
+  ],
+  "d": [
+   5,
+   5
+  ],
+  "c": [
+   4,
+   4
+  ],
+  "f": [
+   7,
+   1
+  ],
+  "b": [
+   1,
+   6
+  ]
+ },
+ "murderer": "d",
+ "cast": {
+  "e": "a",
+  "a": "b",
+  "d": "c",
+  "c": "d",
+  "f": "e",
+  "b": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "eastOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "inRoom",
+    "room": "A"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "inRoom",
+    "room": "O"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tombe"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "northOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tombe"
+   }
+  }
+ ]
+}

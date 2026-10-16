@@ -1,0 +1,358 @@
+{
+  "formatVersion": 1,
+  "title": "Le Navire Fantôme — la seconde affaire Frégaton",
+  "size": 7,
+  "rooms": {
+    "V": {
+      "name": "Vigie",
+      "the": "la vigie",
+      "floor": "parquet"
+    },
+    "P": {
+      "name": "Pont",
+      "the": "le pont",
+      "floor": "navire"
+    },
+    "K": {
+      "name": "Cabine du capitaine",
+      "the": "la cabine du capitaine",
+      "floor": "navire"
+    },
+    "E": {
+      "name": "Entrepont",
+      "the": "l'entrepont",
+      "floor": "navire"
+    },
+    "Q": {
+      "name": "Coquerie",
+      "the": "la coquerie",
+      "floor": "tomettes"
+    },
+    "C": {
+      "name": "Cale",
+      "the": "la cale",
+      "floor": "navire"
+    },
+    "S": {
+      "name": "Soute à poudre",
+      "the": "la soute à poudre",
+      "floor": "navire"
+    }
+  },
+  "layout": [
+    "VVPPPKK",
+    "VVPPPKK",
+    "EEPPPQK",
+    "EECCQQQ",
+    "EECCCQQ",
+    "SSCCCCQ",
+    "SSSCCCC"
+  ],
+  "objects": [
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "canon",
+      "at": [
+        0,
+        3
+      ]
+    },
+    {
+      "type": "canon",
+      "at": [
+        2,
+        2
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        1,
+        6
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        6
+      ]
+    },
+    {
+      "type": "hamac",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "hamac",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        3,
+        5
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        4,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        4
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        5
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        5,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        2
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Abordage",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🏴‍☠️",
+      "desc": "Pirate, a perdu une jambe, un œil et le sens de l'orientation",
+      "archetype": "pirate"
+    },
+    {
+      "id": "b",
+      "name": "Blafard",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ]
+    },
+    {
+      "id": "c",
+      "name": "Colosse",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🦶",
+      "desc": "Géant, toujours couché : aucun plafond n'est assez haut",
+      "archetype": "geant",
+      "shape": "L3"
+    },
+    {
+      "id": "d",
+      "name": "Dico",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🦜",
+      "desc": "Perroquet, répète tous les secrets",
+      "archetype": "perroquet"
+    },
+    {
+      "id": "e",
+      "name": "Écume",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene"
+    },
+    {
+      "id": "f",
+      "name": "Frégaton",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🧑‍✈️",
+      "desc": "Capitaine, n'a jamais quitté le port",
+      "archetype": "capitaine"
+    }
+  ],
+  "decor": "navire",
+  "id": "navire--capitaine--geant--l3--cache",
+  "hiddenShapes": true,
+  "intro": "Le capitaine Frégaton a été retrouvé sans vie à bord du Navire Fantôme, qui dérivait dans le brouillard. Cinq membres d'équipage étaient à bord. Un seul était avec lui.",
+  "epilogue": "Dico avoue, et le répète trois fois : Frégaton voulait le vendre au marché pour une poignée de graines.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Abordage était à côté d'un fauteuil.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était allongé sur un lit.",
+      "logic": {
+        "type": "onObject",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Blafard était à côté d'un canon.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "canon"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Colosse était dans la même colonne qu'un canon.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "canon"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était dans la même colonne qu'un coffre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était sur la même ligne qu'un coffre.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dico était sur la même ligne qu'un chaudron.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était au sud d'Écume.",
+      "logic": {
+        "type": "southOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Écume était au nord de Colosse.",
+      "logic": {
+        "type": "northOf",
+        "other": "c"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        4,
+        0
+      ],
+      "c": [
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          6,
+          4
+        ]
+      ],
+      "a": [
+        1,
+        6
+      ],
+      "d": [
+        3,
+        1
+      ],
+      "e": [
+        2,
+        5
+      ],
+      "b": [
+        0,
+        2
+      ]
+    },
+    "murderer": "d"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 3,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 1
+  },
+  "difficulty": 5
+}

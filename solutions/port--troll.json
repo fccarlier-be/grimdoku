@@ -2,41 +2,41 @@
  "positions": {
   "g": [
    6,
-   0
-  ],
-  "c": [
-   3,
-   1
+   3
   ],
   "f": [
    4,
    6
   ],
-  "e": [
+  "d": [
+   1,
+   0
+  ],
+  "c": [
    5,
    2
   ],
-  "d": [
-   1,
+  "a": [
+   0,
    5
   ],
   "b": [
-   2,
-   3
+   3,
+   1
   ],
-  "a": [
-   0,
+  "e": [
+   2,
    4
   ]
  },
- "murderer": "e",
+ "murderer": "c",
  "cast": {
-  "c": "a",
-  "f": "b",
-  "e": "c",
-  "d": "d",
+  "f": "a",
+  "d": "b",
+  "c": "c",
+  "a": "d",
   "b": "e",
-  "a": "f"
+  "e": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
@@ -44,8 +44,8 @@
   {
    "who": "f",
    "logic": {
-    "type": "eastOf",
-    "other": "a"
+    "type": "southOf",
+    "other": "e"
    }
   },
   {
@@ -56,49 +56,56 @@
    }
   },
   {
-   "who": "a",
-   "logic": {
-    "type": "northOf",
-    "other": "c"
-   }
-  },
-  {
    "who": "c",
    "logic": {
-    "type": "southOf",
+    "type": "eastOf",
     "other": "b"
    }
   },
   {
-   "who": "a",
+   "who": "b",
    "logic": {
-    "type": "adjacentTo",
+    "type": "southOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
     "object": "tonneau"
    }
   },
   {
    "who": "b",
    "logic": {
-    "type": "adjacentTo",
+    "type": "sameRowAs",
     "object": "barque"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "table"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "westOf",
-    "other": "d"
+    "type": "sameColAs",
+    "object": "chaise"
    }
   },
   {
-   "who": "e",
+   "who": "a",
    "logic": {
-    "type": "adjacentTo",
-    "object": "tonneau"
+    "type": "onObject",
+    "object": "barque"
    }
   },
   {
-   "who": "c",
+   "who": "b",
    "logic": {
     "type": "onObject",
     "object": "chaise"

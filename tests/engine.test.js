@@ -119,7 +119,32 @@ test('forme cachée : toutes les formes sont envisagées', () => {
   const known = E.placementsOf(E.prepare(bigMini), 'a').length;
   const hidden = E.placementsOf(E.prepare({ ...bigMini, hiddenShapes: true }), 'a');
   assert.ok(hidden.length > known);
-  assert.deepEqual([...new Set(hidden.map(pl => pl.length))].sort(), [2, 3]);
+  assert.deepEqual([...new Set(hidden.map(pl => pl.length))].sort(), [2, 3, 4], 'de 2 à 4 cases');
+  const old = E.placementsOf(E.prepare({ ...bigMini, hiddenShapes: true, hiddenMax: 3 }), 'a');
+  assert.deepEqual([...new Set(old.map(pl => pl.length))].sort(), [2, 3], 'grilles d\'origine : 2 ou 3 cases');
   assert.equal(E.skullsOf({ ...bigMini, hiddenShapes: true }, []), 5);
   assert.equal(E.skullsOf(bigMini, []), 4);
+});
+
+test('formes : 8 formes de 2 à 4 cases, tournées et retournées', () => {
+  assert.deepEqual(Object.keys(E.SHAPES), ['I2', 'I3', 'L3', 'I4', 'O4', 'L4', 'T4', 'S4']);
+  const n = Object.fromEntries(Object.keys(E.SHAPES).map(s => [s, E.orientations(s).length]));
+  assert.deepEqual(n, { I2: 2, I3: 2, L3: 4, I4: 2, O4: 1, L4: 8, T4: 4, S4: 4 }, 'L et J, S et Z : la forme se retourne');
+});
+
+test('la taille d\'un grand personnage change d\'une affaire à l\'autre', () => {
+  const shapes = {};
+  for (const p of PUZZLES) for (const c of p.characters) if (c.shape) (shapes[c.archetype] = shapes[c.archetype] || new Set()).add(E.SHAPES[c.shape].cells.length);
+  assert.ok(Object.values(shapes).some(s => s.size > 1));
+});
+
+test('pas deux grilles presque identiques dans un même décor (victime au même endroit, ou plus de la moitié des cases en commun)', () => {
+  const by = {};
+  for (const p of PUZZLES) (by[p.decor] = by[p.decor] || []).push(p);
+  const sig = (p) => E.layoutSig(p.solution.positions, p.characters.find(c => c.role === 'victim').id);
+  const close = [];
+  for (const ps of Object.values(by))
+    for (let i = 0; i < ps.length; i++) for (let j = i + 1; j < ps.length; j++)
+      if (E.tooClose(sig(ps[i]), sig(ps[j]))) close.push(ps[i].id + ' ~ ' + ps[j].id);
+  assert.deepEqual(close, []);
 });

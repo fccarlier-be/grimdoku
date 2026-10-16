@@ -1,0 +1,306 @@
+{
+  "formatVersion": 1,
+  "title": "La Forge du Dragon — l'affaire Estomac",
+  "size": 7,
+  "rooms": {
+    "D": {
+      "name": "Antre du dragon",
+      "the": "l'antre du dragon",
+      "floor": "roche"
+    },
+    "F": {
+      "name": "Forge",
+      "the": "la forge",
+      "floor": "dalles"
+    },
+    "A": {
+      "name": "Armurerie",
+      "the": "l'armurerie",
+      "floor": "dalles"
+    },
+    "O": {
+      "name": "Fonderie",
+      "the": "la fonderie",
+      "floor": "dalles"
+    },
+    "C": {
+      "name": "Réserve de charbon",
+      "the": "la réserve de charbon",
+      "floor": "roche"
+    },
+    "T": {
+      "name": "Atelier",
+      "the": "l'atelier",
+      "floor": "parquet"
+    },
+    "Y": {
+      "name": "Cour",
+      "the": "la cour",
+      "floor": "paves"
+    }
+  },
+  "layout": [
+    "DDDFFFA",
+    "DDFFFAA",
+    "DDOOFAA",
+    "CCOOTTA",
+    "CCOOTTT",
+    "CYYYTTT",
+    "YYYYYTT"
+  ],
+  "objects": [
+    {
+      "type": "coffre",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        1,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        4
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        2,
+        6
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        2,
+        2
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        5,
+        0
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        5
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        4
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        6,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        5,
+        2
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Agrifol",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "⛏️",
+      "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
+      "archetype": "mineur"
+    },
+    {
+      "id": "b",
+      "name": "Basalte",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🪨",
+      "desc": "Golem de pierre, lent mais très appliqué",
+      "archetype": "golem",
+      "shape": "T4"
+    },
+    {
+      "id": "c",
+      "name": "Chaparde",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "d",
+      "name": "Durandal",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
+    },
+    {
+      "id": "e",
+      "name": "Estomac",
+      "gender": "m",
+      "role": "victim",
+      "icon": "👹",
+      "desc": "Ogre, végétarien depuis mardi",
+      "archetype": "ogre"
+    }
+  ],
+  "decor": "forge",
+  "id": "forge--ogre--golem--t4",
+  "intro": "L'ogre Estomac a été retrouvé sans vie à la Forge du Dragon, encore tiède. Quatre artisans et clients s'y pressaient cette nuit-là. Un seul était avec lui.",
+  "epilogue": "Agrifol avoue : Estomac avait fondu sa plus belle pépite pour en faire une cuillère.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Agrifol était dans la même colonne qu'une table.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était sur la même ligne qu'un lit.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Basalte était au sud d'Agrifol.",
+      "logic": {
+        "type": "southOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Chaparde était à côté d'un tonneau.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Durandal était au nord d'Agrifol.",
+      "logic": {
+        "type": "northOf",
+        "other": "a"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "e": [
+        3,
+        6
+      ],
+      "b": [
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          6,
+          4
+        ]
+      ],
+      "a": [
+        1,
+        5
+      ],
+      "d": [
+        0,
+        1
+      ],
+      "c": [
+        4,
+        0
+      ]
+    },
+    "murderer": "a"
+  },
+  "rating": {
+    "skulls": 1,
+    "score": 2,
+    "hardest": "position relative",
+    "hardSteps": 0,
+    "directStart": 1
+  },
+  "difficulty": 4
+}

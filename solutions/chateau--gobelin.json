@@ -1,76 +1,76 @@
 {
  "positions": {
   "g": [
-   0,
-   2
-  ],
-  "c": [
-   5,
-   6
-  ],
-  "a": [
-   1,
-   5
+   3,
+   4
   ],
   "b": [
    4,
-   3
+   5
   ],
-  "f": [
+  "c": [
    6,
    0
   ],
+  "f": [
+   0,
+   3
+  ],
   "d": [
    2,
-   4
+   1
+  ],
+  "a": [
+   5,
+   2
   ],
   "e": [
-   3,
-   1
+   1,
+   6
   ]
  },
- "murderer": "d",
+ "murderer": "a",
  "cast": {
-  "c": "a",
-  "a": "b",
-  "b": "c",
-  "f": "d",
-  "d": "e",
+  "b": "a",
+  "c": "b",
+  "f": "c",
+  "d": "d",
+  "a": "e",
   "e": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "c",
+   "who": "b",
    "logic": {
     "type": "sameRowAs",
-    "object": "foin"
+    "object": "champi"
    }
   },
   {
-   "who": "b",
+   "who": "c",
    "logic": {
-    "type": "westOf",
+    "type": "southOf",
     "other": "d"
    }
   },
   {
    "who": "f",
    "logic": {
-    "type": "sameRowAs",
-    "object": "sarcophage"
+    "type": "northOf",
+    "other": "b"
    }
   },
   {
-   "who": "e",
+   "who": "d",
    "logic": {
-    "type": "sameRowAs",
-    "object": "arbre"
+    "type": "adjacentTo",
+    "object": "coffre"
    }
   },
   {
-   "who": "b",
+   "who": "a",
    "logic": {
     "type": "adjacentTo",
     "object": "champi"
@@ -80,21 +80,14 @@
    "who": "e",
    "logic": {
     "type": "eastOf",
-    "other": "f"
-   }
-  },
-  {
-   "who": "d",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "tonneau"
+    "other": "b"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "adjacentTo",
-    "object": "tonneau"
+    "type": "sameRowAs",
+    "object": "etagere"
    }
   }
  ]

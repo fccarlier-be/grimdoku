@@ -188,7 +188,16 @@
     },
     {
       "id": "b",
-      "name": "Braise",
+      "name": "Bruyère",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
+    },
+    {
+      "id": "c",
+      "name": "Cramoisi",
       "gender": "m",
       "role": "suspect",
       "icon": "🐉",
@@ -196,22 +205,13 @@
       "archetype": "dragonnet"
     },
     {
-      "id": "c",
-      "name": "Cornélius",
+      "id": "d",
+      "name": "Dédale",
       "gender": "m",
       "role": "suspect",
       "icon": "🧙‍♂️",
       "desc": "Mage, allergique au houblon",
       "archetype": "mage"
-    },
-    {
-      "id": "d",
-      "name": "Digitale",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧚",
-      "desc": "Fée, doit trois tournées",
-      "archetype": "fee"
     },
     {
       "id": "e",
@@ -236,8 +236,9 @@
   "decor": "academie",
   "id": "academie--djinn--geant--cache",
   "hiddenShapes": true,
+  "hiddenMax": 3,
   "intro": "La djinn Fumerolle a été retrouvée sans vie un soir d'examens à l'Académie de Magie. Cinq élèves et professeurs révisaient encore. Un seul était avec elle.",
-  "epilogue": "Digitale avoue : Fumerolle l'avait utilisée comme marque-page. Toute une nuit.",
+  "epilogue": "Dédale avoue en éternuant : Fumerolle avait remplacé sa tisane par une potion au houblon. En plein cours.",
   "clues": [
     {
       "who": "a",
@@ -249,58 +250,50 @@
     },
     {
       "who": "a",
-      "text": "Elle était dans la même colonne qu'un chaudron.",
+      "text": "Elle était dans la même colonne qu'une chaise.",
       "logic": {
         "type": "sameColAs",
-        "object": "chaudron"
+        "object": "chaise"
       }
     },
     {
       "who": "b",
-      "text": "Braise était allongé sur un lit.",
+      "text": "Bruyère était à côté d'une boule de cristal.",
       "logic": {
-        "type": "onObject",
-        "object": "lit"
+        "type": "adjacentTo",
+        "object": "cristal"
       }
     },
     {
       "who": "c",
-      "text": "Cornélius était au nord de Digitale.",
+      "text": "Cramoisi était à côté d'un arbre.",
       "logic": {
-        "type": "northOf",
-        "other": "d"
+        "type": "adjacentTo",
+        "object": "arbre"
       }
     },
     {
-      "who": "c",
-      "text": "Il était sur la même ligne qu'une chaise.",
+      "who": "d",
+      "text": "Dédale était sur la même ligne qu'une chaise.",
       "logic": {
         "type": "sameRowAs",
         "object": "chaise"
       }
     },
     {
-      "who": "c",
-      "text": "Il n'était pas dans le réfectoire.",
-      "logic": {
-        "type": "notInRoom",
-        "room": "R"
-      }
-    },
-    {
       "who": "d",
-      "text": "Digitale était dans la même colonne qu'une table.",
+      "text": "Il était au nord d'Escabeau.",
       "logic": {
-        "type": "sameColAs",
-        "object": "table"
+        "type": "northOf",
+        "other": "e"
       }
     },
     {
       "who": "e",
-      "text": "Escabeau était dans la même colonne qu'un champignon géant.",
+      "text": "Escabeau était dans la même colonne qu'un arbre.",
       "logic": {
         "type": "sameColAs",
-        "object": "champi"
+        "object": "arbre"
       }
     }
   ],
@@ -308,33 +301,33 @@
     "positions": {
       "f": [
         3,
-        4
+        6
       ],
       "e": [
         [
-          6,
-          1
+          5,
+          3
         ],
         [
-          6,
-          2
+          5,
+          4
         ]
       ],
       "a": [
         0,
-        6
+        2
       ],
-      "c": [
+      "d": [
         4,
         5
       ],
-      "d": [
-        5,
-        3
-      ],
       "b": [
-        2,
+        1,
         0
+      ],
+      "c": [
+        6,
+        1
       ]
     },
     "murderer": "d"

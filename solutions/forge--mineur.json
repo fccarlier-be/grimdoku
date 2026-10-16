@@ -1,40 +1,40 @@
 {
  "positions": {
   "g": [
-   4,
-   0
-  ],
-  "d": [
-   0,
-   2
+   5,
+   4
   ],
   "c": [
+   1,
+   5
+  ],
+  "d": [
    2,
-   3
+   0
+  ],
+  "e": [
+   4,
+   1
   ],
   "a": [
    3,
-   1
-  ],
-  "e": [
-   6,
-   4
+   2
   ],
   "b": [
-   1,
+   6,
    6
   ],
   "f": [
-   5,
-   5
+   0,
+   3
   ]
  },
- "murderer": "a",
+ "murderer": "b",
  "cast": {
-  "d": "a",
-  "c": "b",
-  "a": "c",
-  "e": "d",
+  "c": "a",
+  "d": "b",
+  "e": "c",
+  "a": "d",
   "b": "e",
   "f": "f"
  },
@@ -42,42 +42,28 @@
  "needsL2": false,
  "clues": [
   {
-   "who": "d",
+   "who": "e",
+   "logic": {
+    "type": "inRoom",
+    "room": "C"
+   }
+  },
+  {
+   "who": "a",
    "logic": {
     "type": "sameColAs",
     "object": "tonneau"
    }
   },
   {
-   "who": "a",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "chariot"
-   }
-  },
-  {
    "who": "f",
    "logic": {
-    "type": "inRoom",
-    "room": "T"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "statue"
+    "type": "northOf",
+    "other": "c"
    }
   },
   {
    "who": "a",
-   "logic": {
-    "type": "sameColAs",
-    "object": "lit"
-   }
-  },
-  {
-   "who": "c",
    "logic": {
     "type": "adjacentTo",
     "object": "chaudron"
@@ -86,15 +72,29 @@
   {
    "who": "c",
    "logic": {
-    "type": "southOf",
-    "other": "d"
+    "type": "sameRowAs",
+    "object": "lit"
    }
   },
   {
-   "who": "e",
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "c",
    "logic": {
     "type": "inRoom",
-    "room": "Y"
+    "room": "A"
    }
   }
  ]

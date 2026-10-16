@@ -1,0 +1,320 @@
+{
+  "formatVersion": 1,
+  "title": "La Tour de l'Archimage — la seconde affaire Étoilebarbe",
+  "intro": "L'archimage Étoilebarbe a été retrouvé sans vie dans la Tour de l'Archimage, où un portail runique relie le laboratoire à la crypte. Quatre invités douteux traînaient dans les étages. Un seul était avec lui.",
+  "epilogue": "Diaphane avoue : Étoilebarbe voulait l'enfermer dans un bocal pour l'exposer à l'observatoire. Les fantômes ont leur dignité.",
+  "size": 7,
+  "rooms": {
+    "L": {
+      "name": "Laboratoire",
+      "the": "le laboratoire",
+      "floor": "damier"
+    },
+    "O": {
+      "name": "Observatoire",
+      "the": "l'observatoire",
+      "floor": "parquet"
+    },
+    "B": {
+      "name": "Bibliothèque",
+      "the": "la bibliothèque",
+      "floor": "parquet"
+    },
+    "H": {
+      "name": "Hall",
+      "the": "le hall",
+      "floor": "dalles"
+    },
+    "C": {
+      "name": "Crypte",
+      "the": "la crypte",
+      "floor": "crypte"
+    },
+    "J": {
+      "name": "Jardin",
+      "the": "le jardin",
+      "floor": "herbe"
+    },
+    "E": {
+      "name": "Escalier",
+      "the": "l'escalier",
+      "floor": "parquet"
+    }
+  },
+  "layout": [
+    "LLLOOOO",
+    "LLLOOOO",
+    "LLBBBOO",
+    "HHBBBJJ",
+    "HHHCCJJ",
+    "EEECCJJ",
+    "EEECCCJ"
+  ],
+  "objects": [
+    {
+      "type": "portail",
+      "at": [
+        0,
+        0
+      ],
+      "link": "p1"
+    },
+    {
+      "type": "portail",
+      "at": [
+        6,
+        5
+      ],
+      "link": "p1"
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        2,
+        2
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        2,
+        4
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        6,
+        2
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        5,
+        5
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Aspicia",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🐍",
+      "desc": "Vouivre, serpent ailé, très longue à se retourner",
+      "archetype": "vouivre",
+      "shape": "S4"
+    },
+    {
+      "id": "b",
+      "name": "Braise",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
+      "id": "c",
+      "name": "Clovis",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
+    },
+    {
+      "id": "d",
+      "name": "Diaphane",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ]
+    },
+    {
+      "id": "e",
+      "name": "Étoilebarbe",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🧙‍♂️",
+      "desc": "Archimage, 412 ans, toujours pas de testament",
+      "archetype": "archimage"
+    }
+  ],
+  "decor": "tour",
+  "id": "tour--archimage--vouivre--s4",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Aspicia était à côté d'un arbre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Braise était au sud d'Aspicia.",
+      "logic": {
+        "type": "southOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était dans la même colonne qu'une statue.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Clovis était à l'est de Diaphane.",
+      "logic": {
+        "type": "eastOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était dans l'observatoire.",
+      "logic": {
+        "type": "inRoom",
+        "room": "O"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était dans la même colonne qu'un tapis.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Diaphane était sur la même ligne qu'un portail runique.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "portail"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "e": [
+        2,
+        1
+      ],
+      "a": [
+        [
+          3,
+          5
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "d": [
+        0,
+        2
+      ],
+      "b": [
+        6,
+        0
+      ],
+      "c": [
+        1,
+        3
+      ]
+    },
+    "murderer": "d"
+  },
+  "rating": {
+    "skulls": 1,
+    "score": 2,
+    "hardest": "position relative",
+    "hardSteps": 0,
+    "directStart": 1
+  },
+  "difficulty": 4
+}

@@ -1,119 +1,119 @@
 {
  "positions": {
   "h": [
-   7,
-   2
-  ],
-  "d": [
-   3,
-   7
+   4,
+   3
   ],
   "a": [
    1,
-   5
-  ],
-  "e": [
-   5,
    4
   ],
   "b": [
    6,
-   0
+   2
   ],
   "f": [
-   0,
-   3
+   2,
+   6
   ],
   "g": [
-   2,
-   1
+   7,
+   7
+  ],
+  "d": [
+   0,
+   5
   ],
   "c": [
-   4,
-   6
+   5,
+   1
+  ],
+  "e": [
+   3,
+   0
   ]
  },
  "murderer": "b",
  "cast": {
-  "d": "a",
-  "a": "b",
-  "e": "c",
-  "b": "d",
-  "f": "e",
-  "g": "f",
-  "c": "g"
+  "a": "a",
+  "b": "b",
+  "f": "c",
+  "g": "d",
+  "d": "e",
+  "c": "f",
+  "e": "g"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "d",
-   "logic": {
-    "type": "northOf",
-    "other": "e"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "southOf",
-    "other": "f"
-   }
-  },
-  {
-   "who": "f",
-   "logic": {
-    "type": "westOf",
-    "other": "e"
-   }
-  },
-  {
-   "who": "g",
-   "logic": {
-    "type": "sameColAs",
-    "object": "sarcophage"
-   }
-  },
-  {
-   "who": "c",
+   "who": "a",
    "logic": {
     "type": "eastOf",
     "other": "e"
    }
   },
   {
-   "who": "a",
-   "logic": {
-    "type": "onObject",
-    "object": "pupitre"
-   }
-  },
-  {
    "who": "f",
    "logic": {
-    "type": "inRoom",
-    "room": "A"
+    "type": "northOf",
+    "other": "c"
    }
   },
   {
-   "who": "c",
+   "who": "g",
    "logic": {
-    "type": "westOf",
-    "other": "d"
+    "type": "eastOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "northOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "table"
    }
   },
   {
    "who": "b",
    "logic": {
-    "type": "sameRowAs",
+    "type": "onObject",
     "object": "statue"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tombe"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "northOf",
+    "other": "g"
    }
   },
   {
    "who": "c",
    "logic": {
-    "type": "northOf",
-    "other": "b"
+    "type": "adjacentTo",
+    "object": "sarcophage"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "sarcophage"
    }
   }
  ]

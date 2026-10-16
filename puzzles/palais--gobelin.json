@@ -179,21 +179,21 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aplomb",
-      "gender": "m",
+      "name": "Arcane",
+      "gender": "f",
       "role": "suspect",
-      "icon": "🎩",
-      "desc": "Bonimenteur, vend du rêve au kilo",
-      "archetype": "bonimenteur"
+      "icon": "🔮",
+      "desc": "Cartomancienne, voit l'avenir, rate le présent",
+      "archetype": "cartomancienne"
     },
     {
       "id": "b",
-      "name": "Belladone",
-      "gender": "f",
+      "name": "Baudouin",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧛‍♀️",
-      "desc": "Comtesse vampire, végane (elle le jure)",
-      "archetype": "vampire"
+      "icon": "🤴",
+      "desc": "Roi, avare de compliments et de tout le reste",
+      "archetype": "roi"
     },
     {
       "id": "c",
@@ -206,16 +206,7 @@
     },
     {
       "id": "d",
-      "name": "Dagobert",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🤴",
-      "desc": "Roi, avare de compliments et de tout le reste",
-      "archetype": "roi"
-    },
-    {
-      "id": "e",
-      "name": "Étoilebarbe",
+      "name": "Doublebarbe",
       "gender": "m",
       "role": "suspect",
       "icon": "🧙‍♂️",
@@ -223,13 +214,22 @@
       "archetype": "archimage"
     },
     {
-      "id": "f",
-      "name": "Fortuna",
+      "id": "e",
+      "name": "Écarlate",
       "gender": "f",
       "role": "suspect",
-      "icon": "🔮",
-      "desc": "Cartomancienne, voit l'avenir, rate le présent",
-      "archetype": "cartomancienne"
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
+    },
+    {
+      "id": "f",
+      "name": "Faconde",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🎩",
+      "desc": "Bonimenteur, vend du rêve au kilo",
+      "archetype": "bonimenteur"
     },
     {
       "id": "g",
@@ -244,86 +244,78 @@
   "decor": "palais",
   "id": "palais--gobelin",
   "intro": "Le gobelin Grigou a été retrouvé sans vie au Palais des Mille Vœux, sous un tapis volant qui ne volait plus. Six invités avaient fait un vœu ce soir-là. Un seul était avec lui.",
-  "epilogue": "Dagobert avoue, la couronne de travers : Grigou avait souhaité devenir roi à sa place. Le vœu a été annulé.",
+  "epilogue": "Arcane l'avait lu dans les cartes : Grigou allait vider le trésor. Elle a préféré prendre les devants.",
   "clues": [
     {
       "who": "a",
-      "text": "Aplomb était sur la même ligne qu'un tapis.",
+      "text": "Arcane était dans la salle des lampes.",
+      "logic": {
+        "type": "inRoom",
+        "room": "L"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Elle était dans la même colonne qu'une table.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Baudouin était sur la même ligne qu'un tapis.",
       "logic": {
         "type": "sameRowAs",
         "object": "tapis"
       }
     },
     {
-      "who": "a",
-      "text": "Il était à côté d'une boule de cristal.",
+      "who": "b",
+      "text": "Il était à côté d'une statue.",
       "logic": {
         "type": "adjacentTo",
-        "object": "cristal"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Belladone était dans la salle du trône.",
-      "logic": {
-        "type": "inRoom",
-        "room": "T"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Elle était dans la même colonne qu'un arbre.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "arbre"
+        "object": "statue"
       }
     },
     {
       "who": "c",
-      "text": "Calebasse était à l'ouest de Fortuna.",
+      "text": "Calebasse était à l'est de Baudouin.",
       "logic": {
-        "type": "westOf",
-        "other": "f"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Elle était sur un tapis.",
-      "logic": {
-        "type": "onObject",
-        "object": "tapis"
+        "type": "eastOf",
+        "other": "b"
       }
     },
     {
       "who": "d",
-      "text": "Dagobert était au nord de Calebasse.",
+      "text": "Doublebarbe était sur la même ligne qu'une chaise.",
       "logic": {
-        "type": "northOf",
-        "other": "c"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Il était dans la même colonne qu'un fauteuil.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "fauteuil"
+        "type": "sameRowAs",
+        "object": "chaise"
       }
     },
     {
       "who": "e",
-      "text": "Étoilebarbe était à l'est de Dagobert.",
+      "text": "Écarlate était à côté d'une table.",
       "logic": {
-        "type": "eastOf",
+        "type": "adjacentTo",
+        "object": "table"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Faconde était à l'ouest de Doublebarbe.",
+      "logic": {
+        "type": "westOf",
         "other": "d"
       }
     },
     {
       "who": "f",
-      "text": "Fortuna était sur la même ligne qu'une chaise.",
+      "text": "Il était dans la même colonne qu'un champignon géant.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "chaise"
+        "type": "sameColAs",
+        "object": "champi"
       }
     }
   ],
@@ -331,39 +323,39 @@
     "positions": {
       "g": [
         3,
-        2
-      ],
-      "d": [
-        5,
-        3
-      ],
-      "f": [
-        4,
-        5
-      ],
-      "a": [
-        1,
         0
       ],
       "b": [
-        2,
+        1,
         4
       ],
+      "a": [
+        2,
+        1
+      ],
+      "f": [
+        5,
+        2
+      ],
       "e": [
-        0,
-        6
+        6,
+        5
+      ],
+      "d": [
+        4,
+        3
       ],
       "c": [
-        6,
-        1
+        0,
+        6
       ]
     },
-    "murderer": "d"
+    "murderer": "a"
   },
   "rating": {
     "skulls": 2,
     "score": 4,
-    "hardest": "pièces",
+    "hardest": "seul candidat",
     "hardSteps": 2,
     "directStart": 1
   },

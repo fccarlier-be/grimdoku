@@ -1,48 +1,83 @@
 {
  "positions": {
   "g": [
-   0,
-   2
-  ],
-  "c": [
-   2,
-   6
-  ],
-  "a": [
-   4,
+   3,
    4
   ],
-  "b": [
-   5,
-   1
-  ],
-  "f": [
-   1,
-   3
-  ],
-  "e": [
-   3,
-   0
-  ],
-  "d": [
+  "a": [
    6,
    5
+  ],
+  "f": [
+   5,
+   2
+  ],
+  "b": [
+   0,
+   0
+  ],
+  "e": [
+   2,
+   1
+  ],
+  "d": [
+   1,
+   6
+  ],
+  "c": [
+   4,
+   3
   ]
  },
- "murderer": "f",
+ "murderer": "c",
  "cast": {
-  "c": "a",
-  "a": "b",
+  "a": "a",
+  "f": "b",
   "b": "c",
-  "f": "d",
-  "e": "e",
-  "d": "f"
+  "e": "d",
+  "d": "e",
+  "c": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "westOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "foin"
+   }
+  },
+  {
    "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "foin"
+   }
+  },
+  {
+   "who": "e",
    "logic": {
     "type": "sameRowAs",
     "object": "cristal"
@@ -51,43 +86,29 @@
   {
    "who": "a",
    "logic": {
-    "type": "sameRowAs",
-    "object": "chaudron"
+    "type": "inRoom",
+    "room": "M"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "northOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tapis"
    }
   },
   {
    "who": "b",
    "logic": {
     "type": "onObject",
-    "object": "chaise"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "tapis"
-   }
-  },
-  {
-   "who": "d",
-   "logic": {
-    "type": "southOf",
-    "other": "e"
-   }
-  },
-  {
-   "who": "f",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "coffre"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "sameColAs",
-    "object": "tonneau"
+    "object": "lit"
    }
   }
  ]

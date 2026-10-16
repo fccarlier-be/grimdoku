@@ -1,93 +1,58 @@
 {
  "positions": {
   "g": [
-   3,
+   6,
+   4
+  ],
+  "e": [
+   1,
+   1
+  ],
+  "d": [
+   0,
+   6
+  ],
+  "a": [
+   4,
+   5
+  ],
+  "b": [
+   2,
    2
+  ],
+  "c": [
+   3,
+   0
   ],
   "f": [
    5,
    3
-  ],
-  "c": [
-   4,
-   5
-  ],
-  "a": [
-   1,
-   0
-  ],
-  "e": [
-   2,
-   4
-  ],
-  "b": [
-   0,
-   6
-  ],
-  "d": [
-   6,
-   1
   ]
  },
  "murderer": "f",
  "cast": {
-  "f": "a",
-  "c": "b",
+  "e": "a",
+  "d": "b",
   "a": "c",
-  "e": "d",
-  "b": "e",
-  "d": "f"
+  "b": "d",
+  "c": "e",
+  "f": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "f",
-   "logic": {
-    "type": "northOf",
-    "other": "d"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "tapis"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "inRoom",
-    "room": "T"
-   }
-  },
-  {
    "who": "d",
    "logic": {
-    "type": "westOf",
-    "other": "c"
+    "type": "northOf",
+    "other": "a"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "adjacentTo",
-    "object": "cristal"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "inRoom",
-    "room": "R"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "chaise"
+    "type": "westOf",
+    "other": "d"
    }
   },
   {
@@ -98,24 +63,45 @@
    }
   },
   {
-   "who": "e",
+   "who": "b",
    "logic": {
     "type": "sameColAs",
-    "object": "arbre"
+    "object": "champi"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "table"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "champi"
    }
   },
   {
    "who": "c",
    "logic": {
-    "type": "sameColAs",
-    "object": "coffre"
+    "type": "adjacentTo",
+    "object": "etagere"
    }
   },
   {
-   "who": "d",
+   "who": "e",
    "logic": {
-    "type": "onObject",
-    "object": "tapis"
+    "type": "inRoom",
+    "room": "O"
    }
   }
  ]

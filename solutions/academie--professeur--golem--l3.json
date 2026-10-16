@@ -1,0 +1,92 @@
+{
+ "positions": {
+  "f": [
+   3,
+   0
+  ],
+  "d": [
+   [
+    1,
+    3
+   ],
+   [
+    2,
+    3
+   ],
+   [
+    2,
+    4
+   ]
+  ],
+  "b": [
+   4,
+   1
+  ],
+  "a": [
+   0,
+   5
+  ],
+  "e": [
+   6,
+   6
+  ],
+  "c": [
+   5,
+   2
+  ]
+ },
+ "murderer": "b",
+ "cast": {
+  "d": "a",
+  "b": "b",
+  "a": "c",
+  "e": "d",
+  "c": "e"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "pupitre"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "westOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "inRoom",
+    "room": "S"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "arbre"
+   }
+  }
+ ]
+}

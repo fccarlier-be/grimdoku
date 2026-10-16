@@ -188,34 +188,7 @@
     },
     {
       "id": "b",
-      "name": "Blanchebarbe",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧙‍♂️",
-      "desc": "Archimage, 412 ans, toujours pas de testament",
-      "archetype": "archimage"
-    },
-    {
-      "id": "c",
-      "name": "Clinquant",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🎩",
-      "desc": "Bonimenteur, vend du rêve au kilo",
-      "archetype": "bonimenteur"
-    },
-    {
-      "id": "d",
-      "name": "Djinnifer",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧞‍♀️",
-      "desc": "Djinn, a déjà exaucé deux vœux de trop",
-      "archetype": "djinn"
-    },
-    {
-      "id": "e",
-      "name": "Écarlate",
+      "name": "Belladone",
       "gender": "f",
       "role": "suspect",
       "icon": "🧛‍♀️",
@@ -223,13 +196,40 @@
       "archetype": "vampire"
     },
     {
-      "id": "f",
-      "name": "Fortuna",
+      "id": "c",
+      "name": "Cendrebarbe",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Archimage, 412 ans, toujours pas de testament",
+      "archetype": "archimage"
+    },
+    {
+      "id": "d",
+      "name": "Duperon",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🎩",
+      "desc": "Bonimenteur, vend du rêve au kilo",
+      "archetype": "bonimenteur"
+    },
+    {
+      "id": "e",
+      "name": "Étoila",
       "gender": "f",
       "role": "suspect",
       "icon": "🔮",
       "desc": "Cartomancienne, voit l'avenir, rate le présent",
       "archetype": "cartomancienne"
+    },
+    {
+      "id": "f",
+      "name": "Fumerolle",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn"
     },
     {
       "id": "g",
@@ -244,91 +244,75 @@
   "decor": "palais",
   "id": "palais--roi",
   "intro": "Le roi Godefroy a été retrouvé sans vie au Palais des Mille Vœux, sous un tapis volant qui ne volait plus. Six invités avaient fait un vœu ce soir-là. Un seul était avec lui.",
-  "epilogue": "Fortuna l'avait lu dans les cartes : Godefroy allait vider le trésor. Elle a préféré prendre les devants.",
+  "epilogue": "Fumerolle avoue : Godefroy réclamait un quatrième vœu. Il n'y a jamais de quatrième vœu.",
   "clues": [
     {
       "who": "a",
-      "text": "Arnak était sur la même ligne qu'un tapis.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "tapis"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était à côté d'une boule de cristal.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "cristal"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Blanchebarbe était dans le trésor.",
-      "logic": {
-        "type": "inRoom",
-        "room": "R"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Clinquant était sur la même ligne qu'une chaise.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Il était dans la même colonne qu'un coffre.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "coffre"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Djinnifer était à l'ouest de Clinquant.",
+      "text": "Arnak était à l'ouest de Duperon.",
       "logic": {
         "type": "westOf",
-        "other": "c"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Elle était sur un tapis.",
-      "logic": {
-        "type": "onObject",
-        "object": "tapis"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Écarlate était dans la salle du trône.",
-      "logic": {
-        "type": "inRoom",
-        "room": "T"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Elle était dans la même colonne qu'un arbre.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "arbre"
-      }
-    },
-    {
-      "who": "f",
-      "text": "Fortuna était au nord de Djinnifer.",
-      "logic": {
-        "type": "northOf",
         "other": "d"
       }
     },
     {
+      "who": "a",
+      "text": "Il était à côté d'une table.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "table"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était sur la même ligne qu'un champignon géant.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Belladone était dans la même colonne qu'un champignon géant.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Elle était sur la même ligne qu'un fauteuil.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Cendrebarbe était à côté d'une étagère.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "etagere"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Duperon était au nord d'Arnak.",
+      "logic": {
+        "type": "northOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Étoila était dans l'observatoire.",
+      "logic": {
+        "type": "inRoom",
+        "room": "O"
+      }
+    },
+    {
       "who": "f",
-      "text": "Elle était dans la même colonne qu'un fauteuil.",
+      "text": "Fumerolle était dans la même colonne qu'un fauteuil.",
       "logic": {
         "type": "sameColAs",
         "object": "fauteuil"
@@ -338,32 +322,32 @@
   "solution": {
     "positions": {
       "g": [
-        3,
+        6,
+        4
+      ],
+      "e": [
+        1,
+        1
+      ],
+      "d": [
+        0,
+        6
+      ],
+      "a": [
+        4,
+        5
+      ],
+      "b": [
+        2,
         2
+      ],
+      "c": [
+        3,
+        0
       ],
       "f": [
         5,
         3
-      ],
-      "c": [
-        4,
-        5
-      ],
-      "a": [
-        1,
-        0
-      ],
-      "e": [
-        2,
-        4
-      ],
-      "b": [
-        0,
-        6
-      ],
-      "d": [
-        6,
-        1
       ]
     },
     "murderer": "f"
@@ -371,9 +355,9 @@
   "rating": {
     "skulls": 1,
     "score": 2,
-    "hardest": "ligne réservée",
+    "hardest": "position relative",
     "hardSteps": 0,
-    "directStart": 1
+    "directStart": 2
   },
   "difficulty": 1
 }

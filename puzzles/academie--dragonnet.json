@@ -206,7 +206,16 @@
     },
     {
       "id": "d",
-      "name": "Daëlin",
+      "name": "Dahlia",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧙‍♀️",
+      "desc": "Apprentie sorcière, a déjà fait exploser trois chaudrons",
+      "archetype": "apprentie"
+    },
+    {
+      "id": "e",
+      "name": "Erwëlle",
       "gender": "f",
       "role": "suspect",
       "icon": "🧝‍♀️",
@@ -214,22 +223,13 @@
       "archetype": "elfe"
     },
     {
-      "id": "e",
-      "name": "Églantine",
+      "id": "f",
+      "name": "Fougère",
       "gender": "f",
       "role": "suspect",
       "icon": "🧚",
       "desc": "Fée, doit trois tournées",
       "archetype": "fee"
-    },
-    {
-      "id": "f",
-      "name": "Frimousse",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧙‍♀️",
-      "desc": "Apprentie sorcière, a déjà fait exploser trois chaudrons",
-      "archetype": "apprentie"
     },
     {
       "id": "g",
@@ -248,132 +248,100 @@
   "clues": [
     {
       "who": "a",
-      "text": "Azimut était à côté d'un champignon géant.",
+      "text": "Azimut était sur un champignon géant.",
       "logic": {
-        "type": "adjacentTo",
+        "type": "onObject",
         "object": "champi"
       }
     },
     {
-      "who": "a",
-      "text": "Il était dans la même colonne qu'un coffre.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "coffre"
-      }
-    },
-    {
       "who": "b",
-      "text": "Bécher était à l'ouest de Calebasse.",
+      "text": "Bécher était à l'ouest d'Azimut.",
       "logic": {
         "type": "westOf",
-        "other": "c"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était dans le bureau du directeur.",
-      "logic": {
-        "type": "inRoom",
-        "room": "B"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était assis dans un fauteuil.",
-      "logic": {
-        "type": "onObject",
-        "object": "fauteuil"
+        "other": "a"
       }
     },
     {
       "who": "c",
-      "text": "Calebasse était sur la même ligne qu'une table.",
+      "text": "Calebasse était sur la même ligne qu'un coffre.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Elle était à l'est de Fougère.",
+      "logic": {
+        "type": "eastOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dahlia était sur la même ligne qu'une table.",
       "logic": {
         "type": "sameRowAs",
         "object": "table"
       }
     },
     {
-      "who": "d",
-      "text": "Daëlin était sur la même ligne qu'une étagère.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "etagere"
-      }
-    },
-    {
       "who": "e",
-      "text": "Églantine était sur la même ligne qu'un lit.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "lit"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Elle était à l'est de Daëlin.",
+      "text": "Erwëlle était à l'est de Calebasse.",
       "logic": {
         "type": "eastOf",
-        "other": "d"
+        "other": "c"
       }
     },
     {
       "who": "f",
-      "text": "Frimousse était dans la même colonne qu'une boule de cristal.",
+      "text": "Fougère était sur la même ligne qu'un chaudron.",
       "logic": {
-        "type": "sameColAs",
-        "object": "cristal"
-      }
-    },
-    {
-      "who": "f",
-      "text": "Elle était allongée sur un lit.",
-      "logic": {
-        "type": "onObject",
-        "object": "lit"
+        "type": "sameRowAs",
+        "object": "chaudron"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        5,
+        6,
         2
+      ],
+      "d": [
+        4,
+        5
+      ],
+      "a": [
+        5,
+        1
       ],
       "f": [
         2,
-        0
-      ],
-      "a": [
-        6,
-        1
-      ],
-      "e": [
-        4,
-        4
+        3
       ],
       "c": [
         3,
+        4
+      ],
+      "e": [
+        0,
         6
       ],
-      "d": [
-        1,
-        3
-      ],
       "b": [
-        0,
-        5
+        1,
+        0
       ]
     },
     "murderer": "a"
   },
   "rating": {
     "skulls": 2,
-    "score": 4,
-    "hardest": "seul candidat",
-    "hardSteps": 2,
-    "directStart": 2
+    "score": 3,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 1
   },
   "difficulty": 2
 }

@@ -159,12 +159,12 @@
   "characters": [
     {
       "id": "a",
-      "name": "Arpège",
-      "gender": "m",
+      "name": "Arcane",
+      "gender": "f",
       "role": "suspect",
-      "icon": "🧑‍🎤",
-      "desc": "Barde, chante faux",
-      "archetype": "barde"
+      "icon": "🔮",
+      "desc": "Cartomancienne, voit l'avenir, rate le présent",
+      "archetype": "cartomancienne"
     },
     {
       "id": "b",
@@ -177,21 +177,21 @@
     },
     {
       "id": "c",
-      "name": "Croquassiette",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧌",
-      "desc": "Troll, plongeur à mi-temps",
-      "archetype": "troll"
-    },
-    {
-      "id": "d",
-      "name": "Duperon",
+      "name": "Clinquant",
       "gender": "m",
       "role": "suspect",
       "icon": "🎩",
       "desc": "Bonimenteur, vend du rêve au kilo",
       "archetype": "bonimenteur"
+    },
+    {
+      "id": "d",
+      "name": "Dièse",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
     },
     {
       "id": "e",
@@ -204,12 +204,12 @@
     },
     {
       "id": "f",
-      "name": "Fortuna",
-      "gender": "f",
+      "name": "Fringale",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🔮",
-      "desc": "Cartomancienne, voit l'avenir, rate le présent",
-      "archetype": "cartomancienne"
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
     },
     {
       "id": "g",
@@ -223,43 +223,35 @@
   ],
   "decor": "foire",
   "id": "foire--gobelin",
-  "epilogue": "Églantine avoue : Grigou voulait l'enfermer dans un bocal pour le stand des merveilles. Elle s'est rebiffée. Pour de bon.",
+  "epilogue": "Arcane l'avait vu dans les cartes : Grigou allait ruiner la foire. Elle a préféré changer l'avenir elle-même.",
   "clues": [
     {
       "who": "a",
-      "text": "Arpège était sur la même ligne qu'un chaudron.",
+      "text": "Arcane était au sud de Braise.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "chaudron"
+        "type": "southOf",
+        "other": "b"
       }
     },
     {
       "who": "a",
-      "text": "Il était dans la même colonne qu'un tonneau.",
+      "text": "Elle était sur un tapis.",
+      "logic": {
+        "type": "onObject",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Braise était dans la même colonne qu'un tonneau.",
       "logic": {
         "type": "sameColAs",
         "object": "tonneau"
       }
     },
     {
-      "who": "b",
-      "text": "Braise était sur la même ligne qu'un tapis.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "tapis"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était dans la même colonne qu'un lit.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "lit"
-      }
-    },
-    {
       "who": "c",
-      "text": "Croquassiette était assis sur une chaise.",
+      "text": "Clinquant était assis sur une chaise.",
       "logic": {
         "type": "onObject",
         "object": "chaise"
@@ -267,84 +259,76 @@
     },
     {
       "who": "d",
-      "text": "Duperon était au sud de Braise.",
+      "text": "Dièse était à l'ouest de Clinquant.",
       "logic": {
-        "type": "southOf",
-        "other": "b"
+        "type": "westOf",
+        "other": "c"
       }
     },
     {
       "who": "d",
-      "text": "Il était dans la même colonne qu'une chaise.",
+      "text": "Il était au nord d'Arcane.",
       "logic": {
-        "type": "sameColAs",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Il était à l'est d'Églantine.",
-      "logic": {
-        "type": "eastOf",
-        "other": "e"
+        "type": "northOf",
+        "other": "a"
       }
     },
     {
       "who": "e",
-      "text": "Églantine était sur la même ligne qu'un coffre.",
+      "text": "Églantine était dans la même colonne qu'une botte de foin.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "coffre"
+        "type": "sameColAs",
+        "object": "foin"
       }
     },
     {
       "who": "f",
-      "text": "Fortuna était sur la même ligne qu'une boule de cristal.",
+      "text": "Fringale était à l'est d'Arcane.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "cristal"
+        "type": "eastOf",
+        "other": "a"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        0,
+        4,
         2
       ],
+      "a": [
+        3,
+        3
+      ],
+      "d": [
+        1,
+        0
+      ],
       "f": [
+        6,
+        5
+      ],
+      "e": [
         2,
         6
       ],
-      "a": [
-        4,
+      "b": [
+        0,
         4
       ],
       "c": [
         5,
         1
-      ],
-      "e": [
-        1,
-        3
-      ],
-      "b": [
-        3,
-        0
-      ],
-      "d": [
-        6,
-        5
       ]
     },
-    "murderer": "e"
+    "murderer": "a"
   },
   "rating": {
     "skulls": 1,
     "score": 2,
-    "hardest": "ligne réservée",
+    "hardest": "position relative",
     "hardSteps": 0,
-    "directStart": 2
+    "directStart": 1
   },
   "difficulty": 1
 }

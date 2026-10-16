@@ -260,6 +260,7 @@
   "decor": "bal",
   "id": "bal--vampire--geant-vouivre--cache",
   "hiddenShapes": true,
+  "hiddenMax": 3,
   "intro": "La comtesse Funestine a été retrouvée sans vie au Bal Masqué, sous un loup de velours. Cinq invités dansaient encore. Un seul était avec elle.",
   "epilogue": "Dagobert avoue, outré : Funestine lui avait marché sur la traîne pendant la valse royale. Trois fois.",
   "clues": [

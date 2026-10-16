@@ -236,6 +236,7 @@
   "decor": "palais",
   "id": "palais--roi--dragon--cache",
   "hiddenShapes": true,
+  "hiddenMax": 3,
   "intro": "Le roi Ferdinand a été retrouvé sans vie au Palais des Mille Vœux, sous un tapis volant qui ne volait plus. Cinq invités avaient fait un vœu ce soir-là. Un seul était avec lui.",
   "epilogue": "Destinée l'avait lu dans les cartes : Ferdinand allait vider le trésor. Elle a préféré prendre les devants.",
   "clues": [

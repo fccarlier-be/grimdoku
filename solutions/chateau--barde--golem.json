@@ -1,87 +1,94 @@
 {
  "positions": {
   "f": [
-   2,
-   6
-  ],
-  "b": [
-   [
-    0,
-    2
-   ],
-   [
-    0,
-    3
-   ]
-  ],
-  "e": [
-   3,
-   1
-  ],
-  "a": [
    5,
    0
   ],
   "c": [
-   6,
-   5
+   [
+    0,
+    5
+   ],
+   [
+    1,
+    5
+   ]
+  ],
+  "a": [
+   2,
+   3
   ],
   "d": [
+   6,
+   2
+  ],
+  "e": [
    4,
    4
+  ],
+  "b": [
+   3,
+   6
   ]
  },
- "murderer": "c",
+ "murderer": "d",
  "cast": {
-  "b": "a",
-  "e": "b",
-  "a": "c",
-  "c": "d",
-  "d": "e"
+  "c": "a",
+  "a": "b",
+  "d": "c",
+  "e": "d",
+  "b": "e"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "b",
-   "logic": {
-    "type": "sameColAs",
-    "object": "chaise"
-   }
-  },
-  {
-   "who": "d",
-   "logic": {
-    "type": "eastOf",
-    "other": "b"
-   }
-  },
-  {
-   "who": "d",
-   "logic": {
-    "type": "sameColAs",
-    "object": "chaise"
-   }
-  },
-  {
    "who": "c",
    "logic": {
-    "type": "sameRowAs",
-    "object": "sarcophage"
+    "type": "adjacentTo",
+    "object": "chaudron"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "adjacentTo",
-    "object": "foin"
+    "type": "northOf",
+    "other": "e"
    }
   },
   {
    "who": "e",
    "logic": {
-    "type": "sameRowAs",
+    "type": "eastOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "onObject",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameColAs",
     "object": "arbre"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "tapis"
    }
   }
  ]

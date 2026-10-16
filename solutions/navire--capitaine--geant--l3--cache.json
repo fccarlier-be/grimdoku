@@ -1,0 +1,113 @@
+{
+ "positions": {
+  "f": [
+   4,
+   0
+  ],
+  "c": [
+   [
+    5,
+    3
+   ],
+   [
+    6,
+    3
+   ],
+   [
+    6,
+    4
+   ]
+  ],
+  "a": [
+   1,
+   6
+  ],
+  "d": [
+   3,
+   1
+  ],
+  "e": [
+   2,
+   5
+  ],
+  "b": [
+   0,
+   2
+  ]
+ },
+ "murderer": "d",
+ "cast": {
+  "c": "a",
+  "a": "b",
+  "d": "c",
+  "e": "d",
+  "b": "e"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "canon"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "northOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "canon"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "southOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "lit"
+   }
+  }
+ ]
+}

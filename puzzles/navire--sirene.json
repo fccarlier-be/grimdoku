@@ -172,16 +172,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Abysse",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧛‍♀️",
-      "desc": "Comtesse vampire, végane (elle le jure)",
-      "archetype": "vampire"
-    },
-    {
-      "id": "b",
-      "name": "Bavard",
+      "name": "Ara",
       "gender": "m",
       "role": "suspect",
       "icon": "🦜",
@@ -189,8 +180,8 @@
       "archetype": "perroquet"
     },
     {
-      "id": "c",
-      "name": "Coutelas",
+      "id": "b",
+      "name": "Bâbord",
       "gender": "m",
       "role": "suspect",
       "icon": "🏴‍☠️",
@@ -198,8 +189,35 @@
       "archetype": "pirate"
     },
     {
+      "id": "c",
+      "name": "Cabestan",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍✈️",
+      "desc": "Capitaine, n'a jamais quitté le port",
+      "archetype": "capitaine"
+    },
+    {
       "id": "d",
-      "name": "Diaphane",
+      "name": "Draculine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
+    },
+    {
+      "id": "e",
+      "name": "Edmond",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
+    },
+    {
+      "id": "f",
+      "name": "Frisson",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -208,24 +226,6 @@
       "traits": [
         "spectre"
       ]
-    },
-    {
-      "id": "e",
-      "name": "Étrave",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧑‍✈️",
-      "desc": "Capitaine, n'a jamais quitté le port",
-      "archetype": "capitaine"
-    },
-    {
-      "id": "f",
-      "name": "Fernand",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧟",
-      "desc": "Zombie, ancien apprenti. Ancien tout court",
-      "archetype": "zombie"
     },
     {
       "id": "g",
@@ -240,67 +240,59 @@
   "decor": "navire",
   "id": "navire--sirene",
   "intro": "La sirène Goémone a été retrouvée sans vie à bord du Navire Fantôme, qui dérivait dans le brouillard. Six membres d'équipage étaient à bord. Un seul était avec elle.",
-  "epilogue": "Coutelas avoue en mâchonnant sa pipe : Goémone avait caché la carte au trésor. Un pirate pardonne tout, sauf le trésor.",
+  "epilogue": "Draculine avoue : Goémone avait ouvert l'écoutille en plein soleil. Sur un navire, l'ombre se partage.",
   "clues": [
     {
       "who": "a",
-      "text": "Abysse était dans la même colonne qu'un lit.",
+      "text": "Ara était sur la même ligne qu'un fauteuil.",
       "logic": {
-        "type": "sameColAs",
+        "type": "sameRowAs",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était à côté d'un hamac.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "hamac"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bâbord était à l'ouest de Cabestan.",
+      "logic": {
+        "type": "westOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était à côté d'un lit.",
+      "logic": {
+        "type": "adjacentTo",
         "object": "lit"
       }
     },
     {
-      "who": "a",
-      "text": "Elle était à côté d'une table.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "table"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Bavard était à côté d'un tonneau.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "tonneau"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était dans la coquerie.",
-      "logic": {
-        "type": "inRoom",
-        "room": "Q"
-      }
-    },
-    {
       "who": "c",
-      "text": "Coutelas était au sud de Bavard.",
-      "logic": {
-        "type": "southOf",
-        "other": "b"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Il était à côté d'un coffre.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "coffre"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Diaphane était au nord de Bavard.",
+      "text": "Cabestan était au nord d'Edmond.",
       "logic": {
         "type": "northOf",
-        "other": "b"
+        "other": "e"
       }
     },
     {
       "who": "d",
-      "text": "Il était à côté d'un tonneau.",
+      "text": "Draculine était sur la même ligne qu'un chaudron.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Elle était à côté d'un tonneau.",
       "logic": {
         "type": "adjacentTo",
         "object": "tonneau"
@@ -308,53 +300,61 @@
     },
     {
       "who": "e",
-      "text": "Étrave était sur la même ligne qu'un tonneau.",
+      "text": "Edmond était à l'ouest de Draculine.",
       "logic": {
-        "type": "sameRowAs",
+        "type": "westOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Frisson était dans la même colonne qu'un tonneau.",
+      "logic": {
+        "type": "sameColAs",
         "object": "tonneau"
       }
     },
     {
       "who": "f",
-      "text": "Fernand était à l'est de Coutelas.",
+      "text": "Il était au nord de Bâbord.",
       "logic": {
-        "type": "eastOf",
-        "other": "c"
+        "type": "northOf",
+        "other": "b"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        3,
-        2
-      ],
-      "c": [
-        5,
-        3
-      ],
-      "b": [
         4,
-        5
-      ],
-      "d": [
-        1,
-        0
-      ],
-      "f": [
-        2,
         4
       ],
+      "b": [
+        1,
+        5
+      ],
       "a": [
+        2,
+        1
+      ],
+      "f": [
         0,
-        6
+        2
       ],
       "e": [
         6,
-        1
+        0
+      ],
+      "d": [
+        3,
+        3
+      ],
+      "c": [
+        5,
+        6
       ]
     },
-    "murderer": "c"
+    "murderer": "d"
   },
   "rating": {
     "skulls": 1,

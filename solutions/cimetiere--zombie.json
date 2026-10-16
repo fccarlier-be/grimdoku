@@ -1,47 +1,47 @@
 {
  "positions": {
   "h": [
+   6,
+   6
+  ],
+  "d": [
+   4,
+   4
+  ],
+  "c": [
+   2,
+   7
+  ],
+  "b": [
+   5,
+   5
+  ],
+  "g": [
    7,
    2
   ],
-  "d": [
-   3,
-   7
-  ],
-  "a": [
-   1,
-   5
-  ],
-  "e": [
-   5,
-   4
-  ],
-  "b": [
-   6,
-   0
-  ],
   "f": [
-   0,
+   1,
    3
   ],
-  "g": [
-   2,
+  "e": [
+   3,
    1
   ],
-  "c": [
-   4,
-   6
+  "a": [
+   0,
+   0
   ]
  },
  "murderer": "b",
  "cast": {
   "d": "a",
-  "a": "b",
-  "e": "c",
-  "b": "d",
+  "c": "b",
+  "b": "c",
+  "g": "d",
   "f": "e",
-  "g": "f",
-  "c": "g"
+  "e": "f",
+  "a": "g"
  },
  "nSolutions": 1,
  "needsL2": false,
@@ -49,43 +49,29 @@
   {
    "who": "d",
    "logic": {
-    "type": "northOf",
-    "other": "e"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
     "type": "southOf",
-    "other": "f"
-   }
-  },
-  {
-   "who": "f",
-   "logic": {
-    "type": "westOf",
     "other": "e"
    }
   },
   {
    "who": "g",
    "logic": {
-    "type": "sameColAs",
-    "object": "sarcophage"
+    "type": "southOf",
+    "other": "c"
    }
   },
   {
-   "who": "c",
+   "who": "e",
    "logic": {
-    "type": "eastOf",
-    "other": "e"
+    "type": "westOf",
+    "other": "b"
    }
   },
   {
    "who": "a",
    "logic": {
     "type": "onObject",
-    "object": "pupitre"
+    "object": "lit"
    }
   },
   {
@@ -96,24 +82,45 @@
    }
   },
   {
-   "who": "c",
+   "who": "b",
    "logic": {
-    "type": "westOf",
-    "other": "d"
+    "type": "sameColAs",
+    "object": "pupitre"
    }
   },
   {
-   "who": "b",
+   "who": "d",
    "logic": {
-    "type": "sameRowAs",
-    "object": "statue"
+    "type": "eastOf",
+    "other": "f"
    }
   },
   {
    "who": "c",
    "logic": {
     "type": "northOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "onObject",
+    "object": "sarcophage"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "northOf",
     "other": "b"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tombe"
    }
   }
  ]

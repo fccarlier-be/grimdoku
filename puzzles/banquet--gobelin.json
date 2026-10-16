@@ -133,21 +133,21 @@
   "characters": [
     {
       "id": "a",
-      "name": "Arôme",
+      "name": "Amandin",
       "gender": "m",
       "role": "suspect",
       "icon": "👨‍🍳",
-      "desc": "Chef gobelin, goûte tout, surtout ce qui bouge encore",
-      "archetype": "chef"
+      "desc": "Boulanger, pétrit plus de ragots que de pâte",
+      "archetype": "boulanger"
     },
     {
       "id": "b",
-      "name": "Bedaine",
+      "name": "Brann",
       "gender": "m",
       "role": "suspect",
-      "icon": "👹",
-      "desc": "Ogre, végétarien depuis mardi",
-      "archetype": "ogre"
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
     },
     {
       "id": "c",
@@ -160,21 +160,21 @@
     },
     {
       "id": "d",
-      "name": "Dariole",
+      "name": "Dévoreur",
       "gender": "m",
       "role": "suspect",
-      "icon": "👨‍🍳",
-      "desc": "Boulanger, pétrit plus de ragots que de pâte",
-      "archetype": "boulanger"
+      "icon": "👹",
+      "desc": "Ogre, végétarien depuis mardi",
+      "archetype": "ogre"
     },
     {
       "id": "e",
-      "name": "Écho",
+      "name": "Épice",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧑‍🎤",
-      "desc": "Barde, chante faux",
-      "archetype": "barde"
+      "icon": "👨‍🍳",
+      "desc": "Chef gobelin, goûte tout, surtout ce qui bouge encore",
+      "archetype": "chef"
     },
     {
       "id": "f",
@@ -189,85 +189,85 @@
   "decor": "banquet",
   "id": "banquet--gobelin",
   "intro": "Le gobelin Filou a été retrouvé sans vie au beau milieu du Banquet des Gobelins, la serviette encore autour du cou. Cinq convives s'empiffraient. Un seul était avec lui.",
-  "epilogue": "Bedaine avoue, rouge de honte : Filou l'avait vu manger de la viande. Il était végétarien depuis mardi.",
+  "epilogue": "Croquassiette avoue la bouche pleine : Filou avait pris la dernière part de gâteau. Et l'assiette avec.",
   "clues": [
     {
       "who": "a",
-      "text": "Arôme était sur un champignon géant.",
+      "text": "Amandin était à côté d'un coffre.",
       "logic": {
-        "type": "onObject",
-        "object": "champi"
+        "type": "adjacentTo",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était dans la même colonne qu'un chaudron.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chaudron"
       }
     },
     {
       "who": "b",
-      "text": "Bedaine était à côté d'un tapis.",
+      "text": "Brann était à côté d'un champignon géant.",
       "logic": {
         "type": "adjacentTo",
-        "object": "tapis"
+        "object": "champi"
       }
     },
     {
       "who": "c",
-      "text": "Croquassiette était à côté d'un tonneau.",
+      "text": "Croquassiette était à côté d'une chaise.",
       "logic": {
         "type": "adjacentTo",
-        "object": "tonneau"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Il était dans la même colonne qu'une chaise.",
-      "logic": {
-        "type": "sameColAs",
         "object": "chaise"
       }
     },
     {
       "who": "d",
-      "text": "Dariole était sur la même ligne qu'un tonneau.",
+      "text": "Dévoreur était à côté d'un chaudron.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "tonneau"
+        "type": "adjacentTo",
+        "object": "chaudron"
       }
     },
     {
       "who": "e",
-      "text": "Écho était dans le garde-manger.",
+      "text": "Épice était dans le cellier.",
       "logic": {
         "type": "inRoom",
-        "room": "G"
+        "room": "C"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        2,
+        3,
         5
       ],
       "c": [
-        0,
+        4,
         3
+      ],
+      "d": [
+        0,
+        0
       ],
       "b": [
         5,
-        4
-      ],
-      "e": [
-        3,
-        0
-      ],
-      "d": [
-        1,
-        1
+        2
       ],
       "a": [
-        4,
-        2
+        2,
+        1
+      ],
+      "e": [
+        1,
+        4
       ]
     },
-    "murderer": "b"
+    "murderer": "c"
   },
   "rating": {
     "skulls": 0,

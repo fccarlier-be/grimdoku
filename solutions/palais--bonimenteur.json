@@ -1,121 +1,114 @@
 {
  "positions": {
   "g": [
-   3,
-   2
-  ],
-  "f": [
-   5,
+   6,
    3
   ],
   "c": [
    4,
-   5
-  ],
-  "a": [
-   1,
-   0
-  ],
-  "e": [
-   2,
    4
   ],
   "b": [
+   3,
+   5
+  ],
+  "a": [
    0,
    6
   ],
   "d": [
-   6,
+   2,
+   2
+  ],
+  "f": [
+   1,
    1
+  ],
+  "e": [
+   5,
+   0
   ]
  },
- "murderer": "f",
+ "murderer": "c",
  "cast": {
-  "f": "a",
-  "c": "b",
+  "c": "a",
+  "b": "b",
   "a": "c",
-  "e": "d",
-  "b": "e",
-  "d": "f"
+  "d": "d",
+  "f": "e",
+  "e": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "f",
+   "who": "c",
    "logic": {
-    "type": "northOf",
+    "type": "eastOf",
     "other": "d"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "sameRowAs",
+    "type": "sameColAs",
     "object": "tapis"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "inRoom",
+    "room": "O"
    }
   },
   {
    "who": "e",
    "logic": {
-    "type": "inRoom",
-    "room": "T"
-   }
-  },
-  {
-   "who": "d",
-   "logic": {
     "type": "westOf",
-    "other": "c"
+    "other": "f"
    }
   },
   {
    "who": "a",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "cristal"
-   }
-  },
-  {
-   "who": "b",
    "logic": {
     "type": "inRoom",
     "room": "R"
    }
   },
   {
-   "who": "c",
+   "who": "b",
    "logic": {
-    "type": "sameRowAs",
-    "object": "chaise"
-   }
-  },
-  {
-   "who": "f",
-   "logic": {
-    "type": "sameColAs",
-    "object": "fauteuil"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "sameColAs",
-    "object": "arbre"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "sameColAs",
-    "object": "coffre"
+    "type": "adjacentTo",
+    "object": "tonneau"
    }
   },
   {
    "who": "d",
    "logic": {
-    "type": "onObject",
-    "object": "tapis"
+    "type": "adjacentTo",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "arbre"
    }
   }
  ]

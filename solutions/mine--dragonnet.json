@@ -1,119 +1,119 @@
 {
  "positions": {
   "h": [
-   1,
-   3
+   2,
+   7
   ],
-  "b": [
+  "c": [
    5,
-   2
+   1
   ],
   "d": [
-   7,
-   0
+   3,
+   3
   ],
   "e": [
-   4,
+   6,
    5
   ],
-  "f": [
-   6,
+  "b": [
+   1,
    6
+  ],
+  "a": [
+   7,
+   4
+  ],
+  "f": [
+   4,
+   0
   ],
   "g": [
    0,
-   7
-  ],
-  "a": [
-   3,
-   4
-  ],
-  "c": [
-   2,
-   1
+   2
   ]
  },
- "murderer": "a",
+ "murderer": "b",
  "cast": {
-  "b": "a",
+  "c": "a",
   "d": "b",
   "e": "c",
-  "f": "d",
-  "g": "e",
-  "a": "f",
-  "c": "g"
+  "b": "d",
+  "a": "e",
+  "f": "f",
+  "g": "g"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "b",
-   "logic": {
-    "type": "sameColAs",
-    "object": "coffre"
-   }
-  },
-  {
-   "who": "d",
-   "logic": {
-    "type": "southOf",
-    "other": "f"
-   }
-  },
-  {
-   "who": "f",
-   "logic": {
-    "type": "southOf",
-    "other": "e"
-   }
-  },
-  {
-   "who": "g",
-   "logic": {
-    "type": "northOf",
-    "other": "b"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "northOf",
-    "other": "b"
-   }
-  },
-  {
    "who": "c",
    "logic": {
-    "type": "adjacentTo",
-    "object": "lit"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "eastOf",
-    "other": "d"
+    "type": "southOf",
+    "other": "g"
    }
   },
   {
    "who": "e",
    "logic": {
     "type": "sameRowAs",
-    "object": "chaise"
+    "object": "enclume"
    }
   },
   {
-   "who": "c",
+   "who": "b",
    "logic": {
-    "type": "northOf",
-    "other": "a"
+    "type": "sameColAs",
+    "object": "chariot"
    }
   },
   {
    "who": "a",
    "logic": {
+    "type": "inRoom",
+    "room": "C"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "enclume"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "eastOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
     "type": "sameColAs",
-    "object": "statue"
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "notInRoom",
+    "room": "P"
    }
   }
  ]

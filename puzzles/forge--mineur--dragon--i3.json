@@ -1,0 +1,294 @@
+{
+  "formatVersion": 1,
+  "title": "La Forge du Dragon — l'affaire Étai",
+  "size": 7,
+  "rooms": {
+    "D": {
+      "name": "Antre du dragon",
+      "the": "l'antre du dragon",
+      "floor": "roche"
+    },
+    "F": {
+      "name": "Forge",
+      "the": "la forge",
+      "floor": "dalles"
+    },
+    "A": {
+      "name": "Armurerie",
+      "the": "l'armurerie",
+      "floor": "dalles"
+    },
+    "O": {
+      "name": "Fonderie",
+      "the": "la fonderie",
+      "floor": "dalles"
+    },
+    "C": {
+      "name": "Réserve de charbon",
+      "the": "la réserve de charbon",
+      "floor": "roche"
+    },
+    "T": {
+      "name": "Atelier",
+      "the": "l'atelier",
+      "floor": "parquet"
+    },
+    "Y": {
+      "name": "Cour",
+      "the": "la cour",
+      "floor": "paves"
+    }
+  },
+  "layout": [
+    "DDDFFFA",
+    "DDFFFAA",
+    "DDOOFAA",
+    "CCOOTTA",
+    "CCOOTTT",
+    "CYYYTTT",
+    "YYYYYTT"
+  ],
+  "objects": [
+    {
+      "type": "coffre",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        1,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        4
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        2,
+        6
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        2,
+        2
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        5,
+        0
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        5
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        4
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        6,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        5,
+        2
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Aymeric",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
+    },
+    {
+      "id": "b",
+      "name": "Braisier",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragon adulte, toujours lové dans un coin",
+      "archetype": "dragon",
+      "shape": "I3"
+    },
+    {
+      "id": "c",
+      "name": "Chaparde",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "d",
+      "name": "Dentdur",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    },
+    {
+      "id": "e",
+      "name": "Étai",
+      "gender": "m",
+      "role": "victim",
+      "icon": "⛏️",
+      "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
+      "archetype": "mineur"
+    }
+  ],
+  "decor": "forge",
+  "id": "forge--mineur--dragon--i3",
+  "intro": "Le mineur Étai a été retrouvé sans vie à la Forge du Dragon, encore tiède. Quatre artisans et clients s'y pressaient cette nuit-là. Un seul était avec lui.",
+  "epilogue": "Aymeric avoue en grinçant : Étai lui avait forgé une armure encore plus petite que l'ancienne.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Aymeric était allongé sur un lit.",
+      "logic": {
+        "type": "onObject",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Braisier était sur la même ligne qu'un arbre.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Chaparde était au nord d'Aymeric.",
+      "logic": {
+        "type": "northOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dentdur était dans l'atelier.",
+      "logic": {
+        "type": "inRoom",
+        "room": "T"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "e": [
+        2,
+        0
+      ],
+      "b": [
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          6,
+          4
+        ]
+      ],
+      "a": [
+        1,
+        1
+      ],
+      "c": [
+        0,
+        5
+      ],
+      "d": [
+        4,
+        6
+      ]
+    },
+    "murderer": "a"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 3,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 1
+  },
+  "difficulty": 4
+}

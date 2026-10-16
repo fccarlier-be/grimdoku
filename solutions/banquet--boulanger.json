@@ -1,64 +1,71 @@
 {
  "positions": {
   "f": [
-   2,
+   4,
    5
   ],
-  "e": [
+  "d": [
+   5,
+   0
+  ],
+  "c": [
    0,
+   2
+  ],
+  "a": [
+   3,
    3
   ],
   "b": [
-   5,
-   4
-  ],
-  "c": [
-   3,
-   0
-  ],
-  "d": [
-   1,
+   2,
    1
   ],
-  "a": [
-   4,
-   2
+  "e": [
+   1,
+   4
   ]
  },
- "murderer": "b",
+ "murderer": "a",
  "cast": {
-  "e": "a",
-  "b": "b",
-  "c": "c",
-  "d": "d",
-  "a": "e"
+  "d": "a",
+  "c": "b",
+  "a": "c",
+  "b": "d",
+  "e": "e"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "e",
+   "who": "d",
    "logic": {
-    "type": "adjacentTo",
-    "object": "tonneau"
+    "type": "westOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "westOf",
+    "other": "e"
    }
   },
   {
    "who": "b",
    "logic": {
-    "type": "southOf",
-    "other": "c"
+    "type": "adjacentTo",
+    "object": "foin"
    }
   },
   {
-   "who": "d",
+   "who": "e",
    "logic": {
-    "type": "sameRowAs",
-    "object": "tonneau"
+    "type": "northOf",
+    "other": "d"
    }
   },
   {
-   "who": "c",
+   "who": "a",
    "logic": {
     "type": "sameRowAs",
     "object": "foin"
@@ -67,15 +74,15 @@
   {
    "who": "a",
    "logic": {
-    "type": "onObject",
-    "object": "champi"
+    "type": "sameColAs",
+    "object": "table"
    }
   },
   {
-   "who": "b",
+   "who": "a",
    "logic": {
-    "type": "sameColAs",
-    "object": "table"
+    "type": "onObject",
+    "object": "chaise"
    }
   }
  ]

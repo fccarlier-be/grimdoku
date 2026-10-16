@@ -232,6 +232,7 @@
   "decor": "navire",
   "id": "navire--capitaine--geant--cache",
   "hiddenShapes": true,
+  "hiddenMax": 3,
   "intro": "Le capitaine Frégaton a été retrouvé sans vie à bord du Navire Fantôme, qui dérivait dans le brouillard. Cinq membres d'équipage étaient à bord. Un seul était avec lui.",
   "epilogue": "Blafard hantait ce navire bien avant son équipage. Frégaton voulait le chasser par-dessus bord avec un seau d'eau bénite.",
   "clues": [

@@ -1,0 +1,320 @@
+{
+  "formatVersion": 1,
+  "title": "La Bibliothèque Interdite — la seconde affaire Ernestine",
+  "size": 7,
+  "rooms": {
+    "S": {
+      "name": "Scriptorium",
+      "the": "le scriptorium",
+      "floor": "parquet"
+    },
+    "Y": {
+      "name": "Rayonnages",
+      "the": "les rayonnages",
+      "floor": "parquet"
+    },
+    "B": {
+      "name": "Bureau",
+      "the": "le bureau",
+      "floor": "parquet"
+    },
+    "L": {
+      "name": "Salle de lecture",
+      "the": "la salle de lecture",
+      "floor": "parquet"
+    },
+    "G": {
+      "name": "Galerie",
+      "the": "la galerie",
+      "floor": "parquet"
+    },
+    "R": {
+      "name": "Réserve",
+      "the": "la réserve",
+      "floor": "parquet"
+    },
+    "A": {
+      "name": "Archives",
+      "the": "les archives",
+      "floor": "parquet"
+    }
+  },
+  "layout": [
+    "SSSYYYY",
+    "SSSYYYY",
+    "BBLLLGG",
+    "BBLLLGG",
+    "RRLLLGG",
+    "RRRAAAA",
+    "RRRAAAA"
+  ],
+  "objects": [
+    {
+      "type": "pupitre",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        0
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        5,
+        4
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        6,
+        5
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        6,
+        3
+      ]
+    }
+  ],
+  "intro": "La bibliothécaire Ernestine a été retrouvée sans vie entre deux rayonnages de la Bibliothèque Interdite. Quatre lecteurs nocturnes erraient dans les allées. Un seul était avec elle.",
+  "characters": [
+    {
+      "id": "a",
+      "name": "Argile",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🪨",
+      "desc": "Golem de pierre, lent mais très appliqué",
+      "archetype": "golem",
+      "shape": "L3"
+    },
+    {
+      "id": "b",
+      "name": "Blafard",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ]
+    },
+    {
+      "id": "c",
+      "name": "Cendrebrune",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragon adulte, toujours lové dans un coin",
+      "archetype": "dragon",
+      "shape": "I2"
+    },
+    {
+      "id": "d",
+      "name": "Dédale",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage"
+    },
+    {
+      "id": "e",
+      "name": "Ernestine",
+      "gender": "f",
+      "role": "victim",
+      "icon": "👩‍🏫",
+      "desc": "Bibliothécaire, réclame le silence en hurlant",
+      "archetype": "bibliothecaire"
+    }
+  ],
+  "decor": "bibliotheque",
+  "id": "bibliotheque--bibliothecaire--golem-dragon--l3-i2--cache",
+  "hiddenShapes": true,
+  "epilogue": "Dédale avoue en éternuant : Ernestine avait caché son grimoire de recettes de bière au rayon « Interdit aux mages ».",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Argile était sur la même ligne qu'une table.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était dans la même colonne qu'une statue.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Blafard était à côté d'une chaise.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Cendrebrune était au sud d'Argile.",
+      "logic": {
+        "type": "southOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dédale était dans la même colonne qu'un tonneau.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "tonneau"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "e": [
+        1,
+        1
+      ],
+      "a": [
+        [
+          3,
+          5
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          6
+        ]
+      ],
+      "c": [
+        [
+          5,
+          2
+        ],
+        [
+          6,
+          2
+        ]
+      ],
+      "d": [
+        0,
+        0
+      ],
+      "b": [
+        2,
+        4
+      ]
+    },
+    "murderer": "d"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 3,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 1
+  },
+  "difficulty": 5
+}

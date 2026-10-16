@@ -199,12 +199,12 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aubépine",
+      "name": "Amphora",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧚",
-      "desc": "Fée, doit trois tournées",
-      "archetype": "fee"
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn"
     },
     {
       "id": "b",
@@ -226,16 +226,25 @@
     },
     {
       "id": "d",
-      "name": "Djinnifer",
+      "name": "Daëlin",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧞‍♀️",
-      "desc": "Djinn, a déjà exaucé deux vœux de trop",
-      "archetype": "djinn"
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
     },
     {
       "id": "e",
-      "name": "Enguerrand",
+      "name": "Églantine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
+    },
+    {
+      "id": "f",
+      "name": "Foulques",
       "gender": "m",
       "role": "suspect",
       "icon": "🤺",
@@ -243,22 +252,13 @@
       "archetype": "chevalier"
     },
     {
-      "id": "f",
-      "name": "Ferdinand",
+      "id": "g",
+      "name": "Godefroy",
       "gender": "m",
       "role": "suspect",
       "icon": "🤴",
       "desc": "Roi, avare de compliments et de tout le reste",
       "archetype": "roi"
-    },
-    {
-      "id": "g",
-      "name": "Galwë",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧝‍♀️",
-      "desc": "Elfe, critique gastronomique",
-      "archetype": "elfe"
     },
     {
       "id": "h",
@@ -276,11 +276,11 @@
   "decor": "bal",
   "id": "bal--spectre",
   "intro": "Le spectre Hulul a été retrouvé sans vie au Bal Masqué, sous un loup de velours. Sept invités dansaient encore. Un seul était avec lui.",
-  "epilogue": "Aubépine avoue : Hulul l'avait prise pour une décoration de lustre et voulait l'accrocher.",
+  "epilogue": "Godefroy avoue, outré : Hulul lui avait marché sur la traîne pendant la valse royale. Trois fois.",
   "clues": [
     {
       "who": "a",
-      "text": "Aubépine était dans la même colonne qu'une chaise.",
+      "text": "Amphora était dans la même colonne qu'une chaise.",
       "logic": {
         "type": "sameColAs",
         "object": "chaise"
@@ -288,62 +288,62 @@
     },
     {
       "who": "a",
-      "text": "Elle était à côté d'un champignon géant.",
+      "text": "Elle était à côté d'un lit.",
       "logic": {
         "type": "adjacentTo",
-        "object": "champi"
+        "object": "lit"
       }
     },
     {
-      "who": "a",
-      "text": "Elle était au sud de Djinnifer.",
+      "who": "b",
+      "text": "Belladone était au sud de Godefroy.",
       "logic": {
         "type": "southOf",
-        "other": "d"
+        "other": "g"
       }
     },
     {
       "who": "b",
-      "text": "Belladone était à côté d'une chaise.",
+      "text": "Elle était à côté d'une table.",
       "logic": {
         "type": "adjacentTo",
-        "object": "chaise"
+        "object": "table"
       }
     },
     {
       "who": "b",
-      "text": "Elle était dans la même colonne qu'un coffre.",
+      "text": "Elle était dans la même colonne qu'un tonneau.",
       "logic": {
         "type": "sameColAs",
-        "object": "coffre"
+        "object": "tonneau"
       }
     },
     {
       "who": "c",
-      "text": "Couac était assis dans un fauteuil.",
+      "text": "Couac était à l'ouest de Godefroy.",
       "logic": {
-        "type": "onObject",
-        "object": "fauteuil"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Il était au nord de Galwë.",
-      "logic": {
-        "type": "northOf",
+        "type": "westOf",
         "other": "g"
       }
     },
     {
       "who": "d",
-      "text": "Djinnifer était à l'ouest d'Aubépine.",
+      "text": "Daëlin était dans la même colonne qu'une chaise.",
       "logic": {
-        "type": "westOf",
-        "other": "a"
+        "type": "sameColAs",
+        "object": "chaise"
       }
     },
     {
-      "who": "d",
+      "who": "e",
+      "text": "Églantine était à l'est de Couac.",
+      "logic": {
+        "type": "eastOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "e",
       "text": "Elle était assise dans un fauteuil.",
       "logic": {
         "type": "onObject",
@@ -351,74 +351,66 @@
       }
     },
     {
-      "who": "e",
-      "text": "Enguerrand était dans la même colonne qu'un arbre.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "arbre"
-      }
-    },
-    {
       "who": "f",
-      "text": "Ferdinand était au sud de Galwë.",
+      "text": "Foulques était à l'est de Daëlin.",
       "logic": {
-        "type": "southOf",
-        "other": "g"
-      }
-    },
-    {
-      "who": "f",
-      "text": "Il était sur la même ligne qu'une statue.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "statue"
+        "type": "eastOf",
+        "other": "d"
       }
     },
     {
       "who": "g",
-      "text": "Galwë était au nord d'Aubépine.",
+      "text": "Godefroy était au sud de Couac.",
       "logic": {
-        "type": "northOf",
-        "other": "a"
+        "type": "southOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Il était dans la même colonne qu'un arbre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "arbre"
       }
     }
   ],
   "solution": {
     "positions": {
       "h": [
-        7,
+        0,
         3
       ],
-      "f": [
-        4,
-        7
-      ],
-      "e": [
-        0,
+      "g": [
+        3,
         5
       ],
-      "g": [
+      "f": [
         2,
         6
       ],
-      "c": [
-        1,
-        1
-      ],
-      "a": [
-        6,
+      "d": [
+        7,
         4
       ],
-      "d": [
+      "c": [
+        1,
+        0
+      ],
+      "e": [
         5,
         2
       ],
+      "a": [
+        6,
+        1
+      ],
       "b": [
-        3,
-        0
+        4,
+        7
       ]
     },
-    "murderer": "a"
+    "murderer": "g"
   },
   "rating": {
     "skulls": 2,

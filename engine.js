@@ -32,23 +32,32 @@
   };
 
 
-  // Grands personnages (4–5 crânes) : formes, en décalages [dl, dc] dans une orientation de base.
+  // Grands personnages (4–5 crânes) : formes de 2 à 4 cases, en décalages [dl, dc] dans une orientation de base.
+  // La forme est propre à chaque énigme (champ `shape` du personnage), pas au type : un dragon peut faire 2 cases ici, 4 là.
   // Règles : chaque case prend sa ligne et sa colonne, toutes les cases dans la même pièce, jamais sur un meuble.
+  // Orientation libre : la forme peut être tournée et retournée.
   const SHAPES = {
     I2: { name: '2 cases', cells: [[0, 0], [0, 1]] },
     I3: { name: '3 cases en ligne', cells: [[0, 0], [0, 1], [0, 2]] },
-    L3: { name: '3 cases en angle', cells: [[0, 0], [1, 0], [1, 1]] }
+    L3: { name: '3 cases en angle', cells: [[0, 0], [1, 0], [1, 1]] },
+    I4: { name: '4 cases en ligne', cells: [[0, 0], [0, 1], [0, 2], [0, 3]] },
+    O4: { name: '4 cases en carré', cells: [[0, 0], [0, 1], [1, 0], [1, 1]] },
+    L4: { name: '4 cases en L', cells: [[0, 0], [1, 0], [2, 0], [2, 1]] },
+    T4: { name: '4 cases en T', cells: [[0, 0], [0, 1], [0, 2], [1, 1]] },
+    S4: { name: '4 cases en zigzag', cells: [[0, 1], [0, 2], [1, 0], [1, 1]] }
   };
   const byRC = (a, b) => a[0] - b[0] || a[1] - b[1];
-  // orientations distinctes d'une forme, coin haut-gauche en (0, 0), cases triées
+  // orientations distinctes d'une forme (rotations et miroirs), coin haut-gauche en (0, 0), cases triées
   function orientations(shape) {
     const out = new Map();
-    let cs = SHAPES[shape].cells;
-    for (let k = 0; k < 4; k++) {
-      cs = cs.map(([r, c]) => [c, -r]);
-      const mr = Math.min(...cs.map(x => x[0])), mc = Math.min(...cs.map(x => x[1]));
-      const norm = cs.map(([r, c]) => [r - mr, c - mc]).sort(byRC);
-      out.set(JSON.stringify(norm), norm);
+    for (const mirror of [false, true]) {
+      let cs = SHAPES[shape].cells.map(([r, c]) => [r, mirror ? -c : c]);
+      for (let k = 0; k < 4; k++) {
+        cs = cs.map(([r, c]) => [c, -r]);
+        const mr = Math.min(...cs.map(x => x[0])), mc = Math.min(...cs.map(x => x[1]));
+        const norm = cs.map(([r, c]) => [r - mr, c - mc]).sort(byRC);
+        out.set(JSON.stringify(norm), norm);
+      }
     }
     return [...out.values()];
   }
@@ -81,11 +90,13 @@
   }
   const zoneAt = (ctx, v) => ctx.zoneOf(...cellsOf(v)[0]);
 
-  // Formes possibles d'un personnage : null (une case), [forme] (forme connue), toutes (forme cachée, 5 crânes).
+  // Formes possibles d'un personnage : null (une case), [forme] (forme connue), toutes de 2 à 4 cases (forme cachée, 5 crânes).
   function shapesOf(ctx, id) {
     const ch = ctx.chars[id];
     if (!ch.shape) return null;
-    return ctx.p.hiddenShapes ? Object.keys(SHAPES) : [ch.shape];
+    // hiddenMax : forme cachée parmi celles d'au plus ce nombre de cases (grilles d'origine : 2 ou 3 cases)
+    if (ctx.p.hiddenShapes) return Object.keys(SHAPES).filter(s => SHAPES[s].cells.length <= (ctx.p.hiddenMax || 4));
+    return [ch.shape];
   }
 
   function canStand(ctx, charId, r, c) {
@@ -449,7 +460,19 @@
     return rateDifficulty(steps).skulls;
   }
 
-  const api = { OBJECTS, SHAPES, TECH, rateDifficulty, skullsOf, RELATIVE, isPair, prepare, sharedRooms, canStand, evalClue, murdererOf, solve, checkPlacement, neighbors, humanSolve, cellsOf, posKey, placementsOf, isPlacement, shapesOf, orientations, linesOf };
+  // Empreinte d'une solution : cases occupées et case(s) de la victime. Deux grilles d'un même décor sont « trop
+  // proches » si la victime est au même endroit ou si elles partagent plus de la moitié de leurs cases occupées
+  // (retour de François : des affaires différentes ne doivent pas être la même grille avec d'autres noms).
+  function layoutSig(positions, victimId) {
+    return { cells: Object.values(positions).flatMap(v => cellsOf(v).map(([r, c]) => key(r, c))), victim: posKey(positions[victimId]) };
+  }
+  function tooClose(a, b) {
+    if (a.victim === b.victim) return true;
+    const B = new Set(b.cells);
+    return a.cells.filter(k => B.has(k)).length * 2 > Math.min(a.cells.length, b.cells.length);
+  }
+
+  const api = { layoutSig, tooClose, OBJECTS, SHAPES, TECH, rateDifficulty, skullsOf, RELATIVE, isPair, prepare, sharedRooms, canStand, evalClue, murdererOf, solve, checkPlacement, neighbors, humanSolve, cellsOf, posKey, placementsOf, isPlacement, shapesOf, orientations, linesOf };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.GrimEngine = api;
 })(typeof window !== 'undefined' ? window : globalThis);

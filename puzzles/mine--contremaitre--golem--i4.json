@@ -1,0 +1,319 @@
+{
+  "formatVersion": 1,
+  "title": "La Mine des Nains — l'affaire Émeri",
+  "size": 8,
+  "rooms": {
+    "E": {
+      "name": "Entrée",
+      "the": "l'entrée",
+      "floor": "roche"
+    },
+    "G": {
+      "name": "Galerie",
+      "the": "la galerie",
+      "floor": "roche"
+    },
+    "F": {
+      "name": "Forge",
+      "the": "la forge",
+      "floor": "roche"
+    },
+    "P": {
+      "name": "Puits",
+      "the": "le puits",
+      "floor": "roche"
+    },
+    "V": {
+      "name": "Filon",
+      "the": "le filon",
+      "floor": "roche"
+    },
+    "D": {
+      "name": "Dortoir",
+      "the": "le dortoir",
+      "floor": "roche"
+    },
+    "C": {
+      "name": "Cantine",
+      "the": "la cantine",
+      "floor": "parquet"
+    },
+    "T": {
+      "name": "Salle des coffres",
+      "the": "la salle des coffres",
+      "floor": "roche"
+    }
+  },
+  "layout": [
+    "EEEGGFFF",
+    "EEEGGFFF",
+    "DDGGGPPF",
+    "DDGGGPPV",
+    "DDCCCPVV",
+    "TTCCCVVV",
+    "TTCCCVVV",
+    "TTTTCVVV"
+  ],
+  "objects": [
+    {
+      "type": "tonneau",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        1,
+        7
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        6,
+        7
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        2
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        7,
+        2
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        7,
+        6
+      ]
+    }
+  ],
+  "intro": "Le contremaître Émeri a été retrouvé au fond de la Mine des Nains, aussi froid que le granit. Quatre ouvriers étaient descendus pour l'équipe de nuit. Un seul était avec lui.",
+  "characters": [
+    {
+      "id": "a",
+      "name": "Argile",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🪨",
+      "desc": "Golem de pierre, lent mais très appliqué",
+      "archetype": "golem",
+      "shape": "I4"
+    },
+    {
+      "id": "b",
+      "name": "Bâfrin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    },
+    {
+      "id": "c",
+      "name": "Caillou",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "⛏️",
+      "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
+      "archetype": "mineur"
+    },
+    {
+      "id": "d",
+      "name": "Dîme",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "e",
+      "name": "Émeri",
+      "gender": "m",
+      "role": "victim",
+      "icon": "👷",
+      "desc": "Contremaître nain, compte les pépites et les pauses",
+      "archetype": "contremaitre"
+    }
+  ],
+  "decor": "mine",
+  "id": "mine--contremaitre--golem--i4",
+  "epilogue": "Bâfrin avoue : Émeri l'utilisait comme étai depuis six mois. Un troll aussi a besoin de s'asseoir.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Argile était à côté d'une table.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "table"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bâfrin était sur la même ligne qu'un lit.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était à côté d'un lit.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Caillou était dans la même colonne qu'un champignon géant.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dîme était dans l'entrée.",
+      "logic": {
+        "type": "inRoom",
+        "room": "E"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "e": [
+        3,
+        0
+      ],
+      "a": [
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          7,
+          4
+        ]
+      ],
+      "c": [
+        1,
+        6
+      ],
+      "b": [
+        2,
+        1
+      ],
+      "d": [
+        0,
+        2
+      ]
+    },
+    "murderer": "b"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 3,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 1
+  },
+  "difficulty": 4
+}

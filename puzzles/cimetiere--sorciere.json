@@ -185,7 +185,16 @@
   "characters": [
     {
       "id": "a",
-      "name": "Albâtre",
+      "name": "Anselme",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "⚰️",
+      "desc": "Fossoyeur, creuse en sifflotant",
+      "archetype": "fossoyeur"
+    },
+    {
+      "id": "b",
+      "name": "Blafard",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -196,44 +205,17 @@
       ]
     },
     {
-      "id": "b",
-      "name": "Belladone",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧛‍♀️",
-      "desc": "Comtesse vampire, végane (elle le jure)",
-      "archetype": "vampire"
-    },
-    {
       "id": "c",
-      "name": "Coassin",
+      "name": "Clodomir",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐸",
-      "desc": "Crapaud, prince déchu, attend toujours son bisou",
-      "archetype": "crapaud"
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
     },
     {
       "id": "d",
-      "name": "Déterre",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "⚰️",
-      "desc": "Fossoyeur, creuse en sifflotant",
-      "archetype": "fossoyeur"
-    },
-    {
-      "id": "e",
-      "name": "Edmond",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧟",
-      "desc": "Zombie, ancien apprenti. Ancien tout court",
-      "archetype": "zombie"
-    },
-    {
-      "id": "f",
-      "name": "Funeste",
+      "name": "Dénonce",
       "gender": "m",
       "role": "suspect",
       "icon": "🐦‍⬛",
@@ -241,13 +223,31 @@
       "archetype": "corbeau"
     },
     {
-      "id": "g",
-      "name": "Gontran",
+      "id": "e",
+      "name": "Eugène",
       "gender": "m",
       "role": "suspect",
-      "icon": "🤺",
-      "desc": "Chevalier, armure trop petite depuis Noël",
-      "archetype": "chevalier"
+      "icon": "🐸",
+      "desc": "Crapaud, prince déchu, attend toujours son bisou",
+      "archetype": "crapaud"
+    },
+    {
+      "id": "f",
+      "name": "Fernand",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
+    },
+    {
+      "id": "g",
+      "name": "Grenat",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
     },
     {
       "id": "h",
@@ -262,131 +262,131 @@
   "decor": "cimetiere",
   "id": "cimetiere--sorciere",
   "intro": "La sorcière Houx a été retrouvée sans vie au Cimetière de Minuit, ce qui, admettons-le, simplifie les démarches. Sept habitués rôdaient entre les tombes. Un seul était avec elle.",
-  "epilogue": "Belladone avoue : Houx avait planté de l'ail sur toutes les tombes. Même la sienne.",
+  "epilogue": "Blafard avoue : Houx avait réservé sa tombe préférée. Il la hantait depuis trois siècles.",
   "clues": [
     {
       "who": "a",
-      "text": "Albâtre hantait un pupitre.",
-      "logic": {
-        "type": "onObject",
-        "object": "pupitre"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Belladone était sur la même ligne qu'une statue.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "statue"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Coassin était à l'est d'Edmond.",
+      "text": "Anselme était à l'est d'Eugène.",
       "logic": {
         "type": "eastOf",
         "other": "e"
       }
     },
     {
-      "who": "c",
-      "text": "Il était à l'ouest de Déterre.",
+      "who": "a",
+      "text": "Il était sur la même ligne qu'une table.",
       "logic": {
-        "type": "westOf",
-        "other": "d"
+        "type": "sameRowAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était à côté d'une tombe.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tombe"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Blafard hantait une statue.",
+      "logic": {
+        "type": "onObject",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était au nord de Grenat.",
+      "logic": {
+        "type": "northOf",
+        "other": "g"
       }
     },
     {
       "who": "c",
-      "text": "Il était au nord de Belladone.",
+      "text": "Clodomir était à côté d'un sarcophage.",
       "logic": {
-        "type": "northOf",
-        "other": "b"
+        "type": "adjacentTo",
+        "object": "sarcophage"
       }
     },
     {
       "who": "d",
-      "text": "Déterre était au nord d'Edmond.",
+      "text": "Dénonce était au nord d'Anselme.",
       "logic": {
         "type": "northOf",
-        "other": "e"
+        "other": "a"
       }
     },
     {
       "who": "e",
-      "text": "Edmond était au sud de Funeste.",
+      "text": "Eugène était sur la même ligne qu'un sarcophage.",
       "logic": {
-        "type": "southOf",
-        "other": "f"
+        "type": "sameRowAs",
+        "object": "sarcophage"
       }
     },
     {
       "who": "f",
-      "text": "Funeste était à l'ouest d'Edmond.",
+      "text": "Fernand était au nord de Clodomir.",
       "logic": {
-        "type": "westOf",
-        "other": "e"
-      }
-    },
-    {
-      "who": "f",
-      "text": "Il était dans l'allée des ifs.",
-      "logic": {
-        "type": "inRoom",
-        "room": "A"
+        "type": "northOf",
+        "other": "c"
       }
     },
     {
       "who": "g",
-      "text": "Gontran était dans la même colonne qu'un sarcophage.",
+      "text": "Grenat était à l'est de Blafard.",
       "logic": {
-        "type": "sameColAs",
-        "object": "sarcophage"
+        "type": "eastOf",
+        "other": "b"
       }
     }
   ],
   "solution": {
     "positions": {
       "h": [
-        7,
-        2
-      ],
-      "d": [
-        3,
-        7
+        4,
+        3
       ],
       "a": [
         1,
-        5
-      ],
-      "e": [
-        5,
         4
       ],
       "b": [
         6,
-        0
+        2
       ],
       "f": [
-        0,
-        3
+        2,
+        6
       ],
       "g": [
-        2,
-        1
+        7,
+        7
+      ],
+      "d": [
+        0,
+        5
       ],
       "c": [
-        4,
-        6
+        5,
+        1
+      ],
+      "e": [
+        3,
+        0
       ]
     },
     "murderer": "b"
   },
   "rating": {
     "skulls": 2,
-    "score": 4,
-    "hardest": "pièces",
-    "hardSteps": 2,
+    "score": 3,
+    "hardest": "seul candidat",
+    "hardSteps": 1,
     "directStart": 1
   },
   "difficulty": 2

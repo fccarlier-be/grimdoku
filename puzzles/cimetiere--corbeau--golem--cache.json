@@ -254,6 +254,7 @@
   "decor": "cimetiere",
   "id": "cimetiere--corbeau--golem--cache",
   "hiddenShapes": true,
+  "hiddenMax": 3,
   "intro": "Le corbeau Griffon a été retrouvé sans vie au Cimetière de Minuit, ce qui, admettons-le, simplifie les démarches. Six habitués rôdaient entre les tombes. Un seul était avec lui.",
   "epilogue": "On avait gravé une consigne sur le front de Fondation : « Range la pièce. » Il a rangé Griffon aussi, très soigneusement.",
   "clues": [

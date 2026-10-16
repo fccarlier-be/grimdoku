@@ -179,12 +179,12 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aspre",
+      "name": "Ara",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧔‍♂️",
-      "desc": "Tavernier nain, radin légendaire",
-      "archetype": "tavernier"
+      "icon": "🦜",
+      "desc": "Perroquet, répète tous les secrets",
+      "archetype": "perroquet"
     },
     {
       "id": "b",
@@ -197,16 +197,7 @@
     },
     {
       "id": "c",
-      "name": "Coutelas",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🏴‍☠️",
-      "desc": "Pirate, a perdu une jambe, un œil et le sens de l'orientation",
-      "archetype": "pirate"
-    },
-    {
-      "id": "d",
-      "name": "Dîme",
+      "name": "Chaparde",
       "gender": "m",
       "role": "suspect",
       "icon": "👺",
@@ -214,22 +205,31 @@
       "archetype": "gobelin"
     },
     {
-      "id": "e",
-      "name": "Écho-Écho",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🦜",
-      "desc": "Perroquet, répète tous les secrets",
-      "archetype": "perroquet"
-    },
-    {
-      "id": "f",
-      "name": "Frégaton",
+      "id": "d",
+      "name": "Drakkar",
       "gender": "m",
       "role": "suspect",
       "icon": "🧑‍✈️",
       "desc": "Capitaine, n'a jamais quitté le port",
       "archetype": "capitaine"
+    },
+    {
+      "id": "e",
+      "name": "Écu",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧔‍♂️",
+      "desc": "Tavernier nain, radin légendaire",
+      "archetype": "tavernier"
+    },
+    {
+      "id": "f",
+      "name": "Flibuste",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🏴‍☠️",
+      "desc": "Pirate, a perdu une jambe, un œil et le sens de l'orientation",
+      "archetype": "pirate"
     },
     {
       "id": "g",
@@ -244,50 +244,18 @@
   "decor": "port",
   "id": "port--sirene",
   "intro": "La sirène Goémone a été retrouvée sans vie au Port des Contrebandiers, à l'heure où la marée se retire. Six habitués traînaient sur les quais. Un seul était avec elle.",
-  "epilogue": "Écho-Écho avoue, et le répète : Goémone voulait le vendre à la taverne comme horloge parlante.",
+  "epilogue": "Drakkar avoue, la main sur le cœur : Goémone s'était moquée de son navire « qui ne quitte jamais le port ». C'était vrai, c'était cruel.",
   "clues": [
     {
       "who": "a",
-      "text": "Aspre était au nord de Coutelas.",
+      "text": "Ara était dans la douane.",
       "logic": {
-        "type": "northOf",
-        "other": "c"
+        "type": "inRoom",
+        "room": "D"
       }
     },
     {
       "who": "a",
-      "text": "Il était à côté d'un tonneau.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "tonneau"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était à l'ouest de Dîme.",
-      "logic": {
-        "type": "westOf",
-        "other": "d"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Bâfrin était à côté d'une barque.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "barque"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Coutelas était au sud de Bâfrin.",
-      "logic": {
-        "type": "southOf",
-        "other": "b"
-      }
-    },
-    {
-      "who": "c",
       "text": "Il était assis sur une chaise.",
       "logic": {
         "type": "onObject",
@@ -295,69 +263,93 @@
       }
     },
     {
+      "who": "b",
+      "text": "Bâfrin était dans le quai.",
+      "logic": {
+        "type": "inRoom",
+        "room": "Q"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Chaparde était à l'est d'Ara.",
+      "logic": {
+        "type": "eastOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était sur la même ligne qu'une enclume.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "enclume"
+      }
+    },
+    {
       "who": "d",
-      "text": "Dîme était sur la même ligne qu'un lit.",
+      "text": "Drakkar était dans la même colonne qu'une enclume.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "enclume"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Écu était sur la même ligne qu'un lit.",
       "logic": {
         "type": "sameRowAs",
         "object": "lit"
       }
     },
     {
-      "who": "e",
-      "text": "Écho-Écho était à côté d'un tonneau.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "tonneau"
-      }
-    },
-    {
       "who": "f",
-      "text": "Frégaton était à l'est d'Aspre.",
+      "text": "Flibuste était dans la même colonne qu'une chaise.",
       "logic": {
-        "type": "eastOf",
-        "other": "a"
+        "type": "sameColAs",
+        "object": "chaise"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        6,
-        0
-      ],
-      "c": [
-        3,
-        1
+        5,
+        3
       ],
       "f": [
+        6,
+        1
+      ],
+      "d": [
+        3,
+        4
+      ],
+      "a": [
+        2,
+        5
+      ],
+      "c": [
         4,
         6
       ],
-      "e": [
-        5,
+      "b": [
+        0,
         2
       ],
-      "d": [
+      "e": [
         1,
-        5
-      ],
-      "b": [
-        2,
-        3
-      ],
-      "a": [
-        0,
-        4
+        0
       ]
     },
-    "murderer": "e"
+    "murderer": "d"
   },
   "rating": {
     "skulls": 2,
-    "score": 4,
-    "hardest": "position relative",
-    "hardSteps": 0,
-    "directStart": 0
+    "score": 3,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 1
   },
   "difficulty": 2
 }

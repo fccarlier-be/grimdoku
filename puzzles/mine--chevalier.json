@@ -179,52 +179,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Anatole",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧟",
-      "desc": "Zombie, ancien apprenti. Ancien tout court",
-      "archetype": "zombie"
-    },
-    {
-      "id": "b",
-      "name": "Basalte",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👷",
-      "desc": "Contremaître nain, compte les pépites et les pauses",
-      "archetype": "contremaitre"
-    },
-    {
-      "id": "c",
-      "name": "Capucine",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧚",
-      "desc": "Fée, doit trois tournées",
-      "archetype": "fee"
-    },
-    {
-      "id": "d",
-      "name": "Dardafeu",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🐉",
-      "desc": "Dragonnet, brûle tout ce qu'il touche",
-      "archetype": "dragonnet"
-    },
-    {
-      "id": "e",
-      "name": "Étai",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "⛏️",
-      "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
-      "archetype": "mineur"
-    },
-    {
-      "id": "f",
-      "name": "Fringale",
+      "name": "Avaloir",
       "gender": "m",
       "role": "suspect",
       "icon": "🧌",
@@ -232,13 +187,58 @@
       "archetype": "troll"
     },
     {
-      "id": "g",
-      "name": "Grigou",
+      "id": "b",
+      "name": "Bruyère",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
+    },
+    {
+      "id": "c",
+      "name": "Charbon",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👷",
+      "desc": "Contremaître nain, compte les pépites et les pauses",
+      "archetype": "contremaitre"
+    },
+    {
+      "id": "d",
+      "name": "Désiré",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
+    },
+    {
+      "id": "e",
+      "name": "Étincel",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
+      "id": "f",
+      "name": "Filou",
       "gender": "m",
       "role": "suspect",
       "icon": "👺",
       "desc": "Gobelin, trésorier du royaume (non déclaré)",
       "archetype": "gobelin"
+    },
+    {
+      "id": "g",
+      "name": "Grisou",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "⛏️",
+      "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
+      "archetype": "mineur"
     },
     {
       "id": "h",
@@ -252,132 +252,140 @@
   ],
   "decor": "mine",
   "id": "mine--chevalier",
-  "epilogue": "Capucine avoue : Hardouin la gardait dans un bocal pour éclairer la galerie. Elle a fini par trouver la sortie. Et un gros caillou.",
+  "epilogue": "Grisou avoue : Hardouin lui avait volé sa plus belle pépite. C'était devenu une question de principe.",
   "clues": [
     {
       "who": "a",
-      "text": "Anatole était dans la salle des coffres.",
-      "logic": {
-        "type": "inRoom",
-        "room": "T"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était sur la même ligne qu'un chariot de mine.",
+      "text": "Avaloir était sur la même ligne qu'une statue.",
       "logic": {
         "type": "sameRowAs",
-        "object": "chariot"
+        "object": "statue"
       }
     },
     {
       "who": "a",
-      "text": "Il était dans la même colonne qu'un coffre.",
+      "text": "Il était dans la même colonne qu'un lit.",
       "logic": {
         "type": "sameColAs",
-        "object": "coffre"
+        "object": "lit"
       }
     },
     {
       "who": "b",
-      "text": "Basalte était dans l'entrée.",
+      "text": "Bruyère était sur la même ligne qu'une enclume.",
       "logic": {
-        "type": "inRoom",
-        "room": "E"
+        "type": "sameRowAs",
+        "object": "enclume"
       }
     },
     {
       "who": "b",
-      "text": "Il était à l'est de Dardafeu.",
+      "text": "Elle était à côté d'un champignon géant.",
       "logic": {
-        "type": "eastOf",
-        "other": "d"
+        "type": "adjacentTo",
+        "object": "champi"
       }
     },
     {
       "who": "c",
-      "text": "Capucine était à côté d'une chaise.",
+      "text": "Charbon était sur la même ligne qu'une chaise.",
       "logic": {
-        "type": "adjacentTo",
+        "type": "sameRowAs",
         "object": "chaise"
       }
     },
     {
+      "who": "c",
+      "text": "Il était dans le dortoir.",
+      "logic": {
+        "type": "inRoom",
+        "room": "D"
+      }
+    },
+    {
       "who": "d",
-      "text": "Dardafeu était au sud de Fringale.",
+      "text": "Désiré était au sud de Grisou.",
       "logic": {
         "type": "southOf",
-        "other": "f"
+        "other": "g"
       }
     },
     {
       "who": "e",
-      "text": "Étai était à l'est de Fringale.",
+      "text": "Étincel était à l'ouest de Désiré.",
       "logic": {
-        "type": "eastOf",
-        "other": "f"
+        "type": "westOf",
+        "other": "d"
       }
     },
     {
       "who": "f",
-      "text": "Fringale était dans le puits.",
+      "text": "Filou était au sud de Charbon.",
       "logic": {
-        "type": "inRoom",
-        "room": "P"
+        "type": "southOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Il était au nord de Désiré.",
+      "logic": {
+        "type": "northOf",
+        "other": "d"
       }
     },
     {
       "who": "g",
-      "text": "Grigou était dans le filon.",
+      "text": "Grisou était sur la même ligne qu'un lit.",
       "logic": {
-        "type": "inRoom",
-        "room": "V"
+        "type": "sameRowAs",
+        "object": "lit"
       }
     }
   ],
   "solution": {
     "positions": {
       "h": [
-        6,
-        3
-      ],
-      "e": [
         1,
-        6
-      ],
-      "f": [
-        2,
         5
       ],
       "g": [
-        5,
+        2,
         7
       ],
-      "d": [
-        3,
+      "a": [
+        0,
         1
+      ],
+      "f": [
+        5,
+        4
+      ],
+      "e": [
+        3,
+        2
+      ],
+      "b": [
+        6,
+        6
+      ],
+      "d": [
+        7,
+        3
       ],
       "c": [
         4,
-        4
-      ],
-      "a": [
-        7,
         0
-      ],
-      "b": [
-        0,
-        2
       ]
     },
-    "murderer": "c"
+    "murderer": "g"
   },
   "rating": {
     "skulls": 2,
     "score": 3,
     "hardest": "pièces",
     "hardSteps": 1,
-    "directStart": 1
+    "directStart": 2
   },
   "difficulty": 2
 }

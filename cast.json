@@ -551,7 +551,7 @@
     "icon": "🦶",
     "gender": "m",
     "title": "le géant",
-    "shape": "I2",
+    "big": true,
     "desc": "Géant, toujours couché : aucun plafond n'est assez haut",
     "epilogue": "{coupable} jure qu'il s'est seulement retourné dans son sommeil. Hélas, {victime} faisait la sieste juste à côté.",
     "names": {
@@ -569,7 +569,7 @@
     "icon": "🪨",
     "gender": "m",
     "title": "le golem",
-    "shape": "I2",
+    "big": true,
     "desc": "Golem de pierre, lent mais très appliqué",
     "epilogue": "On avait gravé une consigne sur le front de {coupable} : « Range la pièce. » Il a rangé {victime} aussi, très soigneusement.",
     "names": {
@@ -587,7 +587,7 @@
     "icon": "🐍",
     "gender": "f",
     "title": "la vouivre",
-    "shape": "I3",
+    "big": true,
     "desc": "Vouivre, serpent ailé, très longue à se retourner",
     "epilogue": "{coupable} voulait juste faire un câlin à {victime}. Avec trois cases de longueur, un câlin finit vite en nœud.",
     "names": {
@@ -605,7 +605,7 @@
     "icon": "🐉",
     "gender": "m",
     "title": "le dragon",
-    "shape": "L3",
+    "big": true,
     "desc": "Dragon adulte, toujours lové dans un coin",
     "epilogue": "{coupable} gardait son trésor dans un coin, comme tout dragon qui se respecte. {victime} a eu le tort de compter les pièces à voix haute.",
     "names": {

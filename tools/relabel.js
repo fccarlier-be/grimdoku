@@ -20,9 +20,10 @@ for (const file of fs.readdirSync(path.join(ROOT, 'solutions'))) {
   if (!scene) continue;
   const sol = JSON.parse(fs.readFileSync(path.join(ROOT, 'solutions', file), 'utf8'));
   const loaded = loadScene(path.join(ROOT, 'scenes', scene + '.json'));
-  const raw = big ? withBig(loaded, victim, big.big) : victim ? withVictim(loaded, victim) : loaded;
+  const raw = big ? withBig(loaded, victim, big.big, big.shapes) : victim ? withVictim(loaded, victim) : loaded;
   const p = resolve(raw, sol.cast);
   if (big && big.hidden) p.hiddenShapes = true;
+  if (big && big.hiddenMax) p.hiddenMax = big.hiddenMax;
   const ids = p.characters.map(c => c.id);
   const vic = p.characters.find(c => c.role === 'victim').id;
   const suspects = ids.filter(x => x !== vic);

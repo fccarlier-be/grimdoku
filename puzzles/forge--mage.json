@@ -183,25 +183,7 @@
     },
     {
       "id": "c",
-      "name": "Chaparde",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
-    },
-    {
-      "id": "d",
-      "name": "Dardafeu",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🐉",
-      "desc": "Dragonnet, brûle tout ce qu'il touche",
-      "archetype": "dragonnet"
-    },
-    {
-      "id": "e",
-      "name": "Étai",
+      "name": "Caillou",
       "gender": "m",
       "role": "suspect",
       "icon": "⛏️",
@@ -209,13 +191,31 @@
       "archetype": "mineur"
     },
     {
-      "id": "f",
-      "name": "Festin",
+      "id": "d",
+      "name": "Dévoreur",
       "gender": "m",
       "role": "suspect",
       "icon": "👹",
       "desc": "Ogre, végétarien depuis mardi",
       "archetype": "ogre"
+    },
+    {
+      "id": "e",
+      "name": "Escroquin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "f",
+      "name": "Flammèche",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
     },
     {
       "id": "g",
@@ -230,102 +230,86 @@
   "decor": "forge",
   "id": "forge--mage",
   "intro": "Le mage Gribouille a été retrouvé sans vie à la Forge du Dragon, encore tiède. Six artisans et clients s'y pressaient cette nuit-là. Un seul était avec lui.",
-  "epilogue": "Étai avoue : Gribouille avait fondu sa plus belle pépite pour en faire une cuillère.",
+  "epilogue": "Escroquin avoue : Gribouille avait remarqué que les épées vendues étaient en fer-blanc peint.",
   "clues": [
     {
       "who": "a",
-      "text": "Aymeric était au sud de Chaparde.",
+      "text": "Aymeric était à côté d'un arbre.",
       "logic": {
-        "type": "southOf",
-        "other": "c"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était assis sur une chaise.",
-      "logic": {
-        "type": "onObject",
-        "object": "chaise"
+        "type": "adjacentTo",
+        "object": "arbre"
       }
     },
     {
       "who": "b",
-      "text": "Bâfrin était à côté d'une statue.",
+      "text": "Bâfrin était à côté d'un lit.",
       "logic": {
         "type": "adjacentTo",
-        "object": "statue"
+        "object": "lit"
       }
     },
     {
       "who": "c",
-      "text": "Chaparde n'était pas dans la fonderie.",
+      "text": "Caillou était sur la même ligne qu'un tonneau.",
       "logic": {
-        "type": "notInRoom",
-        "room": "O"
+        "type": "sameRowAs",
+        "object": "tonneau"
       }
     },
     {
       "who": "d",
-      "text": "Dardafeu était au nord de Chaparde.",
+      "text": "Dévoreur était dans la même colonne qu'une enclume.",
       "logic": {
-        "type": "northOf",
-        "other": "c"
+        "type": "sameColAs",
+        "object": "enclume"
       }
     },
     {
       "who": "e",
-      "text": "Étai était sur la même ligne qu'une enclume.",
+      "text": "Escroquin était sur la même ligne qu'un chaudron.",
       "logic": {
         "type": "sameRowAs",
-        "object": "enclume"
+        "object": "chaudron"
       }
     },
     {
       "who": "f",
-      "text": "Festin était sur la même ligne qu'une enclume.",
+      "text": "Flammèche était sur la même ligne qu'une statue.",
       "logic": {
         "type": "sameRowAs",
-        "object": "enclume"
-      }
-    },
-    {
-      "who": "f",
-      "text": "Il était au nord de Chaparde.",
-      "logic": {
-        "type": "northOf",
-        "other": "c"
+        "object": "statue"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        6,
+        4,
         2
       ],
-      "e": [
+      "c": [
         5,
-        3
-      ],
-      "a": [
-        4,
         4
       ],
-      "c": [
-        3,
+      "a": [
+        6,
         1
+      ],
+      "e": [
+        2,
+        3
       ],
       "b": [
         1,
+        0
+      ],
+      "d": [
+        3,
         6
       ],
       "f": [
         0,
         5
-      ],
-      "d": [
-        2,
-        0
       ]
     },
     "murderer": "e"
@@ -335,7 +319,7 @@
     "score": 4,
     "hardest": "seul candidat",
     "hardSteps": 2,
-    "directStart": 2
+    "directStart": 1
   },
   "difficulty": 2
 }

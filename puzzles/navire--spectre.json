@@ -172,12 +172,12 @@
   "characters": [
     {
       "id": "a",
-      "name": "Abysse",
-      "gender": "f",
+      "name": "Abordage",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧛‍♀️",
-      "desc": "Comtesse vampire, végane (elle le jure)",
-      "archetype": "vampire"
+      "icon": "🏴‍☠️",
+      "desc": "Pirate, a perdu une jambe, un œil et le sens de l'orientation",
+      "archetype": "pirate"
     },
     {
       "id": "b",
@@ -190,25 +190,16 @@
     },
     {
       "id": "c",
-      "name": "Coutelas",
+      "name": "Cabestan",
       "gender": "m",
       "role": "suspect",
-      "icon": "🏴‍☠️",
-      "desc": "Pirate, a perdu une jambe, un œil et le sens de l'orientation",
-      "archetype": "pirate"
+      "icon": "🧑‍✈️",
+      "desc": "Capitaine, n'a jamais quitté le port",
+      "archetype": "capitaine"
     },
     {
       "id": "d",
-      "name": "Désiré",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧟",
-      "desc": "Zombie, ancien apprenti. Ancien tout court",
-      "archetype": "zombie"
-    },
-    {
-      "id": "e",
-      "name": "Écume",
+      "name": "Dorade",
       "gender": "f",
       "role": "suspect",
       "icon": "🧜‍♀️",
@@ -216,13 +207,22 @@
       "archetype": "sirene"
     },
     {
+      "id": "e",
+      "name": "Écarlate",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
+    },
+    {
       "id": "f",
-      "name": "Frégaton",
+      "name": "Fernand",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧑‍✈️",
-      "desc": "Capitaine, n'a jamais quitté le port",
-      "archetype": "capitaine"
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
     },
     {
       "id": "g",
@@ -240,119 +240,111 @@
   "decor": "navire",
   "id": "navire--spectre",
   "intro": "Le spectre Grisâtre a été retrouvé sans vie à bord du Navire Fantôme, qui dérivait dans le brouillard. Six membres d'équipage étaient à bord. Un seul était avec lui.",
-  "epilogue": "Coutelas avoue en mâchonnant sa pipe : Grisâtre avait caché la carte au trésor. Un pirate pardonne tout, sauf le trésor.",
+  "epilogue": "Fernand avoue, lentement : Grisâtre l'utilisait comme ancre de secours. Il a horreur de l'eau froide.",
   "clues": [
     {
       "who": "a",
-      "text": "Abysse était dans la même colonne qu'un lit.",
+      "text": "Abordage était assis dans un fauteuil.",
       "logic": {
-        "type": "sameColAs",
-        "object": "lit"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Elle était à côté d'une table.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "table"
+        "type": "onObject",
+        "object": "fauteuil"
       }
     },
     {
       "who": "b",
-      "text": "Bavard était à côté d'un tonneau.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "tonneau"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était dans la coquerie.",
+      "text": "Bavard était dans la vigie.",
       "logic": {
         "type": "inRoom",
-        "room": "Q"
+        "room": "V"
       }
     },
     {
       "who": "c",
-      "text": "Coutelas était au sud de Bavard.",
+      "text": "Cabestan était à l'ouest de Bavard.",
       "logic": {
-        "type": "southOf",
+        "type": "westOf",
         "other": "b"
       }
     },
     {
       "who": "c",
-      "text": "Il était à côté d'un coffre.",
+      "text": "Il n'était pas dans l'entrepont.",
+      "logic": {
+        "type": "notInRoom",
+        "room": "E"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dorade était à côté d'un coffre.",
       "logic": {
         "type": "adjacentTo",
         "object": "coffre"
       }
     },
     {
-      "who": "d",
-      "text": "Désiré était à l'est de Coutelas.",
-      "logic": {
-        "type": "eastOf",
-        "other": "c"
-      }
-    },
-    {
       "who": "e",
-      "text": "Écume était au nord de Désiré.",
+      "text": "Écarlate était à l'ouest de Fernand.",
       "logic": {
-        "type": "northOf",
-        "other": "d"
+        "type": "westOf",
+        "other": "f"
       }
     },
     {
       "who": "f",
-      "text": "Frégaton était sur la même ligne qu'un tonneau.",
+      "text": "Fernand était au sud d'Abordage.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "tonneau"
+        "type": "southOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Il n'était pas dans la coquerie.",
+      "logic": {
+        "type": "notInRoom",
+        "room": "Q"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        3,
+        4,
         2
       ],
-      "c": [
-        5,
-        3
+      "a": [
+        2,
+        6
       ],
       "b": [
-        4,
+        0,
+        1
+      ],
+      "d": [
+        1,
+        3
+      ],
+      "f": [
+        5,
         5
       ],
       "e": [
-        1,
-        0
-      ],
-      "d": [
-        2,
+        3,
         4
       ],
-      "a": [
-        0,
-        6
-      ],
-      "f": [
+      "c": [
         6,
-        1
+        0
       ]
     },
-    "murderer": "c"
+    "murderer": "f"
   },
   "rating": {
     "skulls": 2,
-    "score": 4,
+    "score": 3,
     "hardest": "pièces",
-    "hardSteps": 2,
+    "hardSteps": 1,
     "directStart": 1
   },
   "difficulty": 2

@@ -1,0 +1,320 @@
+{
+  "formatVersion": 1,
+  "title": "Le Château de Mortebrune — l'affaire Eudes",
+  "intro": "Le roi Eudes a été retrouvé sans vie au petit matin, au Château de Mortebrune. Quatre invités juraient qu'ils dormaient. Un seul était avec lui.",
+  "epilogue": "Chaparde avoue : Eudes avait réclamé un audit du trésor royal. Le gobelin a classé l'audit.",
+  "size": 7,
+  "rooms": {
+    "C": {
+      "name": "Chapelle",
+      "the": "la chapelle",
+      "floor": "dalles"
+    },
+    "G": {
+      "name": "Grande salle",
+      "the": "la grande salle",
+      "floor": "dalles"
+    },
+    "K": {
+      "name": "Cuisines",
+      "the": "les cuisines",
+      "floor": "damier"
+    },
+    "A": {
+      "name": "Armurerie",
+      "the": "l'armurerie",
+      "floor": "dalles"
+    },
+    "T": {
+      "name": "Tour",
+      "the": "la tour",
+      "floor": "dalles"
+    },
+    "J": {
+      "name": "Jardin",
+      "the": "le jardin",
+      "floor": "herbe"
+    },
+    "D": {
+      "name": "Donjon",
+      "the": "le donjon",
+      "floor": "dalles"
+    }
+  },
+  "layout": [
+    "CCGGGKK",
+    "CCGGGKK",
+    "AAGGGKT",
+    "AAJJJTT",
+    "AAJJJTT",
+    "DDJJJTT",
+    "DDDJJTT"
+  ],
+  "objects": [
+    {
+      "type": "statue",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        1,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        4,
+        2
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        3
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        6,
+        6
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        6,
+        1
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Ardent",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragon adulte, toujours lové dans un coin",
+      "archetype": "dragon",
+      "shape": "T4"
+    },
+    {
+      "id": "b",
+      "name": "Brann",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
+    },
+    {
+      "id": "c",
+      "name": "Chaparde",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "d",
+      "name": "Durandal",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
+    },
+    {
+      "id": "e",
+      "name": "Eudes",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🤴",
+      "desc": "Roi, avare de compliments et de tout le reste",
+      "archetype": "roi"
+    }
+  ],
+  "decor": "chateau",
+  "id": "chateau--roi--dragon--t4",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Ardent était au sud de Brann.",
+      "logic": {
+        "type": "southOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Brann était à côté d'un coffre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était à l'ouest de Durandal.",
+      "logic": {
+        "type": "westOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Chaparde était dans la même colonne qu'un lit.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Durandal était dans le donjon.",
+      "logic": {
+        "type": "inRoom",
+        "room": "D"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "e": [
+        0,
+        5
+      ],
+      "a": [
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          4
+        ]
+      ],
+      "d": [
+        6,
+        2
+      ],
+      "c": [
+        1,
+        6
+      ],
+      "b": [
+        2,
+        1
+      ]
+    },
+    "murderer": "c"
+  },
+  "rating": {
+    "skulls": 1,
+    "score": 2,
+    "hardest": "position relative",
+    "hardSteps": 0,
+    "directStart": 1
+  },
+  "difficulty": 4
+}

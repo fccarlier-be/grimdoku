@@ -199,16 +199,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aymeric",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🤺",
-      "desc": "Chevalier, armure trop petite depuis Noël",
-      "archetype": "chevalier"
-    },
-    {
-      "id": "b",
-      "name": "Blafard",
+      "name": "Albâtre",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -219,31 +210,40 @@
       ]
     },
     {
-      "id": "c",
-      "name": "Couac",
+      "id": "b",
+      "name": "Baudouin",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧑‍🎤",
-      "desc": "Barde, chante faux",
-      "archetype": "barde"
+      "icon": "🤴",
+      "desc": "Roi, avare de compliments et de tout le reste",
+      "archetype": "roi"
     },
     {
-      "id": "d",
-      "name": "Daëlin",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧝‍♀️",
-      "desc": "Elfe, critique gastronomique",
-      "archetype": "elfe"
-    },
-    {
-      "id": "e",
-      "name": "Encensia",
+      "id": "c",
+      "name": "Calebasse",
       "gender": "f",
       "role": "suspect",
       "icon": "🧞‍♀️",
       "desc": "Djinn, a déjà exaucé deux vœux de trop",
       "archetype": "djinn"
+    },
+    {
+      "id": "d",
+      "name": "Durandal",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
+    },
+    {
+      "id": "e",
+      "name": "Erwëlle",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
     },
     {
       "id": "f",
@@ -256,12 +256,12 @@
     },
     {
       "id": "g",
-      "name": "Godefroy",
+      "name": "Gamme",
       "gender": "m",
       "role": "suspect",
-      "icon": "🤴",
-      "desc": "Roi, avare de compliments et de tout le reste",
-      "archetype": "roi"
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
     },
     {
       "id": "h",
@@ -276,58 +276,74 @@
   "decor": "bal",
   "id": "bal--vampire",
   "intro": "La comtesse Hémoglobine a été retrouvée sans vie au Bal Masqué, sous un loup de velours. Sept invités dansaient encore. Un seul était avec elle.",
-  "epilogue": "Godefroy avoue, outré : Hémoglobine lui avait marché sur la traîne pendant la valse royale. Trois fois.",
+  "epilogue": "Erwëlle avoue avec dédain : Hémoglobine avait osé venir avec la même tenue qu'elle.",
   "clues": [
     {
       "who": "a",
-      "text": "Aymeric était au nord de Couac.",
+      "text": "Albâtre était au sud de Calebasse.",
       "logic": {
-        "type": "northOf",
+        "type": "southOf",
         "other": "c"
       }
     },
     {
       "who": "a",
-      "text": "Il était à côté d'un lit.",
+      "text": "Il hantait une statue.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "lit"
+        "type": "onObject",
+        "object": "statue"
       }
     },
     {
       "who": "b",
-      "text": "Blafard était au sud d'Encensia.",
+      "text": "Baudouin était sur un tapis.",
       "logic": {
-        "type": "southOf",
-        "other": "e"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était dans le balcon.",
-      "logic": {
-        "type": "inRoom",
-        "room": "B"
+        "type": "onObject",
+        "object": "tapis"
       }
     },
     {
       "who": "c",
-      "text": "Couac était dans la même colonne qu'une statue.",
+      "text": "Calebasse était à côté d'une statue.",
       "logic": {
-        "type": "sameColAs",
+        "type": "adjacentTo",
         "object": "statue"
       }
     },
     {
       "who": "d",
-      "text": "Daëlin était au sud d'Encensia.",
+      "text": "Durandal était assis sur une chaise.",
       "logic": {
-        "type": "southOf",
-        "other": "e"
+        "type": "onObject",
+        "object": "chaise"
       }
     },
     {
-      "who": "d",
+      "who": "e",
+      "text": "Erwëlle était dans la salle de bal.",
+      "logic": {
+        "type": "inRoom",
+        "room": "S"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Elle était à côté d'une chaise.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Fougère était au sud de Durandal.",
+      "logic": {
+        "type": "southOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "f",
       "text": "Elle était assise dans un fauteuil.",
       "logic": {
         "type": "onObject",
@@ -335,74 +351,50 @@
       }
     },
     {
-      "who": "e",
-      "text": "Encensia était sur la même ligne qu'une chaise.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "f",
-      "text": "Fougère était à l'est de Godefroy.",
-      "logic": {
-        "type": "eastOf",
-        "other": "g"
-      }
-    },
-    {
       "who": "g",
-      "text": "Godefroy était sur la même ligne qu'une table.",
+      "text": "Gamme était à côté d'un arbre.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "table"
-      }
-    },
-    {
-      "who": "g",
-      "text": "Il était dans la même colonne qu'un champignon géant.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "champi"
+        "type": "adjacentTo",
+        "object": "arbre"
       }
     }
   ],
   "solution": {
     "positions": {
       "h": [
-        2,
-        4
-      ],
-      "b": [
-        1,
-        0
-      ],
-      "g": [
         3,
         3
       ],
       "a": [
-        6,
-        1
+        4,
+        0
+      ],
+      "b": [
+        2,
+        7
       ],
       "d": [
         5,
+        6
+      ],
+      "e": [
+        1,
+        4
+      ],
+      "g": [
+        6,
+        5
+      ],
+      "f": [
+        7,
         2
       ],
       "c": [
-        7,
-        6
-      ],
-      "f": [
-        4,
-        5
-      ],
-      "e": [
         0,
-        7
+        1
       ]
     },
-    "murderer": "g"
+    "murderer": "e"
   },
   "rating": {
     "skulls": 3,

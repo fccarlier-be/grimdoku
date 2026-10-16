@@ -1,88 +1,88 @@
 {
  "positions": {
   "f": [
-   1,
-   0
-  ],
-  "e": [
-   5,
-   4
-  ],
-  "b": [
-   4,
+   2,
    1
   ],
-  "d": [
+  "c": [
    3,
    3
   ],
-  "a": [
-   2,
+  "b": [
+   5,
+   2
+  ],
+  "d": [
+   4,
    5
   ],
-  "c": [
+  "e": [
+   1,
+   4
+  ],
+  "a": [
    0,
-   2
+   0
   ]
  },
- "murderer": "c",
+ "murderer": "a",
  "cast": {
-  "e": "a",
+  "c": "a",
   "b": "b",
   "d": "c",
-  "a": "d",
-  "c": "e"
+  "e": "d",
+  "a": "e"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
+   "who": "c",
+   "logic": {
+    "type": "eastOf",
+    "other": "a"
+   }
+  },
+  {
    "who": "e",
    "logic": {
-    "type": "southOf",
-    "other": "b"
+    "type": "inRoom",
+    "room": "C"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaudron"
    }
   },
   {
    "who": "d",
    "logic": {
-    "type": "sameRowAs",
-    "object": "tonneau"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "tonneau"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "adjacentTo",
+    "type": "sameColAs",
     "object": "etagere"
    }
   },
   {
    "who": "b",
    "logic": {
-    "type": "adjacentTo",
-    "object": "lit"
+    "type": "sameRowAs",
+    "object": "coffre"
    }
   },
   {
-   "who": "c",
+   "who": "e",
    "logic": {
     "type": "eastOf",
-    "other": "b"
+    "other": "c"
    }
   },
   {
-   "who": "c",
+   "who": "a",
    "logic": {
-    "type": "sameRowAs",
-    "object": "table"
+    "type": "onObject",
+    "object": "chaise"
    }
   }
  ]

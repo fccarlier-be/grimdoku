@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "title": "Meurtre au Sanglier Borgne — l'affaire Fringale",
   "intro": "Le troll Fringale a été retrouvé sans vie à l'aube, au Sanglier Borgne. Cinq clients avaient trop bu, ou pas assez. Un seul était avec lui.",
-  "epilogue": "Écu avoue en comptant ses pièces : Fringale voulait partir sans payer l'ardoise. Personne ne part sans payer l'ardoise.",
+  "epilogue": "Azimut avoue en éternuant : Fringale avait glissé du houblon dans sa tisane. Pour un allergique, c'est une déclaration de guerre.",
   "size": 6,
   "rooms": {
     "T": {
@@ -128,12 +128,12 @@
   "characters": [
     {
       "id": "a",
-      "name": "Arpège",
+      "name": "Azimut",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧑‍🎤",
-      "desc": "Barde, chante faux",
-      "archetype": "barde"
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage"
     },
     {
       "id": "b",
@@ -146,21 +146,21 @@
     },
     {
       "id": "c",
-      "name": "Capucine",
+      "name": "Couac",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
+    },
+    {
+      "id": "d",
+      "name": "Digitale",
       "gender": "f",
       "role": "suspect",
       "icon": "🧚",
       "desc": "Fée, doit trois tournées",
       "archetype": "fee"
-    },
-    {
-      "id": "d",
-      "name": "Dédale",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧙‍♂️",
-      "desc": "Mage, allergique au houblon",
-      "archetype": "mage"
     },
     {
       "id": "e",
@@ -186,18 +186,10 @@
   "clues": [
     {
       "who": "a",
-      "text": "Arpège était dans la même colonne qu'un tonneau.",
+      "text": "Azimut était allongé sur un lit.",
       "logic": {
-        "type": "sameColAs",
-        "object": "tonneau"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était sur la même ligne qu'un chaudron.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "chaudron"
+        "type": "onObject",
+        "object": "lit"
       }
     },
     {
@@ -209,73 +201,73 @@
       }
     },
     {
-      "who": "c",
-      "text": "Capucine était sur la même ligne qu'une chaise.",
+      "who": "b",
+      "text": "Elle était sur la même ligne qu'une table.",
       "logic": {
         "type": "sameRowAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Couac était à côté d'une chaise.",
+      "logic": {
+        "type": "adjacentTo",
         "object": "chaise"
       }
     },
     {
-      "who": "c",
-      "text": "Elle était dans la même colonne qu'un lit.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "lit"
-      }
-    },
-    {
       "who": "d",
-      "text": "Dédale était à côté d'une botte de foin.",
+      "text": "Digitale était sur la même ligne qu'un coffre.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "foin"
+        "type": "sameRowAs",
+        "object": "coffre"
       }
     },
     {
       "who": "e",
-      "text": "Écu était dans la même colonne qu'une table.",
+      "text": "Écu était dans la cuisine.",
       "logic": {
-        "type": "sameColAs",
-        "object": "table"
+        "type": "inRoom",
+        "room": "C"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        5,
-        2
-      ],
-      "d": [
-        4,
-        5
+        3,
+        1
       ],
       "a": [
-        0,
-        3
+        4,
+        0
+      ],
+      "c": [
+        1,
+        2
       ],
       "b": [
         2,
         4
       ],
-      "c": [
-        1,
-        0
+      "d": [
+        5,
+        3
       ],
       "e": [
-        3,
-        1
+        0,
+        5
       ]
     },
-    "murderer": "e"
+    "murderer": "a"
   },
   "rating": {
     "skulls": 0,
     "score": 1,
     "hardest": "case unique",
     "hardSteps": 0,
-    "directStart": 1
+    "directStart": 2
   },
   "difficulty": 0
 }

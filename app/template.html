@@ -172,12 +172,8 @@ header.top { display: flex; align-items: center; gap: 10px; }
 .body.je { right: -2px; border-top-right-radius: 0; border-bottom-right-radius: 0; }
 .body.sel { box-shadow: 0 0 0 3px var(--candle), 0 0 12px var(--candle); }
 .body.bad { box-shadow: 0 0 0 3px var(--blood); }
-.cell .bodyletter { position: relative; z-index: 3; color: var(--cc); font: 800 .8em/1 var(--f-body); -webkit-text-stroke: .09em var(--ink); paint-order: stroke fill; }
-.bigart { position: absolute; z-index: 3; pointer-events: none; }
-.bigart svg { position: absolute; left: 50%; top: 50%; overflow: visible; filter: drop-shadow(0 2px 0 rgba(0,0,0,.25)); }
-.bigart.sel svg { filter: drop-shadow(0 0 3px var(--candle)) drop-shadow(0 0 6px var(--candle)); }
-.bigart.bad svg { filter: drop-shadow(0 0 3px var(--blood)) drop-shadow(0 0 5px var(--blood)); }
-.cell .letter.bigbadge { top: 6%; left: 6%; z-index: 5; }
+/* grand personnage : son portrait, un peu plus petit, sur chacune de ses cases */
+.body ~ .token { width: 70%; }
 .shape { display: inline-grid; gap: 1px; vertical-align: -2px; margin-left: 4px; }
 .shape i { width: 7px; height: 7px; background: var(--cc); box-shadow: 0 0 0 1px var(--ink); border-radius: 1px; }
 .cell.hint::after { content: ""; position: absolute; inset: 0; background: rgba(90, 150, 255, .38); box-shadow: inset 0 0 0 2px rgba(50, 110, 230, .85); pointer-events: none; }
@@ -204,6 +200,7 @@ header.top { display: flex; align-items: center; gap: 10px; }
 .hdtitle { display: none; } /* titre de l'affaire dans la barre du haut : ordinateur seulement */
 .tbtn { border: 1px solid var(--line); background: var(--board); border-radius: 99px; min-width: 38px; height: 38px; padding: 0 10px; font-size: 15px; }
 .tbtn:disabled { opacity: .4; }
+.tbtn.pen .lbl { display: inline; }
 .accuse { background: var(--candle); color: var(--candle-ink); border: 0; font-weight: 700; border-radius: 99px; height: 38px; padding: 0 14px; }
 .accuse:disabled { background: var(--board-2); color: var(--muted); }
 .tray { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
@@ -411,6 +408,7 @@ html, body { background: var(--desk-tex, none) center top / 640px, var(--night);
 /* outils */
 .tbtn { background: transparent; border: 1.5px solid var(--line); color: var(--ink); border-radius: 8px; }
 .tbtn:hover:not(:disabled) { background: var(--board-2); }
+.tbtn.pen[aria-pressed="true"] { background: #2b2016; color: #f3e6c8; border-color: #2b2016; box-shadow: 0 0 0 2px rgba(240, 169, 58, .55); }
 /* Accuser : un sceau de cire rouge */
 .accuse {
   background: radial-gradient(circle at 35% 30%, #d4473b, #8e1f17 72%); color: #fbe7cf;
@@ -806,39 +804,11 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
   const snapshot = () => { undo.push(JSON.stringify(S)); if (undo.length > 100) undo.shift(); };
   const charAt = (r, c) => Object.keys(S.pos).find(id => E.cellsOf(S.pos[id]).some(([a, b]) => a === r && b === c));
   const isBig = (id) => !!ctx.chars[id].shape;
-  // Image entière d'un grand personnage : tournée de k quarts de tour (sens horaire) pour coller à ses cases.
-  // -1 si les cases n'ont pas sa vraie forme (forme cachée mal devinée) ou s'il n'a pas encore d'image.
-  function artTurn(id) {
-    const ch = ctx.chars[id], v = S.pos[id];
-    if (!ch.shape || !v || !document.getElementById('big-' + ch.archetype)) return -1;
-    const want = E.posKey(norm(E.cellsOf(v)));
-    let cs = E.SHAPES[ch.shape].cells;
-    for (let k = 0; k < 4; k++) {
-      if (E.posKey(norm(cs)) === want) return k;
-      const h = Math.max(...cs.map(x => x[0])) + 1;
-      cs = cs.map(([r, c]) => [c, h - 1 - r]);
-    }
-    return -1;
-  }
-  const norm = (cs) => { const r0 = Math.min(...cs.map(x => x[0])), c0 = Math.min(...cs.map(x => x[1])); return cs.map(([r, c]) => [r - r0, c - c0]).sort((a, b) => a[0] - b[0] || a[1] - b[1]); };
-  function bigArtHtml(n, bad) {
-    let out = '';
-    for (const id of Object.keys(S.pos)) {
-      const k = artTurn(id);
-      if (k < 0) continue;
-      const cs = E.cellsOf(S.pos[id]);
-      const r0 = Math.min(...cs.map(x => x[0])), c0 = Math.min(...cs.map(x => x[1]));
-      const bh = Math.max(...cs.map(x => x[0])) - r0 + 1, bw = Math.max(...cs.map(x => x[1])) - c0 + 1;
-      const [iw, ih] = k % 2 ? [bh, bw] : [bw, bh]; // taille de l'image avant rotation, en cases
-      out += `<div class="bigart ${selected === id ? 'sel' : ''} ${bad.has(id) ? 'bad' : ''}" style="left:${c0 / n * 100}%;top:${r0 / n * 100}%;width:${bw / n * 100}%;height:${bh / n * 100}%">`
-        + `<svg viewBox="0 0 ${iw * 64} ${ih * 64}" style="width:${iw / bw * 100}%;height:${ih / bh * 100}%;transform:translate(-50%,-50%) rotate(${k * 90}deg)"><use href="#big-${ctx.chars[id].archetype}" width="${iw * 64}" height="${ih * 64}"/></svg></div>`;
-    }
-    return out;
-  }
-  // forme d'un grand personnage : dessin de la forme connue, ou « 2 ou 3 cases » si elle est cachée (5 crânes)
+  const hiddenSizes = () => P.hiddenMax === 3 ? '2 ou 3 cases' : '2 à 4 cases';
+  // forme d'un grand personnage : dessin de la forme connue, ou « 2 à 4 cases » si elle est cachée (5 crânes)
   function shapeHtml(ch) {
     if (!ch.shape) return '';
-    if (P.hiddenShapes) return ` <b class="bigtag">· grand : 2 ou 3 cases</b>`;
+    if (P.hiddenShapes) return ` <b class="bigtag">· grand : ${hiddenSizes()}</b>`;
     const cs = E.SHAPES[ch.shape].cells, h = Math.max(...cs.map(x => x[0])) + 1, w = Math.max(...cs.map(x => x[1])) + 1;
     const grid = Array.from({ length: h * w }, (_, i) => cs.some(([r, c]) => r * w + c === i) ? '<i></i>' : '<i style="visibility:hidden"></i>').join('');
     return ` <b class="bigtag">· grand : ${E.SHAPES[ch.shape].name}<span class="shape" style="grid-template-columns:repeat(${w},7px);--cc:${colorOf(ch)}" aria-hidden="true">${grid}</span></b>`;
@@ -962,15 +932,11 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
       let label = '';
       if (!labelled.has(room)) { labelled.add(room); label = `<span class="roomlabel">${esc(P.rooms[room].name)}</span>`; }
       const objHtml = def ? `<span class="obj" aria-hidden="true">${ico(o.type)}</span>` : '';
-      // grand personnage : un corps sur chaque case (joint à ses voisines), portrait sur la première
-      const art = ch && isBig(who) && artTurn(who) >= 0;
-      const bodyCells = ch && isBig(who) && !art ? E.cellsOf(S.pos[who]) : null;
-      const isFirstOf = (id) => { const c0 = E.cellsOf(S.pos[id])[0]; return c0[0] === r && c0[1] === c; };
+      // grand personnage : un corps sur chaque case (joint à ses voisines), son portrait sur chacune
+      const bodyCells = ch && isBig(who) ? E.cellsOf(S.pos[who]) : null;
       const joins = bodyCells ? [[-1, 0, 'jn'], [1, 0, 'js'], [0, -1, 'jw'], [0, 1, 'je']].filter(([dr, dc]) => bodyCells.some(([a, b]) => a === r + dr && b === c + dc)).map(x => x[2]).join(' ') : '';
       const body = bodyCells ? `<span class="body ${joins} ${selected === who ? 'sel' : ''} ${bad.has(who) ? 'bad' : ''}" style="--cc:${colorOf(ch)}"></span>` : '';
-      const first = !bodyCells || (bodyCells[0][0] === r && bodyCells[0][1] === c);
-      const tok = art ? (isFirstOf(who) ? `<span class="letter bigbadge" style="--cc:${colorOf(ch)}">${letterOf(ch)}</span>` : '')
-        : ch && !first ? `${body}<span class="bodyletter" style="--cc:${colorOf(ch)}">${letterOf(ch)}</span>` : ch ? `${body}<span class="token ${ch.role === 'victim' ? 'victim' : ''} ${selected === who ? 'sel' : ''} ${bad.has(who) ? 'bad' : ''}">${face(ch)}<span class="letter" style="--cc:${colorOf(ch)}">${letterOf(ch)}</span></span>` : '';
+      const tok = ch ? `${body}<span class="token ${ch.role === 'victim' ? 'victim' : ''} ${selected === who ? 'sel' : ''} ${bad.has(who) ? 'bad' : ''}">${face(ch)}<span class="letter" style="--cc:${colorOf(ch)}">${letterOf(ch)}</span></span>` : '';
       const pencils = pens.length ? `<span class="pencils ${pens.length > 1 ? 'many' : ''}">${pens.map(x => `<span class="pencil ${selected === x.id ? 'sel' : ''}" style="--cc:${colorOf(x)}">${letterOf(x)}</span>`).join('')}</span>` : '';
       // croix automatiques (lignes/colonnes des personnages confirmés) à l'encre : certaines ;
       // croix manuelles au crayon : simples hypothèses du joueur
@@ -985,7 +951,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     if (P.characters.some(c => (c.traits || []).includes('spectre')))
       specials.push(`<span><b>👻 Spectre</b> : peut se tenir sur les meubles bloquants (tables, statues…). Il respecte quand même lignes et colonnes.</span>`);
     if (P.characters.some(c => c.shape))
-      specials.push(`<span><b>🐉 Grand personnage</b> : il occupe plusieurs cases, et chacune prend sa ligne et sa colonne. Toutes ses cases sont dans la même pièce, jamais sur un meuble.${P.hiddenShapes ? ' <b>Sa forme est inconnue</b> : 2 cases, 3 en ligne ou 3 en angle.' : ''} Pour le placer : sa lettre au crayon sur chacune de ses cases, puis appui long sur l'une d'elles.</span>`);
+      specials.push(`<span><b>🐉 Grand personnage</b> : il occupe plusieurs cases, et chacune prend sa ligne et sa colonne. Toutes ses cases sont dans la même pièce, jamais sur un meuble. Sa forme peut être tournée ou retournée.${P.hiddenShapes ? ` <b>Sa forme est inconnue</b> : ${hiddenSizes()}.` : ''} Pour le placer : ✏️ Crayon, sa lettre sur chacune de ses cases, puis appui long sur l'une d'elles.</span>`);
     const links = {};
     P.objects.filter(o => o.type === 'portail').forEach(o => (links[o.link] = links[o.link] || []).push(P.rooms[P.layout[o.at[0]][o.at[1]]].name));
     Object.values(links).forEach(l => specials.push(`<span><b>🌀 Portail</b> : ${esc(l[0])} et ${esc(l[1])} comptent comme une seule pièce.</span>`));
@@ -1011,13 +977,14 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
         <details><summary>L'affaire <span class="skulls">${skulls(P.difficulty)}</span></summary><p>${esc(P.intro)}</p></details>
       </div>
       <div class="boardwrap">
-        <div class="board" id="board" style="--n:${n}">${cells}${wallsSvg()}${bigArtHtml(n, bad)}</div>
+        <div class="board" id="board" style="--n:${n}">${cells}${wallsSvg()}</div>
         ${S.solved ? `<div class="stamp" aria-hidden="true"><span>Affaire<br>résolue</span></div>` : ''}
       </div>
       ${specials.length ? `<div class="special">${specials.join('')}</div>` : ''}
       ${S.solved ? verdictHtml() : `<div class="dock">
         <div class="tools">
           <button class="tbtn" id="hintBtn" aria-label="Indice">🕯️<span class="lbl"> Indice</span></button>
+          <button class="tbtn pen" id="penBtn" aria-pressed="${!!settings.pen}" title="Crayon : un toucher écrit la lettre du personnage choisi. Éteint : un toucher pose une croix.">✏️<span class="lbl"> Crayon</span></button>
           <span class="spacer"></span>
           <button class="tbtn" id="undo" aria-label="Annuler" ${undo.length ? '' : 'disabled'}>↶<span class="lbl"> Annuler</span></button>
           <button class="accuse" id="accuse" ${allPlaced ? '' : 'disabled'}>Accuser</button>
@@ -1062,6 +1029,10 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     });
     if (S.solved) return bindVerdict();
     document.getElementById('hintBtn').onclick = hint;
+    document.getElementById('penBtn').onclick = () => {
+      settings.pen = !settings.pen; store.set('settings', settings); render();
+      if (settings.pen && !selected) toast('✏️ Crayon : choisis un personnage, puis touche ses cases possibles.');
+    };
     document.getElementById('undo').onclick = () => { if (!undo.length) return; S = JSON.parse(undo.pop()); save(); render(); };
     document.getElementById('accuse').onclick = accuse;
     document.querySelectorAll('.chip').forEach(b => b.onclick = () => pick(b.dataset.id));
@@ -1121,20 +1092,22 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
 
   const pencilsAt = (r, c) => P.characters.filter(x => (S.pencil[x.id] || []).includes(r + ',' + c)).map(x => x.id);
 
-  // toucher court : lettre au crayon (plusieurs cases possibles par personnage)
+  // toucher court, selon l'outil : Crayon allumé = lettre du personnage choisi (plusieurs cases possibles),
+  // éteint = croix (hypothèse du joueur). Un pion confirmé : touché, il est choisi ; au crayon, touché à nouveau,
+  // il redevient une lettre. L'appui long place le personnage quel que soit l'outil.
   function tap(r, c) {
     const who = charAt(r, c);
     const k = r + ',' + c;
     if (who) {
-      if (who !== selected) { selected = who; return render(); }
-      // pion confirmé touché à nouveau : il redevient une lettre au crayon
+      if (who !== selected || !settings.pen) { selected = who === selected ? null : who; return render(); }
       snapshot(); S.pencil[who] = E.cellsOf(S.pos[who]).map(rc => rc.join(',')); delete S.pos[who]; save(); return render();
     }
+    if (!settings.pen) return toggleMark(r, c);
     if (!selected) {
-      // sans personnage choisi : une case à lettres sélectionne leur personnage, une case vide se barre
+      // au crayon sans personnage choisi : une case à lettres choisit leur personnage
       const pens = pencilsAt(r, c);
       if (pens.length) { selected = pens[0]; return render(); }
-      return toggleMark(r, c);
+      return toast('✏️ Choisis d\'abord un personnage (sa carte d\'indice ou la barre du bas).', true);
     }
     if (!E.canStand(ctx, selected, r, c)) {
       const o = ctx.objAt[k];
@@ -1175,7 +1148,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
       v = bigCells(id, r, c);
       if (!E.isPlacement(ctx, id, v)) {
         const ch = ctx.chars[id];
-        const what = P.hiddenShapes ? '2 ou 3 cases (2 cases, 3 en ligne ou 3 en angle)' : E.SHAPES[ch.shape].name;
+        const what = P.hiddenShapes ? hiddenSizes() : E.SHAPES[ch.shape].name + ' (tournées ou retournées)';
         return toast(`${ch.name} occupe ${what}, dans une seule pièce et hors des meubles. Marque au crayon exactement ses cases, puis appuie longuement sur l'une d'elles.`, true, 6000);
       }
     }
@@ -1278,16 +1251,16 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
         <li>« À côté de » veut dire juste au-dessus, en dessous, à gauche ou à droite, dans la même pièce. Pas en diagonale, ni à travers un mur — même par une porte : les portes ne sont qu'un décor.</li>
         <li><b>Seule la pièce du crime contient deux personnes</b> : chaque suspect était seul dans sa pièce, sauf le coupable, qui était avec la victime.</li>
         <li>La victime n'a pas d'indice : c'est à toi de la trouver.</li>
-        <li><b>Grands personnages</b> (4 et 5 crânes) : ils occupent 2 cases, 3 cases en ligne ou 3 cases en angle. Chacune de leurs cases prend sa ligne et sa colonne. Toutes leurs cases sont dans la même pièce, jamais sur un meuble. « À côté de » et « même ligne / colonne » valent pour n'importe laquelle de leurs cases ; « au nord de X » veut dire toutes leurs cases plus haut que X. À 5 crânes, leur forme est inconnue.</li>
+        <li><b>Grands personnages</b> (4 et 5 crânes) : ils occupent de 2 à 4 cases, en ligne, en angle, en carré, en T ou en zigzag, et leur taille change d'une affaire à l'autre. Leur forme peut être tournée ou retournée. Chacune de leurs cases prend sa ligne et sa colonne. Toutes leurs cases sont dans la même pièce, jamais sur un meuble. « À côté de » et « même ligne / colonne » valent pour n'importe laquelle de leurs cases ; « au nord de X » veut dire toutes leurs cases plus haut que X. À 5 crânes, leur forme est inconnue (2 à 4 cases, ou 2 ou 3 cases si la fiche le dit).</li>
       </ul>
       <div class="sect">Gestes</div>
       <ul>
-        <li>Touche un personnage, puis une case : sa <b>lettre</b> s'y inscrit au crayon. Tu peux noter plusieurs cases possibles ; touche une lettre à nouveau pour l'effacer.</li>
-        <li><b>Appui long</b> (1,5 s) sur une case : quand la jauge est pleine, le personnage y est placé pour de bon. Un grand personnage : sa lettre au crayon sur chacune de ses cases, puis appui long sur l'une d'elles.</li>
+        <li>Outil ✏️ <b>Crayon</b> allumé : touche un personnage, puis une case : sa <b>lettre</b> s'y inscrit au crayon. Tu peux noter plusieurs cases possibles ; touche une lettre à nouveau pour l'effacer.</li>
+        <li>Outil ✏️ <b>Crayon</b> éteint : touche une case pour la barrer d'une croix <b>au crayon gris-bleu</b> (ta propre hypothèse) ; touche-la encore pour l'effacer.</li>
+        <li><b>Appui long</b> (1,5 s) sur une case, avec ou sans le crayon : quand la jauge est pleine, le personnage choisi y est placé pour de bon. Un grand personnage : sa lettre au crayon sur chacune de ses cases, puis appui long sur l'une d'elles ; son portrait s'affiche alors sur chacune.</li>
         <li>Quand un personnage est choisi, ce que nomment ses indices s'allume en bleu : les objets cités (tous ceux du même type) ou la pièce citée.</li>
         <li>Une fois un personnage placé pour de bon, sa ligne et sa colonne se remplissent de croix <b>à l'encre noire</b> : ces cases sont condamnées.</li>
-        <li>Touche un personnage placé pour le remettre au crayon.</li>
-        <li>Sans personnage choisi, touche une case vide pour la barrer d'une croix <b>au crayon gris-bleu</b> (ta propre hypothèse) ; touche-la encore pour l'effacer.</li>
+        <li>Au crayon, touche deux fois un personnage placé pour le remettre en lettres.</li>
         <li>Bouton 💡 <b>Indice</b> : signale une erreur, ou désigne le prochain personnage à déduire et le raisonnement à utiliser.</li>
         <li>Le ✓ d'un indice le grise quand tu l'as exploité.</li>
       </ul>

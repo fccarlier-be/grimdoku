@@ -135,25 +135,16 @@
     },
     {
       "id": "b",
-      "name": "Bob",
+      "name": "Braise",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧟",
-      "desc": "Zombie, ancien apprenti. Ancien tout court",
-      "archetype": "zombie"
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
     },
     {
       "id": "c",
-      "name": "Crêpin",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👨‍🌾",
-      "desc": "Meunier, pèse le grain avec le pouce",
-      "archetype": "meunier"
-    },
-    {
-      "id": "d",
-      "name": "Dariole",
+      "name": "Croissant",
       "gender": "m",
       "role": "suspect",
       "icon": "👨‍🍳",
@@ -161,13 +152,22 @@
       "archetype": "boulanger"
     },
     {
-      "id": "e",
-      "name": "Étincel",
+      "id": "d",
+      "name": "Dupain",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐉",
-      "desc": "Dragonnet, brûle tout ce qu'il touche",
-      "archetype": "dragonnet"
+      "icon": "👨‍🌾",
+      "desc": "Meunier, pèse le grain avec le pouce",
+      "archetype": "meunier"
+    },
+    {
+      "id": "e",
+      "name": "Edmond",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
     },
     {
       "id": "f",
@@ -182,116 +182,92 @@
   "decor": "ferme",
   "id": "ferme--fee",
   "intro": "La fée Fougère a été retrouvée au petit matin dans la Ferme Hantée, entre le potager et le fournil. Cinq voisins y avaient passé la nuit. Un seul était avec elle.",
-  "epilogue": "Avaloir avoue la bouche pleine : Fougère lui avait interdit le potager. Il n'avait mangé que les citrouilles. Et l'épouvantail.",
+  "epilogue": "Braise avoue en fumant : Fougère lui demandait de chauffer le four, puis de le refroidir, puis de le chauffer.",
   "clues": [
     {
       "who": "a",
-      "text": "Avaloir était dans la même colonne qu'une chaise.",
+      "text": "Avaloir était sur un champignon géant.",
       "logic": {
-        "type": "sameColAs",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était sur la même ligne qu'un champignon géant.",
-      "logic": {
-        "type": "sameRowAs",
+        "type": "onObject",
         "object": "champi"
       }
     },
     {
       "who": "b",
-      "text": "Bob était sur la même ligne qu'un tonneau.",
+      "text": "Braise était sur la même ligne qu'un arbre.",
       "logic": {
         "type": "sameRowAs",
-        "object": "tonneau"
+        "object": "arbre"
       }
     },
     {
       "who": "b",
-      "text": "Il était dans la même colonne qu'un champignon géant.",
+      "text": "Il était à côté d'une botte de foin.",
       "logic": {
-        "type": "sameColAs",
-        "object": "champi"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Crêpin était sur la même ligne qu'une botte de foin.",
-      "logic": {
-        "type": "sameRowAs",
+        "type": "adjacentTo",
         "object": "foin"
       }
     },
     {
       "who": "c",
-      "text": "Il était dans le poulailler.",
+      "text": "Croissant était au sud de Braise.",
       "logic": {
-        "type": "inRoom",
-        "room": "O"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Dariole était au nord de Crêpin.",
-      "logic": {
-        "type": "northOf",
-        "other": "c"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Il était à l'est de Bob.",
-      "logic": {
-        "type": "eastOf",
+        "type": "southOf",
         "other": "b"
       }
     },
     {
-      "who": "e",
-      "text": "Étincel était dans le potager.",
+      "who": "d",
+      "text": "Dupain était dans la même colonne qu'un tonneau.",
       "logic": {
-        "type": "inRoom",
-        "room": "P"
+        "type": "sameColAs",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Edmond était dans la même colonne qu'un arbre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "arbre"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        4,
-        1
-      ],
-      "d": [
-        0,
-        3
-      ],
-      "a": [
-        5,
-        0
-      ],
-      "b": [
         2,
-        2
-      ],
-      "e": [
-        3,
         4
       ],
       "c": [
-        1,
+        4,
+        1
+      ],
+      "a": [
+        5,
+        2
+      ],
+      "e": [
+        0,
+        3
+      ],
+      "b": [
+        3,
         5
+      ],
+      "d": [
+        1,
+        0
       ]
     },
-    "murderer": "a"
+    "murderer": "b"
   },
   "rating": {
     "skulls": 1,
     "score": 2,
     "hardest": "position relative",
     "hardSteps": 0,
-    "directStart": 3
+    "directStart": 2
   },
   "difficulty": 1
 }

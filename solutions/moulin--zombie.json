@@ -1,95 +1,102 @@
 {
  "positions": {
   "f": [
-   2,
-   2
-  ],
-  "a": [
-   1,
-   0
-  ],
-  "b": [
    4,
-   1
+   4
+  ],
+  "c": [
+   5,
+   2
   ],
   "d": [
    0,
-   5
+   1
   ],
-  "c": [
-   3,
-   3
+  "a": [
+   2,
+   0
   ],
   "e": [
-   5,
-   4
+   1,
+   5
+  ],
+  "b": [
+   3,
+   3
   ]
  },
- "murderer": "a",
+ "murderer": "b",
  "cast": {
-  "a": "a",
-  "b": "b",
-  "d": "c",
-  "c": "d",
-  "e": "e"
+  "c": "a",
+  "d": "b",
+  "a": "c",
+  "e": "d",
+  "b": "e"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "a",
-   "logic": {
-    "type": "sameColAs",
-    "object": "coffre"
-   }
-  },
-  {
    "who": "d",
    "logic": {
-    "type": "eastOf",
-    "other": "e"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "sameColAs",
-    "object": "lit"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "eastOf",
-    "other": "c"
-   }
-  },
-  {
-   "who": "d",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "chaise"
+    "type": "inRoom",
+    "room": "M"
    }
   },
   {
    "who": "a",
    "logic": {
     "type": "adjacentTo",
-    "object": "table"
+    "object": "arbre"
    }
   },
   {
    "who": "e",
    "logic": {
-    "type": "notInRoom",
-    "room": "P"
+    "type": "northOf",
+    "other": "b"
    }
   },
   {
    "who": "b",
    "logic": {
-    "type": "onObject",
-    "object": "champi"
+    "type": "eastOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "westOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
    }
   }
  ]

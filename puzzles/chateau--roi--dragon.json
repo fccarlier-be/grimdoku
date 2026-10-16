@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "title": "Le Château de Mortebrune — l'affaire Ferdinand",
   "intro": "Le roi Ferdinand a été retrouvé sans vie au petit matin, au Château de Mortebrune. Cinq invités juraient qu'ils dormaient. Un seul était avec lui.",
-  "epilogue": "Enguerrand avoue en grinçant de l'armure : Ferdinand s'était moqué de sa cuirasse trop petite devant toute la cour.",
+  "epilogue": "Clodomir avoue en grinçant de l'armure : Ferdinand s'était moqué de sa cuirasse trop petite devant toute la cour.",
   "size": 7,
   "rooms": {
     "C": {
@@ -181,7 +181,16 @@
   "characters": [
     {
       "id": "a",
-      "name": "Arpège",
+      "name": "Arnak",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "b",
+      "name": "Brann",
       "gender": "m",
       "role": "suspect",
       "icon": "🧑‍🎤",
@@ -189,17 +198,17 @@
       "archetype": "barde"
     },
     {
-      "id": "b",
-      "name": "Bérénwë",
-      "gender": "f",
+      "id": "c",
+      "name": "Clodomir",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧝‍♀️",
-      "desc": "Elfe, critique gastronomique",
-      "archetype": "elfe"
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
     },
     {
-      "id": "c",
-      "name": "Cendrebrune",
+      "id": "d",
+      "name": "Draconyx",
       "gender": "m",
       "role": "suspect",
       "icon": "🐉",
@@ -208,22 +217,13 @@
       "shape": "L3"
     },
     {
-      "id": "d",
-      "name": "Dîme",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
-    },
-    {
       "id": "e",
-      "name": "Enguerrand",
-      "gender": "m",
+      "name": "Erwëlle",
+      "gender": "f",
       "role": "suspect",
-      "icon": "🤺",
-      "desc": "Chevalier, armure trop petite depuis Noël",
-      "archetype": "chevalier"
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
     },
     {
       "id": "f",
@@ -240,104 +240,120 @@
   "clues": [
     {
       "who": "a",
-      "text": "Arpège était à côté d'un tonneau.",
+      "text": "Arnak était à côté d'une botte de foin.",
       "logic": {
         "type": "adjacentTo",
-        "object": "tonneau"
+        "object": "foin"
       }
     },
     {
       "who": "b",
-      "text": "Bérénwë était sur la même ligne qu'un tonneau.",
+      "text": "Brann était sur la même ligne qu'une chaise.",
       "logic": {
         "type": "sameRowAs",
-        "object": "tonneau"
+        "object": "chaise"
       }
     },
     {
       "who": "b",
-      "text": "Elle était dans la même colonne qu'un chaudron.",
+      "text": "Il était dans la même colonne qu'une statue.",
       "logic": {
         "type": "sameColAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était sur un tapis.",
+      "logic": {
+        "type": "onObject",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Clodomir était dans la même colonne qu'un tapis.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était sur la même ligne qu'un chaudron.",
+      "logic": {
+        "type": "sameRowAs",
         "object": "chaudron"
       }
     },
     {
       "who": "c",
-      "text": "Cendrebrune était à l'ouest de Dîme.",
+      "text": "Il était à l'ouest d'Erwëlle.",
       "logic": {
         "type": "westOf",
-        "other": "d"
+        "other": "e"
       }
     },
     {
       "who": "d",
-      "text": "Dîme était au nord de Bérénwë.",
+      "text": "Draconyx était au nord d'Erwëlle.",
       "logic": {
         "type": "northOf",
-        "other": "b"
+        "other": "e"
       }
     },
     {
       "who": "e",
-      "text": "Enguerrand était dans la même colonne qu'une table.",
+      "text": "Erwëlle était au sud de Clodomir.",
       "logic": {
-        "type": "sameColAs",
-        "object": "table"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Il était à l'ouest de Dîme.",
-      "logic": {
-        "type": "westOf",
-        "other": "d"
+        "type": "southOf",
+        "other": "c"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        5,
+        2,
         2
       ],
-      "c": [
+      "d": [
         [
           3,
-          0
-        ],
-        [
-          3,
-          1
+          5
         ],
         [
           4,
-          0
+          5
+        ],
+        [
+          4,
+          6
         ]
+      ],
+      "c": [
+        0,
+        3
+      ],
+      "a": [
+        5,
+        0
+      ],
+      "b": [
+        1,
+        1
       ],
       "e": [
         6,
-        3
-      ],
-      "d": [
-        0,
         4
-      ],
-      "a": [
-        1,
-        5
-      ],
-      "b": [
-        2,
-        6
       ]
     },
-    "murderer": "e"
+    "murderer": "c"
   },
   "rating": {
     "skulls": 1,
     "score": 2,
-    "hardest": "ligne réservée",
+    "hardest": "position relative",
     "hardSteps": 0,
     "directStart": 2
   },

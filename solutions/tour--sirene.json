@@ -1,86 +1,100 @@
 {
  "positions": {
   "g": [
-   3,
-   4
-  ],
-  "c": [
-   4,
-   1
-  ],
-  "e": [
-   6,
-   0
-  ],
-  "a": [
-   0,
-   6
-  ],
-  "d": [
-   2,
-   3
-  ],
-  "f": [
    1,
    2
   ],
   "b": [
    5,
+   1
+  ],
+  "d": [
+   4,
    5
+  ],
+  "c": [
+   6,
+   4
+  ],
+  "f": [
+   3,
+   0
+  ],
+  "e": [
+   2,
+   3
+  ],
+  "a": [
+   0,
+   6
   ]
  },
- "murderer": "d",
+ "murderer": "c",
  "cast": {
-  "c": "a",
-  "e": "b",
-  "a": "c",
-  "d": "d",
-  "f": "e",
-  "b": "f"
+  "b": "a",
+  "d": "b",
+  "c": "c",
+  "f": "d",
+  "e": "e",
+  "a": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "e",
+   "who": "d",
    "logic": {
     "type": "sameColAs",
-    "object": "statue"
+    "object": "portail"
    }
   },
   {
-   "who": "a",
+   "who": "c",
    "logic": {
-    "type": "sameColAs",
-    "object": "arbre"
+    "type": "southOf",
+    "other": "d"
    }
   },
   {
    "who": "f",
    "logic": {
-    "type": "southOf",
-    "other": "a"
+    "type": "northOf",
+    "other": "d"
    }
   },
   {
-   "who": "d",
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "sarcophage"
+   }
+  },
+  {
+   "who": "a",
    "logic": {
     "type": "sameRowAs",
-    "object": "etagere"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "onObject",
-    "object": "champi"
+    "object": "cristal"
    }
   },
   {
    "who": "c",
    "logic": {
     "type": "adjacentTo",
-    "object": "statue"
+    "object": "portail"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "westOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "onObject",
+    "object": "tapis"
    }
   },
   {

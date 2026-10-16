@@ -165,12 +165,12 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aymeric",
+      "name": "Arnak",
       "gender": "m",
       "role": "suspect",
-      "icon": "🤺",
-      "desc": "Chevalier, armure trop petite depuis Noël",
-      "archetype": "chevalier"
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
     },
     {
       "id": "b",
@@ -183,12 +183,12 @@
     },
     {
       "id": "c",
-      "name": "Chaparde",
+      "name": "Cornélius",
       "gender": "m",
       "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage"
     },
     {
       "id": "d",
@@ -210,12 +210,12 @@
     },
     {
       "id": "f",
-      "name": "Faribole",
+      "name": "Foulques",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧙‍♂️",
-      "desc": "Mage, allergique au houblon",
-      "archetype": "mage"
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
     },
     {
       "id": "g",
@@ -230,112 +230,120 @@
   "decor": "forge",
   "id": "forge--troll",
   "intro": "Le troll Gloutor a été retrouvé sans vie à la Forge du Dragon, encore tiède. Six artisans et clients s'y pressaient cette nuit-là. Un seul était avec lui.",
-  "epilogue": "Étai avoue : Gloutor avait fondu sa plus belle pépite pour en faire une cuillère.",
+  "epilogue": "Arnak avoue : Gloutor avait remarqué que les épées vendues étaient en fer-blanc peint.",
   "clues": [
     {
       "who": "a",
-      "text": "Aymeric était au sud de Chaparde.",
+      "text": "Arnak était dans la même colonne qu'un chariot de mine.",
       "logic": {
-        "type": "southOf",
-        "other": "c"
+        "type": "sameColAs",
+        "object": "chariot"
       }
     },
     {
       "who": "a",
-      "text": "Il était assis sur une chaise.",
+      "text": "Il était à côté d'un lit.",
       "logic": {
-        "type": "onObject",
+        "type": "adjacentTo",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bedaine était dans la même colonne qu'une chaise.",
+      "logic": {
+        "type": "sameColAs",
         "object": "chaise"
       }
     },
     {
       "who": "b",
-      "text": "Bedaine était à côté d'une statue.",
+      "text": "Il n'était pas dans l'atelier.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "statue"
+        "type": "notInRoom",
+        "room": "T"
       }
     },
     {
       "who": "c",
-      "text": "Chaparde n'était pas dans la fonderie.",
+      "text": "Cornélius était au nord de Dardafeu.",
       "logic": {
-        "type": "notInRoom",
-        "room": "O"
+        "type": "northOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était dans la même colonne qu'une statue.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "statue"
       }
     },
     {
       "who": "d",
-      "text": "Dardafeu était au nord de Chaparde.",
+      "text": "Dardafeu était dans la fonderie.",
       "logic": {
-        "type": "northOf",
-        "other": "c"
+        "type": "inRoom",
+        "room": "O"
       }
     },
     {
       "who": "e",
-      "text": "Étai était sur la même ligne qu'une enclume.",
+      "text": "Étai était dans la même colonne qu'un chariot de mine.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "enclume"
+        "type": "sameColAs",
+        "object": "chariot"
       }
     },
     {
       "who": "f",
-      "text": "Faribole était sur la même ligne qu'une enclume.",
+      "text": "Foulques était à l'est de Bedaine.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "enclume"
-      }
-    },
-    {
-      "who": "f",
-      "text": "Il était au nord de Chaparde.",
-      "logic": {
-        "type": "northOf",
-        "other": "c"
+        "type": "eastOf",
+        "other": "b"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        6,
-        2
+        2,
+        1
       ],
       "e": [
-        5,
+        0,
         3
       ],
+      "f": [
+        5,
+        5
+      ],
       "a": [
-        4,
+        1,
+        0
+      ],
+      "b": [
+        6,
         4
       ],
       "c": [
         3,
-        1
-      ],
-      "b": [
-        1,
         6
       ],
-      "f": [
-        0,
-        5
-      ],
       "d": [
-        2,
-        0
+        4,
+        2
       ]
     },
-    "murderer": "e"
+    "murderer": "a"
   },
   "rating": {
     "skulls": 2,
-    "score": 4,
-    "hardest": "seul candidat",
-    "hardSteps": 2,
-    "directStart": 2
+    "score": 3,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 1
   },
   "difficulty": 2
 }

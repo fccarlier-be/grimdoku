@@ -1,0 +1,358 @@
+{
+  "formatVersion": 1,
+  "title": "Le Bal Masqué — l'affaire Draculine",
+  "size": 8,
+  "rooms": {
+    "B": {
+      "name": "Balcon",
+      "the": "le balcon",
+      "floor": "dalles"
+    },
+    "S": {
+      "name": "Salle de bal",
+      "the": "la salle de bal",
+      "floor": "noble"
+    },
+    "E": {
+      "name": "Escalier d'honneur",
+      "the": "l'escalier d'honneur",
+      "floor": "dalles"
+    },
+    "V": {
+      "name": "Vestiaire",
+      "the": "le vestiaire",
+      "floor": "parquet"
+    },
+    "F": {
+      "name": "Buffet",
+      "the": "le buffet",
+      "floor": "damier"
+    },
+    "M": {
+      "name": "Salon des miroirs",
+      "the": "le salon des miroirs",
+      "floor": "noble"
+    },
+    "J": {
+      "name": "Jardin d'hiver",
+      "the": "le jardin d'hiver",
+      "floor": "mosaique"
+    },
+    "O": {
+      "name": "Boudoir",
+      "the": "le boudoir",
+      "floor": "noble"
+    }
+  },
+  "layout": [
+    "BBBSSSSE",
+    "BBSSSSSE",
+    "VVSSSSEE",
+    "VVSSSSFF",
+    "MMMSSFFF",
+    "MMMJJJFF",
+    "OOJJJJFF",
+    "OOOJJJJF"
+  ],
+  "objects": [
+    {
+      "type": "statue",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        1,
+        6
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        7
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        7
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        4,
+        6
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        7
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        5,
+        2
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        4
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        7,
+        5
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        6,
+        3
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        6,
+        0
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        7,
+        2
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Albâtre",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ]
+    },
+    {
+      "id": "b",
+      "name": "Boucline",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🐍",
+      "desc": "Vouivre, serpent ailé, très longue à se retourner",
+      "archetype": "vouivre",
+      "shape": "I4"
+    },
+    {
+      "id": "c",
+      "name": "Colosse",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🦶",
+      "desc": "Géant, toujours couché : aucun plafond n'est assez haut",
+      "archetype": "geant",
+      "shape": "L3"
+    },
+    {
+      "id": "d",
+      "name": "Draculine",
+      "gender": "f",
+      "role": "victim",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
+    }
+  ],
+  "decor": "bal",
+  "id": "bal--vampire--geant-vouivre--l3-i4--cache",
+  "hiddenShapes": true,
+  "intro": "La comtesse Draculine a été retrouvée sans vie au Bal Masqué, sous un loup de velours. Trois invités dansaient encore. Un seul était avec elle.",
+  "epilogue": "Albâtre avoue : Draculine l'avait pris pour un invité déguisé en drap et avait tiré dessus pour voir.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Albâtre était à côté d'une chaise.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il hantait une table.",
+      "logic": {
+        "type": "onObject",
+        "object": "table"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Boucline était dans la même colonne qu'un arbre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Elle était sur la même ligne qu'une table.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Elle était à côté d'une chaise.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Colosse était sur la même ligne qu'un champignon géant.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était dans la même colonne qu'un champignon géant.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "champi"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "d": [
+        5,
+        7
+      ],
+      "c": [
+        [
+          6,
+          4
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          7,
+          4
+        ]
+      ],
+      "b": [
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "a": [
+        4,
+        6
+      ]
+    },
+    "murderer": "a"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 3,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 1
+  },
+  "difficulty": 5
+}

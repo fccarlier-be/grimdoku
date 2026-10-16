@@ -106,23 +106,29 @@ function checkConventions(p) {
     if (step[suspects[i].id] < step[suspects[i - 1].id])
       throw new Error(`${p.id} : ${suspects[i].name} se place avant ${suspects[i - 1].name}, l'ordre alphabétique doit suivre la facilité`);
 }
+const TITLES = new Set();
 for (const entry of MANIFEST) {
   if (!fs.existsSync(`solutions/${entry.id}.json`)) { console.log(`⏳ ${entry.id} : pas encore de solution (node tools/batch.js)`); continue; }
   const s = JSON.parse(fs.readFileSync(`solutions/${entry.id}.json`, 'utf8'));
   const base = loadScene(`scenes/${entry.scene}.json`);
-  const scene = entry.big ? withBig(base, entry.victim, entry.big) : entry.victim ? withVictim(base, entry.victim) : base;
+  const scene = entry.big ? withBig(base, entry.victim, entry.big, entry.shapes) : entry.victim ? withVictim(base, entry.victim) : base;
   const texts = entry.victim ? scene.auto : scene;
   // noms d'après la lettre (cast.json) ; s.cast : lettres réattribuées par gen.js
   const p = resolve(scene, s.cast);
   delete p.epilogues; delete p.scene; delete p.subtitle; // seuls intro et epilogue (remplis) vont dans l'énigme
   p.decor = baseOf(entry.scene); // illustration du décor sur la fiche d'enquête (assets/decors/<décor>)
   p.id = entry.id;
-  if (entry.hidden) p.hiddenShapes = true; // 5 crânes : le joueur ne connaît pas la forme des grands
+  if (entry.hidden) p.hiddenShapes = true;
+  if (entry.hiddenMax) p.hiddenMax = entry.hiddenMax; // 5 crânes : le joueur ne connaît pas la forme des grands
   delete p.auto;
   const nameOf = (id) => p.characters.find(c => c.id === id).name;
   const victim = p.characters.find(c => c.role === 'victim');
   if (scene.subtitle) p.title = `${scene.title} — ${scene.subtitle}`;
   if (entry.victim) p.title = `${scene.title} — l'affaire ${victim.name}`;
+  // même décor, même victime qu'une affaire déjà publiée (grands personnages de tailles différentes) : la seconde affaire
+  if (entry.victim && TITLES.has(p.title)) p.title = `${scene.title} — la seconde affaire ${victim.name}`;
+  if (TITLES.has(p.title)) throw new Error(`${p.id} : titre déjà pris « ${p.title} »`);
+  TITLES.add(p.title);
   // gabarits : {victime} {coupable}, {titre}/{Titre} (« le troll »), accords sur la victime {e} {il}/{Il} {lui},
   // nombre de suspects en lettres {nombre}/{Nombre}
   const f = victim.gender === 'f', nb = NOMBRES[p.characters.length - 1], title = ARCHETYPES[victim.archetype].title;

@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "title": "La Tour de l'Archimage — l'affaire Gédéon",
   "intro": "Le zombie Gédéon a été retrouvé sans vie dans la Tour de l'Archimage, où un portail runique relie le laboratoire à la crypte. Six invités douteux traînaient dans les étages. Un seul était avec lui.",
-  "epilogue": "Crépuscula avoue : Gédéon avait ouvert les volets de l'observatoire en plein midi. Exprès.",
+  "epilogue": "Étincel avoue : Gédéon l'utilisait pour allumer toutes les bougies de la tour. Tous les soirs.",
   "size": 7,
   "rooms": {
     "L": {
@@ -162,21 +162,24 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aquabelle",
+      "name": "Albâtre",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ]
+    },
+    {
+      "id": "b",
+      "name": "Bulle",
       "gender": "f",
       "role": "suspect",
       "icon": "🧜‍♀️",
       "desc": "Sirène, venue pour l'aquarium",
       "archetype": "sirene"
-    },
-    {
-      "id": "b",
-      "name": "Blanchebarbe",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧙‍♂️",
-      "desc": "Archimage, 412 ans, toujours pas de testament",
-      "archetype": "archimage"
     },
     {
       "id": "c",
@@ -189,33 +192,30 @@
     },
     {
       "id": "d",
-      "name": "Djinnifer",
-      "gender": "f",
+      "name": "Doublebarbe",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧞‍♀️",
-      "desc": "Djinn, a déjà exaucé deux vœux de trop",
-      "archetype": "djinn"
+      "icon": "🧙‍♂️",
+      "desc": "Archimage, 412 ans, toujours pas de testament",
+      "archetype": "archimage"
     },
     {
       "id": "e",
-      "name": "Ectoplasme",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👻",
-      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
-      "archetype": "spectre",
-      "traits": [
-        "spectre"
-      ]
-    },
-    {
-      "id": "f",
-      "name": "Flammèche",
+      "name": "Étincel",
       "gender": "m",
       "role": "suspect",
       "icon": "🐉",
       "desc": "Dragonnet, brûle tout ce qu'il touche",
       "archetype": "dragonnet"
+    },
+    {
+      "id": "f",
+      "name": "Fumerolle",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn"
     },
     {
       "id": "g",
@@ -232,70 +232,22 @@
   "clues": [
     {
       "who": "a",
-      "text": "Aquabelle était dans la même colonne qu'un arbre.",
+      "text": "Albâtre était au nord de Doublebarbe.",
       "logic": {
-        "type": "sameColAs",
-        "object": "arbre"
+        "type": "northOf",
+        "other": "d"
       }
     },
     {
       "who": "a",
-      "text": "Elle était assise sur une chaise.",
-      "logic": {
-        "type": "onObject",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Blanchebarbe était sur un champignon géant.",
-      "logic": {
-        "type": "onObject",
-        "object": "champi"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Crépuscula était au sud de Djinnifer.",
-      "logic": {
-        "type": "southOf",
-        "other": "d"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Elle était sur la même ligne qu'une étagère.",
+      "text": "Il était sur la même ligne qu'un sarcophage.",
       "logic": {
         "type": "sameRowAs",
-        "object": "etagere"
+        "object": "sarcophage"
       }
     },
     {
-      "who": "c",
-      "text": "Elle était à l'est de Djinnifer.",
-      "logic": {
-        "type": "eastOf",
-        "other": "d"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Djinnifer était au sud d'Aquabelle.",
-      "logic": {
-        "type": "southOf",
-        "other": "a"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Ectoplasme était au nord de Flammèche.",
-      "logic": {
-        "type": "northOf",
-        "other": "f"
-      }
-    },
-    {
-      "who": "e",
+      "who": "a",
       "text": "Il était à côté d'une statue.",
       "logic": {
         "type": "adjacentTo",
@@ -303,53 +255,101 @@
       }
     },
     {
-      "who": "f",
-      "text": "Flammèche était dans la même colonne qu'une statue.",
+      "who": "b",
+      "text": "Bulle était à côté d'un champignon géant.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Crépuscula était à l'est de Fumerolle.",
+      "logic": {
+        "type": "eastOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Elle était sur un tapis.",
+      "logic": {
+        "type": "onObject",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Doublebarbe était au sud de Fumerolle.",
+      "logic": {
+        "type": "southOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Étincel était à l'est de Doublebarbe.",
+      "logic": {
+        "type": "eastOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était dans la même colonne qu'une boule de cristal.",
       "logic": {
         "type": "sameColAs",
-        "object": "statue"
+        "object": "cristal"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Fumerolle était au nord de Doublebarbe.",
+      "logic": {
+        "type": "northOf",
+        "other": "d"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        3,
-        4
+        2,
+        5
       ],
-      "e": [
+      "a": [
         4,
         1
       ],
-      "f": [
-        6,
-        0
-      ],
-      "a": [
-        0,
-        6
-      ],
-      "c": [
-        2,
-        3
-      ],
-      "d": [
+      "e": [
         1,
-        2
+        4
       ],
       "b": [
         5,
-        5
+        6
+      ],
+      "c": [
+        3,
+        3
+      ],
+      "f": [
+        0,
+        2
+      ],
+      "d": [
+        6,
+        0
       ]
     },
-    "murderer": "c"
+    "murderer": "e"
   },
   "rating": {
     "skulls": 1,
     "score": 2,
     "hardest": "position relative",
     "hardSteps": 0,
-    "directStart": 2
+    "directStart": 1
   },
   "difficulty": 1
 }

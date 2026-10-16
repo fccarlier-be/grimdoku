@@ -194,21 +194,24 @@
     },
     {
       "id": "b",
-      "name": "Berce",
-      "gender": "f",
+      "name": "Bertrand",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧙‍♀️",
-      "desc": "Sorcière des marais, cuisine tout ce qui coasse",
-      "archetype": "sorciere"
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
     },
     {
       "id": "c",
-      "name": "Crépuscula",
-      "gender": "f",
+      "name": "Chaînon",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧛‍♀️",
-      "desc": "Comtesse vampire, végane (elle le jure)",
-      "archetype": "vampire"
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ]
     },
     {
       "id": "d",
@@ -221,33 +224,30 @@
     },
     {
       "id": "e",
-      "name": "Enguerrand",
-      "gender": "m",
+      "name": "Ellébore",
+      "gender": "f",
       "role": "suspect",
-      "icon": "🤺",
-      "desc": "Chevalier, armure trop petite depuis Noël",
-      "archetype": "chevalier"
+      "icon": "🧙‍♀️",
+      "desc": "Sorcière des marais, cuisine tout ce qui coasse",
+      "archetype": "sorciere"
     },
     {
       "id": "f",
-      "name": "Funeste",
+      "name": "Funestine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
+    },
+    {
+      "id": "g",
+      "name": "Griffon",
       "gender": "m",
       "role": "suspect",
       "icon": "🐦‍⬛",
       "desc": "Corbeau, écrit des lettres anonymes",
       "archetype": "corbeau"
-    },
-    {
-      "id": "g",
-      "name": "Grisâtre",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👻",
-      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
-      "archetype": "spectre",
-      "traits": [
-        "spectre"
-      ]
     },
     {
       "id": "h",
@@ -262,14 +262,22 @@
   "decor": "cimetiere",
   "id": "cimetiere--crapaud",
   "intro": "Le crapaud Hector a été retrouvé sans vie au Cimetière de Minuit, ce qui, admettons-le, simplifie les démarches. Sept habitués rôdaient entre les tombes. Un seul était avec lui.",
-  "epilogue": "Anatole avoue, lentement : Hector l'avait réveillé à minuit pile. Il venait juste de s'endormir.",
+  "epilogue": "Funestine avoue : Hector avait planté de l'ail sur toutes les tombes. Même la sienne.",
   "clues": [
     {
       "who": "a",
-      "text": "Anatole était dans la même colonne qu'une statue.",
+      "text": "Anatole était à l'ouest de Déterre.",
       "logic": {
-        "type": "sameColAs",
-        "object": "statue"
+        "type": "westOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était dans l'ossuaire.",
+      "logic": {
+        "type": "inRoom",
+        "room": "O"
       }
     },
     {
@@ -282,47 +290,31 @@
     },
     {
       "who": "b",
-      "text": "Berce était dans la même colonne qu'une statue.",
+      "text": "Bertrand était dans le caveau.",
       "logic": {
-        "type": "sameColAs",
-        "object": "statue"
+        "type": "inRoom",
+        "room": "K"
       }
     },
     {
       "who": "b",
-      "text": "Elle était à l'est de Grisâtre.",
-      "logic": {
-        "type": "eastOf",
-        "other": "g"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Crépuscula était au sud de Berce.",
-      "logic": {
-        "type": "southOf",
-        "other": "b"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Elle était dans l'allée des ifs.",
-      "logic": {
-        "type": "inRoom",
-        "room": "A"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Déterre était sur la même ligne qu'un lit.",
+      "text": "Il était sur la même ligne qu'une tombe.",
       "logic": {
         "type": "sameRowAs",
-        "object": "lit"
+        "object": "tombe"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Chaînon était à côté d'une statue.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "statue"
       }
     },
     {
       "who": "d",
-      "text": "Il était dans la même colonne qu'une tombe.",
+      "text": "Déterre était dans la même colonne qu'une tombe.",
       "logic": {
         "type": "sameColAs",
         "object": "tombe"
@@ -330,79 +322,71 @@
     },
     {
       "who": "e",
-      "text": "Enguerrand n'était pas dans le caveau.",
+      "text": "Ellébore était à côté d'une table.",
       "logic": {
-        "type": "notInRoom",
-        "room": "K"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Il était à l'est de Crépuscula.",
-      "logic": {
-        "type": "eastOf",
-        "other": "c"
+        "type": "adjacentTo",
+        "object": "table"
       }
     },
     {
       "who": "f",
-      "text": "Funeste était à côté d'une tombe.",
+      "text": "Funestine était sur la même ligne qu'une tombe.",
       "logic": {
-        "type": "adjacentTo",
+        "type": "sameRowAs",
         "object": "tombe"
       }
     },
     {
       "who": "g",
-      "text": "Grisâtre était sur la même ligne qu'un arbre.",
+      "text": "Griffon n'était pas dans l'allée des ifs.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "arbre"
+        "type": "notInRoom",
+        "room": "A"
       }
     }
   ],
   "solution": {
     "positions": {
-      "a": [
-        6,
-        6
-      ],
-      "b": [
-        1,
-        2
-      ],
-      "d": [
-        0,
-        5
-      ],
-      "c": [
+      "h": [
         3,
         3
       ],
-      "e": [
-        4,
-        4
+      "d": [
+        1,
+        6
+      ],
+      "c": [
+        5,
+        2
+      ],
+      "a": [
+        6,
+        5
       ],
       "f": [
         2,
+        4
+      ],
+      "e": [
+        0,
         1
       ],
       "g": [
         7,
         0
       ],
-      "h": [
-        5,
+      "b": [
+        4,
         7
       ]
     },
-    "murderer": "a"
+    "murderer": "f"
   },
   "rating": {
     "skulls": 3,
-    "score": 6,
+    "score": 5,
     "hardest": "pièces",
-    "hardSteps": 2,
+    "hardSteps": 1,
     "directStart": 0
   },
   "difficulty": 3

@@ -214,6 +214,7 @@
   "decor": "forge",
   "id": "forge--chevalier--dragon-golem--cache",
   "hiddenShapes": true,
+  "hiddenMax": 3,
   "intro": "Le chevalier Enguerrand a été retrouvé sans vie à la Forge du Dragon, encore tiède. Quatre artisans et clients s'y pressaient cette nuit-là. Un seul était avec lui.",
   "epilogue": "Arnak avoue : Enguerrand avait remarqué que les épées vendues étaient en fer-blanc peint.",
   "clues": [

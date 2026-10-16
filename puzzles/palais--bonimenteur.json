@@ -188,16 +188,7 @@
     },
     {
       "id": "b",
-      "name": "Blanchebarbe",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧙‍♂️",
-      "desc": "Archimage, 412 ans, toujours pas de testament",
-      "archetype": "archimage"
-    },
-    {
-      "id": "c",
-      "name": "Clairvoya",
+      "name": "Bohémia",
       "gender": "f",
       "role": "suspect",
       "icon": "🔮",
@@ -205,17 +196,17 @@
       "archetype": "cartomancienne"
     },
     {
-      "id": "d",
-      "name": "Djinnifer",
-      "gender": "f",
+      "id": "c",
+      "name": "Childéric",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧞‍♀️",
-      "desc": "Djinn, a déjà exaucé deux vœux de trop",
-      "archetype": "djinn"
+      "icon": "🤴",
+      "desc": "Roi, avare de compliments et de tout le reste",
+      "archetype": "roi"
     },
     {
-      "id": "e",
-      "name": "Écarlate",
+      "id": "d",
+      "name": "Draculine",
       "gender": "f",
       "role": "suspect",
       "icon": "🧛‍♀️",
@@ -223,13 +214,22 @@
       "archetype": "vampire"
     },
     {
+      "id": "e",
+      "name": "Encensia",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn"
+    },
+    {
       "id": "f",
-      "name": "Ferdinand",
+      "name": "Fizzlebarbe",
       "gender": "m",
       "role": "suspect",
-      "icon": "🤴",
-      "desc": "Roi, avare de compliments et de tout le reste",
-      "archetype": "roi"
+      "icon": "🧙‍♂️",
+      "desc": "Archimage, 412 ans, toujours pas de testament",
+      "archetype": "archimage"
     },
     {
       "id": "g",
@@ -244,134 +244,126 @@
   "decor": "palais",
   "id": "palais--bonimenteur",
   "intro": "Le bonimenteur Gouaille a été retrouvé sans vie au Palais des Mille Vœux, sous un tapis volant qui ne volait plus. Six invités avaient fait un vœu ce soir-là. Un seul était avec lui.",
-  "epilogue": "Ferdinand avoue, la couronne de travers : Gouaille avait souhaité devenir roi à sa place. Le vœu a été annulé.",
+  "epilogue": "Childéric avoue, la couronne de travers : Gouaille avait souhaité devenir roi à sa place. Le vœu a été annulé.",
   "clues": [
     {
       "who": "a",
-      "text": "Arnak était sur la même ligne qu'un tapis.",
+      "text": "Arnak était dans la même colonne qu'un tapis.",
       "logic": {
-        "type": "sameRowAs",
+        "type": "sameColAs",
         "object": "tapis"
       }
     },
     {
       "who": "a",
-      "text": "Il était à côté d'une boule de cristal.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "cristal"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Blanchebarbe était dans le trésor.",
+      "text": "Il était dans le trésor.",
       "logic": {
         "type": "inRoom",
         "room": "R"
       }
     },
     {
+      "who": "b",
+      "text": "Bohémia était à côté d'un tonneau.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tonneau"
+      }
+    },
+    {
       "who": "c",
-      "text": "Clairvoya était sur la même ligne qu'une chaise.",
+      "text": "Childéric était à l'est de Draculine.",
+      "logic": {
+        "type": "eastOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était sur la même ligne qu'un champignon géant.",
       "logic": {
         "type": "sameRowAs",
-        "object": "chaise"
+        "object": "champi"
       }
     },
     {
       "who": "c",
-      "text": "Elle était dans la même colonne qu'un coffre.",
+      "text": "Il était dans la même colonne qu'une statue.",
       "logic": {
         "type": "sameColAs",
-        "object": "coffre"
+        "object": "statue"
       }
     },
     {
       "who": "d",
-      "text": "Djinnifer était à l'ouest de Clairvoya.",
+      "text": "Draculine était à côté d'un fauteuil.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Encensia était à l'ouest de Fizzlebarbe.",
       "logic": {
         "type": "westOf",
-        "other": "c"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Elle était sur un tapis.",
-      "logic": {
-        "type": "onObject",
-        "object": "tapis"
+        "other": "f"
       }
     },
     {
       "who": "e",
-      "text": "Écarlate était dans la salle du trône.",
+      "text": "Elle était sur la même ligne qu'un arbre.",
       "logic": {
-        "type": "inRoom",
-        "room": "T"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Elle était dans la même colonne qu'un arbre.",
-      "logic": {
-        "type": "sameColAs",
+        "type": "sameRowAs",
         "object": "arbre"
       }
     },
     {
       "who": "f",
-      "text": "Ferdinand était au nord de Djinnifer.",
+      "text": "Fizzlebarbe était dans l'observatoire.",
       "logic": {
-        "type": "northOf",
-        "other": "d"
-      }
-    },
-    {
-      "who": "f",
-      "text": "Il était dans la même colonne qu'un fauteuil.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "fauteuil"
+        "type": "inRoom",
+        "room": "O"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        3,
-        2
-      ],
-      "f": [
-        5,
+        6,
         3
       ],
       "c": [
         4,
-        5
-      ],
-      "a": [
-        1,
-        0
-      ],
-      "e": [
-        2,
         4
       ],
       "b": [
+        3,
+        5
+      ],
+      "a": [
         0,
         6
       ],
       "d": [
-        6,
+        2,
+        2
+      ],
+      "f": [
+        1,
         1
+      ],
+      "e": [
+        5,
+        0
       ]
     },
-    "murderer": "f"
+    "murderer": "c"
   },
   "rating": {
     "skulls": 1,
     "score": 2,
-    "hardest": "ligne réservée",
+    "hardest": "position relative",
     "hardSteps": 0,
     "directStart": 1
   },

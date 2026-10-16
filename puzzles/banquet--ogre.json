@@ -133,21 +133,21 @@
   "characters": [
     {
       "id": "a",
-      "name": "Arôme",
+      "name": "Amandin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🍳",
+      "desc": "Boulanger, pétrit plus de ragots que de pâte",
+      "archetype": "boulanger"
+    },
+    {
+      "id": "b",
+      "name": "Bouillon",
       "gender": "m",
       "role": "suspect",
       "icon": "👨‍🍳",
       "desc": "Chef gobelin, goûte tout, surtout ce qui bouge encore",
       "archetype": "chef"
-    },
-    {
-      "id": "b",
-      "name": "Bâfrin",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧌",
-      "desc": "Troll, plongeur à mi-temps",
-      "archetype": "troll"
     },
     {
       "id": "c",
@@ -160,12 +160,12 @@
     },
     {
       "id": "d",
-      "name": "Dariole",
+      "name": "Dentdur",
       "gender": "m",
       "role": "suspect",
-      "icon": "👨‍🍳",
-      "desc": "Boulanger, pétrit plus de ragots que de pâte",
-      "archetype": "boulanger"
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
     },
     {
       "id": "e",
@@ -189,85 +189,85 @@
   "decor": "banquet",
   "id": "banquet--ogre",
   "intro": "L'ogre Festin a été retrouvé sans vie au beau milieu du Banquet des Gobelins, la serviette encore autour du cou. Cinq convives s'empiffraient. Un seul était avec lui.",
-  "epilogue": "Bâfrin avoue la bouche pleine : Festin avait pris la dernière part de gâteau. Et l'assiette avec.",
+  "epilogue": "Écho avoue : Festin avait parlé pendant sa ballade. Toute la ballade.",
   "clues": [
     {
       "who": "a",
-      "text": "Arôme était sur un champignon géant.",
+      "text": "Amandin était dans la même colonne qu'un tapis.",
       "logic": {
-        "type": "onObject",
-        "object": "champi"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Bâfrin était à côté d'un tapis.",
-      "logic": {
-        "type": "adjacentTo",
+        "type": "sameColAs",
         "object": "tapis"
       }
     },
     {
-      "who": "c",
-      "text": "Chaparde était à côté d'un tonneau.",
+      "who": "a",
+      "text": "Il était à côté d'un tonneau.",
       "logic": {
         "type": "adjacentTo",
         "object": "tonneau"
       }
     },
     {
-      "who": "c",
-      "text": "Il était dans la même colonne qu'une chaise.",
+      "who": "b",
+      "text": "Bouillon était dans la cuisine.",
       "logic": {
-        "type": "sameColAs",
-        "object": "chaise"
+        "type": "inRoom",
+        "room": "K"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Chaparde était à côté d'un champignon géant.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "champi"
       }
     },
     {
       "who": "d",
-      "text": "Dariole était sur la même ligne qu'un tonneau.",
+      "text": "Dentdur était à côté d'un coffre.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "tonneau"
+        "type": "adjacentTo",
+        "object": "coffre"
       }
     },
     {
       "who": "e",
-      "text": "Écho était dans le garde-manger.",
+      "text": "Écho était assis sur une chaise.",
       "logic": {
-        "type": "inRoom",
-        "room": "G"
+        "type": "onObject",
+        "object": "chaise"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        2,
-        5
-      ],
-      "c": [
-        0,
+        4,
         3
       ],
-      "b": [
+      "c": [
         5,
-        4
+        2
       ],
-      "e": [
+      "d": [
         3,
         0
       ],
-      "d": [
-        1,
-        1
+      "e": [
+        2,
+        4
       ],
       "a": [
-        4,
-        2
+        0,
+        5
+      ],
+      "b": [
+        1,
+        1
       ]
     },
-    "murderer": "b"
+    "murderer": "e"
   },
   "rating": {
     "skulls": 0,

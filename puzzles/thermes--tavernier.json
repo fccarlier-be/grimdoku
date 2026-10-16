@@ -135,12 +135,12 @@
     },
     {
       "id": "b",
-      "name": "Bruyère",
-      "gender": "f",
+      "name": "Bricolin",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧚",
-      "desc": "Fée, doit trois tournées",
-      "archetype": "fee"
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage"
     },
     {
       "id": "c",
@@ -153,12 +153,12 @@
     },
     {
       "id": "d",
-      "name": "Dédale",
-      "gender": "m",
+      "name": "Digitale",
+      "gender": "f",
       "role": "suspect",
-      "icon": "🧙‍♂️",
-      "desc": "Mage, allergique au houblon",
-      "archetype": "mage"
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
     },
     {
       "id": "e",
@@ -182,92 +182,100 @@
   "decor": "thermes",
   "id": "thermes--tavernier",
   "intro": "Le tavernier Florin a été retrouvé sans vie aux Thermes Enchantés, détendu pour toujours. Cinq curistes profitaient des bains. Un seul était avec lui.",
-  "epilogue": "Avaloir avoue : Florin l'avait comparé à un rocher décoratif.",
+  "epilogue": "Bricolin avoue en éternuant : Florin avait parfumé le sauna à la bière.",
   "clues": [
     {
       "who": "a",
-      "text": "Avaloir était sur un tapis.",
-      "logic": {
-        "type": "onObject",
-        "object": "tapis"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Bruyère était allongée sur un lit.",
-      "logic": {
-        "type": "onObject",
-        "object": "lit"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Corail était à l'ouest de Bruyère.",
-      "logic": {
-        "type": "westOf",
-        "other": "b"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Elle était sur la même ligne qu'une table.",
+      "text": "Avaloir était sur la même ligne qu'une table.",
       "logic": {
         "type": "sameRowAs",
         "object": "table"
       }
     },
     {
-      "who": "d",
-      "text": "Dédale était à côté d'une chaise.",
+      "who": "a",
+      "text": "Il était à côté d'un massif de roseaux.",
       "logic": {
         "type": "adjacentTo",
-        "object": "chaise"
+        "object": "roseaux"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bricolin était sur la même ligne qu'un tonneau.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était sur un tapis.",
+      "logic": {
+        "type": "onObject",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Corail était allongée sur un lit.",
+      "logic": {
+        "type": "onObject",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Digitale était à côté d'un coffre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "coffre"
       }
     },
     {
       "who": "e",
-      "text": "Erwëlle était à côté d'une statue.",
+      "text": "Erwëlle était assise sur une chaise.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "statue"
+        "type": "onObject",
+        "object": "chaise"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        1,
-        4
-      ],
-      "c": [
-        5,
-        0
-      ],
-      "e": [
-        3,
+        0,
         5
       ],
-      "a": [
-        2,
-        2
-      ],
-      "b": [
+      "c": [
         4,
         3
       ],
-      "d": [
-        0,
+      "e": [
+        3,
         1
+      ],
+      "a": [
+        5,
+        4
+      ],
+      "d": [
+        1,
+        0
+      ],
+      "b": [
+        2,
+        2
       ]
     },
-    "murderer": "a"
+    "murderer": "b"
   },
   "rating": {
     "skulls": 1,
     "score": 2,
-    "hardest": "position relative",
+    "hardest": "ligne réservée",
     "hardSteps": 0,
-    "directStart": 1
+    "directStart": 2
   },
   "difficulty": 1
 }

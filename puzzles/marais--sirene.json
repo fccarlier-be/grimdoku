@@ -120,25 +120,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Anatole",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧟",
-      "desc": "Zombie, ancien apprenti. Ancien tout court",
-      "archetype": "zombie"
-    },
-    {
-      "id": "b",
-      "name": "Bérénwë",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧝‍♀️",
-      "desc": "Elfe, critique gastronomique",
-      "archetype": "elfe"
-    },
-    {
-      "id": "c",
-      "name": "Coassin",
+      "name": "Ambroise",
       "gender": "m",
       "role": "suspect",
       "icon": "🐸",
@@ -146,22 +128,40 @@
       "archetype": "crapaud"
     },
     {
-      "id": "d",
-      "name": "Datura",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧙‍♀️",
-      "desc": "Sorcière des marais, cuisine tout ce qui coasse",
-      "archetype": "sorciere"
-    },
-    {
-      "id": "e",
-      "name": "Engloutor",
+      "id": "b",
+      "name": "Bâfrin",
       "gender": "m",
       "role": "suspect",
       "icon": "🧌",
       "desc": "Troll, plongeur à mi-temps",
       "archetype": "troll"
+    },
+    {
+      "id": "c",
+      "name": "Célandra",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
+    },
+    {
+      "id": "d",
+      "name": "Désiré",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
+    },
+    {
+      "id": "e",
+      "name": "Ellébore",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧙‍♀️",
+      "desc": "Sorcière des marais, cuisine tout ce qui coasse",
+      "archetype": "sorciere"
     },
     {
       "id": "f",
@@ -175,62 +175,62 @@
   ],
   "decor": "marais",
   "id": "marais--sirene",
-  "epilogue": "Anatole avoue, très lentement : Flottille venait le déterrer à chaque pleine lune. Il voulait juste dormir.",
+  "epilogue": "Ellébore avoue sans remords : Flottille manquait à sa soupe du dimanche. Rien de personnel.",
   "clues": [
     {
       "who": "a",
-      "text": "Anatole était dans la roselière.",
+      "text": "Ambroise était allongé sur un lit.",
       "logic": {
-        "type": "inRoom",
-        "room": "R"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était dans la même colonne qu'un champignon géant.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "champi"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Bérénwë était à côté d'un lit.",
-      "logic": {
-        "type": "adjacentTo",
+        "type": "onObject",
         "object": "lit"
       }
     },
     {
-      "who": "c",
-      "text": "Coassin était dans le ponton.",
+      "who": "b",
+      "text": "Bâfrin était sur un champignon géant.",
       "logic": {
-        "type": "inRoom",
-        "room": "P"
+        "type": "onObject",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Célandra était à côté d'un tonneau.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tonneau"
       }
     },
     {
       "who": "d",
-      "text": "Datura était dans l'îlot.",
+      "text": "Désiré était sur la même ligne qu'un champignon géant.",
       "logic": {
-        "type": "inRoom",
-        "room": "I"
+        "type": "sameRowAs",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était à côté d'un massif de roseaux.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "roseaux"
       }
     },
     {
       "who": "e",
-      "text": "Engloutor était dans la même colonne qu'un arbre.",
+      "text": "Ellébore était à côté d'un arbre.",
       "logic": {
-        "type": "sameColAs",
+        "type": "adjacentTo",
         "object": "arbre"
       }
     },
     {
       "who": "e",
-      "text": "Il était sur la même ligne qu'un champignon géant.",
+      "text": "Elle était sur la même ligne qu'un massif de roseaux.",
       "logic": {
         "type": "sameRowAs",
-        "object": "champi"
+        "object": "roseaux"
       }
     }
   ],
@@ -238,30 +238,30 @@
     "positions": {
       "f": [
         3,
-        3
+        2
+      ],
+      "d": [
+        2,
+        5
       ],
       "a": [
         1,
+        0
+      ],
+      "b": [
+        5,
         4
       ],
       "c": [
-        2,
-        2
+        0,
+        3
       ],
       "e": [
-        5,
-        5
-      ],
-      "b": [
-        0,
-        0
-      ],
-      "d": [
         4,
         1
       ]
     },
-    "murderer": "a"
+    "murderer": "e"
   },
   "rating": {
     "skulls": 0,

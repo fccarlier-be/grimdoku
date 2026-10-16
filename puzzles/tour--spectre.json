@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "title": "La Tour de l'Archimage — l'affaire Grisâtre",
   "intro": "Le spectre Grisâtre a été retrouvé sans vie dans la Tour de l'Archimage, où un portail runique relie le laboratoire à la crypte. Six invités douteux traînaient dans les étages. Un seul était avec lui.",
-  "epilogue": "Crépuscula avoue : Grisâtre avait ouvert les volets de l'observatoire en plein midi. Exprès.",
+  "epilogue": "Funestine avoue : Grisâtre avait ouvert les volets de l'observatoire en plein midi. Exprès.",
   "size": 7,
   "rooms": {
     "L": {
@@ -162,34 +162,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aquabelle",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧜‍♀️",
-      "desc": "Sirène, venue pour l'aquarium",
-      "archetype": "sirene"
-    },
-    {
-      "id": "b",
-      "name": "Blanchebarbe",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧙‍♂️",
-      "desc": "Archimage, 412 ans, toujours pas de testament",
-      "archetype": "archimage"
-    },
-    {
-      "id": "c",
-      "name": "Crépuscula",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧛‍♀️",
-      "desc": "Comtesse vampire, végane (elle le jure)",
-      "archetype": "vampire"
-    },
-    {
-      "id": "d",
-      "name": "Djinnifer",
+      "name": "Amphora",
       "gender": "f",
       "role": "suspect",
       "icon": "🧞‍♀️",
@@ -197,8 +170,17 @@
       "archetype": "djinn"
     },
     {
-      "id": "e",
-      "name": "Étincel",
+      "id": "b",
+      "name": "Bulle",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene"
+    },
+    {
+      "id": "c",
+      "name": "Cramoisi",
       "gender": "m",
       "role": "suspect",
       "icon": "🐉",
@@ -206,13 +188,31 @@
       "archetype": "dragonnet"
     },
     {
-      "id": "f",
-      "name": "Fernand",
+      "id": "d",
+      "name": "Désiré",
       "gender": "m",
       "role": "suspect",
       "icon": "🧟",
       "desc": "Zombie, ancien apprenti. Ancien tout court",
       "archetype": "zombie"
+    },
+    {
+      "id": "e",
+      "name": "Étoilebarbe",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Archimage, 412 ans, toujours pas de testament",
+      "archetype": "archimage"
+    },
+    {
+      "id": "f",
+      "name": "Funestine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
     },
     {
       "id": "g",
@@ -232,10 +232,10 @@
   "clues": [
     {
       "who": "a",
-      "text": "Aquabelle était dans la même colonne qu'un arbre.",
+      "text": "Amphora était sur la même ligne qu'une boule de cristal.",
       "logic": {
-        "type": "sameColAs",
-        "object": "arbre"
+        "type": "sameRowAs",
+        "object": "cristal"
       }
     },
     {
@@ -248,108 +248,92 @@
     },
     {
       "who": "b",
-      "text": "Blanchebarbe était sur un champignon géant.",
+      "text": "Bulle était à côté d'un arbre.",
       "logic": {
-        "type": "onObject",
-        "object": "champi"
+        "type": "adjacentTo",
+        "object": "arbre"
       }
     },
     {
       "who": "c",
-      "text": "Crépuscula était au sud de Djinnifer.",
+      "text": "Cramoisi était à côté d'un coffre.",
       "logic": {
-        "type": "southOf",
-        "other": "d"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Elle était sur la même ligne qu'une étagère.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "etagere"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Elle était à l'est de Djinnifer.",
-      "logic": {
-        "type": "eastOf",
-        "other": "d"
+        "type": "adjacentTo",
+        "object": "coffre"
       }
     },
     {
       "who": "d",
-      "text": "Djinnifer était au sud d'Aquabelle.",
+      "text": "Désiré était dans le hall.",
       "logic": {
-        "type": "southOf",
-        "other": "a"
+        "type": "inRoom",
+        "room": "H"
       }
     },
     {
       "who": "e",
-      "text": "Étincel était au nord de Fernand.",
-      "logic": {
-        "type": "northOf",
-        "other": "f"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Il était à côté d'une statue.",
+      "text": "Étoilebarbe était à côté d'un tapis.",
       "logic": {
         "type": "adjacentTo",
-        "object": "statue"
+        "object": "tapis"
       }
     },
     {
       "who": "f",
-      "text": "Fernand était dans la même colonne qu'une statue.",
+      "text": "Funestine était sur la même ligne qu'un tapis.",
       "logic": {
-        "type": "sameColAs",
-        "object": "statue"
+        "type": "sameRowAs",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Elle était dans la crypte.",
+      "logic": {
+        "type": "inRoom",
+        "room": "C"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        3,
-        4
+        1,
+        0
       ],
-      "e": [
-        4,
+      "c": [
+        6,
         1
       ],
+      "d": [
+        4,
+        2
+      ],
+      "b": [
+        3,
+        5
+      ],
       "f": [
-        6,
-        0
+        5,
+        4
       ],
       "a": [
         0,
         6
       ],
-      "c": [
+      "e": [
         2,
         3
-      ],
-      "d": [
-        1,
-        2
-      ],
-      "b": [
-        5,
-        5
       ]
     },
-    "murderer": "c"
+    "murderer": "f"
   },
   "rating": {
     "skulls": 1,
     "score": 2,
-    "hardest": "position relative",
+    "hardest": "ligne réservée",
     "hardSteps": 0,
-    "directStart": 2
+    "directStart": 1
   },
   "difficulty": 1
 }

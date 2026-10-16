@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "title": "Meurtre au Sanglier Borgne — l'affaire Fougère",
   "intro": "La fée Fougère a été retrouvée sans vie à l'aube, au Sanglier Borgne. Cinq clients avaient trop bu, ou pas assez. Un seul était avec elle.",
-  "epilogue": "Centime avoue en comptant ses pièces : Fougère voulait partir sans payer l'ardoise. Personne ne part sans payer l'ardoise.",
+  "epilogue": "Aspre avoue en comptant ses pièces : Fougère voulait partir sans payer l'ardoise. Personne ne part sans payer l'ardoise.",
   "size": 6,
   "rooms": {
     "T": {
@@ -128,12 +128,12 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aëlys",
-      "gender": "f",
+      "name": "Aspre",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧝‍♀️",
-      "desc": "Elfe, critique gastronomique",
-      "archetype": "elfe"
+      "icon": "🧔‍♂️",
+      "desc": "Tavernier nain, radin légendaire",
+      "archetype": "tavernier"
     },
     {
       "id": "b",
@@ -146,12 +146,12 @@
     },
     {
       "id": "c",
-      "name": "Centime",
+      "name": "Cornélius",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧔‍♂️",
-      "desc": "Tavernier nain, radin légendaire",
-      "archetype": "tavernier"
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage"
     },
     {
       "id": "d",
@@ -164,12 +164,12 @@
     },
     {
       "id": "e",
-      "name": "Eustache",
-      "gender": "m",
+      "name": "Erwëlle",
+      "gender": "f",
       "role": "suspect",
-      "icon": "🧙‍♂️",
-      "desc": "Mage, allergique au houblon",
-      "archetype": "mage"
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
     },
     {
       "id": "f",
@@ -186,95 +186,95 @@
   "clues": [
     {
       "who": "a",
-      "text": "Aëlys était sur la même ligne qu'un tonneau.",
+      "text": "Aspre était sur la même ligne qu'un chaudron.",
       "logic": {
         "type": "sameRowAs",
-        "object": "tonneau"
+        "object": "chaudron"
       }
     },
     {
       "who": "a",
-      "text": "Elle était à côté d'une étagère.",
+      "text": "Il était assis sur une chaise.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "etagere"
+        "type": "onObject",
+        "object": "chaise"
       }
     },
     {
       "who": "b",
-      "text": "Brann était à côté d'un lit.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "lit"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Centime était à l'est de Brann.",
-      "logic": {
-        "type": "eastOf",
-        "other": "b"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Il était sur la même ligne qu'une table.",
+      "text": "Brann était sur la même ligne qu'un coffre.",
       "logic": {
         "type": "sameRowAs",
-        "object": "table"
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Cornélius était à l'est d'Aspre.",
+      "logic": {
+        "type": "eastOf",
+        "other": "a"
       }
     },
     {
       "who": "d",
-      "text": "Dentdur était sur la même ligne qu'un tonneau.",
+      "text": "Dentdur était dans la même colonne qu'une étagère.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "tonneau"
+        "type": "sameColAs",
+        "object": "etagere"
       }
     },
     {
       "who": "e",
-      "text": "Eustache était au sud de Brann.",
+      "text": "Erwëlle était dans la cuisine.",
       "logic": {
-        "type": "southOf",
-        "other": "b"
+        "type": "inRoom",
+        "room": "C"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Elle était à l'est de Cornélius.",
+      "logic": {
+        "type": "eastOf",
+        "other": "c"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        1,
-        0
-      ],
-      "e": [
-        5,
-        4
-      ],
-      "b": [
-        4,
+        2,
         1
       ],
-      "d": [
+      "c": [
         3,
         3
       ],
-      "a": [
-        2,
+      "b": [
+        5,
+        2
+      ],
+      "d": [
+        4,
         5
       ],
-      "c": [
+      "e": [
+        1,
+        4
+      ],
+      "a": [
         0,
-        2
+        0
       ]
     },
-    "murderer": "c"
+    "murderer": "a"
   },
   "rating": {
     "skulls": 2,
-    "score": 3,
+    "score": 4,
     "hardest": "pièces",
-    "hardSteps": 1,
+    "hardSteps": 2,
     "directStart": 1
   },
   "difficulty": 2

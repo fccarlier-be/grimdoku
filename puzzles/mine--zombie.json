@@ -188,34 +188,7 @@
     },
     {
       "id": "b",
-      "name": "Basalte",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👷",
-      "desc": "Contremaître nain, compte les pépites et les pauses",
-      "archetype": "contremaitre"
-    },
-    {
-      "id": "c",
-      "name": "Clodomir",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🤺",
-      "desc": "Chevalier, armure trop petite depuis Noël",
-      "archetype": "chevalier"
-    },
-    {
-      "id": "d",
-      "name": "Dardafeu",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🐉",
-      "desc": "Dragonnet, brûle tout ce qu'il touche",
-      "archetype": "dragonnet"
-    },
-    {
-      "id": "e",
-      "name": "Étai",
+      "name": "Boulon",
       "gender": "m",
       "role": "suspect",
       "icon": "⛏️",
@@ -223,8 +196,8 @@
       "archetype": "mineur"
     },
     {
-      "id": "f",
-      "name": "Fringale",
+      "id": "c",
+      "name": "Croquassiette",
       "gender": "m",
       "role": "suspect",
       "icon": "🧌",
@@ -232,13 +205,40 @@
       "archetype": "troll"
     },
     {
-      "id": "g",
-      "name": "Grigou",
+      "id": "d",
+      "name": "Dîme",
       "gender": "m",
       "role": "suspect",
       "icon": "👺",
       "desc": "Gobelin, trésorier du royaume (non déclaré)",
       "archetype": "gobelin"
+    },
+    {
+      "id": "e",
+      "name": "Enguerrand",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
+    },
+    {
+      "id": "f",
+      "name": "Flammèche",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
+      "id": "g",
+      "name": "Granit",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👷",
+      "desc": "Contremaître nain, compte les pépites et les pauses",
+      "archetype": "contremaitre"
     },
     {
       "id": "h",
@@ -252,122 +252,130 @@
   ],
   "decor": "mine",
   "id": "mine--zombie",
-  "epilogue": "Clodomir cherchait un trésor maudit dans la mine. Hubert voulait lui faire payer l'entrée. On ne fait pas payer un chevalier en quête.",
+  "epilogue": "Croquassiette avoue : Hubert l'utilisait comme étai depuis six mois. Un troll aussi a besoin de s'asseoir.",
   "clues": [
     {
       "who": "a",
-      "text": "Aubépine était dans la salle des coffres.",
+      "text": "Aubépine était sur la même ligne qu'une statue.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Elle était à côté d'un chaudron.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Boulon était à l'ouest de Dîme.",
+      "logic": {
+        "type": "westOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était à côté d'un chariot de mine.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chariot"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Croquassiette était dans la même colonne qu'une chaise.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dîme était au sud d'Aubépine.",
+      "logic": {
+        "type": "southOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Enguerrand était au nord de Dîme.",
+      "logic": {
+        "type": "northOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était dans la salle des coffres.",
       "logic": {
         "type": "inRoom",
         "room": "T"
       }
     },
     {
-      "who": "a",
-      "text": "Elle était sur la même ligne qu'un chariot de mine.",
+      "who": "f",
+      "text": "Flammèche était à l'ouest de Boulon.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "chariot"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Elle était dans la même colonne qu'un coffre.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "coffre"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Basalte était dans l'entrée.",
-      "logic": {
-        "type": "inRoom",
-        "room": "E"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était à l'est de Dardafeu.",
-      "logic": {
-        "type": "eastOf",
-        "other": "d"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Clodomir était à côté d'une chaise.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Dardafeu était au sud de Fringale.",
-      "logic": {
-        "type": "southOf",
-        "other": "f"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Étai était à l'est de Fringale.",
-      "logic": {
-        "type": "eastOf",
-        "other": "f"
+        "type": "westOf",
+        "other": "b"
       }
     },
     {
       "who": "f",
-      "text": "Fringale était dans le puits.",
+      "text": "Il était sur la même ligne qu'un coffre.",
       "logic": {
-        "type": "inRoom",
-        "room": "P"
+        "type": "sameRowAs",
+        "object": "coffre"
       }
     },
     {
       "who": "g",
-      "text": "Grigou était dans le filon.",
+      "text": "Granit était sur la même ligne qu'une chaise.",
       "logic": {
-        "type": "inRoom",
-        "room": "V"
+        "type": "sameRowAs",
+        "object": "chaise"
       }
     }
   ],
   "solution": {
     "positions": {
       "h": [
-        6,
+        2,
+        2
+      ],
+      "b": [
+        3,
+        5
+      ],
+      "c": [
+        1,
         3
       ],
-      "e": [
-        1,
+      "d": [
+        6,
         6
       ],
       "f": [
-        2,
-        5
-      ],
-      "g": [
-        5,
-        7
-      ],
-      "d": [
-        3,
-        1
-      ],
-      "c": [
-        4,
+        7,
         4
       ],
-      "a": [
-        7,
-        0
+      "e": [
+        5,
+        1
       ],
-      "b": [
+      "a": [
         0,
-        2
+        7
+      ],
+      "g": [
+        4,
+        0
       ]
     },
     "murderer": "c"

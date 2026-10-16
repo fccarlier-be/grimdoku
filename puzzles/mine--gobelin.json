@@ -179,25 +179,16 @@
   "characters": [
     {
       "id": "a",
-      "name": "Anatole",
+      "name": "Aymeric",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧟",
-      "desc": "Zombie, ancien apprenti. Ancien tout court",
-      "archetype": "zombie"
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
     },
     {
       "id": "b",
-      "name": "Basalte",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👷",
-      "desc": "Contremaître nain, compte les pépites et les pauses",
-      "archetype": "contremaitre"
-    },
-    {
-      "id": "c",
-      "name": "Capucine",
+      "name": "Bruyère",
       "gender": "f",
       "role": "suspect",
       "icon": "🧚",
@@ -205,13 +196,22 @@
       "archetype": "fee"
     },
     {
-      "id": "d",
-      "name": "Durandal",
+      "id": "c",
+      "name": "Croquassiette",
       "gender": "m",
       "role": "suspect",
-      "icon": "🤺",
-      "desc": "Chevalier, armure trop petite depuis Noël",
-      "archetype": "chevalier"
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    },
+    {
+      "id": "d",
+      "name": "Désiré",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
     },
     {
       "id": "e",
@@ -224,21 +224,21 @@
     },
     {
       "id": "f",
-      "name": "Fringale",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧌",
-      "desc": "Troll, plongeur à mi-temps",
-      "archetype": "troll"
-    },
-    {
-      "id": "g",
-      "name": "Gratin",
+      "name": "Flammèche",
       "gender": "m",
       "role": "suspect",
       "icon": "🐉",
       "desc": "Dragonnet, brûle tout ce qu'il touche",
       "archetype": "dragonnet"
+    },
+    {
+      "id": "g",
+      "name": "Granit",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👷",
+      "desc": "Contremaître nain, compte les pépites et les pauses",
+      "archetype": "contremaitre"
     },
     {
       "id": "h",
@@ -252,131 +252,115 @@
   ],
   "decor": "mine",
   "id": "mine--gobelin",
-  "epilogue": "Capucine avoue : Harpagnol la gardait dans un bocal pour éclairer la galerie. Elle a fini par trouver la sortie. Et un gros caillou.",
+  "epilogue": "Granit avoue : Harpagnol prenait une pause toutes les sept minutes. Il les a toutes chronométrées. Puis il a arrêté le chronomètre.",
   "clues": [
     {
       "who": "a",
-      "text": "Anatole était dans la salle des coffres.",
+      "text": "Aymeric était sur un champignon géant.",
       "logic": {
-        "type": "inRoom",
-        "room": "T"
+        "type": "onObject",
+        "object": "champi"
       }
     },
     {
-      "who": "a",
-      "text": "Il était sur la même ligne qu'un chariot de mine.",
+      "who": "b",
+      "text": "Bruyère était à côté d'un chariot de mine.",
       "logic": {
-        "type": "sameRowAs",
+        "type": "adjacentTo",
         "object": "chariot"
       }
     },
     {
-      "who": "a",
-      "text": "Il était dans la même colonne qu'un coffre.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "coffre"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Basalte était dans l'entrée.",
-      "logic": {
-        "type": "inRoom",
-        "room": "E"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était à l'est de Durandal.",
-      "logic": {
-        "type": "eastOf",
-        "other": "d"
-      }
-    },
-    {
       "who": "c",
-      "text": "Capucine était à côté d'une chaise.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Durandal était au sud de Fringale.",
-      "logic": {
-        "type": "southOf",
-        "other": "f"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Étai était à l'est de Fringale.",
-      "logic": {
-        "type": "eastOf",
-        "other": "f"
-      }
-    },
-    {
-      "who": "f",
-      "text": "Fringale était dans le puits.",
+      "text": "Croquassiette était dans le puits.",
       "logic": {
         "type": "inRoom",
         "room": "P"
       }
     },
     {
-      "who": "g",
-      "text": "Gratin était dans le filon.",
+      "who": "c",
+      "text": "Il était au nord de Bruyère.",
       "logic": {
-        "type": "inRoom",
-        "room": "V"
+        "type": "northOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Désiré était à côté d'un chariot de mine.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chariot"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Étai était sur la même ligne qu'une enclume.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "enclume"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Flammèche était sur la même ligne qu'une statue.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Granit était à côté d'une chaise.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chaise"
       }
     }
   ],
   "solution": {
     "positions": {
       "h": [
-        6,
-        3
+        7,
+        4
       ],
       "e": [
-        1,
-        6
+        6,
+        0
       ],
-      "f": [
+      "c": [
         2,
         5
       ],
-      "g": [
-        5,
+      "f": [
+        0,
         7
       ],
-      "d": [
-        3,
-        1
-      ],
-      "c": [
-        4,
-        4
-      ],
       "a": [
-        7,
-        0
+        5,
+        6
       ],
       "b": [
-        0,
+        3,
+        3
+      ],
+      "d": [
+        1,
+        1
+      ],
+      "g": [
+        4,
         2
       ]
     },
-    "murderer": "c"
+    "murderer": "g"
   },
   "rating": {
     "skulls": 2,
-    "score": 3,
+    "score": 4,
     "hardest": "pièces",
-    "hardSteps": 1,
+    "hardSteps": 2,
     "directStart": 1
   },
   "difficulty": 2

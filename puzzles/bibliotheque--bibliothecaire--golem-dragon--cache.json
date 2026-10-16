@@ -225,6 +225,7 @@
   "decor": "bibliotheque",
   "id": "bibliotheque--bibliothecaire--golem-dragon--cache",
   "hiddenShapes": true,
+  "hiddenMax": 3,
   "epilogue": "Azimut avoue en éternuant : Ernestine avait caché son grimoire de recettes de bière au rayon « Interdit aux mages ».",
   "clues": [
     {

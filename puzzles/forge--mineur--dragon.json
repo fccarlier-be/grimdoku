@@ -165,22 +165,22 @@
   "characters": [
     {
       "id": "a",
-      "name": "Ardent",
+      "name": "Avaloir",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    },
+    {
+      "id": "b",
+      "name": "Braisier",
       "gender": "m",
       "role": "suspect",
       "icon": "🐉",
       "desc": "Dragon adulte, toujours lové dans un coin",
       "archetype": "dragon",
       "shape": "L3"
-    },
-    {
-      "id": "b",
-      "name": "Bedaine",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👹",
-      "desc": "Ogre, végétarien depuis mardi",
-      "archetype": "ogre"
     },
     {
       "id": "c",
@@ -202,12 +202,12 @@
     },
     {
       "id": "e",
-      "name": "Engloutor",
+      "name": "Estomac",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧌",
-      "desc": "Troll, plongeur à mi-temps",
-      "archetype": "troll"
+      "icon": "👹",
+      "desc": "Ogre, végétarien depuis mardi",
+      "archetype": "ogre"
     },
     {
       "id": "f",
@@ -222,108 +222,108 @@
   "decor": "forge",
   "id": "forge--mineur--dragon",
   "intro": "Le mineur Filon a été retrouvé sans vie à la Forge du Dragon, encore tiède. Cinq artisans et clients s'y pressaient cette nuit-là. Un seul était avec lui.",
-  "epilogue": "Bedaine avoue, rouge de honte : Filon lui avait forgé une fourchette géante. Il était végétarien depuis mardi.",
+  "epilogue": "Durandal avoue en grinçant : Filon lui avait forgé une armure encore plus petite que l'ancienne.",
   "clues": [
     {
       "who": "a",
-      "text": "Ardent était à côté d'un arbre.",
+      "text": "Avaloir était sur la même ligne qu'un chaudron.",
       "logic": {
-        "type": "adjacentTo",
+        "type": "sameRowAs",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était dans la même colonne qu'un arbre.",
+      "logic": {
+        "type": "sameColAs",
         "object": "arbre"
       }
     },
     {
       "who": "b",
-      "text": "Bedaine était au nord d'Engloutor.",
+      "text": "Braisier était à l'ouest d'Estomac.",
       "logic": {
-        "type": "northOf",
+        "type": "westOf",
         "other": "e"
       }
     },
     {
-      "who": "b",
-      "text": "Il était à côté d'un tonneau.",
+      "who": "c",
+      "text": "Chaparde était dans la cour.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "tonneau"
+        "type": "inRoom",
+        "room": "Y"
       }
     },
     {
-      "who": "c",
-      "text": "Chaparde était sur la même ligne qu'une table.",
+      "who": "d",
+      "text": "Durandal était sur la même ligne qu'un coffre.",
       "logic": {
         "type": "sameRowAs",
-        "object": "table"
+        "object": "coffre"
       }
     },
     {
-      "who": "d",
-      "text": "Durandal était à l'ouest de Bedaine.",
+      "who": "e",
+      "text": "Estomac était au sud de Chaparde.",
       "logic": {
-        "type": "westOf",
-        "other": "b"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Il était au nord de Chaparde.",
-      "logic": {
-        "type": "northOf",
+        "type": "southOf",
         "other": "c"
       }
     },
     {
       "who": "e",
-      "text": "Engloutor était à l'est de Chaparde.",
+      "text": "Il était dans l'atelier.",
       "logic": {
-        "type": "eastOf",
-        "other": "c"
+        "type": "inRoom",
+        "room": "T"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        0,
-        5
+        1,
+        4
       ],
-      "a": [
+      "b": [
         [
-          5,
-          1
+          3,
+          2
         ],
         [
-          6,
-          1
+          3,
+          3
         ],
         [
-          6,
+          4,
           2
         ]
       ],
       "d": [
+        0,
+        5
+      ],
+      "c": [
+        5,
+        1
+      ],
+      "a": [
         2,
         0
       ],
-      "c": [
-        3,
-        3
-      ],
       "e": [
-        4,
+        6,
         6
-      ],
-      "b": [
-        1,
-        4
       ]
     },
-    "murderer": "b"
+    "murderer": "d"
   },
   "rating": {
     "skulls": 1,
     "score": 2,
-    "hardest": "position relative",
+    "hardest": "ligne réservée",
     "hardSteps": 0,
     "directStart": 1
   },

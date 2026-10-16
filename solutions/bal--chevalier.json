@@ -1,56 +1,84 @@
 {
  "positions": {
   "h": [
-   7,
-   3
-  ],
-  "b": [
-   4,
-   7
-  ],
-  "g": [
-   0,
-   5
-  ],
-  "f": [
    2,
-   6
+   5
   ],
   "c": [
    1,
    1
   ],
   "a": [
-   6,
-   4
+   7,
+   0
   ],
   "d": [
    5,
-   2
+   6
+  ],
+  "g": [
+   0,
+   7
   ],
   "e": [
    3,
-   0
+   3
+  ],
+  "f": [
+   6,
+   4
+  ],
+  "b": [
+   4,
+   2
   ]
  },
- "murderer": "a",
+ "murderer": "e",
  "cast": {
-  "b": "a",
-  "g": "b",
-  "f": "c",
-  "c": "d",
-  "a": "e",
-  "d": "f",
-  "e": "g"
+  "c": "a",
+  "a": "b",
+  "d": "c",
+  "g": "d",
+  "e": "e",
+  "f": "f",
+  "b": "g"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "f",
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "southOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "g",
    "logic": {
     "type": "northOf",
-    "other": "a"
+    "other": "b"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "fauteuil"
    }
   },
   {
@@ -61,73 +89,38 @@
    }
   },
   {
-   "who": "a",
+   "who": "c",
    "logic": {
-    "type": "sameColAs",
-    "object": "chaise"
+    "type": "southOf",
+    "other": "g"
    }
   },
   {
-   "who": "d",
-   "logic": {
-    "type": "westOf",
-    "other": "a"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "chaise"
-   }
-  },
-  {
-   "who": "a",
+   "who": "f",
    "logic": {
     "type": "adjacentTo",
     "object": "champi"
    }
   },
   {
-   "who": "c",
-   "logic": {
-    "type": "northOf",
-    "other": "f"
-   }
-  },
-  {
-   "who": "g",
-   "logic": {
-    "type": "sameColAs",
-    "object": "arbre"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "statue"
-   }
-  },
-  {
-   "who": "b",
+   "who": "e",
    "logic": {
     "type": "adjacentTo",
-    "object": "table"
+    "object": "tapis"
    }
   },
   {
-   "who": "a",
+   "who": "e",
    "logic": {
-    "type": "southOf",
-    "other": "d"
+    "type": "westOf",
+    "other": "f"
    }
   },
   {
    "who": "d",
    "logic": {
     "type": "onObject",
-    "object": "fauteuil"
+    "object": "chaise"
    }
   }
  ]

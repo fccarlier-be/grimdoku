@@ -129,16 +129,7 @@
     },
     {
       "id": "b",
-      "name": "Bufo",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🐸",
-      "desc": "Crapaud, prince déchu, attend toujours son bisou",
-      "archetype": "crapaud"
-    },
-    {
-      "id": "c",
-      "name": "Célandra",
+      "name": "Bérénwë",
       "gender": "f",
       "role": "suspect",
       "icon": "🧝‍♀️",
@@ -146,22 +137,31 @@
       "archetype": "elfe"
     },
     {
-      "id": "d",
-      "name": "Dentdur",
+      "id": "c",
+      "name": "Coassin",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧌",
-      "desc": "Troll, plongeur à mi-temps",
-      "archetype": "troll"
+      "icon": "🐸",
+      "desc": "Crapaud, prince déchu, attend toujours son bisou",
+      "archetype": "crapaud"
     },
     {
-      "id": "e",
-      "name": "Ellébore",
+      "id": "d",
+      "name": "Datura",
       "gender": "f",
       "role": "suspect",
       "icon": "🧙‍♀️",
       "desc": "Sorcière des marais, cuisine tout ce qui coasse",
       "archetype": "sorciere"
+    },
+    {
+      "id": "e",
+      "name": "Engloutor",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
     },
     {
       "id": "f",
@@ -175,101 +175,85 @@
   ],
   "decor": "marais",
   "id": "marais--zombie",
-  "epilogue": "Aquabelle avoue : Fernand pompait l'eau de sa mare pour ses petites affaires. Une sirène sans eau, c'est une sardine.",
+  "epilogue": "Bérénwë avoue d'un air dégoûté : Fernand lui avait servi de la soupe de vase et exigé cinq étoiles.",
   "clues": [
     {
       "who": "a",
-      "text": "Aquabelle était dans la roselière.",
+      "text": "Aquabelle était allongée sur un lit.",
       "logic": {
-        "type": "inRoom",
-        "room": "R"
+        "type": "onObject",
+        "object": "lit"
       }
     },
     {
-      "who": "a",
-      "text": "Elle était dans la même colonne qu'un champignon géant.",
+      "who": "b",
+      "text": "Bérénwë était sur un champignon géant.",
       "logic": {
-        "type": "sameColAs",
+        "type": "onObject",
         "object": "champi"
       }
     },
     {
-      "who": "b",
-      "text": "Bufo était au sud de Célandra.",
+      "who": "c",
+      "text": "Coassin était au sud de Datura.",
       "logic": {
         "type": "southOf",
-        "other": "c"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était dans le ponton.",
-      "logic": {
-        "type": "inRoom",
-        "room": "P"
+        "other": "d"
       }
     },
     {
       "who": "c",
-      "text": "Célandra était à l'ouest de Bufo.",
+      "text": "Il était dans la même colonne qu'un tonneau.",
       "logic": {
-        "type": "westOf",
-        "other": "b"
+        "type": "sameColAs",
+        "object": "tonneau"
       }
     },
     {
       "who": "d",
-      "text": "Dentdur était au sud d'Ellébore.",
+      "text": "Datura était dans la même colonne qu'un chaudron.",
       "logic": {
-        "type": "southOf",
-        "other": "e"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Il était à l'est d'Aquabelle.",
-      "logic": {
-        "type": "eastOf",
-        "other": "a"
+        "type": "sameColAs",
+        "object": "chaudron"
       }
     },
     {
       "who": "e",
-      "text": "Ellébore était dans l'îlot.",
+      "text": "Engloutor était à l'est de Coassin.",
       "logic": {
-        "type": "inRoom",
-        "room": "I"
+        "type": "eastOf",
+        "other": "c"
       }
     }
   ],
   "solution": {
     "positions": {
-      "a": [
-        1,
-        4
-      ],
-      "b": [
-        2,
+      "f": [
+        4,
         2
       ],
-      "c": [
-        0,
+      "a": [
+        1,
         0
       ],
-      "e": [
-        4,
-        1
-      ],
-      "d": [
-        5,
-        5
-      ],
-      "f": [
+      "c": [
         3,
         3
+      ],
+      "e": [
+        0,
+        5
+      ],
+      "b": [
+        5,
+        4
+      ],
+      "d": [
+        2,
+        1
       ]
     },
-    "murderer": "a"
+    "murderer": "b"
   },
   "rating": {
     "skulls": 1,

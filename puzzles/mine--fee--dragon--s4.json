@@ -1,0 +1,340 @@
+{
+  "formatVersion": 1,
+  "title": "La Mine des Nains — l'affaire Fougère",
+  "size": 8,
+  "rooms": {
+    "E": {
+      "name": "Entrée",
+      "the": "l'entrée",
+      "floor": "roche"
+    },
+    "G": {
+      "name": "Galerie",
+      "the": "la galerie",
+      "floor": "roche"
+    },
+    "F": {
+      "name": "Forge",
+      "the": "la forge",
+      "floor": "roche"
+    },
+    "P": {
+      "name": "Puits",
+      "the": "le puits",
+      "floor": "roche"
+    },
+    "V": {
+      "name": "Filon",
+      "the": "le filon",
+      "floor": "roche"
+    },
+    "D": {
+      "name": "Dortoir",
+      "the": "le dortoir",
+      "floor": "roche"
+    },
+    "C": {
+      "name": "Cantine",
+      "the": "la cantine",
+      "floor": "parquet"
+    },
+    "T": {
+      "name": "Salle des coffres",
+      "the": "la salle des coffres",
+      "floor": "roche"
+    }
+  },
+  "layout": [
+    "EEEGGFFF",
+    "EEEGGFFF",
+    "DDGGGPPF",
+    "DDGGGPPV",
+    "DDCCCPVV",
+    "TTCCCVVV",
+    "TTCCCVVV",
+    "TTTTCVVV"
+  ],
+  "objects": [
+    {
+      "type": "tonneau",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        1,
+        7
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        6,
+        7
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        2
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        7,
+        2
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        7,
+        6
+      ]
+    }
+  ],
+  "intro": "La fée Fougère a été retrouvée au fond de la Mine des Nains, aussi froide que le granit. Cinq ouvriers étaient descendus pour l'équipe de nuit. Un seul était avec elle.",
+  "characters": [
+    {
+      "id": "a",
+      "name": "Agrifol",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "⛏️",
+      "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
+      "archetype": "mineur"
+    },
+    {
+      "id": "b",
+      "name": "Braisier",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragon adulte, toujours lové dans un coin",
+      "archetype": "dragon",
+      "shape": "S4"
+    },
+    {
+      "id": "c",
+      "name": "Croquassiette",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    },
+    {
+      "id": "d",
+      "name": "Dardafeu",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
+      "id": "e",
+      "name": "Escroquin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "f",
+      "name": "Fougère",
+      "gender": "f",
+      "role": "victim",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
+    }
+  ],
+  "decor": "mine",
+  "id": "mine--fee--dragon--s4",
+  "epilogue": "Agrifol avoue : Fougère lui avait volé sa plus belle pépite. C'était devenu une question de principe.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Agrifol était sur un champignon géant.",
+      "logic": {
+        "type": "onObject",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Braisier était sur la même ligne qu'un chaudron.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Croquassiette était sur la même ligne qu'une chaise.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dardafeu était dans la même colonne qu'une table.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était au sud de Croquassiette.",
+      "logic": {
+        "type": "southOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Escroquin était au sud de Croquassiette.",
+      "logic": {
+        "type": "southOf",
+        "other": "c"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        3,
+        7
+      ],
+      "b": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "a": [
+        5,
+        6
+      ],
+      "c": [
+        4,
+        5
+      ],
+      "e": [
+        6,
+        4
+      ],
+      "d": [
+        7,
+        3
+      ]
+    },
+    "murderer": "a"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 3,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 1
+  },
+  "difficulty": 4
+}

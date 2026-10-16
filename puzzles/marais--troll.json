@@ -120,12 +120,12 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aquabelle",
+      "name": "Aconit",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧜‍♀️",
-      "desc": "Sirène, venue pour l'aquarium",
-      "archetype": "sirene"
+      "icon": "🧙‍♀️",
+      "desc": "Sorcière des marais, cuisine tout ce qui coasse",
+      "archetype": "sorciere"
     },
     {
       "id": "b",
@@ -147,21 +147,21 @@
     },
     {
       "id": "d",
-      "name": "Dodu",
+      "name": "Dorade",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene"
+    },
+    {
+      "id": "e",
+      "name": "Eugène",
       "gender": "m",
       "role": "suspect",
       "icon": "🐸",
       "desc": "Crapaud, prince déchu, attend toujours son bisou",
       "archetype": "crapaud"
-    },
-    {
-      "id": "e",
-      "name": "Ellébore",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧙‍♀️",
-      "desc": "Sorcière des marais, cuisine tout ce qui coasse",
-      "archetype": "sorciere"
     },
     {
       "id": "f",
@@ -175,106 +175,98 @@
   ],
   "decor": "marais",
   "id": "marais--troll",
-  "epilogue": "Aquabelle avoue : Fringale pompait l'eau de sa mare pour ses petites affaires. Une sirène sans eau, c'est une sardine.",
+  "epilogue": "Dorade avoue : Fringale pompait l'eau de sa mare pour ses petites affaires. Une sirène sans eau, c'est une sardine.",
   "clues": [
     {
       "who": "a",
-      "text": "Aquabelle était dans la roselière.",
+      "text": "Aconit était allongée sur un lit.",
       "logic": {
-        "type": "inRoom",
-        "room": "R"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Elle était dans la même colonne qu'un champignon géant.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "champi"
+        "type": "onObject",
+        "object": "lit"
       }
     },
     {
       "who": "b",
-      "text": "Bob était au sud de Célandra.",
+      "text": "Bob était à côté d'une barque.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "barque"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Célandra était dans l'îlot.",
+      "logic": {
+        "type": "inRoom",
+        "room": "I"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dorade était au sud de Célandra.",
       "logic": {
         "type": "southOf",
         "other": "c"
       }
     },
     {
-      "who": "b",
-      "text": "Il était dans le ponton.",
+      "who": "d",
+      "text": "Elle était dans la même colonne qu'un arbre.",
       "logic": {
-        "type": "inRoom",
-        "room": "P"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Célandra était à l'ouest de Bob.",
-      "logic": {
-        "type": "westOf",
-        "other": "b"
+        "type": "sameColAs",
+        "object": "arbre"
       }
     },
     {
       "who": "d",
-      "text": "Dodu était au sud d'Ellébore.",
+      "text": "Elle était sur la même ligne qu'un champignon géant.",
       "logic": {
-        "type": "southOf",
-        "other": "e"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Il était à l'est d'Aquabelle.",
-      "logic": {
-        "type": "eastOf",
-        "other": "a"
+        "type": "sameRowAs",
+        "object": "champi"
       }
     },
     {
       "who": "e",
-      "text": "Ellébore était dans l'îlot.",
+      "text": "Eugène était dans la même colonne qu'un tonneau.",
       "logic": {
-        "type": "inRoom",
-        "room": "I"
+        "type": "sameColAs",
+        "object": "tonneau"
       }
     }
   ],
   "solution": {
     "positions": {
-      "a": [
-        1,
-        4
-      ],
-      "b": [
-        2,
-        2
-      ],
-      "c": [
-        0,
-        0
-      ],
-      "e": [
+      "f": [
         4,
-        1
+        4
       ],
       "d": [
         5,
+        1
+      ],
+      "b": [
+        0,
         5
       ],
-      "f": [
-        3,
+      "e": [
+        2,
         3
+      ],
+      "c": [
+        3,
+        2
+      ],
+      "a": [
+        1,
+        0
       ]
     },
-    "murderer": "a"
+    "murderer": "d"
   },
   "rating": {
     "skulls": 1,
     "score": 2,
-    "hardest": "position relative",
+    "hardest": "ligne réservée",
     "hardSteps": 0,
     "directStart": 1
   },

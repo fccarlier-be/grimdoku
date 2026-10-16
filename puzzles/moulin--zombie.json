@@ -127,34 +127,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aubépine",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧚",
-      "desc": "Fée, doit trois tournées",
-      "archetype": "fee"
-    },
-    {
-      "id": "b",
-      "name": "Bâfrin",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧌",
-      "desc": "Troll, plongeur à mi-temps",
-      "archetype": "troll"
-    },
-    {
-      "id": "c",
-      "name": "Cramoisi",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🐉",
-      "desc": "Dragonnet, brûle tout ce qu'il touche",
-      "archetype": "dragonnet"
-    },
-    {
-      "id": "d",
-      "name": "Dorade",
+      "name": "Aquabelle",
       "gender": "f",
       "role": "suspect",
       "icon": "🧜‍♀️",
@@ -162,13 +135,40 @@
       "archetype": "sirene"
     },
     {
-      "id": "e",
-      "name": "Épeautre",
+      "id": "b",
+      "name": "Boisseau",
       "gender": "m",
       "role": "suspect",
       "icon": "👨‍🌾",
       "desc": "Meunier, pèse le grain avec le pouce",
       "archetype": "meunier"
+    },
+    {
+      "id": "c",
+      "name": "Capucine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
+    },
+    {
+      "id": "d",
+      "name": "Dentdur",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    },
+    {
+      "id": "e",
+      "name": "Étincel",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
     },
     {
       "id": "f",
@@ -182,108 +182,116 @@
   ],
   "decor": "moulin",
   "id": "moulin--zombie",
-  "epilogue": "Aubépine avoue en battant des ailes : Fernand lui avait volé sa poudre de fée pour la mélanger à la farine.",
+  "epilogue": "Boisseau avoue en pesant ses mots : Fernand l'accusait de mettre le pouce sur la balance. C'était vrai, mais ça ne se dit pas.",
   "clues": [
     {
       "who": "a",
-      "text": "Aubépine était dans la même colonne qu'un coffre.",
+      "text": "Aquabelle était à côté d'un arbre.",
       "logic": {
-        "type": "sameColAs",
-        "object": "coffre"
+        "type": "adjacentTo",
+        "object": "arbre"
       }
     },
     {
       "who": "a",
-      "text": "Elle était à côté d'une table.",
+      "text": "Elle était sur la même ligne qu'un tonneau.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "table"
+        "type": "sameRowAs",
+        "object": "tonneau"
       }
     },
     {
       "who": "b",
-      "text": "Bâfrin était sur un champignon géant.",
-      "logic": {
-        "type": "onObject",
-        "object": "champi"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Cramoisi était dans la même colonne qu'un lit.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "lit"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Dorade était à l'est d'Épeautre.",
-      "logic": {
-        "type": "eastOf",
-        "other": "e"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Elle était sur la même ligne qu'une chaise.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Épeautre était à l'est de Cramoisi.",
+      "text": "Boisseau était à l'est de Capucine.",
       "logic": {
         "type": "eastOf",
         "other": "c"
       }
     },
     {
-      "who": "e",
-      "text": "Il n'était pas dans le potager.",
+      "who": "b",
+      "text": "Il était sur la même ligne qu'une statue.",
       "logic": {
-        "type": "notInRoom",
-        "room": "P"
+        "type": "sameRowAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était à l'ouest d'Étincel.",
+      "logic": {
+        "type": "westOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Capucine était à côté d'un tonneau.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dentdur était dans le moulin.",
+      "logic": {
+        "type": "inRoom",
+        "room": "M"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Étincel était au nord de Boisseau.",
+      "logic": {
+        "type": "northOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était dans la même colonne qu'une chaise.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chaise"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        2,
-        2
-      ],
-      "a": [
-        1,
-        0
-      ],
-      "b": [
         4,
-        1
+        4
+      ],
+      "c": [
+        5,
+        2
       ],
       "d": [
         0,
-        5
+        1
       ],
-      "c": [
-        3,
-        3
+      "a": [
+        2,
+        0
       ],
       "e": [
-        5,
-        4
+        1,
+        5
+      ],
+      "b": [
+        3,
+        3
       ]
     },
-    "murderer": "a"
+    "murderer": "b"
   },
   "rating": {
     "skulls": 1,
     "score": 2,
-    "hardest": "ligne réservée",
+    "hardest": "position relative",
     "hardSteps": 0,
-    "directStart": 2
+    "directStart": 1
   },
   "difficulty": 1
 }

@@ -159,7 +159,16 @@
   "characters": [
     {
       "id": "a",
-      "name": "Arpège",
+      "name": "Aplomb",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🎩",
+      "desc": "Bonimenteur, vend du rêve au kilo",
+      "archetype": "bonimenteur"
+    },
+    {
+      "id": "b",
+      "name": "Brann",
       "gender": "m",
       "role": "suspect",
       "icon": "🧑‍🎤",
@@ -167,8 +176,8 @@
       "archetype": "barde"
     },
     {
-      "id": "b",
-      "name": "Bakchich",
+      "id": "c",
+      "name": "Chaparde",
       "gender": "m",
       "role": "suspect",
       "icon": "👺",
@@ -176,22 +185,13 @@
       "archetype": "gobelin"
     },
     {
-      "id": "c",
-      "name": "Clairvoya",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🔮",
-      "desc": "Cartomancienne, voit l'avenir, rate le présent",
-      "archetype": "cartomancienne"
-    },
-    {
       "id": "d",
-      "name": "Duperon",
+      "name": "Dentdur",
       "gender": "m",
       "role": "suspect",
-      "icon": "🎩",
-      "desc": "Bonimenteur, vend du rêve au kilo",
-      "archetype": "bonimenteur"
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
     },
     {
       "id": "e",
@@ -204,12 +204,12 @@
     },
     {
       "id": "f",
-      "name": "Fringale",
-      "gender": "m",
+      "name": "Fortuna",
+      "gender": "f",
       "role": "suspect",
-      "icon": "🧌",
-      "desc": "Troll, plongeur à mi-temps",
-      "archetype": "troll"
+      "icon": "🔮",
+      "desc": "Cartomancienne, voit l'avenir, rate le présent",
+      "archetype": "cartomancienne"
     },
     {
       "id": "g",
@@ -223,94 +223,110 @@
   ],
   "decor": "foire",
   "id": "foire--dragonnet",
-  "epilogue": "Fringale, hercule de foire, avoue : Gratin l'avait traité de « gros caillou » devant les enfants.",
+  "epilogue": "Fortuna l'avait vu dans les cartes : Gratin allait ruiner la foire. Elle a préféré changer l'avenir elle-même.",
   "clues": [
     {
       "who": "a",
-      "text": "Arpège était sur la même ligne qu'un chaudron.",
+      "text": "Aplomb était au nord de Chaparde.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "chaudron"
+        "type": "northOf",
+        "other": "c"
       }
     },
     {
       "who": "a",
-      "text": "Il était dans la même colonne qu'un tonneau.",
+      "text": "Il était dans la même colonne qu'une table.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était sur un tapis.",
+      "logic": {
+        "type": "onObject",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Brann était dans les coulisses.",
+      "logic": {
+        "type": "inRoom",
+        "room": "K"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Chaparde était dans la même colonne qu'un chaudron.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était sur la même ligne qu'une chaise.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dentdur était dans la même colonne qu'une botte de foin.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "foin"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Églantine était dans la même colonne qu'un tonneau.",
       "logic": {
         "type": "sameColAs",
         "object": "tonneau"
       }
     },
     {
-      "who": "b",
-      "text": "Bakchich était assis sur une chaise.",
-      "logic": {
-        "type": "onObject",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Clairvoya était sur la même ligne qu'une boule de cristal.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "cristal"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Duperon était au sud d'Églantine.",
-      "logic": {
-        "type": "southOf",
-        "other": "e"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Églantine était sur la même ligne qu'un tapis.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "tapis"
-      }
-    },
-    {
       "who": "f",
-      "text": "Fringale était sur la même ligne qu'un coffre.",
+      "text": "Fortuna était à l'ouest de Brann.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "coffre"
+        "type": "westOf",
+        "other": "b"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        0,
+        6,
         2
       ],
-      "c": [
-        2,
-        6
-      ],
-      "a": [
-        4,
-        4
-      ],
-      "b": [
-        5,
-        1
-      ],
       "f": [
-        1,
-        3
-      ],
-      "e": [
-        3,
+        4,
         0
       ],
-      "d": [
-        6,
+      "b": [
+        2,
+        1
+      ],
+      "c": [
+        5,
         5
+      ],
+      "d": [
+        1,
+        6
+      ],
+      "e": [
+        0,
+        4
+      ],
+      "a": [
+        3,
+        3
       ]
     },
     "murderer": "f"

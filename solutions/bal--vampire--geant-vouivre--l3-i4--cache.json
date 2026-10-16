@@ -1,0 +1,103 @@
+{
+ "positions": {
+  "d": [
+   5,
+   7
+  ],
+  "c": [
+   [
+    6,
+    4
+   ],
+   [
+    7,
+    3
+   ],
+   [
+    7,
+    4
+   ]
+  ],
+  "b": [
+   [
+    0,
+    5
+   ],
+   [
+    1,
+    5
+   ],
+   [
+    2,
+    5
+   ],
+   [
+    3,
+    5
+   ]
+  ],
+  "a": [
+   4,
+   6
+  ]
+ },
+ "murderer": "a",
+ "cast": {
+  "c": "a",
+  "b": "b",
+  "a": "c"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "table"
+   }
+  }
+ ]
+}

@@ -237,6 +237,7 @@
   "decor": "mine",
   "id": "mine--mineur--golem-dragon--cache",
   "hiddenShapes": true,
+  "hiddenMax": 3,
   "epilogue": "Dardafeu servait de lampe et de soufflet sans être payé. Filon a ri quand il a demandé une augmentation. Le dragonnet n'a pas ri.",
   "clues": [
     {

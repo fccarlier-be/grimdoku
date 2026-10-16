@@ -185,7 +185,25 @@
   "characters": [
     {
       "id": "a",
-      "name": "Albâtre",
+      "name": "Ambroise",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐸",
+      "desc": "Crapaud, prince déchu, attend toujours son bisou",
+      "archetype": "crapaud"
+    },
+    {
+      "id": "b",
+      "name": "Belladone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
+    },
+    {
+      "id": "c",
+      "name": "Chaînon",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -194,24 +212,6 @@
       "traits": [
         "spectre"
       ]
-    },
-    {
-      "id": "b",
-      "name": "Berce",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧙‍♀️",
-      "desc": "Sorcière des marais, cuisine tout ce qui coasse",
-      "archetype": "sorciere"
-    },
-    {
-      "id": "c",
-      "name": "Coassin",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🐸",
-      "desc": "Crapaud, prince déchu, attend toujours son bisou",
-      "archetype": "crapaud"
     },
     {
       "id": "d",
@@ -224,12 +224,12 @@
     },
     {
       "id": "e",
-      "name": "Écarlate",
-      "gender": "f",
+      "name": "Enguerrand",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧛‍♀️",
-      "desc": "Comtesse vampire, végane (elle le jure)",
-      "archetype": "vampire"
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
     },
     {
       "id": "f",
@@ -242,12 +242,12 @@
     },
     {
       "id": "g",
-      "name": "Gontran",
-      "gender": "m",
+      "name": "Garance",
+      "gender": "f",
       "role": "suspect",
-      "icon": "🤺",
-      "desc": "Chevalier, armure trop petite depuis Noël",
-      "archetype": "chevalier"
+      "icon": "🧙‍♀️",
+      "desc": "Sorcière des marais, cuisine tout ce qui coasse",
+      "archetype": "sorciere"
     },
     {
       "id": "h",
@@ -262,75 +262,83 @@
   "decor": "cimetiere",
   "id": "cimetiere--zombie",
   "intro": "Le zombie Hubert a été retrouvé sans vie au Cimetière de Minuit, ce qui, admettons-le, simplifie les démarches. Sept habitués rôdaient entre les tombes. Un seul était avec lui.",
-  "epilogue": "Berce avoue sans remords : Hubert cueillait ses herbes de cimetière avant elle.",
+  "epilogue": "Belladone avoue : Hubert avait planté de l'ail sur toutes les tombes. Même la sienne.",
   "clues": [
     {
       "who": "a",
-      "text": "Albâtre hantait un pupitre.",
+      "text": "Ambroise était allongé sur un lit.",
       "logic": {
         "type": "onObject",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Belladone était dans la même colonne qu'un pupitre.",
+      "logic": {
+        "type": "sameColAs",
         "object": "pupitre"
       }
     },
     {
       "who": "b",
-      "text": "Berce était sur la même ligne qu'une statue.",
+      "text": "Elle était sur la même ligne qu'une tombe.",
       "logic": {
         "type": "sameRowAs",
-        "object": "statue"
+        "object": "tombe"
       }
     },
     {
       "who": "c",
-      "text": "Coassin était à l'est d'Écarlate.",
+      "text": "Chaînon était au nord d'Enguerrand.",
       "logic": {
-        "type": "eastOf",
+        "type": "northOf",
         "other": "e"
       }
     },
     {
       "who": "c",
-      "text": "Il était à l'ouest de Déterre.",
+      "text": "Il hantait un sarcophage.",
       "logic": {
-        "type": "westOf",
-        "other": "d"
+        "type": "onObject",
+        "object": "sarcophage"
       }
     },
     {
-      "who": "c",
-      "text": "Il était au nord de Berce.",
+      "who": "d",
+      "text": "Déterre était au sud d'Enguerrand.",
+      "logic": {
+        "type": "southOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était à l'est de Funeste.",
+      "logic": {
+        "type": "eastOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était au nord de Belladone.",
       "logic": {
         "type": "northOf",
         "other": "b"
       }
     },
     {
-      "who": "d",
-      "text": "Déterre était au nord d'Écarlate.",
-      "logic": {
-        "type": "northOf",
-        "other": "e"
-      }
-    },
-    {
       "who": "e",
-      "text": "Écarlate était au sud de Funeste.",
-      "logic": {
-        "type": "southOf",
-        "other": "f"
-      }
-    },
-    {
-      "who": "f",
-      "text": "Funeste était à l'ouest d'Écarlate.",
+      "text": "Enguerrand était à l'ouest de Belladone.",
       "logic": {
         "type": "westOf",
-        "other": "e"
+        "other": "b"
       }
     },
     {
       "who": "f",
-      "text": "Il était dans l'allée des ifs.",
+      "text": "Funeste était dans l'allée des ifs.",
       "logic": {
         "type": "inRoom",
         "room": "A"
@@ -338,55 +346,55 @@
     },
     {
       "who": "g",
-      "text": "Gontran était dans la même colonne qu'un sarcophage.",
+      "text": "Garance était au sud de Chaînon.",
       "logic": {
-        "type": "sameColAs",
-        "object": "sarcophage"
+        "type": "southOf",
+        "other": "c"
       }
     }
   ],
   "solution": {
     "positions": {
       "h": [
+        6,
+        6
+      ],
+      "d": [
+        4,
+        4
+      ],
+      "c": [
+        2,
+        7
+      ],
+      "b": [
+        5,
+        5
+      ],
+      "g": [
         7,
         2
       ],
-      "d": [
-        3,
-        7
-      ],
-      "a": [
-        1,
-        5
-      ],
-      "e": [
-        5,
-        4
-      ],
-      "b": [
-        6,
-        0
-      ],
       "f": [
-        0,
+        1,
         3
       ],
-      "g": [
-        2,
+      "e": [
+        3,
         1
       ],
-      "c": [
-        4,
-        6
+      "a": [
+        0,
+        0
       ]
     },
     "murderer": "b"
   },
   "rating": {
     "skulls": 2,
-    "score": 4,
+    "score": 3,
     "hardest": "pièces",
-    "hardSteps": 2,
+    "hardSteps": 1,
     "directStart": 1
   },
   "difficulty": 2

@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "title": "Le Château de Mortebrune — l'affaire Grigou",
   "intro": "Le gobelin Grigou a été retrouvé sans vie au petit matin, au Château de Mortebrune. Six invités juraient qu'ils dormaient. Un seul était avec lui.",
-  "epilogue": "Dardafeu avoue : Grigou voulait le mettre en cage dans la cour, comme attraction pour les visiteurs.",
+  "epilogue": "Ardent avoue : Grigou voulait le mettre en cage dans la cour, comme attraction pour les visiteurs.",
   "size": 7,
   "rooms": {
     "C": {
@@ -181,25 +181,16 @@
   "characters": [
     {
       "id": "a",
-      "name": "Arpège",
+      "name": "Ardent",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧑‍🎤",
-      "desc": "Barde, chante faux",
-      "archetype": "barde"
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
     },
     {
       "id": "b",
-      "name": "Bérénwë",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧝‍♀️",
-      "desc": "Elfe, critique gastronomique",
-      "archetype": "elfe"
-    },
-    {
-      "id": "c",
-      "name": "Clodomir",
+      "name": "Bertrand",
       "gender": "m",
       "role": "suspect",
       "icon": "🤺",
@@ -207,13 +198,25 @@
       "archetype": "chevalier"
     },
     {
-      "id": "d",
-      "name": "Dardafeu",
+      "id": "c",
+      "name": "Couac",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐉",
-      "desc": "Dragonnet, brûle tout ce qu'il touche",
-      "archetype": "dragonnet"
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
+    },
+    {
+      "id": "d",
+      "name": "Diaphane",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ]
     },
     {
       "id": "e",
@@ -226,15 +229,12 @@
     },
     {
       "id": "f",
-      "name": "Frisson",
-      "gender": "m",
+      "name": "Faëlys",
+      "gender": "f",
       "role": "suspect",
-      "icon": "👻",
-      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
-      "archetype": "spectre",
-      "traits": [
-        "spectre"
-      ]
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
     },
     {
       "id": "g",
@@ -251,107 +251,99 @@
   "clues": [
     {
       "who": "a",
-      "text": "Arpège était à côté d'un tonneau.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "tonneau"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Bérénwë était à l'ouest de Dardafeu.",
-      "logic": {
-        "type": "westOf",
-        "other": "d"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Elle était à côté d'un champignon géant.",
+      "text": "Ardent était à côté d'un champignon géant.",
       "logic": {
         "type": "adjacentTo",
         "object": "champi"
       }
     },
     {
-      "who": "c",
-      "text": "Clodomir était sur la même ligne qu'une botte de foin.",
+      "who": "a",
+      "text": "Il était sur la même ligne qu'une étagère.",
       "logic": {
         "type": "sameRowAs",
-        "object": "foin"
+        "object": "etagere"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bertrand était sur la même ligne qu'un champignon géant.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Couac était au sud de Diaphane.",
+      "logic": {
+        "type": "southOf",
+        "other": "d"
       }
     },
     {
       "who": "d",
-      "text": "Dardafeu était sur la même ligne qu'un tonneau.",
+      "text": "Diaphane était à côté d'un coffre.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "tonneau"
+        "type": "adjacentTo",
+        "object": "coffre"
       }
     },
     {
       "who": "e",
-      "text": "Eudes était sur la même ligne qu'un arbre.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "arbre"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Il était à l'est de Frisson.",
+      "text": "Eudes était à l'est de Bertrand.",
       "logic": {
         "type": "eastOf",
-        "other": "f"
+        "other": "b"
       }
     },
     {
       "who": "f",
-      "text": "Frisson était sur la même ligne qu'un sarcophage.",
+      "text": "Faëlys était au nord de Bertrand.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "sarcophage"
+        "type": "northOf",
+        "other": "b"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        0,
-        2
-      ],
-      "c": [
-        5,
-        6
-      ],
-      "a": [
-        1,
-        5
+        3,
+        4
       ],
       "b": [
         4,
-        3
+        5
       ],
-      "f": [
+      "c": [
         6,
         0
       ],
+      "f": [
+        0,
+        3
+      ],
       "d": [
         2,
-        4
+        1
+      ],
+      "a": [
+        5,
+        2
       ],
       "e": [
-        3,
-        1
+        1,
+        6
       ]
     },
-    "murderer": "d"
+    "murderer": "a"
   },
   "rating": {
     "skulls": 2,
-    "score": 3,
+    "score": 4,
     "hardest": "pièces",
-    "hardSteps": 1,
+    "hardSteps": 2,
     "directStart": 1
   },
   "difficulty": 2

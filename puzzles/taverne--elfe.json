@@ -128,16 +128,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aubépine",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧚",
-      "desc": "Fée, doit trois tournées",
-      "archetype": "fee"
-    },
-    {
-      "id": "b",
-      "name": "Bâfrin",
+      "name": "Avaloir",
       "gender": "m",
       "role": "suspect",
       "icon": "🧌",
@@ -145,13 +136,22 @@
       "archetype": "troll"
     },
     {
+      "id": "b",
+      "name": "Bruyère",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
+    },
+    {
       "id": "c",
-      "name": "Couac",
+      "name": "Cornélius",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧑‍🎤",
-      "desc": "Barde, chante faux",
-      "archetype": "barde"
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage"
     },
     {
       "id": "d",
@@ -164,12 +164,12 @@
     },
     {
       "id": "e",
-      "name": "Eustache",
+      "name": "Écho",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧙‍♂️",
-      "desc": "Mage, allergique au houblon",
-      "archetype": "mage"
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
     },
     {
       "id": "f",
@@ -186,93 +186,93 @@
   "clues": [
     {
       "who": "a",
-      "text": "Aubépine était sur la même ligne qu'un tonneau.",
+      "text": "Avaloir était sur la même ligne qu'une étagère.",
       "logic": {
         "type": "sameRowAs",
-        "object": "tonneau"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Elle était à côté d'une étagère.",
-      "logic": {
-        "type": "adjacentTo",
         "object": "etagere"
       }
     },
     {
-      "who": "b",
-      "text": "Bâfrin était dans la cave.",
-      "logic": {
-        "type": "inRoom",
-        "room": "R"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Couac était à l'ouest d'Eustache.",
+      "who": "a",
+      "text": "Il était à l'ouest de Denier.",
       "logic": {
         "type": "westOf",
-        "other": "e"
+        "other": "d"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était assis sur une chaise.",
+      "logic": {
+        "type": "onObject",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bruyère était à l'ouest de Cornélius.",
+      "logic": {
+        "type": "westOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Elle était dans la même colonne qu'un chaudron.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chaudron"
       }
     },
     {
       "who": "c",
-      "text": "Il était à côté d'un lit.",
+      "text": "Cornélius était dans la cuisine.",
+      "logic": {
+        "type": "inRoom",
+        "room": "C"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Denier était à côté d'un coffre.",
       "logic": {
         "type": "adjacentTo",
-        "object": "lit"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Denier était sur la même ligne qu'une table.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "table"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Il était à l'est de Couac.",
-      "logic": {
-        "type": "eastOf",
-        "other": "c"
+        "object": "coffre"
       }
     },
     {
       "who": "e",
-      "text": "Eustache était au sud de Couac.",
+      "text": "Écho était à côté d'une botte de foin.",
       "logic": {
-        "type": "southOf",
-        "other": "c"
+        "type": "adjacentTo",
+        "object": "foin"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        1,
+        3,
         0
       ],
-      "e": [
-        5,
-        4
-      ],
       "c": [
-        4,
-        1
+        0,
+        5
       ],
-      "b": [
-        3,
+      "e": [
+        4,
         3
       ],
       "a": [
+        1,
+        1
+      ],
+      "b": [
         2,
-        5
+        4
       ],
       "d": [
-        0,
+        5,
         2
       ]
     },
@@ -281,7 +281,7 @@
   "rating": {
     "skulls": 1,
     "score": 2,
-    "hardest": "position relative",
+    "hardest": "ligne réservée",
     "hardSteps": 0,
     "directStart": 1
   },

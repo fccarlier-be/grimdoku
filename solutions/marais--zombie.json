@@ -1,95 +1,81 @@
 {
  "positions": {
-  "a": [
-   1,
-   4
-  ],
-  "b": [
-   2,
+  "f": [
+   4,
    2
   ],
-  "c": [
-   0,
+  "a": [
+   1,
    0
   ],
-  "e": [
-   4,
-   1
-  ],
-  "d": [
-   5,
-   5
-  ],
-  "f": [
+  "c": [
    3,
    3
+  ],
+  "e": [
+   0,
+   5
+  ],
+  "b": [
+   5,
+   4
+  ],
+  "d": [
+   2,
+   1
   ]
  },
- "murderer": "a",
+ "murderer": "b",
  "cast": {
   "a": "a",
-  "b": "b",
-  "c": "d",
-  "e": "e",
-  "d": "c"
+  "c": "b",
+  "e": "c",
+  "b": "d",
+  "d": "e"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "a",
+   "who": "c",
    "logic": {
-    "type": "inRoom",
-    "room": "R"
+    "type": "southOf",
+    "other": "d"
    }
   },
   {
-   "who": "b",
+   "who": "e",
    "logic": {
-    "type": "southOf",
+    "type": "eastOf",
     "other": "c"
    }
   },
   {
    "who": "d",
    "logic": {
-    "type": "southOf",
-    "other": "e"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "westOf",
-    "other": "b"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
     "type": "sameColAs",
-    "object": "champi"
+    "object": "chaudron"
    }
   },
   {
    "who": "b",
    "logic": {
-    "type": "inRoom",
-    "room": "P"
+    "type": "onObject",
+    "object": "champi"
    }
   },
   {
-   "who": "e",
+   "who": "c",
    "logic": {
-    "type": "inRoom",
-    "room": "I"
+    "type": "sameColAs",
+    "object": "tonneau"
    }
   },
   {
-   "who": "d",
+   "who": "a",
    "logic": {
-    "type": "eastOf",
-    "other": "a"
+    "type": "onObject",
+    "object": "lit"
    }
   }
  ]

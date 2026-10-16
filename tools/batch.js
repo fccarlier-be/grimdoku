@@ -20,7 +20,10 @@ const ONLY = arg('only', '');
 const TARGETS = { 6: [0, 1, 0, 1, 2, 1], 7: [1, 2, 1, 2, 3, 2, 1], 8: [2, 3, 2, 3, 2, 3, 2, 3] };
 const TRIES = { 6: 60, 7: 60, 8: 25 };
 const TIMEOUT = { 6: 60e3, 7: 120e3, 8: 300e3 };
-const SEEDS = [1, 2, 3, 4, 5, 6];
+// graines propres à chaque affaire (sinon deux affaires d'un même décor tirent la même grille)
+const hash = (s) => [...s].reduce((h, ch) => (h * 31 + ch.charCodeAt(0)) % 1000003, 7);
+const SEEDS = Number(arg('seeds', 6)); // --seeds=N : plus d'essais pour une affaire difficile
+const seedsOf = (id) => Array.from({ length: SEEDS }, (_, k) => hash(id) * 7 + k + 1);
 
 // énigmes écrites à la main : lues dans build-puzzles.js
 const manifestSrc = fs.readFileSync(path.join(ROOT, 'build-puzzles.js'), 'utf8').match(/const MANIFEST = (\[[\s\S]*?\n\]);/)[1];
@@ -50,17 +53,35 @@ for (const f of fs.readdirSync(path.join(ROOT, 'scenes')).sort()) {
 const BIG_TARGETS = { false: [1, 2, 1, 2, 2], true: [1, 2, 2, 3, 2] };
 JSON.parse(fs.readFileSync(path.join(ROOT, 'big-cases.json'), 'utf8')).cases.forEach((c, i) => {
   const size = loadScene(scenePath(c.scene)).size;
-  jobs.push({ id: c.id, scene: c.scene, victim: c.victim, big: c.big, hidden: !!c.hidden, size, target: BIG_TARGETS[!!c.hidden][i % 5] });
+  jobs.push({ id: c.id, scene: c.scene, victim: c.victim, big: c.big, shapes: c.shapes, hidden: !!c.hidden, hiddenMax: c.hiddenMax, size, target: BIG_TARGETS[!!c.hidden][i % 5] });
 });
 const todo = jobs.filter(j => !fs.existsSync(path.join(ROOT, 'solutions', j.id + '.json')) && (!ONLY || j.scene === ONLY || j.scene.startsWith(ONLY + '-')));
 console.log(`${todo.length} affaire(s) à produire, ${JOBS} en parallèle`);
 
+// grilles déjà produites dans le même décor (variantes comprises) : à ne pas refaire
+const decorOf = (job) => baseOf(job.scene);
+function avoidFile(job) {
+  const out = [];
+  for (const j of jobs) {
+    if (j.id === job.id || decorOf(j) !== decorOf(job)) continue;
+    const f = path.join(ROOT, 'solutions', j.id + '.json');
+    if (!fs.existsSync(f)) continue;
+    const sol = JSON.parse(fs.readFileSync(f, 'utf8'));
+    const vic = Object.keys(sol.positions).sort().pop(); // la victime prend la dernière lettre
+    out.push(E.layoutSig(sol.positions, vic));
+  }
+  const file = path.join(os.tmpdir(), `grimdoku-avoid-${process.pid}-${job.id}.json`);
+  fs.writeFileSync(file, JSON.stringify(out));
+  return file;
+}
+
 function runGen(job, seed, skulls) {
   return new Promise((done) => {
-    const args = ['gen.js', `scenes/${job.scene}.json`, String(seed), '--level=1', `--skulls=${skulls}`, `--tries=${TRIES[job.size]}`];
+    const args = ['gen.js', `scenes/${job.scene}.json`, String(seed), '--level=1', `--skulls=${skulls}`, `--tries=${TRIES[job.size]}`, `--avoid=${job.avoid}`];
     if (job.victim) args.push(`--victim=${job.victim}`);
-    if (job.big) args.push(`--big=${job.big.join(',')}`);
+    if (job.big) args.push(`--big=${job.big.map((t, i) => t + ':' + job.shapes[i]).join(',')}`);
     if (job.hidden) args.push('--hidden');
+    if (job.hiddenMax) args.push(`--hidden-max=${job.hiddenMax}`);
     const child = spawn(process.execPath, args, { cwd: ROOT });
     let out = '';
     child.stdout.on('data', d => (out += d));
@@ -73,15 +94,17 @@ function runGen(job, seed, skulls) {
 const fallbacks = (t) => [t, t - 1, t + 1, t - 2, t + 2, t + 3, t - 3].filter((x, i, a) => x >= 0 && x <= 3 && a.indexOf(x) === i);
 
 async function produce(job) {
+  job.avoid = avoidFile(job);
   for (const skulls of fallbacks(job.target)) {
-    for (const seed of SEEDS) {
+    for (const seed of seedsOf(job.id)) {
       const out = await runGen(job, seed, skulls);
       if (!out) continue;
       const sol = JSON.parse(out);
       const base = loadScene(scenePath(job.scene));
-      const scene = job.big ? withBig(base, job.victim, job.big) : job.victim ? withVictim(base, job.victim) : base;
+      const scene = job.big ? withBig(base, job.victim, job.big, job.shapes) : job.victim ? withVictim(base, job.victim) : base;
       const p = resolve(scene, sol.cast);
       if (job.hidden) p.hiddenShapes = true;
+      if (job.hiddenMax) p.hiddenMax = job.hiddenMax;
       const h = E.humanSolve(p, sol.clues, 2);
       if (!h.solved || E.solve(p, sol.clues, 2).length !== 1) continue;
       fs.writeFileSync(path.join(ROOT, 'solutions', job.id + '.json'), JSON.stringify(sol, null, 1) + '\n');
@@ -98,8 +121,17 @@ async function produce(job) {
 (async () => {
   const queue = [...todo];
   let ok = 0;
+  // une seule affaire à la fois par décor : chacune voit les grilles déjà produites des autres
+  const busy = new Set();
   await Promise.all(Array.from({ length: JOBS }, async () => {
-    while (queue.length) if (await produce(queue.shift())) ok++;
+    for (;;) {
+      const i = queue.findIndex(j => !busy.has(decorOf(j)));
+      if (i < 0) { if (!queue.length) return; await new Promise(r => setTimeout(r, 500)); continue; }
+      const job = queue.splice(i, 1)[0];
+      busy.add(decorOf(job));
+      if (await produce(job)) ok++;
+      busy.delete(decorOf(job));
+    }
   }));
   console.log(`terminé : ${ok}/${todo.length} produite(s)`);
 })();

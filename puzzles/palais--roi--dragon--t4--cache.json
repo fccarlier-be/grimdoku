@@ -1,0 +1,329 @@
+{
+  "formatVersion": 1,
+  "title": "Le Palais des Mille Vœux — l'affaire Eudes",
+  "size": 7,
+  "rooms": {
+    "O": {
+      "name": "Observatoire",
+      "the": "l'observatoire",
+      "floor": "mosaique"
+    },
+    "T": {
+      "name": "Salle du trône",
+      "the": "la salle du trône",
+      "floor": "noble"
+    },
+    "R": {
+      "name": "Trésor",
+      "the": "le trésor",
+      "floor": "noble"
+    },
+    "L": {
+      "name": "Salle des lampes",
+      "the": "la salle des lampes",
+      "floor": "dalles"
+    },
+    "J": {
+      "name": "Jardins suspendus",
+      "the": "les jardins suspendus",
+      "floor": "herbe"
+    },
+    "B": {
+      "name": "Bazar",
+      "the": "le bazar",
+      "floor": "tomettes"
+    },
+    "H": {
+      "name": "Hammam",
+      "the": "le hammam",
+      "floor": "mosaique"
+    }
+  },
+  "layout": [
+    "OOTTTRR",
+    "OOTTTRR",
+    "LLTTTBB",
+    "LLJJJBB",
+    "HHJJJBB",
+    "HHHJJBB",
+    "HHHJJBB"
+  ],
+  "objects": [
+    {
+      "type": "cristal",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        1,
+        3
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        2
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        1,
+        6
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        4
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        4,
+        2
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        6,
+        6
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        6,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        0
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Ardent",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragon adulte, toujours lové dans un coin",
+      "archetype": "dragon",
+      "shape": "T4"
+    },
+    {
+      "id": "b",
+      "name": "Bohémia",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🔮",
+      "desc": "Cartomancienne, voit l'avenir, rate le présent",
+      "archetype": "cartomancienne"
+    },
+    {
+      "id": "c",
+      "name": "Chaparde",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "d",
+      "name": "Duperon",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🎩",
+      "desc": "Bonimenteur, vend du rêve au kilo",
+      "archetype": "bonimenteur"
+    },
+    {
+      "id": "e",
+      "name": "Eudes",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🤴",
+      "desc": "Roi, avare de compliments et de tout le reste",
+      "archetype": "roi"
+    }
+  ],
+  "decor": "palais",
+  "id": "palais--roi--dragon--t4--cache",
+  "hiddenShapes": true,
+  "intro": "Le roi Eudes a été retrouvé sans vie au Palais des Mille Vœux, sous un tapis volant qui ne volait plus. Quatre invités avaient fait un vœu ce soir-là. Un seul était avec lui.",
+  "epilogue": "Chaparde avoue : Eudes avait compté les pièces du trésor. Il en manquait. Le gobelin savait où.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Ardent était sur la même ligne qu'une chaise.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était dans la même colonne qu'un champignon géant.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était dans la même colonne qu'une chaise.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bohémia était sur un tapis.",
+      "logic": {
+        "type": "onObject",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Chaparde était à côté d'un tonneau.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Duperon était sur la même ligne qu'un arbre.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "arbre"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "e": [
+        6,
+        5
+      ],
+      "a": [
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          2
+        ]
+      ],
+      "b": [
+        1,
+        3
+      ],
+      "d": [
+        3,
+        4
+      ],
+      "c": [
+        2,
+        6
+      ]
+    },
+    "murderer": "c"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 3,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 1
+  },
+  "difficulty": 5
+}

@@ -185,30 +185,33 @@
   "characters": [
     {
       "id": "a",
-      "name": "Anatole",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧟",
-      "desc": "Zombie, ancien apprenti. Ancien tout court",
-      "archetype": "zombie"
-    },
-    {
-      "id": "b",
-      "name": "Becquet",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🐦‍⬛",
-      "desc": "Corbeau, écrit des lettres anonymes",
-      "archetype": "corbeau"
-    },
-    {
-      "id": "c",
-      "name": "Ciguë",
+      "name": "Aconit",
       "gender": "f",
       "role": "suspect",
       "icon": "🧙‍♀️",
       "desc": "Sorcière des marais, cuisine tout ce qui coasse",
       "archetype": "sorciere"
+    },
+    {
+      "id": "b",
+      "name": "Blafard",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ]
+    },
+    {
+      "id": "c",
+      "name": "Clodomir",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
     },
     {
       "id": "d",
@@ -230,24 +233,21 @@
     },
     {
       "id": "f",
-      "name": "Foulques",
+      "name": "Funeste",
       "gender": "m",
       "role": "suspect",
-      "icon": "🤺",
-      "desc": "Chevalier, armure trop petite depuis Noël",
-      "archetype": "chevalier"
+      "icon": "🐦‍⬛",
+      "desc": "Corbeau, écrit des lettres anonymes",
+      "archetype": "corbeau"
     },
     {
       "id": "g",
-      "name": "Grisâtre",
+      "name": "Gédéon",
       "gender": "m",
       "role": "suspect",
-      "icon": "👻",
-      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
-      "archetype": "spectre",
-      "traits": [
-        "spectre"
-      ]
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
     },
     {
       "id": "h",
@@ -262,147 +262,131 @@
   "decor": "cimetiere",
   "id": "cimetiere--vampire",
   "intro": "La comtesse Hémoglobine a été retrouvée sans vie au Cimetière de Minuit, ce qui, admettons-le, simplifie les démarches. Sept habitués rôdaient entre les tombes. Un seul était avec elle.",
-  "epilogue": "Anatole avoue, lentement : Hémoglobine l'avait réveillé à minuit pile. Il venait juste de s'endormir.",
+  "epilogue": "Funeste avoue, et l'écrit dans une lettre anonyme : Hémoglobine avait découvert qui écrivait les lettres anonymes.",
   "clues": [
     {
       "who": "a",
-      "text": "Anatole était dans la même colonne qu'une statue.",
+      "text": "Aconit était à côté d'une table.",
       "logic": {
-        "type": "sameColAs",
-        "object": "statue"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était sur la même ligne qu'une statue.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "statue"
+        "type": "adjacentTo",
+        "object": "table"
       }
     },
     {
       "who": "b",
-      "text": "Becquet était dans la même colonne qu'une statue.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "statue"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était à l'est de Grisâtre.",
-      "logic": {
-        "type": "eastOf",
-        "other": "g"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Ciguë était au sud de Becquet.",
+      "text": "Blafard était au sud de Déterre.",
       "logic": {
         "type": "southOf",
-        "other": "b"
+        "other": "d"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il hantait un arbre.",
+      "logic": {
+        "type": "onObject",
+        "object": "arbre"
       }
     },
     {
       "who": "c",
-      "text": "Elle était dans l'allée des ifs.",
+      "text": "Clodomir était à l'est de Déterre.",
       "logic": {
-        "type": "inRoom",
-        "room": "A"
+        "type": "eastOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était au sud d'Eugène.",
+      "logic": {
+        "type": "southOf",
+        "other": "e"
       }
     },
     {
       "who": "d",
-      "text": "Déterre était sur la même ligne qu'un lit.",
+      "text": "Déterre était dans l'ossuaire.",
+      "logic": {
+        "type": "inRoom",
+        "room": "O"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était dans la même colonne qu'un sarcophage.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "sarcophage"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Eugène était dans la même colonne qu'un lit.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Funeste était sur la même ligne qu'un lit.",
       "logic": {
         "type": "sameRowAs",
         "object": "lit"
       }
     },
     {
-      "who": "d",
-      "text": "Il était dans la même colonne qu'une tombe.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "tombe"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Eugène n'était pas dans le caveau.",
-      "logic": {
-        "type": "notInRoom",
-        "room": "K"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Il était à l'est de Ciguë.",
-      "logic": {
-        "type": "eastOf",
-        "other": "c"
-      }
-    },
-    {
-      "who": "f",
-      "text": "Foulques était à côté d'une tombe.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "tombe"
-      }
-    },
-    {
       "who": "g",
-      "text": "Grisâtre était sur la même ligne qu'un arbre.",
+      "text": "Gédéon était sur la même ligne qu'une tombe.",
       "logic": {
         "type": "sameRowAs",
-        "object": "arbre"
+        "object": "tombe"
       }
     }
   ],
   "solution": {
     "positions": {
-      "a": [
+      "h": [
+        2,
+        5
+      ],
+      "d": [
         6,
         6
       ],
       "b": [
+        7,
+        4
+      ],
+      "g": [
+        5,
+        1
+      ],
+      "a": [
         1,
         2
       ],
-      "d": [
+      "f": [
         0,
-        5
-      ],
-      "c": [
-        3,
         3
       ],
-      "e": [
+      "c": [
         4,
-        4
-      ],
-      "f": [
-        2,
-        1
-      ],
-      "g": [
-        7,
-        0
-      ],
-      "h": [
-        5,
         7
+      ],
+      "e": [
+        3,
+        0
       ]
     },
-    "murderer": "a"
+    "murderer": "f"
   },
   "rating": {
     "skulls": 3,
-    "score": 6,
+    "score": 7,
     "hardest": "pièces",
-    "hardSteps": 2,
+    "hardSteps": 3,
     "directStart": 0
   },
   "difficulty": 3

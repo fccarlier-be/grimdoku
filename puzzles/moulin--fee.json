@@ -127,16 +127,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Ardent",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🐉",
-      "desc": "Dragonnet, brûle tout ce qu'il touche",
-      "archetype": "dragonnet"
-    },
-    {
-      "id": "b",
-      "name": "Bulle",
+      "name": "Aquabelle",
       "gender": "f",
       "role": "suspect",
       "icon": "🧜‍♀️",
@@ -144,8 +135,8 @@
       "archetype": "sirene"
     },
     {
-      "id": "c",
-      "name": "Clovis",
+      "id": "b",
+      "name": "Bob",
       "gender": "m",
       "role": "suspect",
       "icon": "🧟",
@@ -153,22 +144,31 @@
       "archetype": "zombie"
     },
     {
-      "id": "d",
-      "name": "Dupain",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👨‍🌾",
-      "desc": "Meunier, pèse le grain avec le pouce",
-      "archetype": "meunier"
-    },
-    {
-      "id": "e",
-      "name": "Engloutor",
+      "id": "c",
+      "name": "Croquassiette",
       "gender": "m",
       "role": "suspect",
       "icon": "🧌",
       "desc": "Troll, plongeur à mi-temps",
       "archetype": "troll"
+    },
+    {
+      "id": "d",
+      "name": "Dardafeu",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
+      "id": "e",
+      "name": "Épeautre",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🌾",
+      "desc": "Meunier, pèse le grain avec le pouce",
+      "archetype": "meunier"
     },
     {
       "id": "f",
@@ -182,18 +182,50 @@
   ],
   "decor": "moulin",
   "id": "moulin--fee",
-  "epilogue": "Bulle avoue en larmes : Fougère voulait assécher la mare pour agrandir le moulin. On ne touche pas à la maison d'une sirène.",
+  "epilogue": "Dardafeu avoue en fumant des naseaux : Fougère lui demandait de chauffer le four à pain. Gratuitement. Pour la quatorzième fois.",
   "clues": [
     {
       "who": "a",
-      "text": "Ardent était assis sur une chaise.",
+      "text": "Aquabelle était à côté d'un tonneau.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Elle était dans la même colonne qu'une botte de foin.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "foin"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bob était assis sur une chaise.",
       "logic": {
         "type": "onObject",
         "object": "chaise"
       }
     },
     {
-      "who": "a",
+      "who": "b",
+      "text": "Il était dans le potager.",
+      "logic": {
+        "type": "inRoom",
+        "room": "P"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Croquassiette était dans la grange.",
+      "logic": {
+        "type": "inRoom",
+        "room": "G"
+      }
+    },
+    {
+      "who": "c",
       "text": "Il était sur la même ligne qu'un coffre.",
       "logic": {
         "type": "sameRowAs",
@@ -201,73 +233,65 @@
       }
     },
     {
-      "who": "b",
-      "text": "Bulle était assise sur une chaise.",
+      "who": "d",
+      "text": "Dardafeu était sur la même ligne qu'un arbre.",
       "logic": {
-        "type": "onObject",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Clovis était à côté d'un lit.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "lit"
+        "type": "sameRowAs",
+        "object": "arbre"
       }
     },
     {
       "who": "d",
-      "text": "Dupain était dans la mare.",
+      "text": "Il était dans la même colonne qu'une chaise.",
       "logic": {
-        "type": "inRoom",
-        "room": "E"
+        "type": "sameColAs",
+        "object": "chaise"
       }
     },
     {
       "who": "e",
-      "text": "Engloutor n'était pas dans le potager.",
+      "text": "Épeautre était à côté d'un coffre.",
       "logic": {
-        "type": "notInRoom",
-        "room": "P"
+        "type": "adjacentTo",
+        "object": "coffre"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        3,
+        2,
+        1
+      ],
+      "c": [
+        0,
         3
       ],
-      "e": [
-        2,
-        0
+      "a": [
+        5,
+        4
       ],
       "b": [
         4,
         5
       ],
-      "c": [
-        1,
-        4
-      ],
-      "a": [
-        0,
+      "d": [
+        3,
         2
       ],
-      "d": [
-        5,
-        1
+      "e": [
+        1,
+        0
       ]
     },
-    "murderer": "b"
+    "murderer": "d"
   },
   "rating": {
     "skulls": 0,
     "score": 1,
     "hardest": "case unique",
     "hardSteps": 0,
-    "directStart": 1
+    "directStart": 2
   },
   "difficulty": 0
 }

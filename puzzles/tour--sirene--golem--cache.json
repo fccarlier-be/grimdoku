@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "title": "La Tour de l'Archimage — l'affaire Flottille",
   "intro": "La sirène Flottille a été retrouvée sans vie dans la Tour de l'Archimage, où un portail runique relie le laboratoire à la crypte. Cinq invités douteux traînaient dans les étages. Un seul était avec elle.",
-  "epilogue": "Belladone avoue : Flottille avait ouvert les volets de l'observatoire en plein midi. Exprès.",
+  "epilogue": "Draculine avoue : Flottille avait ouvert les volets de l'observatoire en plein midi. Exprès.",
   "size": 7,
   "rooms": {
     "L": {
@@ -162,21 +162,24 @@
   "characters": [
     {
       "id": "a",
-      "name": "Ardent",
+      "name": "Anatole",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐉",
-      "desc": "Dragonnet, brûle tout ce qu'il touche",
-      "archetype": "dragonnet"
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
     },
     {
       "id": "b",
-      "name": "Belladone",
-      "gender": "f",
+      "name": "Blafard",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧛‍♀️",
-      "desc": "Comtesse vampire, végane (elle le jure)",
-      "archetype": "vampire"
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ]
     },
     {
       "id": "c",
@@ -190,24 +193,21 @@
     },
     {
       "id": "d",
-      "name": "Diaphane",
-      "gender": "m",
+      "name": "Draculine",
+      "gender": "f",
       "role": "suspect",
-      "icon": "👻",
-      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
-      "archetype": "spectre",
-      "traits": [
-        "spectre"
-      ]
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
     },
     {
       "id": "e",
-      "name": "Edmond",
+      "name": "Étincel",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧟",
-      "desc": "Zombie, ancien apprenti. Ancien tout court",
-      "archetype": "zombie"
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
     },
     {
       "id": "f",
@@ -222,50 +222,51 @@
   "decor": "tour",
   "id": "tour--sirene--golem--cache",
   "hiddenShapes": true,
+  "hiddenMax": 3,
   "clues": [
     {
       "who": "a",
-      "text": "Ardent était sur la même ligne qu'une boule de cristal.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "cristal"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était dans la même colonne qu'un arbre.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "arbre"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était assis sur une chaise.",
+      "text": "Anatole était sur un champignon géant.",
       "logic": {
         "type": "onObject",
-        "object": "chaise"
+        "object": "champi"
       }
     },
     {
       "who": "b",
-      "text": "Belladone était à côté d'un sarcophage.",
+      "text": "Blafard était sur un tapis.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "sarcophage"
+        "type": "onObject",
+        "object": "tapis"
       }
     },
     {
       "who": "c",
-      "text": "Caillasse était au sud d'Ardent.",
+      "text": "Caillasse était au sud de Draculine.",
       "logic": {
         "type": "southOf",
-        "other": "a"
+        "other": "d"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était à côté d'une statue.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "statue"
       }
     },
     {
       "who": "d",
-      "text": "Diaphane était dans la même colonne qu'un chaudron.",
+      "text": "Draculine était au nord de Blafard.",
+      "logic": {
+        "type": "northOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Étincel était dans la même colonne qu'un chaudron.",
       "logic": {
         "type": "sameColAs",
         "object": "chaudron"
@@ -273,47 +274,55 @@
     },
     {
       "who": "e",
-      "text": "Edmond était dans la même colonne qu'un tapis.",
+      "text": "Il n'était pas dans l'escalier.",
       "logic": {
-        "type": "sameColAs",
-        "object": "tapis"
+        "type": "notInRoom",
+        "room": "E"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était à l'ouest de Draculine.",
+      "logic": {
+        "type": "westOf",
+        "other": "d"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        1,
-        2
+        6,
+        4
       ],
       "c": [
         [
-          5,
-          0
+          1,
+          6
         ],
         [
-          6,
-          0
+          2,
+          6
         ]
       ],
-      "d": [
+      "b": [
         3,
+        3
+      ],
+      "e": [
+        4,
         1
       ],
       "a": [
+        5,
+        5
+      ],
+      "d": [
         0,
-        6
-      ],
-      "e": [
-        2,
-        3
-      ],
-      "b": [
-        4,
-        4
+        2
       ]
     },
-    "murderer": "b"
+    "murderer": "d"
   },
   "rating": {
     "skulls": 2,

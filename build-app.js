@@ -47,17 +47,7 @@ for (const type of Object.keys(ARCHETYPES)) {
   const viewBox = (svg.match(/viewBox="([^"]+)"/) || [])[1] || '0 0 64 64';
   symbols.push(`<symbol id="chr-${type}" viewBox="${viewBox}">${svg.replace(/^<svg[^>]*>/, '').replace(/<\/svg>$/, '')}</symbol>`);
 }
-// grands personnages : image entière <type>-full.webp → <symbol id="big-<type>"> au format de sa forme (en cases)
-const BOX = { I2: [2, 1], I3: [3, 1], L3: [2, 2] };
-let bigImages = 0;
-for (const [type, a] of Object.entries(ARCHETYPES)) {
-  const full = `assets/characters/${type}-full.webp`;
-  if (!a.shape) continue;
-  if (!fs.existsSync(full)) { missing.push('grand personnage entier ' + type); continue; }
-  const [w, h] = BOX[a.shape];
-  symbols.push(`<symbol id="big-${type}" viewBox="0 0 ${w * 64} ${h * 64}"><image href="data:image/webp;base64,${fs.readFileSync(full).toString('base64')}" width="${w * 64}" height="${h * 64}"/></symbol>`);
-  bigImages++;
-}
+// grands personnages : leur portrait (<type>.webp, buste tiré de l'image entière par tools/images.py) sur chacune de leurs cases
 // sols : assets/floors/<matière>.webp → une classe .fl-<matière> par matière (texture teintée par la couleur de la pièce) ;
 // parchemin.webp → fond du cadre de la carte. Sans texture : couleur unie de la pièce (repli).
 const floorsUsed = [...new Set(puzzles.flatMap(p => Object.values(p.rooms).map(r => r.floor)).filter(Boolean))].sort();
@@ -127,5 +117,5 @@ const out = t.replace('/*__ENGINE__*/', () => engine)
   .replace('/*__FLOORS__*/', () => floorCss.join('\n'));
 fs.mkdirSync('dist', { recursive: true });
 fs.writeFileSync('dist/grimdoku.html', out);
-console.log('dist/grimdoku.html', out.length, 'octets,', symbols.length, 'dessins, dont', objImages, 'objet(s) et', images, 'portrait(s) illustrés,', bigImages, 'grand(s) personnage(s) en entier');
+console.log('dist/grimdoku.html', out.length, 'octets,', symbols.length, 'dessins, dont', objImages, 'objet(s) et', images, 'portrait(s) illustrés');
 if (missing.length) console.log('⚠️  sans image (emoji provisoire) :', missing.join(', '));

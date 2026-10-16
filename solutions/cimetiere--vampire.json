@@ -1,55 +1,104 @@
 {
  "positions": {
-  "a": [
+  "h": [
+   2,
+   5
+  ],
+  "d": [
    6,
    6
   ],
   "b": [
+   7,
+   4
+  ],
+  "g": [
+   5,
+   1
+  ],
+  "a": [
    1,
    2
   ],
-  "d": [
+  "f": [
    0,
-   5
-  ],
-  "c": [
-   3,
    3
   ],
-  "e": [
+  "c": [
    4,
-   4
-  ],
-  "f": [
-   2,
-   1
-  ],
-  "g": [
-   7,
-   0
-  ],
-  "h": [
-   5,
    7
+  ],
+  "e": [
+   3,
+   0
   ]
  },
- "murderer": "a",
+ "murderer": "f",
  "cast": {
-  "a": "c",
-  "b": "e",
   "d": "a",
-  "c": "d",
-  "e": "g",
-  "f": "f",
-  "g": "b"
+  "b": "b",
+  "g": "c",
+  "a": "d",
+  "f": "e",
+  "c": "f",
+  "e": "g"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "d",
+   "who": "b",
+   "logic": {
+    "type": "southOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "g",
    "logic": {
     "type": "sameRowAs",
+    "object": "tombe"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "eastOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "inRoom",
+    "room": "O"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "onObject",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "table"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
     "object": "lit"
    }
   },
@@ -57,77 +106,14 @@
    "who": "c",
    "logic": {
     "type": "southOf",
-    "other": "b"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "sameColAs",
-    "object": "statue"
-   }
-  },
-  {
-   "who": "f",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "tombe"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "sameColAs",
-    "object": "statue"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "inRoom",
-    "room": "A"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "eastOf",
-    "other": "g"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "statue"
+    "other": "e"
    }
   },
   {
    "who": "d",
    "logic": {
     "type": "sameColAs",
-    "object": "tombe"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "notInRoom",
-    "room": "K"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "eastOf",
-    "other": "c"
-   }
-  },
-  {
-   "who": "g",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "arbre"
+    "object": "sarcophage"
    }
   }
  ]

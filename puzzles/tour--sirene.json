@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "title": "La Tour de l'Archimage — l'affaire Goémone",
   "intro": "La sirène Goémone a été retrouvée sans vie dans la Tour de l'Archimage, où un portail runique relie le laboratoire à la crypte. Six invités douteux traînaient dans les étages. Un seul était avec elle.",
-  "epilogue": "Draculine avoue : Goémone avait ouvert les volets de l'observatoire en plein midi. Exprès.",
+  "epilogue": "Clovis avoue, lentement : Goémone l'avait ramené à la vie pour faire le ménage. Il n'avait rien demandé.",
   "size": 7,
   "rooms": {
     "L": {
@@ -162,16 +162,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Anatole",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧟",
-      "desc": "Zombie, ancien apprenti. Ancien tout court",
-      "archetype": "zombie"
-    },
-    {
-      "id": "b",
-      "name": "Blanchebarbe",
+      "name": "Argentbarbe",
       "gender": "m",
       "role": "suspect",
       "icon": "🧙‍♂️",
@@ -179,8 +170,8 @@
       "archetype": "archimage"
     },
     {
-      "id": "c",
-      "name": "Chaînon",
+      "id": "b",
+      "name": "Blafard",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -191,17 +182,17 @@
       ]
     },
     {
-      "id": "d",
-      "name": "Draculine",
-      "gender": "f",
+      "id": "c",
+      "name": "Clovis",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧛‍♀️",
-      "desc": "Comtesse vampire, végane (elle le jure)",
-      "archetype": "vampire"
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
     },
     {
-      "id": "e",
-      "name": "Étincel",
+      "id": "d",
+      "name": "Dardafeu",
       "gender": "m",
       "role": "suspect",
       "icon": "🐉",
@@ -209,13 +200,22 @@
       "archetype": "dragonnet"
     },
     {
-      "id": "f",
-      "name": "Fumerolle",
+      "id": "e",
+      "name": "Encensia",
       "gender": "f",
       "role": "suspect",
       "icon": "🧞‍♀️",
       "desc": "Djinn, a déjà exaucé deux vœux de trop",
       "archetype": "djinn"
+    },
+    {
+      "id": "f",
+      "name": "Funestine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
     },
     {
       "id": "g",
@@ -232,10 +232,10 @@
   "clues": [
     {
       "who": "a",
-      "text": "Anatole était dans la même colonne qu'un arbre.",
+      "text": "Argentbarbe était sur la même ligne qu'une boule de cristal.",
       "logic": {
-        "type": "sameColAs",
-        "object": "arbre"
+        "type": "sameRowAs",
+        "object": "cristal"
       }
     },
     {
@@ -248,84 +248,100 @@
     },
     {
       "who": "b",
-      "text": "Blanchebarbe était sur un champignon géant.",
+      "text": "Blafard était sur un tapis.",
       "logic": {
         "type": "onObject",
-        "object": "champi"
+        "object": "tapis"
       }
     },
     {
       "who": "c",
-      "text": "Chaînon était à côté d'une statue.",
+      "text": "Clovis était au sud de Dardafeu.",
+      "logic": {
+        "type": "southOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était à côté d'un portail runique.",
       "logic": {
         "type": "adjacentTo",
-        "object": "statue"
+        "object": "portail"
       }
     },
     {
       "who": "d",
-      "text": "Draculine était sur la même ligne qu'une étagère.",
+      "text": "Dardafeu était dans la même colonne qu'un portail runique.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "etagere"
+        "type": "sameColAs",
+        "object": "portail"
       }
     },
     {
       "who": "e",
-      "text": "Étincel était dans la même colonne qu'une statue.",
+      "text": "Encensia était dans la même colonne qu'un sarcophage.",
       "logic": {
         "type": "sameColAs",
-        "object": "statue"
+        "object": "sarcophage"
       }
     },
     {
       "who": "f",
-      "text": "Fumerolle était au sud d'Anatole.",
+      "text": "Funestine était au nord de Dardafeu.",
       "logic": {
-        "type": "southOf",
-        "other": "a"
+        "type": "northOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Elle était à l'ouest d'Encensia.",
+      "logic": {
+        "type": "westOf",
+        "other": "e"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        3,
-        4
-      ],
-      "c": [
-        4,
-        1
-      ],
-      "e": [
-        6,
-        0
-      ],
-      "a": [
-        0,
-        6
-      ],
-      "d": [
-        2,
-        3
-      ],
-      "f": [
         1,
         2
       ],
       "b": [
         5,
+        1
+      ],
+      "d": [
+        4,
         5
+      ],
+      "c": [
+        6,
+        4
+      ],
+      "f": [
+        3,
+        0
+      ],
+      "e": [
+        2,
+        3
+      ],
+      "a": [
+        0,
+        6
       ]
     },
-    "murderer": "d"
+    "murderer": "c"
   },
   "rating": {
     "skulls": 2,
-    "score": 4,
+    "score": 3,
     "hardest": "pièces",
-    "hardSteps": 2,
-    "directStart": 2
+    "hardSteps": 1,
+    "directStart": 1
   },
   "difficulty": 2
 }

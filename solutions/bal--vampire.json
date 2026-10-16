@@ -1,123 +1,116 @@
 {
  "positions": {
   "h": [
-   2,
-   4
-  ],
-  "b": [
-   1,
-   0
-  ],
-  "g": [
    3,
    3
   ],
   "a": [
-   6,
-   1
+   4,
+   0
+  ],
+  "b": [
+   2,
+   7
   ],
   "d": [
    5,
+   6
+  ],
+  "e": [
+   1,
+   4
+  ],
+  "g": [
+   6,
+   5
+  ],
+  "f": [
+   7,
    2
   ],
   "c": [
-   7,
-   6
-  ],
-  "f": [
-   4,
-   5
-  ],
-  "e": [
    0,
-   7
+   1
   ]
  },
- "murderer": "g",
+ "murderer": "e",
  "cast": {
-  "b": "a",
-  "g": "b",
-  "a": "c",
-  "d": "d",
-  "c": "e",
+  "a": "a",
+  "b": "b",
+  "d": "c",
+  "e": "d",
+  "g": "e",
   "f": "f",
-  "e": "g"
+  "c": "g"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "b",
-   "logic": {
-    "type": "southOf",
-    "other": "e"
-   }
-  },
-  {
-   "who": "g",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "table"
-   }
-  },
-  {
    "who": "a",
    "logic": {
-    "type": "northOf",
+    "type": "southOf",
     "other": "c"
    }
   },
   {
-   "who": "d",
+   "who": "b",
    "logic": {
-    "type": "southOf",
-    "other": "e"
+    "type": "onObject",
+    "object": "tapis"
    }
   },
   {
-   "who": "c",
+   "who": "f",
    "logic": {
-    "type": "sameColAs",
-    "object": "statue"
+    "type": "southOf",
+    "other": "d"
    }
   },
   {
    "who": "e",
    "logic": {
-    "type": "sameRowAs",
+    "type": "inRoom",
+    "room": "S"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "onObject",
     "object": "chaise"
    }
   },
   {
    "who": "a",
    "logic": {
+    "type": "onObject",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
     "type": "adjacentTo",
-    "object": "lit"
+    "object": "statue"
    }
   },
   {
-   "who": "g",
+   "who": "e",
    "logic": {
-    "type": "sameColAs",
-    "object": "champi"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "inRoom",
-    "room": "B"
+    "type": "adjacentTo",
+    "object": "chaise"
    }
   },
   {
    "who": "f",
-   "logic": {
-    "type": "eastOf",
-    "other": "g"
-   }
-  },
-  {
-   "who": "d",
    "logic": {
     "type": "onObject",
     "object": "fauteuil"

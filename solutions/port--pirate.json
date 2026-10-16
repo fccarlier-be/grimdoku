@@ -1,107 +1,114 @@
 {
  "positions": {
   "g": [
-   0,
-   6
-  ],
-  "c": [
-   1,
-   3
-  ],
-  "d": [
-   3,
-   2
-  ],
-  "a": [
    4,
-   1
-  ],
-  "f": [
-   6,
-   4
-  ],
-  "b": [
-   2,
-   5
+   3
   ],
   "e": [
    5,
+   2
+  ],
+  "b": [
+   0,
+   6
+  ],
+  "a": [
+   3,
+   4
+  ],
+  "c": [
+   1,
    0
+  ],
+  "f": [
+   6,
+   5
+  ],
+  "d": [
+   2,
+   1
   ]
  },
- "murderer": "b",
+ "murderer": "a",
  "cast": {
-  "c": "a",
-  "d": "b",
+  "e": "a",
+  "b": "b",
   "a": "c",
-  "f": "d",
-  "b": "e",
-  "e": "f"
+  "c": "d",
+  "f": "e",
+  "d": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "c",
+   "who": "b",
    "logic": {
-    "type": "sameRowAs",
-    "object": "tonneau"
+    "type": "inRoom",
+    "room": "D"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "eastOf",
+    "other": "d"
    }
   },
   {
    "who": "d",
    "logic": {
-    "type": "sameRowAs",
-    "object": "table"
+    "type": "northOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
    }
   },
   {
    "who": "a",
    "logic": {
+    "type": "sameRowAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
     "type": "sameColAs",
-    "object": "lit"
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "enclume"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "notInRoom",
+    "room": "C"
    }
   },
   {
    "who": "f",
    "logic": {
     "type": "southOf",
-    "other": "c"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "sameColAs",
-    "object": "tonneau"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "onObject",
-    "object": "chaise"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "table"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "enclume"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "eastOf",
-    "other": "d"
+    "other": "e"
    }
   }
  ]

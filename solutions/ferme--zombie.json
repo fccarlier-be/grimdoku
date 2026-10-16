@@ -2,44 +2,51 @@
  "positions": {
   "f": [
    4,
-   1
-  ],
-  "d": [
-   0,
    3
   ],
   "a": [
-   5,
-   0
-  ],
-  "b": [
-   2,
+   3,
    2
   ],
-  "e": [
-   3,
+  "c": [
+   2,
    4
   ],
-  "c": [
-   1,
+  "d": [
+   0,
    5
+  ],
+  "e": [
+   1,
+   1
+  ],
+  "b": [
+   5,
+   0
   ]
  },
  "murderer": "a",
  "cast": {
-  "d": "a",
-  "a": "b",
-  "b": "c",
+  "a": "a",
+  "c": "b",
+  "d": "c",
   "e": "d",
-  "c": "e"
+  "b": "e"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "a",
+   "who": "d",
    "logic": {
     "type": "sameColAs",
+    "object": "foin"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
     "object": "chaise"
    }
   },
@@ -47,41 +54,6 @@
    "who": "b",
    "logic": {
     "type": "sameRowAs",
-    "object": "tonneau"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "inRoom",
-    "room": "P"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "foin"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "inRoom",
-    "room": "O"
-   }
-  },
-  {
-   "who": "d",
-   "logic": {
-    "type": "inRoom",
-    "room": "E"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "sameColAs",
     "object": "champi"
    }
   },
@@ -89,7 +61,42 @@
    "who": "a",
    "logic": {
     "type": "sameRowAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameColAs",
     "object": "champi"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "notInRoom",
+    "room": "E"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "notInRoom",
+    "room": "O"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "inRoom",
+    "room": "G"
    }
   }
  ]

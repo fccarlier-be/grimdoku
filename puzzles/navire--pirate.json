@@ -181,16 +181,7 @@
     },
     {
       "id": "b",
-      "name": "Bulle",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧜‍♀️",
-      "desc": "Sirène, venue pour l'aquarium",
-      "archetype": "sirene"
-    },
-    {
-      "id": "c",
-      "name": "Cacatoès",
+      "name": "Bavard",
       "gender": "m",
       "role": "suspect",
       "icon": "🦜",
@@ -198,16 +189,22 @@
       "archetype": "perroquet"
     },
     {
+      "id": "c",
+      "name": "Corail",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene"
+    },
+    {
       "id": "d",
-      "name": "Diaphane",
+      "name": "Désiré",
       "gender": "m",
       "role": "suspect",
-      "icon": "👻",
-      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
-      "archetype": "spectre",
-      "traits": [
-        "spectre"
-      ]
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
     },
     {
       "id": "e",
@@ -220,12 +217,15 @@
     },
     {
       "id": "f",
-      "name": "Fernand",
+      "name": "Frisson",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧟",
-      "desc": "Zombie, ancien apprenti. Ancien tout court",
-      "archetype": "zombie"
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ]
     },
     {
       "id": "g",
@@ -240,61 +240,53 @@
   "decor": "navire",
   "id": "navire--pirate",
   "intro": "Le pirate Grappin a été retrouvé sans vie à bord du Navire Fantôme, qui dérivait dans le brouillard. Six membres d'équipage étaient à bord. Un seul était avec lui.",
-  "epilogue": "Cacatoès avoue, et le répète trois fois : Grappin voulait le vendre au marché pour une poignée de graines.",
+  "epilogue": "Abysse avoue : Grappin avait ouvert l'écoutille en plein soleil. Sur un navire, l'ombre se partage.",
   "clues": [
     {
       "who": "a",
-      "text": "Abysse était dans la même colonne qu'un lit.",
+      "text": "Abysse était assise dans un fauteuil.",
       "logic": {
-        "type": "sameColAs",
-        "object": "lit"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Elle était à côté d'une table.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "table"
+        "type": "onObject",
+        "object": "fauteuil"
       }
     },
     {
       "who": "b",
-      "text": "Bulle était à côté d'un tonneau.",
+      "text": "Bavard n'était pas dans la cale.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "tonneau"
+        "type": "notInRoom",
+        "room": "C"
       }
     },
     {
       "who": "b",
-      "text": "Elle était dans la coquerie.",
+      "text": "Il était allongé dans un hamac.",
       "logic": {
-        "type": "inRoom",
-        "room": "Q"
+        "type": "onObject",
+        "object": "hamac"
       }
     },
     {
       "who": "c",
-      "text": "Cacatoès était au sud de Bulle.",
-      "logic": {
-        "type": "southOf",
-        "other": "b"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Il était à côté d'un coffre.",
+      "text": "Corail était à côté d'un chaudron.",
       "logic": {
         "type": "adjacentTo",
-        "object": "coffre"
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Elle était à l'est de Désiré.",
+      "logic": {
+        "type": "eastOf",
+        "other": "d"
       }
     },
     {
       "who": "d",
-      "text": "Diaphane était au nord de Bulle.",
+      "text": "Désiré était à l'est de Bavard.",
       "logic": {
-        "type": "northOf",
+        "type": "eastOf",
         "other": "b"
       }
     },
@@ -308,53 +300,53 @@
     },
     {
       "who": "e",
-      "text": "Étrave était sur la même ligne qu'un tonneau.",
+      "text": "Étrave était à l'ouest de Corail.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "tonneau"
+        "type": "westOf",
+        "other": "c"
       }
     },
     {
       "who": "f",
-      "text": "Fernand était à l'est de Cacatoès.",
+      "text": "Frisson était dans la même colonne qu'un coffre.",
       "logic": {
-        "type": "eastOf",
-        "other": "c"
+        "type": "sameColAs",
+        "object": "coffre"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        3,
-        2
-      ],
-      "c": [
-        5,
-        3
+        1,
+        5
       ],
       "b": [
         4,
-        5
+        1
       ],
-      "d": [
-        1,
-        0
-      ],
-      "f": [
-        2,
+      "c": [
+        3,
         4
       ],
+      "f": [
+        6,
+        0
+      ],
+      "d": [
+        5,
+        3
+      ],
       "a": [
-        0,
+        2,
         6
       ],
       "e": [
-        6,
-        1
+        0,
+        2
       ]
     },
-    "murderer": "c"
+    "murderer": "a"
   },
   "rating": {
     "skulls": 1,

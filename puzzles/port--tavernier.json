@@ -179,16 +179,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Ara",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🦜",
-      "desc": "Perroquet, répète tous les secrets",
-      "archetype": "perroquet"
-    },
-    {
-      "id": "b",
-      "name": "Bakchich",
+      "name": "Arnak",
       "gender": "m",
       "role": "suspect",
       "icon": "👺",
@@ -196,26 +187,8 @@
       "archetype": "gobelin"
     },
     {
-      "id": "c",
-      "name": "Coutelas",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🏴‍☠️",
-      "desc": "Pirate, a perdu une jambe, un œil et le sens de l'orientation",
-      "archetype": "pirate"
-    },
-    {
-      "id": "d",
-      "name": "Drakkar",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧑‍✈️",
-      "desc": "Capitaine, n'a jamais quitté le port",
-      "archetype": "capitaine"
-    },
-    {
-      "id": "e",
-      "name": "Engloutor",
+      "id": "b",
+      "name": "Bâfrin",
       "gender": "m",
       "role": "suspect",
       "icon": "🧌",
@@ -223,13 +196,40 @@
       "archetype": "troll"
     },
     {
-      "id": "f",
-      "name": "Flottille",
+      "id": "c",
+      "name": "Cabestan",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍✈️",
+      "desc": "Capitaine, n'a jamais quitté le port",
+      "archetype": "capitaine"
+    },
+    {
+      "id": "d",
+      "name": "Dorade",
       "gender": "f",
       "role": "suspect",
       "icon": "🧜‍♀️",
       "desc": "Sirène, venue pour l'aquarium",
       "archetype": "sirene"
+    },
+    {
+      "id": "e",
+      "name": "Écho-Écho",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🦜",
+      "desc": "Perroquet, répète tous les secrets",
+      "archetype": "perroquet"
+    },
+    {
+      "id": "f",
+      "name": "Flibuste",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🏴‍☠️",
+      "desc": "Pirate, a perdu une jambe, un œil et le sens de l'orientation",
+      "archetype": "pirate"
     },
     {
       "id": "g",
@@ -244,18 +244,34 @@
   "decor": "port",
   "id": "port--tavernier",
   "intro": "Le tavernier Grippesou a été retrouvé sans vie au Port des Contrebandiers, à l'heure où la marée se retire. Six habitués traînaient sur les quais. Un seul était avec lui.",
-  "epilogue": "Bakchich avoue : Grippesou avait découvert ses faux droits de douane. Il en avait inventé quarante.",
+  "epilogue": "Dorade avoue : Grippesou jetait ses filets juste devant sa grotte.",
   "clues": [
     {
       "who": "a",
-      "text": "Ara était dans la même colonne qu'un lit.",
+      "text": "Arnak était allongé sur un lit.",
       "logic": {
-        "type": "sameColAs",
+        "type": "onObject",
         "object": "lit"
       }
     },
     {
-      "who": "a",
+      "who": "b",
+      "text": "Bâfrin était à l'est d'Écho-Écho.",
+      "logic": {
+        "type": "eastOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était dans la même colonne qu'un canon.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "canon"
+      }
+    },
+    {
+      "who": "b",
       "text": "Il était sur la même ligne qu'une enclume.",
       "logic": {
         "type": "sameRowAs",
@@ -263,101 +279,93 @@
       }
     },
     {
-      "who": "b",
-      "text": "Bakchich était assis sur une chaise.",
+      "who": "c",
+      "text": "Cabestan était à l'ouest de Bâfrin.",
       "logic": {
-        "type": "onObject",
-        "object": "chaise"
+        "type": "westOf",
+        "other": "b"
       }
     },
     {
       "who": "c",
-      "text": "Coutelas était sur la même ligne qu'un tonneau.",
+      "text": "Il était à côté d'un tonneau.",
       "logic": {
-        "type": "sameRowAs",
+        "type": "adjacentTo",
         "object": "tonneau"
       }
     },
     {
       "who": "c",
-      "text": "Il était à l'est de Drakkar.",
+      "text": "Il était au nord de Dorade.",
       "logic": {
-        "type": "eastOf",
+        "type": "northOf",
         "other": "d"
       }
     },
     {
       "who": "d",
-      "text": "Drakkar était sur la même ligne qu'une table.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "table"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Engloutor était dans la même colonne qu'un tonneau.",
+      "text": "Dorade était dans la même colonne qu'une enclume.",
       "logic": {
         "type": "sameColAs",
-        "object": "tonneau"
+        "object": "enclume"
       }
     },
     {
       "who": "e",
-      "text": "Il était à côté d'une table.",
+      "text": "Écho-Écho était au nord de Dorade.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "table"
+        "type": "northOf",
+        "other": "d"
       }
     },
     {
       "who": "f",
-      "text": "Flottille était au sud de Coutelas.",
+      "text": "Flibuste était sur la même ligne qu'une statue.",
       "logic": {
-        "type": "southOf",
-        "other": "c"
+        "type": "sameRowAs",
+        "object": "statue"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
+        3,
+        5
+      ],
+      "f": [
         0,
         6
       ],
       "c": [
-        1,
-        3
-      ],
-      "d": [
-        3,
+        5,
         2
       ],
-      "a": [
-        4,
-        1
+      "e": [
+        2,
+        0
       ],
-      "f": [
+      "d": [
         6,
         4
       ],
-      "b": [
-        2,
-        5
+      "a": [
+        1,
+        1
       ],
-      "e": [
-        5,
-        0
+      "b": [
+        4,
+        3
       ]
     },
-    "murderer": "b"
+    "murderer": "d"
   },
   "rating": {
     "skulls": 1,
     "score": 2,
     "hardest": "position relative",
     "hardSteps": 0,
-    "directStart": 1
+    "directStart": 2
   },
   "difficulty": 1
 }

@@ -1,36 +1,36 @@
 {
  "positions": {
   "f": [
-   3,
-   4
-  ],
-  "d": [
-   0,
-   2
-  ],
-  "c": [
-   2,
-   1
-  ],
-  "a": [
-   1,
-   0
-  ],
-  "b": [
    5,
    3
   ],
-  "e": [
+  "b": [
+   3,
+   2
+  ],
+  "a": [
    4,
+   1
+  ],
+  "d": [
+   0,
    5
+  ],
+  "c": [
+   1,
+   0
+  ],
+  "e": [
+   2,
+   4
   ]
  },
- "murderer": "e",
+ "murderer": "b",
  "cast": {
-  "d": "a",
-  "c": "b",
-  "a": "c",
-  "b": "d",
+  "b": "a",
+  "a": "b",
+  "d": "c",
+  "c": "d",
   "e": "e"
  },
  "nSolutions": 1,
@@ -39,56 +39,42 @@
   {
    "who": "a",
    "logic": {
-    "type": "inRoom",
-    "room": "V"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "lit"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
     "type": "sameColAs",
-    "object": "tonneau"
+    "object": "table"
    }
   },
   {
    "who": "c",
    "logic": {
-    "type": "adjacentTo",
-    "object": "tonneau"
+    "type": "inRoom",
+    "room": "V"
    }
   },
   {
-   "who": "b",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "table"
-   }
-  },
-  {
-   "who": "e",
+   "who": "a",
    "logic": {
     "type": "sameRowAs",
     "object": "roseaux"
    }
   },
   {
-   "who": "d",
+   "who": "b",
    "logic": {
-    "type": "sameColAs",
+    "type": "onObject",
     "object": "lit"
    }
   },
   {
    "who": "d",
    "logic": {
-    "type": "sameRowAs",
+    "type": "adjacentTo",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "adjacentTo",
     "object": "statue"
    }
   }

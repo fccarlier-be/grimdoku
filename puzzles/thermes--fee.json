@@ -126,16 +126,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Avaloir",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧌",
-      "desc": "Troll, plongeur à mi-temps",
-      "archetype": "troll"
-    },
-    {
-      "id": "b",
-      "name": "Bricolin",
+      "name": "Azimut",
       "gender": "m",
       "role": "suspect",
       "icon": "🧙‍♂️",
@@ -143,22 +134,31 @@
       "archetype": "mage"
     },
     {
-      "id": "c",
-      "name": "Corail",
-      "gender": "f",
+      "id": "b",
+      "name": "Bâfrin",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧜‍♀️",
-      "desc": "Sirène, venue pour l'aquarium",
-      "archetype": "sirene"
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
     },
     {
-      "id": "d",
-      "name": "Denier",
+      "id": "c",
+      "name": "Centime",
       "gender": "m",
       "role": "suspect",
       "icon": "🧔‍♂️",
       "desc": "Tavernier nain, radin légendaire",
       "archetype": "tavernier"
+    },
+    {
+      "id": "d",
+      "name": "Dorade",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene"
     },
     {
       "id": "e",
@@ -182,19 +182,27 @@
   "decor": "thermes",
   "id": "thermes--fee",
   "intro": "La fée Fougère a été retrouvée sans vie aux Thermes Enchantés, détendue pour toujours. Cinq curistes profitaient des bains. Un seul était avec elle.",
-  "epilogue": "Avaloir avoue : Fougère l'avait comparé à un rocher décoratif.",
+  "epilogue": "Erwëlle avoue avec dédain : Fougère avait trempé ses pieds dans le bassin chaud. Juste avant elle.",
   "clues": [
     {
       "who": "a",
-      "text": "Avaloir était sur un tapis.",
+      "text": "Azimut était dans la même colonne qu'un fauteuil.",
       "logic": {
-        "type": "onObject",
-        "object": "tapis"
+        "type": "sameColAs",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était sur la même ligne qu'une table.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "table"
       }
     },
     {
       "who": "b",
-      "text": "Bricolin était allongé sur un lit.",
+      "text": "Bâfrin était allongé sur un lit.",
       "logic": {
         "type": "onObject",
         "object": "lit"
@@ -202,33 +210,25 @@
     },
     {
       "who": "c",
-      "text": "Corail était à l'ouest de Bricolin.",
+      "text": "Centime était assis sur une chaise.",
+      "logic": {
+        "type": "onObject",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dorade était à l'ouest de Bâfrin.",
       "logic": {
         "type": "westOf",
         "other": "b"
       }
     },
     {
-      "who": "c",
-      "text": "Elle était sur la même ligne qu'une table.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "table"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Denier était à côté d'une chaise.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "chaise"
-      }
-    },
-    {
       "who": "e",
-      "text": "Erwëlle était à côté d'une statue.",
+      "text": "Erwëlle était dans la même colonne qu'une statue.",
       "logic": {
-        "type": "adjacentTo",
+        "type": "sameColAs",
         "object": "statue"
       }
     }
@@ -236,36 +236,36 @@
   "solution": {
     "positions": {
       "f": [
-        1,
+        0,
         4
       ],
-      "c": [
-        5,
+      "d": [
+        4,
         0
       ],
       "e": [
-        3,
-        5
-      ],
-      "a": [
         2,
-        2
-      ],
-      "b": [
-        4,
         3
       ],
-      "d": [
-        0,
+      "b": [
+        3,
+        2
+      ],
+      "a": [
+        5,
+        5
+      ],
+      "c": [
+        1,
         1
       ]
     },
-    "murderer": "a"
+    "murderer": "e"
   },
   "rating": {
     "skulls": 1,
     "score": 2,
-    "hardest": "position relative",
+    "hardest": "ligne réservée",
     "hardSteps": 0,
     "directStart": 1
   },

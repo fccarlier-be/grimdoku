@@ -1,0 +1,98 @@
+{
+ "positions": {
+  "e": [
+   0,
+   1
+  ],
+  "a": [
+   [
+    4,
+    3
+   ],
+   [
+    4,
+    4
+   ],
+   [
+    5,
+    4
+   ],
+   [
+    6,
+    4
+   ]
+  ],
+  "b": [
+   3,
+   5
+  ],
+  "c": [
+   1,
+   0
+  ],
+  "d": [
+   2,
+   2
+  ]
+ },
+ "murderer": "c",
+ "cast": {
+  "a": "a",
+  "b": "b",
+  "c": "c",
+  "d": "d"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "etagere"
+   }
+  }
+ ]
+}

@@ -165,25 +165,16 @@
   "characters": [
     {
       "id": "a",
-      "name": "Arnak",
+      "name": "Aymeric",
       "gender": "m",
       "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
     },
     {
       "id": "b",
-      "name": "Bâfrin",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧌",
-      "desc": "Troll, plongeur à mi-temps",
-      "archetype": "troll"
-    },
-    {
-      "id": "c",
-      "name": "Caillasse",
+      "name": "Basalte",
       "gender": "m",
       "role": "suspect",
       "icon": "🪨",
@@ -192,13 +183,22 @@
       "shape": "I2"
     },
     {
-      "id": "d",
-      "name": "Durandal",
+      "id": "c",
+      "name": "Chaparde",
       "gender": "m",
       "role": "suspect",
-      "icon": "🤺",
-      "desc": "Chevalier, armure trop petite depuis Noël",
-      "archetype": "chevalier"
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "d",
+      "name": "Dentdur",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
     },
     {
       "id": "e",
@@ -222,42 +222,18 @@
   "decor": "forge",
   "id": "forge--ogre--golem",
   "intro": "L'ogre Festin a été retrouvé sans vie à la Forge du Dragon, encore tiède. Cinq artisans et clients s'y pressaient cette nuit-là. Un seul était avec lui.",
-  "epilogue": "Durandal avoue en grinçant : Festin lui avait forgé une armure encore plus petite que l'ancienne.",
+  "epilogue": "Chaparde avoue : Festin avait remarqué que les épées vendues étaient en fer-blanc peint.",
   "clues": [
     {
       "who": "a",
-      "text": "Arnak était assis sur une chaise.",
-      "logic": {
-        "type": "onObject",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Bâfrin était à côté d'une enclume.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "enclume"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Caillasse était dans la même colonne qu'un chaudron.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "chaudron"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Durandal était sur la même ligne qu'une enclume.",
+      "text": "Aymeric était sur la même ligne qu'un lit.",
       "logic": {
         "type": "sameRowAs",
-        "object": "enclume"
+        "object": "lit"
       }
     },
     {
-      "who": "d",
+      "who": "a",
       "text": "Il était dans la même colonne qu'une table.",
       "logic": {
         "type": "sameColAs",
@@ -265,48 +241,96 @@
       }
     },
     {
-      "who": "e",
-      "text": "Étai était au sud de Bâfrin.",
+      "who": "b",
+      "text": "Basalte était au sud d'Aymeric.",
       "logic": {
         "type": "southOf",
-        "other": "b"
+        "other": "a"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était à côté d'un lit.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Chaparde était dans la même colonne qu'un tonneau.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était sur la même ligne qu'un tonneau.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dentdur était au sud d'Aymeric.",
+      "logic": {
+        "type": "southOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était au nord de Chaparde.",
+      "logic": {
+        "type": "northOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Étai était dans la même colonne qu'un tonneau.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "tonneau"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        3,
+        4,
         6
       ],
-      "c": [
+      "b": [
         [
-          6,
-          1
+          2,
+          0
         ],
         [
-          6,
-          2
+          2,
+          1
         ]
       ],
       "e": [
-        2,
-        0
+        6,
+        2
       ],
-      "d": [
+      "a": [
         1,
         5
       ],
-      "a": [
-        4,
+      "c": [
+        5,
         4
       ],
-      "b": [
-        0,
+      "d": [
+        3,
         3
       ]
     },
-    "murderer": "d"
+    "murderer": "c"
   },
   "rating": {
     "skulls": 2,

@@ -179,21 +179,21 @@
   "characters": [
     {
       "id": "a",
-      "name": "Arnak",
+      "name": "Aldric",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤴",
+      "desc": "Roi, avare de compliments et de tout le reste",
+      "archetype": "roi"
+    },
+    {
+      "id": "b",
+      "name": "Bakchich",
       "gender": "m",
       "role": "suspect",
       "icon": "👺",
       "desc": "Gobelin, trésorier du royaume (non déclaré)",
       "archetype": "gobelin"
-    },
-    {
-      "id": "b",
-      "name": "Belladone",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧛‍♀️",
-      "desc": "Comtesse vampire, végane (elle le jure)",
-      "archetype": "vampire"
     },
     {
       "id": "c",
@@ -206,12 +206,12 @@
     },
     {
       "id": "d",
-      "name": "Dagobert",
-      "gender": "m",
+      "name": "Draculine",
+      "gender": "f",
       "role": "suspect",
-      "icon": "🤴",
-      "desc": "Roi, avare de compliments et de tout le reste",
-      "archetype": "roi"
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
     },
     {
       "id": "e",
@@ -244,126 +244,118 @@
   "decor": "palais",
   "id": "palais--cartomancienne",
   "intro": "La cartomancienne Gémina a été retrouvée sans vie au Palais des Mille Vœux, sous un tapis volant qui ne volait plus. Six invités avaient fait un vœu ce soir-là. Un seul était avec elle.",
-  "epilogue": "Dagobert avoue, la couronne de travers : Gémina avait souhaité devenir roi à sa place. Le vœu a été annulé.",
+  "epilogue": "Étoilebarbe avoue en lissant sa barbe : Gémina avait souhaité devenir un plus grand magicien que lui. Inacceptable.",
   "clues": [
     {
       "who": "a",
-      "text": "Arnak était sur la même ligne qu'un tapis.",
+      "text": "Aldric était sur la même ligne qu'un arbre.",
       "logic": {
         "type": "sameRowAs",
-        "object": "tapis"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était à côté d'une boule de cristal.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "cristal"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Belladone était dans la salle du trône.",
-      "logic": {
-        "type": "inRoom",
-        "room": "T"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Elle était dans la même colonne qu'un arbre.",
-      "logic": {
-        "type": "sameColAs",
         "object": "arbre"
       }
     },
     {
-      "who": "c",
-      "text": "Calebasse était à l'ouest de Faconde.",
-      "logic": {
-        "type": "westOf",
-        "other": "f"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Elle était sur un tapis.",
+      "who": "a",
+      "text": "Il était sur un tapis.",
       "logic": {
         "type": "onObject",
         "object": "tapis"
       }
     },
     {
-      "who": "d",
-      "text": "Dagobert était au nord de Calebasse.",
+      "who": "b",
+      "text": "Bakchich était sur la même ligne qu'un tonneau.",
       "logic": {
-        "type": "northOf",
-        "other": "c"
+        "type": "sameRowAs",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Calebasse était à côté d'un coffre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "coffre"
       }
     },
     {
       "who": "d",
-      "text": "Il était dans la même colonne qu'un fauteuil.",
+      "text": "Draculine était au nord de Bakchich.",
       "logic": {
-        "type": "sameColAs",
-        "object": "fauteuil"
+        "type": "northOf",
+        "other": "b"
       }
     },
     {
       "who": "e",
-      "text": "Étoilebarbe était à l'est de Dagobert.",
+      "text": "Étoilebarbe était sur la même ligne qu'un tapis.",
       "logic": {
-        "type": "eastOf",
-        "other": "d"
+        "type": "sameRowAs",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était dans la même colonne qu'un champignon géant.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "champi"
       }
     },
     {
       "who": "f",
-      "text": "Faconde était sur la même ligne qu'une chaise.",
+      "text": "Faconde était dans la même colonne qu'un tapis.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Il était sur la même ligne qu'un champignon géant.",
       "logic": {
         "type": "sameRowAs",
-        "object": "chaise"
+        "object": "champi"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        3,
-        2
-      ],
-      "d": [
         5,
-        3
+        0
+      ],
+      "a": [
+        3,
+        6
       ],
       "f": [
         4,
-        5
-      ],
-      "a": [
-        1,
-        0
+        3
       ],
       "b": [
         2,
         4
       ],
-      "e": [
+      "d": [
         0,
-        6
+        1
+      ],
+      "e": [
+        6,
+        2
       ],
       "c": [
-        6,
-        1
+        1,
+        5
       ]
     },
-    "murderer": "d"
+    "murderer": "e"
   },
   "rating": {
     "skulls": 2,
     "score": 4,
-    "hardest": "pièces",
+    "hardest": "seul candidat",
     "hardSteps": 2,
     "directStart": 1
   },

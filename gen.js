@@ -1,6 +1,6 @@
 // Grimdoku — générateur d'indices pour une scène donnée (prototype).
-// Usage : node gen.js scenes/<décor>.json [seed] [--victim=<type>] [--big=<type>[,<type>]] [--hidden] [--level=1|2] [--portal-murder] [--murderer=<id>] [--skulls=0|1|2|3] [--tries=N]
-// --big : grands personnages (4 crânes) ; --hidden : leur forme est cachée (5 crânes). --skulls filtre alors la difficulté
+// Usage : node gen.js scenes/<décor>.json [seed] [--victim=<type>] [--big=<type>:<forme>[,<type>:<forme>]] [--hidden] [--level=1|2] [--portal-murder] [--murderer=<id>] [--skulls=0|1|2|3] [--tries=N]
+// --big : grands personnages (4 crânes), chacun avec sa forme (engine.js, SHAPES ; ex. --big=dragon:T4) ; --hidden : leur forme est cachée (5 crânes). --skulls filtre alors la difficulté
 // « de base » (déroulé du solveur), qui sert à ordonner les grilles à l'intérieur du niveau.
 // Conventions imposées : suspects dans des pièces différentes, aucun indice pour la victime (ni meuble sous elle),
 // indice pour qui est sur un meuble, ordre de facilité = ordre alphabétique des suspects (A le plus facile).
@@ -13,13 +13,19 @@ const victimArg = (process.argv.find(a => a.startsWith('--victim=')) || '').spli
 const bigArg = (process.argv.find(a => a.startsWith('--big=')) || '').split('=')[1];
 // --victim=<type> : affaire automatique, ce type d'habitué est la victime ; --big : avec des grands personnages
 const base = loadScene(process.argv[2]);
-const scene = resolve(bigArg ? withBig(base, victimArg, bigArg.split(',')) : victimArg ? withVictim(base, victimArg) : base);
+const bigs = bigArg ? bigArg.split(',').map(x => x.split(':')) : [];
+const scene = resolve(bigArg ? withBig(base, victimArg, bigs.map(x => x[0]), bigs.map(x => x[1])) : victimArg ? withVictim(base, victimArg) : base);
 if (process.argv.includes('--hidden')) scene.hiddenShapes = true;
+const hiddenMax = (process.argv.find(a => a.startsWith('--hidden-max=')) || '').split('=')[1];
+if (hiddenMax) scene.hiddenMax = Number(hiddenMax); // forme cachée parmi celles d'au plus N cases
 let seed = Number(process.argv[3] || 1);
 const portalMurder = process.argv.includes('--portal-murder');
 const arg = (name, def) => (process.argv.find(a => a.startsWith(`--${name}=`)) || `=${def}`).split('=')[1];
 const wantMurderer = arg('murderer', '');
 const tries = Number(arg('tries', 200));
+// --avoid=<fichier.json> : grilles déjà publiées du même décor ([{ cells: [posKey…], victim: posKey }]) ; on refuse une
+// solution trop proche (E.tooClose : même case pour la victime, ou plus de la moitié des cases occupées en commun)
+const avoid = arg('avoid', '') ? JSON.parse(fs.readFileSync(arg('avoid', ''), 'utf8')) : [];
 const wantSkulls = arg('skulls', '') === '' ? null : Number(arg('skulls', '')); // null = n'importe quelle difficulté (0 est un niveau)
 const rnd = () => { seed = (seed * 1103515245 + 12345) % 2147483648; return seed / 2147483648; };
 const shuffle = (a) => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
@@ -33,7 +39,7 @@ const suspects = ids.filter(id => id !== victim);
 // 1. tirer une solution valide au hasard
 const hasBig = scene.characters.some(c => c.shape);
 // la vraie forme de chaque grand (même si le joueur ne la connaît pas : --hidden)
-const truth = E.prepare({ ...scene, hiddenShapes: false });
+const truth = E.prepare({ ...scene, hiddenShapes: false, hiddenMax: undefined });
 const PL = Object.fromEntries(ids.map(id => [id, E.placementsOf(truth, id)]));
 function randomPositions() {
   if (!hasBig) {
@@ -58,6 +64,8 @@ function randomSolution() {
     if (!pos) continue;
     if (E.sharedRooms(ctx, pos).length) continue;
     if (E.cellsOf(pos[victim]).some(rc => ctx.objAt[rc.join(',')])) continue; // la victime n'a pas d'indice, donc pas de meuble
+    const me = E.layoutSig(pos, victim);
+    if (avoid.some(o => E.tooClose(me, o))) continue; // déjà une grille presque identique dans ce décor
     const m = E.murdererOf(ctx, pos);
     if (!m) continue;
     if (wantMurderer && m !== wantMurderer) continue;

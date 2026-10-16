@@ -1,47 +1,47 @@
 {
  "positions": {
-  "a": [
-   6,
-   6
-  ],
-  "b": [
-   1,
-   2
-  ],
-  "d": [
-   0,
-   5
-  ],
-  "c": [
+  "h": [
    3,
    3
   ],
-  "e": [
-   4,
-   4
+  "d": [
+   1,
+   6
+  ],
+  "c": [
+   5,
+   2
+  ],
+  "a": [
+   6,
+   5
   ],
   "f": [
    2,
+   4
+  ],
+  "e": [
+   0,
    1
   ],
   "g": [
    7,
    0
   ],
-  "h": [
-   5,
+  "b": [
+   4,
    7
   ]
  },
- "murderer": "a",
+ "murderer": "f",
  "cast": {
-  "a": "c",
-  "b": "e",
   "d": "a",
-  "c": "d",
-  "e": "g",
-  "f": "f",
-  "g": "b"
+  "c": "b",
+  "a": "c",
+  "f": "d",
+  "e": "e",
+  "g": "f",
+  "b": "g"
  },
  "nSolutions": 1,
  "needsL2": false,
@@ -49,85 +49,71 @@
   {
    "who": "d",
    "logic": {
-    "type": "sameRowAs",
-    "object": "lit"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "southOf",
-    "other": "b"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
     "type": "sameColAs",
-    "object": "statue"
-   }
-  },
-  {
-   "who": "f",
-   "logic": {
-    "type": "adjacentTo",
     "object": "tombe"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "sameColAs",
-    "object": "statue"
+    "type": "westOf",
+    "other": "d"
    }
   },
   {
-   "who": "c",
+   "who": "a",
    "logic": {
     "type": "inRoom",
-    "room": "A"
+    "room": "O"
    }
   },
   {
    "who": "b",
    "logic": {
-    "type": "eastOf",
-    "other": "g"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "statue"
-   }
-  },
-  {
-   "who": "d",
-   "logic": {
-    "type": "sameColAs",
-    "object": "tombe"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "notInRoom",
+    "type": "inRoom",
     "room": "K"
    }
   },
   {
    "who": "e",
    "logic": {
-    "type": "eastOf",
-    "other": "c"
+    "type": "adjacentTo",
+    "object": "table"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "statue"
    }
   },
   {
    "who": "g",
    "logic": {
+    "type": "notInRoom",
+    "room": "A"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
     "type": "sameRowAs",
-    "object": "arbre"
+    "object": "tombe"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tombe"
    }
   }
  ]

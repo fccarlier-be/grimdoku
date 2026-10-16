@@ -199,16 +199,25 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aubépine",
-      "gender": "f",
+      "name": "Aldric",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧚",
-      "desc": "Fée, doit trois tournées",
-      "archetype": "fee"
+      "icon": "🤴",
+      "desc": "Roi, avare de compliments et de tout le reste",
+      "archetype": "roi"
     },
     {
       "id": "b",
-      "name": "Blafard",
+      "name": "Belladone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
+    },
+    {
+      "id": "c",
+      "name": "Chaînon",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -219,35 +228,8 @@
       ]
     },
     {
-      "id": "c",
-      "name": "Couac",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧑‍🎤",
-      "desc": "Barde, chante faux",
-      "archetype": "barde"
-    },
-    {
       "id": "d",
-      "name": "Djinnifer",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧞‍♀️",
-      "desc": "Djinn, a déjà exaucé deux vœux de trop",
-      "archetype": "djinn"
-    },
-    {
-      "id": "e",
-      "name": "Écarlate",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧛‍♀️",
-      "desc": "Comtesse vampire, végane (elle le jure)",
-      "archetype": "vampire"
-    },
-    {
-      "id": "f",
-      "name": "Faëlys",
+      "name": "Daëlin",
       "gender": "f",
       "role": "suspect",
       "icon": "🧝‍♀️",
@@ -255,13 +237,31 @@
       "archetype": "elfe"
     },
     {
+      "id": "e",
+      "name": "Églantine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
+    },
+    {
+      "id": "f",
+      "name": "Fumerolle",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn"
+    },
+    {
       "id": "g",
-      "name": "Godefroy",
+      "name": "Gamme",
       "gender": "m",
       "role": "suspect",
-      "icon": "🤴",
-      "desc": "Roi, avare de compliments et de tout le reste",
-      "archetype": "roi"
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
     },
     {
       "id": "h",
@@ -276,141 +276,133 @@
   "decor": "bal",
   "id": "bal--chevalier",
   "intro": "Le chevalier Hardouin a été retrouvé sans vie au Bal Masqué, sous un loup de velours. Sept invités dansaient encore. Un seul était avec lui.",
-  "epilogue": "Aubépine avoue : Hardouin l'avait prise pour une décoration de lustre et voulait l'accrocher.",
+  "epilogue": "Églantine avoue : Hardouin l'avait prise pour une décoration de lustre et voulait l'accrocher.",
   "clues": [
     {
       "who": "a",
-      "text": "Aubépine était dans la même colonne qu'une chaise.",
+      "text": "Aldric était sur la même ligne qu'un arbre.",
       "logic": {
-        "type": "sameColAs",
-        "object": "chaise"
+        "type": "sameRowAs",
+        "object": "arbre"
       }
     },
     {
       "who": "a",
-      "text": "Elle était à côté d'un champignon géant.",
+      "text": "Il était à côté d'un lit.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Belladone était à côté d'un fauteuil.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Chaînon était assis dans un fauteuil.",
+      "logic": {
+        "type": "onObject",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était au sud de Gamme.",
+      "logic": {
+        "type": "southOf",
+        "other": "g"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Daëlin était au sud de Belladone.",
+      "logic": {
+        "type": "southOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Elle était assise sur une chaise.",
+      "logic": {
+        "type": "onObject",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Églantine était à côté d'un tapis.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Elle était à l'ouest de Fumerolle.",
+      "logic": {
+        "type": "westOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Fumerolle était à côté d'un champignon géant.",
       "logic": {
         "type": "adjacentTo",
         "object": "champi"
       }
     },
     {
-      "who": "a",
-      "text": "Elle était au sud de Djinnifer.",
-      "logic": {
-        "type": "southOf",
-        "other": "d"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Blafard était sur la même ligne qu'une statue.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "statue"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était à côté d'une table.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "table"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Couac était assis dans un fauteuil.",
-      "logic": {
-        "type": "onObject",
-        "object": "fauteuil"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Il était au nord de Faëlys.",
-      "logic": {
-        "type": "northOf",
-        "other": "f"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Djinnifer était à l'ouest d'Aubépine.",
-      "logic": {
-        "type": "westOf",
-        "other": "a"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Elle était assise dans un fauteuil.",
-      "logic": {
-        "type": "onObject",
-        "object": "fauteuil"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Écarlate était à côté d'une chaise.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "f",
-      "text": "Faëlys était au nord d'Aubépine.",
-      "logic": {
-        "type": "northOf",
-        "other": "a"
-      }
-    },
-    {
       "who": "g",
-      "text": "Godefroy était dans la même colonne qu'un arbre.",
+      "text": "Gamme était au nord de Belladone.",
       "logic": {
-        "type": "sameColAs",
-        "object": "arbre"
+        "type": "northOf",
+        "other": "b"
       }
     }
   ],
   "solution": {
     "positions": {
       "h": [
-        7,
-        3
-      ],
-      "b": [
-        4,
-        7
-      ],
-      "g": [
-        0,
-        5
-      ],
-      "f": [
         2,
-        6
+        5
       ],
       "c": [
         1,
         1
       ],
       "a": [
-        6,
-        4
+        7,
+        0
       ],
       "d": [
         5,
-        2
+        6
+      ],
+      "g": [
+        0,
+        7
       ],
       "e": [
         3,
-        0
+        3
+      ],
+      "f": [
+        6,
+        4
+      ],
+      "b": [
+        4,
+        2
       ]
     },
-    "murderer": "a"
+    "murderer": "e"
   },
   "rating": {
     "skulls": 2,
