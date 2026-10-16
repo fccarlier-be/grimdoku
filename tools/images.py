@@ -309,8 +309,20 @@ DECOR_DIR = ROOT / 'decors'   # illustrations des décors : <décor>.(png|jpeg),
 def levels():
     if not LEVEL_DIR.exists():
         return
+    from PIL import ImageDraw, ImageFilter
     for src in sources(LEVEL_DIR):
         img = key_out_outside(Image.open(src))
+        # lueurs mêlées au fond magenta (halo de bougie) : la teinte rose devient un jaune orangé chaud
+        img.putdata([(min(255, r + 30), max(g, round(r * .8)), round(g * .5), a) if r > g + 25 and b > g + 25 else (r, g, b, a)
+                     for r, g, b, a in img.getdata()])
+        # scène dessinée jusqu'aux bords (sol, table) : fondu ovale pour qu'elle se fonde dans le parchemin
+        alpha = img.getchannel('A')
+        ap, w, h = alpha.load(), img.width, img.height
+        ring = [ap[x, y] for x in range(w) for y in (0, 1, h - 2, h - 1)] + [ap[x, y] for y in range(h) for x in (0, 1, w - 2, w - 1)]
+        if sum(1 for v in ring if v > 128) > 0.3 * len(ring):  # le dessin touche les bords : c'est une scène, pas un objet
+            m = Image.new('L', img.size, 0)
+            ImageDraw.Draw(m).ellipse((img.width * .06, img.height * .06, img.width * .94, img.height * .94), fill=255)
+            img.putalpha(ImageChops.multiply(alpha, m.filter(ImageFilter.GaussianBlur(img.width * .06))))
         box = img.getchannel('A').point(lambda a: 255 if a > 24 else 0).getbbox()
         if box:
             img = img.crop(box)
@@ -320,11 +332,31 @@ def levels():
         print(f'niveau {src.name} → {out.name} {img.size} ({out.stat().st_size // 1024} Ko)')
 
 
+def trim_white(img, frame=0.015):
+    """Retire les bandes blanches que le générateur ajoute parfois sur les bords (lignes ou colonnes majoritairement
+    presque blanches, depuis chaque bord), puis une petite marge pour le filet d'encre qui les borde souvent."""
+    g = img.convert('L')
+    w, h = g.size
+    px = g.load()
+    white = lambda xs: sum(1 for v in xs if v > 228) / len(xs) > 0.6
+    row = lambda y: [px[x, y] for x in range(0, w, 4)]
+    col = lambda x: [px[x, y] for y in range(0, h, 4)]
+    top, bottom, left, right = 0, h - 1, 0, w - 1
+    while top < h // 3 and white(row(top)): top += 1
+    while bottom > 2 * h // 3 and white(row(bottom)): bottom -= 1
+    while left < w // 3 and white(col(left)): left += 1
+    while right > 2 * w // 3 and white(col(right)): right -= 1
+    if (top, bottom, left, right) != (0, h - 1, 0, w - 1):  # il y avait des bandes : on enlève aussi le filet
+        dx, dy = round(w * frame), round(h * frame)
+        top, bottom, left, right = top + dy, bottom - dy, left + dx, right - dx
+    return img.crop((left, top, right + 1, bottom + 1))
+
+
 def decors():
     if not DECOR_DIR.exists():
         return
     for src in sources(DECOR_DIR):
-        img = Image.open(src).convert('RGB')
+        img = trim_white(Image.open(src).convert('RGB'))
         img.thumbnail((720, 720), Image.LANCZOS)
         out = DECOR_DIR / (type_name(src.stem) + '.webp')
         img.save(out, 'WEBP', quality=84, method=6)

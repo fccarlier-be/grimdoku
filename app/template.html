@@ -631,7 +631,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
   // Les morceaux n'ont pas besoin de boucler d'eux-mêmes : chaque piste a deux lecteurs, et 4 s avant la fin
   // l'autre repart du début en fondu enchaîné (XFADE) — boucle sans coupure, quel que soit le morceau.
   const sound = (() => {
-    const XFADE = 4, LEVEL = 0.32;
+    const XFADE = 4, TAIL = 1.5, LEVEL = 0.32; // TAIL : fin du morceau ignorée (les générateurs y mettent souvent un fondu)
     const tracks = {};
     for (const [k, src] of Object.entries(MEDIA.audio || {})) {
       try { tracks[k] = { els: [new Audio(src), new Audio(src)], cur: 0, gains: [], gain: null, timer: null }; }
@@ -644,7 +644,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
       clearInterval(t.timer);
       t.timer = setInterval(() => {
         const a = t.els[t.cur];
-        if (!a.duration || a.currentTime < a.duration - XFADE) return;
+        if (!a.duration || a.currentTime < a.duration - XFADE - TAIL) return;
         const nxt = 1 - t.cur, b = t.els[nxt], now = ac.currentTime;
         b.currentTime = 0; b.play().catch(() => {});
         t.gains[nxt].gain.cancelScheduledValues(now); t.gains[nxt].gain.setValueAtTime(0, now); t.gains[nxt].gain.linearRampToValueAtTime(1, now + XFADE);

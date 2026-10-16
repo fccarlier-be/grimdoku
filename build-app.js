@@ -96,7 +96,8 @@ const { execFileSync } = require('child_process');
 const MEDIA = ['dist/media', 'deploy/grimdoku/site/media'];
 MEDIA.forEach(d => { fs.rmSync(d, { recursive: true, force: true }); fs.mkdirSync(d, { recursive: true }); }); // vidé : rien de périmé en ligne
 const media = { audio: {}, levels: [], decors: [] };
-const copyMedia = (src, name) => MEDIA.forEach(d => fs.copyFileSync(src, `${d}/${name}`));
+// lisibles par le serveur web quelle que soit leur origine (un fichier sorti d'un zip peut être en 600)
+const copyMedia = (src, name) => MEDIA.forEach(d => { fs.copyFileSync(src, `${d}/${name}`); fs.chmodSync(`${d}/${name}`, 0o644); });
 for (const track of ['menu', 'carte']) {
   const src = ['m4a', 'mp3', 'ogg', 'wav'].map(e => `assets/audio/${track}.${e}`).find(f => fs.existsSync(f));
   if (!src) { missing.push('son ' + track); continue; }
