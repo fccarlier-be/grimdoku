@@ -48,7 +48,13 @@ CROP = {
 SHAPE_BOX = {'I2': (2, 1), 'I3': (3, 1), 'L3': (2, 2)}
 # tête dans l'image entière (fixée par le prompt) : (côté du carré en fraction de la hauteur, centre x, centre y en fraction)
 BIG_HEAD = {'I2': (0.95, 0.22, 0.48), 'I3': (0.95, 0.15, 0.48), 'L3': (0.5, 0.25, 0.25)}
-BIG_HEAD_TYPE = {}  # réglages par type si l'image générée place la tête ailleurs
+BIG_HEAD_TYPE = {  # réglages par type d'après les images générées
+    'golem': (0.62, 0.12, 0.47),
+    'vouivre': (0.80, 0.09, 0.47),
+    'dragon': (0.44, 0.27, 0.17),
+}
+# allongés vus de dessus, tête à gauche : on redresse le buste d'un quart de tour (sens horaire, en degrés)
+BIG_HEAD_TURN = {'I2': 90, 'I3': 90, 'L3': 0}
 BIG_SIZE = 256      # pixels par case
 CAST = json.loads((ROOT.parent / 'cast.json').read_text(encoding='utf-8'))
 SHAPE_OF = {t: a['shape'] for t, a in CAST.items() if isinstance(a, dict) and a.get('shape')}
@@ -106,7 +112,7 @@ def big(src, name):
     side = round(H * zoom)
     left = min(max(0, round(W * cx - side / 2)), W - side)
     top = min(max(0, round(H * cy - side / 2)), H - side)
-    full.crop((left, top, left + side, top + side)).resize((SIZE, SIZE), Image.LANCZOS).save(DIR / (name + '.webp'), 'WEBP', quality=82, method=6)
+    full.crop((left, top, left + side, top + side)).rotate(-BIG_HEAD_TURN[SHAPE_OF[name]]).resize((SIZE, SIZE), Image.LANCZOS).save(DIR / (name + '.webp'), 'WEBP', quality=82, method=6)
     print(f'grand {src.name} → {out.name} + {name}.webp')
 
 
