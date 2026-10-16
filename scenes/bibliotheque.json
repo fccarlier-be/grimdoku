@@ -5,31 +5,38 @@
   "rooms": {
     "S": {
       "name": "Scriptorium",
-      "the": "le scriptorium"
+      "the": "le scriptorium",
+      "floor": "parquet"
     },
     "Y": {
       "name": "Rayonnages",
-      "the": "les rayonnages"
+      "the": "les rayonnages",
+      "floor": "parquet"
     },
     "B": {
       "name": "Bureau",
-      "the": "le bureau"
+      "the": "le bureau",
+      "floor": "parquet"
     },
     "L": {
       "name": "Salle de lecture",
-      "the": "la salle de lecture"
+      "the": "la salle de lecture",
+      "floor": "parquet"
     },
     "G": {
       "name": "Galerie",
-      "the": "la galerie"
+      "the": "la galerie",
+      "floor": "parquet"
     },
     "R": {
       "name": "Réserve",
-      "the": "la réserve"
+      "the": "la réserve",
+      "floor": "parquet"
     },
     "A": {
       "name": "Archives",
-      "the": "les archives"
+      "the": "les archives",
+      "floor": "parquet"
     }
   },
   "layout": [

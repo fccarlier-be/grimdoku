@@ -5,23 +5,28 @@
   "rooms": {
     "H": {
       "name": "Cabane",
-      "the": "la cabane"
+      "the": "la cabane",
+      "floor": "parquet"
     },
     "P": {
       "name": "Ponton",
-      "the": "le ponton"
+      "the": "le ponton",
+      "floor": "navire"
     },
     "R": {
       "name": "Roselière",
-      "the": "la roselière"
+      "the": "la roselière",
+      "floor": "boue"
     },
     "I": {
       "name": "Îlot",
-      "the": "l'îlot"
+      "the": "l'îlot",
+      "floor": "herbe"
     },
     "T": {
       "name": "Tourbière",
-      "the": "la tourbière"
+      "the": "la tourbière",
+      "floor": "boue"
     }
   },
   "layout": [

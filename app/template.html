@@ -89,18 +89,36 @@ header.top { display: flex; align-items: center; gap: 10px; }
   display: grid; grid-template-columns: repeat(var(--n), 1fr);
   border: 0; overflow: visible; position: relative; /* seul le cadre dessiné à la main (wallsSvg) borde la carte */
   background: var(--parch);
-  margin: 8px 7px 4px; width: calc(100% - 14px);
+  margin: 14px; width: calc(100% - 28px);
   user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;
 }
 .cell {
   position: relative; aspect-ratio: 1; border: 0; padding: 0; margin: 0;
-  background: var(--room); color: var(--ink);
+  color: var(--ink);
   border-top: 1px solid var(--ink-soft); border-left: 1px solid var(--ink-soft);
   display: grid; place-items: center; overflow: visible;
   font-size: calc(100cqw / var(--n) * .5);
 }
 .walls { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; overflow: visible; }
 .walls path { fill: none; stroke: var(--ink); stroke-linecap: round; stroke-linejoin: round; }
+.walls .leaf { stroke: #6b4423; }
+.walls .swing { stroke-dasharray: 0.06 0.05; opacity: .6; }
+/* sols : texture de la matière (2×2 cases), teintée par la couleur de la pièce ; sans texture, couleur unie */
+.cell {
+  --tint: color-mix(in srgb, var(--room) 42%, transparent);
+  background-color: var(--room);
+  background-image: linear-gradient(var(--tint), var(--tint)), var(--floor, none);
+  background-size: 100% 100%, 200% 200%;
+  background-position: 0 0, var(--bp, 0 0);
+}
+/* cadre : feuille de parchemin aux bords déchirés et brûlés sous la carte */
+.boardwrap { isolation: isolate; }
+.boardwrap::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; border-radius: 4px;
+  background: var(--parch-tex, none) center / 200px, linear-gradient(#e6d1a2, #d9bf88);
+  box-shadow: inset 0 0 14px 2px rgba(110, 60, 15, .55), 0 10px 26px rgba(0, 0, 0, .45);
+  filter: url(#torn);
+}
 .cell.r0 { border-top-color: transparent; }
 .cell.c0 { border-left-color: transparent; }
 .cell.block::before {
@@ -322,6 +340,7 @@ header.top { display: flex; align-items: center; gap: 10px; }
 .toggle input { width: 22px; height: 22px; accent-color: var(--candle); }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+/*__FLOORS__*/
 </style>
 
 <div class="wrap" id="app"></div>
@@ -493,17 +512,49 @@ const PUZZLES = /*__PUZZLES__*/;
     const n = P.size, L = P.layout;
     let seed = [...P.id].reduce((h, ch) => (h * 31 + ch.charCodeAt(0)) >>> 0, 7);
     const rnd = () => { seed = (seed * 1103515245 + 12345) >>> 0; return (seed >>> 8) / 16777216; };
-    // segments de mur, fusionnés en lignes droites : [x1, y1, x2, y2] en unités de case
+    // pans de mur d'une case : horizontaux (h, entre les lignes r-1 et r) et verticaux (v, entre les colonnes c-1 et c)
+    const edges = {};
+    for (let r = 1; r < n; r++) for (let c = 0; c < n; c++) if (L[r][c] !== L[r - 1][c]) edges['h' + r + ',' + c] = { h: true, r, c, a: [r - 1, c], b: [r, c] };
+    for (let c = 1; c < n; c++) for (let r = 0; r < n; r++) if (L[r][c] !== L[r][c - 1]) edges['v' + r + ',' + c] = { h: false, r, c, a: [r, c - 1], b: [r, c] };
+    // portes (pur décor, sans effet sur « à côté de ») : une par paire de pièces voisines,
+    // de préférence entre deux cases sans meuble bloquant
+    const blocked = ([r, c]) => { const o = ctx.objAt[r + ',' + c]; return !!(o && E.OBJECTS[o.type].blocking); };
+    const pairs = {};
+    for (const [k, e] of Object.entries(edges)) { const pk = [L[e.a[0]][e.a[1]], L[e.b[0]][e.b[1]]].sort().join('|'); (pairs[pk] = pairs[pk] || []).push(k); }
+    const doors = new Set();
+    for (const pk of Object.keys(pairs).sort()) {
+      const free = pairs[pk].filter(k => !blocked(edges[k].a) && !blocked(edges[k].b));
+      const from = free.length ? free : pairs[pk];
+      doors.add(from[Math.floor(rnd() * from.length)]);
+    }
+    const wall = (k) => edges[k] && !doors.has(k);
+    // murs fusionnés en lignes droites (coupées aux portes) : [x1, y1, x2, y2] en unités de case
     const lines = [];
     for (let r = 1; r < n; r++) for (let c = 0; c < n;) {
-      if (L[r][c] === L[r - 1][c]) { c++; continue; }
-      const c0 = c; while (c < n && L[r][c] !== L[r - 1][c]) c++;
+      if (!wall('h' + r + ',' + c)) { c++; continue; }
+      const c0 = c; while (c < n && wall('h' + r + ',' + c)) c++;
       lines.push([c0, r, c, r]);
     }
     for (let c = 1; c < n; c++) for (let r = 0; r < n;) {
-      if (L[r][c] === L[r][c - 1]) { r++; continue; }
-      const r0 = r; while (r < n && L[r][c] !== L[r][c - 1]) r++;
+      if (!wall('v' + r + ',' + c)) { r++; continue; }
+      const r0 = r; while (r < n && wall('v' + r + ',' + c)) r++;
       lines.push([c, r0, c, r]);
+    }
+    // une porte : bouts de mur, deux montants, un battant entrouvert vers la pièce b et l'arc de son ouverture
+    let leaves = '', swings = '';
+    for (const k of doors) {
+      const { h, r, c } = edges[k];
+      const [x, y] = h ? [c, r] : [c, r];                  // début du pan de mur
+      const [ux, uy] = h ? [1, 0] : [0, 1];                // le long du mur
+      const [vx, vy] = h ? [0, 1] : [1, 0];                // vers la pièce b
+      const at = (t, d = 0) => [x + ux * t + vx * d, y + uy * t + vy * d];
+      const seg = (p, q) => [p[0], p[1], q[0], q[1]];
+      lines.push(seg(at(0), at(0.2)), seg(at(0.8), at(1)), seg(at(0.2, -0.055), at(0.2, 0.055)), seg(at(0.8, -0.055), at(0.8, 0.055)));
+      const hx = x + ux * 0.2, hy = y + uy * 0.2, R = 0.6;
+      const lx = hx + R * (ux * 0.5 + vx * 0.866), ly = hy + R * (uy * 0.5 + vy * 0.866);
+      const sweep = (lx - hx) * uy - (ly - hy) * ux > 0 ? 1 : 0;
+      leaves += `M${hx} ${hy} L${lx.toFixed(3)} ${ly.toFixed(3)} `;
+      swings += `M${lx.toFixed(3)} ${ly.toFixed(3)} A${R} ${R} 0 0 ${sweep} ${hx + ux * R} ${hy + uy * R} `;
     }
     // cadre : centré sur le bord de la carte, tremblé des deux côtés (la carte ne coupe pas ce qui dépasse)
     const frame = [[0, 0, n, 0], [n, 0, n, n], [n, n, 0, n], [0, n, 0, 0]];
@@ -531,7 +582,8 @@ const PUZZLES = /*__PUZZLES__*/;
     wallsSvg.for = P.id;
     wallsSvg.html = `<svg class="walls" viewBox="0 0 ${n} ${n}" preserveAspectRatio="none" aria-hidden="true">
       <path d="${main}" stroke-width="0.09"/><path d="${second}" stroke-width="0.06"/>
-      <path d="${frameMain}" stroke-width="0.09"/><path d="${frameSecond}" stroke-width="0.06"/></svg>`;
+      <path d="${frameMain}" stroke-width="0.09"/><path d="${frameSecond}" stroke-width="0.06"/>
+      <path class="swing" d="${swings}" stroke-width="0.02"/><path class="leaf" d="${leaves}" stroke-width="0.055"/></svg>`;
     return wallsSvg.html;
   }
 
@@ -597,7 +649,8 @@ const PUZZLES = /*__PUZZLES__*/;
       const auto = settings.shade && (usedR.has(r) || usedC.has(c));
       const mark = who ? '' : auto ? '<span class="mark">✕</span>' : S.marks.includes(r + ',' + c) ? '<span class="mark manual">✕</span>' : '';
       const aria = `${P.rooms[room].name}, ligne ${r + 1}, colonne ${c + 1}${def ? ', ' + def.name : ''}${ch ? ', ' + ch.name : ''}`;
-      cells += `<button class="${cls.join(' ')}" style="--room: var(--r${roomIdx(room) % 8})" data-r="${r}" data-c="${c}" aria-label="${esc(aria)}">${label}${objHtml}${tok}${pencils}${mark}</button>`;
+      if (P.rooms[room].floor) cls.push('fl-' + P.rooms[room].floor);
+      cells += `<button class="${cls.join(' ')}" style="--room: var(--r${roomIdx(room) % 8}); --bp: ${c % 2 * 100}% ${r % 2 * 100}%" data-r="${r}" data-c="${c}" aria-label="${esc(aria)}">${label}${objHtml}${tok}${pencils}${mark}</button>`;
     }
 
     const specials = [];
@@ -891,7 +944,7 @@ const PUZZLES = /*__PUZZLES__*/;
         <li>Les meubles hachurés sont <b>bloquants</b> : personne ne peut s'y tenir. Les autres (chaise, lit, tapis…) sont praticables.</li>
         <li>Quand quelqu'un est sur un meuble (chaise, lit, tapis…), un indice le dit toujours.</li>
         <li>« Au nord de X » veut dire sur une ligne plus haute que X, dans n'importe quelle colonne (sud : plus bas ; est : plus à droite ; ouest : plus à gauche).</li>
-        <li>« À côté de » veut dire juste au-dessus, en dessous, à gauche ou à droite, dans la même pièce. Pas en diagonale, ni à travers un mur.</li>
+        <li>« À côté de » veut dire juste au-dessus, en dessous, à gauche ou à droite, dans la même pièce. Pas en diagonale, ni à travers un mur — même par une porte : les portes ne sont qu'un décor.</li>
         <li><b>Seule la pièce du crime contient deux personnes</b> : chaque suspect était seul dans sa pièce, sauf le coupable, qui était avec la victime.</li>
         <li>La victime n'a pas d'indice : c'est à toi de la trouver.</li>
         <li><b>Grands personnages</b> (4 et 5 crânes) : ils occupent 2 cases, 3 cases en ligne ou 3 cases en angle. Chacune de leurs cases prend sa ligne et sa colonne. Toutes leurs cases sont dans la même pièce, jamais sur un meuble. « À côté de » et « même ligne / colonne » valent pour n'importe laquelle de leurs cases ; « au nord de X » veut dire toutes leurs cases plus haut que X. À 5 crânes, leur forme est inconnue.</li>

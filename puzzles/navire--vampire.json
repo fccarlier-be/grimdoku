@@ -5,31 +5,38 @@
   "rooms": {
     "V": {
       "name": "Vigie",
-      "the": "la vigie"
+      "the": "la vigie",
+      "floor": "parquet"
     },
     "P": {
       "name": "Pont",
-      "the": "le pont"
+      "the": "le pont",
+      "floor": "navire"
     },
     "K": {
       "name": "Cabine du capitaine",
-      "the": "la cabine du capitaine"
+      "the": "la cabine du capitaine",
+      "floor": "navire"
     },
     "E": {
       "name": "Entrepont",
-      "the": "l'entrepont"
+      "the": "l'entrepont",
+      "floor": "navire"
     },
     "Q": {
       "name": "Coquerie",
-      "the": "la coquerie"
+      "the": "la coquerie",
+      "floor": "tomettes"
     },
     "C": {
       "name": "Cale",
-      "the": "la cale"
+      "the": "la cale",
+      "floor": "navire"
     },
     "S": {
       "name": "Soute à poudre",
-      "the": "la soute à poudre"
+      "the": "la soute à poudre",
+      "floor": "navire"
     }
   },
   "layout": [

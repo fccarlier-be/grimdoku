@@ -5,31 +5,38 @@
   "rooms": {
     "P": {
       "name": "Phare",
-      "the": "le phare"
+      "the": "le phare",
+      "floor": "parquet"
     },
     "Q": {
       "name": "Quai",
-      "the": "le quai"
+      "the": "le quai",
+      "floor": "navire"
     },
     "D": {
       "name": "Douane",
-      "the": "la douane"
+      "the": "la douane",
+      "floor": "dalles"
     },
     "T": {
       "name": "Taverne du port",
-      "the": "la taverne du port"
+      "the": "la taverne du port",
+      "floor": "parquet"
     },
     "C": {
       "name": "Chantier naval",
-      "the": "le chantier naval"
+      "the": "le chantier naval",
+      "floor": "navire"
     },
     "E": {
       "name": "Entrepôt",
-      "the": "l'entrepôt"
+      "the": "l'entrepôt",
+      "floor": "tomettes"
     },
     "M": {
       "name": "Marché aux poissons",
-      "the": "le marché aux poissons"
+      "the": "le marché aux poissons",
+      "floor": "damier"
     }
   },
   "layout": [

@@ -5,35 +5,43 @@
   "rooms": {
     "G": {
       "name": "Maison du gardien",
-      "the": "la maison du gardien"
+      "the": "la maison du gardien",
+      "floor": "parquet"
     },
     "C": {
       "name": "Chapelle",
-      "the": "la chapelle"
+      "the": "la chapelle",
+      "floor": "dalles"
     },
     "A": {
       "name": "Allée des ifs",
-      "the": "l'allée des ifs"
+      "the": "l'allée des ifs",
+      "floor": "herbe"
     },
     "K": {
       "name": "Caveau",
-      "the": "le caveau"
+      "the": "le caveau",
+      "floor": "crypte"
     },
     "P": {
       "name": "Carré des pauvres",
-      "the": "le carré des pauvres"
+      "the": "le carré des pauvres",
+      "floor": "herbe"
     },
     "J": {
       "name": "Jardin du souvenir",
-      "the": "le jardin du souvenir"
+      "the": "le jardin du souvenir",
+      "floor": "herbe"
     },
     "O": {
       "name": "Ossuaire",
-      "the": "l'ossuaire"
+      "the": "l'ossuaire",
+      "floor": "crypte"
     },
     "Y": {
       "name": "Crypte",
-      "the": "la crypte"
+      "the": "la crypte",
+      "floor": "crypte"
     }
   },
   "layout": [

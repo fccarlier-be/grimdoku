@@ -5,31 +5,38 @@
   "rooms": {
     "O": {
       "name": "Observatoire",
-      "the": "l'observatoire"
+      "the": "l'observatoire",
+      "floor": "mosaique"
     },
     "T": {
       "name": "Salle du trône",
-      "the": "la salle du trône"
+      "the": "la salle du trône",
+      "floor": "noble"
     },
     "R": {
       "name": "Trésor",
-      "the": "le trésor"
+      "the": "le trésor",
+      "floor": "noble"
     },
     "L": {
       "name": "Salle des lampes",
-      "the": "la salle des lampes"
+      "the": "la salle des lampes",
+      "floor": "dalles"
     },
     "J": {
       "name": "Jardins suspendus",
-      "the": "les jardins suspendus"
+      "the": "les jardins suspendus",
+      "floor": "herbe"
     },
     "B": {
       "name": "Bazar",
-      "the": "le bazar"
+      "the": "le bazar",
+      "floor": "tomettes"
     },
     "H": {
       "name": "Hammam",
-      "the": "le hammam"
+      "the": "le hammam",
+      "floor": "mosaique"
     }
   },
   "layout": [

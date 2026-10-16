@@ -7,23 +7,28 @@
   "rooms": {
     "T": {
       "name": "Salle commune",
-      "the": "la salle commune"
+      "the": "la salle commune",
+      "floor": "parquet"
     },
     "C": {
       "name": "Cuisine",
-      "the": "la cuisine"
+      "the": "la cuisine",
+      "floor": "damier"
     },
     "R": {
       "name": "Cave",
-      "the": "la cave"
+      "the": "la cave",
+      "floor": "tomettes"
     },
     "B": {
       "name": "Chambre",
-      "the": "la chambre"
+      "the": "la chambre",
+      "floor": "parquet"
     },
     "E": {
       "name": "Écurie",
-      "the": "l'écurie"
+      "the": "l'écurie",
+      "floor": "paille"
     }
   },
   "layout": [

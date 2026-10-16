@@ -8,31 +8,38 @@
   "rooms": {
     "L": {
       "name": "Laboratoire",
-      "the": "le laboratoire"
+      "the": "le laboratoire",
+      "floor": "damier"
     },
     "O": {
       "name": "Observatoire",
-      "the": "l'observatoire"
+      "the": "l'observatoire",
+      "floor": "parquet"
     },
     "B": {
       "name": "Bibliothèque",
-      "the": "la bibliothèque"
+      "the": "la bibliothèque",
+      "floor": "parquet"
     },
     "H": {
       "name": "Hall",
-      "the": "le hall"
+      "the": "le hall",
+      "floor": "dalles"
     },
     "C": {
       "name": "Crypte",
-      "the": "la crypte"
+      "the": "la crypte",
+      "floor": "crypte"
     },
     "J": {
       "name": "Jardin",
-      "the": "le jardin"
+      "the": "le jardin",
+      "floor": "herbe"
     },
     "E": {
       "name": "Escalier",
-      "the": "l'escalier"
+      "the": "l'escalier",
+      "floor": "parquet"
     }
   },
   "layout": [

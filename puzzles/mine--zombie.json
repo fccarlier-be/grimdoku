@@ -5,35 +5,43 @@
   "rooms": {
     "E": {
       "name": "Entrée",
-      "the": "l'entrée"
+      "the": "l'entrée",
+      "floor": "roche"
     },
     "G": {
       "name": "Galerie",
-      "the": "la galerie"
+      "the": "la galerie",
+      "floor": "roche"
     },
     "F": {
       "name": "Forge",
-      "the": "la forge"
+      "the": "la forge",
+      "floor": "roche"
     },
     "P": {
       "name": "Puits",
-      "the": "le puits"
+      "the": "le puits",
+      "floor": "roche"
     },
     "V": {
       "name": "Filon",
-      "the": "le filon"
+      "the": "le filon",
+      "floor": "roche"
     },
     "D": {
       "name": "Dortoir",
-      "the": "le dortoir"
+      "the": "le dortoir",
+      "floor": "roche"
     },
     "C": {
       "name": "Cantine",
-      "the": "la cantine"
+      "the": "la cantine",
+      "floor": "parquet"
     },
     "T": {
       "name": "Salle des coffres",
-      "the": "la salle des coffres"
+      "the": "la salle des coffres",
+      "floor": "roche"
     }
   },
   "layout": [

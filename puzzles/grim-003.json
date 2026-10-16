@@ -7,31 +7,38 @@
   "rooms": {
     "C": {
       "name": "Chapelle",
-      "the": "la chapelle"
+      "the": "la chapelle",
+      "floor": "dalles"
     },
     "G": {
       "name": "Grande salle",
-      "the": "la grande salle"
+      "the": "la grande salle",
+      "floor": "dalles"
     },
     "K": {
       "name": "Cuisines",
-      "the": "les cuisines"
+      "the": "les cuisines",
+      "floor": "damier"
     },
     "A": {
       "name": "Armurerie",
-      "the": "l'armurerie"
+      "the": "l'armurerie",
+      "floor": "dalles"
     },
     "T": {
       "name": "Tour",
-      "the": "la tour"
+      "the": "la tour",
+      "floor": "dalles"
     },
     "J": {
       "name": "Jardin",
-      "the": "le jardin"
+      "the": "le jardin",
+      "floor": "herbe"
     },
     "D": {
       "name": "Donjon",
-      "the": "le donjon"
+      "the": "le donjon",
+      "floor": "dalles"
     }
   },
   "layout": [

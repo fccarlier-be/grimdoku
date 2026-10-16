@@ -5,7 +5,9 @@ Grands personnages (cast.json, « shape ») : l'image montre le corps entier à 
             → <type>-full.webp (détouré, au format de la forme : 2:1, 3:1 ou carré pour l'angle)
             + <type>.webp (buste découpé autour de la tête, dont la place est fixée par le prompt : BIG_HEAD)
 Mobilier  : assets/objects/<type>.(png|jpg|jpeg)    → recadrage au plus près de l'objet, centré → <type>.webp
-Dans les deux cas : fond magenta (#FF00FF) → transparence, liseré rose retiré, 256 px, WebP.
+Sols      : assets/floors/<matière>.(png|jpg|jpeg) → carré, raccordable (bords qui se répètent sans couture),
+            contraste adouci et éclairci → <matière>.webp (une texture couvre 2×2 cases ; parchemin : cadre de la carte)
+Portraits et mobilier : fond magenta (#FF00FF) → transparence, liseré rose retiré, 256 px, WebP.
 build-app.js préfère ces .webp aux dessins <type>.svg quand ils existent.
 
 Usage : .venv/bin/python tools/images.py   (installer une fois : python3 -m venv .venv && .venv/bin/pip install pillow)
@@ -13,11 +15,15 @@ Usage : .venv/bin/python tools/images.py   (installer une fois : python3 -m venv
 import json
 import unicodedata
 from pathlib import Path
-from PIL import Image
+from PIL import Image, ImageChops, ImageEnhance, ImageStat
 
 ROOT = Path(__file__).resolve().parent.parent / 'assets'
 DIR = ROOT / 'characters'
 OBJ_DIR = ROOT / 'objects'
+FLOOR_DIR = ROOT / 'floors'
+FLOOR_SIZE = 320       # une texture = 2×2 cases
+FLOOR_SOFT = 0.45      # part de couleur moyenne mélangée à la texture (contraste adouci : meubles et pions lisibles)
+FLOOR_LIGHT = 1.12     # éclaircissement
 # noms de fichiers tolérés pour un type d'objet (accents retirés automatiquement)
 OBJ_ALIAS = {'champignon': 'champi', 'roseau': 'roseaux'}
 # idem pour les personnages (fautes de frappe dans les noms de fichiers)
@@ -152,9 +158,38 @@ def objects():
         print(f'objet {src.name} → {out.name} ({out.stat().st_size // 1024} Ko)')
 
 
+def seamless(img):
+    """Texture raccordable : au centre l'image, vers les bords sa copie décalée d'une demi-taille (dont les bords
+    viennent du centre de l'image, donc se raccordent d'une tuile à l'autre), avec un fondu entre les deux."""
+    w, h = img.size
+    shifted = ImageChops.offset(img, w // 2, h // 2)
+    band = w * 0.28
+    mask = Image.new('L', (w, h))
+    mask.putdata([round(255 * min(1, min(x, w - 1 - x, y, h - 1 - y) / band)) for y in range(h) for x in range(w)])
+    return Image.composite(img, shifted, mask)
+
+
+def floors():
+    if not FLOOR_DIR.exists():
+        return
+    for src in sources(FLOOR_DIR):
+        name = type_name(src.stem)
+        img = Image.open(src).convert('RGB')
+        side = min(img.size)
+        img = img.crop(((img.width - side) // 2, (img.height - side) // 2, (img.width + side) // 2, (img.height + side) // 2))
+        img = seamless(img.resize((FLOOR_SIZE * 2, FLOOR_SIZE * 2), Image.LANCZOS))
+        mean = tuple(round(v) for v in ImageStat.Stat(img).mean)
+        img = Image.blend(img, Image.new('RGB', img.size, mean), FLOOR_SOFT)
+        img = ImageEnhance.Brightness(img).enhance(FLOOR_LIGHT)
+        out = FLOOR_DIR / (name + '.webp')
+        img.resize((FLOOR_SIZE, FLOOR_SIZE), Image.LANCZOS).save(out, 'WEBP', quality=78, method=6)
+        print(f'sol {src.name} → {out.name} ({out.stat().st_size // 1024} Ko)')
+
+
 def main():
     portraits()
     objects()
+    floors()
 
 
 if __name__ == '__main__':

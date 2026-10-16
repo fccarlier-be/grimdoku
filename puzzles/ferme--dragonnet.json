@@ -5,23 +5,28 @@
   "rooms": {
     "G": {
       "name": "Grange",
-      "the": "la grange"
+      "the": "la grange",
+      "floor": "paille"
     },
     "E": {
       "name": "Étable",
-      "the": "l'étable"
+      "the": "l'étable",
+      "floor": "paille"
     },
     "O": {
       "name": "Poulailler",
-      "the": "le poulailler"
+      "the": "le poulailler",
+      "floor": "paille"
     },
     "F": {
       "name": "Fournil",
-      "the": "le fournil"
+      "the": "le fournil",
+      "floor": "tomettes"
     },
     "P": {
       "name": "Potager",
-      "the": "le potager"
+      "the": "le potager",
+      "floor": "herbe"
     }
   },
   "layout": [

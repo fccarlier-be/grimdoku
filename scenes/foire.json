@@ -5,31 +5,38 @@
   "rooms": {
     "R": {
       "name": "Roulotte",
-      "the": "la roulotte"
+      "the": "la roulotte",
+      "floor": "parquet"
     },
     "S": {
       "name": "Stands",
-      "the": "les stands"
+      "the": "les stands",
+      "floor": "sciure"
     },
     "B": {
       "name": "Buvette",
-      "the": "la buvette"
+      "the": "la buvette",
+      "floor": "parquet"
     },
     "K": {
       "name": "Coulisses",
-      "the": "les coulisses"
+      "the": "les coulisses",
+      "floor": "parquet"
     },
     "C": {
       "name": "Chapiteau",
-      "the": "le chapiteau"
+      "the": "le chapiteau",
+      "floor": "sciure"
     },
     "M": {
       "name": "Ménagerie",
-      "the": "la ménagerie"
+      "the": "la ménagerie",
+      "floor": "paille"
     },
     "N": {
       "name": "Manège",
-      "the": "le manège"
+      "the": "le manège",
+      "floor": "sciure"
     }
   },
   "layout": [

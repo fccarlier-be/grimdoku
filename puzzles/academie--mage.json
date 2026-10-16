@@ -5,31 +5,38 @@
   "rooms": {
     "A": {
       "name": "Tour d'astronomie",
-      "the": "la tour d'astronomie"
+      "the": "la tour d'astronomie",
+      "floor": "parquet"
     },
     "X": {
       "name": "Salle de cours",
-      "the": "la salle de cours"
+      "the": "la salle de cours",
+      "floor": "parquet"
     },
     "B": {
       "name": "Bureau du directeur",
-      "the": "le bureau du directeur"
+      "the": "le bureau du directeur",
+      "floor": "parquet"
     },
     "D": {
       "name": "Dortoir",
-      "the": "le dortoir"
+      "the": "le dortoir",
+      "floor": "parquet"
     },
     "L": {
       "name": "Laboratoire",
-      "the": "le laboratoire"
+      "the": "le laboratoire",
+      "floor": "damier"
     },
     "R": {
       "name": "Réfectoire",
-      "the": "le réfectoire"
+      "the": "le réfectoire",
+      "floor": "parquet"
     },
     "S": {
       "name": "Serre",
-      "the": "la serre"
+      "the": "la serre",
+      "floor": "herbe"
     }
   },
   "layout": [

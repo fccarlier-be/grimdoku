@@ -58,11 +58,24 @@ for (const [type, a] of Object.entries(ARCHETYPES)) {
   symbols.push(`<symbol id="big-${type}" viewBox="0 0 ${w * 64} ${h * 64}"><image href="data:image/webp;base64,${fs.readFileSync(full).toString('base64')}" width="${w * 64}" height="${h * 64}"/></symbol>`);
   bigImages++;
 }
+// sols : assets/floors/<matière>.webp → une classe .fl-<matière> par matière (texture teintée par la couleur de la pièce) ;
+// parchemin.webp → fond du cadre de la carte. Sans texture : couleur unie de la pièce (repli).
+const floorsUsed = [...new Set(puzzles.flatMap(p => Object.values(p.rooms).map(r => r.floor)).filter(Boolean))].sort();
+const floorCss = [];
+for (const m of floorsUsed.concat('parchemin')) {
+  const f = `assets/floors/${m}.webp`;
+  if (!fs.existsSync(f)) { missing.push('sol ' + m); continue; }
+  const url = `url(data:image/webp;base64,${fs.readFileSync(f).toString('base64')})`;
+  floorCss.push(m === 'parchemin' ? `:root { --parch-tex: ${url}; }` : `.cell.fl-${m} { --floor: ${url}; }`);
+}
+// bords déchirés du parchemin (cadre de la carte) : bruit fractal qui déplace le contour
+defs.push('<filter id="torn" x="-4%" y="-4%" width="108%" height="108%"><feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="3" seed="11" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="11" xChannelSelector="R" yChannelSelector="G"/></filter>');
 const sprite = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>${defs.join('')}</defs>${symbols.join('')}</svg>`;
 
 const out = t.replace('/*__ENGINE__*/', () => engine)
   .replace('/*__PUZZLES__*/', () => JSON.stringify(puzzles))
-  .replace('<!--__SPRITE__-->', () => sprite);
+  .replace('<!--__SPRITE__-->', () => sprite)
+  .replace('/*__FLOORS__*/', () => floorCss.join('\n'));
 fs.mkdirSync('dist', { recursive: true });
 fs.writeFileSync('dist/grimdoku.html', out);
 console.log('dist/grimdoku.html', out.length, 'octets,', symbols.length, 'dessins, dont', objImages, 'objet(s) et', images, 'portrait(s) illustrés,', bigImages, 'grand(s) personnage(s) en entier');

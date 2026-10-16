@@ -14,23 +14,28 @@
   "rooms": {
     "M": {
       "name": "Moulin",
-      "the": "le moulin"
+      "the": "le moulin",
+      "floor": "parquet"
     },
     "G": {
       "name": "Grange",
-      "the": "la grange"
+      "the": "la grange",
+      "floor": "paille"
     },
     "V": {
       "name": "Verger",
-      "the": "le verger"
+      "the": "le verger",
+      "floor": "herbe"
     },
     "P": {
       "name": "Potager",
-      "the": "le potager"
+      "the": "le potager",
+      "floor": "herbe"
     },
     "E": {
       "name": "Mare",
-      "the": "la mare"
+      "the": "la mare",
+      "floor": "boue"
     }
   },
   "layout": [

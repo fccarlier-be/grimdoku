@@ -5,23 +5,28 @@
   "rooms": {
     "K": {
       "name": "Cuisine",
-      "the": "la cuisine"
+      "the": "la cuisine",
+      "floor": "damier"
     },
     "C": {
       "name": "Cellier",
-      "the": "le cellier"
+      "the": "le cellier",
+      "floor": "tomettes"
     },
     "F": {
       "name": "Salle des fêtes",
-      "the": "la salle des fêtes"
+      "the": "la salle des fêtes",
+      "floor": "noble"
     },
     "G": {
       "name": "Garde-manger",
-      "the": "le garde-manger"
+      "the": "le garde-manger",
+      "floor": "tomettes"
     },
     "O": {
       "name": "Cour",
-      "the": "la cour"
+      "the": "la cour",
+      "floor": "paves"
     }
   },
   "layout": [

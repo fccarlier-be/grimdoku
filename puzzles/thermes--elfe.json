@@ -5,23 +5,28 @@
   "rooms": {
     "V": {
       "name": "Vestiaire",
-      "the": "le vestiaire"
+      "the": "le vestiaire",
+      "floor": "parquet"
     },
     "C": {
       "name": "Bassin chaud",
-      "the": "le bassin chaud"
+      "the": "le bassin chaud",
+      "floor": "mosaique"
     },
     "F": {
       "name": "Bassin froid",
-      "the": "le bassin froid"
+      "the": "le bassin froid",
+      "floor": "mosaique"
     },
     "S": {
       "name": "Sauna",
-      "the": "le sauna"
+      "the": "le sauna",
+      "floor": "mosaique"
     },
     "M": {
       "name": "Salle de massage",
-      "the": "la salle de massage"
+      "the": "la salle de massage",
+      "floor": "parquet"
     }
   },
   "layout": [

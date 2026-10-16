@@ -5,31 +5,38 @@
   "rooms": {
     "D": {
       "name": "Antre du dragon",
-      "the": "l'antre du dragon"
+      "the": "l'antre du dragon",
+      "floor": "roche"
     },
     "F": {
       "name": "Forge",
-      "the": "la forge"
+      "the": "la forge",
+      "floor": "dalles"
     },
     "A": {
       "name": "Armurerie",
-      "the": "l'armurerie"
+      "the": "l'armurerie",
+      "floor": "dalles"
     },
     "O": {
       "name": "Fonderie",
-      "the": "la fonderie"
+      "the": "la fonderie",
+      "floor": "dalles"
     },
     "C": {
       "name": "Réserve de charbon",
-      "the": "la réserve de charbon"
+      "the": "la réserve de charbon",
+      "floor": "roche"
     },
     "T": {
       "name": "Atelier",
-      "the": "l'atelier"
+      "the": "l'atelier",
+      "floor": "parquet"
     },
     "Y": {
       "name": "Cour",
-      "the": "la cour"
+      "the": "la cour",
+      "floor": "paves"
     }
   },
   "layout": [
