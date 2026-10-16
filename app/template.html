@@ -951,7 +951,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     if (P.characters.some(c => (c.traits || []).includes('spectre')))
       specials.push(`<span><b>👻 Spectre</b> : peut se tenir sur les meubles bloquants (tables, statues…). Il respecte quand même lignes et colonnes.</span>`);
     if (P.characters.some(c => c.shape))
-      specials.push(`<span><b>🐉 Grand personnage</b> : il occupe plusieurs cases, et chacune prend sa ligne et sa colonne. Toutes ses cases sont dans la même pièce, jamais sur un meuble. Sa forme peut être tournée ou retournée.${P.hiddenShapes ? ` <b>Sa forme est inconnue</b> : ${hiddenSizes()}.` : ''} Pour le placer : ✏️ Crayon, sa lettre sur chacune de ses cases, puis appui long sur l'une d'elles.</span>`);
+      specials.push(`<span><b>🐉 Grand personnage</b> : il occupe plusieurs cases, et chacune prend sa ligne et sa colonne. Toutes ses cases sont dans la même pièce, jamais sur un meuble. Sa forme peut être tournée ou retournée.${P.hiddenShapes ? ` <b>Sa forme est inconnue</b> : ${hiddenSizes()}.` : ''} Pour le placer : choisis-le, touche chacune de ses cases pour y écrire sa lettre, puis appui long sur l'une d'elles.</span>`);
     const links = {};
     P.objects.filter(o => o.type === 'portail').forEach(o => (links[o.link] = links[o.link] || []).push(P.rooms[P.layout[o.at[0]][o.at[1]]].name));
     Object.values(links).forEach(l => specials.push(`<span><b>🌀 Portail</b> : ${esc(l[0])} et ${esc(l[1])} comptent comme une seule pièce.</span>`));
@@ -984,7 +984,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
       ${S.solved ? verdictHtml() : `<div class="dock">
         <div class="tools">
           <button class="tbtn" id="hintBtn" aria-label="Indice">🕯️<span class="lbl"> Indice</span></button>
-          <button class="tbtn pen" id="penBtn" aria-pressed="${!!settings.pen}" title="Crayon : un toucher écrit la lettre du personnage choisi. Éteint : un toucher pose une croix.">✏️<span class="lbl"> Crayon</span></button>
+          <button class="tbtn pen" id="penBtn" aria-pressed="${!!settings.cross}" title="Crayon : un toucher barre une case d'une croix (ou l'efface). Les lettres s'écrivent en choisissant un personnage.">✏️<span class="lbl"> Crayon</span></button>
           <span class="spacer"></span>
           <button class="tbtn" id="undo" aria-label="Annuler" ${undo.length ? '' : 'disabled'}>↶<span class="lbl"> Annuler</span></button>
           <button class="accuse" id="accuse" ${allPlaced ? '' : 'disabled'}>Accuser</button>
@@ -1030,8 +1030,10 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     if (S.solved) return bindVerdict();
     document.getElementById('hintBtn').onclick = hint;
     document.getElementById('penBtn').onclick = () => {
-      settings.pen = !settings.pen; store.set('settings', settings); render();
-      if (settings.pen && !selected) toast('✏️ Crayon : choisis un personnage, puis touche ses cases possibles.');
+      // deux modes séparés : crayon = croix ; un personnage choisi = ses lettres
+      settings.cross = !settings.cross; store.set('settings', settings);
+      if (settings.cross) selected = null;
+      render();
     };
     document.getElementById('undo').onclick = () => { if (!undo.length) return; S = JSON.parse(undo.pop()); save(); render(); };
     document.getElementById('accuse').onclick = accuse;
@@ -1076,8 +1078,13 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     });
   }
 
+  // choisir un personnage éteint le crayon : on passe aux lettres
+  function pickOnly(id) {
+    selected = id;
+    if (settings.cross) { settings.cross = false; store.set('settings', settings); }
+  }
   function pick(id) {
-    selected = selected === id ? null : id;
+    if (selected === id) selected = null; else pickOnly(id);
     render();
   }
 
@@ -1092,22 +1099,22 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
 
   const pencilsAt = (r, c) => P.characters.filter(x => (S.pencil[x.id] || []).includes(r + ',' + c)).map(x => x.id);
 
-  // toucher court, selon l'outil : Crayon allumé = lettre du personnage choisi (plusieurs cases possibles),
-  // éteint = croix (hypothèse du joueur). Un pion confirmé : touché, il est choisi ; au crayon, touché à nouveau,
-  // il redevient une lettre. L'appui long place le personnage quel que soit l'outil.
+  // toucher court, selon l'outil : Crayon allumé = croix (hypothèse du joueur) ; sinon, avec un personnage choisi,
+  // sa lettre (plusieurs cases possibles). Un pion confirmé : touché, il est choisi ; touché à nouveau, il redevient
+  // une lettre. L'appui long place le personnage choisi.
   function tap(r, c) {
     const who = charAt(r, c);
     const k = r + ',' + c;
+    if (settings.cross && !who) return toggleMark(r, c);
     if (who) {
-      if (who !== selected || !settings.pen) { selected = who === selected ? null : who; return render(); }
+      if (who !== selected) { pickOnly(who); return render(); }
       snapshot(); S.pencil[who] = E.cellsOf(S.pos[who]).map(rc => rc.join(',')); delete S.pos[who]; save(); return render();
     }
-    if (!settings.pen) return toggleMark(r, c);
     if (!selected) {
-      // au crayon sans personnage choisi : une case à lettres choisit leur personnage
+      // sans personnage choisi : une case à lettres choisit leur personnage
       const pens = pencilsAt(r, c);
-      if (pens.length) { selected = pens[0]; return render(); }
-      return toast('✏️ Choisis d\'abord un personnage (sa carte d\'indice ou la barre du bas).', true);
+      if (pens.length) { pickOnly(pens[0]); return render(); }
+      return toast('Choisis un personnage pour écrire sa lettre, ou allume ✏️ Crayon pour barrer une case.', true);
     }
     if (!E.canStand(ctx, selected, r, c)) {
       const o = ctx.objAt[k];
@@ -1176,13 +1183,13 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
   function hint() {
     const sol = P.solution.positions;
     const wrong = Object.keys(S.pos).find(id => E.posKey(S.pos[id]) !== E.posKey(sol[id]));
-    if (wrong) { selected = wrong; render(); return toast(`Quelque chose cloche : ${ctx.chars[wrong].name} n'est pas à sa place.`, true, 5000); }
+    if (wrong) { pickOnly(wrong); render(); return toast(`Quelque chose cloche : ${ctx.chars[wrong].name} n'est pas à sa place.`, true, 5000); }
     hint.steps = hint.steps && hint.for === P.id ? hint.steps : E.humanSolve(P, P.clues, 2).steps;
     hint.for = P.id;
     for (const st of hint.steps) {
       const id = st.ids.find(x => !S.pos[x]);
       if (!id) continue;
-      selected = id; render();
+      pickOnly(id); render();
       return toast('💡 ' + HINT_TEXT[st.tech](ctx.chars[id].name), false, 6000);
     }
     toast('Tout le monde est à sa place : il ne reste plus qu\'à accuser !', false, 4000);
@@ -1255,12 +1262,12 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
       </ul>
       <div class="sect">Gestes</div>
       <ul>
-        <li>Outil ✏️ <b>Crayon</b> allumé : touche un personnage, puis une case : sa <b>lettre</b> s'y inscrit au crayon. Tu peux noter plusieurs cases possibles ; touche une lettre à nouveau pour l'effacer.</li>
-        <li>Outil ✏️ <b>Crayon</b> éteint : touche une case pour la barrer d'une croix <b>au crayon gris-bleu</b> (ta propre hypothèse) ; touche-la encore pour l'effacer.</li>
-        <li><b>Appui long</b> (1,5 s) sur une case, avec ou sans le crayon : quand la jauge est pleine, le personnage choisi y est placé pour de bon. Un grand personnage : sa lettre au crayon sur chacune de ses cases, puis appui long sur l'une d'elles ; son portrait s'affiche alors sur chacune.</li>
+        <li>Touche un personnage, puis une case : sa <b>lettre</b> s'y inscrit. Tu peux noter plusieurs cases possibles ; touche une lettre à nouveau pour l'effacer.</li>
+        <li>Outil ✏️ <b>Crayon</b> : touche une case pour la barrer d'une croix <b>au crayon gris-bleu</b> (ta propre hypothèse) ; touche-la encore pour l'effacer. Choisir un personnage éteint le crayon.</li>
+        <li><b>Appui long</b> (1,5 s) sur une case : quand la jauge est pleine, le personnage choisi y est placé pour de bon. Un grand personnage : sa lettre au crayon sur chacune de ses cases, puis appui long sur l'une d'elles ; son portrait s'affiche alors sur chacune.</li>
         <li>Quand un personnage est choisi, ce que nomment ses indices s'allume en bleu : les objets cités (tous ceux du même type) ou la pièce citée.</li>
         <li>Une fois un personnage placé pour de bon, sa ligne et sa colonne se remplissent de croix <b>à l'encre noire</b> : ces cases sont condamnées.</li>
-        <li>Au crayon, touche deux fois un personnage placé pour le remettre en lettres.</li>
+        <li>Touche deux fois un personnage placé pour le remettre en lettres.</li>
         <li>Bouton 💡 <b>Indice</b> : signale une erreur, ou désigne le prochain personnage à déduire et le raisonnement à utiliser.</li>
         <li>Le ✓ d'un indice le grise quand tu l'as exploité.</li>
       </ul>

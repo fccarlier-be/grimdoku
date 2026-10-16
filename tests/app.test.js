@@ -93,8 +93,6 @@ test('gestes : lettre au crayon, appui abandonné, appui long, retour au crayon'
   openCase(p.id);
   const [id, [r, c]] = Object.entries(p.solution.positions)[0];
   pick(id);
-  d.getElementById('penBtn').click();
-  assert.equal(d.getElementById('penBtn').getAttribute('aria-pressed'), 'true', 'outil Crayon allumé');
   cell(r, c).click();
   assert.ok(cell(r, c).querySelector('.pencil'), 'toucher court : lettre au crayon');
   assert.equal(d.querySelectorAll('.cell .mark').length, 0, 'une lettre au crayon ne pose pas de croix');
@@ -126,33 +124,31 @@ test('régression : vérification en direct d\'un indice relatif dont l\'autre p
   assert.deepEqual(errors, [], 'pas d\'erreur JavaScript');
 });
 
-test('Crayon éteint : toucher une case la barre, même avec un personnage choisi ; encore une fois efface la croix', () => {
-  const { d, cell, pick, openCase, PUZZLES } = open();
+test('✏️ Crayon : toucher une case la barre, encore une fois efface la croix ; choisir un personnage l\'éteint', () => {
+  const { w, d, cell, pick, openCase, PUZZLES } = open();
   const p = PUZZLES[0];
   openCase(p.id);
-  assert.equal(d.getElementById('penBtn').getAttribute('aria-pressed'), 'false', 'Crayon éteint par défaut');
+  const pen = () => d.getElementById('penBtn').getAttribute('aria-pressed');
+  assert.equal(pen(), 'false', 'Crayon éteint par défaut');
   const free = [...d.querySelectorAll('.cell')].find(el => !el.querySelector('.obj'));
   const [r, c] = [+free.dataset.r, +free.dataset.c];
   cell(r, c).click();
+  assert.equal(cell(r, c).querySelector('.mark'), null, 'sans crayon ni personnage : rien');
+  assert.match(d.querySelector('.toast').textContent, /Crayon/);
+  d.getElementById('penBtn').click();
+  assert.equal(pen(), 'true');
+  assert.equal(JSON.parse(w.localStorage.getItem('grimdoku:settings')).cross, true, 'outil retenu');
+  cell(r, c).click();
   assert.ok(cell(r, c).querySelector('.mark.manual'), 'croix posée, au crayon (hypothèse du joueur)');
+  assert.equal(cell(r, c).querySelector('.pencil'), null, 'pas de lettre');
   cell(r, c).click();
   assert.equal(cell(r, c).querySelector('.mark'), null, 'croix effacée');
   pick(p.characters[0].id);
+  assert.equal(pen(), 'false', 'choisir un personnage éteint le crayon');
   cell(r, c).click();
-  assert.ok(cell(r, c).querySelector('.mark.manual'), 'personnage choisi, Crayon éteint : une croix');
-  assert.equal(cell(r, c).querySelector('.pencil'), null, 'et pas de lettre');
-});
-
-test('Crayon allumé sans personnage choisi : ni croix ni lettre, un rappel ; outil retenu', () => {
-  const { w, d, cell, openCase, PUZZLES } = open();
-  const p = PUZZLES[0];
-  openCase(p.id);
+  assert.ok(cell(r, c).querySelector('.pencil') && !cell(r, c).querySelector('.mark'), 'personnage choisi : sa lettre');
   d.getElementById('penBtn').click();
-  const free = [...d.querySelectorAll('.cell')].find(el => !el.querySelector('.obj'));
-  free.click();
-  assert.equal(d.querySelectorAll('.cell .mark, .cell .pencil').length, 0);
-  assert.match(d.querySelector('.toast').textContent, /Choisis/);
-  assert.equal(JSON.parse(w.localStorage.getItem('grimdoku:settings')).pen, true, 'outil retenu');
+  assert.equal(d.querySelector('.chip[aria-pressed="true"]'), null, 'allumer le crayon désélectionne le personnage');
 });
 
 test('indice : désigne le prochain personnage à déduire, ou signale une erreur', () => {
@@ -186,7 +182,6 @@ test('grand personnage : lettres au crayon sur ses cases, puis appui long ; form
   const { d, cell, pick, hold, openCase, errors } = open();
   openCase(p.id);
   pick(big.id);
-  d.getElementById('penBtn').click();
   cell(...cells[0]).click();
   await hold(...cells[0]);
   assert.equal(cell(...cells[0]).querySelector('.token'), null, 'une seule case : pas placé');
