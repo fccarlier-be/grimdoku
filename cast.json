@@ -3,6 +3,7 @@
   "mage": {
     "icon": "🧙‍♂️",
     "gender": "m",
+    "title": "le mage",
     "desc": "Mage, allergique au houblon",
     "names": {
       "A": "Azimut",
@@ -18,6 +19,7 @@
   "barde": {
     "icon": "🧑‍🎤",
     "gender": "m",
+    "title": "le barde",
     "desc": "Barde, chante faux",
     "names": {
       "A": "Arpège",
@@ -33,6 +35,7 @@
   "troll": {
     "icon": "🧌",
     "gender": "m",
+    "title": "le troll",
     "desc": "Troll, plongeur à mi-temps",
     "names": {
       "A": "Avaloir",
@@ -48,6 +51,7 @@
   "elfe": {
     "icon": "🧝‍♀️",
     "gender": "f",
+    "title": "l'elfe",
     "desc": "Elfe, critique gastronomique",
     "names": {
       "A": "Aëlys",
@@ -63,6 +67,7 @@
   "fee": {
     "icon": "🧚",
     "gender": "f",
+    "title": "la fée",
     "desc": "Fée, doit trois tournées",
     "names": {
       "A": "Aubépine",
@@ -78,6 +83,7 @@
   "tavernier": {
     "icon": "🧔‍♂️",
     "gender": "m",
+    "title": "le tavernier",
     "desc": "Tavernier nain, radin légendaire",
     "names": {
       "A": "Aspre",
@@ -93,6 +99,7 @@
   "spectre": {
     "icon": "👻",
     "gender": "m",
+    "title": "le spectre",
     "traits": [
       "spectre"
     ],
@@ -111,6 +118,7 @@
   "dragonnet": {
     "icon": "🐉",
     "gender": "m",
+    "title": "le dragonnet",
     "desc": "Dragonnet, brûle tout ce qu'il touche",
     "names": {
       "A": "Ardent",
@@ -126,6 +134,7 @@
   "zombie": {
     "icon": "🧟",
     "gender": "m",
+    "title": "le zombie",
     "desc": "Zombie, ancien apprenti. Ancien tout court",
     "names": {
       "A": "Anatole",
@@ -141,6 +150,7 @@
   "sirene": {
     "icon": "🧜‍♀️",
     "gender": "f",
+    "title": "la sirène",
     "desc": "Sirène, venue pour l'aquarium",
     "names": {
       "A": "Aquabelle",
@@ -156,6 +166,7 @@
   "vampire": {
     "icon": "🧛‍♀️",
     "gender": "f",
+    "title": "la comtesse",
     "desc": "Comtesse vampire, végane (elle le jure)",
     "names": {
       "A": "Abysse",
@@ -171,6 +182,7 @@
   "djinn": {
     "icon": "🧞‍♀️",
     "gender": "f",
+    "title": "la djinn",
     "desc": "Djinn, a déjà exaucé deux vœux de trop",
     "names": {
       "A": "Amphora",
@@ -186,6 +198,7 @@
   "archimage": {
     "icon": "🧙‍♂️",
     "gender": "m",
+    "title": "l'archimage",
     "desc": "Archimage, 412 ans, toujours pas de testament",
     "names": {
       "A": "Argentbarbe",
@@ -201,6 +214,7 @@
   "chevalier": {
     "icon": "🤺",
     "gender": "m",
+    "title": "le chevalier",
     "desc": "Chevalier, armure trop petite depuis Noël",
     "names": {
       "A": "Aymeric",
@@ -216,6 +230,7 @@
   "gobelin": {
     "icon": "👺",
     "gender": "m",
+    "title": "le gobelin",
     "desc": "Gobelin, trésorier du royaume (non déclaré)",
     "names": {
       "A": "Arnak",
@@ -231,6 +246,7 @@
   "roi": {
     "icon": "🤴",
     "gender": "m",
+    "title": "le roi",
     "desc": "Roi, avare de compliments et de tout le reste",
     "names": {
       "A": "Aldric",
@@ -246,6 +262,7 @@
   "meunier": {
     "icon": "👨‍🌾",
     "gender": "m",
+    "title": "le meunier",
     "desc": "Meunier, pèse le grain avec le pouce",
     "names": {
       "A": "Amidon",
@@ -261,6 +278,7 @@
   "boulanger": {
     "icon": "👨‍🍳",
     "gender": "m",
+    "title": "le boulanger",
     "desc": "Boulanger, pétrit plus de ragots que de pâte",
     "names": {
       "A": "Amandin",
@@ -271,6 +289,262 @@
       "F": "Fougasse",
       "G": "Gaufrin",
       "H": "Honoré"
+    }
+  },
+  "bonimenteur": {
+    "icon": "🎩",
+    "gender": "m",
+    "title": "le bonimenteur",
+    "desc": "Bonimenteur, vend du rêve au kilo",
+    "names": {
+      "A": "Aplomb",
+      "B": "Bagou",
+      "C": "Clinquant",
+      "D": "Duperon",
+      "E": "Esbroufe",
+      "F": "Faconde",
+      "G": "Gouaille",
+      "H": "Hâbleur"
+    }
+  },
+  "cartomancienne": {
+    "icon": "🔮",
+    "gender": "f",
+    "title": "la cartomancienne",
+    "desc": "Cartomancienne, voit l'avenir, rate le présent",
+    "names": {
+      "A": "Arcane",
+      "B": "Bohémia",
+      "C": "Clairvoya",
+      "D": "Destinée",
+      "E": "Étoila",
+      "F": "Fortuna",
+      "G": "Gémina",
+      "H": "Horoscopa"
+    }
+  },
+  "sorciere": {
+    "icon": "🧙‍♀️",
+    "gender": "f",
+    "title": "la sorcière",
+    "desc": "Sorcière des marais, cuisine tout ce qui coasse",
+    "names": {
+      "A": "Aconit",
+      "B": "Berce",
+      "C": "Ciguë",
+      "D": "Datura",
+      "E": "Ellébore",
+      "F": "Fiel",
+      "G": "Garance",
+      "H": "Houx"
+    }
+  },
+  "crapaud": {
+    "icon": "🐸",
+    "gender": "m",
+    "title": "le crapaud",
+    "desc": "Crapaud, prince déchu, attend toujours son bisou",
+    "names": {
+      "A": "Ambroise",
+      "B": "Bufo",
+      "C": "Coassin",
+      "D": "Dodu",
+      "E": "Eugène",
+      "F": "Flaque",
+      "G": "Gluant",
+      "H": "Hector"
+    }
+  },
+  "bibliothecaire": {
+    "icon": "👩‍🏫",
+    "gender": "f",
+    "title": "la bibliothécaire",
+    "desc": "Bibliothécaire, réclame le silence en hurlant",
+    "names": {
+      "A": "Agathe",
+      "B": "Bérénice",
+      "C": "Clémentine",
+      "D": "Dewey",
+      "E": "Ernestine",
+      "F": "Folio",
+      "G": "Gutenberga",
+      "H": "Héloïse"
+    }
+  },
+  "contremaitre": {
+    "icon": "👷",
+    "gender": "m",
+    "title": "le contremaître",
+    "desc": "Contremaître nain, compte les pépites et les pauses",
+    "names": {
+      "A": "Anthracite",
+      "B": "Basalte",
+      "C": "Charbon",
+      "D": "Diorite",
+      "E": "Émeri",
+      "F": "Feldspath",
+      "G": "Granit",
+      "H": "Houille"
+    }
+  },
+  "mineur": {
+    "icon": "⛏️",
+    "gender": "m",
+    "title": "le mineur",
+    "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
+    "names": {
+      "A": "Agrifol",
+      "B": "Boulon",
+      "C": "Caillou",
+      "D": "Dynamite",
+      "E": "Étai",
+      "F": "Filon",
+      "G": "Grisou",
+      "H": "Hotte"
+    }
+  },
+  "pirate": {
+    "icon": "🏴‍☠️",
+    "gender": "m",
+    "title": "le pirate",
+    "desc": "Pirate, a perdu une jambe, un œil et le sens de l'orientation",
+    "names": {
+      "A": "Abordage",
+      "B": "Bâbord",
+      "C": "Coutelas",
+      "D": "Doublon",
+      "E": "Écoutille",
+      "F": "Flibuste",
+      "G": "Grappin",
+      "H": "Hune"
+    }
+  },
+  "capitaine": {
+    "icon": "🧑‍✈️",
+    "gender": "m",
+    "title": "le capitaine",
+    "desc": "Capitaine, n'a jamais quitté le port",
+    "names": {
+      "A": "Amiral",
+      "B": "Barbecale",
+      "C": "Cabestan",
+      "D": "Drakkar",
+      "E": "Étrave",
+      "F": "Frégaton",
+      "G": "Gouvernail",
+      "H": "Hissot"
+    }
+  },
+  "perroquet": {
+    "icon": "🦜",
+    "gender": "m",
+    "title": "le perroquet",
+    "desc": "Perroquet, répète tous les secrets",
+    "names": {
+      "A": "Ara",
+      "B": "Bavard",
+      "C": "Cacatoès",
+      "D": "Dico",
+      "E": "Écho-Écho",
+      "F": "Fanfaron",
+      "G": "Gazouille",
+      "H": "Hurleur"
+    }
+  },
+  "apprentie": {
+    "icon": "🧙‍♀️",
+    "gender": "f",
+    "title": "l'apprentie",
+    "desc": "Apprentie sorcière, a déjà fait exploser trois chaudrons",
+    "names": {
+      "A": "Aube",
+      "B": "Brindille",
+      "C": "Cannelle",
+      "D": "Dahlia",
+      "E": "Étincelle",
+      "F": "Frimousse",
+      "G": "Grenadine",
+      "H": "Hirondelle"
+    }
+  },
+  "professeur": {
+    "icon": "👨‍🏫",
+    "gender": "m",
+    "title": "le professeur",
+    "desc": "Professeur de potions, note à l'odeur",
+    "names": {
+      "A": "Alchimius",
+      "B": "Bécher",
+      "C": "Cornue",
+      "D": "Distillus",
+      "E": "Éprouvette",
+      "F": "Fiolius",
+      "G": "Gramme",
+      "H": "Hydromel"
+    }
+  },
+  "chef": {
+    "icon": "👨‍🍳",
+    "gender": "m",
+    "title": "le chef",
+    "desc": "Chef gobelin, goûte tout, surtout ce qui bouge encore",
+    "names": {
+      "A": "Arôme",
+      "B": "Bouillon",
+      "C": "Cuistot",
+      "D": "Dégustin",
+      "E": "Épice",
+      "F": "Fricot",
+      "G": "Gratiné",
+      "H": "Hachis"
+    }
+  },
+  "ogre": {
+    "icon": "👹",
+    "gender": "m",
+    "title": "l'ogre",
+    "desc": "Ogre, végétarien depuis mardi",
+    "names": {
+      "A": "Avaleur",
+      "B": "Bedaine",
+      "C": "Croc",
+      "D": "Dévoreur",
+      "E": "Estomac",
+      "F": "Festin",
+      "G": "Goinfre",
+      "H": "Hargne"
+    }
+  },
+  "fossoyeur": {
+    "icon": "⚰️",
+    "gender": "m",
+    "title": "le fossoyeur",
+    "desc": "Fossoyeur, creuse en sifflotant",
+    "names": {
+      "A": "Anselme",
+      "B": "Bêchu",
+      "C": "Caveau",
+      "D": "Déterre",
+      "E": "Épitaphe",
+      "F": "Funérin",
+      "G": "Glas",
+      "H": "Humus"
+    }
+  },
+  "corbeau": {
+    "icon": "🐦‍⬛",
+    "gender": "m",
+    "title": "le corbeau",
+    "desc": "Corbeau, écrit des lettres anonymes",
+    "names": {
+      "A": "Augure",
+      "B": "Becquet",
+      "C": "Croassant",
+      "D": "Dénonce",
+      "E": "Encrier",
+      "F": "Funeste",
+      "G": "Griffon",
+      "H": "Hiboulet"
     }
   }
 }

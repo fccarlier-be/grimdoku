@@ -1,0 +1,94 @@
+{
+ "positions": {
+  "g": [
+   0,
+   4
+  ],
+  "b": [
+   5,
+   5
+  ],
+  "c": [
+   3,
+   0
+  ],
+  "d": [
+   4,
+   1
+  ],
+  "e": [
+   1,
+   2
+  ],
+  "f": [
+   2,
+   6
+  ],
+  "a": [
+   6,
+   3
+  ]
+ },
+ "murderer": "e",
+ "cast": {
+  "b": "a",
+  "c": "b",
+  "d": "c",
+  "e": "d",
+  "f": "e",
+  "a": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "inRoom",
+    "room": "B"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameColAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaise"
+   }
+  }
+ ]
+}

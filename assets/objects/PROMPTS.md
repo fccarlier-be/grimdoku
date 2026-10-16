@@ -49,3 +49,17 @@ New object:
 | `cristal.png` | a crystal ball on a carved dark wooden stand, the glass glowing pale blue and cyan with a soft swirling mist inside (no purple, no pink) |
 | `sarcophage.png` | a closed grey stone sarcophagus lying on the ground, the lid carved with a simple face and folded arms, chipped edges and cobwebs at one corner |
 | `portail.png` | a standing circular stone ring engraved with glowing golden runes, filled with a swirling vortex of deep blue and cyan magical energy (no purple, no pink) |
+
+## Nouveaux objets (pack de 80 énigmes) — même méthode, joindre le tonneau validé
+
+| Fichier | Description |
+|---|---|
+| `canon.png` | a black iron ship's cannon on a wooden carriage with small wheels, a few cannonballs stacked beside it |
+| `tombe.png` | an old grey stone gravestone with a rounded top, slightly tilted, a crack and a patch of moss, a few weeds at its base |
+| `enclume.png` | a heavy black iron anvil on a thick tree-stump base, a blacksmith's hammer resting on top |
+| `pupitre.png` | a slanted wooden lectern with an open heavy book on it, a candle stub and a quill |
+| `roseaux.png` | a dense clump of tall reeds and cattails growing from a patch of mud, muted green and brown |
+| `chariot.png` | a small wooden mine cart with iron bands on short rails, filled with grey rocks and a few gold nuggets |
+| `hamac.png` | a canvas hammock hanging between two short wooden posts, slightly sagging, with a folded blanket in it |
+| `fauteuil.png` | a deep wingback armchair upholstered in worn brick-red fabric with wooden feet and a small cushion |
+| `barque.png` | a small wooden rowing boat seen from slightly above, two oars resting inside |

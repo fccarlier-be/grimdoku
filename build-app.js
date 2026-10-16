@@ -9,6 +9,9 @@ const puzzles = fs.readdirSync('puzzles').sort().map(f => JSON.parse(fs.readFile
 
 // mobilier : assets/objects/<type>.svg → un <symbol id="obj-<type>"> par objet, utilisé via <use href="#obj-…">
 const defs = [], symbols = [];
+// secours tant qu'un meuble ou un personnage n'a ni image (.webp) ni dessin (.svg) : son emoji, et un avertissement
+const missing = [];
+const emojiSymbol = (id, emoji) => `<symbol id="${id}" viewBox="0 0 64 64"><text x="32" y="34" font-size="44" text-anchor="middle" dominant-baseline="central">${emoji}</text></symbol>`;
 let objImages = 0;
 for (const type of Object.keys(E.OBJECTS)) {
   // une image <type>.webp (préparée par tools/images.py) a priorité sur le dessin <type>.svg
@@ -19,7 +22,7 @@ for (const type of Object.keys(E.OBJECTS)) {
     continue;
   }
   const file = `assets/objects/${type}.svg`;
-  if (!fs.existsSync(file)) throw new Error('dessin manquant : ' + file);
+  if (!fs.existsSync(file)) { symbols.push(emojiSymbol(`obj-${type}`, E.OBJECTS[type].icon)); missing.push('objet ' + type); continue; }
   let svg = fs.readFileSync(file, 'utf8').trim();
   svg = svg.replace(/<defs>([\s\S]*?)<\/defs>/, (_, d) => { defs.push(d); return ''; });
   const viewBox = (svg.match(/viewBox="([^"]+)"/) || [])[1] || '0 0 64 64';
@@ -39,7 +42,7 @@ for (const type of Object.keys(ARCHETYPES)) {
     continue;
   }
   const file = `assets/characters/${type}.svg`;
-  if (!fs.existsSync(file)) throw new Error('portrait manquant : ' + file);
+  if (!fs.existsSync(file)) { symbols.push(emojiSymbol(`chr-${type}`, ARCHETYPES[type].icon)); missing.push('personnage ' + type); continue; }
   const svg = fs.readFileSync(file, 'utf8').trim();
   const viewBox = (svg.match(/viewBox="([^"]+)"/) || [])[1] || '0 0 64 64';
   symbols.push(`<symbol id="chr-${type}" viewBox="${viewBox}">${svg.replace(/^<svg[^>]*>/, '').replace(/<\/svg>$/, '')}</symbol>`);
@@ -52,3 +55,4 @@ const out = t.replace('/*__ENGINE__*/', () => engine)
 fs.mkdirSync('dist', { recursive: true });
 fs.writeFileSync('dist/grimdoku.html', out);
 console.log('dist/grimdoku.html', out.length, 'octets,', symbols.length, 'dessins, dont', objImages, 'objet(s) et', images, 'portrait(s) illustrés');
+if (missing.length) console.log('⚠️  sans image (emoji provisoire) :', missing.join(', '));

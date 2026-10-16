@@ -1,0 +1,209 @@
+{
+  "formatVersion": 1,
+  "title": "La Foire aux Sortilèges",
+  "size": 7,
+  "rooms": {
+    "R": {
+      "name": "Roulotte",
+      "the": "la roulotte"
+    },
+    "S": {
+      "name": "Stands",
+      "the": "les stands"
+    },
+    "B": {
+      "name": "Buvette",
+      "the": "la buvette"
+    },
+    "K": {
+      "name": "Coulisses",
+      "the": "les coulisses"
+    },
+    "C": {
+      "name": "Chapiteau",
+      "the": "le chapiteau"
+    },
+    "M": {
+      "name": "Ménagerie",
+      "the": "la ménagerie"
+    },
+    "N": {
+      "name": "Manège",
+      "the": "le manège"
+    }
+  },
+  "layout": [
+    "RRSSSBB",
+    "RRSSSBB",
+    "KKCCCCB",
+    "KKCCCCM",
+    "NNCCCCM",
+    "NNNCCMM",
+    "NNNCCMM"
+  ],
+  "objects": [
+    {
+      "type": "lit",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        0,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        2,
+        4
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        4,
+        5
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        4,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        6
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        6,
+        0
+      ]
+    }
+  ],
+  "intro": "Le bonimenteur {victime}, maître de la Foire aux Sortilèges, a été retrouvé sous son propre chapiteau, la bouche enfin close. Six forains avaient une dent contre lui. Un seul était avec lui.",
+  "characters": [
+    {
+      "id": "a",
+      "archetype": "cartomancienne",
+      "role": "suspect"
+    },
+    {
+      "id": "b",
+      "archetype": "barde",
+      "role": "suspect"
+    },
+    {
+      "id": "c",
+      "archetype": "gobelin",
+      "role": "suspect"
+    },
+    {
+      "id": "d",
+      "archetype": "troll",
+      "role": "suspect"
+    },
+    {
+      "id": "e",
+      "archetype": "fee",
+      "role": "suspect"
+    },
+    {
+      "id": "f",
+      "archetype": "dragonnet",
+      "role": "suspect"
+    },
+    {
+      "id": "g",
+      "archetype": "bonimenteur",
+      "role": "victim"
+    }
+  ],
+  "epilogues": {
+    "cartomancienne": "{coupable} l'avait vu dans les cartes : {victime} comptait la remplacer par une boule de cristal mécanique. Elle a préféré changer l'avenir elle-même.",
+    "barde": "{coupable} avoue en chanson (fausse) : {victime} l'obligeait à jouer la même ritournelle six fois par heure. Même un barde a ses limites.",
+    "gobelin": "{coupable} tenait la caisse de la foire. {victime} venait de découvrir que la caisse avait un double fond. Et un triple.",
+    "troll": "{coupable}, hercule de foire, en avait assez de soulever {victime} à bout de bras pour le final. Ce soir, il l'a posé. Brusquement.",
+    "fee": "{coupable} servait de « fée en bocal » au stand des merveilles. Quand {victime} a voulu refermer le couvercle, elle s'est rebiffée. Pour de bon.",
+    "dragonnet": "{coupable}, cracheur de feu vedette, touchait trois fois moins que ce qu'annonçait l'affiche. Il a négocié. Il a un peu trop soufflé."
+  },
+  "auto": {
+    "intro": "{Titre} {victime} a été retrouvé{e} sans vie à la Foire aux Sortilèges, entre le chapiteau et la ménagerie. {Nombre} forains rôdaient. Un seul était avec {lui}.",
+    "epilogues": {
+      "cartomancienne": "{coupable} l'avait vu dans les cartes : {victime} allait ruiner la foire. Elle a préféré changer l'avenir elle-même.",
+      "barde": "{coupable} avoue en chanson (fausse) : {victime} avait coupé sa musique en plein spectacle. Même un barde a ses limites.",
+      "gobelin": "{coupable} tenait la caisse de la foire. {victime} venait de découvrir que la caisse avait un double fond. Et un triple.",
+      "troll": "{coupable}, hercule de foire, avoue : {victime} l'avait traité de « gros caillou » devant les enfants.",
+      "fee": "{coupable} avoue : {victime} voulait l'enfermer dans un bocal pour le stand des merveilles. Elle s'est rebiffée. Pour de bon.",
+      "dragonnet": "{coupable}, cracheur de feu vedette, avoue : {victime} avait éteint son numéro avec un seau d'eau. Devant tout le public.",
+      "bonimenteur": "{coupable} avoue d'une voix de stentor : {victime} faisait fuir les clients. Et sans clients, pas de bonimenteur."
+    }
+  }
+}

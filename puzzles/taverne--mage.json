@@ -1,0 +1,275 @@
+{
+  "formatVersion": 1,
+  "title": "Meurtre au Sanglier Borgne — l'affaire Faribole",
+  "intro": "Le mage Faribole a été retrouvé sans vie à l'aube, au Sanglier Borgne. Cinq clients avaient trop bu, ou pas assez. Un seul était avec lui.",
+  "epilogue": "Écu avoue en comptant ses pièces : Faribole voulait partir sans payer l'ardoise. Personne ne part sans payer l'ardoise.",
+  "size": 6,
+  "rooms": {
+    "T": {
+      "name": "Salle commune",
+      "the": "la salle commune"
+    },
+    "C": {
+      "name": "Cuisine",
+      "the": "la cuisine"
+    },
+    "R": {
+      "name": "Cave",
+      "the": "la cave"
+    },
+    "B": {
+      "name": "Chambre",
+      "the": "la chambre"
+    },
+    "E": {
+      "name": "Écurie",
+      "the": "l'écurie"
+    }
+  },
+  "layout": [
+    "TTTCCC",
+    "TTTCCC",
+    "TTTRRC",
+    "BBTRRE",
+    "BBTEEE",
+    "BBBEEE"
+  ],
+  "objects": [
+    {
+      "type": "table",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        4,
+        4
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        5,
+        5
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Avaloir",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    },
+    {
+      "id": "b",
+      "name": "Bérénwë",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
+    },
+    {
+      "id": "c",
+      "name": "Capucine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
+    },
+    {
+      "id": "d",
+      "name": "Dièse",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
+    },
+    {
+      "id": "e",
+      "name": "Écu",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧔‍♂️",
+      "desc": "Tavernier nain, radin légendaire",
+      "archetype": "tavernier"
+    },
+    {
+      "id": "f",
+      "name": "Faribole",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage"
+    }
+  ],
+  "id": "taverne--mage",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Avaloir était dans la même colonne qu'un tonneau.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était sur la même ligne qu'un chaudron.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bérénwë était à côté d'un tonneau.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Capucine était sur la même ligne qu'une chaise.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Elle était dans la même colonne qu'un lit.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dièse était à côté d'une botte de foin.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "foin"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Écu était dans la même colonne qu'une table.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "table"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        5,
+        2
+      ],
+      "d": [
+        4,
+        5
+      ],
+      "a": [
+        0,
+        3
+      ],
+      "b": [
+        2,
+        4
+      ],
+      "c": [
+        1,
+        0
+      ],
+      "e": [
+        3,
+        1
+      ]
+    },
+    "murderer": "e"
+  },
+  "rating": {
+    "skulls": 0,
+    "score": 1,
+    "hardest": "case unique",
+    "hardSteps": 0,
+    "directStart": 1
+  },
+  "difficulty": 0
+}

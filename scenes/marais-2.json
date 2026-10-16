@@ -1,0 +1,44 @@
+{
+  "extends": "marais",
+  "subtitle": "Brume épaisse",
+  "intro": "Le crapaud {victime} ne recevra jamais son bisou : on l'a retrouvé raide au bord du marais. Cinq voisins pataugeaient dans la brume. Un seul était avec lui.",
+  "characters": [
+    {
+      "id": "a",
+      "archetype": "sirene",
+      "role": "suspect"
+    },
+    {
+      "id": "b",
+      "archetype": "zombie",
+      "role": "suspect"
+    },
+    {
+      "id": "c",
+      "archetype": "troll",
+      "role": "suspect"
+    },
+    {
+      "id": "d",
+      "archetype": "elfe",
+      "role": "suspect"
+    },
+    {
+      "id": "e",
+      "archetype": "sorciere",
+      "role": "suspect"
+    },
+    {
+      "id": "f",
+      "archetype": "crapaud",
+      "role": "victim"
+    }
+  ],
+  "epilogues": {
+    "sirene": "{coupable} avoue : {victime} coassait sous sa fenêtre toutes les nuits en se prenant pour un prince charmant.",
+    "zombie": "{coupable} avoue, à son rythme : {victime} avait promis de lui rendre son bras s'il l'embrassait. Il l'a embrassé. Pas de bras.",
+    "troll": "{coupable} avoue : {victime} faisait payer un droit de passage sur SON pont. Il n'y a qu'un troll par pont.",
+    "elfe": "{coupable} avoue : {victime} exigeait un bisou royal pour redevenir prince. Une elfe a son standing.",
+    "sorciere": "{coupable} avoue sans remords : {victime} était l'ingrédient principal de sa soupe du dimanche. Rien de personnel."
+  }
+}

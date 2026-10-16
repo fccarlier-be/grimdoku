@@ -1,0 +1,318 @@
+{
+  "formatVersion": 1,
+  "title": "La Foire aux Sortilèges — l'affaire Glycine",
+  "size": 7,
+  "rooms": {
+    "R": {
+      "name": "Roulotte",
+      "the": "la roulotte"
+    },
+    "S": {
+      "name": "Stands",
+      "the": "les stands"
+    },
+    "B": {
+      "name": "Buvette",
+      "the": "la buvette"
+    },
+    "K": {
+      "name": "Coulisses",
+      "the": "les coulisses"
+    },
+    "C": {
+      "name": "Chapiteau",
+      "the": "le chapiteau"
+    },
+    "M": {
+      "name": "Ménagerie",
+      "the": "la ménagerie"
+    },
+    "N": {
+      "name": "Manège",
+      "the": "le manège"
+    }
+  },
+  "layout": [
+    "RRSSSBB",
+    "RRSSSBB",
+    "KKCCCCB",
+    "KKCCCCM",
+    "NNCCCCM",
+    "NNNCCMM",
+    "NNNCCMM"
+  ],
+  "objects": [
+    {
+      "type": "lit",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        0,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        2,
+        4
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        4,
+        5
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        4,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        6
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        6,
+        0
+      ]
+    }
+  ],
+  "intro": "La fée Glycine a été retrouvée sans vie à la Foire aux Sortilèges, entre le chapiteau et la ménagerie. Six forains rôdaient. Un seul était avec elle.",
+  "characters": [
+    {
+      "id": "a",
+      "name": "Aplomb",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🎩",
+      "desc": "Bonimenteur, vend du rêve au kilo",
+      "archetype": "bonimenteur"
+    },
+    {
+      "id": "b",
+      "name": "Bohémia",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🔮",
+      "desc": "Cartomancienne, voit l'avenir, rate le présent",
+      "archetype": "cartomancienne"
+    },
+    {
+      "id": "c",
+      "name": "Couac",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
+    },
+    {
+      "id": "d",
+      "name": "Dîme",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "e",
+      "name": "Engloutor",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    },
+    {
+      "id": "f",
+      "name": "Flammèche",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
+      "id": "g",
+      "name": "Glycine",
+      "gender": "f",
+      "role": "victim",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
+    }
+  ],
+  "id": "foire--fee",
+  "epilogue": "Engloutor, hercule de foire, avoue : Glycine l'avait traité de « gros caillou » devant les enfants.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Aplomb était dans la même colonne qu'une table.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bohémia était dans la même colonne qu'un chaudron.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Elle était sur la même ligne qu'une chaise.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Couac était sur la même ligne qu'un tapis.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dîme était sur la même ligne qu'un chaudron.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Engloutor était sur la même ligne qu'un coffre.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Flammèche était dans la buvette.",
+      "logic": {
+        "type": "inRoom",
+        "room": "B"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "g": [
+        0,
+        4
+      ],
+      "b": [
+        5,
+        5
+      ],
+      "c": [
+        3,
+        0
+      ],
+      "d": [
+        4,
+        1
+      ],
+      "e": [
+        1,
+        2
+      ],
+      "f": [
+        2,
+        6
+      ],
+      "a": [
+        6,
+        3
+      ]
+    },
+    "murderer": "e"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 7,
+    "hardest": "seul candidat",
+    "hardSteps": 3,
+    "directStart": 0
+  },
+  "difficulty": 3
+}

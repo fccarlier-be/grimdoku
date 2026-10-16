@@ -1,19 +1,21 @@
 // Grimdoku — générateur d'indices pour une scène donnée (prototype).
-// Usage : node gen.js scene.json [seed] [--level=1|2] [--portal-murder] [--murderer=<id>] [--skulls=1|2|3] [--tries=N]
+// Usage : node gen.js scenes/<décor>.json [seed] [--victim=<type>] [--level=1|2] [--portal-murder] [--murderer=<id>] [--skulls=0|1|2|3] [--tries=N]
 // Conventions imposées : suspects dans des pièces différentes, aucun indice pour la victime (ni meuble sous elle),
 // indice pour qui est sur un meuble, ordre de facilité = ordre alphabétique des suspects (A le plus facile).
 'use strict';
 const fs = require('fs');
 const E = require('./engine');
 
-const { resolve } = require('./cast');
-const scene = resolve(JSON.parse(fs.readFileSync(process.argv[2], 'utf8')));
+const { resolve, loadScene, withVictim } = require('./cast');
+const victimArg = (process.argv.find(a => a.startsWith('--victim=')) || '').split('=')[1];
+// --victim=<type> : affaire automatique, ce type d'habitué est la victime
+const scene = resolve(victimArg ? withVictim(loadScene(process.argv[2]), victimArg) : loadScene(process.argv[2]));
 let seed = Number(process.argv[3] || 1);
 const portalMurder = process.argv.includes('--portal-murder');
 const arg = (name, def) => (process.argv.find(a => a.startsWith(`--${name}=`)) || `=${def}`).split('=')[1];
 const wantMurderer = arg('murderer', '');
 const tries = Number(arg('tries', 200));
-const wantSkulls = Number(arg('skulls', 0)); // 0 = n'importe quelle difficulté
+const wantSkulls = arg('skulls', '') === '' ? null : Number(arg('skulls', '')); // null = n'importe quelle difficulté (0 est un niveau)
 const rnd = () => { seed = (seed * 1103515245 + 12345) % 2147483648; return seed / 2147483648; };
 const shuffle = (a) => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 
@@ -97,7 +99,11 @@ function relabel(steps, murderer) {
 
 const count = (clues) => E.solve(scene, clues, 400).length;
 const level = Number((process.argv.find(a => a.startsWith('--level=')) || '--level=1').split('=')[1]);
-const hs = (clues, lv) => E.humanSolve(scene, clues, lv);
+// technique la plus dure autorisée pendant le choix des indices, selon la difficulté visée
+// (0 crâne : indices + cases uniques ; 1 : + ligne réservée, positions relatives ; 2 : + seul candidat, pièces)
+const MAX_TECH = { 0: 1, 1: 3, 2: 5, 3: 6 };
+const maxTech = wantSkulls === null ? Infinity : MAX_TECH[wantSkulls];
+const hs = (clues, lv) => E.humanSolve(scene, clues, lv, maxTech);
 
 for (let attempt = 0; attempt < tries; attempt++) {
   const { pos, m } = randomSolution();
@@ -141,13 +147,14 @@ for (let attempt = 0; attempt < tries; attempt++) {
   if (level === 2 && !needsL2) continue;
   if (!hs(chosen, level).solved) continue;
   // A le plus facile à placer, puis B… (ex æquo permis) : on réattribue les suspects aux positions
-  const f = relabel(hs(chosen, level).steps, m);
+  // ordre de facilité vu par le solveur complet (comme le build), pas par le solveur limité du choix des indices
+  const f = relabel(E.humanSolve(scene, chosen, 2).steps, m);
   if (!f) continue;
   const pos2 = { [victim]: pos[victim] };
   for (const id of suspects) pos2[f[id]] = pos[id];
   const clues2 = chosen.map(cl => ({ who: f[cl.who], logic: cl.logic.other ? { ...cl.logic, other: f[cl.logic.other] } : cl.logic }));
   const scene2 = { ...scene, characters: scene.characters.map(c => c.id === victim ? c : { ...ctx.chars[Object.keys(f).find(k => f[k] === c.id)], id: c.id }) };
-  if (wantSkulls && E.rateDifficulty(E.humanSolve(scene2, clues2, 2).steps).skulls !== wantSkulls) continue;
+  if (wantSkulls !== null && E.rateDifficulty(E.humanSolve(scene2, clues2, 2).steps).skulls !== wantSkulls) continue;
   const sol = E.solve(scene2, clues2, 2);
   if (sol.length !== 1) { console.error('BUG: non unique'); process.exit(2); }
   const cast = {}; for (const id of suspects) cast[f[id]] = id;

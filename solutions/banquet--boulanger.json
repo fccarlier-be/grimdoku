@@ -1,0 +1,82 @@
+{
+ "positions": {
+  "f": [
+   2,
+   5
+  ],
+  "e": [
+   0,
+   3
+  ],
+  "b": [
+   5,
+   4
+  ],
+  "c": [
+   3,
+   0
+  ],
+  "d": [
+   1,
+   1
+  ],
+  "a": [
+   4,
+   2
+  ]
+ },
+ "murderer": "b",
+ "cast": {
+  "e": "a",
+  "b": "b",
+  "c": "c",
+  "d": "d",
+  "a": "e"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "e",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "southOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "foin"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "table"
+   }
+  }
+ ]
+}

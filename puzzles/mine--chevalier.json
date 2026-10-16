@@ -1,0 +1,374 @@
+{
+  "formatVersion": 1,
+  "title": "La Mine des Nains — l'affaire Hardouin",
+  "size": 8,
+  "rooms": {
+    "E": {
+      "name": "Entrée",
+      "the": "l'entrée"
+    },
+    "G": {
+      "name": "Galerie",
+      "the": "la galerie"
+    },
+    "F": {
+      "name": "Forge",
+      "the": "la forge"
+    },
+    "P": {
+      "name": "Puits",
+      "the": "le puits"
+    },
+    "V": {
+      "name": "Filon",
+      "the": "le filon"
+    },
+    "D": {
+      "name": "Dortoir",
+      "the": "le dortoir"
+    },
+    "C": {
+      "name": "Cantine",
+      "the": "la cantine"
+    },
+    "T": {
+      "name": "Salle des coffres",
+      "the": "la salle des coffres"
+    }
+  },
+  "layout": [
+    "EEEGGFFF",
+    "EEEGGFFF",
+    "DDGGGPPF",
+    "DDGGGPPV",
+    "DDCCCPVV",
+    "TTCCCVVV",
+    "TTCCCVVV",
+    "TTTTCVVV"
+  ],
+  "objects": [
+    {
+      "type": "tonneau",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        1,
+        7
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        6,
+        7
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        2
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        7,
+        2
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        7,
+        6
+      ]
+    }
+  ],
+  "intro": "Le chevalier Hardouin a été retrouvé au fond de la Mine des Nains, aussi froid que le granit. Sept ouvriers étaient descendus pour l'équipe de nuit. Un seul était avec lui.",
+  "characters": [
+    {
+      "id": "a",
+      "name": "Anatole",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
+    },
+    {
+      "id": "b",
+      "name": "Basalte",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👷",
+      "desc": "Contremaître nain, compte les pépites et les pauses",
+      "archetype": "contremaitre"
+    },
+    {
+      "id": "c",
+      "name": "Capucine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
+    },
+    {
+      "id": "d",
+      "name": "Dardafeu",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
+      "id": "e",
+      "name": "Étai",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "⛏️",
+      "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
+      "archetype": "mineur"
+    },
+    {
+      "id": "f",
+      "name": "Fringale",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    },
+    {
+      "id": "g",
+      "name": "Grigou",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "h",
+      "name": "Hardouin",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
+    }
+  ],
+  "id": "mine--chevalier",
+  "epilogue": "Capucine avoue : Hardouin la gardait dans un bocal pour éclairer la galerie. Elle a fini par trouver la sortie. Et un gros caillou.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Anatole était dans la salle des coffres.",
+      "logic": {
+        "type": "inRoom",
+        "room": "T"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était sur la même ligne qu'un chariot de mine.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chariot"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était dans la même colonne qu'un coffre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Basalte était dans l'entrée.",
+      "logic": {
+        "type": "inRoom",
+        "room": "E"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était à l'est de Dardafeu.",
+      "logic": {
+        "type": "eastOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Capucine était à côté d'une chaise.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dardafeu était au sud de Fringale.",
+      "logic": {
+        "type": "southOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Étai était à l'est de Fringale.",
+      "logic": {
+        "type": "eastOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Fringale était dans le puits.",
+      "logic": {
+        "type": "inRoom",
+        "room": "P"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Grigou était dans le filon.",
+      "logic": {
+        "type": "inRoom",
+        "room": "V"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "h": [
+        6,
+        3
+      ],
+      "e": [
+        1,
+        6
+      ],
+      "f": [
+        2,
+        5
+      ],
+      "g": [
+        5,
+        7
+      ],
+      "d": [
+        3,
+        1
+      ],
+      "c": [
+        4,
+        4
+      ],
+      "a": [
+        7,
+        0
+      ],
+      "b": [
+        0,
+        2
+      ]
+    },
+    "murderer": "c"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 3,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 1
+  },
+  "difficulty": 2
+}

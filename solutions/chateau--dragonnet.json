@@ -1,0 +1,108 @@
+{
+ "positions": {
+  "g": [
+   6,
+   3
+  ],
+  "f": [
+   1,
+   5
+  ],
+  "c": [
+   0,
+   2
+  ],
+  "d": [
+   2,
+   6
+  ],
+  "e": [
+   3,
+   0
+  ],
+  "a": [
+   5,
+   1
+  ],
+  "b": [
+   4,
+   4
+  ]
+ },
+ "murderer": "b",
+ "cast": {
+  "f": "a",
+  "c": "b",
+  "d": "c",
+  "e": "d",
+  "a": "e",
+  "b": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "f",
+   "logic": {
+    "type": "northOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "southOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "northOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "southOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "foin"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
+   }
+  }
+ ]
+}

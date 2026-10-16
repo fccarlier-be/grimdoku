@@ -18,7 +18,17 @@
     lit:      { name: 'lit', a: "un lit", the: "le lit",            blocking: false, icon: '🛏️' },
     tapis:    { name: 'tapis', a: "un tapis", the: "le tapis",          blocking: false, icon: '' },
     champi:   { name: 'champignon géant', a: "un champignon géant", the: "le champignon géant", blocking: false, icon: '🍄' },
-    portail:  { name: 'portail runique', a: "un portail runique", the: "le portail runique", blocking: false, icon: '🌀' }
+    portail:  { name: 'portail runique', a: "un portail runique", the: "le portail runique", blocking: false, icon: '🌀' },
+    // ajouts du pack de 20 énigmes
+    canon:    { name: 'canon', a: "un canon", the: "le canon", blocking: true, icon: '💣' },
+    tombe:    { name: 'tombe', a: "une tombe", the: "la tombe", blocking: true, icon: '🪦' },
+    enclume:  { name: 'enclume', a: "une enclume", the: "l'enclume", blocking: true, icon: '⚒️' },
+    pupitre:  { name: 'pupitre', a: "un pupitre", the: "le pupitre", blocking: true, icon: '📖' },
+    roseaux:  { name: 'massif de roseaux', a: "un massif de roseaux", the: "le massif de roseaux", blocking: true, icon: '🌾' },
+    chariot:  { name: 'chariot de mine', a: "un chariot de mine", the: "le chariot de mine", blocking: true, icon: '🛒' },
+    hamac:    { name: 'hamac', a: "un hamac", the: "le hamac", blocking: false, icon: '🪢' },
+    fauteuil: { name: 'fauteuil', a: "un fauteuil", the: "le fauteuil", blocking: false, icon: '🛋️' },
+    barque:   { name: 'barque', a: "une barque", the: "la barque", blocking: false, icon: '🛶' }
   };
 
   function key(r, c) { return r + ',' + c; }
@@ -181,7 +191,8 @@
   // Renvoie { solved, remaining, cand, order, steps } ; cand: {id: Set('r,c')} ;
   // steps : [{ ids, tech }] dans l'ordre où un humain place les personnages ; order : steps[].ids.
   const TECH = ['indice', 'case unique', 'ligne réservée', 'position relative', 'seul candidat', 'pièces', 'groupes'];
-  function humanSolve(p, clues, level) {
+  // maxTech (optionnel) : n'utiliser que les techniques jusqu'à cet indice de TECH (générateur, grilles faciles)
+  function humanSolve(p, clues, level, maxTech = Infinity) {
     const ctx = prepare(p);
     const n = ctx.n;
     const ids = p.characters.map(c => c.id);
@@ -199,9 +210,13 @@
     const steps = [];
     const placed = new Set();
     let fresh = [];
-    const cells = (id) => [...cand[id]].map(k => k.split(',').map(Number));
+    // Chaque technique raisonne sur un instantané pris au début de son passage (snap) et n'applique ses éliminations
+    // qu'à l'état réel : le résultat d'un passage ne dépend pas de l'ordre des personnages (donc pas des lettres).
+    const liveCells = (id) => [...cand[id]].map(k => k.split(',').map(Number));
+    let snap = null;
+    const cells = (id) => (snap ? snap[id] : liveCells(id));
     const zones = (id) => new Set(cells(id).map(([r, c]) => ctx.zoneOf(r, c)));
-    const fixed = (id) => cand[id].size === 1 ? cells(id)[0] : null;
+    const fixed = (id) => { const cs = cells(id); return cs.length === 1 ? cs[0] : null; };
     const restrict = (id, pred) => {
       let ch = false;
       for (const k of [...cand[id]]) { const [r, c] = k.split(',').map(Number); if (!pred(r, c)) { cand[id].delete(k); ch = true; } }
@@ -226,7 +241,7 @@
       () => {
         let ch = false;
         for (const id of ids) {
-          if (cand[id].size < 2) continue;
+          if (cells(id).length < 2) continue;
           for (const axis of [0, 1]) {
             const L = new Set(cells(id).map(rc => rc[axis]));
             if (L.size !== 1) continue;
@@ -322,9 +337,12 @@
     for (let guard = 0; guard < 1000; guard++) {
       if (ids.some(id => cand[id].size === 0)) return { solved: false, contradiction: true, cand, steps, order: steps.map(s => s.ids) };
       let progressed = false;
-      for (let t = 1; t < rules.length; t++) {
+      for (let t = 1; t < rules.length && t <= maxTech; t++) {
         fresh = [];
-        if (rules[t]()) {
+        snap = Object.fromEntries(ids.map(id => [id, liveCells(id)]));
+        const changed = rules[t]();
+        snap = null;
+        if (changed) {
           if (fresh.length) steps.push({ ids: fresh, tech: t });
           progressed = true;
           break;

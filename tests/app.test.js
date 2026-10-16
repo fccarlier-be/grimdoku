@@ -10,6 +10,9 @@ const HTML = fs.readFileSync(path.join(__dirname, '..', 'dist', 'grimdoku.html')
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 const sigOf = (p) => p.characters.map(c => c.id + ':' + c.name).join('|') + '#' + p.clues.length;
 
+const opened = [];
+test.after(() => opened.forEach(w => w.close()));
+
 // ouvre l'appli ; settings / saves : contenu du localStorage avant le chargement
 function open({ settings, saves = {} } = {}) {
   const dom = new JSDOM(HTML, {
@@ -29,6 +32,7 @@ function open({ settings, saves = {} } = {}) {
   const pick = (id) => d.querySelector(`.chip[data-id="${id}"]`).click();
   const hold = async (r, c, ms = 1600) => { fire(cell(r, c), 'pointerdown'); await sleep(ms); fire(cell(r, c), 'pointerup'); };
   const openCase = (id) => d.querySelector(`.case[data-id="${id}"]`).click();
+  opened.push(w);
   return { w, d, errors, cell, fire, pick, hold, openCase, PUZZLES: w.eval('PUZZLES') };
 }
 
@@ -42,16 +46,19 @@ test('accueil : toutes les affaires, de la plus facile à la plus dure', () => {
 });
 
 test('chaque affaire : la bonne carte mène à la victoire', () => {
-  const { PUZZLES } = open();
+  // une seule page pour toutes les affaires (une page jsdom par affaire épuiserait la mémoire)
+  const { w, d, openCase, errors, PUZZLES } = open();
   for (const p of PUZZLES) {
     const save = { pos: p.solution.positions, pencil: {}, marks: [], done: [], solved: false, sig: sigOf(p) };
-    const { d, openCase, errors } = open({ saves: { [p.id]: save } });
+    w.localStorage.setItem('grimdoku:p:' + p.id, JSON.stringify(save));
     openCase(p.id);
     d.getElementById('accuse').click();
     assert.ok(d.querySelector('.stamp'), `${p.id} : tampon « Affaire résolue »`);
     assert.ok(d.querySelector('.verdictcard'), `${p.id} : verdict`);
-    assert.deepEqual(errors, [], p.id);
+    d.getElementById('back').click();
   }
+  assert.deepEqual(errors, []);
+  w.close();
 });
 
 test('mauvaise carte : pas de victoire', () => {

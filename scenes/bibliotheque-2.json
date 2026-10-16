@@ -1,0 +1,50 @@
+{
+  "extends": "bibliotheque",
+  "subtitle": "Réserve interdite",
+  "intro": "L'archimage {victime} a été retrouvé endormi pour de bon sur un grimoire de la Bibliothèque Interdite. Six lecteurs nocturnes erraient entre les rayonnages. Un seul était avec lui.",
+  "characters": [
+    {
+      "id": "a",
+      "archetype": "mage",
+      "role": "suspect"
+    },
+    {
+      "id": "b",
+      "archetype": "spectre",
+      "role": "suspect"
+    },
+    {
+      "id": "c",
+      "archetype": "vampire",
+      "role": "suspect"
+    },
+    {
+      "id": "d",
+      "archetype": "djinn",
+      "role": "suspect"
+    },
+    {
+      "id": "e",
+      "archetype": "gobelin",
+      "role": "suspect"
+    },
+    {
+      "id": "f",
+      "archetype": "bibliothecaire",
+      "role": "suspect"
+    },
+    {
+      "id": "g",
+      "archetype": "archimage",
+      "role": "victim"
+    }
+  ],
+  "epilogues": {
+    "mage": "{coupable} avoue : {victime} lui avait volé sa thèse sur les allergies magiques, il y a trois cents ans. Il est rancunier, et patient.",
+    "spectre": "{coupable} avoue : {victime} voulait l'exorciser pour récupérer la réserve. Le fantôme a pris les devants.",
+    "vampire": "{coupable} avoue : {victime} lisait à voix haute un traité sur l'ail en salle de lecture. Il y a des limites.",
+    "djinn": "{coupable} avoue : {victime} avait fait son troisième vœu : « Laisse-moi tranquille pour toujours. » Elle l'a exaucé à sa façon.",
+    "gobelin": "{coupable} avoue : {victime} avait découvert que les livres rares disparaissaient. Le gobelin a fait disparaître un lecteur rare.",
+    "bibliothecaire": "{coupable} avoue en chuchotant, pour une fois : {victime} ronflait en salle de lecture depuis quatre siècles."
+  }
+}

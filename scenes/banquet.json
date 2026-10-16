@@ -1,0 +1,171 @@
+{
+  "formatVersion": 1,
+  "title": "Le Banquet des Gobelins",
+  "size": 6,
+  "rooms": {
+    "K": {
+      "name": "Cuisine",
+      "the": "la cuisine"
+    },
+    "C": {
+      "name": "Cellier",
+      "the": "le cellier"
+    },
+    "F": {
+      "name": "Salle des fêtes",
+      "the": "la salle des fêtes"
+    },
+    "G": {
+      "name": "Garde-manger",
+      "the": "le garde-manger"
+    },
+    "O": {
+      "name": "Cour",
+      "the": "la cour"
+    }
+  },
+  "layout": [
+    "KKKCCC",
+    "KKFFCC",
+    "GGFFFF",
+    "GGFFFF",
+    "GOOFFF",
+    "OOOOFF"
+  ],
+  "objects": [
+    {
+      "type": "chaudron",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        1,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        2,
+        4
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        4,
+        2
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "archetype": "gobelin",
+      "role": "suspect"
+    },
+    {
+      "id": "b",
+      "archetype": "troll",
+      "role": "suspect"
+    },
+    {
+      "id": "c",
+      "archetype": "ogre",
+      "role": "suspect"
+    },
+    {
+      "id": "d",
+      "archetype": "barde",
+      "role": "suspect"
+    },
+    {
+      "id": "e",
+      "archetype": "boulanger",
+      "role": "suspect"
+    },
+    {
+      "id": "f",
+      "archetype": "chef",
+      "role": "victim"
+    }
+  ],
+  "auto": {
+    "intro": "{Titre} {victime} a été retrouvé{e} sans vie au beau milieu du Banquet des Gobelins, la serviette encore autour du cou. {Nombre} convives s'empiffraient. Un seul était avec {lui}.",
+    "epilogues": {
+      "gobelin": "{coupable} avoue : {victime} avait réclamé l'addition du banquet. Personne ne réclame l'addition à un gobelin.",
+      "troll": "{coupable} avoue la bouche pleine : {victime} avait pris la dernière part de gâteau. Et l'assiette avec.",
+      "chef": "{coupable} avoue en goûtant sa sauce : {victime} avait demandé du sel. Devant tout le monde.",
+      "ogre": "{coupable} avoue, rouge de honte : {victime} l'avait vu manger de la viande. Il était végétarien depuis mardi.",
+      "barde": "{coupable} avoue : {victime} avait parlé pendant sa ballade. Toute la ballade.",
+      "boulanger": "{coupable} avoue en pétrissant nerveusement : {victime} avait trouvé son pain rassis. Il était juste « de caractère »."
+    }
+  }
+}

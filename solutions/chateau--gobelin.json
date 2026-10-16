@@ -1,0 +1,101 @@
+{
+ "positions": {
+  "g": [
+   0,
+   2
+  ],
+  "c": [
+   5,
+   6
+  ],
+  "a": [
+   1,
+   5
+  ],
+  "b": [
+   4,
+   3
+  ],
+  "f": [
+   6,
+   0
+  ],
+  "d": [
+   2,
+   4
+  ],
+  "e": [
+   3,
+   1
+  ]
+ },
+ "murderer": "d",
+ "cast": {
+  "c": "a",
+  "a": "b",
+  "b": "c",
+  "f": "d",
+  "d": "e",
+  "e": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "foin"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "westOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "sarcophage"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "eastOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tonneau"
+   }
+  }
+ ]
+}

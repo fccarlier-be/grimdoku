@@ -1,0 +1,101 @@
+{
+ "positions": {
+  "g": [
+   1,
+   4
+  ],
+  "f": [
+   2,
+   0
+  ],
+  "e": [
+   6,
+   1
+  ],
+  "b": [
+   4,
+   6
+  ],
+  "d": [
+   3,
+   2
+  ],
+  "c": [
+   5,
+   3
+  ],
+  "a": [
+   0,
+   5
+  ]
+ },
+ "murderer": "a",
+ "cast": {
+  "f": "a",
+  "e": "b",
+  "b": "c",
+  "d": "d",
+  "c": "e",
+  "a": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "e",
+   "logic": {
+    "type": "southOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "southOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "westOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "inRoom",
+    "room": "Y"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "inRoom",
+    "room": "B"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameColAs",
+    "object": "fauteuil"
+   }
+  }
+ ]
+}

@@ -1,0 +1,223 @@
+{
+  "formatVersion": 1,
+  "title": "La Bibliothèque Interdite",
+  "size": 7,
+  "rooms": {
+    "S": {
+      "name": "Scriptorium",
+      "the": "le scriptorium"
+    },
+    "Y": {
+      "name": "Rayonnages",
+      "the": "les rayonnages"
+    },
+    "B": {
+      "name": "Bureau",
+      "the": "le bureau"
+    },
+    "L": {
+      "name": "Salle de lecture",
+      "the": "la salle de lecture"
+    },
+    "G": {
+      "name": "Galerie",
+      "the": "la galerie"
+    },
+    "R": {
+      "name": "Réserve",
+      "the": "la réserve"
+    },
+    "A": {
+      "name": "Archives",
+      "the": "les archives"
+    }
+  },
+  "layout": [
+    "SSSYYYY",
+    "SSSYYYY",
+    "BBLLLGG",
+    "BBLLLGG",
+    "RRLLLGG",
+    "RRRAAAA",
+    "RRRAAAA"
+  ],
+  "objects": [
+    {
+      "type": "pupitre",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        0
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        5,
+        4
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        6,
+        5
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        6,
+        3
+      ]
+    }
+  ],
+  "intro": "La bibliothécaire {victime} a été retrouvée entre deux rayonnages, un « Chut ! » figé sur les lèvres. Six lecteurs nocturnes erraient dans la Bibliothèque Interdite. Un seul était avec elle.",
+  "characters": [
+    {
+      "id": "a",
+      "archetype": "mage",
+      "role": "suspect"
+    },
+    {
+      "id": "b",
+      "archetype": "spectre",
+      "role": "suspect"
+    },
+    {
+      "id": "c",
+      "archetype": "vampire",
+      "role": "suspect"
+    },
+    {
+      "id": "d",
+      "archetype": "djinn",
+      "role": "suspect"
+    },
+    {
+      "id": "e",
+      "archetype": "gobelin",
+      "role": "suspect"
+    },
+    {
+      "id": "f",
+      "archetype": "archimage",
+      "role": "suspect"
+    },
+    {
+      "id": "g",
+      "archetype": "bibliothecaire",
+      "role": "victim"
+    }
+  ],
+  "epilogues": {
+    "mage": "{coupable} avoue en éternuant : {victime} lui réclamait trois siècles d'amendes de retard pour un grimoire de recettes de bière.",
+    "spectre": "{coupable} hantait la réserve depuis des siècles. {victime} voulait la transformer en salle de lecture « lumineuse et accueillante ». Insupportable.",
+    "vampire": "{coupable} avoue : {victime} avait ouvert les rideaux de la galerie « pour lire plus confortablement ». Il y a des choses qu'on ne fait pas à une comtesse.",
+    "djinn": "{coupable} avoue : {victime} avait rangé sa lampe au rayon « Objets trouvés ». Il y a quatre-vingts ans.",
+    "gobelin": "{coupable} revendait les livres rares au marché noir. {victime} venait de faire l'inventaire. Il a classé l'affaire.",
+    "archimage": "{coupable} avoue : {victime} avait rangé ses mémoires au rayon « Fiction ». Quatre cent douze ans de vérité, et on ose douter."
+  },
+  "auto": {
+    "intro": "{Titre} {victime} a été retrouvé{e} sans vie entre deux rayonnages de la Bibliothèque Interdite. {Nombre} lecteurs nocturnes erraient dans les allées. Un seul était avec {lui}.",
+    "epilogues": {
+      "mage": "{coupable} avoue en éternuant : {victime} avait caché son grimoire de recettes de bière au rayon « Interdit aux mages ».",
+      "spectre": "{coupable} hantait la réserve depuis des siècles. {victime} voulait la transformer en salle de lecture « lumineuse et accueillante ». Insupportable.",
+      "vampire": "{coupable} avoue : {victime} avait ouvert les rideaux de la galerie « pour lire plus confortablement ».",
+      "djinn": "{coupable} avoue : {victime} avait rangé sa lampe au rayon « Objets trouvés ». Il y a quatre-vingts ans.",
+      "gobelin": "{coupable} revendait les livres rares au marché noir. {victime} venait de s'en apercevoir. Il a classé l'affaire.",
+      "archimage": "{coupable} avoue : {victime} avait rangé ses mémoires au rayon « Fiction ». Quatre cent douze ans de vérité, et on ose douter.",
+      "bibliothecaire": "{coupable} avoue en chuchotant, pour une fois : {victime} parlait fort en salle de lecture. Depuis des siècles."
+    }
+  }
+}

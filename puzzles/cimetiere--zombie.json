@@ -1,0 +1,384 @@
+{
+  "formatVersion": 1,
+  "title": "Le Cimetière de Minuit — l'affaire Hubert",
+  "size": 8,
+  "rooms": {
+    "G": {
+      "name": "Maison du gardien",
+      "the": "la maison du gardien"
+    },
+    "C": {
+      "name": "Chapelle",
+      "the": "la chapelle"
+    },
+    "A": {
+      "name": "Allée des ifs",
+      "the": "l'allée des ifs"
+    },
+    "K": {
+      "name": "Caveau",
+      "the": "le caveau"
+    },
+    "P": {
+      "name": "Carré des pauvres",
+      "the": "le carré des pauvres"
+    },
+    "J": {
+      "name": "Jardin du souvenir",
+      "the": "le jardin du souvenir"
+    },
+    "O": {
+      "name": "Ossuaire",
+      "the": "l'ossuaire"
+    },
+    "Y": {
+      "name": "Crypte",
+      "the": "la crypte"
+    }
+  },
+  "layout": [
+    "GGGAACCC",
+    "GGGAACCC",
+    "PPAAAAKK",
+    "PPAAAAKK",
+    "PPJJJOOK",
+    "YYJJJOOO",
+    "YYJJJOOO",
+    "YYYYJOOO"
+  ],
+  "objects": [
+    {
+      "type": "lit",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        3,
+        5
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        2,
+        7
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        5,
+        3
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        6,
+        2
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        7,
+        4
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        7,
+        5
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        6,
+        1
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        7,
+        3
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Albâtre",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ]
+    },
+    {
+      "id": "b",
+      "name": "Berce",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧙‍♀️",
+      "desc": "Sorcière des marais, cuisine tout ce qui coasse",
+      "archetype": "sorciere"
+    },
+    {
+      "id": "c",
+      "name": "Coassin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐸",
+      "desc": "Crapaud, prince déchu, attend toujours son bisou",
+      "archetype": "crapaud"
+    },
+    {
+      "id": "d",
+      "name": "Déterre",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "⚰️",
+      "desc": "Fossoyeur, creuse en sifflotant",
+      "archetype": "fossoyeur"
+    },
+    {
+      "id": "e",
+      "name": "Écarlate",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
+    },
+    {
+      "id": "f",
+      "name": "Funeste",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐦‍⬛",
+      "desc": "Corbeau, écrit des lettres anonymes",
+      "archetype": "corbeau"
+    },
+    {
+      "id": "g",
+      "name": "Gontran",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
+    },
+    {
+      "id": "h",
+      "name": "Hubert",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
+    }
+  ],
+  "id": "cimetiere--zombie",
+  "intro": "Le zombie Hubert a été retrouvé sans vie au Cimetière de Minuit, ce qui, admettons-le, simplifie les démarches. Sept habitués rôdaient entre les tombes. Un seul était avec lui.",
+  "epilogue": "Berce avoue sans remords : Hubert cueillait ses herbes de cimetière avant elle.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Albâtre hantait un pupitre.",
+      "logic": {
+        "type": "onObject",
+        "object": "pupitre"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Berce était sur la même ligne qu'une statue.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Coassin était à l'est d'Écarlate.",
+      "logic": {
+        "type": "eastOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était à l'ouest de Déterre.",
+      "logic": {
+        "type": "westOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était au nord de Berce.",
+      "logic": {
+        "type": "northOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Déterre était au nord d'Écarlate.",
+      "logic": {
+        "type": "northOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Écarlate était au sud de Funeste.",
+      "logic": {
+        "type": "southOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Funeste était à l'ouest d'Écarlate.",
+      "logic": {
+        "type": "westOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Il était dans l'allée des ifs.",
+      "logic": {
+        "type": "inRoom",
+        "room": "A"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Gontran était dans la même colonne qu'un sarcophage.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "sarcophage"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "h": [
+        7,
+        2
+      ],
+      "d": [
+        3,
+        7
+      ],
+      "a": [
+        1,
+        5
+      ],
+      "e": [
+        5,
+        4
+      ],
+      "b": [
+        6,
+        0
+      ],
+      "f": [
+        0,
+        3
+      ],
+      "g": [
+        2,
+        1
+      ],
+      "c": [
+        4,
+        6
+      ]
+    },
+    "murderer": "b"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "pièces",
+    "hardSteps": 2,
+    "directStart": 1
+  },
+  "difficulty": 2
+}

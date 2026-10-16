@@ -1,0 +1,355 @@
+{
+  "formatVersion": 1,
+  "title": "L'Académie de Magie — l'affaire Génia",
+  "size": 7,
+  "rooms": {
+    "A": {
+      "name": "Tour d'astronomie",
+      "the": "la tour d'astronomie"
+    },
+    "X": {
+      "name": "Salle de cours",
+      "the": "la salle de cours"
+    },
+    "B": {
+      "name": "Bureau du directeur",
+      "the": "le bureau du directeur"
+    },
+    "D": {
+      "name": "Dortoir",
+      "the": "le dortoir"
+    },
+    "L": {
+      "name": "Laboratoire",
+      "the": "le laboratoire"
+    },
+    "R": {
+      "name": "Réfectoire",
+      "the": "le réfectoire"
+    },
+    "S": {
+      "name": "Serre",
+      "the": "la serre"
+    }
+  },
+  "layout": [
+    "AAXXXBB",
+    "AAXXXBB",
+    "DDXXXLL",
+    "DDRRRLL",
+    "DDRRRLL",
+    "SSSRRRL",
+    "SSSSRRR"
+  ],
+  "objects": [
+    {
+      "type": "cristal",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        0,
+        3
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        1,
+        6
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        2,
+        6
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        3,
+        5
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        4,
+        6
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        2
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        6,
+        0
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        6,
+        3
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Alchimius",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🏫",
+      "desc": "Professeur de potions, note à l'odeur",
+      "archetype": "professeur"
+    },
+    {
+      "id": "b",
+      "name": "Braise",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
+      "id": "c",
+      "name": "Cannelle",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧙‍♀️",
+      "desc": "Apprentie sorcière, a déjà fait exploser trois chaudrons",
+      "archetype": "apprentie"
+    },
+    {
+      "id": "d",
+      "name": "Digitale",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
+    },
+    {
+      "id": "e",
+      "name": "Eustache",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage"
+    },
+    {
+      "id": "f",
+      "name": "Faëlys",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
+    },
+    {
+      "id": "g",
+      "name": "Génia",
+      "gender": "f",
+      "role": "victim",
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn"
+    }
+  ],
+  "id": "academie--djinn",
+  "intro": "La djinn Génia a été retrouvée sans vie un soir d'examens à l'Académie de Magie. Six élèves et professeurs révisaient encore. Un seul était avec elle.",
+  "epilogue": "Faëlys avoue avec dédain : Génia avait servi au réfectoire un ragoût qui méritait zéro étoile. Elle a tenu à le lui faire savoir.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Alchimius était à l'ouest de Faëlys.",
+      "logic": {
+        "type": "westOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était allongé sur un lit.",
+      "logic": {
+        "type": "onObject",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Braise était à l'est d'Alchimius.",
+      "logic": {
+        "type": "eastOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était à côté d'un arbre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Cannelle était dans la même colonne qu'un fauteuil.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Digitale était dans la même colonne qu'un champignon géant.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Elle était au nord de Cannelle.",
+      "logic": {
+        "type": "northOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Eustache était au sud de Faëlys.",
+      "logic": {
+        "type": "southOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Faëlys était sur la même ligne qu'une chaise.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaise"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "g": [
+        3,
+        4
+      ],
+      "c": [
+        1,
+        5
+      ],
+      "e": [
+        5,
+        6
+      ],
+      "d": [
+        0,
+        1
+      ],
+      "b": [
+        6,
+        2
+      ],
+      "f": [
+        4,
+        3
+      ],
+      "a": [
+        2,
+        0
+      ]
+    },
+    "murderer": "f"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 0
+  },
+  "difficulty": 3
+}

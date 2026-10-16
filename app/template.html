@@ -55,6 +55,16 @@ header.top { display: flex; align-items: center; gap: 10px; }
 /* ---------- accueil ---------- */
 .lead { color: var(--muted); margin: 0; max-width: 60ch; }
 .cases { display: flex; flex-direction: column; gap: 10px; }
+.level { border-top: 1px solid var(--line); padding-top: 10px; }
+.level summary { list-style: none; display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 4px 0 10px; }
+.level summary::-webkit-details-marker { display: none; }
+.level summary b { font-family: var(--f-display); font-weight: 400; font-size: 22px; color: var(--candle); }
+.level summary .count { margin-left: auto; font-size: 13px; color: var(--muted); }
+.level summary .skulls { font-size: 13px; }
+@media (min-width: 900px) and (hover: hover) {
+  #app:not(.game) { max-width: 1000px; }
+  #app:not(.game) .cases { display: grid; grid-template-columns: 1fr 1fr; }
+}
 .case {
   display: grid; grid-template-columns: 56px 1fr auto; gap: 12px; align-items: center; text-align: left;
   background: var(--board); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px;
@@ -322,6 +332,34 @@ const PUZZLES = /*__PUZZLES__*/;
   let P = null, ctx = null, S = null, undo = [], selected = null, toastT = null;
 
   // ---------- accueil ----------
+  // accueil : affaires groupées par niveau de crânes ; le premier niveau pas encore terminé est ouvert
+  const LEVEL_NAMES = ['Initiation', 'Facile', 'Corsé', 'Retors', 'Diabolique', 'Légendaire'];
+  function caseHtml(p) {
+    const st = store.get('p:' + p.id, null);
+    const done = st && st.solved;
+    const started = st && Object.keys(st.pos || {}).length;
+    const v = p.characters.find(c => c.role === 'victim');
+    return `<button class="case" data-id="${p.id}">
+          <span class="seal" aria-hidden="true">${face(v)}</span>
+          <span><h3>${esc(p.title)}</h3><span class="meta">${p.size}×${p.size} · ${p.characters.length - 1} suspects</span></span>
+          <span class="state ${done ? 'done' : ''}">${done ? 'Résolue' : started ? 'En cours' : 'Nouvelle'}</span>
+        </button>`;
+  }
+  function levels() {
+    let opened = false;
+    return LEVEL_NAMES.map((name, d) => {
+      const list = PUZZLES.filter(p => p.difficulty === d);
+      if (!list.length) return '';
+      const solved = list.filter(p => (store.get('p:' + p.id, null) || {}).solved).length;
+      const open = !opened && solved < list.length;
+      if (open) opened = true;
+      return `<details class="level" ${open ? 'open' : ''}>
+        <summary><span class="skulls">${skulls(d)}</span><b>${name}</b><span class="count">${solved}/${list.length}</span></summary>
+        <div class="cases">${list.map(caseHtml).join('')}</div>
+      </details>`;
+    }).join('');
+  }
+
   function home() {
     P = null;
     $app.classList.remove('game');
@@ -332,18 +370,7 @@ const PUZZLES = /*__PUZZLES__*/;
         <button class="iconbtn" id="rulesBtn" aria-label="Règles">?</button>
       </header>
       <p class="lead">Place chaque suspect sur la carte grâce aux indices. Une personne par ligne, une par colonne. Le coupable est celui qui était seul avec la victime.</p>
-      <div class="sect">Affaires en cours</div>
-      <div class="cases">${PUZZLES.map(p => {
-        const st = store.get('p:' + p.id, null);
-        const done = st && st.solved;
-        const started = st && Object.keys(st.pos || {}).length;
-        const v = p.characters.find(c => c.role === 'victim');
-        return `<button class="case" data-id="${p.id}">
-          <span class="seal" aria-hidden="true">${face(v)}</span>
-          <span><h3>${esc(p.title)}</h3><span class="meta"><span class="skulls">${skulls(p.difficulty)}</span> · ${p.size}×${p.size} · ${p.characters.length - 1} suspects</span></span>
-          <span class="state ${done ? 'done' : ''}">${done ? 'Résolue' : started ? 'En cours' : 'Nouvelle'}</span>
-        </button>`;
-      }).join('')}</div>`;
+      ${levels()}`;
     $app.querySelectorAll('.case').forEach(b => b.onclick = () => open(b.dataset.id));
     document.getElementById('rulesBtn').onclick = rules;
   }

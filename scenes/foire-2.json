@@ -1,0 +1,50 @@
+{
+  "extends": "foire",
+  "subtitle": "Une autre nuit",
+  "intro": "La cartomancienne {victime} n'avait pas vu venir celle-là : on l'a retrouvée dans la Foire aux Sortilèges, ses cartes éparpillées autour d'elle. Six forains rôdaient. Un seul était avec elle.",
+  "characters": [
+    {
+      "id": "a",
+      "archetype": "bonimenteur",
+      "role": "suspect"
+    },
+    {
+      "id": "b",
+      "archetype": "barde",
+      "role": "suspect"
+    },
+    {
+      "id": "c",
+      "archetype": "gobelin",
+      "role": "suspect"
+    },
+    {
+      "id": "d",
+      "archetype": "troll",
+      "role": "suspect"
+    },
+    {
+      "id": "e",
+      "archetype": "fee",
+      "role": "suspect"
+    },
+    {
+      "id": "f",
+      "archetype": "dragonnet",
+      "role": "suspect"
+    },
+    {
+      "id": "g",
+      "archetype": "cartomancienne",
+      "role": "victim"
+    }
+  ],
+  "epilogues": {
+    "bonimenteur": "{coupable} avoue : {victime} annonçait aux clients que ses élixirs n'étaient que de l'eau. Ce qui était vrai. Ce qui était grave.",
+    "barde": "{coupable} avoue : {victime} lui avait prédit une carrière de soliste. Il a tout misé dessus. Le public, lui, n'a rien misé du tout.",
+    "gobelin": "{coupable} avoue : {victime} avait lu dans les cartes où il cachait la caisse. Il fallait faire taire les cartes.",
+    "troll": "{coupable} avoue : {victime} lui avait annoncé « une grande perte ». Il pensait à ses derniers cheveux. C'était elle.",
+    "fee": "{coupable} avoue : {victime} lisait l'avenir dans de la poudre de fée. La sienne, prélevée sans permission.",
+    "dragonnet": "{coupable} avoue : {victime} lui avait prédit qu'il ne cracherait jamais de vraies flammes. Il a tenu à lui prouver le contraire."
+  }
+}

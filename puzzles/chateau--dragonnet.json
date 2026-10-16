@@ -1,0 +1,358 @@
+{
+  "formatVersion": 1,
+  "title": "Le Château de Mortebrune — l'affaire Gratin",
+  "intro": "Le dragonnet Gratin a été retrouvé sans vie au petit matin, au Château de Mortebrune. Six invités juraient qu'ils dormaient. Un seul était avec lui.",
+  "epilogue": "Baudouin avoue, la couronne de travers : Gratin complotait pour s'asseoir sur son trône. Il l'a pris très personnellement.",
+  "size": 7,
+  "rooms": {
+    "C": {
+      "name": "Chapelle",
+      "the": "la chapelle"
+    },
+    "G": {
+      "name": "Grande salle",
+      "the": "la grande salle"
+    },
+    "K": {
+      "name": "Cuisines",
+      "the": "les cuisines"
+    },
+    "A": {
+      "name": "Armurerie",
+      "the": "l'armurerie"
+    },
+    "T": {
+      "name": "Tour",
+      "the": "la tour"
+    },
+    "J": {
+      "name": "Jardin",
+      "the": "le jardin"
+    },
+    "D": {
+      "name": "Donjon",
+      "the": "le donjon"
+    }
+  },
+  "layout": [
+    "CCGGGKK",
+    "CCGGGKK",
+    "AAGGGKT",
+    "AAJJJTT",
+    "AAJJJTT",
+    "DDJJJTT",
+    "DDDJJTT"
+  ],
+  "objects": [
+    {
+      "type": "statue",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        1,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        4,
+        2
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        3
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        6,
+        6
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        6,
+        1
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Albâtre",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ]
+    },
+    {
+      "id": "b",
+      "name": "Baudouin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤴",
+      "desc": "Roi, avare de compliments et de tout le reste",
+      "archetype": "roi"
+    },
+    {
+      "id": "c",
+      "name": "Chaparde",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "d",
+      "name": "Dièse",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
+    },
+    {
+      "id": "e",
+      "name": "Erwëlle",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
+    },
+    {
+      "id": "f",
+      "name": "Foulques",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
+    },
+    {
+      "id": "g",
+      "name": "Gratin",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    }
+  ],
+  "id": "chateau--dragonnet",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Albâtre hantait une botte de foin.",
+      "logic": {
+        "type": "onObject",
+        "object": "foin"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Baudouin était sur la même ligne qu'un champignon géant.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était dans la même colonne qu'une chaise.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Chaparde était sur la même ligne qu'une statue.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était dans la même colonne qu'un champignon géant.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dièse était au sud de Foulques.",
+      "logic": {
+        "type": "southOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Erwëlle était au nord de Baudouin.",
+      "logic": {
+        "type": "northOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Elle était au sud de Dièse.",
+      "logic": {
+        "type": "southOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Foulques était au nord d'Albâtre.",
+      "logic": {
+        "type": "northOf",
+        "other": "a"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "g": [
+        6,
+        3
+      ],
+      "f": [
+        1,
+        5
+      ],
+      "c": [
+        0,
+        2
+      ],
+      "d": [
+        2,
+        6
+      ],
+      "e": [
+        3,
+        0
+      ],
+      "a": [
+        5,
+        1
+      ],
+      "b": [
+        4,
+        4
+      ]
+    },
+    "murderer": "b"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 3,
+    "directStart": 1
+  },
+  "difficulty": 3
+}

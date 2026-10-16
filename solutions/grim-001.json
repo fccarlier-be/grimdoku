@@ -1,9 +1,5 @@
 {
  "positions": {
-  "f": [
-   5,
-   0
-  ],
   "a": [
    2,
    4
@@ -12,20 +8,24 @@
    1,
    3
   ],
-  "c": [
+  "e": [
    4,
    1
   ],
-  "d": [
+  "c": [
    0,
    2
   ],
-  "e": [
+  "d": [
    3,
    5
+  ],
+  "f": [
+   5,
+   0
   ]
  },
- "murderer": "c",
+ "murderer": "e",
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
@@ -37,14 +37,14 @@
    }
   },
   {
-   "who": "d",
+   "who": "c",
    "logic": {
     "type": "adjacentTo",
     "object": "table"
    }
   },
   {
-   "who": "e",
+   "who": "d",
    "logic": {
     "type": "southOf",
     "other": "a"
@@ -58,18 +58,25 @@
    }
   },
   {
-   "who": "c",
+   "who": "e",
    "logic": {
     "type": "sameRowAs",
     "object": "lit"
    }
   },
   {
-   "who": "d",
+   "who": "c",
    "logic": {
     "type": "eastOf",
-    "other": "c"
+    "other": "e"
    }
   }
- ]
+ ],
+ "cast": {
+  "a": "a",
+  "b": "b",
+  "e": "c",
+  "c": "d",
+  "d": "e"
+ }
 }

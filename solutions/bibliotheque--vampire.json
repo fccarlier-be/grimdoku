@@ -1,0 +1,129 @@
+{
+ "positions": {
+  "g": [
+   5,
+   2
+  ],
+  "d": [
+   4,
+   1
+  ],
+  "c": [
+   0,
+   4
+  ],
+  "a": [
+   6,
+   6
+  ],
+  "b": [
+   2,
+   3
+  ],
+  "e": [
+   3,
+   5
+  ],
+  "f": [
+   1,
+   0
+  ]
+ },
+ "murderer": "d",
+ "cast": {
+  "d": "a",
+  "c": "b",
+  "a": "c",
+  "b": "d",
+  "e": "e",
+  "f": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "d",
+   "logic": {
+    "type": "southOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "westOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "etagere"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameColAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "onObject",
+    "object": "etagere"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "southOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "table"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "onObject",
+    "object": "chaise"
+   }
+  }
+ ]
+}

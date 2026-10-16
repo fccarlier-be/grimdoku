@@ -1,0 +1,343 @@
+{
+  "formatVersion": 1,
+  "title": "La Bibliothèque Interdite — l'affaire Grisâtre",
+  "size": 7,
+  "rooms": {
+    "S": {
+      "name": "Scriptorium",
+      "the": "le scriptorium"
+    },
+    "Y": {
+      "name": "Rayonnages",
+      "the": "les rayonnages"
+    },
+    "B": {
+      "name": "Bureau",
+      "the": "le bureau"
+    },
+    "L": {
+      "name": "Salle de lecture",
+      "the": "la salle de lecture"
+    },
+    "G": {
+      "name": "Galerie",
+      "the": "la galerie"
+    },
+    "R": {
+      "name": "Réserve",
+      "the": "la réserve"
+    },
+    "A": {
+      "name": "Archives",
+      "the": "les archives"
+    }
+  },
+  "layout": [
+    "SSSYYYY",
+    "SSSYYYY",
+    "BBLLLGG",
+    "BBLLLGG",
+    "RRLLLGG",
+    "RRRAAAA",
+    "RRRAAAA"
+  ],
+  "objects": [
+    {
+      "type": "pupitre",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        0
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        5,
+        4
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        6,
+        5
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        6,
+        3
+      ]
+    }
+  ],
+  "intro": "Le spectre Grisâtre a été retrouvé sans vie entre deux rayonnages de la Bibliothèque Interdite. Six lecteurs nocturnes erraient dans les allées. Un seul était avec lui.",
+  "characters": [
+    {
+      "id": "a",
+      "name": "Agathe",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "👩‍🏫",
+      "desc": "Bibliothécaire, réclame le silence en hurlant",
+      "archetype": "bibliothecaire"
+    },
+    {
+      "id": "b",
+      "name": "Bazarine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn"
+    },
+    {
+      "id": "c",
+      "name": "Cendrebarbe",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Archimage, 412 ans, toujours pas de testament",
+      "archetype": "archimage"
+    },
+    {
+      "id": "d",
+      "name": "Dîme",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "e",
+      "name": "Écarlate",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
+    },
+    {
+      "id": "f",
+      "name": "Faribole",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage"
+    },
+    {
+      "id": "g",
+      "name": "Grisâtre",
+      "gender": "m",
+      "role": "victim",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ]
+    }
+  ],
+  "id": "bibliotheque--spectre",
+  "epilogue": "Agathe avoue en chuchotant, pour une fois : Grisâtre parlait fort en salle de lecture. Depuis des siècles.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Agathe était dans les rayonnages.",
+      "logic": {
+        "type": "inRoom",
+        "room": "Y"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Elle était dans la même colonne qu'un fauteuil.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bazarine était au sud de Dîme.",
+      "logic": {
+        "type": "southOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Cendrebarbe était sur la même ligne qu'un coffre.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dîme était à l'ouest de Cendrebarbe.",
+      "logic": {
+        "type": "westOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était sur la même ligne qu'une table.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Écarlate était au sud de Cendrebarbe.",
+      "logic": {
+        "type": "southOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Faribole était dans le bureau.",
+      "logic": {
+        "type": "inRoom",
+        "room": "B"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "g": [
+        1,
+        4
+      ],
+      "f": [
+        2,
+        0
+      ],
+      "e": [
+        6,
+        1
+      ],
+      "b": [
+        4,
+        6
+      ],
+      "d": [
+        3,
+        2
+      ],
+      "c": [
+        5,
+        3
+      ],
+      "a": [
+        0,
+        5
+      ]
+    },
+    "murderer": "a"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 3,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 1
+  },
+  "difficulty": 2
+}

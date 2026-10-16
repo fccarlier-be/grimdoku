@@ -1,0 +1,56 @@
+{
+  "extends": "mine",
+  "subtitle": "Équipe de nuit",
+  "intro": "Le mineur {victime} a été retrouvé au fond d'une galerie de la Mine des Nains, sa pioche encore à la main. Sept collègues travaillaient de nuit. Un seul était avec lui.",
+  "characters": [
+    {
+      "id": "a",
+      "archetype": "contremaitre",
+      "role": "suspect"
+    },
+    {
+      "id": "b",
+      "archetype": "troll",
+      "role": "suspect"
+    },
+    {
+      "id": "c",
+      "archetype": "gobelin",
+      "role": "suspect"
+    },
+    {
+      "id": "d",
+      "archetype": "dragonnet",
+      "role": "suspect"
+    },
+    {
+      "id": "e",
+      "archetype": "chevalier",
+      "role": "suspect"
+    },
+    {
+      "id": "f",
+      "archetype": "fee",
+      "role": "suspect"
+    },
+    {
+      "id": "g",
+      "archetype": "zombie",
+      "role": "suspect"
+    },
+    {
+      "id": "h",
+      "archetype": "mineur",
+      "role": "victim"
+    }
+  ],
+  "epilogues": {
+    "contremaitre": "{coupable} avoue : {victime} prenait une pause toutes les sept minutes. Il les a toutes chronométrées. Puis il a arrêté le chronomètre.",
+    "troll": "{coupable} avoue : {victime} creusait sous son lit pour suivre un filon. Le troll s'est réveillé à l'étage du dessous.",
+    "gobelin": "{coupable} avoue : {victime} avait trouvé LA pépite. Le gobelin l'a trouvée aussi, juste après.",
+    "dragonnet": "{coupable} avoue : {victime} lui demandait de faire sauter la roche « d'un petit souffle ». Le souffle n'était pas petit.",
+    "chevalier": "{coupable} avoue : {victime} lui avait vendu une carte au trésor qui menait aux latrines.",
+    "fee": "{coupable} avoue : {victime} l'avait prise pour une luciole et voulait l'accrocher à son casque.",
+    "zombie": "{coupable} avoue, lentement : {victime} l'avait déterré par erreur, puis l'avait engueulé pour le désordre."
+  }
+}

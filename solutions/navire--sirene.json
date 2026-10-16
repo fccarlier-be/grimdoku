@@ -1,0 +1,115 @@
+{
+ "positions": {
+  "g": [
+   3,
+   2
+  ],
+  "c": [
+   5,
+   3
+  ],
+  "b": [
+   4,
+   5
+  ],
+  "d": [
+   1,
+   0
+  ],
+  "f": [
+   2,
+   4
+  ],
+  "a": [
+   0,
+   6
+  ],
+  "e": [
+   6,
+   1
+  ]
+ },
+ "murderer": "c",
+ "cast": {
+  "c": "a",
+  "b": "b",
+  "d": "c",
+  "f": "d",
+  "a": "e",
+  "e": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "c",
+   "logic": {
+    "type": "southOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "northOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "eastOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameColAs",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "inRoom",
+    "room": "Q"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "table"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tonneau"
+   }
+  }
+ ]
+}

@@ -189,5 +189,17 @@
       "archetype": "archimage",
       "role": "victim"
     }
-  ]
+  ],
+  "auto": {
+    "intro": "{Titre} {victime} a été retrouvé{e} sans vie dans la Tour de l'Archimage, où un portail runique relie le laboratoire à la crypte. {Nombre} invités douteux traînaient dans les étages. Un seul était avec {lui}.",
+    "epilogues": {
+      "spectre": "{coupable} avoue : {victime} voulait l'enfermer dans un bocal pour l'exposer à l'observatoire. Les fantômes ont leur dignité.",
+      "dragonnet": "{coupable} avoue : {victime} l'utilisait pour allumer toutes les bougies de la tour. Tous les soirs.",
+      "zombie": "{coupable} avoue, lentement : {victime} l'avait ramené à la vie pour faire le ménage. Il n'avait rien demandé.",
+      "sirene": "{coupable} avoue : {victime} avait versé une potion « régénérante » dans son aquarium. Elle a eu des écailles violettes pendant un mois.",
+      "vampire": "{coupable} avoue : {victime} avait ouvert les volets de l'observatoire en plein midi. Exprès.",
+      "djinn": "{coupable} avoue : {victime} avait souhaité qu'elle « disparaisse dans sa lampe ». Elle a souhaité très fort le contraire.",
+      "archimage": "{coupable} avoue en lissant sa barbe : {victime} avait touché à ses grimoires. On ne touche pas aux grimoires d'un archimage."
+    }
+  }
 }

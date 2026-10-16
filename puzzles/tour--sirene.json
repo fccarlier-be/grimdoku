@@ -1,0 +1,323 @@
+{
+  "formatVersion": 1,
+  "title": "La Tour de l'Archimage — l'affaire Goémone",
+  "intro": "La sirène Goémone a été retrouvée sans vie dans la Tour de l'Archimage, où un portail runique relie le laboratoire à la crypte. Six invités douteux traînaient dans les étages. Un seul était avec elle.",
+  "epilogue": "Draculine avoue : Goémone avait ouvert les volets de l'observatoire en plein midi. Exprès.",
+  "size": 7,
+  "rooms": {
+    "L": {
+      "name": "Laboratoire",
+      "the": "le laboratoire"
+    },
+    "O": {
+      "name": "Observatoire",
+      "the": "l'observatoire"
+    },
+    "B": {
+      "name": "Bibliothèque",
+      "the": "la bibliothèque"
+    },
+    "H": {
+      "name": "Hall",
+      "the": "le hall"
+    },
+    "C": {
+      "name": "Crypte",
+      "the": "la crypte"
+    },
+    "J": {
+      "name": "Jardin",
+      "the": "le jardin"
+    },
+    "E": {
+      "name": "Escalier",
+      "the": "l'escalier"
+    }
+  },
+  "layout": [
+    "LLLOOOO",
+    "LLLOOOO",
+    "LLBBBOO",
+    "HHBBBJJ",
+    "HHHCCJJ",
+    "EEECCJJ",
+    "EEECCCJ"
+  ],
+  "objects": [
+    {
+      "type": "portail",
+      "at": [
+        0,
+        0
+      ],
+      "link": "p1"
+    },
+    {
+      "type": "portail",
+      "at": [
+        6,
+        5
+      ],
+      "link": "p1"
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        2,
+        2
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        2,
+        4
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        6,
+        2
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        5,
+        5
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Anatole",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
+    },
+    {
+      "id": "b",
+      "name": "Blanchebarbe",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Archimage, 412 ans, toujours pas de testament",
+      "archetype": "archimage"
+    },
+    {
+      "id": "c",
+      "name": "Chaînon",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ]
+    },
+    {
+      "id": "d",
+      "name": "Draculine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
+    },
+    {
+      "id": "e",
+      "name": "Étincel",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
+      "id": "f",
+      "name": "Fumerolle",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn"
+    },
+    {
+      "id": "g",
+      "name": "Goémone",
+      "gender": "f",
+      "role": "victim",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene"
+    }
+  ],
+  "id": "tour--sirene",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Anatole était dans la même colonne qu'un arbre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était assis sur une chaise.",
+      "logic": {
+        "type": "onObject",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Blanchebarbe était sur un champignon géant.",
+      "logic": {
+        "type": "onObject",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Chaînon était à côté d'une statue.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Draculine était sur la même ligne qu'une étagère.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "etagere"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Étincel était dans la même colonne qu'une statue.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Fumerolle était au sud d'Anatole.",
+      "logic": {
+        "type": "southOf",
+        "other": "a"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "g": [
+        3,
+        4
+      ],
+      "c": [
+        4,
+        1
+      ],
+      "e": [
+        6,
+        0
+      ],
+      "a": [
+        0,
+        6
+      ],
+      "d": [
+        2,
+        3
+      ],
+      "f": [
+        1,
+        2
+      ],
+      "b": [
+        5,
+        5
+      ]
+    },
+    "murderer": "d"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "pièces",
+    "hardSteps": 2,
+    "directStart": 2
+  },
+  "difficulty": 2
+}

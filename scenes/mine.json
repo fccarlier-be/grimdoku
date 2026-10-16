@@ -1,0 +1,235 @@
+{
+  "formatVersion": 1,
+  "title": "La Mine des Nains",
+  "size": 8,
+  "rooms": {
+    "E": {
+      "name": "Entrée",
+      "the": "l'entrée"
+    },
+    "G": {
+      "name": "Galerie",
+      "the": "la galerie"
+    },
+    "F": {
+      "name": "Forge",
+      "the": "la forge"
+    },
+    "P": {
+      "name": "Puits",
+      "the": "le puits"
+    },
+    "V": {
+      "name": "Filon",
+      "the": "le filon"
+    },
+    "D": {
+      "name": "Dortoir",
+      "the": "le dortoir"
+    },
+    "C": {
+      "name": "Cantine",
+      "the": "la cantine"
+    },
+    "T": {
+      "name": "Salle des coffres",
+      "the": "la salle des coffres"
+    }
+  },
+  "layout": [
+    "EEEGGFFF",
+    "EEEGGFFF",
+    "DDGGGPPF",
+    "DDGGGPPV",
+    "DDCCCPVV",
+    "TTCCCVVV",
+    "TTCCCVVV",
+    "TTTTCVVV"
+  ],
+  "objects": [
+    {
+      "type": "tonneau",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        1,
+        7
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        6,
+        7
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        2
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        7,
+        2
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        7,
+        6
+      ]
+    }
+  ],
+  "intro": "Le contremaître {victime} a été retrouvé au fond de la Mine des Nains, aussi froid que le granit. Sept ouvriers étaient descendus pour l'équipe de nuit. Un seul était avec lui.",
+  "characters": [
+    {
+      "id": "a",
+      "archetype": "mineur",
+      "role": "suspect"
+    },
+    {
+      "id": "b",
+      "archetype": "troll",
+      "role": "suspect"
+    },
+    {
+      "id": "c",
+      "archetype": "gobelin",
+      "role": "suspect"
+    },
+    {
+      "id": "d",
+      "archetype": "dragonnet",
+      "role": "suspect"
+    },
+    {
+      "id": "e",
+      "archetype": "chevalier",
+      "role": "suspect"
+    },
+    {
+      "id": "f",
+      "archetype": "fee",
+      "role": "suspect"
+    },
+    {
+      "id": "g",
+      "archetype": "zombie",
+      "role": "suspect"
+    },
+    {
+      "id": "h",
+      "archetype": "contremaitre",
+      "role": "victim"
+    }
+  ],
+  "epilogues": {
+    "mineur": "{coupable} avoue : {victime} lui retirait une pépite par pause, et il prenait beaucoup de pauses. C'était devenu une question de principe.",
+    "troll": "{coupable} avoue : {victime} l'utilisait comme étai depuis six mois. Un troll aussi a besoin de s'asseoir.",
+    "gobelin": "{coupable} avoue : {victime} avait remarqué que la mine produisait plus d'or que le coffre n'en contenait. Le gobelin avait une explication. Plusieurs, même.",
+    "dragonnet": "{coupable} servait de lampe et de soufflet sans être payé. Il a demandé une augmentation. {victime} a ri. Le dragonnet n'a pas ri.",
+    "chevalier": "{coupable} cherchait un trésor maudit dans la mine. {victime} voulait lui faire payer l'entrée. On ne fait pas payer un chevalier en quête.",
+    "fee": "{coupable} avoue : {victime} la gardait dans un bocal pour éclairer la galerie. Elle a fini par trouver la sortie. Et un gros caillou.",
+    "zombie": "{coupable} avoue, après réflexion : {victime} l'avait laissé sous un éboulement « pour gagner du temps ». Il a mis du temps, mais il est revenu."
+  },
+  "auto": {
+    "intro": "{Titre} {victime} a été retrouvé{e} au fond de la Mine des Nains, aussi froid{e} que le granit. {Nombre} ouvriers étaient descendus pour l'équipe de nuit. Un seul était avec {lui}.",
+    "epilogues": {
+      "mineur": "{coupable} avoue : {victime} lui avait volé sa plus belle pépite. C'était devenu une question de principe.",
+      "troll": "{coupable} avoue : {victime} l'utilisait comme étai depuis six mois. Un troll aussi a besoin de s'asseoir.",
+      "gobelin": "{coupable} avoue : {victime} avait remarqué que la mine produisait plus d'or que le coffre n'en contenait. Le gobelin avait une explication. Plusieurs, même.",
+      "dragonnet": "{coupable} servait de lampe et de soufflet sans être payé. {victime} a ri quand il a demandé une augmentation. Le dragonnet n'a pas ri.",
+      "chevalier": "{coupable} cherchait un trésor maudit dans la mine. {victime} voulait lui faire payer l'entrée. On ne fait pas payer un chevalier en quête.",
+      "fee": "{coupable} avoue : {victime} la gardait dans un bocal pour éclairer la galerie. Elle a fini par trouver la sortie. Et un gros caillou.",
+      "zombie": "{coupable} avoue, après réflexion : {victime} l'avait laissé sous un éboulement « pour gagner du temps ». Il a mis du temps, mais il est revenu.",
+      "contremaitre": "{coupable} avoue : {victime} prenait une pause toutes les sept minutes. Il les a toutes chronométrées. Puis il a arrêté le chronomètre."
+    }
+  }
+}

@@ -1,0 +1,232 @@
+{
+  "formatVersion": 1,
+  "title": "Le Cimetière de Minuit",
+  "size": 8,
+  "rooms": {
+    "G": {
+      "name": "Maison du gardien",
+      "the": "la maison du gardien"
+    },
+    "C": {
+      "name": "Chapelle",
+      "the": "la chapelle"
+    },
+    "A": {
+      "name": "Allée des ifs",
+      "the": "l'allée des ifs"
+    },
+    "K": {
+      "name": "Caveau",
+      "the": "le caveau"
+    },
+    "P": {
+      "name": "Carré des pauvres",
+      "the": "le carré des pauvres"
+    },
+    "J": {
+      "name": "Jardin du souvenir",
+      "the": "le jardin du souvenir"
+    },
+    "O": {
+      "name": "Ossuaire",
+      "the": "l'ossuaire"
+    },
+    "Y": {
+      "name": "Crypte",
+      "the": "la crypte"
+    }
+  },
+  "layout": [
+    "GGGAACCC",
+    "GGGAACCC",
+    "PPAAAAKK",
+    "PPAAAAKK",
+    "PPJJJOOK",
+    "YYJJJOOO",
+    "YYJJJOOO",
+    "YYYYJOOO"
+  ],
+  "objects": [
+    {
+      "type": "lit",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        3,
+        5
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        2,
+        7
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        5,
+        3
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        6,
+        2
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        7,
+        4
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        7,
+        5
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        6,
+        1
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        7,
+        3
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "archetype": "fossoyeur",
+      "role": "suspect"
+    },
+    {
+      "id": "b",
+      "archetype": "spectre",
+      "role": "suspect"
+    },
+    {
+      "id": "c",
+      "archetype": "zombie",
+      "role": "suspect"
+    },
+    {
+      "id": "d",
+      "archetype": "vampire",
+      "role": "suspect"
+    },
+    {
+      "id": "e",
+      "archetype": "sorciere",
+      "role": "suspect"
+    },
+    {
+      "id": "f",
+      "archetype": "corbeau",
+      "role": "suspect"
+    },
+    {
+      "id": "g",
+      "archetype": "chevalier",
+      "role": "suspect"
+    },
+    {
+      "id": "h",
+      "archetype": "crapaud",
+      "role": "victim"
+    }
+  ],
+  "auto": {
+    "intro": "{Titre} {victime} a été retrouvé{e} sans vie au Cimetière de Minuit, ce qui, admettons-le, simplifie les démarches. {Nombre} habitués rôdaient entre les tombes. Un seul était avec {lui}.",
+    "epilogues": {
+      "fossoyeur": "{coupable} avoue en sifflotant : {victime} piétinait ses plates-bandes. Et un fossoyeur a toujours un trou d'avance.",
+      "spectre": "{coupable} avoue : {victime} avait réservé sa tombe préférée. Il la hantait depuis trois siècles.",
+      "zombie": "{coupable} avoue, lentement : {victime} l'avait réveillé à minuit pile. Il venait juste de s'endormir.",
+      "vampire": "{coupable} avoue : {victime} avait planté de l'ail sur toutes les tombes. Même la sienne.",
+      "sorciere": "{coupable} avoue sans remords : {victime} cueillait ses herbes de cimetière avant elle.",
+      "corbeau": "{coupable} avoue, et l'écrit dans une lettre anonyme : {victime} avait découvert qui écrivait les lettres anonymes.",
+      "chevalier": "{coupable} avoue en grinçant : {victime} s'était moqué{e} de son armure rouillée devant le caveau de ses ancêtres.",
+      "crapaud": "{coupable} avoue : {victime} l'avait confondu avec une grenouille. C'est très vexant, pour un prince."
+    }
+  }
+}

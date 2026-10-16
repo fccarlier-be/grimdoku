@@ -1,0 +1,89 @@
+{
+ "positions": {
+  "f": [
+   5,
+   2
+  ],
+  "c": [
+   4,
+   4
+  ],
+  "d": [
+   3,
+   0
+  ],
+  "b": [
+   2,
+   5
+  ],
+  "e": [
+   1,
+   1
+  ],
+  "a": [
+   0,
+   3
+  ]
+ },
+ "murderer": "c",
+ "cast": {
+  "c": "a",
+  "d": "b",
+  "b": "c",
+  "e": "d",
+  "a": "e"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "d",
+   "logic": {
+    "type": "inRoom",
+    "room": "I"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "roseaux"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "westOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "inRoom",
+    "room": "P"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "arbre"
+   }
+  }
+ ]
+}

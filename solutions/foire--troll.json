@@ -1,0 +1,94 @@
+{
+ "positions": {
+  "g": [
+   0,
+   2
+  ],
+  "c": [
+   2,
+   6
+  ],
+  "a": [
+   4,
+   4
+  ],
+  "b": [
+   5,
+   1
+  ],
+  "f": [
+   1,
+   3
+  ],
+  "e": [
+   3,
+   0
+  ],
+  "d": [
+   6,
+   5
+  ]
+ },
+ "murderer": "f",
+ "cast": {
+  "c": "a",
+  "a": "b",
+  "b": "c",
+  "f": "d",
+  "e": "e",
+  "d": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "onObject",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "southOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tonneau"
+   }
+  }
+ ]
+}

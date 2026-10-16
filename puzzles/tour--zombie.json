@@ -1,0 +1,347 @@
+{
+  "formatVersion": 1,
+  "title": "La Tour de l'Archimage — l'affaire Gédéon",
+  "intro": "Le zombie Gédéon a été retrouvé sans vie dans la Tour de l'Archimage, où un portail runique relie le laboratoire à la crypte. Six invités douteux traînaient dans les étages. Un seul était avec lui.",
+  "epilogue": "Crépuscula avoue : Gédéon avait ouvert les volets de l'observatoire en plein midi. Exprès.",
+  "size": 7,
+  "rooms": {
+    "L": {
+      "name": "Laboratoire",
+      "the": "le laboratoire"
+    },
+    "O": {
+      "name": "Observatoire",
+      "the": "l'observatoire"
+    },
+    "B": {
+      "name": "Bibliothèque",
+      "the": "la bibliothèque"
+    },
+    "H": {
+      "name": "Hall",
+      "the": "le hall"
+    },
+    "C": {
+      "name": "Crypte",
+      "the": "la crypte"
+    },
+    "J": {
+      "name": "Jardin",
+      "the": "le jardin"
+    },
+    "E": {
+      "name": "Escalier",
+      "the": "l'escalier"
+    }
+  },
+  "layout": [
+    "LLLOOOO",
+    "LLLOOOO",
+    "LLBBBOO",
+    "HHBBBJJ",
+    "HHHCCJJ",
+    "EEECCJJ",
+    "EEECCCJ"
+  ],
+  "objects": [
+    {
+      "type": "portail",
+      "at": [
+        0,
+        0
+      ],
+      "link": "p1"
+    },
+    {
+      "type": "portail",
+      "at": [
+        6,
+        5
+      ],
+      "link": "p1"
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        2,
+        2
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        2,
+        4
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        6,
+        2
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        5,
+        5
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Aquabelle",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene"
+    },
+    {
+      "id": "b",
+      "name": "Blanchebarbe",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Archimage, 412 ans, toujours pas de testament",
+      "archetype": "archimage"
+    },
+    {
+      "id": "c",
+      "name": "Crépuscula",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
+    },
+    {
+      "id": "d",
+      "name": "Djinnifer",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn"
+    },
+    {
+      "id": "e",
+      "name": "Ectoplasme",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ]
+    },
+    {
+      "id": "f",
+      "name": "Flammèche",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
+      "id": "g",
+      "name": "Gédéon",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
+    }
+  ],
+  "id": "tour--zombie",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Aquabelle était dans la même colonne qu'un arbre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Elle était assise sur une chaise.",
+      "logic": {
+        "type": "onObject",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Blanchebarbe était sur un champignon géant.",
+      "logic": {
+        "type": "onObject",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Crépuscula était au sud de Djinnifer.",
+      "logic": {
+        "type": "southOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Elle était sur la même ligne qu'une étagère.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "etagere"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Elle était à l'est de Djinnifer.",
+      "logic": {
+        "type": "eastOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Djinnifer était au sud d'Aquabelle.",
+      "logic": {
+        "type": "southOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Ectoplasme était au nord de Flammèche.",
+      "logic": {
+        "type": "northOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était à côté d'une statue.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Flammèche était dans la même colonne qu'une statue.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "statue"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "g": [
+        3,
+        4
+      ],
+      "e": [
+        4,
+        1
+      ],
+      "f": [
+        6,
+        0
+      ],
+      "a": [
+        0,
+        6
+      ],
+      "c": [
+        2,
+        3
+      ],
+      "d": [
+        1,
+        2
+      ],
+      "b": [
+        5,
+        5
+      ]
+    },
+    "murderer": "c"
+  },
+  "rating": {
+    "skulls": 1,
+    "score": 2,
+    "hardest": "position relative",
+    "hardSteps": 0,
+    "directStart": 2
+  },
+  "difficulty": 1
+}

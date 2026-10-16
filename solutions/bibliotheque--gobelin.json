@@ -1,0 +1,94 @@
+{
+ "positions": {
+  "a": [
+   3,
+   1
+  ],
+  "b": [
+   4,
+   0
+  ],
+  "d": [
+   6,
+   4
+  ],
+  "c": [
+   2,
+   3
+  ],
+  "e": [
+   1,
+   6
+  ],
+  "f": [
+   0,
+   2
+  ],
+  "g": [
+   5,
+   5
+  ]
+ },
+ "murderer": "d",
+ "cast": {
+  "a": "f",
+  "b": "d",
+  "d": "c",
+  "c": "a",
+  "e": "b",
+  "f": "e"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "f",
+   "logic": {
+    "type": "northOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "onObject",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "table"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "cristal"
+   }
+  }
+ ]
+}

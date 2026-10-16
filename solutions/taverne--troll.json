@@ -1,0 +1,89 @@
+{
+ "positions": {
+  "f": [
+   5,
+   2
+  ],
+  "d": [
+   4,
+   5
+  ],
+  "a": [
+   0,
+   3
+  ],
+  "b": [
+   2,
+   4
+  ],
+  "c": [
+   1,
+   0
+  ],
+  "e": [
+   3,
+   1
+  ]
+ },
+ "murderer": "e",
+ "cast": {
+  "d": "a",
+  "a": "b",
+  "b": "c",
+  "c": "d",
+  "e": "e"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "foin"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "table"
+   }
+  }
+ ]
+}

@@ -1,0 +1,87 @@
+{
+ "positions": {
+  "g": [
+   5,
+   6
+  ],
+  "a": [
+   4,
+   0
+  ],
+  "e": [
+   0,
+   2
+  ],
+  "d": [
+   6,
+   1
+  ],
+  "b": [
+   3,
+   5
+  ],
+  "f": [
+   2,
+   3
+  ],
+  "c": [
+   1,
+   4
+  ]
+ },
+ "murderer": "b",
+ "cast": {
+  "a": "a",
+  "e": "b",
+  "d": "c",
+  "b": "d",
+  "f": "e",
+  "c": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "northOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "sarcophage"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "coffre"
+   }
+  }
+ ]
+}

@@ -29,4 +29,24 @@ function resolve(scene, cast = {}) {
   return { ...scene, characters };
 }
 
-module.exports = { ARCHETYPES, resolve };
+// Charge scenes/<nom>.json. Une variante ({ "extends": "foire", ... }) reprend le plan, les pièces et les objets
+// de sa scène de base, et remplace ce qu'elle redéfinit (personnages, intro, épilogues, sous-titre).
+function loadScene(file) {
+  const scene = JSON.parse(fs.readFileSync(file, 'utf8'));
+  if (!scene.extends) return scene;
+  const base = loadScene(path.join(path.dirname(file), scene.extends + '.json'));
+  const { extends: _, ...own } = scene;
+  return { ...base, epilogue: undefined, epilogues: undefined, subtitle: undefined, ...own };
+}
+
+// Affaires automatiques : le groupe d'habitués d'un décor (ses personnages), avec `victimType` comme victime.
+// Suspects en a, b, c… puis la victime en dernier (gen.js réattribue ensuite les lettres selon la facilité).
+function withVictim(scene, victimType) {
+  const pool = scene.characters.map(c => c.archetype);
+  if (!pool.includes(victimType)) throw new Error(`${victimType} n'est pas un habitué de ce décor (${pool.join(', ')})`);
+  const order = pool.filter(t => t !== victimType).concat(victimType);
+  const characters = order.map((t, i) => ({ id: String.fromCharCode(97 + i), archetype: t, role: t === victimType ? 'victim' : 'suspect' }));
+  return { ...scene, characters };
+}
+
+module.exports = { ARCHETYPES, resolve, loadScene, withVictim };

@@ -1,18 +1,45 @@
 'use strict';
 const fs = require('fs');
 const E = require('./engine');
-const { resolve } = require('./cast');
+const { resolve, loadScene, withVictim, ARCHETYPES } = require('./cast');
 // Énigmes publiées : identifiant → scène (plan, personnages, intro, épilogue(s)) + solution (sortie de gen.js).
-// Une même scène peut porter plusieurs énigmes ; « subtitle » les distingue dans le titre.
+// Une variante de scène (« extends ») réutilise un décor avec une autre victime ; son « subtitle » complète le titre.
 // Intro et épilogue : {victime} et {coupable} sont remplacés par les noms (qui dépendent des lettres) ;
 // « epilogues » donne un texte par type de coupable possible, pour que personne n'ait besoin de connaître la solution.
 const MANIFEST = [
   { id: 'grim-001', scene: 'taverne' },
   { id: 'grim-002', scene: 'tour' },
   { id: 'grim-003', scene: 'chateau' },
-  { id: 'grim-004', scene: 'moulin' }
+  { id: 'grim-004', scene: 'moulin' },
+  { id: 'grim-005', scene: 'marais' },
+  { id: 'grim-006', scene: 'marais-2' },
+  { id: 'grim-007', scene: 'foire' },
+  { id: 'grim-008', scene: 'foire-2' },
+  { id: 'grim-009', scene: 'bibliotheque' },
+  { id: 'grim-010', scene: 'bibliotheque-2' },
+  { id: 'grim-011', scene: 'mine' },
+  { id: 'grim-012', scene: 'mine-2' }
 ];
 
+// Affaires automatiques : chaque décor qui a des textes « auto » (intro et mobiles génériques) donne une affaire
+// par habitué victime, dès que solutions/<décor>--<type>.json existe (produit par gen.js --victim=<type>).
+// Les victimes déjà traitées à la main dans ce décor sont sautées.
+const baseOf = (name) => { const raw = JSON.parse(fs.readFileSync(`scenes/${name}.json`, 'utf8')); return raw.extends || name; };
+const handVictims = new Set(MANIFEST.map(e => baseOf(e.scene) + '--' + loadScene(`scenes/${e.scene}.json`).characters.find(c => c.role === 'victim').archetype));
+for (const f of fs.readdirSync('scenes').sort()) {
+  const name = f.replace(/\.json$/, '');
+  const scene = loadScene(`scenes/${f}`);
+  // les variantes (« extends ») réutilisent un décor : pas d'affaires automatiques en double
+  if (baseOf(name) !== name || !scene.auto) continue;
+  for (const c of scene.characters) {
+    const id = `${name}--${c.archetype}`;
+    if (handVictims.has(id) || !fs.existsSync(`solutions/${id}.json`)) continue;
+    MANIFEST.push({ id, scene: name, victim: c.archetype });
+  }
+}
+
+const NOMBRES = ['zéro', 'un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit'];
+const cap = (t) => t[0].toUpperCase() + t.slice(1);
 // « de » / « que » élidés devant une voyelle : d'Amphora, qu'Écarlate
 const elide = (word, name) => /^[aeiouyhàâéèêëîïôöûü]/i.test(name.normalize('NFC')) ? word.slice(0, -1) + '\'' + name : word + ' ' + name;
 // Une phrase par indice. first : le nom ouvre la phrase, sinon le pronom (Il / Elle).
@@ -28,6 +55,9 @@ function clueText(p, ch, L, first) {
     case 'onObject':
       if (L.object === 'chaise') return `${who} était assis${e} sur une chaise.`;
       if (L.object === 'lit') return `${who} était allongé${e} sur un lit.`;
+      if (L.object === 'fauteuil') return `${who} était assis${e} dans un fauteuil.`;
+      if (L.object === 'hamac') return `${who} était allongé${e} dans un hamac.`;
+      if (L.object === 'barque') return `${who} était dans une barque.`;
       return obj.blocking ? `${who} hantait ${obj.a}.` : `${who} était sur ${obj.a}.`;
     case 'adjacentTo': return `${who} était à côté d'${obj.a}.`;
     case 'notAdjacentTo': return `${who} n'était pas à côté d'${obj.a}.`;
@@ -73,17 +103,29 @@ function checkConventions(p) {
       throw new Error(`${p.id} : ${suspects[i].name} se place avant ${suspects[i - 1].name}, l'ordre alphabétique doit suivre la facilité`);
 }
 for (const entry of MANIFEST) {
+  if (!fs.existsSync(`solutions/${entry.id}.json`)) { console.log(`⏳ ${entry.id} : pas encore de solution (node tools/batch.js)`); continue; }
   const s = JSON.parse(fs.readFileSync(`solutions/${entry.id}.json`, 'utf8'));
-  const scene = JSON.parse(fs.readFileSync(`scenes/${entry.scene}.json`, 'utf8'));
+  const base = loadScene(`scenes/${entry.scene}.json`);
+  const scene = entry.victim ? withVictim(base, entry.victim) : base;
+  const texts = entry.victim ? scene.auto : scene;
   // noms d'après la lettre (cast.json) ; s.cast : lettres réattribuées par gen.js
   const p = resolve(scene, s.cast);
-  delete p.epilogues; delete p.scene; // textes sources : seuls intro et epilogue (remplis) vont dans l'énigme
+  delete p.epilogues; delete p.scene; delete p.subtitle; // seuls intro et epilogue (remplis) vont dans l'énigme
   p.id = entry.id;
-  if (entry.subtitle) p.title = `${scene.title} — ${entry.subtitle}`;
+  delete p.auto;
   const nameOf = (id) => p.characters.find(c => c.id === id).name;
-  const fill = (t) => t.replace(/\{victime\}/g, nameOf(p.characters.find(c => c.role === 'victim').id)).replace(/\{coupable\}/g, nameOf(s.murderer));
-  p.intro = fill(scene.intro);
-  p.epilogue = fill(scene.epilogue || scene.epilogues[p.characters.find(c => c.id === s.murderer).archetype]);
+  const victim = p.characters.find(c => c.role === 'victim');
+  if (scene.subtitle) p.title = `${scene.title} — ${scene.subtitle}`;
+  if (entry.victim) p.title = `${scene.title} — l'affaire ${victim.name}`;
+  // gabarits : {victime} {coupable}, {titre}/{Titre} (« le troll »), accords sur la victime {e} {il}/{Il} {lui},
+  // nombre de suspects en lettres {nombre}/{Nombre}
+  const f = victim.gender === 'f', nb = NOMBRES[p.characters.length - 1], title = ARCHETYPES[victim.archetype].title;
+  const fill = (t) => t.replace(/\{victime\}/g, victim.name).replace(/\{coupable\}/g, nameOf(s.murderer))
+    .replace(/\{titre\}/g, title).replace(/\{Titre\}/g, cap(title)).replace(/\{e\}/g, f ? 'e' : '')
+    .replace(/\{il\}/g, f ? 'elle' : 'il').replace(/\{Il\}/g, f ? 'Elle' : 'Il').replace(/\{lui\}/g, f ? 'elle' : 'lui')
+    .replace(/\{nombre\}/g, nb).replace(/\{Nombre\}/g, cap(nb));
+  p.intro = fill(texts.intro);
+  p.epilogue = fill(texts.epilogue || texts.epilogues[p.characters.find(c => c.id === s.murderer).archetype]);
   // texte généré : le nom ouvre la première phrase de chaque personnage, le pronom les suivantes
   const seen = new Set();
   p.clues = s.clues.map(cl => {
