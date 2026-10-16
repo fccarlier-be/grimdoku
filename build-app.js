@@ -78,7 +78,17 @@ for (const [name, v] of [['accueil-large', '--hero-wide'], ['accueil-haut', '--h
   if (fs.existsSync(f)) floorCss.push(`:root { ${v}: url(data:image/webp;base64,${fs.readFileSync(f).toString('base64')}); }`);
   // version portrait : utilisée sur téléphone à la place du paysage
   if (fs.existsSync(f) && name === 'accueil-haut') floorCss.push('@media (max-width: 699px) { .heroimg { background-image: var(--hero-tall); aspect-ratio: 9 / 16; max-height: 72vh; } }');
-  else missing.push('accueil ' + name);
+}
+// titre et bouton « Jouer » de l'accueil : images détourées (assets/home/titre.webp, jouer.webp) ; sans elles, le texte
+const homeSizes = fs.existsSync('assets/home/sizes.json') ? JSON.parse(fs.readFileSync('assets/home/sizes.json', 'utf8')) : {};
+for (const [name, sel] of [['titre', '.herotitle .logo'], ['jouer', '.herobtn']]) {
+  const f = `assets/home/${name}.webp`;
+  if (!fs.existsSync(f) || !homeSizes[name]) { missing.push('accueil ' + name); continue; }
+  const [w, h] = homeSizes[name];
+  const url = `url(data:image/webp;base64,${fs.readFileSync(f).toString('base64')})`;
+  floorCss.push(name === 'titre'
+    ? `${sel} { display: block; margin: 0 auto; width: min(86%, 640px); aspect-ratio: ${w} / ${h}; background: ${url} center / contain no-repeat; font-size: 0; color: transparent; -webkit-text-stroke: 0; text-shadow: none; filter: drop-shadow(0 4px 10px rgba(0, 0, 0, .55)); }`
+    : `${sel} { width: min(64vw, 300px); aspect-ratio: ${w} / ${h}; padding: 0; background: ${url} center / contain no-repeat; box-shadow: none; border-radius: 0; filter: drop-shadow(0 6px 12px rgba(0, 0, 0, .55)); } ${sel} span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); } ${sel}:hover { transform: scale(1.04); }`);
 }
 const sprite = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>${defs.join('')}</defs>${symbols.join('')}</svg>`;
 

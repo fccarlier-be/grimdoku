@@ -23,6 +23,7 @@ OBJ_DIR = ROOT / 'objects'
 FLOOR_DIR = ROOT / 'floors'
 HOME_DIR = ROOT / 'home'      # illustrations de l'écran d'accueil (accueil-large : paysage, accueil-haut : portrait)
 HOME_WIDTH = 1600
+HOME_CUTOUT = {'titre': 1400, 'jouer': 700}  # images détourées (fond magenta) : largeur max
 FLOOR_SIZE = 320       # une texture = 2×2 cases
 FLOOR_SOFT = 0.45      # part de couleur moyenne mélangée à la texture (contraste adouci : meubles et pions lisibles)
 FLOOR_LIGHT = 1.12     # éclaircissement
@@ -240,13 +241,31 @@ def floors():
 def home():
     if not HOME_DIR.exists():
         return
+    sizes = {}
     for src in sources(HOME_DIR):
+        name = src.stem.lower()
+        if name in HOME_CUTOUT:
+            # titre et bouton : fond magenta détouré, recadré sur le dessin
+            img = Image.open(src)
+            img = key_out(img.resize((img.width, img.height), Image.LANCZOS))
+            box = img.getchannel('A').point(lambda a: 255 if a > 24 else 0).getbbox()
+            if box:
+                img = img.crop(box)
+            if img.width > HOME_CUTOUT[name]:
+                img = img.resize((HOME_CUTOUT[name], round(img.height * HOME_CUTOUT[name] / img.width)), Image.LANCZOS)
+            out = HOME_DIR / (name + '.webp')
+            img.save(out, 'WEBP', quality=90, method=6)
+            sizes[name] = img.size
+            print(f'accueil {src.name} → {out.name} {img.size} ({out.stat().st_size // 1024} Ko, détouré)')
+            continue
         img = Image.open(src).convert('RGB')
         if img.width > HOME_WIDTH:
             img = img.resize((HOME_WIDTH, round(img.height * HOME_WIDTH / img.width)), Image.LANCZOS)
         out = HOME_DIR / (src.stem.lower() + '.webp')
         img.save(out, 'WEBP', quality=92, method=6)
         print(f'accueil {src.name} → {out.name} {img.size} ({out.stat().st_size // 1024} Ko)')
+        sizes[name] = img.size
+    (HOME_DIR / 'sizes.json').write_text(json.dumps(sizes), encoding='utf-8')  # proportions, pour le build
 
 
 def main():

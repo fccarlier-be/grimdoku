@@ -472,6 +472,7 @@ html, body { background: var(--desk-tex, none) center top / 640px, var(--night);
 /* ---------- page des niveaux et page d'un niveau ---------- */
 .pagetitle { font-family: var(--f-display); font-weight: 400; font-size: 28px; line-height: 1; margin: 0; color: var(--candle); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .pagetitle .skulls { font-family: var(--f-body); font-size: 15px; }
+.lead .lvlname { font-family: var(--f-display); font-weight: 400; font-size: 22px; color: var(--fg); }
 .lead .count { white-space: nowrap; color: var(--candle); margin-left: 6px; }
 .lvls { display: grid; grid-template-columns: 1fr; gap: 16px; }
 @media (min-width: 700px) { .lvls { grid-template-columns: repeat(3, 1fr); gap: 22px; } }
@@ -563,7 +564,7 @@ const PUZZLES = /*__PUZZLES__*/;
   function levelsPage() {
     P = null;
     $app.classList.remove('game');
-    $app.innerHTML = pageHead("Retour à l'accueil", 'Choisis ton enquête') + `
+    $app.innerHTML = pageHead("Retour à l'accueil", 'Choisis ton niveau') + `
       <div class="lvls">${LEVEL_NAMES.map((name, d) => {
         const list = PUZZLES.filter(p => p.difficulty === d);
         if (!list.length) return '';
@@ -585,8 +586,8 @@ const PUZZLES = /*__PUZZLES__*/;
     P = null;
     $app.classList.remove('game');
     const list = PUZZLES.filter(p => p.difficulty === d);
-    $app.innerHTML = pageHead('Retour aux niveaux', `${LEVEL_NAMES[d]} <span class="skulls">${skulls(d)}</span>`) + `
-      <p class="lead">${LEVEL_BLURB[d]} <span class="count">${solvedIn(list)} / ${list.length} résolues</span></p>
+    $app.innerHTML = pageHead('Retour aux niveaux', 'Choisis ton enquête') + `
+      <p class="lead"><b class="lvlname">${LEVEL_NAMES[d]}</b> <span class="skulls">${skulls(d)}</span> — ${LEVEL_BLURB[d]} <span class="count">${solvedIn(list)} / ${list.length} résolues</span></p>
       <div class="cases">${list.map(caseHtml).join('')}</div>`;
     document.getElementById('back').onclick = () => go('niveaux');
     document.getElementById('rulesBtn').onclick = rules;
@@ -598,9 +599,9 @@ const PUZZLES = /*__PUZZLES__*/;
     // accueil : l'affiche (les suspects alignés sous la toise), le titre sur les poutres, le sceau « Jouer »
     $app.innerHTML = `
       <section class="hero">
-        <h1 class="brand herotitle">Grimdoku<small>Meurtres en terres enchantées</small></h1>
+        <h1 class="brand herotitle"><span class="logo">Grimdoku</span><small>Meurtres en terres enchantées</small></h1>
         <div class="heroimg" role="img" aria-label="Les suspects alignés sous une toise, dans une taverne, autour d'une silhouette tracée à la craie"></div>
-        <button class="accuse herobtn" id="playBtn">Jouer</button>
+        <button class="accuse herobtn" id="playBtn"><span>Jouer</span></button>
       </section>`;
     document.getElementById('playBtn').onclick = () => go('niveaux');
   }
