@@ -186,3 +186,19 @@ test('grand personnage : lettres au crayon sur ses cases, puis appui long ; form
   assert.equal(d.querySelectorAll('.pencil').length, cells.length);
   assert.deepEqual(errors, []);
 });
+
+test('son : 🔊 ouvre la barre de volume, le réglage est retenu ; barre à zéro = 🔇', () => {
+  const { w, d, errors } = open();
+  const btn = d.querySelector('.soundbtn');
+  if (!btn) return; // pas de musique dans ce build
+  btn.click();
+  const range = d.querySelector('.soundpop input[type=range]');
+  assert.ok(range, 'panneau de volume ouvert');
+  range.value = '25'; range.dispatchEvent(new w.Event('input', { bubbles: true }));
+  assert.equal(JSON.parse(w.localStorage.getItem('grimdoku:settings')).volume, 0.25, 'volume retenu');
+  range.value = '0'; range.dispatchEvent(new w.Event('input', { bubbles: true }));
+  assert.equal(d.querySelector('.soundbtn').textContent, '🔇');
+  d.body.click();
+  assert.equal(d.querySelector('.soundpop'), null, 'fermé en touchant ailleurs');
+  assert.deepEqual(errors, []);
+});

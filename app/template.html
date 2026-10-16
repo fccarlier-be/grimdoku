@@ -514,6 +514,21 @@ html, body { background: var(--desk-tex, none) center top / 640px, var(--night);
   background-size: cover; background-position: center 40%; box-shadow: inset 0 -2px 0 rgba(43, 32, 22, .45);
 }
 .case.has-decor .seal { margin-top: -38px; box-shadow: 0 0 0 3px #efe0bd, 0 0 0 4px rgba(43, 32, 22, .6), 0 4px 8px rgba(0, 0, 0, .35); }
+
+/* panneau du son : barre de volume */
+.soundpop {
+  position: fixed; z-index: 45; width: 220px; padding: 12px 14px; display: flex; flex-direction: column; gap: 10px;
+  --fg: var(--ink); --line: rgba(43, 32, 22, .38); color: var(--ink); isolation: isolate;
+}
+.soundpop::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; border-radius: 3px;
+  background: var(--parch-tex, none) center / 240px, linear-gradient(#f1e3c2, #e3cfa3);
+  box-shadow: inset 0 0 0 1.5px rgba(43, 32, 22, .5), inset 0 0 12px rgba(120, 66, 18, .35), 0 6px 16px rgba(0, 0, 0, .55);
+  filter: url(#torn-s);
+}
+.soundpop label { display: flex; flex-direction: column; gap: 6px; font-family: var(--f-display); font-size: 18px; }
+.soundpop input[type=range] { width: 100%; accent-color: #a3312a; height: 28px; }
+.soundpop .btn { background: transparent; border: 1.5px solid var(--line); border-radius: 8px; color: var(--ink); min-height: 38px; padding: 6px 10px; }
 /*__FLOORS__*/
 </style>
 
@@ -631,14 +646,16 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
   // Les morceaux n'ont pas besoin de boucler d'eux-mêmes : chaque piste a deux lecteurs, et 4 s avant la fin
   // l'autre repart du début en fondu enchaîné (XFADE) — boucle sans coupure, quel que soit le morceau.
   const sound = (() => {
-    const XFADE = 4, TAIL = 1.5, LEVEL = 0.32; // TAIL : fin du morceau ignorée (les générateurs y mettent souvent un fondu)
+    const XFADE = 4, TAIL = 1.5, MAX = 0.55; // TAIL : fin du morceau ignorée (les générateurs y mettent souvent un fondu)
+    // volume choisi par le joueur (0 à 1, barre du panneau 🔊), 0,6 par défaut ; « Couper » le met en sourdine sans l'oublier
+    const vol = () => (typeof settings.volume === 'number' ? settings.volume : 0.6);
     const tracks = {};
     for (const [k, src] of Object.entries(MEDIA.audio || {})) {
       try { tracks[k] = { els: [new Audio(src), new Audio(src)], cur: 0, gains: [], gain: null, timer: null }; }
       catch (e) { /* pas de son */ }
     }
     let want = null, ac = null;
-    const on = () => settings.sound !== false;
+    const on = () => settings.sound !== false && vol() > 0;
     // fondu enchaîné vers l'autre lecteur de la piste quand la fin approche
     function watch(t) {
       clearInterval(t.timer);
@@ -656,7 +673,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     function apply() {
       if (!ac) return;
       for (const [k, t] of Object.entries(tracks)) {
-        const target = on() && k === want ? LEVEL : 0;
+        const target = on() && k === want ? MAX * vol() : 0;
         t.gain.gain.cancelScheduledValues(ac.currentTime);
         t.gain.gain.setTargetAtTime(target, ac.currentTime, 0.5);
         if (target > 0) {
@@ -683,14 +700,39 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
         } catch (e) { ac = null; return; }
         apply();
       },
-      toggle() { settings.sound = !on(); store.set('settings', settings); this.unlock(); apply(); }
+      toggle() {
+        if (vol() === 0) settings.volume = 0.6; // « Remettre » après une barre à zéro : volume par défaut
+        settings.sound = !on(); store.set('settings', settings); this.unlock(); apply();
+      },
+      volume: () => vol(),
+      setVolume(v) { settings.volume = v; if (v > 0) settings.sound = true; store.set('settings', settings); this.unlock(); apply(); }
     };
   })();
   const soundBtn = () => sound.available ? `<button class="iconbtn soundbtn" aria-label="Couper ou remettre le son">${sound.icon()}</button>` : '';
   ['pointerdown', 'keydown'].forEach(ev => document.addEventListener(ev, () => sound.unlock(), { once: true }));
+  // 🔊 ouvre un petit panneau : barre de volume et Couper / Remettre (se ferme en touchant ailleurs)
+  const refreshIcons = () => document.querySelectorAll('.soundbtn').forEach(x => (x.textContent = sound.icon()));
+  function soundPanel(btn) {
+    const old = document.querySelector('.soundpop');
+    if (old) { old.remove(); return; }
+    const pop = document.createElement('div');
+    pop.className = 'soundpop';
+    pop.innerHTML = `<label>Volume <input type="range" min="0" max="100" step="1" value="${Math.round(sound.volume() * 100)}" aria-label="Volume du son"></label>
+      <button class="btn mute">${settings.sound !== false && sound.volume() > 0 ? '🔇 Couper' : '🔊 Remettre'}</button>`;
+    const r = btn.getBoundingClientRect();
+    pop.style.top = (r.bottom + 8) + 'px';
+    pop.style.right = Math.max(8, window.innerWidth - r.right) + 'px';
+    document.body.appendChild(pop);
+    const range = pop.querySelector('input'), mute = pop.querySelector('.mute');
+    const sync = () => { mute.textContent = settings.sound !== false && sound.volume() > 0 ? '🔇 Couper' : '🔊 Remettre'; refreshIcons(); };
+    range.oninput = () => { sound.setVolume(range.value / 100); sync(); };
+    mute.onclick = () => { sound.toggle(); range.value = Math.round(sound.volume() * 100); sync(); };
+  }
   document.addEventListener('click', (e) => {
-    const b = e.target.closest('.soundbtn'); if (!b) return;
-    sound.toggle(); document.querySelectorAll('.soundbtn').forEach(x => (x.textContent = sound.icon()));
+    const b = e.target.closest('.soundbtn');
+    if (b) return soundPanel(b);
+    const pop = document.querySelector('.soundpop');
+    if (pop && !e.target.closest('.soundpop')) pop.remove();
   });
 
   // Navigation : une adresse par écran (#/, #/niveaux, #/niveau/2, #/affaire/<id>), le bouton retour du navigateur
