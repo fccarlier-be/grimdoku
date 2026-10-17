@@ -653,7 +653,7 @@
       ]
     },
     {
-      "id": "grande-foire--troll--dragon-golem--t4-l3--cache",
+      "id": "grande-foire--troll--dragon-golem--t4-i2--cache",
       "scene": "grande-foire",
       "victim": "troll",
       "big": [
@@ -662,7 +662,7 @@
       ],
       "shapes": [
         "T4",
-        "L3"
+        "I2"
       ],
       "hidden": true,
       "hiddenMax": 4

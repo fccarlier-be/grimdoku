@@ -1,0 +1,587 @@
+{
+  "formatVersion": 1,
+  "title": "La Grande Foire des Mille Merveilles — l'affaire Jambonneau",
+  "decor": "foire",
+  "size": 12,
+  "rooms": {
+    "A": {
+      "name": "Chapiteau",
+      "the": "le chapiteau",
+      "floor": "sciure"
+    },
+    "B": {
+      "name": "Ménagerie",
+      "the": "la ménagerie",
+      "floor": "paille"
+    },
+    "C": {
+      "name": "Grande roue",
+      "the": "la grande roue",
+      "floor": "paves"
+    },
+    "D": {
+      "name": "Stand de tir",
+      "the": "le stand de tir",
+      "floor": "parquet"
+    },
+    "E": {
+      "name": "Piste aux étoiles",
+      "the": "la piste aux étoiles",
+      "floor": "sciure"
+    },
+    "G": {
+      "name": "Cabinet des curiosités",
+      "the": "le cabinet des curiosités",
+      "floor": "noble"
+    },
+    "H": {
+      "name": "Labyrinthe",
+      "the": "le labyrinthe",
+      "floor": "herbe"
+    },
+    "I": {
+      "name": "Buvette",
+      "the": "la buvette",
+      "floor": "tomettes"
+    },
+    "K": {
+      "name": "Manège",
+      "the": "le manège",
+      "floor": "paves"
+    }
+  },
+  "layout": [
+    "AAAABBBBCCCC",
+    "AAAABBBBCCCC",
+    "AAAABBBBCCCC",
+    "DDDDDBBBCCCC",
+    "DDDDDEEEEHHH",
+    "DDDDDEEEEHHH",
+    "GGGGGEEEEHHH",
+    "GGGGGEEEEHHH",
+    "GGGIIIIIIHHH",
+    "IIIIIIIIIHHH",
+    "IIIIKKKKKHHH",
+    "IIIIKKKKKKKK"
+  ],
+  "objects": [
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        1
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        1,
+        7
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        2,
+        4
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        10
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        2,
+        9
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        3,
+        11
+      ]
+    },
+    {
+      "type": "canon",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        7,
+        8
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        5
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        10
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        6,
+        9
+      ]
+    },
+    {
+      "type": "hamac",
+      "at": [
+        5,
+        11
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        6,
+        2
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        7,
+        0
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        7,
+        4
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        8,
+        10
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        10,
+        11
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        9,
+        9
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        8,
+        5
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        9,
+        7
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        9,
+        4
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        10,
+        1
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        11,
+        2
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        10,
+        6
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        11,
+        9
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        11,
+        5
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Aplomb",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🎩",
+      "desc": "Bonimenteur, vend du rêve au kilo",
+      "archetype": "bonimenteur"
+    },
+    {
+      "id": "b",
+      "name": "Braise",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
+      "id": "c",
+      "name": "Cendrebrune",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragon adulte, toujours lové dans un coin",
+      "archetype": "dragon",
+      "shape": "T4"
+    },
+    {
+      "id": "d",
+      "name": "Dîme",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "e",
+      "name": "Étoila",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🔮",
+      "desc": "Cartomancienne, voit l'avenir, rate le présent",
+      "archetype": "cartomancienne"
+    },
+    {
+      "id": "f",
+      "name": "Fondation",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🪨",
+      "desc": "Golem de pierre, lent mais très appliqué",
+      "archetype": "golem",
+      "shape": "I2"
+    },
+    {
+      "id": "g",
+      "name": "Gamme",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
+    },
+    {
+      "id": "h",
+      "name": "Hargne",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👹",
+      "desc": "Ogre, végétarien depuis mardi",
+      "archetype": "ogre"
+    },
+    {
+      "id": "i",
+      "name": "Iris",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
+    },
+    {
+      "id": "j",
+      "name": "Jambonneau",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    }
+  ],
+  "id": "grande-foire--troll--dragon-golem--t4-i2--cache",
+  "hiddenShapes": true,
+  "hiddenMax": 4,
+  "intro": "Le troll Jambonneau a été retrouvé sans vie à la Grande Foire des Mille Merveilles, juste après le feu d'artifice. Neuf forains et visiteurs juraient regarder le ciel. Un seul était avec lui.",
+  "epilogue": "Étoila avoue : Jambonneau avait mélangé son jeu de tarot. Toutes ses prédictions de la semaine étaient fausses.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Aplomb était sur la même ligne qu'un lit.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était dans la même colonne qu'un tonneau.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était à l'ouest de Braise.",
+      "logic": {
+        "type": "westOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Braise était à l'ouest de Gamme.",
+      "logic": {
+        "type": "westOf",
+        "other": "g"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était sur la même ligne qu'un tonneau.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Cendrebrune était dans la même colonne qu'un champignon géant.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était dans la même colonne qu'une chaise.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était sur la même ligne qu'une boule de cristal.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "cristal"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il n'était pas à côté d'un hamac.",
+      "logic": {
+        "type": "notAdjacentTo",
+        "object": "hamac"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dîme était dans la même colonne qu'une table.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Étoila était à côté d'une table.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "table"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Fondation était sur la même ligne qu'un canon.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "canon"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Gamme était sur la même ligne qu'une chaise.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "h",
+      "text": "Hargne était à l'est de Fondation.",
+      "logic": {
+        "type": "eastOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "i",
+      "text": "Iris était sur la même ligne qu'un chariot de mine.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chariot"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "j": [
+        11,
+        0
+      ],
+      "c": [
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          7,
+          11
+        ]
+      ],
+      "f": [
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "a": [
+        4,
+        2
+      ],
+      "e": [
+        9,
+        5
+      ],
+      "g": [
+        0,
+        8
+      ],
+      "d": [
+        8,
+        1
+      ],
+      "i": [
+        10,
+        4
+      ],
+      "b": [
+        1,
+        3
+      ],
+      "h": [
+        5,
+        7
+      ]
+    },
+    "murderer": "e"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 6,
+    "hardest": "pièces",
+    "hardSteps": 2,
+    "directStart": 0
+  },
+  "difficulty": 5
+}

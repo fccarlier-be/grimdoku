@@ -1,5 +1,5 @@
 // Grimdoku — production en série des énigmes manquantes (en parallèle, sans rien révéler des solutions).
-// Usage : node tools/batch.js [--jobs=7] [--only=<décor>[,<décor>…]] [--seeds=N]
+// Usage : node tools/batch.js [--jobs=7] [--only=<décor>[,<décor>…]] [--seeds=N] [--parallel] [--race]
 // Pour chaque affaire sans solution : énigmes écrites à la main (MANIFEST de build-puzzles.js) et affaires automatiques
 // (un habitué victime par décor ayant des textes « auto »), lance gen.js avec une difficulté visée, puis des niveaux
 // voisins en repli. Écrit solutions/<id>.json. Le journal ne donne que la difficulté, le nombre d'indices et les techniques.
@@ -89,6 +89,8 @@ function runGen(job, seed, skulls) {
     if (job.hidden) args.push('--hidden');
     if (job.hiddenMax) args.push(`--hidden-max=${job.hiddenMax}`);
     const child = spawn(process.execPath, args, { cwd: ROOT });
+    (job.children = job.children || new Set()).add(child);
+    child.on('close', () => job.children.delete(child));
     let out = '';
     child.stdout.on('data', d => (out += d));
     const timer = setTimeout(() => child.kill('SIGKILL'), TIMEOUT[job.size]);
@@ -99,29 +101,46 @@ function runGen(job, seed, skulls) {
 // difficulté visée, puis voisins (±1), puis n'importe laquelle de 0 à 3
 const fallbacks = (t) => t === null ? [null] : [t, t - 1, t + 1, t - 2, t + 2, t + 3, t - 3].filter((x, i, a) => x >= 0 && x <= 3 && a.indexOf(x) === i);
 
+// Vérifie une sortie de gen.js et l'écrit si elle convient (unique, résoluble, pas trop proche d'une autre grille du décor)
+function accept(job, out, skulls) {
+  if (!out) return false;
+  const sol = JSON.parse(out);
+  const base = loadScene(scenePath(job.scene));
+  const scene = job.big ? withBig(base, job.victim, job.big, job.shapes) : job.victim ? withVictim(base, job.victim) : base;
+  const p = resolve(scene, sol.cast);
+  if (job.hidden) p.hiddenShapes = true;
+  if (job.hiddenMax) p.hiddenMax = job.hiddenMax;
+  const h = E.humanSolve(p, sol.clues, 2);
+  if (!h.solved || E.solve(p, sol.clues, 2).length !== 1) return false;
+  // une autre grille du décor a pu être écrite entre-temps (--parallel, --race) : on revérifie qu'elle n'est pas trop proche
+  const mine = E.layoutSig(sol.positions, Object.keys(sol.positions).sort().pop());
+  if (JSON.parse(fs.readFileSync(avoidFile(job), 'utf8')).some(o => E.tooClose(mine, o))) return false;
+  fs.writeFileSync(path.join(ROOT, 'solutions', job.id + '.json'), JSON.stringify(sol, null, 1) + '\n');
+  const r = { skulls: E.skullsOf(p, h.steps) };
+  const techs = [...new Set(h.steps.map(s => E.TECH[s.tech]))].join(', ');
+  console.log(`✔ ${job.id.padEnd(26)} ${'💀'.repeat(r.skulls) || '0 crâne'}${job.big && skulls !== null ? ` (base ${skulls})` : ''}${skulls !== job.target ? ` (visé ${job.target})` : ''} · ${sol.clues.length} indices · ${techs}`);
+  return true;
+}
+
+// --race : les graines d'une même affaire tournent en même temps (JOBS à la fois), la première grille valable l'emporte
+// et arrête les autres — pour une ou deux affaires difficiles, au lieu d'essayer les graines l'une après l'autre
+const RACE = process.argv.includes('--race');
 async function produce(job) {
   job.avoid = avoidFile(job);
   for (const skulls of fallbacks(job.target)) {
-    for (const seed of seedsOf(job.id)) {
-      const out = await runGen(job, seed, skulls);
-      if (!out) continue;
-      const sol = JSON.parse(out);
-      const base = loadScene(scenePath(job.scene));
-      const scene = job.big ? withBig(base, job.victim, job.big, job.shapes) : job.victim ? withVictim(base, job.victim) : base;
-      const p = resolve(scene, sol.cast);
-      if (job.hidden) p.hiddenShapes = true;
-      if (job.hiddenMax) p.hiddenMax = job.hiddenMax;
-      const h = E.humanSolve(p, sol.clues, 2);
-      if (!h.solved || E.solve(p, sol.clues, 2).length !== 1) continue;
-      // une autre grille du décor a pu être écrite entre-temps (--parallel) : on revérifie qu'elle n'est pas trop proche
-      const mine = E.layoutSig(sol.positions, Object.keys(sol.positions).sort().pop());
-      if (JSON.parse(fs.readFileSync(avoidFile(job), 'utf8')).some(o => E.tooClose(mine, o))) continue;
-      fs.writeFileSync(path.join(ROOT, 'solutions', job.id + '.json'), JSON.stringify(sol, null, 1) + '\n');
-      const r = { skulls: E.skullsOf(p, h.steps) };
-      const techs = [...new Set(h.steps.map(s => E.TECH[s.tech]))].join(', ');
-      console.log(`✔ ${job.id.padEnd(26)} ${'💀'.repeat(r.skulls) || '0 crâne'}${job.big && skulls !== null ? ` (base ${skulls})` : ''}${skulls !== job.target ? ` (visé ${job.target})` : ''} · ${sol.clues.length} indices · ${techs}`);
-      return true;
+    if (RACE) {
+      let won = false;
+      const seeds = [...seedsOf(job.id)];
+      await Promise.all(Array.from({ length: Math.min(JOBS, seeds.length) }, async () => {
+        while (!won && seeds.length) {
+          const out = await runGen(job, seeds.shift(), skulls);
+          if (!won && accept(job, out, skulls)) { won = true; for (const c of job.children || []) c.kill('SIGKILL'); }
+        }
+      }));
+      if (won) return true;
+      continue;
     }
+    for (const seed of seedsOf(job.id)) if (accept(job, await runGen(job, seed, skulls), skulls)) return true;
   }
   console.log(`✖ ${job.id} : aucune grille trouvée`);
   return false;
