@@ -2,115 +2,122 @@
  "positions": {
   "h": [
    3,
-   3
-  ],
-  "d": [
-   1,
-   6
-  ],
-  "c": [
-   5,
-   2
-  ],
-  "a": [
-   6,
-   5
+   7
   ],
   "f": [
+   7,
+   1
+  ],
+  "a": [
+   0,
+   6
+  ],
+  "d": [
+   6,
+   3
+  ],
+  "b": [
+   1,
+   2
+  ],
+  "c": [
+   4,
+   0
+  ],
+  "g": [
    2,
    4
   ],
   "e": [
-   0,
-   1
-  ],
-  "g": [
-   7,
-   0
-  ],
-  "b": [
-   4,
-   7
+   5,
+   5
   ]
  },
- "murderer": "f",
+ "murderer": "a",
  "cast": {
-  "d": "a",
-  "c": "b",
-  "a": "c",
-  "f": "d",
-  "e": "e",
+  "f": "a",
+  "a": "b",
+  "d": "c",
+  "b": "d",
+  "c": "e",
   "g": "f",
-  "b": "g"
+  "e": "g"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "d",
-   "logic": {
-    "type": "sameColAs",
-    "object": "tombe"
-   }
-  },
-  {
-   "who": "a",
+   "who": "f",
    "logic": {
     "type": "westOf",
-    "other": "d"
+    "other": "b"
    }
   },
   {
-   "who": "a",
+   "who": "d",
    "logic": {
-    "type": "inRoom",
-    "room": "O"
+    "type": "westOf",
+    "other": "g"
    }
   },
   {
    "who": "b",
    "logic": {
-    "type": "inRoom",
-    "room": "K"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "table"
+    "type": "northOf",
+    "other": "g"
    }
   },
   {
    "who": "c",
    "logic": {
     "type": "adjacentTo",
-    "object": "statue"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "statue"
+    "object": "tombe"
    }
   },
   {
    "who": "g",
    "logic": {
-    "type": "notInRoom",
+    "type": "eastOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "eastOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "inRoom",
     "room": "A"
    }
   },
   {
    "who": "f",
    "logic": {
-    "type": "sameRowAs",
-    "object": "tombe"
+    "type": "eastOf",
+    "other": "c"
    }
   },
   {
-   "who": "b",
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "eastOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "c",
    "logic": {
     "type": "sameRowAs",
     "object": "tombe"

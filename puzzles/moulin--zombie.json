@@ -145,21 +145,21 @@
     },
     {
       "id": "c",
-      "name": "Capucine",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧚",
-      "desc": "Fée, doit trois tournées",
-      "archetype": "fee"
-    },
-    {
-      "id": "d",
-      "name": "Dentdur",
+      "name": "Croquassiette",
       "gender": "m",
       "role": "suspect",
       "icon": "🧌",
       "desc": "Troll, plongeur à mi-temps",
       "archetype": "troll"
+    },
+    {
+      "id": "d",
+      "name": "Digitale",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
     },
     {
       "id": "e",
@@ -182,116 +182,100 @@
   ],
   "decor": "moulin",
   "id": "moulin--zombie",
-  "epilogue": "Boisseau avoue en pesant ses mots : Fernand l'accusait de mettre le pouce sur la balance. C'était vrai, mais ça ne se dit pas.",
+  "epilogue": "Croquassiette avoue la bouche pleine : Fernand lui avait reproché de manger les sacs de grain. Avec le sac.",
   "clues": [
     {
       "who": "a",
-      "text": "Aquabelle était à côté d'un arbre.",
+      "text": "Aquabelle était assise sur une chaise.",
+      "logic": {
+        "type": "onObject",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Boisseau était à côté d'une chaise.",
       "logic": {
         "type": "adjacentTo",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était sur la même ligne qu'un arbre.",
+      "logic": {
+        "type": "sameRowAs",
         "object": "arbre"
       }
     },
     {
-      "who": "a",
-      "text": "Elle était sur la même ligne qu'un tonneau.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "tonneau"
-      }
-    },
-    {
       "who": "b",
-      "text": "Boisseau était à l'est de Capucine.",
+      "text": "Il était au nord de Croquassiette.",
       "logic": {
-        "type": "eastOf",
+        "type": "northOf",
         "other": "c"
       }
     },
     {
-      "who": "b",
-      "text": "Il était sur la même ligne qu'une statue.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "statue"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était à l'ouest d'Étincel.",
-      "logic": {
-        "type": "westOf",
-        "other": "e"
-      }
-    },
-    {
       "who": "c",
-      "text": "Capucine était à côté d'un tonneau.",
+      "text": "Croquassiette était dans la même colonne qu'un tonneau.",
       "logic": {
-        "type": "adjacentTo",
+        "type": "sameColAs",
         "object": "tonneau"
       }
     },
     {
       "who": "d",
-      "text": "Dentdur était dans le moulin.",
+      "text": "Digitale était à l'est d'Étincel.",
       "logic": {
-        "type": "inRoom",
-        "room": "M"
+        "type": "eastOf",
+        "other": "e"
       }
     },
     {
       "who": "e",
-      "text": "Étincel était au nord de Boisseau.",
+      "text": "Étincel était à l'ouest d'Aquabelle.",
       "logic": {
-        "type": "northOf",
-        "other": "b"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Il était dans la même colonne qu'une chaise.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "chaise"
+        "type": "westOf",
+        "other": "a"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        4,
+        5,
+        1
+      ],
+      "d": [
+        1,
         4
       ],
       "c": [
-        5,
-        2
-      ],
-      "d": [
-        0,
-        1
+        4,
+        3
       ],
       "a": [
+        0,
+        2
+      ],
+      "e": [
         2,
         0
       ],
-      "e": [
-        1,
-        5
-      ],
       "b": [
         3,
-        3
+        5
       ]
     },
-    "murderer": "b"
+    "murderer": "c"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
-    "hardest": "position relative",
+    "skulls": 2,
+    "score": 4,
+    "hardest": "ligne réservée",
     "hardSteps": 0,
-    "directStart": 1
+    "directStart": 0
   },
-  "difficulty": 1
+  "difficulty": 2
 }

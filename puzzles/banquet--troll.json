@@ -133,25 +133,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Arôme",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👨‍🍳",
-      "desc": "Chef gobelin, goûte tout, surtout ce qui bouge encore",
-      "archetype": "chef"
-    },
-    {
-      "id": "b",
-      "name": "Briochon",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👨‍🍳",
-      "desc": "Boulanger, pétrit plus de ragots que de pâte",
-      "archetype": "boulanger"
-    },
-    {
-      "id": "c",
-      "name": "Chaparde",
+      "name": "Arnak",
       "gender": "m",
       "role": "suspect",
       "icon": "👺",
@@ -159,8 +141,8 @@
       "archetype": "gobelin"
     },
     {
-      "id": "d",
-      "name": "Dévoreur",
+      "id": "b",
+      "name": "Bedaine",
       "gender": "m",
       "role": "suspect",
       "icon": "👹",
@@ -168,13 +150,31 @@
       "archetype": "ogre"
     },
     {
-      "id": "e",
-      "name": "Écho",
+      "id": "c",
+      "name": "Couac",
       "gender": "m",
       "role": "suspect",
       "icon": "🧑‍🎤",
       "desc": "Barde, chante faux",
       "archetype": "barde"
+    },
+    {
+      "id": "d",
+      "name": "Dariole",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🍳",
+      "desc": "Boulanger, pétrit plus de ragots que de pâte",
+      "archetype": "boulanger"
+    },
+    {
+      "id": "e",
+      "name": "Épice",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🍳",
+      "desc": "Chef gobelin, goûte tout, surtout ce qui bouge encore",
+      "archetype": "chef"
     },
     {
       "id": "f",
@@ -189,100 +189,100 @@
   "decor": "banquet",
   "id": "banquet--troll",
   "intro": "Le troll Fringale a été retrouvé sans vie au beau milieu du Banquet des Gobelins, la serviette encore autour du cou. Cinq convives s'empiffraient. Un seul était avec lui.",
-  "epilogue": "Chaparde avoue : Fringale avait réclamé l'addition du banquet. Personne ne réclame l'addition à un gobelin.",
+  "epilogue": "Épice avoue en goûtant sa sauce : Fringale avait demandé du sel. Devant tout le monde.",
   "clues": [
     {
       "who": "a",
-      "text": "Arôme était sur la même ligne qu'une table.",
+      "text": "Arnak était à l'est de Dariole.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "table"
+        "type": "eastOf",
+        "other": "d"
       }
     },
     {
       "who": "a",
-      "text": "Il était dans la même colonne qu'un coffre.",
+      "text": "Il était sur la même ligne qu'une botte de foin.",
       "logic": {
-        "type": "sameColAs",
-        "object": "coffre"
+        "type": "sameRowAs",
+        "object": "foin"
       }
     },
     {
       "who": "b",
-      "text": "Briochon était à l'est de Chaparde.",
+      "text": "Bedaine était à côté d'un chaudron.",
       "logic": {
-        "type": "eastOf",
-        "other": "c"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était dans la cuisine.",
-      "logic": {
-        "type": "inRoom",
-        "room": "K"
+        "type": "adjacentTo",
+        "object": "chaudron"
       }
     },
     {
       "who": "c",
-      "text": "Chaparde était au sud de Dévoreur.",
+      "text": "Couac était à l'est de Dariole.",
       "logic": {
-        "type": "southOf",
+        "type": "eastOf",
         "other": "d"
       }
     },
     {
       "who": "d",
-      "text": "Dévoreur était dans la même colonne qu'un tonneau.",
+      "text": "Dariole était dans la même colonne qu'une chaise.",
       "logic": {
         "type": "sameColAs",
-        "object": "tonneau"
+        "object": "chaise"
       }
     },
     {
       "who": "e",
-      "text": "Écho était sur la même ligne qu'une chaise.",
+      "text": "Épice était dans la même colonne qu'un arbre.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "chaise"
+        "type": "sameColAs",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était à l'ouest de Bedaine.",
+      "logic": {
+        "type": "westOf",
+        "other": "b"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        5,
-        3
-      ],
-      "c": [
         4,
-        1
+        0
       ],
-      "d": [
-        1,
-        4
-      ],
-      "e": [
-        2,
+      "a": [
+        3,
         5
       ],
       "b": [
         0,
         2
       ],
-      "a": [
-        3,
-        0
+      "c": [
+        1,
+        4
+      ],
+      "d": [
+        5,
+        3
+      ],
+      "e": [
+        2,
+        1
       ]
     },
-    "murderer": "c"
+    "murderer": "e"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
-    "hardest": "position relative",
-    "hardSteps": 0,
-    "directStart": 1
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 0
   },
-  "difficulty": 1
+  "difficulty": 3
 }

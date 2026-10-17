@@ -1,0 +1,182 @@
+{
+ "positions": {
+  "l": [
+   3,
+   9
+  ],
+  "e": [
+   6,
+   3
+  ],
+  "c": [
+   2,
+   1
+  ],
+  "a": [
+   11,
+   5
+  ],
+  "i": [
+   1,
+   8
+  ],
+  "g": [
+   0,
+   7
+  ],
+  "f": [
+   4,
+   0
+  ],
+  "d": [
+   9,
+   11
+  ],
+  "h": [
+   5,
+   10
+  ],
+  "j": [
+   8,
+   4
+  ],
+  "b": [
+   10,
+   2
+  ],
+  "k": [
+   7,
+   6
+  ]
+ },
+ "murderer": "i",
+ "cast": {
+  "e": "a",
+  "c": "b",
+  "a": "c",
+  "i": "d",
+  "g": "e",
+  "f": "f",
+  "d": "g",
+  "h": "h",
+  "j": "i",
+  "b": "j",
+  "k": "k"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "f",
+   "logic": {
+    "type": "westOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "j",
+   "logic": {
+    "type": "westOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "k",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chariot"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "inRoom",
+    "room": "G"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "onObject",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "hamac"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "northOf",
+    "other": "i"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "chaise"
+   }
+  }
+ ]
+}

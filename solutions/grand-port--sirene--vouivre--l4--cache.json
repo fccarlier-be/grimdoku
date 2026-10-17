@@ -1,0 +1,141 @@
+{
+ "positions": {
+  "h": [
+   5,
+   5
+  ],
+  "c": [
+   [
+    2,
+    3
+   ],
+   [
+    3,
+    3
+   ],
+   [
+    4,
+    3
+   ],
+   [
+    4,
+    4
+   ]
+  ],
+  "b": [
+   8,
+   2
+  ],
+  "d": [
+   7,
+   6
+  ],
+  "e": [
+   6,
+   0
+  ],
+  "g": [
+   0,
+   7
+  ],
+  "f": [
+   1,
+   1
+  ],
+  "a": [
+   9,
+   8
+  ]
+ },
+ "murderer": "d",
+ "cast": {
+  "c": "a",
+  "b": "b",
+  "d": "c",
+  "e": "d",
+  "g": "e",
+  "f": "f",
+  "a": "g"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "hamac"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "southOf",
+    "other": "g"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "eastOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "enclume"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chariot"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "southOf",
+    "other": "g"
+   }
+  }
+ ]
+}

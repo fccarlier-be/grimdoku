@@ -132,7 +132,7 @@ test('formes : 8 formes de 2 à 4 cases, tournées et retournées', () => {
   assert.deepEqual(n, { I2: 2, I3: 2, L3: 4, I4: 2, O4: 1, L4: 8, T4: 4, S4: 4 }, 'L et J, S et Z : la forme se retourne');
 });
 
-test('la taille d\'un grand personnage change d\'une affaire à l\'autre', () => {
+test('la taille d\'un grand personnage change d\'une affaire à l\'autre', { skip: !PUZZLES.some(p => p.size > 8) && 'pas encore de carte de 9×9 ou plus' }, () => {
   const shapes = {};
   for (const p of PUZZLES) for (const c of p.characters) if (c.shape) (shapes[c.archetype] = shapes[c.archetype] || new Set()).add(E.SHAPES[c.shape].cells.length);
   assert.ok(Object.values(shapes).some(s => s.size > 1));
@@ -140,11 +140,26 @@ test('la taille d\'un grand personnage change d\'une affaire à l\'autre', () =>
 
 test('pas deux grilles presque identiques dans un même décor (victime au même endroit, ou plus de la moitié des cases en commun)', () => {
   const by = {};
-  for (const p of PUZZLES) (by[p.decor] = by[p.decor] || []).push(p);
+  // même plan = même illustration et même taille (une grande carte reprend l'illustration d'un petit décor)
+  for (const p of PUZZLES) (by[p.decor + p.size] = by[p.decor + p.size] || []).push(p);
   const sig = (p) => E.layoutSig(p.solution.positions, p.characters.find(c => c.role === 'victim').id);
   const close = [];
   for (const ps of Object.values(by))
     for (let i = 0; i < ps.length; i++) for (let j = i + 1; j < ps.length; j++)
       if (E.tooClose(sig(ps[i]), sig(ps[j]))) close.push(ps[i].id + ' ~ ' + ps[j].id);
   assert.deepEqual(close, []);
+});
+
+test('nouvelles règles : chaque pièce occupée, aucun placement direct, grand personnage jamais placé en premier', () => {
+  for (const p of PUZZLES) {
+    const ctx = E.prepare(p);
+    const suspects = p.characters.filter(c => c.role !== 'victim').length;
+    assert.equal(ctx.zones.length, suspects, `${p.id} : autant de pièces que de suspects`);
+    assert.deepEqual(E.emptyZones(ctx, p.solution.positions), [], `${p.id} : aucune pièce vide`);
+    const steps = E.humanSolve(p, p.clues.map(c => ({ who: c.who, logic: c.logic })), 2).steps;
+    assert.ok(!steps.some(s => s.tech === 0), `${p.id} : aucun personnage placé par ses seuls indices`);
+    assert.ok(!steps[0].ids.some(id => p.characters.find(c => c.id === id).shape), `${p.id} : grand personnage pas en premier`);
+    const max = p.size <= 8 ? 2 : p.size === 9 ? 3 : 4;
+    for (const c of p.characters) if (c.shape) assert.ok(E.SHAPES[c.shape].cells.length <= max, `${p.id} : ${c.shape} trop grand pour ${p.size}×${p.size}`);
+  }
 });

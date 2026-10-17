@@ -23,11 +23,6 @@
       "the": "la fonderie",
       "floor": "dalles"
     },
-    "C": {
-      "name": "Réserve de charbon",
-      "the": "la réserve de charbon",
-      "floor": "roche"
-    },
     "T": {
       "name": "Atelier",
       "the": "l'atelier",
@@ -43,9 +38,9 @@
     "DDDFFFA",
     "DDFFFAA",
     "DDOOFAA",
-    "CCOOTTA",
-    "CCOOTTT",
-    "CYYYTTT",
+    "OOOOTTA",
+    "OOOOTTT",
+    "OYYYTTT",
     "YYYYYTT"
   ],
   "objects": [
@@ -165,16 +160,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aymeric",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🤺",
-      "desc": "Chevalier, armure trop petite depuis Noël",
-      "archetype": "chevalier"
-    },
-    {
-      "id": "b",
-      "name": "Bedaine",
+      "name": "Avaleur",
       "gender": "m",
       "role": "suspect",
       "icon": "👹",
@@ -182,13 +168,22 @@
       "archetype": "ogre"
     },
     {
-      "id": "c",
-      "name": "Croquassiette",
+      "id": "b",
+      "name": "Braise",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧌",
-      "desc": "Troll, plongeur à mi-temps",
-      "archetype": "troll"
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
+      "id": "c",
+      "name": "Clodomir",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
     },
     {
       "id": "d",
@@ -201,21 +196,21 @@
     },
     {
       "id": "e",
-      "name": "Étincel",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🐉",
-      "desc": "Dragonnet, brûle tout ce qu'il touche",
-      "archetype": "dragonnet"
-    },
-    {
-      "id": "f",
-      "name": "Filon",
+      "name": "Étai",
       "gender": "m",
       "role": "suspect",
       "icon": "⛏️",
       "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
       "archetype": "mineur"
+    },
+    {
+      "id": "f",
+      "name": "Fringale",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
     },
     {
       "id": "g",
@@ -230,120 +225,104 @@
   "decor": "forge",
   "id": "forge--gobelin",
   "intro": "Le gobelin Grigou a été retrouvé sans vie à la Forge du Dragon, encore tiède. Six artisans et clients s'y pressaient cette nuit-là. Un seul était avec lui.",
-  "epilogue": "Croquassiette avoue : Grigou se servait de sa tête comme enclume de secours.",
+  "epilogue": "Avaleur avoue, rouge de honte : Grigou lui avait forgé une fourchette géante. Il était végétarien depuis mardi.",
   "clues": [
     {
       "who": "a",
-      "text": "Aymeric était à côté d'une statue.",
+      "text": "Avaleur était à côté d'une table.",
       "logic": {
         "type": "adjacentTo",
-        "object": "statue"
+        "object": "table"
       }
     },
     {
       "who": "b",
-      "text": "Bedaine était à l'ouest de Dédale.",
-      "logic": {
-        "type": "westOf",
-        "other": "d"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Croquassiette était au sud de Bedaine.",
-      "logic": {
-        "type": "southOf",
-        "other": "b"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Il était à côté d'une chaise.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Dédale était à l'ouest de Croquassiette.",
-      "logic": {
-        "type": "westOf",
-        "other": "c"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Il était sur la même ligne qu'une chaise.",
+      "text": "Braise était sur la même ligne qu'une statue.",
       "logic": {
         "type": "sameRowAs",
-        "object": "chaise"
+        "object": "statue"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Clodomir était à côté d'un coffre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dédale était sur la même ligne qu'une table.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était à côté d'un chariot de mine.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chariot"
       }
     },
     {
       "who": "e",
-      "text": "Étincel était au nord de Filon.",
+      "text": "Étai était au nord de Fringale.",
       "logic": {
         "type": "northOf",
         "other": "f"
       }
     },
     {
-      "who": "e",
-      "text": "Il était à l'ouest de Croquassiette.",
-      "logic": {
-        "type": "westOf",
-        "other": "c"
-      }
-    },
-    {
       "who": "f",
-      "text": "Filon était au nord de Bedaine.",
+      "text": "Fringale était au sud d'Étai.",
       "logic": {
-        "type": "northOf",
-        "other": "b"
+        "type": "southOf",
+        "other": "e"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        6,
-        5
-      ],
-      "f": [
-        2,
-        0
-      ],
-      "a": [
-        1,
-        6
-      ],
-      "c": [
         5,
         4
       ],
-      "b": [
+      "e": [
+        2,
+        0
+      ],
+      "c": [
+        1,
+        6
+      ],
+      "f": [
+        6,
+        2
+      ],
+      "a": [
+        4,
+        5
+      ],
+      "d": [
         3,
         1
       ],
-      "d": [
-        4,
-        2
-      ],
-      "e": [
+      "b": [
         0,
         3
       ]
     },
-    "murderer": "c"
+    "murderer": "a"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
-    "hardest": "position relative",
-    "hardSteps": 0,
-    "directStart": 1
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 0
   },
-  "difficulty": 1
+  "difficulty": 3
 }

@@ -1,42 +1,42 @@
 {
  "positions": {
   "g": [
-   1,
-   0
-  ],
-  "c": [
-   6,
-   1
-  ],
-  "d": [
-   4,
-   2
-  ],
-  "b": [
    3,
    5
   ],
-  "f": [
-   5,
-   4
+  "c": [
+   4,
+   2
   ],
-  "a": [
+  "f": [
+   6,
+   0
+  ],
+  "b": [
    0,
-   6
+   1
   ],
   "e": [
+   1,
+   4
+  ],
+  "d": [
    2,
    3
+  ],
+  "a": [
+   5,
+   6
   ]
  },
- "murderer": "f",
+ "murderer": "a",
  "cast": {
   "c": "a",
-  "d": "b",
+  "f": "b",
   "b": "c",
-  "f": "d",
-  "a": "e",
-  "e": "f"
+  "e": "d",
+  "d": "e",
+  "a": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
@@ -44,57 +44,43 @@
   {
    "who": "f",
    "logic": {
+    "type": "southOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
     "type": "sameRowAs",
-    "object": "tapis"
+    "object": "sarcophage"
    }
   },
   {
    "who": "b",
    "logic": {
     "type": "adjacentTo",
-    "object": "arbre"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "coffre"
-   }
-  },
-  {
-   "who": "d",
-   "logic": {
-    "type": "inRoom",
-    "room": "H"
+    "object": "portail"
    }
   },
   {
    "who": "e",
    "logic": {
-    "type": "adjacentTo",
-    "object": "tapis"
+    "type": "sameRowAs",
+    "object": "chaudron"
    }
   },
   {
-   "who": "f",
-   "logic": {
-    "type": "inRoom",
-    "room": "C"
-   }
-  },
-  {
-   "who": "a",
+   "who": "d",
    "logic": {
     "type": "sameRowAs",
-    "object": "cristal"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "onObject",
-    "object": "chaise"
+    "object": "etagere"
    }
   }
  ]

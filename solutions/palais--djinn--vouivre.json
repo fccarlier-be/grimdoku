@@ -1,42 +1,43 @@
 {
  "positions": {
-  "e": [
-   0,
-   1
+  "f": [
+   5,
+   2
   ],
-  "b": [
+  "d": [
    [
-    4,
-    3
-   ],
-   [
-    5,
+    6,
     3
    ],
    [
     6,
-    3
+    4
    ]
   ],
-  "d": [
-   2,
-   2
-  ],
   "a": [
+   4,
+   1
+  ],
+  "e": [
+   1,
+   5
+  ],
+  "b": [
    3,
-   6
+   0
   ],
   "c": [
-   1,
-   0
+   2,
+   6
   ]
  },
- "murderer": "c",
+ "murderer": "a",
  "cast": {
-  "b": "a",
-  "d": "b",
-  "a": "c",
-  "c": "d"
+  "d": "a",
+  "a": "b",
+  "e": "c",
+  "b": "d",
+  "c": "e"
  },
  "nSolutions": 1,
  "needsL2": false,
@@ -44,43 +45,50 @@
   {
    "who": "d",
    "logic": {
-    "type": "eastOf",
+    "type": "westOf",
     "other": "c"
    }
   },
   {
-   "who": "c",
+   "who": "a",
    "logic": {
     "type": "northOf",
     "other": "d"
    }
   },
   {
-   "who": "a",
+   "who": "e",
    "logic": {
-    "type": "sameRowAs",
-    "object": "arbre"
+    "type": "westOf",
+    "other": "c"
    }
   },
   {
-   "who": "c",
+   "who": "b",
    "logic": {
     "type": "sameColAs",
     "object": "cristal"
    }
   },
   {
-   "who": "b",
+   "who": "c",
    "logic": {
-    "type": "eastOf",
-    "other": "d"
+    "type": "adjacentTo",
+    "object": "tapis"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "onObject",
-    "object": "tapis"
+    "type": "adjacentTo",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "coffre"
    }
   }
  ]

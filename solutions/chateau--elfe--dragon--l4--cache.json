@@ -1,59 +1,63 @@
 {
  "positions": {
-  "e": [
-   0,
-   1
+  "f": [
+   1,
+   6
   ],
-  "a": [
+  "d": [
    [
-    4,
-    3
+    3,
+    5
    ],
    [
     4,
-    4
-   ],
-   [
-    5,
-    4
-   ],
-   [
-    6,
-    4
+    5
    ]
   ],
   "b": [
-   3,
-   5
-  ],
-  "c": [
-   1,
-   0
-  ],
-  "d": [
    2,
    2
+  ],
+  "c": [
+   5,
+   4
+  ],
+  "a": [
+   0,
+   1
+  ],
+  "e": [
+   6,
+   0
   ]
  },
- "murderer": "c",
+ "murderer": "b",
  "cast": {
-  "a": "a",
+  "d": "a",
   "b": "b",
   "c": "c",
-  "d": "d"
+  "a": "d",
+  "e": "e"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "a",
+   "who": "c",
    "logic": {
-    "type": "adjacentTo",
-    "object": "champi"
+    "type": "sameRowAs",
+    "object": "etagere"
    }
   },
   {
-   "who": "c",
+   "who": "e",
+   "logic": {
+    "type": "westOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "a",
    "logic": {
     "type": "adjacentTo",
     "object": "statue"
@@ -62,36 +66,29 @@
   {
    "who": "d",
    "logic": {
-    "type": "adjacentTo",
-    "object": "tapis"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
     "type": "sameRowAs",
     "object": "lit"
    }
   },
   {
-   "who": "a",
+   "who": "b",
    "logic": {
-    "type": "sameRowAs",
-    "object": "cristal"
+    "type": "adjacentTo",
+    "object": "tapis"
    }
   },
   {
    "who": "c",
    "logic": {
-    "type": "sameRowAs",
-    "object": "table"
+    "type": "notInRoom",
+    "room": "T"
    }
   },
   {
    "who": "b",
    "logic": {
-    "type": "sameColAs",
-    "object": "etagere"
+    "type": "westOf",
+    "other": "c"
    }
   }
  ]

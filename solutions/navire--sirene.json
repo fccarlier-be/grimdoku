@@ -1,41 +1,41 @@
 {
  "positions": {
   "g": [
+   5,
+   2
+  ],
+  "a": [
    4,
    4
   ],
   "b": [
+   3,
+   6
+  ],
+  "f": [
    1,
    5
   ],
-  "a": [
+  "d": [
    2,
-   1
-  ],
-  "f": [
-   0,
-   2
+   3
   ],
   "e": [
    6,
-   0
-  ],
-  "d": [
-   3,
-   3
+   1
   ],
   "c": [
-   5,
-   6
+   0,
+   0
   ]
  },
- "murderer": "d",
+ "murderer": "a",
  "cast": {
-  "b": "a",
-  "a": "b",
+  "a": "a",
+  "b": "b",
   "f": "c",
-  "e": "d",
-  "d": "e",
+  "d": "d",
+  "e": "e",
   "c": "f"
  },
  "nSolutions": 1,
@@ -44,71 +44,57 @@
   {
    "who": "b",
    "logic": {
-    "type": "westOf",
-    "other": "c"
+    "type": "sameRowAs",
+    "object": "chaudron"
    }
   },
   {
    "who": "f",
-   "logic": {
-    "type": "sameColAs",
-    "object": "tonneau"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "westOf",
-    "other": "d"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "lit"
-   }
-  },
-  {
-   "who": "f",
-   "logic": {
-    "type": "northOf",
-    "other": "b"
-   }
-  },
-  {
-   "who": "a",
    "logic": {
     "type": "sameRowAs",
-    "object": "fauteuil"
+    "object": "coffre"
    }
   },
   {
    "who": "d",
    "logic": {
-    "type": "sameRowAs",
-    "object": "chaudron"
+    "type": "sameColAs",
+    "object": "canon"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "inRoom",
+    "room": "C"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameColAs",
+    "object": "coffre"
    }
   },
   {
    "who": "c",
    "logic": {
     "type": "northOf",
-    "other": "e"
+    "other": "f"
    }
   },
   {
-   "who": "a",
+   "who": "e",
    "logic": {
-    "type": "adjacentTo",
-    "object": "hamac"
+    "type": "southOf",
+    "other": "a"
    }
   },
   {
-   "who": "d",
+   "who": "c",
    "logic": {
-    "type": "adjacentTo",
-    "object": "tonneau"
+    "type": "sameColAs",
+    "object": "coffre"
    }
   }
  ]

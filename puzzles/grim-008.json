@@ -3,11 +3,6 @@
   "title": "La Foire aux Sortilèges — Une autre nuit",
   "size": 7,
   "rooms": {
-    "R": {
-      "name": "Roulotte",
-      "the": "la roulotte",
-      "floor": "parquet"
-    },
     "S": {
       "name": "Stands",
       "the": "les stands",
@@ -40,8 +35,8 @@
     }
   },
   "layout": [
-    "RRSSSBB",
-    "RRSSSBB",
+    "KKSSSBB",
+    "KKSSSBB",
     "KKCCCCB",
     "KKCCCCM",
     "NNCCCCM",
@@ -159,25 +154,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Arpège",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧑‍🎤",
-      "desc": "Barde, chante faux",
-      "archetype": "barde"
-    },
-    {
-      "id": "b",
-      "name": "Bakchich",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
-    },
-    {
-      "id": "c",
-      "name": "Clinquant",
+      "name": "Aplomb",
       "gender": "m",
       "role": "suspect",
       "icon": "🎩",
@@ -185,17 +162,26 @@
       "archetype": "bonimenteur"
     },
     {
-      "id": "d",
-      "name": "Dardafeu",
+      "id": "b",
+      "name": "Bâfrin",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐉",
-      "desc": "Dragonnet, brûle tout ce qu'il touche",
-      "archetype": "dragonnet"
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
     },
     {
-      "id": "e",
-      "name": "Églantine",
+      "id": "c",
+      "name": "Couac",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
+    },
+    {
+      "id": "d",
+      "name": "Digitale",
       "gender": "f",
       "role": "suspect",
       "icon": "🧚",
@@ -203,13 +189,22 @@
       "archetype": "fee"
     },
     {
-      "id": "f",
-      "name": "Fringale",
+      "id": "e",
+      "name": "Étincel",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧌",
-      "desc": "Troll, plongeur à mi-temps",
-      "archetype": "troll"
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
+      "id": "f",
+      "name": "Filou",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
     },
     {
       "id": "g",
@@ -221,80 +216,64 @@
       "archetype": "cartomancienne"
     }
   ],
-  "epilogue": "Dardafeu avoue : Gémina lui avait prédit qu'il ne cracherait jamais de vraies flammes. Il a tenu à lui prouver le contraire.",
+  "epilogue": "Étincel avoue : Gémina lui avait prédit qu'il ne cracherait jamais de vraies flammes. Il a tenu à lui prouver le contraire.",
   "decor": "foire",
   "id": "grim-008",
   "clues": [
     {
       "who": "a",
-      "text": "Arpège était dans la même colonne qu'un chaudron.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "chaudron"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était à côté d'une chaise.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Bakchich était à côté d'une chaise.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était dans la même colonne qu'un lit.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "lit"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Clinquant était dans la ménagerie.",
-      "logic": {
-        "type": "inRoom",
-        "room": "M"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Dardafeu était sur la même ligne qu'une botte de foin.",
+      "text": "Aplomb était sur la même ligne qu'un tapis.",
       "logic": {
         "type": "sameRowAs",
-        "object": "foin"
+        "object": "tapis"
       }
     },
     {
-      "who": "e",
-      "text": "Églantine était dans la même colonne qu'une chaise.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "f",
-      "text": "Fringale était dans la même colonne qu'une table.",
+      "who": "b",
+      "text": "Bâfrin était dans la même colonne qu'une table.",
       "logic": {
         "type": "sameColAs",
         "object": "table"
       }
     },
     {
-      "who": "f",
-      "text": "Il était à l'est de Dardafeu.",
+      "who": "b",
+      "text": "Il était à l'est d'Étincel.",
       "logic": {
         "type": "eastOf",
-        "other": "d"
+        "other": "e"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Couac était à l'est de Bâfrin.",
+      "logic": {
+        "type": "eastOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Digitale était au nord de Filou.",
+      "logic": {
+        "type": "northOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Étincel était dans le chapiteau.",
+      "logic": {
+        "type": "inRoom",
+        "room": "C"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Filou était à l'ouest d'Aplomb.",
+      "logic": {
+        "type": "westOf",
+        "other": "a"
       }
     }
   ],
@@ -304,39 +283,39 @@
         6,
         4
       ],
-      "c": [
+      "a": [
         3,
         6
       ],
-      "a": [
+      "c": [
         0,
         5
       ],
-      "b": [
+      "f": [
         5,
         0
       ],
-      "f": [
+      "b": [
         1,
         3
       ],
-      "e": [
+      "d": [
         2,
         1
       ],
-      "d": [
+      "e": [
         4,
         2
       ]
     },
-    "murderer": "d"
+    "murderer": "e"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
-    "hardest": "position relative",
-    "hardSteps": 0,
-    "directStart": 2
+    "skulls": 3,
+    "score": 7,
+    "hardest": "pièces",
+    "hardSteps": 3,
+    "directStart": 0
   },
-  "difficulty": 1
+  "difficulty": 3
 }

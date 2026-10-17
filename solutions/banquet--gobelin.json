@@ -1,81 +1,74 @@
 {
  "positions": {
   "f": [
-   3,
+   4,
    5
   ],
+  "d": [
+   1,
+   1
+  ],
   "c": [
-   4,
+   0,
    3
   ],
-  "d": [
-   0,
+  "b": [
+   3,
    0
   ],
-  "b": [
+  "e": [
    5,
    2
   ],
   "a": [
    2,
-   1
-  ],
-  "e": [
-   1,
    4
   ]
  },
- "murderer": "c",
+ "murderer": "a",
  "cast": {
-  "c": "a",
-  "d": "b",
+  "d": "a",
+  "c": "b",
   "b": "c",
-  "a": "d",
-  "e": "e"
+  "e": "d",
+  "a": "e"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "a",
+   "who": "d",
    "logic": {
-    "type": "adjacentTo",
-    "object": "coffre"
+    "type": "northOf",
+    "other": "e"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "sameColAs",
-    "object": "chaudron"
+    "type": "onObject",
+    "object": "chaise"
    }
   },
   {
    "who": "b",
    "logic": {
-    "type": "adjacentTo",
-    "object": "champi"
+    "type": "sameRowAs",
+    "object": "foin"
    }
   },
   {
    "who": "c",
    "logic": {
-    "type": "adjacentTo",
-    "object": "chaise"
-   }
-  },
-  {
-   "who": "d",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "chaudron"
+    "type": "sameColAs",
+    "object": "table"
    }
   },
   {
    "who": "e",
    "logic": {
-    "type": "inRoom",
-    "room": "C"
+    "type": "adjacentTo",
+    "object": "arbre"
    }
   }
  ]

@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "title": "La Tour de l'Archimage — l'affaire Génia",
   "intro": "La djinn Génia a été retrouvée sans vie dans la Tour de l'Archimage, où un portail runique relie le laboratoire à la crypte. Six invités douteux traînaient dans les étages. Un seul était avec elle.",
-  "epilogue": "Dorade avoue : Génia avait versé une potion « régénérante » dans son aquarium. Elle a eu des écailles violettes pendant un mois.",
+  "epilogue": "Albâtre avoue : Génia voulait l'enfermer dans un bocal pour l'exposer à l'observatoire. Les fantômes ont leur dignité.",
   "size": 7,
   "rooms": {
     "L": {
@@ -162,25 +162,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Anatole",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧟",
-      "desc": "Zombie, ancien apprenti. Ancien tout court",
-      "archetype": "zombie"
-    },
-    {
-      "id": "b",
-      "name": "Blanchebarbe",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧙‍♂️",
-      "desc": "Archimage, 412 ans, toujours pas de testament",
-      "archetype": "archimage"
-    },
-    {
-      "id": "c",
-      "name": "Chaînon",
+      "name": "Albâtre",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -191,8 +173,8 @@
       ]
     },
     {
-      "id": "d",
-      "name": "Dorade",
+      "id": "b",
+      "name": "Bulle",
       "gender": "f",
       "role": "suspect",
       "icon": "🧜‍♀️",
@@ -200,13 +182,31 @@
       "archetype": "sirene"
     },
     {
-      "id": "e",
-      "name": "Étincel",
+      "id": "c",
+      "name": "Cramoisi",
       "gender": "m",
       "role": "suspect",
       "icon": "🐉",
       "desc": "Dragonnet, brûle tout ce qu'il touche",
       "archetype": "dragonnet"
+    },
+    {
+      "id": "d",
+      "name": "Doublebarbe",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Archimage, 412 ans, toujours pas de testament",
+      "archetype": "archimage"
+    },
+    {
+      "id": "e",
+      "name": "Edmond",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
     },
     {
       "id": "f",
@@ -232,100 +232,100 @@
   "clues": [
     {
       "who": "a",
-      "text": "Anatole était dans la même colonne qu'un arbre.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "arbre"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était assis sur une chaise.",
+      "text": "Albâtre était sur un portail runique.",
       "logic": {
         "type": "onObject",
-        "object": "chaise"
+        "object": "portail"
       }
     },
     {
       "who": "b",
-      "text": "Blanchebarbe était sur un champignon géant.",
+      "text": "Bulle était à côté d'une chaise.",
       "logic": {
-        "type": "onObject",
-        "object": "champi"
+        "type": "adjacentTo",
+        "object": "chaise"
       }
     },
     {
       "who": "c",
-      "text": "Chaînon était à côté d'une statue.",
+      "text": "Cramoisi était à côté d'un tapis.",
       "logic": {
         "type": "adjacentTo",
-        "object": "statue"
+        "object": "tapis"
       }
     },
     {
       "who": "d",
-      "text": "Dorade était sur la même ligne qu'une étagère.",
+      "text": "Doublebarbe était au sud d'Albâtre.",
+      "logic": {
+        "type": "southOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était à l'ouest de Cramoisi.",
+      "logic": {
+        "type": "westOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Edmond était sur la même ligne qu'une étagère.",
       "logic": {
         "type": "sameRowAs",
         "object": "etagere"
       }
     },
     {
-      "who": "e",
-      "text": "Étincel était dans la même colonne qu'une statue.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "statue"
-      }
-    },
-    {
       "who": "f",
-      "text": "Funestine était au sud d'Anatole.",
+      "text": "Funestine était sur la même ligne qu'un arbre.",
       "logic": {
-        "type": "southOf",
-        "other": "a"
+        "type": "sameRowAs",
+        "object": "arbre"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        3,
-        4
-      ],
-      "c": [
-        4,
-        1
-      ],
-      "e": [
         6,
-        0
+        4
       ],
       "a": [
         0,
-        6
+        0
       ],
-      "d": [
+      "c": [
+        5,
+        2
+      ],
+      "e": [
         2,
         3
       ],
-      "f": [
-        1,
-        2
-      ],
       "b": [
-        5,
+        1,
+        6
+      ],
+      "f": [
+        3,
         5
+      ],
+      "d": [
+        4,
+        1
       ]
     },
-    "murderer": "d"
+    "murderer": "a"
   },
   "rating": {
-    "skulls": 2,
-    "score": 4,
+    "skulls": 3,
+    "score": 6,
     "hardest": "pièces",
     "hardSteps": 2,
-    "directStart": 2
+    "directStart": 0
   },
-  "difficulty": 2
+  "difficulty": 3
 }

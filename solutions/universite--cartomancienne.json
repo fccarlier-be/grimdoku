@@ -1,0 +1,156 @@
+{
+ "positions": {
+  "k": [
+   2,
+   3
+  ],
+  "j": [
+   8,
+   1
+  ],
+  "d": [
+   3,
+   5
+  ],
+  "e": [
+   5,
+   7
+  ],
+  "b": [
+   0,
+   8
+  ],
+  "h": [
+   4,
+   2
+  ],
+  "i": [
+   6,
+   9
+  ],
+  "f": [
+   9,
+   6
+  ],
+  "a": [
+   7,
+   10
+  ],
+  "c": [
+   1,
+   0
+  ],
+  "g": [
+   10,
+   4
+  ]
+ },
+ "murderer": "c",
+ "cast": {
+  "j": "a",
+  "d": "b",
+  "e": "c",
+  "b": "d",
+  "h": "e",
+  "i": "f",
+  "f": "g",
+  "a": "h",
+  "c": "i",
+  "g": "j"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "e",
+   "logic": {
+    "type": "southOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "onObject",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "sameColAs",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "j",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "table"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "pupitre"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "eastOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "westOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameColAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "sameColAs",
+    "object": "coffre"
+   }
+  }
+ ]
+}

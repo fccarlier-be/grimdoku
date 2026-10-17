@@ -1,0 +1,189 @@
+{
+ "positions": {
+  "l": [
+   1,
+   4
+  ],
+  "f": [
+   3,
+   10
+  ],
+  "i": [
+   6,
+   8
+  ],
+  "e": [
+   2,
+   2
+  ],
+  "g": [
+   5,
+   3
+  ],
+  "d": [
+   11,
+   0
+  ],
+  "b": [
+   9,
+   6
+  ],
+  "j": [
+   8,
+   9
+  ],
+  "h": [
+   0,
+   7
+  ],
+  "k": [
+   4,
+   11
+  ],
+  "c": [
+   10,
+   5
+  ],
+  "a": [
+   7,
+   1
+  ]
+ },
+ "murderer": "h",
+ "cast": {
+  "f": "a",
+  "i": "b",
+  "e": "c",
+  "g": "d",
+  "d": "e",
+  "b": "f",
+  "j": "g",
+  "h": "h",
+  "k": "i",
+  "c": "j",
+  "a": "k"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "f",
+   "logic": {
+    "type": "northOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "southOf",
+    "other": "h"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "eastOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "westOf",
+    "other": "i"
+   }
+  },
+  {
+   "who": "k",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameColAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "inRoom",
+    "room": "E"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "inRoom",
+    "room": "D"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "inRoom",
+    "room": "C"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "sarcophage"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chariot"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "sarcophage"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "j",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chariot"
+   }
+  }
+ ]
+}

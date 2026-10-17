@@ -1,0 +1,179 @@
+{
+ "positions": {
+  "j": [
+   8,
+   3
+  ],
+  "e": [
+   [
+    0,
+    6
+   ],
+   [
+    0,
+    7
+   ],
+   [
+    1,
+    5
+   ],
+   [
+    1,
+    6
+   ]
+  ],
+  "b": [
+   7,
+   2
+  ],
+  "c": [
+   5,
+   4
+  ],
+  "h": [
+   10,
+   10
+  ],
+  "a": [
+   2,
+   1
+  ],
+  "d": [
+   9,
+   0
+  ],
+  "f": [
+   6,
+   8
+  ],
+  "g": [
+   3,
+   9
+  ],
+  "i": [
+   11,
+   11
+  ]
+ },
+ "murderer": "d",
+ "cast": {
+  "e": "a",
+  "b": "b",
+  "c": "c",
+  "h": "d",
+  "a": "e",
+  "d": "f",
+  "f": "g",
+  "g": "h",
+  "i": "i"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "e",
+   "logic": {
+    "type": "eastOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "sameColAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "northOf",
+    "other": "i"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "eastOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "sarcophage"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "hamac"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "eastOf",
+    "other": "g"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "eastOf",
+    "other": "d"
+   }
+  }
+ ]
+}

@@ -3,11 +3,6 @@
   "title": "La Foire aux Sortilèges — l'affaire Glycine",
   "size": 7,
   "rooms": {
-    "R": {
-      "name": "Roulotte",
-      "the": "la roulotte",
-      "floor": "parquet"
-    },
     "S": {
       "name": "Stands",
       "the": "les stands",
@@ -40,8 +35,8 @@
     }
   },
   "layout": [
-    "RRSSSBB",
-    "RRSSSBB",
+    "KKSSSBB",
+    "KKSSSBB",
     "KKCCCCB",
     "KKCCCCM",
     "NNCCCCM",
@@ -159,16 +154,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aplomb",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🎩",
-      "desc": "Bonimenteur, vend du rêve au kilo",
-      "archetype": "bonimenteur"
-    },
-    {
-      "id": "b",
-      "name": "Bohémia",
+      "name": "Arcane",
       "gender": "f",
       "role": "suspect",
       "icon": "🔮",
@@ -176,26 +162,17 @@
       "archetype": "cartomancienne"
     },
     {
+      "id": "b",
+      "name": "Braise",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
       "id": "c",
-      "name": "Couac",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧑‍🎤",
-      "desc": "Barde, chante faux",
-      "archetype": "barde"
-    },
-    {
-      "id": "d",
-      "name": "Dîme",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
-    },
-    {
-      "id": "e",
-      "name": "Engloutor",
+      "name": "Croquassiette",
       "gender": "m",
       "role": "suspect",
       "icon": "🧌",
@@ -203,13 +180,31 @@
       "archetype": "troll"
     },
     {
-      "id": "f",
-      "name": "Flammèche",
+      "id": "d",
+      "name": "Dièse",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐉",
-      "desc": "Dragonnet, brûle tout ce qu'il touche",
-      "archetype": "dragonnet"
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
+    },
+    {
+      "id": "e",
+      "name": "Escroquin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "f",
+      "name": "Faconde",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🎩",
+      "desc": "Bonimenteur, vend du rêve au kilo",
+      "archetype": "bonimenteur"
     },
     {
       "id": "g",
@@ -223,103 +218,103 @@
   ],
   "decor": "foire",
   "id": "foire--fee",
-  "epilogue": "Engloutor, hercule de foire, avoue : Glycine l'avait traité de « gros caillou » devant les enfants.",
+  "epilogue": "Faconde avoue d'une voix de stentor : Glycine faisait fuir les clients. Et sans clients, pas de bonimenteur.",
   "clues": [
     {
       "who": "a",
-      "text": "Aplomb était dans la même colonne qu'une table.",
+      "text": "Arcane était dans les stands.",
       "logic": {
-        "type": "sameColAs",
-        "object": "table"
+        "type": "inRoom",
+        "room": "S"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Elle était au sud de Braise.",
+      "logic": {
+        "type": "southOf",
+        "other": "b"
       }
     },
     {
       "who": "b",
-      "text": "Bohémia était dans la même colonne qu'un chaudron.",
+      "text": "Braise était à côté d'un lit.",
       "logic": {
-        "type": "sameColAs",
-        "object": "chaudron"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Elle était sur la même ligne qu'une chaise.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "chaise"
+        "type": "adjacentTo",
+        "object": "lit"
       }
     },
     {
       "who": "c",
-      "text": "Couac était sur la même ligne qu'un tapis.",
+      "text": "Croquassiette était à l'est d'Arcane.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "tapis"
+        "type": "eastOf",
+        "other": "a"
       }
     },
     {
       "who": "d",
-      "text": "Dîme était sur la même ligne qu'un chaudron.",
+      "text": "Dièse était à côté d'un tonneau.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "chaudron"
+        "type": "adjacentTo",
+        "object": "tonneau"
       }
     },
     {
       "who": "e",
-      "text": "Engloutor était sur la même ligne qu'un coffre.",
+      "text": "Escroquin était au nord de Faconde.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "coffre"
+        "type": "northOf",
+        "other": "f"
       }
     },
     {
       "who": "f",
-      "text": "Flammèche était dans la buvette.",
+      "text": "Faconde était dans la même colonne qu'une table.",
       "logic": {
-        "type": "inRoom",
-        "room": "B"
+        "type": "sameColAs",
+        "object": "table"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        0,
+        3,
         4
       ],
-      "b": [
-        5,
-        5
-      ],
-      "c": [
-        3,
-        0
-      ],
-      "d": [
-        4,
-        1
-      ],
-      "e": [
+      "a": [
         1,
         2
       ],
-      "f": [
+      "d": [
+        6,
+        5
+      ],
+      "e": [
+        4,
+        0
+      ],
+      "c": [
         2,
         6
       ],
-      "a": [
-        6,
+      "b": [
+        0,
+        1
+      ],
+      "f": [
+        5,
         3
       ]
     },
-    "murderer": "e"
+    "murderer": "f"
   },
   "rating": {
     "skulls": 3,
-    "score": 7,
-    "hardest": "seul candidat",
-    "hardSteps": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
     "directStart": 0
   },
   "difficulty": 3

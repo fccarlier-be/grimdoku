@@ -2,23 +2,13 @@
   "formatVersion": 1,
   "title": "Le Château de Mortebrune — l'affaire Faëlys",
   "intro": "L'elfe Faëlys a été retrouvée sans vie au petit matin, au Château de Mortebrune. Cinq invités juraient qu'ils dormaient. Un seul était avec elle.",
-  "epilogue": "Albâtre hantait ces murs quatre siècles avant tout le monde. Faëlys voulait le faire exorciser pour rénover l'aile ouest.",
+  "epilogue": "Blafard hantait ces murs quatre siècles avant tout le monde. Faëlys voulait le faire exorciser pour rénover l'aile ouest.",
   "size": 7,
   "rooms": {
-    "C": {
-      "name": "Chapelle",
-      "the": "la chapelle",
-      "floor": "dalles"
-    },
     "G": {
       "name": "Grande salle",
       "the": "la grande salle",
       "floor": "dalles"
-    },
-    "K": {
-      "name": "Cuisines",
-      "the": "les cuisines",
-      "floor": "damier"
     },
     "A": {
       "name": "Armurerie",
@@ -42,9 +32,9 @@
     }
   },
   "layout": [
-    "CCGGGKK",
-    "CCGGGKK",
-    "AAGGGKT",
+    "AAGGGGG",
+    "AAGGGGG",
+    "AAGGGGT",
     "AAJJJTT",
     "AAJJJTT",
     "DDJJJTT",
@@ -181,7 +171,16 @@
   "characters": [
     {
       "id": "a",
-      "name": "Albâtre",
+      "name": "Arpège",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
+    },
+    {
+      "id": "b",
+      "name": "Blafard",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -192,22 +191,13 @@
       ]
     },
     {
-      "id": "b",
-      "name": "Bakchich",
+      "id": "c",
+      "name": "Chaparde",
       "gender": "m",
       "role": "suspect",
       "icon": "👺",
       "desc": "Gobelin, trésorier du royaume (non déclaré)",
       "archetype": "gobelin"
-    },
-    {
-      "id": "c",
-      "name": "Clodomir",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🤺",
-      "desc": "Chevalier, armure trop petite depuis Noël",
-      "archetype": "chevalier"
     },
     {
       "id": "d",
@@ -217,16 +207,16 @@
       "icon": "🐉",
       "desc": "Dragon adulte, toujours lové dans un coin",
       "archetype": "dragon",
-      "shape": "L3"
+      "shape": "I2"
     },
     {
       "id": "e",
-      "name": "Écho",
+      "name": "Enguerrand",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧑‍🎤",
-      "desc": "Barde, chante faux",
-      "archetype": "barde"
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
     },
     {
       "id": "f",
@@ -240,36 +230,34 @@
   ],
   "decor": "chateau",
   "id": "chateau--elfe--dragon--cache",
-  "hiddenShapes": true,
-  "hiddenMax": 3,
   "clues": [
     {
       "who": "a",
-      "text": "Albâtre hantait un coffre.",
+      "text": "Arpège était sur un tapis.",
       "logic": {
         "type": "onObject",
-        "object": "coffre"
+        "object": "tapis"
       }
     },
     {
       "who": "b",
-      "text": "Bakchich était à côté d'une chaise.",
+      "text": "Blafard était dans la tour.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "chaise"
+        "type": "inRoom",
+        "room": "T"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était dans la même colonne qu'une étagère.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "etagere"
       }
     },
     {
       "who": "c",
-      "text": "Clodomir était sur la même ligne qu'une statue.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "statue"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Draconyx était sur la même ligne qu'un arbre.",
+      "text": "Chaparde était sur la même ligne qu'un arbre.",
       "logic": {
         "type": "sameRowAs",
         "object": "arbre"
@@ -277,66 +265,70 @@
     },
     {
       "who": "d",
-      "text": "Il était dans la même colonne qu'un tapis.",
+      "text": "Draconyx était à l'ouest de Chaparde.",
       "logic": {
-        "type": "sameColAs",
-        "object": "tapis"
+        "type": "westOf",
+        "other": "c"
       }
     },
     {
       "who": "e",
-      "text": "Écho était dans la même colonne qu'un tonneau.",
+      "text": "Enguerrand était au sud de Blafard.",
       "logic": {
-        "type": "sameColAs",
-        "object": "tonneau"
+        "type": "southOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était sur la même ligne qu'une étagère.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "etagere"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        3,
-        1
+        2,
+        6
       ],
       "d": [
         [
-          5,
-          4
+          0,
+          2
         ],
         [
-          6,
+          0,
           3
-        ],
-        [
-          6,
-          4
         ]
       ],
-      "c": [
-        4,
-        6
-      ],
-      "b": [
-        0,
-        2
-      ],
       "e": [
-        1,
-        5
+        5,
+        0
+      ],
+      "c": [
+        3,
+        4
       ],
       "a": [
-        2,
-        0
+        1,
+        1
+      ],
+      "b": [
+        4,
+        5
       ]
     },
-    "murderer": "a"
+    "murderer": "b"
   },
   "rating": {
-    "skulls": 2,
-    "score": 3,
+    "skulls": 3,
+    "score": 5,
     "hardest": "pièces",
     "hardSteps": 1,
-    "directStart": 1
+    "directStart": 0
   },
-  "difficulty": 5
+  "difficulty": 4
 }

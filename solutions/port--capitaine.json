@@ -1,42 +1,42 @@
 {
  "positions": {
   "g": [
-   6,
+   4,
+   3
+  ],
+  "f": [
+   5,
+   6
+  ],
+  "a": [
+   1,
    0
   ],
   "c": [
    3,
-   1
-  ],
-  "f": [
-   4,
-   6
-  ],
-  "e": [
-   5,
    2
   ],
   "d": [
-   1,
-   5
+   6,
+   1
   ],
   "b": [
    2,
-   3
+   5
   ],
-  "a": [
+  "e": [
    0,
    4
   ]
  },
- "murderer": "e",
+ "murderer": "c",
  "cast": {
-  "c": "a",
-  "f": "b",
-  "e": "c",
+  "f": "a",
+  "a": "b",
+  "c": "c",
   "d": "d",
   "b": "e",
-  "a": "f"
+  "e": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
@@ -44,33 +44,54 @@
   {
    "who": "f",
    "logic": {
-    "type": "eastOf",
-    "other": "a"
-   }
-  },
-  {
-   "who": "d",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "lit"
+    "type": "inRoom",
+    "room": "E"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "northOf",
-    "other": "c"
+    "type": "southOf",
+    "other": "e"
    }
   },
   {
    "who": "c",
    "logic": {
-    "type": "southOf",
-    "other": "b"
+    "type": "sameColAs",
+    "object": "tonneau"
    }
   },
   {
    "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "barque"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "eastOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "f",
    "logic": {
     "type": "adjacentTo",
     "object": "tonneau"
@@ -78,27 +99,6 @@
   },
   {
    "who": "b",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "barque"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "westOf",
-    "other": "d"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "tonneau"
-   }
-  },
-  {
-   "who": "c",
    "logic": {
     "type": "onObject",
     "object": "chaise"

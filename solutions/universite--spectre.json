@@ -1,0 +1,149 @@
+{
+ "positions": {
+  "k": [
+   1,
+   5
+  ],
+  "i": [
+   6,
+   1
+  ],
+  "d": [
+   10,
+   2
+  ],
+  "e": [
+   5,
+   3
+  ],
+  "a": [
+   3,
+   6
+  ],
+  "g": [
+   9,
+   7
+  ],
+  "f": [
+   0,
+   0
+  ],
+  "j": [
+   7,
+   4
+  ],
+  "c": [
+   8,
+   8
+  ],
+  "b": [
+   4,
+   9
+  ],
+  "h": [
+   2,
+   10
+  ]
+ },
+ "murderer": "a",
+ "cast": {
+  "i": "a",
+  "d": "b",
+  "e": "c",
+  "a": "d",
+  "g": "e",
+  "f": "f",
+  "j": "g",
+  "c": "h",
+  "b": "i",
+  "h": "j"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "i",
+   "logic": {
+    "type": "sameColAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "northOf",
+    "other": "j"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "roseaux"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "eastOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "pupitre"
+   }
+  },
+  {
+   "who": "j",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "eastOf",
+    "other": "a"
+   }
+  }
+ ]
+}

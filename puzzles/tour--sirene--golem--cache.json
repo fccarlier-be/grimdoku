@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "title": "La Tour de l'Archimage — l'affaire Flottille",
   "intro": "La sirène Flottille a été retrouvée sans vie dans la Tour de l'Archimage, où un portail runique relie le laboratoire à la crypte. Cinq invités douteux traînaient dans les étages. Un seul était avec elle.",
-  "epilogue": "Draculine avoue : Flottille avait ouvert les volets de l'observatoire en plein midi. Exprès.",
+  "epilogue": "On avait gravé une consigne sur le front de Caillasse : « Range la pièce. » Il a rangé Flottille aussi, très soigneusement.",
   "size": 7,
   "rooms": {
     "L": {
@@ -19,11 +19,6 @@
       "name": "Bibliothèque",
       "the": "la bibliothèque",
       "floor": "parquet"
-    },
-    "H": {
-      "name": "Hall",
-      "the": "le hall",
-      "floor": "dalles"
     },
     "C": {
       "name": "Crypte",
@@ -45,8 +40,8 @@
     "LLLOOOO",
     "LLLOOOO",
     "LLBBBOO",
-    "HHBBBJJ",
-    "HHHCCJJ",
+    "BBBBBJJ",
+    "BBBCCJJ",
     "EEECCJJ",
     "EEECCCJ"
   ],
@@ -162,16 +157,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Anatole",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧟",
-      "desc": "Zombie, ancien apprenti. Ancien tout court",
-      "archetype": "zombie"
-    },
-    {
-      "id": "b",
-      "name": "Blafard",
+      "name": "Albâtre",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -180,6 +166,15 @@
       "traits": [
         "spectre"
       ]
+    },
+    {
+      "id": "b",
+      "name": "Bob",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
     },
     {
       "id": "c",
@@ -221,115 +216,89 @@
   ],
   "decor": "tour",
   "id": "tour--sirene--golem--cache",
-  "hiddenShapes": true,
-  "hiddenMax": 3,
   "clues": [
     {
       "who": "a",
-      "text": "Anatole était sur un champignon géant.",
-      "logic": {
-        "type": "onObject",
-        "object": "champi"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Blafard était sur un tapis.",
+      "text": "Albâtre était sur un tapis.",
       "logic": {
         "type": "onObject",
         "object": "tapis"
       }
     },
     {
-      "who": "c",
-      "text": "Caillasse était au sud de Draculine.",
-      "logic": {
-        "type": "southOf",
-        "other": "d"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Il était à côté d'une statue.",
+      "who": "b",
+      "text": "Bob était à côté d'une statue.",
       "logic": {
         "type": "adjacentTo",
         "object": "statue"
       }
     },
     {
+      "who": "c",
+      "text": "Caillasse était au sud d'Albâtre.",
+      "logic": {
+        "type": "southOf",
+        "other": "a"
+      }
+    },
+    {
       "who": "d",
-      "text": "Draculine était au nord de Blafard.",
+      "text": "Draculine était à côté d'une boule de cristal.",
       "logic": {
-        "type": "northOf",
-        "other": "b"
+        "type": "adjacentTo",
+        "object": "cristal"
       }
     },
     {
       "who": "e",
-      "text": "Étincel était dans la même colonne qu'un chaudron.",
+      "text": "Étincel était à l'est d'Albâtre.",
       "logic": {
-        "type": "sameColAs",
-        "object": "chaudron"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Il n'était pas dans l'escalier.",
-      "logic": {
-        "type": "notInRoom",
-        "room": "E"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Il était à l'ouest de Draculine.",
-      "logic": {
-        "type": "westOf",
-        "other": "d"
+        "type": "eastOf",
+        "other": "a"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        6,
-        4
+        1,
+        2
       ],
       "c": [
         [
-          1,
-          6
+          6,
+          3
         ],
         [
-          2,
-          6
+          6,
+          4
         ]
-      ],
-      "b": [
-        3,
-        3
-      ],
-      "e": [
-        4,
-        1
       ],
       "a": [
         5,
-        5
+        1
+      ],
+      "e": [
+        4,
+        6
+      ],
+      "b": [
+        3,
+        0
       ],
       "d": [
         0,
-        2
+        5
       ]
     },
-    "murderer": "d"
+    "murderer": "c"
   },
   "rating": {
-    "skulls": 2,
-    "score": 3,
+    "skulls": 3,
+    "score": 6,
     "hardest": "pièces",
-    "hardSteps": 1,
-    "directStart": 1
+    "hardSteps": 2,
+    "directStart": 0
   },
-  "difficulty": 5
+  "difficulty": 4
 }

@@ -18,11 +18,6 @@
       "the": "la forge",
       "floor": "roche"
     },
-    "P": {
-      "name": "Puits",
-      "the": "le puits",
-      "floor": "roche"
-    },
     "V": {
       "name": "Filon",
       "the": "le filon",
@@ -47,9 +42,9 @@
   "layout": [
     "EEEGGFFF",
     "EEEGGFFF",
-    "DDGGGPPF",
-    "DDGGGPPV",
-    "DDCCCPVV",
+    "DDGGGFFF",
+    "DDGGGFFV",
+    "DDCCCFVV",
     "TTCCCVVV",
     "TTCCCVVV",
     "TTTTCVVV"
@@ -179,7 +174,16 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aubépine",
+      "name": "Ardent",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
+      "id": "b",
+      "name": "Bruyère",
       "gender": "f",
       "role": "suspect",
       "icon": "🧚",
@@ -187,22 +191,13 @@
       "archetype": "fee"
     },
     {
-      "id": "b",
-      "name": "Boulon",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "⛏️",
-      "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
-      "archetype": "mineur"
-    },
-    {
       "id": "c",
-      "name": "Croquassiette",
+      "name": "Charbon",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧌",
-      "desc": "Troll, plongeur à mi-temps",
-      "archetype": "troll"
+      "icon": "👷",
+      "desc": "Contremaître nain, compte les pépites et les pauses",
+      "archetype": "contremaitre"
     },
     {
       "id": "d",
@@ -215,30 +210,30 @@
     },
     {
       "id": "e",
-      "name": "Enguerrand",
+      "name": "Étai",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "⛏️",
+      "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
+      "archetype": "mineur"
+    },
+    {
+      "id": "f",
+      "name": "Fringale",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    },
+    {
+      "id": "g",
+      "name": "Gontran",
       "gender": "m",
       "role": "suspect",
       "icon": "🤺",
       "desc": "Chevalier, armure trop petite depuis Noël",
       "archetype": "chevalier"
-    },
-    {
-      "id": "f",
-      "name": "Flammèche",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🐉",
-      "desc": "Dragonnet, brûle tout ce qu'il touche",
-      "archetype": "dragonnet"
-    },
-    {
-      "id": "g",
-      "name": "Granit",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👷",
-      "desc": "Contremaître nain, compte les pépites et les pauses",
-      "archetype": "contremaitre"
     },
     {
       "id": "h",
@@ -252,91 +247,75 @@
   ],
   "decor": "mine",
   "id": "mine--zombie",
-  "epilogue": "Croquassiette avoue : Hubert l'utilisait comme étai depuis six mois. Un troll aussi a besoin de s'asseoir.",
+  "epilogue": "Gontran cherchait un trésor maudit dans la mine. Hubert voulait lui faire payer l'entrée. On ne fait pas payer un chevalier en quête.",
   "clues": [
     {
       "who": "a",
-      "text": "Aubépine était sur la même ligne qu'une statue.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "statue"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Elle était à côté d'un chaudron.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "chaudron"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Boulon était à l'ouest de Dîme.",
-      "logic": {
-        "type": "westOf",
-        "other": "d"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était à côté d'un chariot de mine.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "chariot"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Croquassiette était dans la même colonne qu'une chaise.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Dîme était au sud d'Aubépine.",
-      "logic": {
-        "type": "southOf",
-        "other": "a"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Enguerrand était au nord de Dîme.",
+      "text": "Ardent était au nord de Bruyère.",
       "logic": {
         "type": "northOf",
-        "other": "d"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Il était dans la salle des coffres.",
-      "logic": {
-        "type": "inRoom",
-        "room": "T"
-      }
-    },
-    {
-      "who": "f",
-      "text": "Flammèche était à l'ouest de Boulon.",
-      "logic": {
-        "type": "westOf",
         "other": "b"
       }
     },
     {
-      "who": "f",
-      "text": "Il était sur la même ligne qu'un coffre.",
+      "who": "a",
+      "text": "Il était dans la même colonne qu'un champignon géant.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bruyère était à l'est de Fringale.",
+      "logic": {
+        "type": "eastOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Elle était à côté d'un lit.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Charbon était sur la même ligne qu'un chaudron.",
       "logic": {
         "type": "sameRowAs",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dîme était dans la même colonne qu'un coffre.",
+      "logic": {
+        "type": "sameColAs",
         "object": "coffre"
       }
     },
     {
+      "who": "e",
+      "text": "Étai était à l'ouest de Charbon.",
+      "logic": {
+        "type": "westOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Fringale était à l'ouest d'Étai.",
+      "logic": {
+        "type": "westOf",
+        "other": "e"
+      }
+    },
+    {
       "who": "g",
-      "text": "Granit était sur la même ligne qu'une chaise.",
+      "text": "Gontran était sur la même ligne qu'une chaise.",
       "logic": {
         "type": "sameRowAs",
         "object": "chaise"
@@ -346,46 +325,46 @@
   "solution": {
     "positions": {
       "h": [
-        2,
-        2
-      ],
-      "b": [
-        3,
+        5,
         5
       ],
-      "c": [
-        1,
-        3
-      ],
-      "d": [
+      "e": [
         6,
-        6
+        3
       ],
       "f": [
         7,
-        4
+        0
       ],
-      "e": [
-        5,
-        1
+      "d": [
+        0,
+        2
       ],
       "a": [
-        0,
-        7
+        2,
+        6
       ],
       "g": [
         4,
-        0
+        7
+      ],
+      "b": [
+        3,
+        1
+      ],
+      "c": [
+        1,
+        4
       ]
     },
-    "murderer": "c"
+    "murderer": "g"
   },
   "rating": {
-    "skulls": 2,
-    "score": 3,
+    "skulls": 3,
+    "score": 5,
     "hardest": "pièces",
     "hardSteps": 1,
-    "directStart": 1
+    "directStart": 0
   },
-  "difficulty": 2
+  "difficulty": 3
 }

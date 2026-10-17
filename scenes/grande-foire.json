@@ -1,0 +1,383 @@
+{
+  "scene": "grande-foire",
+  "formatVersion": 1,
+  "title": "La Grande Foire des Mille Merveilles",
+  "decor": "foire",
+  "size": 12,
+  "rooms": {
+    "A": {
+      "name": "Chapiteau",
+      "the": "le chapiteau",
+      "floor": "sciure"
+    },
+    "B": {
+      "name": "Ménagerie",
+      "the": "la ménagerie",
+      "floor": "paille"
+    },
+    "C": {
+      "name": "Grande roue",
+      "the": "la grande roue",
+      "floor": "paves"
+    },
+    "D": {
+      "name": "Stand de tir",
+      "the": "le stand de tir",
+      "floor": "parquet"
+    },
+    "E": {
+      "name": "Piste aux étoiles",
+      "the": "la piste aux étoiles",
+      "floor": "sciure"
+    },
+    "F": {
+      "name": "Roulottes",
+      "the": "les roulottes",
+      "floor": "herbe"
+    },
+    "G": {
+      "name": "Cabinet des curiosités",
+      "the": "le cabinet des curiosités",
+      "floor": "noble"
+    },
+    "H": {
+      "name": "Labyrinthe",
+      "the": "le labyrinthe",
+      "floor": "herbe"
+    },
+    "I": {
+      "name": "Buvette",
+      "the": "la buvette",
+      "floor": "tomettes"
+    },
+    "J": {
+      "name": "Tente de la voyante",
+      "the": "la tente de la voyante",
+      "floor": "mosaique"
+    },
+    "K": {
+      "name": "Manège",
+      "the": "le manège",
+      "floor": "paves"
+    }
+  },
+  "layout": [
+    "AAAABBBBCCCC",
+    "AAAABBBBCCCC",
+    "AAAABBBBCCCC",
+    "DDDDDBBBCCCC",
+    "DDDDDEEEEFFF",
+    "DDDDDEEEEFFF",
+    "GGGGGEEEEFFF",
+    "GGGGGEEEEHHH",
+    "GGGIIIIIIHHH",
+    "JJJIIIIIIHHH",
+    "JJJJKKKKKHHH",
+    "JJJJKKKKKKKK"
+  ],
+  "objects": [
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        1
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        1,
+        7
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        2,
+        4
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        10
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        2,
+        9
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        3,
+        11
+      ]
+    },
+    {
+      "type": "canon",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        7,
+        8
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        5
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        10
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        6,
+        9
+      ]
+    },
+    {
+      "type": "hamac",
+      "at": [
+        5,
+        11
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        6,
+        2
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        7,
+        0
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        7,
+        4
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        8,
+        10
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        10,
+        11
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        9,
+        9
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        8,
+        5
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        9,
+        7
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        9,
+        4
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        10,
+        1
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        11,
+        2
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        10,
+        6
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        11,
+        9
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        11,
+        5
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "archetype": "bonimenteur",
+      "role": "suspect"
+    },
+    {
+      "id": "b",
+      "archetype": "cartomancienne",
+      "role": "suspect"
+    },
+    {
+      "id": "c",
+      "archetype": "barde",
+      "role": "suspect"
+    },
+    {
+      "id": "d",
+      "archetype": "gobelin",
+      "role": "suspect"
+    },
+    {
+      "id": "e",
+      "archetype": "troll",
+      "role": "suspect"
+    },
+    {
+      "id": "f",
+      "archetype": "fee",
+      "role": "suspect"
+    },
+    {
+      "id": "g",
+      "archetype": "dragonnet",
+      "role": "suspect"
+    },
+    {
+      "id": "h",
+      "archetype": "ogre",
+      "role": "suspect"
+    },
+    {
+      "id": "i",
+      "archetype": "chef",
+      "role": "suspect"
+    },
+    {
+      "id": "j",
+      "archetype": "boulanger",
+      "role": "suspect"
+    },
+    {
+      "id": "k",
+      "archetype": "meunier",
+      "role": "suspect"
+    },
+    {
+      "id": "l",
+      "archetype": "elfe",
+      "role": "victim"
+    }
+  ],
+  "auto": {
+    "intro": "{Titre} {victime} a été retrouvé{e} sans vie à la Grande Foire des Mille Merveilles, juste après le feu d'artifice. {Nombre} forains et visiteurs juraient regarder le ciel. Un seul était avec {lui}.",
+    "epilogues": {
+      "bonimenteur": "{coupable} avoue, la main sur le cœur : {victime} avait crié « Arnaque ! » au milieu de son meilleur boniment.",
+      "cartomancienne": "{coupable} avoue : {victime} avait mélangé son jeu de tarot. Toutes ses prédictions de la semaine étaient fausses.",
+      "barde": "{coupable} avoue : {victime} avait couvert sa ballade en jouant de l'orgue de Barbarie. Faux. Exprès.",
+      "gobelin": "{coupable} avoue : {victime} avait gagné au chamboule-tout. Personne ne gagne au chamboule-tout du gobelin.",
+      "troll": "{coupable} avoue : {victime} lui avait vendu une barbe à papa. Le troll pensait qu'on parlait d'un vrai papa.",
+      "fee": "{coupable} avoue en scintillant : {victime} l'avait enfermée dans un bocal pour l'exposer au cabinet des curiosités.",
+      "dragonnet": "{coupable} avoue : {victime} avait annoncé « le dragon cracheur de feu » sur l'affiche. Lui ne crache que des étincelles.",
+      "ogre": "{coupable} avoue : {victime} avait organisé le concours du plus gros mangeur. Et l'avait gagné.",
+      "chef": "{coupable} avoue en touillant : {victime} avait comparé sa soupe à celle de la buvette d'en face. Défavorablement.",
+      "boulanger": "{coupable} avoue : {victime} avait dit que ses beignets étaient « corrects ». Corrects !",
+      "meunier": "{coupable} avoue : {victime} voulait remplacer son moulin à vent par un manège à vent. Plus rentable, paraît-il.",
+      "elfe": "{coupable} avoue avec mépris : {victime} avait gagné le concours de tir à l'arc. Avec une arbalète."
+    }
+  }
+}

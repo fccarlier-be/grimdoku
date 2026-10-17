@@ -1,125 +1,118 @@
 {
  "positions": {
-  "a": [
-   2,
+  "h": [
+   4,
    6
   ],
   "b": [
-   5,
-   4
+   6,
+   3
+  ],
+  "f": [
+   3,
+   1
   ],
   "c": [
-   0,
+   5,
    5
   ],
   "d": [
-   4,
+   7,
    0
   ],
-  "f": [
-   7,
-   1
+  "e": [
+   2,
+   4
+  ],
+  "a": [
+   0,
+   2
   ],
   "g": [
-   6,
-   7
-  ],
-  "e": [
    1,
-   3
-  ],
-  "h": [
-   3,
-   2
+   7
   ]
  },
- "murderer": "e",
+ "murderer": "c",
  "cast": {
-  "a": "e",
   "b": "a",
-  "c": "d",
-  "d": "b",
-  "f": "f",
-  "g": "c",
-  "e": "g"
+  "f": "b",
+  "c": "c",
+  "d": "d",
+  "e": "e",
+  "a": "f",
+  "g": "g"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "b",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "tombe"
-   }
-  },
-  {
-   "who": "g",
-   "logic": {
-    "type": "southOf",
-    "other": "d"
-   }
-  },
-  {
    "who": "c",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "statue"
-   }
-  },
-  {
-   "who": "a",
    "logic": {
     "type": "westOf",
     "other": "g"
    }
   },
   {
-   "who": "f",
+   "who": "d",
    "logic": {
-    "type": "sameColAs",
-    "object": "sarcophage"
+    "type": "southOf",
+    "other": "c"
    }
   },
   {
    "who": "e",
    "logic": {
-    "type": "eastOf",
+    "type": "northOf",
     "other": "f"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "inRoom",
-    "room": "K"
+    "type": "sameRowAs",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "sarcophage"
    }
   },
   {
    "who": "b",
    "logic": {
-    "type": "inRoom",
-    "room": "J"
+    "type": "adjacentTo",
+    "object": "statue"
    }
   },
   {
    "who": "e",
    "logic": {
-    "type": "sameColAs",
-    "object": "sarcophage"
+    "type": "adjacentTo",
+    "object": "arbre"
    }
   },
   {
-   "who": "d",
+   "who": "f",
    "logic": {
-    "type": "sameRowAs",
-    "object": "tombe"
+    "type": "eastOf",
+    "other": "d"
    }
   },
   {
-   "who": "b",
+   "who": "c",
    "logic": {
     "type": "sameColAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
     "object": "tombe"
    }
   }

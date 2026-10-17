@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Bal Masqué — l'affaire Draculine",
+  "title": "Le Bal Masqué — la seconde affaire Grenat",
   "size": 8,
   "rooms": {
     "B": {
@@ -12,16 +12,6 @@
       "name": "Salle de bal",
       "the": "la salle de bal",
       "floor": "noble"
-    },
-    "E": {
-      "name": "Escalier d'honneur",
-      "the": "l'escalier d'honneur",
-      "floor": "dalles"
-    },
-    "V": {
-      "name": "Vestiaire",
-      "the": "le vestiaire",
-      "floor": "parquet"
     },
     "F": {
       "name": "Buffet",
@@ -45,10 +35,10 @@
     }
   },
   "layout": [
-    "BBBSSSSE",
-    "BBSSSSSE",
-    "VVSSSSEE",
-    "VVSSSSFF",
+    "BBBSSSSF",
+    "BBSSSSSF",
+    "BBSSSSFF",
+    "BBSSSSFF",
     "MMMSSFFF",
     "MMMJJJFF",
     "OOJJJJFF",
@@ -199,7 +189,16 @@
   "characters": [
     {
       "id": "a",
-      "name": "Albâtre",
+      "name": "Aymeric",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
+    },
+    {
+      "id": "b",
+      "name": "Blafard",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -210,28 +209,46 @@
       ]
     },
     {
-      "id": "b",
-      "name": "Boucline",
+      "id": "c",
+      "name": "Childéric",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤴",
+      "desc": "Roi, avare de compliments et de tout le reste",
+      "archetype": "roi"
+    },
+    {
+      "id": "d",
+      "name": "Déroulée",
       "gender": "f",
       "role": "suspect",
       "icon": "🐍",
       "desc": "Vouivre, serpent ailé, très longue à se retourner",
       "archetype": "vouivre",
-      "shape": "I4"
+      "shape": "I2"
     },
     {
-      "id": "c",
-      "name": "Colosse",
+      "id": "e",
+      "name": "Escabeau",
       "gender": "m",
       "role": "suspect",
       "icon": "🦶",
       "desc": "Géant, toujours couché : aucun plafond n'est assez haut",
       "archetype": "geant",
-      "shape": "L3"
+      "shape": "I2"
     },
     {
-      "id": "d",
-      "name": "Draculine",
+      "id": "f",
+      "name": "Faëlys",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
+    },
+    {
+      "id": "g",
+      "name": "Grenat",
       "gender": "f",
       "role": "victim",
       "icon": "🧛‍♀️",
@@ -241,118 +258,133 @@
   ],
   "decor": "bal",
   "id": "bal--vampire--geant-vouivre--l3-i4--cache",
-  "hiddenShapes": true,
-  "intro": "La comtesse Draculine a été retrouvée sans vie au Bal Masqué, sous un loup de velours. Trois invités dansaient encore. Un seul était avec elle.",
-  "epilogue": "Albâtre avoue : Draculine l'avait pris pour un invité déguisé en drap et avait tiré dessus pour voir.",
+  "intro": "La comtesse Grenat a été retrouvée sans vie au Bal Masqué, sous un loup de velours. Six invités dansaient encore. Un seul était avec elle.",
+  "epilogue": "Déroulée voulait juste faire un câlin à Grenat. Avec trois cases de longueur, un câlin finit vite en nœud.",
   "clues": [
     {
       "who": "a",
-      "text": "Albâtre était à côté d'une chaise.",
+      "text": "Aymeric était à côté d'une chaise.",
       "logic": {
         "type": "adjacentTo",
         "object": "chaise"
       }
     },
     {
-      "who": "a",
-      "text": "Il hantait une table.",
+      "who": "b",
+      "text": "Blafard était à l'ouest de Faëlys.",
+      "logic": {
+        "type": "westOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était assis dans un fauteuil.",
       "logic": {
         "type": "onObject",
-        "object": "table"
+        "object": "fauteuil"
       }
     },
     {
-      "who": "b",
-      "text": "Boucline était dans la même colonne qu'un arbre.",
+      "who": "c",
+      "text": "Childéric était à l'ouest de Blafard.",
+      "logic": {
+        "type": "westOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était dans la même colonne qu'un fauteuil.",
       "logic": {
         "type": "sameColAs",
-        "object": "arbre"
+        "object": "fauteuil"
       }
     },
     {
-      "who": "b",
-      "text": "Elle était sur la même ligne qu'une table.",
+      "who": "c",
+      "text": "Il était sur la même ligne qu'une chaise.",
       "logic": {
         "type": "sameRowAs",
-        "object": "table"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Elle était à côté d'une chaise.",
-      "logic": {
-        "type": "adjacentTo",
         "object": "chaise"
       }
     },
     {
-      "who": "c",
-      "text": "Colosse était sur la même ligne qu'un champignon géant.",
+      "who": "d",
+      "text": "Déroulée était à l'est de Blafard.",
       "logic": {
-        "type": "sameRowAs",
+        "type": "eastOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Escabeau était dans la même colonne qu'un champignon géant.",
+      "logic": {
+        "type": "sameColAs",
         "object": "champi"
       }
     },
     {
-      "who": "c",
-      "text": "Il était dans la même colonne qu'un champignon géant.",
+      "who": "f",
+      "text": "Faëlys était à côté d'un arbre.",
       "logic": {
-        "type": "sameColAs",
-        "object": "champi"
+        "type": "adjacentTo",
+        "object": "arbre"
       }
     }
   ],
   "solution": {
     "positions": {
-      "d": [
-        5,
-        7
+      "g": [
+        2,
+        6
       ],
-      "c": [
+      "e": [
         [
-          6,
-          4
-        ],
-        [
-          7,
+          4,
           3
         ],
         [
-          7,
+          4,
           4
         ]
       ],
-      "b": [
+      "d": [
         [
           0,
-          5
+          7
         ],
         [
           1,
-          5
-        ],
-        [
-          2,
-          5
-        ],
-        [
-          3,
-          5
+          7
         ]
       ],
+      "b": [
+        7,
+        2
+      ],
+      "c": [
+        5,
+        1
+      ],
       "a": [
-        4,
-        6
+        3,
+        0
+      ],
+      "f": [
+        6,
+        5
       ]
     },
-    "murderer": "a"
+    "murderer": "d"
   },
   "rating": {
-    "skulls": 2,
-    "score": 3,
+    "skulls": 3,
+    "score": 7,
     "hardest": "pièces",
-    "hardSteps": 1,
-    "directStart": 1
+    "hardSteps": 3,
+    "directStart": 0
   },
-  "difficulty": 5
+  "difficulty": 4
 }

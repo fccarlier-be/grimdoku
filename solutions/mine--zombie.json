@@ -1,98 +1,105 @@
 {
  "positions": {
   "h": [
-   2,
-   2
-  ],
-  "b": [
-   3,
+   5,
    5
   ],
-  "c": [
-   1,
-   3
-  ],
-  "d": [
+  "e": [
    6,
-   6
+   3
   ],
   "f": [
    7,
-   4
+   0
   ],
-  "e": [
-   5,
-   1
+  "d": [
+   0,
+   2
   ],
   "a": [
-   0,
-   7
+   2,
+   6
   ],
   "g": [
    4,
-   0
+   7
+  ],
+  "b": [
+   3,
+   1
+  ],
+  "c": [
+   1,
+   4
   ]
  },
- "murderer": "c",
+ "murderer": "g",
  "cast": {
-  "b": "a",
-  "c": "b",
+  "e": "a",
+  "f": "b",
   "d": "c",
-  "f": "d",
-  "e": "e",
-  "a": "f",
-  "g": "g"
+  "a": "d",
+  "g": "e",
+  "b": "f",
+  "c": "g"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "d",
-   "logic": {
-    "type": "southOf",
-    "other": "a"
-   }
-  },
-  {
    "who": "f",
    "logic": {
     "type": "westOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "eastOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "northOf",
     "other": "b"
    }
   },
   {
    "who": "e",
    "logic": {
-    "type": "northOf",
-    "other": "d"
+    "type": "westOf",
+    "other": "c"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "sameRowAs",
-    "object": "statue"
-   }
-  },
-  {
-   "who": "f",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "coffre"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "inRoom",
-    "room": "T"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "westOf",
-    "other": "d"
+    "type": "sameColAs",
+    "object": "champi"
    }
   },
   {
@@ -100,27 +107,6 @@
    "logic": {
     "type": "sameRowAs",
     "object": "chaise"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "chaudron"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "sameColAs",
-    "object": "chaise"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "chariot"
    }
   }
  ]

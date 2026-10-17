@@ -127,34 +127,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aubépine",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧚",
-      "desc": "Fée, doit trois tournées",
-      "archetype": "fee"
-    },
-    {
-      "id": "b",
-      "name": "Bâfrin",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧌",
-      "desc": "Troll, plongeur à mi-temps",
-      "archetype": "troll"
-    },
-    {
-      "id": "c",
-      "name": "Clovis",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧟",
-      "desc": "Zombie, ancien apprenti. Ancien tout court",
-      "archetype": "zombie"
-    },
-    {
-      "id": "d",
-      "name": "Dupain",
+      "name": "Amidon",
       "gender": "m",
       "role": "suspect",
       "icon": "👨‍🌾",
@@ -162,13 +135,40 @@
       "archetype": "meunier"
     },
     {
-      "id": "e",
-      "name": "Étincel",
+      "id": "b",
+      "name": "Braise",
       "gender": "m",
       "role": "suspect",
       "icon": "🐉",
       "desc": "Dragonnet, brûle tout ce qu'il touche",
       "archetype": "dragonnet"
+    },
+    {
+      "id": "c",
+      "name": "Capucine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
+    },
+    {
+      "id": "d",
+      "name": "Dentdur",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    },
+    {
+      "id": "e",
+      "name": "Edmond",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
     },
     {
       "id": "f",
@@ -182,116 +182,92 @@
   ],
   "decor": "moulin",
   "id": "moulin--sirene",
-  "epilogue": "Clovis avoue, ce qui lui prend un moment : Flottille l'obligeait à tourner la meule sans le payer. « Je suis mort, pas bénévole. »",
+  "epilogue": "Braise avoue en fumant des naseaux : Flottille lui demandait de chauffer le four à pain. Gratuitement. Pour la quatorzième fois.",
   "clues": [
     {
       "who": "a",
-      "text": "Aubépine était dans la mare.",
+      "text": "Amidon était à côté d'un coffre.",
       "logic": {
-        "type": "inRoom",
-        "room": "E"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Elle était dans la même colonne qu'un champignon géant.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "champi"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Bâfrin était dans la même colonne qu'un coffre.",
-      "logic": {
-        "type": "sameColAs",
+        "type": "adjacentTo",
         "object": "coffre"
       }
     },
     {
       "who": "b",
-      "text": "Il était sur la même ligne qu'un champignon géant.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "champi"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Clovis était sur la même ligne qu'un lit.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "lit"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Il était à côté d'une botte de foin.",
+      "text": "Braise était à côté d'une chaise.",
       "logic": {
         "type": "adjacentTo",
-        "object": "foin"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Dupain était à côté d'une statue.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "statue"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Il était dans la même colonne qu'une chaise.",
-      "logic": {
-        "type": "sameColAs",
         "object": "chaise"
       }
     },
     {
-      "who": "e",
-      "text": "Étincel était sur la même ligne qu'un tonneau.",
+      "who": "c",
+      "text": "Capucine était à l'ouest de Braise.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "tonneau"
+        "type": "westOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dentdur était au sud d'Edmond.",
+      "logic": {
+        "type": "southOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était au nord de Braise.",
+      "logic": {
+        "type": "northOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Edmond était dans la même colonne qu'un champignon géant.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "champi"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
+        2,
+        4
+      ],
+      "c": [
         0,
         3
       ],
-      "a": [
-        5,
+      "d": [
+        4,
+        2
+      ],
+      "e": [
+        3,
         1
       ],
       "b": [
-        4,
-        0
-      ],
-      "c": [
-        1,
-        4
-      ],
-      "e": [
-        2,
-        2
-      ],
-      "d": [
-        3,
+        5,
         5
+      ],
+      "a": [
+        1,
+        0
       ]
     },
-    "murderer": "c"
+    "murderer": "b"
   },
   "rating": {
-    "skulls": 0,
-    "score": 1,
-    "hardest": "case unique",
+    "skulls": 2,
+    "score": 4,
+    "hardest": "ligne réservée",
     "hardSteps": 0,
-    "directStart": 4
+    "directStart": 0
   },
-  "difficulty": 0
+  "difficulty": 2
 }

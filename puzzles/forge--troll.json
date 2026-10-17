@@ -23,11 +23,6 @@
       "the": "la fonderie",
       "floor": "dalles"
     },
-    "C": {
-      "name": "Réserve de charbon",
-      "the": "la réserve de charbon",
-      "floor": "roche"
-    },
     "T": {
       "name": "Atelier",
       "the": "l'atelier",
@@ -43,9 +38,9 @@
     "DDDFFFA",
     "DDFFFAA",
     "DDOOFAA",
-    "CCOOTTA",
-    "CCOOTTT",
-    "CYYYTTT",
+    "OOOOTTA",
+    "OOOOTTT",
+    "OYYYTTT",
     "YYYYYTT"
   ],
   "objects": [
@@ -165,16 +160,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Arnak",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
-    },
-    {
-      "id": "b",
-      "name": "Bedaine",
+      "name": "Avaleur",
       "gender": "m",
       "role": "suspect",
       "icon": "👹",
@@ -182,26 +168,17 @@
       "archetype": "ogre"
     },
     {
+      "id": "b",
+      "name": "Bertrand",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
+    },
+    {
       "id": "c",
-      "name": "Cornélius",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧙‍♂️",
-      "desc": "Mage, allergique au houblon",
-      "archetype": "mage"
-    },
-    {
-      "id": "d",
-      "name": "Dardafeu",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🐉",
-      "desc": "Dragonnet, brûle tout ce qu'il touche",
-      "archetype": "dragonnet"
-    },
-    {
-      "id": "e",
-      "name": "Étai",
+      "name": "Caillou",
       "gender": "m",
       "role": "suspect",
       "icon": "⛏️",
@@ -209,13 +186,31 @@
       "archetype": "mineur"
     },
     {
-      "id": "f",
-      "name": "Foulques",
+      "id": "d",
+      "name": "Dédale",
       "gender": "m",
       "role": "suspect",
-      "icon": "🤺",
-      "desc": "Chevalier, armure trop petite depuis Noël",
-      "archetype": "chevalier"
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage"
+    },
+    {
+      "id": "e",
+      "name": "Étincel",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
+      "id": "f",
+      "name": "Filou",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
     },
     {
       "id": "g",
@@ -230,120 +225,104 @@
   "decor": "forge",
   "id": "forge--troll",
   "intro": "Le troll Gloutor a été retrouvé sans vie à la Forge du Dragon, encore tiède. Six artisans et clients s'y pressaient cette nuit-là. Un seul était avec lui.",
-  "epilogue": "Arnak avoue : Gloutor avait remarqué que les épées vendues étaient en fer-blanc peint.",
+  "epilogue": "Bertrand avoue en grinçant : Gloutor lui avait forgé une armure encore plus petite que l'ancienne.",
   "clues": [
     {
       "who": "a",
-      "text": "Arnak était dans la même colonne qu'un chariot de mine.",
+      "text": "Avaleur était au nord de Caillou.",
       "logic": {
-        "type": "sameColAs",
-        "object": "chariot"
+        "type": "northOf",
+        "other": "c"
       }
     },
     {
       "who": "a",
-      "text": "Il était à côté d'un lit.",
+      "text": "Il était à l'ouest de Dédale.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "lit"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Bedaine était dans la même colonne qu'une chaise.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il n'était pas dans l'atelier.",
-      "logic": {
-        "type": "notInRoom",
-        "room": "T"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Cornélius était au nord de Dardafeu.",
-      "logic": {
-        "type": "northOf",
+        "type": "westOf",
         "other": "d"
       }
     },
     {
+      "who": "b",
+      "text": "Bertrand était dans la même colonne qu'un tonneau.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "tonneau"
+      }
+    },
+    {
       "who": "c",
-      "text": "Il était dans la même colonne qu'une statue.",
+      "text": "Caillou était à côté d'un chariot de mine.",
       "logic": {
-        "type": "sameColAs",
-        "object": "statue"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Dardafeu était dans la fonderie.",
-      "logic": {
-        "type": "inRoom",
-        "room": "O"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Étai était dans la même colonne qu'un chariot de mine.",
-      "logic": {
-        "type": "sameColAs",
+        "type": "adjacentTo",
         "object": "chariot"
       }
     },
     {
-      "who": "f",
-      "text": "Foulques était à l'est de Bedaine.",
+      "who": "d",
+      "text": "Dédale était au nord de Filou.",
       "logic": {
-        "type": "eastOf",
-        "other": "b"
+        "type": "northOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Étincel était au nord d'Avaleur.",
+      "logic": {
+        "type": "northOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Filou était sur la même ligne qu'un lit.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "lit"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        2,
-        1
-      ],
-      "e": [
-        0,
+        5,
         3
       ],
-      "f": [
-        5,
-        5
-      ],
-      "a": [
-        1,
+      "c": [
+        4,
         0
       ],
       "b": [
         6,
-        4
+        2
       ],
-      "c": [
-        3,
+      "f": [
+        1,
         6
       ],
+      "a": [
+        3,
+        4
+      ],
       "d": [
-        4,
-        2
+        0,
+        5
+      ],
+      "e": [
+        2,
+        1
       ]
     },
-    "murderer": "a"
+    "murderer": "b"
   },
   "rating": {
-    "skulls": 2,
-    "score": 3,
+    "skulls": 3,
+    "score": 5,
     "hardest": "pièces",
     "hardSteps": 1,
-    "directStart": 1
+    "directStart": 0
   },
-  "difficulty": 2
+  "difficulty": 3
 }

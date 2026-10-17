@@ -18,11 +18,6 @@
       "the": "l'allée des ifs",
       "floor": "herbe"
     },
-    "K": {
-      "name": "Caveau",
-      "the": "le caveau",
-      "floor": "crypte"
-    },
     "P": {
       "name": "Carré des pauvres",
       "the": "le carré des pauvres",
@@ -47,9 +42,9 @@
   "layout": [
     "GGGAACCC",
     "GGGAACCC",
-    "PPAAAAKK",
-    "PPAAAAKK",
-    "PPJJJOOK",
+    "PPAAAACC",
+    "PPAAAACC",
+    "PPJJJOOC",
     "YYJJJOOO",
     "YYJJJOOO",
     "YYYYJOOO"
@@ -185,34 +180,19 @@
   "characters": [
     {
       "id": "a",
-      "name": "Anatole",
+      "name": "Albâtre",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧟",
-      "desc": "Zombie, ancien apprenti. Ancien tout court",
-      "archetype": "zombie"
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ]
     },
     {
       "id": "b",
-      "name": "Berce",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧙‍♀️",
-      "desc": "Sorcière des marais, cuisine tout ce qui coasse",
-      "archetype": "sorciere"
-    },
-    {
-      "id": "c",
-      "name": "Crépuscula",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧛‍♀️",
-      "desc": "Comtesse vampire, végane (elle le jure)",
-      "archetype": "vampire"
-    },
-    {
-      "id": "d",
-      "name": "Déterre",
+      "name": "Bêchu",
       "gender": "m",
       "role": "suspect",
       "icon": "⚰️",
@@ -220,13 +200,31 @@
       "archetype": "fossoyeur"
     },
     {
-      "id": "e",
-      "name": "Eugène",
+      "id": "c",
+      "name": "Clovis",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐸",
-      "desc": "Crapaud, prince déchu, attend toujours son bisou",
-      "archetype": "crapaud"
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
+    },
+    {
+      "id": "d",
+      "name": "Draculine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
+    },
+    {
+      "id": "e",
+      "name": "Ellébore",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧙‍♀️",
+      "desc": "Sorcière des marais, cuisine tout ce qui coasse",
+      "archetype": "sorciere"
     },
     {
       "id": "f",
@@ -239,15 +237,12 @@
     },
     {
       "id": "g",
-      "name": "Grisâtre",
+      "name": "Gluant",
       "gender": "m",
       "role": "suspect",
-      "icon": "👻",
-      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
-      "archetype": "spectre",
-      "traits": [
-        "spectre"
-      ]
+      "icon": "🐸",
+      "desc": "Crapaud, prince déchu, attend toujours son bisou",
+      "archetype": "crapaud"
     },
     {
       "id": "h",
@@ -262,147 +257,115 @@
   "decor": "cimetiere",
   "id": "cimetiere--corbeau",
   "intro": "Le corbeau Hiboulet a été retrouvé sans vie au Cimetière de Minuit, ce qui, admettons-le, simplifie les démarches. Sept habitués rôdaient entre les tombes. Un seul était avec lui.",
-  "epilogue": "Anatole avoue, lentement : Hiboulet l'avait réveillé à minuit pile. Il venait juste de s'endormir.",
+  "epilogue": "Foulques avoue en grinçant : Hiboulet s'était moqué de son armure rouillée devant le caveau de ses ancêtres.",
   "clues": [
     {
       "who": "a",
-      "text": "Anatole était dans la même colonne qu'une statue.",
+      "text": "Albâtre hantait une tombe.",
       "logic": {
-        "type": "sameColAs",
-        "object": "statue"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était sur la même ligne qu'une statue.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "statue"
+        "type": "onObject",
+        "object": "tombe"
       }
     },
     {
       "who": "b",
-      "text": "Berce était dans la même colonne qu'une statue.",
+      "text": "Bêchu était à côté d'un arbre.",
       "logic": {
-        "type": "sameColAs",
-        "object": "statue"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Elle était à l'est de Grisâtre.",
-      "logic": {
-        "type": "eastOf",
-        "other": "g"
+        "type": "adjacentTo",
+        "object": "arbre"
       }
     },
     {
       "who": "c",
-      "text": "Crépuscula était au sud de Berce.",
+      "text": "Clovis était à l'ouest d'Ellébore.",
       "logic": {
-        "type": "southOf",
-        "other": "b"
+        "type": "westOf",
+        "other": "e"
       }
     },
     {
       "who": "c",
-      "text": "Elle était dans l'allée des ifs.",
+      "text": "Il était au nord d'Ellébore.",
+      "logic": {
+        "type": "northOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Draculine était à côté d'un lit.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Ellébore était dans l'allée des ifs.",
       "logic": {
         "type": "inRoom",
         "room": "A"
       }
     },
     {
-      "who": "d",
-      "text": "Déterre était sur la même ligne qu'un lit.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "lit"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Il était dans la même colonne qu'une tombe.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "tombe"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Eugène n'était pas dans le caveau.",
-      "logic": {
-        "type": "notInRoom",
-        "room": "K"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Il était à l'est de Crépuscula.",
-      "logic": {
-        "type": "eastOf",
-        "other": "c"
-      }
-    },
-    {
       "who": "f",
-      "text": "Foulques était à côté d'une tombe.",
+      "text": "Foulques était à l'ouest d'Albâtre.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "tombe"
+        "type": "westOf",
+        "other": "a"
       }
     },
     {
       "who": "g",
-      "text": "Grisâtre était sur la même ligne qu'un arbre.",
+      "text": "Gluant était à l'ouest d'Ellébore.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "arbre"
+        "type": "westOf",
+        "other": "e"
       }
     }
   ],
   "solution": {
     "positions": {
-      "a": [
-        6,
-        6
+      "h": [
+        4,
+        7
       ],
       "b": [
-        1,
-        2
-      ],
-      "d": [
-        0,
-        5
-      ],
-      "c": [
-        3,
-        3
-      ],
-      "e": [
-        4,
+        6,
         4
       ],
-      "f": [
+      "a": [
+        5,
+        6
+      ],
+      "c": [
         2,
         1
       ],
-      "g": [
-        7,
+      "d": [
+        1,
         0
       ],
-      "h": [
-        5,
-        7
+      "e": [
+        3,
+        3
+      ],
+      "f": [
+        0,
+        5
+      ],
+      "g": [
+        7,
+        2
       ]
     },
-    "murderer": "a"
+    "murderer": "f"
   },
   "rating": {
     "skulls": 3,
-    "score": 6,
-    "hardest": "pièces",
-    "hardSteps": 2,
+    "score": 7,
+    "hardest": "seul candidat",
+    "hardSteps": 3,
     "directStart": 0
   },
   "difficulty": 3

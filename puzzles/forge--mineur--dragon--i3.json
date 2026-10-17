@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Forge du Dragon — l'affaire Étai",
+  "title": "La Forge du Dragon — la seconde affaire Filon",
   "size": 7,
   "rooms": {
     "D": {
@@ -13,20 +13,10 @@
       "the": "la forge",
       "floor": "dalles"
     },
-    "A": {
-      "name": "Armurerie",
-      "the": "l'armurerie",
-      "floor": "dalles"
-    },
     "O": {
       "name": "Fonderie",
       "the": "la fonderie",
       "floor": "dalles"
-    },
-    "C": {
-      "name": "Réserve de charbon",
-      "the": "la réserve de charbon",
-      "floor": "roche"
     },
     "T": {
       "name": "Atelier",
@@ -40,12 +30,12 @@
     }
   },
   "layout": [
-    "DDDFFFA",
-    "DDFFFAA",
-    "DDOOFAA",
-    "CCOOTTA",
-    "CCOOTTT",
-    "CYYYTTT",
+    "DDDFFFF",
+    "DDFFFFF",
+    "DDOOFFF",
+    "OOOOTTF",
+    "OOOOTTT",
+    "OYYYTTT",
     "YYYYYTT"
   ],
   "objects": [
@@ -165,35 +155,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aymeric",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🤺",
-      "desc": "Chevalier, armure trop petite depuis Noël",
-      "archetype": "chevalier"
-    },
-    {
-      "id": "b",
-      "name": "Braisier",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🐉",
-      "desc": "Dragon adulte, toujours lové dans un coin",
-      "archetype": "dragon",
-      "shape": "I3"
-    },
-    {
-      "id": "c",
-      "name": "Chaparde",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
-    },
-    {
-      "id": "d",
-      "name": "Dentdur",
+      "name": "Avaloir",
       "gender": "m",
       "role": "suspect",
       "icon": "🧌",
@@ -201,8 +163,45 @@
       "archetype": "troll"
     },
     {
+      "id": "b",
+      "name": "Bertrand",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
+    },
+    {
+      "id": "c",
+      "name": "Cendrebrune",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragon adulte, toujours lové dans un coin",
+      "archetype": "dragon",
+      "shape": "I2"
+    },
+    {
+      "id": "d",
+      "name": "Dîme",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
       "id": "e",
-      "name": "Étai",
+      "name": "Estomac",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👹",
+      "desc": "Ogre, végétarien depuis mardi",
+      "archetype": "ogre"
+    },
+    {
+      "id": "f",
+      "name": "Filon",
       "gender": "m",
       "role": "victim",
       "icon": "⛏️",
@@ -212,83 +211,99 @@
   ],
   "decor": "forge",
   "id": "forge--mineur--dragon--i3",
-  "intro": "Le mineur Étai a été retrouvé sans vie à la Forge du Dragon, encore tiède. Quatre artisans et clients s'y pressaient cette nuit-là. Un seul était avec lui.",
-  "epilogue": "Aymeric avoue en grinçant : Étai lui avait forgé une armure encore plus petite que l'ancienne.",
+  "intro": "Le mineur Filon a été retrouvé sans vie à la Forge du Dragon, encore tiède. Cinq artisans et clients s'y pressaient cette nuit-là. Un seul était avec lui.",
+  "epilogue": "Avaloir avoue : Filon se servait de sa tête comme enclume de secours.",
   "clues": [
     {
       "who": "a",
-      "text": "Aymeric était allongé sur un lit.",
+      "text": "Avaloir était à l'est d'Estomac.",
       "logic": {
-        "type": "onObject",
-        "object": "lit"
+        "type": "eastOf",
+        "other": "e"
       }
     },
     {
       "who": "b",
-      "text": "Braisier était sur la même ligne qu'un arbre.",
+      "text": "Bertrand était dans l'atelier.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "arbre"
+        "type": "inRoom",
+        "room": "T"
       }
     },
     {
       "who": "c",
-      "text": "Chaparde était au nord d'Aymeric.",
+      "text": "Cendrebrune était au nord d'Estomac.",
       "logic": {
         "type": "northOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dîme était à l'ouest d'Avaloir.",
+      "logic": {
+        "type": "westOf",
         "other": "a"
       }
     },
     {
       "who": "d",
-      "text": "Dentdur était dans l'atelier.",
+      "text": "Il était dans la même colonne qu'une enclume.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "enclume"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Estomac était dans l'antre du dragon.",
       "logic": {
         "type": "inRoom",
-        "room": "T"
+        "room": "D"
       }
     }
   ],
   "solution": {
     "positions": {
-      "e": [
-        2,
-        0
-      ],
-      "b": [
-        [
-          6,
-          2
-        ],
-        [
-          6,
-          3
-        ],
-        [
-          6,
-          4
-        ]
-      ],
-      "a": [
-        1,
+      "f": [
+        5,
         1
       ],
       "c": [
-        0,
-        5
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          5
+        ]
       ],
-      "d": [
+      "b": [
         4,
         6
+      ],
+      "d": [
+        3,
+        3
+      ],
+      "a": [
+        6,
+        4
+      ],
+      "e": [
+        2,
+        0
       ]
     },
     "murderer": "a"
   },
   "rating": {
-    "skulls": 2,
-    "score": 3,
+    "skulls": 3,
+    "score": 6,
     "hardest": "pièces",
-    "hardSteps": 1,
-    "directStart": 1
+    "hardSteps": 2,
+    "directStart": 0
   },
   "difficulty": 4
 }

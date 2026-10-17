@@ -4,43 +4,57 @@
    4,
    2
   ],
-  "c": [
+  "b": [
+   3,
+   5
+  ],
+  "d": [
    0,
    3
+  ],
+  "e": [
+   5,
+   4
+  ],
+  "c": [
+   1,
+   0
   ],
   "a": [
    2,
    1
-  ],
-  "b": [
-   1,
-   0
-  ],
-  "e": [
-   5,
-   5
-  ],
-  "d": [
-   3,
-   4
   ]
  },
- "murderer": "d",
+ "murderer": "e",
  "cast": {
-  "c": "a",
-  "a": "b",
-  "b": "c",
-  "e": "d",
-  "d": "e"
+  "b": "a",
+  "d": "b",
+  "e": "c",
+  "c": "d",
+  "a": "e"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "c",
+   "who": "b",
    "logic": {
     "type": "sameRowAs",
-    "object": "tonneau"
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "northOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
    }
   },
   {
@@ -51,45 +65,17 @@
    }
   },
   {
-   "who": "b",
-   "logic": {
-    "type": "northOf",
-    "other": "a"
-   }
-  },
-  {
    "who": "e",
    "logic": {
-    "type": "eastOf",
-    "other": "a"
-   }
-  },
-  {
-   "who": "d",
-   "logic": {
     "type": "adjacentTo",
-    "object": "arbre"
+    "object": "statue"
    }
   },
   {
    "who": "b",
    "logic": {
-    "type": "westOf",
+    "type": "southOf",
     "other": "a"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "tonneau"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "westOf",
-    "other": "e"
    }
   }
  ]

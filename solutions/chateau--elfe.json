@@ -1,92 +1,85 @@
 {
  "positions": {
   "g": [
-   6,
-   4
-  ],
-  "c": [
    5,
+   0
+  ],
+  "a": [
+   6,
    2
   ],
-  "e": [
-   1,
-   5
+  "c": [
+   4,
+   3
   ],
-  "d": [
+  "f": [
    0,
    1
   ],
-  "a": [
+  "d": [
    3,
+   5
+  ],
+  "e": [
+   1,
    6
   ],
   "b": [
    2,
-   3
-  ],
-  "f": [
-   4,
-   0
+   4
   ]
  },
- "murderer": "c",
+ "murderer": "a",
  "cast": {
-  "c": "a",
-  "e": "b",
-  "d": "c",
-  "a": "d",
-  "b": "e",
-  "f": "f"
+  "a": "a",
+  "c": "b",
+  "f": "c",
+  "d": "d",
+  "e": "e",
+  "b": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "e",
+   "who": "c",
    "logic": {
-    "type": "inRoom",
-    "room": "K"
+    "type": "sameColAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "westOf",
+    "other": "a"
    }
   },
   {
    "who": "d",
    "logic": {
     "type": "adjacentTo",
-    "object": "tapis"
+    "object": "lit"
    }
   },
   {
-   "who": "b",
+   "who": "e",
    "logic": {
-    "type": "inRoom",
-    "room": "G"
+    "type": "eastOf",
+    "other": "b"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "onObject",
-    "object": "lit"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
     "type": "adjacentTo",
-    "object": "champi"
-   }
-  },
-  {
-   "who": "f",
-   "logic": {
-    "type": "northOf",
-    "other": "c"
+    "object": "sarcophage"
    }
   },
   {
    "who": "b",
    "logic": {
-    "type": "onObject",
+    "type": "adjacentTo",
     "object": "tapis"
    }
   }

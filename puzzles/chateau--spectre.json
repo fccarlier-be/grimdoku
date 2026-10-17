@@ -2,14 +2,9 @@
   "formatVersion": 1,
   "title": "Le Château de Mortebrune — l'affaire Grisâtre",
   "intro": "Le spectre Grisâtre a été retrouvé sans vie au petit matin, au Château de Mortebrune. Six invités juraient qu'ils dormaient. Un seul était avec lui.",
-  "epilogue": "Eudes avoue, la couronne de travers : Grisâtre complotait pour s'asseoir sur son trône. Il l'a pris très personnellement.",
+  "epilogue": "Bertrand avoue en grinçant de l'armure : Grisâtre s'était moqué de sa cuirasse trop petite devant toute la cour.",
   "size": 7,
   "rooms": {
-    "C": {
-      "name": "Chapelle",
-      "the": "la chapelle",
-      "floor": "dalles"
-    },
     "G": {
       "name": "Grande salle",
       "the": "la grande salle",
@@ -42,8 +37,8 @@
     }
   },
   "layout": [
-    "CCGGGKK",
-    "CCGGGKK",
+    "AAGGGKK",
+    "AAGGGKK",
     "AAGGGKT",
     "AAJJJTT",
     "AAJJJTT",
@@ -181,43 +176,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Arnak",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
-    },
-    {
-      "id": "b",
-      "name": "Brann",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧑‍🎤",
-      "desc": "Barde, chante faux",
-      "archetype": "barde"
-    },
-    {
-      "id": "c",
-      "name": "Clodomir",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🤺",
-      "desc": "Chevalier, armure trop petite depuis Noël",
-      "archetype": "chevalier"
-    },
-    {
-      "id": "d",
-      "name": "Daëlin",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧝‍♀️",
-      "desc": "Elfe, critique gastronomique",
-      "archetype": "elfe"
-    },
-    {
-      "id": "e",
-      "name": "Eudes",
+      "name": "Aldric",
       "gender": "m",
       "role": "suspect",
       "icon": "🤴",
@@ -225,13 +184,49 @@
       "archetype": "roi"
     },
     {
-      "id": "f",
-      "name": "Flammèche",
+      "id": "b",
+      "name": "Bertrand",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
+    },
+    {
+      "id": "c",
+      "name": "Chaparde",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "d",
+      "name": "Dardafeu",
       "gender": "m",
       "role": "suspect",
       "icon": "🐉",
       "desc": "Dragonnet, brûle tout ce qu'il touche",
       "archetype": "dragonnet"
+    },
+    {
+      "id": "e",
+      "name": "Erwëlle",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
+    },
+    {
+      "id": "f",
+      "name": "Fausset",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
     },
     {
       "id": "g",
@@ -251,91 +246,123 @@
   "clues": [
     {
       "who": "a",
-      "text": "Arnak était dans la même colonne qu'un arbre.",
+      "text": "Aldric était à l'ouest de Dardafeu.",
+      "logic": {
+        "type": "westOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était dans la même colonne qu'une chaise.",
       "logic": {
         "type": "sameColAs",
-        "object": "arbre"
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était sur la même ligne qu'une étagère.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "etagere"
       }
     },
     {
       "who": "b",
-      "text": "Brann était sur la même ligne qu'un tonneau.",
+      "text": "Bertrand était à l'ouest de Chaparde.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "tonneau"
+        "type": "westOf",
+        "other": "c"
       }
     },
     {
-      "who": "c",
-      "text": "Clodomir était au nord d'Eudes.",
+      "who": "b",
+      "text": "Il était sur un tapis.",
       "logic": {
-        "type": "northOf",
-        "other": "e"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Daëlin était dans la même colonne qu'un tapis.",
-      "logic": {
-        "type": "sameColAs",
+        "type": "onObject",
         "object": "tapis"
       }
     },
     {
+      "who": "c",
+      "text": "Chaparde était au nord de Fausset.",
+      "logic": {
+        "type": "northOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était sur un tapis.",
+      "logic": {
+        "type": "onObject",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dardafeu était au nord de Chaparde.",
+      "logic": {
+        "type": "northOf",
+        "other": "c"
+      }
+    },
+    {
       "who": "e",
-      "text": "Eudes était à côté d'un champignon géant.",
+      "text": "Erwëlle était à côté d'un lit.",
       "logic": {
         "type": "adjacentTo",
-        "object": "champi"
+        "object": "lit"
       }
     },
     {
       "who": "f",
-      "text": "Flammèche était au sud de Brann.",
+      "text": "Fausset était dans la même colonne qu'un champignon géant.",
       "logic": {
-        "type": "southOf",
-        "other": "b"
+        "type": "sameColAs",
+        "object": "champi"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        4,
-        4
-      ],
-      "c": [
-        1,
-        5
-      ],
-      "a": [
-        0,
-        3
+        3,
+        0
       ],
       "b": [
-        2,
-        6
-      ],
-      "d": [
-        3,
+        1,
         1
+      ],
+      "c": [
+        2,
+        3
       ],
       "f": [
         6,
-        0
+        2
       ],
       "e": [
+        4,
+        6
+      ],
+      "d": [
+        0,
+        5
+      ],
+      "a": [
         5,
-        2
+        4
       ]
     },
-    "murderer": "e"
+    "murderer": "b"
   },
   "rating": {
     "skulls": 3,
-    "score": 7,
+    "score": 5,
     "hardest": "pièces",
-    "hardSteps": 3,
+    "hardSteps": 1,
     "directStart": 0
   },
   "difficulty": 3

@@ -3,11 +3,6 @@
   "title": "Le Palais des Mille Vœux — l'affaire Godefroy",
   "size": 7,
   "rooms": {
-    "O": {
-      "name": "Observatoire",
-      "the": "l'observatoire",
-      "floor": "mosaique"
-    },
     "T": {
       "name": "Salle du trône",
       "the": "la salle du trône",
@@ -40,8 +35,8 @@
     }
   },
   "layout": [
-    "OOTTTRR",
-    "OOTTTRR",
+    "LLTTTRR",
+    "LLTTTRR",
     "LLTTTBB",
     "LLJJJBB",
     "HHJJJBB",
@@ -179,21 +174,21 @@
   "characters": [
     {
       "id": "a",
-      "name": "Arnak",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
-    },
-    {
-      "id": "b",
-      "name": "Belladone",
+      "name": "Abysse",
       "gender": "f",
       "role": "suspect",
       "icon": "🧛‍♀️",
       "desc": "Comtesse vampire, végane (elle le jure)",
       "archetype": "vampire"
+    },
+    {
+      "id": "b",
+      "name": "Bakchich",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
     },
     {
       "id": "c",
@@ -244,78 +239,70 @@
   "decor": "palais",
   "id": "palais--roi",
   "intro": "Le roi Godefroy a été retrouvé sans vie au Palais des Mille Vœux, sous un tapis volant qui ne volait plus. Six invités avaient fait un vœu ce soir-là. Un seul était avec lui.",
-  "epilogue": "Fumerolle avoue : Godefroy réclamait un quatrième vœu. Il n'y a jamais de quatrième vœu.",
+  "epilogue": "Cendrebarbe avoue en lissant sa barbe : Godefroy avait souhaité devenir un plus grand magicien que lui. Inacceptable.",
   "clues": [
     {
       "who": "a",
-      "text": "Arnak était à l'ouest de Duperon.",
-      "logic": {
-        "type": "westOf",
-        "other": "d"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était à côté d'une table.",
+      "text": "Abysse était à côté d'un tonneau.",
       "logic": {
         "type": "adjacentTo",
-        "object": "table"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était sur la même ligne qu'un champignon géant.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "champi"
+        "object": "tonneau"
       }
     },
     {
       "who": "b",
-      "text": "Belladone était dans la même colonne qu'un champignon géant.",
+      "text": "Bakchich était à côté d'un champignon géant.",
       "logic": {
-        "type": "sameColAs",
+        "type": "adjacentTo",
         "object": "champi"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Elle était sur la même ligne qu'un fauteuil.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "fauteuil"
       }
     },
     {
       "who": "c",
-      "text": "Cendrebarbe était à côté d'une étagère.",
+      "text": "Cendrebarbe était dans la même colonne qu'un champignon géant.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "etagere"
+        "type": "sameColAs",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était sur la même ligne qu'un arbre.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "arbre"
       }
     },
     {
       "who": "d",
-      "text": "Duperon était au nord d'Arnak.",
+      "text": "Duperon était dans la même colonne qu'un tapis.",
       "logic": {
-        "type": "northOf",
-        "other": "a"
+        "type": "sameColAs",
+        "object": "tapis"
       }
     },
     {
       "who": "e",
-      "text": "Étoila était dans l'observatoire.",
+      "text": "Étoila était sur la même ligne qu'une étagère.",
       "logic": {
-        "type": "inRoom",
-        "room": "O"
+        "type": "sameRowAs",
+        "object": "etagere"
       }
     },
     {
       "who": "f",
-      "text": "Fumerolle était dans la même colonne qu'un fauteuil.",
+      "text": "Fumerolle était dans la salle des lampes.",
+      "logic": {
+        "type": "inRoom",
+        "room": "L"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Elle était dans la même colonne qu'un tapis.",
       "logic": {
         "type": "sameColAs",
-        "object": "fauteuil"
+        "object": "tapis"
       }
     }
   ],
@@ -323,41 +310,41 @@
     "positions": {
       "g": [
         6,
-        4
+        0
       ],
       "e": [
-        1,
-        1
+        2,
+        4
       ],
       "d": [
         0,
         6
       ],
-      "a": [
+      "b": [
         4,
+        3
+      ],
+      "a": [
+        3,
         5
       ],
-      "b": [
-        2,
+      "c": [
+        5,
         2
       ],
-      "c": [
-        3,
-        0
-      ],
       "f": [
-        5,
-        3
+        1,
+        1
       ]
     },
-    "murderer": "f"
+    "murderer": "c"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
-    "hardest": "position relative",
+    "skulls": 2,
+    "score": 4,
+    "hardest": "ligne réservée",
     "hardSteps": 0,
-    "directStart": 2
+    "directStart": 0
   },
-  "difficulty": 1
+  "difficulty": 2
 }

@@ -31,32 +31,34 @@ function open({ settings, saves = {} } = {}) {
   const fire = (el, type) => el.dispatchEvent(new w.Event(type, { bubbles: true }));
   const pick = (id) => d.querySelector(`.chip[data-id="${id}"]`).click();
   const hold = async (r, c, ms = 1600) => { fire(cell(r, c), 'pointerdown'); await sleep(ms); fire(cell(r, c), 'pointerup'); };
-  // une affaire s'ouvre depuis la page de son niveau
+  // une affaire s'ouvre depuis la page de sa taille
   const openCase = (id) => {
-    w.grimGo('niveau/' + w.eval('PUZZLES').find(p => p.id === id).difficulty);
+    w.grimGo('taille/' + w.eval('PUZZLES').find(p => p.id === id).size);
     d.querySelector(`.case[data-id="${id}"]`).click();
   };
   opened.push(w);
   return { w, d, errors, cell, fire, pick, hold, openCase, PUZZLES: w.eval('PUZZLES') };
 }
 
-test('accueil → Jouer → niveaux → une page par niveau : toutes les affaires, de la plus facile à la plus dure', () => {
+test('accueil → Jouer → tailles → une page par taille : toutes les affaires, triées par taille puis difficulté, sans crânes', () => {
   const { d, PUZZLES, errors } = open();
   assert.equal(d.querySelectorAll('.case, .lvl').length, 0, 'accueil : seulement l\'affiche, le titre et Jouer');
   d.getElementById('playBtn').click();
-  const lvls = [...d.querySelectorAll('.lvl')].map(b => b.dataset.level);
-  assert.deepEqual(lvls, ['0', '1', '2', '3', '4', '5'], 'un parchemin par niveau');
+  assert.match(d.querySelector('.pagetitle').textContent, /taille/);
+  const sizes = [...d.querySelectorAll('.lvl')].map(b => +b.dataset.size);
+  assert.deepEqual(sizes, [...new Set(PUZZLES.map(p => p.size))].sort((a, b) => a - b), 'un parchemin par taille');
   const shown = [];
-  for (const l of lvls) {
-    d.querySelector(`.lvl[data-level="${l}"]`).click();
+  for (const n of sizes) {
+    d.querySelector(`.lvl[data-size="${n}"]`).click();
     const ids = [...d.querySelectorAll('.case')].map(b => b.dataset.id);
-    assert.ok(ids.every(id => PUZZLES.find(p => p.id === id).difficulty === +l), `niveau ${l} : seulement ses affaires`);
+    assert.ok(ids.every(id => PUZZLES.find(p => p.id === id).size === n), `${n}×${n} : seulement ses affaires`);
+    const diff = ids.map(id => PUZZLES.find(p => p.id === id).difficulty);
+    assert.deepEqual(diff, [...diff].sort((a, b) => a - b), 'de la plus facile à la plus dure');
     shown.push(...ids);
     d.getElementById('back').click();
   }
   assert.equal(shown.length, PUZZLES.length);
-  const skulls = shown.map(id => PUZZLES.find(p => p.id === id).difficulty);
-  assert.deepEqual(skulls, [...skulls].sort((a, b) => a - b));
+  assert.equal(d.body.textContent.includes('💀'), false, 'pas de crânes affichés');
   assert.deepEqual(errors, []);
 });
 

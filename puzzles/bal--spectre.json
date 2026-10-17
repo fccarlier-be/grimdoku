@@ -18,11 +18,6 @@
       "the": "l'escalier d'honneur",
       "floor": "dalles"
     },
-    "V": {
-      "name": "Vestiaire",
-      "the": "le vestiaire",
-      "floor": "parquet"
-    },
     "F": {
       "name": "Buffet",
       "the": "le buffet",
@@ -47,8 +42,8 @@
   "layout": [
     "BBBSSSSE",
     "BBSSSSSE",
-    "VVSSSSEE",
-    "VVSSSSFF",
+    "BBSSSSEE",
+    "BBSSSSFF",
     "MMMSSFFF",
     "MMMJJJFF",
     "OOJJJJFF",
@@ -199,12 +194,12 @@
   "characters": [
     {
       "id": "a",
-      "name": "Amphora",
-      "gender": "f",
+      "name": "Arpège",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧞‍♀️",
-      "desc": "Djinn, a déjà exaucé deux vœux de trop",
-      "archetype": "djinn"
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
     },
     {
       "id": "b",
@@ -217,21 +212,21 @@
     },
     {
       "id": "c",
-      "name": "Couac",
-      "gender": "m",
+      "name": "Calebasse",
+      "gender": "f",
       "role": "suspect",
-      "icon": "🧑‍🎤",
-      "desc": "Barde, chante faux",
-      "archetype": "barde"
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn"
     },
     {
       "id": "d",
-      "name": "Daëlin",
-      "gender": "f",
+      "name": "Dagobert",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧝‍♀️",
-      "desc": "Elfe, critique gastronomique",
-      "archetype": "elfe"
+      "icon": "🤴",
+      "desc": "Roi, avare de compliments et de tout le reste",
+      "archetype": "roi"
     },
     {
       "id": "e",
@@ -253,12 +248,12 @@
     },
     {
       "id": "g",
-      "name": "Godefroy",
-      "gender": "m",
+      "name": "Galwë",
+      "gender": "f",
       "role": "suspect",
-      "icon": "🤴",
-      "desc": "Roi, avare de compliments et de tout le reste",
-      "archetype": "roi"
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
     },
     {
       "id": "h",
@@ -276,70 +271,62 @@
   "decor": "bal",
   "id": "bal--spectre",
   "intro": "Le spectre Hulul a été retrouvé sans vie au Bal Masqué, sous un loup de velours. Sept invités dansaient encore. Un seul était avec lui.",
-  "epilogue": "Godefroy avoue, outré : Hulul lui avait marché sur la traîne pendant la valse royale. Trois fois.",
+  "epilogue": "Galwë avoue avec dédain : Hulul avait osé venir avec la même tenue qu'elle.",
   "clues": [
     {
       "who": "a",
-      "text": "Amphora était dans la même colonne qu'une chaise.",
+      "text": "Arpège était dans la salle de bal.",
       "logic": {
-        "type": "sameColAs",
-        "object": "chaise"
+        "type": "inRoom",
+        "room": "S"
       }
     },
     {
       "who": "a",
-      "text": "Elle était à côté d'un lit.",
+      "text": "Il était sur la même ligne qu'un fauteuil.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "lit"
+        "type": "sameRowAs",
+        "object": "fauteuil"
       }
     },
     {
-      "who": "b",
-      "text": "Belladone était au sud de Godefroy.",
-      "logic": {
-        "type": "southOf",
-        "other": "g"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Elle était à côté d'une table.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "table"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Elle était dans la même colonne qu'un tonneau.",
+      "who": "a",
+      "text": "Il était dans la même colonne qu'un tapis.",
       "logic": {
         "type": "sameColAs",
-        "object": "tonneau"
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Belladone était sur la même ligne qu'un coffre.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "coffre"
       }
     },
     {
       "who": "c",
-      "text": "Couac était à l'ouest de Godefroy.",
+      "text": "Calebasse était dans la même colonne qu'un tapis.",
       "logic": {
-        "type": "westOf",
-        "other": "g"
+        "type": "sameColAs",
+        "object": "tapis"
       }
     },
     {
       "who": "d",
-      "text": "Daëlin était dans la même colonne qu'une chaise.",
+      "text": "Dagobert était à côté d'une statue.",
       "logic": {
-        "type": "sameColAs",
-        "object": "chaise"
+        "type": "adjacentTo",
+        "object": "statue"
       }
     },
     {
       "who": "e",
-      "text": "Églantine était à l'est de Couac.",
+      "text": "Églantine était à l'ouest de Foulques.",
       "logic": {
-        "type": "eastOf",
-        "other": "c"
+        "type": "westOf",
+        "other": "f"
       }
     },
     {
@@ -352,72 +339,72 @@
     },
     {
       "who": "f",
-      "text": "Foulques était à l'est de Daëlin.",
-      "logic": {
-        "type": "eastOf",
-        "other": "d"
-      }
-    },
-    {
-      "who": "g",
-      "text": "Godefroy était au sud de Couac.",
-      "logic": {
-        "type": "southOf",
-        "other": "c"
-      }
-    },
-    {
-      "who": "g",
-      "text": "Il était dans la même colonne qu'un arbre.",
+      "text": "Foulques était dans la même colonne qu'une chaise.",
       "logic": {
         "type": "sameColAs",
-        "object": "arbre"
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Galwë était à l'est d'Arpège.",
+      "logic": {
+        "type": "eastOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Elle était dans la même colonne qu'une statue.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "statue"
       }
     }
   ],
   "solution": {
     "positions": {
       "h": [
-        0,
-        3
+        4,
+        5
+      ],
+      "d": [
+        5,
+        0
+      ],
+      "f": [
+        6,
+        4
       ],
       "g": [
         3,
-        5
-      ],
-      "f": [
-        2,
         6
       ],
-      "d": [
-        7,
-        4
-      ],
-      "c": [
+      "a": [
         1,
-        0
+        3
       ],
       "e": [
-        5,
+        7,
         2
       ],
-      "a": [
-        6,
-        1
+      "c": [
+        0,
+        7
       ],
       "b": [
-        4,
-        7
+        2,
+        1
       ]
     },
     "murderer": "g"
   },
   "rating": {
-    "skulls": 2,
-    "score": 3,
+    "skulls": 3,
+    "score": 5,
     "hardest": "pièces",
     "hardSteps": 1,
-    "directStart": 2
+    "directStart": 0
   },
-  "difficulty": 2
+  "difficulty": 3
 }

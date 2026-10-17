@@ -13,19 +13,9 @@
       "the": "les rayonnages",
       "floor": "parquet"
     },
-    "B": {
-      "name": "Bureau",
-      "the": "le bureau",
-      "floor": "parquet"
-    },
     "L": {
       "name": "Salle de lecture",
       "the": "la salle de lecture",
-      "floor": "parquet"
-    },
-    "G": {
-      "name": "Galerie",
-      "the": "la galerie",
       "floor": "parquet"
     },
     "R": {
@@ -42,9 +32,9 @@
   "layout": [
     "SSSYYYY",
     "SSSYYYY",
-    "BBLLLGG",
-    "BBLLLGG",
-    "RRLLLGG",
+    "SSLLLAA",
+    "SSLLLAA",
+    "RRLLLAA",
     "RRRAAAA",
     "RRRAAAA"
   ],
@@ -173,12 +163,12 @@
   "characters": [
     {
       "id": "a",
-      "name": "Amphora",
-      "gender": "f",
+      "name": "Arnak",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧞‍♀️",
-      "desc": "Djinn, a déjà exaucé deux vœux de trop",
-      "archetype": "djinn"
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
     },
     {
       "id": "b",
@@ -203,12 +193,12 @@
     },
     {
       "id": "d",
-      "name": "Dîme",
-      "gender": "m",
+      "name": "Djinnifer",
+      "gender": "f",
       "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn"
     },
     {
       "id": "e",
@@ -232,54 +222,62 @@
   ],
   "decor": "bibliotheque",
   "id": "bibliotheque--golem--golem",
-  "epilogue": "Blafard hantait la réserve depuis des siècles. Fondation voulait la transformer en salle de lecture « lumineuse et accueillante ». Insupportable.",
+  "epilogue": "Arnak revendait les livres rares au marché noir. Fondation venait de s'en apercevoir. Il a classé l'affaire.",
   "clues": [
     {
       "who": "a",
-      "text": "Amphora était dans la même colonne qu'un tonneau.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "tonneau"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Elle était dans le bureau.",
-      "logic": {
-        "type": "inRoom",
-        "room": "B"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Blafard était à côté d'une boule de cristal.",
+      "text": "Arnak était à côté d'une statue.",
       "logic": {
         "type": "adjacentTo",
-        "object": "cristal"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Cornélius était sur la même ligne qu'une statue.",
-      "logic": {
-        "type": "sameRowAs",
         "object": "statue"
       }
     },
     {
-      "who": "d",
-      "text": "Dîme était à côté d'un pupitre.",
+      "who": "a",
+      "text": "Il était au sud de Blafard.",
+      "logic": {
+        "type": "southOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était à côté d'un fauteuil.",
       "logic": {
         "type": "adjacentTo",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Blafard était dans la même colonne qu'un pupitre.",
+      "logic": {
+        "type": "sameColAs",
         "object": "pupitre"
       }
     },
     {
-      "who": "e",
-      "text": "Écarlate était dans la même colonne qu'une table.",
+      "who": "c",
+      "text": "Cornélius était au nord d'Écarlate.",
       "logic": {
-        "type": "sameColAs",
-        "object": "table"
+        "type": "northOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Djinnifer était à côté d'un tonneau.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Écarlate était à côté d'une étagère.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "etagere"
       }
     }
   ],
@@ -287,8 +285,8 @@
     "positions": {
       "f": [
         [
-          5,
-          5
+          4,
+          6
         ],
         [
           5,
@@ -296,34 +294,34 @@
         ]
       ],
       "c": [
-        3,
-        2
-      ],
-      "b": [
-        6,
-        4
-      ],
-      "e": [
         0,
-        3
-      ],
-      "a": [
-        2,
         0
       ],
-      "d": [
+      "b": [
+        2,
+        2
+      ],
+      "e": [
         1,
+        4
+      ],
+      "d": [
+        6,
         1
+      ],
+      "a": [
+        3,
+        5
       ]
     },
-    "murderer": "b"
+    "murderer": "a"
   },
   "rating": {
-    "skulls": 2,
-    "score": 4,
+    "skulls": 3,
+    "score": 5,
     "hardest": "pièces",
-    "hardSteps": 2,
-    "directStart": 1
+    "hardSteps": 1,
+    "directStart": 0
   },
   "difficulty": 4
 }

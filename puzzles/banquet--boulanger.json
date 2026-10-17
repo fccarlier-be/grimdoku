@@ -133,16 +133,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Avaleur",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👹",
-      "desc": "Ogre, végétarien depuis mardi",
-      "archetype": "ogre"
-    },
-    {
-      "id": "b",
-      "name": "Brann",
+      "name": "Arpège",
       "gender": "m",
       "role": "suspect",
       "icon": "🧑‍🎤",
@@ -150,13 +141,22 @@
       "archetype": "barde"
     },
     {
-      "id": "c",
-      "name": "Croquassiette",
+      "id": "b",
+      "name": "Bouillon",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧌",
-      "desc": "Troll, plongeur à mi-temps",
-      "archetype": "troll"
+      "icon": "👨‍🍳",
+      "desc": "Chef gobelin, goûte tout, surtout ce qui bouge encore",
+      "archetype": "chef"
+    },
+    {
+      "id": "c",
+      "name": "Croc",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👹",
+      "desc": "Ogre, végétarien depuis mardi",
+      "archetype": "ogre"
     },
     {
       "id": "d",
@@ -169,12 +169,12 @@
     },
     {
       "id": "e",
-      "name": "Épice",
+      "name": "Engloutor",
       "gender": "m",
       "role": "suspect",
-      "icon": "👨‍🍳",
-      "desc": "Chef gobelin, goûte tout, surtout ce qui bouge encore",
-      "archetype": "chef"
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
     },
     {
       "id": "f",
@@ -189,100 +189,92 @@
   "decor": "banquet",
   "id": "banquet--boulanger",
   "intro": "Le boulanger Fougasse a été retrouvé sans vie au beau milieu du Banquet des Gobelins, la serviette encore autour du cou. Cinq convives s'empiffraient. Un seul était avec lui.",
-  "epilogue": "Avaleur avoue, rouge de honte : Fougasse l'avait vu manger de la viande. Il était végétarien depuis mardi.",
+  "epilogue": "Croc avoue, rouge de honte : Fougasse l'avait vu manger de la viande. Il était végétarien depuis mardi.",
   "clues": [
     {
       "who": "a",
-      "text": "Avaleur était sur la même ligne qu'une botte de foin.",
+      "text": "Arpège était dans la même colonne qu'une chaise.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "foin"
+        "type": "sameColAs",
+        "object": "chaise"
       }
     },
     {
-      "who": "a",
-      "text": "Il était dans la même colonne qu'une table.",
+      "who": "b",
+      "text": "Bouillon était à côté d'une table.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "table"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Croc était dans la même colonne qu'une table.",
       "logic": {
         "type": "sameColAs",
         "object": "table"
       }
     },
     {
-      "who": "a",
-      "text": "Il était assis sur une chaise.",
-      "logic": {
-        "type": "onObject",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Brann était à côté d'une botte de foin.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "foin"
-      }
-    },
-    {
       "who": "c",
-      "text": "Croquassiette était à l'ouest d'Épice.",
+      "text": "Il était sur la même ligne qu'un champignon géant.",
       "logic": {
-        "type": "westOf",
-        "other": "e"
+        "type": "sameRowAs",
+        "object": "champi"
       }
     },
     {
       "who": "d",
-      "text": "Dîme était à l'ouest de Croquassiette.",
+      "text": "Dîme était dans le cellier.",
       "logic": {
-        "type": "westOf",
-        "other": "c"
+        "type": "inRoom",
+        "room": "C"
       }
     },
     {
       "who": "e",
-      "text": "Épice était au nord de Dîme.",
+      "text": "Engloutor était dans la même colonne qu'un coffre.",
       "logic": {
-        "type": "northOf",
-        "other": "d"
+        "type": "sameColAs",
+        "object": "coffre"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        4,
-        5
+        2,
+        2
       ],
       "d": [
-        5,
+        0,
+        5
+      ],
+      "e": [
+        3,
         0
       ],
       "c": [
-        0,
-        2
+        4,
+        4
       ],
       "a": [
-        3,
+        5,
         3
       ],
       "b": [
-        2,
-        1
-      ],
-      "e": [
         1,
-        4
+        1
       ]
     },
-    "murderer": "a"
+    "murderer": "c"
   },
   "rating": {
-    "skulls": 2,
-    "score": 3,
+    "skulls": 3,
+    "score": 5,
     "hardest": "pièces",
     "hardSteps": 1,
-    "directStart": 1
+    "directStart": 0
   },
-  "difficulty": 2
+  "difficulty": 3
 }

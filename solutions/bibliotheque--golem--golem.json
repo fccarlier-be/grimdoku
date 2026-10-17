@@ -2,8 +2,8 @@
  "positions": {
   "f": [
    [
-    5,
-    5
+    4,
+    6
    ],
    [
     5,
@@ -11,77 +11,84 @@
    ]
   ],
   "c": [
-   3,
-   2
-  ],
-  "b": [
-   6,
-   4
-  ],
-  "e": [
    0,
-   3
-  ],
-  "a": [
-   2,
    0
   ],
-  "d": [
+  "b": [
+   2,
+   2
+  ],
+  "e": [
    1,
+   4
+  ],
+  "d": [
+   6,
    1
+  ],
+  "a": [
+   3,
+   5
   ]
  },
- "murderer": "b",
+ "murderer": "a",
  "cast": {
   "c": "a",
   "b": "b",
   "e": "c",
-  "a": "d",
-  "d": "e"
+  "d": "d",
+  "a": "e"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "b",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "cristal"
-   }
-  },
-  {
    "who": "a",
    "logic": {
-    "type": "sameColAs",
-    "object": "tonneau"
+    "type": "adjacentTo",
+    "object": "statue"
    }
   },
   {
-   "who": "e",
+   "who": "b",
    "logic": {
     "type": "sameColAs",
-    "object": "table"
+    "object": "pupitre"
    }
   },
   {
    "who": "c",
    "logic": {
-    "type": "sameRowAs",
-    "object": "statue"
+    "type": "northOf",
+    "other": "e"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "inRoom",
-    "room": "B"
+    "type": "southOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "fauteuil"
    }
   },
   {
    "who": "d",
    "logic": {
     "type": "adjacentTo",
-    "object": "pupitre"
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "etagere"
    }
   }
  ]

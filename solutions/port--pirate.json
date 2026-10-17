@@ -2,112 +2,98 @@
  "positions": {
   "g": [
    4,
-   3
-  ],
-  "e": [
-   5,
-   2
-  ],
-  "b": [
-   0,
-   6
-  ],
-  "a": [
-   3,
-   4
-  ],
-  "c": [
-   1,
-   0
-  ],
-  "f": [
-   6,
    5
   ],
   "d": [
    2,
+   3
+  ],
+  "f": [
+   1,
+   2
+  ],
+  "b": [
+   3,
    1
+  ],
+  "a": [
+   0,
+   6
+  ],
+  "c": [
+   5,
+   4
+  ],
+  "e": [
+   6,
+   0
   ]
  },
- "murderer": "a",
+ "murderer": "c",
  "cast": {
-  "e": "a",
-  "b": "b",
-  "a": "c",
-  "c": "d",
-  "f": "e",
-  "d": "f"
+  "d": "a",
+  "f": "b",
+  "b": "c",
+  "a": "d",
+  "c": "e",
+  "e": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "b",
-   "logic": {
-    "type": "inRoom",
-    "room": "D"
-   }
-  },
-  {
-   "who": "f",
-   "logic": {
-    "type": "eastOf",
-    "other": "d"
-   }
-  },
-  {
    "who": "d",
    "logic": {
-    "type": "northOf",
+    "type": "southOf",
     "other": "a"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "statue"
    }
   },
   {
    "who": "f",
    "logic": {
     "type": "sameColAs",
-    "object": "chaise"
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "southOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "enclume"
    }
   },
   {
    "who": "a",
+   "logic": {
+    "type": "sameColAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "onObject",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "d",
    "logic": {
     "type": "sameRowAs",
     "object": "chaise"
    }
   },
   {
-   "who": "d",
+   "who": "c",
    "logic": {
-    "type": "sameColAs",
-    "object": "chaise"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "enclume"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "notInRoom",
-    "room": "C"
-   }
-  },
-  {
-   "who": "f",
-   "logic": {
-    "type": "southOf",
+    "type": "northOf",
     "other": "e"
    }
   }

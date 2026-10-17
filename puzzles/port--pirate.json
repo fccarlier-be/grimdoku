@@ -3,11 +3,6 @@
   "title": "Le Port des Contrebandiers — l'affaire Grappin",
   "size": 7,
   "rooms": {
-    "P": {
-      "name": "Phare",
-      "the": "le phare",
-      "floor": "parquet"
-    },
     "Q": {
       "name": "Quai",
       "the": "le quai",
@@ -40,8 +35,8 @@
     }
   },
   "layout": [
-    "PPQQQQD",
-    "PPQQQDD",
+    "TTQQQQD",
+    "TTQQQDD",
     "TTQCCDD",
     "TTCCCEE",
     "TTCCCEE",
@@ -179,25 +174,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aquabelle",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧜‍♀️",
-      "desc": "Sirène, venue pour l'aquarium",
-      "archetype": "sirene"
-    },
-    {
-      "id": "b",
-      "name": "Bavard",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🦜",
-      "desc": "Perroquet, répète tous les secrets",
-      "archetype": "perroquet"
-    },
-    {
-      "id": "c",
-      "name": "Chaparde",
+      "name": "Arnak",
       "gender": "m",
       "role": "suspect",
       "icon": "👺",
@@ -205,17 +182,26 @@
       "archetype": "gobelin"
     },
     {
-      "id": "d",
-      "name": "Denier",
-      "gender": "m",
+      "id": "b",
+      "name": "Bulle",
+      "gender": "f",
       "role": "suspect",
-      "icon": "🧔‍♂️",
-      "desc": "Tavernier nain, radin légendaire",
-      "archetype": "tavernier"
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene"
     },
     {
-      "id": "e",
-      "name": "Étrave",
+      "id": "c",
+      "name": "Croquassiette",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    },
+    {
+      "id": "d",
+      "name": "Drakkar",
       "gender": "m",
       "role": "suspect",
       "icon": "🧑‍✈️",
@@ -223,13 +209,22 @@
       "archetype": "capitaine"
     },
     {
-      "id": "f",
-      "name": "Fringale",
+      "id": "e",
+      "name": "Écu",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧌",
-      "desc": "Troll, plongeur à mi-temps",
-      "archetype": "troll"
+      "icon": "🧔‍♂️",
+      "desc": "Tavernier nain, radin légendaire",
+      "archetype": "tavernier"
+    },
+    {
+      "id": "f",
+      "name": "Fanfaron",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🦜",
+      "desc": "Perroquet, répète tous les secrets",
+      "archetype": "perroquet"
     },
     {
       "id": "g",
@@ -244,86 +239,70 @@
   "decor": "port",
   "id": "port--pirate",
   "intro": "Le pirate Grappin a été retrouvé sans vie au Port des Contrebandiers, à l'heure où la marée se retire. Six habitués traînaient sur les quais. Un seul était avec lui.",
-  "epilogue": "Aquabelle avoue : Grappin jetait ses filets juste devant sa grotte.",
+  "epilogue": "Croquassiette avoue : Grappin avait amarré sa barque à son pont. Il n'y a qu'un troll par pont.",
   "clues": [
     {
       "who": "a",
-      "text": "Aquabelle était sur la même ligne qu'une chaise.",
+      "text": "Arnak était dans la même colonne qu'un coffre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bulle était assise sur une chaise.",
+      "logic": {
+        "type": "onObject",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Croquassiette était dans la même colonne qu'une enclume.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "enclume"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était au nord d'Écu.",
+      "logic": {
+        "type": "northOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Drakkar était au sud d'Arnak.",
+      "logic": {
+        "type": "southOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était sur la même ligne qu'une chaise.",
       "logic": {
         "type": "sameRowAs",
         "object": "chaise"
       }
     },
     {
-      "who": "a",
-      "text": "Elle était à côté d'une enclume.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "enclume"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Bavard était dans la douane.",
-      "logic": {
-        "type": "inRoom",
-        "room": "D"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Chaparde était à côté d'une statue.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "statue"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Denier était au nord d'Aquabelle.",
-      "logic": {
-        "type": "northOf",
-        "other": "a"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Il était dans la même colonne qu'une chaise.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "chaise"
-      }
-    },
-    {
       "who": "e",
-      "text": "Étrave n'était pas dans le chantier naval.",
+      "text": "Écu était au sud de Drakkar.",
       "logic": {
-        "type": "notInRoom",
-        "room": "C"
-      }
-    },
-    {
-      "who": "f",
-      "text": "Fringale était à l'est de Denier.",
-      "logic": {
-        "type": "eastOf",
+        "type": "southOf",
         "other": "d"
       }
     },
     {
       "who": "f",
-      "text": "Il était dans la même colonne qu'une chaise.",
+      "text": "Fanfaron était dans la même colonne qu'un tonneau.",
       "logic": {
         "type": "sameColAs",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "f",
-      "text": "Il était au sud d'Étrave.",
-      "logic": {
-        "type": "southOf",
-        "other": "e"
+        "object": "tonneau"
       }
     }
   ],
@@ -331,41 +310,41 @@
     "positions": {
       "g": [
         4,
-        3
-      ],
-      "e": [
-        5,
-        2
-      ],
-      "b": [
-        0,
-        6
-      ],
-      "a": [
-        3,
-        4
-      ],
-      "c": [
-        1,
-        0
-      ],
-      "f": [
-        6,
         5
       ],
       "d": [
         2,
+        3
+      ],
+      "f": [
+        1,
+        2
+      ],
+      "b": [
+        3,
         1
+      ],
+      "a": [
+        0,
+        6
+      ],
+      "c": [
+        5,
+        4
+      ],
+      "e": [
+        6,
+        0
       ]
     },
-    "murderer": "a"
+    "murderer": "c"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
-    "hardest": "ligne réservée",
-    "hardSteps": 0,
-    "directStart": 1
+    "skulls": 3,
+    "score": 6,
+    "hardest": "pièces",
+    "hardSteps": 2,
+    "directStart": 0
   },
-  "difficulty": 1
+  "difficulty": 3
 }

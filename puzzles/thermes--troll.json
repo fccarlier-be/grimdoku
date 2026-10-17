@@ -135,12 +135,12 @@
     },
     {
       "id": "b",
-      "name": "Bulle",
+      "name": "Bruyère",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧜‍♀️",
-      "desc": "Sirène, venue pour l'aquarium",
-      "archetype": "sirene"
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
     },
     {
       "id": "c",
@@ -153,21 +153,21 @@
     },
     {
       "id": "d",
-      "name": "Digitale",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧚",
-      "desc": "Fée, doit trois tournées",
-      "archetype": "fee"
-    },
-    {
-      "id": "e",
-      "name": "Écu",
+      "name": "Denier",
       "gender": "m",
       "role": "suspect",
       "icon": "🧔‍♂️",
       "desc": "Tavernier nain, radin légendaire",
       "archetype": "tavernier"
+    },
+    {
+      "id": "e",
+      "name": "Écume",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene"
     },
     {
       "id": "f",
@@ -182,53 +182,53 @@
   "decor": "thermes",
   "id": "thermes--troll",
   "intro": "Le troll Fringale a été retrouvé sans vie aux Thermes Enchantés, détendu pour toujours. Cinq curistes profitaient des bains. Un seul était avec lui.",
-  "epilogue": "Bulle avoue : Fringale avait versé des sels de bain dans SON bassin. Elle en a eu des écailles qui piquent pendant une semaine.",
+  "epilogue": "Denier avoue en comptant ses pièces : Fringale était entré aux thermes sans payer. Deux fois.",
   "clues": [
     {
       "who": "a",
-      "text": "Aëlys était dans la même colonne qu'une table.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "table"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Elle était sur la même ligne qu'un massif de roseaux.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "roseaux"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Bulle était allongée sur un lit.",
-      "logic": {
-        "type": "onObject",
-        "object": "lit"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Cornélius était dans le vestiaire.",
+      "text": "Aëlys était dans le vestiaire.",
       "logic": {
         "type": "inRoom",
         "room": "V"
       }
     },
     {
-      "who": "d",
-      "text": "Digitale était à côté d'un fauteuil.",
+      "who": "b",
+      "text": "Bruyère était à côté d'un fauteuil.",
       "logic": {
         "type": "adjacentTo",
         "object": "fauteuil"
       }
     },
     {
-      "who": "e",
-      "text": "Écu était à côté d'une statue.",
+      "who": "c",
+      "text": "Cornélius était assis sur une chaise.",
+      "logic": {
+        "type": "onObject",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Denier était dans la même colonne qu'une statue.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était à côté d'un lit.",
       "logic": {
         "type": "adjacentTo",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Écume était sur la même ligne qu'une statue.",
+      "logic": {
+        "type": "sameRowAs",
         "object": "statue"
       }
     }
@@ -236,38 +236,38 @@
   "solution": {
     "positions": {
       "f": [
-        5,
-        3
-      ],
-      "b": [
-        3,
-        2
-      ],
-      "a": [
         4,
-        1
-      ],
-      "d": [
-        0,
-        5
-      ],
-      "c": [
-        1,
-        0
+        2
       ],
       "e": [
         2,
         4
+      ],
+      "a": [
+        1,
+        0
+      ],
+      "b": [
+        0,
+        5
+      ],
+      "c": [
+        3,
+        1
+      ],
+      "d": [
+        5,
+        3
       ]
     },
-    "murderer": "b"
+    "murderer": "d"
   },
   "rating": {
-    "skulls": 0,
-    "score": 1,
-    "hardest": "case unique",
+    "skulls": 2,
+    "score": 4,
+    "hardest": "ligne réservée",
     "hardSteps": 0,
-    "directStart": 1
+    "directStart": 0
   },
-  "difficulty": 0
+  "difficulty": 2
 }

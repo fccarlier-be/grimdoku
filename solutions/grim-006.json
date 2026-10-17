@@ -1,37 +1,37 @@
 {
  "positions": {
   "f": [
-   5,
-   2
-  ],
-  "c": [
    4,
    4
   ],
   "d": [
-   3,
-   0
-  ],
-  "b": [
-   2,
+   0,
    5
   ],
   "e": [
+   5,
+   2
+  ],
+  "b": [
+   2,
+   0
+  ],
+  "a": [
    1,
    1
   ],
-  "a": [
-   0,
+  "c": [
+   3,
    3
   ]
  },
- "murderer": "c",
+ "murderer": "e",
  "cast": {
-  "c": "a",
-  "d": "b",
+  "d": "a",
+  "e": "b",
   "b": "c",
-  "e": "d",
-  "a": "e"
+  "a": "d",
+  "c": "e"
  },
  "nSolutions": 1,
  "needsL2": false,
@@ -39,50 +39,57 @@
   {
    "who": "d",
    "logic": {
-    "type": "inRoom",
-    "room": "I"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
     "type": "sameColAs",
-    "object": "roseaux"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "westOf",
-    "other": "a"
+    "object": "arbre"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "inRoom",
-    "room": "P"
+    "type": "eastOf",
+    "other": "b"
    }
   },
   {
    "who": "a",
-   "logic": {
-    "type": "sameColAs",
-    "object": "tonneau"
-   }
-  },
-  {
-   "who": "d",
    "logic": {
     "type": "adjacentTo",
-    "object": "champi"
+    "object": "lit"
    }
   },
   {
    "who": "c",
    "logic": {
-    "type": "adjacentTo",
-    "object": "arbre"
+    "type": "inRoom",
+    "room": "R"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "northOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "eastOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "onObject",
+    "object": "champi"
    }
   }
  ]

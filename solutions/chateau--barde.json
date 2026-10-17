@@ -1,99 +1,99 @@
 {
  "positions": {
   "g": [
-   0,
-   2
-  ],
-  "c": [
-   5,
-   6
-  ],
-  "a": [
-   1,
-   5
-  ],
-  "d": [
-   4,
-   3
-  ],
-  "f": [
-   6,
-   0
-  ],
-  "e": [
    2,
-   4
+   2
   ],
   "b": [
    3,
    1
+  ],
+  "d": [
+   6,
+   5
+  ],
+  "a": [
+   4,
+   3
+  ],
+  "c": [
+   5,
+   0
+  ],
+  "f": [
+   1,
+   6
+  ],
+  "e": [
+   0,
+   4
   ]
  },
  "murderer": "e",
  "cast": {
-  "c": "a",
-  "a": "b",
-  "d": "c",
-  "f": "d",
-  "e": "e",
-  "b": "f"
+  "b": "a",
+  "d": "b",
+  "a": "c",
+  "c": "d",
+  "f": "e",
+  "e": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "d",
+   "who": "a",
+   "logic": {
+    "type": "inRoom",
+    "room": "J"
+   }
+  },
+  {
+   "who": "c",
    "logic": {
     "type": "westOf",
-    "other": "e"
+    "other": "b"
    }
   },
   {
    "who": "f",
+   "logic": {
+    "type": "eastOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "d",
    "logic": {
     "type": "sameRowAs",
     "object": "sarcophage"
    }
   },
   {
-   "who": "b",
+   "who": "e",
    "logic": {
     "type": "sameRowAs",
-    "object": "arbre"
-   }
-  },
-  {
-   "who": "d",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "champi"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "cristal"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "sameColAs",
-    "object": "foin"
+    "object": "chaudron"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "adjacentTo",
-    "object": "tonneau"
+    "type": "sameColAs",
+    "object": "arbre"
    }
   },
   {
    "who": "e",
    "logic": {
-    "type": "southOf",
+    "type": "eastOf",
     "other": "a"
    }
   }

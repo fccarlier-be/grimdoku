@@ -3,11 +3,6 @@
   "title": "Le Palais des Mille Vœux — l'affaire Gouaille",
   "size": 7,
   "rooms": {
-    "O": {
-      "name": "Observatoire",
-      "the": "l'observatoire",
-      "floor": "mosaique"
-    },
     "T": {
       "name": "Salle du trône",
       "the": "la salle du trône",
@@ -40,8 +35,8 @@
     }
   },
   "layout": [
-    "OOTTTRR",
-    "OOTTTRR",
+    "LLTTTRR",
+    "LLTTTRR",
     "LLTTTBB",
     "LLJJJBB",
     "HHJJJBB",
@@ -179,25 +174,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Arnak",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
-    },
-    {
-      "id": "b",
-      "name": "Bohémia",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🔮",
-      "desc": "Cartomancienne, voit l'avenir, rate le présent",
-      "archetype": "cartomancienne"
-    },
-    {
-      "id": "c",
-      "name": "Childéric",
+      "name": "Aldric",
       "gender": "m",
       "role": "suspect",
       "icon": "🤴",
@@ -205,8 +182,8 @@
       "archetype": "roi"
     },
     {
-      "id": "d",
-      "name": "Draculine",
+      "id": "b",
+      "name": "Belladone",
       "gender": "f",
       "role": "suspect",
       "icon": "🧛‍♀️",
@@ -214,8 +191,8 @@
       "archetype": "vampire"
     },
     {
-      "id": "e",
-      "name": "Encensia",
+      "id": "c",
+      "name": "Calebasse",
       "gender": "f",
       "role": "suspect",
       "icon": "🧞‍♀️",
@@ -223,13 +200,31 @@
       "archetype": "djinn"
     },
     {
-      "id": "f",
-      "name": "Fizzlebarbe",
+      "id": "d",
+      "name": "Destinée",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🔮",
+      "desc": "Cartomancienne, voit l'avenir, rate le présent",
+      "archetype": "cartomancienne"
+    },
+    {
+      "id": "e",
+      "name": "Étoilebarbe",
       "gender": "m",
       "role": "suspect",
       "icon": "🧙‍♂️",
       "desc": "Archimage, 412 ans, toujours pas de testament",
       "archetype": "archimage"
+    },
+    {
+      "id": "f",
+      "name": "Filou",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
     },
     {
       "id": "g",
@@ -244,128 +239,104 @@
   "decor": "palais",
   "id": "palais--bonimenteur",
   "intro": "Le bonimenteur Gouaille a été retrouvé sans vie au Palais des Mille Vœux, sous un tapis volant qui ne volait plus. Six invités avaient fait un vœu ce soir-là. Un seul était avec lui.",
-  "epilogue": "Childéric avoue, la couronne de travers : Gouaille avait souhaité devenir roi à sa place. Le vœu a été annulé.",
+  "epilogue": "Aldric avoue, la couronne de travers : Gouaille avait souhaité devenir roi à sa place. Le vœu a été annulé.",
   "clues": [
     {
       "who": "a",
-      "text": "Arnak était dans la même colonne qu'un tapis.",
+      "text": "Aldric était à côté d'une statue.",
       "logic": {
-        "type": "sameColAs",
-        "object": "tapis"
+        "type": "adjacentTo",
+        "object": "statue"
       }
     },
     {
       "who": "a",
-      "text": "Il était dans le trésor.",
-      "logic": {
-        "type": "inRoom",
-        "room": "R"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Bohémia était à côté d'un tonneau.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "tonneau"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Childéric était à l'est de Draculine.",
+      "text": "Il était à l'est de Destinée.",
       "logic": {
         "type": "eastOf",
         "other": "d"
       }
     },
     {
+      "who": "b",
+      "text": "Belladone était dans la même colonne qu'un coffre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "coffre"
+      }
+    },
+    {
       "who": "c",
-      "text": "Il était sur la même ligne qu'un champignon géant.",
+      "text": "Calebasse était sur un tapis.",
+      "logic": {
+        "type": "onObject",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Destinée était dans la même colonne qu'un arbre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Étoilebarbe était sur la même ligne qu'un champignon géant.",
       "logic": {
         "type": "sameRowAs",
         "object": "champi"
       }
     },
     {
-      "who": "c",
-      "text": "Il était dans la même colonne qu'une statue.",
+      "who": "f",
+      "text": "Filou était dans la même colonne qu'une boule de cristal.",
       "logic": {
         "type": "sameColAs",
-        "object": "statue"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Draculine était à côté d'un fauteuil.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "fauteuil"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Encensia était à l'ouest de Fizzlebarbe.",
-      "logic": {
-        "type": "westOf",
-        "other": "f"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Elle était sur la même ligne qu'un arbre.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "arbre"
-      }
-    },
-    {
-      "who": "f",
-      "text": "Fizzlebarbe était dans l'observatoire.",
-      "logic": {
-        "type": "inRoom",
-        "room": "O"
+        "object": "cristal"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        6,
-        3
-      ],
-      "c": [
-        4,
-        4
-      ],
-      "b": [
-        3,
-        5
-      ],
-      "a": [
-        0,
-        6
-      ],
-      "d": [
         2,
         2
       ],
-      "f": [
+      "a": [
         1,
-        1
+        4
+      ],
+      "d": [
+        5,
+        3
+      ],
+      "f": [
+        3,
+        0
+      ],
+      "b": [
+        0,
+        6
       ],
       "e": [
-        5,
-        0
+        4,
+        5
+      ],
+      "c": [
+        6,
+        1
       ]
     },
-    "murderer": "c"
+    "murderer": "a"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
-    "hardest": "position relative",
-    "hardSteps": 0,
-    "directStart": 1
+    "skulls": 3,
+    "score": 5,
+    "hardest": "seul candidat",
+    "hardSteps": 1,
+    "directStart": 0
   },
-  "difficulty": 1
+  "difficulty": 3
 }

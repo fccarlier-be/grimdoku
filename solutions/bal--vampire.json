@@ -2,59 +2,80 @@
  "positions": {
   "h": [
    3,
-   3
-  ],
-  "a": [
-   4,
-   0
-  ],
-  "b": [
-   2,
-   7
-  ],
-  "d": [
-   5,
    6
   ],
-  "e": [
-   1,
-   4
-  ],
-  "g": [
-   6,
-   5
+  "a": [
+   2,
+   3
   ],
   "f": [
-   7,
-   2
+   4,
+   5
+  ],
+  "e": [
+   5,
+   1
   ],
   "c": [
+   6,
+   4
+  ],
+  "d": [
+   7,
+   0
+  ],
+  "g": [
    0,
-   1
+   2
+  ],
+  "b": [
+   1,
+   7
   ]
  },
- "murderer": "e",
+ "murderer": "f",
  "cast": {
   "a": "a",
-  "b": "b",
-  "d": "c",
-  "e": "d",
-  "g": "e",
-  "f": "f",
-  "c": "g"
+  "f": "b",
+  "e": "c",
+  "c": "d",
+  "d": "e",
+  "g": "f",
+  "b": "g"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "a",
+   "who": "f",
    "logic": {
-    "type": "southOf",
+    "type": "eastOf",
     "other": "c"
    }
   },
   {
-   "who": "b",
+   "who": "e",
+   "logic": {
+    "type": "southOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "eastOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "westOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "a",
    "logic": {
     "type": "onObject",
     "object": "tapis"
@@ -63,56 +84,35 @@
   {
    "who": "f",
    "logic": {
-    "type": "southOf",
-    "other": "d"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "inRoom",
-    "room": "S"
-   }
-  },
-  {
-   "who": "g",
-   "logic": {
-    "type": "adjacentTo",
+    "type": "sameColAs",
     "object": "arbre"
-   }
-  },
-  {
-   "who": "d",
-   "logic": {
-    "type": "onObject",
-    "object": "chaise"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "onObject",
-    "object": "statue"
    }
   },
   {
    "who": "c",
    "logic": {
+    "type": "northOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
     "type": "adjacentTo",
-    "object": "statue"
+    "object": "tapis"
    }
   },
   {
    "who": "e",
    "logic": {
     "type": "adjacentTo",
-    "object": "chaise"
+    "object": "fauteuil"
    }
   },
   {
-   "who": "f",
+   "who": "g",
    "logic": {
-    "type": "onObject",
+    "type": "sameColAs",
     "object": "fauteuil"
    }
   }

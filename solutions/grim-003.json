@@ -2,92 +2,92 @@
  "positions": {
   "g": [
    2,
-   6
-  ],
-  "c": [
-   3,
-   1
-  ],
-  "f": [
-   0,
    4
   ],
   "e": [
-   4,
-   3
-  ],
-  "d": [
-   6,
-   2
-  ],
-  "a": [
-   5,
+   1,
    5
   ],
-  "b": [
-   1,
+  "a": [
+   3,
+   1
+  ],
+  "c": [
+   6,
    0
+  ],
+  "d": [
+   4,
+   6
+  ],
+  "b": [
+   5,
+   3
+  ],
+  "f": [
+   0,
+   2
   ]
  },
- "murderer": "a",
+ "murderer": "f",
  "cast": {
-  "c": "a",
-  "f": "b",
-  "e": "c",
+  "e": "a",
+  "a": "b",
+  "c": "c",
   "d": "d",
-  "a": "e",
-  "b": "f"
+  "b": "e",
+  "f": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tonneau"
+   }
+  },
+  {
    "who": "c",
    "logic": {
     "type": "sameColAs",
-    "object": "statue"
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "northOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "champi"
    }
   },
   {
    "who": "d",
    "logic": {
-    "type": "sameRowAs",
-    "object": "cristal"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "champi"
+    "type": "southOf",
+    "other": "a"
    }
   },
   {
    "who": "a",
-   "logic": {
-    "type": "onObject",
-    "object": "etagere"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "westOf",
-    "other": "c"
-   }
-  },
-  {
-   "who": "c",
    "logic": {
     "type": "sameRowAs",
     "object": "arbre"
    }
   },
   {
-   "who": "f",
+   "who": "b",
    "logic": {
-    "type": "eastOf",
-    "other": "e"
+    "type": "onObject",
+    "object": "arbre"
    }
   }
  ]

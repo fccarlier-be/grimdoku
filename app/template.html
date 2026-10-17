@@ -552,14 +552,10 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
   };
   const settings = Object.assign({ shade: true, live: false }, store.get('settings', {}));
   // difficulté sur 5 crânes (0 = initiation) ; le libellé sert aux lecteurs d'écran
-  const MAX_SKULLS = 5;
-  const skulls = (d) => `<span aria-label="Difficulté ${d} sur ${MAX_SKULLS}">${'💀'.repeat(d)}<span style="opacity:.22">${'💀'.repeat(Math.max(0, MAX_SKULLS - d))}</span></span>`;
 
   let P = null, ctx = null, S = null, undo = [], selected = null, toastT = null;
 
   // ---------- accueil ----------
-  // accueil : affaires groupées par niveau de crânes ; le premier niveau pas encore terminé est ouvert
-  const LEVEL_NAMES = ['Initiation', 'Facile', 'Corsé', 'Retors', 'Diabolique', 'Légendaire'];
   function caseHtml(p) {
     const st = store.get('p:' + p.id, null);
     const done = st && st.solved;
@@ -572,15 +568,19 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
           <span class="state ${done ? 'done' : started ? 'started' : ''}">${done ? 'Résolue' : started ? 'En cours' : 'Nouvelle'}</span>
         </button>`;
   }
-  // ce que réserve chaque niveau (page des niveaux et page d'un niveau)
-  const LEVEL_BLURB = [
-    'Pour apprendre les règles : chaque indice mène presque tout seul à sa case.',
-    'Quelques déductions simples, sur de petites cartes.',
-    'Il faut croiser les indices ; la règle des pièces entre en jeu.',
-    'Grandes cartes, et aucune prise facile au départ.',
-    'Des grands personnages occupent plusieurs cases.',
-    'Des grands personnages… dont tu ignores la forme.'
-  ];
+  // Classement par taille de carte (décision de François, 2026-10-16) ; dans une taille, de la plus facile à la plus
+  // dure, sans le dire (ordre de PUZZLES, fait par build-app.js). Les crânes ne sont plus affichés.
+  const SIZE_BLURB = {
+    6: 'Petites cartes : pour se faire la main.',
+    7: 'Une pièce de plus, des déductions plus longues.',
+    8: 'Grandes maisons, et parfois un monstre sur deux cases.',
+    9: 'Des monstres jusqu\'à trois cases.',
+    10: 'Des monstres jusqu\'à quatre cases, parfois de forme inconnue.',
+    11: 'Des monstres jusqu\'à quatre cases, parfois de forme inconnue.',
+    12: 'Les plus vastes demeures du royaume.'
+  };
+  const SIZES = [...new Set(PUZZLES.map(p => p.size))].sort((a, b) => a - b);
+  const sizeImg = (n) => MEDIA.levels[SIZES.indexOf(n)]; // vignettes 0, 1, 2… dans l'ordre des tailles
   const solvedIn = (list) => list.filter(p => (store.get('p:' + p.id, null) || {}).solved).length;
   const pageHead = (backAria, title) => `
       <header class="top">
@@ -590,37 +590,35 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
         ${soundBtn()}
         <button class="iconbtn" id="rulesBtn" aria-label="Règles">?</button>
       </header>`;
-  // page des niveaux : un parchemin par niveau de difficulté
-  function levelsPage() {
+  // page des tailles : un parchemin par taille de carte
+  function sizesPage() {
     P = null;
     $app.classList.remove('game');
-    $app.innerHTML = pageHead("Retour à l'accueil", 'Choisis ton niveau') + `
-      <div class="lvls">${LEVEL_NAMES.map((name, d) => {
-        const list = PUZZLES.filter(p => p.difficulty === d);
-        if (!list.length) return '';
+    $app.innerHTML = pageHead("Retour à l'accueil", 'Choisis ta taille') + `
+      <div class="lvls">${SIZES.map(n => {
+        const list = PUZZLES.filter(p => p.size === n);
         const solved = solvedIn(list);
-        return `<button class="lvl" data-level="${d}">
-          ${MEDIA.levels[d] ? `<img class="lvlimg" src="${MEDIA.levels[d]}" alt="" loading="lazy">` : ''}
-          <span class="skulls">${skulls(d)}</span>
-          <b>${name}</b>
-          <span class="blurb">${LEVEL_BLURB[d]}</span>
+        return `<button class="lvl" data-size="${n}">
+          ${sizeImg(n) ? `<img class="lvlimg" src="${sizeImg(n)}" alt="" loading="lazy">` : ''}
+          <b>${n} × ${n}</b>
+          <span class="blurb">${SIZE_BLURB[n] || ''}</span>
           <span class="count">${solved} / ${list.length} résolue${solved > 1 ? 's' : ''}</span>
           ${solved === list.length ? '<span class="lvldone">Terminé</span>' : ''}
         </button>`;
       }).join('')}</div>`;
     document.getElementById('back').onclick = () => go('');
     document.getElementById('rulesBtn').onclick = rules;
-    $app.querySelectorAll('.lvl').forEach(b => b.onclick = () => go('niveau/' + b.dataset.level));
+    $app.querySelectorAll('.lvl').forEach(b => b.onclick = () => go('taille/' + b.dataset.size));
   }
-  // page d'un niveau : ses affaires
-  function levelPage(d) {
+  // page d'une taille : ses affaires, de la plus facile à la plus dure
+  function sizePage(n) {
     P = null;
     $app.classList.remove('game');
-    const list = PUZZLES.filter(p => p.difficulty === d);
-    $app.innerHTML = pageHead('Retour aux niveaux', 'Choisis ton enquête') + `
-      <p class="lead"><b class="lvlname">${LEVEL_NAMES[d]}</b> <span class="skulls">${skulls(d)}</span> — ${LEVEL_BLURB[d]} <span class="count">${solvedIn(list)} / ${list.length} résolues</span></p>
+    const list = PUZZLES.filter(p => p.size === n);
+    $app.innerHTML = pageHead('Retour aux tailles', 'Choisis ton enquête') + `
+      <p class="lead"><b class="lvlname">${n} × ${n}</b> — ${SIZE_BLURB[n] || ''} <span class="count">${solvedIn(list)} / ${list.length} résolues</span></p>
       <div class="cases">${list.map(caseHtml).join('')}</div>`;
-    document.getElementById('back').onclick = () => go('niveaux');
+    document.getElementById('back').onclick = () => go('tailles');
     document.getElementById('rulesBtn').onclick = rules;
     $app.querySelectorAll('.case').forEach(b => b.onclick = () => go('affaire/' + b.dataset.id));
   }
@@ -635,7 +633,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
         <button class="accuse herobtn" id="playBtn"><span>Jouer</span></button>
         ${sound.available ? `<span class="herosound">${soundBtn()}</span>` : ''}
       </section>`;
-    document.getElementById('playBtn').onclick = () => go('niveaux');
+    document.getElementById('playBtn').onclick = () => go('tailles');
   }
 
   // Ambiance sonore : une boucle pour l'accueil et les menus (menu), une pour les cartes (carte), en fondu.
@@ -733,13 +731,13 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     if (pop && !e.target.closest('.soundpop')) pop.remove();
   });
 
-  // Navigation : une adresse par écran (#/, #/niveaux, #/niveau/2, #/affaire/<id>), le bouton retour du navigateur
+  // Navigation : une adresse par écran (#/, #/tailles, #/taille/8, #/affaire/<id>), le bouton retour du navigateur
   // (ou du téléphone) revient à l'écran précédent.
   function show(route) {
     const [page, arg] = route.split('/');
     sound.set(page === 'affaire' ? 'carte' : 'menu');
-    if (page === 'niveaux') levelsPage();
-    else if (page === 'niveau' && LEVEL_NAMES[+arg]) levelPage(+arg);
+    if (page === 'tailles' || page === 'niveaux') sizesPage();
+    else if (page === 'taille' && SIZES.includes(+arg)) sizePage(+arg);
     else if (page === 'affaire' && PUZZLES.some(p => p.id === arg)) open(arg);
     else home();
     window.scrollTo(0, 0);
@@ -965,7 +963,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     $app.innerHTML = `
       <header class="top">
         <button class="iconbtn" id="back" aria-label="Retour aux affaires">‹</button>
-        <button class="hdtitle" id="introBtn" aria-label="Lire l'affaire">${esc(P.title)} <span class="skulls">${skulls(P.difficulty)}</span></button>
+        <button class="hdtitle" id="introBtn" aria-label="Lire l'affaire">${esc(P.title)}</button>
         <span class="spacer"></span>
         ${soundBtn()}
         <button class="iconbtn" id="opts" aria-label="Options">⚙︎</button>
@@ -974,7 +972,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
       <div class="play">
       <div class="casehead">
         <h2>${esc(P.title)}</h2>
-        <details><summary>L'affaire <span class="skulls">${skulls(P.difficulty)}</span></summary><p>${esc(P.intro)}</p></details>
+        <details><summary>L'affaire</summary><p>${esc(P.intro)}</p></details>
       </div>
       <div class="boardwrap">
         <div class="board" id="board" style="--n:${n}">${cells}${wallsSvg()}</div>
@@ -1015,7 +1013,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
   }
 
   function bind() {
-    document.getElementById('back').onclick = () => go('niveau/' + P.difficulty);
+    document.getElementById('back').onclick = () => go('taille/' + P.size);
     document.getElementById('rulesBtn').onclick = rules;
     document.getElementById('opts').onclick = options;
     document.getElementById('introBtn').onclick = () => sheet(`<h2>${esc(P.title)}</h2><p>${esc(P.intro)}</p><div class="row"><button class="btn primary" data-close>À l'enquête</button></div>`);
@@ -1201,6 +1199,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     if (errs.some(e => e.kind === 'col')) return toast('Deux personnes partagent une colonne. Une seule par colonne !', true);
     if (errs.some(e => e.kind === 'shape')) return toast('Un grand personnage n\'a pas la bonne forme.', true);
     if (errs.some(e => e.kind === 'room')) return toast('Deux suspects partagent une pièce : seule la pièce du crime abrite deux personnes.', true);
+    if (errs.some(e => e.kind === 'empty')) return toast('Une pièce est vide : chaque pièce est occupée.', true);
     const m = E.murdererOf(ctx, S.pos);
     if (!m) return toast('La victime doit être seule avec exactement un suspect dans sa pièce.', true);
     const ok = Object.keys(P.solution.positions).every(id => S.pos[id] && E.posKey(S.pos[id]) === E.posKey(P.solution.positions[id]));
@@ -1226,7 +1225,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
         <p class="epi">${esc(P.epilogue)}</p>
         <div class="row">
           <button class="btn" id="replayBtn">Rejouer</button>
-          ${next ? `<button class="btn primary" id="nextBtn">Affaire suivante</button>` : `<button class="btn primary" id="homeBtn">Tous les niveaux</button>`}
+          ${next ? `<button class="btn primary" id="nextBtn">Affaire suivante</button>` : `<button class="btn primary" id="homeBtn">Toutes les tailles</button>`}
         </div>
       </div>`;
   }
@@ -1234,7 +1233,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     const next = PUZZLES[PUZZLES.indexOf(P) + 1];
     document.getElementById('replayBtn').onclick = () => { S = blank(); undo = []; save(); render(); };
     const nb = document.getElementById('nextBtn'); if (nb) nb.onclick = () => go('affaire/' + next.id);
-    const hb = document.getElementById('homeBtn'); if (hb) hb.onclick = () => go('niveaux');
+    const hb = document.getElementById('homeBtn'); if (hb) hb.onclick = () => go('tailles');
   }
 
   // ---------- fenêtres ----------
@@ -1257,8 +1256,9 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
         <li>« Au nord de X » veut dire sur une ligne plus haute que X, dans n'importe quelle colonne (sud : plus bas ; est : plus à droite ; ouest : plus à gauche).</li>
         <li>« À côté de » veut dire juste au-dessus, en dessous, à gauche ou à droite, dans la même pièce. Pas en diagonale, ni à travers un mur — même par une porte : les portes ne sont qu'un décor.</li>
         <li><b>Seule la pièce du crime contient deux personnes</b> : chaque suspect était seul dans sa pièce, sauf le coupable, qui était avec la victime.</li>
+        <li><b>Chaque pièce est occupée</b> : aucune pièce n'est vide (deux pièces reliées par un portail comptent pour une).</li>
         <li>La victime n'a pas d'indice : c'est à toi de la trouver.</li>
-        <li><b>Grands personnages</b> (4 et 5 crânes) : ils occupent de 2 à 4 cases, en ligne, en angle, en carré, en T ou en zigzag, et leur taille change d'une affaire à l'autre. Leur forme peut être tournée ou retournée. Chacune de leurs cases prend sa ligne et sa colonne. Toutes leurs cases sont dans la même pièce, jamais sur un meuble. « À côté de » et « même ligne / colonne » valent pour n'importe laquelle de leurs cases ; « au nord de X » veut dire toutes leurs cases plus haut que X. À 5 crânes, leur forme est inconnue (2 à 4 cases, ou 2 ou 3 cases si la fiche le dit).</li>
+        <li><b>Grands personnages</b> : ils occupent plusieurs cases (2 cases jusqu'en 8×8, jusqu'à 3 en 9×9, jusqu'à 4 au-delà), en ligne, en angle, en carré, en T ou en zigzag, et leur forme peut être tournée ou retournée. Chacune de leurs cases prend sa ligne et sa colonne. Toutes leurs cases sont dans la même pièce, jamais sur un meuble. « À côté de » et « même ligne / colonne » valent pour n'importe laquelle de leurs cases ; « au nord de X » veut dire toutes leurs cases plus haut que X. Sur les grandes cartes, leur forme est parfois inconnue : leur fiche dit seulement combien de cases ils peuvent occuper.</li>
       </ul>
       <div class="sect">Gestes</div>
       <ul>

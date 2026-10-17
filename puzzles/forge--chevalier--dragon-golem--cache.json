@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Forge du Dragon — l'affaire Enguerrand",
+  "title": "La Forge du Dragon — l'affaire Foulques",
   "size": 7,
   "rooms": {
     "D": {
@@ -13,20 +13,10 @@
       "the": "la forge",
       "floor": "dalles"
     },
-    "A": {
-      "name": "Armurerie",
-      "the": "l'armurerie",
-      "floor": "dalles"
-    },
     "O": {
       "name": "Fonderie",
       "the": "la fonderie",
       "floor": "dalles"
-    },
-    "C": {
-      "name": "Réserve de charbon",
-      "the": "la réserve de charbon",
-      "floor": "roche"
     },
     "T": {
       "name": "Atelier",
@@ -40,12 +30,12 @@
     }
   },
   "layout": [
-    "DDDFFFA",
-    "DDFFFAA",
-    "DDOOFAA",
-    "CCOOTTA",
-    "CCOOTTT",
-    "CYYYTTT",
+    "DDDFFFF",
+    "DDFFFFF",
+    "DDOOFFF",
+    "OOOOTTF",
+    "OOOOTTT",
+    "OYYYTTT",
     "YYYYYTT"
   ],
   "objects": [
@@ -174,13 +164,12 @@
     },
     {
       "id": "b",
-      "name": "Basalte",
+      "name": "Bâfrin",
       "gender": "m",
       "role": "suspect",
-      "icon": "🪨",
-      "desc": "Golem de pierre, lent mais très appliqué",
-      "archetype": "golem",
-      "shape": "I2"
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
     },
     {
       "id": "c",
@@ -199,11 +188,21 @@
       "icon": "🐉",
       "desc": "Dragon adulte, toujours lové dans un coin",
       "archetype": "dragon",
-      "shape": "L3"
+      "shape": "I2"
     },
     {
       "id": "e",
-      "name": "Enguerrand",
+      "name": "Éboulis",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🪨",
+      "desc": "Golem de pierre, lent mais très appliqué",
+      "archetype": "golem",
+      "shape": "I2"
+    },
+    {
+      "id": "f",
+      "name": "Foulques",
       "gender": "m",
       "role": "victim",
       "icon": "🤺",
@@ -213,53 +212,19 @@
   ],
   "decor": "forge",
   "id": "forge--chevalier--dragon-golem--cache",
-  "hiddenShapes": true,
-  "hiddenMax": 3,
-  "intro": "Le chevalier Enguerrand a été retrouvé sans vie à la Forge du Dragon, encore tiède. Quatre artisans et clients s'y pressaient cette nuit-là. Un seul était avec lui.",
-  "epilogue": "Arnak avoue : Enguerrand avait remarqué que les épées vendues étaient en fer-blanc peint.",
+  "intro": "Le chevalier Foulques a été retrouvé sans vie à la Forge du Dragon, encore tiède. Cinq artisans et clients s'y pressaient cette nuit-là. Un seul était avec lui.",
+  "epilogue": "Caillou avoue : Foulques avait fondu sa plus belle pépite pour en faire une cuillère.",
   "clues": [
     {
       "who": "a",
-      "text": "Arnak était sur la même ligne qu'un coffre.",
+      "text": "Arnak était dans la cour.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "coffre"
+        "type": "inRoom",
+        "room": "Y"
       }
     },
     {
-      "who": "b",
-      "text": "Basalte était sur la même ligne qu'un chariot de mine.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "chariot"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était sur la même ligne qu'un coffre.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "coffre"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Caillou était dans la même colonne qu'un lit.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "lit"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Draconyx était au sud de Caillou.",
-      "logic": {
-        "type": "southOf",
-        "other": "c"
-      }
-    },
-    {
-      "who": "d",
+      "who": "a",
       "text": "Il était sur la même ligne qu'une enclume.",
       "logic": {
         "type": "sameRowAs",
@@ -267,61 +232,93 @@
       }
     },
     {
+      "who": "b",
+      "text": "Bâfrin était à l'ouest d'Arnak.",
+      "logic": {
+        "type": "westOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Caillou était au nord de Draconyx.",
+      "logic": {
+        "type": "northOf",
+        "other": "d"
+      }
+    },
+    {
       "who": "d",
-      "text": "Il était dans la même colonne qu'une statue.",
+      "text": "Draconyx était à l'est de Bâfrin.",
+      "logic": {
+        "type": "eastOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était dans la même colonne qu'un lit.",
       "logic": {
         "type": "sameColAs",
-        "object": "statue"
+        "object": "lit"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Éboulis était sur la même ligne qu'une enclume.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "enclume"
       }
     }
   ],
   "solution": {
     "positions": {
-      "e": [
-        1,
-        0
+      "f": [
+        6,
+        6
       ],
       "d": [
         [
-          5,
-          5
+          4,
+          1
         ],
         [
-          6,
-          5
-        ],
-        [
-          6,
-          6
+          4,
+          2
         ]
       ],
-      "b": [
+      "e": [
         [
-          2,
-          3
+          0,
+          5
         ],
         [
-          3,
-          3
+          1,
+          5
         ]
       ],
       "c": [
-        4,
-        1
+        3,
+        4
       ],
       "a": [
-        0,
-        2
+        5,
+        3
+      ],
+      "b": [
+        2,
+        0
       ]
     },
-    "murderer": "a"
+    "murderer": "c"
   },
   "rating": {
     "skulls": 3,
-    "score": 5,
+    "score": 6,
     "hardest": "pièces",
-    "hardSteps": 1,
+    "hardSteps": 2,
     "directStart": 0
   },
-  "difficulty": 5
+  "difficulty": 4
 }

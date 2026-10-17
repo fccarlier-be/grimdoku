@@ -1,0 +1,510 @@
+{
+  "formatVersion": 1,
+  "title": "L'Université des Sortilèges — l'affaire Jacinthe",
+  "decor": "academie",
+  "size": 11,
+  "rooms": {
+    "A": {
+      "name": "Amphithéâtre",
+      "the": "l'amphithéâtre",
+      "floor": "parquet"
+    },
+    "B": {
+      "name": "Grande bibliothèque",
+      "the": "la grande bibliothèque",
+      "floor": "parquet"
+    },
+    "C": {
+      "name": "Serre",
+      "the": "la serre",
+      "floor": "herbe"
+    },
+    "D": {
+      "name": "Dortoir",
+      "the": "le dortoir",
+      "floor": "tomettes"
+    },
+    "E": {
+      "name": "Laboratoire",
+      "the": "le laboratoire",
+      "floor": "damier"
+    },
+    "F": {
+      "name": "Cour",
+      "the": "la cour",
+      "floor": "paves"
+    },
+    "G": {
+      "name": "Réfectoire",
+      "the": "le réfectoire",
+      "floor": "tomettes"
+    },
+    "H": {
+      "name": "Observatoire",
+      "the": "l'observatoire",
+      "floor": "mosaique"
+    },
+    "I": {
+      "name": "Salle des duels",
+      "the": "la salle des duels",
+      "floor": "dalles"
+    }
+  },
+  "layout": [
+    "AAAABBBBCCC",
+    "AAAABBBBCCC",
+    "AAAABBBBCCC",
+    "DDDDBBBBEEE",
+    "DDDDFFFFEEE",
+    "DDDDFFFFEEE",
+    "GGGFFFFFEEE",
+    "GGGFFFFFHHH",
+    "GGGIIIIIHHH",
+    "GGGIIIIIHHH",
+    "GGGGGIIIHHH"
+  ],
+  "objects": [
+    {
+      "type": "pupitre",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        1,
+        7
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        0,
+        9
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        1,
+        10
+      ]
+    },
+    {
+      "type": "roseaux",
+      "at": [
+        2,
+        8
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        5,
+        2
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        3,
+        9
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        10
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        6,
+        8
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        6,
+        4
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        4,
+        7
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        7,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        8,
+        0
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        7,
+        9
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        9,
+        10
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        8,
+        5
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        9,
+        6
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        10,
+        1
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        9,
+        2
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        10,
+        3
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Amphora",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn"
+    },
+    {
+      "id": "b",
+      "name": "Bérénice",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "👩‍🏫",
+      "desc": "Bibliothécaire, réclame le silence en hurlant",
+      "archetype": "bibliothecaire"
+    },
+    {
+      "id": "c",
+      "name": "Caillasse",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🪨",
+      "desc": "Golem de pierre, lent mais très appliqué",
+      "archetype": "golem",
+      "shape": "O4"
+    },
+    {
+      "id": "d",
+      "name": "Dodu",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐸",
+      "desc": "Crapaud, prince déchu, attend toujours son bisou",
+      "archetype": "crapaud"
+    },
+    {
+      "id": "e",
+      "name": "Eustache",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage"
+    },
+    {
+      "id": "f",
+      "name": "Frimousse",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧙‍♀️",
+      "desc": "Apprentie sorcière, a déjà fait exploser trois chaudrons",
+      "archetype": "apprentie"
+    },
+    {
+      "id": "g",
+      "name": "Gratin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
+      "id": "h",
+      "name": "Hydromel",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🏫",
+      "desc": "Professeur de potions, note à l'odeur",
+      "archetype": "professeur"
+    },
+    {
+      "id": "i",
+      "name": "Ivoirebarbe",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Archimage, 412 ans, toujours pas de testament",
+      "archetype": "archimage"
+    },
+    {
+      "id": "j",
+      "name": "Jacinthe",
+      "gender": "f",
+      "role": "victim",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
+    }
+  ],
+  "id": "universite--fee--golem--o4",
+  "intro": "La fée Jacinthe a été retrouvée sans vie à l'Université des Sortilèges, la veille de la remise des diplômes. Neuf membres de l'université révisaient, ou faisaient semblant. Un seul était avec elle.",
+  "epilogue": "Eustache avoue : Jacinthe avait échangé son bâton contre un balai. Il a donné son cours de météo avec un balai.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Amphora était au sud de Bérénice.",
+      "logic": {
+        "type": "southOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Elle était à côté d'un champignon géant.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bérénice était dans la même colonne qu'une étagère.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "etagere"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Caillasse était à côté d'une statue.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dodu était à côté d'un coffre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Eustache était au nord d'Hydromel.",
+      "logic": {
+        "type": "northOf",
+        "other": "h"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était dans la même colonne qu'une étagère.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "etagere"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Frimousse était à l'est de Caillasse.",
+      "logic": {
+        "type": "eastOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Gratin était à l'ouest d'Ivoirebarbe.",
+      "logic": {
+        "type": "westOf",
+        "other": "i"
+      }
+    },
+    {
+      "who": "h",
+      "text": "Hydromel était au sud de Frimousse.",
+      "logic": {
+        "type": "southOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "i",
+      "text": "Ivoirebarbe était dans la même colonne qu'une chaise.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chaise"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "j": [
+        6,
+        6
+      ],
+      "c": [
+        [
+          8,
+          3
+        ],
+        [
+          8,
+          4
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          9,
+          4
+        ]
+      ],
+      "i": [
+        7,
+        8
+      ],
+      "f": [
+        3,
+        10
+      ],
+      "h": [
+        5,
+        0
+      ],
+      "e": [
+        4,
+        5
+      ],
+      "a": [
+        1,
+        9
+      ],
+      "b": [
+        0,
+        7
+      ],
+      "g": [
+        2,
+        1
+      ],
+      "d": [
+        10,
+        2
+      ]
+    },
+    "murderer": "e"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 0
+  },
+  "difficulty": 4
+}

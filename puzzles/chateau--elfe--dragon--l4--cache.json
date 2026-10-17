@@ -1,24 +1,14 @@
 {
   "formatVersion": 1,
-  "title": "Le Château de Mortebrune — l'affaire Erwëlle",
-  "intro": "L'elfe Erwëlle a été retrouvée sans vie au petit matin, au Château de Mortebrune. Quatre invités juraient qu'ils dormaient. Un seul était avec elle.",
-  "epilogue": "Chaparde avoue : Erwëlle avait réclamé un audit du trésor royal. Le gobelin a classé l'audit.",
+  "title": "Le Château de Mortebrune — la seconde affaire Faëlys",
+  "intro": "L'elfe Faëlys a été retrouvée sans vie au petit matin, au Château de Mortebrune. Cinq invités juraient qu'ils dormaient. Un seul était avec elle.",
+  "epilogue": "Bertrand avoue en grinçant de l'armure : Faëlys s'était moquée de sa cuirasse trop petite devant toute la cour.",
   "size": 7,
   "rooms": {
-    "C": {
-      "name": "Chapelle",
-      "the": "la chapelle",
-      "floor": "dalles"
-    },
     "G": {
       "name": "Grande salle",
       "the": "la grande salle",
       "floor": "dalles"
-    },
-    "K": {
-      "name": "Cuisines",
-      "the": "les cuisines",
-      "floor": "damier"
     },
     "A": {
       "name": "Armurerie",
@@ -42,9 +32,9 @@
     }
   },
   "layout": [
-    "CCGGGKK",
-    "CCGGGKK",
-    "AAGGGKT",
+    "AAGGGGG",
+    "AAGGGGG",
+    "AAGGGGT",
     "AAJJJTT",
     "AAJJJTT",
     "DDJJJTT",
@@ -181,13 +171,12 @@
   "characters": [
     {
       "id": "a",
-      "name": "Ardent",
+      "name": "Arpège",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐉",
-      "desc": "Dragon adulte, toujours lové dans un coin",
-      "archetype": "dragon",
-      "shape": "L4"
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
     },
     {
       "id": "b",
@@ -209,16 +198,29 @@
     },
     {
       "id": "d",
-      "name": "Dièse",
+      "name": "Draconyx",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧑‍🎤",
-      "desc": "Barde, chante faux",
-      "archetype": "barde"
+      "icon": "🐉",
+      "desc": "Dragon adulte, toujours lové dans un coin",
+      "archetype": "dragon",
+      "shape": "I2"
     },
     {
       "id": "e",
-      "name": "Erwëlle",
+      "name": "Ectoplasme",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ]
+    },
+    {
+      "id": "f",
+      "name": "Faëlys",
       "gender": "f",
       "role": "victim",
       "icon": "🧝‍♀️",
@@ -228,110 +230,105 @@
   ],
   "decor": "chateau",
   "id": "chateau--elfe--dragon--l4--cache",
-  "hiddenShapes": true,
   "clues": [
     {
       "who": "a",
-      "text": "Ardent était à côté d'un champignon géant.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "champi"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était sur la même ligne qu'une boule de cristal.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "cristal"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Bertrand était sur la même ligne qu'un lit.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "lit"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était dans la même colonne qu'une étagère.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "etagere"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Chaparde était à côté d'une statue.",
+      "text": "Arpège était à côté d'une statue.",
       "logic": {
         "type": "adjacentTo",
         "object": "statue"
       }
     },
     {
+      "who": "b",
+      "text": "Bertrand était à côté d'un tapis.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était à l'ouest de Chaparde.",
+      "logic": {
+        "type": "westOf",
+        "other": "c"
+      }
+    },
+    {
       "who": "c",
-      "text": "Il était sur la même ligne qu'une table.",
+      "text": "Chaparde était sur la même ligne qu'une étagère.",
       "logic": {
         "type": "sameRowAs",
-        "object": "table"
+        "object": "etagere"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il n'était pas dans la tour.",
+      "logic": {
+        "type": "notInRoom",
+        "room": "T"
       }
     },
     {
       "who": "d",
-      "text": "Dièse était à côté d'un tapis.",
+      "text": "Draconyx était sur la même ligne qu'un lit.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "tapis"
+        "type": "sameRowAs",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Ectoplasme était à l'ouest d'Arpège.",
+      "logic": {
+        "type": "westOf",
+        "other": "a"
       }
     }
   ],
   "solution": {
     "positions": {
-      "e": [
-        0,
-        1
+      "f": [
+        1,
+        6
       ],
-      "a": [
+      "d": [
         [
-          4,
-          3
+          3,
+          5
         ],
         [
           4,
-          4
-        ],
-        [
-          5,
-          4
-        ],
-        [
-          6,
-          4
+          5
         ]
       ],
       "b": [
-        3,
-        5
-      ],
-      "c": [
-        1,
-        0
-      ],
-      "d": [
         2,
         2
+      ],
+      "c": [
+        5,
+        4
+      ],
+      "a": [
+        0,
+        1
+      ],
+      "e": [
+        6,
+        0
       ]
     },
-    "murderer": "c"
+    "murderer": "b"
   },
   "rating": {
-    "skulls": 2,
-    "score": 3,
+    "skulls": 3,
+    "score": 5,
     "hardest": "pièces",
     "hardSteps": 1,
-    "directStart": 3
+    "directStart": 0
   },
-  "difficulty": 5
+  "difficulty": 4
 }

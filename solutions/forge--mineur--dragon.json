@@ -1,98 +1,94 @@
 {
  "positions": {
   "f": [
-   1,
-   4
-  ],
-  "b": [
-   [
-    3,
-    2
-   ],
-   [
-    3,
-    3
-   ],
-   [
-    4,
-    2
-   ]
-  ],
-  "d": [
-   0,
-   5
-  ],
-  "c": [
-   5,
-   1
-  ],
-  "a": [
    2,
    0
   ],
+  "b": [
+   [
+    4,
+    5
+   ],
+   [
+    4,
+    6
+   ]
+  ],
+  "d": [
+   3,
+   2
+  ],
+  "a": [
+   5,
+   3
+  ],
+  "c": [
+   0,
+   1
+  ],
   "e": [
-   6,
-   6
+   1,
+   4
   ]
  },
- "murderer": "d",
+ "murderer": "c",
  "cast": {
   "b": "a",
   "d": "b",
-  "c": "c",
-  "a": "d",
+  "a": "c",
+  "c": "d",
   "e": "e"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "b",
-   "logic": {
-    "type": "westOf",
-    "other": "e"
-   }
-  },
-  {
-   "who": "a",
+   "who": "d",
    "logic": {
     "type": "sameRowAs",
-    "object": "chaudron"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "southOf",
-    "other": "c"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "inRoom",
-    "room": "Y"
+    "object": "chariot"
    }
   },
   {
    "who": "a",
    "logic": {
     "type": "sameColAs",
-    "object": "arbre"
+    "object": "chariot"
    }
   },
   {
-   "who": "d",
+   "who": "c",
    "logic": {
     "type": "sameRowAs",
-    "object": "coffre"
+    "object": "enclume"
    }
   },
   {
    "who": "e",
    "logic": {
-    "type": "inRoom",
-    "room": "T"
+    "type": "eastOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "table"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "eastOf",
+    "other": "c"
    }
   }
  ]

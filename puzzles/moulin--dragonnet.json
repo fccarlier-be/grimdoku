@@ -127,21 +127,21 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aubépine",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧚",
-      "desc": "Fée, doit trois tournées",
-      "archetype": "fee"
-    },
-    {
-      "id": "b",
-      "name": "Bob",
+      "name": "Anatole",
       "gender": "m",
       "role": "suspect",
       "icon": "🧟",
       "desc": "Zombie, ancien apprenti. Ancien tout court",
       "archetype": "zombie"
+    },
+    {
+      "id": "b",
+      "name": "Bruyère",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
     },
     {
       "id": "c",
@@ -154,21 +154,21 @@
     },
     {
       "id": "d",
-      "name": "Dupain",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👨‍🌾",
-      "desc": "Meunier, pèse le grain avec le pouce",
-      "archetype": "meunier"
-    },
-    {
-      "id": "e",
-      "name": "Engloutor",
+      "name": "Dentdur",
       "gender": "m",
       "role": "suspect",
       "icon": "🧌",
       "desc": "Troll, plongeur à mi-temps",
       "archetype": "troll"
+    },
+    {
+      "id": "e",
+      "name": "Épeautre",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🌾",
+      "desc": "Meunier, pèse le grain avec le pouce",
+      "archetype": "meunier"
     },
     {
       "id": "f",
@@ -182,116 +182,100 @@
   ],
   "decor": "moulin",
   "id": "moulin--dragonnet",
-  "epilogue": "Dupain avoue en pesant ses mots : Flammèche l'accusait de mettre le pouce sur la balance. C'était vrai, mais ça ne se dit pas.",
+  "epilogue": "Anatole avoue, ce qui lui prend un moment : Flammèche l'obligeait à tourner la meule sans le payer. « Je suis mort, pas bénévole. »",
   "clues": [
     {
       "who": "a",
-      "text": "Aubépine était sur la même ligne qu'un coffre.",
+      "text": "Anatole était dans la même colonne qu'un arbre.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "coffre"
+        "type": "sameColAs",
+        "object": "arbre"
       }
     },
     {
       "who": "a",
-      "text": "Elle était à côté d'une table.",
+      "text": "Il était au sud de Dentdur.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "table"
+        "type": "southOf",
+        "other": "d"
       }
     },
     {
       "who": "b",
-      "text": "Bob était au nord d'Engloutor.",
+      "text": "Bruyère n'était pas dans le moulin.",
       "logic": {
-        "type": "northOf",
-        "other": "e"
+        "type": "notInRoom",
+        "room": "M"
       }
     },
     {
       "who": "b",
-      "text": "Il était allongé sur un lit.",
+      "text": "Elle était à l'ouest de Corail.",
       "logic": {
-        "type": "onObject",
-        "object": "lit"
+        "type": "westOf",
+        "other": "c"
       }
     },
     {
       "who": "c",
-      "text": "Corail était dans la mare.",
+      "text": "Corail était sur la même ligne qu'un arbre.",
       "logic": {
-        "type": "inRoom",
-        "room": "E"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Elle était à l'est de Bob.",
-      "logic": {
-        "type": "eastOf",
-        "other": "b"
+        "type": "sameRowAs",
+        "object": "arbre"
       }
     },
     {
       "who": "d",
-      "text": "Dupain était sur la même ligne qu'un champignon géant.",
+      "text": "Dentdur était sur la même ligne qu'un arbre.",
       "logic": {
         "type": "sameRowAs",
-        "object": "champi"
+        "object": "arbre"
       }
     },
     {
       "who": "e",
-      "text": "Engloutor était à l'est d'Aubépine.",
-      "logic": {
-        "type": "eastOf",
-        "other": "a"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Il était sur la même ligne qu'un tonneau.",
+      "text": "Épeautre était sur la même ligne qu'un lit.",
       "logic": {
         "type": "sameRowAs",
-        "object": "tonneau"
+        "object": "lit"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        3,
-        2
-      ],
-      "a": [
-        0,
+        2,
         1
       ],
-      "e": [
-        2,
+      "b": [
+        0,
+        3
+      ],
+      "d": [
+        3,
         5
       ],
       "c": [
         5,
         4
       ],
-      "b": [
-        1,
-        3
-      ],
-      "d": [
+      "a": [
         4,
         0
+      ],
+      "e": [
+        1,
+        2
       ]
     },
-    "murderer": "d"
+    "murderer": "a"
   },
   "rating": {
     "skulls": 2,
     "score": 4,
-    "hardest": "seul candidat",
-    "hardSteps": 2,
-    "directStart": 2
+    "hardest": "position relative",
+    "hardSteps": 0,
+    "directStart": 0
   },
   "difficulty": 2
 }

@@ -162,12 +162,12 @@
   "characters": [
     {
       "id": "a",
-      "name": "Argentbarbe",
-      "gender": "m",
+      "name": "Amphora",
+      "gender": "f",
       "role": "suspect",
-      "icon": "🧙‍♂️",
-      "desc": "Archimage, 412 ans, toujours pas de testament",
-      "archetype": "archimage"
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn"
     },
     {
       "id": "b",
@@ -192,21 +192,21 @@
     },
     {
       "id": "d",
-      "name": "Dardafeu",
+      "name": "Doublebarbe",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Archimage, 412 ans, toujours pas de testament",
+      "archetype": "archimage"
+    },
+    {
+      "id": "e",
+      "name": "Étincel",
       "gender": "m",
       "role": "suspect",
       "icon": "🐉",
       "desc": "Dragonnet, brûle tout ce qu'il touche",
       "archetype": "dragonnet"
-    },
-    {
-      "id": "e",
-      "name": "Encensia",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧞‍♀️",
-      "desc": "Djinn, a déjà exaucé deux vœux de trop",
-      "archetype": "djinn"
     },
     {
       "id": "f",
@@ -232,116 +232,108 @@
   "clues": [
     {
       "who": "a",
-      "text": "Argentbarbe était sur la même ligne qu'une boule de cristal.",
+      "text": "Amphora était sur la même ligne qu'un champignon géant.",
       "logic": {
         "type": "sameRowAs",
-        "object": "cristal"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était assis sur une chaise.",
-      "logic": {
-        "type": "onObject",
-        "object": "chaise"
+        "object": "champi"
       }
     },
     {
       "who": "b",
-      "text": "Blafard était sur un tapis.",
-      "logic": {
-        "type": "onObject",
-        "object": "tapis"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Clovis était au sud de Dardafeu.",
+      "text": "Blafard était au sud de Clovis.",
       "logic": {
         "type": "southOf",
-        "other": "d"
+        "other": "c"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était dans la même colonne qu'un chaudron.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chaudron"
       }
     },
     {
       "who": "c",
-      "text": "Il était à côté d'un portail runique.",
+      "text": "Clovis était dans le jardin.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "portail"
+        "type": "inRoom",
+        "room": "J"
       }
     },
     {
       "who": "d",
-      "text": "Dardafeu était dans la même colonne qu'un portail runique.",
+      "text": "Doublebarbe était dans la même colonne qu'une étagère.",
       "logic": {
         "type": "sameColAs",
-        "object": "portail"
+        "object": "etagere"
       }
     },
     {
       "who": "e",
-      "text": "Encensia était dans la même colonne qu'un sarcophage.",
+      "text": "Étincel était dans le laboratoire.",
+      "logic": {
+        "type": "inRoom",
+        "room": "L"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était dans la même colonne qu'une étagère.",
       "logic": {
         "type": "sameColAs",
-        "object": "sarcophage"
+        "object": "etagere"
       }
     },
     {
       "who": "f",
-      "text": "Funestine était au nord de Dardafeu.",
+      "text": "Funestine était à l'est d'Amphora.",
       "logic": {
-        "type": "northOf",
-        "other": "d"
-      }
-    },
-    {
-      "who": "f",
-      "text": "Elle était à l'ouest d'Encensia.",
-      "logic": {
-        "type": "westOf",
-        "other": "e"
+        "type": "eastOf",
+        "other": "a"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        1,
-        2
+        6,
+        6
       ],
       "b": [
-        5,
+        4,
         1
       ],
-      "d": [
-        4,
-        5
+      "e": [
+        0,
+        2
       ],
       "c": [
-        6,
-        4
+        3,
+        5
       ],
       "f": [
-        3,
-        0
-      ],
-      "e": [
         2,
         3
       ],
       "a": [
-        0,
-        6
+        5,
+        0
+      ],
+      "d": [
+        1,
+        4
       ]
     },
     "murderer": "c"
   },
   "rating": {
-    "skulls": 2,
-    "score": 3,
+    "skulls": 3,
+    "score": 7,
     "hardest": "pièces",
-    "hardSteps": 1,
-    "directStart": 1
+    "hardSteps": 3,
+    "directStart": 0
   },
-  "difficulty": 2
+  "difficulty": 3
 }

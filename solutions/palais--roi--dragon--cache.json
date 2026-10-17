@@ -1,98 +1,87 @@
 {
  "positions": {
   "f": [
-   0,
-   3
+   3,
+   0
   ],
-  "a": [
+  "b": [
    [
-    3,
-    5
+    4,
+    3
    ],
    [
     4,
-    5
-   ],
-   [
-    4,
-    6
+    4
    ]
   ],
   "d": [
-   2,
-   2
-  ],
-  "e": [
-   5,
-   1
+   1,
+   5
   ],
   "c": [
-   6,
-   4
+   0,
+   1
   ],
-  "b": [
-   1,
-   0
+  "a": [
+   5,
+   6
+  ],
+  "e": [
+   6,
+   2
   ]
  },
- "murderer": "d",
+ "murderer": "c",
  "cast": {
-  "a": "a",
+  "b": "a",
   "d": "b",
-  "e": "c",
-  "c": "d",
-  "b": "e"
+  "c": "c",
+  "a": "d",
+  "e": "e"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "e",
+   "who": "d",
    "logic": {
-    "type": "sameColAs",
+    "type": "sameRowAs",
     "object": "tapis"
    }
   },
   {
-   "who": "b",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "cristal"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "tonneau"
-   }
-  },
-  {
    "who": "e",
    "logic": {
-    "type": "inRoom",
-    "room": "H"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
     "type": "sameColAs",
-    "object": "statue"
+    "object": "champi"
    }
   },
   {
    "who": "d",
    "logic": {
     "type": "adjacentTo",
-    "object": "fauteuil"
+    "object": "coffre"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "sameColAs",
-    "object": "tapis"
+    "type": "adjacentTo",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "champi"
    }
   }
  ]

@@ -1,42 +1,42 @@
 {
  "positions": {
   "g": [
-   5,
-   2
-  ],
-  "e": [
-   2,
-   5
-  ],
-  "c": [
-   3,
-   3
-  ],
-  "a": [
-   1,
+   0,
    6
   ],
-  "f": [
-   6,
-   1
+  "e": [
+   1,
+   5
   ],
-  "d": [
+  "a": [
    4,
    0
   ],
+  "c": [
+   6,
+   1
+  ],
   "b": [
-   0,
+   2,
+   2
+  ],
+  "f": [
+   5,
+   3
+  ],
+  "d": [
+   3,
    4
   ]
  },
- "murderer": "c",
+ "murderer": "e",
  "cast": {
   "e": "a",
-  "c": "b",
-  "a": "c",
-  "f": "d",
-  "d": "e",
-  "b": "f"
+  "a": "b",
+  "c": "c",
+  "b": "d",
+  "f": "e",
+  "d": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
@@ -44,61 +44,47 @@
   {
    "who": "e",
    "logic": {
-    "type": "northOf",
-    "other": "d"
+    "type": "sameRowAs",
+    "object": "lit"
    }
   },
   {
-   "who": "a",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "fauteuil"
-   }
-  },
-  {
-   "who": "f",
+   "who": "c",
    "logic": {
     "type": "southOf",
-    "other": "d"
+    "other": "f"
    }
   },
   {
    "who": "b",
    "logic": {
-    "type": "sameRowAs",
-    "object": "table"
+    "type": "southOf",
+    "other": "e"
    }
   },
   {
    "who": "d",
    "logic": {
-    "type": "sameColAs",
-    "object": "coffre"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "chaudron"
-   }
-  },
-  {
-   "who": "f",
-   "logic": {
-    "type": "sameColAs",
-    "object": "hamac"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "tonneau"
+    "type": "westOf",
+    "other": "e"
    }
   },
   {
    "who": "b",
+   "logic": {
+    "type": "onObject",
+    "object": "canon"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "hamac"
+   }
+  },
+  {
+   "who": "f",
    "logic": {
     "type": "adjacentTo",
     "object": "coffre"
@@ -107,8 +93,8 @@
   {
    "who": "a",
    "logic": {
-    "type": "onObject",
-    "object": "lit"
+    "type": "sameRowAs",
+    "object": "tonneau"
    }
   }
  ]

@@ -1,46 +1,46 @@
 {
  "positions": {
   "h": [
-   0,
-   3
+   4,
+   5
+  ],
+  "d": [
+   5,
+   0
+  ],
+  "f": [
+   6,
+   4
   ],
   "g": [
    3,
-   5
-  ],
-  "f": [
-   2,
    6
   ],
-  "d": [
-   7,
-   4
-  ],
-  "c": [
+  "a": [
    1,
-   0
+   3
   ],
   "e": [
-   5,
+   7,
    2
   ],
-  "a": [
-   6,
-   1
+  "c": [
+   0,
+   7
   ],
   "b": [
-   4,
-   7
+   2,
+   1
   ]
  },
  "murderer": "g",
  "cast": {
-  "g": "a",
+  "d": "a",
   "f": "b",
-  "d": "c",
-  "c": "d",
+  "g": "c",
+  "a": "d",
   "e": "e",
-  "a": "f",
+  "c": "f",
   "b": "g"
  },
  "nSolutions": 1,
@@ -49,78 +49,71 @@
   {
    "who": "f",
    "logic": {
-    "type": "eastOf",
-    "other": "d"
+    "type": "sameColAs",
+    "object": "chaise"
    }
   },
   {
-   "who": "c",
+   "who": "g",
    "logic": {
-    "type": "westOf",
-    "other": "g"
+    "type": "eastOf",
+    "other": "a"
    }
   },
   {
    "who": "e",
    "logic": {
-    "type": "eastOf",
-    "other": "c"
+    "type": "westOf",
+    "other": "f"
    }
   },
   {
-   "who": "b",
+   "who": "c",
    "logic": {
-    "type": "southOf",
-    "other": "g"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "table"
+    "type": "sameColAs",
+    "object": "tapis"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "sameColAs",
-    "object": "chaise"
+    "type": "inRoom",
+    "room": "S"
    }
   },
   {
    "who": "b",
    "logic": {
-    "type": "sameColAs",
-    "object": "tonneau"
-   }
-  },
-  {
-   "who": "g",
-   "logic": {
-    "type": "southOf",
-    "other": "c"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "lit"
+    "type": "sameRowAs",
+    "object": "coffre"
    }
   },
   {
    "who": "d",
    "logic": {
-    "type": "sameColAs",
-    "object": "chaise"
+    "type": "adjacentTo",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "fauteuil"
    }
   },
   {
    "who": "g",
    "logic": {
     "type": "sameColAs",
-    "object": "arbre"
+    "object": "statue"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tapis"
    }
   },
   {

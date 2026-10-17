@@ -1,5 +1,5 @@
 {
-  "_doc": "Affaires à grands personnages (4 crânes ; hidden = forme cachée, 5 crânes). shapes : forme de chaque grand (même ordre que big), propre à l’affaire. hiddenMax : forme cachée parmi les formes d’au plus ce nombre de cases (grilles d’origine : 3). Produites par tools/batch.js, assemblées par build-puzzles.js.",
+  "_doc": "Affaires à grands personnages. shapes : forme de chaque grand (même ordre que big), propre à l’affaire ; taille selon la grille (2 cases jusqu’en 8×8, 2–3 en 9×9, 2–4 au-delà). hidden : forme cachée (9×9 et plus), hiddenMax : parmi les formes d’au plus ce nombre de cases. Produites par tools/batch.js, assemblées par build-puzzles.js. Les ids gardent leur suffixe d’origine (sauvegardes des joueurs).",
   "cases": [
     {
       "id": "chateau--roi--dragon",
@@ -9,7 +9,7 @@
         "dragon"
       ],
       "shapes": [
-        "L3"
+        "I2"
       ]
     },
     {
@@ -31,7 +31,7 @@
         "dragon"
       ],
       "shapes": [
-        "L3"
+        "I2"
       ]
     },
     {
@@ -64,7 +64,7 @@
         "dragon"
       ],
       "shapes": [
-        "L3"
+        "I2"
       ]
     },
     {
@@ -86,7 +86,7 @@
         "vouivre"
       ],
       "shapes": [
-        "I3"
+        "I2"
       ]
     },
     {
@@ -97,7 +97,7 @@
         "vouivre"
       ],
       "shapes": [
-        "I3"
+        "I2"
       ]
     },
     {
@@ -119,7 +119,7 @@
         "vouivre"
       ],
       "shapes": [
-        "I3"
+        "I2"
       ]
     },
     {
@@ -141,7 +141,7 @@
         "dragon"
       ],
       "shapes": [
-        "L3"
+        "I2"
       ]
     },
     {
@@ -163,12 +163,10 @@
         "golem",
         "dragon"
       ],
-      "hidden": true,
       "shapes": [
         "I2",
-        "L3"
-      ],
-      "hiddenMax": 3
+        "I2"
+      ]
     },
     {
       "id": "bal--vampire--geant-vouivre--cache",
@@ -178,12 +176,10 @@
         "geant",
         "vouivre"
       ],
-      "hidden": true,
       "shapes": [
         "I2",
-        "I3"
-      ],
-      "hiddenMax": 3
+        "I2"
+      ]
     },
     {
       "id": "cimetiere--corbeau--golem--cache",
@@ -192,11 +188,9 @@
       "big": [
         "golem"
       ],
-      "hidden": true,
       "shapes": [
         "I2"
-      ],
-      "hiddenMax": 3
+      ]
     },
     {
       "id": "chateau--elfe--dragon--cache",
@@ -205,11 +199,9 @@
       "big": [
         "dragon"
       ],
-      "hidden": true,
       "shapes": [
-        "L3"
-      ],
-      "hiddenMax": 3
+        "I2"
+      ]
     },
     {
       "id": "forge--chevalier--dragon-golem--cache",
@@ -219,12 +211,10 @@
         "dragon",
         "golem"
       ],
-      "hidden": true,
       "shapes": [
-        "L3",
+        "I2",
         "I2"
-      ],
-      "hiddenMax": 3
+      ]
     },
     {
       "id": "tour--sirene--golem--cache",
@@ -233,11 +223,9 @@
       "big": [
         "golem"
       ],
-      "hidden": true,
       "shapes": [
         "I2"
-      ],
-      "hiddenMax": 3
+      ]
     },
     {
       "id": "academie--djinn--geant--cache",
@@ -246,11 +234,9 @@
       "big": [
         "geant"
       ],
-      "hidden": true,
       "shapes": [
         "I2"
-      ],
-      "hiddenMax": 3
+      ]
     },
     {
       "id": "palais--roi--dragon--cache",
@@ -259,11 +245,9 @@
       "big": [
         "dragon"
       ],
-      "hidden": true,
       "shapes": [
-        "L3"
-      ],
-      "hiddenMax": 3
+        "I2"
+      ]
     },
     {
       "id": "navire--capitaine--geant--cache",
@@ -272,11 +256,9 @@
       "big": [
         "geant"
       ],
-      "hidden": true,
       "shapes": [
         "I2"
-      ],
-      "hiddenMax": 3
+      ]
     },
     {
       "id": "bibliotheque--bibliothecaire--golem-dragon--cache",
@@ -286,12 +268,10 @@
         "golem",
         "dragon"
       ],
-      "hidden": true,
       "shapes": [
         "I2",
-        "L3"
-      ],
-      "hiddenMax": 3
+        "I2"
+      ]
     },
     {
       "id": "chateau--roi--dragon--t4",
@@ -301,7 +281,7 @@
         "dragon"
       ],
       "shapes": [
-        "T4"
+        "I2"
       ]
     },
     {
@@ -312,7 +292,7 @@
         "golem"
       ],
       "shapes": [
-        "I3"
+        "I2"
       ]
     },
     {
@@ -323,7 +303,7 @@
         "dragon"
       ],
       "shapes": [
-        "I3"
+        "I2"
       ]
     },
     {
@@ -334,7 +314,7 @@
         "golem"
       ],
       "shapes": [
-        "T4"
+        "I2"
       ]
     },
     {
@@ -345,7 +325,7 @@
         "golem"
       ],
       "shapes": [
-        "I4"
+        "I2"
       ]
     },
     {
@@ -356,7 +336,7 @@
         "dragon"
       ],
       "shapes": [
-        "S4"
+        "I2"
       ]
     },
     {
@@ -367,7 +347,7 @@
         "geant"
       ],
       "shapes": [
-        "L3"
+        "I2"
       ]
     },
     {
@@ -378,7 +358,7 @@
         "vouivre"
       ],
       "shapes": [
-        "I4"
+        "I2"
       ]
     },
     {
@@ -389,7 +369,7 @@
         "vouivre"
       ],
       "shapes": [
-        "S4"
+        "I2"
       ]
     },
     {
@@ -400,7 +380,7 @@
         "golem"
       ],
       "shapes": [
-        "L3"
+        "I2"
       ]
     },
     {
@@ -411,7 +391,7 @@
         "vouivre"
       ],
       "shapes": [
-        "L3"
+        "I2"
       ]
     },
     {
@@ -422,7 +402,7 @@
         "geant"
       ],
       "shapes": [
-        "T4"
+        "I2"
       ]
     },
     {
@@ -444,10 +424,9 @@
         "golem",
         "dragon"
       ],
-      "hidden": true,
       "shapes": [
         "I2",
-        "T4"
+        "I2"
       ]
     },
     {
@@ -458,10 +437,9 @@
         "geant",
         "vouivre"
       ],
-      "hidden": true,
       "shapes": [
-        "L3",
-        "I4"
+        "I2",
+        "I2"
       ]
     },
     {
@@ -471,9 +449,8 @@
       "big": [
         "golem"
       ],
-      "hidden": true,
       "shapes": [
-        "I3"
+        "I2"
       ]
     },
     {
@@ -483,9 +460,8 @@
       "big": [
         "dragon"
       ],
-      "hidden": true,
       "shapes": [
-        "L4"
+        "I2"
       ]
     },
     {
@@ -496,9 +472,8 @@
         "dragon",
         "golem"
       ],
-      "hidden": true,
       "shapes": [
-        "L3",
+        "I2",
         "I2"
       ]
     },
@@ -509,9 +484,8 @@
       "big": [
         "golem"
       ],
-      "hidden": true,
       "shapes": [
-        "S4"
+        "I2"
       ]
     },
     {
@@ -521,9 +495,8 @@
       "big": [
         "geant"
       ],
-      "hidden": true,
       "shapes": [
-        "I3"
+        "I2"
       ]
     },
     {
@@ -533,9 +506,8 @@
       "big": [
         "dragon"
       ],
-      "hidden": true,
       "shapes": [
-        "T4"
+        "I2"
       ]
     },
     {
@@ -545,9 +517,8 @@
       "big": [
         "geant"
       ],
-      "hidden": true,
       "shapes": [
-        "L3"
+        "I2"
       ]
     },
     {
@@ -558,10 +529,153 @@
         "golem",
         "dragon"
       ],
-      "hidden": true,
       "shapes": [
-        "L3",
+        "I2",
         "I2"
+      ]
+    },
+    {
+      "id": "citadelle--roi--dragon--l3",
+      "scene": "citadelle",
+      "victim": "roi",
+      "big": [
+        "dragon"
+      ],
+      "shapes": [
+        "L3"
+      ]
+    },
+    {
+      "id": "citadelle--barde--golem--l3--cache",
+      "scene": "citadelle",
+      "victim": "barde",
+      "big": [
+        "golem"
+      ],
+      "shapes": [
+        "L3"
+      ],
+      "hidden": true,
+      "hiddenMax": 3
+    },
+    {
+      "id": "citadelle--elfe--geant--i2",
+      "scene": "citadelle",
+      "victim": "elfe",
+      "big": [
+        "geant"
+      ],
+      "shapes": [
+        "I2"
+      ]
+    },
+    {
+      "id": "grand-port--capitaine--dragon--t4",
+      "scene": "grand-port",
+      "victim": "capitaine",
+      "big": [
+        "dragon"
+      ],
+      "shapes": [
+        "T4"
+      ]
+    },
+    {
+      "id": "grand-port--sirene--vouivre--l4--cache",
+      "scene": "grand-port",
+      "victim": "sirene",
+      "big": [
+        "vouivre"
+      ],
+      "shapes": [
+        "L4"
+      ],
+      "hidden": true,
+      "hiddenMax": 4
+    },
+    {
+      "id": "grand-port--tavernier--golem-geant--i3-i2",
+      "scene": "grand-port",
+      "victim": "tavernier",
+      "big": [
+        "golem",
+        "geant"
+      ],
+      "shapes": [
+        "I3",
+        "I2"
+      ]
+    },
+    {
+      "id": "universite--professeur--dragon--s4",
+      "scene": "universite",
+      "victim": "professeur",
+      "big": [
+        "dragon"
+      ],
+      "shapes": [
+        "S4"
+      ]
+    },
+    {
+      "id": "universite--fee--golem--o4",
+      "scene": "universite",
+      "victim": "fee",
+      "big": [
+        "golem"
+      ],
+      "shapes": [
+        "O4"
+      ]
+    },
+    {
+      "id": "universite--mage--vouivre--l4--cache",
+      "scene": "universite",
+      "victim": "mage",
+      "big": [
+        "vouivre"
+      ],
+      "shapes": [
+        "L4"
+      ],
+      "hidden": true,
+      "hiddenMax": 4
+    },
+    {
+      "id": "grande-foire--bonimenteur--vouivre--s4",
+      "scene": "grande-foire",
+      "victim": "bonimenteur",
+      "big": [
+        "vouivre"
+      ],
+      "shapes": [
+        "S4"
+      ]
+    },
+    {
+      "id": "grande-foire--troll--dragon-golem--t4-l3--cache",
+      "scene": "grande-foire",
+      "victim": "troll",
+      "big": [
+        "dragon",
+        "golem"
+      ],
+      "shapes": [
+        "T4",
+        "L3"
+      ],
+      "hidden": true,
+      "hiddenMax": 4
+    },
+    {
+      "id": "grande-foire--chef--geant--o4",
+      "scene": "grande-foire",
+      "victim": "chef",
+      "big": [
+        "geant"
+      ],
+      "shapes": [
+        "O4"
       ]
     }
   ]

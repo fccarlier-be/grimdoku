@@ -18,11 +18,6 @@
       "the": "l'allée des ifs",
       "floor": "herbe"
     },
-    "K": {
-      "name": "Caveau",
-      "the": "le caveau",
-      "floor": "crypte"
-    },
     "P": {
       "name": "Carré des pauvres",
       "the": "le carré des pauvres",
@@ -47,9 +42,9 @@
   "layout": [
     "GGGAACCC",
     "GGGAACCC",
-    "PPAAAAKK",
-    "PPAAAAKK",
-    "PPJJJOOK",
+    "PPAAAACC",
+    "PPAAAACC",
+    "PPJJJOOC",
     "YYJJJOOO",
     "YYJJJOOO",
     "YYYYJOOO"
@@ -185,16 +180,43 @@
   "characters": [
     {
       "id": "a",
-      "name": "Ambroise",
-      "gender": "m",
+      "name": "Aconit",
+      "gender": "f",
       "role": "suspect",
-      "icon": "🐸",
-      "desc": "Crapaud, prince déchu, attend toujours son bisou",
-      "archetype": "crapaud"
+      "icon": "🧙‍♀️",
+      "desc": "Sorcière des marais, cuisine tout ce qui coasse",
+      "archetype": "sorciere"
     },
     {
       "id": "b",
-      "name": "Belladone",
+      "name": "Bêchu",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "⚰️",
+      "desc": "Fossoyeur, creuse en sifflotant",
+      "archetype": "fossoyeur"
+    },
+    {
+      "id": "c",
+      "name": "Croassant",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐦‍⬛",
+      "desc": "Corbeau, écrit des lettres anonymes",
+      "archetype": "corbeau"
+    },
+    {
+      "id": "d",
+      "name": "Durandal",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
+    },
+    {
+      "id": "e",
+      "name": "Écarlate",
       "gender": "f",
       "role": "suspect",
       "icon": "🧛‍♀️",
@@ -202,8 +224,17 @@
       "archetype": "vampire"
     },
     {
-      "id": "c",
-      "name": "Chaînon",
+      "id": "f",
+      "name": "Flaque",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐸",
+      "desc": "Crapaud, prince déchu, attend toujours son bisou",
+      "archetype": "crapaud"
+    },
+    {
+      "id": "g",
+      "name": "Grisâtre",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -212,42 +243,6 @@
       "traits": [
         "spectre"
       ]
-    },
-    {
-      "id": "d",
-      "name": "Déterre",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "⚰️",
-      "desc": "Fossoyeur, creuse en sifflotant",
-      "archetype": "fossoyeur"
-    },
-    {
-      "id": "e",
-      "name": "Enguerrand",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🤺",
-      "desc": "Chevalier, armure trop petite depuis Noël",
-      "archetype": "chevalier"
-    },
-    {
-      "id": "f",
-      "name": "Funeste",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🐦‍⬛",
-      "desc": "Corbeau, écrit des lettres anonymes",
-      "archetype": "corbeau"
-    },
-    {
-      "id": "g",
-      "name": "Garance",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧙‍♀️",
-      "desc": "Sorcière des marais, cuisine tout ce qui coasse",
-      "archetype": "sorciere"
     },
     {
       "id": "h",
@@ -262,26 +257,18 @@
   "decor": "cimetiere",
   "id": "cimetiere--zombie",
   "intro": "Le zombie Hubert a été retrouvé sans vie au Cimetière de Minuit, ce qui, admettons-le, simplifie les démarches. Sept habitués rôdaient entre les tombes. Un seul était avec lui.",
-  "epilogue": "Belladone avoue : Hubert avait planté de l'ail sur toutes les tombes. Même la sienne.",
+  "epilogue": "Durandal avoue en grinçant : Hubert s'était moqué de son armure rouillée devant le caveau de ses ancêtres.",
   "clues": [
     {
       "who": "a",
-      "text": "Ambroise était allongé sur un lit.",
+      "text": "Aconit était dans la crypte.",
       "logic": {
-        "type": "onObject",
-        "object": "lit"
+        "type": "inRoom",
+        "room": "Y"
       }
     },
     {
-      "who": "b",
-      "text": "Belladone était dans la même colonne qu'un pupitre.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "pupitre"
-      }
-    },
-    {
-      "who": "b",
+      "who": "a",
       "text": "Elle était sur la même ligne qu'une tombe.",
       "logic": {
         "type": "sameRowAs",
@@ -289,67 +276,67 @@
       }
     },
     {
-      "who": "c",
-      "text": "Chaînon était au nord d'Enguerrand.",
+      "who": "b",
+      "text": "Bêchu était à côté d'un sarcophage.",
       "logic": {
-        "type": "northOf",
-        "other": "e"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Il hantait un sarcophage.",
-      "logic": {
-        "type": "onObject",
+        "type": "adjacentTo",
         "object": "sarcophage"
       }
     },
     {
-      "who": "d",
-      "text": "Déterre était au sud d'Enguerrand.",
+      "who": "b",
+      "text": "Il était à l'ouest de Durandal.",
       "logic": {
-        "type": "southOf",
-        "other": "e"
+        "type": "westOf",
+        "other": "d"
       }
     },
     {
-      "who": "d",
-      "text": "Il était à l'est de Funeste.",
+      "who": "c",
+      "text": "Croassant était à l'est de Flaque.",
       "logic": {
         "type": "eastOf",
         "other": "f"
       }
     },
     {
-      "who": "d",
-      "text": "Il était au nord de Belladone.",
+      "who": "c",
+      "text": "Il était sur la même ligne qu'un lit.",
       "logic": {
-        "type": "northOf",
-        "other": "b"
+        "type": "sameRowAs",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Durandal était au sud d'Aconit.",
+      "logic": {
+        "type": "southOf",
+        "other": "a"
       }
     },
     {
       "who": "e",
-      "text": "Enguerrand était à l'ouest de Belladone.",
+      "text": "Écarlate était au nord d'Aconit.",
       "logic": {
-        "type": "westOf",
-        "other": "b"
+        "type": "northOf",
+        "other": "a"
       }
     },
     {
       "who": "f",
-      "text": "Funeste était dans l'allée des ifs.",
+      "text": "Flaque était au nord de Grisâtre.",
       "logic": {
-        "type": "inRoom",
-        "room": "A"
+        "type": "northOf",
+        "other": "g"
       }
     },
     {
       "who": "g",
-      "text": "Garance était au sud de Chaînon.",
+      "text": "Grisâtre était dans la même colonne qu'une table.",
       "logic": {
-        "type": "southOf",
-        "other": "c"
+        "type": "sameColAs",
+        "object": "table"
       }
     }
   ],
@@ -357,45 +344,45 @@
     "positions": {
       "h": [
         6,
-        6
-      ],
-      "d": [
-        4,
-        4
-      ],
-      "c": [
-        2,
-        7
-      ],
-      "b": [
-        5,
         5
       ],
+      "b": [
+        2,
+        6
+      ],
       "g": [
-        7,
-        2
-      ],
-      "f": [
-        1,
-        3
-      ],
-      "e": [
         3,
         1
       ],
+      "e": [
+        4,
+        4
+      ],
       "a": [
-        0,
+        5,
         0
+      ],
+      "c": [
+        0,
+        3
+      ],
+      "d": [
+        7,
+        7
+      ],
+      "f": [
+        1,
+        2
       ]
     },
-    "murderer": "b"
+    "murderer": "d"
   },
   "rating": {
-    "skulls": 2,
-    "score": 3,
+    "skulls": 3,
+    "score": 9,
     "hardest": "pièces",
-    "hardSteps": 1,
-    "directStart": 1
+    "hardSteps": 5,
+    "directStart": 0
   },
-  "difficulty": 2
+  "difficulty": 3
 }

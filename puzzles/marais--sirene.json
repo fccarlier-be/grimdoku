@@ -129,12 +129,12 @@
     },
     {
       "id": "b",
-      "name": "Bâfrin",
-      "gender": "m",
+      "name": "Berce",
+      "gender": "f",
       "role": "suspect",
-      "icon": "🧌",
-      "desc": "Troll, plongeur à mi-temps",
-      "archetype": "troll"
+      "icon": "🧙‍♀️",
+      "desc": "Sorcière des marais, cuisine tout ce qui coasse",
+      "archetype": "sorciere"
     },
     {
       "id": "c",
@@ -156,12 +156,12 @@
     },
     {
       "id": "e",
-      "name": "Ellébore",
-      "gender": "f",
+      "name": "Engloutor",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧙‍♀️",
-      "desc": "Sorcière des marais, cuisine tout ce qui coasse",
-      "archetype": "sorciere"
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
     },
     {
       "id": "f",
@@ -175,59 +175,75 @@
   ],
   "decor": "marais",
   "id": "marais--sirene",
-  "epilogue": "Ellébore avoue sans remords : Flottille manquait à sa soupe du dimanche. Rien de personnel.",
+  "epilogue": "Désiré avoue, très lentement : Flottille venait le déterrer à chaque pleine lune. Il voulait juste dormir.",
   "clues": [
     {
       "who": "a",
-      "text": "Ambroise était allongé sur un lit.",
+      "text": "Ambroise était dans la même colonne qu'un arbre.",
       "logic": {
-        "type": "onObject",
-        "object": "lit"
+        "type": "sameColAs",
+        "object": "arbre"
       }
     },
     {
       "who": "b",
-      "text": "Bâfrin était sur un champignon géant.",
+      "text": "Berce était au sud d'Ambroise.",
       "logic": {
-        "type": "onObject",
-        "object": "champi"
+        "type": "southOf",
+        "other": "a"
       }
     },
     {
-      "who": "c",
-      "text": "Célandra était à côté d'un tonneau.",
+      "who": "b",
+      "text": "Elle était dans la roselière.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "tonneau"
+        "type": "inRoom",
+        "room": "R"
       }
     },
     {
-      "who": "d",
-      "text": "Désiré était sur la même ligne qu'un champignon géant.",
+      "who": "b",
+      "text": "Elle était sur la même ligne qu'un champignon géant.",
       "logic": {
         "type": "sameRowAs",
         "object": "champi"
       }
     },
     {
+      "who": "b",
+      "text": "Elle était à l'ouest de Célandra.",
+      "logic": {
+        "type": "westOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Célandra était à côté d'une barque.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "barque"
+      }
+    },
+    {
       "who": "d",
-      "text": "Il était à côté d'un massif de roseaux.",
+      "text": "Désiré était à l'ouest de Berce.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "roseaux"
+        "type": "westOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il n'était pas dans l'îlot.",
+      "logic": {
+        "type": "notInRoom",
+        "room": "I"
       }
     },
     {
       "who": "e",
-      "text": "Ellébore était à côté d'un arbre.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "arbre"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Elle était sur la même ligne qu'un massif de roseaux.",
+      "text": "Engloutor était sur la même ligne qu'un massif de roseaux.",
       "logic": {
         "type": "sameRowAs",
         "object": "roseaux"
@@ -238,37 +254,37 @@
     "positions": {
       "f": [
         3,
-        2
+        4
       ],
       "d": [
-        2,
-        5
+        5,
+        2
       ],
       "a": [
         1,
-        0
-      ],
-      "b": [
-        5,
-        4
-      ],
-      "c": [
-        0,
-        3
+        1
       ],
       "e": [
         4,
-        1
+        0
+      ],
+      "c": [
+        0,
+        5
+      ],
+      "b": [
+        2,
+        3
       ]
     },
-    "murderer": "e"
+    "murderer": "d"
   },
   "rating": {
-    "skulls": 0,
-    "score": 1,
-    "hardest": "case unique",
-    "hardSteps": 0,
-    "directStart": 1
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 0
   },
-  "difficulty": 0
+  "difficulty": 3
 }

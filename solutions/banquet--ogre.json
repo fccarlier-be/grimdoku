@@ -1,57 +1,50 @@
 {
  "positions": {
   "f": [
+   3,
+   5
+  ],
+  "c": [
    4,
    3
   ],
-  "c": [
+  "d": [
+   0,
+   0
+  ],
+  "b": [
    5,
    2
   ],
-  "d": [
-   3,
-   0
+  "a": [
+   2,
+   1
   ],
   "e": [
-   2,
-   4
-  ],
-  "a": [
-   0,
-   5
-  ],
-  "b": [
    1,
-   1
+   4
   ]
  },
- "murderer": "e",
+ "murderer": "c",
  "cast": {
   "c": "a",
   "d": "b",
-  "e": "c",
+  "b": "c",
   "a": "d",
-  "b": "e"
+  "e": "e"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "b",
-   "logic": {
-    "type": "inRoom",
-    "room": "K"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "champi"
-   }
-  },
-  {
    "who": "d",
+   "logic": {
+    "type": "northOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "a",
    "logic": {
     "type": "adjacentTo",
     "object": "coffre"
@@ -60,22 +53,29 @@
   {
    "who": "e",
    "logic": {
-    "type": "onObject",
+    "type": "northOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "eastOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
     "object": "chaise"
    }
   },
   {
-   "who": "a",
-   "logic": {
-    "type": "sameColAs",
-    "object": "tapis"
-   }
-  },
-  {
-   "who": "a",
+   "who": "b",
    "logic": {
     "type": "adjacentTo",
-    "object": "tonneau"
+    "object": "champi"
    }
   }
  ]

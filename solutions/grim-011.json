@@ -1,119 +1,126 @@
 {
  "positions": {
   "h": [
-   6,
-   3
-  ],
-  "e": [
-   1,
+   2,
    6
   ],
-  "f": [
-   2,
-   5
-  ],
   "g": [
+   3,
+   2
+  ],
+  "c": [
+   1,
+   1
+  ],
+  "b": [
+   4,
+   0
+  ],
+  "e": [
+   7,
+   3
+  ],
+  "a": [
    5,
    7
   ],
-  "d": [
-   3,
-   1
-  ],
-  "c": [
-   4,
+  "f": [
+   6,
    4
   ],
-  "a": [
-   7,
-   0
-  ],
-  "b": [
+  "d": [
    0,
-   2
+   5
   ]
  },
- "murderer": "c",
+ "murderer": "d",
  "cast": {
-  "e": "a",
-  "f": "b",
-  "g": "c",
-  "d": "d",
-  "c": "e",
-  "a": "f",
-  "b": "g"
+  "g": "a",
+  "c": "b",
+  "b": "c",
+  "e": "d",
+  "a": "e",
+  "f": "f",
+  "d": "g"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "e",
-   "logic": {
-    "type": "eastOf",
-    "other": "f"
-   }
-  },
-  {
    "who": "g",
    "logic": {
-    "type": "inRoom",
-    "room": "V"
-   }
-  },
-  {
-   "who": "d",
-   "logic": {
-    "type": "southOf",
-    "other": "f"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "inRoom",
-    "room": "T"
+    "type": "eastOf",
+    "other": "c"
    }
   },
   {
    "who": "b",
    "logic": {
-    "type": "inRoom",
-    "room": "E"
+    "type": "sameColAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "westOf",
+    "other": "d"
    }
   },
   {
    "who": "f",
    "logic": {
-    "type": "inRoom",
-    "room": "P"
+    "type": "sameColAs",
+    "object": "statue"
    }
   },
   {
-   "who": "c",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "chaise"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "chariot"
-   }
-  },
-  {
-   "who": "a",
+   "who": "g",
    "logic": {
     "type": "sameColAs",
     "object": "coffre"
    }
   },
   {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaudron"
+   }
+  },
+  {
    "who": "b",
    "logic": {
-    "type": "eastOf",
-    "other": "d"
+    "type": "sameRowAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "enclume"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "westOf",
+    "other": "a"
    }
   }
  ]

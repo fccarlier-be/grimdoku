@@ -18,11 +18,6 @@
       "the": "l'allée des ifs",
       "floor": "herbe"
     },
-    "K": {
-      "name": "Caveau",
-      "the": "le caveau",
-      "floor": "crypte"
-    },
     "P": {
       "name": "Carré des pauvres",
       "the": "le carré des pauvres",
@@ -47,9 +42,9 @@
   "layout": [
     "GGGAACCC",
     "GGGAACCC",
-    "PPAAAAKK",
-    "PPAAAAKK",
-    "PPJJJOOK",
+    "PPAAAACC",
+    "PPAAAACC",
+    "PPJJJOOC",
     "YYJJJOOO",
     "YYJJJOOO",
     "YYYYJOOO"
@@ -185,25 +180,16 @@
   "characters": [
     {
       "id": "a",
-      "name": "Ambroise",
-      "gender": "m",
+      "name": "Aconit",
+      "gender": "f",
       "role": "suspect",
-      "icon": "🐸",
-      "desc": "Crapaud, prince déchu, attend toujours son bisou",
-      "archetype": "crapaud"
+      "icon": "🧙‍♀️",
+      "desc": "Sorcière des marais, cuisine tout ce qui coasse",
+      "archetype": "sorciere"
     },
     {
       "id": "b",
-      "name": "Becquet",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🐦‍⬛",
-      "desc": "Corbeau, écrit des lettres anonymes",
-      "archetype": "corbeau"
-    },
-    {
-      "id": "c",
-      "name": "Chaînon",
+      "name": "Blafard",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -214,8 +200,8 @@
       ]
     },
     {
-      "id": "d",
-      "name": "Draculine",
+      "id": "c",
+      "name": "Crépuscula",
       "gender": "f",
       "role": "suspect",
       "icon": "🧛‍♀️",
@@ -223,31 +209,40 @@
       "archetype": "vampire"
     },
     {
-      "id": "e",
-      "name": "Enguerrand",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🤺",
-      "desc": "Chevalier, armure trop petite depuis Noël",
-      "archetype": "chevalier"
-    },
-    {
-      "id": "f",
-      "name": "Fiel",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧙‍♀️",
-      "desc": "Sorcière des marais, cuisine tout ce qui coasse",
-      "archetype": "sorciere"
-    },
-    {
-      "id": "g",
-      "name": "Gédéon",
+      "id": "d",
+      "name": "Désiré",
       "gender": "m",
       "role": "suspect",
       "icon": "🧟",
       "desc": "Zombie, ancien apprenti. Ancien tout court",
       "archetype": "zombie"
+    },
+    {
+      "id": "e",
+      "name": "Eugène",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐸",
+      "desc": "Crapaud, prince déchu, attend toujours son bisou",
+      "archetype": "crapaud"
+    },
+    {
+      "id": "f",
+      "name": "Funeste",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐦‍⬛",
+      "desc": "Corbeau, écrit des lettres anonymes",
+      "archetype": "corbeau"
+    },
+    {
+      "id": "g",
+      "name": "Gontran",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
     },
     {
       "id": "h",
@@ -262,140 +257,132 @@
   "decor": "cimetiere",
   "id": "cimetiere--fossoyeur",
   "intro": "Le fossoyeur Humus a été retrouvé sans vie au Cimetière de Minuit, ce qui, admettons-le, simplifie les démarches. Sept habitués rôdaient entre les tombes. Un seul était avec lui.",
-  "epilogue": "Draculine avoue : Humus avait planté de l'ail sur toutes les tombes. Même la sienne.",
+  "epilogue": "Crépuscula avoue : Humus avait planté de l'ail sur toutes les tombes. Même la sienne.",
   "clues": [
     {
       "who": "a",
-      "text": "Ambroise était sur la même ligne qu'une table.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "table"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était à côté d'un arbre.",
+      "text": "Aconit était à côté d'un sarcophage.",
       "logic": {
         "type": "adjacentTo",
-        "object": "arbre"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Becquet était dans la même colonne qu'un sarcophage.",
-      "logic": {
-        "type": "sameColAs",
         "object": "sarcophage"
       }
     },
     {
-      "who": "b",
-      "text": "Il était dans la chapelle.",
-      "logic": {
-        "type": "inRoom",
-        "room": "C"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Chaînon était dans le jardin du souvenir.",
-      "logic": {
-        "type": "inRoom",
-        "room": "J"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Il était à côté d'une tombe.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "tombe"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Draculine était à l'ouest de Chaînon.",
+      "who": "a",
+      "text": "Elle était à l'ouest de Crépuscula.",
       "logic": {
         "type": "westOf",
         "other": "c"
       }
     },
     {
+      "who": "a",
+      "text": "Elle était au sud de Blafard.",
+      "logic": {
+        "type": "southOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Blafard était à côté d'un arbre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Crépuscula était au nord d'Eugène.",
+      "logic": {
+        "type": "northOf",
+        "other": "e"
+      }
+    },
+    {
       "who": "d",
-      "text": "Elle était dans la même colonne qu'une statue.",
+      "text": "Désiré était au sud de Blafard.",
+      "logic": {
+        "type": "southOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était dans la même colonne qu'une table.",
       "logic": {
         "type": "sameColAs",
-        "object": "statue"
+        "object": "table"
       }
     },
     {
       "who": "e",
-      "text": "Enguerrand était au nord de Chaînon.",
+      "text": "Eugène était à l'est de Désiré.",
       "logic": {
-        "type": "northOf",
-        "other": "c"
+        "type": "eastOf",
+        "other": "d"
       }
     },
     {
       "who": "f",
-      "text": "Fiel était dans la même colonne qu'un sarcophage.",
+      "text": "Funeste était dans le carré des pauvres.",
       "logic": {
-        "type": "sameColAs",
-        "object": "sarcophage"
+        "type": "inRoom",
+        "room": "P"
       }
     },
     {
       "who": "g",
-      "text": "Gédéon était dans le carré des pauvres.",
+      "text": "Gontran était au nord d'Eugène.",
       "logic": {
-        "type": "inRoom",
-        "room": "P"
+        "type": "northOf",
+        "other": "e"
       }
     }
   ],
   "solution": {
     "positions": {
       "h": [
-        6,
-        0
-      ],
-      "c": [
-        5,
-        4
-      ],
-      "g": [
-        3,
-        1
-      ],
-      "d": [
-        7,
-        2
-      ],
-      "f": [
-        2,
-        6
-      ],
-      "b": [
-        0,
-        7
-      ],
-      "e": [
         4,
         5
       ],
-      "a": [
+      "b": [
         1,
         3
+      ],
+      "d": [
+        7,
+        1
+      ],
+      "c": [
+        5,
+        7
+      ],
+      "a": [
+        2,
+        6
+      ],
+      "f": [
+        3,
+        0
+      ],
+      "g": [
+        0,
+        2
+      ],
+      "e": [
+        6,
+        4
       ]
     },
-    "murderer": "d"
+    "murderer": "c"
   },
   "rating": {
-    "skulls": 2,
-    "score": 4,
+    "skulls": 3,
+    "score": 9,
     "hardest": "pièces",
-    "hardSteps": 2,
-    "directStart": 1
+    "hardSteps": 5,
+    "directStart": 0
   },
-  "difficulty": 2
+  "difficulty": 3
 }

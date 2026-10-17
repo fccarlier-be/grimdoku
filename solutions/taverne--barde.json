@@ -1,92 +1,71 @@
 {
  "positions": {
   "f": [
-   1,
-   0
-  ],
-  "e": [
-   5,
-   4
+   3,
+   1
   ],
   "c": [
    4,
-   1
+   5
+  ],
+  "e": [
+   5,
+   0
   ],
   "b": [
-   3,
+   0,
    3
+  ],
+  "d": [
+   1,
+   2
   ],
   "a": [
    2,
-   5
-  ],
-  "d": [
-   0,
-   2
+   4
   ]
  },
- "murderer": "d",
+ "murderer": "e",
  "cast": {
-  "e": "a",
-  "c": "b",
+  "c": "a",
+  "e": "b",
   "b": "c",
-  "a": "d",
-  "d": "e"
+  "d": "d",
+  "a": "e"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "e",
-   "logic": {
-    "type": "southOf",
-    "other": "c"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "tonneau"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "etagere"
-   }
-  },
-  {
    "who": "b",
    "logic": {
-    "type": "inRoom",
-    "room": "R"
+    "type": "adjacentTo",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "foin"
    }
   },
   {
    "who": "d",
    "logic": {
-    "type": "sameRowAs",
-    "object": "table"
+    "type": "adjacentTo",
+    "object": "chaise"
    }
   },
   {
-   "who": "d",
+   "who": "a",
    "logic": {
     "type": "eastOf",
-    "other": "c"
+    "other": "b"
    }
   },
   {
-   "who": "c",
-   "logic": {
-    "type": "westOf",
-    "other": "e"
-   }
-  },
-  {
-   "who": "c",
+   "who": "e",
    "logic": {
     "type": "adjacentTo",
     "object": "lit"

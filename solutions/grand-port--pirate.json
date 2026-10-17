@@ -1,0 +1,151 @@
+{
+ "positions": {
+  "j": [
+   8,
+   7
+  ],
+  "d": [
+   5,
+   4
+  ],
+  "e": [
+   2,
+   0
+  ],
+  "b": [
+   0,
+   9
+  ],
+  "i": [
+   6,
+   2
+  ],
+  "g": [
+   4,
+   6
+  ],
+  "c": [
+   1,
+   1
+  ],
+  "f": [
+   7,
+   8
+  ],
+  "a": [
+   3,
+   3
+  ],
+  "h": [
+   9,
+   5
+  ]
+ },
+ "murderer": "d",
+ "cast": {
+  "d": "a",
+  "e": "b",
+  "b": "c",
+  "i": "d",
+  "g": "e",
+  "c": "f",
+  "f": "g",
+  "a": "h",
+  "h": "i"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "d",
+   "logic": {
+    "type": "westOf",
+    "other": "h"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "westOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "inRoom",
+    "room": "B"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "sameColAs",
+    "object": "canon"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "barque"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameColAs",
+    "object": "hamac"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tonneau"
+   }
+  }
+ ]
+}

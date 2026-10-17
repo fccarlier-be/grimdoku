@@ -1,42 +1,43 @@
 {
  "positions": {
-  "e": [
-   2,
-   0
-  ],
-  "b": [
-   [
-    6,
-    2
-   ],
-   [
-    6,
-    3
-   ],
-   [
-    6,
-    4
-   ]
-  ],
-  "a": [
-   1,
+  "f": [
+   5,
    1
   ],
   "c": [
-   0,
-   5
+   [
+    0,
+    5
+   ],
+   [
+    1,
+    5
+   ]
   ],
-  "d": [
+  "b": [
    4,
    6
+  ],
+  "d": [
+   3,
+   3
+  ],
+  "a": [
+   6,
+   4
+  ],
+  "e": [
+   2,
+   0
   ]
  },
  "murderer": "a",
  "cast": {
-  "b": "a",
-  "a": "b",
-  "c": "c",
-  "d": "d"
+  "c": "a",
+  "b": "b",
+  "d": "c",
+  "a": "d",
+  "e": "e"
  },
  "nSolutions": 1,
  "needsL2": false,
@@ -44,29 +45,43 @@
   {
    "who": "b",
    "logic": {
-    "type": "sameRowAs",
-    "object": "arbre"
+    "type": "inRoom",
+    "room": "T"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "westOf",
+    "other": "a"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "onObject",
-    "object": "lit"
+    "type": "eastOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "inRoom",
+    "room": "D"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "enclume"
    }
   },
   {
    "who": "c",
    "logic": {
     "type": "northOf",
-    "other": "a"
-   }
-  },
-  {
-   "who": "d",
-   "logic": {
-    "type": "inRoom",
-    "room": "T"
+    "other": "e"
    }
   }
  ]

@@ -1,0 +1,289 @@
+{
+  "scene": "grand-port",
+  "formatVersion": 1,
+  "title": "Le Grand Port de Brumeval",
+  "decor": "port",
+  "size": 10,
+  "rooms": {
+    "Q": {
+      "name": "Quais",
+      "the": "les quais",
+      "floor": "parquet"
+    },
+    "E": {
+      "name": "Entrepôt",
+      "the": "l'entrepôt",
+      "floor": "sciure"
+    },
+    "T": {
+      "name": "Taverne du Kraken",
+      "the": "la taverne du Kraken",
+      "floor": "tomettes"
+    },
+    "B": {
+      "name": "Capitainerie",
+      "the": "la capitainerie",
+      "floor": "parquet"
+    },
+    "C": {
+      "name": "Chantier naval",
+      "the": "le chantier naval",
+      "floor": "sciure"
+    },
+    "M": {
+      "name": "Marché aux poissons",
+      "the": "le marché aux poissons",
+      "floor": "paves"
+    },
+    "N": {
+      "name": "Galion",
+      "the": "le galion",
+      "floor": "navire"
+    },
+    "P": {
+      "name": "Phare",
+      "the": "le phare",
+      "floor": "roche"
+    },
+    "D": {
+      "name": "Douane",
+      "the": "la douane",
+      "floor": "dalles"
+    }
+  },
+  "layout": [
+    "QQQQQQEEEE",
+    "QQQQQQEEEE",
+    "TTTBBBEEEE",
+    "TTTBBBCCCC",
+    "TTTBBBCCCC",
+    "MMMMNNCCCC",
+    "MMMMNNNNPP",
+    "MMMMNNNNPP",
+    "DDDDNNNNPP",
+    "DDDDDDNNPP"
+  ],
+  "objects": [
+    {
+      "type": "barque",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "canon",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        0,
+        8
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        9
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        2,
+        7
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        2
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        4,
+        5
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        4,
+        7
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        5,
+        9
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        6,
+        1
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        7,
+        3
+      ]
+    },
+    {
+      "type": "canon",
+      "at": [
+        6,
+        5
+      ]
+    },
+    {
+      "type": "hamac",
+      "at": [
+        8,
+        6
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        9,
+        7
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        6,
+        9
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        9,
+        8
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        8,
+        1
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        9,
+        4
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "archetype": "pirate",
+      "role": "suspect"
+    },
+    {
+      "id": "b",
+      "archetype": "capitaine",
+      "role": "suspect"
+    },
+    {
+      "id": "c",
+      "archetype": "perroquet",
+      "role": "suspect"
+    },
+    {
+      "id": "d",
+      "archetype": "sirene",
+      "role": "suspect"
+    },
+    {
+      "id": "e",
+      "archetype": "tavernier",
+      "role": "suspect"
+    },
+    {
+      "id": "f",
+      "archetype": "troll",
+      "role": "suspect"
+    },
+    {
+      "id": "g",
+      "archetype": "gobelin",
+      "role": "suspect"
+    },
+    {
+      "id": "h",
+      "archetype": "vampire",
+      "role": "suspect"
+    },
+    {
+      "id": "i",
+      "archetype": "bonimenteur",
+      "role": "suspect"
+    },
+    {
+      "id": "j",
+      "archetype": "zombie",
+      "role": "victim"
+    }
+  ],
+  "auto": {
+    "intro": "{Titre} {victime} a été retrouvé{e} sans vie au Grand Port de Brumeval, un soir de brume si épaisse qu'on n'y voyait pas sa propre jambe de bois. {Nombre} habitués erraient sur le port. Un seul était avec {lui}.",
+    "epilogues": {
+      "pirate": "{coupable} avoue : {victime} avait vendu la carte de son trésor. Une vraie carte. Avec la croix et tout.",
+      "capitaine": "{coupable} avoue, la casquette sur le cœur : {victime} avait percé la coque de son galion pour « voir s'il flottait encore ».",
+      "perroquet": "{coupable} avoue en répétant tout deux fois : {victime} lui avait appris des gros mots, puis l'avait dénoncé pour insolence.",
+      "sirene": "{coupable} avoue en remuant la queue : {victime} jetait ses déchets dans le port. Pile sur son salon.",
+      "tavernier": "{coupable} avoue en essuyant un verre : {victime} avait une ardoise de onze ans. Et l'intention d'en ouvrir une deuxième.",
+      "troll": "{coupable} avoue : {victime} avait mangé le dernier hareng fumé. Le troll l'attendait depuis l'aube.",
+      "gobelin": "{coupable} avoue : {victime} avait refusé de payer la « taxe de brume ». Une taxe très ancienne, inventée mardi.",
+      "vampire": "{coupable} avoue en ajustant sa cape : {victime} avait installé une lanterne devant son entrepôt. Une lanterne très, très lumineuse.",
+      "bonimenteur": "{coupable} avoue en souriant : {victime} avait prouvé que son élixir de marin n'était que de l'eau de mer filtrée.",
+      "zombie": "{coupable} avoue en perdant un doigt : {victime} l'avait engagé comme figure de proue. Sans lui demander son avis."
+    }
+  }
+}

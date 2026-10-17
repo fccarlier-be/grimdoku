@@ -1,8 +1,8 @@
 {
   "formatVersion": 1,
-  "title": "La Tour de l'Archimage — l'affaire Étoilebarbe",
-  "intro": "L'archimage Étoilebarbe a été retrouvé sans vie dans la Tour de l'Archimage, où un portail runique relie le laboratoire à la crypte. Quatre invités douteux traînaient dans les étages. Un seul était avec lui.",
-  "epilogue": "Dardafeu avoue : Étoilebarbe l'utilisait pour allumer toutes les bougies de la tour. Tous les soirs.",
+  "title": "La Tour de l'Archimage — l'affaire Fizzlebarbe",
+  "intro": "L'archimage Fizzlebarbe a été retrouvé sans vie dans la Tour de l'Archimage, où un portail runique relie le laboratoire à la crypte. Cinq invités douteux traînaient dans les étages. Un seul était avec lui.",
+  "epilogue": "Couleuvrette voulait juste faire un câlin à Fizzlebarbe. Avec trois cases de longueur, un câlin finit vite en nœud.",
   "size": 7,
   "rooms": {
     "L": {
@@ -19,11 +19,6 @@
       "name": "Bibliothèque",
       "the": "la bibliothèque",
       "floor": "parquet"
-    },
-    "H": {
-      "name": "Hall",
-      "the": "le hall",
-      "floor": "dalles"
     },
     "C": {
       "name": "Crypte",
@@ -45,8 +40,8 @@
     "LLLOOOO",
     "LLLOOOO",
     "LLBBBOO",
-    "HHBBBJJ",
-    "HHHCCJJ",
+    "BBBBBJJ",
+    "BBBCCJJ",
     "EEECCJJ",
     "EEECCCJ"
   ],
@@ -162,17 +157,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aspicia",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🐍",
-      "desc": "Vouivre, serpent ailé, très longue à se retourner",
-      "archetype": "vouivre",
-      "shape": "I3"
-    },
-    {
-      "id": "b",
-      "name": "Bob",
+      "name": "Anatole",
       "gender": "m",
       "role": "suspect",
       "icon": "🧟",
@@ -180,8 +165,8 @@
       "archetype": "zombie"
     },
     {
-      "id": "c",
-      "name": "Chaînon",
+      "id": "b",
+      "name": "Blafard",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -192,8 +177,27 @@
       ]
     },
     {
+      "id": "c",
+      "name": "Couleuvrette",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🐍",
+      "desc": "Vouivre, serpent ailé, très longue à se retourner",
+      "archetype": "vouivre",
+      "shape": "I2"
+    },
+    {
       "id": "d",
-      "name": "Dardafeu",
+      "name": "Dorade",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene"
+    },
+    {
+      "id": "e",
+      "name": "Étincel",
       "gender": "m",
       "role": "suspect",
       "icon": "🐉",
@@ -201,8 +205,8 @@
       "archetype": "dragonnet"
     },
     {
-      "id": "e",
-      "name": "Étoilebarbe",
+      "id": "f",
+      "name": "Fizzlebarbe",
       "gender": "m",
       "role": "victim",
       "icon": "🧙‍♂️",
@@ -215,78 +219,110 @@
   "clues": [
     {
       "who": "a",
-      "text": "Aspicia était à côté d'un champignon géant.",
+      "text": "Anatole était sur la même ligne qu'une statue.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "champi"
+        "type": "sameRowAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était dans la même colonne qu'une statue.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "statue"
       }
     },
     {
       "who": "b",
-      "text": "Bob était à côté d'une chaise.",
+      "text": "Blafard était sur la même ligne qu'un portail runique.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "chaise"
+        "type": "sameRowAs",
+        "object": "portail"
       }
     },
     {
-      "who": "c",
-      "text": "Chaînon était dans la même colonne qu'un chaudron.",
+      "who": "b",
+      "text": "Il était dans la même colonne qu'un chaudron.",
       "logic": {
         "type": "sameColAs",
         "object": "chaudron"
       }
     },
     {
-      "who": "d",
-      "text": "Dardafeu était à côté d'un chaudron.",
+      "who": "c",
+      "text": "Couleuvrette était au nord d'Étincel.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "chaudron"
+        "type": "northOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dorade était à l'ouest de Blafard.",
+      "logic": {
+        "type": "westOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Étincel était à l'est de Couleuvrette.",
+      "logic": {
+        "type": "eastOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était dans la crypte.",
+      "logic": {
+        "type": "inRoom",
+        "room": "C"
       }
     }
   ],
   "solution": {
     "positions": {
-      "e": [
+      "f": [
         2,
-        0
-      ],
-      "a": [
-        [
-          4,
-          6
-        ],
-        [
-          5,
-          6
-        ],
-        [
-          6,
-          6
-        ]
+        6
       ],
       "c": [
-        3,
-        1
-      ],
-      "d": [
-        1,
-        2
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
       ],
       "b": [
-        0,
+        6,
+        1
+      ],
+      "e": [
+        5,
+        4
+      ],
+      "a": [
+        4,
         5
+      ],
+      "d": [
+        3,
+        0
       ]
     },
-    "murderer": "d"
+    "murderer": "c"
   },
   "rating": {
-    "skulls": 2,
-    "score": 3,
+    "skulls": 3,
+    "score": 5,
     "hardest": "pièces",
     "hardSteps": 1,
-    "directStart": 1
+    "directStart": 0
   },
   "difficulty": 4
 }

@@ -1,37 +1,33 @@
 {
  "positions": {
   "f": [
-   1,
-   2
+   0,
+   6
   ],
   "b": [
    [
-    3,
-    5
+    5,
+    3
    ],
    [
-    4,
-    5
-   ],
-   [
-    4,
-    6
+    6,
+    3
    ]
   ],
   "c": [
-   6,
-   3
+   3,
+   5
   ],
-  "d": [
-   0,
+  "a": [
+   4,
    1
   ],
   "e": [
    2,
    4
   ],
-  "a": [
-   5,
+  "d": [
+   1,
    0
   ]
  },
@@ -39,9 +35,9 @@
  "cast": {
   "b": "a",
   "c": "b",
-  "d": "c",
+  "a": "c",
   "e": "d",
-  "a": "e"
+  "d": "e"
  },
  "nSolutions": 1,
  "needsL2": false,
@@ -49,43 +45,57 @@
   {
    "who": "b",
    "logic": {
-    "type": "eastOf",
-    "other": "e"
+    "type": "sameRowAs",
+    "object": "arbre"
    }
   },
   {
    "who": "c",
    "logic": {
-    "type": "inRoom",
-    "room": "J"
+    "type": "sameColAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "westOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "statue"
    }
   },
   {
    "who": "d",
    "logic": {
     "type": "sameRowAs",
-    "object": "cristal"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "tonneau"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "westOf",
-    "other": "e"
+    "object": "tapis"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "adjacentTo",
+    "type": "sameColAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
     "object": "chaise"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "eastOf",
+    "other": "b"
    }
   }
  ]

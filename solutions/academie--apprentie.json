@@ -1,128 +1,100 @@
 {
  "positions": {
   "g": [
-   5,
-   2
-  ],
-  "d": [
-   2,
-   0
-  ],
-  "a": [
-   6,
-   1
-  ],
-  "f": [
    4,
-   4
+   3
   ],
-  "c": [
+  "e": [
    3,
    6
   ],
-  "e": [
+  "d": [
    1,
-   3
+   5
+  ],
+  "f": [
+   6,
+   4
   ],
   "b": [
+   5,
+   0
+  ],
+  "a": [
+   2,
+   1
+  ],
+  "c": [
    0,
-   5
+   2
   ]
  },
- "murderer": "a",
+ "murderer": "f",
  "cast": {
-  "d": "a",
-  "a": "b",
+  "e": "a",
+  "d": "b",
   "f": "c",
-  "c": "d",
-  "e": "e",
-  "b": "f"
+  "b": "d",
+  "a": "e",
+  "c": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
+   "who": "e",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "etagere"
+   }
+  },
+  {
    "who": "d",
    "logic": {
-    "type": "sameColAs",
-    "object": "cristal"
+    "type": "eastOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "southOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "northOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "eastOf",
+    "other": "b"
    }
   },
   {
    "who": "a",
    "logic": {
     "type": "adjacentTo",
-    "object": "champi"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "table"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "westOf",
-    "other": "c"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "inRoom",
-    "room": "B"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "etagere"
-   }
-  },
-  {
-   "who": "f",
-   "logic": {
-    "type": "eastOf",
-    "other": "e"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "sameColAs",
     "object": "coffre"
    }
   },
   {
    "who": "c",
    "logic": {
-    "type": "southOf",
-    "other": "d"
+    "type": "sameColAs",
+    "object": "chaise"
    }
   },
   {
-   "who": "f",
+   "who": "a",
    "logic": {
-    "type": "sameRowAs",
-    "object": "lit"
-   }
-  },
-  {
-   "who": "d",
-   "logic": {
-    "type": "onObject",
-    "object": "lit"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "onObject",
-    "object": "fauteuil"
+    "type": "northOf",
+    "other": "e"
    }
   }
  ]

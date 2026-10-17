@@ -3,19 +3,9 @@
   "title": "Le Navire Fantôme — la seconde affaire Fournaise",
   "size": 7,
   "rooms": {
-    "V": {
-      "name": "Vigie",
-      "the": "la vigie",
-      "floor": "parquet"
-    },
     "P": {
       "name": "Pont",
       "the": "le pont",
-      "floor": "navire"
-    },
-    "K": {
-      "name": "Cabine du capitaine",
-      "the": "la cabine du capitaine",
       "floor": "navire"
     },
     "E": {
@@ -40,9 +30,9 @@
     }
   },
   "layout": [
-    "VVPPPKK",
-    "VVPPPKK",
-    "EEPPPQK",
+    "EEPPPQQ",
+    "EEPPPQQ",
+    "EEPPPQQ",
     "EECCQQQ",
     "EECCCQQ",
     "SSCCCCQ",
@@ -172,7 +162,34 @@
   "characters": [
     {
       "id": "a",
-      "name": "Albâtre",
+      "name": "Abordage",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🏴‍☠️",
+      "desc": "Pirate, a perdu une jambe, un œil et le sens de l'orientation",
+      "archetype": "pirate"
+    },
+    {
+      "id": "b",
+      "name": "Bavard",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🦜",
+      "desc": "Perroquet, répète tous les secrets",
+      "archetype": "perroquet"
+    },
+    {
+      "id": "c",
+      "name": "Corail",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene"
+    },
+    {
+      "id": "d",
+      "name": "Diaphane",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -183,40 +200,13 @@
       ]
     },
     {
-      "id": "b",
-      "name": "Bob",
+      "id": "e",
+      "name": "Edmond",
       "gender": "m",
       "role": "suspect",
       "icon": "🧟",
       "desc": "Zombie, ancien apprenti. Ancien tout court",
       "archetype": "zombie"
-    },
-    {
-      "id": "c",
-      "name": "Cacatoès",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🦜",
-      "desc": "Perroquet, répète tous les secrets",
-      "archetype": "perroquet"
-    },
-    {
-      "id": "d",
-      "name": "Doublon",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🏴‍☠️",
-      "desc": "Pirate, a perdu une jambe, un œil et le sens de l'orientation",
-      "archetype": "pirate"
-    },
-    {
-      "id": "e",
-      "name": "Écume",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧜‍♀️",
-      "desc": "Sirène, venue pour l'aquarium",
-      "archetype": "sirene"
     },
     {
       "id": "f",
@@ -232,62 +222,62 @@
   "decor": "navire",
   "id": "navire--dragon--dragon--i2",
   "intro": "Le dragon Fournaise a été retrouvé sans vie à bord du Navire Fantôme, qui dérivait dans le brouillard. Cinq membres d'équipage étaient à bord. Un seul était avec lui.",
-  "epilogue": "Doublon avoue en mâchonnant sa pipe : Fournaise avait caché la carte au trésor. Un pirate pardonne tout, sauf le trésor.",
+  "epilogue": "Corail avoue : Fournaise voulait la pêcher pour l'exposer dans un aquarium du port.",
   "clues": [
     {
       "who": "a",
-      "text": "Albâtre était à côté d'un hamac.",
+      "text": "Abordage était dans la même colonne qu'un coffre.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "hamac"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il hantait un coffre.",
-      "logic": {
-        "type": "onObject",
+        "type": "sameColAs",
         "object": "coffre"
       }
     },
     {
       "who": "b",
-      "text": "Bob était sur la même ligne qu'un hamac.",
+      "text": "Bavard était sur la même ligne qu'un canon.",
       "logic": {
         "type": "sameRowAs",
-        "object": "hamac"
+        "object": "canon"
       }
     },
     {
       "who": "c",
-      "text": "Cacatoès était à côté d'un coffre.",
+      "text": "Corail était à l'ouest de Diaphane.",
+      "logic": {
+        "type": "westOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Elle était à côté d'un canon.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "canon"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Elle était sur la même ligne qu'une table.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Diaphane était à côté d'un coffre.",
       "logic": {
         "type": "adjacentTo",
         "object": "coffre"
       }
     },
     {
-      "who": "c",
-      "text": "Il était à l'est de Doublon.",
-      "logic": {
-        "type": "eastOf",
-        "other": "d"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Doublon était sur la même ligne qu'un fauteuil.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "fauteuil"
-      }
-    },
-    {
       "who": "e",
-      "text": "Écume était au sud de Bob.",
+      "text": "Edmond était à côté d'un chaudron.",
       "logic": {
-        "type": "southOf",
-        "other": "b"
+        "type": "adjacentTo",
+        "object": "chaudron"
       }
     }
   ],
@@ -295,43 +285,43 @@
     "positions": {
       "f": [
         [
-          0,
+          1,
           2
         ],
         [
           1,
-          2
+          3
         ]
       ],
-      "d": [
-        2,
-        3
-      ],
-      "c": [
-        6,
-        4
-      ],
-      "e": [
-        5,
-        1
-      ],
       "a": [
-        3,
+        6,
         0
       ],
       "b": [
-        4,
+        2,
+        1
+      ],
+      "c": [
+        0,
+        4
+      ],
+      "d": [
+        5,
         5
+      ],
+      "e": [
+        3,
+        6
       ]
     },
-    "murderer": "d"
+    "murderer": "c"
   },
   "rating": {
-    "skulls": 2,
-    "score": 4,
+    "skulls": 3,
+    "score": 5,
     "hardest": "pièces",
-    "hardSteps": 2,
-    "directStart": 1
+    "hardSteps": 1,
+    "directStart": 0
   },
   "difficulty": 4
 }

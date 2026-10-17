@@ -2,14 +2,9 @@
   "formatVersion": 1,
   "title": "Le Château de Mortebrune — l'affaire Galwë",
   "intro": "L'elfe Galwë a été retrouvée sans vie au petit matin, au Château de Mortebrune. Six invités juraient qu'ils dormaient. Un seul était avec elle.",
-  "epilogue": "Clodomir avoue en grinçant de l'armure : Galwë s'était moquée de sa cuirasse trop petite devant toute la cour.",
+  "epilogue": "Aymeric avoue en grinçant de l'armure : Galwë s'était moquée de sa cuirasse trop petite devant toute la cour.",
   "size": 7,
   "rooms": {
-    "C": {
-      "name": "Chapelle",
-      "the": "la chapelle",
-      "floor": "dalles"
-    },
     "G": {
       "name": "Grande salle",
       "the": "la grande salle",
@@ -42,8 +37,8 @@
     }
   },
   "layout": [
-    "CCGGGKK",
-    "CCGGGKK",
+    "AAGGGKK",
+    "AAGGGKK",
     "AAGGGKT",
     "AAJJJTT",
     "AAJJJTT",
@@ -181,7 +176,34 @@
   "characters": [
     {
       "id": "a",
-      "name": "Albâtre",
+      "name": "Aymeric",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
+    },
+    {
+      "id": "b",
+      "name": "Baudouin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤴",
+      "desc": "Roi, avare de compliments et de tout le reste",
+      "archetype": "roi"
+    },
+    {
+      "id": "c",
+      "name": "Chaparde",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "d",
+      "name": "Diaphane",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -192,8 +214,8 @@
       ]
     },
     {
-      "id": "b",
-      "name": "Braise",
+      "id": "e",
+      "name": "Étincel",
       "gender": "m",
       "role": "suspect",
       "icon": "🐉",
@@ -201,40 +223,13 @@
       "archetype": "dragonnet"
     },
     {
-      "id": "c",
-      "name": "Clodomir",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🤺",
-      "desc": "Chevalier, armure trop petite depuis Noël",
-      "archetype": "chevalier"
-    },
-    {
-      "id": "d",
-      "name": "Dièse",
+      "id": "f",
+      "name": "Fausset",
       "gender": "m",
       "role": "suspect",
       "icon": "🧑‍🎤",
       "desc": "Barde, chante faux",
       "archetype": "barde"
-    },
-    {
-      "id": "e",
-      "name": "Escroquin",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
-    },
-    {
-      "id": "f",
-      "name": "Ferdinand",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🤴",
-      "desc": "Roi, avare de compliments et de tout le reste",
-      "archetype": "roi"
     },
     {
       "id": "g",
@@ -251,100 +246,92 @@
   "clues": [
     {
       "who": "a",
-      "text": "Albâtre était allongé sur un lit.",
+      "text": "Aymeric était à côté d'un sarcophage.",
       "logic": {
-        "type": "onObject",
-        "object": "lit"
+        "type": "adjacentTo",
+        "object": "sarcophage"
       }
     },
     {
       "who": "b",
-      "text": "Braise était dans la grande salle.",
+      "text": "Baudouin était à côté d'un tapis.",
       "logic": {
-        "type": "inRoom",
-        "room": "G"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était sur un tapis.",
-      "logic": {
-        "type": "onObject",
+        "type": "adjacentTo",
         "object": "tapis"
       }
     },
     {
       "who": "c",
-      "text": "Clodomir était à côté d'un champignon géant.",
+      "text": "Chaparde était dans la même colonne qu'un tapis.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "champi"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Dièse était à côté d'un tapis.",
-      "logic": {
-        "type": "adjacentTo",
+        "type": "sameColAs",
         "object": "tapis"
       }
     },
     {
-      "who": "e",
-      "text": "Escroquin était dans les cuisines.",
+      "who": "d",
+      "text": "Diaphane était à côté d'un lit.",
       "logic": {
-        "type": "inRoom",
-        "room": "K"
+        "type": "adjacentTo",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Étincel était à l'est de Baudouin.",
+      "logic": {
+        "type": "eastOf",
+        "other": "b"
       }
     },
     {
       "who": "f",
-      "text": "Ferdinand était au nord de Clodomir.",
+      "text": "Fausset était à l'ouest d'Aymeric.",
       "logic": {
-        "type": "northOf",
-        "other": "c"
+        "type": "westOf",
+        "other": "a"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        6,
-        4
-      ],
-      "c": [
         5,
+        0
+      ],
+      "a": [
+        6,
         2
       ],
-      "e": [
-        1,
-        5
+      "c": [
+        4,
+        3
       ],
-      "d": [
+      "f": [
         0,
         1
       ],
-      "a": [
+      "d": [
         3,
+        5
+      ],
+      "e": [
+        1,
         6
       ],
       "b": [
         2,
-        3
-      ],
-      "f": [
-        4,
-        0
+        4
       ]
     },
-    "murderer": "c"
+    "murderer": "a"
   },
   "rating": {
-    "skulls": 2,
-    "score": 4,
-    "hardest": "seul candidat",
-    "hardSteps": 2,
-    "directStart": 2
+    "skulls": 3,
+    "score": 7,
+    "hardest": "pièces",
+    "hardSteps": 3,
+    "directStart": 0
   },
-  "difficulty": 2
+  "difficulty": 3
 }

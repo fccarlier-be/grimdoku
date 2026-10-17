@@ -135,25 +135,7 @@
     },
     {
       "id": "b",
-      "name": "Bruyère",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧚",
-      "desc": "Fée, doit trois tournées",
-      "archetype": "fee"
-    },
-    {
-      "id": "c",
-      "name": "Crêpin",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👨‍🌾",
-      "desc": "Meunier, pèse le grain avec le pouce",
-      "archetype": "meunier"
-    },
-    {
-      "id": "d",
-      "name": "Dentdur",
+      "name": "Bâfrin",
       "gender": "m",
       "role": "suspect",
       "icon": "🧌",
@@ -161,13 +143,31 @@
       "archetype": "troll"
     },
     {
-      "id": "e",
-      "name": "Étincel",
+      "id": "c",
+      "name": "Capucine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
+    },
+    {
+      "id": "d",
+      "name": "Dardafeu",
       "gender": "m",
       "role": "suspect",
       "icon": "🐉",
       "desc": "Dragonnet, brûle tout ce qu'il touche",
       "archetype": "dragonnet"
+    },
+    {
+      "id": "e",
+      "name": "Épeautre",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🌾",
+      "desc": "Meunier, pèse le grain avec le pouce",
+      "archetype": "meunier"
     },
     {
       "id": "f",
@@ -182,108 +182,92 @@
   "decor": "ferme",
   "id": "ferme--boulanger",
   "intro": "Le boulanger Fougasse a été retrouvé au petit matin dans la Ferme Hantée, entre le potager et le fournil. Cinq voisins y avaient passé la nuit. Un seul était avec lui.",
-  "epilogue": "Anatole avoue, lentement : Fougasse l'avait planté au milieu du potager pour faire peur aux corbeaux.",
+  "epilogue": "Capucine avoue : Fougasse avait mis sa poussière de fée dans la pâte à crêpes. Les crêpes s'envolaient.",
   "clues": [
     {
       "who": "a",
-      "text": "Anatole était dans la même colonne qu'une chaise.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était sur la même ligne qu'un champignon géant.",
+      "text": "Anatole était sur la même ligne qu'un arbre.",
       "logic": {
         "type": "sameRowAs",
-        "object": "champi"
+        "object": "arbre"
       }
     },
     {
       "who": "b",
-      "text": "Bruyère était sur la même ligne qu'un tonneau.",
+      "text": "Bâfrin était au nord de Capucine.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "tonneau"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Elle était dans la même colonne qu'un champignon géant.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "champi"
+        "type": "northOf",
+        "other": "c"
       }
     },
     {
       "who": "c",
-      "text": "Crêpin était sur la même ligne qu'une botte de foin.",
+      "text": "Capucine était à côté d'une botte de foin.",
       "logic": {
-        "type": "sameRowAs",
+        "type": "adjacentTo",
         "object": "foin"
       }
     },
     {
-      "who": "c",
-      "text": "Il était dans le poulailler.",
+      "who": "d",
+      "text": "Dardafeu était à l'est de Capucine.",
       "logic": {
-        "type": "inRoom",
-        "room": "O"
+        "type": "eastOf",
+        "other": "c"
       }
     },
     {
       "who": "d",
-      "text": "Dentdur était dans l'étable.",
+      "text": "Il était à côté d'un arbre.",
       "logic": {
-        "type": "inRoom",
-        "room": "E"
+        "type": "adjacentTo",
+        "object": "arbre"
       }
     },
     {
       "who": "e",
-      "text": "Étincel était dans le potager.",
+      "text": "Épeautre était dans la même colonne qu'un tonneau.",
       "logic": {
-        "type": "inRoom",
-        "room": "P"
+        "type": "sameColAs",
+        "object": "tonneau"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        4,
+        0,
         1
       ],
-      "d": [
-        0,
-        3
+      "b": [
+        1,
+        4
       ],
       "a": [
-        5,
-        0
+        3,
+        5
       ],
-      "b": [
+      "c": [
         2,
         2
       ],
-      "e": [
-        3,
-        4
+      "d": [
+        4,
+        3
       ],
-      "c": [
-        1,
-        5
+      "e": [
+        5,
+        0
       ]
     },
-    "murderer": "a"
+    "murderer": "c"
   },
   "rating": {
-    "skulls": 0,
-    "score": 1,
-    "hardest": "case unique",
+    "skulls": 2,
+    "score": 4,
+    "hardest": "ligne réservée",
     "hardSteps": 0,
-    "directStart": 3
+    "directStart": 0
   },
-  "difficulty": 0
+  "difficulty": 2
 }

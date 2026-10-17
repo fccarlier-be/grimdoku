@@ -1,0 +1,417 @@
+{
+  "formatVersion": 1,
+  "title": "La Citadelle de Mortebrune — l'affaire If",
+  "decor": "chateau",
+  "size": 9,
+  "rooms": {
+    "R": {
+      "name": "Remparts",
+      "the": "les remparts",
+      "floor": "paves"
+    },
+    "C": {
+      "name": "Cour d'honneur",
+      "the": "la cour d'honneur",
+      "floor": "paves"
+    },
+    "T": {
+      "name": "Tour de guet",
+      "the": "la tour de guet",
+      "floor": "dalles"
+    },
+    "A": {
+      "name": "Armurerie",
+      "the": "l'armurerie",
+      "floor": "dalles"
+    },
+    "J": {
+      "name": "Jardin",
+      "the": "le jardin",
+      "floor": "herbe"
+    },
+    "B": {
+      "name": "Écuries",
+      "the": "les écuries",
+      "floor": "paille"
+    },
+    "P": {
+      "name": "Oubliettes",
+      "the": "les oubliettes",
+      "floor": "crypte"
+    },
+    "D": {
+      "name": "Salle du trône",
+      "the": "la salle du trône",
+      "floor": "noble"
+    }
+  },
+  "layout": [
+    "RRRCCCCTT",
+    "RRRCCCCTT",
+    "RRRCCCCTT",
+    "AAACCCCTT",
+    "AAAJJJJJB",
+    "AAAJJJJJB",
+    "PPPJJJJJB",
+    "PPPDDDDBB",
+    "PPPDDDDBB"
+  ],
+  "objects": [
+    {
+      "type": "canon",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        8
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        2,
+        7
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        0
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        4,
+        7
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        5,
+        8
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        7,
+        0
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        8,
+        2
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        8,
+        5
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        7,
+        4
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        8,
+        7
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Ardent",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
+      "id": "b",
+      "name": "Bakchich",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "c",
+      "name": "Chaînon",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ]
+    },
+    {
+      "id": "d",
+      "name": "Durandal",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
+    },
+    {
+      "id": "e",
+      "name": "Écho",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
+    },
+    {
+      "id": "f",
+      "name": "Festin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👹",
+      "desc": "Ogre, végétarien depuis mardi",
+      "archetype": "ogre"
+    },
+    {
+      "id": "g",
+      "name": "Godefroy",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤴",
+      "desc": "Roi, avare de compliments et de tout le reste",
+      "archetype": "roi"
+    },
+    {
+      "id": "h",
+      "name": "Hëlwyn",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
+    },
+    {
+      "id": "i",
+      "name": "If",
+      "gender": "f",
+      "role": "victim",
+      "icon": "🧙‍♀️",
+      "desc": "Sorcière des marais, cuisine tout ce qui coasse",
+      "archetype": "sorciere"
+    }
+  ],
+  "id": "citadelle--sorciere",
+  "intro": "La sorcière If a été retrouvée sans vie à la Citadelle de Mortebrune, la nuit où le pont-levis est resté coincé. Huit occupants ne pouvaient pas sortir. Un seul était avec elle.",
+  "epilogue": "Festin avoue la bouche pleine : If avait cadenassé le garde-manger de la citadelle. Personne ne cadenasse le garde-manger.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Ardent était à côté d'un canon.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "canon"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bakchich était sur la même ligne qu'un tonneau.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Chaînon était sur la même ligne qu'une botte de foin.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "foin"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était à l'est de Bakchich.",
+      "logic": {
+        "type": "eastOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Durandal était au sud d'Écho.",
+      "logic": {
+        "type": "southOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était dans la même colonne qu'une enclume.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "enclume"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Écho était au sud de Godefroy.",
+      "logic": {
+        "type": "southOf",
+        "other": "g"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Festin était au nord d'Écho.",
+      "logic": {
+        "type": "northOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Il était dans la même colonne qu'un fauteuil.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Il était à l'est de Chaînon.",
+      "logic": {
+        "type": "eastOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Godefroy était dans la même colonne qu'un sarcophage.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "sarcophage"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Il était au nord de Festin.",
+      "logic": {
+        "type": "northOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "h",
+      "text": "Hëlwyn était dans la même colonne qu'un champignon géant.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "champi"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "i": [
+        5,
+        6
+      ],
+      "d": [
+        7,
+        1
+      ],
+      "b": [
+        2,
+        3
+      ],
+      "e": [
+        6,
+        8
+      ],
+      "h": [
+        1,
+        7
+      ],
+      "c": [
+        8,
+        4
+      ],
+      "a": [
+        0,
+        0
+      ],
+      "g": [
+        3,
+        2
+      ],
+      "f": [
+        4,
+        5
+      ]
+    },
+    "murderer": "f"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 0
+  },
+  "difficulty": 3
+}

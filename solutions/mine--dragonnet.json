@@ -4,7 +4,7 @@
    2,
    7
   ],
-  "c": [
+  "f": [
    5,
    1
   ],
@@ -12,7 +12,7 @@
    3,
    3
   ],
-  "e": [
+  "a": [
    6,
    5
   ],
@@ -20,11 +20,11 @@
    1,
    6
   ],
-  "a": [
+  "c": [
    7,
    4
   ],
-  "f": [
+  "e": [
    4,
    0
   ],
@@ -35,85 +35,78 @@
  },
  "murderer": "b",
  "cast": {
-  "c": "a",
+  "f": "a",
   "d": "b",
-  "e": "c",
+  "a": "c",
   "b": "d",
-  "a": "e",
-  "f": "f",
+  "c": "e",
+  "e": "f",
   "g": "g"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "c",
+   "who": "d",
    "logic": {
-    "type": "southOf",
-    "other": "g"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "enclume"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "sameColAs",
-    "object": "chariot"
+    "type": "eastOf",
+    "other": "f"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "inRoom",
-    "room": "C"
-   }
-  },
-  {
-   "who": "g",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "enclume"
+    "type": "westOf",
+    "other": "b"
    }
   },
   {
    "who": "c",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "table"
-   }
-  },
-  {
-   "who": "e",
    "logic": {
     "type": "eastOf",
     "other": "d"
    }
   },
   {
-   "who": "d",
+   "who": "g",
    "logic": {
-    "type": "sameColAs",
-    "object": "chaise"
+    "type": "northOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "inRoom",
+    "room": "V"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaudron"
    }
   },
   {
    "who": "f",
    "logic": {
     "type": "sameRowAs",
-    "object": "chaise"
+    "object": "table"
    }
   },
   {
-   "who": "b",
+   "who": "c",
    "logic": {
-    "type": "notInRoom",
-    "room": "P"
+    "type": "sameRowAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "southOf",
+    "other": "d"
    }
   }
  ]

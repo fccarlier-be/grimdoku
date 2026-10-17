@@ -3,11 +3,6 @@
   "title": "L'Académie de Magie — l'affaire Glycine",
   "size": 7,
   "rooms": {
-    "A": {
-      "name": "Tour d'astronomie",
-      "the": "la tour d'astronomie",
-      "floor": "parquet"
-    },
     "X": {
       "name": "Salle de cours",
       "the": "la salle de cours",
@@ -40,8 +35,8 @@
     }
   },
   "layout": [
-    "AAXXXBB",
-    "AAXXXBB",
+    "DDXXXBB",
+    "DDXXXBB",
     "DDXXXLL",
     "DDRRRLL",
     "DDRRRLL",
@@ -179,34 +174,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aube",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧙‍♀️",
-      "desc": "Apprentie sorcière, a déjà fait exploser trois chaudrons",
-      "archetype": "apprentie"
-    },
-    {
-      "id": "b",
-      "name": "Bécher",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👨‍🏫",
-      "desc": "Professeur de potions, note à l'odeur",
-      "archetype": "professeur"
-    },
-    {
-      "id": "c",
-      "name": "Célandra",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧝‍♀️",
-      "desc": "Elfe, critique gastronomique",
-      "archetype": "elfe"
-    },
-    {
-      "id": "d",
-      "name": "Dédale",
+      "name": "Azimut",
       "gender": "m",
       "role": "suspect",
       "icon": "🧙‍♂️",
@@ -214,8 +182,8 @@
       "archetype": "mage"
     },
     {
-      "id": "e",
-      "name": "Encensia",
+      "id": "b",
+      "name": "Bazarine",
       "gender": "f",
       "role": "suspect",
       "icon": "🧞‍♀️",
@@ -223,13 +191,40 @@
       "archetype": "djinn"
     },
     {
-      "id": "f",
-      "name": "Flammèche",
+      "id": "c",
+      "name": "Cornue",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🏫",
+      "desc": "Professeur de potions, note à l'odeur",
+      "archetype": "professeur"
+    },
+    {
+      "id": "d",
+      "name": "Daëlin",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
+    },
+    {
+      "id": "e",
+      "name": "Étincel",
       "gender": "m",
       "role": "suspect",
       "icon": "🐉",
       "desc": "Dragonnet, brûle tout ce qu'il touche",
       "archetype": "dragonnet"
+    },
+    {
+      "id": "f",
+      "name": "Frimousse",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧙‍♀️",
+      "desc": "Apprentie sorcière, a déjà fait exploser trois chaudrons",
+      "archetype": "apprentie"
     },
     {
       "id": "g",
@@ -244,128 +239,104 @@
   "decor": "academie",
   "id": "academie--fee",
   "intro": "La fée Glycine a été retrouvée sans vie un soir d'examens à l'Académie de Magie. Six élèves et professeurs révisaient encore. Un seul était avec elle.",
-  "epilogue": "Flammèche avoue : Glycine voulait l'inscrire comme « animal de laboratoire ». Il a protesté. Avec du feu.",
+  "epilogue": "Bazarine avoue : Glycine avait utilisé trois vœux pour obtenir son diplôme. Elle a estimé que c'était de la triche.",
   "clues": [
     {
       "who": "a",
-      "text": "Aube était sur la même ligne qu'une chaise.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Elle était allongée sur un lit.",
+      "text": "Azimut était assis dans un fauteuil.",
       "logic": {
         "type": "onObject",
-        "object": "lit"
+        "object": "fauteuil"
       }
     },
     {
       "who": "b",
-      "text": "Bécher était dans le laboratoire.",
+      "text": "Bazarine était sur la même ligne qu'une étagère.",
       "logic": {
-        "type": "inRoom",
-        "room": "L"
+        "type": "sameRowAs",
+        "object": "etagere"
       }
     },
     {
       "who": "c",
-      "text": "Célandra était sur la même ligne qu'une boule de cristal.",
+      "text": "Cornue était à côté d'une boule de cristal.",
       "logic": {
-        "type": "sameRowAs",
+        "type": "adjacentTo",
         "object": "cristal"
       }
     },
     {
-      "who": "c",
-      "text": "Elle était à côté d'un fauteuil.",
+      "who": "d",
+      "text": "Daëlin était à côté d'un arbre.",
       "logic": {
         "type": "adjacentTo",
-        "object": "fauteuil"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Dédale était sur la même ligne qu'un champignon géant.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "champi"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Il n'était pas dans le réfectoire.",
-      "logic": {
-        "type": "notInRoom",
-        "room": "R"
+        "object": "arbre"
       }
     },
     {
       "who": "e",
-      "text": "Encensia était au sud d'Aube.",
+      "text": "Étincel était à l'est de Bazarine.",
       "logic": {
-        "type": "southOf",
-        "other": "a"
+        "type": "eastOf",
+        "other": "b"
       }
     },
     {
       "who": "e",
-      "text": "Elle était dans la même colonne qu'un fauteuil.",
+      "text": "Il était dans la même colonne qu'un arbre.",
       "logic": {
         "type": "sameColAs",
-        "object": "fauteuil"
+        "object": "arbre"
       }
     },
     {
       "who": "f",
-      "text": "Flammèche était sur la même ligne qu'un lit.",
+      "text": "Frimousse était au sud d'Azimut.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "lit"
+        "type": "southOf",
+        "other": "a"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        1,
-        3
-      ],
-      "a": [
         4,
-        0
-      ],
-      "d": [
-        5,
-        2
-      ],
-      "f": [
-        2,
         4
       ],
-      "e": [
-        6,
+      "f": [
+        5,
+        6
+      ],
+      "a": [
+        0,
         5
       ],
-      "c": [
-        0,
-        1
+      "e": [
+        2,
+        3
       ],
       "b": [
         3,
-        6
+        2
+      ],
+      "d": [
+        6,
+        1
+      ],
+      "c": [
+        1,
+        0
       ]
     },
-    "murderer": "f"
+    "murderer": "b"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
-    "hardest": "ligne réservée",
-    "hardSteps": 0,
-    "directStart": 1
+    "skulls": 3,
+    "score": 6,
+    "hardest": "pièces",
+    "hardSteps": 2,
+    "directStart": 0
   },
-  "difficulty": 1
+  "difficulty": 3
 }

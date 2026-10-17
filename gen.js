@@ -27,6 +27,10 @@ const tries = Number(arg('tries', 200));
 // solution trop proche (E.tooClose : même case pour la victime, ou plus de la moitié des cases occupées en commun)
 const avoid = arg('avoid', '') ? JSON.parse(fs.readFileSync(arg('avoid', ''), 'utf8')) : [];
 const wantSkulls = arg('skulls', '') === '' ? null : Number(arg('skulls', '')); // null = n'importe quelle difficulté (0 est un niveau)
+// GEN_DEBUG=1 : en cas d'échec, compte des raisons de rejet des essais (diagnostic)
+const WHY = {};
+const why = (r) => { WHY[r] = (WHY[r] || 0) + 1; };
+process.on('exit', (code) => { if (code && process.env.GEN_DEBUG) console.error('rejets :', JSON.stringify(WHY)); });
 const rnd = () => { seed = (seed * 1103515245 + 12345) % 2147483648; return seed / 2147483648; };
 const shuffle = (a) => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 
@@ -41,29 +45,47 @@ const hasBig = scene.characters.some(c => c.shape);
 // la vraie forme de chaque grand (même si le joueur ne la connaît pas : --hidden)
 const truth = E.prepare({ ...scene, hiddenShapes: false, hiddenMax: undefined });
 const PL = Object.fromEntries(ids.map(id => [id, E.placementsOf(truth, id)]));
+// Construction pas à pas (retour en arrière) : grands d'abord, la victime en dernier ; chaque personnage sur une case tirée
+// au hasard qui respecte déjà les règles (lignes et colonnes libres, un suspect par pièce, victime hors meuble, et avec
+// --no-direct personne sur un meuble unique). Le tirage d'une permutation au hasard ne suffisait plus sur 12×12.
 function randomPositions() {
-  if (!hasBig) {
-    const rows = shuffle([...Array(n).keys()]), cols = shuffle([...Array(n).keys()]);
-    const pos = {}; let ok = true;
-    ids.forEach((id, i) => { pos[id] = [rows[i], cols[i]]; if (!E.canStand(ctx, id, rows[i], cols[i])) ok = false; });
-    return ok ? pos : null;
+  const order = [...ids].sort((a, b) => !!ctx.chars[b].shape - !!ctx.chars[a].shape || (a === victim) - (b === victim));
+  const pos = {}, used = [new Set(), new Set()], zones = new Set();
+  let budget = 5000;
+  const unique = (o) => o && scene.objects.filter(x => x.type === o.type).length === 1;
+  const ok = (id, v) => {
+    const [rs, cs] = E.linesOf(v);
+    if (rs.some(r => used[0].has(r)) || cs.some(c => used[1].has(c))) return false;
+    const cells = E.cellsOf(v);
+    if (id === victim) return !cells.some(rc => ctx.objAt[rc.join(',')]);
+    if (zones.has(ctx.zoneOf(...cells[0]))) return false;
+    return !(noDirect && !ctx.chars[id].shape && unique(ctx.objAt[cells[0].join(',')]));
+  };
+  function rec(i) {
+    if (i === order.length) return true;
+    if (--budget < 0) return false;
+    const id = order[i];
+    for (const v of shuffle([...PL[id]])) {
+      if (!ok(id, v)) continue;
+      const [rs, cs] = E.linesOf(v);
+      const z = id === victim ? null : ctx.zoneOf(...E.cellsOf(v)[0]);
+      pos[id] = v; rs.forEach(r => used[0].add(r)); cs.forEach(c => used[1].add(c)); if (z !== null) zones.add(z);
+      if (rec(i + 1)) return true;
+      rs.forEach(r => used[0].delete(r)); cs.forEach(c => used[1].delete(c)); if (z !== null) zones.delete(z); delete pos[id];
+    }
+    return false;
   }
-  // grands d'abord (les plus encombrants), chacun sur une position libre tirée au hasard
-  const pos = {}, used = [new Set(), new Set()];
-  for (const id of [...ids].sort((a, b) => !!ctx.chars[b].shape - !!ctx.chars[a].shape)) {
-    const free = PL[id].filter(v => E.linesOf(v).every((ls, ax) => ls.every(x => !used[ax].has(x))));
-    if (!free.length) return null;
-    pos[id] = free[Math.floor(rnd() * free.length)];
-    E.linesOf(pos[id]).forEach((ls, ax) => ls.forEach(x => used[ax].add(x)));
-  }
-  return pos;
+  return rec(0) ? pos : null;
 }
 function randomSolution() {
-  for (let t = 0; t < 20000; t++) {
+  for (let t = 0; t < 500000; t++) { // beaucoup de tirages : sur 12×12, peu respectent toutes les règles
     const pos = randomPositions();
     if (!pos) continue;
     if (E.sharedRooms(ctx, pos).length) continue;
+    if (E.emptyZones(ctx, pos).length) continue; // chaque pièce est occupée
     if (E.cellsOf(pos[victim]).some(rc => ctx.objAt[rc.join(',')])) continue; // la victime n'a pas d'indice, donc pas de meuble
+    // sans placement direct : personne sur un meuble unique (l'indice « sur le hamac » le placerait d'emblée)
+    if (noDirect && suspects.some(id => { const o = !ctx.chars[id].shape && ctx.objAt[pos[id].join(',')]; return o && scene.objects.filter(x => x.type === o.type).length === 1; })) { why('meuble unique'); continue; }
     const me = E.layoutSig(pos, victim);
     if (avoid.some(o => E.tooClose(me, o))) continue; // déjà une grille presque identique dans ce décor
     const m = E.murdererOf(ctx, pos);
@@ -149,28 +171,42 @@ const level = Number((process.argv.find(a => a.startsWith('--level=')) || '--lev
 const MAX_TECH = { 0: 1, 1: 3, 2: 5, 3: 6 };
 const maxTech = wantSkulls === null ? Infinity : MAX_TECH[wantSkulls];
 const hs = (clues, lv) => E.humanSolve(scene, clues, lv, maxTech);
+// --no-direct : aucun personnage placé par ses seuls indices (le jeu était trop simple, retour de François) ;
+// --big-late : un grand personnage n'est jamais placé avant qu'au moins un autre personnage l'ait été
+const noDirect = process.argv.includes('--no-direct');
+const bigLate = process.argv.includes('--big-late');
+const OWN = Object.fromEntries(ids.map(id => [id, E.placementsOf(ctx, id)]));
+const ownCount = (id, clues) => {
+  const mine = clues.filter(cl => cl.who === id && !E.isPair(cl.logic.type));
+  return OWN[id].filter(v => mine.every(cl => E.evalClue(ctx, cl, { [id]: v }))).length;
+};
+const direct = (clues, id) => noDirect && ownCount(id, clues) <= 1;
 
 for (let attempt = 0; attempt < tries; attempt++) {
   const { pos, m } = randomSolution();
   let pool = shuffle(candidates(pos));
-  if (level === 1) pool = pool.filter(cl => cl.logic.type !== 'notAdjacentTo');
+  // « pas à côté de » : écarté au niveau 1, sauf sans placement direct (il réduit les cases sans en donner aucune)
+  if (level === 1 && !noDirect) pool = pool.filter(cl => cl.logic.type !== 'notAdjacentTo');
   const chosen = [];
   for (const id of suspects) {
-    const mine = pool.filter(cl => cl.who === id && !cl.logic.type.startsWith('not'));
-    chosen.push(mine[0] || pool.find(cl => cl.who === id));
+    const ok = (cl) => cl.who === id && !direct([cl], id);
+    const mine = pool.filter(cl => ok(cl) && !cl.logic.type.startsWith('not'));
+    const first = mine[0] || pool.find(ok);
+    if (first) chosen.push(first);
   }
   let st = hs(chosen, level);
   while (!st.solved) {
     let best = null, bestR = Infinity;
     for (const cl of pool) {
       if (chosen.includes(cl)) continue;
+      if (direct([...chosen, cl], cl.who)) continue;
       const r = hs([...chosen, cl], level).remaining;
       if (r < bestR) { bestR = r; best = cl; }
     }
     if (!best || bestR >= st.remaining) break;
     chosen.push(best); st = hs(chosen, level);
   }
-  if (!st.solved) continue;
+  if (!st.solved) { why('indices insuffisants'); continue; }
   for (const cl of shuffle([...chosen])) {
     const rest = chosen.filter(x => x !== cl);
     if (!rest.some(x => x.who === cl.who)) continue;
@@ -188,18 +224,24 @@ for (let attempt = 0; attempt < tries; attempt++) {
     if ((t === 'sameRowAs' || t === 'sameColAs') && chosen.some(x => x.who === cl.who && x.logic.type === 'onObject' && x.logic.object === cl.logic.object))
       chosen.splice(chosen.indexOf(cl), 1);
   }
+  // contraintes de difficulté, vérifiées sur le déroulé complet (indices de meubles compris)
+  {
+    const steps = E.humanSolve(scene, chosen, 2).steps;
+    if (noDirect && (steps.some(s => s.tech === 0) || suspects.some(id => direct(chosen, id)))) { why('placement direct'); continue; }
+    if (bigLate && steps.length && steps[0].ids.some(id => ctx.chars[id].shape)) { why('grand placé en premier'); continue; }
+  }
   const needsL2 = !hs(chosen, 1).solved;
   if (level === 2 && !needsL2) continue;
-  if (!hs(chosen, level).solved) continue;
+  if (!hs(chosen, level).solved) { why('plus résoluble après ajouts'); continue; }
   // A le plus facile à placer, puis B… (ex æquo permis) : on réattribue les suspects aux positions
   // ordre de facilité vu par le solveur complet (comme le build), pas par le solveur limité du choix des indices
   const f = relabel(E.humanSolve(scene, chosen, 2).steps, m);
-  if (!f) continue;
+  if (!f) { why('lettres'); continue; }
   const pos2 = { [victim]: pos[victim] };
   for (const id of suspects) pos2[f[id]] = pos[id];
   const clues2 = chosen.map(cl => ({ who: f[cl.who], logic: cl.logic.other ? { ...cl.logic, other: f[cl.logic.other] } : cl.logic }));
   const scene2 = { ...scene, characters: scene.characters.map(c => c.id === victim ? c : { ...ctx.chars[Object.keys(f).find(k => f[k] === c.id)], id: c.id }) };
-  if (wantSkulls !== null && E.rateDifficulty(E.humanSolve(scene2, clues2, 2).steps).skulls !== wantSkulls) continue;
+  if (wantSkulls !== null && E.rateDifficulty(E.humanSolve(scene2, clues2, 2).steps).skulls !== wantSkulls) { why('difficulté'); continue; }
   const sol = E.solve(scene2, clues2, 2);
   if (sol.length !== 1) { console.error('BUG: non unique'); process.exit(2); }
   const cast = {}; for (const id of suspects) cast[f[id]] = id;

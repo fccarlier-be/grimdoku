@@ -18,11 +18,6 @@
       "the": "l'allée des ifs",
       "floor": "herbe"
     },
-    "K": {
-      "name": "Caveau",
-      "the": "le caveau",
-      "floor": "crypte"
-    },
     "P": {
       "name": "Carré des pauvres",
       "the": "le carré des pauvres",
@@ -47,9 +42,9 @@
   "layout": [
     "GGGAACCC",
     "GGGAACCC",
-    "PPAAAAKK",
-    "PPAAAAKK",
-    "PPJJJOOK",
+    "PPAAAACC",
+    "PPAAAACC",
+    "PPJJJOOC",
     "YYJJJOOO",
     "YYJJJOOO",
     "YYYYJOOO"
@@ -185,16 +180,25 @@
   "characters": [
     {
       "id": "a",
-      "name": "Anselme",
+      "name": "Aymeric",
       "gender": "m",
       "role": "suspect",
-      "icon": "⚰️",
-      "desc": "Fossoyeur, creuse en sifflotant",
-      "archetype": "fossoyeur"
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
     },
     {
       "id": "b",
-      "name": "Blafard",
+      "name": "Becquet",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐦‍⬛",
+      "desc": "Corbeau, écrit des lettres anonymes",
+      "archetype": "corbeau"
+    },
+    {
+      "id": "c",
+      "name": "Chaînon",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -205,35 +209,8 @@
       ]
     },
     {
-      "id": "c",
-      "name": "Clodomir",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🤺",
-      "desc": "Chevalier, armure trop petite depuis Noël",
-      "archetype": "chevalier"
-    },
-    {
       "id": "d",
-      "name": "Dénonce",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🐦‍⬛",
-      "desc": "Corbeau, écrit des lettres anonymes",
-      "archetype": "corbeau"
-    },
-    {
-      "id": "e",
-      "name": "Eugène",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🐸",
-      "desc": "Crapaud, prince déchu, attend toujours son bisou",
-      "archetype": "crapaud"
-    },
-    {
-      "id": "f",
-      "name": "Fernand",
+      "name": "Désiré",
       "gender": "m",
       "role": "suspect",
       "icon": "🧟",
@@ -241,13 +218,31 @@
       "archetype": "zombie"
     },
     {
-      "id": "g",
-      "name": "Grenat",
+      "id": "e",
+      "name": "Écarlate",
       "gender": "f",
       "role": "suspect",
       "icon": "🧛‍♀️",
       "desc": "Comtesse vampire, végane (elle le jure)",
       "archetype": "vampire"
+    },
+    {
+      "id": "f",
+      "name": "Funérin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "⚰️",
+      "desc": "Fossoyeur, creuse en sifflotant",
+      "archetype": "fossoyeur"
+    },
+    {
+      "id": "g",
+      "name": "Gluant",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐸",
+      "desc": "Crapaud, prince déchu, attend toujours son bisou",
+      "archetype": "crapaud"
     },
     {
       "id": "h",
@@ -262,132 +257,140 @@
   "decor": "cimetiere",
   "id": "cimetiere--sorciere",
   "intro": "La sorcière Houx a été retrouvée sans vie au Cimetière de Minuit, ce qui, admettons-le, simplifie les démarches. Sept habitués rôdaient entre les tombes. Un seul était avec elle.",
-  "epilogue": "Blafard avoue : Houx avait réservé sa tombe préférée. Il la hantait depuis trois siècles.",
+  "epilogue": "Gluant avoue : Houx l'avait confondu avec une grenouille. C'est très vexant, pour un prince.",
   "clues": [
     {
       "who": "a",
-      "text": "Anselme était à l'est d'Eugène.",
-      "logic": {
-        "type": "eastOf",
-        "other": "e"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était sur la même ligne qu'une table.",
+      "text": "Aymeric était sur la même ligne qu'une statue.",
       "logic": {
         "type": "sameRowAs",
-        "object": "table"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était à côté d'une tombe.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "tombe"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Blafard hantait une statue.",
-      "logic": {
-        "type": "onObject",
         "object": "statue"
       }
     },
     {
-      "who": "b",
-      "text": "Il était au nord de Grenat.",
+      "who": "a",
+      "text": "Il était à l'ouest de Becquet.",
       "logic": {
-        "type": "northOf",
-        "other": "g"
+        "type": "westOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était dans la même colonne qu'un sarcophage.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "sarcophage"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Becquet était sur la même ligne qu'un lit.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "lit"
       }
     },
     {
       "who": "c",
-      "text": "Clodomir était à côté d'un sarcophage.",
+      "text": "Chaînon hantait une tombe.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "sarcophage"
+        "type": "onObject",
+        "object": "tombe"
       }
     },
     {
       "who": "d",
-      "text": "Dénonce était au nord d'Anselme.",
+      "text": "Désiré était dans le jardin du souvenir.",
       "logic": {
-        "type": "northOf",
-        "other": "a"
+        "type": "inRoom",
+        "room": "J"
       }
     },
     {
       "who": "e",
-      "text": "Eugène était sur la même ligne qu'un sarcophage.",
+      "text": "Écarlate était sur la même ligne qu'une tombe.",
       "logic": {
         "type": "sameRowAs",
-        "object": "sarcophage"
+        "object": "tombe"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Elle était dans la même colonne qu'un lit.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "lit"
       }
     },
     {
       "who": "f",
-      "text": "Fernand était au nord de Clodomir.",
+      "text": "Funérin était à l'ouest de Becquet.",
       "logic": {
-        "type": "northOf",
-        "other": "c"
+        "type": "westOf",
+        "other": "b"
       }
     },
     {
       "who": "g",
-      "text": "Grenat était à l'est de Blafard.",
+      "text": "Gluant était à côté d'un arbre.",
       "logic": {
-        "type": "eastOf",
-        "other": "b"
+        "type": "adjacentTo",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Il était à l'ouest de Désiré.",
+      "logic": {
+        "type": "westOf",
+        "other": "d"
       }
     }
   ],
   "solution": {
     "positions": {
       "h": [
-        4,
-        3
-      ],
-      "a": [
-        1,
-        4
-      ],
-      "b": [
-        6,
-        2
+        2,
+        5
       ],
       "f": [
-        2,
+        1,
+        2
+      ],
+      "c": [
+        4,
+        1
+      ],
+      "d": [
+        5,
+        4
+      ],
+      "e": [
+        7,
+        0
+      ],
+      "b": [
+        0,
+        7
+      ],
+      "a": [
+        6,
         6
       ],
       "g": [
-        7,
-        7
-      ],
-      "d": [
-        0,
-        5
-      ],
-      "c": [
-        5,
-        1
-      ],
-      "e": [
         3,
-        0
+        3
       ]
     },
-    "murderer": "b"
+    "murderer": "g"
   },
   "rating": {
-    "skulls": 2,
-    "score": 3,
-    "hardest": "seul candidat",
-    "hardSteps": 1,
-    "directStart": 1
+    "skulls": 3,
+    "score": 6,
+    "hardest": "pièces",
+    "hardSteps": 2,
+    "directStart": 0
   },
-  "difficulty": 2
+  "difficulty": 3
 }

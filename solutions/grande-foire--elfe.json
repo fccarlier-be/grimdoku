@@ -1,0 +1,189 @@
+{
+ "positions": {
+  "l": [
+   9,
+   8
+  ],
+  "i": [
+   11,
+   7
+  ],
+  "g": [
+   10,
+   3
+  ],
+  "k": [
+   7,
+   11
+  ],
+  "h": [
+   8,
+   4
+  ],
+  "j": [
+   0,
+   9
+  ],
+  "d": [
+   1,
+   1
+  ],
+  "b": [
+   6,
+   0
+  ],
+  "f": [
+   2,
+   5
+  ],
+  "c": [
+   3,
+   2
+  ],
+  "a": [
+   5,
+   10
+  ],
+  "e": [
+   4,
+   6
+  ]
+ },
+ "murderer": "h",
+ "cast": {
+  "i": "a",
+  "g": "b",
+  "k": "c",
+  "h": "d",
+  "j": "e",
+  "d": "f",
+  "b": "g",
+  "f": "h",
+  "c": "i",
+  "a": "j",
+  "e": "k"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "i",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "southOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "k",
+   "logic": {
+    "type": "eastOf",
+    "other": "j"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "k",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "sarcophage"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "sarcophage"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "j",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "inRoom",
+    "room": "D"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "eastOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "westOf",
+    "other": "i"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "westOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "foin"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tonneau"
+   }
+  }
+ ]
+}

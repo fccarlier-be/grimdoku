@@ -31,7 +31,43 @@ function resolve(scene, cast = {}) {
     }
     return ch;
   });
-  return { ...scene, characters };
+  return fitRooms({ ...scene, characters });
+}
+
+// Règle « chaque pièce est occupée » : chaque suspect est seul dans sa pièce, la victime est avec le coupable, donc il
+// faut exactement une pièce (zone, portails compris) de moins que de personnages. Tant qu'il y en a trop, la plus petite
+// pièce est fusionnée avec sa plus petite voisine d'une autre zone (le mur disparaît, le nom et le sol de la plus
+// grande restent). Déterministe : même plan à chaque construction.
+function fitRooms(scene) {
+  const want = scene.characters.length - 1;
+  let layout = scene.layout.map(row => row.split(''));
+  const rooms = { ...scene.rooms };
+  const n = scene.size;
+  const E = require('./engine');
+  for (let guard = 0; guard < 50; guard++) {
+    const p = { ...scene, rooms, layout: layout.map(r => r.join('')), characters: [] };
+    const ctx = E.prepare(p);
+    if (ctx.zones.length <= want) break;
+    const size = {};
+    layout.flat().forEach(k => (size[k] = (size[k] || 0) + 1));
+    // paires de pièces voisines dans des zones différentes
+    const pairs = new Set();
+    for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) for (const [dr, dc] of [[0, 1], [1, 0]]) {
+      const a = layout[r][c], b = (layout[r + dr] || [])[c + dc];
+      if (b && a !== b && ctx.zoneOf(r, c) !== ctx.zoneOf(r + dr, c + dc)) pairs.add([a, b].sort().join(''));
+    }
+    let best = null;
+    for (const pr of pairs) {
+      const [a, b] = pr.split('');
+      const [small, big] = size[a] < size[b] || (size[a] === size[b] && a > b) ? [a, b] : [b, a];
+      const score = size[small] * 100 + size[big];
+      if (!best || score < best.score || (score === best.score && small + big < best.small + best.big)) best = { small, big, score };
+    }
+    if (!best) break;
+    layout = layout.map(row => row.map(k => (k === best.small ? best.big : k)));
+    delete rooms[best.small];
+  }
+  return { ...scene, rooms, layout: layout.map(r => r.join('')) };
 }
 
 // Charge scenes/<nom>.json. Une variante ({ "extends": "foire", ... }) reprend le plan, les pièces et les objets
@@ -51,7 +87,7 @@ function withVictim(scene, victimType) {
   if (!pool.includes(victimType)) throw new Error(`${victimType} n'est pas un habitué de ce décor (${pool.join(', ')})`);
   const order = pool.filter(t => t !== victimType).concat(victimType);
   const characters = order.map((t, i) => ({ id: String.fromCharCode(97 + i), archetype: t, role: t === victimType ? 'victim' : 'suspect' }));
-  return { ...scene, characters };
+  return fitRooms({ ...scene, characters });
 }
 
 // Affaires à grands personnages (4–5 crânes) : les habitués d'un décor, `bigTypes` en plus (types de cast.json marqués
@@ -82,7 +118,7 @@ function withBig(scene, victimType, bigTypes, shapes) {
     if (shapeOf[t]) ch.shape = shapeOf[t];
     return ch;
   });
-  return { ...scene, characters };
+  return fitRooms({ ...scene, characters });
 }
 
-module.exports = { ARCHETYPES, resolve, loadScene, withVictim, withBig };
+module.exports = { ARCHETYPES, resolve, loadScene, withVictim, withBig, fitRooms };

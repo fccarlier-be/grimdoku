@@ -1,0 +1,118 @@
+{
+ "positions": {
+  "i": [
+   0,
+   5
+  ],
+  "e": [
+   6,
+   1
+  ],
+  "h": [
+   5,
+   2
+  ],
+  "g": [
+   1,
+   0
+  ],
+  "c": [
+   4,
+   6
+  ],
+  "f": [
+   3,
+   3
+  ],
+  "d": [
+   8,
+   4
+  ],
+  "a": [
+   2,
+   8
+  ],
+  "b": [
+   7,
+   7
+  ]
+ },
+ "murderer": "f",
+ "cast": {
+  "e": "a",
+  "h": "b",
+  "g": "c",
+  "c": "d",
+  "f": "e",
+  "d": "f",
+  "a": "g",
+  "b": "h"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "e",
+   "logic": {
+    "type": "inRoom",
+    "room": "P"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "foin"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chariot"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "sameColAs",
+    "object": "sarcophage"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "westOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "eastOf",
+    "other": "f"
+   }
+  }
+ ]
+}

@@ -126,25 +126,16 @@
   "characters": [
     {
       "id": "a",
-      "name": "Avaloir",
-      "gender": "m",
+      "name": "Aëlys",
+      "gender": "f",
       "role": "suspect",
-      "icon": "🧌",
-      "desc": "Troll, plongeur à mi-temps",
-      "archetype": "troll"
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
     },
     {
       "id": "b",
-      "name": "Bricolin",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧙‍♂️",
-      "desc": "Mage, allergique au houblon",
-      "archetype": "mage"
-    },
-    {
-      "id": "c",
-      "name": "Corail",
+      "name": "Bulle",
       "gender": "f",
       "role": "suspect",
       "icon": "🧜‍♀️",
@@ -152,22 +143,31 @@
       "archetype": "sirene"
     },
     {
+      "id": "c",
+      "name": "Croquassiette",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    },
+    {
       "id": "d",
-      "name": "Digitale",
+      "name": "Dédale",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage"
+    },
+    {
+      "id": "e",
+      "name": "Églantine",
       "gender": "f",
       "role": "suspect",
       "icon": "🧚",
       "desc": "Fée, doit trois tournées",
       "archetype": "fee"
-    },
-    {
-      "id": "e",
-      "name": "Erwëlle",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧝‍♀️",
-      "desc": "Elfe, critique gastronomique",
-      "archetype": "elfe"
     },
     {
       "id": "f",
@@ -182,100 +182,108 @@
   "decor": "thermes",
   "id": "thermes--tavernier",
   "intro": "Le tavernier Florin a été retrouvé sans vie aux Thermes Enchantés, détendu pour toujours. Cinq curistes profitaient des bains. Un seul était avec lui.",
-  "epilogue": "Bricolin avoue en éternuant : Florin avait parfumé le sauna à la bière.",
+  "epilogue": "Aëlys avoue avec dédain : Florin avait trempé ses pieds dans le bassin chaud. Juste avant elle.",
   "clues": [
     {
       "who": "a",
-      "text": "Avaloir était sur la même ligne qu'une table.",
+      "text": "Aëlys était au nord de Bulle.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "table"
+        "type": "northOf",
+        "other": "b"
       }
     },
     {
       "who": "a",
-      "text": "Il était à côté d'un massif de roseaux.",
+      "text": "Elle était à côté d'un lit.",
       "logic": {
         "type": "adjacentTo",
-        "object": "roseaux"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Bricolin était sur la même ligne qu'un tonneau.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "tonneau"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était sur un tapis.",
-      "logic": {
-        "type": "onObject",
-        "object": "tapis"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Corail était allongée sur un lit.",
-      "logic": {
-        "type": "onObject",
         "object": "lit"
       }
     },
     {
-      "who": "d",
-      "text": "Digitale était à côté d'un coffre.",
+      "who": "b",
+      "text": "Bulle était sur la même ligne qu'un lit.",
       "logic": {
-        "type": "adjacentTo",
+        "type": "sameRowAs",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Elle était dans la même colonne qu'un coffre.",
+      "logic": {
+        "type": "sameColAs",
         "object": "coffre"
       }
     },
     {
-      "who": "e",
-      "text": "Erwëlle était assise sur une chaise.",
+      "who": "c",
+      "text": "Croquassiette était au sud de Dédale.",
+      "logic": {
+        "type": "southOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était assis sur une chaise.",
       "logic": {
         "type": "onObject",
         "object": "chaise"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dédale était dans la même colonne qu'une statue.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Églantine était à côté d'une statue.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "statue"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        0,
-        5
+        5,
+        2
       ],
-      "c": [
+      "b": [
         4,
-        3
-      ],
-      "e": [
-        3,
-        1
+        0
       ],
       "a": [
-        5,
+        3,
+        3
+      ],
+      "c": [
+        1,
+        1
+      ],
+      "e": [
+        2,
         4
       ],
       "d": [
-        1,
-        0
-      ],
-      "b": [
-        2,
-        2
+        0,
+        5
       ]
     },
-    "murderer": "b"
+    "murderer": "a"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
-    "hardest": "ligne réservée",
+    "skulls": 2,
+    "score": 4,
+    "hardest": "position relative",
     "hardSteps": 0,
-    "directStart": 2
+    "directStart": 0
   },
-  "difficulty": 1
+  "difficulty": 2
 }

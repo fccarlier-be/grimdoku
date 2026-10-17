@@ -1,0 +1,184 @@
+{
+ "positions": {
+  "k": [
+   3,
+   5
+  ],
+  "d": [
+   10,
+   6
+  ],
+  "b": [
+   4,
+   1
+  ],
+  "c": [
+   5,
+   8
+  ],
+  "f": [
+   9,
+   0
+  ],
+  "i": [
+   1,
+   4
+  ],
+  "g": [
+   2,
+   10
+  ],
+  "e": [
+   6,
+   7
+  ],
+  "h": [
+   7,
+   2
+  ],
+  "a": [
+   8,
+   9
+  ],
+  "j": [
+   0,
+   3
+  ]
+ },
+ "murderer": "i",
+ "cast": {
+  "d": "a",
+  "b": "b",
+  "c": "c",
+  "f": "d",
+  "i": "e",
+  "g": "f",
+  "e": "g",
+  "h": "h",
+  "a": "i",
+  "j": "j"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "d",
+   "logic": {
+    "type": "eastOf",
+    "other": "i"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "northOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "southOf",
+    "other": "i"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "westOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "j",
+   "logic": {
+    "type": "westOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "inRoom",
+    "room": "F"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "sameColAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "j",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "eastOf",
+    "other": "d"
+   }
+  }
+ ]
+}

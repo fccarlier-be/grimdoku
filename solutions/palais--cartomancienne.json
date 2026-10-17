@@ -1,42 +1,42 @@
 {
  "positions": {
   "g": [
-   5,
-   0
-  ],
-  "a": [
    3,
-   6
-  ],
-  "f": [
-   4,
-   3
-  ],
-  "b": [
-   2,
    4
   ],
-  "d": [
+  "a": [
    0,
    1
   ],
-  "e": [
-   6,
-   2
-  ],
-  "c": [
+  "d": [
    1,
    5
+  ],
+  "c": [
+   6,
+   0
+  ],
+  "b": [
+   5,
+   3
+  ],
+  "e": [
+   4,
+   6
+  ],
+  "f": [
+   2,
+   2
   ]
  },
- "murderer": "e",
+ "murderer": "b",
  "cast": {
   "a": "a",
-  "f": "b",
-  "b": "c",
-  "d": "d",
+  "d": "b",
+  "c": "c",
+  "b": "d",
   "e": "e",
-  "c": "f"
+  "f": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
@@ -45,32 +45,11 @@
    "who": "a",
    "logic": {
     "type": "sameRowAs",
-    "object": "arbre"
-   }
-  },
-  {
-   "who": "f",
-   "logic": {
-    "type": "sameColAs",
-    "object": "tapis"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "tonneau"
+    "object": "cristal"
    }
   },
   {
    "who": "d",
-   "logic": {
-    "type": "northOf",
-    "other": "b"
-   }
-  },
-  {
-   "who": "e",
    "logic": {
     "type": "sameRowAs",
     "object": "tapis"
@@ -79,29 +58,43 @@
   {
    "who": "c",
    "logic": {
-    "type": "adjacentTo",
-    "object": "coffre"
+    "type": "westOf",
+    "other": "f"
    }
   },
   {
-   "who": "a",
+   "who": "b",
    "logic": {
-    "type": "onObject",
+    "type": "sameColAs",
     "object": "tapis"
    }
   },
   {
-   "who": "e",
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "f",
    "logic": {
     "type": "sameColAs",
     "object": "champi"
    }
   },
   {
-   "who": "f",
+   "who": "a",
+   "logic": {
+    "type": "notInRoom",
+    "room": "R"
+   }
+  },
+  {
+   "who": "e",
    "logic": {
     "type": "sameRowAs",
-    "object": "champi"
+    "object": "chaise"
    }
   }
  ]

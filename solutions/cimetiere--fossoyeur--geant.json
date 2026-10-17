@@ -1,82 +1,75 @@
 {
  "positions": {
   "g": [
-   4,
+   1,
    4
   ],
-  "f": [
+  "c": [
    [
-    6,
+    4,
     5
    ],
    [
-    6,
+    4,
     6
    ]
   ],
-  "a": [
-   2,
-   3
-  ],
-  "b": [
-   1,
-   0
-  ],
   "e": [
+   2,
+   2
+  ],
+  "d": [
    3,
    7
   ],
-  "d": [
-   7,
-   1
-  ],
-  "c": [
+  "b": [
    5,
-   2
+   0
+  ],
+  "a": [
+   6,
+   3
+  ],
+  "f": [
+   0,
+   1
   ]
  },
- "murderer": "c",
+ "murderer": "e",
  "cast": {
-  "f": "a",
-  "a": "b",
-  "b": "c",
-  "e": "d",
-  "d": "e",
-  "c": "f"
+  "c": "a",
+  "e": "b",
+  "d": "c",
+  "b": "d",
+  "a": "e",
+  "f": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "a",
+   "who": "c",
    "logic": {
-    "type": "eastOf",
-    "other": "c"
+    "type": "sameColAs",
+    "object": "pupitre"
    }
   },
   {
    "who": "b",
    "logic": {
-    "type": "sameRowAs",
-    "object": "table"
+    "type": "southOf",
+    "other": "c"
    }
   },
   {
-   "who": "d",
+   "who": "f",
    "logic": {
-    "type": "sameColAs",
-    "object": "table"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "northOf",
+    "type": "westOf",
     "other": "d"
    }
   },
   {
-   "who": "a",
+   "who": "e",
    "logic": {
     "type": "inRoom",
     "room": "A"
@@ -85,8 +78,29 @@
   {
    "who": "b",
    "logic": {
-    "type": "westOf",
-    "other": "d"
+    "type": "sameColAs",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "southOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "arbre"
    }
   },
   {
@@ -94,41 +108,6 @@
    "logic": {
     "type": "sameColAs",
     "object": "sarcophage"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "tombe"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "sarcophage"
-   }
-  },
-  {
-   "who": "f",
-   "logic": {
-    "type": "southOf",
-    "other": "c"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "northOf",
-    "other": "a"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "onObject",
-    "object": "arbre"
    }
   }
  ]

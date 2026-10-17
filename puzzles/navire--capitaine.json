@@ -3,11 +3,6 @@
   "title": "Le Navire Fantôme — l'affaire Gouvernail",
   "size": 7,
   "rooms": {
-    "V": {
-      "name": "Vigie",
-      "the": "la vigie",
-      "floor": "parquet"
-    },
     "P": {
       "name": "Pont",
       "the": "le pont",
@@ -40,8 +35,8 @@
     }
   },
   "layout": [
-    "VVPPPKK",
-    "VVPPPKK",
+    "EEPPPKK",
+    "EEPPPKK",
     "EEPPPQK",
     "EECCQQQ",
     "EECCCQQ",
@@ -172,25 +167,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aquabelle",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧜‍♀️",
-      "desc": "Sirène, venue pour l'aquarium",
-      "archetype": "sirene"
-    },
-    {
-      "id": "b",
-      "name": "Belladone",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧛‍♀️",
-      "desc": "Comtesse vampire, végane (elle le jure)",
-      "archetype": "vampire"
-    },
-    {
-      "id": "c",
-      "name": "Cacatoès",
+      "name": "Ara",
       "gender": "m",
       "role": "suspect",
       "icon": "🦜",
@@ -198,13 +175,34 @@
       "archetype": "perroquet"
     },
     {
-      "id": "d",
-      "name": "Désiré",
+      "id": "b",
+      "name": "Blafard",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧟",
-      "desc": "Zombie, ancien apprenti. Ancien tout court",
-      "archetype": "zombie"
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ]
+    },
+    {
+      "id": "c",
+      "name": "Corail",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene"
+    },
+    {
+      "id": "d",
+      "name": "Draculine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
     },
     {
       "id": "e",
@@ -217,15 +215,12 @@
     },
     {
       "id": "f",
-      "name": "Frisson",
+      "name": "Fernand",
       "gender": "m",
       "role": "suspect",
-      "icon": "👻",
-      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
-      "archetype": "spectre",
-      "traits": [
-        "spectre"
-      ]
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
     },
     {
       "id": "g",
@@ -240,128 +235,112 @@
   "decor": "navire",
   "id": "navire--capitaine",
   "intro": "Le capitaine Gouvernail a été retrouvé sans vie à bord du Navire Fantôme, qui dérivait dans le brouillard. Six membres d'équipage étaient à bord. Un seul était avec lui.",
-  "epilogue": "Cacatoès avoue, et le répète trois fois : Gouvernail voulait le vendre au marché pour une poignée de graines.",
+  "epilogue": "Écoutille avoue en mâchonnant sa pipe : Gouvernail avait caché la carte au trésor. Un pirate pardonne tout, sauf le trésor.",
   "clues": [
     {
       "who": "a",
-      "text": "Aquabelle était à côté d'un fauteuil.",
+      "text": "Ara était à côté d'un hamac.",
       "logic": {
         "type": "adjacentTo",
-        "object": "fauteuil"
+        "object": "hamac"
       }
     },
     {
       "who": "a",
-      "text": "Elle était allongée sur un lit.",
-      "logic": {
-        "type": "onObject",
-        "object": "lit"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Belladone était sur la même ligne qu'une table.",
+      "text": "Il était sur la même ligne qu'un tonneau.",
       "logic": {
         "type": "sameRowAs",
-        "object": "table"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Elle était à côté d'un coffre.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "coffre"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Cacatoès était sur la même ligne qu'un chaudron.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "chaudron"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Il était à côté d'un tonneau.",
-      "logic": {
-        "type": "adjacentTo",
         "object": "tonneau"
       }
     },
     {
-      "who": "d",
-      "text": "Désiré était dans la même colonne qu'un coffre.",
+      "who": "b",
+      "text": "Blafard était au sud d'Écoutille.",
       "logic": {
-        "type": "sameColAs",
-        "object": "coffre"
+        "type": "southOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il hantait un canon.",
+      "logic": {
+        "type": "onObject",
+        "object": "canon"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Corail était au sud de Fernand.",
+      "logic": {
+        "type": "southOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Draculine était à l'ouest d'Écoutille.",
+      "logic": {
+        "type": "westOf",
+        "other": "e"
       }
     },
     {
       "who": "e",
-      "text": "Écoutille était au nord de Désiré.",
+      "text": "Écoutille était sur la même ligne qu'un lit.",
       "logic": {
-        "type": "northOf",
-        "other": "d"
+        "type": "sameRowAs",
+        "object": "lit"
       }
     },
     {
       "who": "f",
-      "text": "Frisson était au sud de Désiré.",
+      "text": "Fernand était à côté d'un coffre.",
       "logic": {
-        "type": "southOf",
-        "other": "d"
-      }
-    },
-    {
-      "who": "f",
-      "text": "Il était dans la même colonne qu'un hamac.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "hamac"
+        "type": "adjacentTo",
+        "object": "coffre"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        5,
-        2
-      ],
-      "e": [
-        2,
-        5
-      ],
-      "c": [
-        3,
-        3
-      ],
-      "a": [
-        1,
+        0,
         6
       ],
-      "f": [
-        6,
-        1
+      "e": [
+        1,
+        5
       ],
-      "d": [
+      "a": [
         4,
         0
       ],
+      "c": [
+        6,
+        1
+      ],
       "b": [
-        0,
+        2,
+        2
+      ],
+      "f": [
+        5,
+        3
+      ],
+      "d": [
+        3,
         4
       ]
     },
-    "murderer": "c"
+    "murderer": "e"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
-    "hardest": "position relative",
-    "hardSteps": 0,
-    "directStart": 2
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 0
   },
-  "difficulty": 1
+  "difficulty": 3
 }

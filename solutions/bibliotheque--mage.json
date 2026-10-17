@@ -1,121 +1,107 @@
 {
  "positions": {
-  "a": [
-   0,
-   6
-  ],
-  "b": [
+  "g": [
    2,
-   5
-  ],
-  "e": [
-   6,
-   4
-  ],
-  "c": [
-   3,
    2
   ],
-  "d": [
-   1,
-   1
-  ],
   "f": [
-   4,
+   1,
+   6
+  ],
+  "d": [
+   0,
    0
   ],
-  "g": [
+  "c": [
+   6,
+   1
+  ],
+  "e": [
+   4,
+   5
+  ],
+  "b": [
+   3,
+   4
+  ],
+  "a": [
    5,
    3
   ]
  },
- "murderer": "e",
+ "murderer": "b",
  "cast": {
-  "a": "a",
+  "f": "a",
+  "d": "b",
+  "c": "c",
+  "e": "d",
   "b": "e",
-  "e": "c",
-  "c": "b",
-  "d": "d",
-  "f": "f"
+  "a": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "c",
+   "who": "f",
    "logic": {
-    "type": "inRoom",
-    "room": "L"
+    "type": "eastOf",
+    "other": "a"
    }
   },
   {
    "who": "e",
    "logic": {
-    "type": "sameRowAs",
+    "type": "sameColAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
     "object": "cristal"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "westOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tonneau"
    }
   },
   {
    "who": "d",
    "logic": {
-    "type": "sameColAs",
+    "type": "adjacentTo",
     "object": "pupitre"
    }
   },
   {
-   "who": "f",
+   "who": "b",
    "logic": {
-    "type": "westOf",
+    "type": "adjacentTo",
+    "object": "table"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "eastOf",
     "other": "d"
    }
   },
   {
-   "who": "c",
-   "logic": {
-    "type": "sameColAs",
-    "object": "pupitre"
-   }
-  },
-  {
-   "who": "f",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "chaise"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "sameColAs",
-    "object": "statue"
-   }
-  },
-  {
-   "who": "c",
+   "who": "e",
    "logic": {
     "type": "southOf",
-    "other": "a"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "sameColAs",
-    "object": "etagere"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "onObject",
-    "object": "etagere"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "onObject",
-    "object": "fauteuil"
+    "other": "b"
    }
   }
  ]

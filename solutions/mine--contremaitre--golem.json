@@ -1,113 +1,113 @@
 {
  "positions": {
   "g": [
-   0,
-   7
+   6,
+   6
   ],
-  "d": [
+  "f": [
    [
-    4,
-    4
+    1,
+    1
    ],
    [
-    5,
-    4
+    2,
+    1
    ]
+  ],
+  "c": [
+   4,
+   5
+  ],
+  "a": [
+   3,
+   7
+  ],
+  "b": [
+   5,
+   4
+  ],
+  "d": [
+   0,
+   3
   ],
   "e": [
    7,
-   1
-  ],
-  "b": [
-   2,
    0
-  ],
-  "f": [
-   1,
-   5
-  ],
-  "c": [
-   3,
-   3
-  ],
-  "a": [
-   6,
-   6
   ]
  },
- "murderer": "f",
+ "murderer": "a",
  "cast": {
-  "d": "a",
-  "e": "b",
-  "b": "c",
-  "f": "d",
-  "c": "e",
-  "a": "f"
+  "f": "a",
+  "c": "b",
+  "a": "c",
+  "b": "d",
+  "d": "e",
+  "e": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "a",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "chariot"
-   }
-  },
-  {
-   "who": "d",
-   "logic": {
-    "type": "inRoom",
-    "room": "C"
-   }
-  },
-  {
    "who": "f",
    "logic": {
+    "type": "westOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
     "type": "sameRowAs",
-    "object": "chaudron"
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "northOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "northOf",
+    "other": "e"
    }
   },
   {
    "who": "e",
    "logic": {
     "type": "sameRowAs",
-    "object": "coffre"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "sameRowAs",
     "object": "chariot"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "champi"
    }
   },
   {
    "who": "b",
    "logic": {
-    "type": "onObject",
-    "object": "lit"
+    "type": "sameColAs",
+    "object": "statue"
    }
   },
   {
-   "who": "c",
+   "who": "a",
    "logic": {
-    "type": "sameColAs",
-    "object": "chaise"
+    "type": "inRoom",
+    "room": "V"
    }
   },
   {
    "who": "d",
    "logic": {
-    "type": "eastOf",
-    "other": "c"
+    "type": "northOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "coffre"
    }
   }
  ]

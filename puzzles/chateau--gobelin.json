@@ -2,14 +2,9 @@
   "formatVersion": 1,
   "title": "Le Château de Mortebrune — l'affaire Grigou",
   "intro": "Le gobelin Grigou a été retrouvé sans vie au petit matin, au Château de Mortebrune. Six invités juraient qu'ils dormaient. Un seul était avec lui.",
-  "epilogue": "Ardent avoue : Grigou voulait le mettre en cage dans la cour, comme attraction pour les visiteurs.",
+  "epilogue": "Braise avoue : Grigou voulait le mettre en cage dans la cour, comme attraction pour les visiteurs.",
   "size": 7,
   "rooms": {
-    "C": {
-      "name": "Chapelle",
-      "the": "la chapelle",
-      "floor": "dalles"
-    },
     "G": {
       "name": "Grande salle",
       "the": "la grande salle",
@@ -42,8 +37,8 @@
     }
   },
   "layout": [
-    "CCGGGKK",
-    "CCGGGKK",
+    "AAGGGKK",
+    "AAGGGKK",
     "AAGGGKT",
     "AAJJJTT",
     "AAJJJTT",
@@ -181,16 +176,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Ardent",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🐉",
-      "desc": "Dragonnet, brûle tout ce qu'il touche",
-      "archetype": "dragonnet"
-    },
-    {
-      "id": "b",
-      "name": "Bertrand",
+      "name": "Aymeric",
       "gender": "m",
       "role": "suspect",
       "icon": "🤺",
@@ -198,8 +184,26 @@
       "archetype": "chevalier"
     },
     {
+      "id": "b",
+      "name": "Braise",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
       "id": "c",
-      "name": "Couac",
+      "name": "Childéric",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤴",
+      "desc": "Roi, avare de compliments et de tout le reste",
+      "archetype": "roi"
+    },
+    {
+      "id": "d",
+      "name": "Dièse",
       "gender": "m",
       "role": "suspect",
       "icon": "🧑‍🎤",
@@ -207,8 +211,8 @@
       "archetype": "barde"
     },
     {
-      "id": "d",
-      "name": "Diaphane",
+      "id": "e",
+      "name": "Ectoplasme",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -217,15 +221,6 @@
       "traits": [
         "spectre"
       ]
-    },
-    {
-      "id": "e",
-      "name": "Eudes",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🤴",
-      "desc": "Roi, avare de compliments et de tout le reste",
-      "archetype": "roi"
     },
     {
       "id": "f",
@@ -251,58 +246,66 @@
   "clues": [
     {
       "who": "a",
-      "text": "Ardent était à côté d'un champignon géant.",
+      "text": "Aymeric était à côté d'une étagère.",
       "logic": {
         "type": "adjacentTo",
-        "object": "champi"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était sur la même ligne qu'une étagère.",
-      "logic": {
-        "type": "sameRowAs",
         "object": "etagere"
       }
     },
     {
       "who": "b",
-      "text": "Bertrand était sur la même ligne qu'un champignon géant.",
+      "text": "Braise était à l'est d'Ectoplasme.",
+      "logic": {
+        "type": "eastOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était sur la même ligne qu'une botte de foin.",
       "logic": {
         "type": "sameRowAs",
-        "object": "champi"
+        "object": "foin"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était à l'ouest de Faëlys.",
+      "logic": {
+        "type": "westOf",
+        "other": "f"
       }
     },
     {
       "who": "c",
-      "text": "Couac était au sud de Diaphane.",
+      "text": "Childéric était sur la même ligne qu'une table.",
       "logic": {
-        "type": "southOf",
-        "other": "d"
+        "type": "sameRowAs",
+        "object": "table"
       }
     },
     {
       "who": "d",
-      "text": "Diaphane était à côté d'un coffre.",
+      "text": "Dièse était au sud d'Aymeric.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "coffre"
+        "type": "southOf",
+        "other": "a"
       }
     },
     {
       "who": "e",
-      "text": "Eudes était à l'est de Bertrand.",
+      "text": "Ectoplasme était sur la même ligne qu'un coffre.",
       "logic": {
-        "type": "eastOf",
-        "other": "b"
+        "type": "sameRowAs",
+        "object": "coffre"
       }
     },
     {
       "who": "f",
-      "text": "Faëlys était au nord de Bertrand.",
+      "text": "Faëlys était au nord de Childéric.",
       "logic": {
         "type": "northOf",
-        "other": "b"
+        "other": "c"
       }
     }
   ],
@@ -312,11 +315,11 @@
         3,
         4
       ],
-      "b": [
+      "a": [
         4,
         5
       ],
-      "c": [
+      "d": [
         6,
         0
       ],
@@ -324,27 +327,27 @@
         0,
         3
       ],
-      "d": [
+      "e": [
         2,
         1
       ],
-      "a": [
+      "b": [
         5,
         2
       ],
-      "e": [
+      "c": [
         1,
         6
       ]
     },
-    "murderer": "a"
+    "murderer": "b"
   },
   "rating": {
-    "skulls": 2,
-    "score": 4,
+    "skulls": 3,
+    "score": 5,
     "hardest": "pièces",
-    "hardSteps": 2,
-    "directStart": 1
+    "hardSteps": 1,
+    "directStart": 0
   },
-  "difficulty": 2
+  "difficulty": 3
 }

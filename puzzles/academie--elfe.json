@@ -3,11 +3,6 @@
   "title": "L'Académie de Magie — l'affaire Galwë",
   "size": 7,
   "rooms": {
-    "A": {
-      "name": "Tour d'astronomie",
-      "the": "la tour d'astronomie",
-      "floor": "parquet"
-    },
     "X": {
       "name": "Salle de cours",
       "the": "la salle de cours",
@@ -40,8 +35,8 @@
     }
   },
   "layout": [
-    "AAXXXBB",
-    "AAXXXBB",
+    "DDXXXBB",
+    "DDXXXBB",
     "DDXXXLL",
     "DDRRRLL",
     "DDRRRLL",
@@ -179,30 +174,30 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aubépine",
-      "gender": "f",
+      "name": "Azimut",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧚",
-      "desc": "Fée, doit trois tournées",
-      "archetype": "fee"
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage"
     },
     {
       "id": "b",
-      "name": "Bécher",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👨‍🏫",
-      "desc": "Professeur de potions, note à l'odeur",
-      "archetype": "professeur"
-    },
-    {
-      "id": "c",
-      "name": "Cramoisi",
+      "name": "Braise",
       "gender": "m",
       "role": "suspect",
       "icon": "🐉",
       "desc": "Dragonnet, brûle tout ce qu'il touche",
       "archetype": "dragonnet"
+    },
+    {
+      "id": "c",
+      "name": "Capucine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
     },
     {
       "id": "d",
@@ -215,12 +210,12 @@
     },
     {
       "id": "e",
-      "name": "Eustache",
+      "name": "Éprouvette",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧙‍♂️",
-      "desc": "Mage, allergique au houblon",
-      "archetype": "mage"
+      "icon": "👨‍🏫",
+      "desc": "Professeur de potions, note à l'odeur",
+      "archetype": "professeur"
     },
     {
       "id": "f",
@@ -244,54 +239,70 @@
   "decor": "academie",
   "id": "academie--elfe",
   "intro": "L'elfe Galwë a été retrouvée sans vie un soir d'examens à l'Académie de Magie. Six élèves et professeurs révisaient encore. Un seul était avec elle.",
-  "epilogue": "Aubépine avoue : Galwë l'avait utilisée comme marque-page. Toute une nuit.",
+  "epilogue": "Braise avoue : Galwë voulait l'inscrire comme « animal de laboratoire ». Il a protesté. Avec du feu.",
   "clues": [
     {
       "who": "a",
-      "text": "Aubépine était assise sur une chaise.",
+      "text": "Azimut était au nord de Djinnifer.",
       "logic": {
-        "type": "onObject",
-        "object": "chaise"
+        "type": "northOf",
+        "other": "d"
       }
     },
     {
-      "who": "b",
-      "text": "Bécher était allongé sur un lit.",
+      "who": "a",
+      "text": "Il était allongé sur un lit.",
       "logic": {
         "type": "onObject",
         "object": "lit"
       }
     },
     {
+      "who": "b",
+      "text": "Braise était à côté d'une chaise.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chaise"
+      }
+    },
+    {
       "who": "c",
-      "text": "Cramoisi était sur la même ligne qu'une boule de cristal.",
+      "text": "Capucine était à l'est de Braise.",
+      "logic": {
+        "type": "eastOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Elle était sur la même ligne qu'un chaudron.",
       "logic": {
         "type": "sameRowAs",
-        "object": "cristal"
+        "object": "chaudron"
       }
     },
     {
       "who": "d",
-      "text": "Djinnifer était à l'est d'Eustache.",
+      "text": "Djinnifer était sur la même ligne qu'un arbre.",
       "logic": {
-        "type": "eastOf",
-        "other": "e"
+        "type": "sameRowAs",
+        "object": "arbre"
       }
     },
     {
       "who": "e",
-      "text": "Eustache était dans la même colonne qu'un fauteuil.",
+      "text": "Éprouvette était à l'est d'Azimut.",
       "logic": {
-        "type": "sameColAs",
-        "object": "fauteuil"
+        "type": "eastOf",
+        "other": "a"
       }
     },
     {
       "who": "f",
-      "text": "Frimousse était dans la serre.",
+      "text": "Frimousse était dans la salle de cours.",
       "logic": {
         "type": "inRoom",
-        "room": "S"
+        "room": "X"
       }
     }
   ],
@@ -299,41 +310,41 @@
     "positions": {
       "g": [
         5,
-        3
+        4
       ],
       "f": [
+        1,
+        3
+      ],
+      "a": [
+        4,
+        0
+      ],
+      "c": [
+        2,
+        5
+      ],
+      "b": [
+        3,
+        2
+      ],
+      "d": [
         6,
         1
       ],
       "e": [
-        1,
-        5
-      ],
-      "a": [
-        4,
-        2
-      ],
-      "c": [
         0,
-        4
-      ],
-      "d": [
-        3,
         6
-      ],
-      "b": [
-        2,
-        0
       ]
     },
-    "murderer": "a"
+    "murderer": "b"
   },
   "rating": {
-    "skulls": 2,
-    "score": 4,
-    "hardest": "seul candidat",
+    "skulls": 3,
+    "score": 6,
+    "hardest": "pièces",
     "hardSteps": 2,
-    "directStart": 1
+    "directStart": 0
   },
-  "difficulty": 2
+  "difficulty": 3
 }

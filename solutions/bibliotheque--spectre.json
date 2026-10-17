@@ -1,100 +1,114 @@
 {
  "positions": {
   "g": [
-   1,
+   4,
+   2
+  ],
+  "a": [
+   2,
+   6
+  ],
+  "b": [
+   3,
    4
   ],
-  "f": [
-   2,
+  "e": [
+   0,
+   3
+  ],
+  "c": [
+   1,
    0
   ],
-  "e": [
+  "d": [
    6,
    1
   ],
-  "b": [
-   4,
-   6
-  ],
-  "d": [
-   3,
-   2
-  ],
-  "c": [
+  "f": [
    5,
-   3
-  ],
-  "a": [
-   0,
    5
   ]
  },
- "murderer": "a",
+ "murderer": "b",
  "cast": {
-  "f": "a",
-  "e": "b",
-  "b": "c",
-  "d": "d",
-  "c": "e",
-  "a": "f"
+  "a": "a",
+  "b": "b",
+  "e": "c",
+  "c": "d",
+  "d": "e",
+  "f": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "e",
+   "who": "a",
    "logic": {
-    "type": "southOf",
-    "other": "c"
+    "type": "sameColAs",
+    "object": "etagere"
    }
   },
   {
    "who": "b",
-   "logic": {
-    "type": "southOf",
-    "other": "d"
-   }
-  },
-  {
-   "who": "d",
-   "logic": {
-    "type": "westOf",
-    "other": "c"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "coffre"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "inRoom",
-    "room": "Y"
-   }
-  },
-  {
-   "who": "d",
    "logic": {
     "type": "sameRowAs",
     "object": "table"
    }
   },
   {
+   "who": "e",
+   "logic": {
+    "type": "northOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "southOf",
+    "other": "f"
+   }
+  },
+  {
    "who": "f",
    "logic": {
-    "type": "inRoom",
-    "room": "B"
+    "type": "eastOf",
+    "other": "d"
    }
   },
   {
    "who": "a",
    "logic": {
+    "type": "adjacentTo",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "eastOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
     "type": "sameColAs",
     "object": "fauteuil"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "northOf",
+    "other": "c"
    }
   }
  ]

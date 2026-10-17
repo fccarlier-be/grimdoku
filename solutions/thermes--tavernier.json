@@ -1,88 +1,95 @@
 {
  "positions": {
   "f": [
-   0,
-   5
+   5,
+   2
   ],
-  "c": [
+  "b": [
    4,
-   3
-  ],
-  "e": [
-   3,
-   1
+   0
   ],
   "a": [
-   5,
+   3,
+   3
+  ],
+  "c": [
+   1,
+   1
+  ],
+  "e": [
+   2,
    4
   ],
   "d": [
-   1,
-   0
-  ],
-  "b": [
-   2,
-   2
+   0,
+   5
   ]
  },
- "murderer": "b",
+ "murderer": "a",
  "cast": {
-  "c": "a",
-  "e": "b",
-  "a": "c",
-  "d": "d",
-  "b": "e"
+  "b": "a",
+  "a": "b",
+  "c": "c",
+  "e": "d",
+  "d": "e"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
+   "who": "a",
+   "logic": {
+    "type": "northOf",
+    "other": "b"
+   }
+  },
+  {
    "who": "d",
    "logic": {
-    "type": "adjacentTo",
-    "object": "coffre"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "table"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "onObject",
-    "object": "chaise"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "tonneau"
+    "type": "sameColAs",
+    "object": "statue"
    }
   },
   {
    "who": "a",
    "logic": {
     "type": "adjacentTo",
-    "object": "roseaux"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "onObject",
     "object": "lit"
    }
   },
   {
    "who": "b",
    "logic": {
+    "type": "sameRowAs",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "southOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
     "type": "onObject",
-    "object": "tapis"
+    "object": "chaise"
    }
   }
  ]

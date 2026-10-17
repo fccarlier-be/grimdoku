@@ -1,24 +1,14 @@
 {
   "formatVersion": 1,
-  "title": "Le Château de Mortebrune — l'affaire Eudes",
-  "intro": "Le roi Eudes a été retrouvé sans vie au petit matin, au Château de Mortebrune. Quatre invités juraient qu'ils dormaient. Un seul était avec lui.",
-  "epilogue": "Chaparde avoue : Eudes avait réclamé un audit du trésor royal. Le gobelin a classé l'audit.",
+  "title": "Le Château de Mortebrune — la seconde affaire Ferdinand",
+  "intro": "Le roi Ferdinand a été retrouvé sans vie au petit matin, au Château de Mortebrune. Cinq invités juraient qu'ils dormaient. Un seul était avec lui.",
+  "epilogue": "Aëlys avoue avec dédain : Ferdinand avait servi au banquet un vin imbuvable. Elle l'a jugé sans appel.",
   "size": 7,
   "rooms": {
-    "C": {
-      "name": "Chapelle",
-      "the": "la chapelle",
-      "floor": "dalles"
-    },
     "G": {
       "name": "Grande salle",
       "the": "la grande salle",
       "floor": "dalles"
-    },
-    "K": {
-      "name": "Cuisines",
-      "the": "les cuisines",
-      "floor": "damier"
     },
     "A": {
       "name": "Armurerie",
@@ -42,9 +32,9 @@
     }
   },
   "layout": [
-    "CCGGGKK",
-    "CCGGGKK",
-    "AAGGGKT",
+    "AAGGGGG",
+    "AAGGGGG",
+    "AAGGGGT",
     "AAJJJTT",
     "AAJJJTT",
     "DDJJJTT",
@@ -181,22 +171,21 @@
   "characters": [
     {
       "id": "a",
-      "name": "Ardent",
-      "gender": "m",
+      "name": "Aëlys",
+      "gender": "f",
       "role": "suspect",
-      "icon": "🐉",
-      "desc": "Dragon adulte, toujours lové dans un coin",
-      "archetype": "dragon",
-      "shape": "T4"
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
     },
     {
       "id": "b",
-      "name": "Brann",
+      "name": "Bertrand",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧑‍🎤",
-      "desc": "Barde, chante faux",
-      "archetype": "barde"
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
     },
     {
       "id": "c",
@@ -209,16 +198,26 @@
     },
     {
       "id": "d",
-      "name": "Durandal",
+      "name": "Draconyx",
       "gender": "m",
       "role": "suspect",
-      "icon": "🤺",
-      "desc": "Chevalier, armure trop petite depuis Noël",
-      "archetype": "chevalier"
+      "icon": "🐉",
+      "desc": "Dragon adulte, toujours lové dans un coin",
+      "archetype": "dragon",
+      "shape": "I2"
     },
     {
       "id": "e",
-      "name": "Eudes",
+      "name": "Écho",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
+    },
+    {
+      "id": "f",
+      "name": "Ferdinand",
       "gender": "m",
       "role": "victim",
       "icon": "🤴",
@@ -231,90 +230,94 @@
   "clues": [
     {
       "who": "a",
-      "text": "Ardent était au sud de Brann.",
+      "text": "Aëlys était au nord d'Écho.",
       "logic": {
-        "type": "southOf",
-        "other": "b"
+        "type": "northOf",
+        "other": "e"
       }
     },
     {
-      "who": "b",
-      "text": "Brann était à côté d'un coffre.",
+      "who": "a",
+      "text": "Elle était dans la même colonne qu'un coffre.",
       "logic": {
-        "type": "adjacentTo",
+        "type": "sameColAs",
         "object": "coffre"
       }
     },
     {
       "who": "b",
-      "text": "Il était à l'ouest de Durandal.",
+      "text": "Bertrand était sur la même ligne qu'un sarcophage.",
       "logic": {
-        "type": "westOf",
-        "other": "d"
+        "type": "sameRowAs",
+        "object": "sarcophage"
       }
     },
     {
       "who": "c",
-      "text": "Chaparde était dans la même colonne qu'un lit.",
+      "text": "Chaparde était sur la même ligne qu'un champignon géant.",
       "logic": {
-        "type": "sameColAs",
-        "object": "lit"
+        "type": "sameRowAs",
+        "object": "champi"
       }
     },
     {
       "who": "d",
-      "text": "Durandal était dans le donjon.",
+      "text": "Draconyx était à l'est d'Aëlys.",
       "logic": {
-        "type": "inRoom",
-        "room": "D"
+        "type": "eastOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Écho était à côté d'un lit.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "lit"
       }
     }
   ],
   "solution": {
     "positions": {
-      "e": [
-        0,
-        5
-      ],
-      "a": [
-        [
-          3,
-          4
-        ],
-        [
-          4,
-          3
-        ],
-        [
-          4,
-          4
-        ],
-        [
-          5,
-          4
-        ]
+      "f": [
+        3,
+        1
       ],
       "d": [
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ]
+      ],
+      "b": [
         6,
         2
       ],
       "c": [
-        1,
+        4,
+        3
+      ],
+      "e": [
+        2,
         6
       ],
-      "b": [
-        2,
-        1
+      "a": [
+        1,
+        0
       ]
     },
-    "murderer": "c"
+    "murderer": "a"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
-    "hardest": "position relative",
-    "hardSteps": 0,
-    "directStart": 1
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 0
   },
   "difficulty": 4
 }

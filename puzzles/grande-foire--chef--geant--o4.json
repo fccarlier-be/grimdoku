@@ -1,0 +1,580 @@
+{
+  "formatVersion": 1,
+  "title": "La Grande Foire des Mille Merveilles — l'affaire Kari",
+  "decor": "foire",
+  "size": 12,
+  "rooms": {
+    "A": {
+      "name": "Chapiteau",
+      "the": "le chapiteau",
+      "floor": "sciure"
+    },
+    "B": {
+      "name": "Ménagerie",
+      "the": "la ménagerie",
+      "floor": "paille"
+    },
+    "C": {
+      "name": "Grande roue",
+      "the": "la grande roue",
+      "floor": "paves"
+    },
+    "D": {
+      "name": "Stand de tir",
+      "the": "le stand de tir",
+      "floor": "parquet"
+    },
+    "E": {
+      "name": "Piste aux étoiles",
+      "the": "la piste aux étoiles",
+      "floor": "sciure"
+    },
+    "G": {
+      "name": "Cabinet des curiosités",
+      "the": "le cabinet des curiosités",
+      "floor": "noble"
+    },
+    "H": {
+      "name": "Labyrinthe",
+      "the": "le labyrinthe",
+      "floor": "herbe"
+    },
+    "I": {
+      "name": "Buvette",
+      "the": "la buvette",
+      "floor": "tomettes"
+    },
+    "J": {
+      "name": "Tente de la voyante",
+      "the": "la tente de la voyante",
+      "floor": "mosaique"
+    },
+    "K": {
+      "name": "Manège",
+      "the": "le manège",
+      "floor": "paves"
+    }
+  },
+  "layout": [
+    "AAAABBBBCCCC",
+    "AAAABBBBCCCC",
+    "AAAABBBBCCCC",
+    "DDDDDBBBCCCC",
+    "DDDDDEEEEHHH",
+    "DDDDDEEEEHHH",
+    "GGGGGEEEEHHH",
+    "GGGGGEEEEHHH",
+    "GGGIIIIIIHHH",
+    "JJJIIIIIIHHH",
+    "JJJJKKKKKHHH",
+    "JJJJKKKKKKKK"
+  ],
+  "objects": [
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        1
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        1,
+        7
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        2,
+        4
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        10
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        2,
+        9
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        3,
+        11
+      ]
+    },
+    {
+      "type": "canon",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        7,
+        8
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        5
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        10
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        6,
+        9
+      ]
+    },
+    {
+      "type": "hamac",
+      "at": [
+        5,
+        11
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        6,
+        2
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        7,
+        0
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        7,
+        4
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        8,
+        10
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        10,
+        11
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        9,
+        9
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        8,
+        5
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        9,
+        7
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        9,
+        4
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        10,
+        1
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        11,
+        2
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        10,
+        6
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        11,
+        9
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        11,
+        5
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Avaloir",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    },
+    {
+      "id": "b",
+      "name": "Briochon",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🍳",
+      "desc": "Boulanger, pétrit plus de ragots que de pâte",
+      "archetype": "boulanger"
+    },
+    {
+      "id": "c",
+      "name": "Clinquant",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🎩",
+      "desc": "Bonimenteur, vend du rêve au kilo",
+      "archetype": "bonimenteur"
+    },
+    {
+      "id": "d",
+      "name": "Dièse",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
+    },
+    {
+      "id": "e",
+      "name": "Escabeau",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🦶",
+      "desc": "Géant, toujours couché : aucun plafond n'est assez haut",
+      "archetype": "geant",
+      "shape": "O4"
+    },
+    {
+      "id": "f",
+      "name": "Fortuna",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🔮",
+      "desc": "Cartomancienne, voit l'avenir, rate le présent",
+      "archetype": "cartomancienne"
+    },
+    {
+      "id": "g",
+      "name": "Glycine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
+    },
+    {
+      "id": "h",
+      "name": "Harpagnol",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "i",
+      "name": "Ignis",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
+      "id": "j",
+      "name": "Jarret",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👹",
+      "desc": "Ogre, végétarien depuis mardi",
+      "archetype": "ogre"
+    },
+    {
+      "id": "k",
+      "name": "Kari",
+      "gender": "m",
+      "role": "victim",
+      "icon": "👨‍🍳",
+      "desc": "Chef gobelin, goûte tout, surtout ce qui bouge encore",
+      "archetype": "chef"
+    }
+  ],
+  "id": "grande-foire--chef--geant--o4",
+  "intro": "Le chef Kari a été retrouvé sans vie à la Grande Foire des Mille Merveilles, juste après le feu d'artifice. Dix forains et visiteurs juraient regarder le ciel. Un seul était avec lui.",
+  "epilogue": "Jarret avoue : Kari avait organisé le concours du plus gros mangeur. Et l'avait gagné.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Avaloir était dans la même colonne qu'une botte de foin.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "foin"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était sur la même ligne qu'une table.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Briochon était à côté d'un fauteuil.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Clinquant était assis sur une chaise.",
+      "logic": {
+        "type": "onObject",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dièse était à côté d'une statue.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Escabeau était à l'est d'Ignis.",
+      "logic": {
+        "type": "eastOf",
+        "other": "i"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Fortuna était au nord d'Harpagnol.",
+      "logic": {
+        "type": "northOf",
+        "other": "h"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Elle était dans le manège.",
+      "logic": {
+        "type": "inRoom",
+        "room": "K"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Glycine était à l'est d'Harpagnol.",
+      "logic": {
+        "type": "eastOf",
+        "other": "h"
+      }
+    },
+    {
+      "who": "h",
+      "text": "Harpagnol était à l'est de Clinquant.",
+      "logic": {
+        "type": "eastOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "i",
+      "text": "Ignis était dans la piste aux étoiles.",
+      "logic": {
+        "type": "inRoom",
+        "room": "E"
+      }
+    },
+    {
+      "who": "j",
+      "text": "Jarret était à l'est d'Avaloir.",
+      "logic": {
+        "type": "eastOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "j",
+      "text": "Il était sur la même ligne qu'un hamac.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "hamac"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "k": [
+        9,
+        11
+      ],
+      "e": [
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          7
+        ]
+      ],
+      "c": [
+        0,
+        0
+      ],
+      "f": [
+        10,
+        8
+      ],
+      "d": [
+        1,
+        10
+      ],
+      "h": [
+        11,
+        1
+      ],
+      "a": [
+        8,
+        4
+      ],
+      "g": [
+        4,
+        2
+      ],
+      "i": [
+        6,
+        5
+      ],
+      "j": [
+        5,
+        9
+      ],
+      "b": [
+        7,
+        3
+      ]
+    },
+    "murderer": "j"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 0
+  },
+  "difficulty": 4
+}

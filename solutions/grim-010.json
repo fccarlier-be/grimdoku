@@ -1,107 +1,93 @@
 {
  "positions": {
   "g": [
-   4,
-   4
-  ],
-  "d": [
    0,
-   0
-  ],
-  "e": [
-   6,
-   1
-  ],
-  "a": [
-   3,
    2
   ],
-  "b": [
+  "e": [
    1,
-   3
-  ],
-  "c": [
-   5,
    6
   ],
   "f": [
+   6,
+   4
+  ],
+  "c": [
    2,
+   1
+  ],
+  "d": [
+   5,
+   0
+  ],
+  "b": [
+   4,
+   3
+  ],
+  "a": [
+   3,
    5
   ]
  },
- "murderer": "a",
+ "murderer": "c",
  "cast": {
-  "d": "a",
-  "e": "b",
-  "a": "c",
-  "b": "d",
-  "c": "e",
-  "f": "f"
+  "e": "a",
+  "f": "b",
+  "c": "c",
+  "d": "d",
+  "b": "e",
+  "a": "f"
  },
  "nSolutions": 1,
- "needsL2": true,
+ "needsL2": false,
  "clues": [
   {
-   "who": "d",
+   "who": "e",
    "logic": {
-    "type": "westOf",
-    "other": "c"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "eastOf",
-    "other": "d"
+    "type": "sameColAs",
+    "object": "statue"
    }
   },
   {
    "who": "c",
-   "logic": {
-    "type": "eastOf",
-    "other": "b"
-   }
-  },
-  {
-   "who": "f",
    "logic": {
     "type": "onObject",
     "object": "fauteuil"
    }
   },
   {
-   "who": "e",
+   "who": "d",
    "logic": {
-    "type": "sameColAs",
-    "object": "coffre"
+    "type": "inRoom",
+    "room": "R"
    }
   },
   {
-   "who": "e",
+   "who": "f",
    "logic": {
-    "type": "sameRowAs",
-    "object": "cristal"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "notAdjacentTo",
-    "object": "etagere"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "sameColAs",
-    "object": "pupitre"
+    "type": "southOf",
+    "other": "d"
    }
   },
   {
    "who": "a",
    "logic": {
     "type": "adjacentTo",
-    "object": "table"
+    "object": "statue"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "onObject",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "eastOf",
+    "other": "d"
    }
   }
  ]

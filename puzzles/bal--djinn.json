@@ -18,11 +18,6 @@
       "the": "l'escalier d'honneur",
       "floor": "dalles"
     },
-    "V": {
-      "name": "Vestiaire",
-      "the": "le vestiaire",
-      "floor": "parquet"
-    },
     "F": {
       "name": "Buffet",
       "the": "le buffet",
@@ -47,8 +42,8 @@
   "layout": [
     "BBBSSSSE",
     "BBSSSSSE",
-    "VVSSSSEE",
-    "VVSSSSFF",
+    "BBSSSSEE",
+    "BBSSSSFF",
     "MMMSSFFF",
     "MMMJJJFF",
     "OOJJJJFF",
@@ -199,7 +194,34 @@
   "characters": [
     {
       "id": "a",
-      "name": "Albâtre",
+      "name": "Aldric",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤴",
+      "desc": "Roi, avare de compliments et de tout le reste",
+      "archetype": "roi"
+    },
+    {
+      "id": "b",
+      "name": "Belladone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
+    },
+    {
+      "id": "c",
+      "name": "Célandra",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
+    },
+    {
+      "id": "d",
+      "name": "Diaphane",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -210,35 +232,17 @@
       ]
     },
     {
-      "id": "b",
-      "name": "Baudouin",
+      "id": "e",
+      "name": "Enguerrand",
       "gender": "m",
       "role": "suspect",
-      "icon": "🤴",
-      "desc": "Roi, avare de compliments et de tout le reste",
-      "archetype": "roi"
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
     },
     {
-      "id": "c",
-      "name": "Crépuscula",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧛‍♀️",
-      "desc": "Comtesse vampire, végane (elle le jure)",
-      "archetype": "vampire"
-    },
-    {
-      "id": "d",
-      "name": "Daëlin",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧝‍♀️",
-      "desc": "Elfe, critique gastronomique",
-      "archetype": "elfe"
-    },
-    {
-      "id": "e",
-      "name": "Écho",
+      "id": "f",
+      "name": "Fausset",
       "gender": "m",
       "role": "suspect",
       "icon": "🧑‍🎤",
@@ -246,22 +250,13 @@
       "archetype": "barde"
     },
     {
-      "id": "f",
-      "name": "Fougère",
+      "id": "g",
+      "name": "Glycine",
       "gender": "f",
       "role": "suspect",
       "icon": "🧚",
       "desc": "Fée, doit trois tournées",
       "archetype": "fee"
-    },
-    {
-      "id": "g",
-      "name": "Gontran",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🤺",
-      "desc": "Chevalier, armure trop petite depuis Noël",
-      "archetype": "chevalier"
     },
     {
       "id": "h",
@@ -276,148 +271,124 @@
   "decor": "bal",
   "id": "bal--djinn",
   "intro": "La djinn Houka a été retrouvée sans vie au Bal Masqué, sous un loup de velours. Sept invités dansaient encore. Un seul était avec elle.",
-  "epilogue": "Fougère avoue : Houka l'avait prise pour une décoration de lustre et voulait l'accrocher.",
+  "epilogue": "Enguerrand avoue en grinçant : Houka avait refusé de danser avec lui à cause du bruit de son armure.",
   "clues": [
     {
       "who": "a",
-      "text": "Albâtre était dans la même colonne qu'une statue.",
+      "text": "Aldric était au nord de Belladone.",
       "logic": {
-        "type": "sameColAs",
-        "object": "statue"
+        "type": "northOf",
+        "other": "b"
       }
     },
     {
       "who": "a",
-      "text": "Il était à côté d'un fauteuil.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "fauteuil"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Baudouin était dans le vestiaire.",
+      "text": "Il était dans le jardin d'hiver.",
       "logic": {
         "type": "inRoom",
-        "room": "V"
+        "room": "J"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était dans la même colonne qu'un arbre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "arbre"
       }
     },
     {
       "who": "b",
-      "text": "Il était assis sur une chaise.",
-      "logic": {
-        "type": "onObject",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Crépuscula était au sud de Fougère.",
-      "logic": {
-        "type": "southOf",
-        "other": "f"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Elle était dans la même colonne qu'un tonneau.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "tonneau"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Elle était au nord de Daëlin.",
-      "logic": {
-        "type": "northOf",
-        "other": "d"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Daëlin était à l'ouest d'Écho.",
-      "logic": {
-        "type": "westOf",
-        "other": "e"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Elle était assise dans un fauteuil.",
+      "text": "Belladone était assise dans un fauteuil.",
       "logic": {
         "type": "onObject",
         "object": "fauteuil"
       }
     },
     {
-      "who": "e",
-      "text": "Écho était à côté d'un champignon géant.",
+      "who": "c",
+      "text": "Célandra était sur la même ligne qu'un champignon géant.",
       "logic": {
-        "type": "adjacentTo",
+        "type": "sameRowAs",
         "object": "champi"
       }
     },
     {
-      "who": "f",
-      "text": "Fougère était sur la même ligne qu'une table.",
+      "who": "d",
+      "text": "Diaphane hantait une statue.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "table"
+        "type": "onObject",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Enguerrand était à côté d'une chaise.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Fausset était sur un tapis.",
+      "logic": {
+        "type": "onObject",
+        "object": "tapis"
       }
     },
     {
       "who": "g",
-      "text": "Gontran était dans la même colonne qu'une table.",
+      "text": "Glycine était au sud de Diaphane.",
       "logic": {
-        "type": "sameColAs",
-        "object": "table"
+        "type": "southOf",
+        "other": "d"
       }
     }
   ],
   "solution": {
     "positions": {
       "h": [
-        0,
-        5
-      ],
-      "a": [
-        1,
-        0
-      ],
-      "b": [
         3,
-        1
-      ],
-      "g": [
-        2,
-        6
-      ],
-      "d": [
-        7,
-        2
-      ],
-      "e": [
-        6,
-        4
-      ],
-      "f": [
-        4,
         3
       ],
-      "c": [
+      "d": [
+        0,
+        0
+      ],
+      "a": [
         5,
+        5
+      ],
+      "e": [
+        1,
+        4
+      ],
+      "c": [
+        6,
+        6
+      ],
+      "f": [
+        2,
         7
+      ],
+      "g": [
+        4,
+        1
+      ],
+      "b": [
+        7,
+        2
       ]
     },
-    "murderer": "f"
+    "murderer": "e"
   },
   "rating": {
-    "skulls": 2,
-    "score": 4,
+    "skulls": 3,
+    "score": 7,
     "hardest": "pièces",
-    "hardSteps": 2,
-    "directStart": 2
+    "hardSteps": 3,
+    "directStart": 0
   },
-  "difficulty": 2
+  "difficulty": 3
 }

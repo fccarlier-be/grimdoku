@@ -1,93 +1,101 @@
 {
  "positions": {
-  "e": [
-   6,
+  "f": [
+   3,
    5
   ],
-  "c": [
+  "b": [
    [
-    0,
-    2
-   ],
-   [
-    0,
+    4,
     3
    ],
    [
-    0,
+    4,
     4
    ]
   ],
   "a": [
-   3,
+   1,
    1
   ],
-  "d": [
-   1,
-   0
+  "c": [
+   0,
+   2
   ],
-  "b": [
-   4,
+  "d": [
+   2,
    6
+  ],
+  "e": [
+   6,
+   0
   ]
  },
- "murderer": "b",
+ "murderer": "d",
  "cast": {
-  "c": "a",
+  "b": "a",
   "a": "b",
-  "d": "c",
-  "b": "d"
+  "c": "c",
+  "d": "d",
+  "e": "e"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "c",
+   "who": "a",
    "logic": {
-    "type": "sameColAs",
-    "object": "chaise"
+    "type": "northOf",
+    "other": "d"
    }
   },
   {
-   "who": "a",
+   "who": "c",
    "logic": {
-    "type": "southOf",
-    "other": "d"
+    "type": "westOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chaise"
    }
   },
   {
    "who": "d",
    "logic": {
-    "type": "sameColAs",
-    "object": "statue"
+    "type": "sameRowAs",
+    "object": "tapis"
    }
   },
   {
    "who": "b",
    "logic": {
     "type": "sameColAs",
-    "object": "chaudron"
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "sarcophage"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "westOf",
+    "other": "a"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "sameColAs",
-    "object": "foin"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "champi"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "lit"
+    "type": "onObject",
+    "object": "tapis"
    }
   }
  ]

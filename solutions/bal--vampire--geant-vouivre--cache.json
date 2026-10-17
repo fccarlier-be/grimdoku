@@ -1,111 +1,105 @@
 {
  "positions": {
-  "f": [
-   5,
-   3
+  "g": [
+   0,
+   7
   ],
   "e": [
    [
-    4,
-    1
+    1,
+    3
    ],
    [
-    4,
-    2
+    1,
+    4
    ]
   ],
   "c": [
    [
-    1,
+    5,
     5
    ],
    [
-    2,
-    5
-   ],
-   [
-    3,
+    6,
     5
    ]
   ],
   "a": [
-   6,
-   0
-  ],
-  "d": [
-   7,
-   6
+   4,
+   2
   ],
   "b": [
-   0,
-   7
+   7,
+   1
+  ],
+  "d": [
+   3,
+   0
+  ],
+  "f": [
+   2,
+   6
   ]
  },
- "murderer": "d",
+ "murderer": "f",
  "cast": {
   "e": "a",
   "c": "b",
   "a": "c",
-  "d": "d",
-  "b": "e"
+  "b": "d",
+  "d": "e",
+  "f": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "c",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "coffre"
-   }
-  },
-  {
-   "who": "c",
+   "who": "a",
    "logic": {
     "type": "adjacentTo",
-    "object": "statue"
+    "object": "fauteuil"
    }
   },
   {
    "who": "b",
    "logic": {
-    "type": "inRoom",
-    "room": "E"
+    "type": "sameColAs",
+    "object": "chaise"
    }
   },
   {
-   "who": "a",
+   "who": "b",
    "logic": {
-    "type": "onObject",
-    "object": "lit"
+    "type": "westOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "champi"
    }
   },
   {
    "who": "d",
    "logic": {
-    "type": "southOf",
-    "other": "a"
+    "type": "inRoom",
+    "room": "B"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tapis"
    }
   },
   {
    "who": "c",
    "logic": {
     "type": "sameRowAs",
-    "object": "chaise"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "inRoom",
-    "room": "M"
-   }
-  },
-  {
-   "who": "d",
-   "logic": {
-    "type": "sameColAs",
-    "object": "table"
+    "object": "arbre"
    }
   }
  ]

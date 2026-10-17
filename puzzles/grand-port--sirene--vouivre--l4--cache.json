@@ -1,0 +1,440 @@
+{
+  "formatVersion": 1,
+  "title": "Le Grand Port de Brumeval — l'affaire Houle",
+  "decor": "port",
+  "size": 10,
+  "rooms": {
+    "Q": {
+      "name": "Quais",
+      "the": "les quais",
+      "floor": "parquet"
+    },
+    "E": {
+      "name": "Entrepôt",
+      "the": "l'entrepôt",
+      "floor": "sciure"
+    },
+    "B": {
+      "name": "Capitainerie",
+      "the": "la capitainerie",
+      "floor": "parquet"
+    },
+    "C": {
+      "name": "Chantier naval",
+      "the": "le chantier naval",
+      "floor": "sciure"
+    },
+    "M": {
+      "name": "Marché aux poissons",
+      "the": "le marché aux poissons",
+      "floor": "paves"
+    },
+    "N": {
+      "name": "Galion",
+      "the": "le galion",
+      "floor": "navire"
+    },
+    "D": {
+      "name": "Douane",
+      "the": "la douane",
+      "floor": "dalles"
+    }
+  },
+  "layout": [
+    "QQQQQQEEEE",
+    "QQQQQQEEEE",
+    "BBBBBBEEEE",
+    "BBBBBBCCCC",
+    "BBBBBBCCCC",
+    "MMMMNNCCCC",
+    "MMMMNNNNCC",
+    "MMMMNNNNCC",
+    "DDDDNNNNCC",
+    "DDDDDDNNCC"
+  ],
+  "objects": [
+    {
+      "type": "barque",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "canon",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        0,
+        8
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        9
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        2,
+        7
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        2
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        4,
+        5
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        4,
+        7
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        5,
+        9
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        6,
+        1
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        7,
+        3
+      ]
+    },
+    {
+      "type": "canon",
+      "at": [
+        6,
+        5
+      ]
+    },
+    {
+      "type": "hamac",
+      "at": [
+        8,
+        6
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        9,
+        7
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        6,
+        9
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        9,
+        8
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        8,
+        1
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        9,
+        4
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Arnak",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "b",
+      "name": "Bâbord",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🏴‍☠️",
+      "desc": "Pirate, a perdu une jambe, un œil et le sens de l'orientation",
+      "archetype": "pirate"
+    },
+    {
+      "id": "c",
+      "name": "Couleuvrette",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🐍",
+      "desc": "Vouivre, serpent ailé, très longue à se retourner",
+      "archetype": "vouivre",
+      "shape": "L4"
+    },
+    {
+      "id": "d",
+      "name": "Drakkar",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍✈️",
+      "desc": "Capitaine, n'a jamais quitté le port",
+      "archetype": "capitaine"
+    },
+    {
+      "id": "e",
+      "name": "Écho-Écho",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🦜",
+      "desc": "Perroquet, répète tous les secrets",
+      "archetype": "perroquet"
+    },
+    {
+      "id": "f",
+      "name": "Fringale",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    },
+    {
+      "id": "g",
+      "name": "Grippesou",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧔‍♂️",
+      "desc": "Tavernier nain, radin légendaire",
+      "archetype": "tavernier"
+    },
+    {
+      "id": "h",
+      "name": "Houle",
+      "gender": "f",
+      "role": "victim",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene"
+    }
+  ],
+  "id": "grand-port--sirene--vouivre--l4--cache",
+  "hiddenShapes": true,
+  "hiddenMax": 4,
+  "intro": "La sirène Houle a été retrouvée sans vie au Grand Port de Brumeval, un soir de brume si épaisse qu'on n'y voyait pas sa propre jambe de bois. Sept habitués erraient sur le port. Un seul était avec elle.",
+  "epilogue": "Drakkar avoue, la casquette sur le cœur : Houle avait percé la coque de son galion pour « voir s'il flottait encore ».",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Arnak était assis sur une chaise.",
+      "logic": {
+        "type": "onObject",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bâbord était à côté d'un coffre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Couleuvrette était sur la même ligne qu'une enclume.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "enclume"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Elle était à côté d'un fauteuil.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Elle était à côté d'un tonneau.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Drakkar était à côté d'un hamac.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "hamac"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Écho-Écho était au sud de Grippesou.",
+      "logic": {
+        "type": "southOf",
+        "other": "g"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Fringale était à l'est d'Écho-Écho.",
+      "logic": {
+        "type": "eastOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Il était dans la même colonne qu'une table.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Il était au sud de Grippesou.",
+      "logic": {
+        "type": "southOf",
+        "other": "g"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Grippesou était dans la même colonne qu'un chariot de mine.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chariot"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "h": [
+        5,
+        5
+      ],
+      "c": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "b": [
+        8,
+        2
+      ],
+      "d": [
+        7,
+        6
+      ],
+      "e": [
+        6,
+        0
+      ],
+      "g": [
+        0,
+        7
+      ],
+      "f": [
+        1,
+        1
+      ],
+      "a": [
+        9,
+        8
+      ]
+    },
+    "murderer": "d"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 7,
+    "hardest": "pièces",
+    "hardSteps": 3,
+    "directStart": 0
+  },
+  "difficulty": 5
+}

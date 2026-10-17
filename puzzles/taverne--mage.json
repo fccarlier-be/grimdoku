@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "title": "Meurtre au Sanglier Borgne — l'affaire Faribole",
   "intro": "Le mage Faribole a été retrouvé sans vie à l'aube, au Sanglier Borgne. Cinq clients avaient trop bu, ou pas assez. Un seul était avec lui.",
-  "epilogue": "Écu avoue en comptant ses pièces : Faribole voulait partir sans payer l'ardoise. Personne ne part sans payer l'ardoise.",
+  "epilogue": "Denier avoue en comptant ses pièces : Faribole voulait partir sans payer l'ardoise. Personne ne part sans payer l'ardoise.",
   "size": 6,
   "rooms": {
     "T": {
@@ -137,12 +137,12 @@
     },
     {
       "id": "b",
-      "name": "Bérénwë",
-      "gender": "f",
+      "name": "Brann",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧝‍♀️",
-      "desc": "Elfe, critique gastronomique",
-      "archetype": "elfe"
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
     },
     {
       "id": "c",
@@ -155,21 +155,21 @@
     },
     {
       "id": "d",
-      "name": "Dièse",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧑‍🎤",
-      "desc": "Barde, chante faux",
-      "archetype": "barde"
-    },
-    {
-      "id": "e",
-      "name": "Écu",
+      "name": "Denier",
       "gender": "m",
       "role": "suspect",
       "icon": "🧔‍♂️",
       "desc": "Tavernier nain, radin légendaire",
       "archetype": "tavernier"
+    },
+    {
+      "id": "e",
+      "name": "Erwëlle",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
     },
     {
       "id": "f",
@@ -186,96 +186,88 @@
   "clues": [
     {
       "who": "a",
-      "text": "Avaloir était dans la même colonne qu'un tonneau.",
+      "text": "Avaloir était à côté d'un tonneau.",
       "logic": {
-        "type": "sameColAs",
+        "type": "adjacentTo",
         "object": "tonneau"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était sur la même ligne qu'un chaudron.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "chaudron"
       }
     },
     {
       "who": "b",
-      "text": "Bérénwë était à côté d'un tonneau.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "tonneau"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Capucine était sur la même ligne qu'une chaise.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Elle était dans la même colonne qu'un lit.",
+      "text": "Brann était dans la même colonne qu'un chaudron.",
       "logic": {
         "type": "sameColAs",
-        "object": "lit"
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Capucine était à côté d'un coffre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "coffre"
       }
     },
     {
       "who": "d",
-      "text": "Dièse était à côté d'une botte de foin.",
+      "text": "Denier était au nord de Brann.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "foin"
+        "type": "northOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était sur la même ligne qu'un tonneau.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "tonneau"
       }
     },
     {
       "who": "e",
-      "text": "Écu était dans la même colonne qu'une table.",
+      "text": "Erwëlle était à l'est de Denier.",
       "logic": {
-        "type": "sameColAs",
-        "object": "table"
+        "type": "eastOf",
+        "other": "d"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        5,
-        2
-      ],
-      "d": [
-        4,
-        5
-      ],
-      "a": [
-        0,
-        3
-      ],
-      "b": [
-        2,
-        4
-      ],
-      "c": [
         1,
         0
       ],
-      "e": [
+      "b": [
+        5,
+        4
+      ],
+      "a": [
         3,
+        3
+      ],
+      "e": [
+        0,
+        5
+      ],
+      "c": [
+        4,
         1
+      ],
+      "d": [
+        2,
+        2
       ]
     },
-    "murderer": "e"
+    "murderer": "d"
   },
   "rating": {
-    "skulls": 0,
-    "score": 1,
-    "hardest": "case unique",
+    "skulls": 2,
+    "score": 4,
+    "hardest": "ligne réservée",
     "hardSteps": 0,
-    "directStart": 1
+    "directStart": 0
   },
-  "difficulty": 0
+  "difficulty": 2
 }

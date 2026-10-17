@@ -1,13 +1,8 @@
 {
   "formatVersion": 1,
-  "title": "La Mine des Nains — l'affaire Émeri",
+  "title": "La Mine des Nains — la seconde affaire Granit",
   "size": 8,
   "rooms": {
-    "E": {
-      "name": "Entrée",
-      "the": "l'entrée",
-      "floor": "roche"
-    },
     "G": {
       "name": "Galerie",
       "the": "la galerie",
@@ -16,11 +11,6 @@
     "F": {
       "name": "Forge",
       "the": "la forge",
-      "floor": "roche"
-    },
-    "P": {
-      "name": "Puits",
-      "the": "le puits",
       "floor": "roche"
     },
     "V": {
@@ -45,11 +35,11 @@
     }
   },
   "layout": [
-    "EEEGGFFF",
-    "EEEGGFFF",
-    "DDGGGPPF",
-    "DDGGGPPV",
-    "DDCCCPVV",
+    "DDDGGFFF",
+    "DDDGGFFF",
+    "DDGGGFFF",
+    "DDGGGFFV",
+    "DDCCCFVV",
     "TTCCCVVV",
     "TTCCCVVV",
     "TTTTCVVV"
@@ -175,17 +165,16 @@
       ]
     }
   ],
-  "intro": "Le contremaître Émeri a été retrouvé au fond de la Mine des Nains, aussi froid que le granit. Quatre ouvriers étaient descendus pour l'équipe de nuit. Un seul était avec lui.",
+  "intro": "Le contremaître Granit a été retrouvé au fond de la Mine des Nains, aussi froid que le granit. Six ouvriers étaient descendus pour l'équipe de nuit. Un seul était avec lui.",
   "characters": [
     {
       "id": "a",
-      "name": "Argile",
+      "name": "Arnak",
       "gender": "m",
       "role": "suspect",
-      "icon": "🪨",
-      "desc": "Golem de pierre, lent mais très appliqué",
-      "archetype": "golem",
-      "shape": "I4"
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
     },
     {
       "id": "b",
@@ -198,7 +187,35 @@
     },
     {
       "id": "c",
-      "name": "Caillou",
+      "name": "Clodomir",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
+    },
+    {
+      "id": "d",
+      "name": "Dardafeu",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
+      "id": "e",
+      "name": "Éboulis",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🪨",
+      "desc": "Golem de pierre, lent mais très appliqué",
+      "archetype": "golem",
+      "shape": "I2"
+    },
+    {
+      "id": "f",
+      "name": "Filon",
       "gender": "m",
       "role": "suspect",
       "icon": "⛏️",
@@ -206,17 +223,8 @@
       "archetype": "mineur"
     },
     {
-      "id": "d",
-      "name": "Dîme",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
-    },
-    {
-      "id": "e",
-      "name": "Émeri",
+      "id": "g",
+      "name": "Granit",
       "gender": "m",
       "role": "victim",
       "icon": "👷",
@@ -226,56 +234,96 @@
   ],
   "decor": "mine",
   "id": "mine--contremaitre--golem--i4",
-  "epilogue": "Bâfrin avoue : Émeri l'utilisait comme étai depuis six mois. Un troll aussi a besoin de s'asseoir.",
+  "epilogue": "Dardafeu servait de lampe et de soufflet sans être payé. Granit a ri quand il a demandé une augmentation. Le dragonnet n'a pas ri.",
   "clues": [
     {
       "who": "a",
-      "text": "Argile était à côté d'une table.",
+      "text": "Arnak était dans le filon.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "table"
+        "type": "inRoom",
+        "room": "V"
       }
     },
     {
       "who": "b",
-      "text": "Bâfrin était sur la même ligne qu'un lit.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "lit"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était à côté d'un lit.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "lit"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Caillou était dans la même colonne qu'un champignon géant.",
+      "text": "Bâfrin était dans la même colonne qu'un champignon géant.",
       "logic": {
         "type": "sameColAs",
         "object": "champi"
       }
     },
     {
+      "who": "b",
+      "text": "Il était au nord de Filon.",
+      "logic": {
+        "type": "northOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était sur la même ligne qu'un lit.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Clodomir était au sud d'Arnak.",
+      "logic": {
+        "type": "southOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était dans la même colonne qu'un coffre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "coffre"
+      }
+    },
+    {
       "who": "d",
-      "text": "Dîme était dans l'entrée.",
+      "text": "Dardafeu était dans la même colonne qu'un tonneau.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Éboulis était au nord d'Arnak.",
+      "logic": {
+        "type": "northOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était dans la cantine.",
       "logic": {
         "type": "inRoom",
-        "room": "E"
+        "room": "C"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Filon était à l'est de Clodomir.",
+      "logic": {
+        "type": "eastOf",
+        "other": "c"
       }
     }
   ],
   "solution": {
     "positions": {
-      "e": [
-        3,
-        0
+      "g": [
+        1,
+        1
       ],
-      "a": [
+      "e": [
         [
           4,
           4
@@ -283,37 +331,37 @@
         [
           5,
           4
-        ],
-        [
-          6,
-          4
-        ],
-        [
-          7,
-          4
         ]
       ],
-      "c": [
-        1,
-        6
+      "f": [
+        3,
+        3
       ],
       "b": [
         2,
-        1
+        6
+      ],
+      "a": [
+        6,
+        5
       ],
       "d": [
         0,
         2
+      ],
+      "c": [
+        7,
+        0
       ]
     },
-    "murderer": "b"
+    "murderer": "d"
   },
   "rating": {
-    "skulls": 2,
-    "score": 3,
+    "skulls": 3,
+    "score": 5,
     "hardest": "pièces",
     "hardSteps": 1,
-    "directStart": 1
+    "directStart": 0
   },
   "difficulty": 4
 }

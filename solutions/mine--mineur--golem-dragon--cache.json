@@ -1,118 +1,105 @@
 {
  "positions": {
-  "f": [
-   0,
-   3
+  "g": [
+   4,
+   6
   ],
   "c": [
    [
-    6,
-    1
+    2,
+    2
    ],
-   [
-    7,
-    1
-   ]
-  ],
-  "a": [
    [
     3,
-    7
-   ],
-   [
-    4,
-    6
-   ],
-   [
-    4,
-    7
+    2
    ]
   ],
-  "e": [
-   5,
-   4
-  ],
   "b": [
-   1,
-   0
+   [
+    6,
+    3
+   ],
+   [
+    6,
+    4
+   ]
+  ],
+  "f": [
+   0,
+   5
   ],
   "d": [
-   2,
-   2
+   7,
+   1
+  ],
+  "a": [
+   5,
+   7
+  ],
+  "e": [
+   1,
+   0
   ]
  },
- "murderer": "d",
+ "murderer": "a",
  "cast": {
   "c": "a",
-  "a": "b",
-  "e": "c",
-  "b": "d",
-  "d": "e"
+  "b": "b",
+  "f": "c",
+  "d": "d",
+  "a": "e",
+  "e": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "c",
+   "who": "f",
    "logic": {
-    "type": "sameRowAs",
-    "object": "coffre"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "sameColAs",
-    "object": "chaudron"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "eastOf",
-    "other": "d"
+    "type": "northOf",
+    "other": "e"
    }
   },
   {
    "who": "d",
    "logic": {
-    "type": "sameRowAs",
-    "object": "chariot"
+    "type": "adjacentTo",
+    "object": "coffre"
    }
   },
   {
    "who": "e",
    "logic": {
-    "type": "sameRowAs",
-    "object": "table"
+    "type": "westOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "inRoom",
+    "room": "G"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "northOf",
+    "other": "c"
    }
   },
   {
    "who": "b",
    "logic": {
-    "type": "sameRowAs",
-    "object": "chaudron"
+    "type": "southOf",
+    "other": "a"
    }
   },
   {
-   "who": "b",
+   "who": "a",
    "logic": {
     "type": "adjacentTo",
-    "object": "tonneau"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "chariot"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "sameColAs",
-    "object": "chariot"
+    "object": "enclume"
    }
   }
  ]

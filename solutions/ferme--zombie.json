@@ -4,11 +4,11 @@
    4,
    3
   ],
-  "a": [
+  "c": [
    3,
    2
   ],
-  "c": [
+  "a": [
    2,
    4
   ],
@@ -25,10 +25,10 @@
    0
   ]
  },
- "murderer": "a",
+ "murderer": "c",
  "cast": {
-  "a": "a",
-  "c": "b",
+  "c": "a",
+  "a": "b",
   "d": "c",
   "e": "d",
   "b": "e"
@@ -44,59 +44,45 @@
    }
   },
   {
-   "who": "b",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "chaise"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "champi"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "arbre"
-   }
-  },
-  {
-   "who": "a",
+   "who": "e",
    "logic": {
     "type": "sameColAs",
-    "object": "champi"
+    "object": "table"
    }
   },
   {
-   "who": "c",
+   "who": "b",
+   "logic": {
+    "type": "westOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "a",
    "logic": {
     "type": "sameColAs",
     "object": "statue"
    }
   },
   {
-   "who": "c",
+   "who": "a",
    "logic": {
     "type": "notInRoom",
     "room": "E"
    }
   },
   {
-   "who": "d",
+   "who": "b",
    "logic": {
-    "type": "notInRoom",
-    "room": "O"
+    "type": "sameRowAs",
+    "object": "champi"
    }
   },
   {
-   "who": "e",
+   "who": "c",
    "logic": {
-    "type": "inRoom",
-    "room": "G"
+    "type": "sameRowAs",
+    "object": "arbre"
    }
   }
  ]

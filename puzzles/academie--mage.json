@@ -3,11 +3,6 @@
   "title": "L'Académie de Magie — l'affaire Gribouille",
   "size": 7,
   "rooms": {
-    "A": {
-      "name": "Tour d'astronomie",
-      "the": "la tour d'astronomie",
-      "floor": "parquet"
-    },
     "X": {
       "name": "Salle de cours",
       "the": "la salle de cours",
@@ -40,8 +35,8 @@
     }
   },
   "layout": [
-    "AAXXXBB",
-    "AAXXXBB",
+    "DDXXXBB",
+    "DDXXXBB",
     "DDXXXLL",
     "DDRRRLL",
     "DDRRRLL",
@@ -197,16 +192,7 @@
     },
     {
       "id": "c",
-      "name": "Cornue",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👨‍🏫",
-      "desc": "Professeur de potions, note à l'odeur",
-      "archetype": "professeur"
-    },
-    {
-      "id": "d",
-      "name": "Daëlin",
+      "name": "Célandra",
       "gender": "f",
       "role": "suspect",
       "icon": "🧝‍♀️",
@@ -214,8 +200,8 @@
       "archetype": "elfe"
     },
     {
-      "id": "e",
-      "name": "Encensia",
+      "id": "d",
+      "name": "Djinnifer",
       "gender": "f",
       "role": "suspect",
       "icon": "🧞‍♀️",
@@ -223,13 +209,22 @@
       "archetype": "djinn"
     },
     {
-      "id": "f",
-      "name": "Frimousse",
+      "id": "e",
+      "name": "Étincelle",
       "gender": "f",
       "role": "suspect",
       "icon": "🧙‍♀️",
       "desc": "Apprentie sorcière, a déjà fait exploser trois chaudrons",
       "archetype": "apprentie"
+    },
+    {
+      "id": "f",
+      "name": "Fiolius",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🏫",
+      "desc": "Professeur de potions, note à l'odeur",
+      "archetype": "professeur"
     },
     {
       "id": "g",
@@ -244,38 +239,30 @@
   "decor": "academie",
   "id": "academie--mage",
   "intro": "Le mage Gribouille a été retrouvé sans vie un soir d'examens à l'Académie de Magie. Six élèves et professeurs révisaient encore. Un seul était avec lui.",
-  "epilogue": "Frimousse avoue en pleurant : Gribouille allait révéler qui avait fait exploser le chaudron du laboratoire. Les trois fois.",
+  "epilogue": "Fiolius avoue en reniflant une fiole : Gribouille avait triché à l'examen de potions. Ça ne pardonne pas.",
   "clues": [
     {
       "who": "a",
-      "text": "Aubépine était sur la même ligne qu'une chaise.",
+      "text": "Aubépine était au nord de Djinnifer.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "chaise"
+        "type": "northOf",
+        "other": "d"
       }
     },
     {
       "who": "a",
-      "text": "Elle était à côté d'un lit.",
+      "text": "Elle était à côté d'un champignon géant.",
       "logic": {
         "type": "adjacentTo",
-        "object": "lit"
+        "object": "champi"
       }
     },
     {
       "who": "b",
-      "text": "Braise était sur la même ligne qu'une boule de cristal.",
+      "text": "Braise était à l'est de Fiolius.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "cristal"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était à l'ouest de Daëlin.",
-      "logic": {
-        "type": "westOf",
-        "other": "d"
+        "type": "eastOf",
+        "other": "f"
       }
     },
     {
@@ -288,64 +275,64 @@
     },
     {
       "who": "c",
-      "text": "Cornue était à côté d'une boule de cristal.",
+      "text": "Célandra était à côté d'un chaudron.",
       "logic": {
         "type": "adjacentTo",
-        "object": "cristal"
+        "object": "chaudron"
       }
     },
     {
       "who": "d",
-      "text": "Daëlin était au sud d'Aubépine.",
+      "text": "Djinnifer était à l'est de Fiolius.",
       "logic": {
-        "type": "southOf",
-        "other": "a"
+        "type": "eastOf",
+        "other": "f"
       }
     },
     {
       "who": "e",
-      "text": "Encensia était dans la même colonne qu'un arbre.",
+      "text": "Étincelle était au sud de Fiolius.",
       "logic": {
-        "type": "sameColAs",
-        "object": "arbre"
+        "type": "southOf",
+        "other": "f"
       }
     },
     {
       "who": "f",
-      "text": "Frimousse était au sud de Daëlin.",
+      "text": "Fiolius était dans la même colonne qu'une boule de cristal.",
       "logic": {
-        "type": "southOf",
-        "other": "d"
+        "type": "sameColAs",
+        "object": "cristal"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        3,
-        2
-      ],
-      "f": [
-        6,
-        4
-      ],
-      "a": [
         4,
         1
-      ],
-      "b": [
-        0,
-        5
       ],
       "e": [
         2,
         3
       ],
-      "d": [
+      "a": [
         5,
-        6
+        2
+      ],
+      "b": [
+        0,
+        5
+      ],
+      "d": [
+        6,
+        4
       ],
       "c": [
+        3,
+        6
+      ],
+      "f": [
         1,
         0
       ]
@@ -353,11 +340,11 @@
     "murderer": "f"
   },
   "rating": {
-    "skulls": 2,
-    "score": 3,
+    "skulls": 3,
+    "score": 6,
     "hardest": "pièces",
-    "hardSteps": 1,
-    "directStart": 2
+    "hardSteps": 2,
+    "directStart": 0
   },
-  "difficulty": 2
+  "difficulty": 3
 }

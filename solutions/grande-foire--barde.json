@@ -1,0 +1,182 @@
+{
+ "positions": {
+  "l": [
+   4,
+   1
+  ],
+  "j": [
+   8,
+   7
+  ],
+  "g": [
+   1,
+   6
+  ],
+  "f": [
+   0,
+   2
+  ],
+  "d": [
+   3,
+   3
+  ],
+  "h": [
+   6,
+   5
+  ],
+  "e": [
+   10,
+   9
+  ],
+  "a": [
+   7,
+   4
+  ],
+  "c": [
+   2,
+   11
+  ],
+  "i": [
+   9,
+   0
+  ],
+  "b": [
+   11,
+   8
+  ],
+  "k": [
+   5,
+   10
+  ]
+ },
+ "murderer": "d",
+ "cast": {
+  "j": "a",
+  "g": "b",
+  "f": "c",
+  "d": "d",
+  "h": "e",
+  "e": "f",
+  "a": "g",
+  "c": "h",
+  "i": "i",
+  "b": "j",
+  "k": "k"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "j",
+   "logic": {
+    "type": "southOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "northOf",
+    "other": "j"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "eastOf",
+    "other": "j"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "northOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "inRoom",
+    "room": "B"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "canon"
+   }
+  },
+  {
+   "who": "k",
+   "logic": {
+    "type": "sameColAs",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chariot"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "westOf",
+    "other": "g"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "westOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tonneau"
+   }
+  }
+ ]
+}

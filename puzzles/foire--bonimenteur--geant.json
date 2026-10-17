@@ -3,20 +3,10 @@
   "title": "La Foire aux Sortilèges — l'affaire Faconde",
   "size": 7,
   "rooms": {
-    "R": {
-      "name": "Roulotte",
-      "the": "la roulotte",
-      "floor": "parquet"
-    },
     "S": {
       "name": "Stands",
       "the": "les stands",
       "floor": "sciure"
-    },
-    "B": {
-      "name": "Buvette",
-      "the": "la buvette",
-      "floor": "parquet"
     },
     "K": {
       "name": "Coulisses",
@@ -40,9 +30,9 @@
     }
   },
   "layout": [
-    "RRSSSBB",
-    "RRSSSBB",
-    "KKCCCCB",
+    "KKSSSMM",
+    "KKSSSMM",
+    "KKCCCCM",
     "KKCCCCM",
     "NNCCCCM",
     "NNNCCMM",
@@ -159,25 +149,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Arpège",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧑‍🎤",
-      "desc": "Barde, chante faux",
-      "archetype": "barde"
-    },
-    {
-      "id": "b",
-      "name": "Bakchich",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
-    },
-    {
-      "id": "c",
-      "name": "Croquassiette",
+      "name": "Avaloir",
       "gender": "m",
       "role": "suspect",
       "icon": "🧌",
@@ -185,8 +157,8 @@
       "archetype": "troll"
     },
     {
-      "id": "d",
-      "name": "Destinée",
+      "id": "b",
+      "name": "Bohémia",
       "gender": "f",
       "role": "suspect",
       "icon": "🔮",
@@ -194,14 +166,32 @@
       "archetype": "cartomancienne"
     },
     {
-      "id": "e",
-      "name": "Escabeau",
+      "id": "c",
+      "name": "Colosse",
       "gender": "m",
       "role": "suspect",
       "icon": "🦶",
       "desc": "Géant, toujours couché : aucun plafond n'est assez haut",
       "archetype": "geant",
       "shape": "I2"
+    },
+    {
+      "id": "d",
+      "name": "Dièse",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
+    },
+    {
+      "id": "e",
+      "name": "Escroquin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
     },
     {
       "id": "f",
@@ -215,122 +205,98 @@
   ],
   "decor": "foire",
   "id": "foire--bonimenteur--geant",
-  "epilogue": "Croquassiette, hercule de foire, avoue : Faconde l'avait traité de « gros caillou » devant les enfants.",
+  "epilogue": "Colosse jure qu'il s'est seulement retourné dans son sommeil. Hélas, Faconde faisait la sieste juste à côté.",
   "clues": [
     {
       "who": "a",
-      "text": "Arpège était dans la même colonne qu'une statue.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "statue"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était allongé sur un lit.",
-      "logic": {
-        "type": "onObject",
-        "object": "lit"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Bakchich était dans la buvette.",
-      "logic": {
-        "type": "inRoom",
-        "room": "B"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était sur la même ligne qu'un coffre.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "coffre"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était assis sur une chaise.",
+      "text": "Avaloir était assis sur une chaise.",
       "logic": {
         "type": "onObject",
         "object": "chaise"
       }
     },
     {
-      "who": "c",
-      "text": "Croquassiette était au sud de Destinée.",
+      "who": "a",
+      "text": "Il était au nord de Colosse.",
       "logic": {
-        "type": "southOf",
-        "other": "d"
+        "type": "northOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bohémia était à côté d'une botte de foin.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "foin"
       }
     },
     {
       "who": "c",
-      "text": "Il était sur un tapis.",
+      "text": "Colosse était à l'est d'Escroquin.",
       "logic": {
-        "type": "onObject",
-        "object": "tapis"
+        "type": "eastOf",
+        "other": "e"
       }
     },
     {
       "who": "d",
-      "text": "Destinée était au sud d'Arpège.",
+      "text": "Dièse était à l'est d'Avaloir.",
       "logic": {
-        "type": "southOf",
+        "type": "eastOf",
         "other": "a"
       }
     },
     {
       "who": "e",
-      "text": "Escabeau était sur la même ligne qu'un tonneau.",
+      "text": "Escroquin était sur la même ligne qu'une chaise.",
       "logic": {
         "type": "sameRowAs",
-        "object": "tonneau"
+        "object": "chaise"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        4,
-        4
-      ],
-      "e": [
-        [
-          5,
-          2
-        ],
-        [
-          6,
-          2
-        ]
-      ],
-      "d": [
         2,
-        1
-      ],
-      "a": [
-        0,
-        0
-      ],
-      "b": [
-        1,
         5
       ],
       "c": [
+        [
+          6,
+          3
+        ],
+        [
+          6,
+          4
+        ]
+      ],
+      "b": [
         3,
-        3
+        6
+      ],
+      "d": [
+        0,
+        2
+      ],
+      "e": [
+        1,
+        0
+      ],
+      "a": [
+        5,
+        1
       ]
     },
     "murderer": "c"
   },
   "rating": {
-    "skulls": 2,
-    "score": 3,
+    "skulls": 3,
+    "score": 5,
     "hardest": "pièces",
     "hardSteps": 1,
-    "directStart": 3
+    "directStart": 0
   },
   "difficulty": 4
 }

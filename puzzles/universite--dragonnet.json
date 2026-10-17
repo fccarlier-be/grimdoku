@@ -1,0 +1,540 @@
+{
+  "formatVersion": 1,
+  "title": "L'Université des Sortilèges — l'affaire Kramé",
+  "decor": "academie",
+  "size": 11,
+  "rooms": {
+    "A": {
+      "name": "Amphithéâtre",
+      "the": "l'amphithéâtre",
+      "floor": "parquet"
+    },
+    "B": {
+      "name": "Grande bibliothèque",
+      "the": "la grande bibliothèque",
+      "floor": "parquet"
+    },
+    "C": {
+      "name": "Serre",
+      "the": "la serre",
+      "floor": "herbe"
+    },
+    "D": {
+      "name": "Dortoir",
+      "the": "le dortoir",
+      "floor": "tomettes"
+    },
+    "E": {
+      "name": "Laboratoire",
+      "the": "le laboratoire",
+      "floor": "damier"
+    },
+    "F": {
+      "name": "Cour",
+      "the": "la cour",
+      "floor": "paves"
+    },
+    "G": {
+      "name": "Réfectoire",
+      "the": "le réfectoire",
+      "floor": "tomettes"
+    },
+    "H": {
+      "name": "Observatoire",
+      "the": "l'observatoire",
+      "floor": "mosaique"
+    },
+    "I": {
+      "name": "Salle des duels",
+      "the": "la salle des duels",
+      "floor": "dalles"
+    },
+    "J": {
+      "name": "Bureau du doyen",
+      "the": "le bureau du doyen",
+      "floor": "noble"
+    }
+  },
+  "layout": [
+    "AAAABBBBCCC",
+    "AAAABBBBCCC",
+    "AAAABBBBCCC",
+    "DDDDBBBBEEE",
+    "DDDDFFFFEEE",
+    "DDDDFFFFEEE",
+    "GGGFFFFFEEE",
+    "GGGFFFFFHHH",
+    "GGGIIIIIHHH",
+    "JJJIIIIIHHH",
+    "JJJJJIIIHHH"
+  ],
+  "objects": [
+    {
+      "type": "pupitre",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        1,
+        7
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        0,
+        9
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        1,
+        10
+      ]
+    },
+    {
+      "type": "roseaux",
+      "at": [
+        2,
+        8
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        5,
+        2
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        3,
+        9
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        10
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        6,
+        8
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        6,
+        4
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        4,
+        7
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        7,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        8,
+        0
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        7,
+        9
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        9,
+        10
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        8,
+        5
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        9,
+        6
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        10,
+        1
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        9,
+        2
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        10,
+        3
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Aubépine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
+    },
+    {
+      "id": "b",
+      "name": "Bufo",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐸",
+      "desc": "Crapaud, prince déchu, attend toujours son bisou",
+      "archetype": "crapaud"
+    },
+    {
+      "id": "c",
+      "name": "Cannelle",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧙‍♀️",
+      "desc": "Apprentie sorcière, a déjà fait exploser trois chaudrons",
+      "archetype": "apprentie"
+    },
+    {
+      "id": "d",
+      "name": "Destinée",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🔮",
+      "desc": "Cartomancienne, voit l'avenir, rate le présent",
+      "archetype": "cartomancienne"
+    },
+    {
+      "id": "e",
+      "name": "Ectoplasme",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ]
+    },
+    {
+      "id": "f",
+      "name": "Fiolius",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🏫",
+      "desc": "Professeur de potions, note à l'odeur",
+      "archetype": "professeur"
+    },
+    {
+      "id": "g",
+      "name": "Grisebarbe",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Archimage, 412 ans, toujours pas de testament",
+      "archetype": "archimage"
+    },
+    {
+      "id": "h",
+      "name": "Hocus",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage"
+    },
+    {
+      "id": "i",
+      "name": "Ifrita",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn"
+    },
+    {
+      "id": "j",
+      "name": "Jaquette",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "👩‍🏫",
+      "desc": "Bibliothécaire, réclame le silence en hurlant",
+      "archetype": "bibliothecaire"
+    },
+    {
+      "id": "k",
+      "name": "Kramé",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    }
+  ],
+  "id": "universite--dragonnet",
+  "intro": "Le dragonnet Kramé a été retrouvé sans vie à l'Université des Sortilèges, la veille de la remise des diplômes. Dix membres de l'université révisaient, ou faisaient semblant. Un seul était avec lui.",
+  "epilogue": "Ifrita avoue en sortant de sa lampe : Kramé avait fait un quatrième vœu. Le règlement est très clair.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Aubépine était à côté d'un massif de roseaux.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "roseaux"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bufo était à côté d'une boule de cristal.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "cristal"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Cannelle était sur la même ligne qu'une table.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Elle était dans la même colonne qu'une étagère.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "etagere"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Destinée était au sud de Cannelle.",
+      "logic": {
+        "type": "southOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Elle était dans la même colonne qu'un coffre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Elle était sur la même ligne qu'un arbre.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Ectoplasme était dans la même colonne qu'un massif de roseaux.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "roseaux"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Fiolius était à l'est de Jaquette.",
+      "logic": {
+        "type": "eastOf",
+        "other": "j"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Il était sur la même ligne qu'un chaudron.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Grisebarbe était sur la même ligne qu'un coffre.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "h",
+      "text": "Hocus était sur la même ligne qu'un champignon géant.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "i",
+      "text": "Ifrita était dans la même colonne qu'un tapis.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "j",
+      "text": "Jaquette était à l'est de Grisebarbe.",
+      "logic": {
+        "type": "eastOf",
+        "other": "g"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "k": [
+        10,
+        5
+      ],
+      "g": [
+        9,
+        0
+      ],
+      "c": [
+        5,
+        7
+      ],
+      "f": [
+        3,
+        3
+      ],
+      "h": [
+        0,
+        4
+      ],
+      "a": [
+        2,
+        9
+      ],
+      "i": [
+        8,
+        6
+      ],
+      "j": [
+        1,
+        1
+      ],
+      "b": [
+        7,
+        10
+      ],
+      "e": [
+        4,
+        8
+      ],
+      "d": [
+        6,
+        2
+      ]
+    },
+    "murderer": "i"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 8,
+    "hardest": "pièces",
+    "hardSteps": 4,
+    "directStart": 0
+  },
+  "difficulty": 3
+}

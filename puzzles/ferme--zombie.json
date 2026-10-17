@@ -126,12 +126,12 @@
   "characters": [
     {
       "id": "a",
-      "name": "Amandin",
+      "name": "Avaloir",
       "gender": "m",
       "role": "suspect",
-      "icon": "👨‍🍳",
-      "desc": "Boulanger, pétrit plus de ragots que de pâte",
-      "archetype": "boulanger"
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
     },
     {
       "id": "b",
@@ -144,12 +144,12 @@
     },
     {
       "id": "c",
-      "name": "Croquassiette",
+      "name": "Croissant",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧌",
-      "desc": "Troll, plongeur à mi-temps",
-      "archetype": "troll"
+      "icon": "👨‍🍳",
+      "desc": "Boulanger, pétrit plus de ragots que de pâte",
+      "archetype": "boulanger"
     },
     {
       "id": "d",
@@ -182,30 +182,30 @@
   "decor": "ferme",
   "id": "ferme--zombie",
   "intro": "Le zombie Fernand a été retrouvé au petit matin dans la Ferme Hantée, entre le potager et le fournil. Cinq voisins y avaient passé la nuit. Un seul était avec lui.",
-  "epilogue": "Amandin avoue en pétrissant nerveusement : Fernand avait mangé toutes les miches du fournil avant l'aube.",
+  "epilogue": "Croissant avoue en pétrissant nerveusement : Fernand avait mangé toutes les miches du fournil avant l'aube.",
   "clues": [
     {
       "who": "a",
-      "text": "Amandin était sur la même ligne qu'un arbre.",
+      "text": "Avaloir était dans la même colonne qu'une statue.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "arbre"
+        "type": "sameColAs",
+        "object": "statue"
       }
     },
     {
       "who": "a",
-      "text": "Il était dans la même colonne qu'un champignon géant.",
+      "text": "Il n'était pas dans l'étable.",
       "logic": {
-        "type": "sameColAs",
-        "object": "champi"
+        "type": "notInRoom",
+        "room": "E"
       }
     },
     {
       "who": "b",
-      "text": "Boisseau était à côté d'une chaise.",
+      "text": "Boisseau était à l'ouest d'Étincel.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "chaise"
+        "type": "westOf",
+        "other": "e"
       }
     },
     {
@@ -218,18 +218,10 @@
     },
     {
       "who": "c",
-      "text": "Croquassiette était dans la même colonne qu'une statue.",
+      "text": "Croissant était sur la même ligne qu'un arbre.",
       "logic": {
-        "type": "sameColAs",
-        "object": "statue"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Il n'était pas dans l'étable.",
-      "logic": {
-        "type": "notInRoom",
-        "room": "E"
+        "type": "sameRowAs",
+        "object": "arbre"
       }
     },
     {
@@ -241,19 +233,11 @@
       }
     },
     {
-      "who": "d",
-      "text": "Elle n'était pas dans le poulailler.",
-      "logic": {
-        "type": "notInRoom",
-        "room": "O"
-      }
-    },
-    {
       "who": "e",
-      "text": "Étincel était dans la grange.",
+      "text": "Étincel était dans la même colonne qu'une table.",
       "logic": {
-        "type": "inRoom",
-        "room": "G"
+        "type": "sameColAs",
+        "object": "table"
       }
     }
   ],
@@ -263,11 +247,11 @@
         4,
         3
       ],
-      "a": [
+      "c": [
         3,
         2
       ],
-      "c": [
+      "a": [
         2,
         4
       ],
@@ -284,14 +268,14 @@
         0
       ]
     },
-    "murderer": "a"
+    "murderer": "c"
   },
   "rating": {
-    "skulls": 0,
-    "score": 1,
-    "hardest": "case unique",
-    "hardSteps": 0,
-    "directStart": 2
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 0
   },
-  "difficulty": 0
+  "difficulty": 3
 }

@@ -1,0 +1,189 @@
+{
+ "positions": {
+  "l": [
+   3,
+   3
+  ],
+  "i": [
+   7,
+   9
+  ],
+  "h": [
+   6,
+   10
+  ],
+  "j": [
+   8,
+   1
+  ],
+  "a": [
+   11,
+   2
+  ],
+  "b": [
+   1,
+   11
+  ],
+  "f": [
+   5,
+   7
+  ],
+  "e": [
+   2,
+   5
+  ],
+  "g": [
+   10,
+   8
+  ],
+  "d": [
+   0,
+   0
+  ],
+  "c": [
+   9,
+   6
+  ],
+  "k": [
+   4,
+   4
+  ]
+ },
+ "murderer": "k",
+ "cast": {
+  "i": "a",
+  "h": "b",
+  "j": "c",
+  "a": "d",
+  "b": "e",
+  "f": "f",
+  "e": "g",
+  "g": "h",
+  "d": "i",
+  "c": "j",
+  "k": "k"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "h",
+   "logic": {
+    "type": "eastOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "j",
+   "logic": {
+    "type": "westOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "southOf",
+    "other": "i"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "westOf",
+    "other": "g"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "onObject",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "k",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "inRoom",
+    "room": "E"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "k",
+   "logic": {
+    "type": "inRoom",
+    "room": "D"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "foin"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "westOf",
+    "other": "i"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tapis"
+   }
+  }
+ ]
+}

@@ -127,12 +127,12 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aubépine",
-      "gender": "f",
+      "name": "Amidon",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧚",
-      "desc": "Fée, doit trois tournées",
-      "archetype": "fee"
+      "icon": "👨‍🌾",
+      "desc": "Meunier, pèse le grain avec le pouce",
+      "archetype": "meunier"
     },
     {
       "id": "b",
@@ -145,12 +145,12 @@
     },
     {
       "id": "c",
-      "name": "Cramoisi",
-      "gender": "m",
+      "name": "Capucine",
+      "gender": "f",
       "role": "suspect",
-      "icon": "🐉",
-      "desc": "Dragonnet, brûle tout ce qu'il touche",
-      "archetype": "dragonnet"
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
     },
     {
       "id": "d",
@@ -163,12 +163,12 @@
     },
     {
       "id": "e",
-      "name": "Épeautre",
+      "name": "Étincel",
       "gender": "m",
       "role": "suspect",
-      "icon": "👨‍🌾",
-      "desc": "Meunier, pèse le grain avec le pouce",
-      "archetype": "meunier"
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
     },
     {
       "id": "f",
@@ -182,18 +182,34 @@
   ],
   "decor": "moulin",
   "id": "moulin--troll",
-  "epilogue": "Aubépine avoue en battant des ailes : Fringale lui avait volé sa poudre de fée pour la mélanger à la farine.",
+  "epilogue": "Bulle avoue en larmes : Fringale voulait assécher la mare pour agrandir le moulin. On ne touche pas à la maison d'une sirène.",
   "clues": [
     {
       "who": "a",
-      "text": "Aubépine était dans la même colonne qu'un coffre.",
+      "text": "Amidon était assis sur une chaise.",
       "logic": {
-        "type": "sameColAs",
-        "object": "coffre"
+        "type": "onObject",
+        "object": "chaise"
       }
     },
     {
-      "who": "a",
+      "who": "b",
+      "text": "Bulle était à côté d'un champignon géant.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Capucine était à l'est de Bulle.",
+      "logic": {
+        "type": "eastOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "c",
       "text": "Elle était à côté d'une table.",
       "logic": {
         "type": "adjacentTo",
@@ -201,51 +217,19 @@
       }
     },
     {
-      "who": "b",
-      "text": "Bulle était sur un champignon géant.",
-      "logic": {
-        "type": "onObject",
-        "object": "champi"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Cramoisi était dans la même colonne qu'un lit.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "lit"
-      }
-    },
-    {
       "who": "d",
-      "text": "Désiré était à l'est d'Épeautre.",
-      "logic": {
-        "type": "eastOf",
-        "other": "e"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Il était sur la même ligne qu'une chaise.",
+      "text": "Désiré était sur la même ligne qu'un coffre.",
       "logic": {
         "type": "sameRowAs",
-        "object": "chaise"
+        "object": "coffre"
       }
     },
     {
       "who": "e",
-      "text": "Épeautre était à l'est de Cramoisi.",
+      "text": "Étincel était sur la même ligne qu'un arbre.",
       "logic": {
-        "type": "eastOf",
-        "other": "c"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Il n'était pas dans le potager.",
-      "logic": {
-        "type": "notInRoom",
-        "room": "P"
+        "type": "sameRowAs",
+        "object": "arbre"
       }
     }
   ],
@@ -253,37 +237,37 @@
     "positions": {
       "f": [
         2,
-        2
-      ],
-      "a": [
-        1,
         0
       ],
+      "c": [
+        1,
+        2
+      ],
       "b": [
-        4,
+        3,
         1
       ],
       "d": [
         0,
-        5
-      ],
-      "c": [
-        3,
         3
       ],
       "e": [
         5,
         4
+      ],
+      "a": [
+        4,
+        5
       ]
     },
-    "murderer": "a"
+    "murderer": "b"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
+    "skulls": 2,
+    "score": 4,
     "hardest": "ligne réservée",
     "hardSteps": 0,
-    "directStart": 2
+    "directStart": 0
   },
-  "difficulty": 1
+  "difficulty": 2
 }

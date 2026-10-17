@@ -1,0 +1,631 @@
+{
+  "formatVersion": 1,
+  "title": "La Grande Foire des Mille Merveilles — l'affaire Lippu",
+  "decor": "foire",
+  "size": 12,
+  "rooms": {
+    "A": {
+      "name": "Chapiteau",
+      "the": "le chapiteau",
+      "floor": "sciure"
+    },
+    "B": {
+      "name": "Ménagerie",
+      "the": "la ménagerie",
+      "floor": "paille"
+    },
+    "C": {
+      "name": "Grande roue",
+      "the": "la grande roue",
+      "floor": "paves"
+    },
+    "D": {
+      "name": "Stand de tir",
+      "the": "le stand de tir",
+      "floor": "parquet"
+    },
+    "E": {
+      "name": "Piste aux étoiles",
+      "the": "la piste aux étoiles",
+      "floor": "sciure"
+    },
+    "F": {
+      "name": "Roulottes",
+      "the": "les roulottes",
+      "floor": "herbe"
+    },
+    "G": {
+      "name": "Cabinet des curiosités",
+      "the": "le cabinet des curiosités",
+      "floor": "noble"
+    },
+    "H": {
+      "name": "Labyrinthe",
+      "the": "le labyrinthe",
+      "floor": "herbe"
+    },
+    "I": {
+      "name": "Buvette",
+      "the": "la buvette",
+      "floor": "tomettes"
+    },
+    "J": {
+      "name": "Tente de la voyante",
+      "the": "la tente de la voyante",
+      "floor": "mosaique"
+    },
+    "K": {
+      "name": "Manège",
+      "the": "le manège",
+      "floor": "paves"
+    }
+  },
+  "layout": [
+    "AAAABBBBCCCC",
+    "AAAABBBBCCCC",
+    "AAAABBBBCCCC",
+    "DDDDDBBBCCCC",
+    "DDDDDEEEEFFF",
+    "DDDDDEEEEFFF",
+    "GGGGGEEEEFFF",
+    "GGGGGEEEEHHH",
+    "GGGIIIIIIHHH",
+    "JJJIIIIIIHHH",
+    "JJJJKKKKKHHH",
+    "JJJJKKKKKKKK"
+  ],
+  "objects": [
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        1
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        1,
+        7
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        2,
+        4
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        10
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        2,
+        9
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        3,
+        11
+      ]
+    },
+    {
+      "type": "canon",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        7,
+        8
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        5
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        10
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        6,
+        9
+      ]
+    },
+    {
+      "type": "hamac",
+      "at": [
+        5,
+        11
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        6,
+        2
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        7,
+        0
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        7,
+        4
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        8,
+        10
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        10,
+        11
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        9,
+        9
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        8,
+        5
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        9,
+        7
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        9,
+        4
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        10,
+        1
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        11,
+        2
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        10,
+        6
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        11,
+        9
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        11,
+        5
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Ardent",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
+      "id": "b",
+      "name": "Bérénwë",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
+    },
+    {
+      "id": "c",
+      "name": "Clairvoya",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🔮",
+      "desc": "Cartomancienne, voit l'avenir, rate le présent",
+      "archetype": "cartomancienne"
+    },
+    {
+      "id": "d",
+      "name": "Digitale",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
+    },
+    {
+      "id": "e",
+      "name": "Épice",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🍳",
+      "desc": "Chef gobelin, goûte tout, surtout ce qui bouge encore",
+      "archetype": "chef"
+    },
+    {
+      "id": "f",
+      "name": "Fougasse",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🍳",
+      "desc": "Boulanger, pétrit plus de ragots que de pâte",
+      "archetype": "boulanger"
+    },
+    {
+      "id": "g",
+      "name": "Gamme",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
+    },
+    {
+      "id": "h",
+      "name": "Hargne",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👹",
+      "desc": "Ogre, végétarien depuis mardi",
+      "archetype": "ogre"
+    },
+    {
+      "id": "i",
+      "name": "Ivraie",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🌾",
+      "desc": "Meunier, pèse le grain avec le pouce",
+      "archetype": "meunier"
+    },
+    {
+      "id": "j",
+      "name": "Jacasse",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🎩",
+      "desc": "Bonimenteur, vend du rêve au kilo",
+      "archetype": "bonimenteur"
+    },
+    {
+      "id": "k",
+      "name": "Kopeck",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "l",
+      "name": "Lippu",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    }
+  ],
+  "id": "grande-foire--troll",
+  "intro": "Le troll Lippu a été retrouvé sans vie à la Grande Foire des Mille Merveilles, juste après le feu d'artifice. Onze forains et visiteurs juraient regarder le ciel. Un seul était avec lui.",
+  "epilogue": "Clairvoya avoue : Lippu avait mélangé son jeu de tarot. Toutes ses prédictions de la semaine étaient fausses.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Ardent était à l'ouest d'Hargne.",
+      "logic": {
+        "type": "westOf",
+        "other": "h"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était sur la même ligne qu'une table.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bérénwë était sur un tapis.",
+      "logic": {
+        "type": "onObject",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Elle était à l'est de Clairvoya.",
+      "logic": {
+        "type": "eastOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Clairvoya était sur la même ligne qu'un fauteuil.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Digitale était au nord d'Hargne.",
+      "logic": {
+        "type": "northOf",
+        "other": "h"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Elle était dans la même colonne qu'un canon.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "canon"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Elle était au sud d'Épice.",
+      "logic": {
+        "type": "southOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Épice était dans la même colonne qu'une table.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Fougasse était dans la même colonne qu'une botte de foin.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "foin"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Gamme était au sud de Fougasse.",
+      "logic": {
+        "type": "southOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "h",
+      "text": "Hargne était à l'est de Kopeck.",
+      "logic": {
+        "type": "eastOf",
+        "other": "k"
+      }
+    },
+    {
+      "who": "i",
+      "text": "Ivraie était à l'ouest d'Ardent.",
+      "logic": {
+        "type": "westOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "i",
+      "text": "Il était dans la même colonne qu'un arbre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "j",
+      "text": "Jacasse était dans la piste aux étoiles.",
+      "logic": {
+        "type": "inRoom",
+        "room": "E"
+      }
+    },
+    {
+      "who": "j",
+      "text": "Il était sur la même ligne qu'un tonneau.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "j",
+      "text": "Il était à l'est de Gamme.",
+      "logic": {
+        "type": "eastOf",
+        "other": "g"
+      }
+    },
+    {
+      "who": "k",
+      "text": "Kopeck était sur la même ligne qu'un tonneau.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "k",
+      "text": "Il était à côté d'un tonneau.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tonneau"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "l": [
+        6,
+        3
+      ],
+      "j": [
+        4,
+        8
+      ],
+      "c": [
+        7,
+        1
+      ],
+      "g": [
+        10,
+        7
+      ],
+      "k": [
+        9,
+        6
+      ],
+      "d": [
+        2,
+        0
+      ],
+      "a": [
+        5,
+        10
+      ],
+      "h": [
+        8,
+        11
+      ],
+      "e": [
+        1,
+        5
+      ],
+      "f": [
+        3,
+        4
+      ],
+      "i": [
+        0,
+        9
+      ],
+      "b": [
+        11,
+        2
+      ]
+    },
+    "murderer": "c"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 6,
+    "hardest": "pièces",
+    "hardSteps": 2,
+    "directStart": 0
+  },
+  "difficulty": 3
+}

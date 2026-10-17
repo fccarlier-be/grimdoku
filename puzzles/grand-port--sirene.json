@@ -1,0 +1,475 @@
+{
+  "formatVersion": 1,
+  "title": "Le Grand Port de Brumeval — l'affaire Jouvence",
+  "decor": "port",
+  "size": 10,
+  "rooms": {
+    "Q": {
+      "name": "Quais",
+      "the": "les quais",
+      "floor": "parquet"
+    },
+    "E": {
+      "name": "Entrepôt",
+      "the": "l'entrepôt",
+      "floor": "sciure"
+    },
+    "T": {
+      "name": "Taverne du Kraken",
+      "the": "la taverne du Kraken",
+      "floor": "tomettes"
+    },
+    "B": {
+      "name": "Capitainerie",
+      "the": "la capitainerie",
+      "floor": "parquet"
+    },
+    "C": {
+      "name": "Chantier naval",
+      "the": "le chantier naval",
+      "floor": "sciure"
+    },
+    "M": {
+      "name": "Marché aux poissons",
+      "the": "le marché aux poissons",
+      "floor": "paves"
+    },
+    "N": {
+      "name": "Galion",
+      "the": "le galion",
+      "floor": "navire"
+    },
+    "P": {
+      "name": "Phare",
+      "the": "le phare",
+      "floor": "roche"
+    },
+    "D": {
+      "name": "Douane",
+      "the": "la douane",
+      "floor": "dalles"
+    }
+  },
+  "layout": [
+    "QQQQQQEEEE",
+    "QQQQQQEEEE",
+    "TTTBBBEEEE",
+    "TTTBBBCCCC",
+    "TTTBBBCCCC",
+    "MMMMNNCCCC",
+    "MMMMNNNNPP",
+    "MMMMNNNNPP",
+    "DDDDNNNNPP",
+    "DDDDDDNNPP"
+  ],
+  "objects": [
+    {
+      "type": "barque",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "canon",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        0,
+        8
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        9
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        2,
+        7
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        2
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        4,
+        5
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        4,
+        7
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        5,
+        9
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        6,
+        1
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        7,
+        3
+      ]
+    },
+    {
+      "type": "canon",
+      "at": [
+        6,
+        5
+      ]
+    },
+    {
+      "type": "hamac",
+      "at": [
+        8,
+        6
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        9,
+        7
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        6,
+        9
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        9,
+        8
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        8,
+        1
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        9,
+        4
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Arnak",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "b",
+      "name": "Barbecale",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍✈️",
+      "desc": "Capitaine, n'a jamais quitté le port",
+      "archetype": "capitaine"
+    },
+    {
+      "id": "c",
+      "name": "Clinquant",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🎩",
+      "desc": "Bonimenteur, vend du rêve au kilo",
+      "archetype": "bonimenteur"
+    },
+    {
+      "id": "d",
+      "name": "Dico",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🦜",
+      "desc": "Perroquet, répète tous les secrets",
+      "archetype": "perroquet"
+    },
+    {
+      "id": "e",
+      "name": "Écarlate",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
+    },
+    {
+      "id": "f",
+      "name": "Florin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧔‍♂️",
+      "desc": "Tavernier nain, radin légendaire",
+      "archetype": "tavernier"
+    },
+    {
+      "id": "g",
+      "name": "Grappin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🏴‍☠️",
+      "desc": "Pirate, a perdu une jambe, un œil et le sens de l'orientation",
+      "archetype": "pirate"
+    },
+    {
+      "id": "h",
+      "name": "Happeur",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    },
+    {
+      "id": "i",
+      "name": "Isidore",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
+    },
+    {
+      "id": "j",
+      "name": "Jouvence",
+      "gender": "f",
+      "role": "victim",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene"
+    }
+  ],
+  "id": "grand-port--sirene",
+  "intro": "La sirène Jouvence a été retrouvée sans vie au Grand Port de Brumeval, un soir de brume si épaisse qu'on n'y voyait pas sa propre jambe de bois. Neuf habitués erraient sur le port. Un seul était avec elle.",
+  "epilogue": "Arnak avoue : Jouvence avait refusé de payer la « taxe de brume ». Une taxe très ancienne, inventée mardi.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Arnak était à côté d'un tapis.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Barbecale était dans l'entrepôt.",
+      "logic": {
+        "type": "inRoom",
+        "room": "E"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était dans la même colonne qu'un chariot de mine.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chariot"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Clinquant était au nord d'Écarlate.",
+      "logic": {
+        "type": "northOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était dans la même colonne qu'un tonneau.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dico était dans la même colonne qu'un tapis.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était sur la même ligne qu'une chaise.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Écarlate était sur la même ligne qu'une table.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Florin était dans la même colonne qu'une chaise.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Grappin était sur la même ligne qu'une boule de cristal.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "cristal"
+      }
+    },
+    {
+      "who": "h",
+      "text": "Happeur était sur la même ligne qu'un tonneau.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "h",
+      "text": "Il était dans la capitainerie.",
+      "logic": {
+        "type": "inRoom",
+        "room": "B"
+      }
+    },
+    {
+      "who": "i",
+      "text": "Isidore était à côté d'un tonneau.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tonneau"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "j": [
+        5,
+        1
+      ],
+      "g": [
+        6,
+        6
+      ],
+      "b": [
+        1,
+        7
+      ],
+      "d": [
+        9,
+        3
+      ],
+      "f": [
+        8,
+        8
+      ],
+      "h": [
+        2,
+        5
+      ],
+      "a": [
+        7,
+        2
+      ],
+      "e": [
+        3,
+        0
+      ],
+      "c": [
+        0,
+        4
+      ],
+      "i": [
+        4,
+        9
+      ]
+    },
+    "murderer": "a"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 0
+  },
+  "difficulty": 3
+}

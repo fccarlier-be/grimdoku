@@ -120,7 +120,16 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aconit",
+      "name": "Ambroise",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐸",
+      "desc": "Crapaud, prince déchu, attend toujours son bisou",
+      "archetype": "crapaud"
+    },
+    {
+      "id": "b",
+      "name": "Berce",
       "gender": "f",
       "role": "suspect",
       "icon": "🧙‍♀️",
@@ -128,26 +137,8 @@
       "archetype": "sorciere"
     },
     {
-      "id": "b",
-      "name": "Bob",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧟",
-      "desc": "Zombie, ancien apprenti. Ancien tout court",
-      "archetype": "zombie"
-    },
-    {
       "id": "c",
-      "name": "Célandra",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧝‍♀️",
-      "desc": "Elfe, critique gastronomique",
-      "archetype": "elfe"
-    },
-    {
-      "id": "d",
-      "name": "Dorade",
+      "name": "Corail",
       "gender": "f",
       "role": "suspect",
       "icon": "🧜‍♀️",
@@ -155,13 +146,22 @@
       "archetype": "sirene"
     },
     {
+      "id": "d",
+      "name": "Daëlin",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
+    },
+    {
       "id": "e",
-      "name": "Eugène",
+      "name": "Edmond",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐸",
-      "desc": "Crapaud, prince déchu, attend toujours son bisou",
-      "archetype": "crapaud"
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
     },
     {
       "id": "f",
@@ -175,46 +175,38 @@
   ],
   "decor": "marais",
   "id": "marais--troll",
-  "epilogue": "Dorade avoue : Fringale pompait l'eau de sa mare pour ses petites affaires. Une sirène sans eau, c'est une sardine.",
+  "epilogue": "Corail avoue : Fringale pompait l'eau de sa mare pour ses petites affaires. Une sirène sans eau, c'est une sardine.",
   "clues": [
     {
       "who": "a",
-      "text": "Aconit était allongée sur un lit.",
+      "text": "Ambroise était à côté d'un tonneau.",
       "logic": {
-        "type": "onObject",
-        "object": "lit"
+        "type": "adjacentTo",
+        "object": "tonneau"
       }
     },
     {
       "who": "b",
-      "text": "Bob était à côté d'une barque.",
+      "text": "Berce était dans la cabane.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "barque"
+        "type": "inRoom",
+        "room": "H"
       }
     },
     {
       "who": "c",
-      "text": "Célandra était dans l'îlot.",
+      "text": "Corail était sur un champignon géant.",
       "logic": {
-        "type": "inRoom",
-        "room": "I"
+        "type": "onObject",
+        "object": "champi"
       }
     },
     {
       "who": "d",
-      "text": "Dorade était au sud de Célandra.",
-      "logic": {
-        "type": "southOf",
-        "other": "c"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Elle était dans la même colonne qu'un arbre.",
+      "text": "Daëlin était dans la même colonne qu'un tonneau.",
       "logic": {
         "type": "sameColAs",
-        "object": "arbre"
+        "object": "tonneau"
       }
     },
     {
@@ -227,48 +219,48 @@
     },
     {
       "who": "e",
-      "text": "Eugène était dans la même colonne qu'un tonneau.",
+      "text": "Edmond était à côté d'un arbre.",
       "logic": {
-        "type": "sameColAs",
-        "object": "tonneau"
+        "type": "adjacentTo",
+        "object": "arbre"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        4,
-        4
-      ],
-      "d": [
-        5,
-        1
-      ],
-      "b": [
-        0,
+        3,
         5
       ],
-      "e": [
-        2,
-        3
-      ],
       "c": [
-        3,
-        2
+        5,
+        4
+      ],
+      "e": [
+        4,
+        1
       ],
       "a": [
         1,
+        2
+      ],
+      "d": [
+        2,
+        3
+      ],
+      "b": [
+        0,
         0
       ]
     },
-    "murderer": "d"
+    "murderer": "c"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
-    "hardest": "ligne réservée",
-    "hardSteps": 0,
-    "directStart": 1
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 0
   },
-  "difficulty": 1
+  "difficulty": 3
 }

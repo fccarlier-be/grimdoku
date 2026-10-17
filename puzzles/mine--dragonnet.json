@@ -18,11 +18,6 @@
       "the": "la forge",
       "floor": "roche"
     },
-    "P": {
-      "name": "Puits",
-      "the": "le puits",
-      "floor": "roche"
-    },
     "V": {
       "name": "Filon",
       "the": "le filon",
@@ -47,9 +42,9 @@
   "layout": [
     "EEEGGFFF",
     "EEEGGFFF",
-    "DDGGGPPF",
-    "DDGGGPPV",
-    "DDCCCPVV",
+    "DDGGGFFF",
+    "DDGGGFFV",
+    "DDCCCFVV",
     "TTCCCVVV",
     "TTCCCVVV",
     "TTTTCVVV"
@@ -179,12 +174,12 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aubépine",
-      "gender": "f",
+      "name": "Arnak",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧚",
-      "desc": "Fée, doit trois tournées",
-      "archetype": "fee"
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
     },
     {
       "id": "b",
@@ -197,12 +192,12 @@
     },
     {
       "id": "c",
-      "name": "Caillou",
-      "gender": "m",
+      "name": "Capucine",
+      "gender": "f",
       "role": "suspect",
-      "icon": "⛏️",
-      "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
-      "archetype": "mineur"
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
     },
     {
       "id": "d",
@@ -215,21 +210,21 @@
     },
     {
       "id": "e",
-      "name": "Escroquin",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
-    },
-    {
-      "id": "f",
-      "name": "Fernand",
+      "name": "Edmond",
       "gender": "m",
       "role": "suspect",
       "icon": "🧟",
       "desc": "Zombie, ancien apprenti. Ancien tout court",
       "archetype": "zombie"
+    },
+    {
+      "id": "f",
+      "name": "Filon",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "⛏️",
+      "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
+      "archetype": "mineur"
     },
     {
       "id": "g",
@@ -256,82 +251,74 @@
   "clues": [
     {
       "who": "a",
-      "text": "Aubépine était dans la cantine.",
+      "text": "Arnak était à l'ouest de Bertrand.",
+      "logic": {
+        "type": "westOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était dans le filon.",
       "logic": {
         "type": "inRoom",
-        "room": "C"
+        "room": "V"
       }
     },
     {
       "who": "b",
-      "text": "Bertrand était dans la même colonne qu'un chariot de mine.",
+      "text": "Bertrand était sur la même ligne qu'un chaudron.",
       "logic": {
-        "type": "sameColAs",
-        "object": "chariot"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il n'était pas dans le puits.",
-      "logic": {
-        "type": "notInRoom",
-        "room": "P"
+        "type": "sameRowAs",
+        "object": "chaudron"
       }
     },
     {
       "who": "c",
-      "text": "Caillou était au sud de Granit.",
-      "logic": {
-        "type": "southOf",
-        "other": "g"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Il était sur la même ligne qu'une table.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "table"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Dentdur était dans la même colonne qu'une chaise.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Escroquin était sur la même ligne qu'une enclume.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "enclume"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Il était à l'est de Dentdur.",
+      "text": "Capucine était à l'est de Dentdur.",
       "logic": {
         "type": "eastOf",
         "other": "d"
       }
     },
     {
-      "who": "f",
-      "text": "Fernand était sur la même ligne qu'une chaise.",
+      "who": "c",
+      "text": "Elle était sur la même ligne qu'un coffre.",
       "logic": {
         "type": "sameRowAs",
-        "object": "chaise"
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dentdur était à l'est de Filon.",
+      "logic": {
+        "type": "eastOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Edmond était au sud de Dentdur.",
+      "logic": {
+        "type": "southOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Filon était sur la même ligne qu'une table.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "table"
       }
     },
     {
       "who": "g",
-      "text": "Granit était sur la même ligne qu'une enclume.",
+      "text": "Granit était au nord de Bertrand.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "enclume"
+        "type": "northOf",
+        "other": "b"
       }
     }
   ],
@@ -341,7 +328,7 @@
         2,
         7
       ],
-      "c": [
+      "f": [
         5,
         1
       ],
@@ -349,7 +336,7 @@
         3,
         3
       ],
-      "e": [
+      "a": [
         6,
         5
       ],
@@ -357,11 +344,11 @@
         1,
         6
       ],
-      "a": [
+      "c": [
         7,
         4
       ],
-      "f": [
+      "e": [
         4,
         0
       ],
@@ -374,9 +361,9 @@
   },
   "rating": {
     "skulls": 3,
-    "score": 6,
-    "hardest": "pièces",
-    "hardSteps": 2,
+    "score": 7,
+    "hardest": "seul candidat",
+    "hardSteps": 3,
     "directStart": 0
   },
   "difficulty": 3

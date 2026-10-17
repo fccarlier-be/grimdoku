@@ -2,39 +2,39 @@
  "positions": {
   "g": [
    6,
-   4
+   0
   ],
   "e": [
-   1,
-   1
+   2,
+   4
   ],
   "d": [
    0,
    6
   ],
-  "a": [
+  "b": [
    4,
+   3
+  ],
+  "a": [
+   3,
    5
   ],
-  "b": [
-   2,
+  "c": [
+   5,
    2
   ],
-  "c": [
-   3,
-   0
-  ],
   "f": [
-   5,
-   3
+   1,
+   1
   ]
  },
- "murderer": "f",
+ "murderer": "c",
  "cast": {
   "e": "a",
   "d": "b",
-  "a": "c",
-  "b": "d",
+  "b": "c",
+  "a": "d",
   "c": "e",
   "f": "f"
  },
@@ -42,66 +42,59 @@
  "needsL2": false,
  "clues": [
   {
-   "who": "d",
+   "who": "e",
    "logic": {
-    "type": "northOf",
-    "other": "a"
+    "type": "sameRowAs",
+    "object": "etagere"
    }
   },
   {
-   "who": "a",
+   "who": "d",
    "logic": {
-    "type": "westOf",
-    "other": "d"
+    "type": "sameColAs",
+    "object": "tapis"
    }
   },
   {
    "who": "f",
    "logic": {
-    "type": "sameColAs",
-    "object": "fauteuil"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "sameColAs",
-    "object": "champi"
+    "type": "inRoom",
+    "room": "L"
    }
   },
   {
    "who": "a",
    "logic": {
     "type": "adjacentTo",
-    "object": "table"
+    "object": "tonneau"
    }
   },
   {
    "who": "b",
    "logic": {
-    "type": "sameRowAs",
-    "object": "fauteuil"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "sameRowAs",
+    "type": "adjacentTo",
     "object": "champi"
    }
   },
   {
    "who": "c",
    "logic": {
-    "type": "adjacentTo",
-    "object": "etagere"
+    "type": "sameColAs",
+    "object": "champi"
    }
   },
   {
-   "who": "e",
+   "who": "c",
    "logic": {
-    "type": "inRoom",
-    "room": "O"
+    "type": "sameRowAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tapis"
    }
   }
  ]

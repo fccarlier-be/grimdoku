@@ -3,11 +3,6 @@
   "title": "Le Palais des Mille Vœux — l'affaire Génia",
   "size": 7,
   "rooms": {
-    "O": {
-      "name": "Observatoire",
-      "the": "l'observatoire",
-      "floor": "mosaique"
-    },
     "T": {
       "name": "Salle du trône",
       "the": "la salle du trône",
@@ -40,8 +35,8 @@
     }
   },
   "layout": [
-    "OOTTTRR",
-    "OOTTTRR",
+    "LLTTTRR",
+    "LLTTTRR",
     "LLTTTBB",
     "LLJJJBB",
     "HHJJJBB",
@@ -179,21 +174,21 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aplomb",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🎩",
-      "desc": "Bonimenteur, vend du rêve au kilo",
-      "archetype": "bonimenteur"
-    },
-    {
-      "id": "b",
-      "name": "Bakchich",
+      "name": "Arnak",
       "gender": "m",
       "role": "suspect",
       "icon": "👺",
       "desc": "Gobelin, trésorier du royaume (non déclaré)",
       "archetype": "gobelin"
+    },
+    {
+      "id": "b",
+      "name": "Belladone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
     },
     {
       "id": "c",
@@ -206,30 +201,30 @@
     },
     {
       "id": "d",
-      "name": "Draculine",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧛‍♀️",
-      "desc": "Comtesse vampire, végane (elle le jure)",
-      "archetype": "vampire"
-    },
-    {
-      "id": "e",
-      "name": "Étoila",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🔮",
-      "desc": "Cartomancienne, voit l'avenir, rate le présent",
-      "archetype": "cartomancienne"
-    },
-    {
-      "id": "f",
-      "name": "Fizzlebarbe",
+      "name": "Doublebarbe",
       "gender": "m",
       "role": "suspect",
       "icon": "🧙‍♂️",
       "desc": "Archimage, 412 ans, toujours pas de testament",
       "archetype": "archimage"
+    },
+    {
+      "id": "e",
+      "name": "Esbroufe",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🎩",
+      "desc": "Bonimenteur, vend du rêve au kilo",
+      "archetype": "bonimenteur"
+    },
+    {
+      "id": "f",
+      "name": "Fortuna",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🔮",
+      "desc": "Cartomancienne, voit l'avenir, rate le présent",
+      "archetype": "cartomancienne"
     },
     {
       "id": "g",
@@ -244,96 +239,120 @@
   "decor": "palais",
   "id": "palais--djinn",
   "intro": "La djinn Génia a été retrouvée sans vie au Palais des Mille Vœux, sous un tapis volant qui ne volait plus. Six invités avaient fait un vœu ce soir-là. Un seul était avec elle.",
-  "epilogue": "Aplomb avoue d'une voix de stentor : Génia vendait de fausses lampes magiques au bazar. C'était SON commerce.",
+  "epilogue": "Arnak avoue : Génia avait compté les pièces du trésor. Il en manquait. Le gobelin savait où.",
   "clues": [
     {
       "who": "a",
-      "text": "Aplomb était sur un champignon géant.",
+      "text": "Arnak était sur la même ligne qu'un tapis.",
       "logic": {
-        "type": "onObject",
+        "type": "sameRowAs",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était dans la même colonne qu'un champignon géant.",
+      "logic": {
+        "type": "sameColAs",
         "object": "champi"
       }
     },
     {
       "who": "b",
-      "text": "Bakchich était assis dans un fauteuil.",
-      "logic": {
-        "type": "onObject",
-        "object": "fauteuil"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Childéric était dans l'observatoire.",
-      "logic": {
-        "type": "inRoom",
-        "room": "O"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Draculine était sur la même ligne qu'une boule de cristal.",
+      "text": "Belladone était sur la même ligne qu'un coffre.",
       "logic": {
         "type": "sameRowAs",
-        "object": "cristal"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Étoila était à côté d'un coffre.",
-      "logic": {
-        "type": "adjacentTo",
         "object": "coffre"
       }
     },
     {
-      "who": "f",
-      "text": "Fizzlebarbe était dans la même colonne qu'une chaise.",
+      "who": "c",
+      "text": "Childéric était sur la même ligne qu'une statue.",
       "logic": {
-        "type": "sameColAs",
+        "type": "sameRowAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il n'était pas dans le trésor.",
+      "logic": {
+        "type": "notInRoom",
+        "room": "R"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Doublebarbe était au nord d'Arnak.",
+      "logic": {
+        "type": "northOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était sur la même ligne qu'une chaise.",
+      "logic": {
+        "type": "sameRowAs",
         "object": "chaise"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Esbroufe était à l'ouest de Belladone.",
+      "logic": {
+        "type": "westOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Fortuna était à l'ouest de Childéric.",
+      "logic": {
+        "type": "westOf",
+        "other": "c"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        3,
-        4
+        5,
+        0
       ],
       "c": [
-        1,
+        0,
+        3
+      ],
+      "f": [
+        2,
         1
       ],
       "e": [
-        6,
-        5
+        3,
+        4
       ],
       "a": [
-        4,
+        6,
         2
       ],
       "b": [
-        2,
-        3
+        1,
+        5
       ],
       "d": [
-        0,
+        4,
         6
-      ],
-      "f": [
-        5,
-        0
       ]
     },
     "murderer": "a"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
-    "hardest": "ligne réservée",
-    "hardSteps": 0,
-    "directStart": 2
+    "skulls": 3,
+    "score": 7,
+    "hardest": "pièces",
+    "hardSteps": 3,
+    "directStart": 0
   },
-  "difficulty": 1
+  "difficulty": 3
 }

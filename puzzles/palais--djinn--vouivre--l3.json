@@ -1,21 +1,11 @@
 {
   "formatVersion": 1,
-  "title": "Le Palais des Mille Vœux — l'affaire Fumerolle",
+  "title": "Le Palais des Mille Vœux — la seconde affaire Fumerolle",
   "size": 7,
   "rooms": {
-    "O": {
-      "name": "Observatoire",
-      "the": "l'observatoire",
-      "floor": "mosaique"
-    },
     "T": {
       "name": "Salle du trône",
       "the": "la salle du trône",
-      "floor": "noble"
-    },
-    "R": {
-      "name": "Trésor",
-      "the": "le trésor",
       "floor": "noble"
     },
     "L": {
@@ -40,8 +30,8 @@
     }
   },
   "layout": [
-    "OOTTTRR",
-    "OOTTTRR",
+    "LLTTTTT",
+    "LLTTTTT",
     "LLTTTBB",
     "LLJJJBB",
     "HHJJJBB",
@@ -179,12 +169,12 @@
   "characters": [
     {
       "id": "a",
-      "name": "Arnak",
-      "gender": "m",
+      "name": "Arcane",
+      "gender": "f",
       "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
+      "icon": "🔮",
+      "desc": "Cartomancienne, voit l'avenir, rate le présent",
+      "archetype": "cartomancienne"
     },
     {
       "id": "b",
@@ -194,7 +184,7 @@
       "icon": "🐍",
       "desc": "Vouivre, serpent ailé, très longue à se retourner",
       "archetype": "vouivre",
-      "shape": "L3"
+      "shape": "I2"
     },
     {
       "id": "c",
@@ -207,12 +197,12 @@
     },
     {
       "id": "d",
-      "name": "Destinée",
-      "gender": "f",
+      "name": "Dîme",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🔮",
-      "desc": "Cartomancienne, voit l'avenir, rate le présent",
-      "archetype": "cartomancienne"
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
     },
     {
       "id": "e",
@@ -240,97 +230,109 @@
   "clues": [
     {
       "who": "a",
-      "text": "Arnak était à côté d'une chaise.",
+      "text": "Arcane était à l'ouest de Childéric.",
       "logic": {
-        "type": "adjacentTo",
+        "type": "westOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Elle était dans la même colonne qu'une table.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Elle était sur la même ligne qu'une chaise.",
+      "logic": {
+        "type": "sameRowAs",
         "object": "chaise"
       }
     },
     {
       "who": "b",
-      "text": "Boucline était à l'est d'Esbroufe.",
+      "text": "Boucline était sur la même ligne qu'un arbre.",
       "logic": {
-        "type": "eastOf",
-        "other": "e"
+        "type": "sameRowAs",
+        "object": "arbre"
       }
     },
     {
       "who": "c",
-      "text": "Childéric était dans les jardins suspendus.",
+      "text": "Childéric était dans la même colonne qu'une table.",
       "logic": {
-        "type": "inRoom",
-        "room": "J"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Il était à l'ouest d'Esbroufe.",
-      "logic": {
-        "type": "westOf",
-        "other": "e"
+        "type": "sameColAs",
+        "object": "table"
       }
     },
     {
       "who": "d",
-      "text": "Destinée était sur la même ligne qu'une boule de cristal.",
+      "text": "Dîme était sur la même ligne qu'un tapis.",
       "logic": {
         "type": "sameRowAs",
-        "object": "cristal"
+        "object": "tapis"
       }
     },
     {
       "who": "e",
-      "text": "Esbroufe était sur la même ligne qu'un tonneau.",
+      "text": "Esbroufe était dans la même colonne qu'une statue.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "tonneau"
+        "type": "sameColAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était à l'est de Boucline.",
+      "logic": {
+        "type": "eastOf",
+        "other": "b"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        1,
-        2
+        0,
+        6
       ],
       "b": [
         [
-          3,
-          5
+          5,
+          3
         ],
         [
-          4,
-          5
-        ],
-        [
-          4,
-          6
+          6,
+          3
         ]
       ],
       "c": [
-        6,
-        3
+        3,
+        5
       ],
-      "d": [
-        0,
+      "a": [
+        4,
         1
       ],
       "e": [
         2,
         4
       ],
-      "a": [
-        5,
+      "d": [
+        1,
         0
       ]
     },
     "murderer": "e"
   },
   "rating": {
-    "skulls": 2,
-    "score": 4,
-    "hardest": "ligne réservée",
-    "hardSteps": 0,
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
     "directStart": 0
   },
   "difficulty": 4

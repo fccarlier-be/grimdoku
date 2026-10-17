@@ -42,7 +42,7 @@ for (const f of fs.readdirSync('scenes').sort()) {
 for (const c of JSON.parse(fs.readFileSync('big-cases.json', 'utf8')).cases)
   if (fs.existsSync(`solutions/${c.id}.json`)) MANIFEST.push(c);
 
-const NOMBRES = ['zéro', 'un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit'];
+const NOMBRES = ['zéro', 'un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf', 'dix', 'onze', 'douze'];
 const cap = (t) => t[0].toUpperCase() + t.slice(1);
 // « de » / « que » élidés devant une voyelle : d'Amphora, qu'Écarlate
 const elide = (word, name) => /^[aeiouyhàâéèêëîïôöûü]/i.test(name.normalize('NFC')) ? word.slice(0, -1) + '\'' + name : word + ' ' + name;
@@ -107,6 +107,7 @@ function checkConventions(p) {
       throw new Error(`${p.id} : ${suspects[i].name} se place avant ${suspects[i - 1].name}, l'ordre alphabétique doit suivre la facilité`);
 }
 const TITLES = new Set();
+const BUILT = new Set(); // énigmes écrites par ce build
 for (const entry of MANIFEST) {
   if (!fs.existsSync(`solutions/${entry.id}.json`)) { console.log(`⏳ ${entry.id} : pas encore de solution (node tools/batch.js)`); continue; }
   const s = JSON.parse(fs.readFileSync(`solutions/${entry.id}.json`, 'utf8'));
@@ -116,7 +117,8 @@ for (const entry of MANIFEST) {
   // noms d'après la lettre (cast.json) ; s.cast : lettres réattribuées par gen.js
   const p = resolve(scene, s.cast);
   delete p.epilogues; delete p.scene; delete p.subtitle; // seuls intro et epilogue (remplis) vont dans l'énigme
-  p.decor = baseOf(entry.scene); // illustration du décor sur la fiche d'enquête (assets/decors/<décor>)
+  // illustration du décor sur la fiche d'enquête (assets/decors/<décor>) ; un grand plan peut reprendre celle d'un autre décor
+  p.decor = scene.decor || baseOf(entry.scene);
   p.id = entry.id;
   if (entry.hidden) p.hiddenShapes = true;
   if (entry.hiddenMax) p.hiddenMax = entry.hiddenMax; // 5 crânes : le joueur ne connaît pas la forme des grands
@@ -162,7 +164,13 @@ for (const entry of MANIFEST) {
   if (p.characters.some(c => String(sols[0].positions[c.id]) !== String(p.solution.positions[c.id]))) throw new Error('solution différente');
   checkConventions(p);
   fs.writeFileSync('puzzles/' + p.id + '.json', JSON.stringify(p, null, 2));
+  BUILT.add(p.id + '.json');
   const r = p.rating;
   // pas de nom de coupable dans la sortie : François joue aussi aux énigmes (cf. CLAUDE.md §9)
   console.log(`${p.id} OK — ${'💀'.repeat(p.difficulty) || '0 crâne'} (score ${r.score} : la plus dure « ${r.hardest} », ${r.hardSteps} étape(s) difficile(s), ${r.directStart} placement(s) direct(s) au départ)`);
 }
+// puzzles/ ne garde que les énigmes de ce build : une énigme sans solution (en cours de régénération, affaire retirée)
+// ne doit pas rester dans l'appli
+const stale = fs.readdirSync('puzzles').filter(f => f.endsWith('.json') && !BUILT.has(f));
+stale.forEach(f => fs.unlinkSync('puzzles/' + f));
+if (stale.length) console.log(`🧹 ${stale.length} énigme(s) sans solution retirée(s) de puzzles/`);

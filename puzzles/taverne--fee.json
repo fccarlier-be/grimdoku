@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "title": "Meurtre au Sanglier Borgne — l'affaire Fougère",
   "intro": "La fée Fougère a été retrouvée sans vie à l'aube, au Sanglier Borgne. Cinq clients avaient trop bu, ou pas assez. Un seul était avec elle.",
-  "epilogue": "Aspre avoue en comptant ses pièces : Fougère voulait partir sans payer l'ardoise. Personne ne part sans payer l'ardoise.",
+  "epilogue": "Denier avoue en comptant ses pièces : Fougère voulait partir sans payer l'ardoise. Personne ne part sans payer l'ardoise.",
   "size": 6,
   "rooms": {
     "T": {
@@ -128,12 +128,12 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aspre",
+      "name": "Avaloir",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧔‍♂️",
-      "desc": "Tavernier nain, radin légendaire",
-      "archetype": "tavernier"
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
     },
     {
       "id": "b",
@@ -155,12 +155,12 @@
     },
     {
       "id": "d",
-      "name": "Dentdur",
+      "name": "Denier",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧌",
-      "desc": "Troll, plongeur à mi-temps",
-      "archetype": "troll"
+      "icon": "🧔‍♂️",
+      "desc": "Tavernier nain, radin légendaire",
+      "archetype": "tavernier"
     },
     {
       "id": "e",
@@ -186,96 +186,80 @@
   "clues": [
     {
       "who": "a",
-      "text": "Aspre était sur la même ligne qu'un chaudron.",
+      "text": "Avaloir était au sud de Cornélius.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "chaudron"
+        "type": "southOf",
+        "other": "c"
       }
     },
     {
-      "who": "a",
-      "text": "Il était assis sur une chaise.",
+      "who": "b",
+      "text": "Brann était à l'ouest d'Avaloir.",
+      "logic": {
+        "type": "westOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Cornélius était à côté d'un lit.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Denier était assis sur une chaise.",
       "logic": {
         "type": "onObject",
         "object": "chaise"
       }
     },
     {
-      "who": "b",
-      "text": "Brann était sur la même ligne qu'un coffre.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "coffre"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Cornélius était à l'est d'Aspre.",
+      "who": "e",
+      "text": "Erwëlle était à l'est d'Avaloir.",
       "logic": {
         "type": "eastOf",
         "other": "a"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Dentdur était dans la même colonne qu'une étagère.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "etagere"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Erwëlle était dans la cuisine.",
-      "logic": {
-        "type": "inRoom",
-        "room": "C"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Elle était à l'est de Cornélius.",
-      "logic": {
-        "type": "eastOf",
-        "other": "c"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        2,
-        1
+        1,
+        2
       ],
       "c": [
+        4,
+        1
+      ],
+      "b": [
         3,
         3
       ],
-      "b": [
+      "a": [
         5,
-        2
-      ],
-      "d": [
-        4,
-        5
-      ],
-      "e": [
-        1,
         4
       ],
-      "a": [
+      "e": [
+        2,
+        5
+      ],
+      "d": [
         0,
         0
       ]
     },
-    "murderer": "a"
+    "murderer": "d"
   },
   "rating": {
-    "skulls": 2,
-    "score": 4,
+    "skulls": 3,
+    "score": 5,
     "hardest": "pièces",
-    "hardSteps": 2,
-    "directStart": 1
+    "hardSteps": 1,
+    "directStart": 0
   },
-  "difficulty": 2
+  "difficulty": 3
 }

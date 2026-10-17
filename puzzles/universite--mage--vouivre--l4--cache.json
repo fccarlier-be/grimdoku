@@ -1,0 +1,518 @@
+{
+  "formatVersion": 1,
+  "title": "L'Université des Sortilèges — l'affaire Incantus",
+  "decor": "academie",
+  "size": 11,
+  "rooms": {
+    "A": {
+      "name": "Amphithéâtre",
+      "the": "l'amphithéâtre",
+      "floor": "parquet"
+    },
+    "B": {
+      "name": "Grande bibliothèque",
+      "the": "la grande bibliothèque",
+      "floor": "parquet"
+    },
+    "D": {
+      "name": "Dortoir",
+      "the": "le dortoir",
+      "floor": "tomettes"
+    },
+    "E": {
+      "name": "Laboratoire",
+      "the": "le laboratoire",
+      "floor": "damier"
+    },
+    "F": {
+      "name": "Cour",
+      "the": "la cour",
+      "floor": "paves"
+    },
+    "G": {
+      "name": "Réfectoire",
+      "the": "le réfectoire",
+      "floor": "tomettes"
+    },
+    "H": {
+      "name": "Observatoire",
+      "the": "l'observatoire",
+      "floor": "mosaique"
+    },
+    "I": {
+      "name": "Salle des duels",
+      "the": "la salle des duels",
+      "floor": "dalles"
+    }
+  },
+  "layout": [
+    "AAAABBBBEEE",
+    "AAAABBBBEEE",
+    "AAAABBBBEEE",
+    "DDDDBBBBEEE",
+    "DDDDFFFFEEE",
+    "DDDDFFFFEEE",
+    "GGGFFFFFEEE",
+    "GGGFFFFFHHH",
+    "GGGIIIIIHHH",
+    "GGGIIIIIHHH",
+    "GGGGGIIIHHH"
+  ],
+  "objects": [
+    {
+      "type": "pupitre",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        1,
+        7
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        0,
+        9
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        1,
+        10
+      ]
+    },
+    {
+      "type": "roseaux",
+      "at": [
+        2,
+        8
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        5,
+        2
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        3,
+        9
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        10
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        6,
+        8
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        6,
+        4
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        4,
+        7
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        7,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        8,
+        0
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        7,
+        9
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        9,
+        10
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        8,
+        5
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        9,
+        6
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        10,
+        1
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        9,
+        2
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        10,
+        3
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Alchimius",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🏫",
+      "desc": "Professeur de potions, note à l'odeur",
+      "archetype": "professeur"
+    },
+    {
+      "id": "b",
+      "name": "Boucline",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🐍",
+      "desc": "Vouivre, serpent ailé, très longue à se retourner",
+      "archetype": "vouivre",
+      "shape": "L4"
+    },
+    {
+      "id": "c",
+      "name": "Cramoisi",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
+      "id": "d",
+      "name": "Doublebarbe",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Archimage, 412 ans, toujours pas de testament",
+      "archetype": "archimage"
+    },
+    {
+      "id": "e",
+      "name": "Églantine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
+    },
+    {
+      "id": "f",
+      "name": "Fumerolle",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn"
+    },
+    {
+      "id": "g",
+      "name": "Gutenberga",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "👩‍🏫",
+      "desc": "Bibliothécaire, réclame le silence en hurlant",
+      "archetype": "bibliothecaire"
+    },
+    {
+      "id": "h",
+      "name": "Hirondelle",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧙‍♀️",
+      "desc": "Apprentie sorcière, a déjà fait exploser trois chaudrons",
+      "archetype": "apprentie"
+    },
+    {
+      "id": "i",
+      "name": "Incantus",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage"
+    }
+  ],
+  "id": "universite--mage--vouivre--l4--cache",
+  "hiddenShapes": true,
+  "hiddenMax": 4,
+  "intro": "Le mage Incantus a été retrouvé sans vie à l'Université des Sortilèges, la veille de la remise des diplômes. Huit membres de l'université révisaient, ou faisaient semblant. Un seul était avec lui.",
+  "epilogue": "Églantine avoue en battant des ailes : Incantus avait piétiné les semis de la serre « par accident ». Trois fois.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Alchimius était assis sur une chaise.",
+      "logic": {
+        "type": "onObject",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était au sud de Gutenberga.",
+      "logic": {
+        "type": "southOf",
+        "other": "g"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Boucline était sur la même ligne qu'un fauteuil.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Elle était dans la même colonne qu'une chaise.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Cramoisi était à l'ouest d'Églantine.",
+      "logic": {
+        "type": "westOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Doublebarbe était au nord de Fumerolle.",
+      "logic": {
+        "type": "northOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était dans le réfectoire.",
+      "logic": {
+        "type": "inRoom",
+        "room": "G"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était à l'est de Cramoisi.",
+      "logic": {
+        "type": "eastOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Églantine était à côté d'une table.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "table"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Elle était au nord de Cramoisi.",
+      "logic": {
+        "type": "northOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Fumerolle était dans la même colonne qu'un tapis.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Gutenberga était au nord d'Églantine.",
+      "logic": {
+        "type": "northOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "h",
+      "text": "Hirondelle était dans l'observatoire.",
+      "logic": {
+        "type": "inRoom",
+        "room": "H"
+      }
+    },
+    {
+      "who": "h",
+      "text": "Elle était dans la même colonne qu'une chaise.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chaise"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "i": [
+        2,
+        9
+      ],
+      "b": [
+        [
+          9,
+          3
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          10,
+          5
+        ]
+      ],
+      "d": [
+        6,
+        1
+      ],
+      "h": [
+        8,
+        8
+      ],
+      "a": [
+        1,
+        2
+      ],
+      "e": [
+        4,
+        10
+      ],
+      "f": [
+        7,
+        6
+      ],
+      "g": [
+        0,
+        7
+      ],
+      "c": [
+        5,
+        0
+      ]
+    },
+    "murderer": "e"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 6,
+    "hardest": "pièces",
+    "hardSteps": 2,
+    "directStart": 0
+  },
+  "difficulty": 5
+}

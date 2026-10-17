@@ -3,19 +3,9 @@
   "title": "Le Navire Fantôme — l'affaire Frégaton",
   "size": 7,
   "rooms": {
-    "V": {
-      "name": "Vigie",
-      "the": "la vigie",
-      "floor": "parquet"
-    },
     "P": {
       "name": "Pont",
       "the": "le pont",
-      "floor": "navire"
-    },
-    "K": {
-      "name": "Cabine du capitaine",
-      "the": "la cabine du capitaine",
       "floor": "navire"
     },
     "E": {
@@ -40,9 +30,9 @@
     }
   },
   "layout": [
-    "VVPPPKK",
-    "VVPPPKK",
-    "EEPPPQK",
+    "EEPPPQQ",
+    "EEPPPQQ",
+    "EEPPPQQ",
     "EECCQQQ",
     "EECCCQQ",
     "SSCCCCQ",
@@ -181,7 +171,17 @@
     },
     {
       "id": "b",
-      "name": "Blafard",
+      "name": "Bastion",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🦶",
+      "desc": "Géant, toujours couché : aucun plafond n'est assez haut",
+      "archetype": "geant",
+      "shape": "I2"
+    },
+    {
+      "id": "c",
+      "name": "Chaînon",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -190,16 +190,6 @@
       "traits": [
         "spectre"
       ]
-    },
-    {
-      "id": "c",
-      "name": "Colosse",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🦶",
-      "desc": "Géant, toujours couché : aucun plafond n'est assez haut",
-      "archetype": "geant",
-      "shape": "I2"
     },
     {
       "id": "d",
@@ -231,117 +221,99 @@
   ],
   "decor": "navire",
   "id": "navire--capitaine--geant--cache",
-  "hiddenShapes": true,
-  "hiddenMax": 3,
   "intro": "Le capitaine Frégaton a été retrouvé sans vie à bord du Navire Fantôme, qui dérivait dans le brouillard. Cinq membres d'équipage étaient à bord. Un seul était avec lui.",
-  "epilogue": "Blafard hantait ce navire bien avant son équipage. Frégaton voulait le chasser par-dessus bord avec un seau d'eau bénite.",
+  "epilogue": "Chaînon hantait ce navire bien avant son équipage. Frégaton voulait le chasser par-dessus bord avec un seau d'eau bénite.",
   "clues": [
     {
       "who": "a",
-      "text": "Aquabelle était sur la même ligne qu'un lit.",
+      "text": "Aquabelle était allongée dans un hamac.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "lit"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Elle était à côté d'un tonneau.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "tonneau"
+        "type": "onObject",
+        "object": "hamac"
       }
     },
     {
       "who": "b",
-      "text": "Blafard était dans la même colonne qu'un fauteuil.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "fauteuil"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était sur la même ligne qu'un coffre.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "coffre"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Colosse était à l'ouest de Blafard.",
-      "logic": {
-        "type": "westOf",
-        "other": "b"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Dico était au sud d'Écoutille.",
+      "text": "Bastion était au sud d'Écoutille.",
       "logic": {
         "type": "southOf",
         "other": "e"
       }
     },
     {
-      "who": "e",
-      "text": "Écoutille était au sud de Colosse.",
+      "who": "c",
+      "text": "Chaînon était sur la même ligne qu'un tonneau.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était sur la même ligne qu'un hamac.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "hamac"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dico était au sud d'Aquabelle.",
       "logic": {
         "type": "southOf",
-        "other": "c"
+        "other": "a"
       }
     },
     {
       "who": "e",
-      "text": "Il était sur la même ligne qu'un chaudron.",
+      "text": "Écoutille était dans la coquerie.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "chaudron"
+        "type": "inRoom",
+        "room": "Q"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        4,
+        5,
         5
       ],
-      "c": [
+      "b": [
         [
-          2,
-          3
+          1,
+          2
         ],
         [
-          2,
-          4
+          1,
+          3
         ]
       ],
       "e": [
-        3,
-        2
+        0,
+        6
       ],
       "d": [
         6,
         1
       ],
       "a": [
-        1,
+        2,
         0
       ],
-      "b": [
-        5,
-        6
+      "c": [
+        4,
+        4
       ]
     },
-    "murderer": "b"
+    "murderer": "c"
   },
   "rating": {
     "skulls": 2,
-    "score": 3,
-    "hardest": "seul candidat",
-    "hardSteps": 1,
-    "directStart": 1
+    "score": 4,
+    "hardest": "ligne réservée",
+    "hardSteps": 0,
+    "directStart": 0
   },
-  "difficulty": 5
+  "difficulty": 4
 }

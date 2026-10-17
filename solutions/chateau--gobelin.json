@@ -4,11 +4,11 @@
    3,
    4
   ],
-  "b": [
+  "a": [
    4,
    5
   ],
-  "c": [
+  "d": [
    6,
    0
   ],
@@ -16,78 +16,85 @@
    0,
    3
   ],
-  "d": [
+  "e": [
    2,
    1
   ],
-  "a": [
+  "b": [
    5,
    2
   ],
-  "e": [
+  "c": [
    1,
    6
   ]
  },
- "murderer": "a",
+ "murderer": "b",
  "cast": {
-  "b": "a",
-  "c": "b",
+  "a": "a",
+  "d": "b",
   "f": "c",
-  "d": "d",
-  "a": "e",
-  "e": "f"
+  "e": "d",
+  "b": "e",
+  "c": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "b",
+   "who": "a",
    "logic": {
-    "type": "sameRowAs",
-    "object": "champi"
+    "type": "adjacentTo",
+    "object": "etagere"
    }
   },
   {
-   "who": "c",
+   "who": "d",
    "logic": {
     "type": "southOf",
-    "other": "d"
+    "other": "a"
    }
   },
   {
    "who": "f",
    "logic": {
     "type": "northOf",
-    "other": "b"
+    "other": "c"
    }
   },
   {
-   "who": "d",
+   "who": "b",
    "logic": {
-    "type": "adjacentTo",
-    "object": "coffre"
+    "type": "eastOf",
+    "other": "e"
    }
   },
   {
-   "who": "a",
+   "who": "c",
    "logic": {
-    "type": "adjacentTo",
-    "object": "champi"
+    "type": "sameRowAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "foin"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "westOf",
+    "other": "f"
    }
   },
   {
    "who": "e",
    "logic": {
-    "type": "eastOf",
-    "other": "b"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
     "type": "sameRowAs",
-    "object": "etagere"
+    "object": "coffre"
    }
   }
  ]

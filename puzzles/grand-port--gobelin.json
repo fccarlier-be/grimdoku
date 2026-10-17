@@ -1,0 +1,483 @@
+{
+  "formatVersion": 1,
+  "title": "Le Grand Port de Brumeval — l'affaire Jackpot",
+  "decor": "port",
+  "size": 10,
+  "rooms": {
+    "Q": {
+      "name": "Quais",
+      "the": "les quais",
+      "floor": "parquet"
+    },
+    "E": {
+      "name": "Entrepôt",
+      "the": "l'entrepôt",
+      "floor": "sciure"
+    },
+    "T": {
+      "name": "Taverne du Kraken",
+      "the": "la taverne du Kraken",
+      "floor": "tomettes"
+    },
+    "B": {
+      "name": "Capitainerie",
+      "the": "la capitainerie",
+      "floor": "parquet"
+    },
+    "C": {
+      "name": "Chantier naval",
+      "the": "le chantier naval",
+      "floor": "sciure"
+    },
+    "M": {
+      "name": "Marché aux poissons",
+      "the": "le marché aux poissons",
+      "floor": "paves"
+    },
+    "N": {
+      "name": "Galion",
+      "the": "le galion",
+      "floor": "navire"
+    },
+    "P": {
+      "name": "Phare",
+      "the": "le phare",
+      "floor": "roche"
+    },
+    "D": {
+      "name": "Douane",
+      "the": "la douane",
+      "floor": "dalles"
+    }
+  },
+  "layout": [
+    "QQQQQQEEEE",
+    "QQQQQQEEEE",
+    "TTTBBBEEEE",
+    "TTTBBBCCCC",
+    "TTTBBBCCCC",
+    "MMMMNNCCCC",
+    "MMMMNNNNPP",
+    "MMMMNNNNPP",
+    "DDDDNNNNPP",
+    "DDDDDDNNPP"
+  ],
+  "objects": [
+    {
+      "type": "barque",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "canon",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        0,
+        8
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        9
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        2,
+        7
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        2
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        4,
+        5
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        4,
+        7
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        5,
+        9
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        6,
+        1
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        7,
+        3
+      ]
+    },
+    {
+      "type": "canon",
+      "at": [
+        6,
+        5
+      ]
+    },
+    {
+      "type": "hamac",
+      "at": [
+        8,
+        6
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        9,
+        7
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        6,
+        9
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        9,
+        8
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        8,
+        1
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        9,
+        4
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Amiral",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍✈️",
+      "desc": "Capitaine, n'a jamais quitté le port",
+      "archetype": "capitaine"
+    },
+    {
+      "id": "b",
+      "name": "Bâfrin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    },
+    {
+      "id": "c",
+      "name": "Clovis",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
+    },
+    {
+      "id": "d",
+      "name": "Dico",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🦜",
+      "desc": "Perroquet, répète tous les secrets",
+      "archetype": "perroquet"
+    },
+    {
+      "id": "e",
+      "name": "Écarlate",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
+    },
+    {
+      "id": "f",
+      "name": "Flibuste",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🏴‍☠️",
+      "desc": "Pirate, a perdu une jambe, un œil et le sens de l'orientation",
+      "archetype": "pirate"
+    },
+    {
+      "id": "g",
+      "name": "Grippesou",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧔‍♂️",
+      "desc": "Tavernier nain, radin légendaire",
+      "archetype": "tavernier"
+    },
+    {
+      "id": "h",
+      "name": "Houle",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene"
+    },
+    {
+      "id": "i",
+      "name": "Imposteur",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🎩",
+      "desc": "Bonimenteur, vend du rêve au kilo",
+      "archetype": "bonimenteur"
+    },
+    {
+      "id": "j",
+      "name": "Jackpot",
+      "gender": "m",
+      "role": "victim",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    }
+  ],
+  "id": "grand-port--gobelin",
+  "intro": "Le gobelin Jackpot a été retrouvé sans vie au Grand Port de Brumeval, un soir de brume si épaisse qu'on n'y voyait pas sa propre jambe de bois. Neuf habitués erraient sur le port. Un seul était avec lui.",
+  "epilogue": "Clovis avoue en perdant un doigt : Jackpot l'avait engagé comme figure de proue. Sans lui demander son avis.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Amiral était au nord de Bâfrin.",
+      "logic": {
+        "type": "northOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était à côté d'un coffre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bâfrin était sur la même ligne qu'une table.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était dans la même colonne qu'un hamac.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "hamac"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Clovis était dans la même colonne qu'un tapis.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était sur la même ligne qu'une table.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était au nord d'Houle.",
+      "logic": {
+        "type": "northOf",
+        "other": "h"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dico était à l'est d'Imposteur.",
+      "logic": {
+        "type": "eastOf",
+        "other": "i"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Écarlate était sur la même ligne qu'un tapis.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Flibuste était sur la même ligne qu'un pupitre.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "pupitre"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Grippesou était à l'ouest d'Houle.",
+      "logic": {
+        "type": "westOf",
+        "other": "h"
+      }
+    },
+    {
+      "who": "h",
+      "text": "Houle était dans la même colonne qu'une table.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "i",
+      "text": "Imposteur était dans la même colonne qu'une chaise.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "i",
+      "text": "Il était au nord de Bâfrin.",
+      "logic": {
+        "type": "northOf",
+        "other": "b"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "j": [
+        2,
+        4
+      ],
+      "f": [
+        9,
+        5
+      ],
+      "a": [
+        0,
+        7
+      ],
+      "d": [
+        8,
+        9
+      ],
+      "h": [
+        4,
+        1
+      ],
+      "g": [
+        1,
+        0
+      ],
+      "b": [
+        6,
+        6
+      ],
+      "e": [
+        7,
+        2
+      ],
+      "i": [
+        5,
+        8
+      ],
+      "c": [
+        3,
+        3
+      ]
+    },
+    "murderer": "c"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 8,
+    "hardest": "pièces",
+    "hardSteps": 4,
+    "directStart": 0
+  },
+  "difficulty": 3
+}

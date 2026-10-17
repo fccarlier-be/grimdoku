@@ -1,0 +1,163 @@
+{
+ "positions": {
+  "k": [
+   10,
+   5
+  ],
+  "g": [
+   9,
+   0
+  ],
+  "c": [
+   5,
+   7
+  ],
+  "f": [
+   3,
+   3
+  ],
+  "h": [
+   0,
+   4
+  ],
+  "a": [
+   2,
+   9
+  ],
+  "i": [
+   8,
+   6
+  ],
+  "j": [
+   1,
+   1
+  ],
+  "b": [
+   7,
+   10
+  ],
+  "e": [
+   4,
+   8
+  ],
+  "d": [
+   6,
+   2
+  ]
+ },
+ "murderer": "i",
+ "cast": {
+  "g": "a",
+  "c": "b",
+  "f": "c",
+  "h": "d",
+  "a": "e",
+  "i": "f",
+  "j": "g",
+  "b": "h",
+  "e": "i",
+  "d": "j"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "f",
+   "logic": {
+    "type": "eastOf",
+    "other": "j"
+   }
+  },
+  {
+   "who": "j",
+   "logic": {
+    "type": "eastOf",
+    "other": "g"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "roseaux"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "southOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "roseaux"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "etagere"
+   }
+  }
+ ]
+}

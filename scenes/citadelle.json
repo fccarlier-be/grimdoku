@@ -1,0 +1,235 @@
+{
+  "scene": "citadelle",
+  "formatVersion": 1,
+  "title": "La Citadelle de Mortebrune",
+  "decor": "chateau",
+  "size": 9,
+  "rooms": {
+    "R": {
+      "name": "Remparts",
+      "the": "les remparts",
+      "floor": "paves"
+    },
+    "C": {
+      "name": "Cour d'honneur",
+      "the": "la cour d'honneur",
+      "floor": "paves"
+    },
+    "T": {
+      "name": "Tour de guet",
+      "the": "la tour de guet",
+      "floor": "dalles"
+    },
+    "A": {
+      "name": "Armurerie",
+      "the": "l'armurerie",
+      "floor": "dalles"
+    },
+    "J": {
+      "name": "Jardin",
+      "the": "le jardin",
+      "floor": "herbe"
+    },
+    "B": {
+      "name": "Écuries",
+      "the": "les écuries",
+      "floor": "paille"
+    },
+    "P": {
+      "name": "Oubliettes",
+      "the": "les oubliettes",
+      "floor": "crypte"
+    },
+    "D": {
+      "name": "Salle du trône",
+      "the": "la salle du trône",
+      "floor": "noble"
+    }
+  },
+  "layout": [
+    "RRRCCCCTT",
+    "RRRCCCCTT",
+    "RRRCCCCTT",
+    "AAACCCCTT",
+    "AAAJJJJJB",
+    "AAAJJJJJB",
+    "PPPJJJJJB",
+    "PPPDDDDBB",
+    "PPPDDDDBB"
+  ],
+  "objects": [
+    {
+      "type": "canon",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        8
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        2,
+        7
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        0
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        4,
+        7
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        5,
+        8
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        7,
+        0
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        8,
+        2
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        8,
+        5
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        7,
+        4
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        8,
+        7
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "archetype": "chevalier",
+      "role": "suspect"
+    },
+    {
+      "id": "b",
+      "archetype": "gobelin",
+      "role": "suspect"
+    },
+    {
+      "id": "c",
+      "archetype": "barde",
+      "role": "suspect"
+    },
+    {
+      "id": "d",
+      "archetype": "elfe",
+      "role": "suspect"
+    },
+    {
+      "id": "e",
+      "archetype": "spectre",
+      "role": "suspect"
+    },
+    {
+      "id": "f",
+      "archetype": "dragonnet",
+      "role": "suspect"
+    },
+    {
+      "id": "g",
+      "archetype": "roi",
+      "role": "suspect"
+    },
+    {
+      "id": "h",
+      "archetype": "sorciere",
+      "role": "suspect"
+    },
+    {
+      "id": "i",
+      "archetype": "ogre",
+      "role": "victim"
+    }
+  ],
+  "auto": {
+    "intro": "{Titre} {victime} a été retrouvé{e} sans vie à la Citadelle de Mortebrune, la nuit où le pont-levis est resté coincé. {Nombre} occupants ne pouvaient pas sortir. Un seul était avec {lui}.",
+    "epilogues": {
+      "chevalier": "{coupable} avoue, la visière baissée : {victime} avait révélé à toute la garnison qu'il dormait pendant ses tours de garde.",
+      "gobelin": "{coupable} avoue : {victime} avait découvert que l'impôt « pour la réfection des remparts » finançait surtout ses vacances.",
+      "barde": "{coupable} avoue : {victime} avait fait murer la tour où il répétait. Avec ses partitions dedans.",
+      "elfe": "{coupable} avoue avec hauteur : {victime} avait fait abattre le seul arbre centenaire du jardin pour y garer un chariot.",
+      "spectre": "{coupable} gémit ses aveux : {victime} voulait transformer les oubliettes, son domicile depuis trois siècles, en cave à vin.",
+      "dragonnet": "{coupable} avoue en toussant une flammèche : {victime} l'utilisait pour allumer les torches. Sans jamais le payer.",
+      "roi": "{coupable} avoue, très digne : {victime} s'était assis{e} sur le trône « juste pour voir ». C'est toujours comme ça que ça commence.",
+      "sorciere": "{coupable} avoue en ricanant : {victime} avait traité sa potion de soupe. Elle n'a pas aimé la critique culinaire.",
+      "ogre": "{coupable} avoue la bouche pleine : {victime} avait cadenassé le garde-manger de la citadelle. Personne ne cadenasse le garde-manger."
+    }
+  }
+}

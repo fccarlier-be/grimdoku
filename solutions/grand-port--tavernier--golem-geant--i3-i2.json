@@ -1,0 +1,129 @@
+{
+ "positions": {
+  "h": [
+   9,
+   5
+  ],
+  "b": [
+   [
+    3,
+    8
+   ],
+   [
+    4,
+    8
+   ],
+   [
+    5,
+    8
+   ]
+  ],
+  "g": [
+   [
+    7,
+    6
+   ],
+   [
+    7,
+    7
+   ]
+  ],
+  "c": [
+   6,
+   3
+  ],
+  "f": [
+   1,
+   2
+  ],
+  "a": [
+   2,
+   1
+  ],
+  "d": [
+   0,
+   9
+  ],
+  "e": [
+   8,
+   0
+  ]
+ },
+ "murderer": "e",
+ "cast": {
+  "b": "a",
+  "g": "b",
+  "c": "c",
+  "f": "d",
+  "a": "e",
+  "d": "f",
+  "e": "g"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "pupitre"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "eastOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameColAs",
+    "object": "hamac"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "table"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "hamac"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "westOf",
+    "other": "c"
+   }
+  }
+ ]
+}

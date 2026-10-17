@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "title": "La Tour de l'Archimage — l'affaire Grisâtre",
   "intro": "Le spectre Grisâtre a été retrouvé sans vie dans la Tour de l'Archimage, où un portail runique relie le laboratoire à la crypte. Six invités douteux traînaient dans les étages. Un seul était avec lui.",
-  "epilogue": "Funestine avoue : Grisâtre avait ouvert les volets de l'observatoire en plein midi. Exprès.",
+  "epilogue": "Argentbarbe avoue en lissant sa barbe : Grisâtre avait touché à ses grimoires. On ne touche pas aux grimoires d'un archimage.",
   "size": 7,
   "rooms": {
     "L": {
@@ -162,12 +162,12 @@
   "characters": [
     {
       "id": "a",
-      "name": "Amphora",
-      "gender": "f",
+      "name": "Argentbarbe",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧞‍♀️",
-      "desc": "Djinn, a déjà exaucé deux vœux de trop",
-      "archetype": "djinn"
+      "icon": "🧙‍♂️",
+      "desc": "Archimage, 412 ans, toujours pas de testament",
+      "archetype": "archimage"
     },
     {
       "id": "b",
@@ -189,30 +189,30 @@
     },
     {
       "id": "d",
-      "name": "Désiré",
-      "gender": "m",
+      "name": "Djinnifer",
+      "gender": "f",
       "role": "suspect",
-      "icon": "🧟",
-      "desc": "Zombie, ancien apprenti. Ancien tout court",
-      "archetype": "zombie"
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn"
     },
     {
       "id": "e",
-      "name": "Étoilebarbe",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧙‍♂️",
-      "desc": "Archimage, 412 ans, toujours pas de testament",
-      "archetype": "archimage"
-    },
-    {
-      "id": "f",
-      "name": "Funestine",
+      "name": "Écarlate",
       "gender": "f",
       "role": "suspect",
       "icon": "🧛‍♀️",
       "desc": "Comtesse vampire, végane (elle le jure)",
       "archetype": "vampire"
+    },
+    {
+      "id": "f",
+      "name": "Fernand",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
     },
     {
       "id": "g",
@@ -232,108 +232,92 @@
   "clues": [
     {
       "who": "a",
-      "text": "Amphora était sur la même ligne qu'une boule de cristal.",
+      "text": "Argentbarbe était à côté d'un champignon géant.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "cristal"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Elle était assise sur une chaise.",
-      "logic": {
-        "type": "onObject",
-        "object": "chaise"
+        "type": "adjacentTo",
+        "object": "champi"
       }
     },
     {
       "who": "b",
-      "text": "Bulle était à côté d'un arbre.",
+      "text": "Bulle était à côté d'un portail runique.",
       "logic": {
         "type": "adjacentTo",
-        "object": "arbre"
+        "object": "portail"
       }
     },
     {
       "who": "c",
-      "text": "Cramoisi était à côté d'un coffre.",
+      "text": "Cramoisi était sur la même ligne qu'un sarcophage.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "coffre"
+        "type": "sameRowAs",
+        "object": "sarcophage"
       }
     },
     {
       "who": "d",
-      "text": "Désiré était dans le hall.",
+      "text": "Djinnifer était sur la même ligne qu'une étagère.",
       "logic": {
-        "type": "inRoom",
-        "room": "H"
+        "type": "sameRowAs",
+        "object": "etagere"
       }
     },
     {
       "who": "e",
-      "text": "Étoilebarbe était à côté d'un tapis.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "tapis"
-      }
-    },
-    {
-      "who": "f",
-      "text": "Funestine était sur la même ligne qu'un tapis.",
+      "text": "Écarlate était sur la même ligne qu'un chaudron.",
       "logic": {
         "type": "sameRowAs",
-        "object": "tapis"
+        "object": "chaudron"
       }
     },
     {
       "who": "f",
-      "text": "Elle était dans la crypte.",
+      "text": "Fernand était au sud de Bulle.",
       "logic": {
-        "type": "inRoom",
-        "room": "C"
+        "type": "southOf",
+        "other": "b"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        1,
-        0
-      ],
-      "c": [
-        6,
-        1
-      ],
-      "d": [
-        4,
-        2
-      ],
-      "b": [
         3,
         5
       ],
-      "f": [
-        5,
-        4
+      "c": [
+        4,
+        2
       ],
-      "a": [
+      "f": [
+        6,
+        0
+      ],
+      "b": [
         0,
-        6
+        1
       ],
       "e": [
+        1,
+        4
+      ],
+      "d": [
         2,
         3
+      ],
+      "a": [
+        5,
+        6
       ]
     },
-    "murderer": "f"
+    "murderer": "a"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
-    "hardest": "ligne réservée",
-    "hardSteps": 0,
-    "directStart": 1
+    "skulls": 3,
+    "score": 6,
+    "hardest": "pièces",
+    "hardSteps": 2,
+    "directStart": 0
   },
-  "difficulty": 1
+  "difficulty": 3
 }

@@ -8,83 +8,76 @@
    6,
    1
   ],
-  "d": [
+  "a": [
    3,
    4
   ],
-  "a": [
+  "b": [
    2,
    5
   ],
-  "c": [
+  "d": [
    4,
    6
   ],
-  "b": [
+  "e": [
    0,
    2
   ],
-  "e": [
+  "c": [
    1,
    0
   ]
  },
- "murderer": "d",
+ "murderer": "a",
  "cast": {
   "f": "a",
-  "d": "b",
-  "a": "c",
-  "c": "d",
-  "b": "e",
-  "e": "f"
+  "a": "b",
+  "b": "c",
+  "d": "d",
+  "e": "e",
+  "c": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "a",
+   "who": "f",
    "logic": {
-    "type": "inRoom",
-    "room": "D"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "inRoom",
-    "room": "Q"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "lit"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "eastOf",
+    "type": "southOf",
     "other": "a"
    }
   },
   {
    "who": "d",
    "logic": {
-    "type": "sameColAs",
-    "object": "enclume"
+    "type": "eastOf",
+    "other": "e"
    }
   },
   {
-   "who": "f",
+   "who": "e",
    "logic": {
-    "type": "sameColAs",
-    "object": "chaise"
+    "type": "sameRowAs",
+    "object": "canon"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "barque"
    }
   },
   {
    "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "d",
    "logic": {
     "type": "sameRowAs",
     "object": "enclume"
@@ -92,6 +85,13 @@
   },
   {
    "who": "a",
+   "logic": {
+    "type": "sameColAs",
+    "object": "enclume"
+   }
+  },
+  {
+   "who": "b",
    "logic": {
     "type": "onObject",
     "object": "chaise"

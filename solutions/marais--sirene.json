@@ -2,36 +2,36 @@
  "positions": {
   "f": [
    3,
-   2
+   4
   ],
   "d": [
-   2,
-   5
+   5,
+   2
   ],
   "a": [
    1,
-   0
-  ],
-  "b": [
-   5,
-   4
-  ],
-  "c": [
-   0,
-   3
+   1
   ],
   "e": [
    4,
-   1
+   0
+  ],
+  "c": [
+   0,
+   5
+  ],
+  "b": [
+   2,
+   3
   ]
  },
- "murderer": "e",
+ "murderer": "d",
  "cast": {
   "d": "a",
   "a": "b",
-  "b": "c",
+  "e": "c",
   "c": "d",
-  "e": "e"
+  "b": "e"
  },
  "nSolutions": 1,
  "needsL2": false,
@@ -39,6 +39,34 @@
   {
    "who": "d",
    "logic": {
+    "type": "westOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameColAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "southOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "inRoom",
+    "room": "R"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
     "type": "sameRowAs",
     "object": "champi"
    }
@@ -46,43 +74,29 @@
   {
    "who": "e",
    "logic": {
-    "type": "adjacentTo",
-    "object": "arbre"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "onObject",
-    "object": "lit"
+    "type": "sameRowAs",
+    "object": "roseaux"
    }
   },
   {
    "who": "b",
    "logic": {
-    "type": "onObject",
-    "object": "champi"
+    "type": "westOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "notInRoom",
+    "room": "I"
    }
   },
   {
    "who": "c",
    "logic": {
     "type": "adjacentTo",
-    "object": "tonneau"
-   }
-  },
-  {
-   "who": "d",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "roseaux"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "roseaux"
+    "object": "barque"
    }
   }
  ]

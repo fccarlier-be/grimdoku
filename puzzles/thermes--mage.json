@@ -126,34 +126,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aspre",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧔‍♂️",
-      "desc": "Tavernier nain, radin légendaire",
-      "archetype": "tavernier"
-    },
-    {
-      "id": "b",
-      "name": "Bulle",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧜‍♀️",
-      "desc": "Sirène, venue pour l'aquarium",
-      "archetype": "sirene"
-    },
-    {
-      "id": "c",
-      "name": "Célandra",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧝‍♀️",
-      "desc": "Elfe, critique gastronomique",
-      "archetype": "elfe"
-    },
-    {
-      "id": "d",
-      "name": "Dentdur",
+      "name": "Avaloir",
       "gender": "m",
       "role": "suspect",
       "icon": "🧌",
@@ -161,13 +134,40 @@
       "archetype": "troll"
     },
     {
-      "id": "e",
-      "name": "Églantine",
+      "id": "b",
+      "name": "Bruyère",
       "gender": "f",
       "role": "suspect",
       "icon": "🧚",
       "desc": "Fée, doit trois tournées",
       "archetype": "fee"
+    },
+    {
+      "id": "c",
+      "name": "Centime",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧔‍♂️",
+      "desc": "Tavernier nain, radin légendaire",
+      "archetype": "tavernier"
+    },
+    {
+      "id": "d",
+      "name": "Dorade",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene"
+    },
+    {
+      "id": "e",
+      "name": "Erwëlle",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
     },
     {
       "id": "f",
@@ -182,84 +182,100 @@
   "decor": "thermes",
   "id": "thermes--mage",
   "intro": "Le mage Faribole a été retrouvé sans vie aux Thermes Enchantés, détendu pour toujours. Cinq curistes profitaient des bains. Un seul était avec lui.",
-  "epilogue": "Églantine avoue : Faribole l'avait prise pour un moustique et avait tapé dessus. Elle a rendu la politesse.",
+  "epilogue": "Erwëlle avoue avec dédain : Faribole avait trempé ses pieds dans le bassin chaud. Juste avant elle.",
   "clues": [
     {
       "who": "a",
-      "text": "Aspre était à côté d'une table.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "table"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Bulle était sur la même ligne qu'une statue.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "statue"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Célandra était à côté d'une statue.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "statue"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Dentdur était à côté d'un tonneau.",
+      "text": "Avaloir était à côté d'un tonneau.",
       "logic": {
         "type": "adjacentTo",
         "object": "tonneau"
       }
     },
     {
-      "who": "e",
-      "text": "Églantine était sur la même ligne qu'un lit.",
+      "who": "b",
+      "text": "Bruyère était allongée sur un lit.",
       "logic": {
-        "type": "sameRowAs",
+        "type": "onObject",
         "object": "lit"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Centime était au sud de Dorade.",
+      "logic": {
+        "type": "southOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était assis sur une chaise.",
+      "logic": {
+        "type": "onObject",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dorade était dans la même colonne qu'un lit.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Erwëlle était à l'est de Bruyère.",
+      "logic": {
+        "type": "eastOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Elle était au nord d'Avaloir.",
+      "logic": {
+        "type": "northOf",
+        "other": "a"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
+        5,
+        5
+      ],
+      "d": [
+        0,
+        2
+      ],
+      "e": [
         2,
         4
       ],
-      "b": [
-        0,
-        1
-      ],
-      "c": [
-        1,
-        3
-      ],
-      "d": [
+      "a": [
         3,
         0
       ],
-      "e": [
+      "b": [
         4,
-        5
+        3
       ],
-      "a": [
-        5,
-        2
+      "c": [
+        1,
+        1
       ]
     },
     "murderer": "e"
   },
   "rating": {
     "skulls": 2,
-    "score": 3,
-    "hardest": "pièces",
-    "hardSteps": 1,
-    "directStart": 1
+    "score": 4,
+    "hardest": "ligne réservée",
+    "hardSteps": 0,
+    "directStart": 0
   },
   "difficulty": 2
 }

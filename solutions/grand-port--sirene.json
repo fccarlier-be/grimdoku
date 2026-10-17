@@ -1,0 +1,151 @@
+{
+ "positions": {
+  "j": [
+   5,
+   1
+  ],
+  "g": [
+   6,
+   6
+  ],
+  "b": [
+   1,
+   7
+  ],
+  "d": [
+   9,
+   3
+  ],
+  "f": [
+   8,
+   8
+  ],
+  "h": [
+   2,
+   5
+  ],
+  "a": [
+   7,
+   2
+  ],
+  "e": [
+   3,
+   0
+  ],
+  "c": [
+   0,
+   4
+  ],
+  "i": [
+   4,
+   9
+  ]
+ },
+ "murderer": "a",
+ "cast": {
+  "g": "a",
+  "b": "b",
+  "d": "c",
+  "f": "d",
+  "h": "e",
+  "a": "f",
+  "e": "g",
+  "c": "h",
+  "i": "i"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "b",
+   "logic": {
+    "type": "inRoom",
+    "room": "E"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "northOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "inRoom",
+    "room": "B"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chariot"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaise"
+   }
+  }
+ ]
+}

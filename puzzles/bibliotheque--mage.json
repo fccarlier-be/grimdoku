@@ -13,11 +13,6 @@
       "the": "les rayonnages",
       "floor": "parquet"
     },
-    "B": {
-      "name": "Bureau",
-      "the": "le bureau",
-      "floor": "parquet"
-    },
     "L": {
       "name": "Salle de lecture",
       "the": "la salle de lecture",
@@ -42,8 +37,8 @@
   "layout": [
     "SSSYYYY",
     "SSSYYYY",
-    "BBLLLGG",
-    "BBLLLGG",
+    "SSLLLGG",
+    "SSLLLGG",
     "RRLLLGG",
     "RRRAAAA",
     "RRRAAAA"
@@ -173,15 +168,12 @@
   "characters": [
     {
       "id": "a",
-      "name": "Albâtre",
-      "gender": "m",
+      "name": "Agathe",
+      "gender": "f",
       "role": "suspect",
-      "icon": "👻",
-      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
-      "archetype": "spectre",
-      "traits": [
-        "spectre"
-      ]
+      "icon": "👩‍🏫",
+      "desc": "Bibliothécaire, réclame le silence en hurlant",
+      "archetype": "bibliothecaire"
     },
     {
       "id": "b",
@@ -194,25 +186,7 @@
     },
     {
       "id": "c",
-      "name": "Crépuscula",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧛‍♀️",
-      "desc": "Comtesse vampire, végane (elle le jure)",
-      "archetype": "vampire"
-    },
-    {
-      "id": "d",
-      "name": "Dîme",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
-    },
-    {
-      "id": "e",
-      "name": "Encensia",
+      "name": "Calebasse",
       "gender": "f",
       "role": "suspect",
       "icon": "🧞‍♀️",
@@ -220,13 +194,34 @@
       "archetype": "djinn"
     },
     {
-      "id": "f",
-      "name": "Folio",
+      "id": "d",
+      "name": "Draculine",
       "gender": "f",
       "role": "suspect",
-      "icon": "👩‍🏫",
-      "desc": "Bibliothécaire, réclame le silence en hurlant",
-      "archetype": "bibliothecaire"
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
+    },
+    {
+      "id": "e",
+      "name": "Escroquin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "f",
+      "name": "Frisson",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ]
     },
     {
       "id": "g",
@@ -240,136 +235,120 @@
   ],
   "decor": "bibliotheque",
   "id": "bibliotheque--mage",
-  "epilogue": "Encensia avoue : Gribouille avait rangé sa lampe au rayon « Objets trouvés ». Il y a quatre-vingts ans.",
+  "epilogue": "Blanchebarbe avoue : Gribouille avait rangé ses mémoires au rayon « Fiction ». Quatre cent douze ans de vérité, et on ose douter.",
   "clues": [
     {
       "who": "a",
-      "text": "Albâtre était dans la même colonne qu'une statue.",
+      "text": "Agathe était à côté d'une boule de cristal.",
       "logic": {
-        "type": "sameColAs",
-        "object": "statue"
+        "type": "adjacentTo",
+        "object": "cristal"
       }
     },
     {
       "who": "a",
-      "text": "Il hantait une étagère.",
+      "text": "Elle était à l'ouest de Blanchebarbe.",
       "logic": {
-        "type": "onObject",
-        "object": "etagere"
+        "type": "westOf",
+        "other": "b"
       }
     },
     {
       "who": "b",
-      "text": "Blanchebarbe était dans la même colonne qu'une étagère.",
+      "text": "Blanchebarbe était à côté d'une table.",
       "logic": {
-        "type": "sameColAs",
-        "object": "etagere"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était assis dans un fauteuil.",
-      "logic": {
-        "type": "onObject",
-        "object": "fauteuil"
+        "type": "adjacentTo",
+        "object": "table"
       }
     },
     {
       "who": "c",
-      "text": "Crépuscula était dans la salle de lecture.",
+      "text": "Calebasse était à côté d'un tonneau.",
       "logic": {
-        "type": "inRoom",
-        "room": "L"
+        "type": "adjacentTo",
+        "object": "tonneau"
       }
     },
     {
       "who": "c",
-      "text": "Elle était dans la même colonne qu'un pupitre.",
+      "text": "Elle était à l'est de Draculine.",
       "logic": {
-        "type": "sameColAs",
-        "object": "pupitre"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Elle était au sud d'Albâtre.",
-      "logic": {
-        "type": "southOf",
-        "other": "a"
+        "type": "eastOf",
+        "other": "d"
       }
     },
     {
       "who": "d",
-      "text": "Dîme était dans la même colonne qu'un pupitre.",
+      "text": "Draculine était à côté d'un pupitre.",
       "logic": {
-        "type": "sameColAs",
+        "type": "adjacentTo",
         "object": "pupitre"
       }
     },
     {
       "who": "e",
-      "text": "Encensia était sur la même ligne qu'une boule de cristal.",
+      "text": "Escroquin était dans la même colonne qu'un coffre.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "cristal"
+        "type": "sameColAs",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était au sud de Blanchebarbe.",
+      "logic": {
+        "type": "southOf",
+        "other": "b"
       }
     },
     {
       "who": "f",
-      "text": "Folio était à l'ouest de Dîme.",
+      "text": "Frisson était à l'est d'Agathe.",
       "logic": {
-        "type": "westOf",
-        "other": "d"
-      }
-    },
-    {
-      "who": "f",
-      "text": "Elle était sur la même ligne qu'une chaise.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "chaise"
+        "type": "eastOf",
+        "other": "a"
       }
     }
   ],
   "solution": {
     "positions": {
-      "a": [
-        0,
-        6
-      ],
-      "b": [
+      "g": [
         2,
-        5
-      ],
-      "e": [
-        6,
-        4
-      ],
-      "c": [
-        3,
         2
       ],
-      "d": [
-        1,
-        1
-      ],
       "f": [
-        4,
+        1,
+        6
+      ],
+      "d": [
+        0,
         0
       ],
-      "g": [
+      "c": [
+        6,
+        1
+      ],
+      "e": [
+        4,
+        5
+      ],
+      "b": [
+        3,
+        4
+      ],
+      "a": [
         5,
         3
       ]
     },
-    "murderer": "e"
+    "murderer": "b"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
-    "hardest": "ligne réservée",
+    "skulls": 2,
+    "score": 4,
+    "hardest": "position relative",
     "hardSteps": 0,
-    "directStart": 2
+    "directStart": 0
   },
-  "difficulty": 1
+  "difficulty": 2
 }

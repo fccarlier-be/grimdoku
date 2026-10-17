@@ -3,11 +3,6 @@
   "title": "L'Académie de Magie — l'affaire Gramme",
   "size": 7,
   "rooms": {
-    "A": {
-      "name": "Tour d'astronomie",
-      "the": "la tour d'astronomie",
-      "floor": "parquet"
-    },
     "X": {
       "name": "Salle de cours",
       "the": "la salle de cours",
@@ -40,8 +35,8 @@
     }
   },
   "layout": [
-    "AAXXXBB",
-    "AAXXXBB",
+    "DDXXXBB",
+    "DDXXXBB",
     "DDXXXLL",
     "DDRRRLL",
     "DDRRRLL",
@@ -179,21 +174,21 @@
   "characters": [
     {
       "id": "a",
-      "name": "Ardent",
-      "gender": "m",
+      "name": "Aubépine",
+      "gender": "f",
       "role": "suspect",
-      "icon": "🐉",
-      "desc": "Dragonnet, brûle tout ce qu'il touche",
-      "archetype": "dragonnet"
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
     },
     {
       "id": "b",
-      "name": "Brindille",
+      "name": "Bérénwë",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧙‍♀️",
-      "desc": "Apprentie sorcière, a déjà fait exploser trois chaudrons",
-      "archetype": "apprentie"
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
     },
     {
       "id": "c",
@@ -206,7 +201,16 @@
     },
     {
       "id": "d",
-      "name": "Djinnifer",
+      "name": "Dardafeu",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
+      "id": "e",
+      "name": "Encensia",
       "gender": "f",
       "role": "suspect",
       "icon": "🧞‍♀️",
@@ -214,22 +218,13 @@
       "archetype": "djinn"
     },
     {
-      "id": "e",
-      "name": "Églantine",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧚",
-      "desc": "Fée, doit trois tournées",
-      "archetype": "fee"
-    },
-    {
       "id": "f",
-      "name": "Faëlys",
+      "name": "Frimousse",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧝‍♀️",
-      "desc": "Elfe, critique gastronomique",
-      "archetype": "elfe"
+      "icon": "🧙‍♀️",
+      "desc": "Apprentie sorcière, a déjà fait exploser trois chaudrons",
+      "archetype": "apprentie"
     },
     {
       "id": "g",
@@ -244,112 +239,104 @@
   "decor": "academie",
   "id": "academie--professeur",
   "intro": "Le professeur Gramme a été retrouvé sans vie un soir d'examens à l'Académie de Magie. Six élèves et professeurs révisaient encore. Un seul était avec lui.",
-  "epilogue": "Cornélius avoue en éternuant : Gramme avait remplacé sa tisane par une potion au houblon. En plein cours.",
+  "epilogue": "Frimousse avoue en pleurant : Gramme allait révéler qui avait fait exploser le chaudron du laboratoire. Les trois fois.",
   "clues": [
     {
       "who": "a",
-      "text": "Ardent était dans la tour d'astronomie.",
-      "logic": {
-        "type": "inRoom",
-        "room": "A"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était assis dans un fauteuil.",
-      "logic": {
-        "type": "onObject",
-        "object": "fauteuil"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Brindille était à côté d'un arbre.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "arbre"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Cornélius était à côté d'une chaise.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Djinnifer était à l'ouest d'Ardent.",
-      "logic": {
-        "type": "westOf",
-        "other": "a"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Elle était allongée sur un lit.",
+      "text": "Aubépine était allongée sur un lit.",
       "logic": {
         "type": "onObject",
         "object": "lit"
       }
     },
     {
-      "who": "e",
-      "text": "Églantine était à côté d'un chaudron.",
+      "who": "b",
+      "text": "Bérénwë était dans le bureau du directeur.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "chaudron"
+        "type": "inRoom",
+        "room": "B"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Cornélius était au sud de Frimousse.",
+      "logic": {
+        "type": "southOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dardafeu était au nord de Bérénwë.",
+      "logic": {
+        "type": "northOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était à l'est de Frimousse.",
+      "logic": {
+        "type": "eastOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Encensia était dans la même colonne qu'un champignon géant.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "champi"
       }
     },
     {
       "who": "f",
-      "text": "Faëlys était dans la salle de cours.",
+      "text": "Frimousse était sur la même ligne qu'une chaise.",
       "logic": {
-        "type": "inRoom",
-        "room": "X"
+        "type": "sameRowAs",
+        "object": "chaise"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        5,
-        5
-      ],
-      "b": [
-        6,
+        3,
         2
       ],
-      "c": [
+      "f": [
         4,
         3
       ],
-      "e": [
-        3,
+      "c": [
+        5,
         6
       ],
       "a": [
-        1,
-        1
-      ],
-      "d": [
         2,
         0
       ],
-      "f": [
+      "d": [
         0,
         4
+      ],
+      "e": [
+        6,
+        1
+      ],
+      "b": [
+        1,
+        5
       ]
     },
-    "murderer": "c"
+    "murderer": "f"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
-    "hardest": "ligne réservée",
-    "hardSteps": 0,
-    "directStart": 1
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 0
   },
-  "difficulty": 1
+  "difficulty": 3
 }

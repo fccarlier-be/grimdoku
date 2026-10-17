@@ -1,55 +1,48 @@
 {
  "positions": {
   "g": [
-   6,
+   1,
    2
   ],
-  "e": [
-   5,
-   3
-  ],
   "a": [
-   4,
-   4
-  ],
-  "c": [
-   3,
-   1
-  ],
-  "b": [
-   1,
-   6
-  ],
-  "f": [
-   0,
+   5,
    5
   ],
+  "e": [
+   6,
+   4
+  ],
   "d": [
+   0,
+   3
+  ],
+  "c": [
    2,
+   1
+  ],
+  "f": [
+   3,
+   6
+  ],
+  "b": [
+   4,
    0
   ]
  },
- "murderer": "e",
+ "murderer": "d",
  "cast": {
-  "e": "a",
-  "a": "b",
-  "c": "c",
-  "b": "d",
+  "a": "a",
+  "e": "b",
+  "d": "c",
+  "c": "d",
   "f": "e",
-  "d": "f"
+  "b": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "e",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "enclume"
-   }
-  },
-  {
-   "who": "f",
+   "who": "a",
    "logic": {
     "type": "sameRowAs",
     "object": "enclume"
@@ -58,42 +51,49 @@
   {
    "who": "d",
    "logic": {
-    "type": "northOf",
-    "other": "c"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "southOf",
-    "other": "c"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "statue"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "onObject",
-    "object": "chaise"
+    "type": "sameRowAs",
+    "object": "coffre"
    }
   },
   {
    "who": "c",
    "logic": {
-    "type": "notInRoom",
-    "room": "O"
+    "type": "sameRowAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "inRoom",
+    "room": "T"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "coffre"
    }
   },
   {
    "who": "f",
    "logic": {
-    "type": "northOf",
+    "type": "southOf",
     "other": "c"
    }
   }

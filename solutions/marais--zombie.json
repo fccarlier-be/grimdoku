@@ -1,35 +1,35 @@
 {
  "positions": {
   "f": [
-   4,
-   2
-  ],
-  "a": [
-   1,
-   0
-  ],
-  "c": [
-   3,
+   5,
    3
   ],
   "e": [
-   0,
+   4,
+   1
+  ],
+  "c": [
+   3,
    5
   ],
-  "b": [
-   5,
+  "a": [
+   1,
    4
   ],
-  "d": [
+  "b": [
    2,
-   1
+   2
+  ],
+  "d": [
+   0,
+   0
   ]
  },
- "murderer": "b",
+ "murderer": "c",
  "cast": {
-  "a": "a",
+  "e": "a",
   "c": "b",
-  "e": "c",
+  "a": "c",
   "b": "d",
   "d": "e"
  },
@@ -37,45 +37,45 @@
  "needsL2": false,
  "clues": [
   {
-   "who": "c",
-   "logic": {
-    "type": "southOf",
-    "other": "d"
-   }
-  },
-  {
    "who": "e",
    "logic": {
-    "type": "eastOf",
-    "other": "c"
-   }
-  },
-  {
-   "who": "d",
-   "logic": {
-    "type": "sameColAs",
-    "object": "chaudron"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "onObject",
-    "object": "champi"
+    "type": "southOf",
+    "other": "a"
    }
   },
   {
    "who": "c",
    "logic": {
-    "type": "sameColAs",
-    "object": "tonneau"
+    "type": "northOf",
+    "other": "e"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "onObject",
-    "object": "lit"
+    "type": "sameColAs",
+    "object": "barque"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "westOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "inRoom",
+    "room": "T"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaudron"
    }
   }
  ]

@@ -3,11 +3,6 @@
   "title": "Le Navire Fantôme — l'affaire Gédéon",
   "size": 7,
   "rooms": {
-    "V": {
-      "name": "Vigie",
-      "the": "la vigie",
-      "floor": "parquet"
-    },
     "P": {
       "name": "Pont",
       "the": "le pont",
@@ -40,8 +35,8 @@
     }
   },
   "layout": [
-    "VVPPPKK",
-    "VVPPPKK",
+    "EEPPPKK",
+    "EEPPPKK",
     "EEPPPQK",
     "EECCQQQ",
     "EECCCQQ",
@@ -172,7 +167,25 @@
   "characters": [
     {
       "id": "a",
-      "name": "Albâtre",
+      "name": "Abysse",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
+    },
+    {
+      "id": "b",
+      "name": "Barbecale",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍✈️",
+      "desc": "Capitaine, n'a jamais quitté le port",
+      "archetype": "capitaine"
+    },
+    {
+      "id": "c",
+      "name": "Chaînon",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -181,24 +194,6 @@
       "traits": [
         "spectre"
       ]
-    },
-    {
-      "id": "b",
-      "name": "Belladone",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧛‍♀️",
-      "desc": "Comtesse vampire, végane (elle le jure)",
-      "archetype": "vampire"
-    },
-    {
-      "id": "c",
-      "name": "Cacatoès",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🦜",
-      "desc": "Perroquet, répète tous les secrets",
-      "archetype": "perroquet"
     },
     {
       "id": "d",
@@ -211,12 +206,12 @@
     },
     {
       "id": "e",
-      "name": "Étrave",
+      "name": "Écho-Écho",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧑‍✈️",
-      "desc": "Capitaine, n'a jamais quitté le port",
-      "archetype": "capitaine"
+      "icon": "🦜",
+      "desc": "Perroquet, répète tous les secrets",
+      "archetype": "perroquet"
     },
     {
       "id": "f",
@@ -240,105 +235,113 @@
   "decor": "navire",
   "id": "navire--zombie",
   "intro": "Le zombie Gédéon a été retrouvé sans vie à bord du Navire Fantôme, qui dérivait dans le brouillard. Six membres d'équipage étaient à bord. Un seul était avec lui.",
-  "epilogue": "Belladone avoue : Gédéon avait ouvert l'écoutille en plein soleil. Sur un navire, l'ombre se partage.",
+  "epilogue": "Doublon avoue en mâchonnant sa pipe : Gédéon avait caché la carte au trésor. Un pirate pardonne tout, sauf le trésor.",
   "clues": [
     {
       "who": "a",
-      "text": "Albâtre était dans la soute à poudre.",
+      "text": "Abysse était au sud de Chaînon.",
+      "logic": {
+        "type": "southOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Elle était à côté d'une table.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "table"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Barbecale était à l'ouest d'Écho-Écho.",
+      "logic": {
+        "type": "westOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était allongé dans un hamac.",
+      "logic": {
+        "type": "onObject",
+        "object": "hamac"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Chaînon était au nord d'Écho-Écho.",
+      "logic": {
+        "type": "northOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Doublon était à côté d'un coffre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était à l'ouest de Chaînon.",
+      "logic": {
+        "type": "westOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Écho-Écho était dans la soute à poudre.",
       "logic": {
         "type": "inRoom",
         "room": "S"
       }
     },
     {
-      "who": "a",
-      "text": "Il était au nord de Cacatoès.",
-      "logic": {
-        "type": "northOf",
-        "other": "c"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Belladone était sur la même ligne qu'un chaudron.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "chaudron"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Cacatoès était au sud de Belladone.",
+      "who": "f",
+      "text": "Flottille était au sud de Chaînon.",
       "logic": {
         "type": "southOf",
-        "other": "b"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Doublon était sur la même ligne qu'un tonneau.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "tonneau"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Étrave était dans la même colonne qu'un coffre.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "coffre"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Il était sur la même ligne qu'un tonneau.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "tonneau"
-      }
-    },
-    {
-      "who": "f",
-      "text": "Flottille était dans la même colonne qu'un lit.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "lit"
+        "other": "c"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        2,
-        5
-      ],
-      "d": [
-        1,
+        4,
         2
       ],
-      "c": [
-        6,
+      "d": [
+        5,
         3
       ],
-      "f": [
-        0,
-        6
-      ],
-      "a": [
-        5,
+      "e": [
+        6,
         1
       ],
-      "b": [
+      "f": [
         3,
+        6
+      ],
+      "c": [
+        0,
         4
       ],
-      "e": [
-        4,
+      "a": [
+        1,
+        5
+      ],
+      "b": [
+        2,
         0
       ]
     },
-    "murderer": "b"
+    "murderer": "d"
   },
   "rating": {
     "skulls": 3,

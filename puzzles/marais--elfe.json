@@ -120,7 +120,16 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aconit",
+      "name": "Avaloir",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    },
+    {
+      "id": "b",
+      "name": "Berce",
       "gender": "f",
       "role": "suspect",
       "icon": "🧙‍♀️",
@@ -128,8 +137,8 @@
       "archetype": "sorciere"
     },
     {
-      "id": "b",
-      "name": "Bob",
+      "id": "c",
+      "name": "Clovis",
       "gender": "m",
       "role": "suspect",
       "icon": "🧟",
@@ -137,22 +146,13 @@
       "archetype": "zombie"
     },
     {
-      "id": "c",
-      "name": "Coassin",
+      "id": "d",
+      "name": "Dodu",
       "gender": "m",
       "role": "suspect",
       "icon": "🐸",
       "desc": "Crapaud, prince déchu, attend toujours son bisou",
       "archetype": "crapaud"
-    },
-    {
-      "id": "d",
-      "name": "Dentdur",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧌",
-      "desc": "Troll, plongeur à mi-temps",
-      "archetype": "troll"
     },
     {
       "id": "e",
@@ -175,92 +175,100 @@
   ],
   "decor": "marais",
   "id": "marais--elfe",
-  "epilogue": "Dentdur avoue : Faëlys avait transformé son pont en plongeoir. Personne ne touche au pont d'un troll.",
+  "epilogue": "Dodu avoue : Faëlys avait refusé de lui donner le bisou du contre-sort. Il a perdu patience.",
   "clues": [
     {
       "who": "a",
-      "text": "Aconit était dans une barque.",
+      "text": "Avaloir était dans la même colonne qu'une barque.",
       "logic": {
-        "type": "onObject",
+        "type": "sameColAs",
         "object": "barque"
       }
     },
     {
-      "who": "b",
-      "text": "Bob était sur la même ligne qu'un arbre.",
+      "who": "a",
+      "text": "Il était à l'ouest de Berce.",
+      "logic": {
+        "type": "westOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était sur la même ligne qu'un massif de roseaux.",
       "logic": {
         "type": "sameRowAs",
-        "object": "arbre"
+        "object": "roseaux"
       }
     },
     {
       "who": "b",
-      "text": "Il était à côté d'un champignon géant.",
+      "text": "Berce était dans le ponton.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "champi"
+        "type": "inRoom",
+        "room": "P"
       }
     },
     {
       "who": "c",
-      "text": "Coassin était dans la cabane.",
+      "text": "Clovis était à côté d'un massif de roseaux.",
       "logic": {
-        "type": "inRoom",
-        "room": "H"
+        "type": "adjacentTo",
+        "object": "roseaux"
       }
     },
     {
       "who": "d",
-      "text": "Dentdur était à l'ouest d'Écume.",
+      "text": "Dodu était sur la même ligne qu'un champignon géant.",
       "logic": {
-        "type": "westOf",
-        "other": "e"
+        "type": "sameRowAs",
+        "object": "champi"
       }
     },
     {
       "who": "e",
-      "text": "Écume était à l'ouest d'Aconit.",
+      "text": "Écume était sur la même ligne qu'un lit.",
       "logic": {
-        "type": "westOf",
-        "other": "a"
+        "type": "sameRowAs",
+        "object": "lit"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        5,
-        5
+        3,
+        2
       ],
       "e": [
-        2,
-        3
-      ],
-      "b": [
-        3,
-        0
-      ],
-      "c": [
         1,
         1
       ],
+      "c": [
+        2,
+        3
+      ],
       "d": [
-        4,
-        2
+        5,
+        0
       ],
       "a": [
-        0,
+        4,
         4
+      ],
+      "b": [
+        0,
+        5
       ]
     },
     "murderer": "d"
   },
   "rating": {
-    "skulls": 2,
-    "score": 4,
-    "hardest": "seul candidat",
-    "hardSteps": 2,
-    "directStart": 1
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 0
   },
-  "difficulty": 2
+  "difficulty": 3
 }

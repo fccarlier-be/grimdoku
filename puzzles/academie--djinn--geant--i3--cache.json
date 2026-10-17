@@ -1,21 +1,11 @@
 {
   "formatVersion": 1,
-  "title": "L'Académie de Magie — l'affaire Encensia",
+  "title": "L'Académie de Magie — la seconde affaire Fumerolle",
   "size": 7,
   "rooms": {
-    "A": {
-      "name": "Tour d'astronomie",
-      "the": "la tour d'astronomie",
-      "floor": "parquet"
-    },
     "X": {
       "name": "Salle de cours",
       "the": "la salle de cours",
-      "floor": "parquet"
-    },
-    "B": {
-      "name": "Bureau du directeur",
-      "the": "le bureau du directeur",
       "floor": "parquet"
     },
     "D": {
@@ -40,8 +30,8 @@
     }
   },
   "layout": [
-    "AAXXXBB",
-    "AAXXXBB",
+    "DDXXXLL",
+    "DDXXXLL",
     "DDXXXLL",
     "DDRRRLL",
     "DDRRRLL",
@@ -188,26 +178,17 @@
     },
     {
       "id": "b",
-      "name": "Bricolin",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧙‍♂️",
-      "desc": "Mage, allergique au houblon",
-      "archetype": "mage"
-    },
-    {
-      "id": "c",
-      "name": "Colosse",
+      "name": "Bastion",
       "gender": "m",
       "role": "suspect",
       "icon": "🦶",
       "desc": "Géant, toujours couché : aucun plafond n'est assez haut",
       "archetype": "geant",
-      "shape": "I3"
+      "shape": "I2"
     },
     {
-      "id": "d",
-      "name": "Digitale",
+      "id": "c",
+      "name": "Capucine",
       "gender": "f",
       "role": "suspect",
       "icon": "🧚",
@@ -215,8 +196,26 @@
       "archetype": "fee"
     },
     {
+      "id": "d",
+      "name": "Dardafeu",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
       "id": "e",
-      "name": "Encensia",
+      "name": "Eustache",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage"
+    },
+    {
+      "id": "f",
+      "name": "Fumerolle",
       "gender": "f",
       "role": "victim",
       "icon": "🧞‍♀️",
@@ -226,108 +225,91 @@
   ],
   "decor": "academie",
   "id": "academie--djinn--geant--i3--cache",
-  "hiddenShapes": true,
-  "intro": "La djinn Encensia a été retrouvée sans vie un soir d'examens à l'Académie de Magie. Quatre élèves et professeurs révisaient encore. Un seul était avec elle.",
-  "epilogue": "Colosse jure qu'il s'est seulement retourné dans son sommeil. Hélas, Encensia faisait la sieste juste à côté.",
+  "intro": "La djinn Fumerolle a été retrouvée sans vie un soir d'examens à l'Académie de Magie. Cinq élèves et professeurs révisaient encore. Un seul était avec elle.",
+  "epilogue": "Dardafeu avoue : Fumerolle voulait l'inscrire comme « animal de laboratoire ». Il a protesté. Avec du feu.",
   "clues": [
     {
       "who": "a",
-      "text": "Aube était sur un champignon géant.",
-      "logic": {
-        "type": "onObject",
-        "object": "champi"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Bricolin était sur la même ligne qu'un chaudron.",
+      "text": "Aube était sur la même ligne qu'un coffre.",
       "logic": {
         "type": "sameRowAs",
-        "object": "chaudron"
+        "object": "coffre"
       }
     },
     {
       "who": "b",
-      "text": "Il était dans la même colonne qu'une chaise.",
+      "text": "Bastion était à côté d'une chaise.",
       "logic": {
-        "type": "sameColAs",
+        "type": "adjacentTo",
         "object": "chaise"
       }
     },
     {
       "who": "c",
-      "text": "Colosse était dans la même colonne qu'un chaudron.",
+      "text": "Capucine était à côté d'un champignon géant.",
       "logic": {
-        "type": "sameColAs",
-        "object": "chaudron"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Il était dans la même colonne qu'un pupitre.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "pupitre"
+        "type": "adjacentTo",
+        "object": "champi"
       }
     },
     {
       "who": "d",
-      "text": "Digitale était au nord de Bricolin.",
+      "text": "Dardafeu était dans la même colonne qu'une table.",
       "logic": {
-        "type": "northOf",
+        "type": "sameColAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Eustache était à l'est de Bastion.",
+      "logic": {
+        "type": "eastOf",
         "other": "b"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Elle était dans la même colonne qu'un lit.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "lit"
       }
     }
   ],
   "solution": {
     "positions": {
-      "e": [
-        4,
-        3
+      "f": [
+        1,
+        5
       ],
-      "c": [
+      "b": [
         [
-          6,
-          4
+          4,
+          3
         ],
         [
-          6,
-          5
-        ],
-        [
-          6,
-          6
+          5,
+          3
         ]
       ],
       "a": [
-        5,
+        3,
+        0
+      ],
+      "e": [
+        2,
+        4
+      ],
+      "c": [
+        6,
         1
       ],
-      "b": [
-        2,
-        2
-      ],
       "d": [
-        1,
-        0
+        0,
+        6
       ]
     },
-    "murderer": "c"
+    "murderer": "d"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
-    "hardest": "position relative",
-    "hardSteps": 0,
-    "directStart": 2
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 0
   },
-  "difficulty": 5
+  "difficulty": 4
 }

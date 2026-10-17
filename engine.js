@@ -86,7 +86,8 @@
     const zoneOf = (r, c) => find(roomOf(r, c));
     const chars = {};
     for (const ch of p.characters) chars[ch.id] = ch;
-    return { p, n, objAt, roomOf, zoneOf, chars };
+    const zones = [...new Set(Object.keys(p.rooms).map(find))]; // pièces, celles reliées par un portail comptent pour une
+    return { p, n, objAt, roomOf, zoneOf, chars, zones };
   }
   const zoneAt = (ctx, v) => ctx.zoneOf(...cellsOf(v)[0]);
 
@@ -183,6 +184,12 @@
     return out;
   }
 
+  // Chaque pièce est occupée (règle) : zones sans personne, une fois tout le monde placé.
+  function emptyZones(ctx, pos) {
+    const used = new Set(Object.values(pos).map(v => zoneAt(ctx, v)));
+    return ctx.zones.filter(z => !used.has(z));
+  }
+
   // Coupable : seul suspect dans la zone de la victime (null si 0 ou >1).
   function murdererOf(ctx, pos) {
     const v = ctx.p.characters.find(c => c.role === 'victim');
@@ -216,6 +223,7 @@
       if (i === ids.length) {
         if (!binary.every(cl => evalClue(ctx, cl, pos))) return;
         if (sharedRooms(ctx, pos).length) return;
+        if (emptyZones(ctx, pos).length) return;
         const m = murdererOf(ctx, pos);
         if (!m) return;
         sols.push({ positions: JSON.parse(JSON.stringify(pos)), murderer: m });
@@ -246,6 +254,7 @@
       else if (!canStand(ctx, id, ...pos[id])) errs.push({ kind: 'blocked', ids: [id] });
     }
     for (const pair of sharedRooms(ctx, pos)) errs.push({ kind: 'room', ids: pair });
+    if (p.characters.every(c => pos[c.id]) && emptyZones(ctx, pos).length) errs.push({ kind: 'empty', ids: [] });
     return errs;
   }
 
@@ -383,6 +392,11 @@
         const suspects = ids.filter(i => i !== victim);
         // suspects dans des pièces différentes : une pièce certaine pour l'un est interdite aux autres
         for (const s of suspects) { const zs = zones(s); if (zs.size === 1) { const z = [...zs][0]; for (const o of suspects) if (o !== s) ch = restrict(o, (q) => q.zone !== z) || ch; } }
+        // chaque pièce est occupée : une pièce où un seul personnage peut aller est la sienne
+        for (const z of ctx.zones) {
+          const can = ids.filter(id => zones(id).has(z));
+          if (can.length === 1) ch = restrict(can[0], (q) => q.zone === z) || ch;
+        }
         // la victime ne peut être que dans une zone où un suspect peut aller
         ch = restrict(victim, (q) => suspects.some(s => zones(s).has(q.zone))) || ch;
         // ni dans une zone qui contient déjà 2 suspects certains
@@ -472,7 +486,7 @@
     return a.cells.filter(k => B.has(k)).length * 2 > Math.min(a.cells.length, b.cells.length);
   }
 
-  const api = { layoutSig, tooClose, OBJECTS, SHAPES, TECH, rateDifficulty, skullsOf, RELATIVE, isPair, prepare, sharedRooms, canStand, evalClue, murdererOf, solve, checkPlacement, neighbors, humanSolve, cellsOf, posKey, placementsOf, isPlacement, shapesOf, orientations, linesOf };
+  const api = { emptyZones, layoutSig, tooClose, OBJECTS, SHAPES, TECH, rateDifficulty, skullsOf, RELATIVE, isPair, prepare, sharedRooms, canStand, evalClue, murdererOf, solve, checkPlacement, neighbors, humanSolve, cellsOf, posKey, placementsOf, isPlacement, shapesOf, orientations, linesOf };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.GrimEngine = api;
 })(typeof window !== 'undefined' ? window : globalThis);

@@ -1,107 +1,114 @@
 {
  "positions": {
   "g": [
-   3,
-   0
-  ],
-  "b": [
-   1,
-   4
-  ],
-  "a": [
-   2,
-   1
-  ],
-  "f": [
-   5,
-   2
-  ],
-  "e": [
    6,
-   5
-  ],
-  "d": [
-   4,
    3
   ],
   "c": [
+   2,
+   2
+  ],
+  "a": [
+   5,
+   0
+  ],
+  "f": [
+   4,
+   5
+  ],
+  "e": [
    0,
    6
+  ],
+  "d": [
+   1,
+   1
+  ],
+  "b": [
+   3,
+   4
   ]
  },
- "murderer": "a",
+ "murderer": "b",
  "cast": {
-  "b": "a",
+  "c": "a",
   "a": "b",
   "f": "c",
   "e": "d",
   "d": "e",
-  "c": "f"
+  "b": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "b",
+   "who": "c",
    "logic": {
-    "type": "sameRowAs",
-    "object": "tapis"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "inRoom",
-    "room": "L"
+    "type": "southOf",
+    "other": "d"
    }
   },
   {
    "who": "f",
    "logic": {
-    "type": "westOf",
-    "other": "d"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "eastOf",
-    "other": "b"
+    "type": "inRoom",
+    "room": "B"
    }
   },
   {
    "who": "e",
    "logic": {
     "type": "adjacentTo",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "inRoom",
+    "room": "L"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
     "object": "table"
    }
   },
   {
    "who": "d",
    "logic": {
-    "type": "sameRowAs",
-    "object": "chaise"
+    "type": "eastOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "southOf",
+    "other": "e"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "sameColAs",
-    "object": "table"
+    "type": "sameRowAs",
+    "object": "arbre"
    }
   },
   {
-   "who": "b",
+   "who": "c",
    "logic": {
-    "type": "adjacentTo",
-    "object": "statue"
+    "type": "sameColAs",
+    "object": "champi"
    }
   },
   {
    "who": "f",
    "logic": {
-    "type": "sameColAs",
-    "object": "champi"
+    "type": "northOf",
+    "other": "a"
    }
   }
  ]

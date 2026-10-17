@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "title": "Meurtre au Sanglier Borgne — l'affaire Fausset",
   "intro": "Le barde Fausset a été retrouvé sans vie à l'aube, au Sanglier Borgne. Cinq clients avaient trop bu, ou pas assez. Un seul était avec lui.",
-  "epilogue": "Denier avoue en comptant ses pièces : Fausset voulait partir sans payer l'ardoise. Personne ne part sans payer l'ardoise.",
+  "epilogue": "Engloutor avoue la bouche pleine : Fausset lui avait reproché de manger la vaisselle. Il n'avait mangé que les assiettes.",
   "size": 6,
   "rooms": {
     "T": {
@@ -128,12 +128,12 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aubépine",
-      "gender": "f",
+      "name": "Aspre",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧚",
-      "desc": "Fée, doit trois tournées",
-      "archetype": "fee"
+      "icon": "🧔‍♂️",
+      "desc": "Tavernier nain, radin légendaire",
+      "archetype": "tavernier"
     },
     {
       "id": "b",
@@ -146,30 +146,30 @@
     },
     {
       "id": "c",
-      "name": "Croquassiette",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧌",
-      "desc": "Troll, plongeur à mi-temps",
-      "archetype": "troll"
-    },
-    {
-      "id": "d",
-      "name": "Denier",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧔‍♂️",
-      "desc": "Tavernier nain, radin légendaire",
-      "archetype": "tavernier"
-    },
-    {
-      "id": "e",
-      "name": "Eustache",
+      "name": "Cornélius",
       "gender": "m",
       "role": "suspect",
       "icon": "🧙‍♂️",
       "desc": "Mage, allergique au houblon",
       "archetype": "mage"
+    },
+    {
+      "id": "d",
+      "name": "Digitale",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
+    },
+    {
+      "id": "e",
+      "name": "Engloutor",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
     },
     {
       "id": "f",
@@ -186,104 +186,80 @@
   "clues": [
     {
       "who": "a",
-      "text": "Aubépine était sur la même ligne qu'un tonneau.",
+      "text": "Aspre était à l'est de Bérénwë.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "tonneau"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Elle était à côté d'une étagère.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "etagere"
+        "type": "eastOf",
+        "other": "b"
       }
     },
     {
       "who": "b",
-      "text": "Bérénwë était dans la cave.",
-      "logic": {
-        "type": "inRoom",
-        "room": "R"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Croquassiette était à l'ouest d'Eustache.",
-      "logic": {
-        "type": "westOf",
-        "other": "e"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Il était à côté d'un lit.",
+      "text": "Bérénwë était à côté d'un chaudron.",
       "logic": {
         "type": "adjacentTo",
-        "object": "lit"
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Cornélius était à côté d'une botte de foin.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "foin"
       }
     },
     {
       "who": "d",
-      "text": "Denier était sur la même ligne qu'une table.",
+      "text": "Digitale était à côté d'une chaise.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "table"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Il était à l'est de Croquassiette.",
-      "logic": {
-        "type": "eastOf",
-        "other": "c"
+        "type": "adjacentTo",
+        "object": "chaise"
       }
     },
     {
       "who": "e",
-      "text": "Eustache était au sud de Croquassiette.",
+      "text": "Engloutor était à côté d'un lit.",
       "logic": {
-        "type": "southOf",
-        "other": "c"
+        "type": "adjacentTo",
+        "object": "lit"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        1,
-        0
-      ],
-      "e": [
-        5,
-        4
+        3,
+        1
       ],
       "c": [
         4,
-        1
+        5
+      ],
+      "e": [
+        5,
+        0
       ],
       "b": [
-        3,
+        0,
         3
+      ],
+      "d": [
+        1,
+        2
       ],
       "a": [
         2,
-        5
-      ],
-      "d": [
-        0,
-        2
+        4
       ]
     },
-    "murderer": "d"
+    "murderer": "e"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
-    "hardest": "position relative",
-    "hardSteps": 0,
-    "directStart": 1
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 0
   },
-  "difficulty": 1
+  "difficulty": 3
 }

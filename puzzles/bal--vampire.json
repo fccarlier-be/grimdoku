@@ -18,11 +18,6 @@
       "the": "l'escalier d'honneur",
       "floor": "dalles"
     },
-    "V": {
-      "name": "Vestiaire",
-      "the": "le vestiaire",
-      "floor": "parquet"
-    },
     "F": {
       "name": "Buffet",
       "the": "le buffet",
@@ -47,8 +42,8 @@
   "layout": [
     "BBBSSSSE",
     "BBSSSSSE",
-    "VVSSSSEE",
-    "VVSSSSFF",
+    "BBSSSSEE",
+    "BBSSSSFF",
     "MMMSSFFF",
     "MMMJJJFF",
     "OOJJJJFF",
@@ -211,16 +206,7 @@
     },
     {
       "id": "b",
-      "name": "Baudouin",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🤴",
-      "desc": "Roi, avare de compliments et de tout le reste",
-      "archetype": "roi"
-    },
-    {
-      "id": "c",
-      "name": "Calebasse",
+      "name": "Bazarine",
       "gender": "f",
       "role": "suspect",
       "icon": "🧞‍♀️",
@@ -228,17 +214,8 @@
       "archetype": "djinn"
     },
     {
-      "id": "d",
-      "name": "Durandal",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🤺",
-      "desc": "Chevalier, armure trop petite depuis Noël",
-      "archetype": "chevalier"
-    },
-    {
-      "id": "e",
-      "name": "Erwëlle",
+      "id": "c",
+      "name": "Célandra",
       "gender": "f",
       "role": "suspect",
       "icon": "🧝‍♀️",
@@ -246,22 +223,40 @@
       "archetype": "elfe"
     },
     {
-      "id": "f",
-      "name": "Fougère",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧚",
-      "desc": "Fée, doit trois tournées",
-      "archetype": "fee"
-    },
-    {
-      "id": "g",
-      "name": "Gamme",
+      "id": "d",
+      "name": "Dièse",
       "gender": "m",
       "role": "suspect",
       "icon": "🧑‍🎤",
       "desc": "Barde, chante faux",
       "archetype": "barde"
+    },
+    {
+      "id": "e",
+      "name": "Enguerrand",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
+    },
+    {
+      "id": "f",
+      "name": "Ferdinand",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤴",
+      "desc": "Roi, avare de compliments et de tout le reste",
+      "archetype": "roi"
+    },
+    {
+      "id": "g",
+      "name": "Glycine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
     },
     {
       "id": "h",
@@ -276,86 +271,86 @@
   "decor": "bal",
   "id": "bal--vampire",
   "intro": "La comtesse Hémoglobine a été retrouvée sans vie au Bal Masqué, sous un loup de velours. Sept invités dansaient encore. Un seul était avec elle.",
-  "epilogue": "Erwëlle avoue avec dédain : Hémoglobine avait osé venir avec la même tenue qu'elle.",
+  "epilogue": "Ferdinand avoue, outré : Hémoglobine lui avait marché sur la traîne pendant la valse royale. Trois fois.",
   "clues": [
     {
       "who": "a",
-      "text": "Albâtre était au sud de Calebasse.",
-      "logic": {
-        "type": "southOf",
-        "other": "c"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il hantait une statue.",
-      "logic": {
-        "type": "onObject",
-        "object": "statue"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Baudouin était sur un tapis.",
+      "text": "Albâtre était sur un tapis.",
       "logic": {
         "type": "onObject",
         "object": "tapis"
       }
     },
     {
+      "who": "b",
+      "text": "Bazarine était à côté d'un tapis.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tapis"
+      }
+    },
+    {
       "who": "c",
-      "text": "Calebasse était à côté d'une statue.",
+      "text": "Célandra était à l'est d'Albâtre.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "statue"
+        "type": "eastOf",
+        "other": "a"
       }
     },
     {
-      "who": "d",
-      "text": "Durandal était assis sur une chaise.",
+      "who": "c",
+      "text": "Elle était au nord de Dièse.",
       "logic": {
-        "type": "onObject",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Erwëlle était dans la salle de bal.",
-      "logic": {
-        "type": "inRoom",
-        "room": "S"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Elle était à côté d'une chaise.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "f",
-      "text": "Fougère était au sud de Durandal.",
-      "logic": {
-        "type": "southOf",
+        "type": "northOf",
         "other": "d"
       }
     },
     {
-      "who": "f",
-      "text": "Elle était assise dans un fauteuil.",
+      "who": "d",
+      "text": "Dièse était à l'ouest de Ferdinand.",
       "logic": {
-        "type": "onObject",
+        "type": "westOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Enguerrand était au sud de Ferdinand.",
+      "logic": {
+        "type": "southOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était à côté d'un fauteuil.",
+      "logic": {
+        "type": "adjacentTo",
         "object": "fauteuil"
       }
     },
     {
-      "who": "g",
-      "text": "Gamme était à côté d'un arbre.",
+      "who": "f",
+      "text": "Ferdinand était à l'est de Célandra.",
       "logic": {
-        "type": "adjacentTo",
+        "type": "eastOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Il était dans la même colonne qu'un arbre.",
+      "logic": {
+        "type": "sameColAs",
         "object": "arbre"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Glycine était dans la même colonne qu'un fauteuil.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "fauteuil"
       }
     }
   ],
@@ -363,38 +358,38 @@
     "positions": {
       "h": [
         3,
-        3
-      ],
-      "a": [
-        4,
-        0
-      ],
-      "b": [
-        2,
-        7
-      ],
-      "d": [
-        5,
         6
       ],
-      "e": [
-        1,
-        4
-      ],
-      "g": [
-        6,
-        5
+      "a": [
+        2,
+        3
       ],
       "f": [
-        7,
-        2
+        4,
+        5
+      ],
+      "e": [
+        5,
+        1
       ],
       "c": [
+        6,
+        4
+      ],
+      "d": [
+        7,
+        0
+      ],
+      "g": [
         0,
-        1
+        2
+      ],
+      "b": [
+        1,
+        7
       ]
     },
-    "murderer": "e"
+    "murderer": "f"
   },
   "rating": {
     "skulls": 3,

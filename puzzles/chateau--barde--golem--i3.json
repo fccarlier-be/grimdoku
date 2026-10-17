@@ -1,24 +1,14 @@
 {
   "formatVersion": 1,
-  "title": "Le Château de Mortebrune — l'affaire Écho",
-  "intro": "Le barde Écho a été retrouvé sans vie au petit matin, au Château de Mortebrune. Quatre invités juraient qu'ils dormaient. Un seul était avec lui.",
-  "epilogue": "Bérénwë avoue avec dédain : Écho avait servi au banquet un vin imbuvable. Elle l'a jugé sans appel.",
+  "title": "Le Château de Mortebrune — la seconde affaire Fausset",
+  "intro": "Le barde Fausset a été retrouvé sans vie au petit matin, au Château de Mortebrune. Cinq invités juraient qu'ils dormaient. Un seul était avec lui.",
+  "epilogue": "Daëlin avoue avec dédain : Fausset avait servi au banquet un vin imbuvable. Elle l'a jugé sans appel.",
   "size": 7,
   "rooms": {
-    "C": {
-      "name": "Chapelle",
-      "the": "la chapelle",
-      "floor": "dalles"
-    },
     "G": {
       "name": "Grande salle",
       "the": "la grande salle",
       "floor": "dalles"
-    },
-    "K": {
-      "name": "Cuisines",
-      "the": "les cuisines",
-      "floor": "damier"
     },
     "A": {
       "name": "Armurerie",
@@ -42,9 +32,9 @@
     }
   },
   "layout": [
-    "CCGGGKK",
-    "CCGGGKK",
-    "AAGGGKT",
+    "AAGGGGG",
+    "AAGGGGG",
+    "AAGGGGT",
     "AAJJJTT",
     "AAJJJTT",
     "DDJJJTT",
@@ -190,26 +180,17 @@
     },
     {
       "id": "b",
-      "name": "Bérénwë",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧝‍♀️",
-      "desc": "Elfe, critique gastronomique",
-      "archetype": "elfe"
-    },
-    {
-      "id": "c",
-      "name": "Caillasse",
+      "name": "Basalte",
       "gender": "m",
       "role": "suspect",
       "icon": "🪨",
       "desc": "Golem de pierre, lent mais très appliqué",
       "archetype": "golem",
-      "shape": "I3"
+      "shape": "I2"
     },
     {
-      "id": "d",
-      "name": "Dîme",
+      "id": "c",
+      "name": "Chaparde",
       "gender": "m",
       "role": "suspect",
       "icon": "👺",
@@ -217,8 +198,29 @@
       "archetype": "gobelin"
     },
     {
+      "id": "d",
+      "name": "Daëlin",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
+    },
+    {
       "id": "e",
-      "name": "Écho",
+      "name": "Ectoplasme",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ]
+    },
+    {
+      "id": "f",
+      "name": "Fausset",
       "gender": "m",
       "role": "victim",
       "icon": "🧑‍🎤",
@@ -231,102 +233,110 @@
   "clues": [
     {
       "who": "a",
-      "text": "Aymeric était au sud de Dîme.",
+      "text": "Aymeric était au nord de Daëlin.",
       "logic": {
-        "type": "southOf",
+        "type": "northOf",
         "other": "d"
       }
     },
     {
       "who": "a",
-      "text": "Il était dans la même colonne qu'une botte de foin.",
+      "text": "Il était sur un tapis.",
       "logic": {
-        "type": "sameColAs",
-        "object": "foin"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était sur la même ligne qu'un lit.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "lit"
+        "type": "onObject",
+        "object": "tapis"
       }
     },
     {
       "who": "b",
-      "text": "Bérénwë était dans la même colonne qu'un chaudron.",
+      "text": "Basalte était dans la même colonne qu'un arbre.",
       "logic": {
         "type": "sameColAs",
-        "object": "chaudron"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Elle était sur la même ligne qu'un champignon géant.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "champi"
+        "object": "arbre"
       }
     },
     {
       "who": "c",
-      "text": "Caillasse était dans la même colonne qu'une chaise.",
+      "text": "Chaparde était à l'ouest de Basalte.",
       "logic": {
-        "type": "sameColAs",
+        "type": "westOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était à côté d'une chaise.",
+      "logic": {
+        "type": "adjacentTo",
         "object": "chaise"
       }
     },
     {
       "who": "d",
-      "text": "Dîme était dans la même colonne qu'une statue.",
+      "text": "Daëlin était sur la même ligne qu'un tapis.",
       "logic": {
-        "type": "sameColAs",
-        "object": "statue"
+        "type": "sameRowAs",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Ectoplasme était sur la même ligne qu'un sarcophage.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "sarcophage"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était à l'ouest d'Aymeric.",
+      "logic": {
+        "type": "westOf",
+        "other": "a"
       }
     }
   ],
   "solution": {
     "positions": {
-      "e": [
-        6,
+      "f": [
+        3,
         5
       ],
-      "c": [
+      "b": [
         [
-          0,
-          2
-        ],
-        [
-          0,
+          4,
           3
         ],
         [
-          0,
+          4,
           4
         ]
       ],
       "a": [
-        3,
+        1,
         1
       ],
-      "d": [
-        1,
-        0
+      "c": [
+        0,
+        2
       ],
-      "b": [
-        4,
+      "d": [
+        2,
         6
+      ],
+      "e": [
+        6,
+        0
       ]
     },
-    "murderer": "b"
+    "murderer": "d"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
-    "hardest": "position relative",
+    "skulls": 2,
+    "score": 4,
+    "hardest": "ligne réservée",
     "hardSteps": 0,
-    "directStart": 2
+    "directStart": 0
   },
   "difficulty": 4
 }

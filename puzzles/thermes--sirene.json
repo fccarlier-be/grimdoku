@@ -126,16 +126,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aubépine",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧚",
-      "desc": "Fée, doit trois tournées",
-      "archetype": "fee"
-    },
-    {
-      "id": "b",
-      "name": "Bricolin",
+      "name": "Azimut",
       "gender": "m",
       "role": "suspect",
       "icon": "🧙‍♂️",
@@ -143,17 +134,8 @@
       "archetype": "mage"
     },
     {
-      "id": "c",
-      "name": "Croquassiette",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧌",
-      "desc": "Troll, plongeur à mi-temps",
-      "archetype": "troll"
-    },
-    {
-      "id": "d",
-      "name": "Daëlin",
+      "id": "b",
+      "name": "Bérénwë",
       "gender": "f",
       "role": "suspect",
       "icon": "🧝‍♀️",
@@ -161,13 +143,31 @@
       "archetype": "elfe"
     },
     {
-      "id": "e",
-      "name": "Écu",
+      "id": "c",
+      "name": "Centime",
       "gender": "m",
       "role": "suspect",
       "icon": "🧔‍♂️",
       "desc": "Tavernier nain, radin légendaire",
       "archetype": "tavernier"
+    },
+    {
+      "id": "d",
+      "name": "Dentdur",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    },
+    {
+      "id": "e",
+      "name": "Églantine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
     },
     {
       "id": "f",
@@ -182,108 +182,92 @@
   "decor": "thermes",
   "id": "thermes--sirene",
   "intro": "La sirène Flottille a été retrouvée sans vie aux Thermes Enchantés, détendue pour toujours. Cinq curistes profitaient des bains. Un seul était avec elle.",
-  "epilogue": "Écu avoue en comptant ses pièces : Flottille était entrée aux thermes sans payer. Deux fois.",
+  "epilogue": "Bérénwë avoue avec dédain : Flottille avait trempé ses pieds dans le bassin chaud. Juste avant elle.",
   "clues": [
     {
       "who": "a",
-      "text": "Aubépine était dans le vestiaire.",
+      "text": "Azimut était assis sur une chaise.",
       "logic": {
-        "type": "inRoom",
-        "room": "V"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Elle était dans la même colonne qu'un tonneau.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "tonneau"
+        "type": "onObject",
+        "object": "chaise"
       }
     },
     {
       "who": "b",
-      "text": "Bricolin était à côté d'un lit.",
+      "text": "Bérénwë était à côté d'un tapis.",
       "logic": {
         "type": "adjacentTo",
-        "object": "lit"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était sur la même ligne qu'une table.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "table"
+        "object": "tapis"
       }
     },
     {
       "who": "c",
-      "text": "Croquassiette était à côté d'un tonneau.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "tonneau"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Daëlin était dans la même colonne qu'un lit.",
+      "text": "Centime était dans la même colonne qu'une statue.",
       "logic": {
         "type": "sameColAs",
-        "object": "lit"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Elle était sur la même ligne qu'une statue.",
-      "logic": {
-        "type": "sameRowAs",
         "object": "statue"
       }
     },
     {
-      "who": "e",
-      "text": "Écu était sur la même ligne qu'un massif de roseaux.",
+      "who": "d",
+      "text": "Dentdur était sur la même ligne qu'un massif de roseaux.",
       "logic": {
         "type": "sameRowAs",
         "object": "roseaux"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était à l'est d'Azimut.",
+      "logic": {
+        "type": "eastOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Églantine était au sud de Dentdur.",
+      "logic": {
+        "type": "southOf",
+        "other": "d"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        3,
+        0,
         4
       ],
+      "b": [
+        2,
+        3
+      ],
       "d": [
-        0,
+        4,
         2
       ],
-      "c": [
-        2,
-        1
+      "e": [
+        5,
+        0
       ],
       "a": [
         1,
-        0
+        1
       ],
-      "b": [
-        5,
-        3
-      ],
-      "e": [
-        4,
+      "c": [
+        3,
         5
       ]
     },
-    "murderer": "e"
+    "murderer": "b"
   },
   "rating": {
-    "skulls": 0,
-    "score": 1,
-    "hardest": "case unique",
+    "skulls": 2,
+    "score": 4,
+    "hardest": "ligne réservée",
     "hardSteps": 0,
-    "directStart": 2
+    "directStart": 0
   },
-  "difficulty": 0
+  "difficulty": 2
 }

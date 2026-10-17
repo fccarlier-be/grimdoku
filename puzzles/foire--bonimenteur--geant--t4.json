@@ -1,22 +1,12 @@
 {
   "formatVersion": 1,
-  "title": "La Foire aux Sortilèges — l'affaire Esbroufe",
+  "title": "La Foire aux Sortilèges — la seconde affaire Faconde",
   "size": 7,
   "rooms": {
-    "R": {
-      "name": "Roulotte",
-      "the": "la roulotte",
-      "floor": "parquet"
-    },
     "S": {
       "name": "Stands",
       "the": "les stands",
       "floor": "sciure"
-    },
-    "B": {
-      "name": "Buvette",
-      "the": "la buvette",
-      "floor": "parquet"
     },
     "K": {
       "name": "Coulisses",
@@ -40,9 +30,9 @@
     }
   },
   "layout": [
-    "RRSSSBB",
-    "RRSSSBB",
-    "KKCCCCB",
+    "KKSSSMM",
+    "KKSSSMM",
+    "KKCCCCM",
     "KKCCCCM",
     "NNCCCCM",
     "NNNCCMM",
@@ -155,11 +145,20 @@
       ]
     }
   ],
-  "intro": "Le bonimenteur Esbroufe a été retrouvé sans vie à la Foire aux Sortilèges, entre le chapiteau et la ménagerie. Quatre forains rôdaient. Un seul était avec lui.",
+  "intro": "Le bonimenteur Faconde a été retrouvé sans vie à la Foire aux Sortilèges, entre le chapiteau et la ménagerie. Cinq forains rôdaient. Un seul était avec lui.",
   "characters": [
     {
       "id": "a",
-      "name": "Arcane",
+      "name": "Arnak",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "b",
+      "name": "Bohémia",
       "gender": "f",
       "role": "suspect",
       "icon": "🔮",
@@ -167,22 +166,13 @@
       "archetype": "cartomancienne"
     },
     {
-      "id": "b",
-      "name": "Brann",
+      "id": "c",
+      "name": "Couac",
       "gender": "m",
       "role": "suspect",
       "icon": "🧑‍🎤",
       "desc": "Barde, chante faux",
       "archetype": "barde"
-    },
-    {
-      "id": "c",
-      "name": "Chaparde",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
     },
     {
       "id": "d",
@@ -192,11 +182,20 @@
       "icon": "🦶",
       "desc": "Géant, toujours couché : aucun plafond n'est assez haut",
       "archetype": "geant",
-      "shape": "T4"
+      "shape": "I2"
     },
     {
       "id": "e",
-      "name": "Esbroufe",
+      "name": "Engloutor",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    },
+    {
+      "id": "f",
+      "name": "Faconde",
       "gender": "m",
       "role": "victim",
       "icon": "🎩",
@@ -206,94 +205,98 @@
   ],
   "decor": "foire",
   "id": "foire--bonimenteur--geant--t4",
-  "epilogue": "Dolmen jure qu'il s'est seulement retourné dans son sommeil. Hélas, Esbroufe faisait la sieste juste à côté.",
+  "epilogue": "Engloutor, hercule de foire, avoue : Faconde l'avait traité de « gros caillou » devant les enfants.",
   "clues": [
     {
       "who": "a",
-      "text": "Arcane était allongée sur un lit.",
+      "text": "Arnak était à côté d'une chaise.",
       "logic": {
-        "type": "onObject",
-        "object": "lit"
+        "type": "adjacentTo",
+        "object": "chaise"
       }
     },
     {
       "who": "b",
-      "text": "Brann était à l'est de Chaparde.",
+      "text": "Bohémia était à côté d'un coffre.",
       "logic": {
-        "type": "eastOf",
-        "other": "c"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était sur la même ligne qu'une boule de cristal.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "cristal"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Chaparde était sur la même ligne qu'un coffre.",
-      "logic": {
-        "type": "sameRowAs",
+        "type": "adjacentTo",
         "object": "coffre"
       }
     },
     {
-      "who": "d",
-      "text": "Dolmen était à côté d'un chaudron.",
+      "who": "c",
+      "text": "Couac était au sud d'Arnak.",
       "logic": {
-        "type": "adjacentTo",
+        "type": "southOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était dans la même colonne qu'un tapis.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dolmen était dans la même colonne qu'un chaudron.",
+      "logic": {
+        "type": "sameColAs",
         "object": "chaudron"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Engloutor était sur la même ligne qu'une chaise.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaise"
       }
     }
   ],
   "solution": {
     "positions": {
-      "e": [
-        3,
-        5
+      "f": [
+        0,
+        4
       ],
       "d": [
         [
-          4,
-          4
+          5,
+          5
         ],
         [
           5,
-          3
-        ],
-        [
-          5,
-          4
-        ],
-        [
-          6,
-          4
+          6
         ]
       ],
-      "a": [
-        0,
+      "b": [
+        3,
         0
       ],
-      "b": [
-        2,
-        6
-      ],
       "c": [
+        6,
+        3
+      ],
+      "a": [
+        4,
+        1
+      ],
+      "e": [
         1,
         2
       ]
     },
-    "murderer": "d"
+    "murderer": "e"
   },
   "rating": {
     "skulls": 2,
     "score": 4,
-    "hardest": "pièces",
-    "hardSteps": 2,
-    "directStart": 1
+    "hardest": "ligne réservée",
+    "hardSteps": 0,
+    "directStart": 0
   },
   "difficulty": 4
 }

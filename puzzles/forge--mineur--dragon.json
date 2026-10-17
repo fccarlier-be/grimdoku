@@ -13,20 +13,10 @@
       "the": "la forge",
       "floor": "dalles"
     },
-    "A": {
-      "name": "Armurerie",
-      "the": "l'armurerie",
-      "floor": "dalles"
-    },
     "O": {
       "name": "Fonderie",
       "the": "la fonderie",
       "floor": "dalles"
-    },
-    "C": {
-      "name": "Réserve de charbon",
-      "the": "la réserve de charbon",
-      "floor": "roche"
     },
     "T": {
       "name": "Atelier",
@@ -40,12 +30,12 @@
     }
   },
   "layout": [
-    "DDDFFFA",
-    "DDFFFAA",
-    "DDOOFAA",
-    "CCOOTTA",
-    "CCOOTTT",
-    "CYYYTTT",
+    "DDDFFFF",
+    "DDFFFFF",
+    "DDOOFFF",
+    "OOOOTTF",
+    "OOOOTTT",
+    "OYYYTTT",
     "YYYYYTT"
   ],
   "objects": [
@@ -165,12 +155,12 @@
   "characters": [
     {
       "id": "a",
-      "name": "Avaloir",
+      "name": "Arnak",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧌",
-      "desc": "Troll, plongeur à mi-temps",
-      "archetype": "troll"
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
     },
     {
       "id": "b",
@@ -180,16 +170,16 @@
       "icon": "🐉",
       "desc": "Dragon adulte, toujours lové dans un coin",
       "archetype": "dragon",
-      "shape": "L3"
+      "shape": "I2"
     },
     {
       "id": "c",
-      "name": "Chaparde",
+      "name": "Croquassiette",
       "gender": "m",
       "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
     },
     {
       "id": "d",
@@ -222,110 +212,106 @@
   "decor": "forge",
   "id": "forge--mineur--dragon",
   "intro": "Le mineur Filon a été retrouvé sans vie à la Forge du Dragon, encore tiède. Cinq artisans et clients s'y pressaient cette nuit-là. Un seul était avec lui.",
-  "epilogue": "Durandal avoue en grinçant : Filon lui avait forgé une armure encore plus petite que l'ancienne.",
+  "epilogue": "Croquassiette avoue : Filon se servait de sa tête comme enclume de secours.",
   "clues": [
     {
       "who": "a",
-      "text": "Avaloir était sur la même ligne qu'un chaudron.",
+      "text": "Arnak était dans la même colonne qu'un chariot de mine.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "chaudron"
+        "type": "sameColAs",
+        "object": "chariot"
       }
     },
     {
       "who": "a",
-      "text": "Il était dans la même colonne qu'un arbre.",
+      "text": "Il était à côté d'un tonneau.",
       "logic": {
-        "type": "sameColAs",
-        "object": "arbre"
+        "type": "adjacentTo",
+        "object": "tonneau"
       }
     },
     {
       "who": "b",
-      "text": "Braisier était à l'ouest d'Estomac.",
+      "text": "Braisier était à côté d'une table.",
       "logic": {
-        "type": "westOf",
-        "other": "e"
+        "type": "adjacentTo",
+        "object": "table"
       }
     },
     {
       "who": "c",
-      "text": "Chaparde était dans la cour.",
+      "text": "Croquassiette était sur la même ligne qu'une enclume.",
       "logic": {
-        "type": "inRoom",
-        "room": "Y"
+        "type": "sameRowAs",
+        "object": "enclume"
       }
     },
     {
       "who": "d",
-      "text": "Durandal était sur la même ligne qu'un coffre.",
+      "text": "Durandal était sur la même ligne qu'un chariot de mine.",
       "logic": {
         "type": "sameRowAs",
-        "object": "coffre"
+        "object": "chariot"
       }
     },
     {
-      "who": "e",
-      "text": "Estomac était au sud de Chaparde.",
+      "who": "d",
+      "text": "Il était à l'est de Croquassiette.",
       "logic": {
-        "type": "southOf",
+        "type": "eastOf",
         "other": "c"
       }
     },
     {
       "who": "e",
-      "text": "Il était dans l'atelier.",
+      "text": "Estomac était à l'est de Durandal.",
       "logic": {
-        "type": "inRoom",
-        "room": "T"
+        "type": "eastOf",
+        "other": "d"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        1,
-        4
-      ],
-      "b": [
-        [
-          3,
-          2
-        ],
-        [
-          3,
-          3
-        ],
-        [
-          4,
-          2
-        ]
-      ],
-      "d": [
-        0,
-        5
-      ],
-      "c": [
-        5,
-        1
-      ],
-      "a": [
         2,
         0
       ],
+      "b": [
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          6
+        ]
+      ],
+      "d": [
+        3,
+        2
+      ],
+      "a": [
+        5,
+        3
+      ],
+      "c": [
+        0,
+        1
+      ],
       "e": [
-        6,
-        6
+        1,
+        4
       ]
     },
-    "murderer": "d"
+    "murderer": "c"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
+    "skulls": 2,
+    "score": 4,
     "hardest": "ligne réservée",
     "hardSteps": 0,
-    "directStart": 1
+    "directStart": 0
   },
   "difficulty": 4
 }

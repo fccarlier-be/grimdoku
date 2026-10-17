@@ -2,14 +2,9 @@
   "formatVersion": 1,
   "title": "Le Château de Mortebrune — l'affaire Gamme",
   "intro": "Le barde Gamme a été retrouvé sans vie au petit matin, au Château de Mortebrune. Six invités juraient qu'ils dormaient. Un seul était avec lui.",
-  "epilogue": "Étincel avoue : Gamme voulait le mettre en cage dans la cour, comme attraction pour les visiteurs.",
+  "epilogue": "Eudes avoue, la couronne de travers : Gamme complotait pour s'asseoir sur son trône. Il l'a pris très personnellement.",
   "size": 7,
   "rooms": {
-    "C": {
-      "name": "Chapelle",
-      "the": "la chapelle",
-      "floor": "dalles"
-    },
     "G": {
       "name": "Grande salle",
       "the": "la grande salle",
@@ -42,8 +37,8 @@
     }
   },
   "layout": [
-    "CCGGGKK",
-    "CCGGGKK",
+    "AAGGGKK",
+    "AAGGGKK",
     "AAGGGKT",
     "AAJJJTT",
     "AAJJJTT",
@@ -181,34 +176,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Arnak",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
-    },
-    {
-      "id": "b",
-      "name": "Baudouin",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🤴",
-      "desc": "Roi, avare de compliments et de tout le reste",
-      "archetype": "roi"
-    },
-    {
-      "id": "c",
-      "name": "Clodomir",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🤺",
-      "desc": "Chevalier, armure trop petite depuis Noël",
-      "archetype": "chevalier"
-    },
-    {
-      "id": "d",
-      "name": "Daëlin",
+      "name": "Aëlys",
       "gender": "f",
       "role": "suspect",
       "icon": "🧝‍♀️",
@@ -216,17 +184,17 @@
       "archetype": "elfe"
     },
     {
-      "id": "e",
-      "name": "Étincel",
+      "id": "b",
+      "name": "Bertrand",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐉",
-      "desc": "Dragonnet, brûle tout ce qu'il touche",
-      "archetype": "dragonnet"
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
     },
     {
-      "id": "f",
-      "name": "Frisson",
+      "id": "c",
+      "name": "Chaînon",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -235,6 +203,33 @@
       "traits": [
         "spectre"
       ]
+    },
+    {
+      "id": "d",
+      "name": "Dîme",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "e",
+      "name": "Eudes",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤴",
+      "desc": "Roi, avare de compliments et de tout le reste",
+      "archetype": "roi"
+    },
+    {
+      "id": "f",
+      "name": "Flammèche",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
     },
     {
       "id": "g",
@@ -251,108 +246,108 @@
   "clues": [
     {
       "who": "a",
-      "text": "Arnak était à côté d'un tonneau.",
+      "text": "Aëlys était dans le jardin.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "tonneau"
+        "type": "inRoom",
+        "room": "J"
       }
     },
     {
-      "who": "b",
-      "text": "Baudouin était sur la même ligne qu'un arbre.",
+      "who": "a",
+      "text": "Elle était dans la même colonne qu'un arbre.",
       "logic": {
-        "type": "sameRowAs",
+        "type": "sameColAs",
         "object": "arbre"
       }
     },
     {
       "who": "b",
-      "text": "Il était dans la même colonne qu'une botte de foin.",
+      "text": "Bertrand était à côté d'une statue.",
       "logic": {
-        "type": "sameColAs",
-        "object": "foin"
+        "type": "adjacentTo",
+        "object": "statue"
       }
     },
     {
       "who": "c",
-      "text": "Clodomir était à côté d'une boule de cristal.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "cristal"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Daëlin était à l'ouest d'Étincel.",
+      "text": "Chaînon était à l'ouest de Bertrand.",
       "logic": {
         "type": "westOf",
-        "other": "e"
+        "other": "b"
       }
     },
     {
       "who": "d",
-      "text": "Elle était à côté d'un champignon géant.",
+      "text": "Dîme était sur la même ligne qu'un sarcophage.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "champi"
+        "type": "sameRowAs",
+        "object": "sarcophage"
       }
     },
     {
       "who": "e",
-      "text": "Étincel était au sud d'Arnak.",
+      "text": "Eudes était sur la même ligne qu'un chaudron.",
       "logic": {
-        "type": "southOf",
+        "type": "sameRowAs",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était à l'est d'Aëlys.",
+      "logic": {
+        "type": "eastOf",
         "other": "a"
       }
     },
     {
       "who": "f",
-      "text": "Frisson était sur la même ligne qu'un sarcophage.",
+      "text": "Flammèche était à l'est d'Aëlys.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "sarcophage"
+        "type": "eastOf",
+        "other": "a"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        0,
-        2
-      ],
-      "c": [
-        5,
-        6
-      ],
-      "a": [
-        1,
-        5
-      ],
-      "d": [
-        4,
-        3
-      ],
-      "f": [
-        6,
-        0
-      ],
-      "e": [
         2,
-        4
+        2
       ],
       "b": [
         3,
         1
+      ],
+      "d": [
+        6,
+        5
+      ],
+      "a": [
+        4,
+        3
+      ],
+      "c": [
+        5,
+        0
+      ],
+      "f": [
+        1,
+        6
+      ],
+      "e": [
+        0,
+        4
       ]
     },
     "murderer": "e"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
-    "hardest": "position relative",
-    "hardSteps": 0,
-    "directStart": 2
+    "skulls": 3,
+    "score": 7,
+    "hardest": "pièces",
+    "hardSteps": 3,
+    "directStart": 0
   },
-  "difficulty": 1
+  "difficulty": 3
 }

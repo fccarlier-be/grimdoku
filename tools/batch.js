@@ -1,5 +1,5 @@
 // Grimdoku — production en série des énigmes manquantes (en parallèle, sans rien révéler des solutions).
-// Usage : node tools/batch.js [--jobs=7] [--only=<décor>]
+// Usage : node tools/batch.js [--jobs=7] [--only=<décor>[,<décor>…]] [--seeds=N]
 // Pour chaque affaire sans solution : énigmes écrites à la main (MANIFEST de build-puzzles.js) et affaires automatiques
 // (un habitué victime par décor ayant des textes « auto »), lance gen.js avec une difficulté visée, puis des niveaux
 // voisins en repli. Écrit solutions/<id>.json. Le journal ne donne que la difficulté, le nombre d'indices et les techniques.
@@ -17,9 +17,11 @@ const JOBS = Number(arg('jobs', Math.max(1, os.cpus().length - 1)));
 const ONLY = arg('only', '');
 
 // difficulté visée selon la taille de la carte et le rang de l'habitué dans le groupe (progression variée)
-const TARGETS = { 6: [0, 1, 0, 1, 2, 1], 7: [1, 2, 1, 2, 3, 2, 1], 8: [2, 3, 2, 3, 2, 3, 2, 3] };
-const TRIES = { 6: 60, 7: 60, 8: 25 };
-const TIMEOUT = { 6: 60e3, 7: 120e3, 8: 300e3 };
+// (jeu jugé trop simple par François, 2026-10-16 : aucune grille ne place un personnage d'emblée, difficultés relevées)
+const TARGETS = { 6: [1, 2, 1, 2, 2, 1], 7: [2, 3, 2, 3, 2, 3, 2], 8: [3, 2, 3, 3, 2, 3, 3, 3] };
+const TRIES = { 6: 60, 7: 60, 8: 25, 9: 8, 10: 8, 11: 6, 12: 6 };
+const TIMEOUT = { 6: 60e3, 7: 120e3, 8: 300e3, 9: 400e3, 10: 500e3, 11: 600e3, 12: 700e3 };
+// grandes cartes (9×9 et plus) : pas de difficulté visée (trop lent à filtrer) ; sans placement direct, elles sont dures
 // graines propres à chaque affaire (sinon deux affaires d'un même décor tirent la même grille)
 const hash = (s) => [...s].reduce((h, ch) => (h * 31 + ch.charCodeAt(0)) % 1000003, 7);
 const SEEDS = Number(arg('seeds', 6)); // --seeds=N : plus d'essais pour une affaire difficile
@@ -46,16 +48,18 @@ for (const f of fs.readdirSync(path.join(ROOT, 'scenes')).sort()) {
   scene.characters.forEach((c, i) => {
     const id = `${name}--${c.archetype}`;
     if (handVictims.has(id)) return;
-    jobs.push({ id, scene: name, victim: c.archetype, size: scene.size, target: TARGETS[scene.size][i % TARGETS[scene.size].length] });
+    jobs.push({ id, scene: name, victim: c.archetype, size: scene.size, target: scene.size >= 9 ? null : TARGETS[scene.size][i % TARGETS[scene.size].length] });
   });
 }
 // affaires à grands personnages (big-cases.json) : difficulté de base visée, pour une progression dans le niveau 4 / 5
-const BIG_TARGETS = { false: [1, 2, 1, 2, 2], true: [1, 2, 2, 3, 2] };
+const BIG_TARGETS = { false: [2, 3, 2, 3, 3], true: [2, 3, 3, 3, 2] };
 JSON.parse(fs.readFileSync(path.join(ROOT, 'big-cases.json'), 'utf8')).cases.forEach((c, i) => {
   const size = loadScene(scenePath(c.scene)).size;
-  jobs.push({ id: c.id, scene: c.scene, victim: c.victim, big: c.big, shapes: c.shapes, hidden: !!c.hidden, hiddenMax: c.hiddenMax, size, target: BIG_TARGETS[!!c.hidden][i % 5] });
+  jobs.push({ id: c.id, scene: c.scene, victim: c.victim, big: c.big, shapes: c.shapes, hidden: !!c.hidden, hiddenMax: c.hiddenMax, size, target: size >= 9 ? null : BIG_TARGETS[!!c.hidden][i % 5] });
 });
-const todo = jobs.filter(j => !fs.existsSync(path.join(ROOT, 'solutions', j.id + '.json')) && (!ONLY || j.scene === ONLY || j.scene.startsWith(ONLY + '-')));
+// --only=<décor>[,<décor>…] : ces décors seulement (et leurs variantes « <décor>-2 »)
+const onlyList = ONLY ? ONLY.split(',') : [];
+const todo = jobs.filter(j => !fs.existsSync(path.join(ROOT, 'solutions', j.id + '.json')) && (!onlyList.length || onlyList.some(o => j.scene === o || j.scene.startsWith(o + '-'))));
 console.log(`${todo.length} affaire(s) à produire, ${JOBS} en parallèle`);
 
 // grilles déjà produites dans le même décor (variantes comprises) : à ne pas refaire
@@ -77,8 +81,10 @@ function avoidFile(job) {
 
 function runGen(job, seed, skulls) {
   return new Promise((done) => {
-    const args = ['gen.js', `scenes/${job.scene}.json`, String(seed), '--level=1', `--skulls=${skulls}`, `--tries=${TRIES[job.size]}`, `--avoid=${job.avoid}`];
+    const args = ['gen.js', `scenes/${job.scene}.json`, String(seed), '--level=1', `--tries=${TRIES[job.size]}`, `--avoid=${job.avoid}`, '--no-direct'];
+    if (skulls !== null) args.push(`--skulls=${skulls}`);
     if (job.victim) args.push(`--victim=${job.victim}`);
+    if (job.big) args.push('--big-late');
     if (job.big) args.push(`--big=${job.big.map((t, i) => t + ':' + job.shapes[i]).join(',')}`);
     if (job.hidden) args.push('--hidden');
     if (job.hiddenMax) args.push(`--hidden-max=${job.hiddenMax}`);
@@ -91,7 +97,7 @@ function runGen(job, seed, skulls) {
 }
 
 // difficulté visée, puis voisins (±1), puis n'importe laquelle de 0 à 3
-const fallbacks = (t) => [t, t - 1, t + 1, t - 2, t + 2, t + 3, t - 3].filter((x, i, a) => x >= 0 && x <= 3 && a.indexOf(x) === i);
+const fallbacks = (t) => t === null ? [null] : [t, t - 1, t + 1, t - 2, t + 2, t + 3, t - 3].filter((x, i, a) => x >= 0 && x <= 3 && a.indexOf(x) === i);
 
 async function produce(job) {
   job.avoid = avoidFile(job);
@@ -107,10 +113,13 @@ async function produce(job) {
       if (job.hiddenMax) p.hiddenMax = job.hiddenMax;
       const h = E.humanSolve(p, sol.clues, 2);
       if (!h.solved || E.solve(p, sol.clues, 2).length !== 1) continue;
+      // une autre grille du décor a pu être écrite entre-temps (--parallel) : on revérifie qu'elle n'est pas trop proche
+      const mine = E.layoutSig(sol.positions, Object.keys(sol.positions).sort().pop());
+      if (JSON.parse(fs.readFileSync(avoidFile(job), 'utf8')).some(o => E.tooClose(mine, o))) continue;
       fs.writeFileSync(path.join(ROOT, 'solutions', job.id + '.json'), JSON.stringify(sol, null, 1) + '\n');
       const r = { skulls: E.skullsOf(p, h.steps) };
       const techs = [...new Set(h.steps.map(s => E.TECH[s.tech]))].join(', ');
-      console.log(`✔ ${job.id.padEnd(26)} ${'💀'.repeat(r.skulls) || '0 crâne'}${job.big ? ` (base ${skulls})` : ''}${skulls !== job.target ? ` (visé ${job.target})` : ''} · ${sol.clues.length} indices · ${techs}`);
+      console.log(`✔ ${job.id.padEnd(26)} ${'💀'.repeat(r.skulls) || '0 crâne'}${job.big && skulls !== null ? ` (base ${skulls})` : ''}${skulls !== job.target ? ` (visé ${job.target})` : ''} · ${sol.clues.length} indices · ${techs}`);
       return true;
     }
   }
@@ -121,14 +130,16 @@ async function produce(job) {
 (async () => {
   const queue = [...todo];
   let ok = 0;
-  // une seule affaire à la fois par décor : chacune voit les grilles déjà produites des autres
+  // une seule affaire à la fois par décor (chacune voit les grilles déjà produites des autres), sauf --parallel :
+  // plusieurs par décor, chaque grille étant revérifiée juste avant d'être écrite
   const busy = new Set();
+  const PARALLEL = process.argv.includes('--parallel');
   await Promise.all(Array.from({ length: JOBS }, async () => {
     for (;;) {
-      const i = queue.findIndex(j => !busy.has(decorOf(j)));
+      const i = queue.findIndex(j => PARALLEL || !busy.has(decorOf(j)));
       if (i < 0) { if (!queue.length) return; await new Promise(r => setTimeout(r, 500)); continue; }
       const job = queue.splice(i, 1)[0];
-      busy.add(decorOf(job));
+      if (!PARALLEL) busy.add(decorOf(job));
       if (await produce(job)) ok++;
       busy.delete(decorOf(job));
     }

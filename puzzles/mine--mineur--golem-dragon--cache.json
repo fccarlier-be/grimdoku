@@ -1,13 +1,8 @@
 {
   "formatVersion": 1,
-  "title": "La Mine des Nains — l'affaire Filon",
+  "title": "La Mine des Nains — l'affaire Grisou",
   "size": 8,
   "rooms": {
-    "E": {
-      "name": "Entrée",
-      "the": "l'entrée",
-      "floor": "roche"
-    },
     "G": {
       "name": "Galerie",
       "the": "la galerie",
@@ -16,11 +11,6 @@
     "F": {
       "name": "Forge",
       "the": "la forge",
-      "floor": "roche"
-    },
-    "P": {
-      "name": "Puits",
-      "the": "le puits",
       "floor": "roche"
     },
     "V": {
@@ -45,11 +35,11 @@
     }
   },
   "layout": [
-    "EEEGGFFF",
-    "EEEGGFFF",
-    "DDGGGPPF",
-    "DDGGGPPV",
-    "DDCCCPVV",
+    "DDDGGFFF",
+    "DDDGGFFF",
+    "DDGGGFFF",
+    "DDGGGFFV",
+    "DDCCCFVV",
     "TTCCCVVV",
     "TTCCCVVV",
     "TTTTCVVV"
@@ -175,7 +165,7 @@
       ]
     }
   ],
-  "intro": "Le mineur Filon a été retrouvé au fond de la Mine des Nains, aussi froid que le granit. Cinq ouvriers étaient descendus pour l'équipe de nuit. Un seul était avec lui.",
+  "intro": "Le mineur Grisou a été retrouvé au fond de la Mine des Nains, aussi froid que le granit. Six ouvriers étaient descendus pour l'équipe de nuit. Un seul était avec lui.",
   "characters": [
     {
       "id": "a",
@@ -183,18 +173,18 @@
       "gender": "m",
       "role": "suspect",
       "icon": "🐉",
-      "desc": "Dragon adulte, toujours lové dans un coin",
-      "archetype": "dragon",
-      "shape": "L3"
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
     },
     {
       "id": "b",
-      "name": "Bakchich",
+      "name": "Braisier",
       "gender": "m",
       "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
+      "icon": "🐉",
+      "desc": "Dragon adulte, toujours lové dans un coin",
+      "archetype": "dragon",
+      "shape": "I2"
     },
     {
       "id": "c",
@@ -208,16 +198,25 @@
     },
     {
       "id": "d",
-      "name": "Dardafeu",
+      "name": "Dîme",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐉",
-      "desc": "Dragonnet, brûle tout ce qu'il touche",
-      "archetype": "dragonnet"
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
     },
     {
       "id": "e",
-      "name": "Engloutor",
+      "name": "Enguerrand",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
+    },
+    {
+      "id": "f",
+      "name": "Fringale",
       "gender": "m",
       "role": "suspect",
       "icon": "🧌",
@@ -225,8 +224,8 @@
       "archetype": "troll"
     },
     {
-      "id": "f",
-      "name": "Filon",
+      "id": "g",
+      "name": "Grisou",
       "gender": "m",
       "role": "victim",
       "icon": "⛏️",
@@ -236,134 +235,116 @@
   ],
   "decor": "mine",
   "id": "mine--mineur--golem-dragon--cache",
-  "hiddenShapes": true,
-  "hiddenMax": 3,
-  "epilogue": "Dardafeu servait de lampe et de soufflet sans être payé. Filon a ri quand il a demandé une augmentation. Le dragonnet n'a pas ri.",
+  "epilogue": "Ardent servait de lampe et de soufflet sans être payé. Grisou a ri quand il a demandé une augmentation. Le dragonnet n'a pas ri.",
   "clues": [
     {
       "who": "a",
-      "text": "Ardent était dans la même colonne qu'un chaudron.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "chaudron"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était sur la même ligne qu'un chariot de mine.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "chariot"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était dans la même colonne qu'un chariot de mine.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "chariot"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Bakchich était sur la même ligne qu'un chaudron.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "chaudron"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était à côté d'un tonneau.",
+      "text": "Ardent était à côté d'une enclume.",
       "logic": {
         "type": "adjacentTo",
-        "object": "tonneau"
+        "object": "enclume"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Braisier était au sud d'Ardent.",
+      "logic": {
+        "type": "southOf",
+        "other": "a"
       }
     },
     {
       "who": "c",
-      "text": "Caillasse était sur la même ligne qu'un coffre.",
+      "text": "Caillasse était dans la galerie.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "coffre"
+        "type": "inRoom",
+        "room": "G"
       }
     },
     {
       "who": "d",
-      "text": "Dardafeu était sur la même ligne qu'un chariot de mine.",
+      "text": "Dîme était à côté d'un coffre.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "chariot"
+        "type": "adjacentTo",
+        "object": "coffre"
       }
     },
     {
       "who": "e",
-      "text": "Engloutor était à l'est de Dardafeu.",
+      "text": "Enguerrand était à l'ouest de Dîme.",
       "logic": {
-        "type": "eastOf",
+        "type": "westOf",
         "other": "d"
       }
     },
     {
       "who": "e",
-      "text": "Il était sur la même ligne qu'une table.",
+      "text": "Il était au nord de Caillasse.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "table"
+        "type": "northOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Fringale était au nord d'Enguerrand.",
+      "logic": {
+        "type": "northOf",
+        "other": "e"
       }
     }
   ],
   "solution": {
     "positions": {
-      "f": [
-        0,
-        3
+      "g": [
+        4,
+        6
       ],
       "c": [
         [
-          6,
-          1
+          2,
+          2
         ],
-        [
-          7,
-          1
-        ]
-      ],
-      "a": [
         [
           3,
-          7
-        ],
-        [
-          4,
-          6
-        ],
-        [
-          4,
-          7
+          2
         ]
       ],
-      "e": [
-        5,
-        4
-      ],
       "b": [
-        1,
-        0
+        [
+          6,
+          3
+        ],
+        [
+          6,
+          4
+        ]
+      ],
+      "f": [
+        0,
+        5
       ],
       "d": [
-        2,
-        2
+        7,
+        1
+      ],
+      "a": [
+        5,
+        7
+      ],
+      "e": [
+        1,
+        0
       ]
     },
-    "murderer": "d"
+    "murderer": "a"
   },
   "rating": {
-    "skulls": 2,
-    "score": 3,
+    "skulls": 3,
+    "score": 6,
     "hardest": "pièces",
-    "hardSteps": 1,
-    "directStart": 2
+    "hardSteps": 2,
+    "directStart": 0
   },
-  "difficulty": 5
+  "difficulty": 4
 }

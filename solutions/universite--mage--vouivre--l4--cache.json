@@ -1,0 +1,167 @@
+{
+ "positions": {
+  "i": [
+   2,
+   9
+  ],
+  "b": [
+   [
+    9,
+    3
+   ],
+   [
+    9,
+    4
+   ],
+   [
+    9,
+    5
+   ],
+   [
+    10,
+    5
+   ]
+  ],
+  "d": [
+   6,
+   1
+  ],
+  "h": [
+   8,
+   8
+  ],
+  "a": [
+   1,
+   2
+  ],
+  "e": [
+   4,
+   10
+  ],
+  "f": [
+   7,
+   6
+  ],
+  "g": [
+   0,
+   7
+  ],
+  "c": [
+   5,
+   0
+  ]
+ },
+ "murderer": "e",
+ "cast": {
+  "b": "a",
+  "d": "b",
+  "h": "c",
+  "a": "d",
+  "e": "e",
+  "f": "f",
+  "g": "g",
+  "c": "h"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "d",
+   "logic": {
+    "type": "northOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "northOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "westOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "inRoom",
+    "room": "G"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "inRoom",
+    "room": "H"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "table"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "northOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "southOf",
+    "other": "g"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "eastOf",
+    "other": "c"
+   }
+  }
+ ]
+}

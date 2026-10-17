@@ -3,11 +3,6 @@
   "title": "La Foire aux Sortilèges — l'affaire Grigou",
   "size": 7,
   "rooms": {
-    "R": {
-      "name": "Roulotte",
-      "the": "la roulotte",
-      "floor": "parquet"
-    },
     "S": {
       "name": "Stands",
       "the": "les stands",
@@ -40,8 +35,8 @@
     }
   },
   "layout": [
-    "RRSSSBB",
-    "RRSSSBB",
+    "KKSSSBB",
+    "KKSSSBB",
     "KKCCCCB",
     "KKCCCCM",
     "NNCCCCM",
@@ -159,16 +154,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Arcane",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🔮",
-      "desc": "Cartomancienne, voit l'avenir, rate le présent",
-      "archetype": "cartomancienne"
-    },
-    {
-      "id": "b",
-      "name": "Braise",
+      "name": "Ardent",
       "gender": "m",
       "role": "suspect",
       "icon": "🐉",
@@ -176,26 +162,8 @@
       "archetype": "dragonnet"
     },
     {
-      "id": "c",
-      "name": "Clinquant",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🎩",
-      "desc": "Bonimenteur, vend du rêve au kilo",
-      "archetype": "bonimenteur"
-    },
-    {
-      "id": "d",
-      "name": "Dièse",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧑‍🎤",
-      "desc": "Barde, chante faux",
-      "archetype": "barde"
-    },
-    {
-      "id": "e",
-      "name": "Églantine",
+      "id": "b",
+      "name": "Bruyère",
       "gender": "f",
       "role": "suspect",
       "icon": "🧚",
@@ -203,13 +171,40 @@
       "archetype": "fee"
     },
     {
-      "id": "f",
-      "name": "Fringale",
+      "id": "c",
+      "name": "Couac",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
+    },
+    {
+      "id": "d",
+      "name": "Destinée",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🔮",
+      "desc": "Cartomancienne, voit l'avenir, rate le présent",
+      "archetype": "cartomancienne"
+    },
+    {
+      "id": "e",
+      "name": "Engloutor",
       "gender": "m",
       "role": "suspect",
       "icon": "🧌",
       "desc": "Troll, plongeur à mi-temps",
       "archetype": "troll"
+    },
+    {
+      "id": "f",
+      "name": "Faconde",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🎩",
+      "desc": "Bonimenteur, vend du rêve au kilo",
+      "archetype": "bonimenteur"
     },
     {
       "id": "g",
@@ -223,70 +218,70 @@
   ],
   "decor": "foire",
   "id": "foire--gobelin",
-  "epilogue": "Arcane l'avait vu dans les cartes : Grigou allait ruiner la foire. Elle a préféré changer l'avenir elle-même.",
+  "epilogue": "Ardent, cracheur de feu vedette, avoue : Grigou avait éteint son numéro avec un seau d'eau. Devant tout le public.",
   "clues": [
     {
       "who": "a",
-      "text": "Arcane était au sud de Braise.",
+      "text": "Ardent était à côté d'une boule de cristal.",
       "logic": {
-        "type": "southOf",
-        "other": "b"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Elle était sur un tapis.",
-      "logic": {
-        "type": "onObject",
-        "object": "tapis"
+        "type": "adjacentTo",
+        "object": "cristal"
       }
     },
     {
       "who": "b",
-      "text": "Braise était dans la même colonne qu'un tonneau.",
+      "text": "Bruyère était à l'ouest d'Engloutor.",
+      "logic": {
+        "type": "westOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Elle était dans la même colonne qu'une boule de cristal.",
       "logic": {
         "type": "sameColAs",
-        "object": "tonneau"
+        "object": "cristal"
       }
     },
     {
       "who": "c",
-      "text": "Clinquant était assis sur une chaise.",
+      "text": "Couac était au sud de Destinée.",
       "logic": {
-        "type": "onObject",
-        "object": "chaise"
+        "type": "southOf",
+        "other": "d"
       }
     },
     {
       "who": "d",
-      "text": "Dièse était à l'ouest de Clinquant.",
+      "text": "Destinée était à l'est de Bruyère.",
       "logic": {
-        "type": "westOf",
-        "other": "c"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Il était au nord d'Arcane.",
-      "logic": {
-        "type": "northOf",
-        "other": "a"
+        "type": "eastOf",
+        "other": "b"
       }
     },
     {
       "who": "e",
-      "text": "Églantine était dans la même colonne qu'une botte de foin.",
+      "text": "Engloutor était au nord de Faconde.",
       "logic": {
-        "type": "sameColAs",
-        "object": "foin"
+        "type": "northOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était à l'ouest de Destinée.",
+      "logic": {
+        "type": "westOf",
+        "other": "d"
       }
     },
     {
       "who": "f",
-      "text": "Fringale était à l'est d'Arcane.",
+      "text": "Faconde était à côté d'une chaise.",
       "logic": {
-        "type": "eastOf",
-        "other": "a"
+        "type": "adjacentTo",
+        "object": "chaise"
       }
     }
   ],
@@ -296,39 +291,39 @@
         4,
         2
       ],
-      "a": [
-        3,
-        3
-      ],
       "d": [
         1,
+        6
+      ],
+      "c": [
+        3,
         0
       ],
-      "f": [
-        6,
-        5
-      ],
       "e": [
-        2,
-        6
+        5,
+        5
       ],
       "b": [
         0,
         4
       ],
-      "c": [
-        5,
+      "a": [
+        2,
+        3
+      ],
+      "f": [
+        6,
         1
       ]
     },
     "murderer": "a"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
-    "hardest": "position relative",
-    "hardSteps": 0,
-    "directStart": 1
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 0
   },
-  "difficulty": 1
+  "difficulty": 3
 }

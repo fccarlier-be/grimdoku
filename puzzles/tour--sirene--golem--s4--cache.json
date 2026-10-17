@@ -1,8 +1,8 @@
 {
   "formatVersion": 1,
-  "title": "La Tour de l'Archimage — l'affaire Écume",
-  "intro": "La sirène Écume a été retrouvée sans vie dans la Tour de l'Archimage, où un portail runique relie le laboratoire à la crypte. Quatre invités douteux traînaient dans les étages. Un seul était avec elle.",
-  "epilogue": "Clovis avoue, lentement : Écume l'avait ramené à la vie pour faire le ménage. Il n'avait rien demandé.",
+  "title": "La Tour de l'Archimage — la seconde affaire Flottille",
+  "intro": "La sirène Flottille a été retrouvée sans vie dans la Tour de l'Archimage, où un portail runique relie le laboratoire à la crypte. Cinq invités douteux traînaient dans les étages. Un seul était avec elle.",
+  "epilogue": "Ectoplasme avoue : Flottille voulait l'enfermer dans un bocal pour l'exposer à l'observatoire. Les fantômes ont leur dignité.",
   "size": 7,
   "rooms": {
     "L": {
@@ -19,11 +19,6 @@
       "name": "Bibliothèque",
       "the": "la bibliothèque",
       "floor": "parquet"
-    },
-    "H": {
-      "name": "Hall",
-      "the": "le hall",
-      "floor": "dalles"
     },
     "C": {
       "name": "Crypte",
@@ -45,8 +40,8 @@
     "LLLOOOO",
     "LLLOOOO",
     "LLBBBOO",
-    "HHBBBJJ",
-    "HHHCCJJ",
+    "BBBBBJJ",
+    "BBBCCJJ",
     "EEECCJJ",
     "EEECCCJ"
   ],
@@ -162,13 +157,12 @@
   "characters": [
     {
       "id": "a",
-      "name": "Argile",
+      "name": "Anatole",
       "gender": "m",
       "role": "suspect",
-      "icon": "🪨",
-      "desc": "Golem de pierre, lent mais très appliqué",
-      "archetype": "golem",
-      "shape": "S4"
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
     },
     {
       "id": "b",
@@ -181,16 +175,26 @@
     },
     {
       "id": "c",
-      "name": "Clovis",
-      "gender": "m",
+      "name": "Crépuscula",
+      "gender": "f",
       "role": "suspect",
-      "icon": "🧟",
-      "desc": "Zombie, ancien apprenti. Ancien tout court",
-      "archetype": "zombie"
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
     },
     {
       "id": "d",
-      "name": "Diaphane",
+      "name": "Dalle",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🪨",
+      "desc": "Golem de pierre, lent mais très appliqué",
+      "archetype": "golem",
+      "shape": "I2"
+    },
+    {
+      "id": "e",
+      "name": "Ectoplasme",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -201,8 +205,8 @@
       ]
     },
     {
-      "id": "e",
-      "name": "Écume",
+      "id": "f",
+      "name": "Flottille",
       "gender": "f",
       "role": "victim",
       "icon": "🧜‍♀️",
@@ -212,94 +216,105 @@
   ],
   "decor": "tour",
   "id": "tour--sirene--golem--s4--cache",
-  "hiddenShapes": true,
   "clues": [
     {
       "who": "a",
-      "text": "Argile était dans la même colonne qu'un coffre.",
+      "text": "Anatole était à côté d'un champignon géant.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Braise était à l'est d'Anatole.",
+      "logic": {
+        "type": "eastOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était sur la même ligne qu'une statue.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Crépuscula était sur la même ligne qu'une chaise.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dalle était au sud de Braise.",
+      "logic": {
+        "type": "southOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Ectoplasme était dans la même colonne qu'un coffre.",
       "logic": {
         "type": "sameColAs",
         "object": "coffre"
       }
     },
     {
-      "who": "a",
-      "text": "Il était dans la même colonne qu'un portail runique.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "portail"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Braise était sur un champignon géant.",
-      "logic": {
-        "type": "onObject",
-        "object": "champi"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Clovis était sur la même ligne qu'une étagère.",
+      "who": "e",
+      "text": "Il était sur la même ligne qu'un tapis.",
       "logic": {
         "type": "sameRowAs",
-        "object": "etagere"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Diaphane était dans la même colonne qu'un sarcophage.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "sarcophage"
+        "object": "tapis"
       }
     }
   ],
   "solution": {
     "positions": {
-      "e": [
-        1,
-        4
+      "f": [
+        2,
+        3
       ],
-      "a": [
+      "d": [
         [
-          3,
+          5,
           0
         ],
         [
-          3,
-          1
-        ],
-        [
-          4,
-          1
-        ],
-        [
-          4,
-          2
+          6,
+          0
         ]
       ],
-      "d": [
-        6,
-        3
+      "e": [
+        3,
+        2
       ],
       "b": [
-        5,
+        1,
+        6
+      ],
+      "a": [
+        4,
         5
       ],
       "c": [
-        2,
-        6
+        0,
+        1
       ]
     },
-    "murderer": "c"
+    "murderer": "e"
   },
   "rating": {
     "skulls": 2,
-    "score": 3,
-    "hardest": "pièces",
-    "hardSteps": 1,
-    "directStart": 2
+    "score": 4,
+    "hardest": "position relative",
+    "hardSteps": 0,
+    "directStart": 0
   },
-  "difficulty": 5
+  "difficulty": 4
 }

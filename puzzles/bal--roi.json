@@ -18,11 +18,6 @@
       "the": "l'escalier d'honneur",
       "floor": "dalles"
     },
-    "V": {
-      "name": "Vestiaire",
-      "the": "le vestiaire",
-      "floor": "parquet"
-    },
     "F": {
       "name": "Buffet",
       "the": "le buffet",
@@ -47,8 +42,8 @@
   "layout": [
     "BBBSSSSE",
     "BBSSSSSE",
-    "VVSSSSEE",
-    "VVSSSSFF",
+    "BBSSSSEE",
+    "BBSSSSFF",
     "MMMSSFFF",
     "MMMJJJFF",
     "OOJJJJFF",
@@ -199,25 +194,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Abysse",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧛‍♀️",
-      "desc": "Comtesse vampire, végane (elle le jure)",
-      "archetype": "vampire"
-    },
-    {
-      "id": "b",
-      "name": "Bazarine",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧞‍♀️",
-      "desc": "Djinn, a déjà exaucé deux vœux de trop",
-      "archetype": "djinn"
-    },
-    {
-      "id": "c",
-      "name": "Clodomir",
+      "name": "Aymeric",
       "gender": "m",
       "role": "suspect",
       "icon": "🤺",
@@ -225,8 +202,17 @@
       "archetype": "chevalier"
     },
     {
-      "id": "d",
-      "name": "Diaphane",
+      "id": "b",
+      "name": "Belladone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
+    },
+    {
+      "id": "c",
+      "name": "Chaînon",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -237,8 +223,8 @@
       ]
     },
     {
-      "id": "e",
-      "name": "Erwëlle",
+      "id": "d",
+      "name": "Daëlin",
       "gender": "f",
       "role": "suspect",
       "icon": "🧝‍♀️",
@@ -246,22 +232,31 @@
       "archetype": "elfe"
     },
     {
-      "id": "f",
-      "name": "Fougère",
+      "id": "e",
+      "name": "Encensia",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧚",
-      "desc": "Fée, doit trois tournées",
-      "archetype": "fee"
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn"
     },
     {
-      "id": "g",
-      "name": "Gamme",
+      "id": "f",
+      "name": "Fausset",
       "gender": "m",
       "role": "suspect",
       "icon": "🧑‍🎤",
       "desc": "Barde, chante faux",
       "archetype": "barde"
+    },
+    {
+      "id": "g",
+      "name": "Glycine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
     },
     {
       "id": "h",
@@ -276,35 +271,27 @@
   "decor": "bal",
   "id": "bal--roi",
   "intro": "Le roi Hugues a été retrouvé sans vie au Bal Masqué, sous un loup de velours. Sept invités dansaient encore. Un seul était avec lui.",
-  "epilogue": "Fougère avoue : Hugues l'avait prise pour une décoration de lustre et voulait l'accrocher.",
+  "epilogue": "Aymeric avoue en grinçant : Hugues avait refusé de danser avec lui à cause du bruit de son armure.",
   "clues": [
     {
       "who": "a",
-      "text": "Abysse était au sud de Diaphane.",
+      "text": "Aymeric était sur la même ligne qu'une chaise.",
       "logic": {
-        "type": "southOf",
-        "other": "d"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Elle était sur un champignon géant.",
-      "logic": {
-        "type": "onObject",
-        "object": "champi"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Bazarine était assise sur une chaise.",
-      "logic": {
-        "type": "onObject",
+        "type": "sameRowAs",
         "object": "chaise"
       }
     },
     {
-      "who": "c",
-      "text": "Clodomir était sur la même ligne qu'une chaise.",
+      "who": "a",
+      "text": "Il était à côté d'un tapis.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Belladone était sur la même ligne qu'une chaise.",
       "logic": {
         "type": "sameRowAs",
         "object": "chaise"
@@ -312,42 +299,66 @@
     },
     {
       "who": "c",
-      "text": "Il était dans la même colonne qu'une chaise.",
+      "text": "Chaînon était à côté d'un fauteuil.",
       "logic": {
-        "type": "sameColAs",
-        "object": "chaise"
+        "type": "adjacentTo",
+        "object": "fauteuil"
       }
     },
     {
       "who": "d",
-      "text": "Diaphane était à côté d'un coffre.",
+      "text": "Daëlin était sur la même ligne qu'un lit.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "coffre"
+        "type": "sameRowAs",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Elle était dans la même colonne qu'un fauteuil.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "fauteuil"
       }
     },
     {
       "who": "e",
-      "text": "Erwëlle était assise dans un fauteuil.",
+      "text": "Encensia était au nord de Daëlin.",
+      "logic": {
+        "type": "northOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Elle était dans la même colonne qu'un arbre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Fausset était assis dans un fauteuil.",
       "logic": {
         "type": "onObject",
         "object": "fauteuil"
       }
     },
     {
-      "who": "f",
-      "text": "Fougère était sur la même ligne qu'une statue.",
+      "who": "g",
+      "text": "Glycine était au sud d'Aymeric.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "statue"
+        "type": "southOf",
+        "other": "a"
       }
     },
     {
       "who": "g",
-      "text": "Gamme était à côté d'une table.",
+      "text": "Elle était à l'est d'Encensia.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "table"
+        "type": "eastOf",
+        "other": "e"
       }
     }
   ],
@@ -355,45 +366,45 @@
     "positions": {
       "h": [
         2,
-        6
-      ],
-      "d": [
-        3,
-        0
+        4
       ],
       "c": [
-        5,
+        1,
+        0
+      ],
+      "a": [
+        3,
+        3
+      ],
+      "d": [
+        6,
         1
       ],
-      "e": [
-        7,
+      "f": [
+        5,
         2
       ],
       "g": [
+        7,
+        6
+      ],
+      "e": [
         4,
         5
       ],
-      "f": [
-        1,
-        7
-      ],
       "b": [
         0,
-        4
-      ],
-      "a": [
-        6,
-        3
+        7
       ]
     },
-    "murderer": "f"
+    "murderer": "a"
   },
   "rating": {
     "skulls": 3,
-    "score": 5,
+    "score": 9,
     "hardest": "pièces",
-    "hardSteps": 3,
-    "directStart": 1
+    "hardSteps": 5,
+    "directStart": 0
   },
   "difficulty": 3
 }

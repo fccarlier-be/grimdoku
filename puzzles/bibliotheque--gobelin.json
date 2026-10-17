@@ -13,11 +13,6 @@
       "the": "les rayonnages",
       "floor": "parquet"
     },
-    "B": {
-      "name": "Bureau",
-      "the": "le bureau",
-      "floor": "parquet"
-    },
     "L": {
       "name": "Salle de lecture",
       "the": "la salle de lecture",
@@ -42,8 +37,8 @@
   "layout": [
     "SSSYYYY",
     "SSSYYYY",
-    "BBLLLGG",
-    "BBLLLGG",
+    "SSLLLGG",
+    "SSLLLGG",
     "RRLLLGG",
     "RRRAAAA",
     "RRRAAAA"
@@ -173,21 +168,24 @@
   "characters": [
     {
       "id": "a",
-      "name": "Agathe",
-      "gender": "f",
+      "name": "Albâtre",
+      "gender": "m",
       "role": "suspect",
-      "icon": "👩‍🏫",
-      "desc": "Bibliothécaire, réclame le silence en hurlant",
-      "archetype": "bibliothecaire"
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ]
     },
     {
       "id": "b",
-      "name": "Bazarine",
-      "gender": "f",
+      "name": "Blanchebarbe",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧞‍♀️",
-      "desc": "Djinn, a déjà exaucé deux vœux de trop",
-      "archetype": "djinn"
+      "icon": "🧙‍♂️",
+      "desc": "Archimage, 412 ans, toujours pas de testament",
+      "archetype": "archimage"
     },
     {
       "id": "c",
@@ -209,24 +207,21 @@
     },
     {
       "id": "e",
-      "name": "Ectoplasme",
-      "gender": "m",
+      "name": "Encensia",
+      "gender": "f",
       "role": "suspect",
-      "icon": "👻",
-      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
-      "archetype": "spectre",
-      "traits": [
-        "spectre"
-      ]
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn"
     },
     {
       "id": "f",
-      "name": "Fizzlebarbe",
-      "gender": "m",
+      "name": "Folio",
+      "gender": "f",
       "role": "suspect",
-      "icon": "🧙‍♂️",
-      "desc": "Archimage, 412 ans, toujours pas de testament",
-      "archetype": "archimage"
+      "icon": "👩‍🏫",
+      "desc": "Bibliothécaire, réclame le silence en hurlant",
+      "archetype": "bibliothecaire"
     },
     {
       "id": "g",
@@ -240,104 +235,120 @@
   ],
   "decor": "bibliotheque",
   "id": "bibliotheque--gobelin",
-  "epilogue": "Draculine avoue : Grigou avait ouvert les rideaux de la galerie « pour lire plus confortablement ».",
+  "epilogue": "Blanchebarbe avoue : Grigou avait rangé ses mémoires au rayon « Fiction ». Quatre cent douze ans de vérité, et on ose douter.",
   "clues": [
     {
       "who": "a",
-      "text": "Agathe était à côté d'une table.",
+      "text": "Albâtre était à l'est de Blanchebarbe.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "table"
+        "type": "eastOf",
+        "other": "b"
       }
     },
     {
-      "who": "b",
-      "text": "Bazarine était dans la même colonne qu'une table.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "table"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Elle était sur la même ligne qu'une chaise.",
+      "who": "a",
+      "text": "Il était sur la même ligne qu'une étagère.",
       "logic": {
         "type": "sameRowAs",
-        "object": "chaise"
+        "object": "etagere"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Blanchebarbe était dans les rayonnages.",
+      "logic": {
+        "type": "inRoom",
+        "room": "Y"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était dans la même colonne qu'une étagère.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "etagere"
       }
     },
     {
       "who": "c",
-      "text": "Cornélius était assis sur une chaise.",
+      "text": "Cornélius était dans la même colonne qu'un fauteuil.",
       "logic": {
-        "type": "onObject",
-        "object": "chaise"
+        "type": "sameColAs",
+        "object": "fauteuil"
       }
     },
     {
       "who": "d",
-      "text": "Draculine était sur la même ligne qu'une boule de cristal.",
+      "text": "Draculine était à côté d'un tonneau.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "cristal"
+        "type": "adjacentTo",
+        "object": "tonneau"
       }
     },
     {
       "who": "e",
-      "text": "Ectoplasme était dans la même colonne qu'une statue.",
+      "text": "Encensia était sur la même ligne qu'un fauteuil.",
       "logic": {
-        "type": "sameColAs",
-        "object": "statue"
+        "type": "sameRowAs",
+        "object": "fauteuil"
       }
     },
     {
       "who": "f",
-      "text": "Fizzlebarbe était au nord de Bazarine.",
+      "text": "Folio était dans la salle de lecture.",
+      "logic": {
+        "type": "inRoom",
+        "room": "L"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Elle était au nord de Cornélius.",
       "logic": {
         "type": "northOf",
-        "other": "b"
+        "other": "c"
       }
     }
   ],
   "solution": {
     "positions": {
-      "a": [
-        3,
-        1
+      "g": [
+        0,
+        3
       ],
-      "b": [
+      "c": [
         4,
-        0
+        5
+      ],
+      "a": [
+        5,
+        6
       ],
       "d": [
         6,
-        4
-      ],
-      "c": [
-        2,
-        3
+        1
       ],
       "e": [
+        2,
+        0
+      ],
+      "b": [
         1,
-        6
+        4
       ],
       "f": [
-        0,
+        3,
         2
-      ],
-      "g": [
-        5,
-        5
       ]
     },
-    "murderer": "d"
+    "murderer": "b"
   },
   "rating": {
-    "skulls": 3,
-    "score": 8,
-    "hardest": "pièces",
-    "hardSteps": 4,
+    "skulls": 2,
+    "score": 4,
+    "hardest": "ligne réservée",
+    "hardSteps": 0,
     "directStart": 0
   },
-  "difficulty": 3
+  "difficulty": 2
 }

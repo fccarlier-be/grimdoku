@@ -127,16 +127,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Anatole",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧟",
-      "desc": "Zombie, ancien apprenti. Ancien tout court",
-      "archetype": "zombie"
-    },
-    {
-      "id": "b",
-      "name": "Braise",
+      "name": "Ardent",
       "gender": "m",
       "role": "suspect",
       "icon": "🐉",
@@ -144,13 +135,22 @@
       "archetype": "dragonnet"
     },
     {
-      "id": "c",
-      "name": "Capucine",
+      "id": "b",
+      "name": "Bruyère",
       "gender": "f",
       "role": "suspect",
       "icon": "🧚",
       "desc": "Fée, doit trois tournées",
       "archetype": "fee"
+    },
+    {
+      "id": "c",
+      "name": "Corail",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene"
     },
     {
       "id": "d",
@@ -163,12 +163,12 @@
     },
     {
       "id": "e",
-      "name": "Écume",
-      "gender": "f",
+      "name": "Edmond",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧜‍♀️",
-      "desc": "Sirène, venue pour l'aquarium",
-      "archetype": "sirene"
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
     },
     {
       "id": "f",
@@ -182,62 +182,62 @@
   ],
   "decor": "moulin",
   "id": "grim-004",
-  "epilogue": "Dentdur avoue la bouche pleine : Farinard lui facturait chaque miette tombée du moulin. Les miettes, c'était tout ce qu'il mangeait.",
+  "epilogue": "Bruyère avoue en battant des ailes : Farinard lui vendait sa farine au prix de la poudre de fée. Elle a juste voulu lui rendre la monnaie de sa pièce.",
   "clues": [
     {
       "who": "a",
-      "text": "Anatole était au nord de Dentdur.",
+      "text": "Ardent était à l'est de Bruyère.",
       "logic": {
-        "type": "northOf",
+        "type": "eastOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était à côté d'une botte de foin.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "foin"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bruyère était dans la même colonne qu'une statue.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Elle était au sud de Dentdur.",
+      "logic": {
+        "type": "southOf",
         "other": "d"
       }
     },
     {
-      "who": "a",
-      "text": "Il était allongé sur un lit.",
-      "logic": {
-        "type": "onObject",
-        "object": "lit"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Braise était dans le moulin.",
-      "logic": {
-        "type": "inRoom",
-        "room": "M"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était assis sur une chaise.",
-      "logic": {
-        "type": "onObject",
-        "object": "chaise"
-      }
-    },
-    {
       "who": "c",
-      "text": "Capucine était assise sur une chaise.",
+      "text": "Corail était au sud de Bruyère.",
       "logic": {
-        "type": "onObject",
-        "object": "chaise"
+        "type": "southOf",
+        "other": "b"
       }
     },
     {
       "who": "d",
-      "text": "Dentdur était dans la même colonne qu'un arbre.",
+      "text": "Dentdur était au sud d'Edmond.",
       "logic": {
-        "type": "sameColAs",
-        "object": "arbre"
+        "type": "southOf",
+        "other": "e"
       }
     },
     {
       "who": "e",
-      "text": "Écume était dans la même colonne qu'une botte de foin.",
+      "text": "Edmond était à l'est de Corail.",
       "logic": {
-        "type": "sameColAs",
-        "object": "foin"
+        "type": "eastOf",
+        "other": "c"
       }
     }
   ],
@@ -245,37 +245,37 @@
     "positions": {
       "f": [
         3,
-        1
+        3
       ],
-      "c": [
+      "b": [
         4,
-        5
+        4
       ],
       "d": [
         2,
         0
       ],
-      "e": [
+      "c": [
         5,
-        4
+        1
+      ],
+      "e": [
+        1,
+        2
       ],
       "a": [
-        1,
-        3
-      ],
-      "b": [
         0,
-        2
+        5
       ]
     },
-    "murderer": "d"
+    "murderer": "b"
   },
   "rating": {
-    "skulls": 0,
-    "score": 1,
-    "hardest": "case unique",
+    "skulls": 2,
+    "score": 4,
+    "hardest": "position relative",
     "hardSteps": 0,
-    "directStart": 2
+    "directStart": 0
   },
-  "difficulty": 0
+  "difficulty": 2
 }

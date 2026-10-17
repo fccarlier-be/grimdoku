@@ -133,12 +133,12 @@
   "characters": [
     {
       "id": "a",
-      "name": "Amandin",
+      "name": "Arôme",
       "gender": "m",
       "role": "suspect",
       "icon": "👨‍🍳",
-      "desc": "Boulanger, pétrit plus de ragots que de pâte",
-      "archetype": "boulanger"
+      "desc": "Chef gobelin, goûte tout, surtout ce qui bouge encore",
+      "archetype": "chef"
     },
     {
       "id": "b",
@@ -151,16 +151,7 @@
     },
     {
       "id": "c",
-      "name": "Croquassiette",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧌",
-      "desc": "Troll, plongeur à mi-temps",
-      "archetype": "troll"
-    },
-    {
-      "id": "d",
-      "name": "Dévoreur",
+      "name": "Croc",
       "gender": "m",
       "role": "suspect",
       "icon": "👹",
@@ -168,13 +159,22 @@
       "archetype": "ogre"
     },
     {
+      "id": "d",
+      "name": "Dentdur",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    },
+    {
       "id": "e",
-      "name": "Épice",
+      "name": "Échaudé",
       "gender": "m",
       "role": "suspect",
       "icon": "👨‍🍳",
-      "desc": "Chef gobelin, goûte tout, surtout ce qui bouge encore",
-      "archetype": "chef"
+      "desc": "Boulanger, pétrit plus de ragots que de pâte",
+      "archetype": "boulanger"
     },
     {
       "id": "f",
@@ -189,92 +189,84 @@
   "decor": "banquet",
   "id": "banquet--gobelin",
   "intro": "Le gobelin Filou a été retrouvé sans vie au beau milieu du Banquet des Gobelins, la serviette encore autour du cou. Cinq convives s'empiffraient. Un seul était avec lui.",
-  "epilogue": "Croquassiette avoue la bouche pleine : Filou avait pris la dernière part de gâteau. Et l'assiette avec.",
+  "epilogue": "Arôme avoue en goûtant sa sauce : Filou avait demandé du sel. Devant tout le monde.",
   "clues": [
     {
       "who": "a",
-      "text": "Amandin était à côté d'un coffre.",
+      "text": "Arôme était assis sur une chaise.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "coffre"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était dans la même colonne qu'un chaudron.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "chaudron"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Brann était à côté d'un champignon géant.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "champi"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Croquassiette était à côté d'une chaise.",
-      "logic": {
-        "type": "adjacentTo",
+        "type": "onObject",
         "object": "chaise"
       }
     },
     {
-      "who": "d",
-      "text": "Dévoreur était à côté d'un chaudron.",
+      "who": "b",
+      "text": "Brann était sur la même ligne qu'une botte de foin.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "chaudron"
+        "type": "sameRowAs",
+        "object": "foin"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Croc était dans la même colonne qu'une table.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dentdur était au nord d'Échaudé.",
+      "logic": {
+        "type": "northOf",
+        "other": "e"
       }
     },
     {
       "who": "e",
-      "text": "Épice était dans le cellier.",
+      "text": "Échaudé était à côté d'un arbre.",
       "logic": {
-        "type": "inRoom",
-        "room": "C"
+        "type": "adjacentTo",
+        "object": "arbre"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        3,
+        4,
         5
       ],
+      "d": [
+        1,
+        1
+      ],
       "c": [
-        4,
+        0,
         3
       ],
-      "d": [
-        0,
+      "b": [
+        3,
         0
       ],
-      "b": [
+      "e": [
         5,
         2
       ],
       "a": [
         2,
-        1
-      ],
-      "e": [
-        1,
         4
       ]
     },
-    "murderer": "c"
+    "murderer": "a"
   },
   "rating": {
-    "skulls": 0,
-    "score": 1,
-    "hardest": "case unique",
-    "hardSteps": 0,
-    "directStart": 1
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 0
   },
-  "difficulty": 0
+  "difficulty": 3
 }

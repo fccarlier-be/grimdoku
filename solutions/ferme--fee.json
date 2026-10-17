@@ -2,79 +2,79 @@
  "positions": {
   "f": [
    2,
-   4
+   3
   ],
   "c": [
-   4,
-   1
-  ],
-  "a": [
-   5,
-   2
+   3,
+   0
   ],
   "e": [
    0,
-   3
+   1
   ],
   "b": [
-   3,
+   5,
    5
+  ],
+  "a": [
+   4,
+   2
   ],
   "d": [
    1,
-   0
+   4
   ]
  },
- "murderer": "b",
+ "murderer": "a",
  "cast": {
   "c": "a",
-  "a": "b",
-  "e": "c",
-  "b": "d",
+  "e": "b",
+  "b": "c",
+  "a": "d",
   "d": "e"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "b",
+   "who": "c",
    "logic": {
-    "type": "sameRowAs",
-    "object": "arbre"
-   }
-  },
-  {
-   "who": "d",
-   "logic": {
-    "type": "sameColAs",
-    "object": "tonneau"
+    "type": "westOf",
+    "other": "e"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "onObject",
-    "object": "champi"
+    "type": "sameRowAs",
+    "object": "statue"
    }
   },
   {
    "who": "e",
    "logic": {
     "type": "sameColAs",
-    "object": "arbre"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "southOf",
-    "other": "b"
+    "object": "table"
    }
   },
   {
    "who": "b",
    "logic": {
-    "type": "adjacentTo",
+    "type": "sameRowAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameColAs",
     "object": "foin"
    }
   }

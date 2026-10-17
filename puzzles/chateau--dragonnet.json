@@ -2,14 +2,9 @@
   "formatVersion": 1,
   "title": "Le Château de Mortebrune — l'affaire Gratin",
   "intro": "Le dragonnet Gratin a été retrouvé sans vie au petit matin, au Château de Mortebrune. Six invités juraient qu'ils dormaient. Un seul était avec lui.",
-  "epilogue": "Baudouin avoue, la couronne de travers : Gratin complotait pour s'asseoir sur son trône. Il l'a pris très personnellement.",
+  "epilogue": "Ferdinand avoue, la couronne de travers : Gratin complotait pour s'asseoir sur son trône. Il l'a pris très personnellement.",
   "size": 7,
   "rooms": {
-    "C": {
-      "name": "Chapelle",
-      "the": "la chapelle",
-      "floor": "dalles"
-    },
     "G": {
       "name": "Grande salle",
       "the": "la grande salle",
@@ -42,8 +37,8 @@
     }
   },
   "layout": [
-    "CCGGGKK",
-    "CCGGGKK",
+    "AAGGGKK",
+    "AAGGGKK",
     "AAGGGKT",
     "AAJJJTT",
     "AAJJJTT",
@@ -181,7 +176,43 @@
   "characters": [
     {
       "id": "a",
-      "name": "Albâtre",
+      "name": "Arpège",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
+    },
+    {
+      "id": "b",
+      "name": "Bertrand",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
+    },
+    {
+      "id": "c",
+      "name": "Célandra",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
+    },
+    {
+      "id": "d",
+      "name": "Dîme",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "e",
+      "name": "Ectoplasme",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -192,49 +223,13 @@
       ]
     },
     {
-      "id": "b",
-      "name": "Baudouin",
+      "id": "f",
+      "name": "Ferdinand",
       "gender": "m",
       "role": "suspect",
       "icon": "🤴",
       "desc": "Roi, avare de compliments et de tout le reste",
       "archetype": "roi"
-    },
-    {
-      "id": "c",
-      "name": "Chaparde",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
-    },
-    {
-      "id": "d",
-      "name": "Dièse",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧑‍🎤",
-      "desc": "Barde, chante faux",
-      "archetype": "barde"
-    },
-    {
-      "id": "e",
-      "name": "Erwëlle",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧝‍♀️",
-      "desc": "Elfe, critique gastronomique",
-      "archetype": "elfe"
-    },
-    {
-      "id": "f",
-      "name": "Foulques",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🤺",
-      "desc": "Chevalier, armure trop petite depuis Noël",
-      "archetype": "chevalier"
     },
     {
       "id": "g",
@@ -251,116 +246,100 @@
   "clues": [
     {
       "who": "a",
-      "text": "Albâtre hantait une botte de foin.",
+      "text": "Arpège était dans le jardin.",
       "logic": {
-        "type": "onObject",
+        "type": "inRoom",
+        "room": "J"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était sur la même ligne qu'une botte de foin.",
+      "logic": {
+        "type": "sameRowAs",
         "object": "foin"
       }
     },
     {
       "who": "b",
-      "text": "Baudouin était sur la même ligne qu'un champignon géant.",
+      "text": "Bertrand était sur la même ligne qu'un lit.",
       "logic": {
         "type": "sameRowAs",
-        "object": "champi"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était dans la même colonne qu'une chaise.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "chaise"
+        "object": "lit"
       }
     },
     {
       "who": "c",
-      "text": "Chaparde était sur la même ligne qu'une statue.",
+      "text": "Célandra était sur la même ligne qu'un chaudron.",
       "logic": {
         "type": "sameRowAs",
-        "object": "statue"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Il était dans la même colonne qu'un champignon géant.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "champi"
+        "object": "chaudron"
       }
     },
     {
       "who": "d",
-      "text": "Dièse était au sud de Foulques.",
+      "text": "Dîme était à l'est de Bertrand.",
       "logic": {
-        "type": "southOf",
-        "other": "f"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Erwëlle était au nord de Baudouin.",
-      "logic": {
-        "type": "northOf",
+        "type": "eastOf",
         "other": "b"
       }
     },
     {
       "who": "e",
-      "text": "Elle était au sud de Dièse.",
+      "text": "Ectoplasme était dans la même colonne qu'un champignon géant.",
       "logic": {
-        "type": "southOf",
-        "other": "d"
+        "type": "sameColAs",
+        "object": "champi"
       }
     },
     {
       "who": "f",
-      "text": "Foulques était au nord d'Albâtre.",
+      "text": "Ferdinand était dans la même colonne qu'une botte de foin.",
       "logic": {
-        "type": "northOf",
-        "other": "a"
+        "type": "sameColAs",
+        "object": "foin"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        6,
-        3
+        4,
+        0
       ],
-      "f": [
-        1,
+      "b": [
+        3,
         5
       ],
-      "c": [
-        0,
-        2
-      ],
       "d": [
-        2,
+        1,
         6
-      ],
-      "e": [
-        3,
-        0
       ],
       "a": [
         5,
-        1
-      ],
-      "b": [
-        4,
         4
+      ],
+      "c": [
+        0,
+        3
+      ],
+      "e": [
+        6,
+        2
+      ],
+      "f": [
+        2,
+        1
       ]
     },
-    "murderer": "b"
+    "murderer": "f"
   },
   "rating": {
     "skulls": 3,
-    "score": 5,
+    "score": 6,
     "hardest": "pièces",
-    "hardSteps": 3,
-    "directStart": 1
+    "hardSteps": 2,
+    "directStart": 0
   },
   "difficulty": 3
 }

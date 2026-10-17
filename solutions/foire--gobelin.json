@@ -4,97 +4,97 @@
    4,
    2
   ],
-  "a": [
-   3,
-   3
-  ],
   "d": [
    1,
+   6
+  ],
+  "c": [
+   3,
    0
   ],
-  "f": [
-   6,
-   5
-  ],
   "e": [
-   2,
-   6
+   5,
+   5
   ],
   "b": [
    0,
    4
   ],
-  "c": [
-   5,
+  "a": [
+   2,
+   3
+  ],
+  "f": [
+   6,
    1
   ]
  },
  "murderer": "a",
  "cast": {
-  "a": "a",
-  "d": "b",
-  "f": "c",
-  "e": "d",
-  "b": "e",
-  "c": "f"
+  "d": "a",
+  "c": "b",
+  "e": "c",
+  "b": "d",
+  "a": "e",
+  "f": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "a",
+   "who": "d",
    "logic": {
-    "type": "southOf",
+    "type": "eastOf",
     "other": "b"
    }
   },
   {
-   "who": "d",
+   "who": "c",
+   "logic": {
+    "type": "southOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "b",
    "logic": {
     "type": "westOf",
-    "other": "c"
-   }
-  },
-  {
-   "who": "f",
-   "logic": {
-    "type": "eastOf",
-    "other": "a"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "sameColAs",
-    "object": "foin"
+    "other": "e"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "onObject",
-    "object": "tapis"
+    "type": "adjacentTo",
+    "object": "cristal"
    }
   },
   {
    "who": "b",
    "logic": {
     "type": "sameColAs",
-    "object": "tonneau"
+    "object": "cristal"
    }
   },
   {
-   "who": "c",
+   "who": "f",
    "logic": {
-    "type": "onObject",
+    "type": "adjacentTo",
     "object": "chaise"
    }
   },
   {
-   "who": "d",
+   "who": "e",
    "logic": {
     "type": "northOf",
-    "other": "a"
+    "other": "f"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "westOf",
+    "other": "d"
    }
   }
  ]

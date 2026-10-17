@@ -2,92 +2,92 @@
  "positions": {
   "g": [
    6,
-   2
-  ],
-  "d": [
-   4,
-   5
-  ],
-  "a": [
-   5,
    1
   ],
   "f": [
    2,
+   0
+  ],
+  "d": [
+   1,
    3
+  ],
+  "a": [
+   5,
+   2
   ],
   "c": [
    3,
-   4
-  ],
-  "e": [
-   0,
    6
   ],
   "b": [
-   1,
-   0
+   0,
+   5
+  ],
+  "e": [
+   4,
+   4
   ]
  },
  "murderer": "a",
  "cast": {
-  "d": "a",
-  "a": "b",
-  "f": "c",
+  "f": "a",
+  "d": "b",
+  "a": "c",
   "c": "d",
-  "e": "e",
-  "b": "f"
+  "b": "e",
+  "e": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "table"
+   }
+  },
+  {
    "who": "e",
    "logic": {
-    "type": "eastOf",
-    "other": "c"
+    "type": "northOf",
+    "other": "a"
    }
   },
   {
    "who": "b",
    "logic": {
-    "type": "westOf",
-    "other": "a"
+    "type": "onObject",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "etagere"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "onObject",
+    "type": "sameRowAs",
     "object": "champi"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "coffre"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "eastOf",
-    "other": "f"
-   }
-  },
-  {
-   "who": "d",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "table"
    }
   },
   {
    "who": "f",
    "logic": {
-    "type": "sameRowAs",
-    "object": "chaudron"
+    "type": "onObject",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "champi"
    }
   }
  ]

@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "title": "La Tour de l'Archimage — l'affaire Gratin",
   "intro": "Le dragonnet Gratin a été retrouvé sans vie dans la Tour de l'Archimage, où un portail runique relie le laboratoire à la crypte. Six invités douteux traînaient dans les étages. Un seul était avec lui.",
-  "epilogue": "Djinnifer avoue : Gratin avait souhaité qu'elle « disparaisse dans sa lampe ». Elle a souhaité très fort le contraire.",
+  "epilogue": "Bazarine avoue : Gratin avait souhaité qu'elle « disparaisse dans sa lampe ». Elle a souhaité très fort le contraire.",
   "size": 7,
   "rooms": {
     "L": {
@@ -162,7 +162,43 @@
   "characters": [
     {
       "id": "a",
-      "name": "Albâtre",
+      "name": "Abysse",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
+    },
+    {
+      "id": "b",
+      "name": "Bazarine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn"
+    },
+    {
+      "id": "c",
+      "name": "Clovis",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
+    },
+    {
+      "id": "d",
+      "name": "Dorade",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene"
+    },
+    {
+      "id": "e",
+      "name": "Ectoplasme",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -171,42 +207,6 @@
       "traits": [
         "spectre"
       ]
-    },
-    {
-      "id": "b",
-      "name": "Bulle",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧜‍♀️",
-      "desc": "Sirène, venue pour l'aquarium",
-      "archetype": "sirene"
-    },
-    {
-      "id": "c",
-      "name": "Crépuscula",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧛‍♀️",
-      "desc": "Comtesse vampire, végane (elle le jure)",
-      "archetype": "vampire"
-    },
-    {
-      "id": "d",
-      "name": "Djinnifer",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧞‍♀️",
-      "desc": "Djinn, a déjà exaucé deux vœux de trop",
-      "archetype": "djinn"
-    },
-    {
-      "id": "e",
-      "name": "Edmond",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧟",
-      "desc": "Zombie, ancien apprenti. Ancien tout court",
-      "archetype": "zombie"
     },
     {
       "id": "f",
@@ -232,46 +232,14 @@
   "clues": [
     {
       "who": "a",
-      "text": "Albâtre était sur la même ligne qu'une étagère.",
+      "text": "Abysse était au sud d'Ectoplasme.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "etagere"
+        "type": "southOf",
+        "other": "e"
       }
     },
     {
       "who": "a",
-      "text": "Il était à côté d'un chaudron.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "chaudron"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Bulle était dans la même colonne qu'un portail runique.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "portail"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Elle était à côté d'un tapis.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "tapis"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Crépuscula était au sud d'Albâtre.",
-      "logic": {
-        "type": "southOf",
-        "other": "a"
-      }
-    },
-    {
-      "who": "c",
       "text": "Elle était sur un tapis.",
       "logic": {
         "type": "onObject",
@@ -279,19 +247,59 @@
       }
     },
     {
-      "who": "d",
-      "text": "Djinnifer était dans la même colonne qu'une boule de cristal.",
+      "who": "b",
+      "text": "Bazarine était à l'ouest de Clovis.",
+      "logic": {
+        "type": "westOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Elle était dans la même colonne qu'une boule de cristal.",
       "logic": {
         "type": "sameColAs",
         "object": "cristal"
       }
     },
     {
-      "who": "e",
-      "text": "Edmond était au sud de Fizzlebarbe.",
+      "who": "c",
+      "text": "Clovis était au sud de Fizzlebarbe.",
       "logic": {
         "type": "southOf",
         "other": "f"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dorade était dans la même colonne qu'un portail runique.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "portail"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Elle était sur la même ligne qu'un champignon géant.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Ectoplasme était sur la même ligne qu'une étagère.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "etagere"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était dans le laboratoire.",
+      "logic": {
+        "type": "inRoom",
+        "room": "L"
       }
     },
     {
@@ -309,23 +317,23 @@
         0,
         5
       ],
-      "a": [
+      "e": [
         2,
         1
       ],
-      "e": [
+      "c": [
         6,
         6
       ],
-      "b": [
+      "d": [
         5,
         0
       ],
-      "c": [
+      "a": [
         3,
         3
       ],
-      "d": [
+      "b": [
         1,
         4
       ],
@@ -334,14 +342,14 @@
         2
       ]
     },
-    "murderer": "d"
+    "murderer": "b"
   },
   "rating": {
-    "skulls": 2,
-    "score": 4,
+    "skulls": 3,
+    "score": 5,
     "hardest": "pièces",
-    "hardSteps": 2,
-    "directStart": 2
+    "hardSteps": 1,
+    "directStart": 0
   },
-  "difficulty": 2
+  "difficulty": 3
 }

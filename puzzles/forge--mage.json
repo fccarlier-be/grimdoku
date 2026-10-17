@@ -23,11 +23,6 @@
       "the": "la fonderie",
       "floor": "dalles"
     },
-    "C": {
-      "name": "Réserve de charbon",
-      "the": "la réserve de charbon",
-      "floor": "roche"
-    },
     "T": {
       "name": "Atelier",
       "the": "l'atelier",
@@ -43,9 +38,9 @@
     "DDDFFFA",
     "DDFFFAA",
     "DDOOFAA",
-    "CCOOTTA",
-    "CCOOTTT",
-    "CYYYTTT",
+    "OOOOTTA",
+    "OOOOTTT",
+    "OYYYTTT",
     "YYYYYTT"
   ],
   "objects": [
@@ -165,12 +160,12 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aymeric",
+      "name": "Agrifol",
       "gender": "m",
       "role": "suspect",
-      "icon": "🤺",
-      "desc": "Chevalier, armure trop petite depuis Noël",
-      "archetype": "chevalier"
+      "icon": "⛏️",
+      "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
+      "archetype": "mineur"
     },
     {
       "id": "b",
@@ -183,30 +178,30 @@
     },
     {
       "id": "c",
-      "name": "Caillou",
+      "name": "Clodomir",
       "gender": "m",
       "role": "suspect",
-      "icon": "⛏️",
-      "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
-      "archetype": "mineur"
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
     },
     {
       "id": "d",
-      "name": "Dévoreur",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👹",
-      "desc": "Ogre, végétarien depuis mardi",
-      "archetype": "ogre"
-    },
-    {
-      "id": "e",
-      "name": "Escroquin",
+      "name": "Dîme",
       "gender": "m",
       "role": "suspect",
       "icon": "👺",
       "desc": "Gobelin, trésorier du royaume (non déclaré)",
       "archetype": "gobelin"
+    },
+    {
+      "id": "e",
+      "name": "Estomac",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👹",
+      "desc": "Ogre, végétarien depuis mardi",
+      "archetype": "ogre"
     },
     {
       "id": "f",
@@ -230,96 +225,104 @@
   "decor": "forge",
   "id": "forge--mage",
   "intro": "Le mage Gribouille a été retrouvé sans vie à la Forge du Dragon, encore tiède. Six artisans et clients s'y pressaient cette nuit-là. Un seul était avec lui.",
-  "epilogue": "Escroquin avoue : Gribouille avait remarqué que les épées vendues étaient en fer-blanc peint.",
+  "epilogue": "Flammèche avoue en soufflant une volute : Gribouille avait éteint sa forge avec un seau d'eau « pour économiser le charbon ».",
   "clues": [
     {
       "who": "a",
-      "text": "Aymeric était à côté d'un arbre.",
+      "text": "Agrifol était dans la même colonne qu'une chaise.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "arbre"
+        "type": "sameColAs",
+        "object": "chaise"
       }
     },
     {
       "who": "b",
-      "text": "Bâfrin était à côté d'un lit.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "lit"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Caillou était sur la même ligne qu'un tonneau.",
+      "text": "Bâfrin était sur la même ligne qu'un tonneau.",
       "logic": {
         "type": "sameRowAs",
         "object": "tonneau"
       }
     },
     {
-      "who": "d",
-      "text": "Dévoreur était dans la même colonne qu'une enclume.",
+      "who": "c",
+      "text": "Clodomir était au nord de Bâfrin.",
       "logic": {
-        "type": "sameColAs",
-        "object": "enclume"
+        "type": "northOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était sur la même ligne qu'une table.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dîme était à l'est d'Estomac.",
+      "logic": {
+        "type": "eastOf",
+        "other": "e"
       }
     },
     {
       "who": "e",
-      "text": "Escroquin était sur la même ligne qu'un chaudron.",
+      "text": "Estomac était dans la cour.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "chaudron"
+        "type": "inRoom",
+        "room": "Y"
       }
     },
     {
       "who": "f",
-      "text": "Flammèche était sur la même ligne qu'une statue.",
+      "text": "Flammèche était sur la même ligne qu'une chaise.",
       "logic": {
         "type": "sameRowAs",
-        "object": "statue"
+        "object": "chaise"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        4,
-        2
-      ],
-      "c": [
-        5,
-        4
-      ],
-      "a": [
-        6,
-        1
-      ],
-      "e": [
         2,
         3
       ],
-      "b": [
+      "a": [
         1,
-        0
+        4
       ],
-      "d": [
+      "c": [
         3,
         6
       ],
-      "f": [
+      "d": [
         0,
+        2
+      ],
+      "b": [
+        5,
         5
+      ],
+      "e": [
+        6,
+        1
+      ],
+      "f": [
+        4,
+        0
       ]
     },
-    "murderer": "e"
+    "murderer": "f"
   },
   "rating": {
-    "skulls": 2,
-    "score": 4,
-    "hardest": "seul candidat",
-    "hardSteps": 2,
-    "directStart": 1
+    "skulls": 3,
+    "score": 7,
+    "hardest": "pièces",
+    "hardSteps": 3,
+    "directStart": 0
   },
-  "difficulty": 2
+  "difficulty": 3
 }

@@ -126,21 +126,21 @@
   "characters": [
     {
       "id": "a",
-      "name": "Avaloir",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧌",
-      "desc": "Troll, plongeur à mi-temps",
-      "archetype": "troll"
-    },
-    {
-      "id": "b",
-      "name": "Braise",
+      "name": "Ardent",
       "gender": "m",
       "role": "suspect",
       "icon": "🐉",
       "desc": "Dragonnet, brûle tout ce qu'il touche",
       "archetype": "dragonnet"
+    },
+    {
+      "id": "b",
+      "name": "Bob",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
     },
     {
       "id": "c",
@@ -162,12 +162,12 @@
     },
     {
       "id": "e",
-      "name": "Edmond",
+      "name": "Engloutor",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧟",
-      "desc": "Zombie, ancien apprenti. Ancien tout court",
-      "archetype": "zombie"
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
     },
     {
       "id": "f",
@@ -182,54 +182,54 @@
   "decor": "ferme",
   "id": "ferme--fee",
   "intro": "La fée Fougère a été retrouvée au petit matin dans la Ferme Hantée, entre le potager et le fournil. Cinq voisins y avaient passé la nuit. Un seul était avec elle.",
-  "epilogue": "Braise avoue en fumant : Fougère lui demandait de chauffer le four, puis de le refroidir, puis de le chauffer.",
+  "epilogue": "Ardent avoue en fumant : Fougère lui demandait de chauffer le four, puis de le refroidir, puis de le chauffer.",
   "clues": [
     {
       "who": "a",
-      "text": "Avaloir était sur un champignon géant.",
-      "logic": {
-        "type": "onObject",
-        "object": "champi"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Braise était sur la même ligne qu'un arbre.",
+      "text": "Ardent était sur la même ligne qu'une statue.",
       "logic": {
         "type": "sameRowAs",
-        "object": "arbre"
+        "object": "statue"
       }
     },
     {
-      "who": "b",
-      "text": "Il était à côté d'une botte de foin.",
+      "who": "a",
+      "text": "Il était dans la même colonne qu'une botte de foin.",
       "logic": {
-        "type": "adjacentTo",
+        "type": "sameColAs",
         "object": "foin"
       }
     },
     {
-      "who": "c",
-      "text": "Croissant était au sud de Braise.",
+      "who": "b",
+      "text": "Bob était sur la même ligne qu'un champignon géant.",
       "logic": {
-        "type": "southOf",
-        "other": "b"
+        "type": "sameRowAs",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Croissant était à l'ouest d'Engloutor.",
+      "logic": {
+        "type": "westOf",
+        "other": "e"
       }
     },
     {
       "who": "d",
-      "text": "Dupain était dans la même colonne qu'un tonneau.",
+      "text": "Dupain était dans la même colonne qu'une statue.",
       "logic": {
         "type": "sameColAs",
-        "object": "tonneau"
+        "object": "statue"
       }
     },
     {
       "who": "e",
-      "text": "Edmond était dans la même colonne qu'un arbre.",
+      "text": "Engloutor était dans la même colonne qu'une table.",
       "logic": {
         "type": "sameColAs",
-        "object": "arbre"
+        "object": "table"
       }
     }
   ],
@@ -237,37 +237,37 @@
     "positions": {
       "f": [
         2,
-        4
+        3
       ],
       "c": [
-        4,
-        1
-      ],
-      "a": [
-        5,
-        2
+        3,
+        0
       ],
       "e": [
         0,
-        3
+        1
       ],
       "b": [
-        3,
+        5,
         5
+      ],
+      "a": [
+        4,
+        2
       ],
       "d": [
         1,
-        0
+        4
       ]
     },
-    "murderer": "b"
+    "murderer": "a"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
-    "hardest": "position relative",
-    "hardSteps": 0,
-    "directStart": 2
+    "skulls": 3,
+    "score": 7,
+    "hardest": "pièces",
+    "hardSteps": 3,
+    "directStart": 0
   },
-  "difficulty": 1
+  "difficulty": 3
 }

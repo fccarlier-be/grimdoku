@@ -3,19 +3,9 @@
   "title": "Le Palais des Mille Vœux — l'affaire Ferdinand",
   "size": 7,
   "rooms": {
-    "O": {
-      "name": "Observatoire",
-      "the": "l'observatoire",
-      "floor": "mosaique"
-    },
     "T": {
       "name": "Salle du trône",
       "the": "la salle du trône",
-      "floor": "noble"
-    },
-    "R": {
-      "name": "Trésor",
-      "the": "le trésor",
       "floor": "noble"
     },
     "L": {
@@ -40,8 +30,8 @@
     }
   },
   "layout": [
-    "OOTTTRR",
-    "OOTTTRR",
+    "LLTTTTT",
+    "LLTTTTT",
     "LLTTTBB",
     "LLJJJBB",
     "HHJJJBB",
@@ -179,31 +169,31 @@
   "characters": [
     {
       "id": "a",
-      "name": "Ardent",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🐉",
-      "desc": "Dragon adulte, toujours lové dans un coin",
-      "archetype": "dragon",
-      "shape": "L3"
-    },
-    {
-      "id": "b",
-      "name": "Belladone",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧛‍♀️",
-      "desc": "Comtesse vampire, végane (elle le jure)",
-      "archetype": "vampire"
-    },
-    {
-      "id": "c",
-      "name": "Chaparde",
+      "name": "Arnak",
       "gender": "m",
       "role": "suspect",
       "icon": "👺",
       "desc": "Gobelin, trésorier du royaume (non déclaré)",
       "archetype": "gobelin"
+    },
+    {
+      "id": "b",
+      "name": "Braisier",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragon adulte, toujours lové dans un coin",
+      "archetype": "dragon",
+      "shape": "I2"
+    },
+    {
+      "id": "c",
+      "name": "Clinquant",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🎩",
+      "desc": "Bonimenteur, vend du rêve au kilo",
+      "archetype": "bonimenteur"
     },
     {
       "id": "d",
@@ -216,12 +206,12 @@
     },
     {
       "id": "e",
-      "name": "Esbroufe",
-      "gender": "m",
+      "name": "Écarlate",
+      "gender": "f",
       "role": "suspect",
-      "icon": "🎩",
-      "desc": "Bonimenteur, vend du rêve au kilo",
-      "archetype": "bonimenteur"
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
     },
     {
       "id": "f",
@@ -235,113 +225,99 @@
   ],
   "decor": "palais",
   "id": "palais--roi--dragon--cache",
-  "hiddenShapes": true,
-  "hiddenMax": 3,
   "intro": "Le roi Ferdinand a été retrouvé sans vie au Palais des Mille Vœux, sous un tapis volant qui ne volait plus. Cinq invités avaient fait un vœu ce soir-là. Un seul était avec lui.",
-  "epilogue": "Destinée l'avait lu dans les cartes : Ferdinand allait vider le trésor. Elle a préféré prendre les devants.",
+  "epilogue": "Clinquant avoue d'une voix de stentor : Ferdinand vendait de fausses lampes magiques au bazar. C'était SON commerce.",
   "clues": [
     {
       "who": "a",
-      "text": "Ardent était à côté d'un tonneau.",
+      "text": "Arnak était à côté d'un coffre.",
       "logic": {
         "type": "adjacentTo",
-        "object": "tonneau"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était dans la même colonne qu'un tapis.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "tapis"
+        "object": "coffre"
       }
     },
     {
       "who": "b",
-      "text": "Belladone était à côté d'une boule de cristal.",
+      "text": "Braisier était à côté d'un champignon géant.",
       "logic": {
         "type": "adjacentTo",
-        "object": "cristal"
+        "object": "champi"
       }
     },
     {
       "who": "c",
-      "text": "Chaparde était dans la même colonne qu'une statue.",
+      "text": "Clinquant était sur la même ligne qu'une boule de cristal.",
       "logic": {
-        "type": "sameColAs",
-        "object": "statue"
+        "type": "sameRowAs",
+        "object": "cristal"
       }
     },
     {
       "who": "d",
-      "text": "Destinée était à côté d'un fauteuil.",
+      "text": "Destinée était sur la même ligne qu'un tapis.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "fauteuil"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Esbroufe était dans la même colonne qu'un tapis.",
-      "logic": {
-        "type": "sameColAs",
+        "type": "sameRowAs",
         "object": "tapis"
       }
     },
     {
-      "who": "e",
-      "text": "Il était dans le hammam.",
+      "who": "d",
+      "text": "Elle était à côté d'un coffre.",
       "logic": {
-        "type": "inRoom",
-        "room": "H"
+        "type": "adjacentTo",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Écarlate était dans la même colonne qu'un champignon géant.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "champi"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        0,
-        3
+        3,
+        0
       ],
-      "a": [
+      "b": [
         [
-          3,
-          5
+          4,
+          3
         ],
         [
           4,
-          5
-        ],
-        [
-          4,
-          6
+          4
         ]
       ],
       "d": [
-        2,
-        2
-      ],
-      "e": [
-        5,
-        1
+        1,
+        5
       ],
       "c": [
-        6,
-        4
+        0,
+        1
       ],
-      "b": [
-        1,
-        0
+      "a": [
+        5,
+        6
+      ],
+      "e": [
+        6,
+        2
       ]
     },
-    "murderer": "d"
+    "murderer": "c"
   },
   "rating": {
-    "skulls": 2,
-    "score": 4,
-    "hardest": "seul candidat",
+    "skulls": 3,
+    "score": 6,
+    "hardest": "pièces",
     "hardSteps": 2,
-    "directStart": 1
+    "directStart": 0
   },
-  "difficulty": 5
+  "difficulty": 4
 }

@@ -1,0 +1,168 @@
+{
+ "positions": {
+  "l": [
+   10,
+   8
+  ],
+  "d": [
+   9,
+   2
+  ],
+  "b": [
+   3,
+   1
+  ],
+  "j": [
+   1,
+   5
+  ],
+  "a": [
+   4,
+   9
+  ],
+  "k": [
+   7,
+   10
+  ],
+  "g": [
+   8,
+   4
+  ],
+  "h": [
+   5,
+   7
+  ],
+  "e": [
+   2,
+   11
+  ],
+  "f": [
+   11,
+   6
+  ],
+  "i": [
+   6,
+   3
+  ],
+  "c": [
+   0,
+   0
+  ]
+ },
+ "murderer": "f",
+ "cast": {
+  "d": "a",
+  "b": "b",
+  "j": "c",
+  "a": "d",
+  "k": "e",
+  "g": "f",
+  "h": "g",
+  "e": "h",
+  "f": "i",
+  "i": "j",
+  "c": "k"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "southOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "k",
+   "logic": {
+    "type": "northOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "hamac"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "onObject",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "canon"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "table"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chariot"
+   }
+  },
+  {
+   "who": "j",
+   "logic": {
+    "type": "northOf",
+    "other": "e"
+   }
+  }
+ ]
+}

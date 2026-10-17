@@ -2,14 +2,9 @@
   "formatVersion": 1,
   "title": "Le Château de Mortebrune",
   "intro": "Le roi Godefroy a été retrouvé sans vie au petit matin, dans son propre château. Ses invités jurent tous qu'ils dormaient. L'un d'eux ment : il était seul avec lui.",
-  "epilogue": "Albâtre hantait ces murs quatre siècles avant que Godefroy ne s'y installe sans demander. Il n'a jamais digéré l'expropriation. Le fantôme avoue tout, puis traverse le mur pour éviter le procès.",
+  "epilogue": "Flammèche hantait ces murs quatre siècles avant que Godefroy ne s'y installe sans demander. Il n'a jamais digéré l'expropriation. Le fantôme avoue tout, puis traverse le mur pour éviter le procès.",
   "size": 7,
   "rooms": {
-    "C": {
-      "name": "Chapelle",
-      "the": "la chapelle",
-      "floor": "dalles"
-    },
     "G": {
       "name": "Grande salle",
       "the": "la grande salle",
@@ -42,8 +37,8 @@
     }
   },
   "layout": [
-    "CCGGGKK",
-    "CCGGGKK",
+    "AAGGGKK",
+    "AAGGGKK",
     "AAGGGKT",
     "AAJJJTT",
     "AAJJJTT",
@@ -181,7 +176,16 @@
   "characters": [
     {
       "id": "a",
-      "name": "Albâtre",
+      "name": "Arnak",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "b",
+      "name": "Blafard",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -192,22 +196,13 @@
       ]
     },
     {
-      "id": "b",
-      "name": "Braise",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🐉",
-      "desc": "Dragonnet, brûle tout ce qu'il touche",
-      "archetype": "dragonnet"
-    },
-    {
       "id": "c",
-      "name": "Clodomir",
+      "name": "Couac",
       "gender": "m",
       "role": "suspect",
-      "icon": "🤺",
-      "desc": "Chevalier, armure trop petite depuis Noël",
-      "archetype": "chevalier"
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
     },
     {
       "id": "d",
@@ -220,21 +215,21 @@
     },
     {
       "id": "e",
-      "name": "Écho",
+      "name": "Enguerrand",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧑‍🎤",
-      "desc": "Barde, chante faux",
-      "archetype": "barde"
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
     },
     {
       "id": "f",
-      "name": "Filou",
+      "name": "Flammèche",
       "gender": "m",
       "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
     },
     {
       "id": "g",
@@ -251,58 +246,58 @@
   "clues": [
     {
       "who": "a",
-      "text": "Albâtre hantait une étagère.",
-      "logic": {
-        "type": "onObject",
-        "object": "etagere"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Braise était à l'ouest de Clodomir.",
-      "logic": {
-        "type": "westOf",
-        "other": "c"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Clodomir était dans la même colonne qu'une statue.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "statue"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Il était sur la même ligne qu'un arbre.",
+      "text": "Arnak était sur la même ligne qu'un arbre.",
       "logic": {
         "type": "sameRowAs",
         "object": "arbre"
       }
     },
     {
-      "who": "d",
-      "text": "Daëlin était sur la même ligne qu'une boule de cristal.",
+      "who": "b",
+      "text": "Blafard hantait un arbre.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "cristal"
+        "type": "onObject",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Couac était dans la même colonne qu'un coffre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Daëlin était au sud d'Arnak.",
+      "logic": {
+        "type": "southOf",
+        "other": "a"
       }
     },
     {
       "who": "e",
-      "text": "Écho était sur la même ligne qu'un champignon géant.",
+      "text": "Enguerrand était dans la même colonne qu'un tonneau.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "champi"
+        "type": "sameColAs",
+        "object": "tonneau"
       }
     },
     {
       "who": "f",
-      "text": "Filou était à l'est d'Écho.",
+      "text": "Flammèche était au nord d'Enguerrand.",
       "logic": {
-        "type": "eastOf",
+        "type": "northOf",
         "other": "e"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Il était dans la même colonne qu'un champignon géant.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "champi"
       }
     }
   ],
@@ -310,41 +305,41 @@
     "positions": {
       "g": [
         2,
-        6
-      ],
-      "c": [
-        3,
-        1
-      ],
-      "f": [
-        0,
         4
       ],
       "e": [
-        4,
-        3
-      ],
-      "d": [
-        6,
-        2
-      ],
-      "a": [
-        5,
+        1,
         5
       ],
-      "b": [
-        1,
+      "a": [
+        3,
+        1
+      ],
+      "c": [
+        6,
         0
+      ],
+      "d": [
+        4,
+        6
+      ],
+      "b": [
+        5,
+        3
+      ],
+      "f": [
+        0,
+        2
       ]
     },
-    "murderer": "a"
+    "murderer": "f"
   },
   "rating": {
     "skulls": 2,
-    "score": 3,
-    "hardest": "pièces",
-    "hardSteps": 1,
-    "directStart": 1
+    "score": 4,
+    "hardest": "ligne réservée",
+    "hardSteps": 0,
+    "directStart": 0
   },
   "difficulty": 2
 }

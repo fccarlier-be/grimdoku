@@ -142,12 +142,12 @@
     },
     {
       "id": "b",
-      "name": "Bouillon",
+      "name": "Brann",
       "gender": "m",
       "role": "suspect",
-      "icon": "👨‍🍳",
-      "desc": "Chef gobelin, goûte tout, surtout ce qui bouge encore",
-      "archetype": "chef"
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
     },
     {
       "id": "c",
@@ -169,12 +169,12 @@
     },
     {
       "id": "e",
-      "name": "Écho",
+      "name": "Épice",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧑‍🎤",
-      "desc": "Barde, chante faux",
-      "archetype": "barde"
+      "icon": "👨‍🍳",
+      "desc": "Chef gobelin, goûte tout, surtout ce qui bouge encore",
+      "archetype": "chef"
     },
     {
       "id": "f",
@@ -189,92 +189,92 @@
   "decor": "banquet",
   "id": "banquet--ogre",
   "intro": "L'ogre Festin a été retrouvé sans vie au beau milieu du Banquet des Gobelins, la serviette encore autour du cou. Cinq convives s'empiffraient. Un seul était avec lui.",
-  "epilogue": "Écho avoue : Festin avait parlé pendant sa ballade. Toute la ballade.",
+  "epilogue": "Chaparde avoue : Festin avait réclamé l'addition du banquet. Personne ne réclame l'addition à un gobelin.",
   "clues": [
     {
       "who": "a",
-      "text": "Amandin était dans la même colonne qu'un tapis.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "tapis"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était à côté d'un tonneau.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "tonneau"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Bouillon était dans la cuisine.",
-      "logic": {
-        "type": "inRoom",
-        "room": "K"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Chaparde était à côté d'un champignon géant.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "champi"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Dentdur était à côté d'un coffre.",
+      "text": "Amandin était à côté d'un coffre.",
       "logic": {
         "type": "adjacentTo",
         "object": "coffre"
       }
     },
     {
-      "who": "e",
-      "text": "Écho était assis sur une chaise.",
+      "who": "a",
+      "text": "Il était à l'est de Dentdur.",
       "logic": {
-        "type": "onObject",
+        "type": "eastOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Brann était à côté d'un champignon géant.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Chaparde était à côté d'une chaise.",
+      "logic": {
+        "type": "adjacentTo",
         "object": "chaise"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dentdur était au nord de Chaparde.",
+      "logic": {
+        "type": "northOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Épice était au nord de Brann.",
+      "logic": {
+        "type": "northOf",
+        "other": "b"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
+        3,
+        5
+      ],
+      "c": [
         4,
         3
       ],
-      "c": [
+      "d": [
+        0,
+        0
+      ],
+      "b": [
         5,
         2
       ],
-      "d": [
-        3,
-        0
+      "a": [
+        2,
+        1
       ],
       "e": [
-        2,
-        4
-      ],
-      "a": [
-        0,
-        5
-      ],
-      "b": [
         1,
-        1
+        4
       ]
     },
-    "murderer": "e"
+    "murderer": "c"
   },
   "rating": {
-    "skulls": 0,
-    "score": 1,
-    "hardest": "case unique",
-    "hardSteps": 0,
-    "directStart": 1
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 0
   },
-  "difficulty": 0
+  "difficulty": 3
 }

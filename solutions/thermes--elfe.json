@@ -1,81 +1,81 @@
 {
  "positions": {
   "f": [
-   1,
+   2,
    4
   ],
   "c": [
-   5,
-   0
+   1,
+   2
   ],
   "e": [
    3,
-   5
-  ],
-  "a": [
-   2,
-   2
-  ],
-  "b": [
-   4,
-   3
+   0
   ],
   "d": [
    0,
    1
+  ],
+  "a": [
+   4,
+   5
+  ],
+  "b": [
+   5,
+   3
   ]
  },
  "murderer": "a",
  "cast": {
   "c": "a",
   "e": "b",
-  "a": "c",
-  "b": "d",
-  "d": "e"
+  "d": "c",
+  "a": "d",
+  "b": "e"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "c",
-   "logic": {
-    "type": "westOf",
-    "other": "b"
-   }
-  },
-  {
    "who": "e",
    "logic": {
-    "type": "adjacentTo",
-    "object": "statue"
+    "type": "sameRowAs",
+    "object": "chaise"
    }
   },
   {
    "who": "d",
    "logic": {
-    "type": "adjacentTo",
-    "object": "chaise"
+    "type": "northOf",
+    "other": "c"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "onObject",
+    "type": "sameColAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "southOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
     "object": "tapis"
    }
   },
   {
    "who": "b",
    "logic": {
-    "type": "onObject",
+    "type": "adjacentTo",
     "object": "lit"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "table"
    }
   }
  ]

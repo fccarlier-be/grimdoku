@@ -23,11 +23,6 @@
       "the": "la fonderie",
       "floor": "dalles"
     },
-    "C": {
-      "name": "Réserve de charbon",
-      "the": "la réserve de charbon",
-      "floor": "roche"
-    },
     "T": {
       "name": "Atelier",
       "the": "l'atelier",
@@ -43,9 +38,9 @@
     "DDDFFFA",
     "DDFFFAA",
     "DDOOFAA",
-    "CCOOTTA",
-    "CCOOTTT",
-    "CYYYTTT",
+    "OOOOTTA",
+    "OOOOTTT",
+    "OYYYTTT",
     "YYYYYTT"
   ],
   "objects": [
@@ -165,34 +160,16 @@
   "characters": [
     {
       "id": "a",
-      "name": "Arnak",
+      "name": "Agrifol",
       "gender": "m",
       "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
+      "icon": "⛏️",
+      "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
+      "archetype": "mineur"
     },
     {
       "id": "b",
-      "name": "Bedaine",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👹",
-      "desc": "Ogre, végétarien depuis mardi",
-      "archetype": "ogre"
-    },
-    {
-      "id": "c",
-      "name": "Croquassiette",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧌",
-      "desc": "Troll, plongeur à mi-temps",
-      "archetype": "troll"
-    },
-    {
-      "id": "d",
-      "name": "Dardafeu",
+      "name": "Braise",
       "gender": "m",
       "role": "suspect",
       "icon": "🐉",
@@ -200,13 +177,31 @@
       "archetype": "dragonnet"
     },
     {
-      "id": "e",
-      "name": "Étai",
+      "id": "c",
+      "name": "Croc",
       "gender": "m",
       "role": "suspect",
-      "icon": "⛏️",
-      "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
-      "archetype": "mineur"
+      "icon": "👹",
+      "desc": "Ogre, végétarien depuis mardi",
+      "archetype": "ogre"
+    },
+    {
+      "id": "d",
+      "name": "Dentdur",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    },
+    {
+      "id": "e",
+      "name": "Escroquin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
     },
     {
       "id": "f",
@@ -230,69 +225,69 @@
   "decor": "forge",
   "id": "forge--chevalier",
   "intro": "Le chevalier Gontran a été retrouvé sans vie à la Forge du Dragon, encore tiède. Six artisans et clients s'y pressaient cette nuit-là. Un seul était avec lui.",
-  "epilogue": "Étai avoue : Gontran avait fondu sa plus belle pépite pour en faire une cuillère.",
+  "epilogue": "Dentdur avoue : Gontran se servait de sa tête comme enclume de secours.",
   "clues": [
     {
       "who": "a",
-      "text": "Arnak était au sud de Croquassiette.",
+      "text": "Agrifol était sur la même ligne qu'une enclume.",
       "logic": {
-        "type": "southOf",
-        "other": "c"
+        "type": "sameRowAs",
+        "object": "enclume"
       }
     },
     {
       "who": "a",
-      "text": "Il était assis sur une chaise.",
+      "text": "Il était dans l'atelier.",
       "logic": {
-        "type": "onObject",
+        "type": "inRoom",
+        "room": "T"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Braise était sur la même ligne qu'une chaise.",
+      "logic": {
+        "type": "sameRowAs",
         "object": "chaise"
       }
     },
     {
       "who": "b",
-      "text": "Bedaine était à côté d'une statue.",
+      "text": "Il était dans la même colonne qu'un coffre.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "statue"
+        "type": "sameColAs",
+        "object": "coffre"
       }
     },
     {
       "who": "c",
-      "text": "Croquassiette n'était pas dans la fonderie.",
+      "text": "Croc était sur la même ligne qu'un tonneau.",
       "logic": {
-        "type": "notInRoom",
-        "room": "O"
+        "type": "sameRowAs",
+        "object": "tonneau"
       }
     },
     {
       "who": "d",
-      "text": "Dardafeu était au nord de Croquassiette.",
+      "text": "Dentdur était sur la même ligne qu'un coffre.",
       "logic": {
-        "type": "northOf",
-        "other": "c"
+        "type": "sameRowAs",
+        "object": "coffre"
       }
     },
     {
       "who": "e",
-      "text": "Étai était sur la même ligne qu'une enclume.",
+      "text": "Escroquin était dans la même colonne qu'une chaise.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "enclume"
+        "type": "sameColAs",
+        "object": "chaise"
       }
     },
     {
       "who": "f",
-      "text": "Faribole était sur la même ligne qu'une enclume.",
+      "text": "Faribole était au sud de Croc.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "enclume"
-      }
-    },
-    {
-      "who": "f",
-      "text": "Il était au nord de Croquassiette.",
-      "logic": {
-        "type": "northOf",
+        "type": "southOf",
         "other": "c"
       }
     }
@@ -300,42 +295,42 @@
   "solution": {
     "positions": {
       "g": [
-        6,
+        1,
         2
       ],
-      "e": [
-        5,
-        3
-      ],
       "a": [
-        4,
-        4
-      ],
-      "c": [
-        3,
-        1
-      ],
-      "b": [
-        1,
-        6
-      ],
-      "f": [
-        0,
+        5,
         5
       ],
+      "e": [
+        6,
+        4
+      ],
       "d": [
+        0,
+        3
+      ],
+      "c": [
         2,
+        1
+      ],
+      "f": [
+        3,
+        6
+      ],
+      "b": [
+        4,
         0
       ]
     },
-    "murderer": "e"
+    "murderer": "d"
   },
   "rating": {
-    "skulls": 2,
-    "score": 4,
-    "hardest": "seul candidat",
-    "hardSteps": 2,
-    "directStart": 2
+    "skulls": 3,
+    "score": 8,
+    "hardest": "pièces",
+    "hardSteps": 4,
+    "directStart": 0
   },
-  "difficulty": 2
+  "difficulty": 3
 }

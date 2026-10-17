@@ -1,67 +1,46 @@
 {
  "positions": {
   "g": [
-   6,
-   5
-  ],
-  "f": [
-   2,
-   0
-  ],
-  "a": [
-   1,
-   6
-  ],
-  "c": [
    5,
    4
   ],
-  "b": [
+  "e": [
+   2,
+   0
+  ],
+  "c": [
+   1,
+   6
+  ],
+  "f": [
+   6,
+   2
+  ],
+  "a": [
+   4,
+   5
+  ],
+  "d": [
    3,
    1
   ],
-  "d": [
-   4,
-   2
-  ],
-  "e": [
+  "b": [
    0,
    3
   ]
  },
- "murderer": "c",
+ "murderer": "a",
  "cast": {
-  "f": "a",
-  "a": "b",
-  "c": "c",
-  "b": "d",
+  "e": "a",
+  "c": "b",
+  "f": "c",
+  "a": "d",
   "d": "e",
-  "e": "f"
+  "b": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
-  {
-   "who": "f",
-   "logic": {
-    "type": "northOf",
-    "other": "b"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "southOf",
-    "other": "b"
-   }
-  },
-  {
-   "who": "d",
-   "logic": {
-    "type": "westOf",
-    "other": "c"
-   }
-  },
   {
    "who": "e",
    "logic": {
@@ -70,38 +49,45 @@
    }
   },
   {
-   "who": "d",
+   "who": "c",
    "logic": {
-    "type": "sameRowAs",
-    "object": "chaise"
+    "type": "adjacentTo",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "southOf",
+    "other": "e"
    }
   },
   {
    "who": "a",
    "logic": {
     "type": "adjacentTo",
-    "object": "statue"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "chaise"
+    "object": "table"
    }
   },
   {
    "who": "b",
    "logic": {
-    "type": "westOf",
-    "other": "d"
+    "type": "sameRowAs",
+    "object": "statue"
    }
   },
   {
-   "who": "e",
+   "who": "d",
    "logic": {
-    "type": "westOf",
-    "other": "c"
+    "type": "sameRowAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chariot"
    }
   }
  ]

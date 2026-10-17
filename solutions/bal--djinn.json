@@ -1,133 +1,112 @@
 {
  "positions": {
   "h": [
-   0,
-   5
-  ],
-  "a": [
-   1,
-   0
-  ],
-  "b": [
    3,
-   1
-  ],
-  "g": [
-   2,
-   6
-  ],
-  "d": [
-   7,
-   2
-  ],
-  "e": [
-   6,
-   4
-  ],
-  "f": [
-   4,
    3
   ],
-  "c": [
+  "d": [
+   0,
+   0
+  ],
+  "a": [
    5,
+   5
+  ],
+  "e": [
+   1,
+   4
+  ],
+  "c": [
+   6,
+   6
+  ],
+  "f": [
+   2,
    7
+  ],
+  "g": [
+   4,
+   1
+  ],
+  "b": [
+   7,
+   2
   ]
  },
- "murderer": "f",
+ "murderer": "e",
  "cast": {
-  "a": "a",
-  "b": "b",
-  "g": "c",
-  "d": "d",
-  "e": "e",
-  "f": "f",
-  "c": "g"
+  "d": "a",
+  "a": "b",
+  "e": "c",
+  "c": "d",
+  "f": "e",
+  "g": "f",
+  "b": "g"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "b",
+   "who": "a",
    "logic": {
-    "type": "inRoom",
-    "room": "V"
+    "type": "northOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "champi"
    }
   },
   {
    "who": "g",
    "logic": {
-    "type": "sameColAs",
-    "object": "table"
-   }
-  },
-  {
-   "who": "d",
-   "logic": {
-    "type": "westOf",
-    "other": "e"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
     "type": "southOf",
-    "other": "f"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "sameColAs",
-    "object": "tonneau"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "champi"
-   }
-  },
-  {
-   "who": "f",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "table"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "sameColAs",
-    "object": "statue"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "northOf",
     "other": "d"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "adjacentTo",
-    "object": "fauteuil"
+    "type": "inRoom",
+    "room": "J"
    }
   },
   {
-   "who": "b",
+   "who": "a",
    "logic": {
-    "type": "onObject",
-    "object": "chaise"
+    "type": "sameColAs",
+    "object": "arbre"
    }
   },
   {
    "who": "d",
    "logic": {
     "type": "onObject",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "onObject",
     "object": "fauteuil"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "onObject",
+    "object": "tapis"
    }
   }
  ]

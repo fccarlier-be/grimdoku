@@ -3,11 +3,6 @@
   "title": "L'Académie de Magie — l'affaire Génia",
   "size": 7,
   "rooms": {
-    "A": {
-      "name": "Tour d'astronomie",
-      "the": "la tour d'astronomie",
-      "floor": "parquet"
-    },
     "X": {
       "name": "Salle de cours",
       "the": "la salle de cours",
@@ -40,8 +35,8 @@
     }
   },
   "layout": [
-    "AAXXXBB",
-    "AAXXXBB",
+    "DDXXXBB",
+    "DDXXXBB",
     "DDXXXLL",
     "DDRRRLL",
     "DDRRRLL",
@@ -179,25 +174,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Alchimius",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👨‍🏫",
-      "desc": "Professeur de potions, note à l'odeur",
-      "archetype": "professeur"
-    },
-    {
-      "id": "b",
-      "name": "Braise",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🐉",
-      "desc": "Dragonnet, brûle tout ce qu'il touche",
-      "archetype": "dragonnet"
-    },
-    {
-      "id": "c",
-      "name": "Cannelle",
+      "name": "Aube",
       "gender": "f",
       "role": "suspect",
       "icon": "🧙‍♀️",
@@ -205,17 +182,17 @@
       "archetype": "apprentie"
     },
     {
-      "id": "d",
-      "name": "Digitale",
+      "id": "b",
+      "name": "Bérénwë",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧚",
-      "desc": "Fée, doit trois tournées",
-      "archetype": "fee"
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
     },
     {
-      "id": "e",
-      "name": "Eustache",
+      "id": "c",
+      "name": "Cornélius",
       "gender": "m",
       "role": "suspect",
       "icon": "🧙‍♂️",
@@ -223,13 +200,31 @@
       "archetype": "mage"
     },
     {
+      "id": "d",
+      "name": "Dardafeu",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
+      "id": "e",
+      "name": "Éprouvette",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🏫",
+      "desc": "Professeur de potions, note à l'odeur",
+      "archetype": "professeur"
+    },
+    {
       "id": "f",
-      "name": "Faëlys",
+      "name": "Fougère",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧝‍♀️",
-      "desc": "Elfe, critique gastronomique",
-      "archetype": "elfe"
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
     },
     {
       "id": "g",
@@ -244,19 +239,19 @@
   "decor": "academie",
   "id": "academie--djinn",
   "intro": "La djinn Génia a été retrouvée sans vie un soir d'examens à l'Académie de Magie. Six élèves et professeurs révisaient encore. Un seul était avec elle.",
-  "epilogue": "Faëlys avoue avec dédain : Génia avait servi au réfectoire un ragoût qui méritait zéro étoile. Elle a tenu à le lui faire savoir.",
+  "epilogue": "Éprouvette avoue en reniflant une fiole : Génia avait triché à l'examen de potions. Ça ne pardonne pas.",
   "clues": [
     {
       "who": "a",
-      "text": "Alchimius était à l'ouest de Faëlys.",
+      "text": "Aube était au nord de Bérénwë.",
       "logic": {
-        "type": "westOf",
-        "other": "f"
+        "type": "northOf",
+        "other": "b"
       }
     },
     {
       "who": "a",
-      "text": "Il était allongé sur un lit.",
+      "text": "Elle était allongée sur un lit.",
       "logic": {
         "type": "onObject",
         "object": "lit"
@@ -264,39 +259,31 @@
     },
     {
       "who": "b",
-      "text": "Braise était à l'est d'Alchimius.",
+      "text": "Bérénwë était dans la même colonne qu'un coffre.",
       "logic": {
-        "type": "eastOf",
-        "other": "a"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était à côté d'un arbre.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "arbre"
+        "type": "sameColAs",
+        "object": "coffre"
       }
     },
     {
       "who": "c",
-      "text": "Cannelle était dans la même colonne qu'un fauteuil.",
+      "text": "Cornélius était sur la même ligne qu'une étagère.",
       "logic": {
-        "type": "sameColAs",
-        "object": "fauteuil"
+        "type": "sameRowAs",
+        "object": "etagere"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était au nord d'Aube.",
+      "logic": {
+        "type": "northOf",
+        "other": "a"
       }
     },
     {
       "who": "d",
-      "text": "Digitale était dans la même colonne qu'un champignon géant.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "champi"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Elle était au nord de Cannelle.",
+      "text": "Dardafeu était au nord de Cornélius.",
       "logic": {
         "type": "northOf",
         "other": "c"
@@ -304,59 +291,75 @@
     },
     {
       "who": "e",
-      "text": "Eustache était au sud de Faëlys.",
+      "text": "Éprouvette était sur la même ligne qu'une boule de cristal.",
       "logic": {
-        "type": "southOf",
+        "type": "sameRowAs",
+        "object": "cristal"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était à l'est de Fougère.",
+      "logic": {
+        "type": "eastOf",
         "other": "f"
       }
     },
     {
       "who": "f",
-      "text": "Faëlys était sur la même ligne qu'une chaise.",
+      "text": "Fougère était à l'ouest de Dardafeu.",
+      "logic": {
+        "type": "westOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Elle était sur la même ligne qu'un champignon géant.",
       "logic": {
         "type": "sameRowAs",
-        "object": "chaise"
+        "object": "champi"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        3,
-        4
+        2,
+        2
+      ],
+      "a": [
+        4,
+        0
       ],
       "c": [
+        3,
+        6
+      ],
+      "f": [
+        5,
+        3
+      ],
+      "d": [
         1,
         5
       ],
-      "e": [
-        5,
-        6
-      ],
-      "d": [
-        0,
-        1
-      ],
       "b": [
         6,
-        2
+        1
       ],
-      "f": [
-        4,
-        3
-      ],
-      "a": [
-        2,
-        0
+      "e": [
+        0,
+        4
       ]
     },
-    "murderer": "f"
+    "murderer": "e"
   },
   "rating": {
     "skulls": 3,
-    "score": 5,
+    "score": 6,
     "hardest": "pièces",
-    "hardSteps": 1,
+    "hardSteps": 2,
     "directStart": 0
   },
   "difficulty": 3

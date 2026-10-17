@@ -1,81 +1,81 @@
 {
  "positions": {
   "f": [
-   5,
-   3
-  ],
-  "b": [
-   3,
-   2
-  ],
-  "a": [
    4,
-   1
-  ],
-  "d": [
-   0,
-   5
-  ],
-  "c": [
-   1,
-   0
+   2
   ],
   "e": [
    2,
    4
+  ],
+  "a": [
+   1,
+   0
+  ],
+  "b": [
+   0,
+   5
+  ],
+  "c": [
+   3,
+   1
+  ],
+  "d": [
+   5,
+   3
   ]
  },
- "murderer": "b",
+ "murderer": "d",
  "cast": {
-  "b": "a",
+  "e": "a",
   "a": "b",
-  "d": "c",
+  "b": "c",
   "c": "d",
-  "e": "e"
+  "d": "e"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "a",
-   "logic": {
-    "type": "sameColAs",
-    "object": "table"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "inRoom",
-    "room": "V"
-   }
-  },
-  {
-   "who": "a",
+   "who": "e",
    "logic": {
     "type": "sameRowAs",
-    "object": "roseaux"
+    "object": "statue"
    }
   },
   {
    "who": "b",
-   "logic": {
-    "type": "onObject",
-    "object": "lit"
-   }
-  },
-  {
-   "who": "d",
    "logic": {
     "type": "adjacentTo",
     "object": "fauteuil"
    }
   },
   {
-   "who": "e",
+   "who": "c",
+   "logic": {
+    "type": "onObject",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "inRoom",
+    "room": "V"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "d",
    "logic": {
     "type": "adjacentTo",
-    "object": "statue"
+    "object": "lit"
    }
   }
  ]

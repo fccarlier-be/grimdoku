@@ -13,11 +13,6 @@
       "the": "les rayonnages",
       "floor": "parquet"
     },
-    "B": {
-      "name": "Bureau",
-      "the": "le bureau",
-      "floor": "parquet"
-    },
     "L": {
       "name": "Salle de lecture",
       "the": "la salle de lecture",
@@ -42,8 +37,8 @@
   "layout": [
     "SSSYYYY",
     "SSSYYYY",
-    "BBLLLGG",
-    "BBLLLGG",
+    "SSLLLGG",
+    "SSLLLGG",
     "RRLLLGG",
     "RRRAAAA",
     "RRRAAAA"
@@ -173,16 +168,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Argentbarbe",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧙‍♂️",
-      "desc": "Archimage, 412 ans, toujours pas de testament",
-      "archetype": "archimage"
-    },
-    {
-      "id": "b",
-      "name": "Bricolin",
+      "name": "Azimut",
       "gender": "m",
       "role": "suspect",
       "icon": "🧙‍♂️",
@@ -190,8 +176,26 @@
       "archetype": "mage"
     },
     {
+      "id": "b",
+      "name": "Bérénice",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "👩‍🏫",
+      "desc": "Bibliothécaire, réclame le silence en hurlant",
+      "archetype": "bibliothecaire"
+    },
+    {
       "id": "c",
-      "name": "Chaînon",
+      "name": "Cendrebarbe",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Archimage, 412 ans, toujours pas de testament",
+      "archetype": "archimage"
+    },
+    {
+      "id": "d",
+      "name": "Diaphane",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -202,8 +206,8 @@
       ]
     },
     {
-      "id": "d",
-      "name": "Dîme",
+      "id": "e",
+      "name": "Escroquin",
       "gender": "m",
       "role": "suspect",
       "icon": "👺",
@@ -211,22 +215,13 @@
       "archetype": "gobelin"
     },
     {
-      "id": "e",
-      "name": "Écarlate",
+      "id": "f",
+      "name": "Funestine",
       "gender": "f",
       "role": "suspect",
       "icon": "🧛‍♀️",
       "desc": "Comtesse vampire, végane (elle le jure)",
       "archetype": "vampire"
-    },
-    {
-      "id": "f",
-      "name": "Folio",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "👩‍🏫",
-      "desc": "Bibliothécaire, réclame le silence en hurlant",
-      "archetype": "bibliothecaire"
     },
     {
       "id": "g",
@@ -240,120 +235,112 @@
   ],
   "decor": "bibliotheque",
   "id": "bibliotheque--djinn",
-  "epilogue": "Bricolin avoue en éternuant : Génia avait caché son grimoire de recettes de bière au rayon « Interdit aux mages ».",
+  "epilogue": "Cendrebarbe avoue : Génia avait rangé ses mémoires au rayon « Fiction ». Quatre cent douze ans de vérité, et on ose douter.",
   "clues": [
     {
       "who": "a",
-      "text": "Argentbarbe était dans les rayonnages.",
+      "text": "Azimut était assis sur une chaise.",
       "logic": {
-        "type": "inRoom",
-        "room": "Y"
+        "type": "onObject",
+        "object": "chaise"
       }
     },
     {
       "who": "a",
-      "text": "Il était dans la même colonne qu'une statue.",
+      "text": "Il était au nord de Bérénice.",
       "logic": {
-        "type": "sameColAs",
-        "object": "statue"
+        "type": "northOf",
+        "other": "b"
       }
     },
     {
       "who": "b",
-      "text": "Bricolin était à côté d'une chaise.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Chaînon était au sud de Bricolin.",
-      "logic": {
-        "type": "southOf",
-        "other": "b"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Il était sur la même ligne qu'une chaise.",
+      "text": "Bérénice était sur la même ligne qu'une table.",
       "logic": {
         "type": "sameRowAs",
-        "object": "chaise"
+        "object": "table"
       }
     },
     {
-      "who": "d",
-      "text": "Dîme était dans la même colonne qu'une boule de cristal.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "cristal"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Il était à l'ouest de Bricolin.",
+      "who": "c",
+      "text": "Cendrebarbe était à l'ouest d'Escroquin.",
       "logic": {
         "type": "westOf",
-        "other": "b"
+        "other": "e"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était sur la même ligne qu'un coffre.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Diaphane était dans la même colonne qu'une table.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "table"
       }
     },
     {
       "who": "e",
-      "text": "Écarlate était à côté d'un tonneau.",
+      "text": "Escroquin était à l'ouest de Bérénice.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "tonneau"
+        "type": "westOf",
+        "other": "b"
       }
     },
     {
       "who": "f",
-      "text": "Folio était à l'ouest d'Argentbarbe.",
+      "text": "Funestine était sur la même ligne qu'une boule de cristal.",
       "logic": {
-        "type": "westOf",
-        "other": "a"
+        "type": "sameRowAs",
+        "object": "cristal"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        3,
-        2
+        4,
+        1
       ],
-      "b": [
+      "a": [
         2,
+        3
+      ],
+      "d": [
+        0,
+        0
+      ],
+      "f": [
+        6,
+        6
+      ],
+      "e": [
+        1,
         4
       ],
       "c": [
-        4,
-        5
-      ],
-      "e": [
-        6,
-        1
-      ],
-      "d": [
         5,
-        3
+        2
       ],
-      "a": [
-        1,
-        6
-      ],
-      "f": [
-        0,
-        0
+      "b": [
+        3,
+        5
       ]
     },
-    "murderer": "b"
+    "murderer": "c"
   },
   "rating": {
-    "skulls": 2,
-    "score": 3,
-    "hardest": "pièces",
-    "hardSteps": 1,
-    "directStart": 1
+    "skulls": 3,
+    "score": 6,
+    "hardest": "seul candidat",
+    "hardSteps": 2,
+    "directStart": 0
   },
-  "difficulty": 2
+  "difficulty": 3
 }

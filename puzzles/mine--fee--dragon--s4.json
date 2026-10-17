@@ -1,13 +1,8 @@
 {
   "formatVersion": 1,
-  "title": "La Mine des Nains — l'affaire Fougère",
+  "title": "La Mine des Nains — la seconde affaire Glycine",
   "size": 8,
   "rooms": {
-    "E": {
-      "name": "Entrée",
-      "the": "l'entrée",
-      "floor": "roche"
-    },
     "G": {
       "name": "Galerie",
       "the": "la galerie",
@@ -16,11 +11,6 @@
     "F": {
       "name": "Forge",
       "the": "la forge",
-      "floor": "roche"
-    },
-    "P": {
-      "name": "Puits",
-      "the": "le puits",
       "floor": "roche"
     },
     "V": {
@@ -45,11 +35,11 @@
     }
   },
   "layout": [
-    "EEEGGFFF",
-    "EEEGGFFF",
-    "DDGGGPPF",
-    "DDGGGPPV",
-    "DDCCCPVV",
+    "DDDGGFFF",
+    "DDDGGFFF",
+    "DDGGGFFF",
+    "DDGGGFFV",
+    "DDCCCFVV",
     "TTCCCVVV",
     "TTCCCVVV",
     "TTTTCVVV"
@@ -175,7 +165,7 @@
       ]
     }
   ],
-  "intro": "La fée Fougère a été retrouvée au fond de la Mine des Nains, aussi froide que le granit. Cinq ouvriers étaient descendus pour l'équipe de nuit. Un seul était avec elle.",
+  "intro": "La fée Glycine a été retrouvée au fond de la Mine des Nains, aussi froide que le granit. Six ouvriers étaient descendus pour l'équipe de nuit. Un seul était avec elle.",
   "characters": [
     {
       "id": "a",
@@ -188,17 +178,26 @@
     },
     {
       "id": "b",
-      "name": "Braisier",
+      "name": "Bertrand",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
+    },
+    {
+      "id": "c",
+      "name": "Cendrebrune",
       "gender": "m",
       "role": "suspect",
       "icon": "🐉",
       "desc": "Dragon adulte, toujours lové dans un coin",
       "archetype": "dragon",
-      "shape": "S4"
+      "shape": "I2"
     },
     {
-      "id": "c",
-      "name": "Croquassiette",
+      "id": "d",
+      "name": "Dentdur",
       "gender": "m",
       "role": "suspect",
       "icon": "🧌",
@@ -206,8 +205,8 @@
       "archetype": "troll"
     },
     {
-      "id": "d",
-      "name": "Dardafeu",
+      "id": "e",
+      "name": "Étincel",
       "gender": "m",
       "role": "suspect",
       "icon": "🐉",
@@ -215,8 +214,8 @@
       "archetype": "dragonnet"
     },
     {
-      "id": "e",
-      "name": "Escroquin",
+      "id": "f",
+      "name": "Filou",
       "gender": "m",
       "role": "suspect",
       "icon": "👺",
@@ -224,8 +223,8 @@
       "archetype": "gobelin"
     },
     {
-      "id": "f",
-      "name": "Fougère",
+      "id": "g",
+      "name": "Glycine",
       "gender": "f",
       "role": "victim",
       "icon": "🧚",
@@ -235,106 +234,110 @@
   ],
   "decor": "mine",
   "id": "mine--fee--dragon--s4",
-  "epilogue": "Agrifol avoue : Fougère lui avait volé sa plus belle pépite. C'était devenu une question de principe.",
+  "epilogue": "Cendrebrune gardait son trésor dans un coin, comme tout dragon qui se respecte. Glycine a eu le tort de compter les pièces à voix haute.",
   "clues": [
     {
       "who": "a",
-      "text": "Agrifol était sur un champignon géant.",
-      "logic": {
-        "type": "onObject",
-        "object": "champi"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Braisier était sur la même ligne qu'un chaudron.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "chaudron"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Croquassiette était sur la même ligne qu'une chaise.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Dardafeu était dans la même colonne qu'une table.",
+      "text": "Agrifol était dans la même colonne qu'une table.",
       "logic": {
         "type": "sameColAs",
         "object": "table"
       }
     },
     {
-      "who": "d",
-      "text": "Il était au sud de Croquassiette.",
+      "who": "b",
+      "text": "Bertrand était à l'ouest de Cendrebrune.",
       "logic": {
-        "type": "southOf",
+        "type": "westOf",
         "other": "c"
       }
     },
     {
-      "who": "e",
-      "text": "Escroquin était au sud de Croquassiette.",
+      "who": "b",
+      "text": "Il était sur la même ligne qu'un coffre.",
       "logic": {
-        "type": "southOf",
-        "other": "c"
+        "type": "sameRowAs",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Cendrebrune était à côté d'une enclume.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "enclume"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dentdur était allongé sur un lit.",
+      "logic": {
+        "type": "onObject",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Étincel était dans la galerie.",
+      "logic": {
+        "type": "inRoom",
+        "room": "G"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Filou était dans la même colonne qu'une statue.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "statue"
       }
     }
   ],
   "solution": {
     "positions": {
-      "f": [
-        3,
+      "g": [
+        0,
         7
       ],
-      "b": [
-        [
-          0,
-          1
-        ],
-        [
-          0,
-          2
-        ],
+      "c": [
         [
           1,
-          0
+          6
         ],
         [
-          1,
-          1
+          2,
+          6
         ]
       ],
       "a": [
-        5,
-        6
+        7,
+        3
       ],
-      "c": [
+      "d": [
         4,
-        5
+        1
       ],
-      "e": [
+      "f": [
         6,
         4
       ],
-      "d": [
-        7,
-        3
+      "e": [
+        3,
+        2
+      ],
+      "b": [
+        5,
+        5
       ]
     },
-    "murderer": "a"
+    "murderer": "c"
   },
   "rating": {
-    "skulls": 2,
-    "score": 3,
+    "skulls": 3,
+    "score": 6,
     "hardest": "pièces",
-    "hardSteps": 1,
-    "directStart": 1
+    "hardSteps": 2,
+    "directStart": 0
   },
   "difficulty": 4
 }

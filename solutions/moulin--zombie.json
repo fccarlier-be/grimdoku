@@ -1,34 +1,34 @@
 {
  "positions": {
   "f": [
-   4,
+   5,
+   1
+  ],
+  "d": [
+   1,
    4
   ],
   "c": [
-   5,
-   2
-  ],
-  "d": [
-   0,
-   1
+   4,
+   3
   ],
   "a": [
+   0,
+   2
+  ],
+  "e": [
    2,
    0
   ],
-  "e": [
-   1,
-   5
-  ],
   "b": [
    3,
-   3
+   5
   ]
  },
- "murderer": "b",
+ "murderer": "c",
  "cast": {
-  "c": "a",
-  "d": "b",
+  "d": "a",
+  "c": "b",
   "a": "c",
   "e": "d",
   "b": "e"
@@ -39,63 +39,49 @@
   {
    "who": "d",
    "logic": {
-    "type": "inRoom",
-    "room": "M"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "arbre"
+    "type": "eastOf",
+    "other": "e"
    }
   },
   {
    "who": "e",
    "logic": {
-    "type": "northOf",
-    "other": "b"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "eastOf",
-    "other": "c"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "sameRowAs",
-    "object": "statue"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
     "type": "westOf",
-    "other": "e"
+    "other": "a"
    }
   },
   {
-   "who": "a",
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "b",
    "logic": {
     "type": "sameRowAs",
-    "object": "tonneau"
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "northOf",
+    "other": "c"
    }
   },
   {
    "who": "c",
    "logic": {
-    "type": "adjacentTo",
+    "type": "sameColAs",
     "object": "tonneau"
    }
   },
   {
-   "who": "e",
+   "who": "a",
    "logic": {
-    "type": "sameColAs",
+    "type": "onObject",
     "object": "chaise"
    }
   }

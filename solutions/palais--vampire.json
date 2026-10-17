@@ -4,97 +4,90 @@
    6,
    2
   ],
-  "a": [
-   1,
+  "c": [
+   4,
    3
   ],
-  "c": [
-   5,
-   0
-  ],
   "f": [
-   4,
-   5
-  ],
-  "e": [
-   3,
+   1,
    4
   ],
-  "d": [
+  "a": [
    2,
    1
   ],
-  "b": [
+  "e": [
    0,
    6
+  ],
+  "b": [
+   3,
+   5
+  ],
+  "d": [
+   5,
+   0
   ]
  },
- "murderer": "c",
+ "murderer": "d",
  "cast": {
-  "a": "a",
-  "c": "b",
-  "f": "c",
+  "c": "a",
+  "f": "b",
+  "a": "c",
   "e": "d",
-  "d": "e",
-  "b": "f"
+  "b": "e",
+  "d": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "c",
+   "who": "e",
    "logic": {
-    "type": "southOf",
-    "other": "f"
+    "type": "adjacentTo",
+    "object": "coffre"
    }
   },
   {
    "who": "d",
    "logic": {
-    "type": "inRoom",
-    "room": "L"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "eastOf",
-    "other": "e"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "northOf",
-    "other": "f"
-   }
-  },
-  {
-   "who": "f",
-   "logic": {
     "type": "sameColAs",
-    "object": "tonneau"
+    "object": "cristal"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "onObject",
-    "object": "tapis"
+    "type": "adjacentTo",
+    "object": "etagere"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tonneau"
    }
   },
   {
    "who": "c",
    "logic": {
     "type": "adjacentTo",
-    "object": "chaise"
+    "object": "champi"
    }
   },
   {
-   "who": "a",
+   "who": "d",
    "logic": {
-    "type": "westOf",
-    "other": "e"
+    "type": "sameRowAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "eastOf",
+    "other": "c"
    }
   }
  ]

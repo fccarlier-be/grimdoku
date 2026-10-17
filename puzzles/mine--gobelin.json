@@ -18,11 +18,6 @@
       "the": "la forge",
       "floor": "roche"
     },
-    "P": {
-      "name": "Puits",
-      "the": "le puits",
-      "floor": "roche"
-    },
     "V": {
       "name": "Filon",
       "the": "le filon",
@@ -47,9 +42,9 @@
   "layout": [
     "EEEGGFFF",
     "EEEGGFFF",
-    "DDGGGPPF",
-    "DDGGGPPV",
-    "DDCCCPVV",
+    "DDGGGFFF",
+    "DDGGGFFV",
+    "DDCCCFVV",
     "TTCCCVVV",
     "TTCCCVVV",
     "TTTTCVVV"
@@ -188,12 +183,12 @@
     },
     {
       "id": "b",
-      "name": "Bruyère",
-      "gender": "f",
+      "name": "Boulon",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧚",
-      "desc": "Fée, doit trois tournées",
-      "archetype": "fee"
+      "icon": "⛏️",
+      "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
+      "archetype": "mineur"
     },
     {
       "id": "c",
@@ -206,7 +201,25 @@
     },
     {
       "id": "d",
-      "name": "Désiré",
+      "name": "Digitale",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
+    },
+    {
+      "id": "e",
+      "name": "Émeri",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👷",
+      "desc": "Contremaître nain, compte les pépites et les pauses",
+      "archetype": "contremaitre"
+    },
+    {
+      "id": "f",
+      "name": "Fernand",
       "gender": "m",
       "role": "suspect",
       "icon": "🧟",
@@ -214,31 +227,13 @@
       "archetype": "zombie"
     },
     {
-      "id": "e",
-      "name": "Étai",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "⛏️",
-      "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
-      "archetype": "mineur"
-    },
-    {
-      "id": "f",
-      "name": "Flammèche",
+      "id": "g",
+      "name": "Gratin",
       "gender": "m",
       "role": "suspect",
       "icon": "🐉",
       "desc": "Dragonnet, brûle tout ce qu'il touche",
       "archetype": "dragonnet"
-    },
-    {
-      "id": "g",
-      "name": "Granit",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👷",
-      "desc": "Contremaître nain, compte les pépites et les pauses",
-      "archetype": "contremaitre"
     },
     {
       "id": "h",
@@ -252,116 +247,132 @@
   ],
   "decor": "mine",
   "id": "mine--gobelin",
-  "epilogue": "Granit avoue : Harpagnol prenait une pause toutes les sept minutes. Il les a toutes chronométrées. Puis il a arrêté le chronomètre.",
+  "epilogue": "Boulon avoue : Harpagnol lui avait volé sa plus belle pépite. C'était devenu une question de principe.",
   "clues": [
     {
       "who": "a",
-      "text": "Aymeric était sur un champignon géant.",
+      "text": "Aymeric était à l'ouest de Fernand.",
       "logic": {
-        "type": "onObject",
-        "object": "champi"
+        "type": "westOf",
+        "other": "f"
       }
     },
     {
       "who": "b",
-      "text": "Bruyère était à côté d'un chariot de mine.",
+      "text": "Boulon était à côté d'une enclume.",
       "logic": {
         "type": "adjacentTo",
-        "object": "chariot"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Croquassiette était dans le puits.",
-      "logic": {
-        "type": "inRoom",
-        "room": "P"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Il était au nord de Bruyère.",
-      "logic": {
-        "type": "northOf",
-        "other": "b"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Désiré était à côté d'un chariot de mine.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "chariot"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Étai était sur la même ligne qu'une enclume.",
-      "logic": {
-        "type": "sameRowAs",
         "object": "enclume"
       }
     },
     {
-      "who": "f",
-      "text": "Flammèche était sur la même ligne qu'une statue.",
+      "who": "c",
+      "text": "Croquassiette était au nord d'Émeri.",
+      "logic": {
+        "type": "northOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Digitale était à côté d'un champignon géant.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Elle était à l'est de Boulon.",
+      "logic": {
+        "type": "eastOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Émeri était sur la même ligne qu'un chariot de mine.",
       "logic": {
         "type": "sameRowAs",
-        "object": "statue"
+        "object": "chariot"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Fernand était au sud d'Aymeric.",
+      "logic": {
+        "type": "southOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Il était dans la galerie.",
+      "logic": {
+        "type": "inRoom",
+        "room": "G"
       }
     },
     {
       "who": "g",
-      "text": "Granit était à côté d'une chaise.",
+      "text": "Gratin était à l'est de Croquassiette.",
+      "logic": {
+        "type": "eastOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Il était à côté d'un lit.",
       "logic": {
         "type": "adjacentTo",
-        "object": "chaise"
+        "object": "lit"
       }
     }
   ],
   "solution": {
     "positions": {
       "h": [
-        7,
-        4
+        4,
+        5
       ],
-      "e": [
+      "b": [
+        1,
+        6
+      ],
+      "c": [
         6,
         0
       ],
-      "c": [
+      "g": [
         2,
-        5
-      ],
-      "f": [
-        0,
-        7
+        1
       ],
       "a": [
-        5,
-        6
+        0,
+        2
       ],
-      "b": [
+      "d": [
+        5,
+        7
+      ],
+      "f": [
         3,
         3
       ],
-      "d": [
-        1,
-        1
-      ],
-      "g": [
-        4,
-        2
+      "e": [
+        7,
+        4
       ]
     },
-    "murderer": "g"
+    "murderer": "b"
   },
   "rating": {
-    "skulls": 2,
-    "score": 4,
+    "skulls": 3,
+    "score": 7,
     "hardest": "pièces",
-    "hardSteps": 2,
-    "directStart": 1
+    "hardSteps": 3,
+    "directStart": 0
   },
-  "difficulty": 2
+  "difficulty": 3
 }

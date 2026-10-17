@@ -2,77 +2,106 @@
  "positions": {
   "g": [
    0,
-   1
-  ],
-  "f": [
-   3,
-   0
-  ],
-  "a": [
-   6,
    2
   ],
   "c": [
-   1,
-   6
+   4,
+   0
   ],
   "d": [
    2,
    3
   ],
   "e": [
-   4,
+   5,
    4
   ],
   "b": [
-   5,
+   1,
+   6
+  ],
+  "a": [
+   3,
    5
+  ],
+  "f": [
+   6,
+   1
   ]
  },
  "murderer": "e",
+ "cast": {
+  "c": "a",
+  "d": "b",
+  "e": "c",
+  "b": "d",
+  "a": "e",
+  "f": "f"
+ },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
    "who": "c",
    "logic": {
-    "type": "adjacentTo",
-    "object": "chaise"
+    "type": "sameColAs",
+    "object": "portail"
    }
   },
   {
    "who": "d",
    "logic": {
-    "type": "adjacentTo",
-    "object": "etagere"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "onObject",
-    "object": "champi"
+    "type": "inRoom",
+    "room": "B"
    }
   },
   {
    "who": "e",
    "logic": {
-    "type": "eastOf",
-    "other": "d"
+    "type": "northOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "westOf",
+    "other": "b"
    }
   },
   {
    "who": "f",
+   "logic": {
+    "type": "eastOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "westOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "b",
    "logic": {
     "type": "adjacentTo",
     "object": "statue"
    }
   },
   {
-   "who": "a",
+   "who": "c",
    "logic": {
     "type": "onObject",
-    "object": "coffre"
+    "object": "statue"
    }
   }
  ]

@@ -2,23 +2,13 @@
   "formatVersion": 1,
   "title": "Le Château de Mortebrune — l'affaire Fausset",
   "intro": "Le barde Fausset a été retrouvé sans vie au petit matin, au Château de Mortebrune. Cinq invités juraient qu'ils dormaient. Un seul était avec lui.",
-  "epilogue": "Dîme avoue : Fausset avait réclamé un audit du trésor royal. Le gobelin a classé l'audit.",
+  "epilogue": "Enguerrand avoue en grinçant de l'armure : Fausset s'était moqué de sa cuirasse trop petite devant toute la cour.",
   "size": 7,
   "rooms": {
-    "C": {
-      "name": "Chapelle",
-      "the": "la chapelle",
-      "floor": "dalles"
-    },
     "G": {
       "name": "Grande salle",
       "the": "la grande salle",
       "floor": "dalles"
-    },
-    "K": {
-      "name": "Cuisines",
-      "the": "les cuisines",
-      "floor": "damier"
     },
     "A": {
       "name": "Armurerie",
@@ -42,9 +32,9 @@
     }
   },
   "layout": [
-    "CCGGGKK",
-    "CCGGGKK",
-    "AAGGGKT",
+    "AAGGGGG",
+    "AAGGGGG",
+    "AAGGGGT",
     "AAJJJTT",
     "AAJJJTT",
     "DDJJJTT",
@@ -181,16 +171,35 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aymeric",
-      "gender": "m",
+      "name": "Aëlys",
+      "gender": "f",
       "role": "suspect",
-      "icon": "🤺",
-      "desc": "Chevalier, armure trop petite depuis Noël",
-      "archetype": "chevalier"
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
     },
     {
       "id": "b",
-      "name": "Blafard",
+      "name": "Basalte",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🪨",
+      "desc": "Golem de pierre, lent mais très appliqué",
+      "archetype": "golem",
+      "shape": "I2"
+    },
+    {
+      "id": "c",
+      "name": "Chaparde",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "d",
+      "name": "Diaphane",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -201,32 +210,13 @@
       ]
     },
     {
-      "id": "c",
-      "name": "Caillasse",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🪨",
-      "desc": "Golem de pierre, lent mais très appliqué",
-      "archetype": "golem",
-      "shape": "I2"
-    },
-    {
-      "id": "d",
-      "name": "Dîme",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
-    },
-    {
       "id": "e",
-      "name": "Erwëlle",
-      "gender": "f",
+      "name": "Enguerrand",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧝‍♀️",
-      "desc": "Elfe, critique gastronomique",
-      "archetype": "elfe"
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
     },
     {
       "id": "f",
@@ -243,102 +233,110 @@
   "clues": [
     {
       "who": "a",
-      "text": "Aymeric était au nord d'Erwëlle.",
+      "text": "Aëlys était au nord de Chaparde.",
       "logic": {
         "type": "northOf",
-        "other": "e"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était dans la même colonne qu'un arbre.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "arbre"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était sur un tapis.",
-      "logic": {
-        "type": "onObject",
-        "object": "tapis"
+        "other": "c"
       }
     },
     {
       "who": "b",
-      "text": "Blafard était allongé sur un lit.",
+      "text": "Basalte était à l'est de Chaparde.",
       "logic": {
-        "type": "onObject",
-        "object": "lit"
+        "type": "eastOf",
+        "other": "c"
       }
     },
     {
       "who": "c",
-      "text": "Caillasse était à côté d'un chaudron.",
+      "text": "Chaparde était dans le jardin.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "chaudron"
+        "type": "inRoom",
+        "room": "J"
       }
     },
     {
-      "who": "d",
-      "text": "Dîme était dans la même colonne qu'une chaise.",
+      "who": "c",
+      "text": "Il était dans la même colonne qu'une chaise.",
       "logic": {
         "type": "sameColAs",
         "object": "chaise"
       }
     },
     {
-      "who": "e",
-      "text": "Erwëlle était à l'est d'Aymeric.",
+      "who": "d",
+      "text": "Diaphane était au nord de Basalte.",
       "logic": {
-        "type": "eastOf",
-        "other": "a"
+        "type": "northOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Enguerrand était au nord de Diaphane.",
+      "logic": {
+        "type": "northOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était sur la même ligne qu'un tonneau.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était à côté d'un tapis.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tapis"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        5,
-        0
+        0,
+        3
       ],
-      "c": [
+      "b": [
         [
-          0,
+          4,
           5
         ],
         [
-          1,
-          5
+          4,
+          6
         ]
       ],
-      "a": [
+      "e": [
         2,
-        3
-      ],
-      "d": [
-        6,
         2
       ],
-      "e": [
-        4,
+      "c": [
+        6,
         4
       ],
-      "b": [
+      "a": [
+        5,
+        0
+      ],
+      "d": [
         3,
-        6
+        1
       ]
     },
-    "murderer": "d"
+    "murderer": "e"
   },
   "rating": {
-    "skulls": 2,
-    "score": 3,
+    "skulls": 3,
+    "score": 5,
     "hardest": "pièces",
     "hardSteps": 1,
-    "directStart": 2
+    "directStart": 0
   },
   "difficulty": 4
 }

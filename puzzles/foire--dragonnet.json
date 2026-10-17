@@ -3,11 +3,6 @@
   "title": "La Foire aux Sortilèges — l'affaire Gratin",
   "size": 7,
   "rooms": {
-    "R": {
-      "name": "Roulotte",
-      "the": "la roulotte",
-      "floor": "parquet"
-    },
     "S": {
       "name": "Stands",
       "the": "les stands",
@@ -40,8 +35,8 @@
     }
   },
   "layout": [
-    "RRSSSBB",
-    "RRSSSBB",
+    "KKSSSBB",
+    "KKSSSBB",
     "KKCCCCB",
     "KKCCCCM",
     "NNCCCCM",
@@ -159,34 +154,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aplomb",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🎩",
-      "desc": "Bonimenteur, vend du rêve au kilo",
-      "archetype": "bonimenteur"
-    },
-    {
-      "id": "b",
-      "name": "Brann",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧑‍🎤",
-      "desc": "Barde, chante faux",
-      "archetype": "barde"
-    },
-    {
-      "id": "c",
-      "name": "Chaparde",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
-    },
-    {
-      "id": "d",
-      "name": "Dentdur",
+      "name": "Avaloir",
       "gender": "m",
       "role": "suspect",
       "icon": "🧌",
@@ -194,8 +162,17 @@
       "archetype": "troll"
     },
     {
-      "id": "e",
-      "name": "Églantine",
+      "id": "b",
+      "name": "Bohémia",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🔮",
+      "desc": "Cartomancienne, voit l'avenir, rate le présent",
+      "archetype": "cartomancienne"
+    },
+    {
+      "id": "c",
+      "name": "Capucine",
       "gender": "f",
       "role": "suspect",
       "icon": "🧚",
@@ -203,13 +180,31 @@
       "archetype": "fee"
     },
     {
-      "id": "f",
-      "name": "Fortuna",
-      "gender": "f",
+      "id": "d",
+      "name": "Dîme",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🔮",
-      "desc": "Cartomancienne, voit l'avenir, rate le présent",
-      "archetype": "cartomancienne"
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "e",
+      "name": "Esbroufe",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🎩",
+      "desc": "Bonimenteur, vend du rêve au kilo",
+      "archetype": "bonimenteur"
+    },
+    {
+      "id": "f",
+      "name": "Fausset",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
     },
     {
       "id": "g",
@@ -223,51 +218,51 @@
   ],
   "decor": "foire",
   "id": "foire--dragonnet",
-  "epilogue": "Fortuna l'avait vu dans les cartes : Gratin allait ruiner la foire. Elle a préféré changer l'avenir elle-même.",
+  "epilogue": "Fausset avoue en chanson (fausse) : Gratin avait coupé sa musique en plein spectacle. Même un barde a ses limites.",
   "clues": [
     {
       "who": "a",
-      "text": "Aplomb était au nord de Chaparde.",
+      "text": "Avaloir était dans le manège.",
       "logic": {
-        "type": "northOf",
-        "other": "c"
+        "type": "inRoom",
+        "room": "N"
       }
     },
     {
       "who": "a",
-      "text": "Il était dans la même colonne qu'une table.",
+      "text": "Il était dans la même colonne qu'un lit.",
       "logic": {
         "type": "sameColAs",
-        "object": "table"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était sur un tapis.",
-      "logic": {
-        "type": "onObject",
-        "object": "tapis"
+        "object": "lit"
       }
     },
     {
       "who": "b",
-      "text": "Brann était dans les coulisses.",
+      "text": "Bohémia était à côté d'un tonneau.",
       "logic": {
-        "type": "inRoom",
-        "room": "K"
+        "type": "adjacentTo",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Elle était sur la même ligne qu'un coffre.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Elle était à l'est de Dîme.",
+      "logic": {
+        "type": "eastOf",
+        "other": "d"
       }
     },
     {
       "who": "c",
-      "text": "Chaparde était dans la même colonne qu'un chaudron.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "chaudron"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Il était sur la même ligne qu'une chaise.",
+      "text": "Capucine était sur la même ligne qu'une chaise.",
       "logic": {
         "type": "sameRowAs",
         "object": "chaise"
@@ -275,26 +270,26 @@
     },
     {
       "who": "d",
-      "text": "Dentdur était dans la même colonne qu'une botte de foin.",
+      "text": "Dîme était à côté d'un tonneau.",
       "logic": {
-        "type": "sameColAs",
-        "object": "foin"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Églantine était dans la même colonne qu'un tonneau.",
-      "logic": {
-        "type": "sameColAs",
+        "type": "adjacentTo",
         "object": "tonneau"
       }
     },
     {
-      "who": "f",
-      "text": "Fortuna était à l'ouest de Brann.",
+      "who": "e",
+      "text": "Esbroufe était à l'ouest de Capucine.",
       "logic": {
         "type": "westOf",
-        "other": "b"
+        "other": "c"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Fausset était à côté d'un tapis.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tapis"
       }
     }
   ],
@@ -302,41 +297,41 @@
     "positions": {
       "g": [
         6,
-        2
-      ],
-      "f": [
-        4,
-        0
+        3
       ],
       "b": [
-        2,
-        1
+        1,
+        6
+      ],
+      "f": [
+        3,
+        2
+      ],
+      "d": [
+        0,
+        4
+      ],
+      "a": [
+        4,
+        0
       ],
       "c": [
         5,
         5
       ],
-      "d": [
-        1,
-        6
-      ],
       "e": [
-        0,
-        4
-      ],
-      "a": [
-        3,
-        3
+        2,
+        1
       ]
     },
     "murderer": "f"
   },
   "rating": {
-    "skulls": 2,
-    "score": 3,
+    "skulls": 3,
+    "score": 5,
     "hardest": "pièces",
     "hardSteps": 1,
-    "directStart": 1
+    "directStart": 0
   },
-  "difficulty": 2
+  "difficulty": 3
 }

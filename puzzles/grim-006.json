@@ -120,12 +120,12 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aconit",
+      "name": "Aëlys",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧙‍♀️",
-      "desc": "Sorcière des marais, cuisine tout ce qui coasse",
-      "archetype": "sorciere"
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
     },
     {
       "id": "b",
@@ -138,7 +138,16 @@
     },
     {
       "id": "c",
-      "name": "Corail",
+      "name": "Ciguë",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧙‍♀️",
+      "desc": "Sorcière des marais, cuisine tout ce qui coasse",
+      "archetype": "sorciere"
+    },
+    {
+      "id": "d",
+      "name": "Dorade",
       "gender": "f",
       "role": "suspect",
       "icon": "🧜‍♀️",
@@ -146,22 +155,13 @@
       "archetype": "sirene"
     },
     {
-      "id": "d",
-      "name": "Désiré",
+      "id": "e",
+      "name": "Edmond",
       "gender": "m",
       "role": "suspect",
       "icon": "🧟",
       "desc": "Zombie, ancien apprenti. Ancien tout court",
       "archetype": "zombie"
-    },
-    {
-      "id": "e",
-      "name": "Erwëlle",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧝‍♀️",
-      "desc": "Elfe, critique gastronomique",
-      "archetype": "elfe"
     },
     {
       "id": "f",
@@ -173,102 +173,110 @@
       "archetype": "crapaud"
     }
   ],
-  "epilogue": "Corail avoue : Flaque coassait sous sa fenêtre toutes les nuits en se prenant pour un prince charmant.",
+  "epilogue": "Edmond avoue, à son rythme : Flaque avait promis de lui rendre son bras s'il l'embrassait. Il l'a embrassé. Pas de bras.",
   "decor": "marais",
   "id": "grim-006",
   "clues": [
     {
       "who": "a",
-      "text": "Aconit était dans le ponton.",
+      "text": "Aëlys était à l'est de Bâfrin.",
       "logic": {
-        "type": "inRoom",
-        "room": "P"
+        "type": "eastOf",
+        "other": "b"
       }
     },
     {
       "who": "a",
-      "text": "Elle était dans la même colonne qu'un tonneau.",
+      "text": "Elle était à côté d'un lit.",
       "logic": {
-        "type": "sameColAs",
-        "object": "tonneau"
+        "type": "adjacentTo",
+        "object": "lit"
       }
     },
     {
       "who": "b",
-      "text": "Bâfrin était dans la même colonne qu'un massif de roseaux.",
+      "text": "Bâfrin était au nord de Ciguë.",
       "logic": {
-        "type": "sameColAs",
-        "object": "roseaux"
+        "type": "northOf",
+        "other": "c"
       }
     },
     {
-      "who": "c",
-      "text": "Corail était à côté d'un arbre.",
+      "who": "b",
+      "text": "Il était sur un champignon géant.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "arbre"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Désiré était dans l'îlot.",
-      "logic": {
-        "type": "inRoom",
-        "room": "I"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Il était à côté d'un champignon géant.",
-      "logic": {
-        "type": "adjacentTo",
+        "type": "onObject",
         "object": "champi"
       }
     },
     {
-      "who": "e",
-      "text": "Erwëlle était à l'ouest d'Aconit.",
+      "who": "c",
+      "text": "Ciguë était dans la roselière.",
       "logic": {
-        "type": "westOf",
-        "other": "a"
+        "type": "inRoom",
+        "room": "R"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Elle était à l'est d'Edmond.",
+      "logic": {
+        "type": "eastOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dorade était dans la même colonne qu'un arbre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Edmond était sur la même ligne qu'un champignon géant.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "champi"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        5,
-        2
-      ],
-      "c": [
         4,
         4
       ],
       "d": [
-        3,
-        0
-      ],
-      "b": [
-        2,
+        0,
         5
       ],
       "e": [
+        5,
+        2
+      ],
+      "b": [
+        2,
+        0
+      ],
+      "a": [
         1,
         1
       ],
-      "a": [
-        0,
+      "c": [
+        3,
         3
       ]
     },
-    "murderer": "c"
+    "murderer": "e"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
-    "hardest": "ligne réservée",
+    "skulls": 2,
+    "score": 4,
+    "hardest": "position relative",
     "hardSteps": 0,
-    "directStart": 1
+    "directStart": 0
   },
-  "difficulty": 1
+  "difficulty": 2
 }

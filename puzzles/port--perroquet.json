@@ -3,11 +3,6 @@
   "title": "Le Port des Contrebandiers — l'affaire Gazouille",
   "size": 7,
   "rooms": {
-    "P": {
-      "name": "Phare",
-      "the": "le phare",
-      "floor": "parquet"
-    },
     "Q": {
       "name": "Quai",
       "the": "le quai",
@@ -40,8 +35,8 @@
     }
   },
   "layout": [
-    "PPQQQQD",
-    "PPQQQDD",
+    "TTQQQQD",
+    "TTQQQDD",
     "TTQCCDD",
     "TTCCCEE",
     "TTCCCEE",
@@ -179,43 +174,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Abordage",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🏴‍☠️",
-      "desc": "Pirate, a perdu une jambe, un œil et le sens de l'orientation",
-      "archetype": "pirate"
-    },
-    {
-      "id": "b",
-      "name": "Bulle",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧜‍♀️",
-      "desc": "Sirène, venue pour l'aquarium",
-      "archetype": "sirene"
-    },
-    {
-      "id": "c",
-      "name": "Cabestan",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧑‍✈️",
-      "desc": "Capitaine, n'a jamais quitté le port",
-      "archetype": "capitaine"
-    },
-    {
-      "id": "d",
-      "name": "Dîme",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
-    },
-    {
-      "id": "e",
-      "name": "Engloutor",
+      "name": "Avaloir",
       "gender": "m",
       "role": "suspect",
       "icon": "🧌",
@@ -223,13 +182,49 @@
       "archetype": "troll"
     },
     {
-      "id": "f",
-      "name": "Florin",
+      "id": "b",
+      "name": "Barbecale",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍✈️",
+      "desc": "Capitaine, n'a jamais quitté le port",
+      "archetype": "capitaine"
+    },
+    {
+      "id": "c",
+      "name": "Chaparde",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "d",
+      "name": "Dorade",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene"
+    },
+    {
+      "id": "e",
+      "name": "Écu",
       "gender": "m",
       "role": "suspect",
       "icon": "🧔‍♂️",
       "desc": "Tavernier nain, radin légendaire",
       "archetype": "tavernier"
+    },
+    {
+      "id": "f",
+      "name": "Flibuste",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🏴‍☠️",
+      "desc": "Pirate, a perdu une jambe, un œil et le sens de l'orientation",
+      "archetype": "pirate"
     },
     {
       "id": "g",
@@ -244,62 +239,70 @@
   "decor": "port",
   "id": "port--perroquet",
   "intro": "Le perroquet Gazouille a été retrouvé sans vie au Port des Contrebandiers, à l'heure où la marée se retire. Six habitués traînaient sur les quais. Un seul était avec lui.",
-  "epilogue": "Florin avoue en comptant ses pièces : Gazouille avait une ardoise de trois ans à la taverne du port.",
+  "epilogue": "Écu avoue en comptant ses pièces : Gazouille avait une ardoise de trois ans à la taverne du port.",
   "clues": [
     {
       "who": "a",
-      "text": "Abordage était dans la même colonne qu'un tonneau.",
+      "text": "Avaloir était dans la même colonne qu'un coffre.",
       "logic": {
         "type": "sameColAs",
-        "object": "tonneau"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était dans une barque.",
-      "logic": {
-        "type": "onObject",
-        "object": "barque"
+        "object": "coffre"
       }
     },
     {
       "who": "b",
-      "text": "Bulle était à côté d'une statue.",
+      "text": "Barbecale était au nord d'Avaloir.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "statue"
+        "type": "northOf",
+        "other": "a"
       }
     },
     {
       "who": "c",
-      "text": "Cabestan était à côté d'une chaise.",
+      "text": "Chaparde était au sud de Barbecale.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "chaise"
+        "type": "southOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était dans le quai.",
+      "logic": {
+        "type": "inRoom",
+        "room": "Q"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était au sud de Flibuste.",
+      "logic": {
+        "type": "southOf",
+        "other": "f"
       }
     },
     {
       "who": "d",
-      "text": "Dîme était dans la même colonne qu'une table.",
+      "text": "Dorade était à l'ouest de Chaparde.",
       "logic": {
-        "type": "sameColAs",
-        "object": "table"
+        "type": "westOf",
+        "other": "c"
       }
     },
     {
       "who": "e",
-      "text": "Engloutor était à côté d'un tonneau.",
+      "text": "Écu était sur la même ligne qu'une enclume.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "tonneau"
+        "type": "sameRowAs",
+        "object": "enclume"
       }
     },
     {
       "who": "f",
-      "text": "Florin était sur la même ligne qu'une enclume.",
+      "text": "Flibuste était dans la même colonne qu'un tonneau.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "enclume"
+        "type": "sameColAs",
+        "object": "tonneau"
       }
     }
   ],
@@ -309,39 +312,39 @@
         3,
         4
       ],
-      "a": [
-        0,
+      "f": [
+        1,
         5
+      ],
+      "b": [
+        0,
+        1
+      ],
+      "d": [
+        6,
+        0
       ],
       "c": [
         2,
-        1
+        2
       ],
-      "b": [
-        1,
-        0
-      ],
-      "d": [
+      "a": [
         5,
         6
       ],
       "e": [
-        6,
-        3
-      ],
-      "f": [
         4,
-        2
+        3
       ]
     },
-    "murderer": "f"
+    "murderer": "e"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
-    "hardest": "ligne réservée",
+    "skulls": 2,
+    "score": 4,
+    "hardest": "position relative",
     "hardSteps": 0,
-    "directStart": 1
+    "directStart": 0
   },
-  "difficulty": 1
+  "difficulty": 2
 }

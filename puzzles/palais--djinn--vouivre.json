@@ -1,21 +1,11 @@
 {
   "formatVersion": 1,
-  "title": "Le Palais des Mille Vœux — l'affaire Encensia",
+  "title": "Le Palais des Mille Vœux — l'affaire Fumerolle",
   "size": 7,
   "rooms": {
-    "O": {
-      "name": "Observatoire",
-      "the": "l'observatoire",
-      "floor": "mosaique"
-    },
     "T": {
       "name": "Salle du trône",
       "the": "la salle du trône",
-      "floor": "noble"
-    },
-    "R": {
-      "name": "Trésor",
-      "the": "le trésor",
       "floor": "noble"
     },
     "L": {
@@ -40,8 +30,8 @@
     }
   },
   "layout": [
-    "OOTTTRR",
-    "OOTTTRR",
+    "LLTTTTT",
+    "LLTTTTT",
     "LLTTTBB",
     "LLJJJBB",
     "HHJJJBB",
@@ -179,35 +169,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Arcane",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🔮",
-      "desc": "Cartomancienne, voit l'avenir, rate le présent",
-      "archetype": "cartomancienne"
-    },
-    {
-      "id": "b",
-      "name": "Boucline",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🐍",
-      "desc": "Vouivre, serpent ailé, très longue à se retourner",
-      "archetype": "vouivre",
-      "shape": "I3"
-    },
-    {
-      "id": "c",
-      "name": "Clinquant",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🎩",
-      "desc": "Bonimenteur, vend du rêve au kilo",
-      "archetype": "bonimenteur"
-    },
-    {
-      "id": "d",
-      "name": "Dagobert",
+      "name": "Aldric",
       "gender": "m",
       "role": "suspect",
       "icon": "🤴",
@@ -215,8 +177,45 @@
       "archetype": "roi"
     },
     {
+      "id": "b",
+      "name": "Bagou",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🎩",
+      "desc": "Bonimenteur, vend du rêve au kilo",
+      "archetype": "bonimenteur"
+    },
+    {
+      "id": "c",
+      "name": "Chaparde",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "d",
+      "name": "Déroulée",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🐍",
+      "desc": "Vouivre, serpent ailé, très longue à se retourner",
+      "archetype": "vouivre",
+      "shape": "I2"
+    },
+    {
       "id": "e",
-      "name": "Encensia",
+      "name": "Étoila",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🔮",
+      "desc": "Cartomancienne, voit l'avenir, rate le présent",
+      "archetype": "cartomancienne"
+    },
+    {
+      "id": "f",
+      "name": "Fumerolle",
       "gender": "f",
       "role": "victim",
       "icon": "🧞‍♀️",
@@ -226,99 +225,107 @@
   ],
   "decor": "palais",
   "id": "palais--djinn--vouivre",
-  "intro": "La djinn Encensia a été retrouvée sans vie au Palais des Mille Vœux, sous un tapis volant qui ne volait plus. Quatre invités avaient fait un vœu ce soir-là. Un seul était avec elle.",
-  "epilogue": "Clinquant avoue d'une voix de stentor : Encensia vendait de fausses lampes magiques au bazar. C'était SON commerce.",
+  "intro": "La djinn Fumerolle a été retrouvée sans vie au Palais des Mille Vœux, sous un tapis volant qui ne volait plus. Cinq invités avaient fait un vœu ce soir-là. Un seul était avec elle.",
+  "epilogue": "Aldric avoue, la couronne de travers : Fumerolle avait souhaité devenir roi à sa place. Le vœu a été annulé.",
   "clues": [
     {
       "who": "a",
-      "text": "Arcane était sur la même ligne qu'un arbre.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "arbre"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Elle était sur un tapis.",
-      "logic": {
-        "type": "onObject",
-        "object": "tapis"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Boucline était à l'est de Dagobert.",
-      "logic": {
-        "type": "eastOf",
-        "other": "d"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Clinquant était au nord de Dagobert.",
+      "text": "Aldric était au nord de Déroulée.",
       "logic": {
         "type": "northOf",
         "other": "d"
       }
     },
     {
-      "who": "c",
-      "text": "Il était dans la même colonne qu'une boule de cristal.",
+      "who": "a",
+      "text": "Il était à côté d'une chaise.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bagou était dans la même colonne qu'une boule de cristal.",
       "logic": {
         "type": "sameColAs",
         "object": "cristal"
       }
     },
     {
-      "who": "d",
-      "text": "Dagobert était à l'est de Clinquant.",
+      "who": "c",
+      "text": "Chaparde était à côté d'un tapis.",
       "logic": {
-        "type": "eastOf",
+        "type": "adjacentTo",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Déroulée était à l'ouest de Chaparde.",
+      "logic": {
+        "type": "westOf",
         "other": "c"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Étoila était à l'ouest de Chaparde.",
+      "logic": {
+        "type": "westOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Elle était sur la même ligne qu'un coffre.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "coffre"
       }
     }
   ],
   "solution": {
     "positions": {
-      "e": [
-        0,
-        1
+      "f": [
+        5,
+        2
       ],
-      "b": [
+      "d": [
         [
-          4,
-          3
-        ],
-        [
-          5,
+          6,
           3
         ],
         [
           6,
-          3
+          4
         ]
       ],
-      "d": [
-        2,
-        2
-      ],
       "a": [
+        4,
+        1
+      ],
+      "e": [
+        1,
+        5
+      ],
+      "b": [
         3,
-        6
+        0
       ],
       "c": [
-        1,
-        0
+        2,
+        6
       ]
     },
-    "murderer": "c"
+    "murderer": "a"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
+    "skulls": 2,
+    "score": 4,
     "hardest": "ligne réservée",
     "hardSteps": 0,
-    "directStart": 1
+    "directStart": 0
   },
   "difficulty": 4
 }

@@ -1,83 +1,87 @@
 {
  "positions": {
-  "e": [
-   0,
-   5
-  ],
-  "a": [
-   [
-    3,
-    4
-   ],
-   [
-    4,
-    3
-   ],
-   [
-    4,
-    4
-   ],
-   [
-    5,
-    4
-   ]
+  "f": [
+   3,
+   1
   ],
   "d": [
+   [
+    0,
+    4
+   ],
+   [
+    0,
+    5
+   ]
+  ],
+  "b": [
    6,
    2
   ],
   "c": [
-   1,
+   4,
+   3
+  ],
+  "e": [
+   2,
    6
   ],
-  "b": [
-   2,
-   1
+  "a": [
+   1,
+   0
   ]
  },
- "murderer": "c",
+ "murderer": "a",
  "cast": {
-  "a": "a",
-  "d": "b",
+  "d": "a",
+  "b": "b",
   "c": "c",
-  "b": "d"
+  "e": "d",
+  "a": "e"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "a",
-   "logic": {
-    "type": "southOf",
-    "other": "b"
-   }
-  },
-  {
    "who": "d",
    "logic": {
-    "type": "inRoom",
-    "room": "D"
+    "type": "eastOf",
+    "other": "a"
    }
   },
   {
    "who": "b",
    "logic": {
+    "type": "sameRowAs",
+    "object": "sarcophage"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
     "type": "adjacentTo",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "northOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameColAs",
     "object": "coffre"
    }
   },
   {
    "who": "c",
    "logic": {
-    "type": "sameColAs",
-    "object": "lit"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "westOf",
-    "other": "d"
+    "type": "sameRowAs",
+    "object": "champi"
    }
   }
  ]

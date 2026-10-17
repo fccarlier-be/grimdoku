@@ -126,21 +126,21 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aubépine",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧚",
-      "desc": "Fée, doit trois tournées",
-      "archetype": "fee"
-    },
-    {
-      "id": "b",
-      "name": "Bricolin",
+      "name": "Azimut",
       "gender": "m",
       "role": "suspect",
       "icon": "🧙‍♂️",
       "desc": "Mage, allergique au houblon",
       "archetype": "mage"
+    },
+    {
+      "id": "b",
+      "name": "Besant",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧔‍♂️",
+      "desc": "Tavernier nain, radin légendaire",
+      "archetype": "tavernier"
     },
     {
       "id": "c",
@@ -153,12 +153,12 @@
     },
     {
       "id": "d",
-      "name": "Denier",
-      "gender": "m",
+      "name": "Digitale",
+      "gender": "f",
       "role": "suspect",
-      "icon": "🧔‍♂️",
-      "desc": "Tavernier nain, radin légendaire",
-      "archetype": "tavernier"
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
     },
     {
       "id": "e",
@@ -182,92 +182,92 @@
   "decor": "thermes",
   "id": "thermes--elfe",
   "intro": "L'elfe Faëlys a été retrouvée sans vie aux Thermes Enchantés, détendue pour toujours. Cinq curistes profitaient des bains. Un seul était avec elle.",
-  "epilogue": "Aubépine avoue : Faëlys l'avait prise pour un moustique et avait tapé dessus. Elle a rendu la politesse.",
+  "epilogue": "Azimut avoue en éternuant : Faëlys avait parfumé le sauna à la bière.",
   "clues": [
     {
       "who": "a",
-      "text": "Aubépine était sur un tapis.",
+      "text": "Azimut était dans la même colonne qu'une statue.",
       "logic": {
-        "type": "onObject",
-        "object": "tapis"
+        "type": "sameColAs",
+        "object": "statue"
       }
     },
     {
       "who": "b",
-      "text": "Bricolin était allongé sur un lit.",
+      "text": "Besant était au sud d'Azimut.",
       "logic": {
-        "type": "onObject",
+        "type": "southOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était à côté d'un lit.",
+      "logic": {
+        "type": "adjacentTo",
         "object": "lit"
       }
     },
     {
       "who": "c",
-      "text": "Corail était à l'ouest de Bricolin.",
+      "text": "Corail était à côté d'un tapis.",
       "logic": {
-        "type": "westOf",
-        "other": "b"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Elle était sur la même ligne qu'une table.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "table"
+        "type": "adjacentTo",
+        "object": "tapis"
       }
     },
     {
       "who": "d",
-      "text": "Denier était à côté d'une chaise.",
+      "text": "Digitale était au nord de Corail.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "chaise"
+        "type": "northOf",
+        "other": "c"
       }
     },
     {
       "who": "e",
-      "text": "Engloutor était à côté d'une statue.",
+      "text": "Engloutor était sur la même ligne qu'une chaise.",
       "logic": {
-        "type": "adjacentTo",
-        "object": "statue"
+        "type": "sameRowAs",
+        "object": "chaise"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        1,
+        2,
         4
       ],
       "c": [
-        5,
-        0
+        1,
+        2
       ],
       "e": [
         3,
-        5
-      ],
-      "a": [
-        2,
-        2
-      ],
-      "b": [
-        4,
-        3
+        0
       ],
       "d": [
         0,
         1
+      ],
+      "a": [
+        4,
+        5
+      ],
+      "b": [
+        5,
+        3
       ]
     },
     "murderer": "a"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
-    "hardest": "position relative",
+    "skulls": 2,
+    "score": 4,
+    "hardest": "ligne réservée",
     "hardSteps": 0,
-    "directStart": 1
+    "directStart": 0
   },
-  "difficulty": 1
+  "difficulty": 2
 }

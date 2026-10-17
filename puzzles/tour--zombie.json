@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "title": "La Tour de l'Archimage — l'affaire Gédéon",
   "intro": "Le zombie Gédéon a été retrouvé sans vie dans la Tour de l'Archimage, où un portail runique relie le laboratoire à la crypte. Six invités douteux traînaient dans les étages. Un seul était avec lui.",
-  "epilogue": "Étincel avoue : Gédéon l'utilisait pour allumer toutes les bougies de la tour. Tous les soirs.",
+  "epilogue": "Écume avoue : Gédéon avait versé une potion « régénérante » dans son aquarium. Elle a eu des écailles violettes pendant un mois.",
   "size": 7,
   "rooms": {
     "L": {
@@ -162,7 +162,25 @@
   "characters": [
     {
       "id": "a",
-      "name": "Albâtre",
+      "name": "Abysse",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
+    },
+    {
+      "id": "b",
+      "name": "Bazarine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn"
+    },
+    {
+      "id": "c",
+      "name": "Chaînon",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -173,35 +191,8 @@
       ]
     },
     {
-      "id": "b",
-      "name": "Bulle",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧜‍♀️",
-      "desc": "Sirène, venue pour l'aquarium",
-      "archetype": "sirene"
-    },
-    {
-      "id": "c",
-      "name": "Crépuscula",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧛‍♀️",
-      "desc": "Comtesse vampire, végane (elle le jure)",
-      "archetype": "vampire"
-    },
-    {
       "id": "d",
-      "name": "Doublebarbe",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧙‍♂️",
-      "desc": "Archimage, 412 ans, toujours pas de testament",
-      "archetype": "archimage"
-    },
-    {
-      "id": "e",
-      "name": "Étincel",
+      "name": "Dardafeu",
       "gender": "m",
       "role": "suspect",
       "icon": "🐉",
@@ -209,13 +200,22 @@
       "archetype": "dragonnet"
     },
     {
-      "id": "f",
-      "name": "Fumerolle",
+      "id": "e",
+      "name": "Écume",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧞‍♀️",
-      "desc": "Djinn, a déjà exaucé deux vœux de trop",
-      "archetype": "djinn"
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene"
+    },
+    {
+      "id": "f",
+      "name": "Fizzlebarbe",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Archimage, 412 ans, toujours pas de testament",
+      "archetype": "archimage"
     },
     {
       "id": "g",
@@ -232,82 +232,50 @@
   "clues": [
     {
       "who": "a",
-      "text": "Albâtre était au nord de Doublebarbe.",
-      "logic": {
-        "type": "northOf",
-        "other": "d"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était sur la même ligne qu'un sarcophage.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "sarcophage"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était à côté d'une statue.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "statue"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Bulle était à côté d'un champignon géant.",
+      "text": "Abysse était à côté d'un champignon géant.",
       "logic": {
         "type": "adjacentTo",
         "object": "champi"
       }
     },
     {
-      "who": "c",
-      "text": "Crépuscula était à l'est de Fumerolle.",
+      "who": "b",
+      "text": "Bazarine était à côté d'un tapis.",
       "logic": {
-        "type": "eastOf",
-        "other": "f"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Elle était sur un tapis.",
-      "logic": {
-        "type": "onObject",
+        "type": "adjacentTo",
         "object": "tapis"
       }
     },
     {
+      "who": "c",
+      "text": "Chaînon était à côté d'un portail runique.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "portail"
+      }
+    },
+    {
       "who": "d",
-      "text": "Doublebarbe était au sud de Fumerolle.",
+      "text": "Dardafeu était à l'ouest d'Écume.",
       "logic": {
-        "type": "southOf",
-        "other": "f"
+        "type": "westOf",
+        "other": "e"
       }
     },
     {
       "who": "e",
-      "text": "Étincel était à l'est de Doublebarbe.",
-      "logic": {
-        "type": "eastOf",
-        "other": "d"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Il était dans la même colonne qu'une boule de cristal.",
+      "text": "Écume était dans la même colonne qu'un sarcophage.",
       "logic": {
         "type": "sameColAs",
-        "object": "cristal"
+        "object": "sarcophage"
       }
     },
     {
       "who": "f",
-      "text": "Fumerolle était au nord de Doublebarbe.",
+      "text": "Fizzlebarbe était dans la bibliothèque.",
       "logic": {
-        "type": "northOf",
-        "other": "d"
+        "type": "inRoom",
+        "room": "B"
       }
     }
   ],
@@ -317,39 +285,39 @@
         2,
         5
       ],
-      "a": [
+      "c": [
+        1,
+        0
+      ],
+      "d": [
         4,
-        1
+        2
       ],
       "e": [
-        1,
-        4
+        0,
+        3
       ],
-      "b": [
+      "a": [
         5,
         6
       ],
-      "c": [
-        3,
-        3
+      "b": [
+        6,
+        1
       ],
       "f": [
-        0,
-        2
-      ],
-      "d": [
-        6,
-        0
+        3,
+        4
       ]
     },
     "murderer": "e"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
-    "hardest": "position relative",
+    "skulls": 2,
+    "score": 4,
+    "hardest": "ligne réservée",
     "hardSteps": 0,
-    "directStart": 1
+    "directStart": 0
   },
-  "difficulty": 1
+  "difficulty": 2
 }

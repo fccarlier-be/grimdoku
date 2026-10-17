@@ -2,14 +2,9 @@
   "formatVersion": 1,
   "title": "Le Château de Mortebrune — l'affaire Gontran",
   "intro": "Le chevalier Gontran a été retrouvé sans vie au petit matin, au Château de Mortebrune. Six invités juraient qu'ils dormaient. Un seul était avec lui.",
-  "epilogue": "Aldric avoue, la couronne de travers : Gontran complotait pour s'asseoir sur son trône. Il l'a pris très personnellement.",
+  "epilogue": "Chaparde avoue : Gontran avait réclamé un audit du trésor royal. Le gobelin a classé l'audit.",
   "size": 7,
   "rooms": {
-    "C": {
-      "name": "Chapelle",
-      "the": "la chapelle",
-      "floor": "dalles"
-    },
     "G": {
       "name": "Grande salle",
       "the": "la grande salle",
@@ -42,8 +37,8 @@
     }
   },
   "layout": [
-    "CCGGGKK",
-    "CCGGGKK",
+    "AAGGGKK",
+    "AAGGGKK",
     "AAGGGKT",
     "AAJJJTT",
     "AAJJJTT",
@@ -181,43 +176,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aldric",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🤴",
-      "desc": "Roi, avare de compliments et de tout le reste",
-      "archetype": "roi"
-    },
-    {
-      "id": "b",
-      "name": "Bakchich",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
-    },
-    {
-      "id": "c",
-      "name": "Couac",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧑‍🎤",
-      "desc": "Barde, chante faux",
-      "archetype": "barde"
-    },
-    {
-      "id": "d",
-      "name": "Daëlin",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧝‍♀️",
-      "desc": "Elfe, critique gastronomique",
-      "archetype": "elfe"
-    },
-    {
-      "id": "e",
-      "name": "Étincel",
+      "name": "Ardent",
       "gender": "m",
       "role": "suspect",
       "icon": "🐉",
@@ -225,8 +184,26 @@
       "archetype": "dragonnet"
     },
     {
-      "id": "f",
-      "name": "Frisson",
+      "id": "b",
+      "name": "Bérénwë",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
+    },
+    {
+      "id": "c",
+      "name": "Chaparde",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    },
+    {
+      "id": "d",
+      "name": "Diaphane",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -235,6 +212,24 @@
       "traits": [
         "spectre"
       ]
+    },
+    {
+      "id": "e",
+      "name": "Écho",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
+    },
+    {
+      "id": "f",
+      "name": "Ferdinand",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤴",
+      "desc": "Roi, avare de compliments et de tout le reste",
+      "archetype": "roi"
     },
     {
       "id": "g",
@@ -251,31 +246,39 @@
   "clues": [
     {
       "who": "a",
-      "text": "Aldric était sur la même ligne qu'un lit.",
+      "text": "Ardent était à côté d'une boule de cristal.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "lit"
+        "type": "adjacentTo",
+        "object": "cristal"
       }
     },
     {
-      "who": "a",
-      "text": "Il était dans la même colonne qu'un coffre.",
+      "who": "b",
+      "text": "Bérénwë était sur la même ligne qu'un coffre.",
       "logic": {
-        "type": "sameColAs",
+        "type": "sameRowAs",
         "object": "coffre"
       }
     },
     {
       "who": "b",
-      "text": "Bakchich était dans le donjon.",
+      "text": "Elle était dans la même colonne qu'une chaise.",
       "logic": {
-        "type": "inRoom",
-        "room": "D"
+        "type": "sameColAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Elle était à l'ouest de Chaparde.",
+      "logic": {
+        "type": "westOf",
+        "other": "c"
       }
     },
     {
       "who": "c",
-      "text": "Couac était sur la même ligne qu'un arbre.",
+      "text": "Chaparde était sur la même ligne qu'un arbre.",
       "logic": {
         "type": "sameRowAs",
         "object": "arbre"
@@ -283,76 +286,68 @@
     },
     {
       "who": "d",
-      "text": "Daëlin était au nord d'Étincel.",
-      "logic": {
-        "type": "northOf",
-        "other": "e"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Elle était à côté d'une chaise.",
+      "text": "Diaphane était à côté d'un sarcophage.",
       "logic": {
         "type": "adjacentTo",
-        "object": "chaise"
+        "object": "sarcophage"
       }
     },
     {
       "who": "e",
-      "text": "Étincel était dans les cuisines.",
+      "text": "Écho était à côté d'un tapis.",
       "logic": {
-        "type": "inRoom",
-        "room": "K"
+        "type": "adjacentTo",
+        "object": "tapis"
       }
     },
     {
       "who": "f",
-      "text": "Frisson était à l'est de Bakchich.",
+      "text": "Ferdinand était dans la même colonne qu'une étagère.",
       "logic": {
-        "type": "eastOf",
-        "other": "b"
+        "type": "sameColAs",
+        "object": "etagere"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        2,
-        1
-      ],
-      "b": [
-        6,
-        2
-      ],
-      "c": [
-        5,
-        6
-      ],
-      "d": [
-        0,
-        4
-      ],
-      "f": [
         4,
         3
       ],
+      "c": [
+        3,
+        4
+      ],
       "e": [
-        1,
-        5
+        0,
+        1
+      ],
+      "b": [
+        2,
+        2
+      ],
+      "d": [
+        6,
+        0
       ],
       "a": [
-        3,
-        0
+        5,
+        6
+      ],
+      "f": [
+        1,
+        5
       ]
     },
-    "murderer": "a"
+    "murderer": "c"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
+    "skulls": 2,
+    "score": 4,
     "hardest": "ligne réservée",
     "hardSteps": 0,
-    "directStart": 1
+    "directStart": 0
   },
-  "difficulty": 1
+  "difficulty": 2
 }

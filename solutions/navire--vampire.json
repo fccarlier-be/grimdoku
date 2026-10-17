@@ -1,107 +1,93 @@
 {
  "positions": {
   "g": [
-   6,
-   4
-  ],
-  "a": [
    2,
-   6
-  ],
-  "c": [
-   3,
    3
-  ],
-  "b": [
-   4,
-   5
-  ],
-  "e": [
-   5,
-   0
-  ],
-  "f": [
-   0,
-   1
   ],
   "d": [
    1,
+   5
+  ],
+  "b": [
+   6,
+   6
+  ],
+  "e": [
+   4,
+   0
+  ],
+  "f": [
+   5,
+   1
+  ],
+  "c": [
+   0,
    2
+  ],
+  "a": [
+   3,
+   4
   ]
  },
  "murderer": "c",
  "cast": {
-  "a": "a",
-  "c": "b",
-  "b": "c",
-  "e": "d",
-  "f": "e",
-  "d": "f"
+  "d": "a",
+  "b": "b",
+  "e": "c",
+  "f": "d",
+  "c": "e",
+  "a": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "c",
+   "who": "f",
+   "logic": {
+    "type": "westOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "westOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "inRoom",
+    "room": "C"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "hamac"
+   }
+  },
+  {
+   "who": "a",
    "logic": {
     "type": "sameRowAs",
     "object": "chaudron"
    }
   },
   {
-   "who": "b",
-   "logic": {
-    "type": "southOf",
-    "other": "d"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "westOf",
-    "other": "d"
-   }
-  },
-  {
-   "who": "f",
+   "who": "d",
    "logic": {
     "type": "westOf",
     "other": "b"
    }
   },
   {
-   "who": "d",
+   "who": "c",
    "logic": {
-    "type": "southOf",
-    "other": "f"
-   }
-  },
-  {
-   "who": "b",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "chaudron"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
-    "type": "onObject",
-    "object": "tonneau"
-   }
-  },
-  {
-   "who": "d",
-   "logic": {
-    "type": "westOf",
-    "other": "c"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "onObject",
-    "object": "fauteuil"
+    "type": "sameRowAs",
+    "object": "table"
    }
   }
  ]

@@ -18,16 +18,6 @@
       "the": "l'allée des ifs",
       "floor": "herbe"
     },
-    "K": {
-      "name": "Caveau",
-      "the": "le caveau",
-      "floor": "crypte"
-    },
-    "P": {
-      "name": "Carré des pauvres",
-      "the": "le carré des pauvres",
-      "floor": "herbe"
-    },
     "J": {
       "name": "Jardin du souvenir",
       "the": "le jardin du souvenir",
@@ -47,9 +37,9 @@
   "layout": [
     "GGGAACCC",
     "GGGAACCC",
-    "PPAAAAKK",
-    "PPAAAAKK",
-    "PPJJJOOK",
+    "GGAAAACC",
+    "GGAAAACC",
+    "GGJJJOOC",
     "YYJJJOOO",
     "YYJJJOOO",
     "YYYYJOOO"
@@ -185,7 +175,44 @@
   "characters": [
     {
       "id": "a",
-      "name": "Albâtre",
+      "name": "Aconit",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧙‍♀️",
+      "desc": "Sorcière des marais, cuisine tout ce qui coasse",
+      "archetype": "sorciere"
+    },
+    {
+      "id": "b",
+      "name": "Belladone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
+    },
+    {
+      "id": "c",
+      "name": "Colosse",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🦶",
+      "desc": "Géant, toujours couché : aucun plafond n'est assez haut",
+      "archetype": "geant",
+      "shape": "I2"
+    },
+    {
+      "id": "d",
+      "name": "Désiré",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
+    },
+    {
+      "id": "e",
+      "name": "Ectoplasme",
       "gender": "m",
       "role": "suspect",
       "icon": "👻",
@@ -196,50 +223,13 @@
       ]
     },
     {
-      "id": "b",
-      "name": "Bob",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧟",
-      "desc": "Zombie, ancien apprenti. Ancien tout court",
-      "archetype": "zombie"
-    },
-    {
-      "id": "c",
-      "name": "Croassant",
+      "id": "f",
+      "name": "Funeste",
       "gender": "m",
       "role": "suspect",
       "icon": "🐦‍⬛",
       "desc": "Corbeau, écrit des lettres anonymes",
       "archetype": "corbeau"
-    },
-    {
-      "id": "d",
-      "name": "Datura",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧙‍♀️",
-      "desc": "Sorcière des marais, cuisine tout ce qui coasse",
-      "archetype": "sorciere"
-    },
-    {
-      "id": "e",
-      "name": "Écarlate",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧛‍♀️",
-      "desc": "Comtesse vampire, végane (elle le jure)",
-      "archetype": "vampire"
-    },
-    {
-      "id": "f",
-      "name": "Falaise",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🦶",
-      "desc": "Géant, toujours couché : aucun plafond n'est assez haut",
-      "archetype": "geant",
-      "shape": "I2"
     },
     {
       "id": "g",
@@ -254,150 +244,126 @@
   "decor": "cimetiere",
   "id": "cimetiere--fossoyeur--geant",
   "intro": "Le fossoyeur Glas a été retrouvé sans vie au Cimetière de Minuit, ce qui, admettons-le, simplifie les démarches. Six habitués rôdaient entre les tombes. Un seul était avec lui.",
-  "epilogue": "Croassant avoue, et l'écrit dans une lettre anonyme : Glas avait découvert qui écrivait les lettres anonymes.",
+  "epilogue": "Ectoplasme avoue : Glas avait réservé sa tombe préférée. Il la hantait depuis trois siècles.",
   "clues": [
     {
       "who": "a",
-      "text": "Albâtre était à l'est de Croassant.",
+      "text": "Aconit était au sud de Belladone.",
       "logic": {
-        "type": "eastOf",
-        "other": "c"
+        "type": "southOf",
+        "other": "b"
       }
     },
     {
       "who": "a",
-      "text": "Il était dans l'allée des ifs.",
+      "text": "Elle était dans la même colonne qu'un sarcophage.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "sarcophage"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Belladone était au sud de Colosse.",
+      "logic": {
+        "type": "southOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Elle était dans la même colonne qu'un lit.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Colosse était dans la même colonne qu'un pupitre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "pupitre"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Désiré était sur la même ligne qu'un arbre.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Ectoplasme était dans l'allée des ifs.",
       "logic": {
         "type": "inRoom",
         "room": "A"
       }
     },
     {
-      "who": "a",
-      "text": "Il était dans la même colonne qu'un sarcophage.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "sarcophage"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il hantait un arbre.",
-      "logic": {
-        "type": "onObject",
-        "object": "arbre"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Bob était sur la même ligne qu'une table.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "table"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était à l'ouest de Datura.",
-      "logic": {
-        "type": "westOf",
-        "other": "d"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était au nord d'Albâtre.",
-      "logic": {
-        "type": "northOf",
-        "other": "a"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Croassant était au nord de Datura.",
-      "logic": {
-        "type": "northOf",
-        "other": "d"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Il était à côté d'une tombe.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "tombe"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Datura était dans la même colonne qu'une table.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "table"
-      }
-    },
-    {
       "who": "e",
-      "text": "Écarlate était sur la même ligne qu'un sarcophage.",
+      "text": "Il était dans la même colonne qu'une statue.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "sarcophage"
+        "type": "sameColAs",
+        "object": "statue"
       }
     },
     {
       "who": "f",
-      "text": "Falaise était au sud de Croassant.",
+      "text": "Funeste était à l'ouest de Désiré.",
       "logic": {
-        "type": "southOf",
-        "other": "c"
+        "type": "westOf",
+        "other": "d"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        4,
+        1,
         4
       ],
-      "f": [
+      "c": [
         [
-          6,
+          4,
           5
         ],
         [
-          6,
+          4,
           6
         ]
       ],
-      "a": [
-        2,
-        3
-      ],
-      "b": [
-        1,
-        0
-      ],
       "e": [
+        2,
+        2
+      ],
+      "d": [
         3,
         7
       ],
-      "d": [
-        7,
-        1
-      ],
-      "c": [
+      "b": [
         5,
-        2
+        0
+      ],
+      "a": [
+        6,
+        3
+      ],
+      "f": [
+        0,
+        1
       ]
     },
-    "murderer": "c"
+    "murderer": "e"
   },
   "rating": {
-    "skulls": 2,
-    "score": 3,
+    "skulls": 3,
+    "score": 5,
     "hardest": "pièces",
     "hardSteps": 1,
-    "directStart": 1
+    "directStart": 0
   },
   "difficulty": 4
 }

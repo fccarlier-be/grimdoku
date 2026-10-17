@@ -1,5 +1,5 @@
 {
-  "_doc": "Personnages types. Un nom par lettre (A…H) : le personnage qui reçoit la lettre X dans une énigme s'appelle names.X. desc/gender/icon/traits ne doivent pas dépendre de la position (cf. CLAUDE.md §3).",
+  "_doc": "Personnages types. Un nom par lettre (A…L) : le personnage qui reçoit la lettre X dans une énigme s'appelle names.X. desc/gender/icon/traits ne doivent pas dépendre de la position (cf. CLAUDE.md §3).",
   "mage": {
     "icon": "🧙‍♂️",
     "gender": "m",
@@ -13,7 +13,11 @@
       "E": "Eustache",
       "F": "Faribole",
       "G": "Gribouille",
-      "H": "Hocus"
+      "H": "Hocus",
+      "I": "Incantus",
+      "J": "Jonglard",
+      "K": "Karmin",
+      "L": "Lunatik"
     }
   },
   "barde": {
@@ -29,7 +33,11 @@
       "E": "Écho",
       "F": "Fausset",
       "G": "Gamme",
-      "H": "Hautbois"
+      "H": "Hautbois",
+      "I": "Interlude",
+      "J": "Jingle",
+      "K": "Kazoo",
+      "L": "Luth"
     }
   },
   "troll": {
@@ -45,7 +53,11 @@
       "E": "Engloutor",
       "F": "Fringale",
       "G": "Gloutor",
-      "H": "Happeur"
+      "H": "Happeur",
+      "I": "Ingurgitor",
+      "J": "Jambonneau",
+      "K": "Kroustillant",
+      "L": "Lippu"
     }
   },
   "elfe": {
@@ -61,7 +73,11 @@
       "E": "Erwëlle",
       "F": "Faëlys",
       "G": "Galwë",
-      "H": "Hëlwyn"
+      "H": "Hëlwyn",
+      "I": "Ilwë",
+      "J": "Jaëlis",
+      "K": "Kaëlwen",
+      "L": "Lyrwë"
     }
   },
   "fee": {
@@ -77,7 +93,11 @@
       "E": "Églantine",
       "F": "Fougère",
       "G": "Glycine",
-      "H": "Hortense"
+      "H": "Hortense",
+      "I": "Iris",
+      "J": "Jacinthe",
+      "K": "Ketmie",
+      "L": "Lavande"
     }
   },
   "tavernier": {
@@ -93,7 +113,11 @@
       "E": "Écu",
       "F": "Florin",
       "G": "Grippesou",
-      "H": "Hardi"
+      "H": "Hardi",
+      "I": "Intérêt",
+      "J": "Jaunet",
+      "K": "Kreuzer",
+      "L": "Liard"
     }
   },
   "spectre": {
@@ -112,7 +136,11 @@
       "E": "Ectoplasme",
       "F": "Frisson",
       "G": "Grisâtre",
-      "H": "Hulul"
+      "H": "Hulul",
+      "I": "Impalpable",
+      "J": "Jérémiade",
+      "K": "Kryptos",
+      "L": "Lémure"
     }
   },
   "dragonnet": {
@@ -128,7 +156,11 @@
       "E": "Étincel",
       "F": "Flammèche",
       "G": "Gratin",
-      "H": "Haleine"
+      "H": "Haleine",
+      "I": "Ignis",
+      "J": "Jaillifeu",
+      "K": "Kramé",
+      "L": "Lueur"
     }
   },
   "zombie": {
@@ -144,7 +176,11 @@
       "E": "Edmond",
       "F": "Fernand",
       "G": "Gédéon",
-      "H": "Hubert"
+      "H": "Hubert",
+      "I": "Isidore",
+      "J": "Jules",
+      "K": "Kléber",
+      "L": "Lucien"
     }
   },
   "sirene": {
@@ -160,7 +196,11 @@
       "E": "Écume",
       "F": "Flottille",
       "G": "Goémone",
-      "H": "Houle"
+      "H": "Houle",
+      "I": "Iode",
+      "J": "Jouvence",
+      "K": "Kalypso",
+      "L": "Lagune"
     }
   },
   "vampire": {
@@ -176,7 +216,11 @@
       "E": "Écarlate",
       "F": "Funestine",
       "G": "Grenat",
-      "H": "Hémoglobine"
+      "H": "Hémoglobine",
+      "I": "Insomnia",
+      "J": "Jugulaire",
+      "K": "Kryptine",
+      "L": "Lugubra"
     }
   },
   "djinn": {
@@ -192,7 +236,11 @@
       "E": "Encensia",
       "F": "Fumerolle",
       "G": "Génia",
-      "H": "Houka"
+      "H": "Houka",
+      "I": "Ifrita",
+      "J": "Jarre",
+      "K": "Kalifa",
+      "L": "Lampadine"
     }
   },
   "archimage": {
@@ -208,7 +256,11 @@
       "E": "Étoilebarbe",
       "F": "Fizzlebarbe",
       "G": "Grisebarbe",
-      "H": "Hirsutebarbe"
+      "H": "Hirsutebarbe",
+      "I": "Ivoirebarbe",
+      "J": "Jaunebarbe",
+      "K": "Kilobarbe",
+      "L": "Longuebarbe"
     }
   },
   "chevalier": {
@@ -224,7 +276,11 @@
       "E": "Enguerrand",
       "F": "Foulques",
       "G": "Gontran",
-      "H": "Hardouin"
+      "H": "Hardouin",
+      "I": "Isembard",
+      "J": "Jocelyn",
+      "K": "Kunibert",
+      "L": "Lancelin"
     }
   },
   "gobelin": {
@@ -240,7 +296,11 @@
       "E": "Escroquin",
       "F": "Filou",
       "G": "Grigou",
-      "H": "Harpagnol"
+      "H": "Harpagnol",
+      "I": "Impayé",
+      "J": "Jackpot",
+      "K": "Kopeck",
+      "L": "Larcin"
     }
   },
   "roi": {
@@ -256,7 +316,11 @@
       "E": "Eudes",
       "F": "Ferdinand",
       "G": "Godefroy",
-      "H": "Hugues"
+      "H": "Hugues",
+      "I": "Ingelram",
+      "J": "Jehan",
+      "K": "Karloman",
+      "L": "Lothaire"
     }
   },
   "meunier": {
@@ -272,7 +336,11 @@
       "E": "Épeautre",
       "F": "Farinard",
       "G": "Grainville",
-      "H": "Herbert"
+      "H": "Herbert",
+      "I": "Ivraie",
+      "J": "Javelle",
+      "K": "Kamut",
+      "L": "Levain"
     }
   },
   "boulanger": {
@@ -288,7 +356,11 @@
       "E": "Échaudé",
       "F": "Fougasse",
       "G": "Gaufrin",
-      "H": "Honoré"
+      "H": "Honoré",
+      "I": "Ispahan",
+      "J": "Jalousie",
+      "K": "Kouglof",
+      "L": "Linzer"
     }
   },
   "bonimenteur": {
@@ -304,7 +376,11 @@
       "E": "Esbroufe",
       "F": "Faconde",
       "G": "Gouaille",
-      "H": "Hâbleur"
+      "H": "Hâbleur",
+      "I": "Imposteur",
+      "J": "Jacasse",
+      "K": "Kitsch",
+      "L": "Loquace"
     }
   },
   "cartomancienne": {
@@ -320,7 +396,11 @@
       "E": "Étoila",
       "F": "Fortuna",
       "G": "Gémina",
-      "H": "Horoscopa"
+      "H": "Horoscopa",
+      "I": "Intuitia",
+      "J": "Jupitera",
+      "K": "Karmalia",
+      "L": "Lunaria"
     }
   },
   "sorciere": {
@@ -336,7 +416,11 @@
       "E": "Ellébore",
       "F": "Fiel",
       "G": "Garance",
-      "H": "Houx"
+      "H": "Houx",
+      "I": "If",
+      "J": "Jusquiame",
+      "K": "Kalmia",
+      "L": "Lobélie"
     }
   },
   "crapaud": {
@@ -352,7 +436,11 @@
       "E": "Eugène",
       "F": "Flaque",
       "G": "Gluant",
-      "H": "Hector"
+      "H": "Hector",
+      "I": "Ignace",
+      "J": "Jojo",
+      "K": "Krôa",
+      "L": "Léopold"
     }
   },
   "bibliothecaire": {
@@ -368,7 +456,11 @@
       "E": "Ernestine",
       "F": "Folio",
       "G": "Gutenberga",
-      "H": "Héloïse"
+      "H": "Héloïse",
+      "I": "Incunable",
+      "J": "Jaquette",
+      "K": "Kalligraphia",
+      "L": "Lettrine"
     }
   },
   "contremaitre": {
@@ -384,7 +476,11 @@
       "E": "Émeri",
       "F": "Feldspath",
       "G": "Granit",
-      "H": "Houille"
+      "H": "Houille",
+      "I": "Ilménite",
+      "J": "Jaspe",
+      "K": "Kaolin",
+      "L": "Lignite"
     }
   },
   "mineur": {
@@ -400,7 +496,11 @@
       "E": "Étai",
       "F": "Filon",
       "G": "Grisou",
-      "H": "Hotte"
+      "H": "Hotte",
+      "I": "Inox",
+      "J": "Jalon",
+      "K": "Kérosène",
+      "L": "Lanterne"
     }
   },
   "pirate": {
@@ -416,7 +516,11 @@
       "E": "Écoutille",
       "F": "Flibuste",
       "G": "Grappin",
-      "H": "Hune"
+      "H": "Hune",
+      "I": "Îlot",
+      "J": "Jambedebois",
+      "K": "Kraken",
+      "L": "Lascar"
     }
   },
   "capitaine": {
@@ -432,7 +536,11 @@
       "E": "Étrave",
       "F": "Frégaton",
       "G": "Gouvernail",
-      "H": "Hissot"
+      "H": "Hissot",
+      "I": "Iceberg",
+      "J": "Jusant",
+      "K": "Ketch",
+      "L": "Lougre"
     }
   },
   "perroquet": {
@@ -448,7 +556,11 @@
       "E": "Écho-Écho",
       "F": "Fanfaron",
       "G": "Gazouille",
-      "H": "Hurleur"
+      "H": "Hurleur",
+      "I": "Imitateur",
+      "J": "Jacquot",
+      "K": "Koko",
+      "L": "Loulou"
     }
   },
   "apprentie": {
@@ -464,7 +576,11 @@
       "E": "Étincelle",
       "F": "Frimousse",
       "G": "Grenadine",
-      "H": "Hirondelle"
+      "H": "Hirondelle",
+      "I": "Isaline",
+      "J": "Jonquille",
+      "K": "Kumquat",
+      "L": "Luciole"
     }
   },
   "professeur": {
@@ -480,7 +596,11 @@
       "E": "Éprouvette",
       "F": "Fiolius",
       "G": "Gramme",
-      "H": "Hydromel"
+      "H": "Hydromel",
+      "I": "Infusius",
+      "J": "Jauge",
+      "K": "Kelvin",
+      "L": "Lixivius"
     }
   },
   "chef": {
@@ -496,7 +616,11 @@
       "E": "Épice",
       "F": "Fricot",
       "G": "Gratiné",
-      "H": "Hachis"
+      "H": "Hachis",
+      "I": "Infusion",
+      "J": "Julienne",
+      "K": "Kari",
+      "L": "Liaison"
     }
   },
   "ogre": {
@@ -512,7 +636,11 @@
       "E": "Estomac",
       "F": "Festin",
       "G": "Goinfre",
-      "H": "Hargne"
+      "H": "Hargne",
+      "I": "Insatiable",
+      "J": "Jarret",
+      "K": "Krok",
+      "L": "Lardon"
     }
   },
   "fossoyeur": {
@@ -528,7 +656,11 @@
       "E": "Épitaphe",
       "F": "Funérin",
       "G": "Glas",
-      "H": "Humus"
+      "H": "Humus",
+      "I": "Icigît",
+      "J": "Jérôme",
+      "K": "Krypte",
+      "L": "Linceul"
     }
   },
   "corbeau": {
@@ -544,7 +676,11 @@
       "E": "Encrier",
       "F": "Funeste",
       "G": "Griffon",
-      "H": "Hiboulet"
+      "H": "Hiboulet",
+      "I": "Indic",
+      "J": "Jaseur",
+      "K": "Krâ",
+      "L": "Lugubre"
     }
   },
   "geant": {
@@ -562,7 +698,11 @@
       "E": "Escabeau",
       "F": "Falaise",
       "G": "Gigantor",
-      "H": "Hautbois"
+      "H": "Hautbois",
+      "I": "Immeuble",
+      "J": "Jumbo",
+      "K": "Kilomètre",
+      "L": "Lampadaire"
     }
   },
   "golem": {
@@ -580,7 +720,11 @@
       "E": "Éboulis",
       "F": "Fondation",
       "G": "Granit",
-      "H": "Hématite"
+      "H": "Hématite",
+      "I": "Immobile",
+      "J": "Jurassique",
+      "K": "Kilotonne",
+      "L": "Lithos"
     }
   },
   "vouivre": {
@@ -598,7 +742,11 @@
       "E": "Écailline",
       "F": "Fourchelangue",
       "G": "Glissandra",
-      "H": "Hélicia"
+      "H": "Hélicia",
+      "I": "Insinua",
+      "J": "Jaspine",
+      "K": "Kobrette",
+      "L": "Lovée"
     }
   },
   "dragon": {
@@ -616,7 +764,11 @@
       "E": "Embrasor",
       "F": "Fournaise",
       "G": "Grillepoil",
-      "H": "Hautefournaise"
+      "H": "Hautefournaise",
+      "I": "Ignifer",
+      "J": "Jaspefeu",
+      "K": "Krakatoa",
+      "L": "Lavanor"
     }
   }
 }

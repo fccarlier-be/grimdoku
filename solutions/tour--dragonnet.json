@@ -4,23 +4,23 @@
    0,
    5
   ],
-  "a": [
+  "e": [
    2,
    1
   ],
-  "e": [
+  "c": [
    6,
    6
   ],
-  "b": [
+  "d": [
    5,
    0
   ],
-  "c": [
+  "a": [
    3,
    3
   ],
-  "d": [
+  "b": [
    1,
    4
   ],
@@ -29,44 +29,51 @@
    2
   ]
  },
- "murderer": "d",
+ "murderer": "b",
  "cast": {
-  "a": "a",
-  "e": "b",
-  "b": "c",
-  "c": "d",
-  "d": "e",
+  "e": "a",
+  "c": "b",
+  "d": "c",
+  "a": "d",
+  "b": "e",
   "f": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "a",
+   "who": "e",
    "logic": {
     "type": "sameRowAs",
     "object": "etagere"
    }
   },
   {
-   "who": "e",
+   "who": "c",
    "logic": {
     "type": "southOf",
     "other": "f"
    }
   },
   {
-   "who": "b",
+   "who": "d",
    "logic": {
     "type": "sameColAs",
     "object": "portail"
    }
   },
   {
-   "who": "c",
+   "who": "a",
    "logic": {
     "type": "southOf",
-    "other": "a"
+    "other": "e"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "westOf",
+    "other": "c"
    }
   },
   {
@@ -77,28 +84,28 @@
    }
   },
   {
-   "who": "b",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "tapis"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "chaudron"
-   }
-  },
-  {
    "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "inRoom",
+    "room": "L"
+   }
+  },
+  {
+   "who": "b",
    "logic": {
     "type": "sameColAs",
     "object": "cristal"
    }
   },
   {
-   "who": "c",
+   "who": "a",
    "logic": {
     "type": "onObject",
     "object": "tapis"

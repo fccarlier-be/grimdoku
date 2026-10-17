@@ -18,11 +18,6 @@
       "the": "la forge",
       "floor": "roche"
     },
-    "P": {
-      "name": "Puits",
-      "the": "le puits",
-      "floor": "roche"
-    },
     "V": {
       "name": "Filon",
       "the": "le filon",
@@ -47,9 +42,9 @@
   "layout": [
     "EEEGGFFF",
     "EEEGGFFF",
-    "DDGGGPPF",
-    "DDGGGPPV",
-    "DDCCCPVV",
+    "DDGGGFFF",
+    "DDGGGFFV",
+    "DDCCCFVV",
     "TTCCCVVV",
     "TTCCCVVV",
     "TTTTCVVV"
@@ -179,34 +174,7 @@
   "characters": [
     {
       "id": "a",
-      "name": "Avaloir",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧌",
-      "desc": "Troll, plongeur à mi-temps",
-      "archetype": "troll"
-    },
-    {
-      "id": "b",
-      "name": "Bruyère",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧚",
-      "desc": "Fée, doit trois tournées",
-      "archetype": "fee"
-    },
-    {
-      "id": "c",
-      "name": "Charbon",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "👷",
-      "desc": "Contremaître nain, compte les pépites et les pauses",
-      "archetype": "contremaitre"
-    },
-    {
-      "id": "d",
-      "name": "Désiré",
+      "name": "Anatole",
       "gender": "m",
       "role": "suspect",
       "icon": "🧟",
@@ -214,17 +182,17 @@
       "archetype": "zombie"
     },
     {
-      "id": "e",
-      "name": "Étincel",
+      "id": "b",
+      "name": "Boulon",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐉",
-      "desc": "Dragonnet, brûle tout ce qu'il touche",
-      "archetype": "dragonnet"
+      "icon": "⛏️",
+      "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
+      "archetype": "mineur"
     },
     {
-      "id": "f",
-      "name": "Filou",
+      "id": "c",
+      "name": "Chaparde",
       "gender": "m",
       "role": "suspect",
       "icon": "👺",
@@ -232,13 +200,40 @@
       "archetype": "gobelin"
     },
     {
-      "id": "g",
-      "name": "Grisou",
+      "id": "d",
+      "name": "Dardafeu",
       "gender": "m",
       "role": "suspect",
-      "icon": "⛏️",
-      "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
-      "archetype": "mineur"
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
+      "id": "e",
+      "name": "Engloutor",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
+    },
+    {
+      "id": "f",
+      "name": "Feldspath",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👷",
+      "desc": "Contremaître nain, compte les pépites et les pauses",
+      "archetype": "contremaitre"
+    },
+    {
+      "id": "g",
+      "name": "Glycine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
     },
     {
       "id": "h",
@@ -252,94 +247,70 @@
   ],
   "decor": "mine",
   "id": "mine--chevalier",
-  "epilogue": "Grisou avoue : Hardouin lui avait volé sa plus belle pépite. C'était devenu une question de principe.",
+  "epilogue": "Boulon avoue : Hardouin lui avait volé sa plus belle pépite. C'était devenu une question de principe.",
   "clues": [
     {
       "who": "a",
-      "text": "Avaloir était sur la même ligne qu'une statue.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "statue"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était dans la même colonne qu'un lit.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "lit"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Bruyère était sur la même ligne qu'une enclume.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "enclume"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Elle était à côté d'un champignon géant.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "champi"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Charbon était sur la même ligne qu'une chaise.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Il était dans le dortoir.",
-      "logic": {
-        "type": "inRoom",
-        "room": "D"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Désiré était au sud de Grisou.",
-      "logic": {
-        "type": "southOf",
-        "other": "g"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Étincel était à l'ouest de Désiré.",
-      "logic": {
-        "type": "westOf",
-        "other": "d"
-      }
-    },
-    {
-      "who": "f",
-      "text": "Filou était au sud de Charbon.",
+      "text": "Anatole était au sud de Chaparde.",
       "logic": {
         "type": "southOf",
         "other": "c"
       }
     },
     {
-      "who": "f",
-      "text": "Il était au nord de Désiré.",
+      "who": "a",
+      "text": "Il était dans la même colonne qu'une chaise.",
       "logic": {
-        "type": "northOf",
-        "other": "d"
+        "type": "sameColAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Boulon était à l'est de Glycine.",
+      "logic": {
+        "type": "eastOf",
+        "other": "g"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Chaparde était à côté d'une table.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "table"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dardafeu était dans la même colonne qu'un tonneau.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Engloutor était sur la même ligne qu'un tonneau.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Feldspath était dans le dortoir.",
+      "logic": {
+        "type": "inRoom",
+        "room": "D"
       }
     },
     {
       "who": "g",
-      "text": "Grisou était sur la même ligne qu'un lit.",
+      "text": "Glycine était à côté d'un champignon géant.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "lit"
+        "type": "adjacentTo",
+        "object": "champi"
       }
     }
   ],
@@ -349,43 +320,43 @@
         1,
         5
       ],
-      "g": [
+      "b": [
         2,
         7
       ],
-      "a": [
+      "e": [
         0,
         1
       ],
-      "f": [
+      "c": [
         5,
         4
       ],
-      "e": [
+      "d": [
         3,
         2
       ],
-      "b": [
+      "g": [
         6,
         6
       ],
-      "d": [
+      "a": [
         7,
         3
       ],
-      "c": [
+      "f": [
         4,
         0
       ]
     },
-    "murderer": "g"
+    "murderer": "b"
   },
   "rating": {
-    "skulls": 2,
-    "score": 3,
+    "skulls": 3,
+    "score": 7,
     "hardest": "pièces",
-    "hardSteps": 1,
-    "directStart": 2
+    "hardSteps": 3,
+    "directStart": 0
   },
-  "difficulty": 2
+  "difficulty": 3
 }

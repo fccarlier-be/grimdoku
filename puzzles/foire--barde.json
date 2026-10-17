@@ -3,11 +3,6 @@
   "title": "La Foire aux Sortilèges — l'affaire Gamme",
   "size": 7,
   "rooms": {
-    "R": {
-      "name": "Roulotte",
-      "the": "la roulotte",
-      "floor": "parquet"
-    },
     "S": {
       "name": "Stands",
       "the": "les stands",
@@ -40,8 +35,8 @@
     }
   },
   "layout": [
-    "RRSSSBB",
-    "RRSSSBB",
+    "KKSSSBB",
+    "KKSSSBB",
     "KKCCCCB",
     "KKCCCCM",
     "NNCCCCM",
@@ -168,12 +163,12 @@
     },
     {
       "id": "b",
-      "name": "Bohémia",
-      "gender": "f",
+      "name": "Bagou",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🔮",
-      "desc": "Cartomancienne, voit l'avenir, rate le présent",
-      "archetype": "cartomancienne"
+      "icon": "🎩",
+      "desc": "Bonimenteur, vend du rêve au kilo",
+      "archetype": "bonimenteur"
     },
     {
       "id": "c",
@@ -186,30 +181,30 @@
     },
     {
       "id": "d",
-      "name": "Dardafeu",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🐉",
-      "desc": "Dragonnet, brûle tout ce qu'il touche",
-      "archetype": "dragonnet"
-    },
-    {
-      "id": "e",
-      "name": "Esbroufe",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🎩",
-      "desc": "Bonimenteur, vend du rêve au kilo",
-      "archetype": "bonimenteur"
-    },
-    {
-      "id": "f",
-      "name": "Fougère",
+      "name": "Digitale",
       "gender": "f",
       "role": "suspect",
       "icon": "🧚",
       "desc": "Fée, doit trois tournées",
       "archetype": "fee"
+    },
+    {
+      "id": "e",
+      "name": "Étoila",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🔮",
+      "desc": "Cartomancienne, voit l'avenir, rate le présent",
+      "archetype": "cartomancienne"
+    },
+    {
+      "id": "f",
+      "name": "Flammèche",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
     },
     {
       "id": "g",
@@ -223,104 +218,120 @@
   ],
   "decor": "foire",
   "id": "foire--barde",
-  "epilogue": "Avaloir, hercule de foire, avoue : Gamme l'avait traité de « gros caillou » devant les enfants.",
+  "epilogue": "Chaparde tenait la caisse de la foire. Gamme venait de découvrir que la caisse avait un double fond. Et un triple.",
   "clues": [
     {
       "who": "a",
-      "text": "Avaloir était dans la même colonne qu'un tonneau.",
+      "text": "Avaloir était à l'ouest de Bagou.",
       "logic": {
-        "type": "sameColAs",
-        "object": "tonneau"
+        "type": "westOf",
+        "other": "b"
       }
     },
     {
       "who": "a",
-      "text": "Il était sur la même ligne qu'une chaise.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Bohémia était assise sur une chaise.",
+      "text": "Il était assis sur une chaise.",
       "logic": {
         "type": "onObject",
         "object": "chaise"
       }
     },
     {
+      "who": "b",
+      "text": "Bagou était au sud d'Avaloir.",
+      "logic": {
+        "type": "southOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était sur la même ligne qu'un tonneau.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "tonneau"
+      }
+    },
+    {
       "who": "c",
-      "text": "Chaparde était à côté d'une botte de foin.",
+      "text": "Chaparde était à côté d'une boule de cristal.",
       "logic": {
         "type": "adjacentTo",
-        "object": "foin"
+        "object": "cristal"
       }
     },
     {
       "who": "d",
-      "text": "Dardafeu était à l'est d'Esbroufe.",
+      "text": "Digitale était sur la même ligne qu'un tonneau.",
       "logic": {
-        "type": "eastOf",
-        "other": "e"
+        "type": "sameRowAs",
+        "object": "tonneau"
       }
     },
     {
       "who": "e",
-      "text": "Esbroufe était dans le manège.",
+      "text": "Étoila était sur la même ligne qu'un tapis.",
       "logic": {
-        "type": "inRoom",
-        "room": "N"
+        "type": "sameRowAs",
+        "object": "tapis"
       }
     },
     {
       "who": "f",
-      "text": "Fougère était sur la même ligne qu'un tonneau.",
+      "text": "Flammèche était sur la même ligne qu'un lit.",
       "logic": {
         "type": "sameRowAs",
-        "object": "tonneau"
+        "object": "lit"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Il était à l'ouest de Chaparde.",
+      "logic": {
+        "type": "westOf",
+        "other": "c"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        6,
-        3
+        4,
+        4
       ],
-      "b": [
-        1,
-        5
+      "e": [
+        3,
+        0
       ],
       "c": [
-        3,
-        6
+        2,
+        3
       ],
       "a": [
         5,
-        4
+        1
+      ],
+      "d": [
+        1,
+        6
       ],
       "f": [
         0,
         2
       ],
-      "d": [
-        2,
-        1
-      ],
-      "e": [
-        4,
-        0
+      "b": [
+        6,
+        5
       ]
     },
-    "murderer": "a"
+    "murderer": "c"
   },
   "rating": {
-    "skulls": 2,
-    "score": 4,
-    "hardest": "ligne réservée",
-    "hardSteps": 0,
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
     "directStart": 0
   },
-  "difficulty": 2
+  "difficulty": 3
 }

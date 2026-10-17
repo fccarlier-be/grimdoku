@@ -18,11 +18,6 @@
       "the": "l'allée des ifs",
       "floor": "herbe"
     },
-    "K": {
-      "name": "Caveau",
-      "the": "le caveau",
-      "floor": "crypte"
-    },
     "P": {
       "name": "Carré des pauvres",
       "the": "le carré des pauvres",
@@ -47,9 +42,9 @@
   "layout": [
     "GGGAACCC",
     "GGGAACCC",
-    "PPAAAAKK",
-    "PPAAAAKK",
-    "PPJJJOOK",
+    "PPAAAACC",
+    "PPAAAACC",
+    "PPJJJOOC",
     "YYJJJOOO",
     "YYJJJOOO",
     "YYYYJOOO"
@@ -185,12 +180,12 @@
   "characters": [
     {
       "id": "a",
-      "name": "Augure",
+      "name": "Aymeric",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐦‍⬛",
-      "desc": "Corbeau, écrit des lettres anonymes",
-      "archetype": "corbeau"
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
     },
     {
       "id": "b",
@@ -203,7 +198,16 @@
     },
     {
       "id": "c",
-      "name": "Ciguë",
+      "name": "Crépuscula",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire"
+    },
+    {
+      "id": "d",
+      "name": "Datura",
       "gender": "f",
       "role": "suspect",
       "icon": "🧙‍♀️",
@@ -211,8 +215,17 @@
       "archetype": "sorciere"
     },
     {
-      "id": "d",
-      "name": "Désiré",
+      "id": "e",
+      "name": "Encrier",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐦‍⬛",
+      "desc": "Corbeau, écrit des lettres anonymes",
+      "archetype": "corbeau"
+    },
+    {
+      "id": "f",
+      "name": "Fernand",
       "gender": "m",
       "role": "suspect",
       "icon": "🧟",
@@ -220,31 +233,13 @@
       "archetype": "zombie"
     },
     {
-      "id": "e",
-      "name": "Eugène",
+      "id": "g",
+      "name": "Gluant",
       "gender": "m",
       "role": "suspect",
       "icon": "🐸",
       "desc": "Crapaud, prince déchu, attend toujours son bisou",
       "archetype": "crapaud"
-    },
-    {
-      "id": "f",
-      "name": "Foulques",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🤺",
-      "desc": "Chevalier, armure trop petite depuis Noël",
-      "archetype": "chevalier"
-    },
-    {
-      "id": "g",
-      "name": "Grenat",
-      "gender": "f",
-      "role": "suspect",
-      "icon": "🧛‍♀️",
-      "desc": "Comtesse vampire, végane (elle le jure)",
-      "archetype": "vampire"
     },
     {
       "id": "h",
@@ -262,140 +257,132 @@
   "decor": "cimetiere",
   "id": "cimetiere--spectre",
   "intro": "Le spectre Hulul a été retrouvé sans vie au Cimetière de Minuit, ce qui, admettons-le, simplifie les démarches. Sept habitués rôdaient entre les tombes. Un seul était avec lui.",
-  "epilogue": "Eugène avoue : Hulul l'avait confondu avec une grenouille. C'est très vexant, pour un prince.",
+  "epilogue": "Crépuscula avoue : Hulul avait planté de l'ail sur toutes les tombes. Même la sienne.",
   "clues": [
     {
       "who": "a",
-      "text": "Augure était à l'ouest de Grenat.",
+      "text": "Aymeric était sur la même ligne qu'un lit.",
       "logic": {
-        "type": "westOf",
-        "other": "g"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était dans le caveau.",
-      "logic": {
-        "type": "inRoom",
-        "room": "K"
+        "type": "sameRowAs",
+        "object": "lit"
       }
     },
     {
       "who": "b",
-      "text": "Bêchu était à côté d'une tombe.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "tombe"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était dans le jardin du souvenir.",
-      "logic": {
-        "type": "inRoom",
-        "room": "J"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était dans la même colonne qu'une tombe.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "tombe"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Ciguë était à côté d'une statue.",
+      "text": "Bêchu était à côté d'une statue.",
       "logic": {
         "type": "adjacentTo",
         "object": "statue"
       }
     },
     {
-      "who": "d",
-      "text": "Désiré était sur la même ligne qu'une tombe.",
+      "who": "c",
+      "text": "Crépuscula était à l'ouest de Gluant.",
       "logic": {
-        "type": "sameRowAs",
+        "type": "westOf",
+        "other": "g"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Elle était dans la même colonne qu'un arbre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Elle était à côté d'une tombe.",
+      "logic": {
+        "type": "adjacentTo",
         "object": "tombe"
       }
     },
     {
-      "who": "e",
-      "text": "Eugène était à l'est de Foulques.",
+      "who": "d",
+      "text": "Datura était au sud de Crépuscula.",
       "logic": {
-        "type": "eastOf",
+        "type": "southOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Encrier était au nord de Fernand.",
+      "logic": {
+        "type": "northOf",
         "other": "f"
       }
     },
     {
       "who": "e",
-      "text": "Il était dans la même colonne qu'un sarcophage.",
+      "text": "Il était à côté d'un arbre.",
       "logic": {
-        "type": "sameColAs",
-        "object": "sarcophage"
+        "type": "adjacentTo",
+        "object": "arbre"
       }
     },
     {
       "who": "f",
-      "text": "Foulques était dans la même colonne qu'un sarcophage.",
+      "text": "Fernand était à l'est de Datura.",
       "logic": {
-        "type": "sameColAs",
-        "object": "sarcophage"
+        "type": "eastOf",
+        "other": "d"
       }
     },
     {
       "who": "g",
-      "text": "Grenat était au sud de Désiré.",
+      "text": "Gluant était à côté d'un sarcophage.",
       "logic": {
-        "type": "southOf",
-        "other": "d"
+        "type": "adjacentTo",
+        "object": "sarcophage"
       }
     }
   ],
   "solution": {
     "positions": {
-      "a": [
-        2,
+      "h": [
+        4,
         6
       ],
       "b": [
-        5,
-        4
+        6,
+        3
+      ],
+      "f": [
+        3,
+        1
       ],
       "c": [
-        0,
+        5,
         5
       ],
       "d": [
-        4,
+        7,
         0
       ],
-      "f": [
-        7,
-        1
+      "e": [
+        2,
+        4
+      ],
+      "a": [
+        0,
+        2
       ],
       "g": [
-        6,
-        7
-      ],
-      "e": [
         1,
-        3
-      ],
-      "h": [
-        3,
-        2
+        7
       ]
     },
-    "murderer": "e"
+    "murderer": "c"
   },
   "rating": {
-    "skulls": 3,
-    "score": 7,
-    "hardest": "pièces",
-    "hardSteps": 3,
+    "skulls": 2,
+    "score": 4,
+    "hardest": "ligne réservée",
+    "hardSteps": 0,
     "directStart": 0
   },
-  "difficulty": 3
+  "difficulty": 2
 }

@@ -2,111 +2,125 @@
  "positions": {
   "h": [
    2,
-   6
-  ],
-  "d": [
-   3,
-   0
+   4
   ],
   "c": [
-   5,
+   1,
+   0
+  ],
+  "a": [
+   3,
+   3
+  ],
+  "d": [
+   6,
    1
   ],
-  "e": [
-   7,
+  "f": [
+   5,
    2
   ],
   "g": [
+   7,
+   6
+  ],
+  "e": [
    4,
    5
   ],
-  "f": [
-   1,
-   7
-  ],
   "b": [
    0,
-   4
-  ],
-  "a": [
-   6,
-   3
+   7
   ]
  },
- "murderer": "f",
+ "murderer": "a",
  "cast": {
-  "d": "a",
-  "c": "b",
-  "e": "c",
-  "g": "d",
-  "f": "e",
-  "b": "f",
-  "a": "g"
+  "c": "a",
+  "a": "b",
+  "d": "c",
+  "f": "d",
+  "g": "e",
+  "e": "f",
+  "b": "g"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "d",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "coffre"
-   }
-  },
-  {
-   "who": "c",
+   "who": "a",
    "logic": {
     "type": "sameRowAs",
     "object": "chaise"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "lit"
    }
   },
   {
    "who": "g",
    "logic": {
-    "type": "adjacentTo",
-    "object": "table"
+    "type": "southOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "northOf",
+    "other": "d"
    }
   },
   {
    "who": "a",
    "logic": {
-    "type": "southOf",
-    "other": "d"
+    "type": "adjacentTo",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "fauteuil"
    }
   },
   {
    "who": "b",
    "logic": {
-    "type": "onObject",
+    "type": "sameRowAs",
     "object": "chaise"
    }
   },
   {
    "who": "c",
    "logic": {
-    "type": "sameColAs",
-    "object": "chaise"
+    "type": "adjacentTo",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "eastOf",
+    "other": "e"
    }
   },
   {
    "who": "f",
    "logic": {
-    "type": "sameRowAs",
-    "object": "statue"
-   }
-  },
-  {
-   "who": "e",
-   "logic": {
     "type": "onObject",
     "object": "fauteuil"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "onObject",
-    "object": "champi"
    }
   }
  ]

@@ -120,12 +120,12 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aquabelle",
-      "gender": "f",
+      "name": "Avaloir",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧜‍♀️",
-      "desc": "Sirène, venue pour l'aquarium",
-      "archetype": "sirene"
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
     },
     {
       "id": "b",
@@ -156,12 +156,12 @@
     },
     {
       "id": "e",
-      "name": "Engloutor",
-      "gender": "m",
+      "name": "Écume",
+      "gender": "f",
       "role": "suspect",
-      "icon": "🧌",
-      "desc": "Troll, plongeur à mi-temps",
-      "archetype": "troll"
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene"
     },
     {
       "id": "f",
@@ -175,92 +175,92 @@
   ],
   "decor": "marais",
   "id": "marais--zombie",
-  "epilogue": "Bérénwë avoue d'un air dégoûté : Fernand lui avait servi de la soupe de vase et exigé cinq étoiles.",
+  "epilogue": "Coassin avoue : Fernand avait refusé de lui donner le bisou du contre-sort. Il a perdu patience.",
   "clues": [
     {
       "who": "a",
-      "text": "Aquabelle était allongée sur un lit.",
+      "text": "Avaloir était dans la même colonne qu'une barque.",
       "logic": {
-        "type": "onObject",
-        "object": "lit"
+        "type": "sameColAs",
+        "object": "barque"
       }
     },
     {
       "who": "b",
-      "text": "Bérénwë était sur un champignon géant.",
+      "text": "Bérénwë était à l'ouest de Coassin.",
       "logic": {
-        "type": "onObject",
-        "object": "champi"
+        "type": "westOf",
+        "other": "c"
       }
     },
     {
       "who": "c",
-      "text": "Coassin était au sud de Datura.",
+      "text": "Coassin était au nord d'Écume.",
       "logic": {
-        "type": "southOf",
-        "other": "d"
+        "type": "northOf",
+        "other": "e"
       }
     },
     {
       "who": "c",
-      "text": "Il était dans la même colonne qu'un tonneau.",
+      "text": "Il était dans la tourbière.",
       "logic": {
-        "type": "sameColAs",
-        "object": "tonneau"
+        "type": "inRoom",
+        "room": "T"
       }
     },
     {
       "who": "d",
-      "text": "Datura était dans la même colonne qu'un chaudron.",
+      "text": "Datura était sur la même ligne qu'un chaudron.",
       "logic": {
-        "type": "sameColAs",
+        "type": "sameRowAs",
         "object": "chaudron"
       }
     },
     {
       "who": "e",
-      "text": "Engloutor était à l'est de Coassin.",
+      "text": "Écume était au sud d'Avaloir.",
       "logic": {
-        "type": "eastOf",
-        "other": "c"
+        "type": "southOf",
+        "other": "a"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        4,
-        2
-      ],
-      "a": [
-        1,
-        0
-      ],
-      "c": [
-        3,
+        5,
         3
       ],
       "e": [
-        0,
+        4,
+        1
+      ],
+      "c": [
+        3,
         5
       ],
-      "b": [
-        5,
+      "a": [
+        1,
         4
       ],
-      "d": [
+      "b": [
         2,
-        1
+        2
+      ],
+      "d": [
+        0,
+        0
       ]
     },
-    "murderer": "b"
+    "murderer": "c"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
-    "hardest": "position relative",
-    "hardSteps": 0,
-    "directStart": 1
+    "skulls": 3,
+    "score": 6,
+    "hardest": "pièces",
+    "hardSteps": 2,
+    "directStart": 0
   },
-  "difficulty": 1
+  "difficulty": 3
 }

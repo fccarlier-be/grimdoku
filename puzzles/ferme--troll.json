@@ -126,25 +126,16 @@
   "characters": [
     {
       "id": "a",
-      "name": "Amandin",
+      "name": "Ardent",
       "gender": "m",
       "role": "suspect",
-      "icon": "👨‍🍳",
-      "desc": "Boulanger, pétrit plus de ragots que de pâte",
-      "archetype": "boulanger"
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
     },
     {
       "id": "b",
-      "name": "Bob",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🧟",
-      "desc": "Zombie, ancien apprenti. Ancien tout court",
-      "archetype": "zombie"
-    },
-    {
-      "id": "c",
-      "name": "Capucine",
+      "name": "Bruyère",
       "gender": "f",
       "role": "suspect",
       "icon": "🧚",
@@ -152,13 +143,22 @@
       "archetype": "fee"
     },
     {
-      "id": "d",
-      "name": "Dardafeu",
+      "id": "c",
+      "name": "Croissant",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐉",
-      "desc": "Dragonnet, brûle tout ce qu'il touche",
-      "archetype": "dragonnet"
+      "icon": "👨‍🍳",
+      "desc": "Boulanger, pétrit plus de ragots que de pâte",
+      "archetype": "boulanger"
+    },
+    {
+      "id": "d",
+      "name": "Désiré",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie"
     },
     {
       "id": "e",
@@ -182,86 +182,54 @@
   "decor": "ferme",
   "id": "ferme--troll",
   "intro": "Le troll Fringale a été retrouvé au petit matin dans la Ferme Hantée, entre le potager et le fournil. Cinq voisins y avaient passé la nuit. Un seul était avec lui.",
-  "epilogue": "Amandin avoue en pétrissant nerveusement : Fringale avait mangé toutes les miches du fournil avant l'aube.",
+  "epilogue": "Croissant avoue en pétrissant nerveusement : Fringale avait mangé toutes les miches du fournil avant l'aube.",
   "clues": [
     {
       "who": "a",
-      "text": "Amandin était à l'est de Dardafeu.",
-      "logic": {
-        "type": "eastOf",
-        "other": "d"
-      }
-    },
-    {
-      "who": "a",
-      "text": "Il était sur un champignon géant.",
-      "logic": {
-        "type": "onObject",
-        "object": "champi"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Bob était à l'ouest de Dardafeu.",
-      "logic": {
-        "type": "westOf",
-        "other": "d"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était sur la même ligne qu'une statue.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "statue"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était assis sur une chaise.",
-      "logic": {
-        "type": "onObject",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Capucine était à l'ouest d'Épeautre.",
-      "logic": {
-        "type": "westOf",
-        "other": "e"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Elle était dans la même colonne qu'une statue.",
+      "text": "Ardent était dans la même colonne qu'une botte de foin.",
       "logic": {
         "type": "sameColAs",
-        "object": "statue"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Elle était dans l'étable.",
-      "logic": {
-        "type": "inRoom",
-        "room": "E"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Dardafeu était sur la même ligne qu'une botte de foin.",
-      "logic": {
-        "type": "sameRowAs",
         "object": "foin"
       }
     },
     {
-      "who": "e",
-      "text": "Épeautre était au sud de Dardafeu.",
+      "who": "a",
+      "text": "Il était à côté d'une chaise.",
       "logic": {
-        "type": "southOf",
-        "other": "d"
+        "type": "adjacentTo",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bruyère était à côté d'un champignon géant.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Croissant était sur la même ligne qu'un arbre.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Désiré était dans la même colonne qu'un arbre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Épeautre était sur la même ligne qu'un tonneau.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "tonneau"
       }
     }
   ],
@@ -269,37 +237,37 @@
     "positions": {
       "f": [
         2,
-        3
-      ],
-      "a": [
-        5,
-        2
-      ],
-      "b": [
-        4,
-        0
+        4
       ],
       "c": [
-        1,
-        4
+        3,
+        5
       ],
       "d": [
         0,
-        1
+        3
+      ],
+      "b": [
+        4,
+        2
+      ],
+      "a": [
+        5,
+        0
       ],
       "e": [
-        3,
-        5
+        1,
+        1
       ]
     },
-    "murderer": "a"
+    "murderer": "c"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
-    "hardest": "position relative",
-    "hardSteps": 0,
-    "directStart": 3
+    "skulls": 3,
+    "score": 6,
+    "hardest": "pièces",
+    "hardSteps": 2,
+    "directStart": 0
   },
-  "difficulty": 1
+  "difficulty": 3
 }

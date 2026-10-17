@@ -2,23 +2,13 @@
   "formatVersion": 1,
   "title": "Le Château de Mortebrune — l'affaire Ferdinand",
   "intro": "Le roi Ferdinand a été retrouvé sans vie au petit matin, au Château de Mortebrune. Cinq invités juraient qu'ils dormaient. Un seul était avec lui.",
-  "epilogue": "Clodomir avoue en grinçant de l'armure : Ferdinand s'était moqué de sa cuirasse trop petite devant toute la cour.",
+  "epilogue": "Célandra avoue avec dédain : Ferdinand avait servi au banquet un vin imbuvable. Elle l'a jugé sans appel.",
   "size": 7,
   "rooms": {
-    "C": {
-      "name": "Chapelle",
-      "the": "la chapelle",
-      "floor": "dalles"
-    },
     "G": {
       "name": "Grande salle",
       "the": "la grande salle",
       "floor": "dalles"
-    },
-    "K": {
-      "name": "Cuisines",
-      "the": "les cuisines",
-      "floor": "damier"
     },
     "A": {
       "name": "Armurerie",
@@ -42,9 +32,9 @@
     }
   },
   "layout": [
-    "CCGGGKK",
-    "CCGGGKK",
-    "AAGGGKT",
+    "AAGGGGG",
+    "AAGGGGG",
+    "AAGGGGT",
     "AAJJJTT",
     "AAJJJTT",
     "DDJJJTT",
@@ -181,12 +171,12 @@
   "characters": [
     {
       "id": "a",
-      "name": "Arnak",
+      "name": "Aymeric",
       "gender": "m",
       "role": "suspect",
-      "icon": "👺",
-      "desc": "Gobelin, trésorier du royaume (non déclaré)",
-      "archetype": "gobelin"
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
     },
     {
       "id": "b",
@@ -199,12 +189,12 @@
     },
     {
       "id": "c",
-      "name": "Clodomir",
-      "gender": "m",
+      "name": "Célandra",
+      "gender": "f",
       "role": "suspect",
-      "icon": "🤺",
-      "desc": "Chevalier, armure trop petite depuis Noël",
-      "archetype": "chevalier"
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
     },
     {
       "id": "d",
@@ -214,16 +204,16 @@
       "icon": "🐉",
       "desc": "Dragon adulte, toujours lové dans un coin",
       "archetype": "dragon",
-      "shape": "L3"
+      "shape": "I2"
     },
     {
       "id": "e",
-      "name": "Erwëlle",
-      "gender": "f",
+      "name": "Escroquin",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧝‍♀️",
-      "desc": "Elfe, critique gastronomique",
-      "archetype": "elfe"
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
     },
     {
       "id": "f",
@@ -240,88 +230,60 @@
   "clues": [
     {
       "who": "a",
-      "text": "Arnak était à côté d'une botte de foin.",
+      "text": "Aymeric était à côté d'un coffre.",
       "logic": {
         "type": "adjacentTo",
-        "object": "foin"
+        "object": "coffre"
       }
     },
     {
       "who": "b",
-      "text": "Brann était sur la même ligne qu'une chaise.",
+      "text": "Brann était à côté d'une chaise.",
       "logic": {
-        "type": "sameRowAs",
+        "type": "adjacentTo",
         "object": "chaise"
       }
     },
     {
-      "who": "b",
-      "text": "Il était dans la même colonne qu'une statue.",
+      "who": "c",
+      "text": "Célandra était dans la même colonne qu'un champignon géant.",
       "logic": {
         "type": "sameColAs",
-        "object": "statue"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était sur un tapis.",
-      "logic": {
-        "type": "onObject",
-        "object": "tapis"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Clodomir était dans la même colonne qu'un tapis.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "tapis"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Il était sur la même ligne qu'un chaudron.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "chaudron"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Il était à l'ouest d'Erwëlle.",
-      "logic": {
-        "type": "westOf",
-        "other": "e"
+        "object": "champi"
       }
     },
     {
       "who": "d",
-      "text": "Draconyx était au nord d'Erwëlle.",
+      "text": "Draconyx était au sud de Célandra.",
       "logic": {
-        "type": "northOf",
-        "other": "e"
+        "type": "southOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était dans la même colonne qu'une étagère.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "etagere"
       }
     },
     {
       "who": "e",
-      "text": "Erwëlle était au sud de Clodomir.",
+      "text": "Escroquin était dans la même colonne qu'un coffre.",
       "logic": {
-        "type": "southOf",
-        "other": "c"
+        "type": "sameColAs",
+        "object": "coffre"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        2,
-        2
+        6,
+        3
       ],
       "d": [
-        [
-          3,
-          5
-        ],
         [
           4,
           5
@@ -331,31 +293,31 @@
           6
         ]
       ],
-      "c": [
-        0,
-        3
-      ],
       "a": [
+        2,
+        1
+      ],
+      "e": [
         5,
         0
       ],
       "b": [
-        1,
-        1
-      ],
-      "e": [
-        6,
+        0,
         4
+      ],
+      "c": [
+        3,
+        2
       ]
     },
     "murderer": "c"
   },
   "rating": {
-    "skulls": 1,
-    "score": 2,
-    "hardest": "position relative",
-    "hardSteps": 0,
-    "directStart": 2
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 0
   },
   "difficulty": 4
 }

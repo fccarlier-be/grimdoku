@@ -1,0 +1,132 @@
+{
+ "positions": {
+  "i": [
+   3,
+   5
+  ],
+  "f": [
+   6,
+   1
+  ],
+  "b": [
+   1,
+   0
+  ],
+  "c": [
+   4,
+   2
+  ],
+  "e": [
+   8,
+   6
+  ],
+  "a": [
+   2,
+   8
+  ],
+  "g": [
+   5,
+   4
+  ],
+  "h": [
+   0,
+   3
+  ],
+  "d": [
+   7,
+   7
+  ]
+ },
+ "murderer": "h",
+ "cast": {
+  "f": "a",
+  "b": "b",
+  "c": "c",
+  "e": "d",
+  "a": "e",
+  "g": "f",
+  "h": "g",
+  "d": "h"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "f",
+   "logic": {
+    "type": "westOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "foin"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "westOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "northOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "enclume"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "eastOf",
+    "other": "g"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "westOf",
+    "other": "g"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "fauteuil"
+   }
+  }
+ ]
+}

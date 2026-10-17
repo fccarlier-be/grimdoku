@@ -1,87 +1,94 @@
 {
  "positions": {
   "f": [
-   6,
-   4
+   3,
+   0
   ],
-  "d": [
+  "c": [
    [
     4,
-    3
+    4
    ],
    [
     5,
-    3
+    4
    ]
   ],
-  "c": [
-   3,
-   6
-  ],
   "a": [
-   1,
+   2,
    1
   ],
+  "b": [
+   1,
+   3
+  ],
   "e": [
-   2,
+   6,
    2
   ],
-  "b": [
+  "d": [
    0,
-   5
+   6
   ]
  },
- "murderer": "d",
+ "murderer": "a",
  "cast": {
-  "d": "a",
-  "c": "b",
-  "a": "c",
+  "c": "a",
+  "a": "b",
+  "b": "c",
   "e": "d",
-  "b": "e"
+  "d": "e"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "table"
+   }
+  },
+  {
    "who": "a",
    "logic": {
-    "type": "westOf",
-    "other": "e"
+    "type": "adjacentTo",
+    "object": "lit"
    }
   },
   {
    "who": "e",
    "logic": {
-    "type": "inRoom",
-    "room": "X"
-   }
-  },
-  {
-   "who": "a",
-   "logic": {
-    "type": "onObject",
-    "object": "fauteuil"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "chaudron"
+    "type": "eastOf",
+    "other": "a"
    }
   },
   {
    "who": "d",
    "logic": {
     "type": "adjacentTo",
-    "object": "chaise"
+    "object": "fauteuil"
    }
   },
   {
    "who": "b",
    "logic": {
-    "type": "onObject",
-    "object": "fauteuil"
+    "type": "sameRowAs",
+    "object": "etagere"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "champi"
    }
   }
  ]

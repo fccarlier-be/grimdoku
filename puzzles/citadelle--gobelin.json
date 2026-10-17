@@ -1,0 +1,401 @@
+{
+  "formatVersion": 1,
+  "title": "La Citadelle de Mortebrune — l'affaire Impayé",
+  "decor": "chateau",
+  "size": 9,
+  "rooms": {
+    "R": {
+      "name": "Remparts",
+      "the": "les remparts",
+      "floor": "paves"
+    },
+    "C": {
+      "name": "Cour d'honneur",
+      "the": "la cour d'honneur",
+      "floor": "paves"
+    },
+    "T": {
+      "name": "Tour de guet",
+      "the": "la tour de guet",
+      "floor": "dalles"
+    },
+    "A": {
+      "name": "Armurerie",
+      "the": "l'armurerie",
+      "floor": "dalles"
+    },
+    "J": {
+      "name": "Jardin",
+      "the": "le jardin",
+      "floor": "herbe"
+    },
+    "B": {
+      "name": "Écuries",
+      "the": "les écuries",
+      "floor": "paille"
+    },
+    "P": {
+      "name": "Oubliettes",
+      "the": "les oubliettes",
+      "floor": "crypte"
+    },
+    "D": {
+      "name": "Salle du trône",
+      "the": "la salle du trône",
+      "floor": "noble"
+    }
+  },
+  "layout": [
+    "RRRCCCCTT",
+    "RRRCCCCTT",
+    "RRRCCCCTT",
+    "AAACCCCTT",
+    "AAAJJJJJB",
+    "AAAJJJJJB",
+    "PPPJJJJJB",
+    "PPPDDDDBB",
+    "PPPDDDDBB"
+  ],
+  "objects": [
+    {
+      "type": "canon",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        8
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        2,
+        7
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        0
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        4,
+        7
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        5,
+        8
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        7,
+        0
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        8,
+        2
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        8,
+        5
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        7,
+        4
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        8,
+        7
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Aconit",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧙‍♀️",
+      "desc": "Sorcière des marais, cuisine tout ce qui coasse",
+      "archetype": "sorciere"
+    },
+    {
+      "id": "b",
+      "name": "Brann",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde"
+    },
+    {
+      "id": "c",
+      "name": "Clodomir",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
+    },
+    {
+      "id": "d",
+      "name": "Dévoreur",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👹",
+      "desc": "Ogre, végétarien depuis mardi",
+      "archetype": "ogre"
+    },
+    {
+      "id": "e",
+      "name": "Ectoplasme",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ]
+    },
+    {
+      "id": "f",
+      "name": "Flammèche",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet"
+    },
+    {
+      "id": "g",
+      "name": "Godefroy",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤴",
+      "desc": "Roi, avare de compliments et de tout le reste",
+      "archetype": "roi"
+    },
+    {
+      "id": "h",
+      "name": "Hëlwyn",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
+    },
+    {
+      "id": "i",
+      "name": "Impayé",
+      "gender": "m",
+      "role": "victim",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin"
+    }
+  ],
+  "id": "citadelle--gobelin",
+  "intro": "Le gobelin Impayé a été retrouvé sans vie à la Citadelle de Mortebrune, la nuit où le pont-levis est resté coincé. Huit occupants ne pouvaient pas sortir. Un seul était avec lui.",
+  "epilogue": "Flammèche avoue en toussant une flammèche : Impayé l'utilisait pour allumer les torches. Sans jamais le payer.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Aconit était à côté d'un arbre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Elle était à l'ouest de Flammèche.",
+      "logic": {
+        "type": "westOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Brann était à côté d'un tapis.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Clodomir était dans les oubliettes.",
+      "logic": {
+        "type": "inRoom",
+        "room": "P"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dévoreur était au sud de Flammèche.",
+      "logic": {
+        "type": "southOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était dans la même colonne qu'une boule de cristal.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "cristal"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Ectoplasme était dans la même colonne qu'un tonneau.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Flammèche était dans la même colonne qu'un arbre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Godefroy était à l'ouest de Clodomir.",
+      "logic": {
+        "type": "westOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Il était au nord de Flammèche.",
+      "logic": {
+        "type": "northOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "h",
+      "text": "Hëlwyn était à l'est d'Aconit.",
+      "logic": {
+        "type": "eastOf",
+        "other": "a"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "i": [
+        0,
+        6
+      ],
+      "c": [
+        6,
+        2
+      ],
+      "b": [
+        7,
+        3
+      ],
+      "h": [
+        8,
+        8
+      ],
+      "e": [
+        4,
+        0
+      ],
+      "f": [
+        2,
+        5
+      ],
+      "g": [
+        1,
+        1
+      ],
+      "a": [
+        5,
+        4
+      ],
+      "d": [
+        3,
+        7
+      ]
+    },
+    "murderer": "f"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 6,
+    "hardest": "pièces",
+    "hardSteps": 2,
+    "directStart": 0
+  },
+  "difficulty": 3
+}

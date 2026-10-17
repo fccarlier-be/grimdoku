@@ -3,11 +3,6 @@
   "title": "Le Palais des Mille Vœux — l'affaire Grigou",
   "size": 7,
   "rooms": {
-    "O": {
-      "name": "Observatoire",
-      "the": "l'observatoire",
-      "floor": "mosaique"
-    },
     "T": {
       "name": "Salle du trône",
       "the": "la salle du trône",
@@ -40,8 +35,8 @@
     }
   },
   "layout": [
-    "OOTTTRR",
-    "OOTTTRR",
+    "LLTTTRR",
+    "LLTTTRR",
     "LLTTTBB",
     "LLJJJBB",
     "HHJJJBB",
@@ -188,21 +183,21 @@
     },
     {
       "id": "b",
-      "name": "Baudouin",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🤴",
-      "desc": "Roi, avare de compliments et de tout le reste",
-      "archetype": "roi"
-    },
-    {
-      "id": "c",
-      "name": "Calebasse",
+      "name": "Bazarine",
       "gender": "f",
       "role": "suspect",
       "icon": "🧞‍♀️",
       "desc": "Djinn, a déjà exaucé deux vœux de trop",
       "archetype": "djinn"
+    },
+    {
+      "id": "c",
+      "name": "Childéric",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤴",
+      "desc": "Roi, avare de compliments et de tout le reste",
+      "archetype": "roi"
     },
     {
       "id": "d",
@@ -244,120 +239,128 @@
   "decor": "palais",
   "id": "palais--gobelin",
   "intro": "Le gobelin Grigou a été retrouvé sans vie au Palais des Mille Vœux, sous un tapis volant qui ne volait plus. Six invités avaient fait un vœu ce soir-là. Un seul était avec lui.",
-  "epilogue": "Arcane l'avait lu dans les cartes : Grigou allait vider le trésor. Elle a préféré prendre les devants.",
+  "epilogue": "Bazarine avoue : Grigou réclamait un quatrième vœu. Il n'y a jamais de quatrième vœu.",
   "clues": [
     {
       "who": "a",
-      "text": "Arcane était dans la salle des lampes.",
+      "text": "Arcane était sur la même ligne qu'un arbre.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bazarine était sur la même ligne qu'une table.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Childéric était au sud de Doublebarbe.",
+      "logic": {
+        "type": "southOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était dans la même colonne qu'un champignon géant.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Doublebarbe était dans la salle des lampes.",
       "logic": {
         "type": "inRoom",
         "room": "L"
       }
     },
     {
-      "who": "a",
-      "text": "Elle était dans la même colonne qu'une table.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "table"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Baudouin était sur la même ligne qu'un tapis.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "tapis"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était à côté d'une statue.",
-      "logic": {
-        "type": "adjacentTo",
-        "object": "statue"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Calebasse était à l'est de Baudouin.",
+      "who": "d",
+      "text": "Il était à l'est d'Arcane.",
       "logic": {
         "type": "eastOf",
-        "other": "b"
+        "other": "a"
       }
     },
     {
       "who": "d",
-      "text": "Doublebarbe était sur la même ligne qu'une chaise.",
+      "text": "Il était au sud d'Écarlate.",
       "logic": {
-        "type": "sameRowAs",
-        "object": "chaise"
+        "type": "southOf",
+        "other": "e"
       }
     },
     {
       "who": "e",
-      "text": "Écarlate était à côté d'une table.",
+      "text": "Écarlate était à côté d'un coffre.",
       "logic": {
         "type": "adjacentTo",
-        "object": "table"
+        "object": "coffre"
       }
     },
     {
       "who": "f",
-      "text": "Faconde était à l'ouest de Doublebarbe.",
+      "text": "Faconde était dans le bazar.",
       "logic": {
-        "type": "westOf",
-        "other": "d"
+        "type": "inRoom",
+        "room": "B"
       }
     },
     {
       "who": "f",
-      "text": "Il était dans la même colonne qu'un champignon géant.",
+      "text": "Il était au nord d'Arcane.",
       "logic": {
-        "type": "sameColAs",
-        "object": "champi"
+        "type": "northOf",
+        "other": "a"
       }
     }
   ],
   "solution": {
     "positions": {
       "g": [
-        3,
-        0
-      ],
-      "b": [
-        1,
-        4
-      ],
-      "a": [
-        2,
-        1
-      ],
-      "f": [
-        5,
-        2
-      ],
-      "e": [
         6,
-        5
-      ],
-      "d": [
-        4,
         3
       ],
       "c": [
+        2,
+        2
+      ],
+      "a": [
+        5,
+        0
+      ],
+      "f": [
+        4,
+        5
+      ],
+      "e": [
         0,
         6
+      ],
+      "d": [
+        1,
+        1
+      ],
+      "b": [
+        3,
+        4
       ]
     },
-    "murderer": "a"
+    "murderer": "b"
   },
   "rating": {
-    "skulls": 2,
-    "score": 4,
-    "hardest": "seul candidat",
+    "skulls": 3,
+    "score": 6,
+    "hardest": "pièces",
     "hardSteps": 2,
-    "directStart": 1
+    "directStart": 0
   },
-  "difficulty": 2
+  "difficulty": 3
 }

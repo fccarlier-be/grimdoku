@@ -1,107 +1,100 @@
 {
  "positions": {
   "g": [
-   1,
-   2
+   6,
+   6
   ],
   "b": [
-   5,
+   4,
    1
   ],
-  "d": [
-   4,
-   5
+  "e": [
+   0,
+   2
   ],
   "c": [
-   6,
-   4
+   3,
+   5
   ],
   "f": [
-   3,
-   0
-  ],
-  "e": [
    2,
    3
   ],
   "a": [
-   0,
-   6
+   5,
+   0
+  ],
+  "d": [
+   1,
+   4
   ]
  },
  "murderer": "c",
  "cast": {
   "b": "a",
-  "d": "b",
+  "e": "b",
   "c": "c",
   "f": "d",
-  "e": "e",
-  "a": "f"
+  "a": "e",
+  "d": "f"
  },
  "nSolutions": 1,
  "needsL2": false,
  "clues": [
   {
-   "who": "d",
-   "logic": {
-    "type": "sameColAs",
-    "object": "portail"
-   }
-  },
-  {
    "who": "c",
    "logic": {
-    "type": "southOf",
-    "other": "d"
+    "type": "inRoom",
+    "room": "J"
    }
   },
   {
    "who": "f",
    "logic": {
-    "type": "northOf",
-    "other": "d"
+    "type": "eastOf",
+    "other": "a"
    }
   },
   {
    "who": "e",
    "logic": {
-    "type": "sameColAs",
-    "object": "sarcophage"
+    "type": "inRoom",
+    "room": "L"
    }
   },
   {
    "who": "a",
    "logic": {
     "type": "sameRowAs",
-    "object": "cristal"
-   }
-  },
-  {
-   "who": "c",
-   "logic": {
-    "type": "adjacentTo",
-    "object": "portail"
-   }
-  },
-  {
-   "who": "f",
-   "logic": {
-    "type": "westOf",
-    "other": "e"
+    "object": "champi"
    }
   },
   {
    "who": "b",
    "logic": {
-    "type": "onObject",
-    "object": "tapis"
+    "type": "southOf",
+    "other": "c"
    }
   },
   {
-   "who": "a",
+   "who": "b",
    "logic": {
-    "type": "onObject",
-    "object": "chaise"
+    "type": "sameColAs",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "etagere"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "etagere"
    }
   }
  ]

@@ -120,21 +120,21 @@
   "characters": [
     {
       "id": "a",
-      "name": "Aquabelle",
-      "gender": "f",
+      "name": "Ambroise",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧜‍♀️",
-      "desc": "Sirène, venue pour l'aquarium",
-      "archetype": "sirene"
+      "icon": "🐸",
+      "desc": "Crapaud, prince déchu, attend toujours son bisou",
+      "archetype": "crapaud"
     },
     {
       "id": "b",
-      "name": "Bâfrin",
-      "gender": "m",
+      "name": "Bérénwë",
+      "gender": "f",
       "role": "suspect",
-      "icon": "🧌",
-      "desc": "Troll, plongeur à mi-temps",
-      "archetype": "troll"
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe"
     },
     {
       "id": "c",
@@ -147,21 +147,21 @@
     },
     {
       "id": "d",
-      "name": "Daëlin",
+      "name": "Dorade",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧝‍♀️",
-      "desc": "Elfe, critique gastronomique",
-      "archetype": "elfe"
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene"
     },
     {
       "id": "e",
-      "name": "Eugène",
+      "name": "Engloutor",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐸",
-      "desc": "Crapaud, prince déchu, attend toujours son bisou",
-      "archetype": "crapaud"
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll"
     },
     {
       "id": "f",
@@ -175,100 +175,92 @@
   ],
   "decor": "marais",
   "id": "grim-005",
-  "epilogue": "Aquabelle avoue : Fiel vidait sa mare goutte à goutte pour ses potions. Une sirène sans eau, c'est une sardine.",
+  "epilogue": "Dorade avoue : Fiel vidait sa mare goutte à goutte pour ses potions. Une sirène sans eau, c'est une sardine.",
   "clues": [
     {
       "who": "a",
-      "text": "Aquabelle était dans la roselière.",
+      "text": "Ambroise était à l'est de Bérénwë.",
       "logic": {
-        "type": "inRoom",
-        "room": "R"
+        "type": "eastOf",
+        "other": "b"
       }
     },
     {
       "who": "a",
-      "text": "Elle était dans la même colonne qu'un champignon géant.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "champi"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Bâfrin était à côté d'un lit.",
+      "text": "Il était à côté d'un lit.",
       "logic": {
         "type": "adjacentTo",
         "object": "lit"
       }
     },
     {
-      "who": "c",
-      "text": "Clovis était dans le ponton.",
+      "who": "b",
+      "text": "Bérénwë était à côté d'un arbre.",
       "logic": {
-        "type": "inRoom",
-        "room": "P"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Daëlin était dans l'îlot.",
-      "logic": {
-        "type": "inRoom",
-        "room": "I"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Eugène était dans la même colonne qu'un arbre.",
-      "logic": {
-        "type": "sameColAs",
+        "type": "adjacentTo",
         "object": "arbre"
       }
     },
     {
-      "who": "e",
-      "text": "Il était sur la même ligne qu'un champignon géant.",
+      "who": "c",
+      "text": "Clovis était à côté d'un tonneau.",
       "logic": {
-        "type": "sameRowAs",
+        "type": "adjacentTo",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dorade était sur un champignon géant.",
+      "logic": {
+        "type": "onObject",
         "object": "champi"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Engloutor était à l'est de Dorade.",
+      "logic": {
+        "type": "eastOf",
+        "other": "d"
       }
     }
   ],
   "solution": {
     "positions": {
       "f": [
-        3,
+        4,
+        2
+      ],
+      "d": [
+        5,
+        4
+      ],
+      "c": [
+        0,
         3
       ],
       "a": [
         1,
-        4
-      ],
-      "c": [
-        2,
-        2
+        1
       ],
       "e": [
-        5,
+        2,
         5
       ],
       "b": [
-        0,
+        3,
         0
-      ],
-      "d": [
-        4,
-        1
       ]
     },
-    "murderer": "a"
+    "murderer": "d"
   },
   "rating": {
-    "skulls": 0,
-    "score": 1,
-    "hardest": "case unique",
+    "skulls": 2,
+    "score": 4,
+    "hardest": "position relative",
     "hardSteps": 0,
-    "directStart": 1
+    "directStart": 0
   },
-  "difficulty": 0
+  "difficulty": 2
 }

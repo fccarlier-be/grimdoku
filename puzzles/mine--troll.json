@@ -18,11 +18,6 @@
       "the": "la forge",
       "floor": "roche"
     },
-    "P": {
-      "name": "Puits",
-      "the": "le puits",
-      "floor": "roche"
-    },
     "V": {
       "name": "Filon",
       "the": "le filon",
@@ -47,9 +42,9 @@
   "layout": [
     "EEEGGFFF",
     "EEEGGFFF",
-    "DDGGGPPF",
-    "DDGGGPPV",
-    "DDCCCPVV",
+    "DDGGGFFF",
+    "DDGGGFFV",
+    "DDCCCFVV",
     "TTCCCVVV",
     "TTCCCVVV",
     "TTTTCVVV"
@@ -179,21 +174,21 @@
   "characters": [
     {
       "id": "a",
-      "name": "Anthracite",
+      "name": "Aymeric",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier"
+    },
+    {
+      "id": "b",
+      "name": "Basalte",
       "gender": "m",
       "role": "suspect",
       "icon": "👷",
       "desc": "Contremaître nain, compte les pépites et les pauses",
       "archetype": "contremaitre"
-    },
-    {
-      "id": "b",
-      "name": "Boulon",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "⛏️",
-      "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
-      "archetype": "mineur"
     },
     {
       "id": "c",
@@ -206,12 +201,12 @@
     },
     {
       "id": "d",
-      "name": "Digitale",
-      "gender": "f",
+      "name": "Dynamite",
+      "gender": "m",
       "role": "suspect",
-      "icon": "🧚",
-      "desc": "Fée, doit trois tournées",
-      "archetype": "fee"
+      "icon": "⛏️",
+      "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
+      "archetype": "mineur"
     },
     {
       "id": "e",
@@ -224,21 +219,21 @@
     },
     {
       "id": "f",
-      "name": "Foulques",
-      "gender": "m",
-      "role": "suspect",
-      "icon": "🤺",
-      "desc": "Chevalier, armure trop petite depuis Noël",
-      "archetype": "chevalier"
-    },
-    {
-      "id": "g",
-      "name": "Gédéon",
+      "name": "Fernand",
       "gender": "m",
       "role": "suspect",
       "icon": "🧟",
       "desc": "Zombie, ancien apprenti. Ancien tout court",
       "archetype": "zombie"
+    },
+    {
+      "id": "g",
+      "name": "Glycine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee"
     },
     {
       "id": "h",
@@ -252,94 +247,78 @@
   ],
   "decor": "mine",
   "id": "mine--troll",
-  "epilogue": "Gédéon avoue, après réflexion : Happeur l'avait laissé sous un éboulement « pour gagner du temps ». Il a mis du temps, mais il est revenu.",
+  "epilogue": "Fernand avoue, après réflexion : Happeur l'avait laissé sous un éboulement « pour gagner du temps ». Il a mis du temps, mais il est revenu.",
   "clues": [
     {
       "who": "a",
-      "text": "Anthracite était sur la même ligne qu'une enclume.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "enclume"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Boulon était au sud de Gédéon.",
-      "logic": {
-        "type": "southOf",
-        "other": "g"
-      }
-    },
-    {
-      "who": "b",
-      "text": "Il était sur la même ligne qu'une table.",
-      "logic": {
-        "type": "sameRowAs",
-        "object": "table"
-      }
-    },
-    {
-      "who": "c",
-      "text": "Cramoisi était à l'ouest de Digitale.",
-      "logic": {
-        "type": "westOf",
-        "other": "d"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Digitale était au nord d'Escroquin.",
-      "logic": {
-        "type": "northOf",
-        "other": "e"
-      }
-    },
-    {
-      "who": "d",
-      "text": "Elle était dans la même colonne qu'une chaise.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "chaise"
-      }
-    },
-    {
-      "who": "e",
-      "text": "Escroquin était dans la même colonne qu'une enclume.",
-      "logic": {
-        "type": "sameColAs",
-        "object": "enclume"
-      }
-    },
-    {
-      "who": "f",
-      "text": "Foulques était dans le dortoir.",
+      "text": "Aymeric était dans le dortoir.",
       "logic": {
         "type": "inRoom",
         "room": "D"
       }
     },
     {
-      "who": "f",
-      "text": "Il était à l'est d'Anthracite.",
+      "who": "a",
+      "text": "Il était à l'est de Basalte.",
       "logic": {
         "type": "eastOf",
-        "other": "a"
+        "other": "b"
       }
     },
     {
-      "who": "g",
-      "text": "Gédéon était au sud de Foulques.",
+      "who": "b",
+      "text": "Basalte était à côté d'un coffre.",
       "logic": {
-        "type": "southOf",
-        "other": "f"
+        "type": "adjacentTo",
+        "object": "coffre"
       }
     },
     {
-      "who": "g",
-      "text": "Il était dans la même colonne qu'un chaudron.",
+      "who": "c",
+      "text": "Cramoisi était à l'ouest de Glycine.",
+      "logic": {
+        "type": "westOf",
+        "other": "g"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dynamite était à côté d'une table.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "table"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Escroquin était sur la même ligne qu'un lit.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était dans la même colonne qu'un chariot de mine.",
       "logic": {
         "type": "sameColAs",
-        "object": "chaudron"
+        "object": "chariot"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Fernand était sur la même ligne qu'une chaise.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Glycine était dans la même colonne qu'une table.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "table"
       }
     }
   ],
@@ -349,7 +328,7 @@
         7,
         5
       ],
-      "b": [
+      "d": [
         5,
         4
       ],
@@ -361,30 +340,30 @@
         0,
         2
       ],
-      "f": [
+      "a": [
         3,
         1
       ],
-      "d": [
+      "g": [
         1,
         3
       ],
-      "g": [
+      "f": [
         4,
         7
       ],
-      "a": [
+      "b": [
         6,
         0
       ]
     },
-    "murderer": "g"
+    "murderer": "f"
   },
   "rating": {
     "skulls": 3,
-    "score": 6,
+    "score": 5,
     "hardest": "pièces",
-    "hardSteps": 2,
+    "hardSteps": 1,
     "directStart": 0
   },
   "difficulty": 3
