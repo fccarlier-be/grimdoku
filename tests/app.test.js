@@ -30,7 +30,8 @@ function open({ settings, saves = {} } = {}) {
   const cell = (r, c) => d.querySelector(`[data-r="${r}"][data-c="${c}"]`);
   const fire = (el, type) => el.dispatchEvent(new w.Event(type, { bubbles: true }));
   const pick = (id) => d.querySelector(`.chip[data-id="${id}"]`).click();
-  const hold = async (r, c, ms = 1600) => { fire(cell(r, c), 'pointerdown'); await sleep(ms); fire(cell(r, c), 'pointerup'); };
+  // appui long simulé : marge large sur HOLD_MS (1,5 s), la série complète charge la machine
+  const hold = async (r, c, ms = 2200) => { fire(cell(r, c), 'pointerdown'); await sleep(ms); fire(cell(r, c), 'pointerup'); };
   // une affaire s'ouvre depuis la page de sa taille
   const openCase = (id) => {
     w.grimGo('taille/' + w.eval('PUZZLES').find(p => p.id === id).size);
@@ -258,4 +259,21 @@ test('lore : l\'affaire finale est verrouillée, puis débloquée par assez de l
   w.grimGo('tailles');
   d.querySelector('[data-final]').click();
   assert.ok(d.getElementById('accuse'), 'débloquée');
+});
+
+test('carte de Brumeval : un repère par lieu, chaque lieu liste ses enquêtes', () => {
+  const { w, d, errors, PUZZLES } = open();
+  w.grimGo('carte');
+  const places = [...d.querySelectorAll('[data-place]')].map(b => b.dataset.place);
+  const want = [...new Set(PUZZLES.filter(p => !p.final).map(p => p.place))];
+  assert.deepEqual([...places].sort(), [...want].sort(), 'un repère par lieu');
+  let n = 0;
+  for (const pl of places) {
+    w.grimGo('lieu/' + pl);
+    const ids = [...d.querySelectorAll('.case')].map(b => b.dataset.id);
+    assert.ok(ids.length && ids.every(id => PUZZLES.find(p => p.id === id).place === pl), `${pl} : ses enquêtes`);
+    n += ids.length;
+  }
+  assert.equal(n, PUZZLES.filter(p => !p.final).length, 'toutes les enquêtes sont sur la carte');
+  assert.deepEqual(errors, []);
 });

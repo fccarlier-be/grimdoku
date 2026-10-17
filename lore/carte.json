@@ -1,0 +1,19 @@
+{
+  "_doc": "Carte de la baronnie de Brumeval : contrées et lieux (décors), avec la position de chaque repère en % de l'illustration (x depuis la gauche, y depuis le haut). Positions provisoires, tirées de la disposition demandée dans assets/map/PROMPTS.md : à ajuster une fois l'illustration générée.",
+  "contrees": [
+    { "nom": "Mortebrune, le chef-lieu", "lieux": ["chateau", "citadelle", "bal", "cimetiere", "tour"] },
+    { "nom": "La côte", "lieux": ["port", "grand-port", "navire", "thermes"] },
+    { "nom": "La campagne de Bois-Tordu", "lieux": ["taverne", "moulin", "ferme", "marais"] },
+    { "nom": "Les Monts Grimaces", "lieux": ["mine", "forge", "banquet"] },
+    { "nom": "Le quartier savant", "lieux": ["academie", "universite", "bibliotheque"] },
+    { "nom": "Sur la route", "lieux": ["foire", "grande-foire", "palais"] }
+  ],
+  "pos": {
+    "chateau": [52, 16], "citadelle": [59, 23], "bal": [50, 28], "cimetiere": [43, 21], "tour": [67, 11],
+    "port": [10, 55], "grand-port": [15, 36], "navire": [6, 73], "thermes": [21, 82],
+    "taverne": [42, 50], "moulin": [35, 36], "ferme": [49, 64], "marais": [33, 72],
+    "mine": [82, 24], "forge": [89, 40], "banquet": [77, 46],
+    "academie": [70, 62], "universite": [81, 70], "bibliotheque": [66, 77],
+    "foire": [50, 85], "grande-foire": [57, 90], "palais": [40, 93]
+  }
+}

@@ -105,13 +105,16 @@ for (let d = 0; d <= 5; d++) {
   const f = `assets/levels/${d}.webp`;
   if (fs.existsSync(f)) { copyMedia(f, `niveau-${d}.webp`); media.levels[d] = `media/niveau-${d}.webp`; } else missing.push('vignette niveau ' + d);
 }
+// carte de la baronnie (assets/map/brumeval.webp, préparée par tools/images.py) : servie à côté de la page
+if (fs.existsSync('assets/map/brumeval.webp')) { copyMedia('assets/map/brumeval.webp', 'carte-brumeval.webp'); media.map = 'media/carte-brumeval.webp'; }
 for (const decor of [...new Set(puzzles.map(p => p.decor).filter(Boolean))].sort()) {
   const f = `assets/decors/${decor}.webp`;
   if (fs.existsSync(f)) { copyMedia(f, `decor-${decor}.webp`); media.decors.push(decor); } else missing.push('décor ' + decor);
 }
 // bible du jeu : lettres d'Augure (lore/lettres.json) et troupe récurrente (cast.json : nom fixe, trait, tic) pour le carnet
 const LETTRES = JSON.parse(fs.readFileSync('lore/lettres.json', 'utf8'));
-const lore = { need: LETTRES.need, letters: LETTRES.letters, troupe: {} };
+const CARTE = JSON.parse(fs.readFileSync('lore/carte.json', 'utf8'));
+const lore = { need: LETTRES.need, letters: LETTRES.letters, troupe: {}, contrees: CARTE.contrees, pos: CARTE.pos };
 for (const [t, a] of Object.entries(ARCHETYPES)) if (!a.guest) lore.troupe[t] = { name: a.name, desc: a.desc, tic: a.tic, icon: a.icon };
 const sprite = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>${defs.join('')}</defs>${symbols.join('')}</svg>`;
 

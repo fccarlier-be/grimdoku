@@ -363,6 +363,21 @@ def decors():
         print(f'décor {src.name} → {out.name} {img.size} ({out.stat().st_size // 1024} Ko)')
 
 
+MAP_DIR = ROOT / 'map'
+
+
+def carte():
+    # carte de la baronnie (assets/map/brumeval.png|jpeg) → brumeval.webp, 2400 px de large au plus (servie à côté de la page)
+    if not MAP_DIR.exists():
+        return
+    for src in sources(MAP_DIR):
+        img = Image.open(src).convert('RGB')
+        img.thumbnail((2400, 2400), Image.LANCZOS)
+        out = MAP_DIR / (type_name(src.stem) + '.webp')
+        img.save(out, 'WEBP', quality=86, method=6)
+        print(f'carte {src.name} → {out.name} {img.size} ({out.stat().st_size // 1024} Ko)')
+
+
 def main():
     portraits()
     objects()
@@ -370,6 +385,7 @@ def main():
     home()
     levels()
     decors()
+    carte()
 
 
 if __name__ == '__main__':
