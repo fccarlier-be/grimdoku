@@ -10,15 +10,21 @@ PACK=$(mktemp -t grimdoku-test).tgz
 COPYFILE_DISABLE=1 tar -czf "$PACK" --exclude .git --exclude node_modules --exclude .venv --exclude dist --exclude deploy/grimdoku/site --exclude puzzles \
   --exclude '*.zip' --exclude 'assets/*/*.jpeg' --exclude 'assets/*/*.jpg' --exclude 'assets/*/*.png' --exclude 'assets/audio/*.wav' .
 sh tools/pc.sh --scp "$PACK" grimdoku-gen/test.tgz
-sleep 3 # fserver refuse les connexions trop rapprochées
-# puzzles/ et solutions/ vidés d'abord : pas d'énigme périmée ; jsdom installé une fois (node_modules gardé)
+# empreinte de tout ce dont dépend la construction des énigmes : si elle n'a pas changé depuis la dernière construction
+# réussie sur le PC, on ne reconstruit pas (seulement la page, rapide) — retour de François : pas de travail inutile
+HASH=$(cat solutions/*.json scenes/*.json cast.json cast.js engine.js build-puzzles.js big-cases.json | shasum | cut -c1-16)
+# jsdom installé une fois (node_modules gardé) ; puzzles/ et solutions/ vidés seulement si on reconstruit
 OUT=$(sh tools/pc.sh '$ErrorActionPreference = "Continue"; $d = "$HOME\grimdoku-gen"; $t = "$d\test"; $env:Path = "$d\node-v22.11.0-win-x64;" + $env:Path
 Get-CimInstance Win32_Process | Where-Object { $_.Name -eq "node.exe" -and ($_.CommandLine -like "*build-puzzles.js*" -or $_.CommandLine -like "*build-app.js*" -or $_.CommandLine -like "*--test*") } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force }
-New-Item -ItemType Directory -Force $t | Out-Null; Remove-Item -Recurse -Force "$t\puzzles", "$t\solutions" -ErrorAction SilentlyContinue
+New-Item -ItemType Directory -Force $t | Out-Null
+$same = (Test-Path "$t\build.hash") -and ((Get-Content "$t\build.hash") -eq "'$HASH'") -and (Test-Path "$t\puzzles")
+if (-not $same) { Remove-Item -Recurse -Force "$t\puzzles", "$t\solutions", "$t\build.hash" -ErrorAction SilentlyContinue }
 tar -xzf "$d\test.tgz" -C $t; Set-Location $t
 New-Item -ItemType Directory -Force deploy\grimdoku\site, puzzles | Out-Null
 if (-not (Test-Path node_modules\jsdom)) { npm.cmd install --no-audit --no-fund --loglevel=error 2>&1 | Out-Null }
-node build-puzzles.js > build.log 2>&1; if ($LASTEXITCODE) { Get-Content build.log -Tail 15; "ECHEC build"; exit 1 }
+if ($same) { "énigmes inchangées : pas de reconstruction" } else {
+  node build-puzzles.js > build.log 2>&1; if ($LASTEXITCODE) { Get-Content build.log -Tail 15; "ECHEC build"; exit 1 }
+  Set-Content build.hash "'$HASH'" }
 node build-app.js >> build.log 2>&1; if ($LASTEXITCODE) { Get-Content build.log -Tail 15; "ECHEC build"; exit 1 }
 node --test "tests/*.test.js" > test.log 2>&1; $code = $LASTEXITCODE
 Select-String -Path test.log -Pattern "^not ok|^# (pass|fail)" | Select-Object -First 25 | ForEach-Object { $_.Line }

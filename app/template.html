@@ -181,6 +181,13 @@ header.top { display: flex; align-items: center; gap: 10px; }
 
 .special { background: var(--board); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 12px; font-size: 14px; display: flex; flex-direction: column; gap: 4px; }
 .special b { color: var(--candle); font-weight: 500; }
+/* notation de la difficulté ressentie, sous la carte (votes envoyés au serveur : /note, journal nginx) */
+.rate { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 6px 12px; padding: 8px 12px; border-radius: var(--radius); font-size: 14px; }
+.rate .rates { display: inline-flex; gap: 6px; }
+.ratebtn { width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid var(--line); background: transparent; color: var(--fg); font: 700 15px/1 var(--f-body); }
+.ratebtn:hover { background: var(--board-2); }
+.ratebtn[aria-pressed="true"] { background: #a3312a; border-color: #a3312a; color: #fbe7cf; }
+.rate small { color: var(--muted); width: 100%; text-align: center; }
 
 /* outils + personnages : collés en bas */
 .dock {
@@ -289,11 +296,12 @@ header.top { display: flex; align-items: center; gap: 10px; }
   #app.game > .play {
     grid-area: play; display: grid; gap: 14px 16px; align-items: start; justify-content: center;
     grid-template-columns: minmax(300px, calc(100vh - 110px)) 230px;
-    grid-template-rows: auto 1fr;
-    grid-template-areas: "board tools" "board special";
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "board tools" "board special" "rate special";
   }
   #app.game .boardwrap { grid-area: board; }
   #app.game .special { grid-area: special; }
+  #app.game .rate { grid-area: rate; }
   #app.game .dock, #app.game .verdictcard { grid-area: tools; }
   #app.game .dock {
     position: relative; margin-inline: 0; padding: 10px; backdrop-filter: none; -webkit-backdrop-filter: none;
@@ -337,12 +345,12 @@ header.top { display: flex; align-items: center; gap: 10px; }
    Dans ces éléments, les couleurs de base passent de « clair sur nuit » à « encre sur parchemin » :
    les règles plus haut s'adaptent sans être réécrites. Le papier est dessiné par ::before (bords
    un peu déchirés par le filtre #torn-s), pour que le filtre ne touche pas le texte. */
-.clue, .dock, .verdictcard, .special, .sheet, .chip, .case {
+.clue, .dock, .verdictcard, .special, .rate, .sheet, .chip, .case {
   --fg: var(--ink); --muted: #6e5434; --line: rgba(43, 32, 22, .38);
   --board: transparent; --board-2: rgba(43, 32, 22, .08); --red-ink: #a3312a; --sepia: #8a4b12;
   position: relative; isolation: isolate; color: var(--ink); background: transparent; border-color: transparent;
 }
-.clue::before, .dock::before, .verdictcard::before, .special::before, .sheet::before, .chip::before, .case::before {
+.clue::before, .dock::before, .verdictcard::before, .special::before, .rate::before, .sheet::before, .chip::before, .case::before {
   content: ""; position: absolute; inset: 0; z-index: -1; border-radius: 3px;
   background: var(--parch-tex, none) center / 240px, linear-gradient(#f1e3c2, #e3cfa3);
   box-shadow: inset 0 0 0 1.5px rgba(43, 32, 22, .5), inset 0 0 12px rgba(120, 66, 18, .35), 0 3px 8px rgba(0, 0, 0, .45);
@@ -960,6 +968,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     // une carte par personnage, dans l'ordre A, B, C… (ses indices bout à bout)
     const cards = cast.map(ch => ({ ch, items: P.clues.map((cl, i) => ({ cl, i })).filter(x => x.cl.who === ch.id) })).filter(x => x.items.length || x.ch.role === 'victim');
     const allPlaced = Object.keys(S.pos).length === P.characters.length;
+    const myRate = store.get('rate:' + P.id, null);
     $app.innerHTML = `
       <header class="top">
         <button class="iconbtn" id="back" aria-label="Retour aux affaires">‹</button>
@@ -977,6 +986,11 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
       <div class="boardwrap">
         <div class="board" id="board" style="--n:${n}">${cells}${wallsSvg()}</div>
         ${S.solved ? `<div class="stamp" aria-hidden="true"><span>Affaire<br>résolue</span></div>` : ''}
+      </div>
+      <div class="rate" role="group" aria-label="Difficulté ressentie">
+        <span>Difficulté ressentie</span>
+        <span class="rates">${[0, 1, 2, 3, 4, 5].map(k => `<button class="ratebtn" data-rate="${k}" aria-pressed="${myRate === k}">${k}</button>`).join('')}</span>
+        <small>0 : très facile · 5 : infernale — ta note nous aide à classer les enquêtes</small>
       </div>
       ${specials.length ? `<div class="special">${specials.join('')}</div>` : ''}
       ${S.solved ? verdictHtml() : `<div class="dock">
@@ -1025,6 +1039,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
       const idx = b.dataset.done.split(',').map(Number); snapshot();
       S.done = idx.every(i => S.done.includes(i)) ? S.done.filter(x => !idx.includes(x)) : [...new Set(S.done.concat(idx))]; save(); render();
     });
+    document.querySelectorAll('[data-rate]').forEach(b => b.onclick = () => rate(+b.dataset.rate));
     if (S.solved) return bindVerdict();
     document.getElementById('hintBtn').onclick = hint;
     document.getElementById('penBtn').onclick = () => {
@@ -1081,6 +1096,17 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     selected = id;
     if (settings.cross) { settings.cross = false; store.set('settings', settings); }
   }
+  // Note de difficulté ressentie (0 à 5) : gardée ici, et envoyée au serveur (GET /note, réponse vide ; nginx l'inscrit
+  // dans un journal, résumé par tools/notes.sh). v : identifiant anonyme tiré au hasard, pour compter un vote par joueur.
+  function rate(k) {
+    store.set('rate:' + P.id, k);
+    if (!settings.vid) { settings.vid = Math.random().toString(36).slice(2, 10); store.set('settings', settings); }
+    const q = `note?g=${encodeURIComponent(P.id)}&d=${k}&v=${settings.vid}&s=${S.solved ? 1 : 0}&n=${P.size}`;
+    try { if (window.fetch) fetch(q, { cache: 'no-store', keepalive: true }).catch(() => {}); } catch (e) { /* hors ligne : tant pis */ }
+    render();
+    toast('Merci ! Ta note aide à classer les enquêtes.');
+  }
+
   function pick(id) {
     if (selected === id) selected = null; else pickOnly(id);
     render();

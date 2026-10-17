@@ -213,3 +213,17 @@ test('son : 🔊 ouvre la barre de volume, le réglage est retenu ; barre à zé
   assert.equal(d.querySelector('.soundpop'), null, 'fermé en touchant ailleurs');
   assert.deepEqual(errors, []);
 });
+
+test('notation de la difficulté ressentie : 0 à 5 sous la carte, retenue, identifiant anonyme', () => {
+  const { w, d, openCase, errors, PUZZLES } = open();
+  const p = PUZZLES[0];
+  openCase(p.id);
+  assert.equal(d.querySelectorAll('.rate [data-rate]').length, 6, 'six choix, de 0 à 5');
+  d.querySelector('[data-rate="3"]').click();
+  assert.equal(d.querySelector('[data-rate="3"]').getAttribute('aria-pressed'), 'true');
+  assert.equal(JSON.parse(w.localStorage.getItem('grimdoku:rate:' + p.id)), 3, 'note retenue');
+  assert.match(JSON.parse(w.localStorage.getItem('grimdoku:settings')).vid, /^[a-z0-9]+$/, 'joueur anonyme');
+  d.querySelector('[data-rate="0"]').click();
+  assert.equal(JSON.parse(w.localStorage.getItem('grimdoku:rate:' + p.id)), 0, 'on peut changer d\'avis (0 compris)');
+  assert.deepEqual(errors, []);
+});
