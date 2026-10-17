@@ -1,0 +1,287 @@
+{
+  "formatVersion": 1,
+  "title": "Le Banquet des Gobelins — l'affaire Ermengarde",
+  "size": 6,
+  "rooms": {
+    "K": {
+      "name": "Cuisine",
+      "the": "la cuisine",
+      "floor": "damier"
+    },
+    "C": {
+      "name": "Cellier",
+      "the": "le cellier",
+      "floor": "tomettes"
+    },
+    "F": {
+      "name": "Salle des fêtes",
+      "the": "la salle des fêtes",
+      "floor": "noble"
+    },
+    "G": {
+      "name": "Garde-manger",
+      "the": "le garde-manger",
+      "floor": "tomettes"
+    },
+    "O": {
+      "name": "Cour",
+      "the": "la cour",
+      "floor": "paves"
+    }
+  },
+  "layout": [
+    "KKKCCC",
+    "KKFFCC",
+    "GGFFFF",
+    "GGFFFF",
+    "GOOFFF",
+    "OOOOFF"
+  ],
+  "objects": [
+    {
+      "type": "chaudron",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        1,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        2,
+        4
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        4,
+        2
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Bâfrin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll",
+      "tic": "Répète le dernier mot de la phrase des autres"
+    },
+    {
+      "id": "b",
+      "name": "Fricot",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🍳",
+      "desc": "Chef gobelin, goûte tout, surtout ce qui bouge encore",
+      "archetype": "chef",
+      "tic": "Juge chaque plat à sa capacité à s'enfuir"
+    },
+    {
+      "id": "c",
+      "name": "Briochon",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🍳",
+      "desc": "Boulanger, pétrit plus de ragots que de pâte",
+      "archetype": "boulanger",
+      "tic": "« Je dis ça, je dis rien. »"
+    },
+    {
+      "id": "d",
+      "name": "Fausset",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde",
+      "tic": "Transforme chaque conversation en couplet"
+    },
+    {
+      "id": "e",
+      "name": "Festin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👹",
+      "desc": "Ogre, végétarien depuis mardi",
+      "archetype": "ogre",
+      "tic": "Compte les jours depuis mardi"
+    },
+    {
+      "id": "f",
+      "name": "Ermengarde",
+      "gender": "f",
+      "role": "victim",
+      "icon": "👒",
+      "desc": "Cousine éloignée de tout le monde, venue pour l'héritage",
+      "archetype": "cousine",
+      "guest": true
+    }
+  ],
+  "decor": "banquet",
+  "id": "banquet--cousine",
+  "place": "banquet",
+  "intro": "Au Banquet des Gobelins, la cousine Ermengarde, venue réclamer un héritage, est passée du côté des convives au côté du menu. Enfin, presque. Cinq invités se goinfraient. L'un d'eux était seul avec elle. On m'a servi une soupe. Je ne l'ai pas touchée.",
+  "epilogue": "— Vous étiez seul avec Ermengarde.\n— Elle voulait réclamer sa part de ce qui m'appartient. J'ai gardé mon calme : je suis végétarien depuis mardi.\n— On est jeudi.\n— Justement. C'était plus mardi.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Bâfrin était dans la même colonne qu'un tapis.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Fricot était à côté d'une table.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "table"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Briochon n'était pas à côté d'une botte de foin.",
+      "logic": {
+        "type": "notAdjacentTo",
+        "object": "foin"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Fausset était dans la même colonne qu'une table.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était sur la même ligne qu'un arbre.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Festin était assis sur une chaise.",
+      "logic": {
+        "type": "onObject",
+        "object": "chaise"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        3,
+        2
+      ],
+      "a": [
+        0,
+        5
+      ],
+      "e": [
+        2,
+        4
+      ],
+      "d": [
+        5,
+        3
+      ],
+      "c": [
+        4,
+        0
+      ],
+      "b": [
+        1,
+        1
+      ]
+    },
+    "murderer": "e"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 6,
+    "hardest": "pièces",
+    "hardSteps": 2,
+    "directStart": 0
+  },
+  "difficulty": 3
+}

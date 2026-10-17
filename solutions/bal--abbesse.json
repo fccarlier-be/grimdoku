@@ -1,0 +1,106 @@
+{
+ "positions": {
+  "h": [
+   0,
+   5
+  ],
+  "c": [
+   1,
+   4
+  ],
+  "d": [
+   3,
+   0
+  ],
+  "b": [
+   5,
+   3
+  ],
+  "a": [
+   6,
+   1
+  ],
+  "g": [
+   2,
+   6
+  ],
+  "e": [
+   4,
+   2
+  ],
+  "f": [
+   7,
+   7
+  ]
+ },
+ "murderer": "c",
+ "cast": {
+  "c": "a",
+  "d": "b",
+  "b": "c",
+  "a": "d",
+  "g": "e",
+  "e": "f",
+  "f": "g"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "westOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "southOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
+   }
+  }
+ ]
+}

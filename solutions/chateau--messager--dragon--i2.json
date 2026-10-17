@@ -1,0 +1,116 @@
+{
+ "positions": {
+  "f": [
+   2,
+   2
+  ],
+  "c": [
+   [
+    4,
+    6
+   ],
+   [
+    5,
+    6
+   ]
+  ],
+  "a": [
+   1,
+   1
+  ],
+  "d": [
+   0,
+   3
+  ],
+  "e": [
+   6,
+   0
+  ],
+  "b": [
+   3,
+   4
+  ]
+ },
+ "murderer": "d",
+ "cast": {
+  "c": "a",
+  "a": "b",
+  "d": "c",
+  "e": "d",
+  "b": "e"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "c",
+   "logic": {
+    "type": "southOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "southOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "westOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "foin"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "tapis"
+   }
+  }
+ ]
+}

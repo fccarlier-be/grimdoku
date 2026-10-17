@@ -1,0 +1,161 @@
+{
+ "positions": {
+  "l": [
+   0,
+   9
+  ],
+  "a": [
+   4,
+   0
+  ],
+  "k": [
+   7,
+   1
+  ],
+  "b": [
+   9,
+   11
+  ],
+  "i": [
+   3,
+   5
+  ],
+  "e": [
+   1,
+   3
+  ],
+  "g": [
+   11,
+   4
+  ],
+  "d": [
+   2,
+   8
+  ],
+  "f": [
+   6,
+   6
+  ],
+  "c": [
+   5,
+   10
+  ],
+  "j": [
+   10,
+   2
+  ],
+  "h": [
+   8,
+   7
+  ]
+ },
+ "murderer": "d",
+ "cast": {
+  "a": "a",
+  "k": "b",
+  "b": "c",
+  "i": "d",
+  "e": "e",
+  "g": "f",
+  "d": "g",
+  "f": "h",
+  "c": "i",
+  "j": "j",
+  "h": "k"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "k",
+   "logic": {
+    "type": "northOf",
+    "other": "h"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "eastOf",
+    "other": "k"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "j",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "inRoom",
+    "room": "I"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "canon"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "canon"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "inRoom",
+    "room": "C"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chariot"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "lit"
+   }
+  }
+ ]
+}

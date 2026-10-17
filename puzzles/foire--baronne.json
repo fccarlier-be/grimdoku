@@ -1,0 +1,353 @@
+{
+  "formatVersion": 1,
+  "title": "La Foire aux Sortilèges — l'affaire Grisemotte",
+  "size": 7,
+  "rooms": {
+    "S": {
+      "name": "Stands",
+      "the": "les stands",
+      "floor": "sciure"
+    },
+    "B": {
+      "name": "Buvette",
+      "the": "la buvette",
+      "floor": "parquet"
+    },
+    "K": {
+      "name": "Coulisses",
+      "the": "les coulisses",
+      "floor": "parquet"
+    },
+    "C": {
+      "name": "Chapiteau",
+      "the": "le chapiteau",
+      "floor": "sciure"
+    },
+    "M": {
+      "name": "Ménagerie",
+      "the": "la ménagerie",
+      "floor": "paille"
+    },
+    "N": {
+      "name": "Manège",
+      "the": "le manège",
+      "floor": "sciure"
+    }
+  },
+  "layout": [
+    "KKSSSBB",
+    "KKSSSBB",
+    "KKCCCCB",
+    "KKCCCCM",
+    "NNCCCCM",
+    "NNNCCMM",
+    "NNNCCMM"
+  ],
+  "objects": [
+    {
+      "type": "lit",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        0,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        2,
+        4
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        4,
+        5
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        4,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        6
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        6,
+        0
+      ]
+    }
+  ],
+  "intro": "La Foire aux Sortilèges a perdu un client : la baronne de Grisemotte Grisemotte, venue rendre une visite de courtoisie. Six forains juraient qu'ils tenaient leur stand. L'un d'eux était seul avec elle. Le bonimenteur m'a déjà proposé un élixir de vérité. Deux écus, garanti sans effet.",
+  "characters": [
+    {
+      "id": "a",
+      "name": "Bâfrin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll",
+      "tic": "Répète le dernier mot de la phrase des autres"
+    },
+    {
+      "id": "b",
+      "name": "Clairvoya",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🔮",
+      "desc": "Cartomancienne, voit l'avenir, rate le présent",
+      "archetype": "cartomancienne",
+      "tic": "« Je l'avais vu venir. », toujours après coup"
+    },
+    {
+      "id": "c",
+      "name": "Flammèche",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet",
+      "tic": "S'excuse avant même d'avoir brûlé quelque chose"
+    },
+    {
+      "id": "d",
+      "name": "Bakchich",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin",
+      "tic": "« Techniquement, c'est légal. »"
+    },
+    {
+      "id": "e",
+      "name": "Fausset",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde",
+      "tic": "Transforme chaque conversation en couplet"
+    },
+    {
+      "id": "f",
+      "name": "Capucine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee",
+      "tic": "« Je te le rends demain. »"
+    },
+    {
+      "id": "g",
+      "name": "Grisemotte",
+      "gender": "f",
+      "role": "victim",
+      "icon": "👑",
+      "desc": "Baronne voisine, jalouse de tout ce qui brille",
+      "archetype": "baronne",
+      "guest": true
+    }
+  ],
+  "decor": "foire",
+  "id": "foire--baronne",
+  "place": "foire",
+  "epilogue": "— Vous étiez seul avec Grisemotte.\n— « Elle voulait racheter la baronnie et me mettre dehors, ô rage, ô désespoir… »\n— Répondez normalement.\n— J'ai chanté jusqu'à ce qu'elle s'arrête. Définitivement.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Bâfrin était assis sur une chaise.",
+      "logic": {
+        "type": "onObject",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Clairvoya était sur la même ligne qu'une chaise.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Flammèche était à côté d'une statue.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Bakchich était dans les stands.",
+      "logic": {
+        "type": "inRoom",
+        "room": "S"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était à côté d'un tonneau.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Fausset était dans le chapiteau.",
+      "logic": {
+        "type": "inRoom",
+        "room": "C"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était sur la même ligne qu'un chaudron.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il n'était pas à côté d'un tapis.",
+      "logic": {
+        "type": "notAdjacentTo",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Capucine était à l'est de Fausset.",
+      "logic": {
+        "type": "eastOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Elle était à l'ouest de Clairvoya.",
+      "logic": {
+        "type": "westOf",
+        "other": "b"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "g": [
+        2,
+        3
+      ],
+      "b": [
+        1,
+        6
+      ],
+      "e": [
+        4,
+        2
+      ],
+      "d": [
+        0,
+        4
+      ],
+      "a": [
+        5,
+        1
+      ],
+      "f": [
+        6,
+        5
+      ],
+      "c": [
+        3,
+        0
+      ]
+    },
+    "murderer": "e"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "ligne réservée",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 2
+}

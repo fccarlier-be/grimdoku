@@ -24,7 +24,8 @@ for (const p of PUZZLES) {
     assert.equal(p.characters[p.characters.length - 1].id, victim.id, 'victime en dernier');
     assert.ok(!p.clues.some(cl => cl.who === victim.id), 'aucun indice pour la victime');
     assert.equal(E.sharedRooms(E.prepare(p), p.solution.positions).length, 0, 'suspects dans des pièces différentes');
-    p.characters.forEach((c, i) => assert.equal(c.name.normalize('NFD')[0].toUpperCase(), String.fromCharCode(65 + i), `initiale de ${c.name}`));
+    // la lettre (pastille) suit l'ordre a, b, c… ; les noms sont fixes (bible du jeu)
+    p.characters.forEach((c, i) => assert.equal(c.id, String.fromCharCode(97 + i), `lettre de ${c.name}`));
   });
 }
 
@@ -162,4 +163,18 @@ test('nouvelles règles : chaque pièce occupée, aucun placement direct, grand 
     const max = p.size <= 8 ? 2 : p.size === 9 ? 3 : 4;
     for (const c of p.characters) if (c.shape) assert.ok(E.SHAPES[c.shape].cells.length <= max, `${p.id} : ${c.shape} trop grand pour ${p.size}×${p.size}`);
   }
+});
+
+test('bible du jeu : victimes de passage, noms fixes, une lettre par lieu', () => {
+  const cast = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'cast.json'), 'utf8'));
+  const lettres = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'lore', 'lettres.json'), 'utf8'));
+  for (const p of PUZZLES) {
+    const v = p.characters.find(c => c.role === 'victim');
+    if (!p.final) assert.ok(cast[v.archetype].guest, `${p.id} : la victime est un invité de passage`);
+    for (const c of p.characters) assert.equal(c.name, cast[c.archetype].name, `${p.id} : nom fixe pour ${c.archetype}`);
+    assert.ok(p.place, `${p.id} : lieu`);
+    if (!p.final) assert.ok(lettres.letters[p.place], `${p.id} : une lettre d'Augure pour ${p.place}`);
+    assert.match(p.epilogue, /^— /, `${p.id} : épilogue en dialogue`);
+  }
+  assert.ok(lettres.need <= Object.keys(lettres.letters).length);
 });

@@ -1,0 +1,345 @@
+{
+  "formatVersion": 1,
+  "title": "La Foire aux Sortilèges — l'affaire Prudence",
+  "size": 7,
+  "rooms": {
+    "S": {
+      "name": "Stands",
+      "the": "les stands",
+      "floor": "sciure"
+    },
+    "B": {
+      "name": "Buvette",
+      "the": "la buvette",
+      "floor": "parquet"
+    },
+    "K": {
+      "name": "Coulisses",
+      "the": "les coulisses",
+      "floor": "parquet"
+    },
+    "C": {
+      "name": "Chapiteau",
+      "the": "le chapiteau",
+      "floor": "sciure"
+    },
+    "M": {
+      "name": "Ménagerie",
+      "the": "la ménagerie",
+      "floor": "paille"
+    },
+    "N": {
+      "name": "Manège",
+      "the": "le manège",
+      "floor": "sciure"
+    }
+  },
+  "layout": [
+    "KKSSSBB",
+    "KKSSSBB",
+    "KKCCCCB",
+    "KKCCCCM",
+    "NNCCCCM",
+    "NNNCCMM",
+    "NNNCCMM"
+  ],
+  "objects": [
+    {
+      "type": "lit",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        0,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        2,
+        4
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        4,
+        5
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        4,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        6
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        6,
+        0
+      ]
+    }
+  ],
+  "intro": "La Foire aux Sortilèges a perdu un client : l'abbesse Prudence, venue faire la quête. Six forains juraient qu'ils tenaient leur stand. L'un d'eux était seul avec elle. Le bonimenteur m'a déjà proposé un élixir de vérité. Deux écus, garanti sans effet.",
+  "characters": [
+    {
+      "id": "a",
+      "name": "Flammèche",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet",
+      "tic": "S'excuse avant même d'avoir brûlé quelque chose"
+    },
+    {
+      "id": "b",
+      "name": "Bakchich",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin",
+      "tic": "« Techniquement, c'est légal. »"
+    },
+    {
+      "id": "c",
+      "name": "Esbroufe",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🎩",
+      "desc": "Bonimenteur, vend du rêve au kilo",
+      "archetype": "bonimenteur",
+      "tic": "Vouvoie tout le monde, y compris les poules"
+    },
+    {
+      "id": "d",
+      "name": "Bâfrin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll",
+      "tic": "Répète le dernier mot de la phrase des autres"
+    },
+    {
+      "id": "e",
+      "name": "Clairvoya",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🔮",
+      "desc": "Cartomancienne, voit l'avenir, rate le présent",
+      "archetype": "cartomancienne",
+      "tic": "« Je l'avais vu venir. », toujours après coup"
+    },
+    {
+      "id": "f",
+      "name": "Fausset",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde",
+      "tic": "Transforme chaque conversation en couplet"
+    },
+    {
+      "id": "g",
+      "name": "Prudence",
+      "gender": "f",
+      "role": "victim",
+      "icon": "📿",
+      "desc": "Abbesse, quête pour un couvent introuvable",
+      "archetype": "abbesse",
+      "guest": true
+    }
+  ],
+  "decor": "foire",
+  "id": "foire--abbesse",
+  "place": "foire",
+  "epilogue": "— Vous étiez seule avec Prudence.\n— Elle voulait me faire la morale. Je lui ai tiré la carte de la Mort.\n— Et ?\n— Je l'avais vu venir. Après coup, mais je l'avais vu.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Flammèche était à l'ouest de Fausset.",
+      "logic": {
+        "type": "westOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était dans la ménagerie.",
+      "logic": {
+        "type": "inRoom",
+        "room": "M"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était au nord de Bakchich.",
+      "logic": {
+        "type": "northOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bakchich n'était pas à côté d'une statue.",
+      "logic": {
+        "type": "notAdjacentTo",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Esbroufe était dans la même colonne qu'une boule de cristal.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "cristal"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Bâfrin était à l'est de Bakchich.",
+      "logic": {
+        "type": "eastOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Clairvoya était au nord de Bâfrin.",
+      "logic": {
+        "type": "northOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Elle était sur la même ligne qu'une statue.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Fausset était à l'est de Clairvoya.",
+      "logic": {
+        "type": "eastOf",
+        "other": "e"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "g": [
+        2,
+        1
+      ],
+      "e": [
+        3,
+        0
+      ],
+      "f": [
+        1,
+        6
+      ],
+      "b": [
+        6,
+        2
+      ],
+      "d": [
+        4,
+        3
+      ],
+      "a": [
+        5,
+        5
+      ],
+      "c": [
+        0,
+        4
+      ]
+    },
+    "murderer": "e"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "position relative",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 2
+}

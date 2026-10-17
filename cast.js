@@ -1,16 +1,19 @@
 // Grimdoku — distribution : transforme les personnages d'une scène ({ id, archetype, role })
 // en fiches complètes (nom, genre, icône, description, pouvoirs) d'après cast.json.
-// Le nom dépend de la LETTRE (l'identifiant) : le personnage « c » s'appelle names.C de son type.
+// Bible du jeu (2026-10-17) : chaque type est UN personnage récurrent au nom fixe (name) ; la lettre (l'identifiant
+// a, b, c…) n'est plus dans le nom, c'est une pastille. La victime est un invité de passage (guest).
 'use strict';
 const fs = require('fs');
 const path = require('path');
 
 const ARCHETYPES = JSON.parse(fs.readFileSync(path.join(__dirname, 'cast.json'), 'utf8'));
 delete ARCHETYPES._doc;
-// chaque nom commence par sa lettre (accents ignorés : Écarlate → E)
-for (const [type, a] of Object.entries(ARCHETYPES))
-  for (const [letter, name] of Object.entries(a.names))
-    if (name.normalize('NFD')[0].toUpperCase() !== letter) throw new Error(`cast.json : ${type}.${letter} = ${name}`);
+// chaque type a un nom fixe ; un invité a aussi son motif et sa menace (textes des intros et des épilogues)
+for (const [type, a] of Object.entries(ARCHETYPES)) {
+  if (!a.name) throw new Error(`cast.json : ${type} sans nom fixe`);
+  if (a.guest && !(a.motif && a.menace && a.title)) throw new Error(`cast.json : invité ${type} sans titre, motif ou menace`);
+}
+const GUESTS = Object.keys(ARCHETYPES).filter(t => ARCHETYPES[t].guest).sort();
 
 // scene : la scène telle qu'écrite ; cast (optionnel, sortie de gen.js) : { lettre: identifiant d'origine }
 // quand le générateur a réattribué les lettres. Renvoie une copie de la scène avec des fiches complètes.
@@ -20,10 +23,10 @@ function resolve(scene, cast = {}) {
     const src = byId[cast[slot.id] || slot.id];
     const a = ARCHETYPES[src.archetype];
     if (!a) throw new Error(`${scene.id} : type de personnage inconnu « ${src.archetype} »`);
-    const name = a.names[slot.id.toUpperCase()];
-    if (!name) throw new Error(`${scene.id} : pas de nom en ${slot.id.toUpperCase()} pour le type ${src.archetype}`);
-    const ch = { id: slot.id, name, gender: a.gender, role: src.role, icon: a.icon, desc: a.desc, archetype: src.archetype };
+    const ch = { id: slot.id, name: a.name, gender: a.gender, role: src.role, icon: a.icon, desc: a.desc, archetype: src.archetype };
     if (a.traits) ch.traits = a.traits;
+    if (a.guest) ch.guest = true; // invité de passage
+    if (a.tic) ch.tic = a.tic;
     // grand personnage (4–5 crânes) : forme propre à l'énigme (engine.js, SHAPES), donnée par withBig
     if (src.shape) {
       if (!a.big) throw new Error(`${scene.id} : ${src.archetype} n'est pas un grand personnage`);
@@ -121,4 +124,33 @@ function withBig(scene, victimType, bigTypes, shapes) {
   return fitRooms({ ...scene, characters });
 }
 
-module.exports = { ARCHETYPES, resolve, loadScene, withVictim, withBig, fitRooms };
+// Affaires avec un invité pour victime : les habitués du décor sauf `dropType` (il en faut un de moins que la taille de la
+// carte), puis l'invité `guestType` en dernier, victime. gen.js réattribue ensuite les lettres selon la facilité.
+function withGuest(scene, guestType, dropType) {
+  if (!ARCHETYPES[guestType] || !ARCHETYPES[guestType].guest) throw new Error(`${guestType} n'est pas un invité de passage`);
+  const pool = scene.characters.map(c => c.archetype).filter(t => t !== dropType);
+  const suspects = pool.slice(0, scene.size - 1);
+  if (suspects.length < scene.size - 1) throw new Error(`${scene.scene || scene.title} : ${suspects.length} habitués pour ${scene.size - 1} suspects`);
+  const characters = suspects.concat(guestType).map((t, i) => ({ id: String.fromCharCode(97 + i), archetype: t, role: t === guestType ? 'victim' : 'suspect' }));
+  return fitRooms({ ...scene, characters });
+}
+
+// Affaires automatiques d'un décor : une par habitué absent, chacune avec son invité (tous différents dans un même décor,
+// ordre tiré du nom du décor pour varier d'un décor à l'autre). Renvoie [{ id, guest, drop }] ; id = <décor>--<invité>.
+const hash = (s) => [...s].reduce((h, ch) => (h * 31 + ch.charCodeAt(0)) % 1000003, 7);
+function autoCases(name, scene) {
+  const habitues = scene.characters.map(c => c.archetype);
+  if (habitues.length > GUESTS.length) throw new Error(`${name} : plus d'habitués (${habitues.length}) que d'invités (${GUESTS.length})`);
+  const k = hash(name) % GUESTS.length;
+  return habitues.map((drop, i) => { const guest = GUESTS[(k + i) % GUESTS.length]; return { id: `${name}--${guest}`, guest, drop }; });
+}
+
+// Composition d'une affaire d'après son entrée (big-cases.json, autoCases) : grands personnages, invité, ou scène telle quelle
+function compose(base, entry) {
+  if (entry.big) return withBig(base, entry.victim, entry.big, entry.shapes);
+  if (entry.guest) return withGuest(base, entry.guest, entry.drop);
+  if (entry.victim) return withVictim(base, entry.victim);
+  return base;
+}
+
+module.exports = { ARCHETYPES, GUESTS, compose, resolve, loadScene, withVictim, withGuest, withBig, fitRooms, autoCases };

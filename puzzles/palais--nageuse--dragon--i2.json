@@ -1,0 +1,338 @@
+{
+  "formatVersion": 1,
+  "title": "Le Palais des Mille Vœux — l'affaire Ondine",
+  "size": 7,
+  "rooms": {
+    "T": {
+      "name": "Salle du trône",
+      "the": "la salle du trône",
+      "floor": "noble"
+    },
+    "L": {
+      "name": "Salle des lampes",
+      "the": "la salle des lampes",
+      "floor": "dalles"
+    },
+    "J": {
+      "name": "Jardins suspendus",
+      "the": "les jardins suspendus",
+      "floor": "herbe"
+    },
+    "B": {
+      "name": "Bazar",
+      "the": "le bazar",
+      "floor": "tomettes"
+    },
+    "H": {
+      "name": "Hammam",
+      "the": "le hammam",
+      "floor": "mosaique"
+    }
+  },
+  "layout": [
+    "LLTTTTT",
+    "LLTTTTT",
+    "LLTTTBB",
+    "LLJJJBB",
+    "HHJJJBB",
+    "HHHJJBB",
+    "HHHJJBB"
+  ],
+  "objects": [
+    {
+      "type": "cristal",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        1,
+        3
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        2
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        1,
+        6
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        4
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        4,
+        2
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        6,
+        6
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        6,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        0
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Dagobert",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤴",
+      "desc": "Roi, avare de compliments et de tout le reste",
+      "archetype": "roi",
+      "tic": "« C'est pas faux. », à tout ce qu'il ne comprend pas"
+    },
+    {
+      "id": "b",
+      "name": "Cendrebrune",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragon adulte, toujours lové dans un coin",
+      "archetype": "dragon",
+      "tic": "Se réveille aux pires moments",
+      "shape": "I2"
+    },
+    {
+      "id": "c",
+      "name": "Clairvoya",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🔮",
+      "desc": "Cartomancienne, voit l'avenir, rate le présent",
+      "archetype": "cartomancienne",
+      "tic": "« Je l'avais vu venir. », toujours après coup"
+    },
+    {
+      "id": "d",
+      "name": "Bakchich",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin",
+      "tic": "« Techniquement, c'est légal. »"
+    },
+    {
+      "id": "e",
+      "name": "Esbroufe",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🎩",
+      "desc": "Bonimenteur, vend du rêve au kilo",
+      "archetype": "bonimenteur",
+      "tic": "Vouvoie tout le monde, y compris les poules"
+    },
+    {
+      "id": "f",
+      "name": "Ondine",
+      "gender": "f",
+      "role": "victim",
+      "icon": "🛟",
+      "desc": "Maîtresse-nageuse, sans permis ni maillot",
+      "archetype": "nageuse",
+      "guest": true
+    }
+  ],
+  "decor": "palais",
+  "id": "palais--nageuse--dragon--i2",
+  "place": "palais",
+  "intro": "Au Palais des Mille Vœux, la maîtresse-nageuse Ondine, venue donner des cours de natation, a fait un vœu de trop, ou en a croisé un. Cinq hôtes du palais étaient là. L'un d'eux était seul avec elle. La djinn m'a proposé de tout résoudre d'un claquement de doigts. J'ai lu les petites lignes.",
+  "epilogue": "— Vous étiez seul avec Ondine.\n— Permettez que je vous vouvoie : elle voulait m'apprendre à nager de force.\n— Et vous ?\n— Je lui ai vendu un élixir de longue vie. Il y avait une petite erreur sur l'étiquette.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Dagobert était sur la même ligne qu'un champignon géant.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était dans la même colonne qu'une table.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Cendrebrune était à l'ouest de Clairvoya.",
+      "logic": {
+        "type": "westOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Clairvoya était dans le bazar.",
+      "logic": {
+        "type": "inRoom",
+        "room": "B"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Bakchich était au nord de Cendrebrune.",
+      "logic": {
+        "type": "northOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Esbroufe était dans la salle du trône.",
+      "logic": {
+        "type": "inRoom",
+        "room": "T"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était dans la même colonne qu'un arbre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "arbre"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        0,
+        6
+      ],
+      "b": [
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          3
+        ]
+      ],
+      "a": [
+        4,
+        1
+      ],
+      "c": [
+        3,
+        5
+      ],
+      "e": [
+        2,
+        4
+      ],
+      "d": [
+        1,
+        0
+      ]
+    },
+    "murderer": "e"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 6,
+    "hardest": "pièces",
+    "hardSteps": 2,
+    "directStart": 0
+  },
+  "difficulty": 4
+}

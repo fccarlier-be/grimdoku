@@ -1,10 +1,10 @@
 {
-  "_doc": "Affaires à grands personnages. shapes : forme de chaque grand (même ordre que big), propre à l’affaire ; taille selon la grille (2 cases jusqu’en 8×8, 2–3 en 9×9, 2–4 au-delà). hidden : forme cachée (9×9 et plus), hiddenMax : parmi les formes d’au plus ce nombre de cases. Produites par tools/batch.js, assemblées par build-puzzles.js. Les ids gardent leur suffixe d’origine (sauvegardes des joueurs).",
+  "_doc": "Affaires à grands personnages. victim : un invité de passage (cast.json, guest). shapes : forme de chaque grand (même ordre que big) ; taille selon la carte (2 cases jusqu’en 8×8, 2–3 en 9×9, 2–4 au-delà). hidden : forme cachée (9×9 et plus), hiddenMax : parmi les formes d’au plus ce nombre de cases. Produites par tools/batch.js, assemblées par build-puzzles.js.",
   "cases": [
     {
-      "id": "chateau--roi--dragon",
+      "id": "chateau--huissier--dragon--i2",
       "scene": "chateau",
-      "victim": "roi",
+      "victim": "huissier",
       "big": [
         "dragon"
       ],
@@ -13,9 +13,9 @@
       ]
     },
     {
-      "id": "chateau--barde--golem",
+      "id": "chateau--inspecteur--golem--i2",
       "scene": "chateau",
-      "victim": "barde",
+      "victim": "inspecteur",
       "big": [
         "golem"
       ],
@@ -24,9 +24,9 @@
       ]
     },
     {
-      "id": "forge--mineur--dragon",
+      "id": "forge--abbesse--dragon--i2",
       "scene": "forge",
-      "victim": "mineur",
+      "victim": "abbesse",
       "big": [
         "dragon"
       ],
@@ -35,9 +35,9 @@
       ]
     },
     {
-      "id": "forge--ogre--golem",
+      "id": "forge--alchimiste--golem--i2",
       "scene": "forge",
-      "victim": "ogre",
+      "victim": "alchimiste",
       "big": [
         "golem"
       ],
@@ -46,9 +46,9 @@
       ]
     },
     {
-      "id": "mine--contremaitre--golem",
+      "id": "mine--huissier--golem--i2",
       "scene": "mine",
-      "victim": "contremaitre",
+      "victim": "huissier",
       "big": [
         "golem"
       ],
@@ -57,9 +57,9 @@
       ]
     },
     {
-      "id": "mine--fee--dragon",
+      "id": "mine--inspecteur--dragon--i2",
       "scene": "mine",
-      "victim": "fee",
+      "victim": "inspecteur",
       "big": [
         "dragon"
       ],
@@ -68,9 +68,9 @@
       ]
     },
     {
-      "id": "cimetiere--fossoyeur--geant",
+      "id": "cimetiere--abbesse--geant--i2",
       "scene": "cimetiere",
-      "victim": "fossoyeur",
+      "victim": "abbesse",
       "big": [
         "geant"
       ],
@@ -79,9 +79,9 @@
       ]
     },
     {
-      "id": "bal--roi--vouivre",
+      "id": "bal--inspecteur--vouivre--i2",
       "scene": "bal",
-      "victim": "roi",
+      "victim": "inspecteur",
       "big": [
         "vouivre"
       ],
@@ -90,9 +90,9 @@
       ]
     },
     {
-      "id": "tour--archimage--vouivre",
+      "id": "tour--dresseuse--vouivre--i2",
       "scene": "tour",
-      "victim": "archimage",
+      "victim": "dresseuse",
       "big": [
         "vouivre"
       ],
@@ -101,9 +101,9 @@
       ]
     },
     {
-      "id": "academie--professeur--golem",
+      "id": "academie--chasseuse--golem--i2",
       "scene": "academie",
-      "victim": "professeur",
+      "victim": "chasseuse",
       "big": [
         "golem"
       ],
@@ -112,9 +112,9 @@
       ]
     },
     {
-      "id": "palais--djinn--vouivre",
+      "id": "palais--abbesse--vouivre--i2",
       "scene": "palais",
-      "victim": "djinn",
+      "victim": "abbesse",
       "big": [
         "vouivre"
       ],
@@ -123,9 +123,9 @@
       ]
     },
     {
-      "id": "foire--bonimenteur--geant",
+      "id": "foire--chasseuse--geant--i2",
       "scene": "foire",
-      "victim": "bonimenteur",
+      "victim": "chasseuse",
       "big": [
         "geant"
       ],
@@ -134,9 +134,9 @@
       ]
     },
     {
-      "id": "navire--dragon--dragon",
+      "id": "navire--alchimiste--dragon--i2",
       "scene": "navire",
-      "victim": "dragon",
+      "victim": "alchimiste",
       "big": [
         "dragon"
       ],
@@ -145,9 +145,9 @@
       ]
     },
     {
-      "id": "bibliotheque--golem--golem",
+      "id": "bibliotheque--chasseuse--golem--i2",
       "scene": "bibliotheque",
-      "victim": "golem",
+      "victim": "chasseuse",
       "big": [
         "golem"
       ],
@@ -156,9 +156,9 @@
       ]
     },
     {
-      "id": "mine--mineur--golem-dragon--cache",
+      "id": "mine--messager--golem-dragon--i2-i2",
       "scene": "mine",
-      "victim": "mineur",
+      "victim": "messager",
       "big": [
         "golem",
         "dragon"
@@ -169,9 +169,9 @@
       ]
     },
     {
-      "id": "bal--vampire--geant-vouivre--cache",
+      "id": "bal--messager--geant-vouivre--i2-i2",
       "scene": "bal",
-      "victim": "vampire",
+      "victim": "messager",
       "big": [
         "geant",
         "vouivre"
@@ -182,9 +182,9 @@
       ]
     },
     {
-      "id": "cimetiere--corbeau--golem--cache",
+      "id": "cimetiere--alchimiste--golem--i2",
       "scene": "cimetiere",
-      "victim": "corbeau",
+      "victim": "alchimiste",
       "big": [
         "golem"
       ],
@@ -193,9 +193,9 @@
       ]
     },
     {
-      "id": "chateau--elfe--dragon--cache",
+      "id": "chateau--messager--dragon--i2",
       "scene": "chateau",
-      "victim": "elfe",
+      "victim": "messager",
       "big": [
         "dragon"
       ],
@@ -204,9 +204,9 @@
       ]
     },
     {
-      "id": "forge--chevalier--dragon-golem--cache",
+      "id": "forge--messager--dragon-golem--i2-i2",
       "scene": "forge",
-      "victim": "chevalier",
+      "victim": "messager",
       "big": [
         "dragon",
         "golem"
@@ -217,9 +217,9 @@
       ]
     },
     {
-      "id": "tour--sirene--golem--cache",
+      "id": "tour--huissier--golem--i2",
       "scene": "tour",
-      "victim": "sirene",
+      "victim": "huissier",
       "big": [
         "golem"
       ],
@@ -228,9 +228,9 @@
       ]
     },
     {
-      "id": "academie--djinn--geant--cache",
+      "id": "academie--colporteur--geant--i2",
       "scene": "academie",
-      "victim": "djinn",
+      "victim": "colporteur",
       "big": [
         "geant"
       ],
@@ -239,9 +239,9 @@
       ]
     },
     {
-      "id": "palais--roi--dragon--cache",
+      "id": "palais--alchimiste--dragon--i2",
       "scene": "palais",
-      "victim": "roi",
+      "victim": "alchimiste",
       "big": [
         "dragon"
       ],
@@ -250,9 +250,9 @@
       ]
     },
     {
-      "id": "navire--capitaine--geant--cache",
+      "id": "navire--baronne--geant--i2",
       "scene": "navire",
-      "victim": "capitaine",
+      "victim": "baronne",
       "big": [
         "geant"
       ],
@@ -261,9 +261,9 @@
       ]
     },
     {
-      "id": "bibliotheque--bibliothecaire--golem-dragon--cache",
+      "id": "bibliotheque--colporteur--golem-dragon--i2-i2",
       "scene": "bibliotheque",
-      "victim": "bibliothecaire",
+      "victim": "colporteur",
       "big": [
         "golem",
         "dragon"
@@ -274,9 +274,9 @@
       ]
     },
     {
-      "id": "chateau--roi--dragon--t4",
+      "id": "chateau--nageuse--dragon--i2",
       "scene": "chateau",
-      "victim": "roi",
+      "victim": "nageuse",
       "big": [
         "dragon"
       ],
@@ -285,9 +285,9 @@
       ]
     },
     {
-      "id": "chateau--barde--golem--i3",
+      "id": "chateau--percepteur--golem--i2",
       "scene": "chateau",
-      "victim": "barde",
+      "victim": "percepteur",
       "big": [
         "golem"
       ],
@@ -296,9 +296,9 @@
       ]
     },
     {
-      "id": "forge--mineur--dragon--i3",
+      "id": "forge--nageuse--dragon--i2",
       "scene": "forge",
-      "victim": "mineur",
+      "victim": "nageuse",
       "big": [
         "dragon"
       ],
@@ -307,9 +307,9 @@
       ]
     },
     {
-      "id": "forge--ogre--golem--t4",
+      "id": "forge--percepteur--golem--i2",
       "scene": "forge",
-      "victim": "ogre",
+      "victim": "percepteur",
       "big": [
         "golem"
       ],
@@ -318,9 +318,9 @@
       ]
     },
     {
-      "id": "mine--contremaitre--golem--i4",
+      "id": "mine--nageuse--golem--i2",
       "scene": "mine",
-      "victim": "contremaitre",
+      "victim": "nageuse",
       "big": [
         "golem"
       ],
@@ -329,9 +329,9 @@
       ]
     },
     {
-      "id": "mine--fee--dragon--s4",
+      "id": "mine--percepteur--dragon--i2",
       "scene": "mine",
-      "victim": "fee",
+      "victim": "percepteur",
       "big": [
         "dragon"
       ],
@@ -340,9 +340,9 @@
       ]
     },
     {
-      "id": "cimetiere--fossoyeur--geant--l3",
+      "id": "cimetiere--baronne--geant--i2",
       "scene": "cimetiere",
-      "victim": "fossoyeur",
+      "victim": "baronne",
       "big": [
         "geant"
       ],
@@ -351,9 +351,9 @@
       ]
     },
     {
-      "id": "bal--roi--vouivre--i4",
+      "id": "bal--nageuse--vouivre--i2",
       "scene": "bal",
-      "victim": "roi",
+      "victim": "nageuse",
       "big": [
         "vouivre"
       ],
@@ -362,9 +362,9 @@
       ]
     },
     {
-      "id": "tour--archimage--vouivre--s4",
+      "id": "tour--inspecteur--vouivre--i2",
       "scene": "tour",
-      "victim": "archimage",
+      "victim": "inspecteur",
       "big": [
         "vouivre"
       ],
@@ -373,9 +373,9 @@
       ]
     },
     {
-      "id": "academie--professeur--golem--l3",
+      "id": "academie--cousine--golem--i2",
       "scene": "academie",
-      "victim": "professeur",
+      "victim": "cousine",
       "big": [
         "golem"
       ],
@@ -384,9 +384,9 @@
       ]
     },
     {
-      "id": "palais--djinn--vouivre--l3",
+      "id": "palais--messager--vouivre--i2",
       "scene": "palais",
-      "victim": "djinn",
+      "victim": "messager",
       "big": [
         "vouivre"
       ],
@@ -395,9 +395,9 @@
       ]
     },
     {
-      "id": "foire--bonimenteur--geant--t4",
+      "id": "foire--colporteur--geant--i2",
       "scene": "foire",
-      "victim": "bonimenteur",
+      "victim": "colporteur",
       "big": [
         "geant"
       ],
@@ -406,9 +406,9 @@
       ]
     },
     {
-      "id": "navire--dragon--dragon--i2",
+      "id": "navire--chasseuse--dragon--i2",
       "scene": "navire",
-      "victim": "dragon",
+      "victim": "chasseuse",
       "big": [
         "dragon"
       ],
@@ -417,9 +417,9 @@
       ]
     },
     {
-      "id": "mine--mineur--golem-dragon--i2-t4--cache",
+      "id": "mine--touriste--golem-dragon--i2-i2",
       "scene": "mine",
-      "victim": "mineur",
+      "victim": "touriste",
       "big": [
         "golem",
         "dragon"
@@ -430,9 +430,9 @@
       ]
     },
     {
-      "id": "bal--vampire--geant-vouivre--l3-i4--cache",
+      "id": "bal--percepteur--geant-vouivre--i2-i2",
       "scene": "bal",
-      "victim": "vampire",
+      "victim": "percepteur",
       "big": [
         "geant",
         "vouivre"
@@ -443,9 +443,9 @@
       ]
     },
     {
-      "id": "cimetiere--corbeau--golem--i3--cache",
+      "id": "cimetiere--chasseuse--golem--i2",
       "scene": "cimetiere",
-      "victim": "corbeau",
+      "victim": "chasseuse",
       "big": [
         "golem"
       ],
@@ -454,9 +454,9 @@
       ]
     },
     {
-      "id": "chateau--elfe--dragon--l4--cache",
+      "id": "chateau--touriste--dragon--i2",
       "scene": "chateau",
-      "victim": "elfe",
+      "victim": "touriste",
       "big": [
         "dragon"
       ],
@@ -465,9 +465,9 @@
       ]
     },
     {
-      "id": "forge--chevalier--dragon-golem--l3-i2--cache",
+      "id": "forge--touriste--dragon-golem--i2-i2",
       "scene": "forge",
-      "victim": "chevalier",
+      "victim": "touriste",
       "big": [
         "dragon",
         "golem"
@@ -478,9 +478,9 @@
       ]
     },
     {
-      "id": "tour--sirene--golem--s4--cache",
+      "id": "tour--messager--golem--i2",
       "scene": "tour",
-      "victim": "sirene",
+      "victim": "messager",
       "big": [
         "golem"
       ],
@@ -489,9 +489,9 @@
       ]
     },
     {
-      "id": "academie--djinn--geant--i3--cache",
+      "id": "academie--dresseuse--geant--i2",
       "scene": "academie",
-      "victim": "djinn",
+      "victim": "dresseuse",
       "big": [
         "geant"
       ],
@@ -500,9 +500,9 @@
       ]
     },
     {
-      "id": "palais--roi--dragon--t4--cache",
+      "id": "palais--nageuse--dragon--i2",
       "scene": "palais",
-      "victim": "roi",
+      "victim": "nageuse",
       "big": [
         "dragon"
       ],
@@ -511,9 +511,9 @@
       ]
     },
     {
-      "id": "navire--capitaine--geant--l3--cache",
+      "id": "navire--colporteur--geant--i2",
       "scene": "navire",
-      "victim": "capitaine",
+      "victim": "colporteur",
       "big": [
         "geant"
       ],
@@ -522,9 +522,9 @@
       ]
     },
     {
-      "id": "bibliotheque--bibliothecaire--golem-dragon--l3-i2--cache",
+      "id": "bibliotheque--cousine--golem-dragon--i2-i2",
       "scene": "bibliotheque",
-      "victim": "bibliothecaire",
+      "victim": "cousine",
       "big": [
         "golem",
         "dragon"
@@ -535,9 +535,9 @@
       ]
     },
     {
-      "id": "citadelle--roi--dragon--l3",
+      "id": "citadelle--inspecteur--dragon--l3",
       "scene": "citadelle",
-      "victim": "roi",
+      "victim": "inspecteur",
       "big": [
         "dragon"
       ],
@@ -546,9 +546,9 @@
       ]
     },
     {
-      "id": "citadelle--barde--golem--l3--cache",
+      "id": "citadelle--messager--golem--l3--cache",
       "scene": "citadelle",
-      "victim": "barde",
+      "victim": "messager",
       "big": [
         "golem"
       ],
@@ -559,9 +559,9 @@
       "hiddenMax": 3
     },
     {
-      "id": "citadelle--elfe--geant--i2",
+      "id": "citadelle--nageuse--geant--i2",
       "scene": "citadelle",
-      "victim": "elfe",
+      "victim": "nageuse",
       "big": [
         "geant"
       ],
@@ -570,9 +570,9 @@
       ]
     },
     {
-      "id": "grand-port--capitaine--dragon--t4",
+      "id": "grand-port--abbesse--dragon--t4",
       "scene": "grand-port",
-      "victim": "capitaine",
+      "victim": "abbesse",
       "big": [
         "dragon"
       ],
@@ -581,9 +581,9 @@
       ]
     },
     {
-      "id": "grand-port--sirene--vouivre--l4--cache",
+      "id": "grand-port--percepteur--vouivre--l4--cache",
       "scene": "grand-port",
-      "victim": "sirene",
+      "victim": "percepteur",
       "big": [
         "vouivre"
       ],
@@ -594,9 +594,9 @@
       "hiddenMax": 4
     },
     {
-      "id": "grand-port--tavernier--golem-geant--i3-i2",
+      "id": "grand-port--touriste--golem-geant--i3-i2",
       "scene": "grand-port",
-      "victim": "tavernier",
+      "victim": "touriste",
       "big": [
         "golem",
         "geant"
@@ -607,9 +607,9 @@
       ]
     },
     {
-      "id": "universite--professeur--dragon--s4",
+      "id": "universite--cousine--dragon--s4",
       "scene": "universite",
-      "victim": "professeur",
+      "victim": "cousine",
       "big": [
         "dragon"
       ],
@@ -618,9 +618,9 @@
       ]
     },
     {
-      "id": "universite--fee--golem--o4",
+      "id": "universite--dresseuse--golem--o4",
       "scene": "universite",
-      "victim": "fee",
+      "victim": "dresseuse",
       "big": [
         "golem"
       ],
@@ -629,9 +629,9 @@
       ]
     },
     {
-      "id": "universite--mage--vouivre--l4--cache",
+      "id": "universite--huissier--vouivre--l4--cache",
       "scene": "universite",
-      "victim": "mage",
+      "victim": "huissier",
       "big": [
         "vouivre"
       ],
@@ -642,9 +642,9 @@
       "hiddenMax": 4
     },
     {
-      "id": "grande-foire--bonimenteur--vouivre--s4",
+      "id": "grande-foire--alchimiste--vouivre--s4",
       "scene": "grande-foire",
-      "victim": "bonimenteur",
+      "victim": "alchimiste",
       "big": [
         "vouivre"
       ],
@@ -653,9 +653,9 @@
       ]
     },
     {
-      "id": "grande-foire--troll--dragon-golem--t4-i2--cache",
+      "id": "grande-foire--baronne--dragon-golem--t4-i2--cache",
       "scene": "grande-foire",
-      "victim": "troll",
+      "victim": "baronne",
       "big": [
         "dragon",
         "golem"
@@ -668,9 +668,9 @@
       "hiddenMax": 4
     },
     {
-      "id": "grande-foire--chef--geant--o4",
+      "id": "grande-foire--abbesse--geant--o4",
       "scene": "grande-foire",
-      "victim": "chef",
+      "victim": "abbesse",
       "big": [
         "geant"
       ],

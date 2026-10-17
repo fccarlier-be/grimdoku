@@ -1,0 +1,309 @@
+{
+  "formatVersion": 1,
+  "title": "La Foire aux Sortilèges — l'affaire Bricabrac",
+  "size": 7,
+  "rooms": {
+    "S": {
+      "name": "Stands",
+      "the": "les stands",
+      "floor": "sciure"
+    },
+    "K": {
+      "name": "Coulisses",
+      "the": "les coulisses",
+      "floor": "parquet"
+    },
+    "C": {
+      "name": "Chapiteau",
+      "the": "le chapiteau",
+      "floor": "sciure"
+    },
+    "M": {
+      "name": "Ménagerie",
+      "the": "la ménagerie",
+      "floor": "paille"
+    },
+    "N": {
+      "name": "Manège",
+      "the": "le manège",
+      "floor": "sciure"
+    }
+  },
+  "layout": [
+    "KKSSSMM",
+    "KKSSSMM",
+    "KKCCCCM",
+    "KKCCCCM",
+    "NNCCCCM",
+    "NNNCCMM",
+    "NNNCCMM"
+  ],
+  "objects": [
+    {
+      "type": "lit",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        0,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        2,
+        4
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        4,
+        5
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        4,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        6
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        6,
+        0
+      ]
+    }
+  ],
+  "intro": "La Foire aux Sortilèges a perdu un client : le colporteur Bricabrac, venu vendre sa camelote. Cinq forains juraient qu'ils tenaient leur stand. L'un d'eux était seul avec lui. Le bonimenteur m'a déjà proposé un élixir de vérité. Deux écus, garanti sans effet.",
+  "characters": [
+    {
+      "id": "a",
+      "name": "Bakchich",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin",
+      "tic": "« Techniquement, c'est légal. »"
+    },
+    {
+      "id": "b",
+      "name": "Fausset",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde",
+      "tic": "Transforme chaque conversation en couplet"
+    },
+    {
+      "id": "c",
+      "name": "Escabeau",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🦶",
+      "desc": "Géant, toujours couché : aucun plafond n'est assez haut",
+      "archetype": "geant",
+      "tic": "Se cogne, s'excuse auprès du plafond",
+      "shape": "I2"
+    },
+    {
+      "id": "d",
+      "name": "Bâfrin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll",
+      "tic": "Répète le dernier mot de la phrase des autres"
+    },
+    {
+      "id": "e",
+      "name": "Clairvoya",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🔮",
+      "desc": "Cartomancienne, voit l'avenir, rate le présent",
+      "archetype": "cartomancienne",
+      "tic": "« Je l'avais vu venir. », toujours après coup"
+    },
+    {
+      "id": "f",
+      "name": "Bricabrac",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🎒",
+      "desc": "Colporteur, vend des objets dont personne ne veut",
+      "archetype": "colporteur",
+      "guest": true
+    }
+  ],
+  "decor": "foire",
+  "id": "foire--colporteur--geant--i2",
+  "place": "foire",
+  "epilogue": "— Vous étiez seul avec Bricabrac.\n— « Il voulait me revendre ce qu'il m'avait déjà vendu, ô rage, ô désespoir… »\n— Répondez normalement.\n— J'ai chanté jusqu'à ce qu'il s'arrête. Définitivement.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Bakchich était à l'ouest de Bâfrin.",
+      "logic": {
+        "type": "westOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était à côté d'une chaise.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Fausset était dans la même colonne qu'un chaudron.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Escabeau était au nord de Clairvoya.",
+      "logic": {
+        "type": "northOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Bâfrin était dans les coulisses.",
+      "logic": {
+        "type": "inRoom",
+        "room": "K"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Clairvoya était au sud de Bakchich.",
+      "logic": {
+        "type": "southOf",
+        "other": "a"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        3,
+        6
+      ],
+      "c": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "e": [
+        6,
+        4
+      ],
+      "b": [
+        0,
+        5
+      ],
+      "a": [
+        5,
+        0
+      ],
+      "d": [
+        2,
+        1
+      ]
+    },
+    "murderer": "b"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "position relative",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 4
+}

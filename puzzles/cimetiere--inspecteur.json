@@ -1,0 +1,413 @@
+{
+  "formatVersion": 1,
+  "title": "Le Cimetière de Minuit — l'affaire Pinardon",
+  "size": 8,
+  "rooms": {
+    "G": {
+      "name": "Maison du gardien",
+      "the": "la maison du gardien",
+      "floor": "parquet"
+    },
+    "C": {
+      "name": "Chapelle",
+      "the": "la chapelle",
+      "floor": "dalles"
+    },
+    "A": {
+      "name": "Allée des ifs",
+      "the": "l'allée des ifs",
+      "floor": "herbe"
+    },
+    "P": {
+      "name": "Carré des pauvres",
+      "the": "le carré des pauvres",
+      "floor": "herbe"
+    },
+    "J": {
+      "name": "Jardin du souvenir",
+      "the": "le jardin du souvenir",
+      "floor": "herbe"
+    },
+    "O": {
+      "name": "Ossuaire",
+      "the": "l'ossuaire",
+      "floor": "crypte"
+    },
+    "Y": {
+      "name": "Crypte",
+      "the": "la crypte",
+      "floor": "crypte"
+    }
+  },
+  "layout": [
+    "GGGAACCC",
+    "GGGAACCC",
+    "PPAAAACC",
+    "PPAAAACC",
+    "PPJJJOOC",
+    "YYJJJOOO",
+    "YYJJJOOO",
+    "YYYYJOOO"
+  ],
+  "objects": [
+    {
+      "type": "lit",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        3,
+        5
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        2,
+        7
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        5,
+        3
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        6,
+        2
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        7,
+        4
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        7,
+        5
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        6,
+        1
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        7,
+        3
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Augure",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐦‍⬛",
+      "desc": "Corbeau, écrit des lettres anonymes",
+      "archetype": "corbeau",
+      "tic": "Ne parle pas : il écrit"
+    },
+    {
+      "id": "b",
+      "name": "Blafard",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ],
+      "tic": "« De mon vivant… »"
+    },
+    {
+      "id": "c",
+      "name": "Ambroise",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐸",
+      "desc": "Crapaud, prince déchu, attend toujours son bisou",
+      "archetype": "crapaud",
+      "tic": "Rappelle son titre toutes les deux phrases"
+    },
+    {
+      "id": "d",
+      "name": "Glas",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "⚰️",
+      "desc": "Fossoyeur, creuse en sifflotant",
+      "archetype": "fossoyeur",
+      "tic": "Prend les mesures des gens qu'il rencontre"
+    },
+    {
+      "id": "e",
+      "name": "Gontran",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier",
+      "tic": "Annonce chacune de ses actions à voix haute"
+    },
+    {
+      "id": "f",
+      "name": "Belladone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire",
+      "tic": "« Je ne bois jamais… de vin. »"
+    },
+    {
+      "id": "g",
+      "name": "Ciguë",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧙‍♀️",
+      "desc": "Sorcière des marais, cuisine tout ce qui coasse",
+      "archetype": "sorciere",
+      "tic": "Regarde Ambroise avec appétit"
+    },
+    {
+      "id": "h",
+      "name": "Pinardon",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🍷",
+      "desc": "Inspecteur des tavernes, goûte tout, note tout",
+      "archetype": "inspecteur",
+      "guest": true
+    }
+  ],
+  "decor": "cimetiere",
+  "id": "cimetiere--inspecteur",
+  "place": "cimetiere",
+  "intro": "Au Cimetière de Minuit, on a retrouvé l'inspecteur des tavernes Pinardon, venu inspecter les lieux. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Sept habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec lui. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
+  "epilogue": "— Vous étiez seul avec Pinardon.\n— Il voulait me coller un blâme. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Augure était à l'est de Glas.",
+      "logic": {
+        "type": "eastOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était à côté d'une table.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "table"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Blafard était à l'ouest de Belladone.",
+      "logic": {
+        "type": "westOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était dans la même colonne qu'un arbre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était au sud d'Ambroise.",
+      "logic": {
+        "type": "southOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était à côté d'une tombe.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tombe"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Ambroise était au sud de Ciguë.",
+      "logic": {
+        "type": "southOf",
+        "other": "g"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Glas était dans la même colonne qu'un sarcophage.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "sarcophage"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était au sud de Gontran.",
+      "logic": {
+        "type": "southOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Gontran était au sud de Belladone.",
+      "logic": {
+        "type": "southOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Belladone était au nord d'Ambroise.",
+      "logic": {
+        "type": "northOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Ciguë était dans le jardin du souvenir.",
+      "logic": {
+        "type": "inRoom",
+        "room": "J"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "h": [
+        7,
+        6
+      ],
+      "d": [
+        3,
+        1
+      ],
+      "b": [
+        6,
+        5
+      ],
+      "f": [
+        0,
+        7
+      ],
+      "g": [
+        4,
+        3
+      ],
+      "a": [
+        1,
+        2
+      ],
+      "e": [
+        2,
+        4
+      ],
+      "c": [
+        5,
+        0
+      ]
+    },
+    "murderer": "b"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 7,
+    "hardest": "pièces",
+    "hardSteps": 3,
+    "directStart": 0
+  },
+  "difficulty": 3
+}

@@ -1,0 +1,334 @@
+{
+  "formatVersion": 1,
+  "title": "Le Navire Fantôme — l'affaire Vipérine",
+  "size": 7,
+  "rooms": {
+    "P": {
+      "name": "Pont",
+      "the": "le pont",
+      "floor": "navire"
+    },
+    "E": {
+      "name": "Entrepont",
+      "the": "l'entrepont",
+      "floor": "navire"
+    },
+    "Q": {
+      "name": "Coquerie",
+      "the": "la coquerie",
+      "floor": "tomettes"
+    },
+    "C": {
+      "name": "Cale",
+      "the": "la cale",
+      "floor": "navire"
+    },
+    "S": {
+      "name": "Soute à poudre",
+      "the": "la soute à poudre",
+      "floor": "navire"
+    }
+  },
+  "layout": [
+    "EEPPPQQ",
+    "EEPPPQQ",
+    "EEPPPQQ",
+    "EECCQQQ",
+    "EECCCQQ",
+    "SSCCCCQ",
+    "SSSCCCC"
+  ],
+  "objects": [
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "canon",
+      "at": [
+        0,
+        3
+      ]
+    },
+    {
+      "type": "canon",
+      "at": [
+        2,
+        2
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        1,
+        6
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        6
+      ]
+    },
+    {
+      "type": "hamac",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "hamac",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        3,
+        5
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        4,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        4
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        5
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        5,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        2
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Écho-Écho",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🦜",
+      "desc": "Perroquet, répète tous les secrets",
+      "archetype": "perroquet",
+      "tic": "Répète tout, dans le désordre"
+    },
+    {
+      "id": "b",
+      "name": "Goémone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene",
+      "tic": "Fait des bulles quand elle ment"
+    },
+    {
+      "id": "c",
+      "name": "Bâbord",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🏴‍☠️",
+      "desc": "Pirate, a perdu une jambe, un œil et le sens de l'orientation",
+      "archetype": "pirate",
+      "tic": "Indique toujours la mauvaise direction"
+    },
+    {
+      "id": "d",
+      "name": "Blafard",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ],
+      "tic": "« De mon vivant… »"
+    },
+    {
+      "id": "e",
+      "name": "Cendrebrune",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragon adulte, toujours lové dans un coin",
+      "archetype": "dragon",
+      "tic": "Se réveille aux pires moments",
+      "shape": "I2"
+    },
+    {
+      "id": "f",
+      "name": "Vipérine",
+      "gender": "f",
+      "role": "victim",
+      "icon": "🏹",
+      "desc": "Chasseuse de primes, a toujours un avis de recherche sur elle",
+      "archetype": "chasseuse",
+      "guest": true
+    }
+  ],
+  "decor": "navire",
+  "id": "navire--chasseuse--dragon--i2",
+  "place": "navire",
+  "intro": "Le Navire Fantôme ne quitte jamais le port, et la chasseuse de primes Vipérine, venue à bord toucher une prime, non plus, désormais. Cinq membres de l'équipage traînaient sur le pont. L'un d'eux était seul avec elle. Le capitaine m'assure que c'est la faute de la tempête. Il n'y a pas de tempête.",
+  "epilogue": "— Vous étiez seul avec Vipérine.\n— Seul avec Vipérine ! Seul avec Vipérine !\n— Pourquoi ?\n— Elle voulait me livrer au baron contre trois écus ! Coup de bec ! Coup de bec !",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Écho-Écho était dans la coquerie.",
+      "logic": {
+        "type": "inRoom",
+        "room": "Q"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était à l'ouest de Goémone.",
+      "logic": {
+        "type": "westOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Goémone était dans la même colonne qu'un chaudron.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Bâbord était sur la même ligne qu'un hamac.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "hamac"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était à côté d'un tonneau.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Blafard était au sud de Goémone.",
+      "logic": {
+        "type": "southOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Cendrebrune était dans le pont.",
+      "logic": {
+        "type": "inRoom",
+        "room": "P"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        0,
+        6
+      ],
+      "e": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "c": [
+        2,
+        1
+      ],
+      "a": [
+        3,
+        4
+      ],
+      "b": [
+        5,
+        5
+      ],
+      "d": [
+        6,
+        0
+      ]
+    },
+    "murderer": "a"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 6,
+    "hardest": "pièces",
+    "hardSteps": 2,
+    "directStart": 0
+  },
+  "difficulty": 4
+}

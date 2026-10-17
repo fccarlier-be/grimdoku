@@ -1,0 +1,132 @@
+{
+ "positions": {
+  "i": [
+   2,
+   5
+  ],
+  "b": [
+   0,
+   4
+  ],
+  "a": [
+   8,
+   1
+  ],
+  "h": [
+   6,
+   3
+  ],
+  "c": [
+   7,
+   6
+  ],
+  "f": [
+   4,
+   8
+  ],
+  "d": [
+   3,
+   7
+  ],
+  "e": [
+   1,
+   0
+  ],
+  "g": [
+   5,
+   2
+  ]
+ },
+ "murderer": "b",
+ "cast": {
+  "b": "a",
+  "a": "b",
+  "h": "c",
+  "c": "d",
+  "f": "e",
+  "d": "f",
+  "e": "g",
+  "g": "h"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "enclume"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "westOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "sarcophage"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "inRoom",
+    "room": "J"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "eastOf",
+    "other": "h"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "northOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "fauteuil"
+   }
+  }
+ ]
+}

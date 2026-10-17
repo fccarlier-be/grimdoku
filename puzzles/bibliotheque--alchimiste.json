@@ -1,0 +1,346 @@
+{
+  "formatVersion": 1,
+  "title": "La Bibliothèque Interdite — l'affaire Mercurio",
+  "size": 7,
+  "rooms": {
+    "S": {
+      "name": "Scriptorium",
+      "the": "le scriptorium",
+      "floor": "parquet"
+    },
+    "Y": {
+      "name": "Rayonnages",
+      "the": "les rayonnages",
+      "floor": "parquet"
+    },
+    "L": {
+      "name": "Salle de lecture",
+      "the": "la salle de lecture",
+      "floor": "parquet"
+    },
+    "G": {
+      "name": "Galerie",
+      "the": "la galerie",
+      "floor": "parquet"
+    },
+    "R": {
+      "name": "Réserve",
+      "the": "la réserve",
+      "floor": "parquet"
+    },
+    "A": {
+      "name": "Archives",
+      "the": "les archives",
+      "floor": "parquet"
+    }
+  },
+  "layout": [
+    "SSSYYYY",
+    "SSSYYYY",
+    "SSLLLGG",
+    "SSLLLGG",
+    "RRLLLGG",
+    "RRRAAAA",
+    "RRRAAAA"
+  ],
+  "objects": [
+    {
+      "type": "pupitre",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        0
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        5,
+        4
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        6,
+        5
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        6,
+        3
+      ]
+    }
+  ],
+  "intro": "À la Bibliothèque Interdite, l'alchimiste Mercurio, venu proposer ses services, a été retrouvé entre deux rayonnages. On m'a demandé d'enquêter en silence. Six lecteurs étaient là. L'un d'eux était seul avec lui. Je chuchote mes questions ; on me répond en hurlant « chut ».",
+  "characters": [
+    {
+      "id": "a",
+      "name": "Belladone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire",
+      "tic": "« Je ne bois jamais… de vin. »"
+    },
+    {
+      "id": "b",
+      "name": "Gribouille",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage",
+      "tic": "Éternue avant chaque sortilège"
+    },
+    {
+      "id": "c",
+      "name": "Blafard",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ],
+      "tic": "« De mon vivant… »"
+    },
+    {
+      "id": "d",
+      "name": "Bakchich",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin",
+      "tic": "« Techniquement, c'est légal. »"
+    },
+    {
+      "id": "e",
+      "name": "Dewey",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "👩‍🏫",
+      "desc": "Bibliothécaire, réclame le silence en hurlant",
+      "archetype": "bibliothecaire",
+      "tic": "« CHUT ! », en hurlant"
+    },
+    {
+      "id": "f",
+      "name": "Fumerolle",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn",
+      "tic": "Prend tout au pied de la lettre"
+    },
+    {
+      "id": "g",
+      "name": "Mercurio",
+      "gender": "m",
+      "role": "victim",
+      "icon": "⚗️",
+      "desc": "Alchimiste ambulant, transforme l'or en dettes",
+      "archetype": "alchimiste",
+      "guest": true
+    }
+  ],
+  "decor": "bibliotheque",
+  "id": "bibliotheque--alchimiste",
+  "place": "bibliotheque",
+  "epilogue": "— Vous étiez seul avec Mercurio.\n— Il voulait changer mes économies en plomb. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Belladone était assise dans un fauteuil.",
+      "logic": {
+        "type": "onObject",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Gribouille était dans le scriptorium.",
+      "logic": {
+        "type": "inRoom",
+        "room": "S"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Blafard était dans la même colonne qu'une table.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Bakchich était à côté d'une étagère.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "etagere"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Dewey était au nord de Bakchich.",
+      "logic": {
+        "type": "northOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Elle était à côté d'une chaise.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Fumerolle était sur la même ligne qu'un coffre.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "coffre"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "g": [
+        1,
+        6
+      ],
+      "b": [
+        3,
+        1
+      ],
+      "c": [
+        0,
+        3
+      ],
+      "a": [
+        2,
+        5
+      ],
+      "f": [
+        5,
+        0
+      ],
+      "d": [
+        6,
+        4
+      ],
+      "e": [
+        4,
+        2
+      ]
+    },
+    "murderer": "c"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 7,
+    "hardest": "pièces",
+    "hardSteps": 3,
+    "directStart": 0
+  },
+  "difficulty": 3
+}

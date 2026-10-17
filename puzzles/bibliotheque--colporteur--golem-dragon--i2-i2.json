@@ -1,0 +1,341 @@
+{
+  "formatVersion": 1,
+  "title": "La Bibliothèque Interdite — l'affaire Bricabrac",
+  "size": 7,
+  "rooms": {
+    "S": {
+      "name": "Scriptorium",
+      "the": "le scriptorium",
+      "floor": "parquet"
+    },
+    "Y": {
+      "name": "Rayonnages",
+      "the": "les rayonnages",
+      "floor": "parquet"
+    },
+    "L": {
+      "name": "Salle de lecture",
+      "the": "la salle de lecture",
+      "floor": "parquet"
+    },
+    "R": {
+      "name": "Réserve",
+      "the": "la réserve",
+      "floor": "parquet"
+    },
+    "A": {
+      "name": "Archives",
+      "the": "les archives",
+      "floor": "parquet"
+    }
+  },
+  "layout": [
+    "SSSYYYY",
+    "SSSYYYY",
+    "SSLLLAA",
+    "SSLLLAA",
+    "RRLLLAA",
+    "RRRAAAA",
+    "RRRAAAA"
+  ],
+  "objects": [
+    {
+      "type": "pupitre",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        0
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        5,
+        4
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        6,
+        5
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        6,
+        3
+      ]
+    }
+  ],
+  "intro": "À la Bibliothèque Interdite, le colporteur Bricabrac, venu vendre sa camelote, a été retrouvé entre deux rayonnages. On m'a demandé d'enquêter en silence. Cinq lecteurs étaient là. L'un d'eux était seul avec lui. Je chuchote mes questions ; on me répond en hurlant « chut ».",
+  "characters": [
+    {
+      "id": "a",
+      "name": "Gribouille",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage",
+      "tic": "Éternue avant chaque sortilège"
+    },
+    {
+      "id": "b",
+      "name": "Belladone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire",
+      "tic": "« Je ne bois jamais… de vin. »"
+    },
+    {
+      "id": "c",
+      "name": "Blafard",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ],
+      "tic": "« De mon vivant… »"
+    },
+    {
+      "id": "d",
+      "name": "Cendrebrune",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragon adulte, toujours lové dans un coin",
+      "archetype": "dragon",
+      "tic": "Se réveille aux pires moments",
+      "shape": "I2"
+    },
+    {
+      "id": "e",
+      "name": "Caillasse",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🪨",
+      "desc": "Golem de pierre, lent mais très appliqué",
+      "archetype": "golem",
+      "tic": "Exécute les ordres au mot près, avec un temps de retard",
+      "shape": "I2"
+    },
+    {
+      "id": "f",
+      "name": "Bricabrac",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🎒",
+      "desc": "Colporteur, vend des objets dont personne ne veut",
+      "archetype": "colporteur",
+      "guest": true
+    }
+  ],
+  "decor": "bibliotheque",
+  "id": "bibliotheque--colporteur--golem-dragon--i2-i2",
+  "place": "bibliotheque",
+  "epilogue": "— Vous étiez seule avec Bricabrac.\n— Il voulait me revendre ce qu'il m'avait déjà vendu. Je lui ai proposé un verre.\n— De vin ?\n— Je ne bois jamais… de vin.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Gribouille était assis sur une chaise.",
+      "logic": {
+        "type": "onObject",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Belladone était sur la même ligne qu'une statue.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Elle était au sud de Gribouille.",
+      "logic": {
+        "type": "southOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Blafard était à l'ouest de Belladone.",
+      "logic": {
+        "type": "westOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il hantait une étagère.",
+      "logic": {
+        "type": "onObject",
+        "object": "etagere"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Cendrebrune était à côté d'un pupitre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "pupitre"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Caillasse était au sud de Blafard.",
+      "logic": {
+        "type": "southOf",
+        "other": "c"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        4,
+        6
+      ],
+      "e": [
+        [
+          5,
+          2
+        ],
+        [
+          6,
+          2
+        ]
+      ],
+      "d": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "a": [
+        2,
+        3
+      ],
+      "c": [
+        0,
+        4
+      ],
+      "b": [
+        3,
+        5
+      ]
+    },
+    "murderer": "b"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 0
+  },
+  "difficulty": 4
+}

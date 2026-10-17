@@ -1,0 +1,387 @@
+{
+  "formatVersion": 1,
+  "title": "La Citadelle de Mortebrune — l'affaire Pinardon",
+  "decor": "chateau",
+  "size": 9,
+  "rooms": {
+    "R": {
+      "name": "Remparts",
+      "the": "les remparts",
+      "floor": "paves"
+    },
+    "C": {
+      "name": "Cour d'honneur",
+      "the": "la cour d'honneur",
+      "floor": "paves"
+    },
+    "T": {
+      "name": "Tour de guet",
+      "the": "la tour de guet",
+      "floor": "dalles"
+    },
+    "A": {
+      "name": "Armurerie",
+      "the": "l'armurerie",
+      "floor": "dalles"
+    },
+    "J": {
+      "name": "Jardin",
+      "the": "le jardin",
+      "floor": "herbe"
+    },
+    "P": {
+      "name": "Oubliettes",
+      "the": "les oubliettes",
+      "floor": "crypte"
+    },
+    "D": {
+      "name": "Salle du trône",
+      "the": "la salle du trône",
+      "floor": "noble"
+    }
+  },
+  "layout": [
+    "RRRCCCCTT",
+    "RRRCCCCTT",
+    "RRRCCCCTT",
+    "AAACCCCTT",
+    "AAAJJJJJD",
+    "AAAJJJJJD",
+    "PPPJJJJJD",
+    "PPPDDDDDD",
+    "PPPDDDDDD"
+  ],
+  "objects": [
+    {
+      "type": "canon",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        8
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        2,
+        7
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        0
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        4,
+        7
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        5,
+        8
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        7,
+        0
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        8,
+        2
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        8,
+        5
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        7,
+        4
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        8,
+        7
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Aëlys",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe",
+      "tic": "Note tout sur dix, les gens compris"
+    },
+    {
+      "id": "b",
+      "name": "Flammèche",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet",
+      "tic": "S'excuse avant même d'avoir brûlé quelque chose"
+    },
+    {
+      "id": "c",
+      "name": "Bakchich",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin",
+      "tic": "« Techniquement, c'est légal. »"
+    },
+    {
+      "id": "d",
+      "name": "Blafard",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ],
+      "tic": "« De mon vivant… »"
+    },
+    {
+      "id": "e",
+      "name": "Cendrebrune",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragon adulte, toujours lové dans un coin",
+      "archetype": "dragon",
+      "tic": "Se réveille aux pires moments",
+      "shape": "L3"
+    },
+    {
+      "id": "f",
+      "name": "Gontran",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier",
+      "tic": "Annonce chacune de ses actions à voix haute"
+    },
+    {
+      "id": "g",
+      "name": "Fausset",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde",
+      "tic": "Transforme chaque conversation en couplet"
+    },
+    {
+      "id": "h",
+      "name": "Pinardon",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🍷",
+      "desc": "Inspecteur des tavernes, goûte tout, note tout",
+      "archetype": "inspecteur",
+      "guest": true
+    }
+  ],
+  "id": "citadelle--inspecteur--dragon--l3",
+  "place": "citadelle",
+  "intro": "Le pont-levis est resté coincé toute la nuit, et l'inspecteur des tavernes Pinardon, venu inspecter les lieux, est resté coincé avec. Pour toujours. Sept occupants de la Citadelle ne pouvaient pas sortir. L'un d'eux était seul avec lui. Au moins, personne n'a pu s'enfuir.",
+  "epilogue": "— Vous étiez seul avec Pinardon.\n— Il voulait me coller un blâme. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Aëlys était à côté d'une enclume.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "enclume"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Flammèche était dans les remparts.",
+      "logic": {
+        "type": "inRoom",
+        "room": "R"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Bakchich était à l'ouest d'Aëlys.",
+      "logic": {
+        "type": "westOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était sur la même ligne qu'un sarcophage.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "sarcophage"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Blafard était sur la même ligne qu'un arbre.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était à l'ouest de Cendrebrune.",
+      "logic": {
+        "type": "westOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Cendrebrune était à côté d'un chariot de mine.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chariot"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Gontran était sur la même ligne qu'un chariot de mine.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chariot"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Fausset était dans la même colonne qu'un champignon géant.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "champi"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "h": [
+        6,
+        6
+      ],
+      "e": [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "f": [
+        3,
+        8
+      ],
+      "c": [
+        8,
+        1
+      ],
+      "g": [
+        7,
+        7
+      ],
+      "a": [
+        4,
+        2
+      ],
+      "d": [
+        5,
+        3
+      ],
+      "b": [
+        0,
+        0
+      ]
+    },
+    "murderer": "d"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 0
+  },
+  "difficulty": 4
+}

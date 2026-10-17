@@ -1,0 +1,358 @@
+{
+  "formatVersion": 1,
+  "title": "Le Port des Contrebandiers — l'affaire Lirelire",
+  "size": 7,
+  "rooms": {
+    "Q": {
+      "name": "Quai",
+      "the": "le quai",
+      "floor": "navire"
+    },
+    "D": {
+      "name": "Douane",
+      "the": "la douane",
+      "floor": "dalles"
+    },
+    "T": {
+      "name": "Taverne du port",
+      "the": "la taverne du port",
+      "floor": "parquet"
+    },
+    "C": {
+      "name": "Chantier naval",
+      "the": "le chantier naval",
+      "floor": "navire"
+    },
+    "E": {
+      "name": "Entrepôt",
+      "the": "l'entrepôt",
+      "floor": "tomettes"
+    },
+    "M": {
+      "name": "Marché aux poissons",
+      "the": "le marché aux poissons",
+      "floor": "damier"
+    }
+  },
+  "layout": [
+    "TTQQQQD",
+    "TTQQQDD",
+    "TTQCCDD",
+    "TTCCCEE",
+    "TTCCCEE",
+    "MMMCEEE",
+    "MMMMEEE"
+  ],
+  "objects": [
+    {
+      "type": "statue",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "canon",
+      "at": [
+        0,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "barque",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        1,
+        6
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        2,
+        6
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "barque",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        4,
+        4
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        6,
+        6
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        2
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Bakchich",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin",
+      "tic": "« Techniquement, c'est légal. »"
+    },
+    {
+      "id": "b",
+      "name": "Bâbord",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🏴‍☠️",
+      "desc": "Pirate, a perdu une jambe, un œil et le sens de l'orientation",
+      "archetype": "pirate",
+      "tic": "Indique toujours la mauvaise direction"
+    },
+    {
+      "id": "c",
+      "name": "Goémone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene",
+      "tic": "Fait des bulles quand elle ment"
+    },
+    {
+      "id": "d",
+      "name": "Frégaton",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍✈️",
+      "desc": "Capitaine, n'a jamais quitté le port",
+      "archetype": "capitaine",
+      "tic": "Raconte des tempêtes qu'il n'a jamais vues"
+    },
+    {
+      "id": "e",
+      "name": "Bâfrin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll",
+      "tic": "Répète le dernier mot de la phrase des autres"
+    },
+    {
+      "id": "f",
+      "name": "Écho-Écho",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🦜",
+      "desc": "Perroquet, répète tous les secrets",
+      "archetype": "perroquet",
+      "tic": "Répète tout, dans le désordre"
+    },
+    {
+      "id": "g",
+      "name": "Lirelire",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🪕",
+      "desc": "Troubadour itinérant, chante juste, et ça agace",
+      "archetype": "troubadour",
+      "guest": true
+    }
+  ],
+  "decor": "port",
+  "id": "port--troubadour",
+  "place": "port",
+  "intro": "Au Port des Contrebandiers, le troubadour Lirelire, venu donner un concert, a été repêché à marée basse. Six habitués traînaient sur les quais. L'un d'eux était seul avec lui. Ici, tout le monde a quelque chose à cacher, généralement dans un tonneau.",
+  "epilogue": "— Vous étiez seul avec Lirelire.\n— Il voulait chanter mieux que tout le monde. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Bakchich était à l'est de Bâbord.",
+      "logic": {
+        "type": "eastOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était assis sur une chaise.",
+      "logic": {
+        "type": "onObject",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bâbord était assis sur une chaise.",
+      "logic": {
+        "type": "onObject",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Goémone était à l'ouest de Frégaton.",
+      "logic": {
+        "type": "westOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Elle était à côté d'une enclume.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "enclume"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Frégaton était au sud de Bâfrin.",
+      "logic": {
+        "type": "southOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Bâfrin était au sud d'Écho-Écho.",
+      "logic": {
+        "type": "southOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Écho-Écho était à l'ouest de Bakchich.",
+      "logic": {
+        "type": "westOf",
+        "other": "a"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "g": [
+        0,
+        6
+      ],
+      "b": [
+        3,
+        1
+      ],
+      "d": [
+        6,
+        4
+      ],
+      "f": [
+        1,
+        2
+      ],
+      "c": [
+        4,
+        3
+      ],
+      "a": [
+        2,
+        5
+      ],
+      "e": [
+        5,
+        0
+      ]
+    },
+    "murderer": "a"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "position relative",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 2
+}

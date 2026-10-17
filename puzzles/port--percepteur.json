@@ -1,0 +1,374 @@
+{
+  "formatVersion": 1,
+  "title": "Le Port des Contrebandiers — l'affaire Taxard",
+  "size": 7,
+  "rooms": {
+    "Q": {
+      "name": "Quai",
+      "the": "le quai",
+      "floor": "navire"
+    },
+    "D": {
+      "name": "Douane",
+      "the": "la douane",
+      "floor": "dalles"
+    },
+    "T": {
+      "name": "Taverne du port",
+      "the": "la taverne du port",
+      "floor": "parquet"
+    },
+    "C": {
+      "name": "Chantier naval",
+      "the": "le chantier naval",
+      "floor": "navire"
+    },
+    "E": {
+      "name": "Entrepôt",
+      "the": "l'entrepôt",
+      "floor": "tomettes"
+    },
+    "M": {
+      "name": "Marché aux poissons",
+      "the": "le marché aux poissons",
+      "floor": "damier"
+    }
+  },
+  "layout": [
+    "TTQQQQD",
+    "TTQQQDD",
+    "TTQCCDD",
+    "TTCCCEE",
+    "TTCCCEE",
+    "MMMCEEE",
+    "MMMMEEE"
+  ],
+  "objects": [
+    {
+      "type": "statue",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "canon",
+      "at": [
+        0,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "barque",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        1,
+        6
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        2,
+        6
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "barque",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        4,
+        4
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        6,
+        6
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        2
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Grippesou",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧔‍♂️",
+      "desc": "Tavernier nain, radin légendaire",
+      "archetype": "tavernier",
+      "tic": "Compte à voix basse en parlant"
+    },
+    {
+      "id": "b",
+      "name": "Écho-Écho",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🦜",
+      "desc": "Perroquet, répète tous les secrets",
+      "archetype": "perroquet",
+      "tic": "Répète tout, dans le désordre"
+    },
+    {
+      "id": "c",
+      "name": "Bâbord",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🏴‍☠️",
+      "desc": "Pirate, a perdu une jambe, un œil et le sens de l'orientation",
+      "archetype": "pirate",
+      "tic": "Indique toujours la mauvaise direction"
+    },
+    {
+      "id": "d",
+      "name": "Bâfrin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll",
+      "tic": "Répète le dernier mot de la phrase des autres"
+    },
+    {
+      "id": "e",
+      "name": "Frégaton",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍✈️",
+      "desc": "Capitaine, n'a jamais quitté le port",
+      "archetype": "capitaine",
+      "tic": "Raconte des tempêtes qu'il n'a jamais vues"
+    },
+    {
+      "id": "f",
+      "name": "Goémone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene",
+      "tic": "Fait des bulles quand elle ment"
+    },
+    {
+      "id": "g",
+      "name": "Taxard",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🧾",
+      "desc": "Percepteur du baron, compte même les miettes",
+      "archetype": "percepteur",
+      "guest": true
+    }
+  ],
+  "decor": "port",
+  "id": "port--percepteur",
+  "place": "port",
+  "intro": "Au Port des Contrebandiers, le percepteur Taxard, venu lever l'impôt de fin d'année, a été repêché à marée basse. Six habitués traînaient sur les quais. L'un d'eux était seul avec lui. Ici, tout le monde a quelque chose à cacher, généralement dans un tonneau.",
+  "epilogue": "— Vous étiez seul avec Taxard.\n— Il voulait me faire payer l'impôt sur tout ce que je possède. Je lui ai indiqué la sortie.\n— Et ?\n— C'était le puits. Je me trompe toujours de direction.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Grippesou était sur la même ligne qu'un canon.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "canon"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Écho-Écho était au sud de Bâbord.",
+      "logic": {
+        "type": "southOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était à côté d'une chaise.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était au nord de Frégaton.",
+      "logic": {
+        "type": "northOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Bâbord était dans la même colonne qu'une barque.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "barque"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était à côté d'une barque.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "barque"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Bâfrin était au nord de Bâbord.",
+      "logic": {
+        "type": "northOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Frégaton était à l'ouest de Grippesou.",
+      "logic": {
+        "type": "westOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était à côté d'un coffre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Goémone était dans la même colonne qu'une table.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "table"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "g": [
+        3,
+        4
+      ],
+      "c": [
+        2,
+        3
+      ],
+      "e": [
+        6,
+        5
+      ],
+      "b": [
+        4,
+        1
+      ],
+      "f": [
+        5,
+        0
+      ],
+      "d": [
+        1,
+        2
+      ],
+      "a": [
+        0,
+        6
+      ]
+    },
+    "murderer": "c"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "position relative",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 2
+}

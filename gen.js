@@ -8,13 +8,16 @@
 const fs = require('fs');
 const E = require('./engine');
 
-const { resolve, loadScene, withVictim, withBig } = require('./cast');
+const { resolve, loadScene, compose } = require('./cast');
 const victimArg = (process.argv.find(a => a.startsWith('--victim=')) || '').split('=')[1];
+// --guest=<invité> --drop=<habitué absent> : affaire avec un invité de passage pour victime (bible du jeu)
+const guestArg = (process.argv.find(a => a.startsWith('--guest=')) || '').split('=')[1];
+const dropArg = (process.argv.find(a => a.startsWith('--drop=')) || '').split('=')[1];
 const bigArg = (process.argv.find(a => a.startsWith('--big=')) || '').split('=')[1];
 // --victim=<type> : affaire automatique, ce type d'habitué est la victime ; --big : avec des grands personnages
 const base = loadScene(process.argv[2]);
 const bigs = bigArg ? bigArg.split(',').map(x => x.split(':')) : [];
-const scene = resolve(bigArg ? withBig(base, victimArg, bigs.map(x => x[0]), bigs.map(x => x[1])) : victimArg ? withVictim(base, victimArg) : base);
+const scene = resolve(compose(base, bigArg ? { victim: victimArg, big: bigs.map(x => x[0]), shapes: bigs.map(x => x[1]) } : { victim: victimArg, guest: guestArg, drop: dropArg }));
 if (process.argv.includes('--hidden')) scene.hiddenShapes = true;
 const hiddenMax = (process.argv.find(a => a.startsWith('--hidden-max=')) || '').split('=')[1];
 if (hiddenMax) scene.hiddenMax = Number(hiddenMax); // forme cachée parmi celles d'au plus N cases

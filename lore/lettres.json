@@ -1,0 +1,28 @@
+{
+  "_doc": "Lettres anonymes d'Augure (bible du jeu, fil rouge) : une par décor, donnée par la première enquête résolue dans ce décor. Chacune est un ragot sur un héritier du testament de Fizzlebarbe ; aucune ne dépend d'une autre ni ne révèle la solution de l'enquête qui la donne. need : nombre de lettres qui débloque l'affaire finale (scenes/testament.json).",
+  "need": 15,
+  "letters": {
+    "taverne": "Gribouille doit quarante écus au Sanglier Borgne. Il a promis à Grippesou de tout rembourser « dès que la Tour sera à lui ».",
+    "tour": "Fizzlebarbe a changé trois fois de serrure ce mois-ci. Il dit que quelqu'un fouille son bureau la nuit.",
+    "chateau": "Bakchich a mis la Tour de l'Archimage en gage à la banque gobeline. Elle ne lui appartient pas. Détail, selon lui.",
+    "citadelle": "Blafard affirme que la Tour faisait partie de son domaine, il y a quatre siècles. Il a gardé les titres de propriété. Ils sont un peu transparents.",
+    "bal": "Au bal masqué, Fumerolle a promis à trois invités différents qu'ils hériteraient de la Tour. Elle exauce, paraît-il.",
+    "cimetiere": "Glas a déjà creusé une tombe au nom de Fizzlebarbe. « Pour gagner du temps », dit-il.",
+    "moulin": "Fernand a fait refaire une clé de la Tour. Il dit qu'il en avait une, avant l'accident.",
+    "ferme": "Briochon raconte à tout le monde que le testament existe, qu'il est caché, et qu'il n'en dira pas plus. Il en dit toujours plus.",
+    "marais": "Ciguë vend une potion qui fait apparaître les testaments. Dewey en a acheté trois.",
+    "foire": "Clairvoya a prédit à Brindille qu'elle hériterait d'une tour. Esbroufe lui a aussitôt vendu un plan de la Tour. Il y manque un étage.",
+    "grande-foire": "À la Grande Foire, Fiolius a acheté une malle assez grande pour un grimoire. Ou pour un archimage.",
+    "bibliotheque": "Dewey a enfin retrouvé le grimoire volé par Gribouille… caché au fond de la Tour. Qui l'y a mis ?",
+    "mine": "Granit a reçu une commande secrète : un coffre-fort à l'épreuve de la magie. Adresse de livraison : la Tour de l'Archimage.",
+    "forge": "Fizzlebarbe a fait forger une clé unique. Le forgeron l'a vu la glisser entre les pages d'un livre.",
+    "banquet": "Au Banquet des Gobelins, Bakchich a porté un toast « au futur propriétaire de la Tour ». Il a levé son verre vers lui-même.",
+    "navire": "Frégaton jure avoir vu Fizzlebarbe embarquer pour « un voyage sans retour ». Frégaton n'a jamais vu partir le moindre bateau.",
+    "port": "Une cargaison est arrivée au port au nom de Fiolius : douze bocaux vides, étiquetés « souvenirs de la Tour ».",
+    "grand-port": "Le notaire de Brumeval a reçu un testament scellé. On le lui a volé le lendemain. Sur son bureau, il ne restait qu'une plume noire.",
+    "thermes": "Aux Thermes, Fumerolle a dit en riant : « Le vieux veut léguer la Tour à celui qui le mérite. Personne ne le mérite. »",
+    "palais": "Le Palais des Mille Vœux a proposé d'acheter la Tour pour en faire une lampe géante. Fizzlebarbe a répondu par un éclair.",
+    "academie": "Brindille s'entraîne en secret au sort qui ouvre les serrures magiques. Trois portes de l'Académie ont déjà explosé.",
+    "universite": "Fiolius a écrit « Annexe de l'Université » sur les plans de la Tour. À l'encre sympathique. Elle se voit très bien."
+  }
+}

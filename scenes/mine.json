@@ -228,16 +228,6 @@
     "zombie": "{coupable} avoue, après réflexion : {victime} l'avait laissé sous un éboulement « pour gagner du temps ». Il a mis du temps, mais il est revenu."
   },
   "auto": {
-    "intro": "{Titre} {victime} a été retrouvé{e} au fond de la Mine des Nains, aussi froid{e} que le granit. {Nombre} ouvriers étaient descendus pour l'équipe de nuit. Un seul était avec {lui}.",
-    "epilogues": {
-      "mineur": "{coupable} avoue : {victime} lui avait volé sa plus belle pépite. C'était devenu une question de principe.",
-      "troll": "{coupable} avoue : {victime} l'utilisait comme étai depuis six mois. Un troll aussi a besoin de s'asseoir.",
-      "gobelin": "{coupable} avoue : {victime} avait remarqué que la mine produisait plus d'or que le coffre n'en contenait. Le gobelin avait une explication. Plusieurs, même.",
-      "dragonnet": "{coupable} servait de lampe et de soufflet sans être payé. {victime} a ri quand il a demandé une augmentation. Le dragonnet n'a pas ri.",
-      "chevalier": "{coupable} cherchait un trésor maudit dans la mine. {victime} voulait lui faire payer l'entrée. On ne fait pas payer un chevalier en quête.",
-      "fee": "{coupable} avoue : {victime} la gardait dans un bocal pour éclairer la galerie. Elle a fini par trouver la sortie. Et un gros caillou.",
-      "zombie": "{coupable} avoue, après réflexion : {victime} l'avait laissé sous un éboulement « pour gagner du temps ». Il a mis du temps, mais il est revenu.",
-      "contremaitre": "{coupable} avoue : {victime} prenait une pause toutes les sept minutes. Il les a toutes chronométrées. Puis il a arrêté le chronomètre."
-    }
+    "intro": "À la Mine des Nains, {titre} {victime}, venu{e} {motif}, est descendu{e} plus bas que prévu. {Nombre} mineurs et visiteurs étaient au fond. L'un d'eux était seul avec {lui}. Ici, tout le monde a une pioche, et personne n'a d'alibi."
   }
 }

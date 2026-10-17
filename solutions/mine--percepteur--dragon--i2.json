@@ -1,0 +1,114 @@
+{
+ "positions": {
+  "g": [
+   2,
+   2
+  ],
+  "d": [
+   [
+    4,
+    6
+   ],
+   [
+    4,
+    7
+   ]
+  ],
+  "f": [
+   0,
+   3
+  ],
+  "c": [
+   7,
+   4
+  ],
+  "e": [
+   3,
+   0
+  ],
+  "b": [
+   5,
+   1
+  ],
+  "a": [
+   1,
+   5
+  ]
+ },
+ "murderer": "f",
+ "cast": {
+  "d": "a",
+  "f": "b",
+  "c": "c",
+  "e": "d",
+  "b": "e",
+  "a": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chariot"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "northOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "inRoom",
+    "room": "F"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "chariot"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "lit"
+   }
+  }
+ ]
+}

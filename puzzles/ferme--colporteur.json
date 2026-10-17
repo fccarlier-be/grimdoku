@@ -1,0 +1,288 @@
+{
+  "formatVersion": 1,
+  "title": "La Ferme Hantée — l'affaire Bricabrac",
+  "size": 6,
+  "rooms": {
+    "G": {
+      "name": "Grange",
+      "the": "la grange",
+      "floor": "paille"
+    },
+    "E": {
+      "name": "Étable",
+      "the": "l'étable",
+      "floor": "paille"
+    },
+    "O": {
+      "name": "Poulailler",
+      "the": "le poulailler",
+      "floor": "paille"
+    },
+    "F": {
+      "name": "Fournil",
+      "the": "le fournil",
+      "floor": "tomettes"
+    },
+    "P": {
+      "name": "Potager",
+      "the": "le potager",
+      "floor": "herbe"
+    }
+  },
+  "layout": [
+    "GGGEEE",
+    "GGGEEO",
+    "FFGPOO",
+    "FFPPPO",
+    "FFPPPO",
+    "FPPPPO"
+  ],
+  "objects": [
+    {
+      "type": "foin",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        0,
+        2
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        3
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        4,
+        5
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        5,
+        2
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        4,
+        4
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Briochon",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🍳",
+      "desc": "Boulanger, pétrit plus de ragots que de pâte",
+      "archetype": "boulanger",
+      "tic": "« Je dis ça, je dis rien. »"
+    },
+    {
+      "id": "b",
+      "name": "Bâfrin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll",
+      "tic": "Répète le dernier mot de la phrase des autres"
+    },
+    {
+      "id": "c",
+      "name": "Fernand",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie",
+      "tic": "Perd un morceau quand il s'énerve"
+    },
+    {
+      "id": "d",
+      "name": "Flammèche",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet",
+      "tic": "S'excuse avant même d'avoir brûlé quelque chose"
+    },
+    {
+      "id": "e",
+      "name": "Capucine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee",
+      "tic": "« Je te le rends demain. »"
+    },
+    {
+      "id": "f",
+      "name": "Bricabrac",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🎒",
+      "desc": "Colporteur, vend des objets dont personne ne veut",
+      "archetype": "colporteur",
+      "guest": true
+    }
+  ],
+  "decor": "ferme",
+  "id": "ferme--colporteur",
+  "place": "ferme",
+  "intro": "On dit la Ferme Hantée, et le colporteur Bricabrac, venu vendre sa camelote, va sûrement y contribuer. Cinq habitants de la ferme étaient là cette nuit. L'un d'eux était seul avec lui. Les poules, elles, refusent de témoigner.",
+  "epilogue": "— Vous étiez seule avec Bricabrac.\n— Il voulait me revendre ce qu'il m'avait déjà vendu. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Briochon était à l'ouest de Fernand.",
+      "logic": {
+        "type": "westOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était au sud de Bâfrin.",
+      "logic": {
+        "type": "southOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bâfrin était dans la même colonne qu'une botte de foin.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "foin"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Fernand était au nord de Briochon.",
+      "logic": {
+        "type": "northOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Flammèche était à l'ouest de Briochon.",
+      "logic": {
+        "type": "westOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Capucine était à l'ouest de Briochon.",
+      "logic": {
+        "type": "westOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Elle était à côté d'un arbre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "arbre"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        5,
+        3
+      ],
+      "a": [
+        2,
+        4
+      ],
+      "b": [
+        1,
+        0
+      ],
+      "c": [
+        0,
+        5
+      ],
+      "e": [
+        3,
+        2
+      ],
+      "d": [
+        4,
+        1
+      ]
+    },
+    "murderer": "e"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "position relative",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 2
+}

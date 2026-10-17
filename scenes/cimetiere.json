@@ -225,16 +225,6 @@
     }
   ],
   "auto": {
-    "intro": "{Titre} {victime} a été retrouvé{e} sans vie au Cimetière de Minuit, ce qui, admettons-le, simplifie les démarches. {Nombre} habitués rôdaient entre les tombes. Un seul était avec {lui}.",
-    "epilogues": {
-      "fossoyeur": "{coupable} avoue en sifflotant : {victime} piétinait ses plates-bandes. Et un fossoyeur a toujours un trou d'avance.",
-      "spectre": "{coupable} avoue : {victime} avait réservé sa tombe préférée. Il la hantait depuis trois siècles.",
-      "zombie": "{coupable} avoue, lentement : {victime} l'avait réveillé à minuit pile. Il venait juste de s'endormir.",
-      "vampire": "{coupable} avoue : {victime} avait planté de l'ail sur toutes les tombes. Même la sienne.",
-      "sorciere": "{coupable} avoue sans remords : {victime} cueillait ses herbes de cimetière avant elle.",
-      "corbeau": "{coupable} avoue, et l'écrit dans une lettre anonyme : {victime} avait découvert qui écrivait les lettres anonymes.",
-      "chevalier": "{coupable} avoue en grinçant : {victime} s'était moqué{e} de son armure rouillée devant le caveau de ses ancêtres.",
-      "crapaud": "{coupable} avoue : {victime} l'avait confondu avec une grenouille. C'est très vexant, pour un prince."
-    }
+    "intro": "Au Cimetière de Minuit, on a retrouvé {titre} {victime}, venu{e} {motif}. Pour une fois, le fossoyeur n'a pas eu à se déplacer. {Nombre} habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec {lui}. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas."
   }
 }

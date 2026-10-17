@@ -165,14 +165,6 @@
     }
   ],
   "auto": {
-    "intro": "{Titre} {victime} a été retrouvé{e} ce matin au Moulin de Bois-Tordu, aussi raide qu'une meule. {Nombre} villageois rôdaient autour cette nuit. Un seul était avec {lui}.",
-    "epilogues": {
-      "fee": "{coupable} avoue en battant des ailes : {victime} lui avait volé sa poudre de fée pour la mélanger à la farine.",
-      "troll": "{coupable} avoue la bouche pleine : {victime} lui avait reproché de manger les sacs de grain. Avec le sac.",
-      "sirene": "{coupable} avoue en larmes : {victime} voulait assécher la mare pour agrandir le moulin. On ne touche pas à la maison d'une sirène.",
-      "zombie": "{coupable} avoue, ce qui lui prend un moment : {victime} l'obligeait à tourner la meule sans le payer. « Je suis mort, pas bénévole. »",
-      "dragonnet": "{coupable} avoue en fumant des naseaux : {victime} lui demandait de chauffer le four à pain. Gratuitement. Pour la quatorzième fois.",
-      "meunier": "{coupable} avoue en pesant ses mots : {victime} l'accusait de mettre le pouce sur la balance. C'était vrai, mais ça ne se dit pas."
-    }
+    "intro": "Au Moulin de Bois-Tordu, {titre} {victime}, venu{e} {motif}, a fini plus plat{e} qu'une galette. {Nombre} voisins traînaient dans le coin. L'un d'eux était seul avec {lui}. Le meunier m'a proposé de peser les suspects. J'ai refusé."
   }
 }

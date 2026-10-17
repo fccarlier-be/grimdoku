@@ -1,0 +1,358 @@
+{
+  "formatVersion": 1,
+  "title": "L'Académie de Magie — l'affaire Mercurio",
+  "size": 7,
+  "rooms": {
+    "X": {
+      "name": "Salle de cours",
+      "the": "la salle de cours",
+      "floor": "parquet"
+    },
+    "B": {
+      "name": "Bureau du directeur",
+      "the": "le bureau du directeur",
+      "floor": "parquet"
+    },
+    "D": {
+      "name": "Dortoir",
+      "the": "le dortoir",
+      "floor": "parquet"
+    },
+    "L": {
+      "name": "Laboratoire",
+      "the": "le laboratoire",
+      "floor": "damier"
+    },
+    "R": {
+      "name": "Réfectoire",
+      "the": "le réfectoire",
+      "floor": "parquet"
+    },
+    "S": {
+      "name": "Serre",
+      "the": "la serre",
+      "floor": "herbe"
+    }
+  },
+  "layout": [
+    "DDXXXBB",
+    "DDXXXBB",
+    "DDXXXLL",
+    "DDRRRLL",
+    "DDRRRLL",
+    "SSSRRRL",
+    "SSSSRRR"
+  ],
+  "objects": [
+    {
+      "type": "cristal",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        0,
+        3
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        1,
+        6
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        2,
+        6
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        3,
+        5
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        4,
+        6
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        2
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        6,
+        0
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        6,
+        3
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Flammèche",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet",
+      "tic": "S'excuse avant même d'avoir brûlé quelque chose"
+    },
+    {
+      "id": "b",
+      "name": "Fiolius",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🏫",
+      "desc": "Professeur de potions, note à l'odeur",
+      "archetype": "professeur",
+      "tic": "Renifle avant de répondre"
+    },
+    {
+      "id": "c",
+      "name": "Fumerolle",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn",
+      "tic": "Prend tout au pied de la lettre"
+    },
+    {
+      "id": "d",
+      "name": "Gribouille",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage",
+      "tic": "Éternue avant chaque sortilège"
+    },
+    {
+      "id": "e",
+      "name": "Brindille",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧙‍♀️",
+      "desc": "Apprentie sorcière, a déjà fait exploser trois chaudrons",
+      "archetype": "apprentie",
+      "tic": "« C'est normal que ça fume ? »"
+    },
+    {
+      "id": "f",
+      "name": "Capucine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee",
+      "tic": "« Je te le rends demain. »"
+    },
+    {
+      "id": "g",
+      "name": "Mercurio",
+      "gender": "m",
+      "role": "victim",
+      "icon": "⚗️",
+      "desc": "Alchimiste ambulant, transforme l'or en dettes",
+      "archetype": "alchimiste",
+      "guest": true
+    }
+  ],
+  "decor": "academie",
+  "id": "academie--alchimiste",
+  "place": "academie",
+  "intro": "À l'Académie de Magie, l'alchimiste Mercurio, venu proposer ses services, a été retrouvé un soir d'examens. Six élèves et professeurs révisaient, paraît-il. L'un d'eux était seul avec lui. Ça sent le soufre, mais ici, ça sent toujours le soufre.",
+  "epilogue": "— Vous étiez seule avec Mercurio.\n— Il voulait changer mes économies en plomb, alors j'ai lancé un sort de protection.\n— Et ?\n— C'est normal que ça fume encore ?",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Flammèche était au sud de Fumerolle.",
+      "logic": {
+        "type": "southOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Fiolius était à l'est de Capucine.",
+      "logic": {
+        "type": "eastOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était sur la même ligne qu'une chaise.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Fumerolle était sur la même ligne qu'une table.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Gribouille était sur la même ligne qu'un pupitre.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "pupitre"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Brindille était dans la même colonne qu'une chaise.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Capucine était à l'est de Brindille.",
+      "logic": {
+        "type": "eastOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Elle était sur la même ligne qu'un champignon géant.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "champi"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "g": [
+        1,
+        3
+      ],
+      "e": [
+        2,
+        2
+      ],
+      "d": [
+        0,
+        6
+      ],
+      "f": [
+        5,
+        4
+      ],
+      "a": [
+        6,
+        1
+      ],
+      "c": [
+        3,
+        0
+      ],
+      "b": [
+        4,
+        5
+      ]
+    },
+    "murderer": "e"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 6,
+    "hardest": "pièces",
+    "hardSteps": 2,
+    "directStart": 0
+  },
+  "difficulty": 3
+}

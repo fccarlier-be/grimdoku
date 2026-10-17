@@ -1,0 +1,101 @@
+{
+ "positions": {
+  "g": [
+   2,
+   3
+  ],
+  "f": [
+   6,
+   1
+  ],
+  "b": [
+   1,
+   0
+  ],
+  "d": [
+   4,
+   2
+  ],
+  "c": [
+   3,
+   6
+  ],
+  "e": [
+   5,
+   4
+  ],
+  "a": [
+   0,
+   5
+  ]
+ },
+ "murderer": "d",
+ "cast": {
+  "f": "a",
+  "b": "b",
+  "d": "c",
+  "c": "d",
+  "e": "e",
+  "a": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "f",
+   "logic": {
+    "type": "westOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "northOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "inRoom",
+    "room": "A"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "westOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "enclume"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "eastOf",
+    "other": "f"
+   }
+  }
+ ]
+}

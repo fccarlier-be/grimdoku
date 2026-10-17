@@ -1,0 +1,330 @@
+{
+  "formatVersion": 1,
+  "title": "Le Château de Mortebrune — l'affaire Ondine",
+  "intro": "La maîtresse-nageuse Ondine était venue au Château de Mortebrune donner des cours de natation. Le roi m'a fait appeler, ce qui veut dire que c'est grave, ou qu'il s'ennuie. Cinq membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec elle.",
+  "epilogue": "— Vous étiez seul avec Ondine.\n— Elle voulait m'apprendre à nager de force, pendant ma sieste.\n— Et ?\n— Je me suis réveillé de mauvaise humeur. On ne réveille pas un dragon.",
+  "size": 7,
+  "rooms": {
+    "G": {
+      "name": "Grande salle",
+      "the": "la grande salle",
+      "floor": "dalles"
+    },
+    "A": {
+      "name": "Armurerie",
+      "the": "l'armurerie",
+      "floor": "dalles"
+    },
+    "T": {
+      "name": "Tour",
+      "the": "la tour",
+      "floor": "dalles"
+    },
+    "J": {
+      "name": "Jardin",
+      "the": "le jardin",
+      "floor": "herbe"
+    },
+    "D": {
+      "name": "Donjon",
+      "the": "le donjon",
+      "floor": "dalles"
+    }
+  },
+  "layout": [
+    "AAGGGGG",
+    "AAGGGGG",
+    "AAGGGGT",
+    "AAJJJTT",
+    "AAJJJTT",
+    "DDJJJTT",
+    "DDDJJTT"
+  ],
+  "objects": [
+    {
+      "type": "statue",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        1,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        4,
+        2
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        3
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        6,
+        6
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        6,
+        1
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Bakchich",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin",
+      "tic": "« Techniquement, c'est légal. »"
+    },
+    {
+      "id": "b",
+      "name": "Cendrebrune",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragon adulte, toujours lové dans un coin",
+      "archetype": "dragon",
+      "tic": "Se réveille aux pires moments",
+      "shape": "I2"
+    },
+    {
+      "id": "c",
+      "name": "Aëlys",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe",
+      "tic": "Note tout sur dix, les gens compris"
+    },
+    {
+      "id": "d",
+      "name": "Gontran",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier",
+      "tic": "Annonce chacune de ses actions à voix haute"
+    },
+    {
+      "id": "e",
+      "name": "Fausset",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde",
+      "tic": "Transforme chaque conversation en couplet"
+    },
+    {
+      "id": "f",
+      "name": "Ondine",
+      "gender": "f",
+      "role": "victim",
+      "icon": "🛟",
+      "desc": "Maîtresse-nageuse, sans permis ni maillot",
+      "archetype": "nageuse",
+      "guest": true
+    }
+  ],
+  "decor": "chateau",
+  "id": "chateau--nageuse--dragon--i2",
+  "place": "chateau",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Bakchich était sur la même ligne qu'un lit.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Cendrebrune était à côté d'une table.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "table"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était à l'est de Bakchich.",
+      "logic": {
+        "type": "eastOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Aëlys était à côté d'un sarcophage.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "sarcophage"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Gontran était à côté d'un tapis.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Fausset était à côté d'un lit.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "lit"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        1,
+        5
+      ],
+      "b": [
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "d": [
+        2,
+        1
+      ],
+      "a": [
+        3,
+        2
+      ],
+      "e": [
+        4,
+        6
+      ],
+      "c": [
+        6,
+        0
+      ]
+    },
+    "murderer": "b"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 0
+  },
+  "difficulty": 4
+}

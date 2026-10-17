@@ -1,0 +1,172 @@
+{
+ "positions": {
+  "j": [
+   7,
+   0
+  ],
+  "e": [
+   [
+    5,
+    6
+   ],
+   [
+    5,
+    7
+   ],
+   [
+    6,
+    6
+   ],
+   [
+    6,
+    7
+   ]
+  ],
+  "f": [
+   10,
+   8
+  ],
+  "c": [
+   0,
+   3
+  ],
+  "d": [
+   4,
+   2
+  ],
+  "a": [
+   1,
+   4
+  ],
+  "g": [
+   9,
+   5
+  ],
+  "b": [
+   2,
+   9
+  ],
+  "h": [
+   3,
+   10
+  ],
+  "i": [
+   8,
+   1
+  ]
+ },
+ "murderer": "i",
+ "cast": {
+  "e": "a",
+  "f": "b",
+  "c": "c",
+  "d": "d",
+  "a": "e",
+  "g": "f",
+  "b": "g",
+  "h": "h",
+  "i": "i"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "southOf",
+    "other": "g"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "eastOf",
+    "other": "i"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "etagere"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "southOf",
+    "other": "i"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "eastOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "northOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "roseaux"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameColAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "westOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "statue"
+   }
+  }
+ ]
+}

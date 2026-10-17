@@ -156,14 +156,6 @@
     }
   ],
   "auto": {
-    "intro": "{Titre} {victime} a été retrouvé{e} au petit matin dans la Ferme Hantée, entre le potager et le fournil. {Nombre} voisins y avaient passé la nuit. Un seul était avec {lui}.",
-    "epilogues": {
-      "meunier": "{coupable} avoue : {victime} achetait sa farine ailleurs. Chez un concurrent. Qui a un moulin à vent, en plus.",
-      "boulanger": "{coupable} avoue en pétrissant nerveusement : {victime} avait mangé toutes les miches du fournil avant l'aube.",
-      "troll": "{coupable} avoue la bouche pleine : {victime} lui avait interdit le potager. Il n'avait mangé que les citrouilles. Et l'épouvantail.",
-      "zombie": "{coupable} avoue, lentement : {victime} l'avait planté au milieu du potager pour faire peur aux corbeaux.",
-      "fee": "{coupable} avoue : {victime} avait mis sa poussière de fée dans la pâte à crêpes. Les crêpes s'envolaient.",
-      "dragonnet": "{coupable} avoue en fumant : {victime} lui demandait de chauffer le four, puis de le refroidir, puis de le chauffer."
-    }
+    "intro": "On dit la Ferme Hantée, et {titre} {victime}, venu{e} {motif}, va sûrement y contribuer. {Nombre} habitants de la ferme étaient là cette nuit. L'un d'eux était seul avec {lui}. Les poules, elles, refusent de témoigner."
   }
 }

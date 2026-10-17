@@ -1,0 +1,367 @@
+{
+  "formatVersion": 1,
+  "title": "Le Navire Fantôme — l'affaire Taxard",
+  "size": 7,
+  "rooms": {
+    "P": {
+      "name": "Pont",
+      "the": "le pont",
+      "floor": "navire"
+    },
+    "K": {
+      "name": "Cabine du capitaine",
+      "the": "la cabine du capitaine",
+      "floor": "navire"
+    },
+    "E": {
+      "name": "Entrepont",
+      "the": "l'entrepont",
+      "floor": "navire"
+    },
+    "Q": {
+      "name": "Coquerie",
+      "the": "la coquerie",
+      "floor": "tomettes"
+    },
+    "C": {
+      "name": "Cale",
+      "the": "la cale",
+      "floor": "navire"
+    },
+    "S": {
+      "name": "Soute à poudre",
+      "the": "la soute à poudre",
+      "floor": "navire"
+    }
+  },
+  "layout": [
+    "EEPPPKK",
+    "EEPPPKK",
+    "EEPPPQK",
+    "EECCQQQ",
+    "EECCCQQ",
+    "SSCCCCQ",
+    "SSSCCCC"
+  ],
+  "objects": [
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "canon",
+      "at": [
+        0,
+        3
+      ]
+    },
+    {
+      "type": "canon",
+      "at": [
+        2,
+        2
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        1,
+        6
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        6
+      ]
+    },
+    {
+      "type": "hamac",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "hamac",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        3,
+        5
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        4,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        4
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        5
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        5,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        2
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Écho-Écho",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🦜",
+      "desc": "Perroquet, répète tous les secrets",
+      "archetype": "perroquet",
+      "tic": "Répète tout, dans le désordre"
+    },
+    {
+      "id": "b",
+      "name": "Goémone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene",
+      "tic": "Fait des bulles quand elle ment"
+    },
+    {
+      "id": "c",
+      "name": "Frégaton",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍✈️",
+      "desc": "Capitaine, n'a jamais quitté le port",
+      "archetype": "capitaine",
+      "tic": "Raconte des tempêtes qu'il n'a jamais vues"
+    },
+    {
+      "id": "d",
+      "name": "Belladone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire",
+      "tic": "« Je ne bois jamais… de vin. »"
+    },
+    {
+      "id": "e",
+      "name": "Bâbord",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🏴‍☠️",
+      "desc": "Pirate, a perdu une jambe, un œil et le sens de l'orientation",
+      "archetype": "pirate",
+      "tic": "Indique toujours la mauvaise direction"
+    },
+    {
+      "id": "f",
+      "name": "Fernand",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie",
+      "tic": "Perd un morceau quand il s'énerve"
+    },
+    {
+      "id": "g",
+      "name": "Taxard",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🧾",
+      "desc": "Percepteur du baron, compte même les miettes",
+      "archetype": "percepteur",
+      "guest": true
+    }
+  ],
+  "decor": "navire",
+  "id": "navire--percepteur",
+  "place": "navire",
+  "intro": "Le Navire Fantôme ne quitte jamais le port, et le percepteur Taxard, venu à bord lever l'impôt de fin d'année, non plus, désormais. Six membres de l'équipage traînaient sur le pont. L'un d'eux était seul avec lui. Le capitaine m'assure que c'est la faute de la tempête. Il n'y a pas de tempête.",
+  "epilogue": "— Vous étiez seule avec Taxard.\n— Il voulait me faire payer l'impôt sur tout ce que je possède. Je lui ai proposé un verre.\n— De vin ?\n— Je ne bois jamais… de vin.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Écho-Écho était allongé dans un hamac.",
+      "logic": {
+        "type": "onObject",
+        "object": "hamac"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était au nord de Belladone.",
+      "logic": {
+        "type": "northOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Goémone était sur la même ligne qu'un coffre.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Elle était à côté d'un coffre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Frégaton était dans la soute à poudre.",
+      "logic": {
+        "type": "inRoom",
+        "room": "S"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Belladone était sur la même ligne qu'un hamac.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "hamac"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Bâbord était au nord de Frégaton.",
+      "logic": {
+        "type": "northOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était dans la cale.",
+      "logic": {
+        "type": "inRoom",
+        "room": "C"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était sur la même ligne qu'un tonneau.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Fernand était à l'est d'Écho-Écho.",
+      "logic": {
+        "type": "eastOf",
+        "other": "a"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "g": [
+        3,
+        4
+      ],
+      "e": [
+        5,
+        2
+      ],
+      "a": [
+        2,
+        0
+      ],
+      "b": [
+        1,
+        3
+      ],
+      "f": [
+        0,
+        6
+      ],
+      "d": [
+        4,
+        5
+      ],
+      "c": [
+        6,
+        1
+      ]
+    },
+    "murderer": "d"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 6,
+    "hardest": "pièces",
+    "hardSteps": 2,
+    "directStart": 0
+  },
+  "difficulty": 3
+}

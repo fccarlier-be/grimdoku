@@ -1,0 +1,362 @@
+{
+  "formatVersion": 1,
+  "title": "Le Navire Fantôme — l'affaire Pinardon",
+  "size": 7,
+  "rooms": {
+    "P": {
+      "name": "Pont",
+      "the": "le pont",
+      "floor": "navire"
+    },
+    "K": {
+      "name": "Cabine du capitaine",
+      "the": "la cabine du capitaine",
+      "floor": "navire"
+    },
+    "E": {
+      "name": "Entrepont",
+      "the": "l'entrepont",
+      "floor": "navire"
+    },
+    "Q": {
+      "name": "Coquerie",
+      "the": "la coquerie",
+      "floor": "tomettes"
+    },
+    "C": {
+      "name": "Cale",
+      "the": "la cale",
+      "floor": "navire"
+    },
+    "S": {
+      "name": "Soute à poudre",
+      "the": "la soute à poudre",
+      "floor": "navire"
+    }
+  },
+  "layout": [
+    "EEPPPKK",
+    "EEPPPKK",
+    "EEPPPQK",
+    "EECCQQQ",
+    "EECCCQQ",
+    "SSCCCCQ",
+    "SSSCCCC"
+  ],
+  "objects": [
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "canon",
+      "at": [
+        0,
+        3
+      ]
+    },
+    {
+      "type": "canon",
+      "at": [
+        2,
+        2
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        1,
+        6
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        6
+      ]
+    },
+    {
+      "type": "hamac",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "hamac",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        3,
+        5
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        4,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        4
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        5
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        5,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        2
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Goémone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene",
+      "tic": "Fait des bulles quand elle ment"
+    },
+    {
+      "id": "b",
+      "name": "Blafard",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ],
+      "tic": "« De mon vivant… »"
+    },
+    {
+      "id": "c",
+      "name": "Frégaton",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍✈️",
+      "desc": "Capitaine, n'a jamais quitté le port",
+      "archetype": "capitaine",
+      "tic": "Raconte des tempêtes qu'il n'a jamais vues"
+    },
+    {
+      "id": "d",
+      "name": "Fernand",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie",
+      "tic": "Perd un morceau quand il s'énerve"
+    },
+    {
+      "id": "e",
+      "name": "Belladone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire",
+      "tic": "« Je ne bois jamais… de vin. »"
+    },
+    {
+      "id": "f",
+      "name": "Écho-Écho",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🦜",
+      "desc": "Perroquet, répète tous les secrets",
+      "archetype": "perroquet",
+      "tic": "Répète tout, dans le désordre"
+    },
+    {
+      "id": "g",
+      "name": "Pinardon",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🍷",
+      "desc": "Inspecteur des tavernes, goûte tout, note tout",
+      "archetype": "inspecteur",
+      "guest": true
+    }
+  ],
+  "decor": "navire",
+  "id": "navire--inspecteur",
+  "place": "navire",
+  "intro": "Le Navire Fantôme ne quitte jamais le port, et l'inspecteur des tavernes Pinardon, venu à bord inspecter les lieux, non plus, désormais. Six membres de l'équipage traînaient sur le pont. L'un d'eux était seul avec lui. Le capitaine m'assure que c'est la faute de la tempête. Il n'y a pas de tempête.",
+  "epilogue": "— Vous étiez seul avec Pinardon.\n— Seul avec Pinardon ! Seul avec Pinardon !\n— Pourquoi ?\n— Il voulait me coller un blâme ! Coup de bec ! Coup de bec !",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Goémone était au sud de Frégaton.",
+      "logic": {
+        "type": "southOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Elle était dans le pont.",
+      "logic": {
+        "type": "inRoom",
+        "room": "P"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Elle n'était pas à côté d'un coffre.",
+      "logic": {
+        "type": "notAdjacentTo",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Blafard était à l'ouest de Fernand.",
+      "logic": {
+        "type": "westOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était à côté d'un tonneau.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Frégaton était à l'est de Blafard.",
+      "logic": {
+        "type": "eastOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Fernand était à l'ouest de Goémone.",
+      "logic": {
+        "type": "westOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Belladone était sur la même ligne qu'un fauteuil.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Écho-Écho était sur la même ligne qu'un hamac.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "hamac"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "g": [
+        5,
+        3
+      ],
+      "f": [
+        4,
+        4
+      ],
+      "a": [
+        1,
+        2
+      ],
+      "b": [
+        6,
+        0
+      ],
+      "d": [
+        3,
+        1
+      ],
+      "e": [
+        2,
+        5
+      ],
+      "c": [
+        0,
+        6
+      ]
+    },
+    "murderer": "f"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 0
+  },
+  "difficulty": 3
+}

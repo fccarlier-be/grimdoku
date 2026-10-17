@@ -1,0 +1,137 @@
+{
+ "positions": {
+  "j": [
+   3,
+   6
+  ],
+  "e": [
+   8,
+   5
+  ],
+  "d": [
+   5,
+   8
+  ],
+  "c": [
+   0,
+   2
+  ],
+  "f": [
+   9,
+   3
+  ],
+  "g": [
+   4,
+   4
+  ],
+  "h": [
+   2,
+   1
+  ],
+  "i": [
+   1,
+   7
+  ],
+  "b": [
+   6,
+   0
+  ],
+  "a": [
+   7,
+   9
+  ]
+ },
+ "murderer": "d",
+ "cast": {
+  "e": "a",
+  "d": "b",
+  "c": "c",
+  "f": "d",
+  "g": "e",
+  "h": "f",
+  "i": "g",
+  "b": "h",
+  "a": "i"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "e",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "hamac"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "pupitre"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "sameColAs",
+    "object": "barque"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "barque"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "sameColAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "notInRoom",
+    "room": "E"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "westOf",
+    "other": "h"
+   }
+  }
+ ]
+}

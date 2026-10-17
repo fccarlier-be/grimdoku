@@ -1,0 +1,96 @@
+{
+ "positions": {
+  "f": [
+   0,
+   1
+  ],
+  "a": [
+   1,
+   4
+  ],
+  "b": [
+   2,
+   2
+  ],
+  "e": [
+   3,
+   0
+  ],
+  "d": [
+   4,
+   3
+  ],
+  "c": [
+   5,
+   5
+  ]
+ },
+ "murderer": "b",
+ "cast": {
+  "a": "a",
+  "b": "b",
+  "e": "c",
+  "d": "d",
+  "c": "e"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "inRoom",
+    "room": "G"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "foin"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "foin"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "foin"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "southOf",
+    "other": "e"
+   }
+  }
+ ]
+}

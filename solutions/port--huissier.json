@@ -1,0 +1,94 @@
+{
+ "positions": {
+  "g": [
+   4,
+   2
+  ],
+  "c": [
+   5,
+   6
+  ],
+  "a": [
+   3,
+   3
+  ],
+  "f": [
+   6,
+   1
+  ],
+  "e": [
+   1,
+   5
+  ],
+  "b": [
+   0,
+   4
+  ],
+  "d": [
+   2,
+   0
+  ]
+ },
+ "murderer": "a",
+ "cast": {
+  "c": "a",
+  "a": "b",
+  "f": "c",
+  "e": "d",
+  "b": "e",
+  "d": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "c",
+   "logic": {
+    "type": "inRoom",
+    "room": "E"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "barque"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "eastOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "inRoom",
+    "room": "D"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "table"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "eastOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tonneau"
+   }
+  }
+ ]
+}

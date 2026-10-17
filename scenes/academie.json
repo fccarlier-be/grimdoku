@@ -214,15 +214,6 @@
     }
   ],
   "auto": {
-    "intro": "{Titre} {victime} a été retrouvé{e} sans vie un soir d'examens à l'Académie de Magie. {Nombre} élèves et professeurs révisaient encore. Un seul était avec {lui}.",
-    "epilogues": {
-      "apprentie": "{coupable} avoue en pleurant : {victime} allait révéler qui avait fait exploser le chaudron du laboratoire. Les trois fois.",
-      "professeur": "{coupable} avoue en reniflant une fiole : {victime} avait triché à l'examen de potions. Ça ne pardonne pas.",
-      "mage": "{coupable} avoue en éternuant : {victime} avait remplacé sa tisane par une potion au houblon. En plein cours.",
-      "fee": "{coupable} avoue : {victime} l'avait utilisée comme marque-page. Toute une nuit.",
-      "dragonnet": "{coupable} avoue : {victime} voulait l'inscrire comme « animal de laboratoire ». Il a protesté. Avec du feu.",
-      "djinn": "{coupable} avoue : {victime} avait utilisé trois vœux pour obtenir son diplôme. Elle a estimé que c'était de la triche.",
-      "elfe": "{coupable} avoue avec dédain : {victime} avait servi au réfectoire un ragoût qui méritait zéro étoile. Elle a tenu à le lui faire savoir."
-    }
+    "intro": "À l'Académie de Magie, {titre} {victime}, venu{e} {motif}, a été retrouvé{e} un soir d'examens. {Nombre} élèves et professeurs révisaient, paraît-il. L'un d'eux était seul avec {lui}. Ça sent le soufre, mais ici, ça sent toujours le soufre."
   }
 }

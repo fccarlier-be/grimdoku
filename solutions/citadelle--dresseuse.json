@@ -1,0 +1,125 @@
+{
+ "positions": {
+  "i": [
+   5,
+   6
+  ],
+  "d": [
+   6,
+   4
+  ],
+  "c": [
+   0,
+   5
+  ],
+  "b": [
+   7,
+   2
+  ],
+  "g": [
+   1,
+   7
+  ],
+  "a": [
+   2,
+   1
+  ],
+  "e": [
+   8,
+   3
+  ],
+  "h": [
+   3,
+   0
+  ],
+  "f": [
+   4,
+   8
+  ]
+ },
+ "murderer": "d",
+ "cast": {
+  "d": "a",
+  "c": "b",
+  "b": "c",
+  "g": "d",
+  "a": "e",
+  "e": "f",
+  "h": "g",
+  "f": "h"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "westOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "northOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "sarcophage"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chariot"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "arbre"
+   }
+  }
+ ]
+}

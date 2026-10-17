@@ -1,0 +1,102 @@
+{
+ "positions": {
+  "f": [
+   2,
+   5
+  ],
+  "e": [
+   [
+    6,
+    3
+   ],
+   [
+    6,
+    4
+   ]
+  ],
+  "a": [
+   4,
+   1
+  ],
+  "d": [
+   0,
+   6
+  ],
+  "c": [
+   1,
+   2
+  ],
+  "b": [
+   5,
+   0
+  ]
+ },
+ "murderer": "d",
+ "cast": {
+  "e": "a",
+  "a": "b",
+  "d": "c",
+  "c": "d",
+  "b": "e"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "eastOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "table"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "canon"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "westOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "hamac"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "southOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "onObject",
+    "object": "tonneau"
+   }
+  }
+ ]
+}

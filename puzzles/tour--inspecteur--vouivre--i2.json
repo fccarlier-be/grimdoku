@@ -1,0 +1,327 @@
+{
+  "formatVersion": 1,
+  "title": "La Tour de l'Archimage — l'affaire Pinardon",
+  "intro": "L'inspecteur des tavernes Pinardon était monté à la Tour de l'Archimage inspecter les lieux. On l'a retrouvé au pied d'une étagère de grimoires, sans vie. Cinq habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec lui. Ici, même les escaliers mentent.",
+  "epilogue": "— Vous étiez seul avec Pinardon.\n— Il voulait me coller un blâme. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
+  "size": 7,
+  "rooms": {
+    "L": {
+      "name": "Laboratoire",
+      "the": "le laboratoire",
+      "floor": "damier"
+    },
+    "O": {
+      "name": "Observatoire",
+      "the": "l'observatoire",
+      "floor": "parquet"
+    },
+    "B": {
+      "name": "Bibliothèque",
+      "the": "la bibliothèque",
+      "floor": "parquet"
+    },
+    "C": {
+      "name": "Crypte",
+      "the": "la crypte",
+      "floor": "crypte"
+    },
+    "J": {
+      "name": "Jardin",
+      "the": "le jardin",
+      "floor": "herbe"
+    },
+    "E": {
+      "name": "Escalier",
+      "the": "l'escalier",
+      "floor": "parquet"
+    }
+  },
+  "layout": [
+    "LLLOOOO",
+    "LLLOOOO",
+    "LLBBBOO",
+    "BBBBBJJ",
+    "BBBCCJJ",
+    "EEECCJJ",
+    "EEECCCJ"
+  ],
+  "objects": [
+    {
+      "type": "portail",
+      "at": [
+        0,
+        0
+      ],
+      "link": "p1"
+    },
+    {
+      "type": "portail",
+      "at": [
+        6,
+        5
+      ],
+      "link": "p1"
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        2,
+        2
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        2,
+        4
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        6,
+        2
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        5,
+        5
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Flammèche",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet",
+      "tic": "S'excuse avant même d'avoir brûlé quelque chose"
+    },
+    {
+      "id": "b",
+      "name": "Glissandra",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🐍",
+      "desc": "Vouivre, serpent ailé, très longue à se retourner",
+      "archetype": "vouivre",
+      "tic": "Commence ses phrases par la fin",
+      "shape": "I2"
+    },
+    {
+      "id": "c",
+      "name": "Blafard",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ],
+      "tic": "« De mon vivant… »"
+    },
+    {
+      "id": "d",
+      "name": "Fernand",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie",
+      "tic": "Perd un morceau quand il s'énerve"
+    },
+    {
+      "id": "e",
+      "name": "Goémone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene",
+      "tic": "Fait des bulles quand elle ment"
+    },
+    {
+      "id": "f",
+      "name": "Pinardon",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🍷",
+      "desc": "Inspecteur des tavernes, goûte tout, note tout",
+      "archetype": "inspecteur",
+      "guest": true
+    }
+  ],
+  "decor": "tour",
+  "id": "tour--inspecteur--vouivre--i2",
+  "place": "tour",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Flammèche était à l'est de Blafard.",
+      "logic": {
+        "type": "eastOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était sur un tapis.",
+      "logic": {
+        "type": "onObject",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Glissandra était dans la même colonne qu'un tapis.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Blafard était sur la même ligne qu'un chaudron.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Fernand était sur la même ligne qu'un sarcophage.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "sarcophage"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Goémone était dans la même colonne qu'un portail runique.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "portail"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Elle n'était pas à côté d'une chaise.",
+      "logic": {
+        "type": "notAdjacentTo",
+        "object": "chaise"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        5,
+        4
+      ],
+      "b": [
+        [
+          6,
+          0
+        ],
+        [
+          6,
+          1
+        ]
+      ],
+      "c": [
+        1,
+        2
+      ],
+      "a": [
+        3,
+        3
+      ],
+      "d": [
+        4,
+        6
+      ],
+      "e": [
+        2,
+        5
+      ]
+    },
+    "murderer": "c"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "ligne réservée",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 4
+}

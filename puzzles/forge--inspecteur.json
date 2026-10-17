@@ -1,0 +1,344 @@
+{
+  "formatVersion": 1,
+  "title": "La Forge du Dragon — l'affaire Pinardon",
+  "size": 7,
+  "rooms": {
+    "D": {
+      "name": "Antre du dragon",
+      "the": "l'antre du dragon",
+      "floor": "roche"
+    },
+    "F": {
+      "name": "Forge",
+      "the": "la forge",
+      "floor": "dalles"
+    },
+    "A": {
+      "name": "Armurerie",
+      "the": "l'armurerie",
+      "floor": "dalles"
+    },
+    "O": {
+      "name": "Fonderie",
+      "the": "la fonderie",
+      "floor": "dalles"
+    },
+    "T": {
+      "name": "Atelier",
+      "the": "l'atelier",
+      "floor": "parquet"
+    },
+    "Y": {
+      "name": "Cour",
+      "the": "la cour",
+      "floor": "paves"
+    }
+  },
+  "layout": [
+    "DDDFFFA",
+    "DDFFFAA",
+    "DDOOFAA",
+    "OOOOTTA",
+    "OOOOTTT",
+    "OYYYTTT",
+    "YYYYYTT"
+  ],
+  "objects": [
+    {
+      "type": "coffre",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        1,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        4
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        2,
+        6
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        2,
+        2
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        5,
+        0
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        5
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        4
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        6,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        5,
+        2
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Gribouille",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage",
+      "tic": "Éternue avant chaque sortilège"
+    },
+    {
+      "id": "b",
+      "name": "Gontran",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier",
+      "tic": "Annonce chacune de ses actions à voix haute"
+    },
+    {
+      "id": "c",
+      "name": "Bâfrin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll",
+      "tic": "Répète le dernier mot de la phrase des autres"
+    },
+    {
+      "id": "d",
+      "name": "Bakchich",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin",
+      "tic": "« Techniquement, c'est légal. »"
+    },
+    {
+      "id": "e",
+      "name": "Festin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👹",
+      "desc": "Ogre, végétarien depuis mardi",
+      "archetype": "ogre",
+      "tic": "Compte les jours depuis mardi"
+    },
+    {
+      "id": "f",
+      "name": "Grisou",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "⛏️",
+      "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
+      "archetype": "mineur",
+      "tic": "« On creuse ? »"
+    },
+    {
+      "id": "g",
+      "name": "Pinardon",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🍷",
+      "desc": "Inspecteur des tavernes, goûte tout, note tout",
+      "archetype": "inspecteur",
+      "guest": true
+    }
+  ],
+  "decor": "forge",
+  "id": "forge--inspecteur",
+  "place": "forge",
+  "intro": "La Forge du Dragon fume plus que d'habitude : l'inspecteur des tavernes Pinardon, venu inspecter les lieux, n'en est pas ressorti. Six habitués de la forge étaient au travail, paraît-il. L'un d'eux était seul avec lui. Le dragon dort. J'aimerais qu'il continue.",
+  "epilogue": "— Vous étiez seul avec Pinardon.\n— Il voulait me coller un blâme. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Gribouille était sur la même ligne qu'une statue.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Gontran était sur la même ligne qu'une enclume.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "enclume"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Bâfrin était dans l'armurerie.",
+      "logic": {
+        "type": "inRoom",
+        "room": "A"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Bakchich était au nord de Grisou.",
+      "logic": {
+        "type": "northOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était dans la même colonne qu'un chaudron.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était à l'est de Grisou.",
+      "logic": {
+        "type": "eastOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Festin était à l'ouest de Gribouille.",
+      "logic": {
+        "type": "westOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Grisou était à l'ouest de Festin.",
+      "logic": {
+        "type": "westOf",
+        "other": "e"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "g": [
+        2,
+        3
+      ],
+      "f": [
+        6,
+        1
+      ],
+      "b": [
+        1,
+        0
+      ],
+      "d": [
+        4,
+        2
+      ],
+      "c": [
+        3,
+        6
+      ],
+      "e": [
+        5,
+        4
+      ],
+      "a": [
+        0,
+        5
+      ]
+    },
+    "murderer": "d"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "position relative",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 2
+}

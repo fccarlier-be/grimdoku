@@ -159,14 +159,6 @@
     }
   ],
   "auto": {
-    "intro": "{Titre} {victime} a été retrouvé{e} sans vie à l'aube, au Sanglier Borgne. {Nombre} clients avaient trop bu, ou pas assez. Un seul était avec {lui}.",
-    "epilogues": {
-      "mage": "{coupable} avoue en éternuant : {victime} avait glissé du houblon dans sa tisane. Pour un allergique, c'est une déclaration de guerre.",
-      "barde": "{coupable} avoue : {victime} avait hué sa ballade devant toute la taverne. Un barde pardonne tout, sauf ça.",
-      "troll": "{coupable} avoue la bouche pleine : {victime} lui avait reproché de manger la vaisselle. Il n'avait mangé que les assiettes.",
-      "elfe": "{coupable} avoue avec dédain : {victime} avait salé son ragoût sans même goûter. Pour une critique gastronomique, c'est un crime.",
-      "fee": "{coupable} avoue : {victime} lui réclamait les trois tournées qu'elle devait. Depuis dix ans. Avec les intérêts.",
-      "tavernier": "{coupable} avoue en comptant ses pièces : {victime} voulait partir sans payer l'ardoise. Personne ne part sans payer l'ardoise."
-    }
+    "intro": "On m'a tiré du lit à l'aube. {Titre} {victime}, venu{e} au Sanglier Borgne {motif}, ne se réveillera plus. {Nombre} clients juraient dormir comme des loirs. L'un d'eux était avec {lui}. J'ai demandé un café ; on m'a servi une bière."
   }
 }

@@ -1,0 +1,288 @@
+{
+  "formatVersion": 1,
+  "title": "Meurtre au Sanglier Borgne — l'affaire Saisitout",
+  "intro": "On m'a tiré du lit à l'aube. L'huissier Saisitout, venu au Sanglier Borgne saisir des biens, ne se réveillera plus. Cinq clients juraient dormir comme des loirs. L'un d'eux était avec lui. J'ai demandé un café ; on m'a servi une bière.",
+  "epilogue": "— Vous étiez seul avec Saisitout.\n— Saisitout.\n— Pourquoi ?\n— Il voulait saisir mes affaires. Alors Bâfrin taper. Taper fort. Fort.",
+  "size": 6,
+  "rooms": {
+    "T": {
+      "name": "Salle commune",
+      "the": "la salle commune",
+      "floor": "parquet"
+    },
+    "C": {
+      "name": "Cuisine",
+      "the": "la cuisine",
+      "floor": "damier"
+    },
+    "R": {
+      "name": "Cave",
+      "the": "la cave",
+      "floor": "tomettes"
+    },
+    "B": {
+      "name": "Chambre",
+      "the": "la chambre",
+      "floor": "parquet"
+    },
+    "E": {
+      "name": "Écurie",
+      "the": "l'écurie",
+      "floor": "paille"
+    }
+  },
+  "layout": [
+    "TTTCCC",
+    "TTTCCC",
+    "TTTRRC",
+    "BBTRRE",
+    "BBTEEE",
+    "BBBEEE"
+  ],
+  "objects": [
+    {
+      "type": "table",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        4,
+        4
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        5,
+        5
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Aëlys",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe",
+      "tic": "Note tout sur dix, les gens compris"
+    },
+    {
+      "id": "b",
+      "name": "Grippesou",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧔‍♂️",
+      "desc": "Tavernier nain, radin légendaire",
+      "archetype": "tavernier",
+      "tic": "Compte à voix basse en parlant"
+    },
+    {
+      "id": "c",
+      "name": "Capucine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee",
+      "tic": "« Je te le rends demain. »"
+    },
+    {
+      "id": "d",
+      "name": "Gribouille",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage",
+      "tic": "Éternue avant chaque sortilège"
+    },
+    {
+      "id": "e",
+      "name": "Bâfrin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll",
+      "tic": "Répète le dernier mot de la phrase des autres"
+    },
+    {
+      "id": "f",
+      "name": "Saisitout",
+      "gender": "m",
+      "role": "victim",
+      "icon": "📜",
+      "desc": "Huissier de la banque gobeline, saisit d'abord, demande ensuite",
+      "archetype": "huissier",
+      "guest": true
+    }
+  ],
+  "decor": "taverne",
+  "id": "taverne--huissier",
+  "place": "taverne",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Aëlys était au nord de Grippesou.",
+      "logic": {
+        "type": "northOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Elle était dans la cave.",
+      "logic": {
+        "type": "inRoom",
+        "room": "R"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Grippesou était dans la même colonne qu'un chaudron.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Capucine était à côté d'un coffre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Elle était à l'ouest de Bâfrin.",
+      "logic": {
+        "type": "westOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Gribouille était à l'est de Grippesou.",
+      "logic": {
+        "type": "eastOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Bâfrin était sur la même ligne qu'un chaudron.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaudron"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        1,
+        0
+      ],
+      "d": [
+        2,
+        5
+      ],
+      "e": [
+        0,
+        2
+      ],
+      "a": [
+        3,
+        3
+      ],
+      "c": [
+        4,
+        1
+      ],
+      "b": [
+        5,
+        4
+      ]
+    },
+    "murderer": "e"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "ligne réservée",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 2
+}

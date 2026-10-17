@@ -1,0 +1,113 @@
+{
+ "positions": {
+  "h": [
+   0,
+   6
+  ],
+  "c": [
+   1,
+   4
+  ],
+  "b": [
+   4,
+   5
+  ],
+  "f": [
+   5,
+   2
+  ],
+  "d": [
+   6,
+   1
+  ],
+  "a": [
+   2,
+   7
+  ],
+  "e": [
+   3,
+   0
+  ],
+  "g": [
+   7,
+   3
+  ]
+ },
+ "murderer": "c",
+ "cast": {
+  "c": "a",
+  "b": "b",
+  "f": "c",
+  "d": "d",
+  "a": "e",
+  "e": "f",
+  "g": "g"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "southOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameColAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "westOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "onObject",
+    "object": "fauteuil"
+   }
+  }
+ ]
+}

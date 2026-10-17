@@ -1,0 +1,182 @@
+{
+ "positions": {
+  "l": [
+   7,
+   6
+  ],
+  "j": [
+   1,
+   8
+  ],
+  "h": [
+   10,
+   9
+  ],
+  "a": [
+   3,
+   1
+  ],
+  "c": [
+   11,
+   10
+  ],
+  "f": [
+   6,
+   3
+  ],
+  "g": [
+   5,
+   5
+  ],
+  "i": [
+   0,
+   2
+  ],
+  "b": [
+   9,
+   0
+  ],
+  "k": [
+   2,
+   7
+  ],
+  "e": [
+   4,
+   11
+  ],
+  "d": [
+   8,
+   4
+  ]
+ },
+ "murderer": "g",
+ "cast": {
+  "j": "a",
+  "h": "b",
+  "a": "c",
+  "c": "d",
+  "f": "e",
+  "g": "f",
+  "i": "g",
+  "b": "h",
+  "k": "i",
+  "e": "j",
+  "d": "k"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "j",
+   "logic": {
+    "type": "inRoom",
+    "room": "C"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "k",
+   "logic": {
+    "type": "southOf",
+    "other": "j"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "inRoom",
+    "room": "E"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "canon"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "inRoom",
+    "room": "J"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "northOf",
+    "other": "h"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "k",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chariot"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "hamac"
+   }
+  }
+ ]
+}

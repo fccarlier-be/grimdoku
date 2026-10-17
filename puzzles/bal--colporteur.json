@@ -1,0 +1,419 @@
+{
+  "formatVersion": 1,
+  "title": "Le Bal Masqué — l'affaire Bricabrac",
+  "size": 8,
+  "rooms": {
+    "B": {
+      "name": "Balcon",
+      "the": "le balcon",
+      "floor": "dalles"
+    },
+    "S": {
+      "name": "Salle de bal",
+      "the": "la salle de bal",
+      "floor": "noble"
+    },
+    "E": {
+      "name": "Escalier d'honneur",
+      "the": "l'escalier d'honneur",
+      "floor": "dalles"
+    },
+    "F": {
+      "name": "Buffet",
+      "the": "le buffet",
+      "floor": "damier"
+    },
+    "M": {
+      "name": "Salon des miroirs",
+      "the": "le salon des miroirs",
+      "floor": "noble"
+    },
+    "J": {
+      "name": "Jardin d'hiver",
+      "the": "le jardin d'hiver",
+      "floor": "mosaique"
+    },
+    "O": {
+      "name": "Boudoir",
+      "the": "le boudoir",
+      "floor": "noble"
+    }
+  },
+  "layout": [
+    "BBBSSSSE",
+    "BBSSSSSE",
+    "BBSSSSEE",
+    "BBSSSSFF",
+    "MMMSSFFF",
+    "MMMJJJFF",
+    "OOJJJJFF",
+    "OOOJJJJF"
+  ],
+  "objects": [
+    {
+      "type": "statue",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        1,
+        6
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        7
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        7
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        4,
+        6
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        7
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        5,
+        2
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        4
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        7,
+        5
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        6,
+        3
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        6,
+        0
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        7,
+        2
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Capucine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee",
+      "tic": "« Je te le rends demain. »"
+    },
+    {
+      "id": "b",
+      "name": "Blafard",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ],
+      "tic": "« De mon vivant… »"
+    },
+    {
+      "id": "c",
+      "name": "Gontran",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier",
+      "tic": "Annonce chacune de ses actions à voix haute"
+    },
+    {
+      "id": "d",
+      "name": "Aëlys",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe",
+      "tic": "Note tout sur dix, les gens compris"
+    },
+    {
+      "id": "e",
+      "name": "Fumerolle",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn",
+      "tic": "Prend tout au pied de la lettre"
+    },
+    {
+      "id": "f",
+      "name": "Belladone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire",
+      "tic": "« Je ne bois jamais… de vin. »"
+    },
+    {
+      "id": "g",
+      "name": "Dagobert",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤴",
+      "desc": "Roi, avare de compliments et de tout le reste",
+      "archetype": "roi",
+      "tic": "« C'est pas faux. », à tout ce qu'il ne comprend pas"
+    },
+    {
+      "id": "h",
+      "name": "Bricabrac",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🎒",
+      "desc": "Colporteur, vend des objets dont personne ne veut",
+      "archetype": "colporteur",
+      "guest": true
+    }
+  ],
+  "decor": "bal",
+  "id": "bal--colporteur",
+  "place": "bal",
+  "intro": "Bal masqué au château : le colporteur Bricabrac, venu vendre sa camelote, n'a pas passé minuit. Sept invités dansaient, ou le prétendent. L'un d'eux était seul avec lui. Le plus dur, ici, c'est de savoir qui est sous quel masque. Et qui ment dessous.",
+  "epilogue": "— Vous étiez seul avec Bricabrac, Majesté.\n— Il voulait me revendre ce qu'il m'avait déjà vendu. À moi. Le roi.\n— Et vous l'avez supprimé ?\n— Disons que je l'ai… exonéré.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Capucine était dans l'escalier d'honneur.",
+      "logic": {
+        "type": "inRoom",
+        "room": "E"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Elle était à l'ouest de Blafard.",
+      "logic": {
+        "type": "westOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Blafard était à côté d'une table.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "table"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Gontran était à côté d'un coffre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il n'était pas à côté d'une statue.",
+      "logic": {
+        "type": "notAdjacentTo",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Aëlys était à côté d'un lit.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Fumerolle était au sud de Capucine.",
+      "logic": {
+        "type": "southOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Elle était dans la même colonne qu'un arbre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Elle était à l'ouest de Dagobert.",
+      "logic": {
+        "type": "westOf",
+        "other": "g"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Belladone était assise dans un fauteuil.",
+      "logic": {
+        "type": "onObject",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Dagobert n'était pas à côté d'une statue.",
+      "logic": {
+        "type": "notAdjacentTo",
+        "object": "statue"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "h": [
+        1,
+        3
+      ],
+      "b": [
+        4,
+        7
+      ],
+      "g": [
+        0,
+        5
+      ],
+      "c": [
+        3,
+        0
+      ],
+      "d": [
+        6,
+        1
+      ],
+      "a": [
+        2,
+        6
+      ],
+      "e": [
+        7,
+        4
+      ],
+      "f": [
+        5,
+        2
+      ]
+    },
+    "murderer": "g"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "position relative",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 2
+}

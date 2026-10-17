@@ -1,0 +1,106 @@
+{
+ "positions": {
+  "g": [
+   2,
+   6
+  ],
+  "e": [
+   [
+    0,
+    3
+   ],
+   [
+    1,
+    3
+   ]
+  ],
+  "c": [
+   [
+    6,
+    4
+   ],
+   [
+    6,
+    5
+   ]
+  ],
+  "b": [
+   7,
+   2
+  ],
+  "a": [
+   5,
+   7
+  ],
+  "d": [
+   4,
+   1
+  ],
+  "f": [
+   3,
+   0
+  ]
+ },
+ "murderer": "a",
+ "cast": {
+  "e": "a",
+  "c": "b",
+  "b": "c",
+  "a": "d",
+  "d": "e",
+  "f": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "e",
+   "logic": {
+    "type": "northOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "eastOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "onObject",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "westOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "coffre"
+   }
+  }
+ ]
+}

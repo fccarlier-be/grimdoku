@@ -219,17 +219,6 @@
     }
   ],
   "auto": {
-    "intro": "{Titre} {victime} a été retrouvé{e} sans vie à la Citadelle de Mortebrune, la nuit où le pont-levis est resté coincé. {Nombre} occupants ne pouvaient pas sortir. Un seul était avec {lui}.",
-    "epilogues": {
-      "chevalier": "{coupable} avoue, la visière baissée : {victime} avait révélé à toute la garnison qu'il dormait pendant ses tours de garde.",
-      "gobelin": "{coupable} avoue : {victime} avait découvert que l'impôt « pour la réfection des remparts » finançait surtout ses vacances.",
-      "barde": "{coupable} avoue : {victime} avait fait murer la tour où il répétait. Avec ses partitions dedans.",
-      "elfe": "{coupable} avoue avec hauteur : {victime} avait fait abattre le seul arbre centenaire du jardin pour y garer un chariot.",
-      "spectre": "{coupable} gémit ses aveux : {victime} voulait transformer les oubliettes, son domicile depuis trois siècles, en cave à vin.",
-      "dragonnet": "{coupable} avoue en toussant une flammèche : {victime} l'utilisait pour allumer les torches. Sans jamais le payer.",
-      "roi": "{coupable} avoue, très digne : {victime} s'était assis{e} sur le trône « juste pour voir ». C'est toujours comme ça que ça commence.",
-      "sorciere": "{coupable} avoue en ricanant : {victime} avait traité sa potion de soupe. Elle n'a pas aimé la critique culinaire.",
-      "ogre": "{coupable} avoue la bouche pleine : {victime} avait cadenassé le garde-manger de la citadelle. Personne ne cadenasse le garde-manger."
-    }
+    "intro": "Le pont-levis est resté coincé toute la nuit, et {titre} {victime}, venu{e} {motif}, est resté{e} coincé{e} avec. Pour toujours. {Nombre} occupants de la Citadelle ne pouvaient pas sortir. L'un d'eux était seul avec {lui}. Au moins, personne n'a pu s'enfuir."
   }
 }

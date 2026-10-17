@@ -9,7 +9,7 @@ const path = require('path');
 const os = require('os');
 const { spawn } = require('child_process');
 const E = require('../engine');
-const { resolve, loadScene, withVictim, withBig } = require('../cast');
+const { resolve, loadScene, compose, autoCases } = require('../cast');
 
 const ROOT = path.join(__dirname, '..');
 const arg = (name, def) => (process.argv.find(a => a.startsWith(`--${name}=`)) || `=${def}`).split('=')[1];
@@ -35,20 +35,18 @@ const HAND_TARGET = { 'grim-011': 2, 'grim-012': 3 };
 const jobs = [];
 const scenePath = (name) => path.join(ROOT, 'scenes', name + '.json');
 const baseOf = (name) => JSON.parse(fs.readFileSync(scenePath(name), 'utf8')).extends || name;
-const handVictims = new Set(MANIFEST.map(e => baseOf(e.scene) + '--' + loadScene(scenePath(e.scene)).characters.find(c => c.role === 'victim').archetype));
 for (const e of MANIFEST) {
   const size = loadScene(scenePath(e.scene)).size;
-  jobs.push({ id: e.id, scene: e.scene, victim: null, size, target: HAND_TARGET[e.id] ?? 1 });
+  jobs.push({ id: e.id, scene: e.scene, victim: null, size, target: size >= 9 ? null : HAND_TARGET[e.id] ?? 1 });
 }
 for (const f of fs.readdirSync(path.join(ROOT, 'scenes')).sort()) {
   const name = f.replace(/\.json$/, '');
   const scene = loadScene(scenePath(name));
   // les variantes (« extends ») réutilisent un décor : pas d'affaires automatiques en double
   if (baseOf(name) !== name || !scene.auto) continue;
-  scene.characters.forEach((c, i) => {
-    const id = `${name}--${c.archetype}`;
-    if (handVictims.has(id)) return;
-    jobs.push({ id, scene: name, victim: c.archetype, size: scene.size, target: scene.size >= 9 ? null : TARGETS[scene.size][i % TARGETS[scene.size].length] });
+  // une affaire par habitué absent, un invité de passage pour victime (autoCases, cast.js)
+  autoCases(name, scene).forEach((c, i) => {
+    jobs.push({ ...c, scene: name, size: scene.size, target: scene.size >= 9 ? null : TARGETS[scene.size][i % TARGETS[scene.size].length] });
   });
 }
 // affaires à grands personnages (big-cases.json) : difficulté de base visée, pour une progression dans le niveau 4 / 5
@@ -84,6 +82,7 @@ function runGen(job, seed, skulls) {
     const args = ['gen.js', `scenes/${job.scene}.json`, String(seed), '--level=1', `--tries=${TRIES[job.size]}`, `--avoid=${job.avoid}`, '--no-direct'];
     if (skulls !== null) args.push(`--skulls=${skulls}`);
     if (job.victim) args.push(`--victim=${job.victim}`);
+    if (job.guest) args.push(`--guest=${job.guest}`, `--drop=${job.drop}`);
     if (job.big) args.push('--big-late');
     if (job.big) args.push(`--big=${job.big.map((t, i) => t + ':' + job.shapes[i]).join(',')}`);
     if (job.hidden) args.push('--hidden');
@@ -106,7 +105,7 @@ function accept(job, out, skulls) {
   if (!out) return false;
   const sol = JSON.parse(out);
   const base = loadScene(scenePath(job.scene));
-  const scene = job.big ? withBig(base, job.victim, job.big, job.shapes) : job.victim ? withVictim(base, job.victim) : base;
+  const scene = compose(base, job);
   const p = resolve(scene, sol.cast);
   if (job.hidden) p.hiddenShapes = true;
   if (job.hiddenMax) p.hiddenMax = job.hiddenMax;

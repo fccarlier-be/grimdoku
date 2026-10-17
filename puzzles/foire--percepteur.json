@@ -1,0 +1,353 @@
+{
+  "formatVersion": 1,
+  "title": "La Foire aux Sortilèges — l'affaire Taxard",
+  "size": 7,
+  "rooms": {
+    "S": {
+      "name": "Stands",
+      "the": "les stands",
+      "floor": "sciure"
+    },
+    "B": {
+      "name": "Buvette",
+      "the": "la buvette",
+      "floor": "parquet"
+    },
+    "K": {
+      "name": "Coulisses",
+      "the": "les coulisses",
+      "floor": "parquet"
+    },
+    "C": {
+      "name": "Chapiteau",
+      "the": "le chapiteau",
+      "floor": "sciure"
+    },
+    "M": {
+      "name": "Ménagerie",
+      "the": "la ménagerie",
+      "floor": "paille"
+    },
+    "N": {
+      "name": "Manège",
+      "the": "le manège",
+      "floor": "sciure"
+    }
+  },
+  "layout": [
+    "KKSSSBB",
+    "KKSSSBB",
+    "KKCCCCB",
+    "KKCCCCM",
+    "NNCCCCM",
+    "NNNCCMM",
+    "NNNCCMM"
+  ],
+  "objects": [
+    {
+      "type": "lit",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        0,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        2,
+        4
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        4,
+        5
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        4,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        6
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        6,
+        0
+      ]
+    }
+  ],
+  "intro": "La Foire aux Sortilèges a perdu un client : le percepteur Taxard, venu lever l'impôt de fin d'année. Six forains juraient qu'ils tenaient leur stand. L'un d'eux était seul avec lui. Le bonimenteur m'a déjà proposé un élixir de vérité. Deux écus, garanti sans effet.",
+  "characters": [
+    {
+      "id": "a",
+      "name": "Clairvoya",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🔮",
+      "desc": "Cartomancienne, voit l'avenir, rate le présent",
+      "archetype": "cartomancienne",
+      "tic": "« Je l'avais vu venir. », toujours après coup"
+    },
+    {
+      "id": "b",
+      "name": "Capucine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee",
+      "tic": "« Je te le rends demain. »"
+    },
+    {
+      "id": "c",
+      "name": "Esbroufe",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🎩",
+      "desc": "Bonimenteur, vend du rêve au kilo",
+      "archetype": "bonimenteur",
+      "tic": "Vouvoie tout le monde, y compris les poules"
+    },
+    {
+      "id": "d",
+      "name": "Bakchich",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin",
+      "tic": "« Techniquement, c'est légal. »"
+    },
+    {
+      "id": "e",
+      "name": "Flammèche",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet",
+      "tic": "S'excuse avant même d'avoir brûlé quelque chose"
+    },
+    {
+      "id": "f",
+      "name": "Bâfrin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll",
+      "tic": "Répète le dernier mot de la phrase des autres"
+    },
+    {
+      "id": "g",
+      "name": "Taxard",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🧾",
+      "desc": "Percepteur du baron, compte même les miettes",
+      "archetype": "percepteur",
+      "guest": true
+    }
+  ],
+  "decor": "foire",
+  "id": "foire--percepteur",
+  "place": "foire",
+  "epilogue": "— Vous étiez seule avec Taxard.\n— Il voulait me faire payer l'impôt sur tout ce que je possède. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Clairvoya était au sud de Capucine.",
+      "logic": {
+        "type": "southOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Elle était à côté d'un chaudron.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Capucine était à l'ouest de Flammèche.",
+      "logic": {
+        "type": "westOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Elle était sur la même ligne qu'une statue.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Esbroufe était dans la même colonne qu'une table.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Bakchich était à l'ouest d'Esbroufe.",
+      "logic": {
+        "type": "westOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il n'était pas à côté d'une statue.",
+      "logic": {
+        "type": "notAdjacentTo",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Flammèche était à l'ouest de Bâfrin.",
+      "logic": {
+        "type": "westOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était sur la même ligne qu'une chaise.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Bâfrin était au nord de Flammèche.",
+      "logic": {
+        "type": "northOf",
+        "other": "e"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "g": [
+        0,
+        1
+      ],
+      "a": [
+        4,
+        4
+      ],
+      "d": [
+        6,
+        2
+      ],
+      "f": [
+        2,
+        6
+      ],
+      "b": [
+        3,
+        0
+      ],
+      "e": [
+        5,
+        5
+      ],
+      "c": [
+        1,
+        3
+      ]
+    },
+    "murderer": "b"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 7,
+    "hardest": "pièces",
+    "hardSteps": 3,
+    "directStart": 0
+  },
+  "difficulty": 3
+}

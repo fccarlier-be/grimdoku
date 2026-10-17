@@ -1,0 +1,403 @@
+{
+  "formatVersion": 1,
+  "title": "La Citadelle de Mortebrune — l'affaire Bricabrac",
+  "decor": "chateau",
+  "size": 9,
+  "rooms": {
+    "R": {
+      "name": "Remparts",
+      "the": "les remparts",
+      "floor": "paves"
+    },
+    "C": {
+      "name": "Cour d'honneur",
+      "the": "la cour d'honneur",
+      "floor": "paves"
+    },
+    "T": {
+      "name": "Tour de guet",
+      "the": "la tour de guet",
+      "floor": "dalles"
+    },
+    "A": {
+      "name": "Armurerie",
+      "the": "l'armurerie",
+      "floor": "dalles"
+    },
+    "J": {
+      "name": "Jardin",
+      "the": "le jardin",
+      "floor": "herbe"
+    },
+    "B": {
+      "name": "Écuries",
+      "the": "les écuries",
+      "floor": "paille"
+    },
+    "P": {
+      "name": "Oubliettes",
+      "the": "les oubliettes",
+      "floor": "crypte"
+    },
+    "D": {
+      "name": "Salle du trône",
+      "the": "la salle du trône",
+      "floor": "noble"
+    }
+  },
+  "layout": [
+    "RRRCCCCTT",
+    "RRRCCCCTT",
+    "RRRCCCCTT",
+    "AAACCCCTT",
+    "AAAJJJJJB",
+    "AAAJJJJJB",
+    "PPPJJJJJB",
+    "PPPDDDDBB",
+    "PPPDDDDBB"
+  ],
+  "objects": [
+    {
+      "type": "canon",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        8
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        2,
+        7
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        0
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        4,
+        7
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        5,
+        8
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        7,
+        0
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        8,
+        2
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        8,
+        5
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        7,
+        4
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        8,
+        7
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Dagobert",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤴",
+      "desc": "Roi, avare de compliments et de tout le reste",
+      "archetype": "roi",
+      "tic": "« C'est pas faux. », à tout ce qu'il ne comprend pas"
+    },
+    {
+      "id": "b",
+      "name": "Aëlys",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe",
+      "tic": "Note tout sur dix, les gens compris"
+    },
+    {
+      "id": "c",
+      "name": "Gontran",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier",
+      "tic": "Annonce chacune de ses actions à voix haute"
+    },
+    {
+      "id": "d",
+      "name": "Ciguë",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧙‍♀️",
+      "desc": "Sorcière des marais, cuisine tout ce qui coasse",
+      "archetype": "sorciere",
+      "tic": "Regarde Ambroise avec appétit"
+    },
+    {
+      "id": "e",
+      "name": "Fausset",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde",
+      "tic": "Transforme chaque conversation en couplet"
+    },
+    {
+      "id": "f",
+      "name": "Bakchich",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin",
+      "tic": "« Techniquement, c'est légal. »"
+    },
+    {
+      "id": "g",
+      "name": "Festin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👹",
+      "desc": "Ogre, végétarien depuis mardi",
+      "archetype": "ogre",
+      "tic": "Compte les jours depuis mardi"
+    },
+    {
+      "id": "h",
+      "name": "Blafard",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ],
+      "tic": "« De mon vivant… »"
+    },
+    {
+      "id": "i",
+      "name": "Bricabrac",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🎒",
+      "desc": "Colporteur, vend des objets dont personne ne veut",
+      "archetype": "colporteur",
+      "guest": true
+    }
+  ],
+  "id": "citadelle--colporteur",
+  "place": "citadelle",
+  "intro": "Le pont-levis est resté coincé toute la nuit, et le colporteur Bricabrac, venu vendre sa camelote, est resté coincé avec. Pour toujours. Huit occupants de la Citadelle ne pouvaient pas sortir. L'un d'eux était seul avec lui. Au moins, personne n'a pu s'enfuir.",
+  "epilogue": "— Vous étiez seul avec Bricabrac.\n— Il voulait me revendre ce qu'il m'avait déjà vendu. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Dagobert était dans la salle du trône.",
+      "logic": {
+        "type": "inRoom",
+        "room": "D"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était à l'est de Blafard.",
+      "logic": {
+        "type": "eastOf",
+        "other": "h"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Aëlys était sur la même ligne qu'un tonneau.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Elle était à l'est de Fausset.",
+      "logic": {
+        "type": "eastOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Gontran était sur la même ligne qu'un fauteuil.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Ciguë était à côté d'une chaise.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Fausset était sur la même ligne qu'un chariot de mine.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chariot"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Bakchich était dans la même colonne qu'un chariot de mine.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chariot"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Festin était dans la même colonne qu'un lit.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "h",
+      "text": "Blafard était à côté d'un arbre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "arbre"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "i": [
+        5,
+        3
+      ],
+      "c": [
+        8,
+        8
+      ],
+      "f": [
+        1,
+        4
+      ],
+      "e": [
+        3,
+        1
+      ],
+      "b": [
+        2,
+        2
+      ],
+      "h": [
+        4,
+        5
+      ],
+      "a": [
+        7,
+        6
+      ],
+      "d": [
+        0,
+        7
+      ],
+      "g": [
+        6,
+        0
+      ]
+    },
+    "murderer": "h"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 0
+  },
+  "difficulty": 3
+}

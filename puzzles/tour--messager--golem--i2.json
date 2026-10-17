@@ -1,0 +1,327 @@
+{
+  "formatVersion": 1,
+  "title": "La Tour de l'Archimage — l'affaire Rapidon",
+  "intro": "Le messager Rapidon était monté à la Tour de l'Archimage apporter une lettre du baron. On l'a retrouvé au pied d'une étagère de grimoires, sans vie. Cinq habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec lui. Ici, même les escaliers mentent.",
+  "epilogue": "— Vous étiez seul avec Rapidon.\n— Il voulait m'annoncer une mauvaise nouvelle. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
+  "size": 7,
+  "rooms": {
+    "L": {
+      "name": "Laboratoire",
+      "the": "le laboratoire",
+      "floor": "damier"
+    },
+    "O": {
+      "name": "Observatoire",
+      "the": "l'observatoire",
+      "floor": "parquet"
+    },
+    "B": {
+      "name": "Bibliothèque",
+      "the": "la bibliothèque",
+      "floor": "parquet"
+    },
+    "C": {
+      "name": "Crypte",
+      "the": "la crypte",
+      "floor": "crypte"
+    },
+    "J": {
+      "name": "Jardin",
+      "the": "le jardin",
+      "floor": "herbe"
+    },
+    "E": {
+      "name": "Escalier",
+      "the": "l'escalier",
+      "floor": "parquet"
+    }
+  },
+  "layout": [
+    "LLLOOOO",
+    "LLLOOOO",
+    "LLBBBOO",
+    "BBBBBJJ",
+    "BBBCCJJ",
+    "EEECCJJ",
+    "EEECCCJ"
+  ],
+  "objects": [
+    {
+      "type": "portail",
+      "at": [
+        0,
+        0
+      ],
+      "link": "p1"
+    },
+    {
+      "type": "portail",
+      "at": [
+        6,
+        5
+      ],
+      "link": "p1"
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        2,
+        2
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        2,
+        4
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        6,
+        2
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        5,
+        5
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Blafard",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ],
+      "tic": "« De mon vivant… »"
+    },
+    {
+      "id": "b",
+      "name": "Caillasse",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🪨",
+      "desc": "Golem de pierre, lent mais très appliqué",
+      "archetype": "golem",
+      "tic": "Exécute les ordres au mot près, avec un temps de retard",
+      "shape": "I2"
+    },
+    {
+      "id": "c",
+      "name": "Goémone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene",
+      "tic": "Fait des bulles quand elle ment"
+    },
+    {
+      "id": "d",
+      "name": "Flammèche",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet",
+      "tic": "S'excuse avant même d'avoir brûlé quelque chose"
+    },
+    {
+      "id": "e",
+      "name": "Fernand",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie",
+      "tic": "Perd un morceau quand il s'énerve"
+    },
+    {
+      "id": "f",
+      "name": "Rapidon",
+      "gender": "m",
+      "role": "victim",
+      "icon": "✉️",
+      "desc": "Messager du baron, porte toujours de mauvaises nouvelles",
+      "archetype": "messager",
+      "guest": true
+    }
+  ],
+  "decor": "tour",
+  "id": "tour--messager--golem--i2",
+  "place": "tour",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Blafard était dans la même colonne qu'un portail runique.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "portail"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était sur la même ligne qu'une étagère.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "etagere"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Caillasse était dans la même colonne qu'une statue.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Goémone était dans l'escalier.",
+      "logic": {
+        "type": "inRoom",
+        "room": "E"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Flammèche était dans la crypte.",
+      "logic": {
+        "type": "inRoom",
+        "room": "C"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était dans la même colonne qu'un tapis.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Fernand était dans la même colonne qu'un arbre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "arbre"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        1,
+        4
+      ],
+      "b": [
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "a": [
+        2,
+        5
+      ],
+      "d": [
+        6,
+        3
+      ],
+      "e": [
+        4,
+        6
+      ],
+      "c": [
+        5,
+        2
+      ]
+    },
+    "murderer": "a"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 6,
+    "hardest": "pièces",
+    "hardSteps": 2,
+    "directStart": 0
+  },
+  "difficulty": 4
+}

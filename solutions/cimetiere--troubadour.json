@@ -1,0 +1,113 @@
+{
+ "positions": {
+  "h": [
+   6,
+   5
+  ],
+  "f": [
+   0,
+   3
+  ],
+  "e": [
+   7,
+   1
+  ],
+  "g": [
+   4,
+   4
+  ],
+  "b": [
+   5,
+   7
+  ],
+  "a": [
+   1,
+   2
+  ],
+  "c": [
+   2,
+   6
+  ],
+  "d": [
+   3,
+   0
+  ]
+ },
+ "murderer": "b",
+ "cast": {
+  "f": "a",
+  "e": "b",
+  "g": "c",
+  "b": "d",
+  "a": "e",
+  "c": "f",
+  "d": "g"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "f",
+   "logic": {
+    "type": "northOf",
+    "other": "g"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tombe"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "table"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "westOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "westOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "southOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "northOf",
+    "other": "b"
+   }
+  }
+ ]
+}

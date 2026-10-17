@@ -163,14 +163,6 @@
     }
   ],
   "auto": {
-    "intro": "{Titre} {victime} a été retrouvé{e} sans vie au beau milieu du Banquet des Gobelins, la serviette encore autour du cou. {Nombre} convives s'empiffraient. Un seul était avec {lui}.",
-    "epilogues": {
-      "gobelin": "{coupable} avoue : {victime} avait réclamé l'addition du banquet. Personne ne réclame l'addition à un gobelin.",
-      "troll": "{coupable} avoue la bouche pleine : {victime} avait pris la dernière part de gâteau. Et l'assiette avec.",
-      "chef": "{coupable} avoue en goûtant sa sauce : {victime} avait demandé du sel. Devant tout le monde.",
-      "ogre": "{coupable} avoue, rouge de honte : {victime} l'avait vu manger de la viande. Il était végétarien depuis mardi.",
-      "barde": "{coupable} avoue : {victime} avait parlé pendant sa ballade. Toute la ballade.",
-      "boulanger": "{coupable} avoue en pétrissant nerveusement : {victime} avait trouvé son pain rassis. Il était juste « de caractère »."
-    }
+    "intro": "Au Banquet des Gobelins, {titre} {victime}, venu{e} {motif}, est passé{e} du côté des convives au côté du menu. Enfin, presque. {Nombre} invités se goinfraient. L'un d'eux était seul avec {lui}. On m'a servi une soupe. Je ne l'ai pas touchée."
   }
 }

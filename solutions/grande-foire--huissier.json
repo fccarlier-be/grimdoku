@@ -1,0 +1,203 @@
+{
+ "positions": {
+  "l": [
+   0,
+   1
+  ],
+  "f": [
+   4,
+   6
+  ],
+  "a": [
+   7,
+   4
+  ],
+  "c": [
+   3,
+   9
+  ],
+  "b": [
+   9,
+   8
+  ],
+  "g": [
+   2,
+   3
+  ],
+  "j": [
+   1,
+   5
+  ],
+  "i": [
+   10,
+   0
+  ],
+  "h": [
+   6,
+   10
+  ],
+  "e": [
+   8,
+   11
+  ],
+  "d": [
+   5,
+   2
+  ],
+  "k": [
+   11,
+   7
+  ]
+ },
+ "murderer": "g",
+ "cast": {
+  "f": "a",
+  "a": "b",
+  "c": "c",
+  "b": "d",
+  "g": "e",
+  "j": "f",
+  "i": "g",
+  "h": "h",
+  "e": "i",
+  "d": "j",
+  "k": "k"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chariot"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "eastOf",
+    "other": "g"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "northOf",
+    "other": "i"
+   }
+  },
+  {
+   "who": "j",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "inRoom",
+    "room": "J"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "northOf",
+    "other": "k"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "southOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "sameColAs",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "k",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "northOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "northOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "canon"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "j",
+   "logic": {
+    "type": "northOf",
+    "other": "g"
+   }
+  }
+ ]
+}

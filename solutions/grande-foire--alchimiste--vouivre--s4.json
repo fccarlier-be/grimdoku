@@ -1,0 +1,165 @@
+{
+ "positions": {
+  "j": [
+   10,
+   0
+  ],
+  "b": [
+   [
+    4,
+    8
+   ],
+   [
+    5,
+    7
+   ],
+   [
+    5,
+    8
+   ],
+   [
+    6,
+    7
+   ]
+  ],
+  "d": [
+   9,
+   11
+  ],
+  "i": [
+   3,
+   3
+  ],
+  "f": [
+   8,
+   4
+  ],
+  "a": [
+   2,
+   2
+  ],
+  "c": [
+   11,
+   10
+  ],
+  "g": [
+   1,
+   5
+  ],
+  "e": [
+   0,
+   9
+  ],
+  "h": [
+   7,
+   1
+  ]
+ },
+ "murderer": "f",
+ "cast": {
+  "b": "a",
+  "d": "b",
+  "i": "c",
+  "f": "d",
+  "a": "e",
+  "c": "f",
+  "g": "g",
+  "e": "h",
+  "h": "i"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "westOf",
+    "other": "g"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "northOf",
+    "other": "g"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "sarcophage"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "foin"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "foin"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "southOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "statue"
+   }
+  }
+ ]
+}

@@ -1,0 +1,346 @@
+{
+  "formatVersion": 1,
+  "title": "L'Académie de Magie — l'affaire Bricabrac",
+  "size": 7,
+  "rooms": {
+    "X": {
+      "name": "Salle de cours",
+      "the": "la salle de cours",
+      "floor": "parquet"
+    },
+    "D": {
+      "name": "Dortoir",
+      "the": "le dortoir",
+      "floor": "parquet"
+    },
+    "L": {
+      "name": "Laboratoire",
+      "the": "le laboratoire",
+      "floor": "damier"
+    },
+    "R": {
+      "name": "Réfectoire",
+      "the": "le réfectoire",
+      "floor": "parquet"
+    },
+    "S": {
+      "name": "Serre",
+      "the": "la serre",
+      "floor": "herbe"
+    }
+  },
+  "layout": [
+    "DDXXXLL",
+    "DDXXXLL",
+    "DDXXXLL",
+    "DDRRRLL",
+    "DDRRRLL",
+    "SSSRRRL",
+    "SSSSRRR"
+  ],
+  "objects": [
+    {
+      "type": "cristal",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        0,
+        3
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        1,
+        6
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        2,
+        6
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        3,
+        5
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        4,
+        6
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        2
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        6,
+        0
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        6,
+        3
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Flammèche",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet",
+      "tic": "S'excuse avant même d'avoir brûlé quelque chose"
+    },
+    {
+      "id": "b",
+      "name": "Capucine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee",
+      "tic": "« Je te le rends demain. »"
+    },
+    {
+      "id": "c",
+      "name": "Brindille",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧙‍♀️",
+      "desc": "Apprentie sorcière, a déjà fait exploser trois chaudrons",
+      "archetype": "apprentie",
+      "tic": "« C'est normal que ça fume ? »"
+    },
+    {
+      "id": "d",
+      "name": "Escabeau",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🦶",
+      "desc": "Géant, toujours couché : aucun plafond n'est assez haut",
+      "archetype": "geant",
+      "tic": "Se cogne, s'excuse auprès du plafond",
+      "shape": "I2"
+    },
+    {
+      "id": "e",
+      "name": "Gribouille",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage",
+      "tic": "Éternue avant chaque sortilège"
+    },
+    {
+      "id": "f",
+      "name": "Bricabrac",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🎒",
+      "desc": "Colporteur, vend des objets dont personne ne veut",
+      "archetype": "colporteur",
+      "guest": true
+    }
+  ],
+  "decor": "academie",
+  "id": "academie--colporteur--geant--i2",
+  "place": "academie",
+  "intro": "À l'Académie de Magie, le colporteur Bricabrac, venu vendre sa camelote, a été retrouvé un soir d'examens. Cinq élèves et professeurs révisaient, paraît-il. L'un d'eux était seul avec lui. Ça sent le soufre, mais ici, ça sent toujours le soufre.",
+  "epilogue": "— Vous étiez seule avec Bricabrac.\n— Il voulait me revendre ce qu'il m'avait déjà vendu, alors j'ai lancé un sort de protection.\n— Et ?\n— C'est normal que ça fume encore ?",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Flammèche était à l'est de Capucine.",
+      "logic": {
+        "type": "eastOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Capucine était dans le réfectoire.",
+      "logic": {
+        "type": "inRoom",
+        "room": "R"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Elle n'était pas à côté d'une table.",
+      "logic": {
+        "type": "notAdjacentTo",
+        "object": "table"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Brindille était à côté d'une étagère.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "etagere"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Elle était au nord de Flammèche.",
+      "logic": {
+        "type": "northOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Elle était dans la même colonne qu'un fauteuil.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Escabeau était au sud de Gribouille.",
+      "logic": {
+        "type": "southOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Gribouille était à côté d'un lit.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "lit"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        0,
+        6
+      ],
+      "d": [
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          2
+        ]
+      ],
+      "c": [
+        1,
+        5
+      ],
+      "e": [
+        3,
+        0
+      ],
+      "b": [
+        5,
+        3
+      ],
+      "a": [
+        2,
+        4
+      ]
+    },
+    "murderer": "c"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "position relative",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 4
+}

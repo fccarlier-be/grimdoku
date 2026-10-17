@@ -1,0 +1,374 @@
+{
+  "formatVersion": 1,
+  "title": "L'Académie de Magie — l'affaire Gustave",
+  "size": 7,
+  "rooms": {
+    "X": {
+      "name": "Salle de cours",
+      "the": "la salle de cours",
+      "floor": "parquet"
+    },
+    "B": {
+      "name": "Bureau du directeur",
+      "the": "le bureau du directeur",
+      "floor": "parquet"
+    },
+    "D": {
+      "name": "Dortoir",
+      "the": "le dortoir",
+      "floor": "parquet"
+    },
+    "L": {
+      "name": "Laboratoire",
+      "the": "le laboratoire",
+      "floor": "damier"
+    },
+    "R": {
+      "name": "Réfectoire",
+      "the": "le réfectoire",
+      "floor": "parquet"
+    },
+    "S": {
+      "name": "Serre",
+      "the": "la serre",
+      "floor": "herbe"
+    }
+  },
+  "layout": [
+    "DDXXXBB",
+    "DDXXXBB",
+    "DDXXXLL",
+    "DDRRRLL",
+    "DDRRRLL",
+    "SSSRRRL",
+    "SSSSRRR"
+  ],
+  "objects": [
+    {
+      "type": "cristal",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        0,
+        3
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        1,
+        6
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        2,
+        6
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        3,
+        5
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        4,
+        6
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        2
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        6,
+        0
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        6,
+        3
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Fumerolle",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn",
+      "tic": "Prend tout au pied de la lettre"
+    },
+    {
+      "id": "b",
+      "name": "Aëlys",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe",
+      "tic": "Note tout sur dix, les gens compris"
+    },
+    {
+      "id": "c",
+      "name": "Brindille",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧙‍♀️",
+      "desc": "Apprentie sorcière, a déjà fait exploser trois chaudrons",
+      "archetype": "apprentie",
+      "tic": "« C'est normal que ça fume ? »"
+    },
+    {
+      "id": "d",
+      "name": "Flammèche",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet",
+      "tic": "S'excuse avant même d'avoir brûlé quelque chose"
+    },
+    {
+      "id": "e",
+      "name": "Gribouille",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage",
+      "tic": "Éternue avant chaque sortilège"
+    },
+    {
+      "id": "f",
+      "name": "Fiolius",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🏫",
+      "desc": "Professeur de potions, note à l'odeur",
+      "archetype": "professeur",
+      "tic": "Renifle avant de répondre"
+    },
+    {
+      "id": "g",
+      "name": "Gustave",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🎒",
+      "desc": "Touriste, dessine tout au fusain, surtout ce qui est interdit",
+      "archetype": "touriste",
+      "guest": true
+    }
+  ],
+  "decor": "academie",
+  "id": "academie--touriste",
+  "place": "academie",
+  "intro": "À l'Académie de Magie, le touriste Gustave, venu visiter la baronnie, a été retrouvé un soir d'examens. Six élèves et professeurs révisaient, paraît-il. L'un d'eux était seul avec lui. Ça sent le soufre, mais ici, ça sent toujours le soufre.",
+  "epilogue": "— Vous étiez seule avec Gustave.\n— Il voulait faire mon portrait au fusain et le vendre à la foire. Je lui ai mis deux sur dix.\n— Et ensuite ?\n— Ensuite, zéro.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Fumerolle était à côté d'un arbre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Elle était à côté d'un champignon géant.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Aëlys était au sud de Brindille.",
+      "logic": {
+        "type": "southOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Elle était dans la salle de cours.",
+      "logic": {
+        "type": "inRoom",
+        "room": "X"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Elle était dans la même colonne qu'une table.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Brindille était sur la même ligne qu'une étagère.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "etagere"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Flammèche était dans la même colonne qu'une boule de cristal.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "cristal"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était allongé sur un lit.",
+      "logic": {
+        "type": "onObject",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Gribouille était au sud de Fiolius.",
+      "logic": {
+        "type": "southOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Fiolius était à l'est de Gribouille.",
+      "logic": {
+        "type": "eastOf",
+        "other": "e"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "g": [
+        0,
+        2
+      ],
+      "c": [
+        1,
+        5
+      ],
+      "e": [
+        5,
+        4
+      ],
+      "d": [
+        4,
+        0
+      ],
+      "a": [
+        6,
+        1
+      ],
+      "b": [
+        2,
+        3
+      ],
+      "f": [
+        3,
+        6
+      ]
+    },
+    "murderer": "b"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "ligne réservée",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 2
+}

@@ -1,0 +1,192 @@
+{
+ "positions": {
+  "j": [
+   9,
+   3
+  ],
+  "d": [
+   [
+    6,
+    10
+   ],
+   [
+    7,
+    9
+   ],
+   [
+    7,
+    10
+   ],
+   [
+    7,
+    11
+   ]
+  ],
+  "i": [
+   [
+    0,
+    8
+   ],
+   [
+    1,
+    8
+   ]
+  ],
+  "a": [
+   11,
+   6
+  ],
+  "e": [
+   10,
+   0
+  ],
+  "h": [
+   4,
+   7
+  ],
+  "f": [
+   5,
+   4
+  ],
+  "c": [
+   8,
+   2
+  ],
+  "b": [
+   2,
+   1
+  ],
+  "g": [
+   3,
+   5
+  ]
+ },
+ "murderer": "e",
+ "cast": {
+  "d": "a",
+  "i": "b",
+  "a": "c",
+  "e": "d",
+  "h": "e",
+  "f": "f",
+  "c": "g",
+  "b": "h",
+  "g": "i"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "i",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "foin"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "northOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "southOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameColAs",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "inRoom",
+    "room": "I"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "hamac"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "onObject",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "inRoom",
+    "room": "E"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "eastOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "hamac"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "tonneau"
+   }
+  }
+ ]
+}

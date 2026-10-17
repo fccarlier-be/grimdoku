@@ -1,0 +1,94 @@
+{
+ "positions": {
+  "g": [
+   2,
+   5
+  ],
+  "b": [
+   0,
+   3
+  ],
+  "f": [
+   1,
+   0
+  ],
+  "a": [
+   5,
+   1
+  ],
+  "e": [
+   4,
+   2
+  ],
+  "d": [
+   3,
+   4
+  ],
+  "c": [
+   6,
+   6
+  ]
+ },
+ "murderer": "b",
+ "cast": {
+  "b": "a",
+  "f": "b",
+  "a": "c",
+  "e": "d",
+  "d": "e",
+  "c": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "b",
+   "logic": {
+    "type": "northOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "westOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "westOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "inRoom",
+    "room": "J"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "sarcophage"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "tapis"
+   }
+  }
+ ]
+}

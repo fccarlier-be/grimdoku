@@ -1,0 +1,95 @@
+{
+ "positions": {
+  "f": [
+   1,
+   4
+  ],
+  "b": [
+   [
+    3,
+    0
+   ],
+   [
+    3,
+    1
+   ]
+  ],
+  "a": [
+   2,
+   5
+  ],
+  "d": [
+   6,
+   3
+  ],
+  "e": [
+   4,
+   6
+  ],
+  "c": [
+   5,
+   2
+  ]
+ },
+ "murderer": "a",
+ "cast": {
+  "b": "a",
+  "a": "b",
+  "d": "c",
+  "e": "d",
+  "c": "e"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameColAs",
+    "object": "portail"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "inRoom",
+    "room": "C"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "inRoom",
+    "room": "E"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "etagere"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tapis"
+   }
+  }
+ ]
+}

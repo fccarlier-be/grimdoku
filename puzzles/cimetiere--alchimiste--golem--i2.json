@@ -1,0 +1,369 @@
+{
+  "formatVersion": 1,
+  "title": "Le Cimetière de Minuit — l'affaire Mercurio",
+  "size": 8,
+  "rooms": {
+    "G": {
+      "name": "Maison du gardien",
+      "the": "la maison du gardien",
+      "floor": "parquet"
+    },
+    "C": {
+      "name": "Chapelle",
+      "the": "la chapelle",
+      "floor": "dalles"
+    },
+    "A": {
+      "name": "Allée des ifs",
+      "the": "l'allée des ifs",
+      "floor": "herbe"
+    },
+    "J": {
+      "name": "Jardin du souvenir",
+      "the": "le jardin du souvenir",
+      "floor": "herbe"
+    },
+    "O": {
+      "name": "Ossuaire",
+      "the": "l'ossuaire",
+      "floor": "crypte"
+    },
+    "Y": {
+      "name": "Crypte",
+      "the": "la crypte",
+      "floor": "crypte"
+    }
+  },
+  "layout": [
+    "GGGAACCC",
+    "GGGAACCC",
+    "GGAAAACC",
+    "GGAAAACC",
+    "GGJJJOOC",
+    "YYJJJOOO",
+    "YYJJJOOO",
+    "YYYYJOOO"
+  ],
+  "objects": [
+    {
+      "type": "lit",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        3,
+        5
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        2,
+        7
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        5,
+        3
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        6,
+        2
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        7,
+        4
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        7,
+        5
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        6,
+        1
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        7,
+        3
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Blafard",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ],
+      "tic": "« De mon vivant… »"
+    },
+    {
+      "id": "b",
+      "name": "Ciguë",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧙‍♀️",
+      "desc": "Sorcière des marais, cuisine tout ce qui coasse",
+      "archetype": "sorciere",
+      "tic": "Regarde Ambroise avec appétit"
+    },
+    {
+      "id": "c",
+      "name": "Glas",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "⚰️",
+      "desc": "Fossoyeur, creuse en sifflotant",
+      "archetype": "fossoyeur",
+      "tic": "Prend les mesures des gens qu'il rencontre"
+    },
+    {
+      "id": "d",
+      "name": "Caillasse",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🪨",
+      "desc": "Golem de pierre, lent mais très appliqué",
+      "archetype": "golem",
+      "tic": "Exécute les ordres au mot près, avec un temps de retard",
+      "shape": "I2"
+    },
+    {
+      "id": "e",
+      "name": "Fernand",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie",
+      "tic": "Perd un morceau quand il s'énerve"
+    },
+    {
+      "id": "f",
+      "name": "Belladone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire",
+      "tic": "« Je ne bois jamais… de vin. »"
+    },
+    {
+      "id": "g",
+      "name": "Mercurio",
+      "gender": "m",
+      "role": "victim",
+      "icon": "⚗️",
+      "desc": "Alchimiste ambulant, transforme l'or en dettes",
+      "archetype": "alchimiste",
+      "guest": true
+    }
+  ],
+  "decor": "cimetiere",
+  "id": "cimetiere--alchimiste--golem--i2",
+  "place": "cimetiere",
+  "intro": "Au Cimetière de Minuit, on a retrouvé l'alchimiste Mercurio, venu proposer ses services. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Six habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec lui. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
+  "epilogue": "— Vous étiez seul avec Mercurio.\n— Il voulait changer mes économies en plomb. Alors j'ai pris ses mesures.\n— Pour quoi faire ?\n— Le travail était à moitié fait. Autant le finir.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Blafard était dans la même colonne qu'une table.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Ciguë était à l'ouest de Blafard.",
+      "logic": {
+        "type": "westOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Elle était à côté d'une tombe.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tombe"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Glas était dans la même colonne qu'une statue.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Caillasse était à côté d'un pupitre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "pupitre"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Fernand était sur la même ligne qu'une statue.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était au sud de Blafard.",
+      "logic": {
+        "type": "southOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Belladone était dans le jardin du souvenir.",
+      "logic": {
+        "type": "inRoom",
+        "room": "J"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "g": [
+        0,
+        3
+      ],
+      "d": [
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          7
+        ]
+      ],
+      "c": [
+        2,
+        2
+      ],
+      "a": [
+        5,
+        1
+      ],
+      "e": [
+        6,
+        5
+      ],
+      "f": [
+        4,
+        4
+      ],
+      "b": [
+        3,
+        0
+      ]
+    },
+    "murderer": "c"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 6,
+    "hardest": "pièces",
+    "hardSteps": 2,
+    "directStart": 0
+  },
+  "difficulty": 4
+}

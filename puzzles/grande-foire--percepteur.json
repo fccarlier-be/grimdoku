@@ -1,0 +1,628 @@
+{
+  "formatVersion": 1,
+  "title": "La Grande Foire des Mille Merveilles — l'affaire Taxard",
+  "decor": "foire",
+  "size": 12,
+  "rooms": {
+    "A": {
+      "name": "Chapiteau",
+      "the": "le chapiteau",
+      "floor": "sciure"
+    },
+    "B": {
+      "name": "Ménagerie",
+      "the": "la ménagerie",
+      "floor": "paille"
+    },
+    "C": {
+      "name": "Grande roue",
+      "the": "la grande roue",
+      "floor": "paves"
+    },
+    "D": {
+      "name": "Stand de tir",
+      "the": "le stand de tir",
+      "floor": "parquet"
+    },
+    "E": {
+      "name": "Piste aux étoiles",
+      "the": "la piste aux étoiles",
+      "floor": "sciure"
+    },
+    "F": {
+      "name": "Roulottes",
+      "the": "les roulottes",
+      "floor": "herbe"
+    },
+    "G": {
+      "name": "Cabinet des curiosités",
+      "the": "le cabinet des curiosités",
+      "floor": "noble"
+    },
+    "H": {
+      "name": "Labyrinthe",
+      "the": "le labyrinthe",
+      "floor": "herbe"
+    },
+    "I": {
+      "name": "Buvette",
+      "the": "la buvette",
+      "floor": "tomettes"
+    },
+    "J": {
+      "name": "Tente de la voyante",
+      "the": "la tente de la voyante",
+      "floor": "mosaique"
+    },
+    "K": {
+      "name": "Manège",
+      "the": "le manège",
+      "floor": "paves"
+    }
+  },
+  "layout": [
+    "AAAABBBBCCCC",
+    "AAAABBBBCCCC",
+    "AAAABBBBCCCC",
+    "DDDDDBBBCCCC",
+    "DDDDDEEEEFFF",
+    "DDDDDEEEEFFF",
+    "GGGGGEEEEFFF",
+    "GGGGGEEEEHHH",
+    "GGGIIIIIIHHH",
+    "JJJIIIIIIHHH",
+    "JJJJKKKKKHHH",
+    "JJJJKKKKKKKK"
+  ],
+  "objects": [
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        1
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        1,
+        7
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        2,
+        4
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        10
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        2,
+        9
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        3,
+        11
+      ]
+    },
+    {
+      "type": "canon",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        7,
+        8
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        5
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        10
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        6,
+        9
+      ]
+    },
+    {
+      "type": "hamac",
+      "at": [
+        5,
+        11
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        6,
+        2
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        7,
+        0
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        7,
+        4
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        8,
+        10
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        10,
+        11
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        9,
+        9
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        8,
+        5
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        9,
+        7
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        9,
+        4
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        10,
+        1
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        11,
+        2
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        10,
+        6
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        11,
+        9
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        11,
+        5
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Briochon",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🍳",
+      "desc": "Boulanger, pétrit plus de ragots que de pâte",
+      "archetype": "boulanger",
+      "tic": "« Je dis ça, je dis rien. »"
+    },
+    {
+      "id": "b",
+      "name": "Esbroufe",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🎩",
+      "desc": "Bonimenteur, vend du rêve au kilo",
+      "archetype": "bonimenteur",
+      "tic": "Vouvoie tout le monde, y compris les poules"
+    },
+    {
+      "id": "c",
+      "name": "Flammèche",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet",
+      "tic": "S'excuse avant même d'avoir brûlé quelque chose"
+    },
+    {
+      "id": "d",
+      "name": "Bakchich",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin",
+      "tic": "« Techniquement, c'est légal. »"
+    },
+    {
+      "id": "e",
+      "name": "Farinard",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🌾",
+      "desc": "Meunier, pèse le grain avec le pouce",
+      "archetype": "meunier",
+      "tic": "« Au poids, c'est honnête. »"
+    },
+    {
+      "id": "f",
+      "name": "Aëlys",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe",
+      "tic": "Note tout sur dix, les gens compris"
+    },
+    {
+      "id": "g",
+      "name": "Fausset",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde",
+      "tic": "Transforme chaque conversation en couplet"
+    },
+    {
+      "id": "h",
+      "name": "Bâfrin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll",
+      "tic": "Répète le dernier mot de la phrase des autres"
+    },
+    {
+      "id": "i",
+      "name": "Capucine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee",
+      "tic": "« Je te le rends demain. »"
+    },
+    {
+      "id": "j",
+      "name": "Clairvoya",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🔮",
+      "desc": "Cartomancienne, voit l'avenir, rate le présent",
+      "archetype": "cartomancienne",
+      "tic": "« Je l'avais vu venir. », toujours après coup"
+    },
+    {
+      "id": "k",
+      "name": "Festin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👹",
+      "desc": "Ogre, végétarien depuis mardi",
+      "archetype": "ogre",
+      "tic": "Compte les jours depuis mardi"
+    },
+    {
+      "id": "l",
+      "name": "Taxard",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🧾",
+      "desc": "Percepteur du baron, compte même les miettes",
+      "archetype": "percepteur",
+      "guest": true
+    }
+  ],
+  "id": "grande-foire--percepteur",
+  "place": "grande-foire",
+  "intro": "Feu d'artifice à la Grande Foire des Mille Merveilles : tout le monde regardait le ciel, sauf le percepteur Taxard, venu lever l'impôt de fin d'année, qui ne regardera plus rien. Onze forains et visiteurs juraient avoir le nez en l'air. L'un d'eux était seul avec lui.",
+  "epilogue": "— Vous étiez seul avec Taxard.\n— Il voulait me faire payer l'impôt sur tout ce que je possède. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Briochon était dans la même colonne qu'une botte de foin.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "foin"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était assis dans un fauteuil.",
+      "logic": {
+        "type": "onObject",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Esbroufe était dans la même colonne qu'une table.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était dans la tente de la voyante.",
+      "logic": {
+        "type": "inRoom",
+        "room": "J"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Flammèche était à côté d'un champignon géant.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Bakchich était sur la même ligne qu'un hamac.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "hamac"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il n'était pas à côté d'une table.",
+      "logic": {
+        "type": "notAdjacentTo",
+        "object": "table"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Farinard était dans la même colonne qu'une statue.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Aëlys était à l'est de Fausset.",
+      "logic": {
+        "type": "eastOf",
+        "other": "g"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Elle était dans la même colonne qu'une chaise.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Fausset était dans la piste aux étoiles.",
+      "logic": {
+        "type": "inRoom",
+        "room": "E"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Il était dans la même colonne qu'une chaise.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "h",
+      "text": "Bâfrin était dans la même colonne qu'un chariot de mine.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chariot"
+      }
+    },
+    {
+      "who": "h",
+      "text": "Il était sur la même ligne qu'un chariot de mine.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chariot"
+      }
+    },
+    {
+      "who": "i",
+      "text": "Capucine était au sud d'Esbroufe.",
+      "logic": {
+        "type": "southOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "j",
+      "text": "Clairvoya était dans la grande roue.",
+      "logic": {
+        "type": "inRoom",
+        "room": "C"
+      }
+    },
+    {
+      "who": "k",
+      "text": "Festin était au sud de Bâfrin.",
+      "logic": {
+        "type": "southOf",
+        "other": "h"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "l": [
+        3,
+        2
+      ],
+      "b": [
+        9,
+        1
+      ],
+      "j": [
+        0,
+        11
+      ],
+      "g": [
+        6,
+        5
+      ],
+      "d": [
+        5,
+        3
+      ],
+      "h": [
+        1,
+        6
+      ],
+      "i": [
+        11,
+        7
+      ],
+      "c": [
+        10,
+        10
+      ],
+      "k": [
+        2,
+        0
+      ],
+      "a": [
+        7,
+        4
+      ],
+      "e": [
+        8,
+        8
+      ],
+      "f": [
+        4,
+        9
+      ]
+    },
+    "murderer": "d"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 0
+  },
+  "difficulty": 3
+}

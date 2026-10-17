@@ -1,0 +1,395 @@
+{
+  "formatVersion": 1,
+  "title": "La Mine des Nains — l'affaire Prudence",
+  "size": 8,
+  "rooms": {
+    "E": {
+      "name": "Entrée",
+      "the": "l'entrée",
+      "floor": "roche"
+    },
+    "G": {
+      "name": "Galerie",
+      "the": "la galerie",
+      "floor": "roche"
+    },
+    "F": {
+      "name": "Forge",
+      "the": "la forge",
+      "floor": "roche"
+    },
+    "V": {
+      "name": "Filon",
+      "the": "le filon",
+      "floor": "roche"
+    },
+    "D": {
+      "name": "Dortoir",
+      "the": "le dortoir",
+      "floor": "roche"
+    },
+    "C": {
+      "name": "Cantine",
+      "the": "la cantine",
+      "floor": "parquet"
+    },
+    "T": {
+      "name": "Salle des coffres",
+      "the": "la salle des coffres",
+      "floor": "roche"
+    }
+  },
+  "layout": [
+    "EEEGGFFF",
+    "EEEGGFFF",
+    "DDGGGFFF",
+    "DDGGGFFV",
+    "DDCCCFVV",
+    "TTCCCVVV",
+    "TTCCCVVV",
+    "TTTTCVVV"
+  ],
+  "objects": [
+    {
+      "type": "tonneau",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        1,
+        7
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        6,
+        7
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        2
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        7,
+        2
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        7,
+        6
+      ]
+    }
+  ],
+  "intro": "À la Mine des Nains, l'abbesse Prudence, venue faire la quête, est descendue plus bas que prévu. Sept mineurs et visiteurs étaient au fond. L'un d'eux était seul avec elle. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
+  "characters": [
+    {
+      "id": "a",
+      "name": "Flammèche",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet",
+      "tic": "S'excuse avant même d'avoir brûlé quelque chose"
+    },
+    {
+      "id": "b",
+      "name": "Gontran",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier",
+      "tic": "Annonce chacune de ses actions à voix haute"
+    },
+    {
+      "id": "c",
+      "name": "Capucine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee",
+      "tic": "« Je te le rends demain. »"
+    },
+    {
+      "id": "d",
+      "name": "Granit",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👷",
+      "desc": "Contremaître nain, compte les pépites et les pauses",
+      "archetype": "contremaitre",
+      "tic": "Chronomètre tout le monde"
+    },
+    {
+      "id": "e",
+      "name": "Bakchich",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin",
+      "tic": "« Techniquement, c'est légal. »"
+    },
+    {
+      "id": "f",
+      "name": "Grisou",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "⛏️",
+      "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
+      "archetype": "mineur",
+      "tic": "« On creuse ? »"
+    },
+    {
+      "id": "g",
+      "name": "Fernand",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie",
+      "tic": "Perd un morceau quand il s'énerve"
+    },
+    {
+      "id": "h",
+      "name": "Prudence",
+      "gender": "f",
+      "role": "victim",
+      "icon": "📿",
+      "desc": "Abbesse, quête pour un couvent introuvable",
+      "archetype": "abbesse",
+      "guest": true
+    }
+  ],
+  "decor": "mine",
+  "id": "mine--abbesse",
+  "place": "mine",
+  "epilogue": "— Vous étiez seule avec Prudence.\n— Elle voulait me faire la morale. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Flammèche était sur la même ligne qu'un tonneau.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était à l'est de Gontran.",
+      "logic": {
+        "type": "eastOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Gontran était sur la même ligne qu'une chaise.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Capucine était sur la même ligne qu'un lit.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Elle n'était pas à côté d'un chariot de mine.",
+      "logic": {
+        "type": "notAdjacentTo",
+        "object": "chariot"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Elle n'était pas à côté d'un chaudron.",
+      "logic": {
+        "type": "notAdjacentTo",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Granit était à côté d'un champignon géant.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Bakchich était sur la même ligne qu'une statue.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Grisou était à l'est de Flammèche.",
+      "logic": {
+        "type": "eastOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Il était dans la même colonne qu'une table.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Fernand était au sud de Grisou.",
+      "logic": {
+        "type": "southOf",
+        "other": "f"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "h": [
+        1,
+        6
+      ],
+      "f": [
+        3,
+        3
+      ],
+      "e": [
+        0,
+        2
+      ],
+      "a": [
+        6,
+        1
+      ],
+      "b": [
+        4,
+        0
+      ],
+      "c": [
+        2,
+        5
+      ],
+      "g": [
+        7,
+        4
+      ],
+      "d": [
+        5,
+        7
+      ]
+    },
+    "murderer": "c"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "position relative",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 2
+}

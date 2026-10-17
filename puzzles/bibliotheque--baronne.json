@@ -1,0 +1,354 @@
+{
+  "formatVersion": 1,
+  "title": "La Bibliothèque Interdite — l'affaire Grisemotte",
+  "size": 7,
+  "rooms": {
+    "S": {
+      "name": "Scriptorium",
+      "the": "le scriptorium",
+      "floor": "parquet"
+    },
+    "Y": {
+      "name": "Rayonnages",
+      "the": "les rayonnages",
+      "floor": "parquet"
+    },
+    "L": {
+      "name": "Salle de lecture",
+      "the": "la salle de lecture",
+      "floor": "parquet"
+    },
+    "G": {
+      "name": "Galerie",
+      "the": "la galerie",
+      "floor": "parquet"
+    },
+    "R": {
+      "name": "Réserve",
+      "the": "la réserve",
+      "floor": "parquet"
+    },
+    "A": {
+      "name": "Archives",
+      "the": "les archives",
+      "floor": "parquet"
+    }
+  },
+  "layout": [
+    "SSSYYYY",
+    "SSSYYYY",
+    "SSLLLGG",
+    "SSLLLGG",
+    "RRLLLGG",
+    "RRRAAAA",
+    "RRRAAAA"
+  ],
+  "objects": [
+    {
+      "type": "pupitre",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        0
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        5,
+        4
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        6,
+        5
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        6,
+        3
+      ]
+    }
+  ],
+  "intro": "À la Bibliothèque Interdite, la baronne de Grisemotte Grisemotte, venue rendre une visite de courtoisie, a été retrouvée entre deux rayonnages. On m'a demandé d'enquêter en silence. Six lecteurs étaient là. L'un d'eux était seul avec elle. Je chuchote mes questions ; on me répond en hurlant « chut ».",
+  "characters": [
+    {
+      "id": "a",
+      "name": "Gribouille",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage",
+      "tic": "Éternue avant chaque sortilège"
+    },
+    {
+      "id": "b",
+      "name": "Fumerolle",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn",
+      "tic": "Prend tout au pied de la lettre"
+    },
+    {
+      "id": "c",
+      "name": "Fizzlebarbe",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Archimage, 412 ans, toujours pas de testament",
+      "archetype": "archimage",
+      "tic": "« De mon temps… » (en concurrence avec Blafard)"
+    },
+    {
+      "id": "d",
+      "name": "Blafard",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ],
+      "tic": "« De mon vivant… »"
+    },
+    {
+      "id": "e",
+      "name": "Bakchich",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin",
+      "tic": "« Techniquement, c'est légal. »"
+    },
+    {
+      "id": "f",
+      "name": "Belladone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire",
+      "tic": "« Je ne bois jamais… de vin. »"
+    },
+    {
+      "id": "g",
+      "name": "Grisemotte",
+      "gender": "f",
+      "role": "victim",
+      "icon": "👑",
+      "desc": "Baronne voisine, jalouse de tout ce qui brille",
+      "archetype": "baronne",
+      "guest": true
+    }
+  ],
+  "decor": "bibliotheque",
+  "id": "bibliotheque--baronne",
+  "place": "bibliotheque",
+  "epilogue": "— Vous étiez seule avec Grisemotte.\n— Elle voulait racheter la baronnie et me mettre dehors. Je lui ai proposé un verre.\n— De vin ?\n— Je ne bois jamais… de vin.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Gribouille était à l'ouest de Belladone.",
+      "logic": {
+        "type": "westOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Fumerolle était à côté d'un fauteuil.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Fizzlebarbe était à l'est de Gribouille.",
+      "logic": {
+        "type": "eastOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était à côté d'un fauteuil.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Blafard était dans la même colonne qu'un pupitre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "pupitre"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Bakchich était au nord de Gribouille.",
+      "logic": {
+        "type": "northOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était dans les archives.",
+      "logic": {
+        "type": "inRoom",
+        "room": "A"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Belladone était dans la même colonne qu'une étagère.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "etagere"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "g": [
+        0,
+        3
+      ],
+      "a": [
+        6,
+        1
+      ],
+      "d": [
+        4,
+        2
+      ],
+      "f": [
+        1,
+        4
+      ],
+      "b": [
+        2,
+        0
+      ],
+      "e": [
+        5,
+        6
+      ],
+      "c": [
+        3,
+        5
+      ]
+    },
+    "murderer": "f"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "ligne réservée",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 2
+}

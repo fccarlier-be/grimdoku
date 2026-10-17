@@ -318,19 +318,6 @@
     }
   ],
   "auto": {
-    "intro": "{Titre} {victime} a été retrouvé{e} sans vie à l'Université des Sortilèges, la veille de la remise des diplômes. {Nombre} membres de l'université révisaient, ou faisaient semblant. Un seul était avec {lui}.",
-    "epilogues": {
-      "archimage": "{coupable} avoue en lissant sa barbe : {victime} avait corrigé une faute dans son grimoire. À l'encre rouge. Devant les élèves.",
-      "apprentie": "{coupable} avoue : {victime} avait encore saboté son examen de lévitation. Elle a fini par réussir celui de disparition.",
-      "professeur": "{coupable} avoue en rangeant ses fioles : {victime} avait publié ses recherches sous son propre nom.",
-      "mage": "{coupable} avoue : {victime} avait échangé son bâton contre un balai. Il a donné son cours de météo avec un balai.",
-      "fee": "{coupable} avoue en battant des ailes : {victime} avait piétiné les semis de la serre « par accident ». Trois fois.",
-      "djinn": "{coupable} avoue en sortant de sa lampe : {victime} avait fait un quatrième vœu. Le règlement est très clair.",
-      "bibliothecaire": "{coupable} avoue en chuchotant : {victime} rendait ses livres en retard, cornés, et avec des miettes dedans.",
-      "dragonnet": "{coupable} avoue : {victime} l'avait inscrit au concours de fusion des métaux. Comme fourneau.",
-      "crapaud": "{coupable} avoue : {victime} l'avait changé en crapaud. Il a eu tout le temps d'y réfléchir.",
-      "spectre": "{coupable} hante l'université depuis son dernier examen raté. {victime} voulait le lui faire repasser.",
-      "cartomancienne": "{coupable} avoue : elle avait prédit la mort de {victime}. Elle a seulement aidé un peu le destin à tenir parole."
-    }
+    "intro": "La veille de la remise des diplômes, l'Université des Sortilèges a perdu {titre} {victime}, venu{e} {motif}. {Nombre} membres de l'université travaillaient tard, ou faisaient semblant. L'un d'eux était seul avec {lui}. L'Académie d'en face nie tout en bloc, avant même que je demande."
   }
 }

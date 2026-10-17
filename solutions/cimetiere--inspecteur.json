@@ -1,0 +1,134 @@
+{
+ "positions": {
+  "h": [
+   7,
+   6
+  ],
+  "d": [
+   3,
+   1
+  ],
+  "b": [
+   6,
+   5
+  ],
+  "f": [
+   0,
+   7
+  ],
+  "g": [
+   4,
+   3
+  ],
+  "a": [
+   1,
+   2
+  ],
+  "e": [
+   2,
+   4
+  ],
+  "c": [
+   5,
+   0
+  ]
+ },
+ "murderer": "b",
+ "cast": {
+  "d": "a",
+  "b": "b",
+  "f": "c",
+  "g": "d",
+  "a": "e",
+  "e": "f",
+  "c": "g"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "sarcophage"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "westOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "northOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "eastOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "southOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "southOf",
+    "other": "g"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "table"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "inRoom",
+    "room": "J"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "southOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "southOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tombe"
+   }
+  }
+ ]
+}

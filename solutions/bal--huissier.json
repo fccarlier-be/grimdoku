@@ -1,0 +1,120 @@
+{
+ "positions": {
+  "h": [
+   4,
+   3
+  ],
+  "c": [
+   5,
+   1
+  ],
+  "a": [
+   2,
+   5
+  ],
+  "e": [
+   0,
+   2
+  ],
+  "b": [
+   6,
+   4
+  ],
+  "d": [
+   3,
+   6
+  ],
+  "g": [
+   7,
+   0
+  ],
+  "f": [
+   1,
+   7
+  ]
+ },
+ "murderer": "a",
+ "cast": {
+  "c": "a",
+  "a": "b",
+  "e": "c",
+  "b": "d",
+  "d": "e",
+  "g": "f",
+  "f": "g"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "table"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "southOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "eastOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "inRoom",
+    "room": "S"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "westOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "fauteuil"
+   }
+  }
+ ]
+}

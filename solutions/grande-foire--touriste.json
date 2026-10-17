@@ -1,0 +1,196 @@
+{
+ "positions": {
+  "l": [
+   1,
+   1
+  ],
+  "h": [
+   5,
+   8
+  ],
+  "k": [
+   0,
+   2
+  ],
+  "j": [
+   11,
+   7
+  ],
+  "d": [
+   4,
+   0
+  ],
+  "b": [
+   2,
+   9
+  ],
+  "e": [
+   8,
+   11
+  ],
+  "g": [
+   3,
+   5
+  ],
+  "c": [
+   9,
+   6
+  ],
+  "f": [
+   6,
+   10
+  ],
+  "a": [
+   7,
+   4
+  ],
+  "i": [
+   10,
+   3
+  ]
+ },
+ "murderer": "k",
+ "cast": {
+  "h": "a",
+  "k": "b",
+  "j": "c",
+  "d": "d",
+  "b": "e",
+  "e": "f",
+  "g": "g",
+  "c": "h",
+  "f": "i",
+  "a": "j",
+  "i": "k"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "h",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "k",
+   "logic": {
+    "type": "westOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "southOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chariot"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "eastOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "inRoom",
+    "room": "I"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "inRoom",
+    "room": "E"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "onObject",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "southOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "southOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "k",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chariot"
+   }
+  },
+  {
+   "who": "j",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chariot"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "fauteuil"
+   }
+  }
+ ]
+}

@@ -157,14 +157,6 @@
     "elfe": "{coupable} avoue d'un air dégoûté : {victime} servait de la soupe de vase à ses invités et exigeait cinq étoiles."
   },
   "auto": {
-    "intro": "{Titre} {victime} a été retrouvé{e} au petit matin dans la brume du Marais. {Nombre} voisins pataugeaient dans le coin. Un seul était avec {lui}.",
-    "epilogues": {
-      "sirene": "{coupable} avoue : {victime} pompait l'eau de sa mare pour ses petites affaires. Une sirène sans eau, c'est une sardine.",
-      "zombie": "{coupable} avoue, très lentement : {victime} venait le déterrer à chaque pleine lune. Il voulait juste dormir.",
-      "crapaud": "{coupable} avoue : {victime} avait refusé de lui donner le bisou du contre-sort. Il a perdu patience.",
-      "troll": "{coupable} avoue : {victime} avait transformé son pont en plongeoir. Personne ne touche au pont d'un troll.",
-      "elfe": "{coupable} avoue d'un air dégoûté : {victime} lui avait servi de la soupe de vase et exigé cinq étoiles.",
-      "sorciere": "{coupable} avoue sans remords : {victime} manquait à sa soupe du dimanche. Rien de personnel."
-    }
+    "intro": "Le Marais des Brumes a rendu le corps de {titre} {victime}, venu{e} {motif}. Il garde le reste. {Nombre} habitants du marais pataugeaient dans le coin. L'un d'eux était seul avec {lui}. J'ai de la vase jusqu'aux genoux et zéro témoin fiable."
   }
 }

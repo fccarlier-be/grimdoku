@@ -1,0 +1,101 @@
+{
+ "positions": {
+  "g": [
+   5,
+   6
+  ],
+  "f": [
+   0,
+   2
+  ],
+  "a": [
+   6,
+   0
+  ],
+  "b": [
+   4,
+   5
+  ],
+  "e": [
+   1,
+   4
+  ],
+  "c": [
+   3,
+   1
+  ],
+  "d": [
+   2,
+   3
+  ]
+ },
+ "murderer": "b",
+ "cast": {
+  "f": "a",
+  "a": "b",
+  "b": "c",
+  "e": "d",
+  "c": "e",
+  "d": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "westOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "westOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "inRoom",
+    "room": "H"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "portail"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "etagere"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "coffre"
+   }
+  }
+ ]
+}

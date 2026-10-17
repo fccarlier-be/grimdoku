@@ -1,0 +1,103 @@
+{
+ "positions": {
+  "f": [
+   4,
+   4
+  ],
+  "d": [
+   5,
+   2
+  ],
+  "a": [
+   2,
+   0
+  ],
+  "b": [
+   1,
+   1
+  ],
+  "e": [
+   0,
+   5
+  ],
+  "c": [
+   3,
+   3
+  ]
+ },
+ "murderer": "d",
+ "cast": {
+  "d": "a",
+  "a": "b",
+  "b": "c",
+  "e": "d",
+  "c": "e"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "d",
+   "logic": {
+    "type": "westOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "northOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "eastOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "eastOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "inRoom",
+    "room": "R"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "southOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "roseaux"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "champi"
+   }
+  }
+ ]
+}

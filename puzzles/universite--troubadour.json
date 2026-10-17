@@ -1,0 +1,560 @@
+{
+  "formatVersion": 1,
+  "title": "L'Université des Sortilèges — l'affaire Lirelire",
+  "decor": "academie",
+  "size": 11,
+  "rooms": {
+    "A": {
+      "name": "Amphithéâtre",
+      "the": "l'amphithéâtre",
+      "floor": "parquet"
+    },
+    "B": {
+      "name": "Grande bibliothèque",
+      "the": "la grande bibliothèque",
+      "floor": "parquet"
+    },
+    "C": {
+      "name": "Serre",
+      "the": "la serre",
+      "floor": "herbe"
+    },
+    "D": {
+      "name": "Dortoir",
+      "the": "le dortoir",
+      "floor": "tomettes"
+    },
+    "E": {
+      "name": "Laboratoire",
+      "the": "le laboratoire",
+      "floor": "damier"
+    },
+    "F": {
+      "name": "Cour",
+      "the": "la cour",
+      "floor": "paves"
+    },
+    "G": {
+      "name": "Réfectoire",
+      "the": "le réfectoire",
+      "floor": "tomettes"
+    },
+    "H": {
+      "name": "Observatoire",
+      "the": "l'observatoire",
+      "floor": "mosaique"
+    },
+    "I": {
+      "name": "Salle des duels",
+      "the": "la salle des duels",
+      "floor": "dalles"
+    },
+    "J": {
+      "name": "Bureau du doyen",
+      "the": "le bureau du doyen",
+      "floor": "noble"
+    }
+  },
+  "layout": [
+    "AAAABBBBCCC",
+    "AAAABBBBCCC",
+    "AAAABBBBCCC",
+    "DDDDBBBBEEE",
+    "DDDDFFFFEEE",
+    "DDDDFFFFEEE",
+    "GGGFFFFFEEE",
+    "GGGFFFFFHHH",
+    "GGGIIIIIHHH",
+    "JJJIIIIIHHH",
+    "JJJJJIIIHHH"
+  ],
+  "objects": [
+    {
+      "type": "pupitre",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        1,
+        7
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        0,
+        9
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        1,
+        10
+      ]
+    },
+    {
+      "type": "roseaux",
+      "at": [
+        2,
+        8
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        5,
+        2
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        3,
+        9
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        10
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        6,
+        8
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        6,
+        4
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        4,
+        7
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        7,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        8,
+        0
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        7,
+        9
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        9,
+        10
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        8,
+        5
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        9,
+        6
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        10,
+        1
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        9,
+        2
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        10,
+        3
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Dewey",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "👩‍🏫",
+      "desc": "Bibliothécaire, réclame le silence en hurlant",
+      "archetype": "bibliothecaire",
+      "tic": "« CHUT ! », en hurlant"
+    },
+    {
+      "id": "b",
+      "name": "Fiolius",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🏫",
+      "desc": "Professeur de potions, note à l'odeur",
+      "archetype": "professeur",
+      "tic": "Renifle avant de répondre"
+    },
+    {
+      "id": "c",
+      "name": "Blafard",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ],
+      "tic": "« De mon vivant… »"
+    },
+    {
+      "id": "d",
+      "name": "Clairvoya",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🔮",
+      "desc": "Cartomancienne, voit l'avenir, rate le présent",
+      "archetype": "cartomancienne",
+      "tic": "« Je l'avais vu venir. », toujours après coup"
+    },
+    {
+      "id": "e",
+      "name": "Ambroise",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐸",
+      "desc": "Crapaud, prince déchu, attend toujours son bisou",
+      "archetype": "crapaud",
+      "tic": "Rappelle son titre toutes les deux phrases"
+    },
+    {
+      "id": "f",
+      "name": "Flammèche",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet",
+      "tic": "S'excuse avant même d'avoir brûlé quelque chose"
+    },
+    {
+      "id": "g",
+      "name": "Fizzlebarbe",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Archimage, 412 ans, toujours pas de testament",
+      "archetype": "archimage",
+      "tic": "« De mon temps… » (en concurrence avec Blafard)"
+    },
+    {
+      "id": "h",
+      "name": "Brindille",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧙‍♀️",
+      "desc": "Apprentie sorcière, a déjà fait exploser trois chaudrons",
+      "archetype": "apprentie",
+      "tic": "« C'est normal que ça fume ? »"
+    },
+    {
+      "id": "i",
+      "name": "Capucine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee",
+      "tic": "« Je te le rends demain. »"
+    },
+    {
+      "id": "j",
+      "name": "Gribouille",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage",
+      "tic": "Éternue avant chaque sortilège"
+    },
+    {
+      "id": "k",
+      "name": "Lirelire",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🪕",
+      "desc": "Troubadour itinérant, chante juste, et ça agace",
+      "archetype": "troubadour",
+      "guest": true
+    }
+  ],
+  "id": "universite--troubadour",
+  "place": "universite",
+  "intro": "La veille de la remise des diplômes, l'Université des Sortilèges a perdu le troubadour Lirelire, venu donner un concert. Dix membres de l'université travaillaient tard, ou faisaient semblant. L'un d'eux était seul avec lui. L'Académie d'en face nie tout en bloc, avant même que je demande.",
+  "epilogue": "— Vous étiez seul avec Lirelire.\n— Il voulait chanter mieux que tout le monde. Atchoum ! Pardon : le houblon.\n— Et le sortilège ?\n— Il est parti tout seul, avec l'éternuement. Mais je visais bien.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Dewey était sur la même ligne qu'une table.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Elle était à l'est de Clairvoya.",
+      "logic": {
+        "type": "eastOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Fiolius était à côté d'un lit.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était à l'est d'Ambroise.",
+      "logic": {
+        "type": "eastOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Blafard était au sud de Fizzlebarbe.",
+      "logic": {
+        "type": "southOf",
+        "other": "g"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Clairvoya était dans l'observatoire.",
+      "logic": {
+        "type": "inRoom",
+        "room": "H"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Ambroise était au sud de Gribouille.",
+      "logic": {
+        "type": "southOf",
+        "other": "j"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Flammèche était dans la même colonne qu'un lit.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Fizzlebarbe était sur la même ligne qu'une boule de cristal.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "cristal"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Il était à l'ouest de Blafard.",
+      "logic": {
+        "type": "westOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "h",
+      "text": "Brindille était au nord de Flammèche.",
+      "logic": {
+        "type": "northOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "i",
+      "text": "Capucine était sur la même ligne qu'une statue.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "i",
+      "text": "Elle n'était pas à côté d'un tapis.",
+      "logic": {
+        "type": "notAdjacentTo",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "j",
+      "text": "Gribouille était sur la même ligne qu'un lit.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "j",
+      "text": "Il était dans la même colonne qu'une statue.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "statue"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "k": [
+        2,
+        6
+      ],
+      "g": [
+        7,
+        3
+      ],
+      "h": [
+        0,
+        10
+      ],
+      "b": [
+        4,
+        2
+      ],
+      "j": [
+        3,
+        5
+      ],
+      "i": [
+        8,
+        7
+      ],
+      "a": [
+        5,
+        9
+      ],
+      "f": [
+        1,
+        0
+      ],
+      "e": [
+        6,
+        1
+      ],
+      "c": [
+        10,
+        4
+      ],
+      "d": [
+        9,
+        8
+      ]
+    },
+    "murderer": "j"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 0
+  },
+  "difficulty": 3
+}

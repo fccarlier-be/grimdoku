@@ -1,0 +1,94 @@
+{
+ "positions": {
+  "g": [
+   0,
+   2
+  ],
+  "d": [
+   2,
+   3
+  ],
+  "b": [
+   6,
+   6
+  ],
+  "f": [
+   4,
+   0
+  ],
+  "a": [
+   5,
+   1
+  ],
+  "c": [
+   1,
+   5
+  ],
+  "e": [
+   3,
+   4
+  ]
+ },
+ "murderer": "d",
+ "cast": {
+  "d": "a",
+  "b": "b",
+  "f": "c",
+  "a": "d",
+  "c": "e",
+  "e": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "canon"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "hamac"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "inRoom",
+    "room": "S"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "northOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "southOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "westOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "southOf",
+    "other": "d"
+   }
+  }
+ ]
+}

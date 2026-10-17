@@ -1,0 +1,370 @@
+{
+  "formatVersion": 1,
+  "title": "La Bibliothèque Interdite — l'affaire Lirelire",
+  "size": 7,
+  "rooms": {
+    "S": {
+      "name": "Scriptorium",
+      "the": "le scriptorium",
+      "floor": "parquet"
+    },
+    "Y": {
+      "name": "Rayonnages",
+      "the": "les rayonnages",
+      "floor": "parquet"
+    },
+    "L": {
+      "name": "Salle de lecture",
+      "the": "la salle de lecture",
+      "floor": "parquet"
+    },
+    "G": {
+      "name": "Galerie",
+      "the": "la galerie",
+      "floor": "parquet"
+    },
+    "R": {
+      "name": "Réserve",
+      "the": "la réserve",
+      "floor": "parquet"
+    },
+    "A": {
+      "name": "Archives",
+      "the": "les archives",
+      "floor": "parquet"
+    }
+  },
+  "layout": [
+    "SSSYYYY",
+    "SSSYYYY",
+    "SSLLLGG",
+    "SSLLLGG",
+    "RRLLLGG",
+    "RRRAAAA",
+    "RRRAAAA"
+  ],
+  "objects": [
+    {
+      "type": "pupitre",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        0
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        5,
+        4
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        6,
+        5
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        6,
+        3
+      ]
+    }
+  ],
+  "intro": "À la Bibliothèque Interdite, le troubadour Lirelire, venu donner un concert, a été retrouvé entre deux rayonnages. On m'a demandé d'enquêter en silence. Six lecteurs étaient là. L'un d'eux était seul avec lui. Je chuchote mes questions ; on me répond en hurlant « chut ».",
+  "characters": [
+    {
+      "id": "a",
+      "name": "Dewey",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "👩‍🏫",
+      "desc": "Bibliothécaire, réclame le silence en hurlant",
+      "archetype": "bibliothecaire",
+      "tic": "« CHUT ! », en hurlant"
+    },
+    {
+      "id": "b",
+      "name": "Fizzlebarbe",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Archimage, 412 ans, toujours pas de testament",
+      "archetype": "archimage",
+      "tic": "« De mon temps… » (en concurrence avec Blafard)"
+    },
+    {
+      "id": "c",
+      "name": "Belladone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire",
+      "tic": "« Je ne bois jamais… de vin. »"
+    },
+    {
+      "id": "d",
+      "name": "Blafard",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ],
+      "tic": "« De mon vivant… »"
+    },
+    {
+      "id": "e",
+      "name": "Gribouille",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage",
+      "tic": "Éternue avant chaque sortilège"
+    },
+    {
+      "id": "f",
+      "name": "Bakchich",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin",
+      "tic": "« Techniquement, c'est légal. »"
+    },
+    {
+      "id": "g",
+      "name": "Lirelire",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🪕",
+      "desc": "Troubadour itinérant, chante juste, et ça agace",
+      "archetype": "troubadour",
+      "guest": true
+    }
+  ],
+  "decor": "bibliotheque",
+  "id": "bibliotheque--troubadour",
+  "place": "bibliotheque",
+  "epilogue": "— Vous étiez seul avec Lirelire.\n— Il voulait chanter mieux que tout le monde. Atchoum ! Pardon : le houblon.\n— Et le sortilège ?\n— Il est parti tout seul, avec l'éternuement. Mais je visais bien.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Dewey était dans la même colonne qu'une boule de cristal.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "cristal"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Elle était assise sur une chaise.",
+      "logic": {
+        "type": "onObject",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Fizzlebarbe était à l'est de Dewey.",
+      "logic": {
+        "type": "eastOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Belladone était dans la même colonne qu'une statue.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Blafard était au nord de Fizzlebarbe.",
+      "logic": {
+        "type": "northOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était à côté d'un coffre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il n'était pas à côté d'un tonneau.",
+      "logic": {
+        "type": "notAdjacentTo",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Gribouille était sur la même ligne qu'une étagère.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "etagere"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Bakchich était sur la même ligne qu'une chaise.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Il était au sud de Dewey.",
+      "logic": {
+        "type": "southOf",
+        "other": "a"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "g": [
+        3,
+        1
+      ],
+      "e": [
+        0,
+        0
+      ],
+      "d": [
+        5,
+        2
+      ],
+      "c": [
+        1,
+        6
+      ],
+      "f": [
+        4,
+        5
+      ],
+      "b": [
+        6,
+        4
+      ],
+      "a": [
+        2,
+        3
+      ]
+    },
+    "murderer": "e"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 6,
+    "hardest": "pièces",
+    "hardSteps": 2,
+    "directStart": 0
+  },
+  "difficulty": 3
+}

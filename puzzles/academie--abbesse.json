@@ -1,0 +1,350 @@
+{
+  "formatVersion": 1,
+  "title": "L'Académie de Magie — l'affaire Prudence",
+  "size": 7,
+  "rooms": {
+    "X": {
+      "name": "Salle de cours",
+      "the": "la salle de cours",
+      "floor": "parquet"
+    },
+    "B": {
+      "name": "Bureau du directeur",
+      "the": "le bureau du directeur",
+      "floor": "parquet"
+    },
+    "D": {
+      "name": "Dortoir",
+      "the": "le dortoir",
+      "floor": "parquet"
+    },
+    "L": {
+      "name": "Laboratoire",
+      "the": "le laboratoire",
+      "floor": "damier"
+    },
+    "R": {
+      "name": "Réfectoire",
+      "the": "le réfectoire",
+      "floor": "parquet"
+    },
+    "S": {
+      "name": "Serre",
+      "the": "la serre",
+      "floor": "herbe"
+    }
+  },
+  "layout": [
+    "DDXXXBB",
+    "DDXXXBB",
+    "DDXXXLL",
+    "DDRRRLL",
+    "DDRRRLL",
+    "SSSRRRL",
+    "SSSSRRR"
+  ],
+  "objects": [
+    {
+      "type": "cristal",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        0,
+        3
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        1,
+        6
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        2,
+        6
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        3,
+        5
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        4,
+        6
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        2
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        6,
+        0
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        6,
+        3
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Aëlys",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe",
+      "tic": "Note tout sur dix, les gens compris"
+    },
+    {
+      "id": "b",
+      "name": "Gribouille",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage",
+      "tic": "Éternue avant chaque sortilège"
+    },
+    {
+      "id": "c",
+      "name": "Capucine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee",
+      "tic": "« Je te le rends demain. »"
+    },
+    {
+      "id": "d",
+      "name": "Flammèche",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet",
+      "tic": "S'excuse avant même d'avoir brûlé quelque chose"
+    },
+    {
+      "id": "e",
+      "name": "Brindille",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧙‍♀️",
+      "desc": "Apprentie sorcière, a déjà fait exploser trois chaudrons",
+      "archetype": "apprentie",
+      "tic": "« C'est normal que ça fume ? »"
+    },
+    {
+      "id": "f",
+      "name": "Fiolius",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🏫",
+      "desc": "Professeur de potions, note à l'odeur",
+      "archetype": "professeur",
+      "tic": "Renifle avant de répondre"
+    },
+    {
+      "id": "g",
+      "name": "Prudence",
+      "gender": "f",
+      "role": "victim",
+      "icon": "📿",
+      "desc": "Abbesse, quête pour un couvent introuvable",
+      "archetype": "abbesse",
+      "guest": true
+    }
+  ],
+  "decor": "academie",
+  "id": "academie--abbesse",
+  "place": "academie",
+  "intro": "À l'Académie de Magie, l'abbesse Prudence, venue faire la quête, a été retrouvée un soir d'examens. Six élèves et professeurs révisaient, paraît-il. L'un d'eux était seul avec elle. Ça sent le soufre, mais ici, ça sent toujours le soufre.",
+  "epilogue": "— Vous étiez seul avec Prudence.\n— Elle voulait me faire la morale. Atchoum ! Pardon : le houblon.\n— Et le sortilège ?\n— Il est parti tout seul, avec l'éternuement. Mais je visais bien.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Aëlys était dans le bureau du directeur.",
+      "logic": {
+        "type": "inRoom",
+        "room": "B"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Gribouille était dans le dortoir.",
+      "logic": {
+        "type": "inRoom",
+        "room": "D"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était sur la même ligne qu'une étagère.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "etagere"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Capucine était à côté d'une chaise.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Flammèche n'était pas à côté d'un champignon géant.",
+      "logic": {
+        "type": "notAdjacentTo",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Brindille était au nord d'Aëlys.",
+      "logic": {
+        "type": "northOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Fiolius était au nord de Flammèche.",
+      "logic": {
+        "type": "northOf",
+        "other": "d"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "g": [
+        2,
+        1
+      ],
+      "e": [
+        0,
+        4
+      ],
+      "b": [
+        3,
+        0
+      ],
+      "c": [
+        4,
+        3
+      ],
+      "d": [
+        6,
+        2
+      ],
+      "a": [
+        1,
+        5
+      ],
+      "f": [
+        5,
+        6
+      ]
+    },
+    "murderer": "b"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "position relative",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 2
+}

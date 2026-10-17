@@ -1,0 +1,371 @@
+{
+  "formatVersion": 1,
+  "title": "La Mine des Nains — l'affaire Ermengarde",
+  "size": 8,
+  "rooms": {
+    "E": {
+      "name": "Entrée",
+      "the": "l'entrée",
+      "floor": "roche"
+    },
+    "G": {
+      "name": "Galerie",
+      "the": "la galerie",
+      "floor": "roche"
+    },
+    "F": {
+      "name": "Forge",
+      "the": "la forge",
+      "floor": "roche"
+    },
+    "V": {
+      "name": "Filon",
+      "the": "le filon",
+      "floor": "roche"
+    },
+    "D": {
+      "name": "Dortoir",
+      "the": "le dortoir",
+      "floor": "roche"
+    },
+    "C": {
+      "name": "Cantine",
+      "the": "la cantine",
+      "floor": "parquet"
+    },
+    "T": {
+      "name": "Salle des coffres",
+      "the": "la salle des coffres",
+      "floor": "roche"
+    }
+  },
+  "layout": [
+    "EEEGGFFF",
+    "EEEGGFFF",
+    "DDGGGFFF",
+    "DDGGGFFV",
+    "DDCCCFVV",
+    "TTCCCVVV",
+    "TTCCCVVV",
+    "TTTTCVVV"
+  ],
+  "objects": [
+    {
+      "type": "tonneau",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        1,
+        7
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        6,
+        7
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        2
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        7,
+        2
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        7,
+        6
+      ]
+    }
+  ],
+  "intro": "À la Mine des Nains, la cousine Ermengarde, venue réclamer un héritage, est descendue plus bas que prévu. Sept mineurs et visiteurs étaient au fond. L'un d'eux était seul avec elle. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
+  "characters": [
+    {
+      "id": "a",
+      "name": "Bakchich",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin",
+      "tic": "« Techniquement, c'est légal. »"
+    },
+    {
+      "id": "b",
+      "name": "Granit",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👷",
+      "desc": "Contremaître nain, compte les pépites et les pauses",
+      "archetype": "contremaitre",
+      "tic": "Chronomètre tout le monde"
+    },
+    {
+      "id": "c",
+      "name": "Grisou",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "⛏️",
+      "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
+      "archetype": "mineur",
+      "tic": "« On creuse ? »"
+    },
+    {
+      "id": "d",
+      "name": "Bâfrin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll",
+      "tic": "Répète le dernier mot de la phrase des autres"
+    },
+    {
+      "id": "e",
+      "name": "Gontran",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier",
+      "tic": "Annonce chacune de ses actions à voix haute"
+    },
+    {
+      "id": "f",
+      "name": "Capucine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee",
+      "tic": "« Je te le rends demain. »"
+    },
+    {
+      "id": "g",
+      "name": "Flammèche",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet",
+      "tic": "S'excuse avant même d'avoir brûlé quelque chose"
+    },
+    {
+      "id": "h",
+      "name": "Ermengarde",
+      "gender": "f",
+      "role": "victim",
+      "icon": "👒",
+      "desc": "Cousine éloignée de tout le monde, venue pour l'héritage",
+      "archetype": "cousine",
+      "guest": true
+    }
+  ],
+  "decor": "mine",
+  "id": "mine--cousine",
+  "place": "mine",
+  "epilogue": "— Vous étiez seul avec Ermengarde.\n— Elle voulait réclamer sa part de ce qui m'appartient. J'ai fait une opération comptable.\n— Vous l'avez tuée.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Bakchich était dans le filon.",
+      "logic": {
+        "type": "inRoom",
+        "room": "V"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était sur la même ligne qu'une enclume.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "enclume"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Granit était dans l'entrée.",
+      "logic": {
+        "type": "inRoom",
+        "room": "E"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Grisou était sur la même ligne qu'une table.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Bâfrin était à l'ouest de Flammèche.",
+      "logic": {
+        "type": "westOf",
+        "other": "g"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Gontran était dans la même colonne qu'un champignon géant.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Capucine était au sud de Flammèche.",
+      "logic": {
+        "type": "southOf",
+        "other": "g"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Flammèche était dans le dortoir.",
+      "logic": {
+        "type": "inRoom",
+        "room": "D"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "h": [
+        4,
+        7
+      ],
+      "c": [
+        5,
+        4
+      ],
+      "d": [
+        7,
+        0
+      ],
+      "a": [
+        6,
+        5
+      ],
+      "g": [
+        2,
+        1
+      ],
+      "e": [
+        1,
+        6
+      ],
+      "f": [
+        3,
+        3
+      ],
+      "b": [
+        0,
+        2
+      ]
+    },
+    "murderer": "a"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 7,
+    "hardest": "pièces",
+    "hardSteps": 3,
+    "directStart": 0
+  },
+  "difficulty": 3
+}

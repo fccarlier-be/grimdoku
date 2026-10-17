@@ -1,0 +1,296 @@
+{
+  "formatVersion": 1,
+  "title": "Les Thermes Enchantés — l'affaire Saisitout",
+  "size": 6,
+  "rooms": {
+    "V": {
+      "name": "Vestiaire",
+      "the": "le vestiaire",
+      "floor": "parquet"
+    },
+    "C": {
+      "name": "Bassin chaud",
+      "the": "le bassin chaud",
+      "floor": "mosaique"
+    },
+    "F": {
+      "name": "Bassin froid",
+      "the": "le bassin froid",
+      "floor": "mosaique"
+    },
+    "S": {
+      "name": "Sauna",
+      "the": "le sauna",
+      "floor": "mosaique"
+    },
+    "M": {
+      "name": "Salle de massage",
+      "the": "la salle de massage",
+      "floor": "parquet"
+    }
+  },
+  "layout": [
+    "VVCCCC",
+    "VVCCCC",
+    "SSCCFF",
+    "SSMMFF",
+    "SSMMFF",
+    "SMMMFF"
+  ],
+  "objects": [
+    {
+      "type": "coffre",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        3
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        2
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "roseaux",
+      "at": [
+        4,
+        4
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        3,
+        2
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        1
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Aëlys",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe",
+      "tic": "Note tout sur dix, les gens compris"
+    },
+    {
+      "id": "b",
+      "name": "Goémone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene",
+      "tic": "Fait des bulles quand elle ment"
+    },
+    {
+      "id": "c",
+      "name": "Grippesou",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧔‍♂️",
+      "desc": "Tavernier nain, radin légendaire",
+      "archetype": "tavernier",
+      "tic": "Compte à voix basse en parlant"
+    },
+    {
+      "id": "d",
+      "name": "Capucine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee",
+      "tic": "« Je te le rends demain. »"
+    },
+    {
+      "id": "e",
+      "name": "Gribouille",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage",
+      "tic": "Éternue avant chaque sortilège"
+    },
+    {
+      "id": "f",
+      "name": "Saisitout",
+      "gender": "m",
+      "role": "victim",
+      "icon": "📜",
+      "desc": "Huissier de la banque gobeline, saisit d'abord, demande ensuite",
+      "archetype": "huissier",
+      "guest": true
+    }
+  ],
+  "decor": "thermes",
+  "id": "thermes--huissier",
+  "place": "thermes",
+  "intro": "Aux Thermes Enchantés, l'huissier Saisitout, venu saisir des biens, a pris son dernier bain. Cinq baigneurs se prélassaient. L'un d'eux était seul avec lui. J'enquête en peignoir ; c'est le règlement, paraît-il.",
+  "epilogue": "— Vous étiez seule avec Saisitout.\n— Je n'ai rien fait. (Blub.)\n— Vous faites des bulles.\n— Il voulait saisir mes affaires. Je l'ai juste invité à nager. (Blub, blub.)",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Aëlys était au nord de Grippesou.",
+      "logic": {
+        "type": "northOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Elle était à l'ouest de Goémone.",
+      "logic": {
+        "type": "westOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Elle était allongée sur un lit.",
+      "logic": {
+        "type": "onObject",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Goémone était dans le bassin chaud.",
+      "logic": {
+        "type": "inRoom",
+        "room": "C"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Elle était sur la même ligne qu'un tapis.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Grippesou était à l'ouest de Capucine.",
+      "logic": {
+        "type": "westOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Capucine était à côté d'un coffre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Gribouille était sur la même ligne qu'un massif de roseaux.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "roseaux"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        1,
+        4
+      ],
+      "b": [
+        2,
+        3
+      ],
+      "a": [
+        3,
+        2
+      ],
+      "d": [
+        0,
+        1
+      ],
+      "e": [
+        4,
+        5
+      ],
+      "c": [
+        5,
+        0
+      ]
+    },
+    "murderer": "b"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "ligne réservée",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 2
+}

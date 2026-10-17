@@ -1,0 +1,470 @@
+{
+  "formatVersion": 1,
+  "title": "Le Grand Port de Brumeval — l'affaire Ondine",
+  "decor": "port",
+  "size": 10,
+  "rooms": {
+    "Q": {
+      "name": "Quais",
+      "the": "les quais",
+      "floor": "parquet"
+    },
+    "E": {
+      "name": "Entrepôt",
+      "the": "l'entrepôt",
+      "floor": "sciure"
+    },
+    "T": {
+      "name": "Taverne du Kraken",
+      "the": "la taverne du Kraken",
+      "floor": "tomettes"
+    },
+    "B": {
+      "name": "Capitainerie",
+      "the": "la capitainerie",
+      "floor": "parquet"
+    },
+    "C": {
+      "name": "Chantier naval",
+      "the": "le chantier naval",
+      "floor": "sciure"
+    },
+    "M": {
+      "name": "Marché aux poissons",
+      "the": "le marché aux poissons",
+      "floor": "paves"
+    },
+    "N": {
+      "name": "Galion",
+      "the": "le galion",
+      "floor": "navire"
+    },
+    "P": {
+      "name": "Phare",
+      "the": "le phare",
+      "floor": "roche"
+    },
+    "D": {
+      "name": "Douane",
+      "the": "la douane",
+      "floor": "dalles"
+    }
+  },
+  "layout": [
+    "QQQQQQEEEE",
+    "QQQQQQEEEE",
+    "TTTBBBEEEE",
+    "TTTBBBCCCC",
+    "TTTBBBCCCC",
+    "MMMMNNCCCC",
+    "MMMMNNNNPP",
+    "MMMMNNNNPP",
+    "DDDDNNNNPP",
+    "DDDDDDNNPP"
+  ],
+  "objects": [
+    {
+      "type": "barque",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "canon",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        0,
+        8
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        9
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        2,
+        7
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        2
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        4,
+        5
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        4,
+        7
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        5,
+        9
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        6,
+        1
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        7,
+        3
+      ]
+    },
+    {
+      "type": "canon",
+      "at": [
+        6,
+        5
+      ]
+    },
+    {
+      "type": "hamac",
+      "at": [
+        8,
+        6
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        9,
+        7
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        6,
+        9
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        9,
+        8
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        8,
+        1
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        9,
+        4
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Esbroufe",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🎩",
+      "desc": "Bonimenteur, vend du rêve au kilo",
+      "archetype": "bonimenteur",
+      "tic": "Vouvoie tout le monde, y compris les poules"
+    },
+    {
+      "id": "b",
+      "name": "Belladone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire",
+      "tic": "« Je ne bois jamais… de vin. »"
+    },
+    {
+      "id": "c",
+      "name": "Écho-Écho",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🦜",
+      "desc": "Perroquet, répète tous les secrets",
+      "archetype": "perroquet",
+      "tic": "Répète tout, dans le désordre"
+    },
+    {
+      "id": "d",
+      "name": "Frégaton",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍✈️",
+      "desc": "Capitaine, n'a jamais quitté le port",
+      "archetype": "capitaine",
+      "tic": "Raconte des tempêtes qu'il n'a jamais vues"
+    },
+    {
+      "id": "e",
+      "name": "Bâbord",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🏴‍☠️",
+      "desc": "Pirate, a perdu une jambe, un œil et le sens de l'orientation",
+      "archetype": "pirate",
+      "tic": "Indique toujours la mauvaise direction"
+    },
+    {
+      "id": "f",
+      "name": "Goémone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene",
+      "tic": "Fait des bulles quand elle ment"
+    },
+    {
+      "id": "g",
+      "name": "Grippesou",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧔‍♂️",
+      "desc": "Tavernier nain, radin légendaire",
+      "archetype": "tavernier",
+      "tic": "Compte à voix basse en parlant"
+    },
+    {
+      "id": "h",
+      "name": "Bâfrin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll",
+      "tic": "Répète le dernier mot de la phrase des autres"
+    },
+    {
+      "id": "i",
+      "name": "Bakchich",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin",
+      "tic": "« Techniquement, c'est légal. »"
+    },
+    {
+      "id": "j",
+      "name": "Ondine",
+      "gender": "f",
+      "role": "victim",
+      "icon": "🛟",
+      "desc": "Maîtresse-nageuse, sans permis ni maillot",
+      "archetype": "nageuse",
+      "guest": true
+    }
+  ],
+  "id": "grand-port--nageuse",
+  "place": "grand-port",
+  "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : la maîtresse-nageuse Ondine, venue donner des cours de natation, est morte sur les quais. Neuf habitués erraient dans la brume. L'un d'eux était seul avec elle.",
+  "epilogue": "— Vous étiez seul avec Ondine.\n— Elle voulait m'apprendre à nager de force. J'ai affronté des tempêtes, moi !\n— Vous n'avez jamais quitté le port.\n— Ce soir-là, la tempête, c'était moi. Avec une rame.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Esbroufe était à côté d'une boule de cristal.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "cristal"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Belladone était sur la même ligne qu'une boule de cristal.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "cristal"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Elle était à l'ouest de Bâfrin.",
+      "logic": {
+        "type": "westOf",
+        "other": "h"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Écho-Écho était à côté d'une barque.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "barque"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Frégaton était à côté d'un tonneau.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il n'était pas dans l'entrepôt.",
+      "logic": {
+        "type": "notInRoom",
+        "room": "E"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Bâbord était à côté d'un hamac.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "hamac"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Goémone était à côté d'un pupitre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "pupitre"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Grippesou était à côté d'un fauteuil.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "h",
+      "text": "Bâfrin était dans la même colonne qu'une barque.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "barque"
+      }
+    },
+    {
+      "who": "i",
+      "text": "Bakchich était dans la même colonne qu'un coffre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "coffre"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "j": [
+        3,
+        6
+      ],
+      "e": [
+        8,
+        5
+      ],
+      "d": [
+        5,
+        8
+      ],
+      "c": [
+        0,
+        2
+      ],
+      "f": [
+        9,
+        3
+      ],
+      "g": [
+        4,
+        4
+      ],
+      "h": [
+        2,
+        1
+      ],
+      "i": [
+        1,
+        7
+      ],
+      "b": [
+        6,
+        0
+      ],
+      "a": [
+        7,
+        9
+      ]
+    },
+    "murderer": "d"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 6,
+    "hardest": "pièces",
+    "hardSteps": 2,
+    "directStart": 0
+  },
+  "difficulty": 3
+}

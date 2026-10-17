@@ -1,0 +1,280 @@
+{
+  "formatVersion": 1,
+  "title": "Meurtre au Sanglier Borgne — l'affaire Taxard",
+  "intro": "On m'a tiré du lit à l'aube. Le percepteur Taxard, venu au Sanglier Borgne lever l'impôt de fin d'année, ne se réveillera plus. Cinq clients juraient dormir comme des loirs. L'un d'eux était avec lui. J'ai demandé un café ; on m'a servi une bière.",
+  "epilogue": "— Vous étiez seul avec Taxard.\n— Il voulait me faire payer l'impôt sur tout ce que je possède. Atchoum ! Pardon : le houblon.\n— Et le sortilège ?\n— Il est parti tout seul, avec l'éternuement. Mais je visais bien.",
+  "size": 6,
+  "rooms": {
+    "T": {
+      "name": "Salle commune",
+      "the": "la salle commune",
+      "floor": "parquet"
+    },
+    "C": {
+      "name": "Cuisine",
+      "the": "la cuisine",
+      "floor": "damier"
+    },
+    "R": {
+      "name": "Cave",
+      "the": "la cave",
+      "floor": "tomettes"
+    },
+    "B": {
+      "name": "Chambre",
+      "the": "la chambre",
+      "floor": "parquet"
+    },
+    "E": {
+      "name": "Écurie",
+      "the": "l'écurie",
+      "floor": "paille"
+    }
+  },
+  "layout": [
+    "TTTCCC",
+    "TTTCCC",
+    "TTTRRC",
+    "BBTRRE",
+    "BBTEEE",
+    "BBBEEE"
+  ],
+  "objects": [
+    {
+      "type": "table",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        4,
+        4
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        5,
+        5
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Gribouille",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage",
+      "tic": "Éternue avant chaque sortilège"
+    },
+    {
+      "id": "b",
+      "name": "Bâfrin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll",
+      "tic": "Répète le dernier mot de la phrase des autres"
+    },
+    {
+      "id": "c",
+      "name": "Capucine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee",
+      "tic": "« Je te le rends demain. »"
+    },
+    {
+      "id": "d",
+      "name": "Aëlys",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe",
+      "tic": "Note tout sur dix, les gens compris"
+    },
+    {
+      "id": "e",
+      "name": "Fausset",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde",
+      "tic": "Transforme chaque conversation en couplet"
+    },
+    {
+      "id": "f",
+      "name": "Taxard",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🧾",
+      "desc": "Percepteur du baron, compte même les miettes",
+      "archetype": "percepteur",
+      "guest": true
+    }
+  ],
+  "decor": "taverne",
+  "id": "taverne--percepteur",
+  "place": "taverne",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Gribouille était à côté d'un coffre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bâfrin était au sud de Fausset.",
+      "logic": {
+        "type": "southOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était sur la même ligne qu'une table.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Capucine était sur la même ligne qu'un coffre.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Aëlys était dans la cuisine.",
+      "logic": {
+        "type": "inRoom",
+        "room": "C"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Fausset était à l'est de Gribouille.",
+      "logic": {
+        "type": "eastOf",
+        "other": "a"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        3,
+        0
+      ],
+      "a": [
+        4,
+        1
+      ],
+      "e": [
+        1,
+        2
+      ],
+      "b": [
+        2,
+        4
+      ],
+      "d": [
+        0,
+        5
+      ],
+      "c": [
+        5,
+        3
+      ]
+    },
+    "murderer": "a"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "ligne réservée",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 2
+}

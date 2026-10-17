@@ -1,0 +1,544 @@
+{
+  "formatVersion": 1,
+  "title": "L'Université des Sortilèges — l'affaire Grisemotte",
+  "decor": "academie",
+  "size": 11,
+  "rooms": {
+    "A": {
+      "name": "Amphithéâtre",
+      "the": "l'amphithéâtre",
+      "floor": "parquet"
+    },
+    "B": {
+      "name": "Grande bibliothèque",
+      "the": "la grande bibliothèque",
+      "floor": "parquet"
+    },
+    "C": {
+      "name": "Serre",
+      "the": "la serre",
+      "floor": "herbe"
+    },
+    "D": {
+      "name": "Dortoir",
+      "the": "le dortoir",
+      "floor": "tomettes"
+    },
+    "E": {
+      "name": "Laboratoire",
+      "the": "le laboratoire",
+      "floor": "damier"
+    },
+    "F": {
+      "name": "Cour",
+      "the": "la cour",
+      "floor": "paves"
+    },
+    "G": {
+      "name": "Réfectoire",
+      "the": "le réfectoire",
+      "floor": "tomettes"
+    },
+    "H": {
+      "name": "Observatoire",
+      "the": "l'observatoire",
+      "floor": "mosaique"
+    },
+    "I": {
+      "name": "Salle des duels",
+      "the": "la salle des duels",
+      "floor": "dalles"
+    },
+    "J": {
+      "name": "Bureau du doyen",
+      "the": "le bureau du doyen",
+      "floor": "noble"
+    }
+  },
+  "layout": [
+    "AAAABBBBCCC",
+    "AAAABBBBCCC",
+    "AAAABBBBCCC",
+    "DDDDBBBBEEE",
+    "DDDDFFFFEEE",
+    "DDDDFFFFEEE",
+    "GGGFFFFFEEE",
+    "GGGFFFFFHHH",
+    "GGGIIIIIHHH",
+    "JJJIIIIIHHH",
+    "JJJJJIIIHHH"
+  ],
+  "objects": [
+    {
+      "type": "pupitre",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        1,
+        7
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        0,
+        9
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        1,
+        10
+      ]
+    },
+    {
+      "type": "roseaux",
+      "at": [
+        2,
+        8
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        5,
+        2
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        3,
+        9
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        10
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        6,
+        8
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        6,
+        4
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        4,
+        7
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        7,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        8,
+        0
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        7,
+        9
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        9,
+        10
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        8,
+        5
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        9,
+        6
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        10,
+        1
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        9,
+        2
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        10,
+        3
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Fizzlebarbe",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Archimage, 412 ans, toujours pas de testament",
+      "archetype": "archimage",
+      "tic": "« De mon temps… » (en concurrence avec Blafard)"
+    },
+    {
+      "id": "b",
+      "name": "Gribouille",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage",
+      "tic": "Éternue avant chaque sortilège"
+    },
+    {
+      "id": "c",
+      "name": "Blafard",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ],
+      "tic": "« De mon vivant… »"
+    },
+    {
+      "id": "d",
+      "name": "Dewey",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "👩‍🏫",
+      "desc": "Bibliothécaire, réclame le silence en hurlant",
+      "archetype": "bibliothecaire",
+      "tic": "« CHUT ! », en hurlant"
+    },
+    {
+      "id": "e",
+      "name": "Capucine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee",
+      "tic": "« Je te le rends demain. »"
+    },
+    {
+      "id": "f",
+      "name": "Flammèche",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet",
+      "tic": "S'excuse avant même d'avoir brûlé quelque chose"
+    },
+    {
+      "id": "g",
+      "name": "Fumerolle",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn",
+      "tic": "Prend tout au pied de la lettre"
+    },
+    {
+      "id": "h",
+      "name": "Clairvoya",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🔮",
+      "desc": "Cartomancienne, voit l'avenir, rate le présent",
+      "archetype": "cartomancienne",
+      "tic": "« Je l'avais vu venir. », toujours après coup"
+    },
+    {
+      "id": "i",
+      "name": "Fiolius",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🏫",
+      "desc": "Professeur de potions, note à l'odeur",
+      "archetype": "professeur",
+      "tic": "Renifle avant de répondre"
+    },
+    {
+      "id": "j",
+      "name": "Brindille",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧙‍♀️",
+      "desc": "Apprentie sorcière, a déjà fait exploser trois chaudrons",
+      "archetype": "apprentie",
+      "tic": "« C'est normal que ça fume ? »"
+    },
+    {
+      "id": "k",
+      "name": "Grisemotte",
+      "gender": "f",
+      "role": "victim",
+      "icon": "👑",
+      "desc": "Baronne voisine, jalouse de tout ce qui brille",
+      "archetype": "baronne",
+      "guest": true
+    }
+  ],
+  "id": "universite--baronne",
+  "place": "universite",
+  "intro": "La veille de la remise des diplômes, l'Université des Sortilèges a perdu la baronne de Grisemotte Grisemotte, venue rendre une visite de courtoisie. Dix membres de l'université travaillaient tard, ou faisaient semblant. L'un d'eux était seul avec elle. L'Académie d'en face nie tout en bloc, avant même que je demande.",
+  "epilogue": "— Vous étiez seule avec Grisemotte.\n— Elle voulait racheter la baronnie et me mettre dehors. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Fizzlebarbe était à côté d'un arbre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Gribouille était à côté d'un chaudron.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Blafard hantait une étagère.",
+      "logic": {
+        "type": "onObject",
+        "object": "etagere"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dewey était à l'ouest de Clairvoya.",
+      "logic": {
+        "type": "westOf",
+        "other": "h"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Capucine était dans la même colonne qu'une étagère.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "etagere"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Elle était sur la même ligne qu'une statue.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Flammèche était à côté d'un pupitre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "pupitre"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Fumerolle était au sud de Clairvoya.",
+      "logic": {
+        "type": "southOf",
+        "other": "h"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Elle était à l'est de Brindille.",
+      "logic": {
+        "type": "eastOf",
+        "other": "j"
+      }
+    },
+    {
+      "who": "h",
+      "text": "Clairvoya était dans la même colonne qu'une table.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "i",
+      "text": "Fiolius était dans la salle des duels.",
+      "logic": {
+        "type": "inRoom",
+        "room": "I"
+      }
+    },
+    {
+      "who": "i",
+      "text": "Il était à l'ouest de Dewey.",
+      "logic": {
+        "type": "westOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "j",
+      "text": "Brindille était à l'ouest de Dewey.",
+      "logic": {
+        "type": "westOf",
+        "other": "d"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "k": [
+        6,
+        6
+      ],
+      "a": [
+        1,
+        9
+      ],
+      "j": [
+        4,
+        0
+      ],
+      "i": [
+        9,
+        3
+      ],
+      "b": [
+        3,
+        8
+      ],
+      "e": [
+        5,
+        7
+      ],
+      "g": [
+        8,
+        2
+      ],
+      "d": [
+        10,
+        4
+      ],
+      "f": [
+        2,
+        1
+      ],
+      "c": [
+        0,
+        5
+      ],
+      "h": [
+        7,
+        10
+      ]
+    },
+    "murderer": "e"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 6,
+    "hardest": "pièces",
+    "hardSteps": 2,
+    "directStart": 0
+  },
+  "difficulty": 3
+}

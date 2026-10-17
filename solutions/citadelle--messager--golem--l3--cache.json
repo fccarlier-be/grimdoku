@@ -1,0 +1,137 @@
+{
+ "positions": {
+  "h": [
+   6,
+   7
+  ],
+  "f": [
+   [
+    0,
+    5
+   ],
+   [
+    0,
+    6
+   ],
+   [
+    1,
+    6
+   ]
+  ],
+  "a": [
+   7,
+   1
+  ],
+  "d": [
+   5,
+   3
+  ],
+  "b": [
+   3,
+   8
+  ],
+  "e": [
+   8,
+   4
+  ],
+  "c": [
+   2,
+   2
+  ],
+  "g": [
+   4,
+   0
+  ]
+ },
+ "murderer": "d",
+ "cast": {
+  "f": "a",
+  "a": "b",
+  "d": "c",
+  "b": "d",
+  "e": "e",
+  "c": "f",
+  "g": "g"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "sarcophage"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "westOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameColAs",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "foin"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "foin"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "sarcophage"
+   }
+  }
+ ]
+}

@@ -1,0 +1,125 @@
+{
+ "positions": {
+  "i": [
+   5,
+   3
+  ],
+  "c": [
+   8,
+   8
+  ],
+  "f": [
+   1,
+   4
+  ],
+  "e": [
+   3,
+   1
+  ],
+  "b": [
+   2,
+   2
+  ],
+  "h": [
+   4,
+   5
+  ],
+  "a": [
+   7,
+   6
+  ],
+  "d": [
+   0,
+   7
+  ],
+  "g": [
+   6,
+   0
+  ]
+ },
+ "murderer": "h",
+ "cast": {
+  "c": "a",
+  "f": "b",
+  "e": "c",
+  "b": "d",
+  "h": "e",
+  "a": "f",
+  "d": "g",
+  "g": "h"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chariot"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "inRoom",
+    "room": "D"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "eastOf",
+    "other": "h"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chariot"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameColAs",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "eastOf",
+    "other": "e"
+   }
+  }
+ ]
+}

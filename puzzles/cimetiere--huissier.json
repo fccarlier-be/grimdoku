@@ -1,0 +1,394 @@
+{
+  "formatVersion": 1,
+  "title": "Le Cimetière de Minuit — l'affaire Saisitout",
+  "size": 8,
+  "rooms": {
+    "G": {
+      "name": "Maison du gardien",
+      "the": "la maison du gardien",
+      "floor": "parquet"
+    },
+    "C": {
+      "name": "Chapelle",
+      "the": "la chapelle",
+      "floor": "dalles"
+    },
+    "A": {
+      "name": "Allée des ifs",
+      "the": "l'allée des ifs",
+      "floor": "herbe"
+    },
+    "P": {
+      "name": "Carré des pauvres",
+      "the": "le carré des pauvres",
+      "floor": "herbe"
+    },
+    "J": {
+      "name": "Jardin du souvenir",
+      "the": "le jardin du souvenir",
+      "floor": "herbe"
+    },
+    "O": {
+      "name": "Ossuaire",
+      "the": "l'ossuaire",
+      "floor": "crypte"
+    },
+    "Y": {
+      "name": "Crypte",
+      "the": "la crypte",
+      "floor": "crypte"
+    }
+  },
+  "layout": [
+    "GGGAACCC",
+    "GGGAACCC",
+    "PPAAAACC",
+    "PPAAAACC",
+    "PPJJJOOC",
+    "YYJJJOOO",
+    "YYJJJOOO",
+    "YYYYJOOO"
+  ],
+  "objects": [
+    {
+      "type": "lit",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        3,
+        5
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        2,
+        7
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        5,
+        3
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        6,
+        2
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        7,
+        4
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        7,
+        5
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        6,
+        1
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        7,
+        3
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Ambroise",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐸",
+      "desc": "Crapaud, prince déchu, attend toujours son bisou",
+      "archetype": "crapaud",
+      "tic": "Rappelle son titre toutes les deux phrases"
+    },
+    {
+      "id": "b",
+      "name": "Glas",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "⚰️",
+      "desc": "Fossoyeur, creuse en sifflotant",
+      "archetype": "fossoyeur",
+      "tic": "Prend les mesures des gens qu'il rencontre"
+    },
+    {
+      "id": "c",
+      "name": "Augure",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐦‍⬛",
+      "desc": "Corbeau, écrit des lettres anonymes",
+      "archetype": "corbeau",
+      "tic": "Ne parle pas : il écrit"
+    },
+    {
+      "id": "d",
+      "name": "Gontran",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier",
+      "tic": "Annonce chacune de ses actions à voix haute"
+    },
+    {
+      "id": "e",
+      "name": "Belladone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire",
+      "tic": "« Je ne bois jamais… de vin. »"
+    },
+    {
+      "id": "f",
+      "name": "Fernand",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie",
+      "tic": "Perd un morceau quand il s'énerve"
+    },
+    {
+      "id": "g",
+      "name": "Ciguë",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧙‍♀️",
+      "desc": "Sorcière des marais, cuisine tout ce qui coasse",
+      "archetype": "sorciere",
+      "tic": "Regarde Ambroise avec appétit"
+    },
+    {
+      "id": "h",
+      "name": "Saisitout",
+      "gender": "m",
+      "role": "victim",
+      "icon": "📜",
+      "desc": "Huissier de la banque gobeline, saisit d'abord, demande ensuite",
+      "archetype": "huissier",
+      "guest": true
+    }
+  ],
+  "decor": "cimetiere",
+  "id": "cimetiere--huissier",
+  "place": "cimetiere",
+  "intro": "Au Cimetière de Minuit, on a retrouvé l'huissier Saisitout, venu saisir des biens. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Sept habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec lui. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
+  "epilogue": "— Vous étiez seul avec Saisitout.\n— Il voulait saisir mes affaires. Alors j'ai pris ses mesures.\n— Pour quoi faire ?\n— Le travail était à moitié fait. Autant le finir.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Ambroise était au sud de Fernand.",
+      "logic": {
+        "type": "southOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était à l'ouest de Gontran.",
+      "logic": {
+        "type": "westOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était au nord de Belladone.",
+      "logic": {
+        "type": "northOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Glas était au nord de Belladone.",
+      "logic": {
+        "type": "northOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Augure était à l'ouest de Glas.",
+      "logic": {
+        "type": "westOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était à côté d'un pupitre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "pupitre"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Gontran était dans le carré des pauvres.",
+      "logic": {
+        "type": "inRoom",
+        "room": "P"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Belladone était à l'ouest de Fernand.",
+      "logic": {
+        "type": "westOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Fernand était au sud de Gontran.",
+      "logic": {
+        "type": "southOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Ciguë était à l'ouest de Fernand.",
+      "logic": {
+        "type": "westOf",
+        "other": "f"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "h": [
+        7,
+        7
+      ],
+      "b": [
+        4,
+        6
+      ],
+      "f": [
+        3,
+        4
+      ],
+      "e": [
+        6,
+        3
+      ],
+      "g": [
+        1,
+        2
+      ],
+      "c": [
+        0,
+        5
+      ],
+      "d": [
+        2,
+        1
+      ],
+      "a": [
+        5,
+        0
+      ]
+    },
+    "murderer": "b"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "ligne réservée",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 2
+}

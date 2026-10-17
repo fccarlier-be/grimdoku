@@ -1,0 +1,281 @@
+{
+  "formatVersion": 1,
+  "title": "Le Marais des Brumes — l'affaire Saisitout",
+  "size": 6,
+  "rooms": {
+    "H": {
+      "name": "Cabane",
+      "the": "la cabane",
+      "floor": "parquet"
+    },
+    "P": {
+      "name": "Ponton",
+      "the": "le ponton",
+      "floor": "navire"
+    },
+    "R": {
+      "name": "Roselière",
+      "the": "la roselière",
+      "floor": "boue"
+    },
+    "I": {
+      "name": "Îlot",
+      "the": "l'îlot",
+      "floor": "herbe"
+    },
+    "T": {
+      "name": "Tourbière",
+      "the": "la tourbière",
+      "floor": "boue"
+    }
+  },
+  "layout": [
+    "HHHPPP",
+    "HHPPRR",
+    "IIPRRR",
+    "IIIRTT",
+    "IITTTT",
+    "ITTTTT"
+  ],
+  "objects": [
+    {
+      "type": "chaudron",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        1,
+        0
+      ]
+    },
+    {
+      "type": "barque",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        3
+      ]
+    },
+    {
+      "type": "roseaux",
+      "at": [
+        2,
+        4
+      ]
+    },
+    {
+      "type": "roseaux",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        5,
+        4
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        4,
+        5
+      ]
+    },
+    {
+      "type": "roseaux",
+      "at": [
+        4,
+        3
+      ]
+    }
+  ],
+  "intro": "Le Marais des Brumes a rendu le corps de l'huissier Saisitout, venu saisir des biens. Il garde le reste. Cinq habitants du marais pataugeaient dans le coin. L'un d'eux était seul avec lui. J'ai de la vase jusqu'aux genoux et zéro témoin fiable.",
+  "characters": [
+    {
+      "id": "a",
+      "name": "Ciguë",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧙‍♀️",
+      "desc": "Sorcière des marais, cuisine tout ce qui coasse",
+      "archetype": "sorciere",
+      "tic": "Regarde Ambroise avec appétit"
+    },
+    {
+      "id": "b",
+      "name": "Ambroise",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐸",
+      "desc": "Crapaud, prince déchu, attend toujours son bisou",
+      "archetype": "crapaud",
+      "tic": "Rappelle son titre toutes les deux phrases"
+    },
+    {
+      "id": "c",
+      "name": "Bâfrin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll",
+      "tic": "Répète le dernier mot de la phrase des autres"
+    },
+    {
+      "id": "d",
+      "name": "Goémone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene",
+      "tic": "Fait des bulles quand elle ment"
+    },
+    {
+      "id": "e",
+      "name": "Aëlys",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe",
+      "tic": "Note tout sur dix, les gens compris"
+    },
+    {
+      "id": "f",
+      "name": "Saisitout",
+      "gender": "m",
+      "role": "victim",
+      "icon": "📜",
+      "desc": "Huissier de la banque gobeline, saisit d'abord, demande ensuite",
+      "archetype": "huissier",
+      "guest": true
+    }
+  ],
+  "decor": "marais",
+  "id": "marais--huissier",
+  "place": "marais",
+  "epilogue": "— Vous étiez seul avec Saisitout.\n— Saisitout.\n— Pourquoi ?\n— Il voulait saisir mes affaires. Alors Bâfrin taper. Taper fort. Fort.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Ciguë était à l'ouest de Bâfrin.",
+      "logic": {
+        "type": "westOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Elle était dans la roselière.",
+      "logic": {
+        "type": "inRoom",
+        "room": "R"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Ambroise était à côté d'une barque.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "barque"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Bâfrin était au nord de Goémone.",
+      "logic": {
+        "type": "northOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Goémone était sur la même ligne qu'un arbre.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Elle était dans la même colonne qu'un champignon géant.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Aëlys était sur la même ligne qu'un massif de roseaux.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "roseaux"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        5,
+        2
+      ],
+      "d": [
+        4,
+        0
+      ],
+      "b": [
+        0,
+        5
+      ],
+      "c": [
+        3,
+        4
+      ],
+      "e": [
+        1,
+        1
+      ],
+      "a": [
+        2,
+        3
+      ]
+    },
+    "murderer": "c"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "ligne réservée",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 2
+}

@@ -1,0 +1,182 @@
+{
+ "positions": {
+  "l": [
+   2,
+   11
+  ],
+  "g": [
+   11,
+   7
+  ],
+  "c": [
+   0,
+   6
+  ],
+  "d": [
+   1,
+   0
+  ],
+  "a": [
+   7,
+   4
+  ],
+  "k": [
+   6,
+   10
+  ],
+  "f": [
+   9,
+   3
+  ],
+  "j": [
+   5,
+   5
+  ],
+  "h": [
+   10,
+   2
+  ],
+  "e": [
+   3,
+   8
+  ],
+  "i": [
+   4,
+   1
+  ],
+  "b": [
+   8,
+   9
+  ]
+ },
+ "murderer": "e",
+ "cast": {
+  "g": "a",
+  "c": "b",
+  "d": "c",
+  "a": "d",
+  "k": "e",
+  "f": "f",
+  "j": "g",
+  "h": "h",
+  "e": "i",
+  "i": "j",
+  "b": "k"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "g",
+   "logic": {
+    "type": "eastOf",
+    "other": "h"
+   }
+  },
+  {
+   "who": "k",
+   "logic": {
+    "type": "southOf",
+    "other": "j"
+   }
+  },
+  {
+   "who": "j",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "eastOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "table"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "northOf",
+    "other": "g"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "foin"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "inRoom",
+    "room": "H"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "inRoom",
+    "room": "I"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chariot"
+   }
+  },
+  {
+   "who": "k",
+   "logic": {
+    "type": "sameColAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "westOf",
+    "other": "k"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "fauteuil"
+   }
+  }
+ ]
+}

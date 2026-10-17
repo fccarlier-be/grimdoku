@@ -217,15 +217,6 @@
     }
   ],
   "auto": {
-    "intro": "{Titre} {victime} a été retrouvé{e} sans vie au petit matin, au Château de Mortebrune. {Nombre} invités juraient qu'ils dormaient. Un seul était avec {lui}.",
-    "epilogues": {
-      "chevalier": "{coupable} avoue en grinçant de l'armure : {victime} s'était moqué{e} de sa cuirasse trop petite devant toute la cour.",
-      "gobelin": "{coupable} avoue : {victime} avait réclamé un audit du trésor royal. Le gobelin a classé l'audit.",
-      "barde": "{coupable} avoue : {victime} voulait interdire les chansons au château. Toutes. Surtout les siennes.",
-      "elfe": "{coupable} avoue avec dédain : {victime} avait servi au banquet un vin imbuvable. Elle l'a jugé{e} sans appel.",
-      "spectre": "{coupable} hantait ces murs quatre siècles avant tout le monde. {victime} voulait le faire exorciser pour rénover l'aile ouest.",
-      "dragonnet": "{coupable} avoue : {victime} voulait le mettre en cage dans la cour, comme attraction pour les visiteurs.",
-      "roi": "{coupable} avoue, la couronne de travers : {victime} complotait pour s'asseoir sur son trône. Il l'a pris très personnellement."
-    }
+    "intro": "{Titre} {victime} était venu{e} au Château de Mortebrune {motif}. Le roi m'a fait appeler, ce qui veut dire que c'est grave, ou qu'il s'ennuie. {Nombre} membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec {lui}."
   }
 }

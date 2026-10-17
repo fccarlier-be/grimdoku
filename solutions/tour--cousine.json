@@ -1,0 +1,101 @@
+{
+ "positions": {
+  "g": [
+   0,
+   3
+  ],
+  "d": [
+   3,
+   4
+  ],
+  "c": [
+   2,
+   5
+  ],
+  "f": [
+   4,
+   1
+  ],
+  "a": [
+   6,
+   0
+  ],
+  "b": [
+   1,
+   2
+  ],
+  "e": [
+   5,
+   6
+  ]
+ },
+ "murderer": "c",
+ "cast": {
+  "d": "a",
+  "c": "b",
+  "f": "c",
+  "a": "d",
+  "b": "e",
+  "e": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "d",
+   "logic": {
+    "type": "westOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "portail"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "etagere"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "westOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "chaise"
+   }
+  }
+ ]
+}

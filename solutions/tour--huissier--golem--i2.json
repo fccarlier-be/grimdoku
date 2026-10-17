@@ -1,0 +1,102 @@
+{
+ "positions": {
+  "f": [
+   0,
+   1
+  ],
+  "e": [
+   [
+    1,
+    6
+   ],
+   [
+    2,
+    6
+   ]
+  ],
+  "b": [
+   6,
+   3
+  ],
+  "a": [
+   4,
+   2
+  ],
+  "c": [
+   3,
+   5
+  ],
+  "d": [
+   5,
+   0
+  ]
+ },
+ "murderer": "b",
+ "cast": {
+  "e": "a",
+  "b": "b",
+  "a": "c",
+  "c": "d",
+  "d": "e"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "e",
+   "logic": {
+    "type": "eastOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "sarcophage"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "northOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "inRoom",
+    "room": "B"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "southOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "portail"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameColAs",
+    "object": "etagere"
+   }
+  }
+ ]
+}

@@ -1,0 +1,82 @@
+{
+ "positions": {
+  "f": [
+   5,
+   5
+  ],
+  "c": [
+   3,
+   3
+  ],
+  "e": [
+   2,
+   1
+  ],
+  "a": [
+   4,
+   4
+  ],
+  "b": [
+   0,
+   0
+  ],
+  "d": [
+   1,
+   2
+  ]
+ },
+ "murderer": "a",
+ "cast": {
+  "c": "a",
+  "e": "b",
+  "a": "c",
+  "b": "d",
+  "d": "e"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "eastOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "roseaux"
+   }
+  }
+ ]
+}

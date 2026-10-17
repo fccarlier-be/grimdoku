@@ -1,0 +1,94 @@
+{
+ "positions": {
+  "g": [
+   5,
+   2
+  ],
+  "b": [
+   6,
+   1
+  ],
+  "d": [
+   0,
+   3
+  ],
+  "e": [
+   2,
+   6
+  ],
+  "c": [
+   3,
+   0
+  ],
+  "a": [
+   1,
+   5
+  ],
+  "f": [
+   4,
+   4
+  ]
+ },
+ "murderer": "b",
+ "cast": {
+  "b": "a",
+  "d": "b",
+  "e": "c",
+  "c": "d",
+  "a": "e",
+  "f": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "d",
+   "logic": {
+    "type": "northOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "table"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "westOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "southOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "onObject",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "coffre"
+   }
+  }
+ ]
+}

@@ -1,0 +1,115 @@
+{
+ "positions": {
+  "g": [
+   3,
+   4
+  ],
+  "c": [
+   2,
+   3
+  ],
+  "e": [
+   6,
+   5
+  ],
+  "b": [
+   4,
+   1
+  ],
+  "f": [
+   5,
+   0
+  ],
+  "d": [
+   1,
+   2
+  ],
+  "a": [
+   0,
+   6
+  ]
+ },
+ "murderer": "c",
+ "cast": {
+  "c": "a",
+  "e": "b",
+  "b": "c",
+  "f": "d",
+  "d": "e",
+  "a": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "e",
+   "logic": {
+    "type": "westOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "southOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "northOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "canon"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "barque"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "northOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "barque"
+   }
+  }
+ ]
+}

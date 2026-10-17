@@ -1,0 +1,281 @@
+{
+  "scene": "testament",
+  "formatVersion": 1,
+  "title": "La Tour de l'Archimage",
+  "subtitle": "Le testament de Fizzlebarbe",
+  "decor": "tour",
+  "size": 10,
+  "final": true,
+  "intro": "Quinze lettres, et toutes menaient ici. Fizzlebarbe, 412 ans, a été retrouvé mort dans sa Tour, la nuit où il devait enfin signer son testament. Le testament a disparu. Ses neuf héritiers présumés étaient tous là, et un seul était avec lui. Sur la rambarde, le corbeau me regarde comme s'il savait déjà.",
+  "rooms": {
+    "O": {
+      "name": "Observatoire",
+      "the": "l'observatoire",
+      "floor": "mosaique"
+    },
+    "L": {
+      "name": "Laboratoire",
+      "the": "le laboratoire",
+      "floor": "damier"
+    },
+    "B": {
+      "name": "Bibliothèque",
+      "the": "la bibliothèque",
+      "floor": "parquet"
+    },
+    "C": {
+      "name": "Chambre de Fizzlebarbe",
+      "the": "la chambre de Fizzlebarbe",
+      "floor": "noble"
+    },
+    "R": {
+      "name": "Réserve des potions",
+      "the": "la réserve des potions",
+      "floor": "tomettes"
+    },
+    "S": {
+      "name": "Salle du testament",
+      "the": "la salle du testament",
+      "floor": "noble"
+    },
+    "E": {
+      "name": "Grand escalier",
+      "the": "le grand escalier",
+      "floor": "dalles"
+    },
+    "J": {
+      "name": "Jardin suspendu",
+      "the": "le jardin suspendu",
+      "floor": "herbe"
+    },
+    "K": {
+      "name": "Crypte",
+      "the": "la crypte",
+      "floor": "crypte"
+    }
+  },
+  "layout": [
+    "OOOOOLLLLL",
+    "OOOOOLLLLL",
+    "OOOBBBBLLL",
+    "CCCBBBBRRR",
+    "CCCBBBBRRR",
+    "CCCSSSSRRR",
+    "EEESSSSJJJ",
+    "EEESSSSJJJ",
+    "EEEKKKKJJJ",
+    "EEEKKKKKJJ"
+  ],
+  "objects": [
+    {
+      "type": "cristal",
+      "at": [
+        0,
+        2
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        0,
+        7
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        1,
+        9
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        2,
+        8
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        2,
+        4
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        4,
+        5
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        3,
+        9
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        5,
+        8
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        6,
+        4
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        7,
+        5
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        6,
+        6
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        7,
+        1
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        9,
+        0
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        8,
+        5
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        9,
+        7
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        6,
+        9
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        8,
+        8
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "archetype": "gobelin",
+      "role": "suspect"
+    },
+    {
+      "id": "b",
+      "archetype": "zombie",
+      "role": "suspect"
+    },
+    {
+      "id": "c",
+      "archetype": "professeur",
+      "role": "suspect"
+    },
+    {
+      "id": "d",
+      "archetype": "apprentie",
+      "role": "suspect"
+    },
+    {
+      "id": "e",
+      "archetype": "spectre",
+      "role": "suspect"
+    },
+    {
+      "id": "f",
+      "archetype": "bibliothecaire",
+      "role": "suspect"
+    },
+    {
+      "id": "g",
+      "archetype": "mage",
+      "role": "suspect"
+    },
+    {
+      "id": "h",
+      "archetype": "djinn",
+      "role": "suspect"
+    },
+    {
+      "id": "i",
+      "archetype": "corbeau",
+      "role": "suspect"
+    },
+    {
+      "id": "j",
+      "archetype": "archimage",
+      "role": "victim"
+    }
+  ],
+  "epilogues": {
+    "gobelin": "— Vous étiez seul avec Fizzlebarbe.\n— Il allait signer. Et la Tour était déjà en gage chez les gobelins.\n— Donc ?\n— Donc, techniquement, il valait mieux qu'il ne signe pas. C'est légal. Presque.\n— (Augure dépose une dernière lettre, signée Fizzlebarbe : « Mon corbeau vous a tous surveillés pour moi. Je léguais la Tour à celui qui ne la convoitait pas. Il n'y en avait aucun. »)",
+    "zombie": "— Vous étiez seul avec lui.\n— Vingt ans de salaire, il me devait. Il m'a tendu une pièce.\n— Et ?\n— J'ai perdu une main. Elle tenait un chandelier.\n— (Augure dépose une dernière lettre, signée Fizzlebarbe : « Mon corbeau vous a tous surveillés pour moi. Je léguais la Tour à celui qui ne la convoitait pas. Il n'y en avait aucun. »)",
+    "professeur": "— Vous étiez seul avec lui.\n— (Il renifle.) Il sentait la fin.\n— Vous l'avez aidé ?\n— Je l'ai noté. Zéro. Il a mal pris la note.\n— (Augure dépose une dernière lettre, signée Fizzlebarbe : « Mon corbeau vous a tous surveillés pour moi. Je léguais la Tour à celui qui ne la convoitait pas. Il n'y en avait aucun. »)",
+    "apprentie": "— Vous étiez seule avec lui.\n— Je voulais juste ouvrir la serrure du testament.\n— Et ?\n— C'est normal que la Tour fume encore ?\n— (Augure dépose une dernière lettre, signée Fizzlebarbe : « Mon corbeau vous a tous surveillés pour moi. Je léguais la Tour à celui qui ne la convoitait pas. Il n'y en avait aucun. »)",
+    "spectre": "— Vous étiez seul avec lui.\n— De mon vivant, cette Tour était à moi.\n— Et maintenant ?\n— Maintenant, nous voilà deux fantômes à nous la disputer. Ça promet.\n— (Augure dépose une dernière lettre, signée Fizzlebarbe : « Mon corbeau vous a tous surveillés pour moi. Je léguais la Tour à celui qui ne la convoitait pas. Il n'y en avait aucun. »)",
+    "bibliothecaire": "— Vous étiez seule avec lui.\n— Il avait annoté son testament dans un livre de MA bibliothèque.\n— Ce n'est pas un mobile.\n— CHUT. C'en est un.\n— (Augure dépose une dernière lettre, signée Fizzlebarbe : « Mon corbeau vous a tous surveillés pour moi. Je léguais la Tour à celui qui ne la convoitait pas. Il n'y en avait aucun. »)",
+    "mage": "— Vous étiez seul avec lui.\n— Il voulait me déshériter pour un grimoire pas rendu.\n— Onze ans de retard.\n— Atchoum. Le sort est parti tout seul. Encore.\n— (Augure dépose une dernière lettre, signée Fizzlebarbe : « Mon corbeau vous a tous surveillés pour moi. Je léguais la Tour à celui qui ne la convoitait pas. Il n'y en avait aucun. »)",
+    "djinn": "— Vous étiez seule avec lui.\n— Il a fait un dernier vœu : « Que personne ne touche à ma Tour de mon vivant. »\n— Et ?\n— J'ai exaucé. Il n'est plus vivant, et personne n'y touche.\n— (Augure dépose une dernière lettre, signée Fizzlebarbe : « Mon corbeau vous a tous surveillés pour moi. Je léguais la Tour à celui qui ne la convoitait pas. Il n'y en avait aucun. »)",
+    "corbeau": "— Vous étiez seul avec lui.\n— (Billet : « Il m'a fait espionner tout le monde pendant des mois. Les lettres, c'était lui. »)\n— Et ?\n— (Billet : « Puis il m'a légué la Tour. Je n'en voulais pas. Je voulais qu'il arrête de me faire écrire. »)"
+  }
+}

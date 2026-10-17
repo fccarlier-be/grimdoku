@@ -1,0 +1,182 @@
+{
+ "positions": {
+  "l": [
+   3,
+   5
+  ],
+  "k": [
+   11,
+   10
+  ],
+  "a": [
+   9,
+   4
+  ],
+  "g": [
+   6,
+   7
+  ],
+  "j": [
+   0,
+   8
+  ],
+  "d": [
+   7,
+   3
+  ],
+  "f": [
+   4,
+   1
+  ],
+  "c": [
+   1,
+   0
+  ],
+  "b": [
+   2,
+   6
+  ],
+  "i": [
+   5,
+   9
+  ],
+  "e": [
+   10,
+   2
+  ],
+  "h": [
+   8,
+   11
+  ]
+ },
+ "murderer": "b",
+ "cast": {
+  "k": "a",
+  "a": "b",
+  "g": "c",
+  "j": "d",
+  "d": "e",
+  "f": "f",
+  "c": "g",
+  "b": "h",
+  "i": "i",
+  "e": "j",
+  "h": "k"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "k",
+   "logic": {
+    "type": "eastOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "eastOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "j",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "foin"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chariot"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "hamac"
+   }
+  },
+  {
+   "who": "j",
+   "logic": {
+    "type": "inRoom",
+    "room": "C"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "inRoom",
+    "room": "D"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "northOf",
+    "other": "k"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "westOf",
+    "other": "k"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chariot"
+   }
+  }
+ ]
+}

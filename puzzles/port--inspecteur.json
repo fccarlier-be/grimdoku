@@ -1,0 +1,350 @@
+{
+  "formatVersion": 1,
+  "title": "Le Port des Contrebandiers — l'affaire Pinardon",
+  "size": 7,
+  "rooms": {
+    "Q": {
+      "name": "Quai",
+      "the": "le quai",
+      "floor": "navire"
+    },
+    "D": {
+      "name": "Douane",
+      "the": "la douane",
+      "floor": "dalles"
+    },
+    "T": {
+      "name": "Taverne du port",
+      "the": "la taverne du port",
+      "floor": "parquet"
+    },
+    "C": {
+      "name": "Chantier naval",
+      "the": "le chantier naval",
+      "floor": "navire"
+    },
+    "E": {
+      "name": "Entrepôt",
+      "the": "l'entrepôt",
+      "floor": "tomettes"
+    },
+    "M": {
+      "name": "Marché aux poissons",
+      "the": "le marché aux poissons",
+      "floor": "damier"
+    }
+  },
+  "layout": [
+    "TTQQQQD",
+    "TTQQQDD",
+    "TTQCCDD",
+    "TTCCCEE",
+    "TTCCCEE",
+    "MMMCEEE",
+    "MMMMEEE"
+  ],
+  "objects": [
+    {
+      "type": "statue",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "canon",
+      "at": [
+        0,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "barque",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        1,
+        6
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        2,
+        6
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "barque",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        4,
+        4
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        6,
+        6
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        2
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Bakchich",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin",
+      "tic": "« Techniquement, c'est légal. »"
+    },
+    {
+      "id": "b",
+      "name": "Bâfrin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll",
+      "tic": "Répète le dernier mot de la phrase des autres"
+    },
+    {
+      "id": "c",
+      "name": "Écho-Écho",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🦜",
+      "desc": "Perroquet, répète tous les secrets",
+      "archetype": "perroquet",
+      "tic": "Répète tout, dans le désordre"
+    },
+    {
+      "id": "d",
+      "name": "Bâbord",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🏴‍☠️",
+      "desc": "Pirate, a perdu une jambe, un œil et le sens de l'orientation",
+      "archetype": "pirate",
+      "tic": "Indique toujours la mauvaise direction"
+    },
+    {
+      "id": "e",
+      "name": "Grippesou",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧔‍♂️",
+      "desc": "Tavernier nain, radin légendaire",
+      "archetype": "tavernier",
+      "tic": "Compte à voix basse en parlant"
+    },
+    {
+      "id": "f",
+      "name": "Goémone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene",
+      "tic": "Fait des bulles quand elle ment"
+    },
+    {
+      "id": "g",
+      "name": "Pinardon",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🍷",
+      "desc": "Inspecteur des tavernes, goûte tout, note tout",
+      "archetype": "inspecteur",
+      "guest": true
+    }
+  ],
+  "decor": "port",
+  "id": "port--inspecteur",
+  "place": "port",
+  "intro": "Au Port des Contrebandiers, l'inspecteur des tavernes Pinardon, venu inspecter les lieux, a été repêché à marée basse. Six habitués traînaient sur les quais. L'un d'eux était seul avec lui. Ici, tout le monde a quelque chose à cacher, généralement dans un tonneau.",
+  "epilogue": "— Vous étiez seul avec Pinardon.\n— Il voulait me coller un blâme. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Bakchich était à l'ouest de Bâbord.",
+      "logic": {
+        "type": "westOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était assis sur une chaise.",
+      "logic": {
+        "type": "onObject",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bâfrin était assis sur une chaise.",
+      "logic": {
+        "type": "onObject",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Écho-Écho était sur la même ligne qu'un canon.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "canon"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Bâbord était dans le marché aux poissons.",
+      "logic": {
+        "type": "inRoom",
+        "room": "M"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Grippesou était à l'ouest de Bâfrin.",
+      "logic": {
+        "type": "westOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Goémone était dans la même colonne qu'une table.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "table"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "g": [
+        1,
+        0
+      ],
+      "d": [
+        6,
+        3
+      ],
+      "c": [
+        0,
+        4
+      ],
+      "f": [
+        5,
+        6
+      ],
+      "a": [
+        3,
+        1
+      ],
+      "b": [
+        2,
+        5
+      ],
+      "e": [
+        4,
+        2
+      ]
+    },
+    "murderer": "a"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 6,
+    "hardest": "seul candidat",
+    "hardSteps": 2,
+    "directStart": 0
+  },
+  "difficulty": 3
+}

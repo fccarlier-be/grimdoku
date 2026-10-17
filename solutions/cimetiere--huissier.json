@@ -1,0 +1,120 @@
+{
+ "positions": {
+  "h": [
+   7,
+   7
+  ],
+  "b": [
+   4,
+   6
+  ],
+  "f": [
+   3,
+   4
+  ],
+  "e": [
+   6,
+   3
+  ],
+  "g": [
+   1,
+   2
+  ],
+  "c": [
+   0,
+   5
+  ],
+  "d": [
+   2,
+   1
+  ],
+  "a": [
+   5,
+   0
+  ]
+ },
+ "murderer": "b",
+ "cast": {
+  "b": "a",
+  "f": "b",
+  "e": "c",
+  "g": "d",
+  "c": "e",
+  "d": "f",
+  "a": "g"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "e",
+   "logic": {
+    "type": "westOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "westOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "westOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "inRoom",
+    "room": "P"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "southOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "pupitre"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "westOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "northOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "southOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "northOf",
+    "other": "e"
+   }
+  }
+ ]
+}

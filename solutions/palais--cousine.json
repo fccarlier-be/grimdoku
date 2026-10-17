@@ -1,0 +1,101 @@
+{
+ "positions": {
+  "g": [
+   5,
+   0
+  ],
+  "a": [
+   3,
+   6
+  ],
+  "b": [
+   2,
+   1
+  ],
+  "d": [
+   4,
+   4
+  ],
+  "c": [
+   0,
+   3
+  ],
+  "f": [
+   6,
+   2
+  ],
+  "e": [
+   1,
+   5
+  ]
+ },
+ "murderer": "f",
+ "cast": {
+  "a": "a",
+  "b": "b",
+  "d": "c",
+  "c": "d",
+  "f": "e",
+  "e": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "b",
+   "logic": {
+    "type": "inRoom",
+    "room": "L"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "northOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "eastOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "tapis"
+   }
+  }
+ ]
+}

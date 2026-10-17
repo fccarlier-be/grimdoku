@@ -1,41 +1,28 @@
 'use strict';
 const fs = require('fs');
 const E = require('./engine');
-const { resolve, loadScene, withVictim, withBig, ARCHETYPES } = require('./cast');
+const { resolve, loadScene, compose, autoCases, ARCHETYPES } = require('./cast');
 // Énigmes publiées : identifiant → scène (plan, personnages, intro, épilogue(s)) + solution (sortie de gen.js).
 // Une variante de scène (« extends ») réutilise un décor avec une autre victime ; son « subtitle » complète le titre.
 // Intro et épilogue : {victime} et {coupable} sont remplacés par les noms (qui dépendent des lettres) ;
 // « epilogues » donne un texte par type de coupable possible, pour que personne n'ait besoin de connaître la solution.
+// Les énigmes écrites à la main (grim-001 à grim-012, victimes de la troupe) ont été retirées avec la bible du jeu
+// (2026-10-17) : la troupe est récurrente, la victime est un invité de passage. Leurs scènes restent dans scenes/.
+// L'affaire finale du fil rouge (lettres d'Augure) est une scène écrite à la main : elle reste ici.
 const MANIFEST = [
-  { id: 'grim-001', scene: 'taverne' },
-  { id: 'grim-002', scene: 'tour' },
-  { id: 'grim-003', scene: 'chateau' },
-  { id: 'grim-004', scene: 'moulin' },
-  { id: 'grim-005', scene: 'marais' },
-  { id: 'grim-006', scene: 'marais-2' },
-  { id: 'grim-007', scene: 'foire' },
-  { id: 'grim-008', scene: 'foire-2' },
-  { id: 'grim-009', scene: 'bibliotheque' },
-  { id: 'grim-010', scene: 'bibliotheque-2' },
-  { id: 'grim-011', scene: 'mine' },
-  { id: 'grim-012', scene: 'mine-2' }
+  { id: 'testament', scene: 'testament' }
 ];
 
 // Affaires automatiques : chaque décor qui a des textes « auto » (intro et mobiles génériques) donne une affaire
 // par habitué victime, dès que solutions/<décor>--<type>.json existe (produit par gen.js --victim=<type>).
-// Les victimes déjà traitées à la main dans ce décor sont sautées.
+// Une affaire par habitué absent, avec un invité de passage pour victime (autoCases, cast.js).
 const baseOf = (name) => { const raw = JSON.parse(fs.readFileSync(`scenes/${name}.json`, 'utf8')); return raw.extends || name; };
-const handVictims = new Set(MANIFEST.map(e => baseOf(e.scene) + '--' + loadScene(`scenes/${e.scene}.json`).characters.find(c => c.role === 'victim').archetype));
 for (const f of fs.readdirSync('scenes').sort()) {
   const name = f.replace(/\.json$/, '');
   const scene = loadScene(`scenes/${f}`);
   // les variantes (« extends ») réutilisent un décor : pas d'affaires automatiques en double
   if (baseOf(name) !== name || !scene.auto) continue;
-  for (const c of scene.characters) {
-    const id = `${name}--${c.archetype}`;
-    if (handVictims.has(id) || !fs.existsSync(`solutions/${id}.json`)) continue;
-    MANIFEST.push({ id, scene: name, victim: c.archetype });
-  }
+  for (const c of autoCases(name, scene)) if (fs.existsSync(`solutions/${c.id}.json`)) MANIFEST.push({ ...c, scene: name });
 }
 
 // Affaires à grands personnages (4–5 crânes) : big-cases.json, dès que leur solution existe.
@@ -76,16 +63,15 @@ function clueText(p, ch, L, first) {
     default: throw new Error('pas de texte pour ' + L.type);
   }
 }
-const initial = (name) => name.normalize('NFD')[0].toUpperCase();
 
 // Conventions de présentation (cf. CLAUDE.md §6) : lève une erreur si une énigme ne les respecte pas.
 function checkConventions(p) {
   const ctx = E.prepare(p);
   const chars = p.characters;
-  // suspects A, B, C… puis la victime, dernière lettre
+  // suspects a, b, c… puis la victime, dernière lettre (la lettre est une pastille, plus l'initiale du nom)
   chars.forEach((c, i) => {
-    const want = String.fromCharCode(65 + i);
-    if (initial(c.name) !== want) throw new Error(`${p.id} : ${c.name} devrait commencer par ${want}`);
+    const want = String.fromCharCode(97 + i);
+    if (c.id !== want) throw new Error(`${p.id} : ${c.name} devrait porter la lettre ${want.toUpperCase()}`);
   });
   if (chars[chars.length - 1].role !== 'victim' || chars.filter(c => c.role === 'victim').length !== 1)
     throw new Error(p.id + ' : la victime doit être le dernier personnage');
@@ -112,34 +98,39 @@ for (const entry of MANIFEST) {
   if (!fs.existsSync(`solutions/${entry.id}.json`)) { console.log(`⏳ ${entry.id} : pas encore de solution (node tools/batch.js)`); continue; }
   const s = JSON.parse(fs.readFileSync(`solutions/${entry.id}.json`, 'utf8'));
   const base = loadScene(`scenes/${entry.scene}.json`);
-  const scene = entry.big ? withBig(base, entry.victim, entry.big, entry.shapes) : entry.victim ? withVictim(base, entry.victim) : base;
-  const texts = entry.victim ? scene.auto : scene;
+  const scene = compose(base, entry);
+  const auto = entry.victim || entry.guest; // affaire automatique : textes « auto » du décor
+  const texts = auto ? scene.auto : scene;
   // noms d'après la lettre (cast.json) ; s.cast : lettres réattribuées par gen.js
   const p = resolve(scene, s.cast);
   delete p.epilogues; delete p.scene; delete p.subtitle; // seuls intro et epilogue (remplis) vont dans l'énigme
   // illustration du décor sur la fiche d'enquête (assets/decors/<décor>) ; un grand plan peut reprendre celle d'un autre décor
   p.decor = scene.decor || baseOf(entry.scene);
   p.id = entry.id;
+  p.place = baseOf(entry.scene); // le lieu (décor) : sa lettre d'Augure, la carte de la baronnie
+  if (scene.final) p.final = true; // affaire finale du fil rouge : cachée jusqu'à ce que les lettres soient réunies
   if (entry.hidden) p.hiddenShapes = true;
   if (entry.hiddenMax) p.hiddenMax = entry.hiddenMax; // 5 crânes : le joueur ne connaît pas la forme des grands
   delete p.auto;
   const nameOf = (id) => p.characters.find(c => c.id === id).name;
   const victim = p.characters.find(c => c.role === 'victim');
   if (scene.subtitle) p.title = `${scene.title} — ${scene.subtitle}`;
-  if (entry.victim) p.title = `${scene.title} — l'affaire ${victim.name}`;
+  if (auto) p.title = `${scene.title} — l'affaire ${victim.name}`;
   // même décor, même victime qu'une affaire déjà publiée (grands personnages de tailles différentes) : la seconde affaire
-  if (entry.victim && TITLES.has(p.title)) p.title = `${scene.title} — la seconde affaire ${victim.name}`;
+  if (auto && TITLES.has(p.title)) p.title = `${scene.title} — la seconde affaire ${victim.name}`;
   if (TITLES.has(p.title)) throw new Error(`${p.id} : titre déjà pris « ${p.title} »`);
   TITLES.add(p.title);
-  // gabarits : {victime} {coupable}, {titre}/{Titre} (« le troll »), accords sur la victime {e} {il}/{Il} {lui},
-  // nombre de suspects en lettres {nombre}/{Nombre}
-  const f = victim.gender === 'f', nb = NOMBRES[p.characters.length - 1], title = ARCHETYPES[victim.archetype].title;
-  const fill = (t) => t.replace(/\{victime\}/g, victim.name).replace(/\{coupable\}/g, nameOf(s.murderer))
+  // gabarits : {victime} {coupable}, {titre}/{Titre} (« le percepteur »), accords sur la victime {e} {il}/{Il} {lui},
+  // nombre de suspects en lettres {nombre}/{Nombre}, et pour un invité {motif} (« venu{e} … ») et {menace} (épilogues)
+  const va = ARCHETYPES[victim.archetype];
+  const f = victim.gender === 'f', nb = NOMBRES[p.characters.length - 1], title = va.title;
+  const fill = (t) => t.replace(/\{motif\}/g, va.motif || '').replace(/\{menace\}/g, va.menace || 'me nuire').replace(/\{victime\}/g, victim.name).replace(/\{coupable\}/g, nameOf(s.murderer))
     .replace(/\{titre\}/g, title).replace(/\{Titre\}/g, cap(title)).replace(/\{e\}/g, f ? 'e' : '')
     .replace(/\{il\}/g, f ? 'elle' : 'il').replace(/\{Il\}/g, f ? 'Elle' : 'Il').replace(/\{lui\}/g, f ? 'elle' : 'lui')
     .replace(/\{nombre\}/g, nb).replace(/\{Nombre\}/g, cap(nb));
   p.intro = fill(texts.intro);
-  // un grand personnage coupable n'est pas un habitué du décor : épilogue générique de son type (cast.json)
+  // épilogue : le dialogue du coupable avec l'enquêteur (cast.json, propre au personnage, avec son tic) ; une scène écrite
+  // à la main peut avoir le sien. Lignes « — … » : l'enquêteur, puis le coupable, en alternance.
   const mType = p.characters.find(c => c.id === s.murderer).archetype;
   p.epilogue = fill(texts.epilogue || (texts.epilogues || {})[mType] || ARCHETYPES[mType].epilogue);
   // texte généré : le nom ouvre la première phrase de chaque personnage, le pronom les suivantes

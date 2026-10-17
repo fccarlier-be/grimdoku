@@ -1,0 +1,89 @@
+{
+ "positions": {
+  "f": [
+   0,
+   5
+  ],
+  "b": [
+   2,
+   3
+  ],
+  "c": [
+   3,
+   4
+  ],
+  "a": [
+   1,
+   1
+  ],
+  "e": [
+   4,
+   0
+  ],
+  "d": [
+   5,
+   2
+  ]
+ },
+ "murderer": "b",
+ "cast": {
+  "b": "a",
+  "c": "b",
+  "a": "c",
+  "e": "d",
+  "d": "e"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "c",
+   "logic": {
+    "type": "eastOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "chaise"
+   }
+  }
+ ]
+}

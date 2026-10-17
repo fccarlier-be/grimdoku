@@ -1,0 +1,81 @@
+{
+ "positions": {
+  "f": [
+   2,
+   6
+  ],
+  "e": [
+   [
+    4,
+    3
+   ],
+   [
+    4,
+    4
+   ]
+  ],
+  "b": [
+   3,
+   1
+  ],
+  "d": [
+   5,
+   0
+  ],
+  "c": [
+   6,
+   5
+  ],
+  "a": [
+   1,
+   2
+  ]
+ },
+ "murderer": "c",
+ "cast": {
+  "e": "a",
+  "b": "b",
+  "d": "c",
+  "c": "d",
+  "a": "e"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "arbre"
+   }
+  }
+ ]
+}

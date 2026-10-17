@@ -239,16 +239,6 @@
     }
   ],
   "auto": {
-    "intro": "{Titre} {victime} a été retrouvé{e} sans vie au Bal Masqué, sous un loup de velours. {Nombre} invités dansaient encore. Un seul était avec {lui}.",
-    "epilogues": {
-      "vampire": "{coupable} avoue en ôtant son masque : {victime} avait servi du punch à l'ail. À SON bal.",
-      "spectre": "{coupable} avoue : {victime} l'avait pris pour un invité déguisé en drap et avait tiré dessus pour voir.",
-      "roi": "{coupable} avoue, outré : {victime} lui avait marché sur la traîne pendant la valse royale. Trois fois.",
-      "chevalier": "{coupable} avoue en grinçant : {victime} avait refusé de danser avec lui à cause du bruit de son armure.",
-      "elfe": "{coupable} avoue avec dédain : {victime} avait osé venir avec la même tenue qu'elle.",
-      "barde": "{coupable} avoue : {victime} avait demandé à l'orchestre de jouer plus fort pour couvrir sa chanson.",
-      "fee": "{coupable} avoue : {victime} l'avait prise pour une décoration de lustre et voulait l'accrocher.",
-      "djinn": "{coupable} avoue : {victime} avait souhaité « que ce bal ne finisse jamais ». Elle trouvait déjà le temps long."
-    }
+    "intro": "Bal masqué au château : {titre} {victime}, venu{e} {motif}, n'a pas passé minuit. {Nombre} invités dansaient, ou le prétendent. L'un d'eux était seul avec {lui}. Le plus dur, ici, c'est de savoir qui est sous quel masque. Et qui ment dessous."
   }
 }

@@ -1,0 +1,371 @@
+{
+  "formatVersion": 1,
+  "title": "La Mine des Nains — l'affaire Gertrude",
+  "size": 8,
+  "rooms": {
+    "E": {
+      "name": "Entrée",
+      "the": "l'entrée",
+      "floor": "roche"
+    },
+    "G": {
+      "name": "Galerie",
+      "the": "la galerie",
+      "floor": "roche"
+    },
+    "F": {
+      "name": "Forge",
+      "the": "la forge",
+      "floor": "roche"
+    },
+    "V": {
+      "name": "Filon",
+      "the": "le filon",
+      "floor": "roche"
+    },
+    "D": {
+      "name": "Dortoir",
+      "the": "le dortoir",
+      "floor": "roche"
+    },
+    "C": {
+      "name": "Cantine",
+      "the": "la cantine",
+      "floor": "parquet"
+    },
+    "T": {
+      "name": "Salle des coffres",
+      "the": "la salle des coffres",
+      "floor": "roche"
+    }
+  },
+  "layout": [
+    "EEEGGFFF",
+    "EEEGGFFF",
+    "DDGGGFFF",
+    "DDGGGFFV",
+    "DDCCCFVV",
+    "TTCCCVVV",
+    "TTCCCVVV",
+    "TTTTCVVV"
+  ],
+  "objects": [
+    {
+      "type": "tonneau",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        1,
+        7
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "enclume",
+      "at": [
+        6,
+        7
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        6,
+        2
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        7,
+        2
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "chariot",
+      "at": [
+        7,
+        6
+      ]
+    }
+  ],
+  "intro": "À la Mine des Nains, la dresseuse Gertrude, venue recruter des bêtes pour son cirque, est descendue plus bas que prévu. Sept mineurs et visiteurs étaient au fond. L'un d'eux était seul avec elle. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
+  "characters": [
+    {
+      "id": "a",
+      "name": "Fernand",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie",
+      "tic": "Perd un morceau quand il s'énerve"
+    },
+    {
+      "id": "b",
+      "name": "Capucine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee",
+      "tic": "« Je te le rends demain. »"
+    },
+    {
+      "id": "c",
+      "name": "Bakchich",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin",
+      "tic": "« Techniquement, c'est légal. »"
+    },
+    {
+      "id": "d",
+      "name": "Grisou",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "⛏️",
+      "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
+      "archetype": "mineur",
+      "tic": "« On creuse ? »"
+    },
+    {
+      "id": "e",
+      "name": "Gontran",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier",
+      "tic": "Annonce chacune de ses actions à voix haute"
+    },
+    {
+      "id": "f",
+      "name": "Flammèche",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet",
+      "tic": "S'excuse avant même d'avoir brûlé quelque chose"
+    },
+    {
+      "id": "g",
+      "name": "Bâfrin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll",
+      "tic": "Répète le dernier mot de la phrase des autres"
+    },
+    {
+      "id": "h",
+      "name": "Gertrude",
+      "gender": "f",
+      "role": "victim",
+      "icon": "🎪",
+      "desc": "Dresseuse de dragons, surtout des petits",
+      "archetype": "dresseuse",
+      "guest": true
+    }
+  ],
+  "decor": "mine",
+  "id": "mine--dresseuse",
+  "place": "mine",
+  "epilogue": "— Vous étiez seul avec Gertrude.\n— Gertrude.\n— Pourquoi ?\n— Elle voulait m'emmener dans son cirque. Alors Bâfrin taper. Taper fort. Fort.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Fernand était allongé sur un lit.",
+      "logic": {
+        "type": "onObject",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Capucine était dans la salle des coffres.",
+      "logic": {
+        "type": "inRoom",
+        "room": "T"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Bakchich était à l'ouest de Capucine.",
+      "logic": {
+        "type": "westOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Grisou était au nord de Bakchich.",
+      "logic": {
+        "type": "northOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il n'était pas à côté d'un chaudron.",
+      "logic": {
+        "type": "notAdjacentTo",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Gontran était dans la même colonne qu'un coffre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Flammèche était sur la même ligne qu'un chariot de mine.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chariot"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Bâfrin était sur la même ligne qu'une chaise.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaise"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "h": [
+        6,
+        6
+      ],
+      "d": [
+        0,
+        5
+      ],
+      "g": [
+        4,
+        7
+      ],
+      "c": [
+        1,
+        1
+      ],
+      "f": [
+        3,
+        4
+      ],
+      "e": [
+        5,
+        2
+      ],
+      "b": [
+        7,
+        3
+      ],
+      "a": [
+        2,
+        0
+      ]
+    },
+    "murderer": "g"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 6,
+    "hardest": "pièces",
+    "hardSteps": 2,
+    "directStart": 0
+  },
+  "difficulty": 3
+}

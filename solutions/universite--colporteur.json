@@ -1,0 +1,184 @@
+{
+ "positions": {
+  "k": [
+   3,
+   5
+  ],
+  "i": [
+   4,
+   1
+  ],
+  "g": [
+   8,
+   6
+  ],
+  "d": [
+   1,
+   4
+  ],
+  "a": [
+   10,
+   2
+  ],
+  "j": [
+   6,
+   7
+  ],
+  "b": [
+   9,
+   8
+  ],
+  "f": [
+   0,
+   3
+  ],
+  "c": [
+   5,
+   9
+  ],
+  "h": [
+   2,
+   10
+  ],
+  "e": [
+   7,
+   0
+  ]
+ },
+ "murderer": "d",
+ "cast": {
+  "i": "a",
+  "g": "b",
+  "d": "c",
+  "a": "d",
+  "j": "e",
+  "b": "f",
+  "f": "g",
+  "c": "h",
+  "h": "i",
+  "e": "j"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "i",
+   "logic": {
+    "type": "sameColAs",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "northOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "southOf",
+    "other": "g"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "westOf",
+    "other": "h"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "eastOf",
+    "other": "g"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "northOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "inRoom",
+    "room": "I"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameColAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "j",
+   "logic": {
+    "type": "inRoom",
+    "room": "F"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "j",
+   "logic": {
+    "type": "eastOf",
+    "other": "g"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "roseaux"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaise"
+   }
+  }
+ ]
+}

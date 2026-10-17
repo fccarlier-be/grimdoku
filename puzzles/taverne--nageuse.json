@@ -1,0 +1,272 @@
+{
+  "formatVersion": 1,
+  "title": "Meurtre au Sanglier Borgne — l'affaire Ondine",
+  "intro": "On m'a tiré du lit à l'aube. La maîtresse-nageuse Ondine, venue au Sanglier Borgne donner des cours de natation, ne se réveillera plus. Cinq clients juraient dormir comme des loirs. L'un d'eux était avec elle. J'ai demandé un café ; on m'a servi une bière.",
+  "epilogue": "— Vous étiez seul avec Ondine.\n— Ondine.\n— Pourquoi ?\n— Elle voulait m'apprendre à nager de force. Alors Bâfrin taper. Taper fort. Fort.",
+  "size": 6,
+  "rooms": {
+    "T": {
+      "name": "Salle commune",
+      "the": "la salle commune",
+      "floor": "parquet"
+    },
+    "C": {
+      "name": "Cuisine",
+      "the": "la cuisine",
+      "floor": "damier"
+    },
+    "R": {
+      "name": "Cave",
+      "the": "la cave",
+      "floor": "tomettes"
+    },
+    "B": {
+      "name": "Chambre",
+      "the": "la chambre",
+      "floor": "parquet"
+    },
+    "E": {
+      "name": "Écurie",
+      "the": "l'écurie",
+      "floor": "paille"
+    }
+  },
+  "layout": [
+    "TTTCCC",
+    "TTTCCC",
+    "TTTRRC",
+    "BBTRRE",
+    "BBTEEE",
+    "BBBEEE"
+  ],
+  "objects": [
+    {
+      "type": "table",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        4,
+        4
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        5,
+        5
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Fausset",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde",
+      "tic": "Transforme chaque conversation en couplet"
+    },
+    {
+      "id": "b",
+      "name": "Gribouille",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage",
+      "tic": "Éternue avant chaque sortilège"
+    },
+    {
+      "id": "c",
+      "name": "Bâfrin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll",
+      "tic": "Répète le dernier mot de la phrase des autres"
+    },
+    {
+      "id": "d",
+      "name": "Aëlys",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe",
+      "tic": "Note tout sur dix, les gens compris"
+    },
+    {
+      "id": "e",
+      "name": "Grippesou",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧔‍♂️",
+      "desc": "Tavernier nain, radin légendaire",
+      "archetype": "tavernier",
+      "tic": "Compte à voix basse en parlant"
+    },
+    {
+      "id": "f",
+      "name": "Ondine",
+      "gender": "f",
+      "role": "victim",
+      "icon": "🛟",
+      "desc": "Maîtresse-nageuse, sans permis ni maillot",
+      "archetype": "nageuse",
+      "guest": true
+    }
+  ],
+  "decor": "taverne",
+  "id": "taverne--nageuse",
+  "place": "taverne",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Fausset était à côté d'un tonneau.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Gribouille était dans la même colonne qu'un chaudron.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Bâfrin était assis sur une chaise.",
+      "logic": {
+        "type": "onObject",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Aëlys était à l'ouest de Grippesou.",
+      "logic": {
+        "type": "westOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Grippesou était sur la même ligne qu'un lit.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "lit"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        2,
+        1
+      ],
+      "b": [
+        1,
+        4
+      ],
+      "a": [
+        3,
+        3
+      ],
+      "c": [
+        0,
+        0
+      ],
+      "d": [
+        5,
+        2
+      ],
+      "e": [
+        4,
+        5
+      ]
+    },
+    "murderer": "c"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "ligne réservée",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 2
+}

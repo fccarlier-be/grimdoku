@@ -1,0 +1,115 @@
+{
+ "positions": {
+  "g": [
+   2,
+   3
+  ],
+  "b": [
+   1,
+   6
+  ],
+  "e": [
+   4,
+   2
+  ],
+  "d": [
+   0,
+   4
+  ],
+  "a": [
+   5,
+   1
+  ],
+  "f": [
+   6,
+   5
+  ],
+  "c": [
+   3,
+   0
+  ]
+ },
+ "murderer": "e",
+ "cast": {
+  "b": "a",
+  "e": "b",
+  "d": "c",
+  "a": "d",
+  "f": "e",
+  "c": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "d",
+   "logic": {
+    "type": "inRoom",
+    "room": "S"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "eastOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "inRoom",
+    "room": "C"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "westOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "onObject",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "tapis"
+   }
+  }
+ ]
+}

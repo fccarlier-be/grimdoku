@@ -1,0 +1,339 @@
+{
+  "formatVersion": 1,
+  "title": "La Tour de l'Archimage — l'affaire Vipérine",
+  "intro": "La chasseuse de primes Vipérine était montée à la Tour de l'Archimage toucher une prime. On l'a retrouvée au pied d'une étagère de grimoires, sans vie. Six habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec elle. Ici, même les escaliers mentent.",
+  "epilogue": "— Vous étiez seul avec Vipérine.\n— Pardon. Pardon pardon pardon.\n— Je n'ai encore rien dit.\n— Elle voulait me livrer au baron contre trois écus. Alors j'ai éternué. Et quand j'éternue, je crache du feu.",
+  "size": 7,
+  "rooms": {
+    "L": {
+      "name": "Laboratoire",
+      "the": "le laboratoire",
+      "floor": "damier"
+    },
+    "O": {
+      "name": "Observatoire",
+      "the": "l'observatoire",
+      "floor": "parquet"
+    },
+    "B": {
+      "name": "Bibliothèque",
+      "the": "la bibliothèque",
+      "floor": "parquet"
+    },
+    "H": {
+      "name": "Hall",
+      "the": "le hall",
+      "floor": "dalles"
+    },
+    "C": {
+      "name": "Crypte",
+      "the": "la crypte",
+      "floor": "crypte"
+    },
+    "J": {
+      "name": "Jardin",
+      "the": "le jardin",
+      "floor": "herbe"
+    },
+    "E": {
+      "name": "Escalier",
+      "the": "l'escalier",
+      "floor": "parquet"
+    }
+  },
+  "layout": [
+    "LLLOOOO",
+    "LLLOOOO",
+    "LLBBBOO",
+    "HHBBBJJ",
+    "HHHCCJJ",
+    "EEECCJJ",
+    "EEECCCJ"
+  ],
+  "objects": [
+    {
+      "type": "portail",
+      "at": [
+        0,
+        0
+      ],
+      "link": "p1"
+    },
+    {
+      "type": "portail",
+      "at": [
+        6,
+        5
+      ],
+      "link": "p1"
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        2,
+        2
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        2,
+        4
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        6,
+        2
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        5,
+        5
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Blafard",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ],
+      "tic": "« De mon vivant… »"
+    },
+    {
+      "id": "b",
+      "name": "Goémone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene",
+      "tic": "Fait des bulles quand elle ment"
+    },
+    {
+      "id": "c",
+      "name": "Flammèche",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet",
+      "tic": "S'excuse avant même d'avoir brûlé quelque chose"
+    },
+    {
+      "id": "d",
+      "name": "Fernand",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie",
+      "tic": "Perd un morceau quand il s'énerve"
+    },
+    {
+      "id": "e",
+      "name": "Fumerolle",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn",
+      "tic": "Prend tout au pied de la lettre"
+    },
+    {
+      "id": "f",
+      "name": "Fizzlebarbe",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Archimage, 412 ans, toujours pas de testament",
+      "archetype": "archimage",
+      "tic": "« De mon temps… » (en concurrence avec Blafard)"
+    },
+    {
+      "id": "g",
+      "name": "Vipérine",
+      "gender": "f",
+      "role": "victim",
+      "icon": "🏹",
+      "desc": "Chasseuse de primes, a toujours un avis de recherche sur elle",
+      "archetype": "chasseuse",
+      "guest": true
+    }
+  ],
+  "decor": "tour",
+  "id": "tour--chasseuse",
+  "place": "tour",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Blafard hantait une statue.",
+      "logic": {
+        "type": "onObject",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Goémone était dans la même colonne qu'une étagère.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "etagere"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Flammèche était à côté d'un tapis.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était dans la même colonne qu'une étagère.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "etagere"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Fernand était sur la même ligne qu'un sarcophage.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "sarcophage"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Fumerolle était à l'est de Fizzlebarbe.",
+      "logic": {
+        "type": "eastOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Fizzlebarbe était sur la même ligne qu'un champignon géant.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "champi"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "g": [
+        2,
+        3
+      ],
+      "a": [
+        1,
+        5
+      ],
+      "c": [
+        3,
+        4
+      ],
+      "d": [
+        4,
+        1
+      ],
+      "b": [
+        0,
+        2
+      ],
+      "e": [
+        6,
+        6
+      ],
+      "f": [
+        5,
+        0
+      ]
+    },
+    "murderer": "c"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "ligne réservée",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 2
+}

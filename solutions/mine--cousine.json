@@ -1,0 +1,106 @@
+{
+ "positions": {
+  "h": [
+   4,
+   7
+  ],
+  "c": [
+   5,
+   4
+  ],
+  "d": [
+   7,
+   0
+  ],
+  "a": [
+   6,
+   5
+  ],
+  "g": [
+   2,
+   1
+  ],
+  "e": [
+   1,
+   6
+  ],
+  "f": [
+   3,
+   3
+  ],
+  "b": [
+   0,
+   2
+  ]
+ },
+ "murderer": "a",
+ "cast": {
+  "c": "a",
+  "d": "b",
+  "a": "c",
+  "g": "d",
+  "e": "e",
+  "f": "f",
+  "b": "g"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "westOf",
+    "other": "g"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "inRoom",
+    "room": "D"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "inRoom",
+    "room": "E"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "inRoom",
+    "room": "V"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "enclume"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "southOf",
+    "other": "g"
+   }
+  }
+ ]
+}

@@ -1,0 +1,101 @@
+{
+ "positions": {
+  "g": [
+   6,
+   4
+  ],
+  "b": [
+   0,
+   1
+  ],
+  "c": [
+   5,
+   2
+  ],
+  "a": [
+   1,
+   6
+  ],
+  "d": [
+   3,
+   0
+  ],
+  "e": [
+   2,
+   3
+  ],
+  "f": [
+   4,
+   5
+  ]
+ },
+ "murderer": "b",
+ "cast": {
+  "b": "a",
+  "c": "b",
+  "a": "c",
+  "d": "d",
+  "e": "e",
+  "f": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "westOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "westOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "sarcophage"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "eastOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tapis"
+   }
+  }
+ ]
+}

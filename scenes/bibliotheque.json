@@ -216,15 +216,6 @@
     "archimage": "{coupable} avoue : {victime} avait rangé ses mémoires au rayon « Fiction ». Quatre cent douze ans de vérité, et on ose douter."
   },
   "auto": {
-    "intro": "{Titre} {victime} a été retrouvé{e} sans vie entre deux rayonnages de la Bibliothèque Interdite. {Nombre} lecteurs nocturnes erraient dans les allées. Un seul était avec {lui}.",
-    "epilogues": {
-      "mage": "{coupable} avoue en éternuant : {victime} avait caché son grimoire de recettes de bière au rayon « Interdit aux mages ».",
-      "spectre": "{coupable} hantait la réserve depuis des siècles. {victime} voulait la transformer en salle de lecture « lumineuse et accueillante ». Insupportable.",
-      "vampire": "{coupable} avoue : {victime} avait ouvert les rideaux de la galerie « pour lire plus confortablement ».",
-      "djinn": "{coupable} avoue : {victime} avait rangé sa lampe au rayon « Objets trouvés ». Il y a quatre-vingts ans.",
-      "gobelin": "{coupable} revendait les livres rares au marché noir. {victime} venait de s'en apercevoir. Il a classé l'affaire.",
-      "archimage": "{coupable} avoue : {victime} avait rangé ses mémoires au rayon « Fiction ». Quatre cent douze ans de vérité, et on ose douter.",
-      "bibliothecaire": "{coupable} avoue en chuchotant, pour une fois : {victime} parlait fort en salle de lecture. Depuis des siècles."
-    }
+    "intro": "À la Bibliothèque Interdite, {titre} {victime}, venu{e} {motif}, a été retrouvé{e} entre deux rayonnages. On m'a demandé d'enquêter en silence. {Nombre} lecteurs étaient là. L'un d'eux était seul avec {lui}. Je chuchote mes questions ; on me répond en hurlant « chut »."
   }
 }

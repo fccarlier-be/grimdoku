@@ -214,15 +214,6 @@
     }
   ],
   "auto": {
-    "intro": "{Titre} {victime} a été retrouvé{e} sans vie au Port des Contrebandiers, à l'heure où la marée se retire. {Nombre} habitués traînaient sur les quais. Un seul était avec {lui}.",
-    "epilogues": {
-      "pirate": "{coupable} avoue en crachant par terre : {victime} avait dénoncé sa cargaison de rhum à la douane.",
-      "capitaine": "{coupable} avoue, la main sur le cœur : {victime} s'était moqué{e} de son navire « qui ne quitte jamais le port ». C'était vrai, c'était cruel.",
-      "perroquet": "{coupable} avoue, et le répète : {victime} voulait le vendre à la taverne comme horloge parlante.",
-      "sirene": "{coupable} avoue : {victime} jetait ses filets juste devant sa grotte.",
-      "gobelin": "{coupable} avoue : {victime} avait découvert ses faux droits de douane. Il en avait inventé quarante.",
-      "tavernier": "{coupable} avoue en comptant ses pièces : {victime} avait une ardoise de trois ans à la taverne du port.",
-      "troll": "{coupable} avoue : {victime} avait amarré sa barque à son pont. Il n'y a qu'un troll par pont."
-    }
+    "intro": "Au Port des Contrebandiers, {titre} {victime}, venu{e} {motif}, a été repêché{e} à marée basse. {Nombre} habitués traînaient sur les quais. L'un d'eux était seul avec {lui}. Ici, tout le monde a quelque chose à cacher, généralement dans un tonneau."
   }
 }

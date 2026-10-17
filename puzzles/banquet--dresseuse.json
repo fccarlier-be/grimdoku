@@ -1,0 +1,295 @@
+{
+  "formatVersion": 1,
+  "title": "Le Banquet des Gobelins — l'affaire Gertrude",
+  "size": 6,
+  "rooms": {
+    "K": {
+      "name": "Cuisine",
+      "the": "la cuisine",
+      "floor": "damier"
+    },
+    "C": {
+      "name": "Cellier",
+      "the": "le cellier",
+      "floor": "tomettes"
+    },
+    "F": {
+      "name": "Salle des fêtes",
+      "the": "la salle des fêtes",
+      "floor": "noble"
+    },
+    "G": {
+      "name": "Garde-manger",
+      "the": "le garde-manger",
+      "floor": "tomettes"
+    },
+    "O": {
+      "name": "Cour",
+      "the": "la cour",
+      "floor": "paves"
+    }
+  },
+  "layout": [
+    "KKKCCC",
+    "KKFFCC",
+    "GGFFFF",
+    "GGFFFF",
+    "GOOFFF",
+    "OOOOFF"
+  ],
+  "objects": [
+    {
+      "type": "chaudron",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        1,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        2,
+        4
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        4,
+        2
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Festin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👹",
+      "desc": "Ogre, végétarien depuis mardi",
+      "archetype": "ogre",
+      "tic": "Compte les jours depuis mardi"
+    },
+    {
+      "id": "b",
+      "name": "Bakchich",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin",
+      "tic": "« Techniquement, c'est légal. »"
+    },
+    {
+      "id": "c",
+      "name": "Briochon",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🍳",
+      "desc": "Boulanger, pétrit plus de ragots que de pâte",
+      "archetype": "boulanger",
+      "tic": "« Je dis ça, je dis rien. »"
+    },
+    {
+      "id": "d",
+      "name": "Fausset",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde",
+      "tic": "Transforme chaque conversation en couplet"
+    },
+    {
+      "id": "e",
+      "name": "Fricot",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🍳",
+      "desc": "Chef gobelin, goûte tout, surtout ce qui bouge encore",
+      "archetype": "chef",
+      "tic": "Juge chaque plat à sa capacité à s'enfuir"
+    },
+    {
+      "id": "f",
+      "name": "Gertrude",
+      "gender": "f",
+      "role": "victim",
+      "icon": "🎪",
+      "desc": "Dresseuse de dragons, surtout des petits",
+      "archetype": "dresseuse",
+      "guest": true
+    }
+  ],
+  "decor": "banquet",
+  "id": "banquet--dresseuse",
+  "place": "banquet",
+  "intro": "Au Banquet des Gobelins, la dresseuse Gertrude, venue recruter des bêtes pour son cirque, est passée du côté des convives au côté du menu. Enfin, presque. Cinq invités se goinfraient. L'un d'eux était seul avec elle. On m'a servi une soupe. Je ne l'ai pas touchée.",
+  "epilogue": "— Vous étiez seul avec Gertrude.\n— « Elle voulait m'emmener dans son cirque, ô rage, ô désespoir… »\n— Répondez normalement.\n— J'ai chanté jusqu'à ce qu'elle s'arrête. Définitivement.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Festin était dans la même colonne qu'une chaise.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était au nord de Bakchich.",
+      "logic": {
+        "type": "northOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bakchich était à côté d'un chaudron.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Briochon était à côté d'une botte de foin.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "foin"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Fausset était sur la même ligne qu'un champignon géant.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était dans la même colonne qu'une chaise.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Fricot était dans la cour.",
+      "logic": {
+        "type": "inRoom",
+        "room": "O"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        2,
+        5
+      ],
+      "b": [
+        1,
+        1
+      ],
+      "a": [
+        0,
+        3
+      ],
+      "d": [
+        4,
+        4
+      ],
+      "c": [
+        3,
+        0
+      ],
+      "e": [
+        5,
+        2
+      ]
+    },
+    "murderer": "d"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "position relative",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 2
+}

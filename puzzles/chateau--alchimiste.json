@@ -1,0 +1,369 @@
+{
+  "formatVersion": 1,
+  "title": "Le Château de Mortebrune — l'affaire Mercurio",
+  "intro": "L'alchimiste Mercurio était venu au Château de Mortebrune proposer ses services. Le roi m'a fait appeler, ce qui veut dire que c'est grave, ou qu'il s'ennuie. Six membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec lui.",
+  "epilogue": "— Vous étiez seul avec Mercurio.\n— Pardon. Pardon pardon pardon.\n— Je n'ai encore rien dit.\n— Il voulait changer mes économies en plomb. Alors j'ai éternué. Et quand j'éternue, je crache du feu.",
+  "size": 7,
+  "rooms": {
+    "G": {
+      "name": "Grande salle",
+      "the": "la grande salle",
+      "floor": "dalles"
+    },
+    "K": {
+      "name": "Cuisines",
+      "the": "les cuisines",
+      "floor": "damier"
+    },
+    "A": {
+      "name": "Armurerie",
+      "the": "l'armurerie",
+      "floor": "dalles"
+    },
+    "T": {
+      "name": "Tour",
+      "the": "la tour",
+      "floor": "dalles"
+    },
+    "J": {
+      "name": "Jardin",
+      "the": "le jardin",
+      "floor": "herbe"
+    },
+    "D": {
+      "name": "Donjon",
+      "the": "le donjon",
+      "floor": "dalles"
+    }
+  },
+  "layout": [
+    "AAGGGKK",
+    "AAGGGKK",
+    "AAGGGKT",
+    "AAJJJTT",
+    "AAJJJTT",
+    "DDJJJTT",
+    "DDDJJTT"
+  ],
+  "objects": [
+    {
+      "type": "statue",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        1,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        4,
+        2
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        3
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        6,
+        6
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        6,
+        1
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Gontran",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier",
+      "tic": "Annonce chacune de ses actions à voix haute"
+    },
+    {
+      "id": "b",
+      "name": "Fausset",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde",
+      "tic": "Transforme chaque conversation en couplet"
+    },
+    {
+      "id": "c",
+      "name": "Blafard",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ],
+      "tic": "« De mon vivant… »"
+    },
+    {
+      "id": "d",
+      "name": "Dagobert",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤴",
+      "desc": "Roi, avare de compliments et de tout le reste",
+      "archetype": "roi",
+      "tic": "« C'est pas faux. », à tout ce qu'il ne comprend pas"
+    },
+    {
+      "id": "e",
+      "name": "Aëlys",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe",
+      "tic": "Note tout sur dix, les gens compris"
+    },
+    {
+      "id": "f",
+      "name": "Flammèche",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet",
+      "tic": "S'excuse avant même d'avoir brûlé quelque chose"
+    },
+    {
+      "id": "g",
+      "name": "Mercurio",
+      "gender": "m",
+      "role": "victim",
+      "icon": "⚗️",
+      "desc": "Alchimiste ambulant, transforme l'or en dettes",
+      "archetype": "alchimiste",
+      "guest": true
+    }
+  ],
+  "decor": "chateau",
+  "id": "chateau--alchimiste",
+  "place": "chateau",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Gontran était à l'est de Blafard.",
+      "logic": {
+        "type": "eastOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était à côté d'une chaise.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Fausset était à côté d'un sarcophage.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "sarcophage"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Blafard était au sud de Dagobert.",
+      "logic": {
+        "type": "southOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était sur la même ligne qu'un tonneau.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Dagobert était à l'est de Gontran.",
+      "logic": {
+        "type": "eastOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Aëlys était à l'ouest de Dagobert.",
+      "logic": {
+        "type": "westOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Flammèche était dans la même colonne qu'une chaise.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Il était à côté d'un champignon géant.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "champi"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "g": [
+        4,
+        3
+      ],
+      "a": [
+        0,
+        4
+      ],
+      "b": [
+        6,
+        0
+      ],
+      "e": [
+        3,
+        5
+      ],
+      "c": [
+        2,
+        1
+      ],
+      "f": [
+        5,
+        2
+      ],
+      "d": [
+        1,
+        6
+      ]
+    },
+    "murderer": "f"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 5,
+    "hardest": "pièces",
+    "hardSteps": 1,
+    "directStart": 0
+  },
+  "difficulty": 3
+}

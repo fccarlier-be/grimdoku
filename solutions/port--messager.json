@@ -1,0 +1,94 @@
+{
+ "positions": {
+  "g": [
+   6,
+   3
+  ],
+  "b": [
+   3,
+   4
+  ],
+  "e": [
+   2,
+   1
+  ],
+  "a": [
+   4,
+   6
+  ],
+  "f": [
+   1,
+   5
+  ],
+  "d": [
+   5,
+   0
+  ],
+  "c": [
+   0,
+   2
+  ]
+ },
+ "murderer": "d",
+ "cast": {
+  "b": "a",
+  "e": "b",
+  "a": "c",
+  "f": "d",
+  "d": "e",
+  "c": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "e",
+   "logic": {
+    "type": "inRoom",
+    "room": "T"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "canon"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "eastOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "enclume"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "southOf",
+    "other": "f"
+   }
+  }
+ ]
+}

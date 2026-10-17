@@ -202,15 +202,6 @@
     "dragonnet": "{coupable}, cracheur de feu vedette, touchait trois fois moins que ce qu'annonçait l'affiche. Il a négocié. Il a un peu trop soufflé."
   },
   "auto": {
-    "intro": "{Titre} {victime} a été retrouvé{e} sans vie à la Foire aux Sortilèges, entre le chapiteau et la ménagerie. {Nombre} forains rôdaient. Un seul était avec {lui}.",
-    "epilogues": {
-      "cartomancienne": "{coupable} l'avait vu dans les cartes : {victime} allait ruiner la foire. Elle a préféré changer l'avenir elle-même.",
-      "barde": "{coupable} avoue en chanson (fausse) : {victime} avait coupé sa musique en plein spectacle. Même un barde a ses limites.",
-      "gobelin": "{coupable} tenait la caisse de la foire. {victime} venait de découvrir que la caisse avait un double fond. Et un triple.",
-      "troll": "{coupable}, hercule de foire, avoue : {victime} l'avait traité de « gros caillou » devant les enfants.",
-      "fee": "{coupable} avoue : {victime} voulait l'enfermer dans un bocal pour le stand des merveilles. Elle s'est rebiffée. Pour de bon.",
-      "dragonnet": "{coupable}, cracheur de feu vedette, avoue : {victime} avait éteint son numéro avec un seau d'eau. Devant tout le public.",
-      "bonimenteur": "{coupable} avoue d'une voix de stentor : {victime} faisait fuir les clients. Et sans clients, pas de bonimenteur."
-    }
+    "intro": "La Foire aux Sortilèges a perdu un client : {titre} {victime}, venu{e} {motif}. {Nombre} forains juraient qu'ils tenaient leur stand. L'un d'eux était seul avec {lui}. Le bonimenteur m'a déjà proposé un élixir de vérité. Deux écus, garanti sans effet."
   }
 }

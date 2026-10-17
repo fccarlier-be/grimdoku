@@ -1,0 +1,369 @@
+{
+  "formatVersion": 1,
+  "title": "Le Château de Mortebrune — l'affaire Prudence",
+  "intro": "L'abbesse Prudence était venue au Château de Mortebrune faire la quête. Le roi m'a fait appeler, ce qui veut dire que c'est grave, ou qu'il s'ennuie. Six membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec elle.",
+  "epilogue": "— Vous étiez seul avec Prudence.\n— Elle voulait me faire la morale. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
+  "size": 7,
+  "rooms": {
+    "G": {
+      "name": "Grande salle",
+      "the": "la grande salle",
+      "floor": "dalles"
+    },
+    "K": {
+      "name": "Cuisines",
+      "the": "les cuisines",
+      "floor": "damier"
+    },
+    "A": {
+      "name": "Armurerie",
+      "the": "l'armurerie",
+      "floor": "dalles"
+    },
+    "T": {
+      "name": "Tour",
+      "the": "la tour",
+      "floor": "dalles"
+    },
+    "J": {
+      "name": "Jardin",
+      "the": "le jardin",
+      "floor": "herbe"
+    },
+    "D": {
+      "name": "Donjon",
+      "the": "le donjon",
+      "floor": "dalles"
+    }
+  },
+  "layout": [
+    "AAGGGKK",
+    "AAGGGKK",
+    "AAGGGKT",
+    "AAJJJTT",
+    "AAJJJTT",
+    "DDJJJTT",
+    "DDDJJTT"
+  ],
+  "objects": [
+    {
+      "type": "statue",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        1,
+        3
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        4
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        4,
+        2
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        3
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "cristal",
+      "at": [
+        6,
+        6
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        6,
+        1
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Aëlys",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe",
+      "tic": "Note tout sur dix, les gens compris"
+    },
+    {
+      "id": "b",
+      "name": "Bakchich",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin",
+      "tic": "« Techniquement, c'est légal. »"
+    },
+    {
+      "id": "c",
+      "name": "Dagobert",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤴",
+      "desc": "Roi, avare de compliments et de tout le reste",
+      "archetype": "roi",
+      "tic": "« C'est pas faux. », à tout ce qu'il ne comprend pas"
+    },
+    {
+      "id": "d",
+      "name": "Blafard",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ],
+      "tic": "« De mon vivant… »"
+    },
+    {
+      "id": "e",
+      "name": "Flammèche",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet",
+      "tic": "S'excuse avant même d'avoir brûlé quelque chose"
+    },
+    {
+      "id": "f",
+      "name": "Fausset",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde",
+      "tic": "Transforme chaque conversation en couplet"
+    },
+    {
+      "id": "g",
+      "name": "Prudence",
+      "gender": "f",
+      "role": "victim",
+      "icon": "📿",
+      "desc": "Abbesse, quête pour un couvent introuvable",
+      "archetype": "abbesse",
+      "guest": true
+    }
+  ],
+  "decor": "chateau",
+  "id": "chateau--abbesse",
+  "place": "chateau",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Aëlys était à côté d'un chaudron.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bakchich était à côté d'un tapis.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il n'était pas à côté d'une chaise.",
+      "logic": {
+        "type": "notAdjacentTo",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Dagobert était à côté d'un lit.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Blafard était à côté d'une botte de foin.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "foin"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Flammèche était sur la même ligne qu'un chaudron.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était dans la même colonne qu'un tapis.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était à l'ouest de Fausset.",
+      "logic": {
+        "type": "westOf",
+        "other": "f"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Fausset était sur la même ligne qu'une statue.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "statue"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "g": [
+        6,
+        2
+      ],
+      "b": [
+        2,
+        1
+      ],
+      "f": [
+        4,
+        4
+      ],
+      "a": [
+        1,
+        6
+      ],
+      "d": [
+        5,
+        0
+      ],
+      "e": [
+        0,
+        3
+      ],
+      "c": [
+        3,
+        5
+      ]
+    },
+    "murderer": "d"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "ligne réservée",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 2
+}

@@ -1,0 +1,108 @@
+{
+ "positions": {
+  "g": [
+   4,
+   4
+  ],
+  "e": [
+   6,
+   1
+  ],
+  "d": [
+   2,
+   2
+  ],
+  "f": [
+   0,
+   0
+  ],
+  "c": [
+   5,
+   6
+  ],
+  "a": [
+   3,
+   5
+  ],
+  "b": [
+   1,
+   3
+  ]
+ },
+ "murderer": "d",
+ "cast": {
+  "e": "a",
+  "d": "b",
+  "f": "c",
+  "c": "d",
+  "a": "e",
+  "b": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "d",
+   "logic": {
+    "type": "eastOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "westOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "southOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "inRoom",
+    "room": "G"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "westOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "etagere"
+   }
+  }
+ ]
+}

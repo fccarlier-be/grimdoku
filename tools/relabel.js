@@ -6,21 +6,29 @@
 const fs = require('fs');
 const path = require('path');
 const E = require('../engine');
-const { resolve, loadScene, withVictim, withBig } = require('../cast');
+const { resolve, loadScene, compose, autoCases } = require('../cast');
 const ROOT = path.join(__dirname, '..');
 
 let fixed = 0;
 const MANIFEST = eval(fs.readFileSync(path.join(ROOT, 'build-puzzles.js'), 'utf8').match(/const MANIFEST = (\[[\s\S]*?\n\]);/)[1]);
-const sceneOf = Object.fromEntries(MANIFEST.map(e => [e.id, e.scene]));
-const BIG = Object.fromEntries(JSON.parse(fs.readFileSync(path.join(ROOT, 'big-cases.json'), 'utf8')).cases.map(c => [c.id, c]));
+// toutes les affaires connues : grands personnages, affaires automatiques (invités), énigmes du MANIFEST
+const ENTRIES = {};
+for (const c of JSON.parse(fs.readFileSync(path.join(ROOT, 'big-cases.json'), 'utf8')).cases) ENTRIES[c.id] = c;
+for (const e of MANIFEST) ENTRIES[e.id] = e;
+for (const f of fs.readdirSync(path.join(ROOT, 'scenes'))) {
+  const name = f.replace(/\.json$/, '');
+  const raw = JSON.parse(fs.readFileSync(path.join(ROOT, 'scenes', f), 'utf8'));
+  if (raw.extends || !raw.auto) continue;
+  for (const c of autoCases(name, loadScene(path.join(ROOT, 'scenes', f)))) ENTRIES[c.id] = { ...c, scene: name };
+}
 for (const file of fs.readdirSync(path.join(ROOT, 'solutions'))) {
   const id = file.replace(/\.json$/, '');
-  const big = BIG[id];
-  const [scene, victim] = big ? [big.scene, big.victim] : id.includes('--') ? id.split('--') : [sceneOf[id], null];
-  if (!scene) continue;
+  const entry = ENTRIES[id];
+  if (!entry) continue;
+  const big = entry.big ? entry : null;
   const sol = JSON.parse(fs.readFileSync(path.join(ROOT, 'solutions', file), 'utf8'));
-  const loaded = loadScene(path.join(ROOT, 'scenes', scene + '.json'));
-  const raw = big ? withBig(loaded, victim, big.big, big.shapes) : victim ? withVictim(loaded, victim) : loaded;
+  const loaded = loadScene(path.join(ROOT, 'scenes', entry.scene + '.json'));
+  const raw = compose(loaded, entry);
   const p = resolve(raw, sol.cast);
   if (big && big.hidden) p.hiddenShapes = true;
   if (big && big.hiddenMax) p.hiddenMax = big.hiddenMax;

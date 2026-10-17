@@ -272,18 +272,6 @@
     }
   ],
   "auto": {
-    "intro": "{Titre} {victime} a été retrouvé{e} sans vie au Grand Port de Brumeval, un soir de brume si épaisse qu'on n'y voyait pas sa propre jambe de bois. {Nombre} habitués erraient sur le port. Un seul était avec {lui}.",
-    "epilogues": {
-      "pirate": "{coupable} avoue : {victime} avait vendu la carte de son trésor. Une vraie carte. Avec la croix et tout.",
-      "capitaine": "{coupable} avoue, la casquette sur le cœur : {victime} avait percé la coque de son galion pour « voir s'il flottait encore ».",
-      "perroquet": "{coupable} avoue en répétant tout deux fois : {victime} lui avait appris des gros mots, puis l'avait dénoncé pour insolence.",
-      "sirene": "{coupable} avoue en remuant la queue : {victime} jetait ses déchets dans le port. Pile sur son salon.",
-      "tavernier": "{coupable} avoue en essuyant un verre : {victime} avait une ardoise de onze ans. Et l'intention d'en ouvrir une deuxième.",
-      "troll": "{coupable} avoue : {victime} avait mangé le dernier hareng fumé. Le troll l'attendait depuis l'aube.",
-      "gobelin": "{coupable} avoue : {victime} avait refusé de payer la « taxe de brume ». Une taxe très ancienne, inventée mardi.",
-      "vampire": "{coupable} avoue en ajustant sa cape : {victime} avait installé une lanterne devant son entrepôt. Une lanterne très, très lumineuse.",
-      "bonimenteur": "{coupable} avoue en souriant : {victime} avait prouvé que son élixir de marin n'était que de l'eau de mer filtrée.",
-      "zombie": "{coupable} avoue en perdant un doigt : {victime} l'avait engagé comme figure de proue. Sans lui demander son avis."
-    }
+    "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : {titre} {victime}, venu{e} {motif}, est mort{e} sur les quais. {Nombre} habitués erraient dans la brume. L'un d'eux était seul avec {lui}."
   }
 }

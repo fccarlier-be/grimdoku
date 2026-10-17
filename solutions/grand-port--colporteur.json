@@ -1,0 +1,144 @@
+{
+ "positions": {
+  "j": [
+   5,
+   0
+  ],
+  "f": [
+   9,
+   3
+  ],
+  "h": [
+   8,
+   8
+  ],
+  "b": [
+   6,
+   6
+  ],
+  "e": [
+   3,
+   7
+  ],
+  "i": [
+   2,
+   1
+  ],
+  "c": [
+   7,
+   2
+  ],
+  "a": [
+   1,
+   5
+  ],
+  "g": [
+   0,
+   9
+  ],
+  "d": [
+   4,
+   4
+  ]
+ },
+ "murderer": "c",
+ "cast": {
+  "f": "a",
+  "h": "b",
+  "b": "c",
+  "e": "d",
+  "i": "e",
+  "c": "f",
+  "a": "g",
+  "g": "h",
+  "d": "i"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "h",
+   "logic": {
+    "type": "eastOf",
+    "other": "i"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "canon"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chariot"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "inRoom",
+    "room": "Q"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "northOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "enclume"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "pupitre"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "canon"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "northOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "pupitre"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "sameColAs",
+    "object": "coffre"
+   }
+  }
+ ]
+}

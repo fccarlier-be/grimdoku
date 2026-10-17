@@ -1,0 +1,113 @@
+{
+ "positions": {
+  "h": [
+   2,
+   7
+  ],
+  "b": [
+   1,
+   5
+  ],
+  "e": [
+   5,
+   4
+  ],
+  "f": [
+   4,
+   0
+  ],
+  "g": [
+   7,
+   3
+  ],
+  "d": [
+   0,
+   1
+  ],
+  "c": [
+   3,
+   2
+  ],
+  "a": [
+   6,
+   6
+  ]
+ },
+ "murderer": "b",
+ "cast": {
+  "b": "a",
+  "e": "b",
+  "f": "c",
+  "g": "d",
+  "d": "e",
+  "c": "f",
+  "a": "g"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "f",
+   "logic": {
+    "type": "westOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "inRoom",
+    "room": "E"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "westOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "enclume"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "chariot"
+   }
+  }
+ ]
+}

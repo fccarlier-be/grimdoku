@@ -1,0 +1,280 @@
+{
+  "formatVersion": 1,
+  "title": "Le Moulin de Bois-Tordu — l'affaire Prudence",
+  "intro": "Au Moulin de Bois-Tordu, l'abbesse Prudence, venue faire la quête, a fini plus plate qu'une galette. Cinq voisins traînaient dans le coin. L'un d'eux était seul avec elle. Le meunier m'a proposé de peser les suspects. J'ai refusé.",
+  "size": 6,
+  "rooms": {
+    "M": {
+      "name": "Moulin",
+      "the": "le moulin",
+      "floor": "parquet"
+    },
+    "G": {
+      "name": "Grange",
+      "the": "la grange",
+      "floor": "paille"
+    },
+    "V": {
+      "name": "Verger",
+      "the": "le verger",
+      "floor": "herbe"
+    },
+    "P": {
+      "name": "Potager",
+      "the": "le potager",
+      "floor": "herbe"
+    },
+    "E": {
+      "name": "Mare",
+      "the": "la mare",
+      "floor": "boue"
+    }
+  },
+  "layout": [
+    "MMMGGG",
+    "MMMGGG",
+    "VVMGPP",
+    "VVVPPP",
+    "VVEEPP",
+    "VEEEEP"
+  ],
+  "objects": [
+    {
+      "type": "coffre",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        2
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        1,
+        3
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        0
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        5
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        5,
+        3
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Goémone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene",
+      "tic": "Fait des bulles quand elle ment"
+    },
+    {
+      "id": "b",
+      "name": "Capucine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee",
+      "tic": "« Je te le rends demain. »"
+    },
+    {
+      "id": "c",
+      "name": "Fernand",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie",
+      "tic": "Perd un morceau quand il s'énerve"
+    },
+    {
+      "id": "d",
+      "name": "Farinard",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🌾",
+      "desc": "Meunier, pèse le grain avec le pouce",
+      "archetype": "meunier",
+      "tic": "« Au poids, c'est honnête. »"
+    },
+    {
+      "id": "e",
+      "name": "Bâfrin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll",
+      "tic": "Répète le dernier mot de la phrase des autres"
+    },
+    {
+      "id": "f",
+      "name": "Prudence",
+      "gender": "f",
+      "role": "victim",
+      "icon": "📿",
+      "desc": "Abbesse, quête pour un couvent introuvable",
+      "archetype": "abbesse",
+      "guest": true
+    }
+  ],
+  "decor": "moulin",
+  "id": "moulin--abbesse",
+  "place": "moulin",
+  "epilogue": "— Vous étiez seule avec Prudence.\n— Elle voulait me faire la morale. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Goémone était à côté d'un champignon géant.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Capucine n'était pas à côté d'une chaise.",
+      "logic": {
+        "type": "notAdjacentTo",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Fernand était à côté d'un tonneau.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Farinard était sur la même ligne qu'une statue.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Bâfrin était à l'est de Fernand.",
+      "logic": {
+        "type": "eastOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était au nord de Capucine.",
+      "logic": {
+        "type": "northOf",
+        "other": "b"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        0,
+        1
+      ],
+      "b": [
+        2,
+        2
+      ],
+      "e": [
+        1,
+        5
+      ],
+      "a": [
+        4,
+        0
+      ],
+      "c": [
+        5,
+        4
+      ],
+      "d": [
+        3,
+        3
+      ]
+    },
+    "murderer": "b"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "ligne réservée",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 2
+}

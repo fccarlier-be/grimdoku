@@ -1,0 +1,127 @@
+{
+ "positions": {
+  "h": [
+   1,
+   6
+  ],
+  "f": [
+   3,
+   3
+  ],
+  "e": [
+   0,
+   2
+  ],
+  "a": [
+   6,
+   1
+  ],
+  "b": [
+   4,
+   0
+  ],
+  "c": [
+   2,
+   5
+  ],
+  "g": [
+   7,
+   4
+  ],
+  "d": [
+   5,
+   7
+  ]
+ },
+ "murderer": "c",
+ "cast": {
+  "f": "a",
+  "e": "b",
+  "a": "c",
+  "b": "d",
+  "c": "e",
+  "g": "f",
+  "d": "g"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "f",
+   "logic": {
+    "type": "eastOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "southOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "eastOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "chariot"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "chaudron"
+   }
+  }
+ ]
+}

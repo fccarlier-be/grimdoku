@@ -45,7 +45,7 @@ test('accueil → Jouer → tailles → une page par taille : toutes les affaire
   assert.equal(d.querySelectorAll('.case, .lvl').length, 0, 'accueil : seulement l\'affiche, le titre et Jouer');
   d.getElementById('playBtn').click();
   assert.match(d.querySelector('.pagetitle').textContent, /taille/);
-  const sizes = [...d.querySelectorAll('.lvl')].map(b => +b.dataset.size);
+  const sizes = [...d.querySelectorAll('.lvl[data-size]')].map(b => +b.dataset.size);
   assert.deepEqual(sizes, [...new Set(PUZZLES.map(p => p.size))].sort((a, b) => a - b), 'un parchemin par taille');
   const shown = [];
   for (const n of sizes) {
@@ -57,7 +57,7 @@ test('accueil → Jouer → tailles → une page par taille : toutes les affaire
     shown.push(...ids);
     d.getElementById('back').click();
   }
-  assert.equal(shown.length, PUZZLES.length);
+  assert.equal(shown.length, PUZZLES.filter(p => !p.final).length, 'toutes les affaires, sauf la finale (débloquée par les lettres)');
   assert.equal(d.body.textContent.includes('💀'), false, 'pas de crânes affichés');
   assert.deepEqual(errors, []);
 });
@@ -65,10 +65,12 @@ test('accueil → Jouer → tailles → une page par taille : toutes les affaire
 test('chaque affaire : la bonne carte mène à la victoire', () => {
   // une seule page pour toutes les affaires (une page jsdom par affaire épuiserait la mémoire)
   const { w, d, openCase, errors, PUZZLES } = open();
+  // l'affaire finale ne s'ouvre qu'avec assez de lettres d'Augure
+  w.localStorage.setItem('grimdoku:lettres', JSON.stringify(Object.keys(w.eval('LORE').letters)));
   for (const p of PUZZLES) {
     const save = { pos: p.solution.positions, pencil: {}, marks: [], done: [], solved: false, sig: sigOf(p) };
     w.localStorage.setItem('grimdoku:p:' + p.id, JSON.stringify(save));
-    openCase(p.id);
+    if (p.final) w.grimGo('affaire/' + p.id); else openCase(p.id);
     d.getElementById('accuse').click();
     assert.ok(d.querySelector('.stamp'), `${p.id} : tampon « Affaire résolue »`);
     assert.ok(d.querySelector('.verdictcard'), `${p.id} : verdict`);
@@ -226,4 +228,34 @@ test('notation de la difficulté ressentie : 0 à 5 sous la carte, retenue, iden
   d.querySelector('[data-rate="0"]').click();
   assert.equal(JSON.parse(w.localStorage.getItem('grimdoku:rate:' + p.id)), 0, 'on peut changer d\'avis (0 compris)');
   assert.deepEqual(errors, []);
+});
+
+test('lore : lettre d\'Augure à la première victoire dans un lieu, rangée dans le carnet ; épilogue en dialogue', () => {
+  const { w, d, openCase, errors, PUZZLES } = open();
+  const p = PUZZLES.find(q => !q.final);
+  w.localStorage.setItem('grimdoku:p:' + p.id, JSON.stringify({ pos: p.solution.positions, pencil: {}, marks: [], done: [], solved: false, sig: sigOf(p) }));
+  openCase(p.id);
+  d.getElementById('accuse').click();
+  assert.ok(d.querySelector('.letter-augure'), 'lettre glissée sous la porte');
+  assert.deepEqual(JSON.parse(w.localStorage.getItem('grimdoku:lettres')), [p.place]);
+  assert.ok(d.querySelectorAll('.epi .epl').length >= 3, 'épilogue en répliques');
+  w.grimGo('carnet');
+  assert.equal(d.querySelectorAll('.lettre:not(.locked)').length, 1, 'une lettre dans le carnet');
+  assert.ok(d.querySelectorAll('.fiche').length >= 1, 'la troupe croisée a sa fiche');
+  assert.deepEqual(errors, []);
+});
+
+test('lore : l\'affaire finale est verrouillée, puis débloquée par assez de lettres', () => {
+  const { w, d, PUZZLES } = open();
+  const fin = PUZZLES.find(q => q.final);
+  if (!fin) return;
+  w.grimGo('tailles');
+  assert.ok(d.querySelector('.finalcase.locked'), 'verrouillée au départ');
+  w.grimGo('affaire/' + fin.id);
+  assert.equal(d.getElementById('accuse'), null, 'on ne peut pas l\'ouvrir directement');
+  const L = w.eval('LORE');
+  w.localStorage.setItem('grimdoku:lettres', JSON.stringify(Object.keys(L.letters).slice(0, L.need)));
+  w.grimGo('tailles');
+  d.querySelector('[data-final]').click();
+  assert.ok(d.getElementById('accuse'), 'débloquée');
 });

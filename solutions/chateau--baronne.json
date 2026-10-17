@@ -1,0 +1,101 @@
+{
+ "positions": {
+  "g": [
+   3,
+   4
+  ],
+  "e": [
+   4,
+   3
+  ],
+  "a": [
+   2,
+   2
+  ],
+  "f": [
+   1,
+   6
+  ],
+  "c": [
+   5,
+   0
+  ],
+  "b": [
+   0,
+   1
+  ],
+  "d": [
+   6,
+   5
+  ]
+ },
+ "murderer": "e",
+ "cast": {
+  "e": "a",
+  "a": "b",
+  "f": "c",
+  "c": "d",
+  "b": "e",
+  "d": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "eastOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "northOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "inRoom",
+    "room": "T"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "westOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "eastOf",
+    "other": "a"
+   }
+  }
+ ]
+}

@@ -1,0 +1,101 @@
+{
+ "positions": {
+  "g": [
+   6,
+   6
+  ],
+  "d": [
+   3,
+   4
+  ],
+  "e": [
+   2,
+   5
+  ],
+  "c": [
+   4,
+   0
+  ],
+  "f": [
+   5,
+   3
+  ],
+  "a": [
+   1,
+   2
+  ],
+  "b": [
+   0,
+   1
+  ]
+ },
+ "murderer": "d",
+ "cast": {
+  "d": "a",
+  "e": "b",
+  "c": "c",
+  "f": "d",
+  "a": "e",
+  "b": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "e",
+   "logic": {
+    "type": "northOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "westOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "southOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "southOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "westOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "inRoom",
+    "room": "F"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "northOf",
+    "other": "c"
+   }
+  }
+ ]
+}

@@ -1,0 +1,170 @@
+{
+ "positions": {
+  "k": [
+   2,
+   6
+  ],
+  "g": [
+   7,
+   3
+  ],
+  "h": [
+   0,
+   10
+  ],
+  "b": [
+   4,
+   2
+  ],
+  "j": [
+   3,
+   5
+  ],
+  "i": [
+   8,
+   7
+  ],
+  "a": [
+   5,
+   9
+  ],
+  "f": [
+   1,
+   0
+  ],
+  "e": [
+   6,
+   1
+  ],
+  "c": [
+   10,
+   4
+  ],
+  "d": [
+   9,
+   8
+  ]
+ },
+ "murderer": "j",
+ "cast": {
+  "g": "a",
+  "h": "b",
+  "b": "c",
+  "j": "d",
+  "i": "e",
+  "a": "f",
+  "f": "g",
+  "e": "h",
+  "c": "i",
+  "d": "j"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "northOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "southOf",
+    "other": "j"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "southOf",
+    "other": "g"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "j",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "inRoom",
+    "room": "H"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "westOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "eastOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "eastOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "j",
+   "logic": {
+    "type": "sameColAs",
+    "object": "statue"
+   }
+  }
+ ]
+}

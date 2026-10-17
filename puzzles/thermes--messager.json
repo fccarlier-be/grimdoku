@@ -1,0 +1,288 @@
+{
+  "formatVersion": 1,
+  "title": "Les Thermes Enchantés — l'affaire Rapidon",
+  "size": 6,
+  "rooms": {
+    "V": {
+      "name": "Vestiaire",
+      "the": "le vestiaire",
+      "floor": "parquet"
+    },
+    "C": {
+      "name": "Bassin chaud",
+      "the": "le bassin chaud",
+      "floor": "mosaique"
+    },
+    "F": {
+      "name": "Bassin froid",
+      "the": "le bassin froid",
+      "floor": "mosaique"
+    },
+    "S": {
+      "name": "Sauna",
+      "the": "le sauna",
+      "floor": "mosaique"
+    },
+    "M": {
+      "name": "Salle de massage",
+      "the": "la salle de massage",
+      "floor": "parquet"
+    }
+  },
+  "layout": [
+    "VVCCCC",
+    "VVCCCC",
+    "SSCCFF",
+    "SSMMFF",
+    "SSMMFF",
+    "SMMMFF"
+  ],
+  "objects": [
+    {
+      "type": "coffre",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        3
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        2
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "roseaux",
+      "at": [
+        4,
+        4
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        3,
+        2
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        3
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        1
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Capucine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee",
+      "tic": "« Je te le rends demain. »"
+    },
+    {
+      "id": "b",
+      "name": "Bâfrin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll",
+      "tic": "Répète le dernier mot de la phrase des autres"
+    },
+    {
+      "id": "c",
+      "name": "Aëlys",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe",
+      "tic": "Note tout sur dix, les gens compris"
+    },
+    {
+      "id": "d",
+      "name": "Goémone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene",
+      "tic": "Fait des bulles quand elle ment"
+    },
+    {
+      "id": "e",
+      "name": "Grippesou",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧔‍♂️",
+      "desc": "Tavernier nain, radin légendaire",
+      "archetype": "tavernier",
+      "tic": "Compte à voix basse en parlant"
+    },
+    {
+      "id": "f",
+      "name": "Rapidon",
+      "gender": "m",
+      "role": "victim",
+      "icon": "✉️",
+      "desc": "Messager du baron, porte toujours de mauvaises nouvelles",
+      "archetype": "messager",
+      "guest": true
+    }
+  ],
+  "decor": "thermes",
+  "id": "thermes--messager",
+  "place": "thermes",
+  "intro": "Aux Thermes Enchantés, le messager Rapidon, venu apporter une lettre du baron, a pris son dernier bain. Cinq baigneurs se prélassaient. L'un d'eux était seul avec lui. J'enquête en peignoir ; c'est le règlement, paraît-il.",
+  "epilogue": "— Vous étiez seule avec Rapidon.\n— Je n'ai rien fait. (Blub.)\n— Vous faites des bulles.\n— Il voulait m'annoncer une mauvaise nouvelle. Je l'ai juste invité à nager. (Blub, blub.)",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Capucine était au sud de Grippesou.",
+      "logic": {
+        "type": "southOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Elle était à côté d'un coffre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bâfrin était à côté d'un tonneau.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Aëlys était à côté d'une statue.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Goémone était sur la même ligne qu'une table.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "table"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Elle était dans la même colonne qu'une statue.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Grippesou était dans le bassin chaud.",
+      "logic": {
+        "type": "inRoom",
+        "room": "C"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        4,
+        2
+      ],
+      "d": [
+        5,
+        3
+      ],
+      "c": [
+        3,
+        5
+      ],
+      "b": [
+        2,
+        1
+      ],
+      "a": [
+        1,
+        0
+      ],
+      "e": [
+        0,
+        4
+      ]
+    },
+    "murderer": "d"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "position relative",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 2
+}

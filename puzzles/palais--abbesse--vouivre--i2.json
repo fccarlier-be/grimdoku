@@ -1,0 +1,330 @@
+{
+  "formatVersion": 1,
+  "title": "Le Palais des Mille Vœux — l'affaire Prudence",
+  "size": 7,
+  "rooms": {
+    "T": {
+      "name": "Salle du trône",
+      "the": "la salle du trône",
+      "floor": "noble"
+    },
+    "L": {
+      "name": "Salle des lampes",
+      "the": "la salle des lampes",
+      "floor": "dalles"
+    },
+    "J": {
+      "name": "Jardins suspendus",
+      "the": "les jardins suspendus",
+      "floor": "herbe"
+    },
+    "B": {
+      "name": "Bazar",
+      "the": "le bazar",
+      "floor": "tomettes"
+    },
+    "H": {
+      "name": "Hammam",
+      "the": "le hammam",
+      "floor": "mosaique"
+    }
+  },
+  "layout": [
+    "LLTTTTT",
+    "LLTTTTT",
+    "LLTTTBB",
+    "LLJJJBB",
+    "HHJJJBB",
+    "HHHJJBB",
+    "HHHJJBB"
+  ],
+  "objects": [
+    {
+      "type": "cristal",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        1,
+        3
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        2
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        1,
+        6
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        4
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        4,
+        2
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        6,
+        6
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        6,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        0
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Esbroufe",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🎩",
+      "desc": "Bonimenteur, vend du rêve au kilo",
+      "archetype": "bonimenteur",
+      "tic": "Vouvoie tout le monde, y compris les poules"
+    },
+    {
+      "id": "b",
+      "name": "Bakchich",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin",
+      "tic": "« Techniquement, c'est légal. »"
+    },
+    {
+      "id": "c",
+      "name": "Dagobert",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤴",
+      "desc": "Roi, avare de compliments et de tout le reste",
+      "archetype": "roi",
+      "tic": "« C'est pas faux. », à tout ce qu'il ne comprend pas"
+    },
+    {
+      "id": "d",
+      "name": "Clairvoya",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🔮",
+      "desc": "Cartomancienne, voit l'avenir, rate le présent",
+      "archetype": "cartomancienne",
+      "tic": "« Je l'avais vu venir. », toujours après coup"
+    },
+    {
+      "id": "e",
+      "name": "Glissandra",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🐍",
+      "desc": "Vouivre, serpent ailé, très longue à se retourner",
+      "archetype": "vouivre",
+      "tic": "Commence ses phrases par la fin",
+      "shape": "I2"
+    },
+    {
+      "id": "f",
+      "name": "Prudence",
+      "gender": "f",
+      "role": "victim",
+      "icon": "📿",
+      "desc": "Abbesse, quête pour un couvent introuvable",
+      "archetype": "abbesse",
+      "guest": true
+    }
+  ],
+  "decor": "palais",
+  "id": "palais--abbesse--vouivre--i2",
+  "place": "palais",
+  "intro": "Au Palais des Mille Vœux, l'abbesse Prudence, venue faire la quête, a fait un vœu de trop, ou en a croisé un. Cinq hôtes du palais étaient là. L'un d'eux était seul avec elle. La djinn m'a proposé de tout résoudre d'un claquement de doigts. J'ai lu les petites lignes.",
+  "epilogue": "— Vous étiez seul avec Prudence.\n— Permettez que je vous vouvoie : elle voulait me faire la morale.\n— Et vous ?\n— Je lui ai vendu un élixir de longue vie. Il y avait une petite erreur sur l'étiquette.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Esbroufe était à côté d'une table.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "table"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Bakchich était à côté d'un champignon géant.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "champi"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Dagobert était dans le bazar.",
+      "logic": {
+        "type": "inRoom",
+        "room": "B"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était dans la même colonne qu'un tapis.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Clairvoya était au sud de Bakchich.",
+      "logic": {
+        "type": "southOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Glissandra n'était pas à côté d'un coffre.",
+      "logic": {
+        "type": "notAdjacentTo",
+        "object": "coffre"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        0,
+        1
+      ],
+      "e": [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "c": [
+        5,
+        6
+      ],
+      "d": [
+        6,
+        2
+      ],
+      "a": [
+        3,
+        0
+      ],
+      "b": [
+        4,
+        3
+      ]
+    },
+    "murderer": "a"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "ligne réservée",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 4
+}

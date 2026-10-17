@@ -1,0 +1,413 @@
+{
+  "formatVersion": 1,
+  "title": "Le Cimetière de Minuit — l'affaire Ondine",
+  "size": 8,
+  "rooms": {
+    "G": {
+      "name": "Maison du gardien",
+      "the": "la maison du gardien",
+      "floor": "parquet"
+    },
+    "C": {
+      "name": "Chapelle",
+      "the": "la chapelle",
+      "floor": "dalles"
+    },
+    "A": {
+      "name": "Allée des ifs",
+      "the": "l'allée des ifs",
+      "floor": "herbe"
+    },
+    "P": {
+      "name": "Carré des pauvres",
+      "the": "le carré des pauvres",
+      "floor": "herbe"
+    },
+    "J": {
+      "name": "Jardin du souvenir",
+      "the": "le jardin du souvenir",
+      "floor": "herbe"
+    },
+    "O": {
+      "name": "Ossuaire",
+      "the": "l'ossuaire",
+      "floor": "crypte"
+    },
+    "Y": {
+      "name": "Crypte",
+      "the": "la crypte",
+      "floor": "crypte"
+    }
+  },
+  "layout": [
+    "GGGAACCC",
+    "GGGAACCC",
+    "PPAAAACC",
+    "PPAAAACC",
+    "PPJJJOOC",
+    "YYJJJOOO",
+    "YYJJJOOO",
+    "YYYYJOOO"
+  ],
+  "objects": [
+    {
+      "type": "lit",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "pupitre",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        3,
+        5
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        2,
+        7
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        4,
+        1
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        5,
+        3
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        6,
+        2
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        7,
+        4
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "tombe",
+      "at": [
+        7,
+        5
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        6,
+        1
+      ]
+    },
+    {
+      "type": "sarcophage",
+      "at": [
+        7,
+        3
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Augure",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐦‍⬛",
+      "desc": "Corbeau, écrit des lettres anonymes",
+      "archetype": "corbeau",
+      "tic": "Ne parle pas : il écrit"
+    },
+    {
+      "id": "b",
+      "name": "Belladone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire",
+      "tic": "« Je ne bois jamais… de vin. »"
+    },
+    {
+      "id": "c",
+      "name": "Glas",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "⚰️",
+      "desc": "Fossoyeur, creuse en sifflotant",
+      "archetype": "fossoyeur",
+      "tic": "Prend les mesures des gens qu'il rencontre"
+    },
+    {
+      "id": "d",
+      "name": "Fernand",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie",
+      "tic": "Perd un morceau quand il s'énerve"
+    },
+    {
+      "id": "e",
+      "name": "Ambroise",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐸",
+      "desc": "Crapaud, prince déchu, attend toujours son bisou",
+      "archetype": "crapaud",
+      "tic": "Rappelle son titre toutes les deux phrases"
+    },
+    {
+      "id": "f",
+      "name": "Gontran",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤺",
+      "desc": "Chevalier, armure trop petite depuis Noël",
+      "archetype": "chevalier",
+      "tic": "Annonce chacune de ses actions à voix haute"
+    },
+    {
+      "id": "g",
+      "name": "Blafard",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👻",
+      "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
+      "archetype": "spectre",
+      "traits": [
+        "spectre"
+      ],
+      "tic": "« De mon vivant… »"
+    },
+    {
+      "id": "h",
+      "name": "Ondine",
+      "gender": "f",
+      "role": "victim",
+      "icon": "🛟",
+      "desc": "Maîtresse-nageuse, sans permis ni maillot",
+      "archetype": "nageuse",
+      "guest": true
+    }
+  ],
+  "decor": "cimetiere",
+  "id": "cimetiere--nageuse",
+  "place": "cimetiere",
+  "intro": "Au Cimetière de Minuit, on a retrouvé la maîtresse-nageuse Ondine, venue donner des cours de natation. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Sept habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec elle. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
+  "epilogue": "— Vous étiez seul avec Ondine.\n— Elle voulait m'apprendre à nager de force. Ça m'a énervé.\n— Et ?\n— J'ai perdu un bras. Elle l'a reçu sur la tête.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Augure était dans la même colonne qu'une statue.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était à l'ouest de Fernand.",
+      "logic": {
+        "type": "westOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Belladone était à côté d'une tombe.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tombe"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Elle était à l'est de Blafard.",
+      "logic": {
+        "type": "eastOf",
+        "other": "g"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Glas était dans la même colonne qu'un sarcophage.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "sarcophage"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était dans la même colonne qu'un arbre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Fernand était dans l'ossuaire.",
+      "logic": {
+        "type": "inRoom",
+        "room": "O"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Il était sur la même ligne qu'une statue.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Ambroise était à côté d'une table.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "table"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Gontran était dans le jardin du souvenir.",
+      "logic": {
+        "type": "inRoom",
+        "room": "J"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Il n'était pas à côté d'une tombe.",
+      "logic": {
+        "type": "notAdjacentTo",
+        "object": "tombe"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Blafard était au sud d'Augure.",
+      "logic": {
+        "type": "southOf",
+        "other": "a"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "h": [
+        5,
+        5
+      ],
+      "c": [
+        0,
+        3
+      ],
+      "g": [
+        7,
+        0
+      ],
+      "d": [
+        6,
+        7
+      ],
+      "b": [
+        3,
+        1
+      ],
+      "a": [
+        2,
+        6
+      ],
+      "f": [
+        4,
+        4
+      ],
+      "e": [
+        1,
+        2
+      ]
+    },
+    "murderer": "d"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "ligne réservée",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 2
+}

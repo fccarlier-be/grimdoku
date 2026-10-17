@@ -1,0 +1,120 @@
+{
+ "positions": {
+  "h": [
+   0,
+   5
+  ],
+  "d": [
+   6,
+   3
+  ],
+  "e": [
+   7,
+   6
+  ],
+  "b": [
+   1,
+   2
+  ],
+  "a": [
+   3,
+   0
+  ],
+  "g": [
+   2,
+   4
+  ],
+  "c": [
+   4,
+   7
+  ],
+  "f": [
+   5,
+   1
+  ]
+ },
+ "murderer": "c",
+ "cast": {
+  "d": "a",
+  "e": "b",
+  "b": "c",
+  "a": "d",
+  "g": "e",
+  "c": "f",
+  "f": "g"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "e",
+   "logic": {
+    "type": "westOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "eastOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "inRoom",
+    "room": "O"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "pupitre"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "sarcophage"
+   }
+  }
+ ]
+}

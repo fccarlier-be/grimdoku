@@ -1,0 +1,139 @@
+{
+ "positions": {
+  "i": [
+   6,
+   5
+  ],
+  "e": [
+   3,
+   1
+  ],
+  "a": [
+   2,
+   6
+  ],
+  "d": [
+   4,
+   8
+  ],
+  "c": [
+   8,
+   3
+  ],
+  "f": [
+   1,
+   7
+  ],
+  "g": [
+   7,
+   2
+  ],
+  "b": [
+   5,
+   4
+  ],
+  "h": [
+   0,
+   0
+  ]
+ },
+ "murderer": "b",
+ "cast": {
+  "e": "a",
+  "a": "b",
+  "d": "c",
+  "c": "d",
+  "f": "e",
+  "g": "f",
+  "b": "g",
+  "h": "h"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "inRoom",
+    "room": "D"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "enclume"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "northOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "southOf",
+    "other": "h"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "westOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "eastOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "statue"
+   }
+  }
+ ]
+}

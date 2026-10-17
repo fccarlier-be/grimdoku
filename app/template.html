@@ -181,6 +181,30 @@ header.top { display: flex; align-items: center; gap: 10px; }
 
 .special { background: var(--board); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 12px; font-size: 14px; display: flex; flex-direction: column; gap: 4px; }
 .special b { color: var(--candle); font-weight: 500; }
+/* lore : carnet d'enquête, lettres d'Augure, affaire finale, épilogue dialogué */
+.lorebar { display: grid; gap: 10px; margin-bottom: 14px; }
+@media (min-width: 900px) { .lorebar { grid-template-columns: 1fr 1fr; } }
+.lvl.carnet, .lvl.finalcase { min-height: 0; padding: 14px; }
+.lvl.finalcase.locked { opacity: .8; cursor: default; }
+.carnet-sec { margin: 0 0 22px; }
+.carnet-sec h2 { font-family: var(--f-display); font-weight: 400; color: var(--candle); margin: 0 0 6px; }
+.carnet-sec h2 small { font-family: var(--f-body); font-size: 14px; color: var(--muted); }
+.lettres, .carnet-sec { display: grid; gap: 10px; }
+@media (min-width: 900px) { .lettres { grid-template-columns: 1fr 1fr; } }
+.lettre, .fiche { position: relative; isolation: isolate; padding: 12px 14px; color: var(--ink); --muted: #6e5434; }
+.lettre::before, .fiche::before { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: 3px; background: var(--parch-tex, none) center / 240px, linear-gradient(#f1e3c2, #e3cfa3); box-shadow: inset 0 0 0 1.5px rgba(43, 32, 22, .5), 0 3px 8px rgba(0, 0, 0, .45); filter: url(#torn-s); }
+.lettre p { font-style: italic; margin: 6px 0 2px; }
+.lettre small, .fiche small { color: var(--muted); }
+.lettre.locked { opacity: .55; }
+.fiche { display: grid; grid-template-columns: 56px 1fr; gap: 12px; align-items: center; }
+.fiche .seal { width: 56px; height: 56px; border-radius: 8px; overflow: hidden; }
+.fiche p { margin: 4px 0 0; font-size: 14px; }
+.fiche .gag { color: #a3312a; font-style: italic; }
+.epi .epl { margin: 0 0 4px; }
+.epi .epl.them { font-weight: 600; }
+.letter-augure { margin: 10px 0; padding: 10px 12px; border: 1.5px dashed rgba(43, 32, 22, .5); border-radius: 4px; text-align: left; }
+.letter-augure p { font-style: italic; margin: 4px 0; }
+.letter-augure small { color: var(--muted); }
 /* notation de la difficulté ressentie, sous la carte (votes envoyés au serveur : /note, journal nginx) */
 .rate { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 6px 12px; padding: 8px 12px; border-radius: var(--radius); font-size: 14px; }
 .rate .rates { display: inline-flex; gap: 6px; }
@@ -550,6 +574,7 @@ html, body { background: var(--desk-tex, none) center top / 640px, var(--night);
 </script>
 <script>
 const PUZZLES = /*__PUZZLES__*/;
+const LORE = /*__LORE__*/; // bible du jeu : lettres d'Augure, troupe récurrente (noms, traits, tics)
 const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vignettes des niveaux, décors
 (function () {
   'use strict';
@@ -590,7 +615,9 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     11: 'Des monstres jusqu\'à quatre cases, parfois de forme inconnue.',
     12: 'Les plus vastes demeures du royaume.'
   };
-  const SIZES = [...new Set(PUZZLES.map(p => p.size))].sort((a, b) => a - b);
+  const CASES = PUZZLES.filter(p => !p.final); // l'affaire finale n'est dans aucune taille : elle se débloque avec les lettres
+  const FINAL = PUZZLES.find(p => p.final);
+  const SIZES = [...new Set(CASES.map(p => p.size))].sort((a, b) => a - b);
   const sizeImg = (n) => MEDIA.levels[SIZES.indexOf(n)]; // vignettes 0, 1, 2… dans l'ordre des tailles
   const solvedIn = (list) => list.filter(p => (store.get('p:' + p.id, null) || {}).solved).length;
   const pageHead = (backAria, title) => `
@@ -605,9 +632,16 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
   function sizesPage() {
     P = null;
     $app.classList.remove('game');
+    const nl = letters().length, total = Object.keys(LORE.letters).length;
     $app.innerHTML = pageHead("Retour à l'accueil", 'Choisis ta taille') + `
+      <div class="lorebar">
+        <button class="lvl carnet" id="carnetBtn"><b>📖 Carnet d'enquête</b><span class="blurb">${nl} / ${total} lettres d'Augure · la troupe de Brumeval</span></button>
+        ${FINAL ? (finalUnlocked()
+          ? `<button class="lvl finalcase" data-final="1"><b>🕯️ ${esc(FINAL.title)}</b><span class="blurb">L'affaire que les lettres annonçaient.</span>${(store.get('p:' + FINAL.id, null) || {}).solved ? '<span class="lvldone">Terminé</span>' : ''}</button>`
+          : `<div class="lvl finalcase locked"><b>🔒 Une affaire se prépare…</b><span class="blurb">Encore ${LORE.need - nl} lettre${LORE.need - nl > 1 ? 's' : ''} d'Augure.</span></div>`) : ''}
+      </div>
       <div class="lvls">${SIZES.map(n => {
-        const list = PUZZLES.filter(p => p.size === n);
+        const list = CASES.filter(p => p.size === n);
         const solved = solvedIn(list);
         return `<button class="lvl" data-size="${n}">
           ${sizeImg(n) ? `<img class="lvlimg" src="${sizeImg(n)}" alt="" loading="lazy">` : ''}
@@ -619,19 +653,52 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
       }).join('')}</div>`;
     document.getElementById('back').onclick = () => go('');
     document.getElementById('rulesBtn').onclick = rules;
-    $app.querySelectorAll('.lvl').forEach(b => b.onclick = () => go('taille/' + b.dataset.size));
+    $app.querySelectorAll('.lvl[data-size]').forEach(b => b.onclick = () => go('taille/' + b.dataset.size));
+    document.getElementById('carnetBtn').onclick = () => go('carnet');
+    const fb = $app.querySelector('[data-final]'); if (fb) fb.onclick = () => go('affaire/' + FINAL.id);
   }
   // page d'une taille : ses affaires, de la plus facile à la plus dure
   function sizePage(n) {
     P = null;
     $app.classList.remove('game');
-    const list = PUZZLES.filter(p => p.size === n);
+    const list = CASES.filter(p => p.size === n);
     $app.innerHTML = pageHead('Retour aux tailles', 'Choisis ton enquête') + `
       <p class="lead"><b class="lvlname">${n} × ${n}</b> — ${SIZE_BLURB[n] || ''} <span class="count">${solvedIn(list)} / ${list.length} résolues</span></p>
       <div class="cases">${list.map(caseHtml).join('')}</div>`;
     document.getElementById('back').onclick = () => go('tailles');
     document.getElementById('rulesBtn').onclick = rules;
     $app.querySelectorAll('.case').forEach(b => b.onclick = () => go('affaire/' + b.dataset.id));
+  }
+  // Carnet d'enquête : les lettres d'Augure trouvées, et la troupe de Brumeval croisée dans les enquêtes résolues
+  function carnetPage() {
+    P = null;
+    $app.classList.remove('game');
+    const got = letters(), total = Object.keys(LORE.letters).length;
+    const solved = CASES.filter(p => (store.get('p:' + p.id, null) || {}).solved);
+    const met = {};
+    for (const p of solved) for (const c of p.characters) if (!c.guest && LORE.troupe[c.archetype]) met[c.archetype] = (met[c.archetype] || 0) + 1;
+    // gags récurrents : ils se voient dans les fiches
+    const gag = (t) => t === 'capitaine' ? `Départs annoncés : ${met[t]}. Départs effectués : 0.`
+      : t === 'fee' ? `Dette au Sanglier Borgne : ${3 + met[t] * 3} tournées.`
+      : t === 'ogre' ? 'Végétarien depuis mardi.' : '';
+    const fiches = Object.keys(LORE.troupe).filter(t => met[t]).map(t => {
+      const c = LORE.troupe[t];
+      const g = gag(t);
+      return `<div class="fiche"><span class="seal" aria-hidden="true">${face({ archetype: t, name: c.name, role: 'suspect', icon: c.icon })}</span>
+        <div><b>${esc(c.name)}</b> <small>${esc(c.desc)}</small><p>${esc(c.tic)}</p>${g ? `<p class="gag">${esc(g)}</p>` : ''}</div></div>`;
+    }).join('');
+    $app.innerHTML = pageHead('Retour aux tailles', "Carnet d'enquête") + `
+      <section class="carnet-sec"><h2>Lettres d'Augure <small>${got.length} / ${total}</small></h2>
+        <p class="lead">Une lettre anonyme attend dans chaque lieu de Brumeval : elle arrive avec la première enquête résolue sur place. ${got.length >= LORE.need ? "Elles mènent toutes au même endroit." : `Il en faut ${LORE.need} pour comprendre où elles mènent.`}</p>
+        <div class="lettres">${Object.keys(LORE.letters).map(pl => got.includes(pl)
+          ? `<div class="lettre"><b>${esc(placeTitle(pl))}</b><p>${esc(LORE.letters[pl])}</p><small>— A.</small></div>`
+          : `<div class="lettre locked"><b>${esc(placeTitle(pl))}</b><p>Pas encore de lettre ici.</p></div>`).join('')}</div>
+      </section>
+      <section class="carnet-sec"><h2>La troupe de Brumeval <small>${Object.keys(met).length} / ${Object.keys(LORE.troupe).length}</small></h2>
+        ${fiches || '<p class="lead">Résous une enquête pour faire connaissance.</p>'}
+      </section>`;
+    document.getElementById('back').onclick = () => go('tailles');
+    document.getElementById('rulesBtn').onclick = rules;
   }
   function home() {
     P = null;
@@ -749,6 +816,8 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     sound.set(page === 'affaire' ? 'carte' : 'menu');
     if (page === 'tailles' || page === 'niveaux') sizesPage();
     else if (page === 'taille' && SIZES.includes(+arg)) sizePage(+arg);
+    else if (page === 'carnet') carnetPage();
+    else if (page === 'affaire' && FINAL && arg === FINAL.id && !finalUnlocked()) carnetPage(); // pas encore débloquée
     else if (page === 'affaire' && PUZZLES.some(p => p.id === arg)) open(arg);
     else home();
     window.scrollTo(0, 0);
@@ -773,7 +842,10 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     undo = []; selected = null;
     render();
     window.scrollTo(0, 0);
+    // première ouverture : l'enquêteur raconte l'affaire (bible du jeu : sa voix ouvre chaque enquête)
+    if (!store.get('seen:' + id, false)) { store.set('seen:' + id, true); introSheet(); }
   }
+  const introSheet = () => sheet(`<h2>${esc(P.title)}</h2><p>${esc(P.intro)}</p><div class="row"><button class="btn primary" data-close>À l'enquête</button></div>`);
   const save = () => store.set('p:' + P.id, S);
   const HOLD_MS = 1500;  // appui long : placement définitif au bout de HOLD_MS
   const HOLD_DELAY = 250; // la jauge n'apparaît qu'après ce délai (un clic normal ne la montre pas)
@@ -795,7 +867,8 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
   // portrait d'un personnage (assets/characters), découpé en rond ; l'emoji ne sert plus qu'en secours
   const face = (ch) => `<span class="face"><svg class="portrait" role="img" aria-label="${esc(ch.name)}"><use href="#chr-${ch.archetype}"/></svg></span>`;
   const ico = (type) => `<svg class="ico"><use href="#obj-${type}"/></svg>`;
-  const letterOf = (ch) => ch.name.normalize('NFD')[0].toUpperCase();
+  // la lettre est une pastille attribuée à chaque énigme (A = le plus facile à placer) ; les noms sont fixes
+  const letterOf = (ch) => ch.id.toUpperCase();
   // met en gras, dans le texte d'un indice, les mots qui portent sa logique
   function emph(cl) {
     const L = cl.logic, terms = [];
@@ -1030,10 +1103,10 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
   }
 
   function bind() {
-    document.getElementById('back').onclick = () => go('taille/' + P.size);
+    document.getElementById('back').onclick = () => go(P.final ? 'tailles' : 'taille/' + P.size);
     document.getElementById('rulesBtn').onclick = rules;
     document.getElementById('opts').onclick = options;
-    document.getElementById('introBtn').onclick = () => sheet(`<h2>${esc(P.title)}</h2><p>${esc(P.intro)}</p><div class="row"><button class="btn primary" data-close>À l'enquête</button></div>`);
+    document.getElementById('introBtn').onclick = introSheet;
     document.querySelectorAll('.clue').forEach(card => card.addEventListener('click', (e) => {
       if (e.target.closest('button')) return;
       const b = card.querySelector('[data-pick]'); if (b) pick(b.dataset.pick);
@@ -1198,14 +1271,15 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
 
   // 💡 Indice : signale d'abord une erreur parmi les personnages confirmés, sinon désigne le prochain
   // personnage qu'on peut déduire et le raisonnement à utiliser (jamais la case).
+  // ce que l'enquêteur marmonne en relisant ses notes (bible du jeu : compétent, épuisé, poli)
   const HINT_TEXT = [
-    (n) => `Relis l'indice de ${n} : il ne laisse qu'une seule case possible.`,
-    (n) => `${n} : une fois retirées les lignes et colonnes déjà prises, il ne reste qu'une case.`,
-    (n) => `Un personnage ne peut être que sur une seule ligne (ou colonne) : elle lui est réservée. Ça suffit pour placer ${n}.`,
-    (n) => `Utilise les positions relatives (nord, sud, est, ouest) : elles limitent les lignes ou colonnes possibles. Ça place ${n}.`,
-    (n) => `Cherche une ligne ou une colonne qu'un seul personnage peut encore occuper : c'est ${n}.`,
-    (n) => `Pense à la règle des pièces : un seul suspect par pièce, et la victime avec un seul. Ça place ${n}.`,
-    (n) => `Regarde les groupes : si deux personnages se partagent deux lignes, personne d'autre n'y va. Ça place ${n}.`
+    (n) => `Relisons la fiche de ${n}. Ses indices ne laissent qu'une case. Bon.`,
+    (n) => `${n}… On retire les lignes et les colonnes déjà prises : il ne reste qu'une case. Évidemment.`,
+    (n) => `Quelqu'un n'a plus qu'une ligne possible, ou qu'une colonne : elle est à lui, les autres n'ont rien à y faire. Ça suffit pour placer ${n}.`,
+    (n) => `Nord, sud, est, ouest. Les positions relatives coincent ${n}. Ce n'est pas sorcier. Enfin, pas ici.`,
+    (n) => `Une ligne, ou une colonne, où un seul personnage peut encore aller. C'est ${n}. Il fallait la voir.`,
+    (n) => `La règle des pièces : un suspect par pièce, la victime avec un seul, et pas une pièce vide. Ça place ${n}.`,
+    (n) => `Quelques-uns se partagent exactement autant de lignes qu'ils sont. Personne d'autre n'y entre. Ça place ${n}.`
   ];
   function hint() {
     const sol = P.solution.positions;
@@ -1237,29 +1311,46 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
       if (v.size) { settings.live = true; store.set('settings', settings); render(); return toast(`${v.size} indice${v.size > 1 ? 's' : ''} ne colle${v.size > 1 ? 'nt' : ''} pas. Ils sont surlignés en rouge.`, true); }
       return toast("Tout semble coller… mais ce n'est pas la bonne scène. Un indice t'a peut-être échappé.", true);
     }
-    S.solved = true; selected = null; save(); render();
+    S.solved = true; selected = null; save();
+    render.newLetter = grantLetter(P);
+    render();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   // verdict affiché sous la carte une fois l'affaire résolue (remplace le dock)
+  // Lettres d'Augure (fil rouge) : la première enquête résolue dans un lieu donne la lettre de ce lieu
+  const letters = () => store.get('lettres', []);
+  const finalUnlocked = () => letters().length >= LORE.need;
+  function grantLetter(p) {
+    const got = letters();
+    if (!LORE.letters[p.place] || got.includes(p.place)) return null;
+    store.set('lettres', got.concat(p.place));
+    return p.place;
+  }
+  const placeTitle = (place) => { const p = PUZZLES.find(q => q.place === place && !q.final); return p ? p.title.split(' — ')[0] : place; };
+  // épilogue : un dialogue (« — » en début de ligne), l'enquêteur puis le coupable
+  const dialogue = (text) => text.split('\n').map((l, i) => `<p class="epl ${i % 2 ? 'them' : 'me'}">${esc(l)}</p>`).join('');
   function verdictHtml() {
     const k = ctx.chars[P.solution.murderer];
     const v = P.characters.find(c => c.role === 'victim');
-    const next = PUZZLES[PUZZLES.indexOf(P) + 1];
+    const next = nextCase();
     return `<div class="verdictcard">
         <div class="wanted">Coupable</div>
         <span class="em big">${face(k)}</span>
         <b class="culprit">${esc(k.name)}</b>
         <p class="why">Seul suspect dans la pièce de ${esc(v.name)}.</p>
-        <p class="epi">${esc(P.epilogue)}</p>
+        <div class="epi">${dialogue(P.epilogue)}</div>
+        ${render.newLetter === P.place ? `<div class="letter-augure"><b>📜 Une lettre anonyme glissée sous la porte</b><p>${esc(LORE.letters[P.place])}</p><small>— A. · ${letters().length} / ${Object.keys(LORE.letters).length} lettres dans ton carnet</small></div>` : ''}
         <div class="row">
           <button class="btn" id="replayBtn">Rejouer</button>
           ${next ? `<button class="btn primary" id="nextBtn">Affaire suivante</button>` : `<button class="btn primary" id="homeBtn">Toutes les tailles</button>`}
         </div>
       </div>`;
   }
+  // affaire suivante : dans l'ordre (taille, difficulté), sans l'affaire finale
+  const nextCase = () => PUZZLES.slice(PUZZLES.indexOf(P) + 1).find(p => !p.final);
   function bindVerdict() {
-    const next = PUZZLES[PUZZLES.indexOf(P) + 1];
+    const next = nextCase();
     document.getElementById('replayBtn').onclick = () => { S = blank(); undo = []; save(); render(); };
     const nb = document.getElementById('nextBtn'); if (nb) nb.onclick = () => go('affaire/' + next.id);
     const hb = document.getElementById('homeBtn'); if (hb) hb.onclick = () => go('tailles');
@@ -1286,6 +1377,8 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
         <li>« À côté de » veut dire juste au-dessus, en dessous, à gauche ou à droite, dans la même pièce. Pas en diagonale, ni à travers un mur — même par une porte : les portes ne sont qu'un décor.</li>
         <li><b>Seule la pièce du crime contient deux personnes</b> : chaque suspect était seul dans sa pièce, sauf le coupable, qui était avec la victime.</li>
         <li><b>Chaque pièce est occupée</b> : aucune pièce n'est vide (deux pièces reliées par un portail comptent pour une).</li>
+        <li><b>La victime</b> est un invité de passage à Brumeval ; les suspects, eux, sont les habitués, et tu les retrouveras d'une enquête à l'autre. Chacun porte une <b>lettre</b> (A, B, C…) le temps d'une enquête : A est le plus facile à placer.</li>
+        <li><b>Lettres d'Augure</b> : la première enquête résolue dans chaque lieu te vaut une lettre anonyme, rangée dans ton carnet d'enquête. Assez de lettres, et une affaire très spéciale se débloque.</li>
         <li>La victime n'a pas d'indice : c'est à toi de la trouver.</li>
         <li><b>Grands personnages</b> : ils occupent plusieurs cases (2 cases jusqu'en 8×8, jusqu'à 3 en 9×9, jusqu'à 4 au-delà), en ligne, en angle, en carré, en T ou en zigzag, et leur forme peut être tournée ou retournée. Chacune de leurs cases prend sa ligne et sa colonne. Toutes leurs cases sont dans la même pièce, jamais sur un meuble. « À côté de » et « même ligne / colonne » valent pour n'importe laquelle de leurs cases ; « au nord de X » veut dire toutes leurs cases plus haut que X. Sur les grandes cartes, leur forme est parfois inconnue : leur fiche dit seulement combien de cases ils peuvent occuper.</li>
       </ul>

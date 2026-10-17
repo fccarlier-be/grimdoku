@@ -1,0 +1,161 @@
+{
+ "positions": {
+  "l": [
+   1,
+   11
+  ],
+  "h": [
+   3,
+   8
+  ],
+  "e": [
+   8,
+   2
+  ],
+  "c": [
+   11,
+   5
+  ],
+  "d": [
+   0,
+   6
+  ],
+  "b": [
+   9,
+   4
+  ],
+  "k": [
+   6,
+   7
+  ],
+  "a": [
+   5,
+   10
+  ],
+  "f": [
+   4,
+   1
+  ],
+  "i": [
+   10,
+   0
+  ],
+  "g": [
+   2,
+   3
+  ],
+  "j": [
+   7,
+   9
+  ]
+ },
+ "murderer": "h",
+ "cast": {
+  "h": "a",
+  "e": "b",
+  "c": "c",
+  "d": "d",
+  "b": "e",
+  "k": "f",
+  "a": "g",
+  "f": "h",
+  "i": "i",
+  "g": "j",
+  "j": "k"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "b",
+   "logic": {
+    "type": "onObject",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "k",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chariot"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "sameColAs",
+    "object": "canon"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "inRoom",
+    "room": "C"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "onObject",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "foin"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "j",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "eastOf",
+    "other": "h"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tonneau"
+   }
+  }
+ ]
+}

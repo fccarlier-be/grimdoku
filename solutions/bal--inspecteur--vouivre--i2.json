@@ -1,0 +1,100 @@
+{
+ "positions": {
+  "g": [
+   1,
+   4
+  ],
+  "b": [
+   [
+    6,
+    1
+   ],
+   [
+    7,
+    1
+   ]
+  ],
+  "c": [
+   2,
+   3
+  ],
+  "a": [
+   3,
+   0
+  ],
+  "d": [
+   5,
+   5
+  ],
+  "e": [
+   0,
+   7
+  ],
+  "f": [
+   4,
+   2
+  ]
+ },
+ "murderer": "c",
+ "cast": {
+  "b": "a",
+  "c": "b",
+  "a": "c",
+  "d": "d",
+  "e": "e",
+  "f": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "onObject",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "notInRoom",
+    "room": "M"
+   }
+  }
+ ]
+}

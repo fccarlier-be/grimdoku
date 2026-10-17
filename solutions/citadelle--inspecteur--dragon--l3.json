@@ -1,0 +1,123 @@
+{
+ "positions": {
+  "h": [
+   6,
+   6
+  ],
+  "e": [
+   [
+    1,
+    4
+   ],
+   [
+    2,
+    4
+   ],
+   [
+    2,
+    5
+   ]
+  ],
+  "f": [
+   3,
+   8
+  ],
+  "c": [
+   8,
+   1
+  ],
+  "g": [
+   7,
+   7
+  ],
+  "a": [
+   4,
+   2
+  ],
+  "d": [
+   5,
+   3
+  ],
+  "b": [
+   0,
+   0
+  ]
+ },
+ "murderer": "d",
+ "cast": {
+  "e": "a",
+  "f": "b",
+  "c": "c",
+  "g": "d",
+  "a": "e",
+  "d": "f",
+  "b": "g"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "c",
+   "logic": {
+    "type": "westOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "inRoom",
+    "room": "R"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "enclume"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chariot"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameColAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "westOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chariot"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "sarcophage"
+   }
+  }
+ ]
+}

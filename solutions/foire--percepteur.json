@@ -1,0 +1,115 @@
+{
+ "positions": {
+  "g": [
+   0,
+   1
+  ],
+  "a": [
+   4,
+   4
+  ],
+  "d": [
+   6,
+   2
+  ],
+  "f": [
+   2,
+   6
+  ],
+  "b": [
+   3,
+   0
+  ],
+  "e": [
+   5,
+   5
+  ],
+  "c": [
+   1,
+   3
+  ]
+ },
+ "murderer": "b",
+ "cast": {
+  "a": "a",
+  "d": "b",
+  "f": "c",
+  "b": "d",
+  "e": "e",
+  "c": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "a",
+   "logic": {
+    "type": "southOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "westOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "northOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "westOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "westOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "statue"
+   }
+  }
+ ]
+}

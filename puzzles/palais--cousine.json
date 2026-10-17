@@ -1,0 +1,358 @@
+{
+  "formatVersion": 1,
+  "title": "Le Palais des Mille Vœux — l'affaire Ermengarde",
+  "size": 7,
+  "rooms": {
+    "T": {
+      "name": "Salle du trône",
+      "the": "la salle du trône",
+      "floor": "noble"
+    },
+    "R": {
+      "name": "Trésor",
+      "the": "le trésor",
+      "floor": "noble"
+    },
+    "L": {
+      "name": "Salle des lampes",
+      "the": "la salle des lampes",
+      "floor": "dalles"
+    },
+    "J": {
+      "name": "Jardins suspendus",
+      "the": "les jardins suspendus",
+      "floor": "herbe"
+    },
+    "B": {
+      "name": "Bazar",
+      "the": "le bazar",
+      "floor": "tomettes"
+    },
+    "H": {
+      "name": "Hammam",
+      "the": "le hammam",
+      "floor": "mosaique"
+    }
+  },
+  "layout": [
+    "LLTTTRR",
+    "LLTTTRR",
+    "LLTTTBB",
+    "LLJJJBB",
+    "HHJJJBB",
+    "HHHJJBB",
+    "HHHJJBB"
+  ],
+  "objects": [
+    {
+      "type": "cristal",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        1,
+        3
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        2
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        1,
+        6
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        4
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        4,
+        2
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        5
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        6,
+        6
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        6,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        0
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Dagobert",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤴",
+      "desc": "Roi, avare de compliments et de tout le reste",
+      "archetype": "roi",
+      "tic": "« C'est pas faux. », à tout ce qu'il ne comprend pas"
+    },
+    {
+      "id": "b",
+      "name": "Clairvoya",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🔮",
+      "desc": "Cartomancienne, voit l'avenir, rate le présent",
+      "archetype": "cartomancienne",
+      "tic": "« Je l'avais vu venir. », toujours après coup"
+    },
+    {
+      "id": "c",
+      "name": "Belladone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire",
+      "tic": "« Je ne bois jamais… de vin. »"
+    },
+    {
+      "id": "d",
+      "name": "Esbroufe",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🎩",
+      "desc": "Bonimenteur, vend du rêve au kilo",
+      "archetype": "bonimenteur",
+      "tic": "Vouvoie tout le monde, y compris les poules"
+    },
+    {
+      "id": "e",
+      "name": "Fumerolle",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn",
+      "tic": "Prend tout au pied de la lettre"
+    },
+    {
+      "id": "f",
+      "name": "Fizzlebarbe",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Archimage, 412 ans, toujours pas de testament",
+      "archetype": "archimage",
+      "tic": "« De mon temps… » (en concurrence avec Blafard)"
+    },
+    {
+      "id": "g",
+      "name": "Ermengarde",
+      "gender": "f",
+      "role": "victim",
+      "icon": "👒",
+      "desc": "Cousine éloignée de tout le monde, venue pour l'héritage",
+      "archetype": "cousine",
+      "guest": true
+    }
+  ],
+  "decor": "palais",
+  "id": "palais--cousine",
+  "place": "palais",
+  "intro": "Au Palais des Mille Vœux, la cousine Ermengarde, venue réclamer un héritage, a fait un vœu de trop, ou en a croisé un. Six hôtes du palais étaient là. L'un d'eux était seul avec elle. La djinn m'a proposé de tout résoudre d'un claquement de doigts. J'ai lu les petites lignes.",
+  "epilogue": "— Vous étiez seul avec Ermengarde.\n— Elle voulait réclamer sa part de ce qui m'appartient. De mon temps, on changeait ces gens-là en tabouret.\n— Vous l'avez changée en tabouret ?\n— Non. J'ai oublié la formule. Alors j'ai pris la canne.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Dagobert était à l'est de Fumerolle.",
+      "logic": {
+        "type": "eastOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était sur un tapis.",
+      "logic": {
+        "type": "onObject",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Clairvoya était dans la salle des lampes.",
+      "logic": {
+        "type": "inRoom",
+        "room": "L"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Belladone était au nord de Clairvoya.",
+      "logic": {
+        "type": "northOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Esbroufe était sur la même ligne qu'une chaise.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Fumerolle était dans la même colonne qu'un coffre.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Fizzlebarbe était sur la même ligne qu'un coffre.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "coffre"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Il était dans la même colonne qu'un champignon géant.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "champi"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "g": [
+        5,
+        0
+      ],
+      "a": [
+        3,
+        6
+      ],
+      "b": [
+        2,
+        1
+      ],
+      "d": [
+        4,
+        4
+      ],
+      "c": [
+        0,
+        3
+      ],
+      "f": [
+        6,
+        2
+      ],
+      "e": [
+        1,
+        5
+      ]
+    },
+    "murderer": "f"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 6,
+    "hardest": "seul candidat",
+    "hardSteps": 2,
+    "directStart": 0
+  },
+  "difficulty": 3
+}

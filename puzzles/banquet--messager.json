@@ -1,0 +1,295 @@
+{
+  "formatVersion": 1,
+  "title": "Le Banquet des Gobelins — l'affaire Rapidon",
+  "size": 6,
+  "rooms": {
+    "K": {
+      "name": "Cuisine",
+      "the": "la cuisine",
+      "floor": "damier"
+    },
+    "C": {
+      "name": "Cellier",
+      "the": "le cellier",
+      "floor": "tomettes"
+    },
+    "F": {
+      "name": "Salle des fêtes",
+      "the": "la salle des fêtes",
+      "floor": "noble"
+    },
+    "G": {
+      "name": "Garde-manger",
+      "the": "le garde-manger",
+      "floor": "tomettes"
+    },
+    "O": {
+      "name": "Cour",
+      "the": "la cour",
+      "floor": "paves"
+    }
+  },
+  "layout": [
+    "KKKCCC",
+    "KKFFCC",
+    "GGFFFF",
+    "GGFFFF",
+    "GOOFFF",
+    "OOOOFF"
+  ],
+  "objects": [
+    {
+      "type": "chaudron",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        1,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        2,
+        4
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        4,
+        2
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Fausset",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde",
+      "tic": "Transforme chaque conversation en couplet"
+    },
+    {
+      "id": "b",
+      "name": "Festin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👹",
+      "desc": "Ogre, végétarien depuis mardi",
+      "archetype": "ogre",
+      "tic": "Compte les jours depuis mardi"
+    },
+    {
+      "id": "c",
+      "name": "Bâfrin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll",
+      "tic": "Répète le dernier mot de la phrase des autres"
+    },
+    {
+      "id": "d",
+      "name": "Fricot",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🍳",
+      "desc": "Chef gobelin, goûte tout, surtout ce qui bouge encore",
+      "archetype": "chef",
+      "tic": "Juge chaque plat à sa capacité à s'enfuir"
+    },
+    {
+      "id": "e",
+      "name": "Bakchich",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👺",
+      "desc": "Gobelin, trésorier du royaume (non déclaré)",
+      "archetype": "gobelin",
+      "tic": "« Techniquement, c'est légal. »"
+    },
+    {
+      "id": "f",
+      "name": "Rapidon",
+      "gender": "m",
+      "role": "victim",
+      "icon": "✉️",
+      "desc": "Messager du baron, porte toujours de mauvaises nouvelles",
+      "archetype": "messager",
+      "guest": true
+    }
+  ],
+  "decor": "banquet",
+  "id": "banquet--messager",
+  "place": "banquet",
+  "intro": "Au Banquet des Gobelins, le messager Rapidon, venu apporter une lettre du baron, est passé du côté des convives au côté du menu. Enfin, presque. Cinq invités se goinfraient. L'un d'eux était seul avec lui. On m'a servi une soupe. Je ne l'ai pas touchée.",
+  "epilogue": "— Vous étiez seul avec Rapidon.\n— Il voulait m'annoncer une mauvaise nouvelle. Puis il a voulu filer.\n— Et ?\n— Chez moi, ce qui s'enfuit finit dans la marmite. C'est la règle de la maison.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Fausset était sur la même ligne qu'un arbre.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était à l'ouest de Bâfrin.",
+      "logic": {
+        "type": "westOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Festin était à côté d'une botte de foin.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "foin"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Bâfrin était sur la même ligne qu'un tonneau.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Fricot était sur la même ligne qu'une chaise.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Bakchich était dans le cellier.",
+      "logic": {
+        "type": "inRoom",
+        "room": "C"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était à l'ouest de Fricot.",
+      "logic": {
+        "type": "westOf",
+        "other": "d"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        4,
+        3
+      ],
+      "e": [
+        1,
+        4
+      ],
+      "c": [
+        0,
+        2
+      ],
+      "b": [
+        2,
+        1
+      ],
+      "a": [
+        5,
+        0
+      ],
+      "d": [
+        3,
+        5
+      ]
+    },
+    "murderer": "d"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "position relative",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 2
+}

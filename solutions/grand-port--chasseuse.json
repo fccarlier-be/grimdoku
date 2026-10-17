@@ -1,0 +1,144 @@
+{
+ "positions": {
+  "j": [
+   6,
+   7
+  ],
+  "a": [
+   8,
+   5
+  ],
+  "i": [
+   4,
+   6
+  ],
+  "f": [
+   0,
+   9
+  ],
+  "b": [
+   5,
+   2
+  ],
+  "h": [
+   7,
+   8
+  ],
+  "d": [
+   9,
+   1
+  ],
+  "e": [
+   2,
+   4
+  ],
+  "c": [
+   3,
+   0
+  ],
+  "g": [
+   1,
+   3
+  ]
+ },
+ "murderer": "a",
+ "cast": {
+  "a": "a",
+  "i": "b",
+  "f": "c",
+  "b": "d",
+  "h": "e",
+  "d": "f",
+  "e": "g",
+  "c": "h",
+  "g": "i"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "northOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "hamac"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "pupitre"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "eastOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "table"
+   }
+  }
+ ]
+}

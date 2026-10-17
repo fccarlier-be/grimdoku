@@ -1,0 +1,296 @@
+{
+  "formatVersion": 1,
+  "title": "La Ferme Hantée — l'affaire Lirelire",
+  "size": 6,
+  "rooms": {
+    "G": {
+      "name": "Grange",
+      "the": "la grange",
+      "floor": "paille"
+    },
+    "E": {
+      "name": "Étable",
+      "the": "l'étable",
+      "floor": "paille"
+    },
+    "O": {
+      "name": "Poulailler",
+      "the": "le poulailler",
+      "floor": "paille"
+    },
+    "F": {
+      "name": "Fournil",
+      "the": "le fournil",
+      "floor": "tomettes"
+    },
+    "P": {
+      "name": "Potager",
+      "the": "le potager",
+      "floor": "herbe"
+    }
+  },
+  "layout": [
+    "GGGEEE",
+    "GGGEEO",
+    "FFGPOO",
+    "FFPPPO",
+    "FFPPPO",
+    "FPPPPO"
+  ],
+  "objects": [
+    {
+      "type": "foin",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        0,
+        2
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        3
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        4,
+        5
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        3,
+        1
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        5,
+        2
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        4,
+        4
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Farinard",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "👨‍🌾",
+      "desc": "Meunier, pèse le grain avec le pouce",
+      "archetype": "meunier",
+      "tic": "« Au poids, c'est honnête. »"
+    },
+    {
+      "id": "b",
+      "name": "Fernand",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧟",
+      "desc": "Zombie, ancien apprenti. Ancien tout court",
+      "archetype": "zombie",
+      "tic": "Perd un morceau quand il s'énerve"
+    },
+    {
+      "id": "c",
+      "name": "Flammèche",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🐉",
+      "desc": "Dragonnet, brûle tout ce qu'il touche",
+      "archetype": "dragonnet",
+      "tic": "S'excuse avant même d'avoir brûlé quelque chose"
+    },
+    {
+      "id": "d",
+      "name": "Capucine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee",
+      "tic": "« Je te le rends demain. »"
+    },
+    {
+      "id": "e",
+      "name": "Bâfrin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll",
+      "tic": "Répète le dernier mot de la phrase des autres"
+    },
+    {
+      "id": "f",
+      "name": "Lirelire",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🪕",
+      "desc": "Troubadour itinérant, chante juste, et ça agace",
+      "archetype": "troubadour",
+      "guest": true
+    }
+  ],
+  "decor": "ferme",
+  "id": "ferme--troubadour",
+  "place": "ferme",
+  "intro": "On dit la Ferme Hantée, et le troubadour Lirelire, venu donner un concert, va sûrement y contribuer. Cinq habitants de la ferme étaient là cette nuit. L'un d'eux était seul avec lui. Les poules, elles, refusent de témoigner.",
+  "epilogue": "— Vous étiez seul avec Lirelire.\n— Lirelire.\n— Pourquoi ?\n— Il voulait chanter mieux que tout le monde. Alors Bâfrin taper. Taper fort. Fort.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Farinard était à côté d'une botte de foin.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "foin"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était à l'ouest de Capucine.",
+      "logic": {
+        "type": "westOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Fernand était dans le poulailler.",
+      "logic": {
+        "type": "inRoom",
+        "room": "O"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Il était sur la même ligne qu'un tonneau.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Flammèche était sur la même ligne qu'une botte de foin.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "foin"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Capucine était au sud de Fernand.",
+      "logic": {
+        "type": "southOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Bâfrin était dans la même colonne qu'une statue.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était au sud de Capucine.",
+      "logic": {
+        "type": "southOf",
+        "other": "d"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        3,
+        2
+      ],
+      "e": [
+        5,
+        4
+      ],
+      "b": [
+        2,
+        5
+      ],
+      "d": [
+        4,
+        1
+      ],
+      "c": [
+        0,
+        3
+      ],
+      "a": [
+        1,
+        0
+      ]
+    },
+    "murderer": "e"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "position relative",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 2
+}

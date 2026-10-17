@@ -200,15 +200,6 @@
     }
   ],
   "auto": {
-    "intro": "{Titre} {victime} a été retrouvé{e} sans vie à la Forge du Dragon, encore tiède. {Nombre} artisans et clients s'y pressaient cette nuit-là. Un seul était avec {lui}.",
-    "epilogues": {
-      "dragonnet": "{coupable} avoue en soufflant une volute : {victime} avait éteint sa forge avec un seau d'eau « pour économiser le charbon ».",
-      "mineur": "{coupable} avoue : {victime} avait fondu sa plus belle pépite pour en faire une cuillère.",
-      "chevalier": "{coupable} avoue en grinçant : {victime} lui avait forgé une armure encore plus petite que l'ancienne.",
-      "gobelin": "{coupable} avoue : {victime} avait remarqué que les épées vendues étaient en fer-blanc peint.",
-      "troll": "{coupable} avoue : {victime} se servait de sa tête comme enclume de secours.",
-      "ogre": "{coupable} avoue, rouge de honte : {victime} lui avait forgé une fourchette géante. Il était végétarien depuis mardi.",
-      "mage": "{coupable} avoue en éternuant : {victime} avait trempé une lame enchantée dans un tonneau de bière."
-    }
+    "intro": "La Forge du Dragon fume plus que d'habitude : {titre} {victime}, venu{e} {motif}, n'en est pas ressorti{e}. {Nombre} habitués de la forge étaient au travail, paraît-il. L'un d'eux était seul avec {lui}. Le dragon dort. J'aimerais qu'il continue."
   }
 }

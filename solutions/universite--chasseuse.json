@@ -1,0 +1,177 @@
+{
+ "positions": {
+  "k": [
+   3,
+   2
+  ],
+  "i": [
+   5,
+   6
+  ],
+  "d": [
+   9,
+   7
+  ],
+  "g": [
+   4,
+   0
+  ],
+  "j": [
+   6,
+   9
+  ],
+  "c": [
+   8,
+   1
+  ],
+  "f": [
+   2,
+   3
+  ],
+  "h": [
+   7,
+   8
+  ],
+  "e": [
+   10,
+   4
+  ],
+  "a": [
+   0,
+   10
+  ],
+  "b": [
+   1,
+   5
+  ]
+ },
+ "murderer": "g",
+ "cast": {
+  "i": "a",
+  "d": "b",
+  "g": "c",
+  "j": "d",
+  "c": "e",
+  "f": "f",
+  "h": "g",
+  "e": "h",
+  "a": "i",
+  "b": "j"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "i",
+   "logic": {
+    "type": "southOf",
+    "other": "g"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "southOf",
+    "other": "g"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "etagere"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "inRoom",
+    "room": "J"
+   }
+  },
+  {
+   "who": "j",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "southOf",
+    "other": "h"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "etagere"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameColAs",
+    "object": "pupitre"
+   }
+  }
+ ]
+}

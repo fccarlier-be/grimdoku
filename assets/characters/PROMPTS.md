@@ -97,3 +97,29 @@ Creature:
 
 Puis `.venv/bin/python tools/images.py && npm run build` : le script produit `<type>-full.webp` (corps entier) et `<type>.webp` (buste).
 Si le buste est mal cadré, régler `BIG_HEAD_TYPE` dans `tools/images.py`.
+
+## Invités de passage (victimes) — lore 2026-10-17
+
+Depuis la bible du jeu, la victime est presque toujours un **invité de passage** : la troupe récurrente reste vivante
+d'une enquête à l'autre. Même méthode que plus haut : **joindre le portrait du tavernier validé**, envoyer « Prompt de
+suite » puis la ligne de l'invité. Ces portraits sont vus sur la carte de la victime (cachet rouge) : un visage un peu
+pincé ou suffisant, qu'on n'est pas trop triste de voir disparaître, mais sans rien de lugubre.
+
+| Fichier | Invité | Description (à coller après « New character: ») |
+|---|---|---|
+| `percepteur.png` | Taxard, le percepteur | a thin balding tax collector with a long pointed nose, small round spectacles, a tall black hat with a brass badge, a stiff dark-green coat with silver buttons, holding a fat ledger and a quill, a smug little smile |
+| `cousine.png` | Ermengarde, la cousine | a middle-aged woman in an outdated, over-decorated purple travelling dress and a huge feathered hat, a lorgnette raised to one eye, greedy satisfied expression, a rolled family tree tucked under her arm |
+| `inspecteur.png` | Pinardon, l'inspecteur des tavernes | a portly inspector with a waxed curly moustache, a red nose, a brown bowler hat, a checked waistcoat, holding a wine glass up to the light with a frown, a notebook peeking from his pocket |
+| `touriste.png` | Gustave, le touriste | a cheerful sunburnt tourist with a straw hat, a loud striped shirt, a charcoal sketchbook hanging from his neck and a stick of charcoal behind his ear, wide curious eyes, a backpack strap on one shoulder |
+| `huissier.png` | Saisitout, l'huissier | a stern grey-skinned goblin bailiff in a tight black suit and a stiff collar, a monocle, holding up an official parchment with a red wax seal, ears sticking out, cold satisfied expression |
+| `nageuse.png` | Ondine, la maîtresse-nageuse | a sporty woman with short wet hair, a whistle around her neck, an old-fashioned striped full-body bathing suit in blue and white, a rubber swimming ring on one shoulder, very bossy expression |
+| `colporteur.png` | Bricabrac, le colporteur | a scruffy peddler with a patchy grey beard and a crooked smile, a battered felt hat covered in trinkets, a huge backpack overflowing with pots, spoons and useless junk, offering a chipped teapot to the viewer |
+| `abbesse.png` | Prudence, l'abbesse | an elderly abbess in a brown and cream nun's habit with a wooden rosary, a collection box held firmly in both hands, pursed lips and one raised disapproving eyebrow |
+| `troubadour.png` | Lirelire, le troubadour | a handsome, very pleased-with-himself troubadour with golden curls, a feathered beret, a bright yellow and green doublet, holding a lute, eyes closed mid-song, chin up |
+| `chasseuse.png` | Vipérine, la chasseuse de primes | a lean bounty hunter with a scar across one cheek, a wide-brimmed dark hat, a leather coat with many straps, a rolled wanted poster in one hand, narrowed eyes, a crossbow strap over her shoulder |
+| `alchimiste.png` | Mercurio, l'alchimiste | a shifty travelling alchemist with a pointed black goatee, singed eyebrows, round brass goggles pushed on his forehead, a stained leather apron, holding up a bubbling green flask with a sly grin |
+| `baronne.png` | Grisemotte, la baronne voisine | a haughty noblewoman with an enormous towering grey powdered wig, a heavy pearl necklace, a stiff dark-blue gown with a ruff collar, a fan half hiding a contemptuous smile |
+| `dresseuse.png` | Gertrude, la dresseuse de dragons | a burly cheerful animal trainer with rolled-up sleeves, thick leather gloves, a red ringmaster jacket with brass buttons, a coiled whip at her belt, a few singe marks on her face, confident grin |
+| `messager.png` | Rapidon, le messager | a breathless young royal messenger with messy hair, a small cap with a feather, a tabard in the baron's colours (slate blue and ochre), holding out a sealed scroll, an apologetic grimace (he always brings bad news) |
+
+Puis `.venv/bin/python tools/images.py && node build-app.js`. En attendant leur image, le jeu affiche leur emoji.

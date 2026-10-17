@@ -1,0 +1,101 @@
+{
+ "positions": {
+  "g": [
+   0,
+   3
+  ],
+  "a": [
+   6,
+   1
+  ],
+  "d": [
+   4,
+   2
+  ],
+  "f": [
+   1,
+   4
+  ],
+  "b": [
+   2,
+   0
+  ],
+  "e": [
+   5,
+   6
+  ],
+  "c": [
+   3,
+   5
+  ]
+ },
+ "murderer": "f",
+ "cast": {
+  "a": "a",
+  "d": "b",
+  "f": "c",
+  "b": "d",
+  "e": "e",
+  "c": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "a",
+   "logic": {
+    "type": "westOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "northOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "eastOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "inRoom",
+    "room": "A"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "pupitre"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "etagere"
+   }
+  }
+ ]
+}

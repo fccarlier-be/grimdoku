@@ -1,0 +1,95 @@
+{
+ "positions": {
+  "f": [
+   1,
+   3
+  ],
+  "d": [
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    1
+   ]
+  ],
+  "b": [
+   3,
+   6
+  ],
+  "e": [
+   2,
+   4
+  ],
+  "a": [
+   5,
+   5
+  ],
+  "c": [
+   6,
+   2
+  ]
+ },
+ "murderer": "e",
+ "cast": {
+  "d": "a",
+  "b": "b",
+  "e": "c",
+  "a": "d",
+  "c": "e"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "c",
+   "logic": {
+    "type": "westOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "hamac"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "eastOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "onObject",
+    "object": "tonneau"
+   }
+  }
+ ]
+}

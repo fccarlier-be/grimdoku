@@ -156,14 +156,6 @@
     }
   ],
   "auto": {
-    "intro": "{Titre} {victime} a été retrouvé{e} sans vie aux Thermes Enchantés, détendu{e} pour toujours. {Nombre} curistes profitaient des bains. Un seul était avec {lui}.",
-    "epilogues": {
-      "sirene": "{coupable} avoue : {victime} avait versé des sels de bain dans SON bassin. Elle en a eu des écailles qui piquent pendant une semaine.",
-      "elfe": "{coupable} avoue avec dédain : {victime} avait trempé ses pieds dans le bassin chaud. Juste avant elle.",
-      "troll": "{coupable} avoue : {victime} l'avait comparé à un rocher décoratif.",
-      "fee": "{coupable} avoue : {victime} l'avait prise pour un moustique et avait tapé dessus. Elle a rendu la politesse.",
-      "mage": "{coupable} avoue en éternuant : {victime} avait parfumé le sauna à la bière.",
-      "tavernier": "{coupable} avoue en comptant ses pièces : {victime} était entré{e} aux thermes sans payer. Deux fois."
-    }
+    "intro": "Aux Thermes Enchantés, {titre} {victime}, venu{e} {motif}, a pris son dernier bain. {Nombre} baigneurs se prélassaient. L'un d'eux était seul avec {lui}. J'enquête en peignoir ; c'est le règlement, paraît-il."
   }
 }

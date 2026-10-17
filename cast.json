@@ -1,5 +1,5 @@
 {
-  "_doc": "Personnages types. Un nom par lettre (A…L) : le personnage qui reçoit la lettre X dans une énigme s'appelle names.X. desc/gender/icon/traits ne doivent pas dépendre de la position (cf. CLAUDE.md §3).",
+  "_doc": "Personnages. Troupe récurrente (bible du jeu, 2026-10-17) : chaque type est UN personnage au nom fixe (name), avec un tic et un épilogue dialogué ({victime} {Il}/{il}/{lui}/{e} = la victime, {menace} = ce qu'un invité venait lui faire). La lettre (A, B…) n'est plus dans le nom : c'est une pastille, attribuée à chaque énigme selon la facilité. names (A…L) : anciens noms, gardés pour mémoire. guest : invité de passage (victime), avec motif et menace. desc/gender/icon/traits ne dépendent pas de la position.",
   "mage": {
     "icon": "🧙‍♂️",
     "gender": "m",
@@ -18,7 +18,10 @@
       "J": "Jonglard",
       "K": "Karmin",
       "L": "Lunatik"
-    }
+    },
+    "name": "Gribouille",
+    "tic": "Éternue avant chaque sortilège",
+    "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}. Atchoum ! Pardon : le houblon.\n— Et le sortilège ?\n— Il est parti tout seul, avec l'éternuement. Mais je visais bien."
   },
   "barde": {
     "icon": "🧑‍🎤",
@@ -38,7 +41,10 @@
       "J": "Jingle",
       "K": "Kazoo",
       "L": "Luth"
-    }
+    },
+    "name": "Fausset",
+    "tic": "Transforme chaque conversation en couplet",
+    "epilogue": "— Vous étiez seul avec {victime}.\n— « {Il} voulait {menace}, ô rage, ô désespoir… »\n— Répondez normalement.\n— J'ai chanté jusqu'à ce qu'{il} s'arrête. Définitivement."
   },
   "troll": {
     "icon": "🧌",
@@ -58,7 +64,10 @@
       "J": "Jambonneau",
       "K": "Kroustillant",
       "L": "Lippu"
-    }
+    },
+    "name": "Bâfrin",
+    "tic": "Répète le dernier mot de la phrase des autres",
+    "epilogue": "— Vous étiez seul avec {victime}.\n— {victime}.\n— Pourquoi ?\n— {Il} voulait {menace}. Alors Bâfrin taper. Taper fort. Fort."
   },
   "elfe": {
     "icon": "🧝‍♀️",
@@ -78,7 +87,10 @@
       "J": "Jaëlis",
       "K": "Kaëlwen",
       "L": "Lyrwë"
-    }
+    },
+    "name": "Aëlys",
+    "tic": "Note tout sur dix, les gens compris",
+    "epilogue": "— Vous étiez seule avec {victime}.\n— {Il} voulait {menace}. Je lui ai mis deux sur dix.\n— Et ensuite ?\n— Ensuite, zéro."
   },
   "fee": {
     "icon": "🧚",
@@ -98,7 +110,10 @@
       "J": "Jacinthe",
       "K": "Ketmie",
       "L": "Lavande"
-    }
+    },
+    "name": "Capucine",
+    "tic": "« Je te le rends demain. »",
+    "epilogue": "— Vous étiez seule avec {victime}.\n— {Il} voulait {menace}. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain."
   },
   "tavernier": {
     "icon": "🧔‍♂️",
@@ -118,7 +133,10 @@
       "J": "Jaunet",
       "K": "Kreuzer",
       "L": "Liard"
-    }
+    },
+    "name": "Grippesou",
+    "tic": "Compte à voix basse en parlant",
+    "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}. Un écu, deux écus, trois écus…\n— Vous comptez quoi ?\n— Ce qu'{il} me devait. Et ce que l'enterrement va me coûter."
   },
   "spectre": {
     "icon": "👻",
@@ -141,7 +159,10 @@
       "J": "Jérémiade",
       "K": "Kryptos",
       "L": "Lémure"
-    }
+    },
+    "name": "Blafard",
+    "tic": "« De mon vivant… »",
+    "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile."
   },
   "dragonnet": {
     "icon": "🐉",
@@ -161,7 +182,10 @@
       "J": "Jaillifeu",
       "K": "Kramé",
       "L": "Lueur"
-    }
+    },
+    "name": "Flammèche",
+    "tic": "S'excuse avant même d'avoir brûlé quelque chose",
+    "epilogue": "— Vous étiez seul avec {victime}.\n— Pardon. Pardon pardon pardon.\n— Je n'ai encore rien dit.\n— {Il} voulait {menace}. Alors j'ai éternué. Et quand j'éternue, je crache du feu."
   },
   "zombie": {
     "icon": "🧟",
@@ -181,7 +205,10 @@
       "J": "Jules",
       "K": "Kléber",
       "L": "Lucien"
-    }
+    },
+    "name": "Fernand",
+    "tic": "Perd un morceau quand il s'énerve",
+    "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}. Ça m'a énervé.\n— Et ?\n— J'ai perdu un bras. {Il} l'a reçu sur la tête."
   },
   "sirene": {
     "icon": "🧜‍♀️",
@@ -201,7 +228,10 @@
       "J": "Jouvence",
       "K": "Kalypso",
       "L": "Lagune"
-    }
+    },
+    "name": "Goémone",
+    "tic": "Fait des bulles quand elle ment",
+    "epilogue": "— Vous étiez seule avec {victime}.\n— Je n'ai rien fait. (Blub.)\n— Vous faites des bulles.\n— {Il} voulait {menace}. Je l'ai juste invité{e} à nager. (Blub, blub.)"
   },
   "vampire": {
     "icon": "🧛‍♀️",
@@ -221,7 +251,10 @@
       "J": "Jugulaire",
       "K": "Kryptine",
       "L": "Lugubra"
-    }
+    },
+    "name": "Belladone",
+    "tic": "« Je ne bois jamais… de vin. »",
+    "epilogue": "— Vous étiez seule avec {victime}.\n— {Il} voulait {menace}. Je lui ai proposé un verre.\n— De vin ?\n— Je ne bois jamais… de vin."
   },
   "djinn": {
     "icon": "🧞‍♀️",
@@ -241,7 +274,10 @@
       "J": "Jarre",
       "K": "Kalifa",
       "L": "Lampadine"
-    }
+    },
+    "name": "Fumerolle",
+    "tic": "Prend tout au pied de la lettre",
+    "epilogue": "— Vous étiez seule avec {victime}.\n— {Il} voulait {menace}. Puis {il} a dit : « Je voudrais qu'on me laisse tranquille pour l'éternité. »\n— Et ?\n— J'exauce au pied de la lettre."
   },
   "archimage": {
     "icon": "🧙‍♂️",
@@ -261,7 +297,10 @@
       "J": "Jaunebarbe",
       "K": "Kilobarbe",
       "L": "Longuebarbe"
-    }
+    },
+    "name": "Fizzlebarbe",
+    "tic": "« De mon temps… » (en concurrence avec Blafard)",
+    "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}. De mon temps, on changeait ces gens-là en tabouret.\n— Vous l'avez changé{e} en tabouret ?\n— Non. J'ai oublié la formule. Alors j'ai pris la canne."
   },
   "chevalier": {
     "icon": "🤺",
@@ -281,7 +320,10 @@
       "J": "Jocelyn",
       "K": "Kunibert",
       "L": "Lancelin"
-    }
+    },
+    "name": "Gontran",
+    "tic": "Annonce chacune de ses actions à voix haute",
+    "epilogue": "— Vous étiez seul avec {victime}.\n— Je me lève. Je proteste. Je me rassois.\n— Pourquoi ?\n— {Il} voulait {menace}. J'ai dégainé. Je regrette. Je rengaine."
   },
   "gobelin": {
     "icon": "👺",
@@ -301,7 +343,10 @@
       "J": "Jackpot",
       "K": "Kopeck",
       "L": "Larcin"
-    }
+    },
+    "name": "Bakchich",
+    "tic": "« Techniquement, c'est légal. »",
+    "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}. J'ai fait une opération comptable.\n— Vous l'avez tué{e}.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal."
   },
   "roi": {
     "icon": "🤴",
@@ -321,7 +366,10 @@
       "J": "Jehan",
       "K": "Karloman",
       "L": "Lothaire"
-    }
+    },
+    "name": "Dagobert",
+    "tic": "« C'est pas faux. », à tout ce qu'il ne comprend pas",
+    "epilogue": "— Vous étiez seul avec {victime}, Majesté.\n— {Il} voulait {menace}. À moi. Le roi.\n— Et vous l'avez supprimé{e} ?\n— Disons que je l'ai… exonéré{e}."
   },
   "meunier": {
     "icon": "👨‍🌾",
@@ -341,7 +389,10 @@
       "J": "Javelle",
       "K": "Kamut",
       "L": "Levain"
-    }
+    },
+    "name": "Farinard",
+    "tic": "« Au poids, c'est honnête. »",
+    "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}.\n— Et ?\n— Un sac de cinquante livres, lâché du grenier. Au poids, c'est honnête."
   },
   "boulanger": {
     "icon": "👨‍🍳",
@@ -361,7 +412,10 @@
       "J": "Jalousie",
       "K": "Kouglof",
       "L": "Linzer"
-    }
+    },
+    "name": "Briochon",
+    "tic": "« Je dis ça, je dis rien. »",
+    "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}. Je dis ça, je dis rien.\n— Dites-le.\n— Une baguette de trois jours, ça assomme. Je dis ça, je dis rien."
   },
   "bonimenteur": {
     "icon": "🎩",
@@ -381,7 +435,10 @@
       "J": "Jacasse",
       "K": "Kitsch",
       "L": "Loquace"
-    }
+    },
+    "name": "Esbroufe",
+    "tic": "Vouvoie tout le monde, y compris les poules",
+    "epilogue": "— Vous étiez seul avec {victime}.\n— Permettez que je vous vouvoie : {il} voulait {menace}.\n— Et vous ?\n— Je lui ai vendu un élixir de longue vie. Il y avait une petite erreur sur l'étiquette."
   },
   "cartomancienne": {
     "icon": "🔮",
@@ -401,7 +458,10 @@
       "J": "Jupitera",
       "K": "Karmalia",
       "L": "Lunaria"
-    }
+    },
+    "name": "Clairvoya",
+    "tic": "« Je l'avais vu venir. », toujours après coup",
+    "epilogue": "— Vous étiez seule avec {victime}.\n— {Il} voulait {menace}. Je lui ai tiré la carte de la Mort.\n— Et ?\n— Je l'avais vu venir. Après coup, mais je l'avais vu."
   },
   "sorciere": {
     "icon": "🧙‍♀️",
@@ -421,7 +481,10 @@
       "J": "Jusquiame",
       "K": "Kalmia",
       "L": "Lobélie"
-    }
+    },
+    "name": "Ciguë",
+    "tic": "Regarde Ambroise avec appétit",
+    "epilogue": "— Vous étiez seule avec {victime}.\n— {Il} voulait {menace}. Ça m'a coupé l'appétit.\n— Et ?\n— Je l'ai changé{e} en crapaud. Et l'appétit m'est revenu."
   },
   "crapaud": {
     "icon": "🐸",
@@ -441,7 +504,10 @@
       "J": "Jojo",
       "K": "Krôa",
       "L": "Léopold"
-    }
+    },
+    "name": "Ambroise",
+    "tic": "Rappelle son titre toutes les deux phrases",
+    "epilogue": "— Vous étiez seul avec {victime}.\n— Prince Ambroise, je vous prie.\n— Prince, vous étiez seul avec {victime}.\n— {Il} voulait {menace} au lieu de m'embrasser. Un prince a sa fierté. Et une langue très longue."
   },
   "bibliothecaire": {
     "icon": "👩‍🏫",
@@ -461,7 +527,10 @@
       "J": "Jaquette",
       "K": "Kalligraphia",
       "L": "Lettrine"
-    }
+    },
+    "name": "Dewey",
+    "tic": "« CHUT ! », en hurlant",
+    "epilogue": "— Vous étiez seule avec {victime}.\n— CHUT !\n— Je vous pose une question.\n— {Il} voulait {menace} À VOIX HAUTE. CHUT, j'ai dit."
   },
   "contremaitre": {
     "icon": "👷",
@@ -481,7 +550,10 @@
       "J": "Jaspe",
       "K": "Kaolin",
       "L": "Lignite"
-    }
+    },
+    "name": "Granit",
+    "tic": "Chronomètre tout le monde",
+    "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}. En plein temps de travail.\n— Combien de temps ?\n— Quatre minutes. Je l'ai noté{e} absent{e}. Pour toujours."
   },
   "mineur": {
     "icon": "⛏️",
@@ -501,7 +573,10 @@
       "J": "Jalon",
       "K": "Kérosène",
       "L": "Lanterne"
-    }
+    },
+    "name": "Grisou",
+    "tic": "« On creuse ? »",
+    "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}.\n— Et vous avez fait quoi ?\n— On a creusé. Un trou. À sa taille."
   },
   "pirate": {
     "icon": "🏴‍☠️",
@@ -521,7 +596,10 @@
       "J": "Jambedebois",
       "K": "Kraken",
       "L": "Lascar"
-    }
+    },
+    "name": "Bâbord",
+    "tic": "Indique toujours la mauvaise direction",
+    "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}. Je lui ai indiqué la sortie.\n— Et ?\n— C'était le puits. Je me trompe toujours de direction."
   },
   "capitaine": {
     "icon": "🧑‍✈️",
@@ -541,7 +619,10 @@
       "J": "Jusant",
       "K": "Ketch",
       "L": "Lougre"
-    }
+    },
+    "name": "Frégaton",
+    "tic": "Raconte des tempêtes qu'il n'a jamais vues",
+    "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}. J'ai affronté des tempêtes, moi !\n— Vous n'avez jamais quitté le port.\n— Ce soir-là, la tempête, c'était moi. Avec une rame."
   },
   "perroquet": {
     "icon": "🦜",
@@ -561,7 +642,10 @@
       "J": "Jacquot",
       "K": "Koko",
       "L": "Loulou"
-    }
+    },
+    "name": "Écho-Écho",
+    "tic": "Répète tout, dans le désordre",
+    "epilogue": "— Vous étiez seul avec {victime}.\n— Seul avec {victime} ! Seul avec {victime} !\n— Pourquoi ?\n— {Il} voulait {menace} ! Coup de bec ! Coup de bec !"
   },
   "apprentie": {
     "icon": "🧙‍♀️",
@@ -581,7 +665,10 @@
       "J": "Jonquille",
       "K": "Kumquat",
       "L": "Luciole"
-    }
+    },
+    "name": "Brindille",
+    "tic": "« C'est normal que ça fume ? »",
+    "epilogue": "— Vous étiez seule avec {victime}.\n— {Il} voulait {menace}, alors j'ai lancé un sort de protection.\n— Et ?\n— C'est normal que ça fume encore ?"
   },
   "professeur": {
     "icon": "👨‍🏫",
@@ -601,7 +688,10 @@
       "J": "Jauge",
       "K": "Kelvin",
       "L": "Lixivius"
-    }
+    },
+    "name": "Fiolius",
+    "tic": "Renifle avant de répondre",
+    "epilogue": "— Vous étiez seul avec {victime}.\n— (Il renifle.) {Il} voulait {menace}.\n— Et votre potion ?\n— Elle sentait la mort. Excellente note."
   },
   "chef": {
     "icon": "👨‍🍳",
@@ -621,7 +711,10 @@
       "J": "Julienne",
       "K": "Kari",
       "L": "Liaison"
-    }
+    },
+    "name": "Fricot",
+    "tic": "Juge chaque plat à sa capacité à s'enfuir",
+    "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}. Puis {il} a voulu filer.\n— Et ?\n— Chez moi, ce qui s'enfuit finit dans la marmite. C'est la règle de la maison."
   },
   "ogre": {
     "icon": "👹",
@@ -641,7 +734,10 @@
       "J": "Jarret",
       "K": "Krok",
       "L": "Lardon"
-    }
+    },
+    "name": "Festin",
+    "tic": "Compte les jours depuis mardi",
+    "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}. J'ai gardé mon calme : je suis végétarien depuis mardi.\n— On est jeudi.\n— Justement. C'était plus mardi."
   },
   "fossoyeur": {
     "icon": "⚰️",
@@ -661,7 +757,10 @@
       "J": "Jérôme",
       "K": "Krypte",
       "L": "Linceul"
-    }
+    },
+    "name": "Glas",
+    "tic": "Prend les mesures des gens qu'il rencontre",
+    "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}. Alors j'ai pris ses mesures.\n— Pour quoi faire ?\n— Le travail était à moitié fait. Autant le finir."
   },
   "corbeau": {
     "icon": "🐦‍⬛",
@@ -681,7 +780,10 @@
       "J": "Jaseur",
       "K": "Krâ",
       "L": "Lugubre"
-    }
+    },
+    "name": "Augure",
+    "tic": "Ne parle pas : il écrit",
+    "epilogue": "— Vous étiez seul avec {victime}.\n— (Le corbeau vous tend un billet : « {Il} voulait {menace}. »)\n— Et ensuite ?\n— (Deuxième billet : « Ensuite, plus rien. »)"
   },
   "geant": {
     "icon": "🦶",
@@ -689,7 +791,7 @@
     "title": "le géant",
     "big": true,
     "desc": "Géant, toujours couché : aucun plafond n'est assez haut",
-    "epilogue": "{coupable} jure qu'il s'est seulement retourné dans son sommeil. Hélas, {victime} faisait la sieste juste à côté.",
+    "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}. Je me suis levé d'un coup.\n— Et ?\n— Pardon, plafond. Pardon, {victime}.",
     "names": {
       "A": "Armoire",
       "B": "Bastion",
@@ -703,7 +805,9 @@
       "J": "Jumbo",
       "K": "Kilomètre",
       "L": "Lampadaire"
-    }
+    },
+    "name": "Escabeau",
+    "tic": "Se cogne, s'excuse auprès du plafond"
   },
   "golem": {
     "icon": "🪨",
@@ -711,7 +815,7 @@
     "title": "le golem",
     "big": true,
     "desc": "Golem de pierre, lent mais très appliqué",
-    "epilogue": "On avait gravé une consigne sur le front de {coupable} : « Range la pièce. » Il a rangé {victime} aussi, très soigneusement.",
+    "epilogue": "— Vous étiez seul avec {victime}.\n— …\n— Vous étiez seul avec {victime}.\n— {Il} a dit : « Pousse-toi, tas de cailloux. » Je me suis poussé. Sur {lui}.",
     "names": {
       "A": "Argile",
       "B": "Basalte",
@@ -725,7 +829,9 @@
       "J": "Jurassique",
       "K": "Kilotonne",
       "L": "Lithos"
-    }
+    },
+    "name": "Caillasse",
+    "tic": "Exécute les ordres au mot près, avec un temps de retard"
   },
   "vouivre": {
     "icon": "🐍",
@@ -733,7 +839,7 @@
     "title": "la vouivre",
     "big": true,
     "desc": "Vouivre, serpent ailé, très longue à se retourner",
-    "epilogue": "{coupable} voulait juste faire un câlin à {victime}. Avec trois cases de longueur, un câlin finit vite en nœud.",
+    "epilogue": "— Vous étiez seule avec {victime}.\n— Mort{e}, {il} est. Avant, {il} voulait {menace}.\n— Dans l'ordre, s'il vous plaît.\n— L'ordre, je finis toujours par le commencer.",
     "names": {
       "A": "Aspicia",
       "B": "Boucline",
@@ -747,7 +853,9 @@
       "J": "Jaspine",
       "K": "Kobrette",
       "L": "Lovée"
-    }
+    },
+    "name": "Glissandra",
+    "tic": "Commence ses phrases par la fin"
   },
   "dragon": {
     "icon": "🐉",
@@ -755,7 +863,7 @@
     "title": "le dragon",
     "big": true,
     "desc": "Dragon adulte, toujours lové dans un coin",
-    "epilogue": "{coupable} gardait son trésor dans un coin, comme tout dragon qui se respecte. {victime} a eu le tort de compter les pièces à voix haute.",
+    "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}, pendant ma sieste.\n— Et ?\n— Je me suis réveillé de mauvaise humeur. On ne réveille pas un dragon.",
     "names": {
       "A": "Ardent",
       "B": "Braisier",
@@ -769,6 +877,148 @@
       "J": "Jaspefeu",
       "K": "Krakatoa",
       "L": "Lavanor"
-    }
+    },
+    "name": "Cendrebrune",
+    "tic": "Se réveille aux pires moments"
+  },
+  "percepteur": {
+    "guest": true,
+    "name": "Taxard",
+    "gender": "m",
+    "title": "le percepteur",
+    "icon": "🧾",
+    "desc": "Percepteur du baron, compte même les miettes",
+    "motif": "lever l'impôt de fin d'année",
+    "menace": "me faire payer l'impôt sur tout ce que je possède"
+  },
+  "cousine": {
+    "guest": true,
+    "name": "Ermengarde",
+    "gender": "f",
+    "title": "la cousine",
+    "icon": "👒",
+    "desc": "Cousine éloignée de tout le monde, venue pour l'héritage",
+    "motif": "réclamer un héritage",
+    "menace": "réclamer sa part de ce qui m'appartient"
+  },
+  "inspecteur": {
+    "guest": true,
+    "name": "Pinardon",
+    "gender": "m",
+    "title": "l'inspecteur des tavernes",
+    "icon": "🍷",
+    "desc": "Inspecteur des tavernes, goûte tout, note tout",
+    "motif": "inspecter les lieux",
+    "menace": "me coller un blâme"
+  },
+  "touriste": {
+    "guest": true,
+    "name": "Gustave",
+    "gender": "m",
+    "title": "le touriste",
+    "icon": "🎒",
+    "desc": "Touriste, dessine tout au fusain, surtout ce qui est interdit",
+    "motif": "visiter la baronnie",
+    "menace": "faire mon portrait au fusain et le vendre à la foire"
+  },
+  "huissier": {
+    "guest": true,
+    "name": "Saisitout",
+    "gender": "m",
+    "title": "l'huissier",
+    "icon": "📜",
+    "desc": "Huissier de la banque gobeline, saisit d'abord, demande ensuite",
+    "motif": "saisir des biens",
+    "menace": "saisir mes affaires"
+  },
+  "nageuse": {
+    "guest": true,
+    "name": "Ondine",
+    "gender": "f",
+    "title": "la maîtresse-nageuse",
+    "icon": "🛟",
+    "desc": "Maîtresse-nageuse, sans permis ni maillot",
+    "motif": "donner des cours de natation",
+    "menace": "m'apprendre à nager de force"
+  },
+  "colporteur": {
+    "guest": true,
+    "name": "Bricabrac",
+    "gender": "m",
+    "title": "le colporteur",
+    "icon": "🎒",
+    "desc": "Colporteur, vend des objets dont personne ne veut",
+    "motif": "vendre sa camelote",
+    "menace": "me revendre ce qu'il m'avait déjà vendu"
+  },
+  "abbesse": {
+    "guest": true,
+    "name": "Prudence",
+    "gender": "f",
+    "title": "l'abbesse",
+    "icon": "📿",
+    "desc": "Abbesse, quête pour un couvent introuvable",
+    "motif": "faire la quête",
+    "menace": "me faire la morale"
+  },
+  "troubadour": {
+    "guest": true,
+    "name": "Lirelire",
+    "gender": "m",
+    "title": "le troubadour",
+    "icon": "🪕",
+    "desc": "Troubadour itinérant, chante juste, et ça agace",
+    "motif": "donner un concert",
+    "menace": "chanter mieux que tout le monde"
+  },
+  "chasseuse": {
+    "guest": true,
+    "name": "Vipérine",
+    "gender": "f",
+    "title": "la chasseuse de primes",
+    "icon": "🏹",
+    "desc": "Chasseuse de primes, a toujours un avis de recherche sur elle",
+    "motif": "toucher une prime",
+    "menace": "me livrer au baron contre trois écus"
+  },
+  "alchimiste": {
+    "guest": true,
+    "name": "Mercurio",
+    "gender": "m",
+    "title": "l'alchimiste",
+    "icon": "⚗️",
+    "desc": "Alchimiste ambulant, transforme l'or en dettes",
+    "motif": "proposer ses services",
+    "menace": "changer mes économies en plomb"
+  },
+  "baronne": {
+    "guest": true,
+    "name": "Grisemotte",
+    "gender": "f",
+    "title": "la baronne de Grisemotte",
+    "icon": "👑",
+    "desc": "Baronne voisine, jalouse de tout ce qui brille",
+    "motif": "rendre une visite de courtoisie",
+    "menace": "racheter la baronnie et me mettre dehors"
+  },
+  "dresseuse": {
+    "guest": true,
+    "name": "Gertrude",
+    "gender": "f",
+    "title": "la dresseuse",
+    "icon": "🎪",
+    "desc": "Dresseuse de dragons, surtout des petits",
+    "motif": "recruter des bêtes pour son cirque",
+    "menace": "m'emmener dans son cirque"
+  },
+  "messager": {
+    "guest": true,
+    "name": "Rapidon",
+    "gender": "m",
+    "title": "le messager",
+    "icon": "✉️",
+    "desc": "Messager du baron, porte toujours de mauvaises nouvelles",
+    "motif": "apporter une lettre du baron",
+    "menace": "m'annoncer une mauvaise nouvelle"
   }
 }

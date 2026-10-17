@@ -1,0 +1,89 @@
+{
+ "positions": {
+  "f": [
+   1,
+   0
+  ],
+  "b": [
+   4,
+   1
+  ],
+  "a": [
+   5,
+   5
+  ],
+  "d": [
+   2,
+   2
+  ],
+  "c": [
+   3,
+   4
+  ],
+  "e": [
+   0,
+   3
+  ]
+ },
+ "murderer": "d",
+ "cast": {
+  "b": "a",
+  "a": "b",
+  "d": "c",
+  "c": "d",
+  "e": "e"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "a",
+   "logic": {
+    "type": "inRoom",
+    "room": "O"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "northOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "eastOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "southOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "champi"
+   }
+  }
+ ]
+}

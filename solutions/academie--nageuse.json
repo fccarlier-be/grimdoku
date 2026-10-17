@@ -1,0 +1,108 @@
+{
+ "positions": {
+  "g": [
+   6,
+   2
+  ],
+  "a": [
+   2,
+   3
+  ],
+  "b": [
+   0,
+   1
+  ],
+  "f": [
+   5,
+   0
+  ],
+  "d": [
+   3,
+   6
+  ],
+  "c": [
+   1,
+   5
+  ],
+  "e": [
+   4,
+   4
+  ]
+ },
+ "murderer": "f",
+ "cast": {
+  "a": "a",
+  "b": "b",
+  "f": "c",
+  "d": "d",
+  "c": "e",
+  "e": "f"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "a",
+   "logic": {
+    "type": "southOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "etagere"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "northOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameColAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "westOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "table"
+   }
+  }
+ ]
+}

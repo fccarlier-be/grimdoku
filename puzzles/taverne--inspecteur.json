@@ -1,0 +1,272 @@
+{
+  "formatVersion": 1,
+  "title": "Meurtre au Sanglier Borgne — l'affaire Pinardon",
+  "intro": "On m'a tiré du lit à l'aube. L'inspecteur des tavernes Pinardon, venu au Sanglier Borgne inspecter les lieux, ne se réveillera plus. Cinq clients juraient dormir comme des loirs. L'un d'eux était avec lui. J'ai demandé un café ; on m'a servi une bière.",
+  "epilogue": "— Vous étiez seule avec Pinardon.\n— Il voulait me coller un blâme. Je lui ai mis deux sur dix.\n— Et ensuite ?\n— Ensuite, zéro.",
+  "size": 6,
+  "rooms": {
+    "T": {
+      "name": "Salle commune",
+      "the": "la salle commune",
+      "floor": "parquet"
+    },
+    "C": {
+      "name": "Cuisine",
+      "the": "la cuisine",
+      "floor": "damier"
+    },
+    "R": {
+      "name": "Cave",
+      "the": "la cave",
+      "floor": "tomettes"
+    },
+    "B": {
+      "name": "Chambre",
+      "the": "la chambre",
+      "floor": "parquet"
+    },
+    "E": {
+      "name": "Écurie",
+      "the": "l'écurie",
+      "floor": "paille"
+    }
+  },
+  "layout": [
+    "TTTCCC",
+    "TTTCCC",
+    "TTTRRC",
+    "BBTRRE",
+    "BBTEEE",
+    "BBBEEE"
+  ],
+  "objects": [
+    {
+      "type": "table",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        0,
+        0
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        1,
+        1
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        0,
+        4
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        1,
+        5
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        4,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        4,
+        4
+      ]
+    },
+    {
+      "type": "foin",
+      "at": [
+        5,
+        5
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Gribouille",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Mage, allergique au houblon",
+      "archetype": "mage",
+      "tic": "Éternue avant chaque sortilège"
+    },
+    {
+      "id": "b",
+      "name": "Capucine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee",
+      "tic": "« Je te le rends demain. »"
+    },
+    {
+      "id": "c",
+      "name": "Grippesou",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧔‍♂️",
+      "desc": "Tavernier nain, radin légendaire",
+      "archetype": "tavernier",
+      "tic": "Compte à voix basse en parlant"
+    },
+    {
+      "id": "d",
+      "name": "Aëlys",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe",
+      "tic": "Note tout sur dix, les gens compris"
+    },
+    {
+      "id": "e",
+      "name": "Fausset",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧑‍🎤",
+      "desc": "Barde, chante faux",
+      "archetype": "barde",
+      "tic": "Transforme chaque conversation en couplet"
+    },
+    {
+      "id": "f",
+      "name": "Pinardon",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🍷",
+      "desc": "Inspecteur des tavernes, goûte tout, note tout",
+      "archetype": "inspecteur",
+      "guest": true
+    }
+  ],
+  "decor": "taverne",
+  "id": "taverne--inspecteur",
+  "place": "taverne",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Gribouille était assis sur une chaise.",
+      "logic": {
+        "type": "onObject",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Capucine était à l'ouest de Grippesou.",
+      "logic": {
+        "type": "westOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Grippesou était au sud d'Aëlys.",
+      "logic": {
+        "type": "southOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Aëlys était à l'ouest de Gribouille.",
+      "logic": {
+        "type": "westOf",
+        "other": "a"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Fausset était à l'ouest de Capucine.",
+      "logic": {
+        "type": "westOf",
+        "other": "b"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "f": [
+        5,
+        2
+      ],
+      "a": [
+        1,
+        1
+      ],
+      "e": [
+        0,
+        3
+      ],
+      "d": [
+        3,
+        0
+      ],
+      "b": [
+        2,
+        4
+      ],
+      "c": [
+        4,
+        5
+      ]
+    },
+    "murderer": "d"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "position relative",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 2
+}

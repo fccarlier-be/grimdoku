@@ -207,15 +207,6 @@
     }
   ],
   "auto": {
-    "intro": "{Titre} {victime} a été retrouvé{e} sans vie à bord du Navire Fantôme, qui dérivait dans le brouillard. {Nombre} membres d'équipage étaient à bord. Un seul était avec {lui}.",
-    "epilogues": {
-      "pirate": "{coupable} avoue en mâchonnant sa pipe : {victime} avait caché la carte au trésor. Un pirate pardonne tout, sauf le trésor.",
-      "capitaine": "{coupable} avoue, droit comme un mât : {victime} préparait une mutinerie. Sur un bateau qui n'a jamais quitté le port, c'est vexant.",
-      "perroquet": "{coupable} avoue, et le répète trois fois : {victime} voulait le vendre au marché pour une poignée de graines.",
-      "sirene": "{coupable} avoue : {victime} voulait la pêcher pour l'exposer dans un aquarium du port.",
-      "spectre": "{coupable} hantait ce navire bien avant son équipage. {victime} voulait le chasser par-dessus bord avec un seau d'eau bénite.",
-      "zombie": "{coupable} avoue, lentement : {victime} l'utilisait comme ancre de secours. Il a horreur de l'eau froide.",
-      "vampire": "{coupable} avoue : {victime} avait ouvert l'écoutille en plein soleil. Sur un navire, l'ombre se partage."
-    }
+    "intro": "Le Navire Fantôme ne quitte jamais le port, et {titre} {victime}, venu{e} à bord {motif}, non plus, désormais. {Nombre} membres de l'équipage traînaient sur le pont. L'un d'eux était seul avec {lui}. Le capitaine m'assure que c'est la faute de la tempête. Il n'y a pas de tempête."
   }
 }

@@ -1,0 +1,165 @@
+{
+ "positions": {
+  "j": [
+   8,
+   4
+  ],
+  "d": [
+   9,
+   0
+  ],
+  "e": [
+   4,
+   6
+  ],
+  "h": [
+   1,
+   8
+  ],
+  "i": [
+   0,
+   3
+  ],
+  "f": [
+   5,
+   2
+  ],
+  "b": [
+   6,
+   7
+  ],
+  "a": [
+   3,
+   5
+  ],
+  "c": [
+   2,
+   1
+  ],
+  "g": [
+   7,
+   9
+  ]
+ },
+ "murderer": "b",
+ "cast": {
+  "d": "a",
+  "e": "b",
+  "h": "c",
+  "i": "d",
+  "f": "e",
+  "b": "f",
+  "a": "g",
+  "c": "h",
+  "g": "i"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "h",
+   "logic": {
+    "type": "northOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "eastOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "eastOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "southOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "northOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "inRoom",
+    "room": "Q"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chariot"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "westOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "westOf",
+    "other": "c"
+   }
+  }
+ ]
+}

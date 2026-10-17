@@ -364,20 +364,6 @@
     }
   ],
   "auto": {
-    "intro": "{Titre} {victime} a été retrouvé{e} sans vie à la Grande Foire des Mille Merveilles, juste après le feu d'artifice. {Nombre} forains et visiteurs juraient regarder le ciel. Un seul était avec {lui}.",
-    "epilogues": {
-      "bonimenteur": "{coupable} avoue, la main sur le cœur : {victime} avait crié « Arnaque ! » au milieu de son meilleur boniment.",
-      "cartomancienne": "{coupable} avoue : {victime} avait mélangé son jeu de tarot. Toutes ses prédictions de la semaine étaient fausses.",
-      "barde": "{coupable} avoue : {victime} avait couvert sa ballade en jouant de l'orgue de Barbarie. Faux. Exprès.",
-      "gobelin": "{coupable} avoue : {victime} avait gagné au chamboule-tout. Personne ne gagne au chamboule-tout du gobelin.",
-      "troll": "{coupable} avoue : {victime} lui avait vendu une barbe à papa. Le troll pensait qu'on parlait d'un vrai papa.",
-      "fee": "{coupable} avoue en scintillant : {victime} l'avait enfermée dans un bocal pour l'exposer au cabinet des curiosités.",
-      "dragonnet": "{coupable} avoue : {victime} avait annoncé « le dragon cracheur de feu » sur l'affiche. Lui ne crache que des étincelles.",
-      "ogre": "{coupable} avoue : {victime} avait organisé le concours du plus gros mangeur. Et l'avait gagné.",
-      "chef": "{coupable} avoue en touillant : {victime} avait comparé sa soupe à celle de la buvette d'en face. Défavorablement.",
-      "boulanger": "{coupable} avoue : {victime} avait dit que ses beignets étaient « corrects ». Corrects !",
-      "meunier": "{coupable} avoue : {victime} voulait remplacer son moulin à vent par un manège à vent. Plus rentable, paraît-il.",
-      "elfe": "{coupable} avoue avec mépris : {victime} avait gagné le concours de tir à l'arc. Avec une arbalète."
-    }
+    "intro": "Feu d'artifice à la Grande Foire des Mille Merveilles : tout le monde regardait le ciel, sauf {titre} {victime}, venu{e} {motif}, qui ne regardera plus rien. {Nombre} forains et visiteurs juraient avoir le nez en l'air. L'un d'eux était seul avec {lui}."
   }
 }
