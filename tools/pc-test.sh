@@ -13,6 +13,9 @@ sh tools/pc.sh --scp "$PACK" grimdoku-gen/test.tgz
 # empreinte de tout ce dont dépend la construction des énigmes : si elle n'a pas changé depuis la dernière construction
 # réussie sur le PC, on ne reconstruit pas (seulement la page, rapide) — retour de François : pas de travail inutile
 HASH=$(cat solutions/*.json scenes/*.json cast.json cast.js engine.js build-puzzles.js big-cases.json | shasum | cut -c1-16)
+# idem pour les tests du moteur (unicité des solutions : jusqu'à 6 min pour une 12×12) : relancés seulement si les énigmes,
+# le moteur ou ces tests ont changé depuis leur dernier passage réussi ; les tests de l'appli tournent toujours
+EHASH=$(cat "$0" tests/engine.test.js | shasum | cut -c1-16)$HASH
 # jsdom installé une fois (node_modules gardé) ; puzzles/ et solutions/ vidés seulement si on reconstruit
 OUT=$(sh tools/pc.sh '$ErrorActionPreference = "Continue"; $d = "$HOME\grimdoku-gen"; $t = "$d\test"; $env:Path = "$d\node-v22.11.0-win-x64;" + $env:Path
 Get-CimInstance Win32_Process | Where-Object { $_.Name -eq "node.exe" -and ($_.CommandLine -like "*build-puzzles.js*" -or $_.CommandLine -like "*build-app.js*" -or $_.CommandLine -like "*--test*") } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force }
@@ -26,7 +29,10 @@ if ($same) { "énigmes inchangées : pas de reconstruction" } else {
   node build-puzzles.js > build.log 2>&1; if ($LASTEXITCODE) { Get-Content build.log -Tail 15; "ECHEC build"; exit 1 }
   Set-Content build.hash "'$HASH'" }
 node build-app.js >> build.log 2>&1; if ($LASTEXITCODE) { Get-Content build.log -Tail 15; "ECHEC build"; exit 1 }
-node --test "tests/*.test.js" > test.log 2>&1; $code = $LASTEXITCODE
+$esame = (Test-Path engine.hash) -and ((Get-Content engine.hash) -eq "'$EHASH'")
+if ($esame) { "tests du moteur inchangés : seulement ceux de l appli"; node --test tests/app.test.js > test.log 2>&1 } else { node --test "tests/*.test.js" > test.log 2>&1 }
+$code = $LASTEXITCODE
+if (-not $code -and -not $esame) { Set-Content engine.hash "'$EHASH'" }
 Select-String -Path test.log -Pattern "^not ok|^# (pass|fail)" | Select-Object -First 25 | ForEach-Object { $_.Line }
 tar -czf "$d\puzzles.tgz" puzzles
 if ($code) { "ECHEC tests" } else { "OK tests" }' 2>&1 | iconv -f latin1 -t utf-8 2>/dev/null | tr -d '\r')
