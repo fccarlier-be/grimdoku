@@ -1,5 +1,5 @@
 {
-  "_doc": "Carte de la baronnie de Brumeval : contrées et lieux (décors), avec la position de chaque repère en % de l’illustration assets/map/brumeval (x depuis la gauche, y depuis le haut), placés sur l’image du 2026-10-17.",
+  "_doc": "Carte de la baronnie de Brumeval : image = illustration retenue (assets/map/<image>, préparée par tools/images.py), ratio = ses proportions ; contrées et lieux ; pos = position de chaque repère en % de l’illustration (x depuis la gauche, y depuis le haut), calées sur brumeval2 (2026-10-17).",
   "contrees": [
     {
       "nom": "Mortebrune, le chef-lieu",
@@ -57,91 +57,96 @@
   "pos": {
     "navire": [
       13,
-      22
-    ],
-    "thermes": [
-      29,
-      15
+      23
     ],
     "port": [
       13,
-      49
+      45
     ],
     "grand-port": [
-      27,
-      57
+      31,
+      45
+    ],
+    "thermes": [
+      18,
+      78
     ],
     "cimetiere": [
-      46,
-      19
+      51,
+      18
     ],
     "chateau": [
-      58,
-      12
+      59,
+      13
     ],
     "tour": [
-      72,
-      19
+      69,
+      17
     ],
     "citadelle": [
-      49,
-      34
+      56,
+      31
     ],
     "bal": [
-      63,
-      34
+      65,
+      27
     ],
     "taverne": [
-      40,
-      44
+      43,
+      43
     ],
     "moulin": [
       53,
-      48
+      44
     ],
     "ferme": [
-      65,
-      49
+      64,
+      46
     ],
     "marais": [
-      57,
-      60
+      60,
+      58
     ],
     "mine": [
       78,
-      33
+      32
     ],
     "forge": [
       87,
-      24
+      27
     ],
     "banquet": [
       92,
-      46
+      48
     ],
     "academie": [
-      71,
-      63
+      70,
+      64
     ],
     "universite": [
-      80,
-      75
+      81,
+      71
     ],
     "bibliotheque": [
       93,
-      62
+      66
     ],
     "foire": [
-      51,
-      79
+      49,
+      80
     ],
     "grande-foire": [
       61,
-      90
+      86
     ],
     "palais": [
-      90,
-      89
+      92,
+      88
     ]
-  }
+  },
+  "image": "brumeval2",
+  "ratio": [
+    1232,
+    864
+  ]
 }
