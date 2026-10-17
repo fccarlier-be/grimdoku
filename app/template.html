@@ -514,7 +514,9 @@ html, body { background: var(--desk-tex, none) center top / 640px, var(--night);
 @media (min-width: 700px) { .herosound { top: 14px; right: 14px; } }
 .lvlimg { width: 58%; max-width: 150px; aspect-ratio: 1; object-fit: contain; margin: -4px 0 -2px; filter: drop-shadow(0 3px 3px rgba(60, 30, 5, .35)); }
 .lvl:hover .lvlimg { transform: rotate(-3deg) scale(1.05); transition: transform .2s; }
-.case.has-decor { padding-top: 0; grid-template-rows: auto auto; row-gap: 10px; }
+/* le bandeau en haut, la ligne portrait-titre-tampon prend toute la hauteur restante : une carte étirée par sa voisine
+   (titre sur deux lignes) ne recentre pas son contenu (les navigateurs centrent le contenu d’un bouton), le bandeau ne bouge pas */
+.case.has-decor { padding-top: 0; grid-template-rows: auto 1fr; align-content: stretch; row-gap: 10px; }
 .case .decorimg {
   /* image collée sur le parchemin, à 6 px du bord : le bord déchiré (filtre #torn-s, ±3 px) ne la coupe jamais */
   grid-column: 1 / -1; height: 104px; margin: 6px -6px 0; border-radius: 2px;
