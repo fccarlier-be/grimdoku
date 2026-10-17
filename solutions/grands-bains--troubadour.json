@@ -1,0 +1,158 @@
+{
+ "positions": {
+  "j": [
+   7,
+   5
+  ],
+  "f": [
+   0,
+   2
+  ],
+  "b": [
+   6,
+   1
+  ],
+  "g": [
+   9,
+   6
+  ],
+  "a": [
+   1,
+   4
+  ],
+  "e": [
+   2,
+   7
+  ],
+  "h": [
+   5,
+   3
+  ],
+  "i": [
+   4,
+   0
+  ],
+  "d": [
+   8,
+   8
+  ],
+  "c": [
+   3,
+   9
+  ]
+ },
+ "murderer": "g",
+ "cast": {
+  "f": "a",
+  "b": "b",
+  "g": "c",
+  "a": "d",
+  "e": "e",
+  "h": "f",
+  "i": "g",
+  "d": "h",
+  "c": "i"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "f",
+   "logic": {
+    "type": "northOf",
+    "other": "i"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "northOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "westOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "eastOf",
+    "other": "h"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "inRoom",
+    "room": "F"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "inRoom",
+    "room": "C"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "hamac"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "westOf",
+    "other": "c"
+   }
+  }
+ ]
+}

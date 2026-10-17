@@ -1,0 +1,158 @@
+{
+ "positions": {
+  "j": [
+   6,
+   5
+  ],
+  "d": [
+   9,
+   8
+  ],
+  "c": [
+   7,
+   6
+  ],
+  "e": [
+   4,
+   7
+  ],
+  "a": [
+   5,
+   3
+  ],
+  "g": [
+   2,
+   4
+  ],
+  "i": [
+   0,
+   0
+  ],
+  "h": [
+   8,
+   2
+  ],
+  "f": [
+   3,
+   1
+  ],
+  "b": [
+   1,
+   9
+  ]
+ },
+ "murderer": "a",
+ "cast": {
+  "d": "a",
+  "c": "b",
+  "e": "c",
+  "a": "d",
+  "g": "e",
+  "i": "f",
+  "h": "g",
+  "f": "h",
+  "b": "i"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "eastOf",
+    "other": "h"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "northOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "hamac"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "southOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "eastOf",
+    "other": "f"
+   }
+  }
+ ]
+}

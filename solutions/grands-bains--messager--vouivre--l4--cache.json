@@ -1,0 +1,148 @@
+{
+ "positions": {
+  "h": [
+   9,
+   1
+  ],
+  "d": [
+   [
+    1,
+    4
+   ],
+   [
+    1,
+    5
+   ],
+   [
+    2,
+    4
+   ],
+   [
+    3,
+    4
+   ]
+  ],
+  "e": [
+   4,
+   8
+  ],
+  "f": [
+   8,
+   3
+  ],
+  "c": [
+   6,
+   0
+  ],
+  "b": [
+   7,
+   9
+  ],
+  "g": [
+   0,
+   2
+  ],
+  "a": [
+   5,
+   6
+  ]
+ },
+ "murderer": "c",
+ "cast": {
+  "d": "a",
+  "e": "b",
+  "f": "c",
+  "c": "d",
+  "b": "e",
+  "g": "f",
+  "a": "g"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "westOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "eastOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "etagere"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "hamac"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "southOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "fauteuil"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "hamac"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tonneau"
+   }
+  }
+ ]
+}

@@ -1,0 +1,137 @@
+{
+ "positions": {
+  "j": [
+   7,
+   2
+  ],
+  "b": [
+   2,
+   3
+  ],
+  "d": [
+   6,
+   1
+  ],
+  "f": [
+   4,
+   0
+  ],
+  "c": [
+   9,
+   4
+  ],
+  "i": [
+   3,
+   7
+  ],
+  "a": [
+   8,
+   8
+  ],
+  "g": [
+   1,
+   5
+  ],
+  "h": [
+   0,
+   9
+  ],
+  "e": [
+   5,
+   6
+  ]
+ },
+ "murderer": "d",
+ "cast": {
+  "b": "a",
+  "d": "b",
+  "f": "c",
+  "c": "d",
+  "i": "e",
+  "a": "f",
+  "g": "g",
+  "h": "h",
+  "e": "i"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "f",
+   "logic": {
+    "type": "westOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "southOf",
+    "other": "e"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameColAs",
+    "object": "roseaux"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "table"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "sameColAs",
+    "object": "hamac"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "hamac"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "sameColAs",
+    "object": "barque"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "eastOf",
+    "other": "c"
+   }
+  }
+ ]
+}

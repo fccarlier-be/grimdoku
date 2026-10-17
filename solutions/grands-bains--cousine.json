@@ -1,0 +1,137 @@
+{
+ "positions": {
+  "j": [
+   7,
+   6
+  ],
+  "d": [
+   9,
+   0
+  ],
+  "b": [
+   8,
+   4
+  ],
+  "e": [
+   3,
+   7
+  ],
+  "a": [
+   1,
+   2
+  ],
+  "h": [
+   5,
+   3
+  ],
+  "f": [
+   2,
+   5
+  ],
+  "i": [
+   0,
+   8
+  ],
+  "c": [
+   4,
+   1
+  ],
+  "g": [
+   6,
+   9
+  ]
+ },
+ "murderer": "b",
+ "cast": {
+  "d": "a",
+  "b": "b",
+  "e": "c",
+  "a": "d",
+  "h": "e",
+  "f": "f",
+  "i": "g",
+  "c": "h",
+  "g": "i"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "d",
+   "logic": {
+    "type": "westOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "eastOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "barque"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "sameColAs",
+    "object": "barque"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "roseaux"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "northOf",
+    "other": "d"
+   }
+  }
+ ]
+}

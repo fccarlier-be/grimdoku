@@ -1,0 +1,477 @@
+{
+  "formatVersion": 1,
+  "title": "Les Grands Bains de Brumeval — l'affaire Gustave",
+  "decor": "thermes",
+  "size": 10,
+  "rooms": {
+    "A": {
+      "name": "Grand bassin",
+      "the": "le grand bassin",
+      "floor": "mosaique"
+    },
+    "B": {
+      "name": "Hammam",
+      "the": "le hammam",
+      "floor": "dalles"
+    },
+    "C": {
+      "name": "Sauna",
+      "the": "le sauna",
+      "floor": "parquet"
+    },
+    "D": {
+      "name": "Vestiaires",
+      "the": "les vestiaires",
+      "floor": "tomettes"
+    },
+    "E": {
+      "name": "Bassin des sirènes",
+      "the": "le bassin des sirènes",
+      "floor": "mosaique"
+    },
+    "F": {
+      "name": "Salon de thé",
+      "the": "le salon de thé",
+      "floor": "noble"
+    },
+    "G": {
+      "name": "Jardin des cures",
+      "the": "le jardin des cures",
+      "floor": "herbe"
+    },
+    "H": {
+      "name": "Salle des massages",
+      "the": "la salle des massages",
+      "floor": "parquet"
+    },
+    "I": {
+      "name": "Bains de boue",
+      "the": "les bains de boue",
+      "floor": "boue"
+    }
+  },
+  "layout": [
+    "AAAABBBCCC",
+    "AAAABBBCCC",
+    "AAAABBBCCC",
+    "DDDDBBBEEE",
+    "DDDDFFFEEE",
+    "GGGFFFFEEE",
+    "GGGFFFFHHH",
+    "GGGIIIIHHH",
+    "GGGIIIIHHH",
+    "GGGIIIIHHH"
+  ],
+  "objects": [
+    {
+      "type": "statue",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "barque",
+      "at": [
+        1,
+        3
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        8
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        2,
+        9
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        4,
+        2
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "roseaux",
+      "at": [
+        3,
+        8
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        5,
+        9
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        4,
+        4
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        6,
+        6
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        7,
+        0
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        9,
+        2
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        6,
+        8
+      ]
+    },
+    {
+      "type": "hamac",
+      "at": [
+        8,
+        9
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        9,
+        7
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        7,
+        4
+      ]
+    },
+    {
+      "type": "roseaux",
+      "at": [
+        9,
+        5
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Esbroufe",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🎩",
+      "desc": "Bonimenteur, vend du rêve au kilo",
+      "archetype": "bonimenteur",
+      "tic": "Vouvoie tout le monde, y compris les poules"
+    },
+    {
+      "id": "b",
+      "name": "Aëlys",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe",
+      "tic": "Note tout sur dix, les gens compris"
+    },
+    {
+      "id": "c",
+      "name": "Grippesou",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧔‍♂️",
+      "desc": "Tavernier nain, radin légendaire",
+      "archetype": "tavernier",
+      "tic": "Compte à voix basse en parlant"
+    },
+    {
+      "id": "d",
+      "name": "Bâfrin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll",
+      "tic": "Répète le dernier mot de la phrase des autres"
+    },
+    {
+      "id": "e",
+      "name": "Dagobert",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🤴",
+      "desc": "Roi, avare de compliments et de tout le reste",
+      "archetype": "roi",
+      "tic": "« C'est pas faux. », à tout ce qu'il ne comprend pas"
+    },
+    {
+      "id": "f",
+      "name": "Capucine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee",
+      "tic": "« Je te le rends demain. »"
+    },
+    {
+      "id": "g",
+      "name": "Fumerolle",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧞‍♀️",
+      "desc": "Djinn, a déjà exaucé deux vœux de trop",
+      "archetype": "djinn",
+      "tic": "Prend tout au pied de la lettre"
+    },
+    {
+      "id": "h",
+      "name": "Fizzlebarbe",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧙‍♂️",
+      "desc": "Archimage, 412 ans, toujours pas de testament",
+      "archetype": "archimage",
+      "tic": "« De mon temps… » (en concurrence avec Blafard)"
+    },
+    {
+      "id": "i",
+      "name": "Belladone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire",
+      "tic": "« Je ne bois jamais… de vin. »"
+    },
+    {
+      "id": "j",
+      "name": "Gustave",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🎒",
+      "desc": "Touriste, dessine tout au fusain, surtout ce qui est interdit",
+      "archetype": "touriste",
+      "guest": true
+    }
+  ],
+  "id": "grands-bains--touriste",
+  "place": "grands-bains",
+  "intro": "Aux Grands Bains de Brumeval, on vient soigner ses rhumatismes, ses nerfs ou sa réputation. Le touriste Gustave, venu visiter la baronnie, n'est pas ressorti du bain. Neuf curistes et employés barbotaient dans les parages. L'un d'eux était seul avec lui. Il fait quarante degrés, tout le monde transpire, et personne ne sait rien.",
+  "epilogue": "— Vous étiez seul avec Gustave.\n— Gustave.\n— Pourquoi ?\n— Il voulait faire mon portrait au fusain et le vendre à la foire. Alors Bâfrin taper. Taper fort. Fort.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Esbroufe était à côté d'un hamac.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "hamac"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Aëlys était sur la même ligne qu'un tapis.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Elle était dans la même colonne qu'une barque.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "barque"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Grippesou était au sud de Dagobert.",
+      "logic": {
+        "type": "southOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Bâfrin était à côté d'un arbre.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "arbre"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Dagobert était à côté d'une table.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "table"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Il était à l'est de Grippesou.",
+      "logic": {
+        "type": "eastOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Capucine était à l'ouest de Dagobert.",
+      "logic": {
+        "type": "westOf",
+        "other": "e"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Fumerolle était dans la même colonne qu'un massif de roseaux.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "roseaux"
+      }
+    },
+    {
+      "who": "h",
+      "text": "Fizzlebarbe était dans la même colonne qu'un hamac.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "hamac"
+      }
+    },
+    {
+      "who": "i",
+      "text": "Belladone était sur la même ligne qu'une chaise.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaise"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "j": [
+        7,
+        2
+      ],
+      "b": [
+        2,
+        3
+      ],
+      "d": [
+        6,
+        1
+      ],
+      "f": [
+        4,
+        0
+      ],
+      "c": [
+        9,
+        4
+      ],
+      "i": [
+        3,
+        7
+      ],
+      "a": [
+        8,
+        8
+      ],
+      "g": [
+        1,
+        5
+      ],
+      "h": [
+        0,
+        9
+      ],
+      "e": [
+        5,
+        6
+      ]
+    },
+    "murderer": "d"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 7,
+    "hardest": "pièces",
+    "hardSteps": 3,
+    "directStart": 0
+  },
+  "difficulty": 3
+}

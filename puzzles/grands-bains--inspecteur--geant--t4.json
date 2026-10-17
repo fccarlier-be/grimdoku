@@ -1,0 +1,430 @@
+{
+  "formatVersion": 1,
+  "title": "Les Grands Bains de Brumeval — l'affaire Pinardon",
+  "decor": "thermes",
+  "size": 10,
+  "rooms": {
+    "A": {
+      "name": "Grand bassin",
+      "the": "le grand bassin",
+      "floor": "mosaique"
+    },
+    "B": {
+      "name": "Hammam",
+      "the": "le hammam",
+      "floor": "dalles"
+    },
+    "C": {
+      "name": "Sauna",
+      "the": "le sauna",
+      "floor": "parquet"
+    },
+    "F": {
+      "name": "Salon de thé",
+      "the": "le salon de thé",
+      "floor": "noble"
+    },
+    "G": {
+      "name": "Jardin des cures",
+      "the": "le jardin des cures",
+      "floor": "herbe"
+    },
+    "H": {
+      "name": "Salle des massages",
+      "the": "la salle des massages",
+      "floor": "parquet"
+    },
+    "I": {
+      "name": "Bains de boue",
+      "the": "les bains de boue",
+      "floor": "boue"
+    }
+  },
+  "layout": [
+    "AAAABBBCCC",
+    "AAAABBBCCC",
+    "AAAABBBCCC",
+    "FFFFBBBCCC",
+    "FFFFFFFCCC",
+    "GGGFFFFCCC",
+    "GGGFFFFHHH",
+    "GGGIIIIHHH",
+    "GGGIIIIHHH",
+    "GGGIIIIHHH"
+  ],
+  "objects": [
+    {
+      "type": "statue",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "barque",
+      "at": [
+        1,
+        3
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        8
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        2,
+        9
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        4,
+        2
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "roseaux",
+      "at": [
+        3,
+        8
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        5,
+        9
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        4,
+        4
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        6,
+        6
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        7,
+        0
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        9,
+        2
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        6,
+        8
+      ]
+    },
+    {
+      "type": "hamac",
+      "at": [
+        8,
+        9
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        9,
+        7
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        7,
+        4
+      ]
+    },
+    {
+      "type": "roseaux",
+      "at": [
+        9,
+        5
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Bâfrin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll",
+      "tic": "Répète le dernier mot de la phrase des autres"
+    },
+    {
+      "id": "b",
+      "name": "Capucine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee",
+      "tic": "« Je te le rends demain. »"
+    },
+    {
+      "id": "c",
+      "name": "Escabeau",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🦶",
+      "desc": "Géant, toujours couché : aucun plafond n'est assez haut",
+      "archetype": "geant",
+      "tic": "Se cogne, s'excuse auprès du plafond",
+      "shape": "T4"
+    },
+    {
+      "id": "d",
+      "name": "Belladone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire",
+      "tic": "« Je ne bois jamais… de vin. »"
+    },
+    {
+      "id": "e",
+      "name": "Grippesou",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧔‍♂️",
+      "desc": "Tavernier nain, radin légendaire",
+      "archetype": "tavernier",
+      "tic": "Compte à voix basse en parlant"
+    },
+    {
+      "id": "f",
+      "name": "Aëlys",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe",
+      "tic": "Note tout sur dix, les gens compris"
+    },
+    {
+      "id": "g",
+      "name": "Goémone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene",
+      "tic": "Fait des bulles quand elle ment"
+    },
+    {
+      "id": "h",
+      "name": "Pinardon",
+      "gender": "m",
+      "role": "victim",
+      "icon": "🍷",
+      "desc": "Inspecteur des tavernes, goûte tout, note tout",
+      "archetype": "inspecteur",
+      "guest": true
+    }
+  ],
+  "id": "grands-bains--inspecteur--geant--t4",
+  "place": "grands-bains",
+  "intro": "Aux Grands Bains de Brumeval, on vient soigner ses rhumatismes, ses nerfs ou sa réputation. L'inspecteur des tavernes Pinardon, venu inspecter les lieux, n'est pas ressorti du bain. Sept curistes et employés barbotaient dans les parages. L'un d'eux était seul avec lui. Il fait quarante degrés, tout le monde transpire, et personne ne sait rien.",
+  "epilogue": "— Vous étiez seule avec Pinardon.\n— Il voulait me coller un blâme. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Bâfrin était à l'est d'Escabeau.",
+      "logic": {
+        "type": "eastOf",
+        "other": "c"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Il était à côté d'un tapis.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Capucine était assise sur une chaise.",
+      "logic": {
+        "type": "onObject",
+        "object": "chaise"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Escabeau était dans la même colonne qu'une statue.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Belladone était à côté d'un lit.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "lit"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Grippesou était sur la même ligne qu'une statue.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "statue"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Aëlys était sur la même ligne qu'un chaudron.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaudron"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Goémone était sur la même ligne qu'une chaise.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "chaise"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "h": [
+        4,
+        8
+      ],
+      "c": [
+        [
+          8,
+          0
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          9,
+          1
+        ]
+      ],
+      "g": [
+        3,
+        4
+      ],
+      "f": [
+        7,
+        5
+      ],
+      "a": [
+        5,
+        6
+      ],
+      "b": [
+        2,
+        9
+      ],
+      "e": [
+        0,
+        3
+      ],
+      "d": [
+        6,
+        7
+      ]
+    },
+    "murderer": "b"
+  },
+  "rating": {
+    "skulls": 3,
+    "score": 6,
+    "hardest": "pièces",
+    "hardSteps": 2,
+    "directStart": 0
+  },
+  "difficulty": 4
+}

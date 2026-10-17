@@ -1,0 +1,144 @@
+{
+ "positions": {
+  "j": [
+   0,
+   2
+  ],
+  "a": [
+   2,
+   3
+  ],
+  "c": [
+   5,
+   8
+  ],
+  "f": [
+   4,
+   0
+  ],
+  "e": [
+   8,
+   4
+  ],
+  "d": [
+   3,
+   6
+  ],
+  "h": [
+   7,
+   7
+  ],
+  "g": [
+   6,
+   5
+  ],
+  "i": [
+   9,
+   1
+  ],
+  "b": [
+   1,
+   9
+  ]
+ },
+ "murderer": "a",
+ "cast": {
+  "a": "a",
+  "c": "b",
+  "f": "c",
+  "e": "d",
+  "d": "e",
+  "h": "f",
+  "g": "g",
+  "i": "h",
+  "b": "i"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "westOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "eastOf",
+    "other": "f"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "sameColAs",
+    "object": "etagere"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "table"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "southOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "barque"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "sameColAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "southOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "fauteuil"
+   }
+  }
+ ]
+}

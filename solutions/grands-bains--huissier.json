@@ -1,0 +1,144 @@
+{
+ "positions": {
+  "j": [
+   9,
+   4
+  ],
+  "f": [
+   8,
+   3
+  ],
+  "d": [
+   7,
+   9
+  ],
+  "c": [
+   4,
+   8
+  ],
+  "e": [
+   5,
+   6
+  ],
+  "g": [
+   1,
+   1
+  ],
+  "h": [
+   2,
+   5
+  ],
+  "b": [
+   3,
+   2
+  ],
+  "a": [
+   6,
+   0
+  ],
+  "i": [
+   0,
+   7
+  ]
+ },
+ "murderer": "f",
+ "cast": {
+  "f": "a",
+  "d": "b",
+  "c": "c",
+  "e": "d",
+  "g": "e",
+  "h": "f",
+  "b": "g",
+  "a": "h",
+  "i": "i"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "f",
+   "logic": {
+    "type": "inRoom",
+    "room": "I"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "sameColAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "hamac"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "eastOf",
+    "other": "h"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "sameColAs",
+    "object": "etagere"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "tonneau"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "notAdjacentTo",
+    "object": "chaudron"
+   }
+  }
+ ]
+}

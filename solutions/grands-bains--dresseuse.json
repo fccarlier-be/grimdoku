@@ -1,0 +1,151 @@
+{
+ "positions": {
+  "j": [
+   8,
+   0
+  ],
+  "e": [
+   2,
+   3
+  ],
+  "c": [
+   6,
+   2
+  ],
+  "f": [
+   0,
+   9
+  ],
+  "b": [
+   5,
+   7
+  ],
+  "a": [
+   7,
+   8
+  ],
+  "i": [
+   1,
+   4
+  ],
+  "g": [
+   9,
+   6
+  ],
+  "d": [
+   3,
+   1
+  ],
+  "h": [
+   4,
+   5
+  ]
+ },
+ "murderer": "c",
+ "cast": {
+  "e": "a",
+  "c": "b",
+  "f": "c",
+  "b": "d",
+  "a": "e",
+  "i": "f",
+  "g": "g",
+  "d": "h",
+  "h": "i"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "f",
+   "logic": {
+    "type": "inRoom",
+    "room": "C"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "inRoom",
+    "room": "D"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "eastOf",
+    "other": "i"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "inRoom",
+    "room": "E"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "eastOf",
+    "other": "d"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "lit"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "barque"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "westOf",
+    "other": "g"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "northOf",
+    "other": "e"
+   }
+  }
+ ]
+}

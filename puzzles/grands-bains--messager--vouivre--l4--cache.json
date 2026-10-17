@@ -1,0 +1,464 @@
+{
+  "formatVersion": 1,
+  "title": "Les Grands Bains de Brumeval — l'affaire Rapidon",
+  "decor": "thermes",
+  "size": 10,
+  "rooms": {
+    "A": {
+      "name": "Grand bassin",
+      "the": "le grand bassin",
+      "floor": "mosaique"
+    },
+    "B": {
+      "name": "Hammam",
+      "the": "le hammam",
+      "floor": "dalles"
+    },
+    "C": {
+      "name": "Sauna",
+      "the": "le sauna",
+      "floor": "parquet"
+    },
+    "F": {
+      "name": "Salon de thé",
+      "the": "le salon de thé",
+      "floor": "noble"
+    },
+    "G": {
+      "name": "Jardin des cures",
+      "the": "le jardin des cures",
+      "floor": "herbe"
+    },
+    "H": {
+      "name": "Salle des massages",
+      "the": "la salle des massages",
+      "floor": "parquet"
+    },
+    "I": {
+      "name": "Bains de boue",
+      "the": "les bains de boue",
+      "floor": "boue"
+    }
+  },
+  "layout": [
+    "AAAABBBCCC",
+    "AAAABBBCCC",
+    "AAAABBBCCC",
+    "FFFFBBBCCC",
+    "FFFFFFFCCC",
+    "GGGFFFFCCC",
+    "GGGFFFFHHH",
+    "GGGIIIIHHH",
+    "GGGIIIIHHH",
+    "GGGIIIIHHH"
+  ],
+  "objects": [
+    {
+      "type": "statue",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "barque",
+      "at": [
+        1,
+        3
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        8
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        2,
+        9
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        4,
+        2
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "roseaux",
+      "at": [
+        3,
+        8
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        5,
+        9
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        4,
+        4
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        6,
+        6
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        7,
+        0
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        9,
+        2
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        6,
+        8
+      ]
+    },
+    {
+      "type": "hamac",
+      "at": [
+        8,
+        9
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        9,
+        7
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        7,
+        4
+      ]
+    },
+    {
+      "type": "roseaux",
+      "at": [
+        9,
+        5
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "name": "Belladone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧛‍♀️",
+      "desc": "Comtesse vampire, végane (elle le jure)",
+      "archetype": "vampire",
+      "tic": "« Je ne bois jamais… de vin. »"
+    },
+    {
+      "id": "b",
+      "name": "Capucine",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧚",
+      "desc": "Fée, doit trois tournées",
+      "archetype": "fee",
+      "tic": "« Je te le rends demain. »"
+    },
+    {
+      "id": "c",
+      "name": "Bâfrin",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧌",
+      "desc": "Troll, plongeur à mi-temps",
+      "archetype": "troll",
+      "tic": "Répète le dernier mot de la phrase des autres"
+    },
+    {
+      "id": "d",
+      "name": "Glissandra",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🐍",
+      "desc": "Vouivre, serpent ailé, très longue à se retourner",
+      "archetype": "vouivre",
+      "tic": "Commence ses phrases par la fin",
+      "shape": "L4"
+    },
+    {
+      "id": "e",
+      "name": "Goémone",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧜‍♀️",
+      "desc": "Sirène, venue pour l'aquarium",
+      "archetype": "sirene",
+      "tic": "Fait des bulles quand elle ment"
+    },
+    {
+      "id": "f",
+      "name": "Aëlys",
+      "gender": "f",
+      "role": "suspect",
+      "icon": "🧝‍♀️",
+      "desc": "Elfe, critique gastronomique",
+      "archetype": "elfe",
+      "tic": "Note tout sur dix, les gens compris"
+    },
+    {
+      "id": "g",
+      "name": "Grippesou",
+      "gender": "m",
+      "role": "suspect",
+      "icon": "🧔‍♂️",
+      "desc": "Tavernier nain, radin légendaire",
+      "archetype": "tavernier",
+      "tic": "Compte à voix basse en parlant"
+    },
+    {
+      "id": "h",
+      "name": "Rapidon",
+      "gender": "m",
+      "role": "victim",
+      "icon": "✉️",
+      "desc": "Messager du baron, porte toujours de mauvaises nouvelles",
+      "archetype": "messager",
+      "guest": true
+    }
+  ],
+  "id": "grands-bains--messager--vouivre--l4--cache",
+  "place": "grands-bains",
+  "hiddenShapes": true,
+  "hiddenMax": 4,
+  "intro": "Aux Grands Bains de Brumeval, on vient soigner ses rhumatismes, ses nerfs ou sa réputation. Le messager Rapidon, venu apporter une lettre du baron, n'est pas ressorti du bain. Sept curistes et employés barbotaient dans les parages. L'un d'eux était seul avec lui. Il fait quarante degrés, tout le monde transpire, et personne ne sait rien.",
+  "epilogue": "— Vous étiez seul avec Rapidon.\n— Rapidon.\n— Pourquoi ?\n— Il voulait m'annoncer une mauvaise nouvelle. Alors Bâfrin taper. Taper fort. Fort.",
+  "clues": [
+    {
+      "who": "a",
+      "text": "Belladone était à l'est de Glissandra.",
+      "logic": {
+        "type": "eastOf",
+        "other": "d"
+      }
+    },
+    {
+      "who": "a",
+      "text": "Elle était à côté d'un tapis.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "b",
+      "text": "Capucine était à côté d'un hamac.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "hamac"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Bâfrin était sur la même ligne qu'un tapis.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "c",
+      "text": "Il était dans la même colonne qu'un tapis.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "tapis"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Glissandra était sur la même ligne qu'une étagère.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "etagere"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Elle n'était pas à côté d'un fauteuil.",
+      "logic": {
+        "type": "notAdjacentTo",
+        "object": "fauteuil"
+      }
+    },
+    {
+      "who": "d",
+      "text": "Elle était à côté d'un tonneau.",
+      "logic": {
+        "type": "adjacentTo",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "e",
+      "text": "Goémone était dans la même colonne qu'un tonneau.",
+      "logic": {
+        "type": "sameColAs",
+        "object": "tonneau"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Aëlys était sur la même ligne qu'un hamac.",
+      "logic": {
+        "type": "sameRowAs",
+        "object": "hamac"
+      }
+    },
+    {
+      "who": "f",
+      "text": "Elle était au sud de Capucine.",
+      "logic": {
+        "type": "southOf",
+        "other": "b"
+      }
+    },
+    {
+      "who": "g",
+      "text": "Grippesou était à l'ouest de Belladone.",
+      "logic": {
+        "type": "westOf",
+        "other": "a"
+      }
+    }
+  ],
+  "solution": {
+    "positions": {
+      "h": [
+        9,
+        1
+      ],
+      "d": [
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "e": [
+        4,
+        8
+      ],
+      "f": [
+        8,
+        3
+      ],
+      "c": [
+        6,
+        0
+      ],
+      "b": [
+        7,
+        9
+      ],
+      "g": [
+        0,
+        2
+      ],
+      "a": [
+        5,
+        6
+      ]
+    },
+    "murderer": "c"
+  },
+  "rating": {
+    "skulls": 2,
+    "score": 4,
+    "hardest": "position relative",
+    "hardSteps": 0,
+    "directStart": 0
+  },
+  "difficulty": 5
+}

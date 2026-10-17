@@ -1,0 +1,158 @@
+{
+ "positions": {
+  "j": [
+   8,
+   4
+  ],
+  "e": [
+   9,
+   3
+  ],
+  "f": [
+   2,
+   5
+  ],
+  "a": [
+   4,
+   6
+  ],
+  "g": [
+   0,
+   2
+  ],
+  "h": [
+   5,
+   7
+  ],
+  "b": [
+   3,
+   1
+  ],
+  "d": [
+   1,
+   9
+  ],
+  "i": [
+   7,
+   8
+  ],
+  "c": [
+   6,
+   0
+  ]
+ },
+ "murderer": "e",
+ "cast": {
+  "e": "a",
+  "f": "b",
+  "a": "c",
+  "g": "d",
+  "h": "e",
+  "b": "f",
+  "d": "g",
+  "i": "h",
+  "c": "i"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameColAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "westOf",
+    "other": "i"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "westOf",
+    "other": "a"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "barque"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaudron"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameColAs",
+    "object": "table"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "etagere"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "chaise"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameColAs",
+    "object": "statue"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "etagere"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "northOf",
+    "other": "i"
+   }
+  }
+ ]
+}
