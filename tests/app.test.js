@@ -264,7 +264,8 @@ test('lore : l\'affaire finale est verrouillée, puis débloquée par assez de l
 test('carte de Brumeval : un repère par lieu, chaque lieu liste ses enquêtes', () => {
   const { w, d, errors, PUZZLES } = open();
   w.grimGo('carte');
-  const places = [...d.querySelectorAll('[data-place]')].map(b => b.dataset.place);
+  // chaque lieu a son repère sur la carte (si l'illustration existe) et sa ligne dans la liste par contrée
+  const places = [...new Set([...d.querySelectorAll('[data-place]')].map(b => b.dataset.place))];
   const want = [...new Set(PUZZLES.filter(p => !p.final).map(p => p.place))];
   assert.deepEqual([...places].sort(), [...want].sort(), 'un repère par lieu');
   let n = 0;

@@ -182,10 +182,24 @@ header.top { display: flex; align-items: center; gap: 10px; }
 .special { background: var(--board); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 12px; font-size: 14px; display: flex; flex-direction: column; gap: 4px; }
 .special b { color: var(--candle); font-weight: 500; }
 /* carte de Brumeval : illustration et repères, ou plan par contrées */
-.carte { position: relative; width: 100%; aspect-ratio: 3 / 2; background: center / cover no-repeat; border-radius: 4px; box-shadow: 0 10px 26px rgba(0, 0, 0, .5); }
+.carte { position: relative; width: 100%; aspect-ratio: 1024 / 687; background: center / contain no-repeat; filter: drop-shadow(0 10px 18px rgba(0, 0, 0, .5)); }
 .carte .pin { position: absolute; left: var(--x); top: var(--y); transform: translate(-50%, -50%); }
 .pin { display: inline-flex; flex-direction: column; align-items: center; gap: 1px; padding: 5px 9px; border: 0; border-radius: 6px; color: var(--ink); background: rgba(241, 227, 194, .94); box-shadow: inset 0 0 0 1.5px rgba(43, 32, 22, .6), 0 3px 6px rgba(0, 0, 0, .45); font-family: var(--f-body); cursor: pointer; }
 .pin b { font: 400 15px/1.1 var(--f-display); }
+.pin i { display: none; font: 700 12px/1 var(--f-body); font-style: normal; }
+.contree .pin i { display: inline-block; margin-right: 6px; color: #8a4b12; }
+.contree .pin { flex-direction: row; flex-wrap: wrap; column-gap: 0; }
+.contree .pin small { width: 100%; padding-left: 18px; text-align: left; }
+.carte .pin { padding: 3px 7px; }
+.carte .pin b { font-size: 13px; }
+.carte .pin small { font-size: 11px; }
+.carte + .contrees { margin-top: 16px; }
+/* téléphone : sur la carte, des pastilles numérotées ; les noms sont dans la liste en dessous */
+@media (max-width: 699px) {
+  .carte .pin { width: 26px; height: 26px; padding: 0; border-radius: 50%; justify-content: center; }
+  .carte .pin b, .carte .pin small { display: none; }
+  .carte .pin i { display: block; }
+}
 .pin small { font-size: 12px; color: #6e5434; }
 .pin.done { box-shadow: inset 0 0 0 2px #a3312a, 0 3px 6px rgba(0, 0, 0, .45); }
 .pin:hover { transform: translate(-50%, -50%) scale(1.06); }
@@ -723,15 +737,17 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     P = null;
     $app.classList.remove('game');
     const got = letters();
+    // numéro de chaque lieu, dans l'ordre des contrées : la pastille sur la carte (téléphone) renvoie à la liste
+    const order = LORE.contrees.flatMap(c => c.lieux).filter(pl => placeCases(pl).length);
     const pin = (pl) => {
       const list = placeCases(pl), done = solvedIn(list);
       if (!list.length) return '';
       return `<button class="pin ${done === list.length ? 'done' : ''}" data-place="${pl}" style="--x:${LORE.pos[pl][0]}%;--y:${LORE.pos[pl][1]}%">
-        <b>${esc(placeTitle(pl))}</b><small>${done} / ${list.length}${got.includes(pl) ? ' · 📜' : ''}</small></button>`;
+        <i>${order.indexOf(pl) + 1}</i><b>${esc(placeTitle(pl))}</b><small>${done} / ${list.length}${got.includes(pl) ? ' · 📜' : ''}</small></button>`;
     };
     $app.innerHTML = pageHead('Retour aux tailles', 'Carte de Brumeval') + (MEDIA.map
-      ? `<div class="carte" style="background-image:url(${MEDIA.map})">${Object.keys(LORE.pos).map(pin).join('')}</div>`
-      : `<div class="contrees">${LORE.contrees.map(c => `<section class="contree"><h2>${esc(c.nom)}</h2>${c.lieux.map(pin).join('')}</section>`).join('')}</div>`);
+      ? `<div class="carte" style="background-image:url(${MEDIA.map})">${order.map(pin).join('')}</div>` : '')
+      + `<div class="contrees">${LORE.contrees.map(c => `<section class="contree"><h2>${esc(c.nom)}</h2>${c.lieux.map(pin).join('')}</section>`).join('')}</div>`;
     document.getElementById('back').onclick = () => go('tailles');
     document.getElementById('rulesBtn').onclick = rules;
     $app.querySelectorAll('[data-place]').forEach(b => b.onclick = () => go('lieu/' + b.dataset.place));

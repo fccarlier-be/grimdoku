@@ -371,8 +371,14 @@ def carte():
     if not MAP_DIR.exists():
         return
     for src in sources(MAP_DIR):
-        img = Image.open(src).convert('RGB')
+        img = Image.open(src).convert('RGBA')
         img.thumbnail((2400, 2400), Image.LANCZOS)
+        # fond blanc autour du parchemin déchiré → transparent (remplissage depuis les quatre coins, presque-blanc compris)
+        from PIL import ImageDraw
+        w, h = img.size
+        for xy in ((0, 0), (w - 1, 0), (0, h - 1), (w - 1, h - 1)):
+            if min(img.getpixel(xy)[:3]) > 225:
+                ImageDraw.floodfill(img, xy, (255, 255, 255, 0), thresh=40)
         out = MAP_DIR / (type_name(src.stem) + '.webp')
         img.save(out, 'WEBP', quality=86, method=6)
         print(f'carte {src.name} → {out.name} {img.size} ({out.stat().st_size // 1024} Ko)')
