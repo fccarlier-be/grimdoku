@@ -1,0 +1,284 @@
+{
+  "scene": "grands-bains",
+  "formatVersion": 1,
+  "title": "Les Grands Bains de Brumeval",
+  "decor": "thermes",
+  "size": 10,
+  "rooms": {
+    "A": {
+      "name": "Grand bassin",
+      "the": "le grand bassin",
+      "floor": "mosaique"
+    },
+    "B": {
+      "name": "Hammam",
+      "the": "le hammam",
+      "floor": "dalles"
+    },
+    "C": {
+      "name": "Sauna",
+      "the": "le sauna",
+      "floor": "parquet"
+    },
+    "D": {
+      "name": "Vestiaires",
+      "the": "les vestiaires",
+      "floor": "tomettes"
+    },
+    "E": {
+      "name": "Bassin des sirènes",
+      "the": "le bassin des sirènes",
+      "floor": "mosaique"
+    },
+    "F": {
+      "name": "Salon de thé",
+      "the": "le salon de thé",
+      "floor": "noble"
+    },
+    "G": {
+      "name": "Jardin des cures",
+      "the": "le jardin des cures",
+      "floor": "herbe"
+    },
+    "H": {
+      "name": "Salle des massages",
+      "the": "la salle des massages",
+      "floor": "parquet"
+    },
+    "I": {
+      "name": "Bains de boue",
+      "the": "les bains de boue",
+      "floor": "boue"
+    }
+  },
+  "layout": [
+    "AAAABBBCCC",
+    "AAAABBBCCC",
+    "AAAABBBCCC",
+    "DDDDBBBEEE",
+    "DDDDFFFEEE",
+    "GGGFFFFEEE",
+    "GGGFFFFHHH",
+    "GGGIIIIHHH",
+    "GGGIIIIHHH",
+    "GGGIIIIHHH"
+  ],
+  "objects": [
+    {
+      "type": "statue",
+      "at": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "barque",
+      "at": [
+        1,
+        3
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        2,
+        0
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        0,
+        5
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        2,
+        6
+      ]
+    },
+    {
+      "type": "tonneau",
+      "at": [
+        1,
+        8
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        2,
+        9
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        3,
+        0
+      ]
+    },
+    {
+      "type": "coffre",
+      "at": [
+        4,
+        2
+      ]
+    },
+    {
+      "type": "chaise",
+      "at": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "roseaux",
+      "at": [
+        3,
+        8
+      ]
+    },
+    {
+      "type": "statue",
+      "at": [
+        5,
+        9
+      ]
+    },
+    {
+      "type": "table",
+      "at": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "fauteuil",
+      "at": [
+        4,
+        4
+      ]
+    },
+    {
+      "type": "tapis",
+      "at": [
+        6,
+        6
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        5,
+        1
+      ]
+    },
+    {
+      "type": "champi",
+      "at": [
+        7,
+        0
+      ]
+    },
+    {
+      "type": "arbre",
+      "at": [
+        9,
+        2
+      ]
+    },
+    {
+      "type": "lit",
+      "at": [
+        6,
+        8
+      ]
+    },
+    {
+      "type": "hamac",
+      "at": [
+        8,
+        9
+      ]
+    },
+    {
+      "type": "etagere",
+      "at": [
+        9,
+        7
+      ]
+    },
+    {
+      "type": "chaudron",
+      "at": [
+        7,
+        4
+      ]
+    },
+    {
+      "type": "roseaux",
+      "at": [
+        9,
+        5
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "a",
+      "archetype": "sirene",
+      "role": "suspect"
+    },
+    {
+      "id": "b",
+      "archetype": "elfe",
+      "role": "suspect"
+    },
+    {
+      "id": "c",
+      "archetype": "troll",
+      "role": "suspect"
+    },
+    {
+      "id": "d",
+      "archetype": "fee",
+      "role": "suspect"
+    },
+    {
+      "id": "e",
+      "archetype": "tavernier",
+      "role": "suspect"
+    },
+    {
+      "id": "f",
+      "archetype": "vampire",
+      "role": "suspect"
+    },
+    {
+      "id": "g",
+      "archetype": "bonimenteur",
+      "role": "suspect"
+    },
+    {
+      "id": "h",
+      "archetype": "djinn",
+      "role": "suspect"
+    },
+    {
+      "id": "i",
+      "archetype": "archimage",
+      "role": "suspect"
+    },
+    {
+      "id": "j",
+      "archetype": "roi",
+      "role": "victim"
+    }
+  ],
+  "auto": {
+    "intro": "Aux Grands Bains de Brumeval, on vient soigner ses rhumatismes, ses nerfs ou sa réputation. {Titre} {victime}, venu{e} {motif}, n'est pas ressorti{e} du bain. {Nombre} curistes et employés barbotaient dans les parages. L'un d'eux était seul avec {lui}. Il fait quarante degrés, tout le monde transpire, et personne ne sait rien."
+  }
+}

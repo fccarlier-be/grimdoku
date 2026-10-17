@@ -41,9 +41,7 @@ case "$OUT" in *"ECHEC build"*|"") echo "❌ build en échec sur le PC : puzzles
 # énigmes construites sur le PC → puzzles/ du Mac (remplacé en entier : c'est une sortie du build), seulement si le PC
 # en renvoie une par solution (sinon on garde puzzles/ tel quel et on s'arrête)
 TMP=$(mktemp -d)
-O="-i $HOME/.ssh/desktop_franky -o IdentitiesOnly=yes -o BatchMode=yes -o LogLevel=ERROR"
-scp -q $O -o "ProxyCommand=ssh -o ControlMaster=auto -o ControlPath=$HOME/.ssh/cm-grimdoku-%r@%h:%p -o ControlPersist=600 -o BatchMode=yes fserver docker exec -i tailscale tailscale nc %h %p" \
-  francois@100.101.87.56:grimdoku-gen/puzzles.tgz "$TMP/puzzles.tgz"
+sh tools/pc.sh --get grimdoku-gen/puzzles.tgz "$TMP/puzzles.tgz"
 tar -xzf "$TMP/puzzles.tgz" -C "$TMP"
 GOT=$(ls "$TMP/puzzles" 2>/dev/null | grep -c '\.json$' || true)
 WANT=$(ls solutions | grep -c '\.json$')

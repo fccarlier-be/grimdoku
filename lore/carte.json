@@ -17,7 +17,8 @@
         "port",
         "grand-port",
         "navire",
-        "thermes"
+        "thermes",
+        "grands-bains"
       ]
     },
     {
@@ -68,8 +69,8 @@
       45
     ],
     "thermes": [
-      18,
-      78
+      33,
+      19
     ],
     "cimetiere": [
       51,
@@ -142,6 +143,10 @@
     "palais": [
       92,
       88
+    ],
+    "grands-bains": [
+      18,
+      78
     ]
   },
   "image": "brumeval2",

@@ -677,6 +677,30 @@
       "shapes": [
         "O4"
       ]
+    },
+    {
+      "id": "grands-bains--inspecteur--geant--t4",
+      "scene": "grands-bains",
+      "victim": "inspecteur",
+      "big": [
+        "geant"
+      ],
+      "shapes": [
+        "T4"
+      ]
+    },
+    {
+      "id": "grands-bains--messager--vouivre--l4--cache",
+      "scene": "grands-bains",
+      "victim": "messager",
+      "big": [
+        "vouivre"
+      ],
+      "shapes": [
+        "L4"
+      ],
+      "hidden": true,
+      "hiddenMax": 4
     }
   ]
 }
