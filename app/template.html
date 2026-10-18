@@ -590,6 +590,37 @@ html, body { background: var(--desk-tex, none) center top / 640px, var(--night);
 .soundpop input[type=range] { width: 100%; accent-color: #a3312a; height: 28px; }
 .soundpop .btn { background: transparent; border: 1.5px solid var(--line); border-radius: 8px; color: var(--ink); min-height: 38px; padding: 6px 10px; }
 /*__FLOORS__*/
+
+/* ================= survol et sélection plus visibles (demande de François, 2026-10-18) ================= */
+/* personnage choisi : sa fiche se soulève avec un halo doré, son médaillon prend un anneau doré, les autres s'estompent */
+.clue, .chip, .token { transition: transform .15s ease, opacity .15s ease, box-shadow .15s ease, filter .15s ease; }
+.clues.has-sel .clue:not(.sel) { opacity: .55; filter: saturate(.7); }
+.clue.sel { transform: rotate(0) translateY(-3px) scale(1.02); z-index: 2; }
+.clue.sel::before { box-shadow: inset 0 0 0 3px var(--candle), inset 0 0 12px rgba(120, 66, 18, .35), 0 0 0 3px rgba(240, 169, 58, .55), 0 0 22px rgba(240, 169, 58, .45), 0 10px 20px rgba(0, 0, 0, .55); }
+.clue.sel .em, .chip[aria-pressed="true"] .em { box-shadow: 0 0 0 3px var(--candle), 0 0 12px rgba(240, 169, 58, .9); }
+.chip[aria-pressed="true"] { transform: translateY(-2px); }
+.token.sel { transform: scale(1.12); box-shadow: 0 0 0 3px var(--candle), 0 0 16px 2px rgba(240, 169, 58, .9); z-index: 4; }
+.pencil.sel { font-size: 1em; text-decoration-thickness: .16em; }
+@media (hover: hover) {
+  .case, .lvl, .pin, .dot, .tbtn, .btn, .iconbtn, .ratebtn, .accuse { transition: transform .15s ease, box-shadow .15s ease, filter .15s ease; }
+  /* menus : la carte survolée se soulève et se redresse */
+  .case:hover, .lvl:hover { transform: translateY(-4px) rotate(0) scale(1.01); filter: brightness(1.05); }
+  .pin:hover { transform: translateY(-2px); box-shadow: inset 0 0 0 2px var(--candle), 0 6px 12px rgba(0, 0, 0, .5); }
+  .btn:hover, .tbtn:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 0 0 2px var(--candle), 0 4px 10px rgba(0, 0, 0, .4); }
+  .accuse:hover:not(:disabled) { transform: scale(1.05); filter: brightness(1.1); }
+  .iconbtn:hover { transform: scale(1.1); }
+  .ratebtn:hover { transform: scale(1.12); box-shadow: 0 0 0 2px var(--candle); }
+  /* fiches de suspects et barre des personnages */
+  .clue:hover { transform: rotate(0) translateY(-2px); }
+  .clues.has-sel .clue:not(.sel):hover { opacity: .85; }
+  .clue:hover::before { box-shadow: inset 0 0 0 2px rgba(240, 169, 58, .8), inset 0 0 12px rgba(120, 66, 18, .35), 0 8px 16px rgba(0, 0, 0, .5); }
+  .clue .em:hover, .chip:hover .em { box-shadow: 0 0 0 3px rgba(240, 169, 58, .8); }
+  .chip:hover { transform: translateY(-2px); }
+  /* carte : la case sous la souris, et les pions */
+  .cell:hover { outline: 2px solid rgba(240, 169, 58, .85); outline-offset: -2px; z-index: 3; }
+  .token:hover { transform: scale(1.08); }
+  .token.sel:hover { transform: scale(1.14); }
+}
 </style>
 
 <div class="wrap" id="app"></div>
@@ -1155,7 +1186,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
           </button>`).join('')}</div>
       </div>`}
       </div>
-      <div class="clues">
+      <div class="clues ${selected ? 'has-sel' : ''}">
         <h3>Indices</h3>
         ${cards.map(({ ch, items }) => {
           const idx = items.map(x => x.i);
