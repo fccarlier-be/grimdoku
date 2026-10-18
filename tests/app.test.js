@@ -84,6 +84,13 @@ test('déblocage : chaque lieu résolu ouvre les suivants, et tous les lieux son
   assert.equal(d.querySelectorAll('.desk-map .dot').length, 1, 'tant que le château n\'est pas terminé, rien ne s\'ouvre');
   solve(w, PUZZLES.find(p => p.place === L.start && !p.final));
   w.grimGo('bureau');
+  assert.equal(d.querySelectorAll('.desk-map .dot').length, 1, 'château terminé mais lettre pas ouverte : rien ne s\'ouvre encore');
+  assert.ok(d.querySelector('#deskLettres .newmark'), 'la lettre attend sur le bureau');
+  d.getElementById('deskLettres').click();
+  assert.ok(d.querySelector('.envelope-story #envOpen'), 'enveloppe cachetée');
+  d.getElementById('envOpen').click();
+  assert.ok(d.querySelector('.letter-story .story-newplaces'), 'ouverte : les nouveaux lieux sont annoncés');
+  d.getElementById('toCarnet').click();
   const open1 = [...new Set([...d.querySelectorAll('[data-place]')].map(b => b.dataset.place))].sort();
   assert.deepEqual(open1, [L.start, ...L.unlock[L.start]].filter(pl => places.includes(pl)).sort(), 'le château ouvre ses voisins');
   assert.ok(d.querySelector('.dot.fresh'), 'les nouveaux lieux sont signalés');
@@ -284,8 +291,13 @@ test('lore : lettre d\'Augure à la dernière victoire dans un lieu, rangée sur
   openCase(p.id);
   d.getElementById('accuse').click();
   assert.ok(d.querySelector('.story.verdict-story .epi'), 'scène du verdict au centre, avec le dialogue');
+  assert.equal(w.localStorage.getItem('grimdoku:lettres'), null, 'glissée sous la porte, pas encore ouverte');
+  assert.ok(!/📜|🗺/.test(d.getElementById('toLetter').textContent), 'pas d\'émoji sur le bouton');
   d.getElementById('toLetter').click();
+  assert.ok(d.querySelector('.story.envelope-story'), 'l\'enveloppe cachetée');
+  d.getElementById('envOpen').click();
   assert.ok(d.querySelector('.story.letter-story .story-letter'), 'la lettre en grand');
+  assert.ok(!/📜|🗺/.test(d.getElementById('toCarnet').textContent), 'pas d\'émoji sur « Retour au bureau »');
   d.getElementById('letterLater').click();
   assert.equal(d.querySelector('.story'), null, '« Plus tard » referme la lettre');
   assert.match(d.querySelector('.toast').textContent, /bureau/, 'et dit où elle est rangée');
@@ -330,6 +342,7 @@ test('lore : l\'affaire finale est verrouillée, puis débloquée par assez de l
 test('carte de Brumeval : tous lieux ouverts, un repère par lieu, chaque lieu liste ses enquêtes', () => {
   const { w, d, errors, PUZZLES } = open();
   for (const p of PUZZLES.filter(q => !q.final)) solve(w, p);
+  w.localStorage.setItem('grimdoku:lettres', JSON.stringify(Object.keys(w.eval('LORE').letters)));
   w.grimGo('bureau');
   const places = [...new Set([...d.querySelectorAll('.desk-map [data-place]')].map(b => b.dataset.place))];
   const want = [...new Set(PUZZLES.filter(p => !p.final).map(p => p.place))];
@@ -445,6 +458,7 @@ test('lettre anonyme : annonce les lieux ouverts, « Retour au bureau » y mène
   openCase(p.id);
   d.getElementById('accuse').click();
   d.getElementById('toLetter').click();
+  d.getElementById('envOpen').click();
   assert.ok(d.querySelector('.story-newplaces'), 'nouveaux lieux annoncés');
   d.getElementById('toCarnet').click();
   assert.ok(w.location.hash.includes('bureau') && d.querySelector('#deskLettres .newmark'), 'bureau, lettre non lue signalée');

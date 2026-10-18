@@ -701,6 +701,31 @@ html.plaques .tbtn.pen[aria-pressed="true"] { background: none; box-shadow: none
 .story-letter { font: italic 400 21px/1.45 var(--f-body) !important; margin: 4px 0 !important; }
 .story-sign { align-self: flex-end; font-family: var(--f-display); font-size: 22px !important; }
 .story-count { color: var(--muted); font-size: 14px !important; }
+/* ouverture de la lettre : enveloppe de parchemin, cachet « A » qui se brise, rabat qui s'ouvre, lettre qui sort */
+.envelope-story { background: transparent; }
+.envelope-story::before { display: none; }
+.env-title { font: 400 26px/1.1 var(--f-display) !important; color: #f3e6c8; text-shadow: 0 2px 4px rgba(0, 0, 0, .6); }
+.env-hint { color: rgba(243, 230, 200, .75) !important; font-style: italic; }
+.env-stage { position: relative; width: min(320px, 80vw); aspect-ratio: 16 / 10; margin: 120px auto 10px; border: 0; padding: 0; background: none; cursor: pointer; perspective: 900px; filter: drop-shadow(0 14px 18px rgba(0, 0, 0, .6)); }
+.env-back, .env-front, .env-flap, .env-paper { position: absolute; left: 0; right: 0; }
+.env-back { inset: 0; background: linear-gradient(170deg, #e6d3a6, #cdb281); border-radius: 4px; }
+.env-paper { left: 7%; right: 7%; top: 8%; bottom: 8%; background: repeating-linear-gradient(transparent 0 11px, rgba(90, 60, 25, .18) 11px 12px) 0 18px / 100% 100% no-repeat, linear-gradient(#f6ecd2, #eadbb5); border-radius: 2px; z-index: 1; transition: transform .7s .55s cubic-bezier(.3, .8, .4, 1); }
+.env-front { inset: 0; z-index: 2; clip-path: polygon(0 0, 50% 58%, 100% 0, 100% 100%, 0 100%); background: linear-gradient(10deg, #dcc596, #ecdcb4); border-radius: 4px; box-shadow: inset 0 0 0 1px rgba(90, 60, 25, .35); }
+.env-flap { top: 0; height: 60%; clip-path: polygon(0 0, 100% 0, 50% 100%); background: linear-gradient(#e2cd9e, #d2b984); transform-origin: 50% 0; transition: transform .5s .25s ease-in, z-index 0s .5s; z-index: 3; }
+.env-seal { position: absolute; left: 50%; top: 58%; width: 54px; height: 54px; margin: -27px 0 0 -27px; z-index: 4; border-radius: 47% 53% 50% 50% / 52% 48% 52% 48%;
+  background: radial-gradient(circle at 35% 30%, #d4473b, #8e1f17 70%); box-shadow: inset 0 -2px 4px rgba(0, 0, 0, .35), 0 3px 6px rgba(0, 0, 0, .45); }
+.env-stage.opening .env-seal { background: none; box-shadow: none; } /* intact jusqu'au geste : les deux moitiés prennent le relais */
+.env-seal i { position: absolute; inset: 0; display: grid; place-items: center; font: 400 26px/1 var(--f-display); font-style: normal; color: #f6d9c0; border-radius: 47% 53% 50% 50% / 52% 48% 52% 48%;
+  background: radial-gradient(circle at 35% 30%, #d4473b, #8e1f17 70%); box-shadow: inset 0 -2px 4px rgba(0, 0, 0, .35), 0 3px 6px rgba(0, 0, 0, .45); transition: transform .45s ease-in, opacity .45s ease-in; }
+.env-seal i:first-child { clip-path: polygon(0 0, 48% 0, 58% 36%, 44% 60%, 54% 100%, 0 100%); }
+.env-seal i:last-child { clip-path: polygon(52% 0, 100% 0, 100% 100%, 58% 100%, 48% 60%, 62% 36%); }
+@media (hover: hover) { .env-stage:not(.opening):hover .env-seal { animation: sealpulse 1.2s ease-in-out infinite; border-radius: 50%; } }
+.env-stage.opening { cursor: default; }
+.envelope-story:has(.opening) .env-hint { visibility: hidden; }
+.env-stage.opening .env-seal i:first-child { transform: translate(-26px, 34px) rotate(-40deg); opacity: 0; }
+.env-stage.opening .env-seal i:last-child { transform: translate(26px, 38px) rotate(35deg); opacity: 0; }
+.env-stage.opening .env-flap { transform: rotateX(180deg); z-index: 0; }
+.env-stage.opening .env-paper { transform: translateY(-48%); }
 .letter-left { margin: 6px 0 0; font-style: italic; color: #6e5434; }
 .story-newplaces { font-size: 16px !important; color: var(--ink); background: rgba(240, 169, 58, .25); padding: 6px 10px; border-radius: 6px; }
 .story-letter.reveal { font-size: 17px !important; text-align: left; align-self: stretch; }
@@ -936,11 +961,15 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
       </header>`;
   // un lieu est terminé quand toutes ses enquêtes actives sont résolues : c'est là que sa lettre arrive
   const placeDone = (pl) => { const list = placeCases(pl); return list.length > 0 && list.every(isSolved); };
-  // lieux ouverts : le départ, plus ceux qu'ouvre chaque lieu terminé (sa lettre)
+  // lettre glissée sous la porte mais pas encore ouverte : le lieu est terminé, sa lettre attend
+  const pendingLetter = (pl) => placeDone(pl) && !!LORE.letters[pl] && !letters().includes(pl);
+  const pendingLetters = () => [...new Set(CASES.map(p => p.place))].filter(pendingLetter);
+  // lieux ouverts : le départ, plus ceux qu'ouvre chaque lettre OUVERTE (décision de François, 2026-10-19 :
+  // les lieux suivants ne se débloquent qu'à l'ouverture de la lettre)
   function unlockedPlaces() {
     const open = new Set([LORE.start]);
     for (const p of CASES) if (isSolved(p)) open.add(p.place);
-    for (const pl of new Set(CASES.map(p => p.place))) if (placeDone(pl)) (LORE.unlock[pl] || []).forEach(n => open.add(n));
+    for (const pl of letters()) (LORE.unlock[pl] || []).forEach(n => open.add(n));
     return open;
   }
   const seenPlaces = () => store.get('lieux-vus', []);
@@ -968,7 +997,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     // décor : illustrations assets/desk/deco-*.webp (loupe, encrier, bougie) ; à défaut, deux vignettes des niveaux
     const deco = MEDIA.deskDeco && MEDIA.deskDeco.length ? MEDIA.deskDeco : [MEDIA.levels[1], MEDIA.levels[0]].filter(Boolean);
     // fil rouge : de chaque lieu résolu vers les lieux qu'il a révélés (chaque nouveau clou y est relié)
-    const hit = placeDone;
+    const hit = (pl) => letters().includes(pl);
     const strings = Object.entries(LORE.unlock).flatMap(([a, kids]) => hit(a) ? kids.filter(b => open.has(b) && LORE.pos[b] && placeCases(b).length).map(b => [LORE.pos[a], LORE.pos[b]]) : []);
     // croquis épinglés : les derniers lieux ouverts (pas encore visités d'abord) dont le décor est illustré
     const photoOf = (pl) => { const d = (placeCases(pl)[0] || {}).decor; return (MEDIA.placeSketches || []).includes(d) ? d : null; };
@@ -1005,7 +1034,8 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     document.getElementById('rulesBtn').onclick = rules;
     $app.querySelectorAll('[data-place]').forEach(b => b.onclick = () => go('lieu/' + b.dataset.place));
     document.getElementById('deskDossiers').onclick = () => go('dossiers');
-    document.getElementById('deskLettres').onclick = () => go('lettres');
+    // une lettre attend d'être ouverte : on l'ouvre sur le bureau ; sinon, le courrier
+    document.getElementById('deskLettres').onclick = () => pendingLetters().length ? openLetter(pendingLetters()[0]) : go('lettres');
     document.getElementById('deskCarnet').onclick = () => go('carnet');
     const f = document.getElementById('deskFinal'); if (f) f.onclick = () => { caseBack = 'bureau'; go('affaire/' + FINAL.id); };
   }
@@ -1120,11 +1150,13 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     if (!seenPlaces().includes(pl)) store.set('lieux-vus', seenPlaces().concat(pl));
     const list = placeCases(pl);
     $app.innerHTML = pageHead('Retour au bureau', esc(placeTitle(pl))) + `
-      <p class="lead">${letters().includes(pl) ? `📜 <i>${esc(LORE.letters[pl])}</i> — A.` : `${list.length - solvedIn(list) > 1 ? `Encore ${list.length - solvedIn(list)} enquêtes ici` : 'Une dernière enquête ici'}, et une lettre sur ce lieu glissera sous ta porte.`} <span class="count">${solvedIn(list)} / ${list.length} résolues</span></p>
+      ${pendingLetter(pl) ? '<button class="btn primary" id="lieuLetter">Ouvrir la lettre glissée sous la porte</button>' : ''}
+      <p class="lead">${letters().includes(pl) ? `📜 <i>${esc(LORE.letters[pl])}</i> — A.` : pendingLetter(pl) ? 'Toutes les enquêtes de ce lieu sont résolues.' : `${list.length - solvedIn(list) > 1 ? `Encore ${list.length - solvedIn(list)} enquêtes ici` : 'Une dernière enquête ici'}, et une lettre sur ce lieu glissera sous ta porte.`} <span class="count">${solvedIn(list)} / ${list.length} résolues</span></p>
       <div class="cases">${list.map(caseHtml).join('')}</div>`;
     document.getElementById('back').onclick = () => go('bureau');
     document.getElementById('rulesBtn').onclick = rules;
     $app.querySelectorAll('.case').forEach(b => b.onclick = () => { caseBack = 'lieu'; go('affaire/' + b.dataset.id); });
+    const ll = document.getElementById('lieuLetter'); if (ll) ll.onclick = () => openLetter(pl);
   }
   function home() {
     P = null;
@@ -1757,10 +1789,9 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
       if (v.size) { settings.live = true; store.set('settings', settings); render(); return toast(`${v.size} indice${v.size > 1 ? 's' : ''} ne colle${v.size > 1 ? 'nt' : ''} pas. Ils sont surlignés en rouge.`, true); }
       return toast("Tout semble coller… mais ce n'est pas la bonne scène. Un indice t'a peut-être échappé.", true);
     }
-    const before = unlockedPlaces(); // lieux ouverts avant cette victoire
     S.solved = true; selected = null; save();
-    render.newLetter = grantLetter(P);
-    render.newPlaces = [...unlockedPlaces()].filter(pl => !before.has(pl)); // ceux que la lettre vient d'ouvrir
+    render.newLetter = pendingLetter(P.place) ? P.place : null; // glissée sous la porte : à ouvrir
+    render.newPlaces = [];
     render();
     window.scrollTo({ top: 0, behavior: 'smooth' });
     verdictStory(render.newLetter);
@@ -1771,13 +1802,31 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
   const letters = () => store.get('lettres', []);
   const finalUnlocked = () => letters().length >= LORE.need;
   // lettres pas encore lues dans le carnet (le bouton du carnet le signale)
-  const unread = () => letters().filter(pl => !store.get('lettres-lues', []).includes(pl)).length;
-  function grantLetter(p) {
-    const got = letters();
-    if (!LORE.letters[p.place] || got.includes(p.place) || !placeDone(p.place)) return null;
-    store.set('lettres', got.concat(p.place));
-    return p.place;
+  const unread = () => letters().filter(pl => !store.get('lettres-lues', []).includes(pl)).length + pendingLetters().length;
+  // ouvrir la lettre d'un lieu : enveloppe cachetée « A », le cachet se brise, le rabat s'ouvre, la lettre sort ;
+  // c'est seulement là qu'elle est reçue (grimdoku:lettres) et qu'elle ouvre les lieux suivants
+  function openLetter(pl) {
+    if (!pendingLetter(pl)) return letterStory(pl);
+    const ov = story(`<p class="env-title">Une lettre glissée sous la porte</p>
+      <button class="env-stage" id="envOpen" aria-label="Briser le cachet et ouvrir la lettre">
+        <span class="env-back"></span><span class="env-paper"></span><span class="env-front"></span><span class="env-flap"></span>
+        <span class="env-seal"><i>A</i><i>A</i></span>
+      </button>
+      <p class="env-hint">Touche le cachet pour l'ouvrir.</p>`, 'envelope-story');
+    const btn = ov.querySelector('#envOpen');
+    btn.onclick = () => {
+      if (btn.classList.contains('opening')) return;
+      const before = unlockedPlaces();
+      store.set('lettres', letters().concat(pl));
+      render.newPlaces = [...unlockedPlaces()].filter(x => !before.has(x));
+      render.newLetter = pl;
+      // animation (1,4 s), sauf si l'on préfère moins de mouvement (et dans les tests, sans matchMedia)
+      const calm = !window.matchMedia || matchMedia('(prefers-reduced-motion: reduce)').matches;
+      btn.classList.add('opening');
+      if (calm) letterStory(pl); else setTimeout(() => letterStory(pl), 1400);
+    };
   }
+
   const placeTitle = (place) => { const p = PUZZLES.find(q => q.place === place && !q.final); return p ? p.title.split(' — ')[0] : place; };
   // épilogue : un dialogue (« — » en début de ligne), l'enquêteur puis le coupable
   const dialogue = (text) => text.split('\n').map((l, i) => `<p class="epl ${i % 2 ? 'them' : 'me'}">${esc(l)}</p>`).join('');
@@ -1808,8 +1857,8 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
       <div class="epi">${dialogue(P.epilogue)}</div>
       ${newLetter ? '' : leftHtml()}
       <div class="row">${P.revelation ? `<button class="btn primary" id="toReveal">📜 Dans les archives du Palier zéro…</button>`
-        : newLetter ? `<button class="btn primary" id="toLetter">📜 Une lettre a été glissée sous la porte…</button>` : `<button class="btn primary" data-close>Fermer</button>`}</div>`, 'verdict-story');
-    const b = ov.querySelector('#toLetter'); if (b) b.onclick = () => letterStory(newLetter);
+        : newLetter ? `<button class="btn primary" id="toLetter">Une lettre a été glissée sous la porte…</button>` : `<button class="btn primary" data-close>Fermer</button>`}</div>`, 'verdict-story');
+    const b = ov.querySelector('#toLetter'); if (b) b.onclick = () => openLetter(newLetter);
     const r = ov.querySelector('#toReveal'); if (r) r.onclick = revelationStory;
   }
   // Affaire finale : la révélation commune (canon de la matrice de continuité), la même quel que soit le coupable de la
@@ -1836,10 +1885,10 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
       <p class="story-sign">— A.</p>
       ${(render.newPlaces || []).length ? `<p class="story-newplaces">🗺️ Sur ta carte, ${render.newPlaces.length > 1 ? 'de nouveaux lieux s\'ouvrent' : 'un nouveau lieu s\'ouvre'} : <b>${render.newPlaces.map(pl => esc(placeTitle(pl))).join(', ')}</b></p>` : ''}
       <p class="story-count">${n} / ${total} lettres anonymes${FINAL && !finalUnlocked() ? ` · encore ${LORE.need - n} avant que tout s'éclaire` : FINAL ? ' · <b>une enveloppe vient d\'arriver sur ton bureau</b>' : ''}</p>
-      <div class="row"><button class="btn" id="letterLater">Plus tard</button><button class="btn primary" id="toCarnet">🗺️ Retour au bureau</button></div>`, 'letter-story');
+      <div class="row"><button class="btn" id="letterLater">Plus tard</button><button class="btn primary" id="toCarnet">Retour au bureau</button></div>`, 'letter-story');
     // deux choix sans ambiguïté (retour de François : « Ranger dans mon carnet » ne faisait que refermer, on croyait que rien ne se passait)
     ov.querySelector('#toCarnet').onclick = () => { close(); go('bureau'); };
-    ov.querySelector('#letterLater').onclick = () => { close(); toast('📜 Lettre rangée avec les autres, sur ton bureau.'); };
+    ov.querySelector('#letterLater').onclick = () => { close(); if (P) render(); toast('📜 Lettre rangée avec les autres, sur ton bureau.'); };
   }
   function verdictHtml() {
     const k = ctx.chars[P.solution.murderer];
@@ -1852,7 +1901,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
         <p class="why">Seul suspect dans la pièce de ${esc(v.name)}.</p>
         <div class="epi">${dialogue(P.epilogue)}</div>
         ${P.revelation ? `<button class="btn" id="rereadReveal">📜 Relire la lettre de Fizzlebarbe</button>` : ''}
-        ${render.newLetter === P.place ? `<div class="letter-augure"><b>📜 Une lettre anonyme glissée sous la porte</b><p>${esc(LORE.letters[P.place])}</p><small>— A. · ${letters().length} / ${Object.keys(LORE.letters).length} lettres sur ton bureau</small></div>` : leftHtml()}
+        ${pendingLetter(P.place) ? `<button class="btn primary" id="openLetterBtn">Ouvrir la lettre glissée sous la porte</button>` : render.newLetter === P.place && letters().includes(P.place) ? `<div class="letter-augure"><b>📜 Une lettre anonyme glissée sous la porte</b><p>${esc(LORE.letters[P.place])}</p><small>— A. · ${letters().length} / ${Object.keys(LORE.letters).length} lettres sur ton bureau</small></div>` : leftHtml()}
         <div class="row">
           <button class="btn" id="replayBtn">Rejouer</button>
           ${next ? `<button class="btn primary" id="nextBtn">Affaire suivante</button>` : `<button class="btn primary" id="homeBtn">Retour au bureau</button>`}
@@ -1870,6 +1919,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
   function bindVerdict() {
     const next = nextCase();
     const rr = document.getElementById('rereadReveal'); if (rr) rr.onclick = revelationStory;
+    const ol = document.getElementById('openLetterBtn'); if (ol) ol.onclick = () => openLetter(P.place);
     document.getElementById('replayBtn').onclick = () => { S = blank(); undo = []; save(); render(); };
     const nb = document.getElementById('nextBtn'); if (nb) nb.onclick = () => go('affaire/' + next.id);
     const hb = document.getElementById('homeBtn'); if (hb) hb.onclick = () => go('bureau');
