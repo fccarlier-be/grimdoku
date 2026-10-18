@@ -737,8 +737,19 @@ html, body { background: var(--desk-tex, none) center top / 640px, var(--night);
 @media (hover: hover) { .desk-photo:hover { transform: rotate(0) scale(1.06); z-index: 6; } }
 /* fil rouge : entre les lieux résolus qui s'ouvrent l'un l'autre */
 .desk-string { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; overflow: visible; }
-.desk-string line { stroke: #b3261e; stroke-width: 2.2px; vector-effect: non-scaling-stroke; filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, .45)); }
+.desk-string line { stroke: #b3261e; stroke-width: 2.4px; vector-effect: non-scaling-stroke; filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, .45)); }
 .desk-map .dot { z-index: 2; }
+/* les lieux : des clous forgés plantés dans la carte (zone de clic plus large que la tête) */
+.desk-map .dot.nail { width: 34px; height: 34px; background: none; box-shadow: none; border-radius: 50%; }
+.dot.nail::before { content: ""; position: absolute; left: 50%; top: 50%; width: 15px; height: 15px; margin: -7.5px 0 0 -7.5px; border-radius: 3px; transform: rotate(var(--nail));
+  background: radial-gradient(circle at 32% 28%, #a9a39a 0 8%, transparent 22%), linear-gradient(135deg, #5d5a55, #2b2925 60%, #1a1816);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .55), inset 1px 1px 0 rgba(255, 255, 255, .18), 2px 3px 3px rgba(0, 0, 0, .6); }
+.dot.nail.done::before { background: radial-gradient(circle at 32% 28%, #fff3c4 0 8%, transparent 24%), linear-gradient(135deg, #d9b25a, #9a7326 60%, #6b4d17); }
+.dot.nail.fresh { animation: none; }
+.dot.nail.fresh::after { content: ""; position: absolute; inset: 4px; border-radius: 50%; box-shadow: 0 0 0 2px rgba(240, 169, 58, .9), 0 0 14px 4px rgba(240, 169, 58, .55); animation: nailglow 1.6s ease-in-out infinite; pointer-events: none; }
+@keyframes nailglow { 50% { transform: scale(1.35); opacity: .35; } }
+.desk-map .dot.nail:hover, .desk-map .dot.nail:focus-visible { transform: translate(-50%, -50%) scale(1.25); }
+@media (max-aspect-ratio: 1/1) { .desk-map .dot.nail { width: 28px; height: 28px; } .dot.nail::before { width: 11px; height: 11px; margin: -5.5px 0 0 -5.5px; } }
 /* lumière : halo chaud de la bougie, bords du bureau dans l'ombre */
 .desk-glow { position: absolute; z-index: 6; left: -45%; top: -60%; width: 90%; aspect-ratio: 1; pointer-events: none; border-radius: 50%; background: radial-gradient(closest-side, rgba(255, 196, 110, .32), rgba(255, 170, 80, .12) 45%, transparent); mix-blend-mode: screen; }
 .bureau::after { content: ""; position: fixed; inset: 0; z-index: 5; pointer-events: none; background: radial-gradient(ellipse 75% 70% at 52% 48%, rgba(255, 220, 160, .07), transparent 55%, rgba(0, 0, 0, .55) 100%); }
@@ -877,10 +888,11 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     const open = unlockedPlaces(), seen = seenPlaces();
     const order = LORE.contrees.flatMap(c => c.lieux).filter(pl => placeCases(pl).length);
     const dot = (pl) => {
-      if (!open.has(pl)) return `<span class="dot locked" style="--x:${LORE.pos[pl][0]}%;--y:${LORE.pos[pl][1]}%" aria-hidden="true">?</span>`;
+      // un clou par lieu découvert (rien pour les autres) : laiton si terminé, lueur tant qu'il n'a pas été visité
+      if (!open.has(pl)) return '';
       const list = placeCases(pl), done = solvedIn(list), fresh = !seen.includes(pl);
-      return `<button class="dot ${done === list.length ? 'done' : ''} ${fresh ? 'fresh' : ''}" data-place="${pl}" style="--x:${LORE.pos[pl][0]}%;--y:${LORE.pos[pl][1]}%" aria-label="${esc(placeTitle(pl))}, ${done} sur ${list.length} résolues">
-        ${done === list.length ? '✓' : fresh ? '!' : '•'}<span class="tip"><b>${esc(placeTitle(pl))}</b><small>${done} / ${list.length}${fresh ? ' · nouveau' : ''}</small></span></button>`;
+      return `<button class="dot nail ${done === list.length ? 'done' : ''} ${fresh ? 'fresh' : ''}" data-place="${pl}" style="--x:${LORE.pos[pl][0]}%;--y:${LORE.pos[pl][1]}%;--nail:${(pl.length * 37) % 50 - 25}deg" aria-label="${esc(placeTitle(pl))}, ${done} sur ${list.length} résolues">
+        <span class="tip"><b>${esc(placeTitle(pl))}</b><small>${done} / ${list.length}${fresh ? ' · nouveau' : ''}</small></span></button>`;
     };
     // sans texte : les objets parlent d'eux-mêmes ; leur nom reste pour les lecteurs d'écran et l'infobulle (title)
     const nSolved = solvedIn(CASES), nl = letters().length, nu = unread(), fin = FINAL && finalUnlocked();
@@ -888,9 +900,9 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     const item = (cls, id, name, inner, extra = '') => `<button class="desk-item ${cls}" id="${id}" title="${name}" aria-label="${name}">${inner}${extra}</button>`;
     // décor : illustrations assets/desk/deco-*.webp (loupe, encrier, bougie) ; à défaut, deux vignettes des niveaux
     const deco = MEDIA.deskDeco && MEDIA.deskDeco.length ? MEDIA.deskDeco : [MEDIA.levels[1], MEDIA.levels[0]].filter(Boolean);
-    // fil rouge : de chaque lieu résolu vers ceux qu'il a ouverts et où l'on a aussi résolu une enquête
+    // fil rouge : de chaque lieu résolu vers les lieux qu'il a révélés (chaque nouveau clou y est relié)
     const hit = (pl) => solvedIn(placeCases(pl)) > 0;
-    const strings = Object.entries(LORE.unlock).flatMap(([a, kids]) => hit(a) ? kids.filter(b => hit(b) && LORE.pos[b]).map(b => [LORE.pos[a], LORE.pos[b]]) : []);
+    const strings = Object.entries(LORE.unlock).flatMap(([a, kids]) => hit(a) ? kids.filter(b => open.has(b) && LORE.pos[b] && placeCases(b).length).map(b => [LORE.pos[a], LORE.pos[b]]) : []);
     // croquis épinglés : les derniers lieux ouverts (pas encore visités d'abord) dont le décor est illustré
     const photoOf = (pl) => { const d = (placeCases(pl)[0] || {}).decor; return (MEDIA.placeSketches || []).includes(d) ? d : null; };
     const photos = order.filter(pl => open.has(pl) && photoOf(pl)).sort((a, b) => seen.includes(a) - seen.includes(b)).slice(0, 2);

@@ -58,7 +58,7 @@ test('accueil → Jouer → bureau : la carte ouverte, seul le château accessib
   const L = w.eval('LORE');
   assert.deepEqual([...new Set([...d.querySelectorAll('[data-place]')].map(b => b.dataset.place))], [L.start], 'seul le départ est ouvert');
   assert.equal(L.start, 'chateau');
-  assert.ok(d.querySelectorAll('.dot.locked').length >= 20, 'les autres lieux sont des « ? »');
+  assert.equal(d.querySelectorAll('.desk-map .dot').length, 1, 'un seul clou : les autres lieux ne se voient pas encore');
   assert.ok(d.getElementById('deskDossiers') && d.getElementById('deskLettres') && d.getElementById('deskCarnet'));
   assert.equal(d.getElementById('deskFinal'), null, 'pas d\'enveloppe au départ');
   w.grimGo('lieu/taverne');
@@ -83,6 +83,7 @@ test('déblocage : chaque lieu résolu ouvre les suivants, et tous les lieux son
   const open1 = [...new Set([...d.querySelectorAll('[data-place]')].map(b => b.dataset.place))].sort();
   assert.deepEqual(open1, [L.start, ...L.unlock[L.start]].filter(pl => places.includes(pl)).sort(), 'le château ouvre ses voisins');
   assert.ok(d.querySelector('.dot.fresh'), 'les nouveaux lieux sont signalés');
+  assert.equal(d.querySelectorAll('.desk-string line').length, L.unlock[L.start].filter(pl => places.includes(pl)).length, 'chaque nouveau clou relié par le fil rouge');
   const nx = L.unlock[L.start][0];
   w.grimGo('lieu/' + nx);
   assert.ok(d.querySelector('.case'), 'un lieu ouvert s\'ouvre');
@@ -320,7 +321,7 @@ test('carte de Brumeval : tous lieux ouverts, un repère par lieu, chaque lieu l
   const places = [...new Set([...d.querySelectorAll('.desk-map [data-place]')].map(b => b.dataset.place))];
   const want = [...new Set(PUZZLES.filter(p => !p.final).map(p => p.place))];
   assert.deepEqual([...places].sort(), [...want].sort(), 'un repère par lieu');
-  assert.equal(d.querySelectorAll('.dot.locked').length, 0);
+  assert.equal(d.querySelectorAll('.desk-map .dot.nail').length, want.length, 'un clou par lieu');
   let n = 0;
   for (const pl of places) {
     w.grimGo('lieu/' + pl);
