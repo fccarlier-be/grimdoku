@@ -284,6 +284,7 @@ test('lore : lettre d\'Augure à la première victoire dans un lieu, rangée dan
   assert.equal(d.querySelectorAll('.lettre').length, 1, 'une lettre reçue');
   assert.ok(d.querySelector('.lettre.fresh'), 'marquée nouvelle');
   w.grimGo('carnet');
+  d.getElementById('nbNext').click(); // après la page de garde
   assert.ok(d.querySelectorAll('.fiche').length >= 1, 'la troupe croisée a sa fiche');
   w.grimGo('bureau');
   assert.equal(d.querySelector('#deskLettres .newmark'), null, 'lue une fois le courrier ouvert');
@@ -328,6 +329,25 @@ test('carte de Brumeval : tous lieux ouverts, un repère par lieu, chaque lieu l
     n += ids.length;
   }
   assert.equal(n, PUZZLES.filter(p => !p.final).length, 'toutes les enquêtes sont sur la carte');
+  assert.deepEqual(errors, []);
+});
+
+test('carnet : un vrai carnet, page de garde puis un habitant par page, on tourne les pages', () => {
+  const { w, d, errors, PUZZLES } = open();
+  PUZZLES.filter(p => !p.final && p.place === 'chateau').slice(0, 3).forEach(p => solve(w, p));
+  w.grimGo('carnet');
+  assert.ok(d.querySelector('.carnet-livre .nb-garde #prologueBtn'), 'page de garde, prologue à relire');
+  assert.equal(d.getElementById('nbPrev').hidden, true, 'pas de page avant la garde');
+  const seen = [];
+  while (!d.getElementById('nbNext').hidden) {
+    d.getElementById('nbNext').click();
+    const names = [...d.querySelectorAll('.nb-fiche .nb-name')].map(e => e.textContent);
+    assert.equal(names.length, 1, 'un habitant par page');
+    seen.push(...names);
+  }
+  assert.ok(seen.length >= 3 && new Set(seen).size === seen.length, 'chaque habitant croisé a sa page');
+  d.getElementById('nbPrev').click();
+  assert.equal(d.querySelector('.nb-name').textContent, seen[seen.length - 2], 'retour à la page précédente');
   assert.deepEqual(errors, []);
 });
 
