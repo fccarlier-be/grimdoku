@@ -383,3 +383,16 @@ test('lettre d\'Augure : « Voir mon carnet » ouvre le carnet', () => {
   d.getElementById('toCarnet').click();
   assert.ok(w.location.hash.includes('carnet') && d.querySelector('.lettre.fresh'), 'carnet ouvert, la lettre marquée nouvelle');
 });
+
+test('lettres anonymes : le nom d\'Augure n\'apparaît nulle part avant la révélation de l\'affaire finale', () => {
+  const { w, d, PUZZLES } = open();
+  w.localStorage.setItem('grimdoku:lettres', JSON.stringify(['taverne', 'port']));
+  const shown = () => d.getElementById('app').textContent + d.getElementById('layer').textContent;
+  d.getElementById('playBtn').click();
+  for (let i = 0; i < w.eval('LORE').prologue.length; i++) { assert.ok(!/Augure/.test(shown()), `prologue, scène ${i + 1}`); d.getElementById('prologueNext').click(); }
+  for (const route of ['tailles', 'carte', 'carnet', 'lieu/taverne']) { w.grimGo(route); assert.ok(!/Augure/.test(shown()), route); }
+  d.getElementById('rulesBtn').click();
+  assert.ok(!/Augure/.test(shown()), 'règles');
+  const corbeau = PUZZLES.flatMap(p => p.characters).find(c => c.archetype === 'corbeau');
+  assert.ok(corbeau && !/lettre/i.test(corbeau.desc), 'la fiche du corbeau ne dit pas qu\'il écrit les lettres');
+});

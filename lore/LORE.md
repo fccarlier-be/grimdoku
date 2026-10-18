@@ -92,12 +92,12 @@ On l'entend à trois endroits :
 **4. Mes notes** (mode d'emploi)
 1. Choisir un lieu sur la carte de Brumeval, et une enquête.
 2. Placer tout le monde : une personne par ligne et par colonne, un suspect par pièce, la victime seule avec son meurtrier.
-3. Après la première enquête résolue dans un lieu, Augure glisse sous ma porte une lettre sur ce lieu.
+3. Après la première enquête résolue dans un lieu, une lettre sur ce lieu glisse sous ma porte, signée « A. ».
 4. Les lettres s'empilent dans le carnet d'enquête, avec les fiches des habitants croisés.
 5. À quinze lettres, une affaire se débloque. Toutes les lettres semblent y mener.
 *Commencer par le Sanglier Borgne : petites cartes, gros buveurs, et un tavernier qui note tout.*
 
-Ensuite, en haut de la carte, la ligne **Fil rouge** rappelle le nombre de lettres d'Augure réunies, ce qu'il en manque avant l'affaire finale, et une **piste conseillée** : le lieu sans lettre dont l'enquête la plus simple est la plus accessible.
+Ensuite, en haut de la carte, la ligne **Fil rouge** rappelle le nombre de lettres anonymes réunies, ce qu'il en manque avant l'affaire finale, et une **piste conseillée** : le lieu sans lettre dont l'enquête la plus simple est la plus accessible.
 
 ## 4. La troupe récurrente
 Chaque type de personnage est **un seul personnage, au nom fixe**, que l'on retrouve d'une enquête à l'autre. Dans une enquête, il porte une **pastille** : l'initiale de son nom (ou le plus court début qui le distingue des autres personnages présents : Fa pour Fausset, Fl pour Flammèche…). Les fiches sont rangées de la plus facile à placer à la plus difficile.
@@ -472,7 +472,7 @@ Exemple rempli : pour Capucine face à Prudence l'abbesse, « {Il} voulait {mena
 
 ### Augure — Corbeau
 - **Type** : `corbeau` · masculin
-- **Trait** : Corbeau, écrit des lettres anonymes
+- **Trait** : Corbeau, sait tout, ne dit rien
 - **Tic de langage** : Ne parle pas : il écrit
 - **Où on le croise** : Le Cimetière de Minuit
 - **Épilogue quand il est coupable** :
@@ -970,7 +970,7 @@ Des petites histoires qui courent d'une enquête à l'autre, sans jamais compter
 ## 11. Le lore dans le jeu : comment tout s'articule
 ### Le parcours du joueur
 1. **Accueil** : l'affiche, le titre, le sceau « Jouer ».
-2. **Choisis ta taille** : un parchemin par taille de carte (6×6 à 12×12), plus trois entrées du lore : **🗺️ Carte de Brumeval**, **📖 Carnet d'enquête** (avec « ✉️ N nouvelle(s) lettre(s) » tant qu'elles ne sont pas lues) et **l'affaire finale** (verrouillée : « Une affaire se prépare… Encore N lettres d'Augure »). À terme, la carte remplacera le classement par taille.
+2. **Choisis ta taille** : un parchemin par taille de carte (6×6 à 12×12), plus trois entrées du lore : **🗺️ Carte de Brumeval**, **📖 Carnet d'enquête** (« N / 23 lettres anonymes », et « ✉️ N nouvelle(s) lettre(s) » tant qu'elles ne sont pas lues) et **l'affaire finale** (verrouillée : « Une affaire se prépare… Encore N lettres anonymes »). À terme, la carte remplacera le classement par taille.
 3. **Carte de Brumeval** : une pastille numérotée par lieu sur l'illustration (au survol, sur ordinateur : nom du lieu, enquêtes résolues, 📜 si sa lettre est trouvée ; pastille rouge quand le lieu est terminé), puis la liste des lieux par contrée.
 4. **Page d'un lieu** : sa lettre (ou, tant qu'aucune enquête n'y est résolue, « Résous une première enquête ici : Augure t'écrira sur ce lieu ») et ses enquêtes. Le bouton ‹ d'une enquête ouverte d'ici ramène à ce lieu.
 5. **L'enquête** : à la première ouverture, une **scène au centre de l'écran** montre l'illustration du décor, le titre et l'introduction de l'enquêteur (« À l'enquête »). Le titre en haut la rouvre à tout moment.
@@ -988,6 +988,7 @@ Des petites histoires qui courent d'une enquête à l'autre, sans jamais compter
 - Chaque enquête garde sa partie en cours et son état résolu ; l'introduction ne s'ouvre d'elle-même qu'une fois (`grimdoku:seen:<id>`).
 
 ## 12. Règles de cohérence
+- **Les lettres restent anonymes jusqu'à la révélation** : dans le jeu, elles s'appellent « lettres anonymes », signées « — A. » ; le nom d'Augure n'apparaît comme leur auteur qu'après la victoire de l'affaire finale (billet d'Augure). Le soupçon est permis (un corbeau qui écrit au lieu de parler, une plume noire chez le notaire, un corbeau à la fenêtre dans le prologue), la confirmation non. Ce document, lui, les appelle « lettres d'Augure » : il dévoile tout.
 - **La troupe ne meurt pas** : la victime est un invité. Un récurrent ne meurt que rarement, comme un événement (Fizzlebarbe), et revient alors en spectre.
 - **Pas de chronologie imposée** entre les enquêtes, sauf l'affaire finale, qui vient après les lettres.
 - **Les textes ne dépendent jamais de la position** d'un personnage (sauf l'épilogue, écrit une fois la solution connue). Les introductions ne nomment aucun suspect de façon trompeuse : un habitué cité (le roi, le meunier…) peut être présent ou non.
