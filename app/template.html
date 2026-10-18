@@ -521,8 +521,9 @@ html, body { background: var(--desk-tex, none) center top / 640px, var(--night);
 .sceaux .iconbtn.soundbtn { background-image: var(--bouton-son); }
 .sceaux .iconbtn.soundbtn.muet { background-image: var(--bouton-muet); }
 @media (hover: hover) { .sceaux .iconbtn#back:hover, .sceaux .iconbtn#rulesBtn:hover, .sceaux .iconbtn.soundbtn:hover, .sceaux .iconbtn#opts:hover { box-shadow: none; transform: scale(1.1) rotate(-4deg); filter: brightness(1.12) drop-shadow(2px 3px 3px rgba(0, 0, 0, .55)); } }
-/* options (pas d'image) : même cire rouge, avec son symbole */
+/* options : cachet à la roue dentée (assets/desk/bouton-options) ; à défaut, la même cire dessinée en CSS avec son symbole */
 .sceaux .iconbtn#opts { width: 46px; height: 46px; color: #f6d9c0; font-size: 20px; border-radius: 47% 53% 50% 50% / 52% 48% 52% 48%; background: radial-gradient(circle at 35% 30%, #c4483c, #7e1d15 70%); box-shadow: inset 0 -3px 4px rgba(0, 0, 0, .35), inset 0 0 0 3px rgba(90, 20, 14, .5); filter: drop-shadow(2px 3px 3px rgba(0, 0, 0, .55)); transition: transform .15s ease; }
+.sceaux.opts-img .iconbtn#opts { font-size: 0; color: transparent; border-radius: 50%; box-shadow: none; background: var(--bouton-options) center / contain no-repeat; }
 @media (max-width: 699px) { .sceaux .iconbtn#back, .sceaux .iconbtn#rulesBtn, .sceaux .iconbtn.soundbtn, .sceaux .iconbtn#opts { width: 42px; height: 42px; } }
 /* victime : cachet de cire rouge */
 .clue.victim::after {
@@ -854,7 +855,8 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
 // boutons du haut en cachets de cire (assets/desk/bouton-*) : images passées au CSS, sur toute la page
 if (MEDIA.desk && MEDIA.desk['bouton-retour']) {
   document.documentElement.classList.add('sceaux');
-  for (const k of ['bouton-retour', 'bouton-son', 'bouton-muet', 'bouton-aide']) if (MEDIA.desk[k]) document.documentElement.style.setProperty('--' + k, `url(${MEDIA.desk[k]})`);
+  if (MEDIA.desk['bouton-options']) document.documentElement.classList.add('opts-img');
+  for (const k of ['bouton-retour', 'bouton-son', 'bouton-muet', 'bouton-aide', 'bouton-options']) if (MEDIA.desk[k]) document.documentElement.style.setProperty('--' + k, `url(${MEDIA.desk[k]})`);
 }
 (function () {
   'use strict';
