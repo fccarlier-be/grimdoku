@@ -30,8 +30,13 @@ function open({ settings, saves = {} } = {}) {
   const cell = (r, c) => d.querySelector(`[data-r="${r}"][data-c="${c}"]`);
   const fire = (el, type) => el.dispatchEvent(new w.Event(type, { bubbles: true }));
   const pick = (id) => d.querySelector(`.chip[data-id="${id}"]`).click();
-  // appui long simulé : marge large sur HOLD_MS (1,5 s), la série complète charge la machine
-  const hold = async (r, c, ms = 2200) => { fire(cell(r, c), 'pointerdown'); await sleep(ms); fire(cell(r, c), 'pointerup'); };
+  // appui long simulé : la roue s'ouvre (WHEEL_MS = 450 ms, marge large : la série complète charge la machine),
+  // puis on y touche le personnage `who` (par défaut : celui qui est choisi)
+  const hold = async (r, c, who, ms = 900) => {
+    fire(cell(r, c), 'pointerdown'); await sleep(ms); fire(cell(r, c), 'pointerup'); cell(r, c).click();
+    const it = d.querySelector(who ? `.wheel-item[data-wid="${who}"]` : '.wheel-item.sel');
+    if (it) it.click();
+  };
   // une affaire s'ouvre depuis la page de sa taille
   const openCase = (id) => {
     w.grimGo('taille/' + w.eval('PUZZLES').find(p => p.id === id).size);
@@ -102,9 +107,9 @@ test('gestes : lettre au crayon, appui abandonné, appui long, retour au crayon'
   assert.ok(cell(r, c).querySelector('.pencil'), 'toucher court : lettre au crayon');
   assert.equal(d.querySelectorAll('.cell .mark').length, 0, 'une lettre au crayon ne pose pas de croix');
 
-  fire(cell(r, c), 'pointerdown'); await sleep(500); fire(cell(r, c), 'pointerup'); cell(r, c).click();
-  assert.ok(cell(r, c).querySelector('.pencil'), 'appui abandonné : la lettre reste');
-  assert.equal(d.querySelector('.charge'), null, 'jauge retirée');
+  fire(cell(r, c), 'pointerdown'); await sleep(200); fire(cell(r, c), 'pointerup');
+  assert.equal(d.querySelector('.wheel'), null, 'appui trop court : pas de roue');
+  assert.ok(cell(r, c).querySelector('.pencil'), 'la lettre reste');
 
   await hold(r, c);
   assert.ok(cell(r, c).querySelector('.token'), 'appui long : personnage placé');
@@ -278,3 +283,31 @@ test('carte de Brumeval : un repère par lieu, chaque lieu liste ses enquêtes',
   assert.equal(n, PUZZLES.filter(p => !p.final).length, 'toutes les enquêtes sont sur la carte');
   assert.deepEqual(errors, []);
 });
+
+test('appui long : la roue des personnages, on y choisit qui placer (sans l\'avoir choisi avant)', async () => {
+  const { d, cell, hold, openCase, errors, PUZZLES } = open();
+  const p = PUZZLES.find(q => !q.final && !q.characters.some(c => c.shape));
+  openCase(p.id);
+  const [id, [r, c]] = Object.entries(p.solution.positions).find(([k]) => k !== 'a');
+  await hold(r, c, id);
+  assert.ok(cell(r, c).querySelector('.token'), 'placé depuis la roue');
+  assert.equal(d.querySelector('.wheel'), null, 'roue refermée');
+  assert.deepEqual(errors, []);
+});
+
+test('pastille = initiale du nom (deux lettres si besoin), ordre des fiches inchangé ; ‹ ramène au lieu de la carte', () => {
+  const { w, d, openCase, PUZZLES } = open();
+  const p = PUZZLES.find(q => !q.final);
+  w.grimGo('lieu/' + p.place);
+  d.querySelector(`.case[data-id="${p.id}"]`).click();
+  const badges = [...d.querySelectorAll('.clue .em .letter')].map(e => e.textContent);
+  const names = [...d.querySelectorAll('.clue .who')].map(e => e.textContent.trim());
+  badges.forEach((b, i) => assert.ok(names[i].normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().startsWith(b.toLowerCase()), `${b} = début de ${names[i]}`));
+  assert.equal(new Set(badges).size, badges.length, 'pastilles toutes différentes');
+  d.getElementById('back').click();
+  assert.ok(location(w).includes('lieu/' + p.place), 'retour au lieu');
+  openCase(p.id);
+  d.getElementById('back').click();
+  assert.ok(location(w).includes('taille/' + p.size), 'retour à la taille');
+});
+const location = (w) => w.location.hash;

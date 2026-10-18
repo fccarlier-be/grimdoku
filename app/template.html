@@ -591,6 +591,17 @@ html, body { background: var(--desk-tex, none) center top / 640px, var(--night);
 .soundpop .btn { background: transparent; border: 1.5px solid var(--line); border-radius: 8px; color: var(--ink); min-height: 38px; padding: 6px 10px; }
 /*__FLOORS__*/
 
+/* roue des personnages (appui long sur une case) */
+.wheel-layer { position: fixed; inset: 0; z-index: 60; background: rgba(10, 6, 14, .35); }
+.wheel { position: fixed; transform: translate(-50%, -50%); border-radius: 50%; background: radial-gradient(circle, rgba(241, 227, 194, .97) 0 34%, rgba(241, 227, 194, .82) 35% 100%); box-shadow: inset 0 0 0 2px rgba(43, 32, 22, .6), 0 10px 30px rgba(0, 0, 0, .6); animation: wheelin .14s ease-out; }
+@keyframes wheelin { from { transform: translate(-50%, -50%) scale(.6); opacity: 0; } }
+.wheel-cell { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font: 700 13px/1 var(--f-body); color: #6e5434; }
+.wheel-item { position: absolute; transform: translate(-50%, -50%); width: 46px; height: 46px; padding: 0; border: 0; border-radius: 50%; background: #fff8e8; box-shadow: 0 0 0 2px var(--ink), 0 3px 6px rgba(0, 0, 0, .4); cursor: pointer; display: grid; place-items: center; font-size: 26px; transition: transform .12s ease, box-shadow .12s ease; }
+.wheel-item svg { width: 100%; height: 100%; border-radius: 50%; }
+.wheel-item:hover, .wheel-item:focus-visible { transform: translate(-50%, -50%) scale(1.18); box-shadow: 0 0 0 3px var(--candle), 0 0 14px rgba(240, 169, 58, .9); outline: none; z-index: 2; }
+.wheel-item.sel { box-shadow: 0 0 0 3px var(--candle), 0 0 12px rgba(240, 169, 58, .8); }
+.wheel-item.victim { box-shadow: 0 0 0 2.5px var(--blood), 0 3px 6px rgba(0, 0, 0, .4); }
+.wheel-item.placed { opacity: .6; }
 /* ================= survol et sélection plus visibles (demande de François, 2026-10-18) ================= */
 /* personnage choisi : sa fiche se soulève avec un halo doré, son médaillon prend un anneau doré, les autres s'estompent */
 .clue, .chip, .token { transition: transform .15s ease, opacity .15s ease, box-shadow .15s ease, filter .15s ease; }
@@ -727,7 +738,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
       <div class="cases">${list.map(caseHtml).join('')}</div>`;
     document.getElementById('back').onclick = () => go('tailles');
     document.getElementById('rulesBtn').onclick = rules;
-    $app.querySelectorAll('.case').forEach(b => b.onclick = () => go('affaire/' + b.dataset.id));
+    $app.querySelectorAll('.case').forEach(b => b.onclick = () => { caseBack = 'taille'; go('affaire/' + b.dataset.id); });
   }
   // Carnet d'enquête : les lettres d'Augure trouvées, et la troupe de Brumeval croisée dans les enquêtes résolues
   function carnetPage() {
@@ -763,6 +774,8 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
   // Carte de la baronnie : un repère par lieu (enquêtes résolues, lettre trouvée) ; sans illustration, le plan par contrées.
   // Elle remplacera à terme le classement par taille (décision de François, 2026-10-17).
   const placeCases = (pl) => CASES.filter(p => p.place === pl);
+  // d'où l'on est entré dans les enquêtes (« taille » ou « lieu ») : ‹ dans une enquête y ramène, au lieu de l'enquête courante
+  let caseBack = 'taille';
   function cartePage() {
     P = null;
     $app.classList.remove('game');
@@ -799,7 +812,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
       <div class="cases">${list.map(caseHtml).join('')}</div>`;
     document.getElementById('back').onclick = () => go('carte');
     document.getElementById('rulesBtn').onclick = rules;
-    $app.querySelectorAll('.case').forEach(b => b.onclick = () => go('affaire/' + b.dataset.id));
+    $app.querySelectorAll('.case').forEach(b => b.onclick = () => { caseBack = 'lieu'; go('affaire/' + b.dataset.id); });
   }
   function home() {
     P = null;
@@ -939,6 +952,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
   function open(id) {
     P = PUZZLES.find(p => p.id === id);
     ctx = E.prepare(P);
+    computeBadges(P);
     S = store.get('p:' + id, null);
     if (!S || S.sig !== sigOf(P)) S = blank();
     S.pencil = S.pencil || {};
@@ -950,8 +964,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
   }
   const introSheet = () => sheet(`<h2>${esc(P.title)}</h2><p>${esc(P.intro)}</p><div class="row"><button class="btn primary" data-close>À l'enquête</button></div>`);
   const save = () => store.set('p:' + P.id, S);
-  const HOLD_MS = 1500;  // appui long : placement définitif au bout de HOLD_MS
-  const HOLD_DELAY = 250; // la jauge n'apparaît qu'après ce délai (un clic normal ne la montre pas)
+  const WHEEL_MS = 450; // appui long : la roue des personnages s'ouvre au bout de WHEEL_MS
   // une couleur par personnage (lettres au crayon, pastilles) ; la victime en rouge
   const PALETTE = ['#b5562e', '#3f8a3a', '#2f7f86', '#6a4c9c', '#b8862a', '#3d6db5', '#8a6a4a', '#9c4a7a'];
   const colorOf = (ch) => ch.role === 'victim' ? 'var(--blood)' : PALETTE[P.characters.indexOf(ch) % PALETTE.length];
@@ -970,8 +983,22 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
   // portrait d'un personnage (assets/characters), découpé en rond ; l'emoji ne sert plus qu'en secours
   const face = (ch) => `<span class="face"><svg class="portrait" role="img" aria-label="${esc(ch.name)}"><use href="#chr-${ch.archetype}"/></svg></span>`;
   const ico = (type) => `<svg class="ico"><use href="#obj-${type}"/></svg>`;
-  // la lettre est une pastille attribuée à chaque énigme (A = le plus facile à placer) ; les noms sont fixes
-  const letterOf = (ch) => ch.id.toUpperCase();
+  // Pastille d'un personnage = l'initiale de son nom (demande de François, 2026-10-18) ; si plusieurs personnages de
+  // l'énigme la partagent, le plus court début de nom qui les distingue (Fa, Fl…). L'ordre des fiches ne change pas :
+  // la première (identifiant a) reste la plus facile à placer.
+  let BADGES = {};
+  function computeBadges(p) {
+    const plain = (n) => n.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^A-Za-z]/g, '');
+    const names = Object.fromEntries(p.characters.map(c => [c.id, plain(c.name)]));
+    BADGES = {};
+    for (const c of p.characters) {
+      const me = names[c.id];
+      let k = 1;
+      while (k < me.length && p.characters.some(o => o.id !== c.id && names[o.id].slice(0, k).toLowerCase() === me.slice(0, k).toLowerCase())) k++;
+      BADGES[c.id] = me[0].toUpperCase() + me.slice(1, k).toLowerCase();
+    }
+  }
+  const letterOf = (ch) => BADGES[ch.id] || ch.id.toUpperCase();
   // met en gras, dans le texte d'un indice, les mots qui portent sa logique
   function emph(cl) {
     const L = cl.logic, terms = [];
@@ -1206,7 +1233,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
   }
 
   function bind() {
-    document.getElementById('back').onclick = () => go(P.final ? 'tailles' : 'taille/' + P.size);
+    document.getElementById('back').onclick = () => go(P.final ? 'tailles' : caseBack === 'lieu' ? 'lieu/' + P.place : 'taille/' + P.size);
     document.getElementById('rulesBtn').onclick = rules;
     document.getElementById('opts').onclick = options;
     document.getElementById('introBtn').onclick = introSheet;
@@ -1235,29 +1262,15 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     tray.scrollLeft = render.trayScroll || 0;
     tray.onscroll = () => { render.trayScroll = tray.scrollLeft; };
     document.querySelectorAll('.cell').forEach(el => {
-      let t = null, long = false, gauge = null, downAt = 0;
+      let t = null, long = false, downAt = 0;
       const r = +el.dataset.r, c = +el.dataset.c;
-      const stop = () => { clearTimeout(t); if (gauge) { gauge.remove(); gauge = null; } };
+      const stop = () => clearTimeout(t);
+      // appui long sur une case libre : la roue des personnages s'ouvre autour d'elle (demande de François, 2026-10-18)
       el.addEventListener('pointerdown', () => {
         long = false; downAt = Date.now();
-        const id = holdTarget(r, c);
-        if (!id) return;
-        t = setTimeout(() => showGauge(id), HOLD_DELAY);
+        if (charAt(r, c)) return; // un pion confirmé : le toucher le remet au crayon
+        t = setTimeout(() => { long = true; wheel(r, c, el); }, WHEEL_MS);
       });
-      // jauge ronde autour de la lettre : elle démarre après HOLD_DELAY et se remplit jusqu'à HOLD_MS
-      const showGauge = (id) => {
-        gauge = document.createElement('span');
-        gauge.className = 'charge';
-        gauge.style.setProperty('--cc', colorOf(ctx.chars[id]));
-        gauge.innerHTML = `<svg viewBox="0 0 36 36"><circle class="track" cx="18" cy="18" r="15.9155"/><circle class="fill" cx="18" cy="18" r="15.9155"/></svg><b>${letterOf(ctx.chars[id])}</b>`;
-        // au-dessus de la case (le pouce cache la case elle-même) ; en dessous s'il n'y a pas la place
-        const box = el.getBoundingClientRect();
-        const size = Math.max(64, box.width * 1.4);
-        const above = box.top - size - 10 >= 0;
-        gauge.style.cssText += `--s:${size}px; --fill:${HOLD_MS - HOLD_DELAY}ms; left:${box.left + box.width / 2 - size / 2}px; top:${above ? box.top - size - 10 : box.bottom + 10}px;`;
-        document.body.appendChild(gauge);
-        t = setTimeout(() => { long = true; stop(); confirmAt(id, r, c); }, HOLD_MS - HOLD_DELAY);
-      };
       ['pointerup', 'pointerleave', 'pointercancel'].forEach(ev => el.addEventListener(ev, stop));
       el.addEventListener('contextmenu', e => e.preventDefault());
       // un appui long abandonné en route n'est pas un toucher court
@@ -1330,14 +1343,28 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     save(); render();
   }
 
-  // appui long : confirme l'emplacement (le personnage choisi, ou la seule lettre de la case)
-  function holdTarget(r, c) {
-    const who = charAt(r, c);
-    const pens = pencilsAt(r, c);
-    const id = selected || (pens.length === 1 ? pens[0] : null);
-    if (!id || (who && who !== id) || !E.canStand(ctx, id, r, c)) return null;
-    if (who && isBig(id)) return null; // déjà placé : le toucher le remet au crayon
-    return id;
+  // Roue des personnages : ceux qui peuvent se tenir sur la case (le personnage choisi en premier, puis l'ordre des fiches,
+  // la victime à la fin) ; en toucher un le place là (un grand personnage : avec ses lettres au crayon voisines).
+  function wheel(r, c, el) {
+    const cast = [...P.characters].sort((a, b) => (a.role === 'victim') - (b.role === 'victim'));
+    const list = cast.filter(ch => E.canStand(ctx, ch.id, r, c)).sort((a, b) => (b.id === selected) - (a.id === selected));
+    if (!list.length) return toast('Personne ne peut se tenir ici.', true);
+    const box = el.getBoundingClientRect();
+    const R = Math.max(64, 26 + list.length * 7), size = 2 * R + 56;
+    const cx = Math.min(Math.max(box.left + box.width / 2, size / 2 + 4), innerWidth - size / 2 - 4);
+    const cy = Math.min(Math.max(box.top + box.height / 2, size / 2 + 4), innerHeight - size / 2 - 4);
+    $layer.innerHTML = `<div class="wheel-layer" id="wheelLayer"><div class="wheel" style="left:${cx}px;top:${cy}px;width:${size}px;height:${size}px">
+      <span class="wheel-cell">L${r + 1} C${c + 1}</span>
+      ${list.map((ch, i) => {
+        const a = -Math.PI / 2 + i * 2 * Math.PI / list.length;
+        return `<button class="wheel-item ${ch.id === selected ? 'sel' : ''} ${S.pos[ch.id] ? 'placed' : ''} ${ch.role === 'victim' ? 'victim' : ''}" data-wid="${ch.id}" title="${esc(ch.name)}" aria-label="Placer ${esc(ch.name)} ici" style="left:${size / 2 + R * Math.cos(a)}px;top:${size / 2 + R * Math.sin(a)}px">${face(ch)}<span class="letter" style="--cc:${colorOf(ch)}">${letterOf(ch)}</span></button>`;
+      }).join('')}</div></div>`;
+    const layer = document.getElementById('wheelLayer');
+    layer.onclick = (e) => {
+      const it = e.target.closest('[data-wid]');
+      close();
+      if (it) confirmAt(it.dataset.wid, r, c);
+    };
   }
   // cases d'un grand personnage : ses lettres au crayon reliées (par les côtés) à la case appuyée
   function bigCells(id, r, c) {
@@ -1480,7 +1507,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
         <li>« À côté de » veut dire juste au-dessus, en dessous, à gauche ou à droite, dans la même pièce. Pas en diagonale, ni à travers un mur — même par une porte : les portes ne sont qu'un décor.</li>
         <li><b>Seule la pièce du crime contient deux personnes</b> : chaque suspect était seul dans sa pièce, sauf le coupable, qui était avec la victime.</li>
         <li><b>Chaque pièce est occupée</b> : aucune pièce n'est vide (deux pièces reliées par un portail comptent pour une).</li>
-        <li><b>La victime</b> est un invité de passage à Brumeval ; les suspects, eux, sont les habitués, et tu les retrouveras d'une enquête à l'autre. Chacun porte une <b>lettre</b> (A, B, C…) le temps d'une enquête : A est le plus facile à placer.</li>
+        <li><b>La victime</b> est un invité de passage à Brumeval ; les suspects, eux, sont les habitués, et tu les retrouveras d'une enquête à l'autre. Chacun porte une <b>pastille</b> avec l'initiale de son nom (deux lettres si deux noms commencent pareil). Les fiches sont rangées de la plus facile à placer à la plus difficile.</li>
         <li><b>Lettres d'Augure</b> : la première enquête résolue dans chaque lieu te vaut une lettre anonyme, rangée dans ton carnet d'enquête. Assez de lettres, et une affaire très spéciale se débloque.</li>
         <li>La victime n'a pas d'indice : c'est à toi de la trouver.</li>
         <li><b>Grands personnages</b> : ils occupent plusieurs cases (2 cases jusqu'en 8×8, jusqu'à 3 en 9×9, jusqu'à 4 au-delà), en ligne, en angle, en carré, en T ou en zigzag, et leur forme peut être tournée ou retournée. Chacune de leurs cases prend sa ligne et sa colonne. Toutes leurs cases sont dans la même pièce, jamais sur un meuble. « À côté de » et « même ligne / colonne » valent pour n'importe laquelle de leurs cases ; « au nord de X » veut dire toutes leurs cases plus haut que X. Sur les grandes cartes, leur forme est parfois inconnue : leur fiche dit seulement combien de cases ils peuvent occuper.</li>
@@ -1489,7 +1516,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
       <ul>
         <li>Touche un personnage, puis une case : sa <b>lettre</b> s'y inscrit. Tu peux noter plusieurs cases possibles ; touche une lettre à nouveau pour l'effacer.</li>
         <li>Outil ✏️ <b>Crayon</b> : touche une case pour la barrer d'une croix <b>au crayon gris-bleu</b> (ta propre hypothèse) ; touche-la encore pour l'effacer. Choisir un personnage éteint le crayon.</li>
-        <li><b>Appui long</b> (1,5 s) sur une case : quand la jauge est pleine, le personnage choisi y est placé pour de bon. Un grand personnage : sa lettre au crayon sur chacune de ses cases, puis appui long sur l'une d'elles ; son portrait s'affiche alors sur chacune.</li>
+        <li><b>Appui long</b> sur une case : une roue s'ouvre avec les personnages qui peuvent s'y tenir ; touche celui que tu places là pour de bon (un personnage déjà placé y est déplacé). Un grand personnage : sa lettre au crayon sur chacune de ses cases, puis appui long sur l'une d'elles et choisis-le dans la roue ; son portrait s'affiche alors sur chacune.</li>
         <li>Quand un personnage est choisi, ce que nomment ses indices s'allume en bleu : les objets cités (tous ceux du même type) ou la pièce citée.</li>
         <li>Une fois un personnage placé pour de bon, sa ligne et sa colonne se remplissent de croix <b>à l'encre noire</b> : ces cases sont condamnées.</li>
         <li>Touche deux fois un personnage placé pour le remettre en lettres.</li>
