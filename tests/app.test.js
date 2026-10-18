@@ -87,7 +87,7 @@ test('déblocage : chaque lieu résolu ouvre les suivants, et tous les lieux son
   const open1 = [...new Set([...d.querySelectorAll('[data-place]')].map(b => b.dataset.place))].sort();
   assert.deepEqual(open1, [L.start, ...L.unlock[L.start]].filter(pl => places.includes(pl)).sort(), 'le château ouvre ses voisins');
   assert.ok(d.querySelector('.dot.fresh'), 'les nouveaux lieux sont signalés');
-  assert.equal(d.querySelectorAll('.desk-string line').length, L.unlock[L.start].filter(pl => places.includes(pl)).length, 'chaque nouveau clou relié par le fil rouge');
+  assert.equal(d.querySelectorAll('.cord, .desk-string line').length, L.unlock[L.start].filter(pl => places.includes(pl)).length, 'chaque nouveau clou relié par le fil rouge');
   const nx = L.unlock[L.start][0];
   w.grimGo('lieu/' + nx);
   assert.ok(d.querySelector('.case'), 'un lieu ouvert s\'ouvre');

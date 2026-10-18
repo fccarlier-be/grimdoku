@@ -740,6 +740,15 @@ html, body { background: var(--desk-tex, none) center top / 640px, var(--night);
 .desk-string { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; overflow: visible; }
 .desk-string line { stroke: #b3261e; stroke-width: 2.4px; vector-effect: non-scaling-stroke; filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, .45)); }
 .desk-map .dot { z-index: 2; }
+/* corde rouge illustrée (assets/desk/corde-rouge), tendue d'un clou à l'autre */
+.cord { position: absolute; z-index: 1; height: 6px; margin-top: -3px; transform-origin: 0 50%; pointer-events: none; background: var(--corde-rouge) 0 0 / auto 100% repeat-x; filter: drop-shadow(1px 3px 2px rgba(0, 0, 0, .45)); }
+@media (max-aspect-ratio: 1/1) { .cord { height: 4px; margin-top: -2px; } }
+/* clous illustrés (assets/desk/clou-*) : fer, un sur trois rouillé, laiton pour un lieu terminé, grosse tête pour épingler */
+.bureau.clous .dot.nail::before { background: var(--clou-fer) center / contain no-repeat; box-shadow: none; border-radius: 0; filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, .6)); width: 17px; height: 17px; margin: -8.5px 0 0 -8.5px; }
+.bureau.clous .dot.nail.rust::before { background-image: var(--clou-rouille); }
+.bureau.clous .dot.nail.done::before { background-image: var(--clou-laiton); }
+.bureau.clous .pin-tl, .bureau.clous .pin-tr, .bureau.clous .desk-photo::before { background: var(--clou-tete) center / contain no-repeat !important; box-shadow: none !important; border-radius: 0 !important; width: 20px !important; height: 20px !important; filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, .6)); }
+@media (max-aspect-ratio: 1/1) { .bureau.clous .dot.nail::before { width: 13px; height: 13px; margin: -6.5px 0 0 -6.5px; } }
 /* les lieux : des clous forgés plantés dans la carte (zone de clic plus large que la tête) */
 .desk-map .dot.nail { width: 34px; height: 34px; background: none; box-shadow: none; border-radius: 50%; }
 .dot.nail::before { content: ""; position: absolute; left: 50%; top: 50%; width: 15px; height: 15px; margin: -7.5px 0 0 -7.5px; border-radius: 3px; transform: rotate(var(--nail));
@@ -896,7 +905,8 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
       // un clou par lieu découvert (rien pour les autres) : laiton si terminé, lueur tant qu'il n'a pas été visité
       if (!open.has(pl)) return '';
       const list = placeCases(pl), done = solvedIn(list), fresh = !seen.includes(pl);
-      return `<button class="dot nail ${done === list.length ? 'done' : ''} ${fresh ? 'fresh' : ''}" data-place="${pl}" style="--x:${LORE.pos[pl][0]}%;--y:${LORE.pos[pl][1]}%;--nail:${(pl.length * 37) % 50 - 25}deg" aria-label="${esc(placeTitle(pl))}, ${done} sur ${list.length} résolues">
+      const rust = [...pl].reduce((h, ch) => h + ch.charCodeAt(0), 0) % 3 === 0;
+      return `<button class="dot nail ${done === list.length ? 'done' : ''} ${fresh ? 'fresh' : ''} ${rust ? 'rust' : ''}" data-place="${pl}" style="--x:${LORE.pos[pl][0]}%;--y:${LORE.pos[pl][1]}%;--nail:${(pl.length * 37) % 50 - 25}deg" aria-label="${esc(placeTitle(pl))}, ${done} sur ${list.length} résolues">
         <span class="tip"><b>${esc(placeTitle(pl))}</b><small>${done} / ${list.length}${fresh ? ' · nouveau' : ''}</small></span></button>`;
     };
     // sans texte : les objets parlent d'eux-mêmes ; leur nom reste pour les lecteurs d'écran et l'infobulle (title)
@@ -919,12 +929,15 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
         ${soundBtn()}
         <button class="iconbtn" id="rulesBtn" aria-label="Règles">?</button>
       </header>
-      <div class="bureau">
+      <div class="bureau ${MEDIA.desk['clou-fer'] ? 'clous' : ''}" style="${['clou-fer', 'clou-laiton', 'clou-rouille', 'clou-tete', 'corde-rouge'].filter(k => MEDIA.desk[k]).map(k => `--${k}:url(${MEDIA.desk[k]})`).join(';')}">
        <div class="desk-stage" style="--r:${LORE.ratio[0] / LORE.ratio[1]}">
         ${[0, 1, 2].map(i => MEDIA.desk[`papier-${i + 1}`] ? `<img class="desk-paper p${i} img" src="${MEDIA.desk[`papier-${i + 1}`]}" alt="" aria-hidden="true">` : `<span class="desk-paper p${i}" aria-hidden="true"></span>`).join('')}
         <div class="desk-map" style="aspect-ratio:${LORE.ratio[0]} / ${LORE.ratio[1]};${MEDIA.map ? `background-image:url(${MEDIA.map})` : ''}">
           <span class="pin-tl" aria-hidden="true"></span><span class="pin-tr" aria-hidden="true"></span>
-          ${strings.length ? `<svg class="desk-string" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">${strings.map(([[x1, y1], [x2, y2]]) => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/>`).join('')}</svg>` : ''}
+          ${MEDIA.desk['corde-rouge'] ? strings.map(([[x1, y1], [x2, y2]]) => {
+            const r = LORE.ratio[0] / LORE.ratio[1], dx = x2 - x1, dy = (y2 - y1) / r; // en % de la largeur de la carte
+            return `<span class="cord" style="left:${x1}%;top:${y1}%;width:${Math.hypot(dx, dy).toFixed(2)}%;transform:rotate(${(Math.atan2(dy, dx) * 180 / Math.PI).toFixed(1)}deg)" aria-hidden="true"></span>`;
+          }).join('') : strings.length ? `<svg class="desk-string" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">${strings.map(([[x1, y1], [x2, y2]]) => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/>`).join('')}</svg>` : ''}
           ${order.map(dot).join('')}
         </div>
         ${photos.map((pl, i) => `<button class="desk-photo ph${i} ${MEDIA.desk['support-papier'] ? 'img' : ''}" style="${MEDIA.desk['support-papier'] ? `--support:url(${MEDIA.desk['support-papier']})` : ''}" data-place="${pl}" title="${esc(placeTitle(pl))}" aria-label="${esc(placeTitle(pl))}"><span style="background-image:url(media/croquis-lieu-${photoOf(pl)}.webp)"></span></button>`).join('')}
