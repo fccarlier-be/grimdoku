@@ -355,7 +355,9 @@ header.top { display: flex; align-items: center; gap: 10px; }
 /* fenêtres */
 .overlay { position: fixed; inset: 0; z-index: 40; background: rgba(8, 5, 12, .7); display: grid; place-items: end center;
   padding: 0 max(12px, env(safe-area-inset-right, 0px)) calc(12px + env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px)); }
-.sheet { width: 100%; max-width: 520px; max-height: 85vh; overflow-y: auto; background: var(--board); border: 1px solid var(--line); border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 10px; }
+.sheet { width: 100%; max-width: 520px; background: var(--board); border: 1px solid var(--line); border-radius: 16px; display: flex; flex-direction: column; }
+/* le défilement se fait dans .sheet-body : le papier (::before de .sheet) reste sous tout le texte */
+.sheet-body { max-height: 85vh; overflow-y: auto; padding: 18px; display: flex; flex-direction: column; gap: 10px; align-items: inherit; text-align: inherit; align-self: stretch; box-sizing: border-box; }
 .sheet h2 { font-family: var(--f-display); font-weight: 400; font-size: 28px; margin: 0; color: var(--candle); line-height: 1; }
 .sheet p, .sheet li { margin: 0; font-size: 15px; }
 .sheet ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
@@ -1844,14 +1846,14 @@ if (MEDIA.desk && MEDIA.desk['bouton-retour']) {
 
   // ---------- fenêtres ----------
   function sheet(html) {
-    $layer.innerHTML = `<div class="overlay" id="ov"><div class="sheet" role="dialog" aria-modal="true">${html}</div></div>`;
+    $layer.innerHTML = `<div class="overlay" id="ov"><div class="sheet" role="dialog" aria-modal="true"><div class="sheet-body">${html}</div></div></div>`;
     const ov = document.getElementById('ov');
     ov.onclick = (e) => { if (e.target === ov || e.target.hasAttribute('data-close')) close(); };
   }
   function close() { $layer.innerHTML = ''; }
   // Scène du lore, au centre de l'écran (intro, verdict, lettre d'Augure) : plus visible qu'une fenêtre en bas de page
   function story(html, cls = '') {
-    $layer.innerHTML = `<div class="overlay center" id="ov"><div class="sheet story ${cls}" role="dialog" aria-modal="true">${html}</div></div>`;
+    $layer.innerHTML = `<div class="overlay center" id="ov"><div class="sheet story ${cls}" role="dialog" aria-modal="true"><div class="sheet-body">${html}</div></div></div>`;
     const ov = document.getElementById('ov');
     ov.onclick = (e) => { if (e.target === ov || e.target.hasAttribute('data-close')) close(); };
     return ov;
