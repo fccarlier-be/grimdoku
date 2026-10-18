@@ -741,13 +741,16 @@ html, body { background: var(--desk-tex, none) center top / 640px, var(--night);
 .desk-string line { stroke: #b3261e; stroke-width: 2.4px; vector-effect: non-scaling-stroke; filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, .45)); }
 .desk-map .dot { z-index: 2; }
 /* corde rouge illustrée (assets/desk/corde-rouge), tendue d'un clou à l'autre */
-.cord { position: absolute; z-index: 1; height: 6px; margin-top: -3px; transform-origin: 0 50%; pointer-events: none; background: var(--corde-rouge) 0 0 / auto 100% repeat-x; filter: drop-shadow(1px 3px 2px rgba(0, 0, 0, .45)); }
-@media (max-aspect-ratio: 1/1) { .cord { height: 4px; margin-top: -2px; } }
-/* clous illustrés (assets/desk/clou-*) : fer, un sur trois rouillé, laiton pour un lieu terminé, grosse tête pour épingler */
-.bureau.clous .dot.nail::before { background: var(--clou-fer) center / contain no-repeat; box-shadow: none; border-radius: 0; filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, .6)); width: 17px; height: 17px; margin: -8.5px 0 0 -8.5px; }
+.cord { position: absolute; z-index: 1; height: 10px; margin-top: -5px; transform-origin: 0 50%; pointer-events: none; background: var(--corde-rouge) 0 0 / auto 100% repeat-x; filter: drop-shadow(1px 3px 2px rgba(0, 0, 0, .45)); }
+@media (max-aspect-ratio: 1/1) { .cord { height: 6px; margin-top: -3px; } }
+/* clous illustrés (assets/desk/clou-*) : fer, un sur trois rouillé, laiton pour un lieu terminé, grosse tête pour épingler.
+   Vus de trois quarts comme le reste du bureau : tête tournée puis écrasée en hauteur, ombre portée sur la carte */
+.bureau.clous .dot.nail::before { background: var(--clou-fer) center / contain no-repeat; box-shadow: none; border-radius: 0; filter: drop-shadow(3px 4px 1.5px rgba(0, 0, 0, .55)); width: 19px; height: 19px; margin: -12px 0 0 -9.5px; transform: scaleY(.58) rotate(var(--nail)); }
+.bureau.clous .dot.nail.fresh::after { inset: 8px 4px 10px; transform: none; animation: nailglow34 1.6s ease-in-out infinite; }
+@keyframes nailglow34 { 50% { transform: scale(1.35); opacity: .35; } }
 .bureau.clous .dot.nail.rust::before { background-image: var(--clou-rouille); }
 .bureau.clous .dot.nail.done::before { background-image: var(--clou-laiton); }
-.bureau.clous .pin-tl, .bureau.clous .pin-tr, .bureau.clous .desk-photo::before { background: var(--clou-tete) center / contain no-repeat !important; box-shadow: none !important; border-radius: 0 !important; width: 20px !important; height: 20px !important; filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, .6)); }
+.bureau.clous .pin-tl, .bureau.clous .pin-tr, .bureau.clous .desk-photo::before { background: var(--clou-tete) center / contain no-repeat !important; box-shadow: none !important; border-radius: 0 !important; width: 22px !important; height: 22px !important; transform: scaleY(.6) !important; filter: drop-shadow(3px 4px 1.5px rgba(0, 0, 0, .55)); }
 @media (max-aspect-ratio: 1/1) { .bureau.clous .dot.nail::before { width: 13px; height: 13px; margin: -6.5px 0 0 -6.5px; } }
 /* les lieux : des clous forgés plantés dans la carte (zone de clic plus large que la tête) */
 .desk-map .dot.nail { width: 34px; height: 34px; background: none; box-shadow: none; border-radius: 50%; }
