@@ -44,6 +44,11 @@ body {
   min-height: 100%;
 }
 button { font: inherit; color: inherit; touch-action: manipulation; cursor: pointer; }
+/* jeu, pas document : aucun texte sélectionnable, pas de menu « copier » à l'appui long sur téléphone, images non glissables
+   (les champs de saisie, s'il y en a, restent utilisables) */
+html, body { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+img, svg { -webkit-user-drag: none; user-drag: none; }
+input, textarea { -webkit-user-select: text; user-select: text; }
 button:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--candle); outline-offset: 2px; }
 .wrap { max-width: 520px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; padding-block: 12px 24px; }
 
