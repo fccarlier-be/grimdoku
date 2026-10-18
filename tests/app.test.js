@@ -9,6 +9,8 @@ const { JSDOM } = require('jsdom');
 const HTML = fs.readFileSync(path.join(__dirname, '..', 'dist', 'grimdoku.html'), 'utf8');
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 const sigOf = (p) => p.characters.map(c => c.id + ':' + c.name).join('|') + '#' + p.clues.length;
+const location = (w) => w.location.hash;
+const solve = (w, p) => w.localStorage.setItem('grimdoku:p:' + p.id, JSON.stringify({ pos: p.solution.positions, pencil: {}, marks: [], done: [], solved: true, sig: sigOf(p) }));
 
 const opened = [];
 test.after(() => opened.forEach(w => w.close()));
@@ -40,34 +42,52 @@ function open({ settings, saves = {} } = {}) {
     const it = d.querySelector(who ? `.wheel-item[data-wid="${who}"]` : '.wheel-item.sel');
     if (it) it.click();
   };
-  // une affaire s'ouvre depuis la page de sa taille
-  const openCase = (id) => {
-    w.grimGo('taille/' + w.eval('PUZZLES').find(p => p.id === id).size);
-    d.querySelector(`.case[data-id="${id}"]`).click();
-  };
+  // une affaire s'ouvre directement par son adresse (les lieux, eux, s'ouvrent au fil de l'histoire)
+  const openCase = (id) => w.grimGo('affaire/' + id);
   opened.push(w);
   return { w, d, errors, cell, fire, pick, hold, openCase, PUZZLES: w.eval('PUZZLES') };
 }
 
-test('accueil → Jouer → tailles → une page par taille : toutes les affaires, triées par taille puis difficulté, sans crânes', () => {
-  const { d, PUZZLES, errors } = open();
-  assert.equal(d.querySelectorAll('.case, .lvl').length, 0, 'accueil : seulement l\'affiche, le titre et Jouer');
+test('accueil → Jouer → bureau : la carte ouverte, seul le château accessible, les dossiers, les lettres, le carnet', () => {
+  const { w, d, PUZZLES, errors } = open();
+  assert.equal(d.querySelectorAll('.case, .dot').length, 0, 'accueil : seulement l\'affiche, le titre et Jouer');
+  w.localStorage.setItem('grimdoku:prologue', 'true');
   d.getElementById('playBtn').click();
-  assert.match(d.querySelector('.pagetitle').textContent, /taille/);
-  const sizes = [...d.querySelectorAll('.lvl[data-size]')].map(b => +b.dataset.size);
-  assert.deepEqual(sizes, [...new Set(PUZZLES.map(p => p.size))].sort((a, b) => a - b), 'un parchemin par taille');
-  const shown = [];
-  for (const n of sizes) {
-    d.querySelector(`.lvl[data-size="${n}"]`).click();
-    const ids = [...d.querySelectorAll('.case')].map(b => b.dataset.id);
-    assert.ok(ids.every(id => PUZZLES.find(p => p.id === id).size === n), `${n}×${n} : seulement ses affaires`);
-    const diff = ids.map(id => PUZZLES.find(p => p.id === id).difficulty);
-    assert.deepEqual(diff, [...diff].sort((a, b) => a - b), 'de la plus facile à la plus dure');
-    shown.push(...ids);
-    d.getElementById('back').click();
-  }
-  assert.equal(shown.length, PUZZLES.filter(p => !p.final).length, 'toutes les affaires, sauf la finale (débloquée par les lettres)');
+  assert.ok(location(w).includes('bureau') && d.querySelector('.bureau .desk-map'), 'le bureau, la carte au centre');
+  assert.equal(d.querySelector('.lvl, .size'), null, 'plus de classement par taille');
+  const L = w.eval('LORE');
+  assert.deepEqual([...new Set([...d.querySelectorAll('[data-place]')].map(b => b.dataset.place))], [L.start], 'seul le départ est ouvert');
+  assert.equal(L.start, 'chateau');
+  assert.ok(d.querySelectorAll('.dot.locked').length >= 20, 'les autres lieux sont des « ? »');
+  assert.ok(d.getElementById('deskDossiers') && d.getElementById('deskLettres') && d.getElementById('deskCarnet'));
+  assert.equal(d.getElementById('deskFinal'), null, 'pas d\'enveloppe au départ');
+  w.grimGo('lieu/taverne');
+  assert.ok(!location(w).includes('lieu/taverne') || d.querySelector('.bureau, .hero'), 'un lieu fermé ne s\'ouvre pas');
+  assert.equal(d.querySelector('.case'), null);
+  w.grimGo('lieu/chateau');
+  const diff = [...d.querySelectorAll('.case')].map(b => PUZZLES.find(p => p.id === b.dataset.id));
+  assert.ok(diff.length && diff.every(p => p.place === 'chateau'), 'le château liste ses enquêtes');
   assert.equal(d.body.textContent.includes('💀'), false, 'pas de crânes affichés');
+  assert.deepEqual(errors, []);
+});
+
+test('déblocage : chaque lieu résolu ouvre les suivants, et tous les lieux sont atteignables depuis le château', () => {
+  const { w, d, PUZZLES, errors } = open();
+  const L = w.eval('LORE');
+  const places = [...new Set(PUZZLES.filter(p => !p.final).map(p => p.place))];
+  const reach = new Set([L.start]), todo = [L.start];
+  while (todo.length) for (const n of L.unlock[todo.pop()] || []) if (!reach.has(n)) { reach.add(n); todo.push(n); }
+  assert.deepEqual([...reach].filter(pl => places.includes(pl)).sort(), [...places].sort(), 'arbre de déblocage complet');
+  solve(w, PUZZLES.find(p => p.place === L.start));
+  w.grimGo('bureau');
+  const open1 = [...new Set([...d.querySelectorAll('[data-place]')].map(b => b.dataset.place))].sort();
+  assert.deepEqual(open1, [L.start, ...L.unlock[L.start]].filter(pl => places.includes(pl)).sort(), 'le château ouvre ses voisins');
+  assert.ok(d.querySelector('.dot.fresh'), 'les nouveaux lieux sont signalés');
+  const nx = L.unlock[L.start][0];
+  w.grimGo('lieu/' + nx);
+  assert.ok(d.querySelector('.case'), 'un lieu ouvert s\'ouvre');
+  w.grimGo('bureau');
+  assert.equal(d.querySelector(`.dot.fresh[data-place="${nx}"]`), null, 'plus « nouveau » une fois visité');
   assert.deepEqual(errors, []);
 });
 
@@ -254,18 +274,21 @@ test('lore : lettre d\'Augure à la première victoire dans un lieu, rangée dan
   assert.ok(d.querySelector('.story.letter-story .story-letter'), 'la lettre en grand');
   d.getElementById('letterLater').click();
   assert.equal(d.querySelector('.story'), null, '« Plus tard » referme la lettre');
-  assert.match(d.querySelector('.toast').textContent, /carnet/, 'et dit où elle est rangée');
+  assert.match(d.querySelector('.toast').textContent, /bureau/, 'et dit où elle est rangée');
   assert.ok(d.querySelector('.letter-augure'), 'lettre rappelée dans le verdict');
   assert.deepEqual(JSON.parse(w.localStorage.getItem('grimdoku:lettres')), [p.place]);
   assert.ok(d.querySelectorAll('.epi .epl').length >= 3, 'épilogue en répliques');
-  w.grimGo('tailles');
-  assert.ok(d.querySelector('#carnetBtn .newmark'), 'le carnet signale la lettre non lue');
-  w.grimGo('carnet');
-  assert.equal(d.querySelectorAll('.lettre:not(.locked)').length, 1, 'une lettre dans le carnet');
+  w.grimGo('bureau');
+  assert.ok(d.querySelector('#deskLettres .newmark'), 'le bureau signale la lettre non lue');
+  w.grimGo('lettres');
+  assert.equal(d.querySelectorAll('.lettre').length, 1, 'une lettre reçue');
   assert.ok(d.querySelector('.lettre.fresh'), 'marquée nouvelle');
+  w.grimGo('carnet');
   assert.ok(d.querySelectorAll('.fiche').length >= 1, 'la troupe croisée a sa fiche');
-  w.grimGo('tailles');
-  assert.equal(d.querySelector('#carnetBtn .newmark'), null, 'lue une fois le carnet ouvert');
+  w.grimGo('bureau');
+  assert.equal(d.querySelector('#deskLettres .newmark'), null, 'lue une fois le courrier ouvert');
+  w.grimGo('dossiers');
+  assert.ok(d.querySelector(`.case[data-id="${p.id}"]`), 'le dossier est classé');
   assert.deepEqual(errors, []);
 });
 
@@ -273,24 +296,30 @@ test('lore : l\'affaire finale est verrouillée, puis débloquée par assez de l
   const { w, d, PUZZLES } = open();
   const fin = PUZZLES.find(q => q.final);
   if (!fin) return;
-  w.grimGo('tailles');
-  assert.ok(d.querySelector('.finalcase.locked'), 'verrouillée au départ');
+  w.grimGo('bureau');
+  assert.equal(d.getElementById('deskFinal'), null, 'pas d\'enveloppe au départ');
   w.grimGo('affaire/' + fin.id);
   assert.equal(d.getElementById('accuse'), null, 'on ne peut pas l\'ouvrir directement');
   const L = w.eval('LORE');
+  w.localStorage.setItem('grimdoku:lettres', JSON.stringify(Object.keys(L.letters).slice(0, L.need - 1)));
+  w.grimGo('bureau');
+  assert.equal(d.getElementById('deskFinal'), null, 'toujours rien à une lettre près');
   w.localStorage.setItem('grimdoku:lettres', JSON.stringify(Object.keys(L.letters).slice(0, L.need)));
-  w.grimGo('tailles');
-  d.querySelector('[data-final]').click();
-  assert.ok(d.getElementById('accuse'), 'débloquée');
+  w.grimGo('bureau');
+  d.getElementById('deskFinal').click();
+  assert.ok(d.getElementById('accuse'), 'l\'enveloppe ouvre l\'affaire');
+  d.getElementById('back').click();
+  assert.ok(location(w).includes('bureau'), '‹ ramène au bureau');
 });
 
-test('carte de Brumeval : un repère par lieu, chaque lieu liste ses enquêtes', () => {
+test('carte de Brumeval : tous lieux ouverts, un repère par lieu, chaque lieu liste ses enquêtes', () => {
   const { w, d, errors, PUZZLES } = open();
-  w.grimGo('carte');
-  // chaque lieu a son repère sur la carte (si l'illustration existe) et sa ligne dans la liste par contrée
-  const places = [...new Set([...d.querySelectorAll('[data-place]')].map(b => b.dataset.place))];
+  for (const p of PUZZLES.filter(q => !q.final)) solve(w, p);
+  w.grimGo('bureau');
+  const places = [...new Set([...d.querySelectorAll('.desk-map [data-place]')].map(b => b.dataset.place))];
   const want = [...new Set(PUZZLES.filter(p => !p.final).map(p => p.place))];
   assert.deepEqual([...places].sort(), [...want].sort(), 'un repère par lieu');
+  assert.equal(d.querySelectorAll('.dot.locked').length, 0);
   let n = 0;
   for (const pl of places) {
     w.grimGo('lieu/' + pl);
@@ -313,9 +342,9 @@ test('appui long : la roue des personnages, on y choisit qui placer (sans l\'avo
   assert.deepEqual(errors, []);
 });
 
-test('pastille = initiale du nom (deux lettres si besoin), ordre des fiches inchangé ; ‹ ramène au lieu de la carte', () => {
-  const { w, d, openCase, PUZZLES } = open();
-  const p = PUZZLES.find(q => !q.final);
+test('pastille = initiale du nom (deux lettres si besoin), ordre des fiches inchangé ; ‹ ramène au lieu ou aux dossiers', () => {
+  const { w, d, PUZZLES } = open();
+  const p = PUZZLES.find(q => !q.final && q.place === 'chateau');
   w.grimGo('lieu/' + p.place);
   d.querySelector(`.case[data-id="${p.id}"]`).click();
   const badges = [...d.querySelectorAll('.clue .em .letter')].map(e => e.textContent);
@@ -324,11 +353,12 @@ test('pastille = initiale du nom (deux lettres si besoin), ordre des fiches inch
   assert.equal(new Set(badges).size, badges.length, 'pastilles toutes différentes');
   d.getElementById('back').click();
   assert.ok(location(w).includes('lieu/' + p.place), 'retour au lieu');
-  openCase(p.id);
+  solve(w, p);
+  w.grimGo('dossiers');
+  d.querySelector(`.case[data-id="${p.id}"]`).click();
   d.getElementById('back').click();
-  assert.ok(location(w).includes('taille/' + p.size), 'retour à la taille');
+  assert.ok(location(w).includes('dossiers'), 'retour aux dossiers');
 });
-const location = (w) => w.location.hash;
 
 test('affaire finale : la révélation commune (lettre de Fizzlebarbe, billet d\'Augure) seulement après la victoire', () => {
   const { w, d, PUZZLES } = open();
@@ -353,7 +383,7 @@ test('affaire finale : la révélation commune (lettre de Fizzlebarbe, billet d\
   assert.ok(d.getElementById('rereadReveal'), 'relisible depuis le verdict');
 });
 
-test('prologue : à la première partie, quatre scènes, puis la carte ; fil rouge et piste conseillée sur la carte', () => {
+test('prologue : à la première partie, quatre scènes, puis le bureau ; se revoit depuis le carnet', () => {
   const { w, d } = open();
   d.getElementById('playBtn').click();
   const L = w.eval('LORE');
@@ -361,9 +391,9 @@ test('prologue : à la première partie, quatre scènes, puis la carte ; fil rou
     assert.ok(d.querySelector('.prologue-story'), `scène ${i + 1}`);
     d.getElementById('prologueNext').click();
   }
-  assert.ok(w.location.hash.includes('carte'), 'le prologue mène à la carte');
-  assert.ok(d.querySelector('.filrouge'), 'fil rouge en haut de la carte');
-  assert.ok(d.querySelector('.piste[data-place]'), 'piste conseillée');
+  assert.equal(d.querySelector('.prologue-story'), null, 'refermé');
+  assert.ok(w.location.hash.includes('bureau') && d.querySelector('.bureau'), 'le prologue mène au bureau');
+  assert.ok(L.prologue.some(sc => /château/i.test(sc.conseil || '')), 'il envoie au château');
   w.grimGo('');
   d.getElementById('playBtn').click();
   assert.equal(d.querySelector('.prologue-story'), null, 'une seule fois');
@@ -372,16 +402,17 @@ test('prologue : à la première partie, quatre scènes, puis la carte ; fil rou
   assert.ok(d.querySelector('.prologue-story'), 'se revoit depuis le carnet');
 });
 
-test('lettre d\'Augure : « Voir mon carnet » ouvre le carnet', () => {
+test('lettre anonyme : annonce les lieux ouverts, « Retour au bureau » y mène', () => {
   const { w, d, openCase, PUZZLES } = open();
-  const p = PUZZLES.find(q => !q.final);
+  const p = PUZZLES.find(q => !q.final && q.place === 'chateau');
   w.localStorage.setItem('grimdoku:seen:' + p.id, 'true');
   w.localStorage.setItem('grimdoku:p:' + p.id, JSON.stringify({ pos: p.solution.positions, pencil: {}, marks: [], done: [], solved: false, sig: sigOf(p) }));
   openCase(p.id);
   d.getElementById('accuse').click();
   d.getElementById('toLetter').click();
+  assert.ok(d.querySelector('.story-newplaces'), 'nouveaux lieux annoncés');
   d.getElementById('toCarnet').click();
-  assert.ok(w.location.hash.includes('carnet') && d.querySelector('.lettre.fresh'), 'carnet ouvert, la lettre marquée nouvelle');
+  assert.ok(w.location.hash.includes('bureau') && d.querySelector('#deskLettres .newmark'), 'bureau, lettre non lue signalée');
 });
 
 test('lettres anonymes : le nom d\'Augure n\'apparaît nulle part avant la révélation de l\'affaire finale', () => {
@@ -390,7 +421,7 @@ test('lettres anonymes : le nom d\'Augure n\'apparaît nulle part avant la rév�
   const shown = () => d.getElementById('app').textContent + d.getElementById('layer').textContent;
   d.getElementById('playBtn').click();
   for (let i = 0; i < w.eval('LORE').prologue.length; i++) { assert.ok(!/Augure/.test(shown()), `prologue, scène ${i + 1}`); d.getElementById('prologueNext').click(); }
-  for (const route of ['tailles', 'carte', 'carnet', 'lieu/taverne']) { w.grimGo(route); assert.ok(!/Augure/.test(shown()), route); }
+  for (const route of ['bureau', 'lettres', 'carnet', 'dossiers', 'lieu/chateau']) { w.grimGo(route); assert.ok(!/Augure/.test(shown()), route); }
   d.getElementById('rulesBtn').click();
   assert.ok(!/Augure/.test(shown()), 'règles');
   const corbeau = PUZZLES.flatMap(p => p.characters).find(c => c.archetype === 'corbeau');

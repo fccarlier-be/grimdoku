@@ -207,10 +207,7 @@ header.top { display: flex; align-items: center; gap: 10px; }
 .contree h2 { font-family: var(--f-display); font-weight: 400; color: var(--candle); margin: 0 0 8px; font-size: 20px; }
 .contree .pin { width: 100%; margin-bottom: 8px; align-items: flex-start; }
 .contree .pin:hover { transform: scale(1.02); }
-.lorebar { grid-template-columns: 1fr; }
-@media (min-width: 900px) { .lorebar { grid-template-columns: 1fr 1fr 1fr; } }
 /* lore : carnet d'enquête, lettres d'Augure, affaire finale, épilogue dialogué */
-.lorebar { display: grid; gap: 10px; margin-bottom: 14px; }
 .lvl.carnet, .lvl.finalcase { min-height: 0; padding: 14px; }
 .lvl.finalcase.locked { opacity: .8; cursor: default; }
 .carnet-sec { margin: 0 0 22px; }
@@ -610,18 +607,60 @@ html, body { background: var(--desk-tex, none) center top / 640px, var(--night);
 .story-letter { font: italic 400 21px/1.45 var(--f-body) !important; margin: 4px 0 !important; }
 .story-sign { align-self: flex-end; font-family: var(--f-display); font-size: 22px !important; }
 .story-count { color: var(--muted); font-size: 14px !important; }
+.story-newplaces { font-size: 16px !important; color: var(--ink); background: rgba(240, 169, 58, .25); padding: 6px 10px; border-radius: 6px; }
 .story-letter.reveal { font-size: 17px !important; text-align: left; align-self: stretch; }
 .newmark { display: inline-block; margin-top: 4px; padding: 2px 8px; border-radius: 99px; background: #a3312a; color: #fbe7cf; font: 700 12px/1.4 var(--f-body); }
 .lvl.carnet.unread::before { box-shadow: inset 0 0 0 3px #a3312a, 0 0 18px rgba(163, 49, 42, .6), 0 6px 14px rgba(0, 0, 0, .5); }
 .lettre.fresh::before { box-shadow: inset 0 0 0 3px #a3312a, 0 3px 8px rgba(0, 0, 0, .45); }
+/* ================= bureau de l'enquêteur ================= */
+.bureau { position: relative; display: grid; gap: 16px; padding: 4px 0 24px; }
+@media (min-width: 900px) { .bureau { grid-template-columns: minmax(0, 1fr) 230px; grid-template-areas: "map items" "places items"; align-items: start; column-gap: 28px; } .desk-map { grid-area: map; } .desk-places { grid-area: places; } .desk-items { grid-area: items; } }
+.desk-map { position: relative; width: 100%; background: center / contain no-repeat; filter: drop-shadow(0 14px 22px rgba(0, 0, 0, .6)); transform: rotate(-.6deg); z-index: 1; }
+.pin-tl, .pin-tr { position: absolute; top: 3%; width: 16px; height: 16px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #e0574a, #8e1f17 70%); box-shadow: 0 3px 4px rgba(0, 0, 0, .5); z-index: 3; }
+.pin-tl { left: 4%; } .pin-tr { right: 4%; }
+.dot.locked { cursor: default; background: rgba(60, 45, 30, .55); color: #e8d9b8; box-shadow: inset 0 0 0 1.5px rgba(232, 217, 184, .4); font-size: 12px; }
+.dot.locked:hover { transform: translate(-50%, -50%); }
+.dot.fresh { background: #f0a93a; color: #2b2016; animation: dotpulse 1.6s ease-in-out infinite; }
+@keyframes dotpulse { 50% { box-shadow: inset 0 0 0 2px rgba(43, 32, 22, .7), 0 0 0 6px rgba(240, 169, 58, .35), 0 3px 6px rgba(0, 0, 0, .5); } }
+.desk-places { display: flex; flex-wrap: wrap; gap: 6px; position: relative; z-index: 1; }
+.placechip { border: 0; padding: 5px 10px; border-radius: 99px; background: rgba(241, 227, 194, .92); color: var(--ink); font: 400 15px/1.1 var(--f-display); cursor: pointer; box-shadow: inset 0 0 0 1.5px rgba(43, 32, 22, .5), 0 2px 5px rgba(0, 0, 0, .4); }
+.placechip small { font: 700 11px/1 var(--f-body); color: #6e5434; margin-left: 3px; }
+.placechip.done { box-shadow: inset 0 0 0 2px #a3312a, 0 2px 5px rgba(0, 0, 0, .4); }
+.placechip.fresh { background: #f0a93a; }
+.placechip.locked { background: transparent; color: rgba(243, 230, 200, .65); box-shadow: inset 0 0 0 1.5px rgba(243, 230, 200, .3); cursor: default; font-family: var(--f-body); font-size: 13px; }
+.desk-items { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 12px; position: relative; z-index: 1; }
+@media (min-width: 900px) { .desk-items { grid-template-columns: 1fr; } }
+.desk-item { position: relative; border: 0; background: transparent; display: flex; flex-direction: column; align-items: center; gap: 4px; color: #f3e6c8; cursor: pointer; padding: 6px; }
+.desk-item b { font: 400 19px/1.1 var(--f-display); text-shadow: 0 2px 4px rgba(0, 0, 0, .7); }
+.desk-item small { font-size: 13px; color: rgba(243, 230, 200, .75); }
+.desk-item .newmark { position: absolute; top: 0; right: 4px; }
+.desk-img { width: min(160px, 100%); height: 110px; object-fit: contain; filter: drop-shadow(0 6px 8px rgba(0, 0, 0, .55)); }
+@media (hover: hover) { .desk-item:hover { transform: translateY(-4px) rotate(-1deg); } .desk-item:hover b { color: var(--candle); } }
+/* objets dessinés en attendant leurs illustrations (assets/desk/) */
+.pile, .liasse, .cuir, .env { position: relative; display: block; width: 130px; height: 110px; }
+.pile i { position: absolute; left: 10px; bottom: calc(8px + var(--i) * 7px); width: 108px; height: 64px; border-radius: 3px; background: linear-gradient(#d8b67a, #c49a5c); box-shadow: inset 0 0 0 1px rgba(80, 50, 20, .55), 0 3px 4px rgba(0, 0, 0, .45); transform: rotate(calc((var(--i) - 3) * 1.4deg)); }
+.pile i::before { content: ""; position: absolute; top: -8px; left: 12px; width: 34px; height: 10px; border-radius: 3px 3px 0 0; background: #c49a5c; box-shadow: inset 0 0 0 1px rgba(80, 50, 20, .5); }
+.pile i:last-child::after { content: "CLASSÉ"; position: absolute; right: 8px; bottom: 10px; padding: 1px 5px; border: 2px solid #a3312a; color: #a3312a; font: 400 13px/1 var(--f-display); transform: rotate(-8deg); }
+.liasse i { position: absolute; left: 14px; bottom: calc(16px + var(--i) * 4px); width: 100px; height: 62px; border-radius: 2px; background: linear-gradient(160deg, transparent 49%, rgba(80, 50, 20, .25) 50%, transparent 51%), linear-gradient(20deg, transparent 49%, rgba(80, 50, 20, .25) 50%, transparent 51%), #efe0bd; box-shadow: inset 0 0 0 1px rgba(80, 50, 20, .45), 0 3px 4px rgba(0, 0, 0, .45); transform: rotate(calc((var(--i) - 2) * 6deg)); }
+.liasse i.empty { background: transparent; box-shadow: inset 0 0 0 2px rgba(243, 230, 200, .25); border-radius: 6px; transform: none; }
+.liasse::after { content: "A"; position: absolute; left: 50px; bottom: 30px; width: 30px; height: 30px; display: grid; place-items: center; z-index: 2; border-radius: 47% 53% 50% 50%; color: #f6d9c0; font: 400 16px/1 var(--f-display); background: radial-gradient(circle at 35% 30%, #d4473b, #8e1f17 70%); box-shadow: 0 2px 3px rgba(0, 0, 0, .45); }
+.liasse.vide::after { display: none; }
+.cuir { width: 90px; height: 116px; margin: 0 20px; border-radius: 6px 10px 10px 6px; background: radial-gradient(circle at 40% 30%, #8a5a32, #4e2f17 80%); box-shadow: inset 4px 0 0 rgba(0, 0, 0, .35), inset 0 0 0 2px rgba(30, 15, 5, .5), 0 6px 8px rgba(0, 0, 0, .5); transform: rotate(4deg); }
+.cuir::after { content: ""; position: absolute; top: 46%; right: -6px; width: 26px; height: 12px; border-radius: 3px; background: #3a2210; box-shadow: 0 2px 2px rgba(0, 0, 0, .4); }
+.env { width: 140px; height: 96px; border-radius: 3px; background: linear-gradient(150deg, transparent 49.5%, rgba(80, 50, 20, .3) 50%, transparent 51%), linear-gradient(30deg, transparent 49.5%, rgba(80, 50, 20, .3) 50%, transparent 51%), #f1e3c2; box-shadow: inset 0 0 0 1px rgba(80, 50, 20, .45), 0 8px 12px rgba(0, 0, 0, .55); transform: rotate(-5deg); }
+.env::after { content: ""; position: absolute; left: 52px; top: 30px; width: 36px; height: 36px; border-radius: 47% 53% 50% 50%; background: radial-gradient(circle at 35% 30%, #4a4a4a, #111 70%); box-shadow: 0 2px 4px rgba(0, 0, 0, .6); }
+.desk-item.enveloppe.fresh .env { animation: dotpulse 1.6s ease-in-out infinite; }
+/* décor : les vignettes posées sur le bureau */
+.desk-deco { position: absolute; z-index: 0; width: 120px; pointer-events: none; filter: drop-shadow(0 6px 8px rgba(0, 0, 0, .55)); opacity: .95; }
+.desk-deco.d0 { left: -10px; top: -26px; width: 92px; transform: rotate(-12deg); }
+.desk-deco.d1 { right: 250px; bottom: -40px; width: 110px; transform: rotate(14deg); }
+.desk-deco.d2 { left: 30%; bottom: -50px; width: 100px; transform: rotate(-8deg); }
+.desk-deco.d3, .desk-deco.d4, .desk-deco.d5 { display: none; }
+@media (max-width: 899px) { .desk-deco.d1, .desk-deco.d2 { display: none; } .desk-deco.d0 { width: 70px; left: auto; right: 0; top: -20px; } }
 /* prologue et fil rouge */
 .story-img.map { height: 190px; background-size: contain; background-color: transparent; box-shadow: none; }
 .story-text.aside { font-style: italic; color: var(--muted); }
 .guide { text-align: left; align-self: stretch; margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 6px; font-size: 16px; }
-.filrouge { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; margin: 0 0 12px; color: var(--fg); font-size: 15px; }
-.filrouge > b { color: var(--candle); font-family: var(--f-display); font-weight: 400; font-size: 18px; }
-.piste { border: 0; padding: 5px 12px; border-radius: 99px; background: #a3312a; color: #fbe7cf; font: 700 14px/1.2 var(--f-body); cursor: pointer; box-shadow: 0 3px 8px rgba(0, 0, 0, .4); }
-.piste:hover { filter: brightness(1.1); }
 /* roue des personnages (appui long sur une case) */
 .wheel-layer { position: fixed; inset: 0; z-index: 60; background: rgba(10, 6, 14, .35); }
 .wheel { position: fixed; transform: translate(-50%, -50%); border-radius: 50%; background: radial-gradient(circle, rgba(241, 227, 194, .97) 0 34%, rgba(241, 227, 194, .82) 35% 100%); box-shadow: inset 0 0 0 2px rgba(43, 32, 22, .6), 0 10px 30px rgba(0, 0, 0, .6); animation: wheelin .14s ease-out; }
@@ -704,22 +743,16 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
           <span class="state ${done ? 'done' : started ? 'started' : ''}">${done ? 'Résolue' : started ? 'En cours' : 'Nouvelle'}</span>
         </button>`;
   }
-  // Classement par taille de carte (décision de François, 2026-10-16) ; dans une taille, de la plus facile à la plus
-  // dure, sans le dire (ordre de PUZZLES, fait par build-app.js). Les crânes ne sont plus affichés.
-  const SIZE_BLURB = {
-    6: 'Petites cartes : pour se faire la main.',
-    7: 'Une pièce de plus, des déductions plus longues.',
-    8: 'Grandes maisons, et parfois un monstre sur deux cases.',
-    9: 'Des monstres jusqu\'à trois cases.',
-    10: 'Des monstres jusqu\'à quatre cases, parfois de forme inconnue.',
-    11: 'Des monstres jusqu\'à quatre cases, parfois de forme inconnue.',
-    12: 'Les plus vastes demeures du royaume.'
-  };
-  const CASES = PUZZLES.filter(p => !p.final); // l'affaire finale n'est dans aucune taille : elle se débloque avec les lettres
+  // ---------- le bureau de l'enquêteur (décision de François, 2026-10-18) ----------
+  // Plus de classement par taille : « Jouer » mène (après le prologue) au bureau, avec la carte de Brumeval ouverte au
+  // centre, les dossiers classés, les lettres anonymes, le carnet et un peu de décor. Au départ, seul le château est
+  // ouvert ; chaque première enquête résolue dans un lieu apporte sa lettre, qui ouvre les lieux dont elle parle
+  // (lore/carte.json, unlock). L'enveloppe de l'affaire finale n'apparaît qu'avec assez de lettres.
+  const CASES = PUZZLES.filter(p => !p.final); // l'affaire finale n'est dans aucun lieu : elle arrive par l'enveloppe
   const FINAL = PUZZLES.find(p => p.final);
-  const SIZES = [...new Set(CASES.map(p => p.size))].sort((a, b) => a - b);
-  const sizeImg = (n) => MEDIA.levels[SIZES.indexOf(n)]; // vignettes 0, 1, 2… dans l'ordre des tailles
-  const solvedIn = (list) => list.filter(p => (store.get('p:' + p.id, null) || {}).solved).length;
+  const isSolved = (p) => !!(store.get('p:' + p.id, null) || {}).solved;
+  const solvedIn = (list) => list.filter(isSolved).length;
+  const placeCases = (pl) => CASES.filter(p => p.place === pl); // de la plus petite carte à la plus grande, puis la plus facile
   const pageHead = (backAria, title) => `
       <header class="top">
         <button class="iconbtn" id="back" aria-label="${backAria}">‹</button>
@@ -728,59 +761,94 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
         ${soundBtn()}
         <button class="iconbtn" id="rulesBtn" aria-label="Règles">?</button>
       </header>`;
-  // page des tailles : un parchemin par taille de carte
-  function sizesPage() {
+  // lieux ouverts : le départ, plus ceux qu'ouvre chaque lieu où une enquête est résolue
+  function unlockedPlaces() {
+    const open = new Set([LORE.start]);
+    for (const p of CASES) if (isSolved(p)) { open.add(p.place); (LORE.unlock[p.place] || []).forEach(n => open.add(n)); }
+    return open;
+  }
+  const seenPlaces = () => store.get('lieux-vus', []);
+  // d'où l'on est entré dans une enquête (« lieu » ou « dossiers ») : ‹ y ramène
+  let caseBack = 'lieu';
+
+  function bureauPage() {
     P = null;
     $app.classList.remove('game');
-    const nl = letters().length, total = Object.keys(LORE.letters).length;
-    $app.innerHTML = pageHead("Retour à l'accueil", 'Choisis ta taille') + `
-      <div class="lorebar">
-        <button class="lvl carnet" id="carteBtn"><b>🗺️ Carte de Brumeval</b><span class="blurb">Les enquêtes, lieu par lieu</span></button>
-        <button class="lvl carnet ${unread() ? 'unread' : ''}" id="carnetBtn"><b>📖 Carnet d'enquête</b><span class="blurb">${nl} / ${total} lettres anonymes · la troupe de Brumeval</span>${unread() ? `<span class="newmark">✉️ ${unread()} nouvelle${unread() > 1 ? 's' : ''} lettre${unread() > 1 ? 's' : ''}</span>` : ''}</button>
-        ${FINAL ? (finalUnlocked()
-          ? `<button class="lvl finalcase" data-final="1"><b>🕯️ ${esc(FINAL.title)}</b><span class="blurb">L'affaire que les lettres annonçaient.</span>${(store.get('p:' + FINAL.id, null) || {}).solved ? '<span class="lvldone">Terminé</span>' : ''}</button>`
-          : `<div class="lvl finalcase locked"><b>🔒 Une affaire se prépare…</b><span class="blurb">Encore ${LORE.need - nl} lettre${LORE.need - nl > 1 ? 's' : ''} anonyme${LORE.need - nl > 1 ? 's' : ''}.</span></div>`) : ''}
-      </div>
-      <div class="lvls">${SIZES.map(n => {
-        const list = CASES.filter(p => p.size === n);
-        const solved = solvedIn(list);
-        return `<button class="lvl" data-size="${n}">
-          ${sizeImg(n) ? `<img class="lvlimg" src="${sizeImg(n)}" alt="" loading="lazy">` : ''}
-          <b>${n} × ${n}</b>
-          <span class="blurb">${SIZE_BLURB[n] || ''}</span>
-          <span class="count">${solved} / ${list.length} résolue${solved > 1 ? 's' : ''}</span>
-          ${solved === list.length ? '<span class="lvldone">Terminé</span>' : ''}
-        </button>`;
-      }).join('')}</div>`;
+    const open = unlockedPlaces(), seen = seenPlaces();
+    const order = LORE.contrees.flatMap(c => c.lieux).filter(pl => placeCases(pl).length);
+    const dot = (pl) => {
+      if (!open.has(pl)) return `<span class="dot locked" style="--x:${LORE.pos[pl][0]}%;--y:${LORE.pos[pl][1]}%" aria-hidden="true">?</span>`;
+      const list = placeCases(pl), done = solvedIn(list), fresh = !seen.includes(pl);
+      return `<button class="dot ${done === list.length ? 'done' : ''} ${fresh ? 'fresh' : ''}" data-place="${pl}" style="--x:${LORE.pos[pl][0]}%;--y:${LORE.pos[pl][1]}%" aria-label="${esc(placeTitle(pl))}, ${done} sur ${list.length} résolues">
+        ${done === list.length ? '✓' : fresh ? '!' : '•'}<span class="tip"><b>${esc(placeTitle(pl))}</b><small>${done} / ${list.length}${fresh ? ' · nouveau' : ''}</small></span></button>`;
+    };
+    const nSolved = solvedIn(CASES), got = letters(), nl = got.length, total = Object.keys(LORE.letters).length;
+    const deco = (MEDIA.levels || []).filter(Boolean);
+    const img = (k) => MEDIA.desk && MEDIA.desk[k] ? `<img class="desk-img" src="${MEDIA.desk[k]}" alt="">` : '';
+    const sheets = Math.min(8, Math.max(1, Math.ceil(nSolved / 6)));
+    $app.innerHTML = pageHead("Retour à l'accueil", "Bureau de l'enquêteur") + `
+      <div class="bureau">
+        ${deco.map((src, i) => `<img class="desk-deco d${i}" src="${src}" alt="" aria-hidden="true">`).join('')}
+        <div class="desk-map" style="aspect-ratio:${LORE.ratio[0]} / ${LORE.ratio[1]};${MEDIA.map ? `background-image:url(${MEDIA.map})` : ''}">
+          <span class="pin-tl" aria-hidden="true"></span><span class="pin-tr" aria-hidden="true"></span>
+          ${order.map(dot).join('')}
+        </div>
+        <div class="desk-places">${order.filter(pl => open.has(pl)).map(pl => {
+          const list = placeCases(pl), done = solvedIn(list);
+          return `<button class="placechip ${done === list.length ? 'done' : ''} ${seen.includes(pl) ? '' : 'fresh'}" data-place="${pl}">${esc(placeTitle(pl))} <small>${done}/${list.length}</small></button>`;
+        }).join('')}<span class="placechip locked">${order.length - order.filter(pl => open.has(pl)).length} lieux encore inconnus</span></div>
+        <div class="desk-items">
+          <button class="desk-item dossiers" id="deskDossiers">${img('dossiers') || `<span class="pile">${Array.from({ length: sheets }, (_, i) => `<i style="--i:${i}"></i>`).join('')}</span>`}
+            <b>Dossiers classés</b><small>${nSolved} / ${CASES.length}</small></button>
+          <button class="desk-item lettres ${unread() ? 'unread' : ''}" id="deskLettres">${img('lettres') || `<span class="liasse ${nl ? '' : 'vide'}">${nl ? Array.from({ length: Math.min(5, nl) }, (_, i) => `<i style="--i:${i}"></i>`).join('') : '<i class="empty"></i>'}</span>`}
+            <b>Lettres anonymes</b><small>${nl} / ${total}</small>${unread() ? `<span class="newmark">✉️ ${unread()} nouvelle${unread() > 1 ? 's' : ''}</span>` : ''}</button>
+          <button class="desk-item carnet" id="deskCarnet">${img('carnet') || '<span class="cuir"></span>'}
+            <b>Carnet d'enquête</b><small>la troupe de Brumeval</small></button>
+          ${FINAL && finalUnlocked() ? `<button class="desk-item enveloppe ${isSolved(FINAL) ? '' : 'fresh'}" id="deskFinal">${img('enveloppe') || '<span class="env"></span>'}
+            <b>Une enveloppe scellée</b><small>${isSolved(FINAL) ? 'Affaire classée' : esc(FINAL.title)}</small></button>` : ''}
+        </div>
+      </div>`;
     document.getElementById('back').onclick = () => go('');
     document.getElementById('rulesBtn').onclick = rules;
-    $app.querySelectorAll('.lvl[data-size]').forEach(b => b.onclick = () => go('taille/' + b.dataset.size));
-    document.getElementById('carnetBtn').onclick = () => go('carnet');
-    document.getElementById('carteBtn').onclick = () => go('carte');
-    const fb = $app.querySelector('[data-final]'); if (fb) fb.onclick = () => go('affaire/' + FINAL.id);
+    $app.querySelectorAll('[data-place]').forEach(b => b.onclick = () => go('lieu/' + b.dataset.place));
+    document.getElementById('deskDossiers').onclick = () => go('dossiers');
+    document.getElementById('deskLettres').onclick = () => go('lettres');
+    document.getElementById('deskCarnet').onclick = () => go('carnet');
+    const f = document.getElementById('deskFinal'); if (f) f.onclick = () => { caseBack = 'bureau'; go('affaire/' + FINAL.id); };
   }
-  // page d'une taille : ses affaires, de la plus facile à la plus dure
-  function sizePage(n) {
+  // dossiers classés (et en cours) : relire le verdict ou rejouer
+  function dossiersPage() {
     P = null;
     $app.classList.remove('game');
-    const list = CASES.filter(p => p.size === n);
-    $app.innerHTML = pageHead('Retour aux tailles', 'Choisis ton enquête') + `
-      <p class="lead"><b class="lvlname">${n} × ${n}</b> — ${SIZE_BLURB[n] || ''} <span class="count">${solvedIn(list)} / ${list.length} résolues</span></p>
-      <div class="cases">${list.map(caseHtml).join('')}</div>`;
-    document.getElementById('back').onclick = () => go('tailles');
+    const solved = CASES.filter(isSolved), started = CASES.filter(p => !isSolved(p) && Object.keys((store.get('p:' + p.id, null) || {}).pos || {}).length);
+    $app.innerHTML = pageHead('Retour au bureau', 'Dossiers') + `
+      ${started.length ? `<section class="carnet-sec"><h2>En cours <small>${started.length}</small></h2><div class="cases">${started.map(caseHtml).join('')}</div></section>` : ''}
+      <section class="carnet-sec"><h2>Classés <small>${solved.length} / ${CASES.length}</small></h2>
+        ${solved.length ? `<div class="cases">${solved.map(caseHtml).join('')}</div>` : '<p class="lead">Aucun dossier classé pour l\'instant. Le château attend.</p>'}</section>`;
+    document.getElementById('back').onclick = () => go('bureau');
     document.getElementById('rulesBtn').onclick = rules;
-    $app.querySelectorAll('.case').forEach(b => b.onclick = () => { caseBack = 'taille'; go('affaire/' + b.dataset.id); });
+    $app.querySelectorAll('.case').forEach(b => b.onclick = () => { caseBack = 'dossiers'; go('affaire/' + b.dataset.id); });
   }
-  // Carnet d'enquête : les lettres d'Augure trouvées, et la troupe de Brumeval croisée dans les enquêtes résolues
-  function carnetPage() {
+  // les lettres anonymes reçues, comme du vrai courrier
+  function lettresPage() {
     P = null;
     $app.classList.remove('game');
     const got = letters(), total = Object.keys(LORE.letters).length;
     const fresh = got.filter(pl => !store.get('lettres-lues', []).includes(pl));
-    store.set('lettres-lues', got); // ouvrir le carnet, c'est les lire
-    const solved = CASES.filter(p => (store.get('p:' + p.id, null) || {}).solved);
+    store.set('lettres-lues', got); // ouvrir le courrier, c'est le lire
+    $app.innerHTML = pageHead('Retour au bureau', 'Lettres anonymes') + `
+      <p class="lead">Après la première enquête résolue dans chaque lieu de Brumeval, quelqu'un glisse sous ta porte une lettre sur ce lieu, signée d'un simple « A. ». ${got.length >= LORE.need ? 'Elles mènent toutes au même endroit.' : `Il en faut ${LORE.need} pour comprendre où elles mènent.`} <span class="count">${got.length} / ${total}</span></p>
+      ${got.length ? `<div class="lettres">${[...got].reverse().map(pl => `<div class="lettre ${fresh.includes(pl) ? 'fresh' : ''}"><b>${esc(placeTitle(pl))}</b>${fresh.includes(pl) ? ' <span class="newmark">nouvelle</span>' : ''}<p>${esc(LORE.letters[pl])}</p><small>— A.</small></div>`).join('')}</div>`
+        : '<p class="lead">Aucune lettre pour l\'instant.</p>'}`;
+    document.getElementById('back').onclick = () => go('bureau');
+    document.getElementById('rulesBtn').onclick = rules;
+  }
+  // Carnet d'enquête : la troupe de Brumeval croisée dans les enquêtes résolues, et le prologue à revoir
+  function carnetPage() {
+    P = null;
+    $app.classList.remove('game');
     const met = {};
-    for (const p of solved) for (const c of p.characters) if (!c.guest && LORE.troupe[c.archetype]) met[c.archetype] = (met[c.archetype] || 0) + 1;
+    for (const p of CASES.filter(isSolved)) for (const c of p.characters) if (!c.guest && LORE.troupe[c.archetype]) met[c.archetype] = (met[c.archetype] || 0) + 1;
     // gags récurrents : ils se voient dans les fiches
     const gag = (t) => t === 'capitaine' ? `Départs annoncés : ${met[t]}. Départs effectués : 0.`
       : t === 'fee' ? `Dette au Sanglier Borgne : ${3 + met[t] * 3} tournées.`
@@ -791,69 +859,25 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
       return `<div class="fiche"><span class="seal" aria-hidden="true">${face({ archetype: t, name: c.name, role: 'suspect', icon: c.icon })}</span>
         <div><b>${esc(c.name)}</b> <small>${esc(c.desc)}</small><p>${esc(c.tic)}</p>${g ? `<p class="gag">${esc(g)}</p>` : ''}</div></div>`;
     }).join('');
-    $app.innerHTML = pageHead('Retour aux tailles', "Carnet d'enquête") + `
+    $app.innerHTML = pageHead('Retour au bureau', "Carnet d'enquête") + `
       <button class="btn" id="prologueBtn">📜 Revoir le prologue</button>
-      <section class="carnet-sec"><h2>Lettres anonymes <small>${got.length} / ${total}</small></h2>
-        <p class="lead">Après la première enquête résolue dans chaque lieu de Brumeval, quelqu'un glisse sous ta porte une lettre sur ce lieu, signée d'un simple « A. ». ${got.length >= LORE.need ? "Elles mènent toutes au même endroit." : `Il en faut ${LORE.need} pour comprendre où elles mènent.`}</p>
-        <div class="lettres">${Object.keys(LORE.letters).map(pl => got.includes(pl)
-          ? `<div class="lettre ${fresh.includes(pl) ? 'fresh' : ''}"><b>${esc(placeTitle(pl))}</b>${fresh.includes(pl) ? ' <span class="newmark">nouvelle</span>' : ''}<p>${esc(LORE.letters[pl])}</p><small>— A.</small></div>`
-          : `<div class="lettre locked"><b>${esc(placeTitle(pl))}</b><p>Pas encore de lettre ici.</p></div>`).join('')}</div>
-      </section>
       <section class="carnet-sec"><h2>La troupe de Brumeval <small>${Object.keys(met).length} / ${Object.keys(LORE.troupe).length}</small></h2>
         ${fiches || '<p class="lead">Résous une enquête pour faire connaissance.</p>'}
       </section>`;
-    document.getElementById('back').onclick = () => go('tailles');
+    document.getElementById('back').onclick = () => go('bureau');
     document.getElementById('rulesBtn').onclick = rules;
     document.getElementById('prologueBtn').onclick = () => prologue();
   }
-  // Carte de la baronnie : un repère par lieu (enquêtes résolues, lettre trouvée) ; sans illustration, le plan par contrées.
-  // Elle remplacera à terme le classement par taille (décision de François, 2026-10-17).
-  const placeCases = (pl) => CASES.filter(p => p.place === pl);
-  // d'où l'on est entré dans les enquêtes (« taille » ou « lieu ») : ‹ dans une enquête y ramène, au lieu de l'enquête courante
-  let caseBack = 'taille';
-  function cartePage() {
-    P = null;
-    $app.classList.remove('game');
-    const got = letters();
-    // numéro de chaque lieu, dans l'ordre des contrées : la pastille sur la carte (téléphone) renvoie à la liste
-    const order = LORE.contrees.flatMap(c => c.lieux).filter(pl => placeCases(pl).length);
-    const info = (pl) => { const list = placeCases(pl), done = solvedIn(list); return { list, done, txt: `${done} / ${list.length}${got.includes(pl) ? ' · 📜' : ''}` }; };
-    // ligne de la liste par contrée
-    const pin = (pl) => {
-      const { list, done, txt } = info(pl);
-      if (!list.length) return '';
-      return `<button class="pin ${done === list.length ? 'done' : ''}" data-place="${pl}"><i>${order.indexOf(pl) + 1}</i><b>${esc(placeTitle(pl))}</b><small>${txt}</small></button>`;
-    };
-    // pastille numérotée sur la carte ; survolée (souris) ou mise en avant (clavier), elle montre le nom et l'avancement
-    const dot = (pl) => {
-      const { list, done, txt } = info(pl);
-      return `<button class="dot ${done === list.length ? 'done' : ''}" data-place="${pl}" style="--x:${LORE.pos[pl][0]}%;--y:${LORE.pos[pl][1]}%" aria-label="${esc(placeTitle(pl))}, ${done} sur ${list.length} résolues">
-        ${order.indexOf(pl) + 1}<span class="tip"><b>${esc(placeTitle(pl))}</b><small>${txt}</small></span></button>`;
-    };
-    // fil rouge : progression des lettres et piste conseillée (le lieu sans lettre dont l'enquête la plus simple est la
-    // plus petite carte, puis la plus facile)
-    const total = Object.keys(LORE.letters).length;
-    const sansLettre = order.filter(pl => !got.includes(pl) && LORE.letters[pl]);
-    const ease = (pl) => { const c = placeCases(pl).filter(p => !(store.get('p:' + p.id, null) || {}).solved)[0] || placeCases(pl)[0]; return c.size * 100 + c.difficulty; };
-    const piste = sansLettre.sort((a, b) => ease(a) - ease(b))[0];
-    const fil = `<div class="filrouge"><b>Fil rouge</b> · ${got.length} / ${total} lettres anonymes${FINAL && !finalUnlocked() ? ` · encore ${LORE.need - got.length} avant l'affaire que tout annonce` : FINAL ? ' · <b>l\'affaire finale est ouverte</b>' : ''}
-      ${piste ? `<button class="piste" data-place="${piste}">Piste conseillée : ${esc(placeTitle(piste))} →</button>` : ''}</div>`;
-    $app.innerHTML = pageHead('Retour aux tailles', 'Carte de Brumeval') + fil + (MEDIA.map
-      ? `<div class="carte" style="background-image:url(${MEDIA.map});aspect-ratio:${LORE.ratio[0]} / ${LORE.ratio[1]}">${order.map(dot).join('')}</div>` : '')
-      + `<div class="contrees">${LORE.contrees.map(c => `<section class="contree"><h2>${esc(c.nom)}</h2>${c.lieux.map(pin).join('')}</section>`).join('')}</div>`;
-    document.getElementById('back').onclick = () => go('tailles');
-    document.getElementById('rulesBtn').onclick = rules;
-    $app.querySelectorAll('[data-place]').forEach(b => b.onclick = () => go('lieu/' + b.dataset.place));
-  }
-  // page d'un lieu : ses enquêtes, de la plus petite carte à la plus grande
+  // page d'un lieu : sa lettre (si elle est arrivée) et ses enquêtes, de la plus simple à la plus dure
   function lieuPage(pl) {
     P = null;
     $app.classList.remove('game');
+    if (!seenPlaces().includes(pl)) store.set('lieux-vus', seenPlaces().concat(pl));
     const list = placeCases(pl);
-    $app.innerHTML = pageHead('Retour à la carte', esc(placeTitle(pl))) + `
-      <p class="lead">${letters().includes(pl) ? `📜 <i>${esc(LORE.letters[pl])}</i> — A.` : "Résous une première enquête ici : une lettre sur ce lieu glissera sous ta porte."} <span class="count">${solvedIn(list)} / ${list.length} résolues</span></p>
+    $app.innerHTML = pageHead('Retour au bureau', esc(placeTitle(pl))) + `
+      <p class="lead">${letters().includes(pl) ? `📜 <i>${esc(LORE.letters[pl])}</i> — A.` : 'Résous une première enquête ici : une lettre sur ce lieu glissera sous ta porte.'} <span class="count">${solvedIn(list)} / ${list.length} résolues</span></p>
       <div class="cases">${list.map(caseHtml).join('')}</div>`;
-    document.getElementById('back').onclick = () => go('carte');
+    document.getElementById('back').onclick = () => go('bureau');
     document.getElementById('rulesBtn').onclick = rules;
     $app.querySelectorAll('.case').forEach(b => b.onclick = () => { caseBack = 'lieu'; go('affaire/' + b.dataset.id); });
   }
@@ -868,8 +892,8 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
         <button class="accuse herobtn" id="playBtn"><span>Jouer</span></button>
         ${sound.available ? `<span class="herosound">${soundBtn()}</span>` : ''}
       </section>`;
-    // première partie : le prologue s'ouvre par-dessus la page des tailles
-    document.getElementById('playBtn').onclick = () => { go('tailles'); if (!store.get('prologue', false)) prologue(); };
+    // première partie : le prologue s'ouvre par-dessus le bureau
+    document.getElementById('playBtn').onclick = () => { go('bureau'); if (!store.get('prologue', false)) prologue(); };
   }
 
   // Ambiance sonore : une boucle pour l'accueil et les menus (menu), une pour les cartes (carte), en fondu.
@@ -967,17 +991,18 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     if (pop && !e.target.closest('.soundpop')) pop.remove();
   });
 
-  // Navigation : une adresse par écran (#/, #/tailles, #/taille/8, #/affaire/<id>), le bouton retour du navigateur
+  // Navigation : une adresse par écran (#/, #/bureau, #/lieu/<lieu>, #/dossiers, #/lettres, #/carnet, #/affaire/<id>), le bouton retour du navigateur
   // (ou du téléphone) revient à l'écran précédent.
   function show(route) {
     const [page, arg] = route.split('/');
     sound.set(page === 'affaire' ? 'carte' : 'menu');
-    if (page === 'tailles' || page === 'niveaux') sizesPage();
-    else if (page === 'taille' && SIZES.includes(+arg)) sizePage(+arg);
+    // anciennes adresses (tailles, carte) : le bureau
+    if (['bureau', 'tailles', 'niveaux', 'taille', 'carte'].includes(page)) bureauPage();
+    else if (page === 'dossiers') dossiersPage();
+    else if (page === 'lettres') lettresPage();
     else if (page === 'carnet') carnetPage();
-    else if (page === 'carte') cartePage();
-    else if (page === 'lieu' && LORE.pos[arg] && placeCases(arg).length) lieuPage(arg);
-    else if (page === 'affaire' && FINAL && arg === FINAL.id && !finalUnlocked()) carnetPage(); // pas encore débloquée
+    else if (page === 'lieu' && placeCases(arg).length && unlockedPlaces().has(arg)) lieuPage(arg);
+    else if (page === 'affaire' && FINAL && arg === FINAL.id && !finalUnlocked()) bureauPage(); // pas encore arrivée
     else if (page === 'affaire' && PUZZLES.some(p => p.id === arg)) open(arg);
     else home();
     window.scrollTo(0, 0);
@@ -1278,7 +1303,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
   }
 
   function bind() {
-    document.getElementById('back').onclick = () => go(P.final ? 'tailles' : caseBack === 'lieu' ? 'lieu/' + P.place : 'taille/' + P.size);
+    document.getElementById('back').onclick = () => go(P.final ? 'bureau' : caseBack === 'dossiers' ? 'dossiers' : 'lieu/' + P.place);
     document.getElementById('rulesBtn').onclick = rules;
     document.getElementById('opts').onclick = options;
     document.getElementById('introBtn').onclick = introSheet;
@@ -1486,8 +1511,10 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
       if (v.size) { settings.live = true; store.set('settings', settings); render(); return toast(`${v.size} indice${v.size > 1 ? 's' : ''} ne colle${v.size > 1 ? 'nt' : ''} pas. Ils sont surlignés en rouge.`, true); }
       return toast("Tout semble coller… mais ce n'est pas la bonne scène. Un indice t'a peut-être échappé.", true);
     }
+    const before = unlockedPlaces(); // lieux ouverts avant cette victoire
     S.solved = true; selected = null; save();
     render.newLetter = grantLetter(P);
+    render.newPlaces = [...unlockedPlaces()].filter(pl => !before.has(pl)); // ceux que la lettre vient d'ouvrir
     render();
     window.scrollTo({ top: 0, behavior: 'smooth' });
     verdictStory(render.newLetter);
@@ -1519,10 +1546,10 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
         ? `<div class="seal-a" aria-hidden="true">${esc(sc.sceau)}</div><small class="story-from">${esc(sc.de)}</small>${sc.texte.split('\n').map(x => `<p class="story-letter reveal">${esc(x)}</p>`).join('')}<p class="story-sign">${esc(sc.signature)}</p>${sc.apres ? `<p class="story-text aside">${esc(sc.apres)}</p>` : ''}`
         : `${sc.image === 'carte' && MEDIA.map ? `<div class="story-img map" style="background-image:url(${MEDIA.map})"></div>` : ''}<h2>${esc(sc.titre)}</h2>${para(sc.texte)}`;
     const ov = story(`${body}<div class="row">${last ? '' : '<button class="btn" data-close>Passer</button>'}
-      <button class="btn primary" id="prologueNext">${last ? 'Ouvrir la carte' : 'Suite'}</button></div>
+      <button class="btn primary" id="prologueNext">${last ? 'À mon bureau' : 'Suite'}</button></div>
       <small class="story-count">${i + 1} / ${LORE.prologue.length}</small>`, 'prologue-story');
     store.set('prologue', true);
-    ov.querySelector('#prologueNext').onclick = () => { if (last) { close(); go('carte'); } else prologue(i + 1); };
+    ov.querySelector('#prologueNext').onclick = () => { if (last) { close(); go('bureau'); } else prologue(i + 1); };
   }
   // Scènes de fin : le coupable et son dialogue avec l'enquêteur, puis la lettre d'Augure si l'enquête en apporte une
   function verdictStory(newLetter) {
@@ -1560,11 +1587,12 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
       <small class="story-from">Lettre anonyme · ${esc(placeTitle(place))}</small>
       <p class="story-letter">${esc(LORE.letters[place])}</p>
       <p class="story-sign">— A.</p>
-      <p class="story-count">${n} / ${total} lettres dans ton carnet${FINAL && !finalUnlocked() ? ` · encore ${LORE.need - n} avant que tout s'éclaire` : FINAL ? ' · <b>une affaire très spéciale vous attend</b>' : ''}</p>
-      <div class="row"><button class="btn" id="letterLater">Plus tard</button><button class="btn primary" id="toCarnet">📖 Voir mon carnet</button></div>`, 'letter-story');
+      ${(render.newPlaces || []).length ? `<p class="story-newplaces">🗺️ Sur ta carte, ${render.newPlaces.length > 1 ? 'de nouveaux lieux s\'ouvrent' : 'un nouveau lieu s\'ouvre'} : <b>${render.newPlaces.map(pl => esc(placeTitle(pl))).join(', ')}</b></p>` : ''}
+      <p class="story-count">${n} / ${total} lettres anonymes${FINAL && !finalUnlocked() ? ` · encore ${LORE.need - n} avant que tout s'éclaire` : FINAL ? ' · <b>une enveloppe vient d\'arriver sur ton bureau</b>' : ''}</p>
+      <div class="row"><button class="btn" id="letterLater">Plus tard</button><button class="btn primary" id="toCarnet">🗺️ Retour au bureau</button></div>`, 'letter-story');
     // deux choix sans ambiguïté (retour de François : « Ranger dans mon carnet » ne faisait que refermer, on croyait que rien ne se passait)
-    ov.querySelector('#toCarnet').onclick = () => { close(); go('carnet'); };
-    ov.querySelector('#letterLater').onclick = () => { close(); toast('📜 Lettre rangée dans ton carnet (📖 sur la page des tailles).'); };
+    ov.querySelector('#toCarnet').onclick = () => { close(); go('bureau'); };
+    ov.querySelector('#letterLater').onclick = () => { close(); toast('📜 Lettre rangée avec les autres, sur ton bureau.'); };
   }
   function verdictHtml() {
     const k = ctx.chars[P.solution.murderer];
@@ -1580,18 +1608,18 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
         ${render.newLetter === P.place ? `<div class="letter-augure"><b>📜 Une lettre anonyme glissée sous la porte</b><p>${esc(LORE.letters[P.place])}</p><small>— A. · ${letters().length} / ${Object.keys(LORE.letters).length} lettres dans ton carnet</small></div>` : ''}
         <div class="row">
           <button class="btn" id="replayBtn">Rejouer</button>
-          ${next ? `<button class="btn primary" id="nextBtn">Affaire suivante</button>` : `<button class="btn primary" id="homeBtn">Toutes les tailles</button>`}
+          ${next ? `<button class="btn primary" id="nextBtn">Affaire suivante</button>` : `<button class="btn primary" id="homeBtn">Retour au bureau</button>`}
         </div>
       </div>`;
   }
   // affaire suivante : dans l'ordre (taille, difficulté), sans l'affaire finale
-  const nextCase = () => PUZZLES.slice(PUZZLES.indexOf(P) + 1).find(p => !p.final);
+  const nextCase = () => P.final ? null : placeCases(P.place).find(p => p !== P && !isSolved(p));
   function bindVerdict() {
     const next = nextCase();
     const rr = document.getElementById('rereadReveal'); if (rr) rr.onclick = revelationStory;
     document.getElementById('replayBtn').onclick = () => { S = blank(); undo = []; save(); render(); };
     const nb = document.getElementById('nextBtn'); if (nb) nb.onclick = () => go('affaire/' + next.id);
-    const hb = document.getElementById('homeBtn'); if (hb) hb.onclick = () => go('tailles');
+    const hb = document.getElementById('homeBtn'); if (hb) hb.onclick = () => go('bureau');
   }
 
   // ---------- fenêtres ----------
@@ -1623,7 +1651,8 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
         <li><b>Seule la pièce du crime contient deux personnes</b> : chaque suspect était seul dans sa pièce, sauf le coupable, qui était avec la victime.</li>
         <li><b>Chaque pièce est occupée</b> : aucune pièce n'est vide (deux pièces reliées par un portail comptent pour une).</li>
         <li><b>La victime</b> est un invité de passage à Brumeval ; les suspects, eux, sont les habitués, et tu les retrouveras d'une enquête à l'autre. Chacun porte une <b>pastille</b> avec l'initiale de son nom (deux lettres si deux noms commencent pareil). Les fiches sont rangées de la plus facile à placer à la plus difficile.</li>
-        <li><b>Lettres anonymes</b> : la première enquête résolue dans chaque lieu te vaut une lettre anonyme, rangée dans ton carnet d'enquête. Assez de lettres, et une affaire très spéciale se débloque.</li>
+        <li><b>Ton bureau</b> : la carte de Brumeval y est épinglée. Au début, seul le château t'est ouvert ; chaque affaire résolue ouvre de nouveaux lieux (pastille « ! »). Les dossiers classés, les lettres reçues et ton carnet sont posés à côté.</li>
+        <li><b>Lettres anonymes</b> : la première enquête résolue dans chaque lieu te vaut une lettre anonyme, rangée sur ton bureau. Assez de lettres, et il se passera quelque chose.</li>
         <li>La victime n'a pas d'indice : c'est à toi de la trouver.</li>
         <li><b>Grands personnages</b> : ils occupent plusieurs cases (2 cases jusqu'en 8×8, jusqu'à 3 en 9×9, jusqu'à 4 au-delà), en ligne, en angle, en carré, en T ou en zigzag, et leur forme peut être tournée ou retournée. Chacune de leurs cases prend sa ligne et sa colonne. Toutes leurs cases sont dans la même pièce, jamais sur un meuble. « À côté de » et « même ligne / colonne » valent pour n'importe laquelle de leurs cases ; « au nord de X » veut dire toutes leurs cases plus haut que X. Sur les grandes cartes, leur forme est parfois inconnue : leur fiche dit seulement combien de cases ils peuvent occuper.</li>
       </ul>

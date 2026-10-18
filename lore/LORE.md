@@ -44,7 +44,7 @@ Toutes les enquêtes se passent dans **la baronnie de Brumeval**, assez petite p
 - **Les Monts Grimaces** : les nains creusent, les gobelins comptent, le dragon dort (en principe).
 - **Le quartier savant** : deux écoles rivales (l'Académie de Magie et l'Université des Sortilèges) et une bibliothèque dont personne ne rend les livres.
 - **Sur la route** : la Foire aux Sortilèges (qui devient la Grande Foire des Mille Merveilles une fois par an) et le Palais des Mille Vœux, ambassade d'un pays lointain dont la djinn est la seule à connaître le nom.
-Dans le jeu, la **carte de Brumeval** (illustration `assets/map/brumeval2`) montre chaque lieu avec une pastille numérotée.
+Dans le jeu, la **carte de Brumeval** (illustration `assets/map/brumeval2`) est épinglée au centre du bureau, chaque lieu avec sa pastille.
 
 ## 3. L'enquêteur
 L'enquêteur est la seule personne compétente de la baronnie, et ça l'épuise. **Il reste une voix : on ne le voit jamais.** Son nom et son origine sont volontairement laissés ouverts. Sa voix est sèche, polie, au bord de la crise de nerfs : il ne crie jamais, il soupire, puis reformule pour les plus lents.
@@ -66,7 +66,7 @@ On l'entend à trois endroits :
 3. **Le verdict** : c'est lui qui ouvre chaque épilogue (« Vous étiez seul avec… ») et donne la réplique au coupable.
 
 ### Le prologue
-À la première partie (après « Jouer »), quatre scènes au centre de l'écran présentent le monde, l'enquêteur et le fil rouge. On peut les passer, et les revoir depuis le carnet (« 📜 Revoir le prologue »). La dernière ouvre la carte de Brumeval.
+À la première partie (après « Jouer »), quatre scènes au centre de l'écran présentent le monde, l'enquêteur et le fil rouge. On peut les passer, et les revoir depuis le carnet (« 📜 Revoir le prologue »). La dernière mène au bureau.
 
 **1. Brumeval** (sur l'illustration de la carte)
 > La baronnie de Brumeval tient sur une seule carte, entre la mer et les Monts Grimaces. Elle compte six contrées, vingt-trois lieux, et beaucoup trop de cadavres pour des gens qui se connaissent tous.  
@@ -76,7 +76,7 @@ On l'entend à trois endroits :
 **2. Lettre de nomination** — Château de Mortebrune (cachet « D »)
 > Par la présente, Nous, Dagobert, roi de Brumeval et d'à peu près tout ce qu'on voit du donjon, nommons le porteur de cette lettre Enquêteur de la baronnie.  
 >   
-> Il résoudra les meurtres de Nos sujets, de préférence sans accuser la Couronne. Il aura libre accès à tous les lieux, sauf au trésor, qui est vide pour des raisons qui ne le regardent pas.  
+> Il résoudra les meurtres de Nos sujets, de préférence sans accuser la Couronne. Il commencera par Notre château, où l'on meurt beaucoup trop pour un lieu aussi bien gardé. Les autres portes de la baronnie s'ouvriront à mesure qu'il fera ses preuves, sauf celle du trésor, qui est vide pour des raisons qui ne le regardent pas.  
 >   
 > Son salaire sera fixé avec Notre trésorier, Bakchich.
 > Dagobert
@@ -85,19 +85,19 @@ On l'entend à trois endroits :
 **3. Un billet sous la porte** — Billet anonyme (cachet « A »)
 > Bienvenue à Brumeval, enquêteur. Ici, chaque lieu a ses secrets, et j'en connais quelques-uns.  
 >   
-> Résolvez une affaire, n'importe où. Je vous écrirai.
+> Résolvez votre première affaire. Je vous écrirai.
 > — A.
 *Sur le rebord de la fenêtre, un corbeau m'a regardé lire. Puis il est parti. Je n'aime pas les corbeaux qui attendent une réponse.*
 
 **4. Mes notes** (mode d'emploi)
-1. Choisir un lieu sur la carte de Brumeval, et une enquête.
+1. Sur mon bureau, la carte de Brumeval : chaque affaire résolue m'ouvre de nouveaux lieux.
 2. Placer tout le monde : une personne par ligne et par colonne, un suspect par pièce, la victime seule avec son meurtrier.
 3. Après la première enquête résolue dans un lieu, une lettre sur ce lieu glisse sous ma porte, signée « A. ».
-4. Les lettres s'empilent dans le carnet d'enquête, avec les fiches des habitants croisés.
-5. À quinze lettres, une affaire se débloque. Toutes les lettres semblent y mener.
-*Commencer par le Sanglier Borgne : petites cartes, gros buveurs, et un tavernier qui note tout.*
+4. Les lettres s'empilent sur le bureau, à côté des dossiers classés et du carnet des habitants croisés.
+5. À quinze lettres, quelque chose arrivera. Toutes les lettres semblent y mener.
+*Pour l'instant, une seule porte m'est ouverte : celle du château de Mortebrune.*
 
-Ensuite, en haut de la carte, la ligne **Fil rouge** rappelle le nombre de lettres anonymes réunies, ce qu'il en manque avant l'affaire finale, et une **piste conseillée** : le lieu sans lettre dont l'enquête la plus simple est la plus accessible.
+Ensuite, le bureau : seul le château est ouvert, les autres lieux se découvrent au fil des lettres (section 11).
 
 ## 4. La troupe récurrente
 Chaque type de personnage est **un seul personnage, au nom fixe**, que l'on retrouve d'une enquête à l'autre. Dans une enquête, il porte une **pastille** : l'initiale de son nom (ou le plus court début qui le distingue des autres personnages présents : Fa pour Fausset, Fl pour Flammèche…). Les fiches sont rangées de la plus facile à placer à la plus difficile.
@@ -970,17 +970,37 @@ Des petites histoires qui courent d'une enquête à l'autre, sans jamais compter
 ## 11. Le lore dans le jeu : comment tout s'articule
 ### Le parcours du joueur
 1. **Accueil** : l'affiche, le titre, le sceau « Jouer ».
-2. **Choisis ta taille** : un parchemin par taille de carte (6×6 à 12×12), plus trois entrées du lore : **🗺️ Carte de Brumeval**, **📖 Carnet d'enquête** (« N / 23 lettres anonymes », et « ✉️ N nouvelle(s) lettre(s) » tant qu'elles ne sont pas lues) et **l'affaire finale** (verrouillée : « Une affaire se prépare… Encore N lettres anonymes »). À terme, la carte remplacera le classement par taille.
-3. **Carte de Brumeval** : une pastille numérotée par lieu sur l'illustration (au survol, sur ordinateur : nom du lieu, enquêtes résolues, 📜 si sa lettre est trouvée ; pastille rouge quand le lieu est terminé), puis la liste des lieux par contrée.
-4. **Page d'un lieu** : sa lettre (ou, tant qu'aucune enquête n'y est résolue, « Résous une première enquête ici : Augure t'écrira sur ce lieu ») et ses enquêtes. Le bouton ‹ d'une enquête ouverte d'ici ramène à ce lieu.
+2. **Le prologue** (première partie seulement), puis **le bureau de l'enquêteur** : la carte de Brumeval épinglée au centre, déjà en grand. Les lieux ouverts ont une pastille (« ! » tant qu'on ne les a pas visités, ✓ quand toutes leurs enquêtes sont résolues ; au survol : nom et progression) ; les autres sont des « ? ». Sous la carte, les lieux ouverts en étiquettes et « N lieux encore inconnus ». À côté : **Dossiers classés** (N / total), **Lettres anonymes** (N / 23, « ✉️ N nouvelle(s) »), **Carnet d'enquête**, et quelques objets de décor. Plus de classement par taille.
+3. **Le déblocage** : au départ, seul **Le Château de Mortebrune** est ouvert. La première enquête résolue dans un lieu apporte sa lettre et ouvre les lieux suivants :
+
+- Le Château de Mortebrune → Le Banquet des Gobelins, Meurtre au Sanglier Borgne
+- Meurtre au Sanglier Borgne → Le Moulin de Bois-Tordu, La Bibliothèque Interdite
+- Le Banquet des Gobelins → La Mine des Nains
+- Le Moulin de Bois-Tordu → La Ferme Hantée, Le Marais des Brumes
+- La Mine des Nains → La Forge du Dragon
+- La Bibliothèque Interdite → L'Académie de Magie
+- La Ferme Hantée → La Foire aux Sortilèges
+- Le Marais des Brumes → Le Cimetière de Minuit
+- La Forge du Dragon → La Citadelle de Mortebrune
+- L'Académie de Magie → L'Université des Sortilèges
+- Le Cimetière de Minuit → Le Bal Masqué
+- La Citadelle de Mortebrune → La Tour de l'Archimage
+- La Foire aux Sortilèges → Le Port des Contrebandiers
+- Le Bal Masqué → Les Thermes Enchantés, Le Palais des Mille Vœux
+- L'Université des Sortilèges → La Grande Foire des Mille Merveilles
+- Le Port des Contrebandiers → Le Grand Port de Brumeval, Le Navire Fantôme
+- Le Grand Port de Brumeval → Les Grands Bains de Brumeval
+
+4. **Page d'un lieu** : sa lettre (ou « Résous une première enquête ici : une lettre sur ce lieu glissera sous ta porte ») et ses enquêtes. Le bouton ‹ d'une enquête ramène au lieu, ou aux dossiers si on l'a ouverte de là. « Enquête suivante » propose la prochaine enquête non résolue du même lieu.
 5. **L'enquête** : à la première ouverture, une **scène au centre de l'écran** montre l'illustration du décor, le titre et l'introduction de l'enquêteur (« À l'enquête »). Le titre en haut la rouvre à tout moment.
-6. **La victoire** : le tampon « Affaire résolue », puis une **scène centrée** : le portrait du coupable, « Seul suspect dans la pièce de <victime>. » et l'épilogue dialogué. Si l'enquête apporte une lettre : « 📜 Une lettre a été glissée sous la porte… » ouvre **la lettre en grand** (cachet de cire « A », lieu, texte, « — A. », progression « N / 23 lettres · encore M avant que tout s'éclaire »), avec « Ranger dans mon carnet » ou « Ouvrir le carnet ». Le verdict reste résumé dans la colonne de droite (avec la lettre).
-7. **Le carnet d'enquête** : les lettres trouvées (les nouvelles sont marquées), les lieux sans lettre, et les **fiches de la troupe croisée** (portrait, nom, trait, tic, gags qui se voient). Une fiche apparaît quand on a résolu une enquête où ce personnage était présent.
-8. **L'affaire finale** : à 15 lettres, elle s'ouvre depuis la page des tailles. Elle n'est dans aucune taille ni aucun lieu.
+6. **La victoire** : le tampon « Affaire résolue », puis une **scène centrée** : le portrait du coupable, « Seul suspect dans la pièce de <victime>. » et l'épilogue dialogué. Si l'enquête apporte une lettre : « 📜 Une lettre a été glissée sous la porte… » ouvre **la lettre en grand** (cachet de cire « A », lieu, texte, « — A. »), annonce les lieux qui s'ouvrent sur la carte et la progression, avec « Plus tard » ou « 🗺️ Retour au bureau ».
+7. **Lettres, dossiers, carnet** : les lettres reçues (les nouvelles marquées, lues dès qu'on ouvre le courrier) ; les dossiers en cours et classés ; le carnet avec les **fiches de la troupe croisée** (portrait, nom, trait, tic, gags qui se voient) et « 📜 Revoir le prologue ».
+8. **L'affaire finale** : à 15 lettres, **une enveloppe scellée** apparaît sur le bureau (absente avant). Elle n'est dans aucun lieu.
 ### Les règles du jeu liées au lore (écran des règles)
 - La victime est un invité de passage ; les suspects sont les habitués, qu'on retrouve d'une enquête à l'autre.
 - Chacun porte une pastille avec l'initiale de son nom (deux lettres si deux noms commencent pareil) ; les fiches vont de la plus facile à placer à la plus difficile.
-- Lettres d'Augure : la première enquête résolue dans chaque lieu donne une lettre anonyme, rangée dans le carnet ; assez de lettres, et une affaire très spéciale se débloque.
+- Le bureau : au début seul le château est ouvert, chaque affaire résolue ouvre de nouveaux lieux.
+- Lettres anonymes : la première enquête résolue dans chaque lieu donne une lettre, rangée sur le bureau ; assez de lettres, et il se passera quelque chose.
 - Seule la pièce du crime contient deux personnes, et chaque pièce est occupée.
 ### Progression
 - Les lettres trouvées sont gardées dans le navigateur (`grimdoku:lettres`), les lettres lues aussi (`grimdoku:lettres-lues`).

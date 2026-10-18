@@ -51,7 +51,7 @@ P('## 2. Le monde : la baronnie de Brumeval',
   '- **Les Monts Grimaces** : les nains creusent, les gobelins comptent, le dragon dort (en principe).',
   '- **Le quartier savant** : deux écoles rivales (l\'Académie de Magie et l\'Université des Sortilèges) et une bibliothèque dont personne ne rend les livres.',
   '- **Sur la route** : la Foire aux Sortilèges (qui devient la Grande Foire des Mille Merveilles une fois par an) et le Palais des Mille Vœux, ambassade d\'un pays lointain dont la djinn est la seule à connaître le nom.',
-  'Dans le jeu, la **carte de Brumeval** (illustration `assets/map/brumeval2`) montre chaque lieu avec une pastille numérotée.');
+  'Dans le jeu, la **carte de Brumeval** (illustration `assets/map/brumeval2`) est épinglée au centre du bureau, chaque lieu avec sa pastille.');
 
 P('## 3. L\'enquêteur',
   'L\'enquêteur est la seule personne compétente de la baronnie, et ça l\'épuise. **Il reste une voix : on ne le voit jamais.** Son nom et son origine sont volontairement laissés ouverts. Sa voix est sèche, polie, au bord de la crise de nerfs : il ne crie jamais, il soupire, puis reformule pour les plus lents.',
@@ -64,13 +64,13 @@ P('## 3. L\'enquêteur',
   '3. **Le verdict** : c\'est lui qui ouvre chaque épilogue (« Vous étiez seul avec… ») et donne la réplique au coupable.');
 const prologue = J('lore/prologue.json').scenes;
 P('### Le prologue',
-  'À la première partie (après « Jouer »), quatre scènes au centre de l\'écran présentent le monde, l\'enquêteur et le fil rouge. On peut les passer, et les revoir depuis le carnet (« 📜 Revoir le prologue »). La dernière ouvre la carte de Brumeval.');
+  'À la première partie (après « Jouer »), quatre scènes au centre de l\'écran présentent le monde, l\'enquêteur et le fil rouge. On peut les passer, et les revoir depuis le carnet (« 📜 Revoir le prologue »). La dernière mène au bureau.');
 prologue.forEach((sc, i) => {
   if (sc.guide) P(`**${i + 1}. ${sc.titre}** (mode d'emploi)`, ...sc.guide.map((g, k) => `${k + 1}. ${g}`), `*${sc.conseil}*`);
   else if (sc.sceau) P(`**${i + 1}. ${sc.titre}** — ${sc.de} (cachet « ${sc.sceau} »)`, quote(sc.texte.split('\n').join('\n\n')), `> ${sc.signature}`, ...(sc.apres ? [`*${sc.apres}*`] : []));
   else P(`**${i + 1}. ${sc.titre}** (sur l'illustration de la carte)`, quote(sc.texte.split('\n').join('\n\n')));
 });
-P('Ensuite, en haut de la carte, la ligne **Fil rouge** rappelle le nombre de lettres anonymes réunies, ce qu\'il en manque avant l\'affaire finale, et une **piste conseillée** : le lieu sans lettre dont l\'enquête la plus simple est la plus accessible.');
+P('Ensuite, le bureau : seul le château est ouvert, les autres lieux se découvrent au fil des lettres (section 11).');
 
 P('## 4. La troupe récurrente',
   'Chaque type de personnage est **un seul personnage, au nom fixe**, que l\'on retrouve d\'une enquête à l\'autre. Dans une enquête, il porte une **pastille** : l\'initiale de son nom (ou le plus court début qui le distingue des autres personnages présents : Fa pour Fausset, Fl pour Flammèche…). Les fiches sont rangées de la plus facile à placer à la plus difficile.',
@@ -198,17 +198,19 @@ P('## 10. Gags récurrents',
 P('## 11. Le lore dans le jeu : comment tout s\'articule',
   '### Le parcours du joueur',
   '1. **Accueil** : l\'affiche, le titre, le sceau « Jouer ».',
-  '2. **Choisis ta taille** : un parchemin par taille de carte (6×6 à 12×12), plus trois entrées du lore : **🗺️ Carte de Brumeval**, **📖 Carnet d\'enquête** (« N / 23 lettres anonymes », et « ✉️ N nouvelle(s) lettre(s) » tant qu\'elles ne sont pas lues) et **l\'affaire finale** (verrouillée : « Une affaire se prépare… Encore N lettres anonymes »). À terme, la carte remplacera le classement par taille.',
-  '3. **Carte de Brumeval** : une pastille numérotée par lieu sur l\'illustration (au survol, sur ordinateur : nom du lieu, enquêtes résolues, 📜 si sa lettre est trouvée ; pastille rouge quand le lieu est terminé), puis la liste des lieux par contrée.',
-  '4. **Page d\'un lieu** : sa lettre (ou, tant qu\'aucune enquête n\'y est résolue, « Résous une première enquête ici : Augure t\'écrira sur ce lieu ») et ses enquêtes. Le bouton ‹ d\'une enquête ouverte d\'ici ramène à ce lieu.',
+  '2. **Le prologue** (première partie seulement), puis **le bureau de l\'enquêteur** : la carte de Brumeval épinglée au centre, déjà en grand. Les lieux ouverts ont une pastille (« ! » tant qu\'on ne les a pas visités, ✓ quand toutes leurs enquêtes sont résolues ; au survol : nom et progression) ; les autres sont des « ? ». Sous la carte, les lieux ouverts en étiquettes et « N lieux encore inconnus ». À côté : **Dossiers classés** (N / total), **Lettres anonymes** (N / 23, « ✉️ N nouvelle(s) »), **Carnet d\'enquête**, et quelques objets de décor. Plus de classement par taille.',
+  '3. **Le déblocage** : au départ, seul **' + (scenes[carte.start] ? scenes[carte.start].title : carte.start) + '** est ouvert. La première enquête résolue dans un lieu apporte sa lettre et ouvre les lieux suivants :', '',
+  ...Object.entries(carte.unlock).map(([a, b]) => `- ${scenes[a] ? scenes[a].title : a} → ${b.map(l => scenes[l] ? scenes[l].title : l).join(', ')}`), '',
+  '4. **Page d\'un lieu** : sa lettre (ou « Résous une première enquête ici : une lettre sur ce lieu glissera sous ta porte ») et ses enquêtes. Le bouton ‹ d\'une enquête ramène au lieu, ou aux dossiers si on l\'a ouverte de là. « Enquête suivante » propose la prochaine enquête non résolue du même lieu.',
   '5. **L\'enquête** : à la première ouverture, une **scène au centre de l\'écran** montre l\'illustration du décor, le titre et l\'introduction de l\'enquêteur (« À l\'enquête »). Le titre en haut la rouvre à tout moment.',
-  '6. **La victoire** : le tampon « Affaire résolue », puis une **scène centrée** : le portrait du coupable, « Seul suspect dans la pièce de <victime>. » et l\'épilogue dialogué. Si l\'enquête apporte une lettre : « 📜 Une lettre a été glissée sous la porte… » ouvre **la lettre en grand** (cachet de cire « A », lieu, texte, « — A. », progression « N / 23 lettres · encore M avant que tout s\'éclaire »), avec « Ranger dans mon carnet » ou « Ouvrir le carnet ». Le verdict reste résumé dans la colonne de droite (avec la lettre).',
-  '7. **Le carnet d\'enquête** : les lettres trouvées (les nouvelles sont marquées), les lieux sans lettre, et les **fiches de la troupe croisée** (portrait, nom, trait, tic, gags qui se voient). Une fiche apparaît quand on a résolu une enquête où ce personnage était présent.',
-  `8. **L'affaire finale** : à ${lettres.need} lettres, elle s'ouvre depuis la page des tailles. Elle n'est dans aucune taille ni aucun lieu.`,
+  '6. **La victoire** : le tampon « Affaire résolue », puis une **scène centrée** : le portrait du coupable, « Seul suspect dans la pièce de <victime>. » et l\'épilogue dialogué. Si l\'enquête apporte une lettre : « 📜 Une lettre a été glissée sous la porte… » ouvre **la lettre en grand** (cachet de cire « A », lieu, texte, « — A. »), annonce les lieux qui s\'ouvrent sur la carte et la progression, avec « Plus tard » ou « 🗺️ Retour au bureau ».',
+  '7. **Lettres, dossiers, carnet** : les lettres reçues (les nouvelles marquées, lues dès qu\'on ouvre le courrier) ; les dossiers en cours et classés ; le carnet avec les **fiches de la troupe croisée** (portrait, nom, trait, tic, gags qui se voient) et « 📜 Revoir le prologue ».',
+  `8. **L'affaire finale** : à ${lettres.need} lettres, **une enveloppe scellée** apparaît sur le bureau (absente avant). Elle n'est dans aucun lieu.`,
   '### Les règles du jeu liées au lore (écran des règles)',
   '- La victime est un invité de passage ; les suspects sont les habitués, qu\'on retrouve d\'une enquête à l\'autre.',
   '- Chacun porte une pastille avec l\'initiale de son nom (deux lettres si deux noms commencent pareil) ; les fiches vont de la plus facile à placer à la plus difficile.',
-  '- Lettres d\'Augure : la première enquête résolue dans chaque lieu donne une lettre anonyme, rangée dans le carnet ; assez de lettres, et une affaire très spéciale se débloque.',
+  '- Le bureau : au début seul le château est ouvert, chaque affaire résolue ouvre de nouveaux lieux.',
+  '- Lettres anonymes : la première enquête résolue dans chaque lieu donne une lettre, rangée sur le bureau ; assez de lettres, et il se passera quelque chose.',
   '- Seule la pièce du crime contient deux personnes, et chaque pièce est occupée.',
   '### Progression',
   '- Les lettres trouvées sont gardées dans le navigateur (`grimdoku:lettres`), les lettres lues aussi (`grimdoku:lettres-lues`).',

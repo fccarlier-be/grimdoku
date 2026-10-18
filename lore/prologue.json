@@ -10,7 +10,7 @@
       "titre": "Lettre de nomination",
       "sceau": "D",
       "de": "Château de Mortebrune",
-      "texte": "Par la présente, Nous, Dagobert, roi de Brumeval et d'à peu près tout ce qu'on voit du donjon, nommons le porteur de cette lettre Enquêteur de la baronnie.\nIl résoudra les meurtres de Nos sujets, de préférence sans accuser la Couronne. Il aura libre accès à tous les lieux, sauf au trésor, qui est vide pour des raisons qui ne le regardent pas.\nSon salaire sera fixé avec Notre trésorier, Bakchich.",
+      "texte": "Par la présente, Nous, Dagobert, roi de Brumeval et d'à peu près tout ce qu'on voit du donjon, nommons le porteur de cette lettre Enquêteur de la baronnie.\nIl résoudra les meurtres de Nos sujets, de préférence sans accuser la Couronne. Il commencera par Notre château, où l'on meurt beaucoup trop pour un lieu aussi bien gardé. Les autres portes de la baronnie s'ouvriront à mesure qu'il fera ses preuves, sauf celle du trésor, qui est vide pour des raisons qui ne le regardent pas.\nSon salaire sera fixé avec Notre trésorier, Bakchich.",
       "signature": "Dagobert",
       "apres": "Le trésorier m'a reçu. Il m'a expliqué que mon salaire était techniquement légal. Je n'ai rien touché."
     },
@@ -18,20 +18,20 @@
       "titre": "Un billet sous la porte",
       "sceau": "A",
       "de": "Billet anonyme",
-      "texte": "Bienvenue à Brumeval, enquêteur. Ici, chaque lieu a ses secrets, et j'en connais quelques-uns.\nRésolvez une affaire, n'importe où. Je vous écrirai.",
+      "texte": "Bienvenue à Brumeval, enquêteur. Ici, chaque lieu a ses secrets, et j'en connais quelques-uns.\nRésolvez votre première affaire. Je vous écrirai.",
       "signature": "— A.",
       "apres": "Sur le rebord de la fenêtre, un corbeau m'a regardé lire. Puis il est parti. Je n'aime pas les corbeaux qui attendent une réponse."
     },
     {
       "titre": "Mes notes",
       "guide": [
-        "Choisir un lieu sur la carte de Brumeval, et une enquête.",
+        "Sur mon bureau, la carte de Brumeval : chaque affaire résolue m'ouvre de nouveaux lieux.",
         "Placer tout le monde : une personne par ligne et par colonne, un suspect par pièce, la victime seule avec son meurtrier.",
         "Après la première enquête résolue dans un lieu, une lettre sur ce lieu glisse sous ma porte, signée « A. ».",
-        "Les lettres s'empilent dans le carnet d'enquête, avec les fiches des habitants croisés.",
-        "À quinze lettres, une affaire se débloque. Toutes les lettres semblent y mener."
+        "Les lettres s'empilent sur le bureau, à côté des dossiers classés et du carnet des habitants croisés.",
+        "À quinze lettres, quelque chose arrivera. Toutes les lettres semblent y mener."
       ],
-      "conseil": "Commencer par le Sanglier Borgne : petites cartes, gros buveurs, et un tavernier qui note tout."
+      "conseil": "Pour l'instant, une seule porte m'est ouverte : celle du château de Mortebrune."
     }
   ]
 }

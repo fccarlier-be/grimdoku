@@ -1,5 +1,5 @@
 {
-  "_doc": "Carte de la baronnie de Brumeval : image = illustration retenue (assets/map/<image>, préparée par tools/images.py), ratio = ses proportions ; contrées et lieux ; pos = position de chaque repère en % de l’illustration (x depuis la gauche, y depuis le haut), calées sur brumeval2 (2026-10-17).",
+  "_doc": "Carte de la baronnie de Brumeval : image = illustration retenue (assets/map/<image>), ratio = ses proportions ; contrées et lieux ; pos = position de chaque repère en % de l'illustration. start = seul lieu ouvert au départ ; unlock = lieux ouverts par la première enquête résolue dans un lieu (sa lettre anonyme en parle) — décision de François, 2026-10-18 : les lieux se débloquent au fil de l'histoire.",
   "contrees": [
     {
       "nom": "Mortebrune, le chef-lieu",
@@ -153,5 +153,64 @@
   "ratio": [
     1232,
     864
-  ]
+  ],
+  "start": "chateau",
+  "unlock": {
+    "chateau": [
+      "banquet",
+      "taverne"
+    ],
+    "taverne": [
+      "moulin",
+      "bibliotheque"
+    ],
+    "banquet": [
+      "mine"
+    ],
+    "moulin": [
+      "ferme",
+      "marais"
+    ],
+    "mine": [
+      "forge"
+    ],
+    "bibliotheque": [
+      "academie"
+    ],
+    "ferme": [
+      "foire"
+    ],
+    "marais": [
+      "cimetiere"
+    ],
+    "forge": [
+      "citadelle"
+    ],
+    "academie": [
+      "universite"
+    ],
+    "cimetiere": [
+      "bal"
+    ],
+    "citadelle": [
+      "tour"
+    ],
+    "foire": [
+      "port"
+    ],
+    "bal": [
+      "thermes",
+      "palais"
+    ],
+    "universite": [
+      "grande-foire"
+    ],
+    "port": [
+      "grand-port",
+      "navire"
+    ],
+    "grand-port": [
+      "grands-bains"
+    ]
+  }
 }

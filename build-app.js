@@ -86,7 +86,7 @@ for (const [name, sel] of [['titre', '.herotitle .logo'], ['jouer', '.herobtn']]
 const { execFileSync } = require('child_process');
 const MEDIA = ['dist/media', 'deploy/grimdoku/site/media'];
 MEDIA.forEach(d => { fs.rmSync(d, { recursive: true, force: true }); fs.mkdirSync(d, { recursive: true }); }); // vidé : rien de périmé en ligne
-const media = { audio: {}, levels: [], decors: [] };
+const media = { audio: {}, levels: [], decors: [], desk: {} };
 // lisibles par le serveur web quelle que soit leur origine (un fichier sorti d'un zip peut être en 600)
 const copyMedia = (src, name) => MEDIA.forEach(d => { fs.copyFileSync(src, `${d}/${name}`); fs.chmodSync(`${d}/${name}`, 0o644); });
 for (const track of ['menu', 'carte']) {
@@ -105,6 +105,11 @@ for (let d = 0; d <= 5; d++) {
   const f = `assets/levels/${d}.webp`;
   if (fs.existsSync(f)) { copyMedia(f, `niveau-${d}.webp`); media.levels[d] = `media/niveau-${d}.webp`; } else missing.push('vignette niveau ' + d);
 }
+// objets du bureau de l'enquêteur (assets/desk/<objet>.webp, préparés par tools/images.py) : sans image, dessin CSS
+for (const obj of ['dossiers', 'lettres', 'carnet', 'enveloppe']) {
+  const f = `assets/desk/${obj}.webp`;
+  if (fs.existsSync(f)) { copyMedia(f, `desk-${obj}.webp`); media.desk[obj] = `media/desk-${obj}.webp`; }
+}
 // carte de la baronnie (assets/map/brumeval.webp, préparée par tools/images.py) : servie à côté de la page
 {
   const img = JSON.parse(fs.readFileSync('lore/carte.json', 'utf8')).image || 'brumeval'; // illustration retenue
@@ -119,7 +124,7 @@ for (const decor of [...new Set(puzzles.map(p => p.decor).filter(Boolean))].sort
 const LETTRES = JSON.parse(fs.readFileSync('lore/lettres.json', 'utf8'));
 const CARTE = JSON.parse(fs.readFileSync('lore/carte.json', 'utf8'));
 const PROLOGUE = JSON.parse(fs.readFileSync('lore/prologue.json', 'utf8')).scenes;
-const lore = { prologue: PROLOGUE, need: LETTRES.need, letters: LETTRES.letters, troupe: {}, contrees: CARTE.contrees, pos: CARTE.pos, ratio: CARTE.ratio || [3, 2] };
+const lore = { prologue: PROLOGUE, need: LETTRES.need, letters: LETTRES.letters, troupe: {}, contrees: CARTE.contrees, pos: CARTE.pos, ratio: CARTE.ratio || [3, 2], start: CARTE.start, unlock: CARTE.unlock || {} };
 for (const [t, a] of Object.entries(ARCHETYPES)) if (!a.guest) lore.troupe[t] = { name: a.name, desc: a.desc, tic: a.tic, icon: a.icon };
 const sprite = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>${defs.join('')}</defs>${symbols.join('')}</svg>`;
 

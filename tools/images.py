@@ -364,6 +364,22 @@ def decors():
 
 
 MAP_DIR = ROOT / 'map'
+DESK_DIR = ROOT / 'desk'
+
+
+def desk():
+    # objets du bureau de l'enquêteur (assets/desk/<objet>.png|jpeg, fond magenta) : détourés, recadrés → <objet>.webp
+    if not DESK_DIR.exists():
+        return
+    for src in sources(DESK_DIR):
+        img = key_out_outside(Image.open(src))
+        box = img.getchannel('A').point(lambda a: 255 if a > 24 else 0).getbbox()
+        if box:
+            img = img.crop(box)
+        img.thumbnail((520, 520), Image.LANCZOS)
+        out = DESK_DIR / (type_name(src.stem) + '.webp')
+        img.save(out, 'WEBP', quality=88, method=6)
+        print(f'bureau {src.name} → {out.name} {img.size} ({out.stat().st_size // 1024} Ko)')
 
 
 def carte():
@@ -392,6 +408,7 @@ def main():
     levels()
     decors()
     carte()
+    desk()
 
 
 if __name__ == '__main__':
