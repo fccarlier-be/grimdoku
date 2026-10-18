@@ -610,6 +610,7 @@ html, body { background: var(--desk-tex, none) center top / 640px, var(--night);
 .story-letter { font: italic 400 21px/1.45 var(--f-body) !important; margin: 4px 0 !important; }
 .story-sign { align-self: flex-end; font-family: var(--f-display); font-size: 22px !important; }
 .story-count { color: var(--muted); font-size: 14px !important; }
+.story-letter.reveal { font-size: 17px !important; text-align: left; align-self: stretch; }
 .newmark { display: inline-block; margin-top: 4px; padding: 2px 8px; border-radius: 99px; background: #a3312a; color: #fbe7cf; font: 700 12px/1.4 var(--f-body); }
 .lvl.carnet.unread::before { box-shadow: inset 0 0 0 3px #a3312a, 0 0 18px rgba(163, 49, 42, .6), 0 6px 14px rgba(0, 0, 0, .5); }
 .lettre.fresh::before { box-shadow: inset 0 0 0 3px #a3312a, 0 3px 8px rgba(0, 0, 0, .45); }
@@ -1497,8 +1498,26 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
       <b class="culprit">${esc(k.name)}</b>
       <p class="why">Seul suspect dans la pièce de ${esc(v.name)}.</p>
       <div class="epi">${dialogue(P.epilogue)}</div>
-      <div class="row">${newLetter ? `<button class="btn primary" id="toLetter">📜 Une lettre a été glissée sous la porte…</button>` : `<button class="btn primary" data-close>Fermer</button>`}</div>`, 'verdict-story');
+      <div class="row">${P.revelation ? `<button class="btn primary" id="toReveal">📜 Dans les archives du Palier zéro…</button>`
+        : newLetter ? `<button class="btn primary" id="toLetter">📜 Une lettre a été glissée sous la porte…</button>` : `<button class="btn primary" data-close>Fermer</button>`}</div>`, 'verdict-story');
     const b = ov.querySelector('#toLetter'); if (b) b.onclick = () => letterStory(newLetter);
+    const r = ov.querySelector('#toReveal'); if (r) r.onclick = revelationStory;
+  }
+  // Affaire finale : la révélation commune (canon de la matrice de continuité), la même quel que soit le coupable de la
+  // grille — la lettre de Fizzlebarbe trouvée au Palier zéro, puis le billet d'Augure
+  function revelationStory() {
+    const R = P.revelation;
+    const ov = story(`<div class="seal-a" aria-hidden="true">F</div>
+      <small class="story-from">Archives du Palier zéro · la lettre de Fizzlebarbe</small>
+      ${R.lettre.split('\n').map(par => `<p class="story-letter reveal">${esc(par)}</p>`).join('')}
+      <p class="story-sign">${esc(R.signature)}</p>
+      <div class="row"><button class="btn primary" id="toBillet">Un billet tombe de l'enveloppe…</button></div>`, 'letter-story revelation-story');
+    ov.querySelector('#toBillet').onclick = () => story(`<div class="seal-a" aria-hidden="true">A</div>
+      <small class="story-from">Billet d'Augure</small>
+      <p class="story-letter">${esc(R.billet)}</p>
+      <p class="story-sign">— A.</p>
+      <p class="story-count">${esc(R.apres)}</p>
+      <div class="row"><button class="btn primary" data-close>Fermer le dossier</button></div>`, 'letter-story billet-story');
   }
   function letterStory(place) {
     const n = letters().length, total = Object.keys(LORE.letters).length;
@@ -1520,6 +1539,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
         <b class="culprit">${esc(k.name)}</b>
         <p class="why">Seul suspect dans la pièce de ${esc(v.name)}.</p>
         <div class="epi">${dialogue(P.epilogue)}</div>
+        ${P.revelation ? `<button class="btn" id="rereadReveal">📜 Relire la lettre de Fizzlebarbe</button>` : ''}
         ${render.newLetter === P.place ? `<div class="letter-augure"><b>📜 Une lettre anonyme glissée sous la porte</b><p>${esc(LORE.letters[P.place])}</p><small>— A. · ${letters().length} / ${Object.keys(LORE.letters).length} lettres dans ton carnet</small></div>` : ''}
         <div class="row">
           <button class="btn" id="replayBtn">Rejouer</button>
@@ -1531,6 +1551,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
   const nextCase = () => PUZZLES.slice(PUZZLES.indexOf(P) + 1).find(p => !p.final);
   function bindVerdict() {
     const next = nextCase();
+    const rr = document.getElementById('rereadReveal'); if (rr) rr.onclick = revelationStory;
     document.getElementById('replayBtn').onclick = () => { S = blank(); undo = []; save(); render(); };
     const nb = document.getElementById('nextBtn'); if (nb) nb.onclick = () => go('affaire/' + next.id);
     const hb = document.getElementById('homeBtn'); if (hb) hb.onclick = () => go('tailles');

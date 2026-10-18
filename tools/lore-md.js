@@ -28,9 +28,10 @@ const P = (...l) => out.push(...l, '');
 
 P('# Grimdoku — le lore complet',
   `*Document généré à partir des données du jeu le ${new Date().toISOString().slice(0, 10)} (\`lore/LORE.md\`). Il contient tout le lore : le monde, chaque personnage et toutes ses répliques, les invités, les lieux, les lettres d'Augure, l'affaire finale et sa révélation, et la façon dont tout cela s'articule avec le jeu. Il ne contient aucune solution d'énigme.*`,
-  '**Attention : ce document dévoile la fin du fil rouge (qui écrit les lettres, et pourquoi).**');
+  '**Attention : ce document dévoile la fin du fil rouge (le Nœud de Brume, le Palier zéro, qui écrit les lettres et pourquoi).**',
+  'Le canon de référence est `lore/GRIMDOKU_MATRICE_CONTINUITE.md` (vérité fixe, chronologie, connaissances des personnages) ; les décisions d\'application sont dans `lore/PLAN_MIGRATION_CANON.md`.');
 
-P('## Sommaire', '1. Intentions et ton', '2. Le monde : la baronnie de Brumeval', '3. L\'enquêteur', '4. La troupe récurrente (38 personnages)', '5. Les liens entre personnages', '6. Les invités de passage (les victimes)', '7. Les lieux, un par un', '8. Le fil rouge : les lettres d\'Augure', '9. L\'affaire finale : le testament de Fizzlebarbe', '10. Gags récurrents', '11. Le lore dans le jeu : comment tout s\'articule', '12. Règles de cohérence', '13. Où vivent les données (pour modifier le lore)');
+P('## Sommaire', '1. Intentions et ton', '2. Le monde : la baronnie de Brumeval', '3. L\'enquêteur', '4. La troupe récurrente (38 personnages)', '5. Les liens entre personnages', '6. Les invités de passage (les victimes)', '7. Les lieux, un par un', '8. Le fil rouge : la vérité cachée et les lettres d\'Augure', '9. L\'affaire finale : le testament de Fizzlebarbe', '10. Gags récurrents', '11. Le lore dans le jeu : comment tout s\'articule', '12. Règles de cohérence', '13. Où vivent les données (pour modifier le lore)');
 
 P('## 1. Intentions et ton',
   'Le ton est celui de **Kaamelott** : des personnages bêtes mais attachants, des répliques courtes, des chamailleries plutôt que des blagues. Grimdoku reste un jeu de logique : le lore habille les enquêtes sans jamais gêner la déduction.',
@@ -95,8 +96,8 @@ P('## 5. Les liens entre personnages',
   '| Fausset et Goémone | Il lui écrit des chansons ; elle chante juste | Amour sans espoir, donc inépuisable |',
   '| Aëlys et Fricot | La critique a donné deux sur dix au Banquet des Gobelins | Fricot rêve de la faire goûter à sa marmite |',
   '| Fizzlebarbe et Fiolius | L\'Académie contre l\'Université ; chacun dit que l\'autre a copié sa thèse | Les deux écoles se sabotent leurs examens |',
-  '| Fizzlebarbe et Fernand | Fernand était son apprenti avant « l\'accident » | Fernand attend toujours son diplôme, et vingt ans de salaire |',
-  '| Fizzlebarbe et tout le monde | 412 ans et pas de testament | Chacun espère hériter de la Tour (le fil rouge) |',
+  '| Fizzlebarbe et Fernand | Fernand était son apprenti ; une réparation de la Tour l\'a tué il y a vingt ans (il est revenu en zombie, sans sa main) | Rancune légitime : jamais payé ni reconnu, les risques jamais expliqués |',
+  '| Fizzlebarbe et tout le monde | 412 ans et toujours pas de successeur | Chacun croit pouvoir hériter de la Tour, qui n\'est pas un bien mais une charge (le fil rouge) |',
   '| Ciguë et Ambroise | C\'est elle qui l\'a changé en crapaud ; il refuse de dire pourquoi | Ambroise cherche un bisou, Ciguë cherche une recette |',
   '| Dewey et Gribouille | Gribouille a emprunté un grimoire il y a onze ans | Dewey le cherche dans toute la baronnie, en criant |',
   '| Esbroufe et Clairvoya | Associés à la foire : lui vend les élixirs, elle prédit qu\'ils marchent | Leurs clients reviennent rarement contents |',
@@ -131,24 +132,48 @@ for (const name of order) {
     '- **Lettre d\'Augure** :', quote((lettres.letters[name] || '—') + ' — A.'));
 }
 
-P('## 8. Le fil rouge : les lettres d\'Augure',
-  `Après chaque enquête résolue, l'enquêteur trouve **une lettre anonyme glissée sous la porte**. Il y a **une lettre par lieu** (${Object.keys(lettres.letters).length} en tout) : c'est la **première enquête résolue dans un lieu** qui la donne. Les lettres se lisent dans **n'importe quel ordre** ; aucune ne dépend d'une autre ni ne révèle la solution de l'enquête qui la donne (elle n'apparaît qu'après la victoire).`,
-  'Ensemble, elles racontent une affaire plus grande : **le testament de Fizzlebarbe**. L\'archimage, 412 ans, va enfin rédiger un testament et léguer la Tour « à celui qui le mérite », sans dire qui. Chaque lettre est un ragot sur un héritier possible :', '',
+P('## 8. Le fil rouge : la vérité cachée et les lettres d\'Augure',
+  '### La vérité fixe (canon)',
+  '- **Le Nœud de Brume** : il y a environ 412 ans, Fizzlebarbe a découvert un déséquilibre magique qui menaçait les six contrées et a installé sous sa Tour un dispositif qui aide à les garder en équilibre (chemins, frontières, phénomènes magiques locaux). Ses effets visibles restent limités : brume anormale, repères qui semblent changer, trajets qui ne mènent pas où on l\'attend, plans de la Tour incomplets.',
+  '- **Le Palier zéro** : un espace caché de la Tour, dans un pli magique, absent des plans publics. Il abrite les archives de création du Nœud et les documents de la charge.',
+  '- **La Tour est une charge, pas un bien** : Fizzlebarbe n\'en est pas le propriétaire mais le gardien. La garde peut se transmettre ; la Tour ne se vend pas, ne se met pas en gage et ne se lègue pas comme une maison.',
+  '- **Le testament n\'était qu\'un projet** de transmission, confié sous scellé au notaire, jamais finalisé. Les prétendants se battent pour une propriété qu\'aucun ne peut posséder.',
+  '- **Fizzlebarbe** : compétent, mais très mauvais pour faire confiance. Il a fait surveiller les prétendants par Augure sans jamais leur expliquer ce qu\'il cherchait à transmettre, ni demander à Augure ce que lui voulait.',
+  '- **Augure** écrit les rapports pour Fizzlebarbe et, dans son dos, en glisse des copies sous la porte de l\'enquêteur, après qu\'une première affaire a été résolue dans le lieu concerné : il espère qu\'un regard extérieur verra ce que son maître refuse de voir. Il n\'est pas omniscient. C\'est lui qui a repris le projet chez le notaire (d\'où la plume noire), de peur qu\'un prétendant s\'en serve.',
+  '- **Le grimoire et la clé** : il y a onze ans, Gribouille a perdu dans la Tour le grimoire emprunté à Dewey. Fizzlebarbe l\'a retrouvé et y a caché une clé de service, qui ouvre un premier accès vers le Palier zéro (pas le contrôle du Nœud). Dewey retrouve le livre sans comprendre ce que cache la reliure.',
+  '- **Fernand** : apprenti de Fizzlebarbe, il est mort il y a vingt ans pendant une réparation liée aux installations de la Tour, et il est revenu en zombie, sans sa main. Négligence et conflit de travail, pas tentative de meurtre : jamais payé, jamais reconnu, jamais prévenu des risques.',
+  '### Chronologie de référence', '',
+  '| Quand | Fait |', '| --- | --- |',
+  '| Il y a environ 412 ans | Fizzlebarbe installe le Nœud de Brume sous la Tour et en devient le gardien. |',
+  '| Il y a environ 20 ans | Fernand meurt pendant une réparation de la Tour et revient en zombie, sans sa main. |',
+  '| Il y a environ 11 ans | Gribouille perd le grimoire de Dewey dans la Tour ; Fizzlebarbe y cache une clé de service. |',
+  '| Quelques mois avant la fin | Fizzlebarbe envisage enfin de transmettre la garde et fait surveiller les prétendants par Augure. Les rumeurs d\'héritage s\'emballent. |',
+  '| Peu avant la fin | Serrures changées, coffre anti-magie commandé, projet scellé chez le notaire ; Augure reprend le projet et glisse ses copies sous la porte de l\'enquêteur. |',
+  '| La nuit de l\'affaire finale | Fizzlebarbe est tué avant d\'avoir transmis la garde ; le coupable est celui que désigne la grille. |',
+  '| Après le verdict | Les archives du Palier zéro révèlent le Nœud, la charge et le rôle d\'Augure. |',
+  '| Suite prévue | Fizzlebarbe revient en spectre ; Augure veille sur les archives à titre provisoire. |', '',
+  'Les enquêtes ordinaires se jouent dans n\'importe quel ordre : c\'est la chronologie du monde, pas un ordre imposé au joueur.',
+  '### Les lettres',
+  `Après chaque enquête résolue, l'enquêteur trouve **une lettre glissée sous la porte**, signée « — A. ». Il y a **une lettre par lieu** (${Object.keys(lettres.letters).length} en tout), donnée par la **première enquête résolue dans ce lieu**. Elles se lisent dans **n'importe quel ordre**, chacune se comprend seule, aucune ne révèle la solution de l'enquête qui la donne (elle n'apparaît qu'après la victoire). Ce sont des rapports d'Augure sur les prétendants : ragots, caractère, et des indices qui se répondent (la clé et le grimoire, l'étage manquant des plans, la brume du port, la puissance mesurée par le Palais), qu'on relit autrement après la fin.`, '',
   '| Lieu | Lettre |', '| --- | --- |',
   ...order.filter(n => lettres.letters[n]).map(n => `| ${scenes[n] ? scenes[n].title : n} | ${lettres.letters[n]} |`), '',
-  `**Les héritiers et ce que les lettres disent d'eux** : Bakchich (a mis la Tour en gage, a trinqué « au futur propriétaire »), Fernand (clé refaite, vingt ans de salaire dus), Fiolius (malle géante, bocaux « souvenirs de la Tour », plans annotés « Annexe de l'Université »), Brindille (prédiction de Clairvoya, entraînement au sort d'ouverture des serrures), Blafard (titres de propriété vieux de quatre siècles), Dewey (grimoire retrouvé dans la Tour, potions qui font apparaître les testaments), Gribouille (dette au Sanglier Borgne payable « dès que la Tour sera à lui »), Fumerolle (a promis la Tour à trois personnes), et un indice qui ne pointe personne en particulier : la plume noire laissée chez le notaire.`,
-  `**Débloquer la fin** : avec **${lettres.need} lettres**, l'affaire finale s'ouvre (pas besoin de tout finir).`);
+  `**Débloquer la fin** : avec **${lettres.need} lettres**, l'affaire finale s'ouvre (pas besoin de tout finir, ni d'une combinaison précise de lettres).`);
 
 P('## 9. L\'affaire finale : le testament de Fizzlebarbe',
-  `**${testament.title} — ${testament.subtitle}** : carte ${testament.size}×${testament.size}, la Tour de l'Archimage, la nuit où Fizzlebarbe devait signer son testament.`,
+  `**${testament.title} — ${testament.subtitle}** (c'est ainsi que la baronnie appelle l'affaire) : carte ${testament.size}×${testament.size}, la Tour de l'Archimage, la nuit où Fizzlebarbe devait régler sa succession.`,
   `- **Pièces** : ${Object.values(testament.rooms).map(r => r.name).join(', ')}`,
-  `- **Victime** : Fizzlebarbe (seule victime de la troupe : c'est la mort d'un récurrent, prévue comme un événement)`,
-  `- **Suspects, les neuf héritiers** : ${testament.characters.filter(c => c.role !== 'victim').map(c => cast[c.archetype].name).join(', ')}`,
+  '- **Victime** : Fizzlebarbe (seule victime de la troupe : la mort d\'un récurrent, prévue comme un événement)',
+  `- **Suspects, les neuf prétendants** : ${testament.characters.filter(c => c.role !== 'victim').map(c => cast[c.archetype].name).join(', ')}`,
+  '- **Vérité fixe / vérité variable** : le meurtrier est celui que désigne la grille (n\'importe lequel des neuf) ; son épilogue donne son mobile. Tout le reste (le Nœud, le Palier zéro, le projet de transmission, le rôle d\'Augure) est vrai quel que soit le coupable.',
   '- **Introduction** :', quote(testament.intro),
-  '- **Épilogues** : chaque héritier a le sien, et tous (sauf le corbeau) se terminent par la révélation.');
+  '- **Épilogues** : chaque prétendant a le sien, quatre répliques, propre à son mobile (des croyances fausses sur la Tour, pour la plupart).');
 for (const [t, e] of Object.entries(testament.epilogues)) P(`**Si le coupable est ${cast[t].name}** :`, quote(e));
-P('**La révélation** : les lettres n\'étaient pas l\'œuvre d\'un maître chanteur. **Augure travaillait pour Fizzlebarbe** : l\'archimage lui faisait espionner tous ses héritiers pour décider qui méritait la Tour. Sa conclusion, dans la dernière lettre : il la léguait à celui qui ne la convoitait pas… et il n\'y en avait aucun. Si c\'est Augure le coupable, il avoue par billets qu\'il en avait assez d\'écrire, et qu\'il ne voulait pas de la Tour.',
-  '**Suite prévue** : Fizzlebarbe reviendra en spectre, furieux d\'avoir été assassiné avant d\'avoir signé ; Blafard l\'accueillera dans la confrérie des défunts mécontents.');
+const R = testament.revelation;
+P('### La révélation commune',
+  'Après l\'épilogue, quel que soit le coupable, la scène du verdict propose « 📜 Dans les archives du Palier zéro… » : la lettre de Fizzlebarbe, puis le billet d\'Augure. Le verdict, dans la colonne, permet de la relire.',
+  '**La lettre de Fizzlebarbe**', quote(R.lettre.split('\n').join('\n\n')), `> **${R.signature}**`,
+  '**Le billet d\'Augure**', quote(R.billet + ' — A.'), `*${R.apres}*`,
+  '**Ce que ça règle** : la Tour était une charge, le testament un projet, la garde reste à transmettre. Augure, qui ne convoitait pas la Tour, veille sur les archives sans en être propriétaire. Fizzlebarbe reviendra en spectre, furieux que sa succession ne soit pas terminée ; Blafard l\'accueillera dans la confrérie des défunts mécontents.');
 
 P('## 10. Gags récurrents',
   'Des petites histoires qui courent d\'une enquête à l\'autre, sans jamais compter pour la solution :',
@@ -195,7 +220,8 @@ P('## 13. Où vivent les données (pour modifier le lore)',
   '| Lieux : plan, pièces, habitués, introduction (`auto.intro`) | `scenes/<lieu>.json` |',
   '| Lettres d\'Augure, nombre de lettres pour la fin (`need`) | `lore/lettres.json` |',
   '| Carte : contrées, position des pastilles, illustration retenue | `lore/carte.json`, `assets/map/` |',
-  '| Affaire finale : plan, introduction, épilogues | `scenes/testament.json` |',
+  '| Affaire finale : plan, introduction, épilogues, révélation commune (`revelation`) | `scenes/testament.json` |',
+  '| Canon de référence, plan d\'application | `lore/GRIMDOKU_MATRICE_CONTINUITE.md`, `lore/PLAN_MIGRATION_CANON.md` |',
   '| Enquêtes à grands monstres (formes, victimes) | `big-cases.json` |',
   '| Conseils de l\'enquêteur, scènes, carnet, carte | `app/template.html` |',
   '| La bible de travail (document partagé) | https://claude.ai/code/artifact/b1eaad27-d50f-4faf-8b14-30a2ef2e9e65 |',

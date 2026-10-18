@@ -327,3 +327,26 @@ test('pastille = initiale du nom (deux lettres si besoin), ordre des fiches inch
   assert.ok(location(w).includes('taille/' + p.size), 'retour à la taille');
 });
 const location = (w) => w.location.hash;
+
+test('affaire finale : la révélation commune (lettre de Fizzlebarbe, billet d\'Augure) seulement après la victoire', () => {
+  const { w, d, PUZZLES } = open();
+  const fin = PUZZLES.find(q => q.final);
+  if (!fin) return;
+  assert.ok(fin.revelation && fin.revelation.lettre && fin.revelation.billet, 'révélation présente dans les données');
+  assert.ok(!fin.epilogue.includes(fin.revelation.billet), 'pas dans l\'épilogue du coupable : commune à tous');
+  w.localStorage.setItem('grimdoku:lettres', JSON.stringify(Object.keys(w.eval('LORE').letters)));
+  w.localStorage.setItem('grimdoku:seen:' + fin.id, 'true');
+  w.localStorage.setItem('grimdoku:p:' + fin.id, JSON.stringify({ pos: fin.solution.positions, pencil: {}, marks: [], done: [], solved: false, sig: sigOf(fin) }));
+  w.grimGo('affaire/' + fin.id);
+  // ce qui est affiché (la page embarque les données des énigmes dans son script : on ne regarde pas le script)
+  const shown = () => d.getElementById('app').textContent + d.getElementById('layer').textContent;
+  assert.equal(shown().includes(fin.revelation.billet), false, 'rien avant la victoire');
+  assert.equal(d.getElementById('toReveal'), null);
+  d.getElementById('accuse').click();
+  d.getElementById('toReveal').click();
+  assert.ok(d.querySelector('.revelation-story'), 'la lettre de Fizzlebarbe');
+  d.getElementById('toBillet').click();
+  assert.ok(d.querySelector('.billet-story').textContent.includes(fin.revelation.billet), 'puis le billet d\'Augure');
+  d.querySelector('.billet-story [data-close]').click();
+  assert.ok(d.getElementById('rereadReveal'), 'relisible depuis le verdict');
+});
