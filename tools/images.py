@@ -400,19 +400,37 @@ def carte():
         print(f'carte {src.name} → {out.name} {img.size} ({out.stat().st_size // 1024} Ko)')
 
 
-def photos():
-    # photos du carnet d'enquête : le portrait d'origine cadré en carré (buste), fond magenta remplacé par une toile de
-    # studio ancienne (beige au centre, brun sur les bords) → assets/characters/photo/<type>.webp
+INK = (62, 40, 22)  # encre sépia des croquis
+
+
+def ink_lines(rgb, blur=5, strength=1.8):
+    """Croquis à la plume : niveaux de gris, « color dodge » sur l'inverse flouté, traits renforcés.
+    Rend un masque L : 255 = encre, 0 = papier."""
+    from PIL import ImageOps, ImageFilter, ImageMath
+    ev = getattr(ImageMath, 'unsafe_eval', None) or ImageMath.eval
+    g = ImageOps.grayscale(rgb)
+    inv = ImageOps.invert(g).filter(ImageFilter.GaussianBlur(blur))
+    d = ev("convert(min(g * 255 / max(255 - i, 1), 255), 'L')", g=g, i=inv)
+    return ImageOps.invert(d.point(lambda x: max(0, 255 - int((255 - x) * strength))))
+
+
+def fade_mask(w, h, bottom=.3):
+    """Fondu d'esquisse inachevée : plein au centre, qui s'efface vers les bords (et davantage vers le bas)."""
     from PIL import ImageDraw, ImageFilter
-    out_dir = DIR / 'photo'
-    out_dir.mkdir(exist_ok=True)
+    m = Image.new('L', (w, h), 0)
+    ImageDraw.Draw(m).ellipse((-w * .12, -h * .2, w * 1.12, h * (1.1 - bottom)), fill=255)
+    return m.filter(ImageFilter.GaussianBlur(min(w, h) * .09))
+
+
+def sketches():
+    # croquis du carnet (personnages) : portrait d'origine cadré en buste, à l'encre sépia sur fond transparent
+    # → assets/characters/croquis/<type>.webp ; et croquis des lieux pour les feuilles épinglées du bureau
+    # → assets/decors/croquis/<décor>.webp (décision de François, 2026-10-18 : pas de photos au Moyen Âge)
+    from PIL import ImageChops
     n = 360
-    # toile : dégradé radial clair au centre, assombri vers les bords
-    bg = Image.new('RGB', (n, n), (122, 92, 58))
-    glow = Image.new('L', (n, n), 0)
-    ImageDraw.Draw(glow).ellipse((-n * .15, -n * .25, n * 1.15, n * 1.05), fill=255)
-    glow = glow.filter(ImageFilter.GaussianBlur(n * .18))
-    bg = Image.composite(Image.new('RGB', (n, n), (226, 206, 164)), bg, glow)
+    out_dir = DIR / 'croquis'
+    out_dir.mkdir(exist_ok=True)
+    fade = fade_mask(n, n)
     for src in sources(DIR):
         name = CHAR_ALIAS.get(src.stem.lower(), src.stem.lower())
         img = Image.open(src)
@@ -421,15 +439,29 @@ def photos():
         top = min(round(img.height * .03), img.height - side)
         img = img.crop((left, top, left + side, top + side))
         cut = key_out(img.resize((n * 2, n * 2), Image.LANCZOS)).resize((n, n), Image.LANCZOS)
-        photo = bg.copy()
-        photo.paste(cut, (0, 0), cut)
-        photo.save(out_dir / (name + '.webp'), 'WEBP', quality=84, method=6)
-    print(f'photos du carnet → {out_dir.relative_to(ROOT.parent)}/')
+        a = cut.getchannel('A')
+        rgb = Image.composite(cut.convert('RGB'), Image.new('RGB', cut.size, 'white'), a)
+        mask = ImageChops.multiply(ImageChops.multiply(ink_lines(rgb), a), fade)
+        sk = Image.new('RGBA', (n, n), INK + (0,))
+        sk.putalpha(mask)
+        sk.save(out_dir / (name + '.webp'), 'WEBP', quality=86, method=6)
+    print(f'croquis des personnages → {out_dir.relative_to(ROOT.parent)}/')
+    if DECOR_DIR.exists():
+        dec_dir = DECOR_DIR / 'croquis'
+        dec_dir.mkdir(exist_ok=True)
+        for src in sources(DECOR_DIR):
+            img = trim_white(Image.open(src).convert('RGB'))
+            img.thumbnail((480, 480), Image.LANCZOS)
+            mask = ImageChops.multiply(ink_lines(img, blur=4, strength=1.6), fade_mask(*img.size, bottom=.05))
+            sk = Image.new('RGBA', img.size, INK + (0,))
+            sk.putalpha(mask)
+            sk.save(dec_dir / (type_name(src.stem) + '.webp'), 'WEBP', quality=86, method=6)
+        print(f'croquis des lieux → {dec_dir.relative_to(ROOT.parent)}/')
 
 
 def main():
     portraits()
-    photos()
+    sketches()
     objects()
     floors()
     home()

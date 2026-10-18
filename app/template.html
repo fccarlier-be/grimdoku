@@ -247,7 +247,8 @@ header.top { display: flex; align-items: center; gap: 10px; }
 .nb-fiche { display: flex; flex-direction: column; align-items: flex-start; }
 .nb-photo { position: relative; align-self: center; width: 190px; height: 190px; margin: 4px 0 22px; padding: 7px; background: #f6efdc; transform: rotate(var(--tilt)); box-shadow: -3px 5px 8px rgba(0, 0, 0, .35); }
 .nb-photo .face, .nb-photo .portrait, .nb-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.nb-photo img { filter: sepia(.18) contrast(1.03); }
+.nb-sketch { align-self: center; width: 230px; height: 230px; margin: -6px 0 6px; mix-blend-mode: multiply; }
+@media (max-width: 699px) { .nb-sketch { width: 190px; height: 190px; } }
 .nb-photo::before, .nb-photo::after { content: ""; position: absolute; z-index: 1; width: 62px; height: 20px; background: rgba(236, 222, 180, .75); box-shadow: 0 1px 2px rgba(0, 0, 0, .15); }
 .nb-photo::before { top: -8px; left: -18px; transform: rotate(-38deg); } .nb-photo::after { bottom: -8px; right: -18px; transform: rotate(-38deg); }
 .nb-name { font: 400 40px/68px var(--f-quill); margin: 0; color: #2b1d10; }
@@ -679,7 +680,7 @@ html, body { background: var(--desk-tex, none) center top / 640px, var(--night);
 .dot.locked:hover { transform: translate(-50%, -50%); }
 .dot.fresh { background: #f0a93a; color: #2b2016; animation: dotpulse 1.6s ease-in-out infinite; }
 @keyframes dotpulse { 50% { box-shadow: inset 0 0 0 2px rgba(43, 32, 22, .7), 0 0 0 6px rgba(240, 169, 58, .35), 0 3px 6px rgba(0, 0, 0, .5); } }
-/* La scène : un bloc de la taille de la carte ; objets, papiers et photos placés en % de ce bloc, qui mordent sur les
+/* La scène : un bloc de la taille de la carte ; objets, papiers et croquis placés en % de ce bloc, qui mordent sur les
    bords de la carte sans couvrir de pastille (positions des lieux : lore/carte.json) et débordent parfois de l'écran */
 @media (min-aspect-ratio: 1/1) { body:has(#app.desk) { overflow: hidden; } }
 .desk-stage { position: relative; width: min(calc(100% - 300px), calc((100dvh - 190px) * var(--r)), 1400px); aspect-ratio: var(--r); }
@@ -715,12 +716,13 @@ html, body { background: var(--desk-tex, none) center top / 640px, var(--night);
 .desk-paper.p0 { width: 16%; height: 30%; left: -9%; top: 18%; transform: rotate(-7deg); }
 .desk-paper.p1 { width: 14%; height: 26%; right: -8%; top: 26%; transform: rotate(5deg); }
 .desk-paper.p2 { width: 22%; height: 12%; left: 30%; top: -7%; transform: rotate(-3deg); }
-/* photos des derniers lieux ouverts, épinglées au bord de la carte (cliquables) */
-.desk-photo { z-index: 3; border: 0; padding: 8px 8px 26px; background: #f4ecd8; cursor: pointer; box-shadow: 4px 6px 10px rgba(0, 0, 0, .5); }
-.desk-photo span { display: block; width: 100%; aspect-ratio: 4 / 3; background: center / cover; filter: sepia(.35) contrast(1.05); }
+/* croquis des derniers lieux ouverts, sur des feuilles épinglées au bord de la carte (cliquables) */
+.desk-photo { z-index: 3; border: 0; padding: 10px; cursor: pointer; box-shadow: 4px 6px 10px rgba(0, 0, 0, .5);
+  background: radial-gradient(ellipse at 50% 45%, transparent 55%, rgba(120, 80, 30, .25) 100%), var(--parch-tex, none) center / 200px, linear-gradient(160deg, #efe1bd, #dcc597); }
+.desk-photo span { display: block; width: 100%; aspect-ratio: 4 / 3; background: center / contain no-repeat; mix-blend-mode: multiply; }
 .desk-photo::before { content: ""; position: absolute; top: -6px; left: 50%; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #e0574a, #8e1f17 70%); box-shadow: 0 2px 3px rgba(0, 0, 0, .5); }
-.desk-photo.ph0 { width: 12%; right: 6%; top: -8%; transform: rotate(5deg); }
-.desk-photo.ph1 { width: 11%; left: 18%; top: -9%; transform: rotate(-6deg); }
+.desk-photo.ph0 { width: 14%; right: 5%; top: -9%; transform: rotate(5deg); }
+.desk-photo.ph1 { width: 13%; left: 17%; top: -10%; transform: rotate(-6deg); }
 @media (hover: hover) { .desk-photo:hover { transform: rotate(0) scale(1.06); z-index: 6; } }
 /* fil rouge : entre les lieux résolus qui s'ouvrent l'un l'autre */
 .desk-string { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; overflow: visible; }
@@ -878,8 +880,8 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     // fil rouge : de chaque lieu résolu vers ceux qu'il a ouverts et où l'on a aussi résolu une enquête
     const hit = (pl) => solvedIn(placeCases(pl)) > 0;
     const strings = Object.entries(LORE.unlock).flatMap(([a, kids]) => hit(a) ? kids.filter(b => hit(b) && LORE.pos[b]).map(b => [LORE.pos[a], LORE.pos[b]]) : []);
-    // photos épinglées : les derniers lieux ouverts (pas encore visités d'abord) dont le décor est illustré
-    const photoOf = (pl) => { const d = (placeCases(pl)[0] || {}).decor; return MEDIA.decors.includes(d) ? d : null; };
+    // croquis épinglés : les derniers lieux ouverts (pas encore visités d'abord) dont le décor est illustré
+    const photoOf = (pl) => { const d = (placeCases(pl)[0] || {}).decor; return (MEDIA.placeSketches || []).includes(d) ? d : null; };
     const photos = order.filter(pl => open.has(pl) && photoOf(pl)).sort((a, b) => seen.includes(a) - seen.includes(b)).slice(0, 2);
     $app.innerHTML = `
       <header class="top">
@@ -897,7 +899,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
           ${strings.length ? `<svg class="desk-string" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">${strings.map(([[x1, y1], [x2, y2]]) => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/>`).join('')}</svg>` : ''}
           ${order.map(dot).join('')}
         </div>
-        ${photos.map((pl, i) => `<button class="desk-photo ph${i}" data-place="${pl}" title="${esc(placeTitle(pl))}" aria-label="${esc(placeTitle(pl))}"><span style="background-image:url(media/decor-${photoOf(pl)}.webp)"></span></button>`).join('')}
+        ${photos.map((pl, i) => `<button class="desk-photo ph${i}" data-place="${pl}" title="${esc(placeTitle(pl))}" aria-label="${esc(placeTitle(pl))}"><span style="background-image:url(media/croquis-lieu-${photoOf(pl)}.webp)"></span></button>`).join('')}
         ${deco.slice(0, 3).map((src, i) => `<img class="desk-deco s${i}" src="${src}" alt="" aria-hidden="true">`).join('')}
         ${item('dk-dossiers', 'deskDossiers', `Dossiers classés (${nSolved})`, img('dossiers', 'pile'))}
         ${item(`dk-lettres ${nu ? 'unread' : ''}`, 'deskLettres', `Lettres anonymes (${nl})`, img('lettres', 'liasse'), nu ? `<span class="newmark" aria-label="${nu} non lue${nu > 1 ? 's' : ''}"></span>` : '')}
@@ -970,7 +972,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     const fiche = (t, i) => {
       const c = LORE.troupe[t], g = gag(t);
       return `<div class="fiche nb-fiche">
-        <span class="nb-photo" style="--tilt:${[-3, 2.5, -1.5, 3.5][i % 4]}deg" aria-hidden="true">${(MEDIA.photos || []).includes(t) ? `<img src="media/photo-${t}.webp" alt="">` : face({ archetype: t, name: c.name, role: 'suspect', icon: c.icon })}</span>
+        ${(MEDIA.sketches || []).includes(t) ? `<img class="nb-sketch" src="media/croquis-${t}.webp" alt="" aria-hidden="true">` : `<span class="nb-photo" style="--tilt:${[-3, 2.5, -1.5, 3.5][i % 4]}deg" aria-hidden="true">${face({ archetype: t, name: c.name, role: 'suspect', icon: c.icon })}</span>`}
         <h3 class="nb-name">${esc(c.name)}</h3>
         <p class="nb-desc">${esc(c.desc)}</p>
         <p class="nb-tic">${esc(c.tic)}</p>
