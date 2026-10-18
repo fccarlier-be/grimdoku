@@ -228,8 +228,7 @@ header.top { display: flex; align-items: center; gap: 10px; }
 .nb-page.single { border-radius: 4px 6px 6px 4px; box-shadow: inset 18px 0 22px -16px rgba(60, 35, 10, .55); }
 .nb-pages.turn-next .nb-page { animation: nbnext .35s ease; } .nb-pages.turn-prev .nb-page { animation: nbprev .35s ease; }
 @keyframes nbnext { from { opacity: .2; transform: translateX(18px); } } @keyframes nbprev { from { opacity: .2; transform: translateX(-18px); } }
-.nb-num { position: absolute; bottom: 16px; font: italic 400 16px/1 var(--f-hand); color: #7a5c38; }
-.nb-page.left .nb-num { left: 26px; } .nb-page.right .nb-num, .nb-page.single .nb-num { right: 26px; }
+.nb-num { position: absolute; bottom: 16px; left: 0; right: 0; text-align: center; font: italic 400 16px/1 var(--f-hand); color: #7a5c38; } /* au centre : les coins cornés occupent les angles */
 /* coins cornés pour tourner la page */
 .nb-turn { position: absolute; bottom: 14px; width: 54px; height: 54px; border: 0; padding: 0; cursor: pointer; z-index: 2; background: transparent; }
 .nb-turn::before { content: ""; position: absolute; inset: 0; background: linear-gradient(var(--dir), #d9c391 0 48%, rgba(60, 35, 10, .35) 50%, transparent 52%); filter: drop-shadow(0 0 2px rgba(0, 0, 0, .3)); transition: transform .15s; }
