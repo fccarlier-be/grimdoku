@@ -389,12 +389,25 @@ def carte():
     for src in sources(MAP_DIR):
         img = Image.open(src).convert('RGBA')
         img.thumbnail((2400, 2400), Image.LANCZOS)
-        # fond blanc autour du parchemin déchiré → transparent (remplissage depuis les quatre coins, presque-blanc compris)
-        from PIL import ImageDraw
+        # fond blanc autour du parchemin déchiré → transparent : remplissage depuis les quatre coins (presque-blanc
+        # compris), puis le liseré clair laissé par l'anticrénelage est effacé : contour rogné de 2 px, pixels presque
+        # blancs ôtés dans une bande de 10 px le long du bord, arête adoucie
+        from PIL import ImageDraw, ImageFilter, ImageChops
         w, h = img.size
+        probe = img.convert('RGB')
         for xy in ((0, 0), (w - 1, 0), (0, h - 1), (w - 1, h - 1)):
-            if min(img.getpixel(xy)[:3]) > 225:
-                ImageDraw.floodfill(img, xy, (255, 255, 255, 0), thresh=40)
+            if min(probe.getpixel(xy)) > 215:
+                ImageDraw.floodfill(probe, xy, (255, 0, 255), thresh=60)
+        bg = probe.point(lambda v: 0).convert('L')
+        r, g, b = probe.split()
+        bg = ImageChops.multiply(ImageChops.multiply(r.point(lambda v: 255 if v == 255 else 0), g.point(lambda v: 255 if v == 0 else 0)), b.point(lambda v: 255 if v == 255 else 0))
+        if bg.getbbox():
+            bg = bg.filter(ImageFilter.MaxFilter(5))                       # rogne 2 px
+            band = ImageChops.subtract(bg.filter(ImageFilter.MaxFilter(21)), bg)  # 10 px le long du bord
+            light = img.convert('L').point(lambda v: 255 if v > 205 else 0)
+            bg = ImageChops.lighter(bg, ImageChops.multiply(band, light))
+            alpha = ImageChops.invert(bg).filter(ImageFilter.GaussianBlur(.8))
+            img.putalpha(ImageChops.multiply(img.getchannel('A'), alpha))
         out = MAP_DIR / (type_name(src.stem) + '.webp')
         img.save(out, 'WEBP', quality=86, method=6)
         print(f'carte {src.name} → {out.name} {img.size} ({out.stat().st_size // 1024} Ko)')
