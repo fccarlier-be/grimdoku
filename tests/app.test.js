@@ -15,6 +15,9 @@ test.after(() => opened.forEach(w => w.close()));
 
 // ouvre l'appli ; settings / saves : contenu du localStorage avant le chargement
 function open({ settings, saves = {} } = {}) {
+  // une seule page jsdom vivante à la fois : chacune pèse lourd (toutes les énigmes, images, scènes du lore) et les garder
+  // toutes ouvertes jusqu'à la fin de la série épuisait la mémoire (constaté le 2026-10-18)
+  while (opened.length) { try { opened.pop().close(); } catch (e) { /* déjà fermée */ } }
   const dom = new JSDOM(HTML, {
     runScripts: 'dangerously', url: 'http://localhost/', pretendToBeVisual: true,
     beforeParse(w) {
@@ -69,21 +72,25 @@ test('accueil → Jouer → tailles → une page par taille : toutes les affaire
 });
 
 test('chaque affaire : la bonne carte mène à la victoire', () => {
-  // une seule page pour toutes les affaires (une page jsdom par affaire épuiserait la mémoire)
-  const { w, d, openCase, errors, PUZZLES } = open();
-  // l'affaire finale ne s'ouvre qu'avec assez de lettres d'Augure
-  w.localStorage.setItem('grimdoku:lettres', JSON.stringify(Object.keys(w.eval('LORE').letters)));
-  for (const p of PUZZLES) {
-    const save = { pos: p.solution.positions, pencil: {}, marks: [], done: [], solved: false, sig: sigOf(p) };
-    w.localStorage.setItem('grimdoku:p:' + p.id, JSON.stringify(save));
-    if (p.final) w.grimGo('affaire/' + p.id); else openCase(p.id);
-    d.getElementById('accuse').click();
-    assert.ok(d.querySelector('.stamp'), `${p.id} : tampon « Affaire résolue »`);
-    assert.ok(d.querySelector('.verdictcard'), `${p.id} : verdict`);
-    d.getElementById('back').click();
+  // par paquets de 60 affaires, une page jsdom par paquet (une seule page pour toutes épuise la mémoire depuis les scènes
+  // du lore ; une page par affaire aussi)
+  const ALL = open().PUZZLES;
+  for (let i = 0; i < ALL.length; i += 60) {
+    const { w, d, openCase, errors, PUZZLES } = open();
+    // l'affaire finale ne s'ouvre qu'avec assez de lettres d'Augure
+    w.localStorage.setItem('grimdoku:lettres', JSON.stringify(Object.keys(w.eval('LORE').letters)));
+    for (const p of PUZZLES.slice(i, i + 60)) {
+      const save = { pos: p.solution.positions, pencil: {}, marks: [], done: [], solved: false, sig: sigOf(p) };
+      w.localStorage.setItem('grimdoku:p:' + p.id, JSON.stringify(save));
+      if (p.final) w.grimGo('affaire/' + p.id); else openCase(p.id);
+      d.getElementById('accuse').click();
+      assert.ok(d.querySelector('.stamp'), `${p.id} : tampon « Affaire résolue »`);
+      assert.ok(d.querySelector('.verdictcard'), `${p.id} : verdict`);
+      d.getElementById('back').click();
+    }
+    assert.deepEqual(errors, []);
+    w.close();
   }
-  assert.deepEqual(errors, []);
-  w.close();
 });
 
 test('mauvaise carte : pas de victoire', () => {
@@ -242,12 +249,21 @@ test('lore : lettre d\'Augure à la première victoire dans un lieu, rangée dan
   w.localStorage.setItem('grimdoku:p:' + p.id, JSON.stringify({ pos: p.solution.positions, pencil: {}, marks: [], done: [], solved: false, sig: sigOf(p) }));
   openCase(p.id);
   d.getElementById('accuse').click();
-  assert.ok(d.querySelector('.letter-augure'), 'lettre glissée sous la porte');
+  assert.ok(d.querySelector('.story.verdict-story .epi'), 'scène du verdict au centre, avec le dialogue');
+  d.getElementById('toLetter').click();
+  assert.ok(d.querySelector('.story.letter-story .story-letter'), 'la lettre en grand');
+  d.querySelector('.letter-story [data-close]').click();
+  assert.ok(d.querySelector('.letter-augure'), 'lettre rappelée dans le verdict');
   assert.deepEqual(JSON.parse(w.localStorage.getItem('grimdoku:lettres')), [p.place]);
   assert.ok(d.querySelectorAll('.epi .epl').length >= 3, 'épilogue en répliques');
+  w.grimGo('tailles');
+  assert.ok(d.querySelector('#carnetBtn .newmark'), 'le carnet signale la lettre non lue');
   w.grimGo('carnet');
   assert.equal(d.querySelectorAll('.lettre:not(.locked)').length, 1, 'une lettre dans le carnet');
+  assert.ok(d.querySelector('.lettre.fresh'), 'marquée nouvelle');
   assert.ok(d.querySelectorAll('.fiche').length >= 1, 'la troupe croisée a sa fiche');
+  w.grimGo('tailles');
+  assert.equal(d.querySelector('#carnetBtn .newmark'), null, 'lue une fois le carnet ouvert');
   assert.deepEqual(errors, []);
 });
 

@@ -591,6 +591,28 @@ html, body { background: var(--desk-tex, none) center top / 640px, var(--night);
 .soundpop .btn { background: transparent; border: 1.5px solid var(--line); border-radius: 8px; color: var(--ink); min-height: 38px; padding: 6px 10px; }
 /*__FLOORS__*/
 
+/* scènes du lore au centre de l'écran : intro, verdict, lettre d'Augure */
+.overlay.center { place-items: center; padding: 16px; }
+.story { max-width: 560px; text-align: center; align-items: center; animation: storyin .25s ease-out; }
+@keyframes storyin { from { transform: translateY(14px) scale(.96); opacity: 0; } }
+.story h2 { font-size: 30px; }
+.story-img { align-self: stretch; height: 150px; margin: -6px -6px 4px; border-radius: 2px; background: center 40% / cover no-repeat; box-shadow: 0 0 0 1px rgba(43, 32, 22, .55); }
+.story-text { font-size: 17px !important; line-height: 1.5; text-align: left; }
+.story .wanted { font-family: var(--f-display); font-size: 30px; color: var(--red-ink); letter-spacing: .04em; }
+.story-face { position: relative; display: block; flex: none; width: 96px; height: 96px; border-radius: 50%; overflow: hidden; background: #fff8e8; box-shadow: 0 0 0 3px var(--red-ink), 0 4px 10px rgba(0, 0, 0, .4); }
+.story-face svg { display: block; width: 100%; height: 100%; }
+.story .culprit { font-family: var(--f-display); font-size: 30px; font-weight: 400; }
+.story .epi { text-align: left; align-self: stretch; font-size: 16px; }
+.story .row { justify-content: center; }
+.letter-story { background: transparent; }
+.seal-a { width: 58px; height: 58px; display: grid; place-items: center; font: 400 28px/1 var(--f-display); color: #f6d9c0; border-radius: 47% 53% 50% 50% / 52% 48% 52% 48%; background: radial-gradient(circle at 35% 30%, #d4473b, #8e1f17 70%); box-shadow: inset 0 -2px 4px rgba(0, 0, 0, .35), 0 3px 8px rgba(0, 0, 0, .45); transform: rotate(-8deg); }
+.story-from { color: var(--muted); text-transform: uppercase; letter-spacing: .08em; font-size: 12px; }
+.story-letter { font: italic 400 21px/1.45 var(--f-body) !important; margin: 4px 0 !important; }
+.story-sign { align-self: flex-end; font-family: var(--f-display); font-size: 22px !important; }
+.story-count { color: var(--muted); font-size: 14px !important; }
+.newmark { display: inline-block; margin-top: 4px; padding: 2px 8px; border-radius: 99px; background: #a3312a; color: #fbe7cf; font: 700 12px/1.4 var(--f-body); }
+.lvl.carnet.unread::before { box-shadow: inset 0 0 0 3px #a3312a, 0 0 18px rgba(163, 49, 42, .6), 0 6px 14px rgba(0, 0, 0, .5); }
+.lettre.fresh::before { box-shadow: inset 0 0 0 3px #a3312a, 0 3px 8px rgba(0, 0, 0, .45); }
 /* roue des personnages (appui long sur une case) */
 .wheel-layer { position: fixed; inset: 0; z-index: 60; background: rgba(10, 6, 14, .35); }
 .wheel { position: fixed; transform: translate(-50%, -50%); border-radius: 50%; background: radial-gradient(circle, rgba(241, 227, 194, .97) 0 34%, rgba(241, 227, 194, .82) 35% 100%); box-shadow: inset 0 0 0 2px rgba(43, 32, 22, .6), 0 10px 30px rgba(0, 0, 0, .6); animation: wheelin .14s ease-out; }
@@ -705,7 +727,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     $app.innerHTML = pageHead("Retour à l'accueil", 'Choisis ta taille') + `
       <div class="lorebar">
         <button class="lvl carnet" id="carteBtn"><b>🗺️ Carte de Brumeval</b><span class="blurb">Les enquêtes, lieu par lieu</span></button>
-        <button class="lvl carnet" id="carnetBtn"><b>📖 Carnet d'enquête</b><span class="blurb">${nl} / ${total} lettres d'Augure · la troupe de Brumeval</span></button>
+        <button class="lvl carnet ${unread() ? 'unread' : ''}" id="carnetBtn"><b>📖 Carnet d'enquête</b><span class="blurb">${nl} / ${total} lettres d'Augure · la troupe de Brumeval</span>${unread() ? `<span class="newmark">✉️ ${unread()} nouvelle${unread() > 1 ? 's' : ''} lettre${unread() > 1 ? 's' : ''}</span>` : ''}</button>
         ${FINAL ? (finalUnlocked()
           ? `<button class="lvl finalcase" data-final="1"><b>🕯️ ${esc(FINAL.title)}</b><span class="blurb">L'affaire que les lettres annonçaient.</span>${(store.get('p:' + FINAL.id, null) || {}).solved ? '<span class="lvldone">Terminé</span>' : ''}</button>`
           : `<div class="lvl finalcase locked"><b>🔒 Une affaire se prépare…</b><span class="blurb">Encore ${LORE.need - nl} lettre${LORE.need - nl > 1 ? 's' : ''} d'Augure.</span></div>`) : ''}
@@ -745,6 +767,8 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     P = null;
     $app.classList.remove('game');
     const got = letters(), total = Object.keys(LORE.letters).length;
+    const fresh = got.filter(pl => !store.get('lettres-lues', []).includes(pl));
+    store.set('lettres-lues', got); // ouvrir le carnet, c'est les lire
     const solved = CASES.filter(p => (store.get('p:' + p.id, null) || {}).solved);
     const met = {};
     for (const p of solved) for (const c of p.characters) if (!c.guest && LORE.troupe[c.archetype]) met[c.archetype] = (met[c.archetype] || 0) + 1;
@@ -762,7 +786,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
       <section class="carnet-sec"><h2>Lettres d'Augure <small>${got.length} / ${total}</small></h2>
         <p class="lead">Une lettre anonyme attend dans chaque lieu de Brumeval : elle arrive avec la première enquête résolue sur place. ${got.length >= LORE.need ? "Elles mènent toutes au même endroit." : `Il en faut ${LORE.need} pour comprendre où elles mènent.`}</p>
         <div class="lettres">${Object.keys(LORE.letters).map(pl => got.includes(pl)
-          ? `<div class="lettre"><b>${esc(placeTitle(pl))}</b><p>${esc(LORE.letters[pl])}</p><small>— A.</small></div>`
+          ? `<div class="lettre ${fresh.includes(pl) ? 'fresh' : ''}"><b>${esc(placeTitle(pl))}</b>${fresh.includes(pl) ? ' <span class="newmark">nouvelle</span>' : ''}<p>${esc(LORE.letters[pl])}</p><small>— A.</small></div>`
           : `<div class="lettre locked"><b>${esc(placeTitle(pl))}</b><p>Pas encore de lettre ici.</p></div>`).join('')}</div>
       </section>
       <section class="carnet-sec"><h2>La troupe de Brumeval <small>${Object.keys(met).length} / ${Object.keys(LORE.troupe).length}</small></h2>
@@ -962,7 +986,8 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     // première ouverture : l'enquêteur raconte l'affaire (bible du jeu : sa voix ouvre chaque enquête)
     if (!store.get('seen:' + id, false)) { store.set('seen:' + id, true); introSheet(); }
   }
-  const introSheet = () => sheet(`<h2>${esc(P.title)}</h2><p>${esc(P.intro)}</p><div class="row"><button class="btn primary" data-close>À l'enquête</button></div>`);
+  const introSheet = () => story(`${MEDIA.decors.includes(P.decor) ? `<div class="story-img" style="background-image:url(media/decor-${P.decor}.webp)"></div>` : ''}
+      <h2>${esc(P.title)}</h2><p class="story-text">${esc(P.intro)}</p><div class="row"><button class="btn primary" data-close>À l'enquête</button></div>`, 'intro');
   const save = () => store.set('p:' + P.id, S);
   const WHEEL_MS = 450; // appui long : la roue des personnages s'ouvre au bout de WHEEL_MS
   // une couleur par personnage (lettres au crayon, pastilles) ; la victime en rouge
@@ -1445,12 +1470,15 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     render.newLetter = grantLetter(P);
     render();
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    verdictStory(render.newLetter);
   }
 
   // verdict affiché sous la carte une fois l'affaire résolue (remplace le dock)
   // Lettres d'Augure (fil rouge) : la première enquête résolue dans un lieu donne la lettre de ce lieu
   const letters = () => store.get('lettres', []);
   const finalUnlocked = () => letters().length >= LORE.need;
+  // lettres pas encore lues dans le carnet (le bouton du carnet le signale)
+  const unread = () => letters().filter(pl => !store.get('lettres-lues', []).includes(pl)).length;
   function grantLetter(p) {
     const got = letters();
     if (!LORE.letters[p.place] || got.includes(p.place)) return null;
@@ -1460,6 +1488,28 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
   const placeTitle = (place) => { const p = PUZZLES.find(q => q.place === place && !q.final); return p ? p.title.split(' — ')[0] : place; };
   // épilogue : un dialogue (« — » en début de ligne), l'enquêteur puis le coupable
   const dialogue = (text) => text.split('\n').map((l, i) => `<p class="epl ${i % 2 ? 'them' : 'me'}">${esc(l)}</p>`).join('');
+  // Scènes de fin : le coupable et son dialogue avec l'enquêteur, puis la lettre d'Augure si l'enquête en apporte une
+  function verdictStory(newLetter) {
+    const k = ctx.chars[P.solution.murderer];
+    const v = P.characters.find(c => c.role === 'victim');
+    const ov = story(`<div class="wanted">Affaire résolue</div>
+      <span class="em big story-face">${face(k)}</span>
+      <b class="culprit">${esc(k.name)}</b>
+      <p class="why">Seul suspect dans la pièce de ${esc(v.name)}.</p>
+      <div class="epi">${dialogue(P.epilogue)}</div>
+      <div class="row">${newLetter ? `<button class="btn primary" id="toLetter">📜 Une lettre a été glissée sous la porte…</button>` : `<button class="btn primary" data-close>Fermer</button>`}</div>`, 'verdict-story');
+    const b = ov.querySelector('#toLetter'); if (b) b.onclick = () => letterStory(newLetter);
+  }
+  function letterStory(place) {
+    const n = letters().length, total = Object.keys(LORE.letters).length;
+    const ov = story(`<div class="seal-a" aria-hidden="true">A</div>
+      <small class="story-from">Lettre anonyme · ${esc(placeTitle(place))}</small>
+      <p class="story-letter">${esc(LORE.letters[place])}</p>
+      <p class="story-sign">— A.</p>
+      <p class="story-count">${n} / ${total} lettres dans ton carnet${FINAL && !finalUnlocked() ? ` · encore ${LORE.need - n} avant que tout s'éclaire` : FINAL ? ' · <b>une affaire très spéciale vous attend</b>' : ''}</p>
+      <div class="row"><button class="btn" id="toCarnet">Ouvrir le carnet</button><button class="btn primary" data-close>Ranger dans mon carnet</button></div>`, 'letter-story');
+    ov.querySelector('#toCarnet').onclick = () => { close(); go('carnet'); };
+  }
   function verdictHtml() {
     const k = ctx.chars[P.solution.murderer];
     const v = P.characters.find(c => c.role === 'victim');
@@ -1493,6 +1543,13 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     ov.onclick = (e) => { if (e.target === ov || e.target.hasAttribute('data-close')) close(); };
   }
   function close() { $layer.innerHTML = ''; }
+  // Scène du lore, au centre de l'écran (intro, verdict, lettre d'Augure) : plus visible qu'une fenêtre en bas de page
+  function story(html, cls = '') {
+    $layer.innerHTML = `<div class="overlay center" id="ov"><div class="sheet story ${cls}" role="dialog" aria-modal="true">${html}</div></div>`;
+    const ov = document.getElementById('ov');
+    ov.onclick = (e) => { if (e.target === ov || e.target.hasAttribute('data-close')) close(); };
+    return ov;
+  }
 
   function rules() {
     const objs = Object.entries(E.OBJECTS).filter(([k]) => k !== 'portail');
