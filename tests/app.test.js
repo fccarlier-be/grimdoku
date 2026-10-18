@@ -350,3 +350,22 @@ test('affaire finale : la révélation commune (lettre de Fizzlebarbe, billet d\
   d.querySelector('.billet-story [data-close]').click();
   assert.ok(d.getElementById('rereadReveal'), 'relisible depuis le verdict');
 });
+
+test('prologue : à la première partie, quatre scènes, puis la carte ; fil rouge et piste conseillée sur la carte', () => {
+  const { w, d } = open();
+  d.getElementById('playBtn').click();
+  const L = w.eval('LORE');
+  for (let i = 0; i < L.prologue.length; i++) {
+    assert.ok(d.querySelector('.prologue-story'), `scène ${i + 1}`);
+    d.getElementById('prologueNext').click();
+  }
+  assert.ok(w.location.hash.includes('carte'), 'le prologue mène à la carte');
+  assert.ok(d.querySelector('.filrouge'), 'fil rouge en haut de la carte');
+  assert.ok(d.querySelector('.piste[data-place]'), 'piste conseillée');
+  w.grimGo('');
+  d.getElementById('playBtn').click();
+  assert.equal(d.querySelector('.prologue-story'), null, 'une seule fois');
+  w.grimGo('carnet');
+  d.getElementById('prologueBtn').click();
+  assert.ok(d.querySelector('.prologue-story'), 'se revoit depuis le carnet');
+});

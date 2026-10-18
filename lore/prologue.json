@@ -1,0 +1,37 @@
+{
+  "_doc": "Prologue du lore : quatre scènes au centre de l'écran, à la première partie (après « Jouer »), qu'on peut passer et revoir depuis le carnet. Voix de l'enquêteur (scène 1), lettre de Dagobert (2), premier billet d'Augure (3), mode d'emploi (4). Ne révèle rien du canon caché (Nœud de Brume, Palier zéro).",
+  "scenes": [
+    {
+      "titre": "Brumeval",
+      "image": "carte",
+      "texte": "La baronnie de Brumeval tient sur une seule carte, entre la mer et les Monts Grimaces. Elle compte six contrées, vingt-trois lieux, et beaucoup trop de cadavres pour des gens qui se connaissent tous.\nOn y meurt surtout de passage : percepteurs, huissiers, cousines venues réclamer un héritage. Personne ici ne sait mener une enquête. C'est pour ça qu'on m'a fait venir."
+    },
+    {
+      "titre": "Lettre de nomination",
+      "sceau": "D",
+      "de": "Château de Mortebrune",
+      "texte": "Par la présente, Nous, Dagobert, roi de Brumeval et d'à peu près tout ce qu'on voit du donjon, nommons le porteur de cette lettre Enquêteur de la baronnie.\nIl résoudra les meurtres de Nos sujets, de préférence sans accuser la Couronne. Il aura libre accès à tous les lieux, sauf au trésor, qui est vide pour des raisons qui ne le regardent pas.\nSon salaire sera fixé avec Notre trésorier, Bakchich.",
+      "signature": "Dagobert",
+      "apres": "Le trésorier m'a reçu. Il m'a expliqué que mon salaire était techniquement légal. Je n'ai rien touché."
+    },
+    {
+      "titre": "Un billet sous la porte",
+      "sceau": "A",
+      "de": "Billet anonyme",
+      "texte": "Bienvenue à Brumeval, enquêteur. Ici, chaque lieu a ses secrets, et j'en connais quelques-uns.\nRésolvez une affaire, n'importe où. Je vous écrirai.",
+      "signature": "— A.",
+      "apres": "Sur le rebord de la fenêtre, un corbeau m'a regardé lire. Puis il est parti. Je n'aime pas les corbeaux qui attendent une réponse."
+    },
+    {
+      "titre": "Mes notes",
+      "guide": [
+        "Choisir un lieu sur la carte de Brumeval, et une enquête.",
+        "Placer tout le monde : une personne par ligne et par colonne, un suspect par pièce, la victime seule avec son meurtrier.",
+        "Chaque lieu cache une lettre d'Augure. Elle arrive avec la première enquête résolue sur place.",
+        "Les lettres s'empilent dans le carnet d'enquête, avec les fiches des habitants croisés.",
+        "À quinze lettres, une affaire se débloque. Toutes les lettres semblent y mener."
+      ],
+      "conseil": "Commencer par le Sanglier Borgne : petites cartes, gros buveurs, et un tavernier qui note tout."
+    }
+  ]
+}

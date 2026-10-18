@@ -65,6 +65,40 @@ On l'entend à trois endroits :
    Si un personnage confirmé est mal placé, le bouton le signale d'abord : « Quelque chose cloche : <personnage> n'est pas à sa place. »
 3. **Le verdict** : c'est lui qui ouvre chaque épilogue (« Vous étiez seul avec… ») et donne la réplique au coupable.
 
+### Le prologue
+À la première partie (après « Jouer »), quatre scènes au centre de l'écran présentent le monde, l'enquêteur et le fil rouge. On peut les passer, et les revoir depuis le carnet (« 📜 Revoir le prologue »). La dernière ouvre la carte de Brumeval.
+
+**1. Brumeval** (sur l'illustration de la carte)
+> La baronnie de Brumeval tient sur une seule carte, entre la mer et les Monts Grimaces. Elle compte six contrées, vingt-trois lieux, et beaucoup trop de cadavres pour des gens qui se connaissent tous.  
+>   
+> On y meurt surtout de passage : percepteurs, huissiers, cousines venues réclamer un héritage. Personne ici ne sait mener une enquête. C'est pour ça qu'on m'a fait venir.
+
+**2. Lettre de nomination** — Château de Mortebrune (cachet « D »)
+> Par la présente, Nous, Dagobert, roi de Brumeval et d'à peu près tout ce qu'on voit du donjon, nommons le porteur de cette lettre Enquêteur de la baronnie.  
+>   
+> Il résoudra les meurtres de Nos sujets, de préférence sans accuser la Couronne. Il aura libre accès à tous les lieux, sauf au trésor, qui est vide pour des raisons qui ne le regardent pas.  
+>   
+> Son salaire sera fixé avec Notre trésorier, Bakchich.
+> Dagobert
+*Le trésorier m'a reçu. Il m'a expliqué que mon salaire était techniquement légal. Je n'ai rien touché.*
+
+**3. Un billet sous la porte** — Billet anonyme (cachet « A »)
+> Bienvenue à Brumeval, enquêteur. Ici, chaque lieu a ses secrets, et j'en connais quelques-uns.  
+>   
+> Résolvez une affaire, n'importe où. Je vous écrirai.
+> — A.
+*Sur le rebord de la fenêtre, un corbeau m'a regardé lire. Puis il est parti. Je n'aime pas les corbeaux qui attendent une réponse.*
+
+**4. Mes notes** (mode d'emploi)
+1. Choisir un lieu sur la carte de Brumeval, et une enquête.
+2. Placer tout le monde : une personne par ligne et par colonne, un suspect par pièce, la victime seule avec son meurtrier.
+3. Chaque lieu cache une lettre d'Augure. Elle arrive avec la première enquête résolue sur place.
+4. Les lettres s'empilent dans le carnet d'enquête, avec les fiches des habitants croisés.
+5. À quinze lettres, une affaire se débloque. Toutes les lettres semblent y mener.
+*Commencer par le Sanglier Borgne : petites cartes, gros buveurs, et un tavernier qui note tout.*
+
+Ensuite, en haut de la carte, la ligne **Fil rouge** rappelle le nombre de lettres d'Augure réunies, ce qu'il en manque avant l'affaire finale, et une **piste conseillée** : le lieu sans lettre dont l'enquête la plus simple est la plus accessible.
+
 ## 4. La troupe récurrente
 Chaque type de personnage est **un seul personnage, au nom fixe**, que l'on retrouve d'une enquête à l'autre. Dans une enquête, il porte une **pastille** : l'initiale de son nom (ou le plus court début qui le distingue des autres personnages présents : Fa pour Fausset, Fl pour Flammèche…). Les fiches sont rangées de la plus facile à placer à la plus difficile.
 **Comment lire les épilogues** : la première réplique est celle de l'enquêteur, puis elles alternent. Les gabarits sont remplacés à la construction de l'énigme :
@@ -969,6 +1003,7 @@ Des petites histoires qui courent d'une enquête à l'autre, sans jamais compter
 | Lettres d'Augure, nombre de lettres pour la fin (`need`) | `lore/lettres.json` |
 | Carte : contrées, position des pastilles, illustration retenue | `lore/carte.json`, `assets/map/` |
 | Affaire finale : plan, introduction, épilogues, révélation commune (`revelation`) | `scenes/testament.json` |
+| Prologue (quatre scènes de la première partie) | `lore/prologue.json` |
 | Canon de référence, plan d'application | `lore/GRIMDOKU_MATRICE_CONTINUITE.md`, `lore/PLAN_MIGRATION_CANON.md` |
 | Enquêtes à grands monstres (formes, victimes) | `big-cases.json` |
 | Conseils de l'enquêteur, scènes, carnet, carte | `app/template.html` |

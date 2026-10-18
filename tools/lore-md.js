@@ -62,6 +62,15 @@ P('## 3. L\'enquêteur',
   ...hints.map((h, i) => `| ${TECH[i]} | ${h} |`), '',
   '   Si un personnage confirmé est mal placé, le bouton le signale d\'abord : « Quelque chose cloche : <personnage> n\'est pas à sa place. »',
   '3. **Le verdict** : c\'est lui qui ouvre chaque épilogue (« Vous étiez seul avec… ») et donne la réplique au coupable.');
+const prologue = J('lore/prologue.json').scenes;
+P('### Le prologue',
+  'À la première partie (après « Jouer »), quatre scènes au centre de l\'écran présentent le monde, l\'enquêteur et le fil rouge. On peut les passer, et les revoir depuis le carnet (« 📜 Revoir le prologue »). La dernière ouvre la carte de Brumeval.');
+prologue.forEach((sc, i) => {
+  if (sc.guide) P(`**${i + 1}. ${sc.titre}** (mode d'emploi)`, ...sc.guide.map((g, k) => `${k + 1}. ${g}`), `*${sc.conseil}*`);
+  else if (sc.sceau) P(`**${i + 1}. ${sc.titre}** — ${sc.de} (cachet « ${sc.sceau} »)`, quote(sc.texte.split('\n').join('\n\n')), `> ${sc.signature}`, ...(sc.apres ? [`*${sc.apres}*`] : []));
+  else P(`**${i + 1}. ${sc.titre}** (sur l'illustration de la carte)`, quote(sc.texte.split('\n').join('\n\n')));
+});
+P('Ensuite, en haut de la carte, la ligne **Fil rouge** rappelle le nombre de lettres d\'Augure réunies, ce qu\'il en manque avant l\'affaire finale, et une **piste conseillée** : le lieu sans lettre dont l\'enquête la plus simple est la plus accessible.');
 
 P('## 4. La troupe récurrente',
   'Chaque type de personnage est **un seul personnage, au nom fixe**, que l\'on retrouve d\'une enquête à l\'autre. Dans une enquête, il porte une **pastille** : l\'initiale de son nom (ou le plus court début qui le distingue des autres personnages présents : Fa pour Fausset, Fl pour Flammèche…). Les fiches sont rangées de la plus facile à placer à la plus difficile.',
@@ -221,6 +230,7 @@ P('## 13. Où vivent les données (pour modifier le lore)',
   '| Lettres d\'Augure, nombre de lettres pour la fin (`need`) | `lore/lettres.json` |',
   '| Carte : contrées, position des pastilles, illustration retenue | `lore/carte.json`, `assets/map/` |',
   '| Affaire finale : plan, introduction, épilogues, révélation commune (`revelation`) | `scenes/testament.json` |',
+  '| Prologue (quatre scènes de la première partie) | `lore/prologue.json` |',
   '| Canon de référence, plan d\'application | `lore/GRIMDOKU_MATRICE_CONTINUITE.md`, `lore/PLAN_MIGRATION_CANON.md` |',
   '| Enquêtes à grands monstres (formes, victimes) | `big-cases.json` |',
   '| Conseils de l\'enquêteur, scènes, carnet, carte | `app/template.html` |',

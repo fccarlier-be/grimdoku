@@ -118,7 +118,8 @@ for (const decor of [...new Set(puzzles.map(p => p.decor).filter(Boolean))].sort
 // bible du jeu : lettres d'Augure (lore/lettres.json) et troupe récurrente (cast.json : nom fixe, trait, tic) pour le carnet
 const LETTRES = JSON.parse(fs.readFileSync('lore/lettres.json', 'utf8'));
 const CARTE = JSON.parse(fs.readFileSync('lore/carte.json', 'utf8'));
-const lore = { need: LETTRES.need, letters: LETTRES.letters, troupe: {}, contrees: CARTE.contrees, pos: CARTE.pos, ratio: CARTE.ratio || [3, 2] };
+const PROLOGUE = JSON.parse(fs.readFileSync('lore/prologue.json', 'utf8')).scenes;
+const lore = { prologue: PROLOGUE, need: LETTRES.need, letters: LETTRES.letters, troupe: {}, contrees: CARTE.contrees, pos: CARTE.pos, ratio: CARTE.ratio || [3, 2] };
 for (const [t, a] of Object.entries(ARCHETYPES)) if (!a.guest) lore.troupe[t] = { name: a.name, desc: a.desc, tic: a.tic, icon: a.icon };
 const sprite = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>${defs.join('')}</defs>${symbols.join('')}</svg>`;
 
