@@ -307,7 +307,7 @@ header.top { display: flex; align-items: center; gap: 10px; }
 .seg button { border: 0; background: transparent; padding: 6px 12px; border-radius: 99px; font-size: 14px; color: var(--muted); min-height: 34px; }
 .seg button[aria-pressed="true"] { background: var(--board-2); color: var(--fg); }
 .tools .spacer { flex: 1; }
-.tbtn .lbl { display: none; }
+.tbtn .lbl { display: inline; } /* plus de pictogrammes : le libellé partout */
 .hdtitle { display: none; } /* titre de l'affaire dans la barre du haut : ordinateur seulement */
 .tbtn { border: 1px solid var(--line); background: var(--board); border-radius: 99px; min-width: 38px; height: 38px; padding: 0 10px; font-size: 15px; }
 .tbtn:disabled { opacity: .4; }
@@ -1151,7 +1151,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     const list = placeCases(pl);
     $app.innerHTML = pageHead('Retour au bureau', esc(placeTitle(pl))) + `
       ${pendingLetter(pl) ? '<button class="btn primary" id="lieuLetter">Ouvrir la lettre glissée sous la porte</button>' : ''}
-      <p class="lead">${letters().includes(pl) ? `📜 <i>${esc(LORE.letters[pl])}</i> — A.` : pendingLetter(pl) ? 'Toutes les enquêtes de ce lieu sont résolues.' : `${list.length - solvedIn(list) > 1 ? `Encore ${list.length - solvedIn(list)} enquêtes ici` : 'Une dernière enquête ici'}, et une lettre sur ce lieu glissera sous ta porte.`} <span class="count">${solvedIn(list)} / ${list.length} résolues</span></p>
+      <p class="lead">${letters().includes(pl) ? `<i>${esc(LORE.letters[pl])}</i> — A.` : pendingLetter(pl) ? 'Toutes les enquêtes de ce lieu sont résolues.' : `${list.length - solvedIn(list) > 1 ? `Encore ${list.length - solvedIn(list)} enquêtes ici` : 'Une dernière enquête ici'}, et une lettre sur ce lieu glissera sous ta porte.`} <span class="count">${solvedIn(list)} / ${list.length} résolues</span></p>
       <div class="cases">${list.map(caseHtml).join('')}</div>`;
     document.getElementById('back').onclick = () => go('bureau');
     document.getElementById('rulesBtn').onclick = rules;
@@ -1251,13 +1251,13 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     const pop = document.createElement('div');
     pop.className = 'soundpop';
     pop.innerHTML = `<label>Volume <input type="range" min="0" max="100" step="1" value="${Math.round(sound.volume() * 100)}" aria-label="Volume du son"></label>
-      <button class="btn mute">${settings.sound !== false && sound.volume() > 0 ? '🔇 Couper' : '🔊 Remettre'}</button>`;
+      <button class="btn mute">${settings.sound !== false && sound.volume() > 0 ? 'Couper le son' : 'Remettre le son'}</button>`;
     const r = btn.getBoundingClientRect();
     pop.style.top = (r.bottom + 8) + 'px';
     pop.style.right = Math.max(8, window.innerWidth - r.right) + 'px';
     document.body.appendChild(pop);
     const range = pop.querySelector('input'), mute = pop.querySelector('.mute');
-    const sync = () => { mute.textContent = settings.sound !== false && sound.volume() > 0 ? '🔇 Couper' : '🔊 Remettre'; refreshIcons(); };
+    const sync = () => { mute.textContent = settings.sound !== false && sound.volume() > 0 ? 'Couper le son' : 'Remettre le son'; refreshIcons(); };
     range.oninput = () => { sound.setVolume(range.value / 100); sync(); };
     mute.onclick = () => { sound.toggle(); range.value = Math.round(sound.volume() * 100); sync(); };
   }
@@ -1549,10 +1549,10 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
       ${specials.length ? `<div class="special">${specials.join('')}</div>` : ''}
       ${S.solved ? verdictHtml() : `<div class="dock">
         <div class="tools">
-          <button class="tbtn" id="hintBtn" aria-label="Indice">🕯️<span class="lbl"> Indice</span></button>
-          <button class="tbtn pen" id="penBtn" aria-pressed="${!!settings.cross}" title="Crayon : un toucher barre une case d'une croix (ou l'efface). Les lettres s'écrivent en choisissant un personnage.">✏️<span class="lbl"> Crayon</span></button>
+          <button class="tbtn" id="hintBtn" aria-label="Indice"><span class="lbl">Indice</span></button>
+          <button class="tbtn pen" id="penBtn" aria-pressed="${!!settings.cross}" title="Crayon : un toucher barre une case d'une croix (ou l'efface). Les lettres s'écrivent en choisissant un personnage."><span class="lbl">Crayon</span></button>
           <span class="spacer"></span>
-          <button class="tbtn" id="undo" aria-label="Annuler" ${undo.length ? '' : 'disabled'}>↶<span class="lbl"> Annuler</span></button>
+          <button class="tbtn" id="undo" aria-label="Annuler" ${undo.length ? '' : 'disabled'}><span class="lbl">Annuler</span></button>
           <button class="accuse" id="accuse" ${allPlaced ? '' : 'disabled'}>Accuser</button>
         </div>
         <div class="tray" id="tray">${cast.map(ch => `
@@ -1678,7 +1678,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
       // sans personnage choisi : une case à lettres choisit leur personnage
       const pens = pencilsAt(r, c);
       if (pens.length) { pickOnly(pens[0]); return render(); }
-      return toast('Choisis un personnage pour écrire sa lettre, ou allume ✏️ Crayon pour barrer une case.', true);
+      return toast('Choisis un personnage pour écrire sa lettre, ou allume le Crayon pour barrer une case.', true);
     }
     if (!E.canStand(ctx, selected, r, c)) {
       const o = ctx.objAt[k];
@@ -1856,7 +1856,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
       <p class="why">Seul suspect dans la pièce de ${esc(v.name)}.</p>
       <div class="epi">${dialogue(P.epilogue)}</div>
       ${newLetter ? '' : leftHtml()}
-      <div class="row">${P.revelation ? `<button class="btn primary" id="toReveal">📜 Dans les archives du Palier zéro…</button>`
+      <div class="row">${P.revelation ? `<button class="btn primary" id="toReveal">Dans les archives du Palier zéro…</button>`
         : newLetter ? `<button class="btn primary" id="toLetter">Une lettre a été glissée sous la porte…</button>` : `<button class="btn primary" data-close>Fermer</button>`}</div>`, 'verdict-story');
     const b = ov.querySelector('#toLetter'); if (b) b.onclick = () => openLetter(newLetter);
     const r = ov.querySelector('#toReveal'); if (r) r.onclick = revelationStory;
@@ -1883,12 +1883,12 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
       <small class="story-from">Lettre anonyme · ${esc(placeTitle(place))}</small>
       <p class="story-letter">${esc(LORE.letters[place])}</p>
       <p class="story-sign">— A.</p>
-      ${(render.newPlaces || []).length ? `<p class="story-newplaces">🗺️ Sur ta carte, ${render.newPlaces.length > 1 ? 'de nouveaux lieux s\'ouvrent' : 'un nouveau lieu s\'ouvre'} : <b>${render.newPlaces.map(pl => esc(placeTitle(pl))).join(', ')}</b></p>` : ''}
+      ${(render.newPlaces || []).length ? `<p class="story-newplaces">Sur ta carte, ${render.newPlaces.length > 1 ? 'de nouveaux lieux s\'ouvrent' : 'un nouveau lieu s\'ouvre'} : <b>${render.newPlaces.map(pl => esc(placeTitle(pl))).join(', ')}</b></p>` : ''}
       <p class="story-count">${n} / ${total} lettres anonymes${FINAL && !finalUnlocked() ? ` · encore ${LORE.need - n} avant que tout s'éclaire` : FINAL ? ' · <b>une enveloppe vient d\'arriver sur ton bureau</b>' : ''}</p>
       <div class="row"><button class="btn" id="letterLater">Plus tard</button><button class="btn primary" id="toCarnet">Retour au bureau</button></div>`, 'letter-story');
     // deux choix sans ambiguïté (retour de François : « Ranger dans mon carnet » ne faisait que refermer, on croyait que rien ne se passait)
     ov.querySelector('#toCarnet').onclick = () => { close(); go('bureau'); };
-    ov.querySelector('#letterLater').onclick = () => { close(); if (P) render(); toast('📜 Lettre rangée avec les autres, sur ton bureau.'); };
+    ov.querySelector('#letterLater').onclick = () => { close(); if (P) render(); toast('Lettre rangée avec les autres, sur ton bureau.'); };
   }
   function verdictHtml() {
     const k = ctx.chars[P.solution.murderer];
@@ -1900,8 +1900,8 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
         <b class="culprit">${esc(k.name)}</b>
         <p class="why">Seul suspect dans la pièce de ${esc(v.name)}.</p>
         <div class="epi">${dialogue(P.epilogue)}</div>
-        ${P.revelation ? `<button class="btn" id="rereadReveal">📜 Relire la lettre de Fizzlebarbe</button>` : ''}
-        ${pendingLetter(P.place) ? `<button class="btn primary" id="openLetterBtn">Ouvrir la lettre glissée sous la porte</button>` : render.newLetter === P.place && letters().includes(P.place) ? `<div class="letter-augure"><b>📜 Une lettre anonyme glissée sous la porte</b><p>${esc(LORE.letters[P.place])}</p><small>— A. · ${letters().length} / ${Object.keys(LORE.letters).length} lettres sur ton bureau</small></div>` : leftHtml()}
+        ${P.revelation ? `<button class="btn" id="rereadReveal">Relire la lettre de Fizzlebarbe</button>` : ''}
+        ${pendingLetter(P.place) ? `<button class="btn primary" id="openLetterBtn">Ouvrir la lettre glissée sous la porte</button>` : render.newLetter === P.place && letters().includes(P.place) ? `<div class="letter-augure"><b>Une lettre anonyme glissée sous la porte</b><p>${esc(LORE.letters[P.place])}</p><small>— A. · ${letters().length} / ${Object.keys(LORE.letters).length} lettres sur ton bureau</small></div>` : leftHtml()}
         <div class="row">
           <button class="btn" id="replayBtn">Rejouer</button>
           ${next ? `<button class="btn primary" id="nextBtn">Affaire suivante</button>` : `<button class="btn primary" id="homeBtn">Retour au bureau</button>`}
@@ -1912,7 +1912,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
   const leftHtml = () => {
     if (P.final || letters().includes(P.place) || !LORE.letters[P.place]) return '';
     const left = placeCases(P.place).filter(p => !isSolved(p)).length;
-    return left ? `<p class="letter-left">📜 ${left > 1 ? `Encore ${left} enquêtes` : 'Une dernière enquête'} dans ce lieu avant sa lettre.</p>` : '';
+    return left ? `<p class="letter-left">${left > 1 ? `Encore ${left} enquêtes` : 'Une dernière enquête'} dans ce lieu avant sa lettre.</p>` : '';
   };
   // affaire suivante : dans l'ordre (taille, difficulté), sans l'affaire finale
   const nextCase = () => P.final ? null : placeCases(P.place).find(p => p !== P && !isSolved(p));
@@ -1962,12 +1962,12 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
       <div class="sect">Gestes</div>
       <ul>
         <li>Touche un personnage, puis une case : sa <b>lettre</b> s'y inscrit. Tu peux noter plusieurs cases possibles ; touche une lettre à nouveau pour l'effacer.</li>
-        <li>Outil ✏️ <b>Crayon</b> : touche une case pour la barrer d'une croix <b>au crayon gris-bleu</b> (ta propre hypothèse) ; touche-la encore pour l'effacer. Choisir un personnage éteint le crayon.</li>
+        <li>Outil <b>Crayon</b> : touche une case pour la barrer d'une croix <b>au crayon gris-bleu</b> (ta propre hypothèse) ; touche-la encore pour l'effacer. Choisir un personnage éteint le crayon.</li>
         <li><b>Appui long</b> sur une case : une roue s'ouvre avec les personnages qui peuvent s'y tenir ; touche celui que tu places là pour de bon (un personnage déjà placé y est déplacé). Un grand personnage : sa lettre au crayon sur chacune de ses cases, puis appui long sur l'une d'elles et choisis-le dans la roue ; son portrait s'affiche alors sur chacune.</li>
         <li>Quand un personnage est choisi, ce que nomment ses indices s'allume en bleu : les objets cités (tous ceux du même type) ou la pièce citée.</li>
         <li>Une fois un personnage placé pour de bon, sa ligne et sa colonne se remplissent de croix <b>à l'encre noire</b> : ces cases sont condamnées.</li>
         <li>Touche deux fois un personnage placé pour le remettre en lettres.</li>
-        <li>Bouton 💡 <b>Indice</b> : signale une erreur, ou désigne le prochain personnage à déduire et le raisonnement à utiliser.</li>
+        <li>Bouton <b>Indice</b> : signale une erreur, ou désigne le prochain personnage à déduire et le raisonnement à utiliser.</li>
         <li>Le ✓ d'un indice le grise quand tu l'as exploité.</li>
       </ul>
       <div class="sect">Mobilier</div>
