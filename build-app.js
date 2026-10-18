@@ -86,7 +86,7 @@ for (const [name, sel] of [['titre', '.herotitle .logo'], ['jouer', '.herobtn']]
 const { execFileSync } = require('child_process');
 const MEDIA = ['dist/media', 'deploy/grimdoku/site/media'];
 MEDIA.forEach(d => { fs.rmSync(d, { recursive: true, force: true }); fs.mkdirSync(d, { recursive: true }); }); // vidé : rien de périmé en ligne
-const media = { audio: {}, levels: [], decors: [], desk: {}, deskDeco: [] };
+const media = { audio: {}, levels: [], decors: [], desk: {}, deskDeco: [], photos: [] };
 // lisibles par le serveur web quelle que soit leur origine (un fichier sorti d'un zip peut être en 600)
 const copyMedia = (src, name) => MEDIA.forEach(d => { fs.copyFileSync(src, `${d}/${name}`); fs.chmodSync(`${d}/${name}`, 0o644); });
 for (const track of ['menu', 'carte']) {
@@ -109,6 +109,10 @@ for (let d = 0; d <= 5; d++) {
 for (const obj of ['dossiers', 'lettres', 'carnet', 'enveloppe']) {
   const f = `assets/desk/${obj}.webp`;
   if (fs.existsSync(f)) { copyMedia(f, `desk-${obj}.webp`); media.desk[obj] = `media/desk-${obj}.webp`; }
+}
+// photos du carnet d'enquête (assets/characters/photo/<type>.webp : portrait d'origine cadré en carré, préparé par tools/images.py)
+if (fs.existsSync('assets/characters/photo')) for (const f of fs.readdirSync('assets/characters/photo').filter(n => n.endsWith('.webp')).sort()) {
+  copyMedia(`assets/characters/photo/${f}`, `photo-${f}`); media.photos.push(f.replace(/\.webp$/, ''));
 }
 // décor du bureau (assets/desk/deco-<objet>.webp : loupe, encrier, bougie…), dans l'ordre alphabétique
 if (fs.existsSync('assets/desk')) for (const f of fs.readdirSync('assets/desk').filter(n => /^deco-.*\.webp$/.test(n)).sort()) {

@@ -400,8 +400,36 @@ def carte():
         print(f'carte {src.name} → {out.name} {img.size} ({out.stat().st_size // 1024} Ko)')
 
 
+def photos():
+    # photos du carnet d'enquête : le portrait d'origine cadré en carré (buste), fond magenta remplacé par une toile de
+    # studio ancienne (beige au centre, brun sur les bords) → assets/characters/photo/<type>.webp
+    from PIL import ImageDraw, ImageFilter
+    out_dir = DIR / 'photo'
+    out_dir.mkdir(exist_ok=True)
+    n = 360
+    # toile : dégradé radial clair au centre, assombri vers les bords
+    bg = Image.new('RGB', (n, n), (122, 92, 58))
+    glow = Image.new('L', (n, n), 0)
+    ImageDraw.Draw(glow).ellipse((-n * .15, -n * .25, n * 1.15, n * 1.05), fill=255)
+    glow = glow.filter(ImageFilter.GaussianBlur(n * .18))
+    bg = Image.composite(Image.new('RGB', (n, n), (226, 206, 164)), bg, glow)
+    for src in sources(DIR):
+        name = CHAR_ALIAS.get(src.stem.lower(), src.stem.lower())
+        img = Image.open(src)
+        side = round(min(img.size) * .92)
+        left = (img.width - side) // 2
+        top = min(round(img.height * .03), img.height - side)
+        img = img.crop((left, top, left + side, top + side))
+        cut = key_out(img.resize((n * 2, n * 2), Image.LANCZOS)).resize((n, n), Image.LANCZOS)
+        photo = bg.copy()
+        photo.paste(cut, (0, 0), cut)
+        photo.save(out_dir / (name + '.webp'), 'WEBP', quality=84, method=6)
+    print(f'photos du carnet → {out_dir.relative_to(ROOT.parent)}/')
+
+
 def main():
     portraits()
+    photos()
     objects()
     floors()
     home()

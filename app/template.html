@@ -246,7 +246,8 @@ header.top { display: flex; align-items: center; gap: 10px; }
 /* une page par habitant : portrait collé, nom, trait, tic, gag à l'encre rouge dans la marge */
 .nb-fiche { display: flex; flex-direction: column; align-items: flex-start; }
 .nb-photo { position: relative; align-self: center; width: 190px; height: 190px; margin: 4px 0 22px; padding: 7px; background: #f6efdc; transform: rotate(var(--tilt)); box-shadow: -3px 5px 8px rgba(0, 0, 0, .35); }
-.nb-photo .face, .nb-photo .portrait { display: block; width: 100%; height: 100%; }
+.nb-photo .face, .nb-photo .portrait, .nb-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.nb-photo img { filter: sepia(.18) contrast(1.03); }
 .nb-photo::before, .nb-photo::after { content: ""; position: absolute; z-index: 1; width: 62px; height: 20px; background: rgba(236, 222, 180, .75); box-shadow: 0 1px 2px rgba(0, 0, 0, .15); }
 .nb-photo::before { top: -8px; left: -18px; transform: rotate(-38deg); } .nb-photo::after { bottom: -8px; right: -18px; transform: rotate(-38deg); }
 .nb-name { font: 400 40px/68px var(--f-quill); margin: 0; color: #2b1d10; }
@@ -967,7 +968,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     const fiche = (t, i) => {
       const c = LORE.troupe[t], g = gag(t);
       return `<div class="fiche nb-fiche">
-        <span class="nb-photo" style="--tilt:${[-3, 2.5, -1.5, 3.5][i % 4]}deg" aria-hidden="true">${face({ archetype: t, name: c.name, role: 'suspect', icon: c.icon })}</span>
+        <span class="nb-photo" style="--tilt:${[-3, 2.5, -1.5, 3.5][i % 4]}deg" aria-hidden="true">${(MEDIA.photos || []).includes(t) ? `<img src="media/photo-${t}.webp" alt="">` : face({ archetype: t, name: c.name, role: 'suspect', icon: c.icon })}</span>
         <h3 class="nb-name">${esc(c.name)}</h3>
         <p class="nb-desc">${esc(c.desc)}</p>
         <p class="nb-tic">${esc(c.tic)}</p>
