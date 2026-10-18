@@ -716,10 +716,21 @@ html, body { background: var(--desk-tex, none) center top / 640px, var(--night);
 .desk-paper.p0 { width: 16%; height: 30%; left: -9%; top: 18%; transform: rotate(-7deg); }
 .desk-paper.p1 { width: 14%; height: 26%; right: -8%; top: 26%; transform: rotate(5deg); }
 .desk-paper.p2 { width: 22%; height: 12%; left: 30%; top: -7%; transform: rotate(-3deg); }
+/* papiers illustrés (assets/desk/papier-*) : la feuille dessinée remplace le papier ligné CSS */
+.desk-paper.img { background: none; box-shadow: none; border-radius: 0; height: auto; filter: drop-shadow(3px 5px 6px rgba(0, 0, 0, .45)); }
+.desk-paper.img.p0 { width: 15%; top: 14%; } .desk-paper.img.p1 { width: 13%; top: 22%; } .desk-paper.img.p2 { width: 24%; top: -8%; }
+/* clous forgés (au lieu des punaises, trop modernes) : tête de fer carrée martelée, un peu de travers */
+.pin-tl, .pin-tr, .desk-photo::before { width: 15px !important; height: 15px !important; border-radius: 3px !important; transform: rotate(var(--nail, 12deg));
+  background: radial-gradient(circle at 32% 28%, #a9a39a 0 8%, transparent 22%), linear-gradient(135deg, #5d5a55, #2b2925 60%, #1a1816) !important;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .55), inset 1px 1px 0 rgba(255, 255, 255, .18), 2px 3px 3px rgba(0, 0, 0, .55) !important; }
+.pin-tr { --nail: -9deg; }
 /* croquis des derniers lieux ouverts, sur des feuilles épinglées au bord de la carte (cliquables) */
 .desk-photo { z-index: 3; border: 0; padding: 10px; cursor: pointer; box-shadow: 4px 6px 10px rgba(0, 0, 0, .5);
   background: radial-gradient(ellipse at 50% 45%, transparent 55%, rgba(120, 80, 30, .25) 100%), var(--parch-tex, none) center / 200px, linear-gradient(160deg, #efe1bd, #dcc597); }
 .desk-photo span { display: block; width: 100%; aspect-ratio: 4 / 3; background: center / contain no-repeat; mix-blend-mode: multiply; }
+/* support illustré (assets/desk/support-papier) : feuille arrachée d'un carnet, le croquis dans sa partie vide */
+.desk-photo.img { box-sizing: border-box; padding: 0; aspect-ratio: 520 / 394; background: var(--support) center / 100% 100% no-repeat; box-shadow: none; filter: drop-shadow(3px 5px 6px rgba(0, 0, 0, .45)); }
+.desk-photo.img span { position: absolute; left: 13%; right: 8%; top: 10%; bottom: 11%; width: auto; aspect-ratio: auto; }
 .desk-photo::before { content: ""; position: absolute; top: -6px; left: 50%; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #e0574a, #8e1f17 70%); box-shadow: 0 2px 3px rgba(0, 0, 0, .5); }
 .desk-photo.ph0 { width: 14%; right: 5%; top: -9%; transform: rotate(5deg); }
 .desk-photo.ph1 { width: 13%; left: 17%; top: -10%; transform: rotate(-6deg); }
@@ -893,13 +904,13 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
       </header>
       <div class="bureau">
        <div class="desk-stage" style="--r:${LORE.ratio[0] / LORE.ratio[1]}">
-        <span class="desk-paper p0" aria-hidden="true"></span><span class="desk-paper p1" aria-hidden="true"></span><span class="desk-paper p2" aria-hidden="true"></span>
+        ${[0, 1, 2].map(i => MEDIA.desk[`papier-${i + 1}`] ? `<img class="desk-paper p${i} img" src="${MEDIA.desk[`papier-${i + 1}`]}" alt="" aria-hidden="true">` : `<span class="desk-paper p${i}" aria-hidden="true"></span>`).join('')}
         <div class="desk-map" style="aspect-ratio:${LORE.ratio[0]} / ${LORE.ratio[1]};${MEDIA.map ? `background-image:url(${MEDIA.map})` : ''}">
           <span class="pin-tl" aria-hidden="true"></span><span class="pin-tr" aria-hidden="true"></span>
           ${strings.length ? `<svg class="desk-string" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">${strings.map(([[x1, y1], [x2, y2]]) => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/>`).join('')}</svg>` : ''}
           ${order.map(dot).join('')}
         </div>
-        ${photos.map((pl, i) => `<button class="desk-photo ph${i}" data-place="${pl}" title="${esc(placeTitle(pl))}" aria-label="${esc(placeTitle(pl))}"><span style="background-image:url(media/croquis-lieu-${photoOf(pl)}.webp)"></span></button>`).join('')}
+        ${photos.map((pl, i) => `<button class="desk-photo ph${i} ${MEDIA.desk['support-papier'] ? 'img' : ''}" style="${MEDIA.desk['support-papier'] ? `--support:url(${MEDIA.desk['support-papier']})` : ''}" data-place="${pl}" title="${esc(placeTitle(pl))}" aria-label="${esc(placeTitle(pl))}"><span style="background-image:url(media/croquis-lieu-${photoOf(pl)}.webp)"></span></button>`).join('')}
         ${deco.slice(0, 3).map((src, i) => `<img class="desk-deco s${i}" src="${src}" alt="" aria-hidden="true">`).join('')}
         ${item('dk-dossiers', 'deskDossiers', `Dossiers classés (${nSolved})`, img('dossiers', 'pile'))}
         ${item(`dk-lettres ${nu ? 'unread' : ''}`, 'deskLettres', `Lettres anonymes (${nl})`, img('lettres', 'liasse'), nu ? `<span class="newmark" aria-label="${nu} non lue${nu > 1 ? 's' : ''}"></span>` : '')}
