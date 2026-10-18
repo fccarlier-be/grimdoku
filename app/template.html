@@ -1561,8 +1561,10 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
       <p class="story-letter">${esc(LORE.letters[place])}</p>
       <p class="story-sign">— A.</p>
       <p class="story-count">${n} / ${total} lettres dans ton carnet${FINAL && !finalUnlocked() ? ` · encore ${LORE.need - n} avant que tout s'éclaire` : FINAL ? ' · <b>une affaire très spéciale vous attend</b>' : ''}</p>
-      <div class="row"><button class="btn" id="toCarnet">Ouvrir le carnet</button><button class="btn primary" data-close>Ranger dans mon carnet</button></div>`, 'letter-story');
+      <div class="row"><button class="btn" id="letterLater">Plus tard</button><button class="btn primary" id="toCarnet">📖 Voir mon carnet</button></div>`, 'letter-story');
+    // deux choix sans ambiguïté (retour de François : « Ranger dans mon carnet » ne faisait que refermer, on croyait que rien ne se passait)
     ov.querySelector('#toCarnet').onclick = () => { close(); go('carnet'); };
+    ov.querySelector('#letterLater').onclick = () => { close(); toast('📜 Lettre rangée dans ton carnet (📖 sur la page des tailles).'); };
   }
   function verdictHtml() {
     const k = ctx.chars[P.solution.murderer];

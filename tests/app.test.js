@@ -252,7 +252,9 @@ test('lore : lettre d\'Augure à la première victoire dans un lieu, rangée dan
   assert.ok(d.querySelector('.story.verdict-story .epi'), 'scène du verdict au centre, avec le dialogue');
   d.getElementById('toLetter').click();
   assert.ok(d.querySelector('.story.letter-story .story-letter'), 'la lettre en grand');
-  d.querySelector('.letter-story [data-close]').click();
+  d.getElementById('letterLater').click();
+  assert.equal(d.querySelector('.story'), null, '« Plus tard » referme la lettre');
+  assert.match(d.querySelector('.toast').textContent, /carnet/, 'et dit où elle est rangée');
   assert.ok(d.querySelector('.letter-augure'), 'lettre rappelée dans le verdict');
   assert.deepEqual(JSON.parse(w.localStorage.getItem('grimdoku:lettres')), [p.place]);
   assert.ok(d.querySelectorAll('.epi .epl').length >= 3, 'épilogue en répliques');
@@ -368,4 +370,16 @@ test('prologue : à la première partie, quatre scènes, puis la carte ; fil rou
   w.grimGo('carnet');
   d.getElementById('prologueBtn').click();
   assert.ok(d.querySelector('.prologue-story'), 'se revoit depuis le carnet');
+});
+
+test('lettre d\'Augure : « Voir mon carnet » ouvre le carnet', () => {
+  const { w, d, openCase, PUZZLES } = open();
+  const p = PUZZLES.find(q => !q.final);
+  w.localStorage.setItem('grimdoku:seen:' + p.id, 'true');
+  w.localStorage.setItem('grimdoku:p:' + p.id, JSON.stringify({ pos: p.solution.positions, pencil: {}, marks: [], done: [], solved: false, sig: sigOf(p) }));
+  openCase(p.id);
+  d.getElementById('accuse').click();
+  d.getElementById('toLetter').click();
+  d.getElementById('toCarnet').click();
+  assert.ok(w.location.hash.includes('carnet') && d.querySelector('.lettre.fresh'), 'carnet ouvert, la lettre marquée nouvelle');
 });
