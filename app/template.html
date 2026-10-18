@@ -564,6 +564,15 @@ html, body { background: var(--desk-tex, none) center top / 640px, var(--night);
   font-family: var(--f-display); font-weight: 400; font-size: 18px; box-shadow: inset 0 -2px 5px rgba(0, 0, 0, .3), 0 2px 5px rgba(0, 0, 0, .35);
 }
 .sheet { border: 0; border-radius: 3px; }
+/* plaques : coins de 40 px de l'image (640 × 151) gardés intacts, seul le milieu s'étire ; le texte posé en HTML */
+html.plaques .btn, html.plaques .sheet .btn, html.plaques .verdictcard .btn, html.plaques .soundpop .btn {
+  background: none; box-shadow: none; border-radius: 0; border-style: solid; border-width: 12px 16px; padding: 2px 10px; min-height: 48px;
+  border-image: var(--bouton-secondaire) 40 48 fill / 12px 16px stretch; color: #3b2a18;
+  font-family: var(--f-display); font-weight: 400; font-size: 18px; line-height: 1.1; filter: drop-shadow(1px 3px 2px rgba(0, 0, 0, .4)); transition: transform .12s ease, filter .12s ease; }
+html.plaques .btn.primary, html.plaques .sheet .btn.primary, html.plaques .verdictcard .btn.primary { border-image-source: var(--bouton-principal); color: #fbe7cf; text-shadow: 0 1px 1px rgba(0, 0, 0, .45); }
+@media (hover: hover) { html.plaques .btn:hover { transform: translateY(-2px); filter: brightness(1.08) drop-shadow(1px 5px 3px rgba(0, 0, 0, .45)); } }
+html.plaques .btn:active { transform: translateY(1px); filter: brightness(.96) drop-shadow(1px 1px 1px rgba(0, 0, 0, .4)); }
+html.plaques .soundpop .btn { min-height: 42px; font-size: 16px; }
 .sheet h2 { color: var(--red-ink); }
 .toggle input { accent-color: var(--red-ink); }
 
@@ -856,6 +865,11 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
 if (MEDIA.desk && MEDIA.desk['bouton-retour']) {
   document.documentElement.classList.add('sceaux');
   if (MEDIA.desk['bouton-options']) document.documentElement.classList.add('opts-img');
+}
+// boutons texte sur plaques illustrées (assets/desk/bouton-principal|secondaire), étirées par le milieu (border-image)
+if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondaire']) {
+  document.documentElement.classList.add('plaques');
+  for (const k of ['bouton-principal', 'bouton-secondaire']) document.documentElement.style.setProperty('--' + k, `url(${MEDIA.desk[k]})`);
   for (const k of ['bouton-retour', 'bouton-son', 'bouton-muet', 'bouton-aide', 'bouton-options']) if (MEDIA.desk[k]) document.documentElement.style.setProperty('--' + k, `url(${MEDIA.desk[k]})`);
 }
 (function () {
