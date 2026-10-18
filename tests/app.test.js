@@ -45,7 +45,8 @@ function open({ settings, saves = {} } = {}) {
   // une affaire s'ouvre directement par son adresse (les lieux, eux, s'ouvrent au fil de l'histoire)
   const openCase = (id) => w.grimGo('affaire/' + id);
   opened.push(w);
-  return { w, d, errors, cell, fire, pick, hold, openCase, PUZZLES: w.eval('PUZZLES') };
+  // grilles désactivées (off, lore/actives.json) : gardées dans les données, mais pas jouables
+  return { w, d, errors, cell, fire, pick, hold, openCase, PUZZLES: w.eval('PUZZLES').filter(p => !p.off) };
 }
 
 test('accueil → Jouer → bureau : la carte ouverte, seul le château accessible, les dossiers, les lettres, le carnet', () => {
@@ -78,7 +79,10 @@ test('déblocage : chaque lieu résolu ouvre les suivants, et tous les lieux son
   const reach = new Set([L.start]), todo = [L.start];
   while (todo.length) for (const n of L.unlock[todo.pop()] || []) if (!reach.has(n)) { reach.add(n); todo.push(n); }
   assert.deepEqual([...reach].filter(pl => places.includes(pl)).sort(), [...places].sort(), 'arbre de déblocage complet');
-  solve(w, PUZZLES.find(p => p.place === L.start));
+  PUZZLES.filter(p => p.place === L.start && !p.final).slice(1).forEach(p => solve(w, p));
+  w.grimGo('bureau');
+  assert.equal(d.querySelectorAll('.desk-map .dot').length, 1, 'tant que le château n\'est pas terminé, rien ne s\'ouvre');
+  solve(w, PUZZLES.find(p => p.place === L.start && !p.final));
   w.grimGo('bureau');
   const open1 = [...new Set([...d.querySelectorAll('[data-place]')].map(b => b.dataset.place))].sort();
   assert.deepEqual(open1, [L.start, ...L.unlock[L.start]].filter(pl => places.includes(pl)).sort(), 'le château ouvre ses voisins');
@@ -264,9 +268,18 @@ test('notation de la difficulté ressentie : 0 à 5 sous la carte, retenue, iden
   assert.deepEqual(errors, []);
 });
 
-test('lore : lettre d\'Augure à la première victoire dans un lieu, rangée dans le carnet ; épilogue en dialogue', () => {
+test('lore : lettre d\'Augure à la dernière victoire dans un lieu, rangée sur le bureau ; épilogue en dialogue', () => {
   const { w, d, openCase, errors, PUZZLES } = open();
-  const p = PUZZLES.find(q => !q.final);
+  const [p, ...others] = PUZZLES.filter(q => !q.final && q.place === PUZZLES.find(r => !r.final).place);
+  // avant-dernière enquête : pas de lettre, seulement le compte de ce qui reste
+  others.slice(1).forEach(q => solve(w, q));
+  w.localStorage.setItem('grimdoku:p:' + others[0].id, JSON.stringify({ pos: others[0].solution.positions, pencil: {}, marks: [], done: [], solved: false, sig: sigOf(others[0]) }));
+  openCase(others[0].id);
+  d.getElementById('accuse').click();
+  assert.equal(d.getElementById('toLetter'), null, 'pas de lettre avant la dernière enquête du lieu');
+  assert.match(d.querySelector('.letter-left').textContent, /dernière enquête/, 'il en reste une');
+  assert.equal(w.localStorage.getItem('grimdoku:lettres'), null);
+  d.querySelector('.story [data-close]').click();
   w.localStorage.setItem('grimdoku:p:' + p.id, JSON.stringify({ pos: p.solution.positions, pencil: {}, marks: [], done: [], solved: false, sig: sigOf(p) }));
   openCase(p.id);
   d.getElementById('accuse').click();
@@ -425,7 +438,8 @@ test('prologue : à la première partie, quatre scènes, puis le bureau ; se rev
 
 test('lettre anonyme : annonce les lieux ouverts, « Retour au bureau » y mène', () => {
   const { w, d, openCase, PUZZLES } = open();
-  const p = PUZZLES.find(q => !q.final && q.place === 'chateau');
+  const [p, ...others] = PUZZLES.filter(q => !q.final && q.place === 'chateau');
+  others.forEach(q => solve(w, q)); // la dernière enquête du château
   w.localStorage.setItem('grimdoku:seen:' + p.id, 'true');
   w.localStorage.setItem('grimdoku:p:' + p.id, JSON.stringify({ pos: p.solution.positions, pencil: {}, marks: [], done: [], solved: false, sig: sigOf(p) }));
   openCase(p.id);

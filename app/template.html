@@ -663,6 +663,7 @@ html, body { background: var(--desk-tex, none) center top / 640px, var(--night);
 .story-letter { font: italic 400 21px/1.45 var(--f-body) !important; margin: 4px 0 !important; }
 .story-sign { align-self: flex-end; font-family: var(--f-display); font-size: 22px !important; }
 .story-count { color: var(--muted); font-size: 14px !important; }
+.letter-left { margin: 6px 0 0; font-style: italic; color: #6e5434; }
 .story-newplaces { font-size: 16px !important; color: var(--ink); background: rgba(240, 169, 58, .25); padding: 6px 10px; border-radius: 6px; }
 .story-letter.reveal { font-size: 17px !important; text-align: left; align-self: stretch; }
 .newmark { display: inline-block; margin-top: 4px; padding: 2px 8px; border-radius: 99px; background: #a3312a; color: #fbe7cf; font: 700 12px/1.4 var(--f-body); }
@@ -856,9 +857,10 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
   // ---------- le bureau de l'enquêteur (décision de François, 2026-10-18) ----------
   // Plus de classement par taille : « Jouer » mène (après le prologue) au bureau, avec la carte de Brumeval ouverte au
   // centre, les dossiers classés, les lettres anonymes, le carnet et un peu de décor. Au départ, seul le château est
-  // ouvert ; chaque première enquête résolue dans un lieu apporte sa lettre, qui ouvre les lieux dont elle parle
+  // ouvert ; la dernière enquête résolue dans un lieu (5 à 7 par lieu) apporte sa lettre, qui ouvre les lieux suivants
   // (lore/carte.json, unlock). L'enveloppe de l'affaire finale n'apparaît qu'avec assez de lettres.
-  const CASES = PUZZLES.filter(p => !p.final); // l'affaire finale n'est dans aucun lieu : elle arrive par l'enveloppe
+  // l'affaire finale n'est dans aucun lieu : elle arrive par l'enveloppe ; les grilles désactivées (off) non plus
+  const CASES = PUZZLES.filter(p => !p.final && !p.off);
   const FINAL = PUZZLES.find(p => p.final);
   const isSolved = (p) => !!(store.get('p:' + p.id, null) || {}).solved;
   const solvedIn = (list) => list.filter(isSolved).length;
@@ -871,10 +873,13 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
         ${soundBtn()}
         <button class="iconbtn" id="rulesBtn" aria-label="Règles">?</button>
       </header>`;
-  // lieux ouverts : le départ, plus ceux qu'ouvre chaque lieu où une enquête est résolue
+  // un lieu est terminé quand toutes ses enquêtes actives sont résolues : c'est là que sa lettre arrive
+  const placeDone = (pl) => { const list = placeCases(pl); return list.length > 0 && list.every(isSolved); };
+  // lieux ouverts : le départ, plus ceux qu'ouvre chaque lieu terminé (sa lettre)
   function unlockedPlaces() {
     const open = new Set([LORE.start]);
-    for (const p of CASES) if (isSolved(p)) { open.add(p.place); (LORE.unlock[p.place] || []).forEach(n => open.add(n)); }
+    for (const p of CASES) if (isSolved(p)) open.add(p.place);
+    for (const pl of new Set(CASES.map(p => p.place))) if (placeDone(pl)) (LORE.unlock[pl] || []).forEach(n => open.add(n));
     return open;
   }
   const seenPlaces = () => store.get('lieux-vus', []);
@@ -901,7 +906,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     // décor : illustrations assets/desk/deco-*.webp (loupe, encrier, bougie) ; à défaut, deux vignettes des niveaux
     const deco = MEDIA.deskDeco && MEDIA.deskDeco.length ? MEDIA.deskDeco : [MEDIA.levels[1], MEDIA.levels[0]].filter(Boolean);
     // fil rouge : de chaque lieu résolu vers les lieux qu'il a révélés (chaque nouveau clou y est relié)
-    const hit = (pl) => solvedIn(placeCases(pl)) > 0;
+    const hit = placeDone;
     const strings = Object.entries(LORE.unlock).flatMap(([a, kids]) => hit(a) ? kids.filter(b => open.has(b) && LORE.pos[b] && placeCases(b).length).map(b => [LORE.pos[a], LORE.pos[b]]) : []);
     // croquis épinglés : les derniers lieux ouverts (pas encore visités d'abord) dont le décor est illustré
     const photoOf = (pl) => { const d = (placeCases(pl)[0] || {}).decor; return (MEDIA.placeSketches || []).includes(d) ? d : null; };
@@ -1050,7 +1055,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     if (!seenPlaces().includes(pl)) store.set('lieux-vus', seenPlaces().concat(pl));
     const list = placeCases(pl);
     $app.innerHTML = pageHead('Retour au bureau', esc(placeTitle(pl))) + `
-      <p class="lead">${letters().includes(pl) ? `📜 <i>${esc(LORE.letters[pl])}</i> — A.` : 'Résous une première enquête ici : une lettre sur ce lieu glissera sous ta porte.'} <span class="count">${solvedIn(list)} / ${list.length} résolues</span></p>
+      <p class="lead">${letters().includes(pl) ? `📜 <i>${esc(LORE.letters[pl])}</i> — A.` : `${list.length - solvedIn(list) > 1 ? `Encore ${list.length - solvedIn(list)} enquêtes ici` : 'Une dernière enquête ici'}, et une lettre sur ce lieu glissera sous ta porte.`} <span class="count">${solvedIn(list)} / ${list.length} résolues</span></p>
       <div class="cases">${list.map(caseHtml).join('')}</div>`;
     document.getElementById('back').onclick = () => go('bureau');
     document.getElementById('rulesBtn').onclick = rules;
@@ -1179,7 +1184,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     else if (page === 'carnet') carnetPage();
     else if (page === 'lieu' && placeCases(arg).length && unlockedPlaces().has(arg)) lieuPage(arg);
     else if (page === 'affaire' && FINAL && arg === FINAL.id && !finalUnlocked()) bureauPage(); // pas encore arrivée
-    else if (page === 'affaire' && PUZZLES.some(p => p.id === arg)) open(arg);
+    else if (page === 'affaire' && PUZZLES.some(p => p.id === arg && !p.off)) open(arg);
     else home();
     window.scrollTo(0, 0);
   }
@@ -1697,14 +1702,14 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
   }
 
   // verdict affiché sous la carte une fois l'affaire résolue (remplace le dock)
-  // Lettres d'Augure (fil rouge) : la première enquête résolue dans un lieu donne la lettre de ce lieu
+  // Lettres d'Augure (fil rouge) : la dernière enquête résolue dans un lieu donne la lettre de ce lieu
   const letters = () => store.get('lettres', []);
   const finalUnlocked = () => letters().length >= LORE.need;
   // lettres pas encore lues dans le carnet (le bouton du carnet le signale)
   const unread = () => letters().filter(pl => !store.get('lettres-lues', []).includes(pl)).length;
   function grantLetter(p) {
     const got = letters();
-    if (!LORE.letters[p.place] || got.includes(p.place)) return null;
+    if (!LORE.letters[p.place] || got.includes(p.place) || !placeDone(p.place)) return null;
     store.set('lettres', got.concat(p.place));
     return p.place;
   }
@@ -1736,6 +1741,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
       <b class="culprit">${esc(k.name)}</b>
       <p class="why">Seul suspect dans la pièce de ${esc(v.name)}.</p>
       <div class="epi">${dialogue(P.epilogue)}</div>
+      ${newLetter ? '' : leftHtml()}
       <div class="row">${P.revelation ? `<button class="btn primary" id="toReveal">📜 Dans les archives du Palier zéro…</button>`
         : newLetter ? `<button class="btn primary" id="toLetter">📜 Une lettre a été glissée sous la porte…</button>` : `<button class="btn primary" data-close>Fermer</button>`}</div>`, 'verdict-story');
     const b = ov.querySelector('#toLetter'); if (b) b.onclick = () => letterStory(newLetter);
@@ -1781,13 +1787,19 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
         <p class="why">Seul suspect dans la pièce de ${esc(v.name)}.</p>
         <div class="epi">${dialogue(P.epilogue)}</div>
         ${P.revelation ? `<button class="btn" id="rereadReveal">📜 Relire la lettre de Fizzlebarbe</button>` : ''}
-        ${render.newLetter === P.place ? `<div class="letter-augure"><b>📜 Une lettre anonyme glissée sous la porte</b><p>${esc(LORE.letters[P.place])}</p><small>— A. · ${letters().length} / ${Object.keys(LORE.letters).length} lettres dans ton carnet</small></div>` : ''}
+        ${render.newLetter === P.place ? `<div class="letter-augure"><b>📜 Une lettre anonyme glissée sous la porte</b><p>${esc(LORE.letters[P.place])}</p><small>— A. · ${letters().length} / ${Object.keys(LORE.letters).length} lettres sur ton bureau</small></div>` : leftHtml()}
         <div class="row">
           <button class="btn" id="replayBtn">Rejouer</button>
           ${next ? `<button class="btn primary" id="nextBtn">Affaire suivante</button>` : `<button class="btn primary" id="homeBtn">Retour au bureau</button>`}
         </div>
       </div>`;
   }
+  // avant la lettre : enquêtes encore à résoudre dans le lieu (rien si la lettre est arrivée ou pour l'affaire finale)
+  const leftHtml = () => {
+    if (P.final || letters().includes(P.place) || !LORE.letters[P.place]) return '';
+    const left = placeCases(P.place).filter(p => !isSolved(p)).length;
+    return left ? `<p class="letter-left">📜 ${left > 1 ? `Encore ${left} enquêtes` : 'Une dernière enquête'} dans ce lieu avant sa lettre.</p>` : '';
+  };
   // affaire suivante : dans l'ordre (taille, difficulté), sans l'affaire finale
   const nextCase = () => P.final ? null : placeCases(P.place).find(p => p !== P && !isSolved(p));
   function bindVerdict() {
@@ -1827,8 +1839,8 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
         <li><b>Seule la pièce du crime contient deux personnes</b> : chaque suspect était seul dans sa pièce, sauf le coupable, qui était avec la victime.</li>
         <li><b>Chaque pièce est occupée</b> : aucune pièce n'est vide (deux pièces reliées par un portail comptent pour une).</li>
         <li><b>La victime</b> est un invité de passage à Brumeval ; les suspects, eux, sont les habitués, et tu les retrouveras d'une enquête à l'autre. Chacun porte une <b>pastille</b> avec l'initiale de son nom (deux lettres si deux noms commencent pareil). Les fiches sont rangées de la plus facile à placer à la plus difficile.</li>
-        <li><b>Ton bureau</b> : la carte de Brumeval y est épinglée. Au début, seul le château t'est ouvert ; chaque affaire résolue ouvre de nouveaux lieux (pastille « ! »). Les dossiers classés, les lettres reçues et ton carnet sont posés à côté.</li>
-        <li><b>Lettres anonymes</b> : la première enquête résolue dans chaque lieu te vaut une lettre anonyme, rangée sur ton bureau. Assez de lettres, et il se passera quelque chose.</li>
+        <li><b>Ton bureau</b> : la carte de Brumeval y est épinglée. Au début, seul le château t'est ouvert ; chaque lieu terminé ouvre de nouveaux lieux (un nouveau clou sur la carte). Les dossiers classés, les lettres reçues et ton carnet sont posés à côté.</li>
+        <li><b>Lettres anonymes</b> : chaque lieu compte 5 à 7 enquêtes ; la dernière résolue te vaut une lettre anonyme sur ce lieu, rangée sur ton bureau. Assez de lettres, et il se passera quelque chose.</li>
         <li>La victime n'a pas d'indice : c'est à toi de la trouver.</li>
         <li><b>Grands personnages</b> : ils occupent plusieurs cases (2 cases jusqu'en 8×8, jusqu'à 3 en 9×9, jusqu'à 4 au-delà), en ligne, en angle, en carré, en T ou en zigzag, et leur forme peut être tournée ou retournée. Chacune de leurs cases prend sa ligne et sa colonne. Toutes leurs cases sont dans la même pièce, jamais sur un meuble. « À côté de » et « même ligne / colonne » valent pour n'importe laquelle de leurs cases ; « au nord de X » veut dire toutes leurs cases plus haut que X. Sur les grandes cartes, leur forme est parfois inconnue : leur fiche dit seulement combien de cases ils peuvent occuper.</li>
       </ul>

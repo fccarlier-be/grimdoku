@@ -18,16 +18,16 @@
       "titre": "Un billet sous la porte",
       "sceau": "A",
       "de": "Billet anonyme",
-      "texte": "Bienvenue à Brumeval, enquêteur. Ici, chaque lieu a ses secrets, et j'en connais quelques-uns.\nRésolvez votre première affaire. Je vous écrirai.",
+      "texte": "Bienvenue à Brumeval, enquêteur. Ici, chaque lieu a ses secrets, et j'en connais quelques-uns.\nVenez à bout des affaires du château. Je vous écrirai.",
       "signature": "— A.",
       "apres": "Sur le rebord de la fenêtre, un corbeau m'a regardé lire. Puis il est parti. Je n'aime pas les corbeaux qui attendent une réponse."
     },
     {
       "titre": "Mes notes",
       "guide": [
-        "Sur mon bureau, la carte de Brumeval : chaque affaire résolue m'ouvre de nouveaux lieux.",
+        "Sur mon bureau, la carte de Brumeval : chaque lieu dont j'ai bouclé toutes les enquêtes m'en ouvre de nouveaux.",
         "Placer tout le monde : une personne par ligne et par colonne, un suspect par pièce, la victime seule avec son meurtrier.",
-        "Après la première enquête résolue dans un lieu, une lettre sur ce lieu glisse sous ma porte, signée « A. ».",
+        "Quand la dernière enquête d'un lieu est résolue, une lettre sur ce lieu glisse sous ma porte, signée « A. ».",
         "Les lettres s'empilent sur le bureau, à côté des dossiers classés et du carnet des habitants croisés.",
         "À quinze lettres, quelque chose arrivera. Toutes les lettres semblent y mener."
       ],

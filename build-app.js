@@ -7,6 +7,12 @@ const engine = fs.readFileSync('engine.js', 'utf8');
 // difficulté, score, puis identifiant
 const puzzles = fs.readdirSync('puzzles').sort().map(f => JSON.parse(fs.readFileSync('puzzles/' + f, 'utf8')))
   .sort((a, b) => a.size - b.size || a.difficulty - b.difficulty || a.rating.score - b.rating.score || a.id.localeCompare(b.id));
+// grilles actives de chaque lieu (lore/actives.json, tools/actives.js) : les autres restent dans les données, désactivées
+// (« off » : ni dans les lieux ni ouvrables), pour pouvoir les réactiver sans rien régénérer
+if (fs.existsSync('lore/actives.json')) {
+  const on = new Set(Object.entries(JSON.parse(fs.readFileSync('lore/actives.json', 'utf8'))).filter(([k]) => k !== '_doc').flatMap(([, ids]) => ids));
+  for (const p of puzzles) if (!p.final && !on.has(p.id)) p.off = true;
+}
 
 // mobilier : assets/objects/<type>.svg → un <symbol id="obj-<type>"> par objet, utilisé via <use href="#obj-…">
 const defs = [], symbols = [];
