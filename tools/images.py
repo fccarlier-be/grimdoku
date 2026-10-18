@@ -67,6 +67,16 @@ BIG_HEAD_TYPE = {  # réglages par type d'après les images générées
 # allongés vus de dessus, tête à gauche : on redresse le buste d'un quart de tour (sens horaire, en degrés)
 BIG_HEAD_TURN = {'I2': 90, 'I3': 90, 'L3': 0}
 BIG_SIZE = 256      # pixels par case
+# Buste des grands monstres (pions, fiches) : depuis que leur forme est propre à chaque affaire, cast.json ne donne plus de
+# forme par type et big() ne s'applique plus ; leur image entière est recadrée ici autour de la tête.
+# (côté du carré en fraction de la hauteur, centre x, centre y en fraction de l'image, quart de tour horaire pour
+# redresser un monstre couché tête à gauche)
+BIG_BUST = {
+    'geant': (0.80, 0.17, 0.50, 90),
+    'golem': (0.72, 0.14, 0.50, 90),
+    'vouivre': (0.95, 0.13, 0.50, 90),
+    'dragon': (0.50, 0.30, 0.24, 0),
+}
 CAST = json.loads((ROOT.parent / 'cast.json').read_text(encoding='utf-8'))
 SHAPE_OF = {t: a['shape'] for t, a in CAST.items() if isinstance(a, dict) and a.get('shape')}
 
@@ -168,6 +178,17 @@ def portraits():
             big(src, name)
             continue
         img = Image.open(src)
+        if name in BIG_BUST:
+            # grand monstre (image entière, souvent couché vu de dessus) : buste carré autour de la tête, redressé
+            frac, cx, cy, turn = BIG_BUST[name]
+            side = round(img.height * frac)
+            left = min(max(0, round(img.width * cx - side / 2)), img.width - side)
+            top = min(max(0, round(img.height * cy - side / 2)), img.height - side)
+            img = img.crop((left, top, left + side, top + side)).rotate(-turn)
+            img = key_out(img.resize((SIZE * 2, SIZE * 2), Image.LANCZOS)).resize((SIZE, SIZE), Image.LANCZOS)
+            img.save(DIR / (name + '.webp'), 'WEBP', quality=82, method=6)
+            print(f'grand monstre {src.name} → {name}.webp (buste)')
+            continue
         zoom, cx, cy = CROP.get(name, (ZOOM, CX, CY))
         side = round(min(img.size) * zoom)
         left = min(max(0, round(img.width * cx - side / 2)), img.width - side)
@@ -447,10 +468,17 @@ def sketches():
     for src in sources(DIR):
         name = CHAR_ALIAS.get(src.stem.lower(), src.stem.lower())
         img = Image.open(src)
-        side = round(min(img.size) * .92)
-        left = (img.width - side) // 2
-        top = min(round(img.height * .03), img.height - side)
-        img = img.crop((left, top, left + side, top + side))
+        if name in BIG_BUST:  # grand monstre : même buste que son pion (BIG_BUST)
+            frac, cx, cy, turn = BIG_BUST[name]
+            side = round(img.height * frac)
+            left = min(max(0, round(img.width * cx - side / 2)), img.width - side)
+            top = min(max(0, round(img.height * cy - side / 2)), img.height - side)
+            img = img.crop((left, top, left + side, top + side)).rotate(-turn)
+        else:
+            side = round(min(img.size) * .92)
+            left = (img.width - side) // 2
+            top = min(round(img.height * .03), img.height - side)
+            img = img.crop((left, top, left + side, top + side))
         cut = key_out(img.resize((n * 2, n * 2), Image.LANCZOS)).resize((n, n), Image.LANCZOS)
         a = cut.getchannel('A')
         rgb = Image.composite(cut.convert('RGB'), Image.new('RGB', cut.size, 'white'), a)
