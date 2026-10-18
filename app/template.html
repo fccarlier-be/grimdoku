@@ -794,7 +794,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     $app.innerHTML = pageHead('Retour aux tailles', "Carnet d'enquête") + `
       <button class="btn" id="prologueBtn">📜 Revoir le prologue</button>
       <section class="carnet-sec"><h2>Lettres d'Augure <small>${got.length} / ${total}</small></h2>
-        <p class="lead">Une lettre anonyme attend dans chaque lieu de Brumeval : elle arrive avec la première enquête résolue sur place. ${got.length >= LORE.need ? "Elles mènent toutes au même endroit." : `Il en faut ${LORE.need} pour comprendre où elles mènent.`}</p>
+        <p class="lead">Après la première enquête résolue dans chaque lieu de Brumeval, Augure glisse sous ta porte une lettre sur ce lieu. ${got.length >= LORE.need ? "Elles mènent toutes au même endroit." : `Il en faut ${LORE.need} pour comprendre où elles mènent.`}</p>
         <div class="lettres">${Object.keys(LORE.letters).map(pl => got.includes(pl)
           ? `<div class="lettre ${fresh.includes(pl) ? 'fresh' : ''}"><b>${esc(placeTitle(pl))}</b>${fresh.includes(pl) ? ' <span class="newmark">nouvelle</span>' : ''}<p>${esc(LORE.letters[pl])}</p><small>— A.</small></div>`
           : `<div class="lettre locked"><b>${esc(placeTitle(pl))}</b><p>Pas encore de lettre ici.</p></div>`).join('')}</div>
@@ -851,7 +851,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
     $app.classList.remove('game');
     const list = placeCases(pl);
     $app.innerHTML = pageHead('Retour à la carte', esc(placeTitle(pl))) + `
-      <p class="lead">${letters().includes(pl) ? `📜 <i>${esc(LORE.letters[pl])}</i> — A.` : "Une lettre d'Augure attend ici la première enquête résolue."} <span class="count">${solvedIn(list)} / ${list.length} résolues</span></p>
+      <p class="lead">${letters().includes(pl) ? `📜 <i>${esc(LORE.letters[pl])}</i> — A.` : "Résous une première enquête ici : Augure t'écrira sur ce lieu."} <span class="count">${solvedIn(list)} / ${list.length} résolues</span></p>
       <div class="cases">${list.map(caseHtml).join('')}</div>`;
     document.getElementById('back').onclick = () => go('carte');
     document.getElementById('rulesBtn').onclick = rules;

@@ -92,7 +92,7 @@ On l'entend à trois endroits :
 **4. Mes notes** (mode d'emploi)
 1. Choisir un lieu sur la carte de Brumeval, et une enquête.
 2. Placer tout le monde : une personne par ligne et par colonne, un suspect par pièce, la victime seule avec son meurtrier.
-3. Chaque lieu cache une lettre d'Augure. Elle arrive avec la première enquête résolue sur place.
+3. Après la première enquête résolue dans un lieu, Augure glisse sous ma porte une lettre sur ce lieu.
 4. Les lettres s'empilent dans le carnet d'enquête, avec les fiches des habitants croisés.
 5. À quinze lettres, une affaire se débloque. Toutes les lettres semblent y mener.
 *Commencer par le Sanglier Borgne : petites cartes, gros buveurs, et un tavernier qui note tout.*
@@ -848,7 +848,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 
 Les enquêtes ordinaires se jouent dans n'importe quel ordre : c'est la chronologie du monde, pas un ordre imposé au joueur.
 ### Les lettres
-Après chaque enquête résolue, l'enquêteur trouve **une lettre glissée sous la porte**, signée « — A. ». Il y a **une lettre par lieu** (23 en tout), donnée par la **première enquête résolue dans ce lieu**. Elles se lisent dans **n'importe quel ordre**, chacune se comprend seule, aucune ne révèle la solution de l'enquête qui la donne (elle n'apparaît qu'après la victoire). Ce sont des rapports d'Augure sur les prétendants : ragots, caractère, et des indices qui se répondent (la clé et le grimoire, l'étage manquant des plans, la brume du port, la puissance mesurée par le Palais), qu'on relit autrement après la fin.
+Après la première enquête résolue dans un lieu, l'enquêteur trouve **une lettre glissée sous sa porte**, signée « — A. ». Il y a **une lettre par lieu** (23 en tout), donnée par la **première enquête résolue dans ce lieu**. Elles se lisent dans **n'importe quel ordre**, chacune se comprend seule, aucune ne révèle la solution de l'enquête qui la donne (elle n'apparaît qu'après la victoire). Ce sont des rapports d'Augure sur les prétendants : ragots, caractère, et des indices qui se répondent (la clé et le grimoire, l'étage manquant des plans, la brume du port, la puissance mesurée par le Palais), qu'on relit autrement après la fin.
 
 | Lieu | Lettre |
 | --- | --- |
@@ -972,7 +972,7 @@ Des petites histoires qui courent d'une enquête à l'autre, sans jamais compter
 1. **Accueil** : l'affiche, le titre, le sceau « Jouer ».
 2. **Choisis ta taille** : un parchemin par taille de carte (6×6 à 12×12), plus trois entrées du lore : **🗺️ Carte de Brumeval**, **📖 Carnet d'enquête** (avec « ✉️ N nouvelle(s) lettre(s) » tant qu'elles ne sont pas lues) et **l'affaire finale** (verrouillée : « Une affaire se prépare… Encore N lettres d'Augure »). À terme, la carte remplacera le classement par taille.
 3. **Carte de Brumeval** : une pastille numérotée par lieu sur l'illustration (au survol, sur ordinateur : nom du lieu, enquêtes résolues, 📜 si sa lettre est trouvée ; pastille rouge quand le lieu est terminé), puis la liste des lieux par contrée.
-4. **Page d'un lieu** : sa lettre (ou « Une lettre d'Augure attend ici la première enquête résolue ») et ses enquêtes. Le bouton ‹ d'une enquête ouverte d'ici ramène à ce lieu.
+4. **Page d'un lieu** : sa lettre (ou, tant qu'aucune enquête n'y est résolue, « Résous une première enquête ici : Augure t'écrira sur ce lieu ») et ses enquêtes. Le bouton ‹ d'une enquête ouverte d'ici ramène à ce lieu.
 5. **L'enquête** : à la première ouverture, une **scène au centre de l'écran** montre l'illustration du décor, le titre et l'introduction de l'enquêteur (« À l'enquête »). Le titre en haut la rouvre à tout moment.
 6. **La victoire** : le tampon « Affaire résolue », puis une **scène centrée** : le portrait du coupable, « Seul suspect dans la pièce de <victime>. » et l'épilogue dialogué. Si l'enquête apporte une lettre : « 📜 Une lettre a été glissée sous la porte… » ouvre **la lettre en grand** (cachet de cire « A », lieu, texte, « — A. », progression « N / 23 lettres · encore M avant que tout s'éclaire »), avec « Ranger dans mon carnet » ou « Ouvrir le carnet ». Le verdict reste résumé dans la colonne de droite (avec la lettre).
 7. **Le carnet d'enquête** : les lettres trouvées (les nouvelles sont marquées), les lieux sans lettre, et les **fiches de la troupe croisée** (portrait, nom, trait, tic, gags qui se voient). Une fiche apparaît quand on a résolu une enquête où ce personnage était présent.
