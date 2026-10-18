@@ -688,15 +688,16 @@ html, body { background: var(--desk-tex, none) center top / 640px, var(--night);
 .desk-item, .desk-deco, .desk-photo { position: absolute; }
 .desk-item { z-index: 4; border: 0; padding: 0; background: transparent; cursor: pointer; transition: transform .15s ease, filter .15s ease; }
 .desk-item img, .desk-item > span:not(.newmark), .desk-deco { width: 100%; height: auto; display: block; filter: drop-shadow(3px 4px 2px rgba(0, 0, 0, .45)) drop-shadow(12px 16px 16px rgba(0, 0, 0, .45)); }
-.desk-item.dk-dossiers { width: 20%; right: -16%; bottom: -13%; transform: rotate(-9deg); }
-.desk-item.dk-lettres { width: 17%; right: -11%; top: -6%; transform: rotate(8deg); }
-.desk-item.dk-carnet { width: 19%; left: -12%; bottom: -9%; transform: rotate(-14deg); }
+.desk-item.dk-dossiers { width: 20%; left: -13%; bottom: -10%; transform: rotate(-9deg); }
+/* les lettres à cheval sur le bord gauche de la carte, à gauche du port */
+.desk-item.dk-lettres { width: 17%; left: -11%; top: 35%; transform: rotate(-7deg); }
+.desk-item.dk-carnet { width: 19%; right: -15%; bottom: -12%; transform: rotate(-14deg); }
 .desk-item.dk-enveloppe { width: 15%; right: -11%; top: 50%; transform: rotate(-11deg); }
 @media (hover: hover) { .desk-item:hover { filter: brightness(1.12) drop-shadow(0 0 10px rgba(240, 169, 58, .45)); } }
 .desk-deco { z-index: 3; pointer-events: none; }
 /* la loupe, à cheval sur le bas de la carte, entre la foire et le palais */
 .desk-deco.s0 { width: 15%; left: 70%; top: 87%; transform: rotate(-24deg); z-index: 3; }
-.desk-deco.s1 { width: 8%; left: 6%; bottom: -5%; z-index: 5; }
+.desk-deco.s1 { width: 8%; right: -7%; top: -3%; z-index: 5; }
 .desk-deco.s2 { width: 12%; left: -9%; top: -8%; z-index: 5; }
 .desk-deco.s3, .desk-deco.s4 { display: none; }
 /* lettre non lue : un cachet rouge qui bat, sans texte */
