@@ -573,6 +573,12 @@ html.plaques .btn.primary, html.plaques .sheet .btn.primary, html.plaques .verdi
 @media (hover: hover) { html.plaques .btn:hover { transform: translateY(-2px); filter: brightness(1.08) drop-shadow(1px 5px 3px rgba(0, 0, 0, .45)); } }
 html.plaques .btn:active { transform: translateY(1px); filter: brightness(.96) drop-shadow(1px 1px 1px rgba(0, 0, 0, .4)); }
 html.plaques .soundpop .btn { min-height: 42px; font-size: 16px; }
+/* Accuser (dans l'enquête) : la plaque de cuir rouge, plus grande ; ternie tant que tout le monde n'est pas placé */
+html.plaques #accuse { background: none; box-shadow: none; border-radius: 0; border-style: solid; border-width: 12px 16px; padding: 0 10px; height: 52px;
+  border-image: var(--bouton-principal) 40 48 fill / 12px 16px stretch; color: #fbe7cf; font-size: 22px; text-shadow: 0 1px 1px rgba(0, 0, 0, .45); filter: drop-shadow(1px 3px 2px rgba(0, 0, 0, .4)); }
+html.plaques #accuse:disabled { background: none; color: rgba(251, 231, 207, .75); opacity: 1; filter: grayscale(.75) brightness(.85) drop-shadow(1px 2px 1px rgba(0, 0, 0, .3)); cursor: not-allowed; }
+@media (hover: hover) { html.plaques #accuse:hover:not(:disabled) { transform: translateY(-2px); filter: brightness(1.1) drop-shadow(1px 5px 3px rgba(0, 0, 0, .45)); } }
+html.plaques #app.game #accuse { height: 54px; border-radius: 0; }
 .sheet h2 { color: var(--red-ink); }
 .toggle input { accent-color: var(--red-ink); }
 
