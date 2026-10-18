@@ -970,7 +970,7 @@ Des petites histoires qui courent d'une enquête à l'autre, sans jamais compter
 ## 11. Le lore dans le jeu : comment tout s'articule
 ### Le parcours du joueur
 1. **Accueil** : l'affiche, le titre, le sceau « Jouer ».
-2. **Le prologue** (première partie seulement), puis **le bureau de l'enquêteur** : la carte de Brumeval épinglée au centre, déjà en grand. Les lieux ouverts ont une pastille (« ! » tant qu'on ne les a pas visités, ✓ quand toutes leurs enquêtes sont résolues ; au survol : nom et progression) ; les autres sont des « ? ». Sous la carte, les lieux ouverts en étiquettes et « N lieux encore inconnus ». À côté : **Dossiers classés** (N / total), **Lettres anonymes** (N / 23, « ✉️ N nouvelle(s) »), **Carnet d'enquête**, et quelques objets de décor. Plus de classement par taille.
+2. **Le prologue** (première partie seulement), puis **le bureau de l'enquêteur** : la carte de Brumeval épinglée au centre, déjà en grand. Les lieux ouverts ont une pastille (« ! » tant qu'on ne les a pas visités, ✓ quand toutes leurs enquêtes sont résolues ; au survol : nom et progression) ; les autres sont des « ? ». Aucun texte : dans les coins, les objets cliquables (**dossiers classés**, **lettres anonymes** avec un cachet rouge qui bat tant qu'une lettre n'est pas lue, **carnet d'enquête**), et un peu de décor (loupe, encrier, bougie). Plus de classement par taille.
 3. **Le déblocage** : au départ, seul **Le Château de Mortebrune** est ouvert. La première enquête résolue dans un lieu apporte sa lettre et ouvre les lieux suivants :
 
 - Le Château de Mortebrune → Le Banquet des Gobelins, Meurtre au Sanglier Borgne

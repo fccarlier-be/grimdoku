@@ -612,52 +612,57 @@ html, body { background: var(--desk-tex, none) center top / 640px, var(--night);
 .newmark { display: inline-block; margin-top: 4px; padding: 2px 8px; border-radius: 99px; background: #a3312a; color: #fbe7cf; font: 700 12px/1.4 var(--f-body); }
 .lvl.carnet.unread::before { box-shadow: inset 0 0 0 3px #a3312a, 0 0 18px rgba(163, 49, 42, .6), 0 6px 14px rgba(0, 0, 0, .5); }
 .lettre.fresh::before { box-shadow: inset 0 0 0 3px #a3312a, 0 3px 8px rgba(0, 0, 0, .45); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 /* ================= bureau de l'enquêteur ================= */
-.bureau { position: relative; display: grid; gap: 16px; padding: 4px 0 24px; }
-@media (min-width: 900px) { .bureau { grid-template-columns: minmax(0, 1fr) 230px; grid-template-areas: "map items" "places items"; align-items: start; column-gap: 28px; } .desk-map { grid-area: map; } .desk-places { grid-area: places; } .desk-items { grid-area: items; } }
-.desk-map { position: relative; width: 100%; background: center / contain no-repeat; filter: drop-shadow(0 14px 22px rgba(0, 0, 0, .6)); transform: rotate(-.6deg); z-index: 1; }
+/* Plein écran, sans texte : la carte au centre, les objets dans les coins, un peu de décor (François, 2026-10-18) */
+#app.desk { max-width: none; padding-bottom: 0; gap: 0; }
+#app.desk > header.top { position: relative; z-index: 6; }
+.bureau { --obj: clamp(92px, 11vw, 170px); --side: calc(var(--obj) + 16px); position: relative; height: calc(100dvh - 76px); min-height: 480px; display: grid; place-items: center; }
+.desk-map { position: relative; z-index: 1; width: min(calc(100% - 2 * var(--side)), calc((100dvh - 120px) * var(--r)), 1500px); background: center / contain no-repeat; filter: drop-shadow(0 18px 26px rgba(0, 0, 0, .65)); transform: rotate(-.5deg); }
 .pin-tl, .pin-tr { position: absolute; top: 3%; width: 16px; height: 16px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #e0574a, #8e1f17 70%); box-shadow: 0 3px 4px rgba(0, 0, 0, .5); z-index: 3; }
 .pin-tl { left: 4%; } .pin-tr { right: 4%; }
 .dot.locked { cursor: default; background: rgba(60, 45, 30, .55); color: #e8d9b8; box-shadow: inset 0 0 0 1.5px rgba(232, 217, 184, .4); font-size: 12px; }
 .dot.locked:hover { transform: translate(-50%, -50%); }
 .dot.fresh { background: #f0a93a; color: #2b2016; animation: dotpulse 1.6s ease-in-out infinite; }
 @keyframes dotpulse { 50% { box-shadow: inset 0 0 0 2px rgba(43, 32, 22, .7), 0 0 0 6px rgba(240, 169, 58, .35), 0 3px 6px rgba(0, 0, 0, .5); } }
-.desk-places { display: flex; flex-wrap: wrap; gap: 6px; position: relative; z-index: 1; }
-.placechip { border: 0; padding: 5px 10px; border-radius: 99px; background: rgba(241, 227, 194, .92); color: var(--ink); font: 400 15px/1.1 var(--f-display); cursor: pointer; box-shadow: inset 0 0 0 1.5px rgba(43, 32, 22, .5), 0 2px 5px rgba(0, 0, 0, .4); }
-.placechip small { font: 700 11px/1 var(--f-body); color: #6e5434; margin-left: 3px; }
-.placechip.done { box-shadow: inset 0 0 0 2px #a3312a, 0 2px 5px rgba(0, 0, 0, .4); }
-.placechip.fresh { background: #f0a93a; }
-.placechip.locked { background: transparent; color: rgba(243, 230, 200, .65); box-shadow: inset 0 0 0 1.5px rgba(243, 230, 200, .3); cursor: default; font-family: var(--f-body); font-size: 13px; }
-.desk-items { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 12px; position: relative; z-index: 1; }
-@media (min-width: 900px) { .desk-items { grid-template-columns: 1fr; } }
-.desk-item { position: relative; border: 0; background: transparent; display: flex; flex-direction: column; align-items: center; gap: 4px; color: #f3e6c8; cursor: pointer; padding: 6px; }
-.desk-item b { font: 400 19px/1.1 var(--f-display); text-shadow: 0 2px 4px rgba(0, 0, 0, .7); }
-.desk-item small { font-size: 13px; color: rgba(243, 230, 200, .75); }
-.desk-item .newmark { position: absolute; top: 0; right: 4px; }
-.desk-item.vide .desk-img { opacity: .4; filter: grayscale(.6) drop-shadow(0 6px 8px rgba(0, 0, 0, .55)); }
-.desk-img { width: min(160px, 100%); height: 110px; object-fit: contain; filter: drop-shadow(0 6px 8px rgba(0, 0, 0, .55)); }
-@media (hover: hover) { .desk-item:hover { transform: translateY(-4px) rotate(-1deg); } .desk-item:hover b { color: var(--candle); } }
-/* objets dessinés en attendant leurs illustrations (assets/desk/) */
-.pile, .liasse, .cuir, .env { position: relative; display: block; width: 130px; height: 110px; }
-.pile i { position: absolute; left: 10px; bottom: calc(8px + var(--i) * 7px); width: 108px; height: 64px; border-radius: 3px; background: linear-gradient(#d8b67a, #c49a5c); box-shadow: inset 0 0 0 1px rgba(80, 50, 20, .55), 0 3px 4px rgba(0, 0, 0, .45); transform: rotate(calc((var(--i) - 3) * 1.4deg)); }
-.pile i::before { content: ""; position: absolute; top: -8px; left: 12px; width: 34px; height: 10px; border-radius: 3px 3px 0 0; background: #c49a5c; box-shadow: inset 0 0 0 1px rgba(80, 50, 20, .5); }
-.pile i:last-child::after { content: "CLASSÉ"; position: absolute; right: 8px; bottom: 10px; padding: 1px 5px; border: 2px solid #a3312a; color: #a3312a; font: 400 13px/1 var(--f-display); transform: rotate(-8deg); }
-.liasse i { position: absolute; left: 14px; bottom: calc(16px + var(--i) * 4px); width: 100px; height: 62px; border-radius: 2px; background: linear-gradient(160deg, transparent 49%, rgba(80, 50, 20, .25) 50%, transparent 51%), linear-gradient(20deg, transparent 49%, rgba(80, 50, 20, .25) 50%, transparent 51%), #efe0bd; box-shadow: inset 0 0 0 1px rgba(80, 50, 20, .45), 0 3px 4px rgba(0, 0, 0, .45); transform: rotate(calc((var(--i) - 2) * 6deg)); }
-.liasse i.empty { background: transparent; box-shadow: inset 0 0 0 2px rgba(243, 230, 200, .25); border-radius: 6px; transform: none; }
-.liasse::after { content: "A"; position: absolute; left: 50px; bottom: 30px; width: 30px; height: 30px; display: grid; place-items: center; z-index: 2; border-radius: 47% 53% 50% 50%; color: #f6d9c0; font: 400 16px/1 var(--f-display); background: radial-gradient(circle at 35% 30%, #d4473b, #8e1f17 70%); box-shadow: 0 2px 3px rgba(0, 0, 0, .45); }
-.liasse.vide::after { display: none; }
-.cuir { width: 90px; height: 116px; margin: 0 20px; border-radius: 6px 10px 10px 6px; background: radial-gradient(circle at 40% 30%, #8a5a32, #4e2f17 80%); box-shadow: inset 4px 0 0 rgba(0, 0, 0, .35), inset 0 0 0 2px rgba(30, 15, 5, .5), 0 6px 8px rgba(0, 0, 0, .5); transform: rotate(4deg); }
-.cuir::after { content: ""; position: absolute; top: 46%; right: -6px; width: 26px; height: 12px; border-radius: 3px; background: #3a2210; box-shadow: 0 2px 2px rgba(0, 0, 0, .4); }
-.env { width: 140px; height: 96px; border-radius: 3px; background: linear-gradient(150deg, transparent 49.5%, rgba(80, 50, 20, .3) 50%, transparent 51%), linear-gradient(30deg, transparent 49.5%, rgba(80, 50, 20, .3) 50%, transparent 51%), #f1e3c2; box-shadow: inset 0 0 0 1px rgba(80, 50, 20, .45), 0 8px 12px rgba(0, 0, 0, .55); transform: rotate(-5deg); }
-.env::after { content: ""; position: absolute; left: 52px; top: 30px; width: 36px; height: 36px; border-radius: 47% 53% 50% 50%; background: radial-gradient(circle at 35% 30%, #4a4a4a, #111 70%); box-shadow: 0 2px 4px rgba(0, 0, 0, .6); }
-.desk-item.enveloppe.fresh .env { animation: dotpulse 1.6s ease-in-out infinite; }
-/* décor : les vignettes posées sur le bureau */
-.desk-deco { position: absolute; z-index: 0; width: 120px; pointer-events: none; filter: drop-shadow(0 6px 8px rgba(0, 0, 0, .55)); opacity: .95; }
-.desk-deco.d0 { left: -10px; top: -26px; width: 92px; transform: rotate(-12deg); }
-.desk-deco.d1 { right: 250px; bottom: -40px; width: 110px; transform: rotate(14deg); }
-.desk-deco.d2 { left: 30%; bottom: -50px; width: 100px; transform: rotate(-8deg); }
-.desk-deco.d3, .desk-deco.d4, .desk-deco.d5 { display: none; }
-@media (max-width: 899px) { .desk-deco.d1, .desk-deco.d2 { display: none; } .desk-deco.d0 { width: 70px; left: auto; right: 0; top: -20px; } }
+/* objets cliquables, dans les coins */
+.desk-item { position: absolute; z-index: 4; width: var(--obj); aspect-ratio: 1; border: 0; padding: 0; background: transparent; cursor: pointer; transition: transform .15s ease, filter .15s ease; }
+.desk-item img, .desk-item > span:not(.newmark) { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 8px 10px rgba(0, 0, 0, .6)); }
+.desk-item.dk-dossiers { left: 0; top: 2%; transform: rotate(-6deg); }
+.desk-item.dk-lettres { right: 0; top: 2%; transform: rotate(5deg); }
+.desk-item.dk-carnet { left: 0; bottom: 3%; transform: rotate(4deg); }
+.desk-item.dk-enveloppe { right: 0; bottom: 3%; transform: rotate(-7deg); }
+@media (hover: hover) { .desk-item:hover { transform: scale(1.08) rotate(0deg); filter: brightness(1.12); } }
+.desk-item.vide img { opacity: .4; filter: grayscale(.6) drop-shadow(0 8px 10px rgba(0, 0, 0, .6)); }
+/* lettre non lue : un cachet rouge qui bat, sans texte */
+.desk-item .newmark { position: absolute; top: 14%; right: 16%; left: auto; bottom: auto; margin: 0; border: 0; color: transparent; width: 22px; height: 22px; padding: 0; border-radius: 50%; font-size: 0; background: radial-gradient(circle at 35% 30%, #e0574a, #8e1f17 70%); box-shadow: 0 2px 4px rgba(0, 0, 0, .5); animation: sealpulse 1.4s ease-in-out infinite; }
+@keyframes sealpulse { 50% { box-shadow: 0 0 0 7px rgba(224, 87, 74, .3), 0 2px 4px rgba(0, 0, 0, .5); } }
+.desk-item.dk-enveloppe.fresh { animation: envglow 1.8s ease-in-out infinite; }
+@keyframes envglow { 50% { filter: drop-shadow(0 0 14px rgba(240, 169, 58, .8)); } }
+/* dessins CSS en attendant les illustrations (assets/desk/) */
+.pile, .liasse, .cuir, .env { position: relative; display: block; }
+.pile { background: linear-gradient(#d8b67a, #c49a5c); border-radius: 4px; transform: scale(.8, .55); box-shadow: inset 0 0 0 2px rgba(80, 50, 20, .55); }
+.liasse { background: #efe0bd; border-radius: 3px; transform: scale(.8, .55); box-shadow: inset 0 0 0 2px rgba(80, 50, 20, .45); }
+.cuir { background: radial-gradient(circle at 40% 30%, #8a5a32, #4e2f17 80%); border-radius: 6px 10px 10px 6px; transform: scale(.65, .85); }
+.env { background: #f1e3c2; border-radius: 3px; transform: scale(.85, .6); box-shadow: inset 0 0 0 2px rgba(80, 50, 20, .45); }
+/* décor (loupe, encrier, bougie…) : à mi-hauteur sur les côtés, en haut et en bas au centre sur téléphone */
+.desk-deco { position: absolute; z-index: 2; width: calc(var(--obj) * .8); pointer-events: none; filter: drop-shadow(0 6px 8px rgba(0, 0, 0, .55)); }
+.desk-deco.s0 { left: 6px; top: 50%; transform: translateY(-50%) rotate(-10deg); }
+.desk-deco.s1 { right: 6px; top: 50%; transform: translateY(-50%) rotate(12deg); }
+.desk-deco.s2 { right: 0; bottom: 3%; transform: rotate(8deg); }
+.desk-deco.s3, .desk-deco.s4 { display: none; }
+/* téléphone (écran en hauteur) : la carte sur toute la largeur au centre, les objets au-dessus et en dessous */
+@media (max-aspect-ratio: 1/1) {
+  .bureau { --obj: clamp(84px, 28vw, 170px); height: auto; min-height: calc(100dvh - 76px); grid-template-columns: repeat(3, 1fr); grid-template-areas: "tl tc tr" "map map map" "bl bc br"; align-content: center; justify-items: center; align-items: center; grid-template-rows: var(--obj) auto var(--obj); gap: 18px 0; }
+  .desk-deco { max-height: calc(var(--obj) * .8); object-fit: contain; }
+  .desk-map { grid-area: map; width: 100%; }
+  .desk-item, .bureau .desk-deco[class] { position: relative; inset: auto; }
+  .desk-item.dk-dossiers { grid-area: tl; } .desk-item.dk-lettres { grid-area: tr; }
+  .desk-item.dk-carnet { grid-area: bl; } .desk-item.dk-enveloppe { grid-area: br; }
+  .desk-deco.s0 { grid-area: tc; transform: rotate(-8deg); } .desk-deco.s1 { grid-area: bc; transform: rotate(10deg); }
+  .desk-deco.s2 { grid-area: br; transform: rotate(8deg); }
+  .dot { width: 20px; height: 20px; font-size: 11px; }
+}
 /* prologue et fil rouge */
 .story-img.map { height: 190px; background-size: contain; background-color: transparent; box-shadow: none; }
 .story-text.aside { font-style: italic; color: var(--muted); }
@@ -775,6 +780,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
   function bureauPage() {
     P = null;
     $app.classList.remove('game');
+    $app.classList.add('desk');
     const open = unlockedPlaces(), seen = seenPlaces();
     const order = LORE.contrees.flatMap(c => c.lieux).filter(pl => placeCases(pl).length);
     const dot = (pl) => {
@@ -783,31 +789,30 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
       return `<button class="dot ${done === list.length ? 'done' : ''} ${fresh ? 'fresh' : ''}" data-place="${pl}" style="--x:${LORE.pos[pl][0]}%;--y:${LORE.pos[pl][1]}%" aria-label="${esc(placeTitle(pl))}, ${done} sur ${list.length} résolues">
         ${done === list.length ? '✓' : fresh ? '!' : '•'}<span class="tip"><b>${esc(placeTitle(pl))}</b><small>${done} / ${list.length}${fresh ? ' · nouveau' : ''}</small></span></button>`;
     };
-    const nSolved = solvedIn(CASES), got = letters(), nl = got.length, total = Object.keys(LORE.letters).length;
-    const deco = (MEDIA.levels || []).filter(Boolean);
-    const img = (k) => MEDIA.desk && MEDIA.desk[k] ? `<img class="desk-img" src="${MEDIA.desk[k]}" alt="">` : '';
-    const sheets = Math.min(8, Math.max(1, Math.ceil(nSolved / 6)));
-    $app.innerHTML = pageHead("Retour à l'accueil", "Bureau de l'enquêteur") + `
+    // sans texte : les objets parlent d'eux-mêmes ; leur nom reste pour les lecteurs d'écran et l'infobulle (title)
+    const nSolved = solvedIn(CASES), nl = letters().length, nu = unread(), fin = FINAL && finalUnlocked();
+    const img = (k, css) => MEDIA.desk && MEDIA.desk[k] ? `<img src="${MEDIA.desk[k]}" alt="">` : `<span class="${css}"></span>`;
+    const item = (cls, id, name, inner, extra = '') => `<button class="desk-item ${cls}" id="${id}" title="${name}" aria-label="${name}">${inner}${extra}</button>`;
+    // décor : illustrations assets/desk/deco-*.webp ; à défaut, deux vignettes des niveaux (la loupe, la bougie)
+    const deco = (MEDIA.deskDeco && MEDIA.deskDeco.length ? MEDIA.deskDeco : [MEDIA.levels[1], MEDIA.levels[0]].filter(Boolean)).slice(0, fin ? 2 : 3);
+    $app.innerHTML = `
+      <header class="top">
+        <button class="iconbtn" id="back" aria-label="Retour à l'accueil">‹</button>
+        <h1 class="sr-only">Bureau de l'enquêteur</h1>
+        <span class="spacer"></span>
+        ${soundBtn()}
+        <button class="iconbtn" id="rulesBtn" aria-label="Règles">?</button>
+      </header>
       <div class="bureau">
-        ${deco.map((src, i) => `<img class="desk-deco d${i}" src="${src}" alt="" aria-hidden="true">`).join('')}
-        <div class="desk-map" style="aspect-ratio:${LORE.ratio[0]} / ${LORE.ratio[1]};${MEDIA.map ? `background-image:url(${MEDIA.map})` : ''}">
+        ${deco.map((src, i) => `<img class="desk-deco s${i}" src="${src}" alt="" aria-hidden="true">`).join('')}
+        <div class="desk-map" style="--r:${LORE.ratio[0] / LORE.ratio[1]};aspect-ratio:${LORE.ratio[0]} / ${LORE.ratio[1]};${MEDIA.map ? `background-image:url(${MEDIA.map})` : ''}">
           <span class="pin-tl" aria-hidden="true"></span><span class="pin-tr" aria-hidden="true"></span>
           ${order.map(dot).join('')}
         </div>
-        <div class="desk-places">${order.filter(pl => open.has(pl)).map(pl => {
-          const list = placeCases(pl), done = solvedIn(list);
-          return `<button class="placechip ${done === list.length ? 'done' : ''} ${seen.includes(pl) ? '' : 'fresh'}" data-place="${pl}">${esc(placeTitle(pl))} <small>${done}/${list.length}</small></button>`;
-        }).join('')}<span class="placechip locked">${order.length - order.filter(pl => open.has(pl)).length} lieux encore inconnus</span></div>
-        <div class="desk-items">
-          <button class="desk-item dossiers ${nSolved ? '' : 'vide'}" id="deskDossiers">${img('dossiers') || `<span class="pile">${Array.from({ length: sheets }, (_, i) => `<i style="--i:${i}"></i>`).join('')}</span>`}
-            <b>Dossiers classés</b><small>${nSolved} / ${CASES.length}</small></button>
-          <button class="desk-item lettres ${unread() ? 'unread' : ''} ${nl ? '' : 'vide'}" id="deskLettres">${img('lettres') || `<span class="liasse ${nl ? '' : 'vide'}">${nl ? Array.from({ length: Math.min(5, nl) }, (_, i) => `<i style="--i:${i}"></i>`).join('') : '<i class="empty"></i>'}</span>`}
-            <b>Lettres anonymes</b><small>${nl} / ${total}</small>${unread() ? `<span class="newmark">✉️ ${unread()} nouvelle${unread() > 1 ? 's' : ''}</span>` : ''}</button>
-          <button class="desk-item carnet" id="deskCarnet">${img('carnet') || '<span class="cuir"></span>'}
-            <b>Carnet d'enquête</b><small>la troupe de Brumeval</small></button>
-          ${FINAL && finalUnlocked() ? `<button class="desk-item enveloppe ${isSolved(FINAL) ? '' : 'fresh'}" id="deskFinal">${img('enveloppe') || '<span class="env"></span>'}
-            <b>Une enveloppe scellée</b><small>${isSolved(FINAL) ? 'Affaire classée' : esc(FINAL.title)}</small></button>` : ''}
-        </div>
+        ${item(`dk-dossiers ${nSolved ? '' : 'vide'}`, 'deskDossiers', `Dossiers classés (${nSolved})`, img('dossiers', 'pile'))}
+        ${item(`dk-lettres ${nu ? 'unread' : ''} ${nl ? '' : 'vide'}`, 'deskLettres', `Lettres anonymes (${nl})`, img('lettres', 'liasse'), nu ? `<span class="newmark" aria-label="${nu} non lue${nu > 1 ? 's' : ''}"></span>` : '')}
+        ${item('dk-carnet', 'deskCarnet', "Carnet d'enquête", img('carnet', 'cuir'))}
+        ${fin ? item(`dk-enveloppe ${isSolved(FINAL) ? '' : 'fresh'}`, 'deskFinal', 'Une enveloppe scellée', img('enveloppe', 'env')) : ''}
       </div>`;
     document.getElementById('back').onclick = () => go('');
     document.getElementById('rulesBtn').onclick = rules;
@@ -996,6 +1001,7 @@ const MEDIA = /*__MEDIA__*/; // fichiers servis à côté de la page : sons, vig
   // (ou du téléphone) revient à l'écran précédent.
   function show(route) {
     const [page, arg] = route.split('/');
+    $app.classList.remove('desk');
     sound.set(page === 'affaire' ? 'carte' : 'menu');
     // anciennes adresses (tailles, carte) : le bureau
     if (['bureau', 'tailles', 'niveaux', 'taille', 'carte'].includes(page)) bureauPage();
