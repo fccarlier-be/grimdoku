@@ -17,7 +17,7 @@
     "note": ""
   },
   "chateau--touriste--dragon--i2": {
-    "status": "relire",
+    "status": "valide",
     "note": "Repassé après la relecture extérieure : rouvert malgré ta validation, car on ne comprenait pas le meurtre. Seule la question de l'enquêteur change (« en morceaux sur sa tête »), ta chute est gardée."
   },
   "academie--chasseuse--golem--i2": {
@@ -29,15 +29,15 @@
     "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
   },
   "banquet--huissier": {
-    "status": "relire",
+    "status": "valide",
     "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
   },
   "banquet--nageuse": {
-    "status": "relire",
+    "status": "valide",
     "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
   },
   "taverne--dresseuse": {
-    "status": "relire",
+    "status": "valide",
     "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
   },
   "taverne--huissier": {
@@ -45,7 +45,7 @@
     "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
   },
   "taverne--nageuse": {
-    "status": "relire",
+    "status": "valide",
     "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
   },
   "bibliotheque--nageuse": {
@@ -317,8 +317,8 @@
     "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
   },
   "taverne--inspecteur": {
-    "status": "relire",
-    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+    "status": "valide",
+    "note": "Ca ne va pas, on ne sait plus si Aëlys est critique ou chef... A revoir..."
   },
   "bibliotheque--baronne": {
     "status": "relire",
@@ -455,5 +455,25 @@
   "mine--troubadour": {
     "status": "relire",
     "note": "Repassé : nouvelle grille (coupable imposé pour rééquilibrer : Dewey ou Granit)."
+  },
+  "banquet--cousine": {
+    "status": "valide",
+    "note": "Nul. On ne tue pas pour une demi-assiette de navets. A la limite on pourrait dire que l'ogre, récemment devenu végétarien, a craqué en croquant sa cousine."
+  },
+  "banquet--dresseuse": {
+    "status": "relire",
+    "note": "La chute est nulle. On comprend l'intention mais ça n'est ni drôle, ni naturel comme dialogue."
+  },
+  "banquet--messager": {
+    "status": "valide",
+    "note": ""
+  },
+  "taverne--messager": {
+    "status": "valide",
+    "note": ""
+  },
+  "taverne--percepteur": {
+    "status": "relire",
+    "note": "Quel est le rapport entre le grimoire et l'éternuement?..."
   }
 }
