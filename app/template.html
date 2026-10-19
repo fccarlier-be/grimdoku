@@ -693,23 +693,26 @@ html.plaques .tbtn.pen[aria-pressed="true"] { background: none; box-shadow: none
 #app.scene-page .lead { max-width: none; }
 .linkbtn { align-self: flex-start; border: 0; background: none; padding: 2px 0; color: var(--muted); font-size: 14px; text-decoration: underline; text-underline-offset: 3px; }
 .linkbtn:hover { color: var(--candle); }
-/* ordinateur : la feuille entière tient dans l'écran, sous l'en-tête */
-.scene { position: relative; align-self: center; width: min(100%, calc((100dvh - 230px) * var(--r, 1.5) + 44px)); min-width: min(100%, 560px); contain: inline-size; }
-/* l'illustration imprimée sur une feuille de parchemin aux bords déchirés et brûlés, comme la carte de Brumeval :
-   le papier sur un calque à part (#torn ne déforme ni l'image ni les sceaux), l'image fondue dans le papier sur ses bords */
-.scene-sheet { position: relative; isolation: isolate; padding: 22px; transform: rotate(-.3deg); filter: drop-shadow(0 14px 22px rgba(0, 0, 0, .6)); }
-.scene-sheet::before {
-  content: ""; position: absolute; inset: 0; z-index: -1; border-radius: 4px;
-  background: radial-gradient(ellipse at 50% 50%, transparent 62%, rgba(120, 66, 18, .35) 100%), var(--parch-tex, none) center / 240px, linear-gradient(#ead7aa, #d9bf88);
-  box-shadow: inset 0 0 22px 5px rgba(90, 45, 10, .7), inset 0 0 4px 1px rgba(50, 22, 5, .8);
-  filter: url(#torn);
-}
+.linkbtn.under { align-self: center; margin-top: 4px; }
+/* ordinateur : l'illustration entière tient dans l'écran, sous l'en-tête */
+.scene { position: relative; align-self: center; width: min(100%, calc((100dvh - 230px) * var(--r, 1.5))); min-width: min(100%, 560px); contain: inline-size; }
+/* l'illustration elle-même a les bords déchirés et brûlés, comme la carte de Brumeval (François, 2026-10-20 : pas de
+   cadre de parchemin autour) : découpée par un masque au bord déchiré (bruit + déplacement, en SVG), avec un liseré brûlé dessous ;
+   l'ombre portée suit la déchirure. Les sceaux, hors du masque, ne sont jamais rognés. */
+.scene-sheet { position: relative; transform: rotate(-.3deg); filter: drop-shadow(0 12px 20px rgba(0, 0, 0, .65)); }
 .scene-img { position: relative; width: 100%; }
-.scene-art {
-  position: absolute; inset: 0; background-size: cover; background-position: center; mix-blend-mode: multiply;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 3.5%, #000 96.5%, transparent), linear-gradient(transparent, #000 5%, #000 95%, transparent);
-  -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent, #000 3.5%, #000 96.5%, transparent), linear-gradient(transparent, #000 5%, #000 95%, transparent); mask-composite: intersect;
+.scene-img { --torn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 660' preserveAspectRatio='none'%3E%3Cfilter id='t' x='-5%25' y='-5%25' width='110%25' height='110%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.03 .045' numOctaves='5' seed='11'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='26' xChannelSelector='R' yChannelSelector='G'/%3E%3C/filter%3E%3Crect x='14' y='14' width='972' height='632' fill='%23fff' filter='url(%23t)'/%3E%3C/svg%3E"); --torn-in: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 660' preserveAspectRatio='none'%3E%3Cfilter id='t' x='-5%25' y='-5%25' width='110%25' height='110%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.03 .045' numOctaves='5' seed='11'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='26' xChannelSelector='R' yChannelSelector='G'/%3E%3C/filter%3E%3Crect x='20' y='20' width='960' height='620' fill='%23fff' filter='url(%23t)'/%3E%3C/svg%3E"); }
+/* le bord brûlé : la même déchirure, un peu plus large, en brun roussi sous l'image */
+.scene-img::before {
+  content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, #6b3a12 60%, #2a1204 100%);
+  -webkit-mask: var(--torn) center / 100% 100% no-repeat; mask: var(--torn) center / 100% 100% no-repeat;
 }
+.scene-art {
+  position: absolute; inset: 0; background-size: cover; background-position: center;
+  -webkit-mask: var(--torn-in) center / 100% 100% no-repeat; mask: var(--torn-in) center / 100% 100% no-repeat;
+}
+/* l'image roussie près du bord, qui s'éclaircit vers l'intérieur */
+.scene-art::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 30px 10px rgba(90, 45, 10, .55), inset 0 0 70px 16px rgba(140, 90, 40, .2); }
 .zone {
   position: absolute; width: 54px; height: 54px; margin: -27px 0 0 -27px; padding: 0; border: 0; border-radius: 50%;
   background: radial-gradient(circle at 35% 30%, #d4473b, #8e1f17 70%); display: grid; place-items: center;
@@ -735,7 +738,7 @@ html.plaques .tbtn.pen[aria-pressed="true"] { background: none; box-shadow: none
   /* téléphone : l'image prend la hauteur, déborde sur les côtés et glisse sous le doigt */
   .scene { width: auto; min-width: 0; align-self: stretch; margin-inline: -16px; overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; scrollbar-width: none; padding-block: 6px 18px; }
   .scene::-webkit-scrollbar { display: none; }
-  .scene-sheet { width: max-content; padding: 14px; margin-inline: 6px; transform: none; }
+  .scene-sheet { width: max-content; margin-inline: 8px; transform: none; }
   .scene-img { width: auto; height: min(66dvh, 540px); }
 }
 
@@ -1236,8 +1239,8 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     $app.innerHTML = pageHead('Retour au bureau', esc(placeTitle(pl))) + `
       ${pendingLetter(pl) ? '<button class="btn primary" id="lieuLetter">Ouvrir la lettre glissée sous la porte</button>' : ''}
       <p class="lead">${letters().includes(pl) ? `<i>${esc(LORE.letters[pl])}</i> — A.` : pendingLetter(pl) ? 'Toutes les enquêtes de ce lieu sont résolues.' : `${list.length - solvedIn(list) > 1 ? `Encore ${list.length - solvedIn(list)} enquêtes ici` : 'Une dernière enquête ici'}, et une lettre sur ce lieu glissera sous ta porte.`} <span class="count">${solvedIn(list)} / ${list.length} résolues</span></p>
-      ${scene ? `<button class="linkbtn" id="lieuVue">${settings.lieuListe ? 'Voir le lieu' : 'Voir la liste des enquêtes'}</button>` : ''}
-      ${scene && !settings.lieuListe ? sceneHtml(scene, list) : `<div class="cases">${list.map(caseHtml).join('')}</div>`}`;
+      ${scene && !settings.lieuListe ? sceneHtml(scene, list) + '<button class="linkbtn under" id="lieuVue">Voir la liste des enquêtes</button>'
+        : (scene ? '<button class="linkbtn" id="lieuVue">Voir le lieu</button>' : '') + `<div class="cases">${list.map(caseHtml).join('')}</div>`}`;
     $app.classList.toggle('scene-page', !!scene && !settings.lieuListe);
     document.getElementById('back').onclick = () => go('bureau');
     document.getElementById('rulesBtn').onclick = rules;
