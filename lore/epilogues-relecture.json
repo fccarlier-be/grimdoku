@@ -9,7 +9,7 @@
     "note": "Réécrit d'après ta note (« Partager ne veut pas dire tuer ») : elle réclame l'épée de famille, il la lui « donne », pointe la première."
   },
   "chateau--dresseuse": {
-    "status": "relire",
+    "status": "valide",
     "note": "Réécrit d'après ta note (« Gontran tuerait Fanfare juste parce que Flammèche lui obéit ? ») : le mobile devient l'honneur du chevalier. Elle veut un combat truqué ; un chevalier ne fait jamais semblant."
   },
   "chateau--inspecteur--golem--i2": {
@@ -19,5 +19,213 @@
   "chateau--touriste--dragon--i2": {
     "status": "valide",
     "note": ""
+  },
+  "academie--chasseuse--golem--i2": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "citadelle--chasseuse": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "banquet--huissier": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "banquet--nageuse": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "taverne--dresseuse": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "taverne--huissier": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "taverne--nageuse": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "bibliotheque--nageuse": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "bibliotheque--percepteur": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "bibliotheque--chasseuse--golem--i2": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "moulin--abbesse": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "moulin--nageuse": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "academie--abbesse": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "ferme--abbesse": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "ferme--alchimiste": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "ferme--baronne": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "ferme--colporteur": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "ferme--troubadour": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "forge--huissier": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "forge--abbesse--dragon--i2": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "marais--huissier": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "marais--nageuse": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "cimetiere--huissier": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "cimetiere--percepteur": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "cimetiere--touriste": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "cimetiere--chasseuse--golem--i2": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "citadelle--dresseuse": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "citadelle--baronne": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "citadelle--huissier": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "foire--abbesse": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "foire--baronne": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "foire--touriste": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "foire--troubadour": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "foire--colporteur--geant--i2": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "universite--huissier--vouivre--l4--cache": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "bal--alchimiste": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "bal--abbesse": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "bal--chasseuse": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "bal--dresseuse": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "bal--nageuse--vouivre--i2": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "grande-foire--troubadour": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "grande-foire--baronne--dragon-golem--t4-i2--cache": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "port--messager": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "tour--troubadour": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "grand-port--nageuse": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "palais--baronne": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "palais--dresseuse": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "thermes--dresseuse": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "grands-bains--dresseuse": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "grands-bains--touriste": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "grands-bains--abbesse": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+  },
+  "grands-bains--messager--vouivre--l4--cache": {
+    "status": "relire",
+    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
   }
 }
