@@ -718,21 +718,22 @@ html.plaques .tbtn.pen[aria-pressed="true"] { background: none; box-shadow: none
 /* l'image légèrement roussie près du bord */
 .scene-art::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 40px 12px rgba(90, 55, 20, .35); }
 .zone {
-  position: absolute; width: 54px; height: 54px; margin: -27px 0 0 -27px; padding: 0; border: 0; border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #d4473b, #8e1f17 70%); display: grid; place-items: center;
-  box-shadow: inset 0 -2px 4px rgba(0, 0, 0, .35), 0 0 0 2px rgba(246, 217, 192, .55), 0 4px 10px rgba(0, 0, 0, .6);
+  position: absolute; width: 56px; height: 56px; margin: -28px 0 0 -28px; padding: 0; border: 0; border-radius: 50%; overflow: visible;
+  --ring: #a3271d; background: #efe0bd; display: block;
+  box-shadow: 0 0 0 3px var(--ring), 0 0 0 4.5px #17100a, 0 4px 10px rgba(0, 0, 0, .6);
   transition: transform .15s;
 }
-.zone .face { width: 42px; height: 42px; border-radius: 50%; overflow: hidden; background: #efe0bd; display: grid; place-items: center; box-shadow: inset 0 0 0 2px rgba(43, 32, 22, .5); }
-.zone .face .portrait { width: 100%; height: 100%; }
+/* le portrait remplit tout le sceau */
+.zone .face { position: absolute; inset: 0; width: auto; height: auto; border-radius: 50%; overflow: hidden; display: block; }
+.zone .face .portrait { display: block; width: 100%; height: 100%; }
 .zone:hover, .zone.sel { transform: scale(1.12); z-index: 2; }
-.zone.sel { box-shadow: inset 0 -2px 4px rgba(0, 0, 0, .35), 0 0 0 3px var(--candle), 0 4px 10px rgba(0, 0, 0, .6); }
-/* pas encore ouverte : le sceau luit doucement ; résolue : cire ternie, coche à l'encre */
-.zone.new::after { content: ""; position: absolute; inset: -6px; border-radius: 50%; box-shadow: 0 0 14px 4px rgba(255, 196, 110, .55); animation: zone-glow 2.4s ease-in-out infinite; pointer-events: none; }
+.zone.sel { box-shadow: 0 0 0 3px var(--candle), 0 0 0 4.5px #17100a, 0 4px 10px rgba(0, 0, 0, .6); }
+/* pas encore ouverte : le sceau luit doucement ; en cours : liseré ambre ; résolue : liseré brun, portrait passé, coche */
+.zone.new::after { content: ""; position: absolute; inset: -7px; border-radius: 50%; box-shadow: 0 0 14px 4px rgba(255, 196, 110, .55); animation: zone-glow 2.4s ease-in-out infinite; pointer-events: none; }
 @keyframes zone-glow { 50% { opacity: .25; } }
 @media (prefers-reduced-motion: reduce) { .zone.new::after { animation: none; } }
-.zone.started { background: radial-gradient(circle at 35% 30%, #c98a3a, #7a4a12 70%); }
-.zone.done { background: radial-gradient(circle at 35% 30%, #8a6a4a, #4a3424 70%); }
+.zone.started { --ring: #c27a22; }
+.zone.done { --ring: #6b4a2c; }
 .zone.done .face { filter: sepia(.7) saturate(.6); opacity: .85; }
 .zone-mark { position: absolute; right: -6px; bottom: -6px; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; background: #efe0bd; color: #a3312a; font: 700 15px/1 var(--f-body); box-shadow: 0 0 0 1.5px rgba(43, 32, 22, .6); }
 .zone-pop { position: absolute; z-index: 5; width: min(320px, 86vw); }
@@ -1269,13 +1270,16 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     </div></div></div>`;
   }
   function bindScene(list, enter) {
-    const pop = document.getElementById('zonePop'), img = $app.querySelector('.scene-img');
-    let cur = -1;
-    const close = () => { pop.hidden = true; cur = -1; $app.querySelectorAll('.zone.sel').forEach(z => z.classList.remove('sel')); };
-    $app.querySelectorAll('.zone').forEach(z => z.onclick = (e) => {
-      e.stopPropagation();
+    const pop = document.getElementById('zonePop'), img = $app.querySelector('.scene-img'), sc = document.getElementById('scene');
+    // souris : la fiche s'ouvre au survol du sceau (François, 2026-10-20) et un clic entre ; toucher : un premier toucher
+    // ouvre la fiche, un second (ou la fiche) entre
+    const hover = !!(window.matchMedia && matchMedia('(hover: hover) and (pointer: fine)').matches);
+    let cur = -1, hideT = null;
+    const close = () => { clearTimeout(hideT); pop.hidden = true; cur = -1; $app.querySelectorAll('.zone.sel').forEach(z => z.classList.remove('sel')); };
+    const show = (z) => {
+      clearTimeout(hideT);
       const i = +z.dataset.i;
-      if (cur === i) return enter(list[i].id); // second toucher sur le même sceau : on entre
+      if (cur === i) return;
       close(); cur = i; z.classList.add('sel');
       const p = list[i], st = store.get('p:' + p.id, null), done = st && st.solved, started = st && Object.keys(st.pos || {}).length;
       // le lieu est déjà à l'écran : « l'affaire Gisèle », sans « Le Château de Mortebrune — »
@@ -1288,17 +1292,29 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
         </button>`;
       pop.hidden = false;
       // fiche sous le sceau (au-dessus s'il est bas), gardée dans l'image
-      const W = img.clientWidth, H = img.clientHeight, x = z.offsetLeft, y = z.offsetTop, pw = pop.offsetWidth, ph = pop.offsetHeight;
+      // (offsetLeft/Top : coin du sceau, décalé de sa demi-taille par la marge négative ; on part de son centre)
+      const W = img.clientWidth, H = img.clientHeight, x = z.offsetLeft + z.offsetWidth / 2, y = z.offsetTop + z.offsetHeight / 2;
+      const pw = pop.offsetWidth, ph = pop.offsetHeight, gap = z.offsetHeight / 2 + 8;
       pop.style.left = Math.max(8, Math.min(W - pw - 8, x - pw / 2)) + 'px';
-      pop.style.top = (y + 34 + ph < H - 8 ? y + 34 : Math.max(8, y - 34 - ph)) + 'px';
-      pop.querySelector('.case').onclick = (ev) => { ev.stopPropagation(); enter(list[i].id); };
+      pop.style.top = (y + gap + ph < H - 8 ? y + gap : Math.max(8, y - gap - ph)) + 'px';
+      pop.querySelector('.case').onclick = (ev) => { ev.stopPropagation(); enter(p.id); };
       // téléphone : l'image glisse pour montrer la fiche entière
-      const sc = document.getElementById('scene'), left = parseFloat(pop.style.left);
+      const left = parseFloat(pop.style.left);
       if (sc.scrollWidth > sc.clientWidth && (left < sc.scrollLeft || left + pw > sc.scrollLeft + sc.clientWidth)) sc.scrollTo({ left: left + pw / 2 - sc.clientWidth / 2, behavior: 'smooth' });
+    };
+    // on quitte le sceau : la fiche reste un instant, le temps d'y passer la souris
+    const later = () => { clearTimeout(hideT); hideT = setTimeout(close, 220); };
+    $app.querySelectorAll('.zone').forEach(z => {
+      z.onclick = (e) => {
+        e.stopPropagation();
+        if (hover || cur === +z.dataset.i) return enter(list[+z.dataset.i].id);
+        show(z);
+      };
+      if (hover) { z.onmouseenter = () => show(z); z.onmouseleave = later; z.onfocus = () => show(z); }
     });
+    if (hover) { pop.onmouseenter = () => clearTimeout(hideT); pop.onmouseleave = later; }
     img.onclick = close;
     // téléphone : on arrive centré sur la première enquête pas encore résolue
-    const sc = document.getElementById('scene');
     const first = $app.querySelector('.zone:not(.done)') || $app.querySelector('.zone');
     if (sc.scrollWidth > sc.clientWidth && first) sc.scrollLeft = first.offsetLeft - sc.clientWidth / 2;
   }
