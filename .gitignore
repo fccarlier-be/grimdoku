@@ -16,3 +16,5 @@ lore/.epi-sync
 deploy/grimdoku/site/*.png
 deploy/grimdoku/site/favicon.ico
 deploy/grimdoku/site/manifest.webmanifest
+# progressions des joueurs (sauvegarde en ligne) : seulement sur le VPS
+deploy/grimdoku/api-data/

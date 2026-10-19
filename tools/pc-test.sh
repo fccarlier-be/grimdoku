@@ -7,7 +7,7 @@
 set -e
 cd "$(dirname "$0")/.."
 PACK=$(mktemp -t grimdoku-test).tgz
-COPYFILE_DISABLE=1 tar -czf "$PACK" --exclude .git --exclude node_modules --exclude .venv --exclude dist --exclude deploy/grimdoku/site --exclude puzzles \
+COPYFILE_DISABLE=1 tar -czf "$PACK" --exclude .git --exclude node_modules --exclude .venv --exclude dist --exclude deploy/grimdoku/site --exclude deploy/grimdoku/api-data --exclude deploy/grimdoku/epi --exclude puzzles \
   --exclude '*.zip' --exclude 'assets/*/*.jpeg' --exclude 'assets/*/*.jpg' --exclude 'assets/*/*.png' --exclude 'assets/audio/*.wav' .
 sh tools/pc.sh --scp "$PACK" grimdoku-gen/test.tgz
 # empreinte de tout ce dont dépend la construction des énigmes : si elle n'a pas changé depuis la dernière construction

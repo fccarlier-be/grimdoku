@@ -169,7 +169,14 @@ const lore = { prologue: PROLOGUE, need: LETTRES.need, letters: LETTRES.letters,
 for (const [t, a] of Object.entries(ARCHETYPES)) if (!a.guest) lore.troupe[t] = { name: a.name, desc: a.desc, tic: a.tic, icon: a.icon };
 const sprite = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>${defs.join('')}</defs>${symbols.join('')}</svg>`;
 
+// sauvegarde en ligne (compte Google) : fusion des progressions (app/sync.js) et identifiant client Google
+// (deploy/grimdoku/api/config.json, public par nature) ; sans identifiant, rien n'apparaît dans le jeu
+const syncJs = fs.readFileSync('app/sync.js', 'utf8');
+const apiCfg = JSON.parse(fs.readFileSync('deploy/grimdoku/api/config.json', 'utf8'));
+const account = apiCfg.googleClientId ? { clientId: apiCfg.googleClientId } : null;
 const out = t.replace('/*__ENGINE__*/', () => engine)
+  .replace('/*__SYNC__*/', () => syncJs)
+  .replace('/*__ACCOUNT__*/null', () => JSON.stringify(account))
   .replace('/*__PUZZLES__*/', () => JSON.stringify(puzzles))
   .replace('/*__MEDIA__*/', () => JSON.stringify(media))
   .replace('/*__LORE__*/', () => JSON.stringify(lore))

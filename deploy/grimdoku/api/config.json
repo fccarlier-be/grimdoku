@@ -1,0 +1,4 @@
+{
+  "googleClientId": "",
+  "origins": ["https://grimdoku.fcold.org", "http://localhost:8095"]
+}

@@ -33,6 +33,24 @@ services:
     networks:
       - serveur_default
 
+  # Sauvegarde en ligne de la progression (compte Google) : api/server.js, joint par nginx (/api/), sans port. Données
+  # (progressions, secret des sessions) dans ./api-data, jamais envoyé ni écrasé par une mise en ligne.
+  grimdoku-api:
+    image: node:22-alpine
+    container_name: grimdoku-api
+    restart: unless-stopped
+    command: ["node", "/app/server.js"]
+    environment:
+      - API_DATA=/data
+      - API_CONFIG=/app/config.json
+      - HOST=0.0.0.0
+      - PORT=8097
+    volumes:
+      - ./api:/app:ro
+      - ./api-data:/data
+    networks:
+      - serveur_default
+
 networks:
   serveur_default:
     external: true   # réseau de ~/serveur/docker-compose.yml, où tourne cloudflared
