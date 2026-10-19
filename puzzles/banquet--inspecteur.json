@@ -196,7 +196,7 @@
   "id": "banquet--inspecteur",
   "place": "banquet",
   "intro": "Au Banquet des Gobelins, l'inspecteur des tavernes Décanteur, venu inspecter les lieux, est passé de la liste des invités à la carte du menu. On l'a retrouvé avant le dessert. Cinq invités se goinfraient. L'un d'eux était seul avec lui. On m'a servi une soupe. Je ne l'ai pas touchée.",
-  "epilogue": "— Vous étiez seul avec Décanteur.\n— Décanteur.\n— Pourquoi ?\n— Il voulait me coller un blâme. Alors Bâfrin taper. Taper fort. Fort.",
+  "epilogue": "— Il n'y avait que vous et Décanteur.\n— Décanteur.\n— Pourquoi lui ?\n— Il a passé le doigt sur les assiettes : « Blâme. Tout est sale. Frottez plus fort ! » Bâfrin frotté lui, dans le bac. Fort.",
   "clues": [
     {
       "who": "a",

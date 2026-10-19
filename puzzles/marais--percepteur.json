@@ -182,7 +182,7 @@
   "id": "marais--percepteur",
   "place": "marais",
   "intro": "Le Marais des Brumes a rendu le corps de le percepteur Liardin, venu lever l'impôt de fin d'année. Il garde le reste. Cinq habitants du marais pataugeaient dans le coin. L'un d'eux était seul avec lui. J'ai de la vase jusqu'aux genoux et zéro témoin fiable.",
-  "epilogue": "— Vous étiez seule avec Liardin.\n— Je n'ai rien fait. (Blub.)\n— Vous faites des bulles.\n— Il voulait me faire payer l'impôt sur tout ce que je possède. Je l'ai juste invité à nager. (Blub, blub.)",
+  "epilogue": "— Personne d'autre n'était avec Liardin. Sauf vous.\n— Il voulait taxer l'eau du marais, au litre, parce que j'y vis.\n— Et il est tombé dedans.\n— Il a glissé. *Blop.* Il a sauté. *Blop, blop.* Bon. Je l'ai aidé à mesurer de plus près.",
   "clues": [
     {
       "who": "a",

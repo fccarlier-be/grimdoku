@@ -280,7 +280,7 @@
   "id": "bal--colporteur",
   "place": "bal",
   "intro": "Bal masqué au château : le colporteur Fatras, venu vendre sa camelote, n'a pas survécu jusqu'à minuit. Sept invités dansaient, ou le prétendent. L'un d'eux était seul avec lui. Le plus dur, ici, c'est de savoir qui est sous quel masque. Et qui ment dessous.",
-  "epilogue": "— Vous étiez seul avec Fatras, Majesté.\n— Il voulait me revendre ce qu'il m'avait déjà vendu. À moi. Le roi.\n— Et vous l'avez supprimé ?\n— Disons que je l'ai… exonéré.",
+  "epilogue": "— Et Fatras, Majesté ?\n— Il voulait me revendre la couronne qu'il m'avait déjà vendue.\n— Vous l'aviez achetée ?\n— C'est pas faux. C'était la mienne : il me l'avait volée au bal précédent. Je l'ai payée une deuxième fois. Avec le sceptre.",
   "clues": [
     {
       "who": "a",

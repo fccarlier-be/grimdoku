@@ -189,7 +189,7 @@
   "id": "thermes--huissier",
   "place": "thermes",
   "intro": "Aux Thermes Enchantés, l'huissier Récupérin, venu saisir des biens, a pris son dernier bain. Cinq baigneurs se prélassaient. L'un d'eux était seul avec lui. J'enquête en peignoir ; c'est le règlement, paraît-il.",
-  "epilogue": "— Vous étiez seule avec Récupérin.\n— Je n'ai rien fait. (Blub.)\n— Vous faites des bulles.\n— Il voulait saisir mes affaires. Je l'ai juste invité à nager. (Blub, blub.)",
+  "epilogue": "— C'était vous, avec Récupérin.\n— Il voulait saisir mon aquarium.\n— Avec vous dedans ?\n— Il a plongé pour l'inventaire. Je ne l'ai pas retenu au fond. *Blop.*",
   "clues": [
     {
       "who": "a",

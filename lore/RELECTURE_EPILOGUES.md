@@ -216,7 +216,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 **Débloquer la fin** : avec **les 23 lettres** (toutes : décision de François, 2026-10-19), l'affaire finale s'ouvre. La fin est donc vraiment la fin : Fizzlebarbe ne peut plus réapparaître vivant dans une enquête jouée après sa mort.
 
 ## Les épilogues
-189 épilogues (147 grilles jouables, 42 grilles désactivées), dont **4 validés ✅**. Classés par lieu, dans l'ordre où le joueur les découvre. Pour chacun : la victime (son métier, ce qu'elle venait faire, la menace qu'elle représentait), le coupable (trait et tic), l'introduction de l'enquête, puis l'épilogue.
+192 épilogues (147 grilles jouables, 45 grilles désactivées), dont **4 validés ✅**. Classés par lieu, dans l'ordre où le joueur les découvre. Pour chacun : la victime (son métier, ce qu'elle venait faire, la menace qu'elle représentait), le coupable (trait et tic), l'introduction de l'enquête, puis l'épilogue.
 
 ### Le Château de Mortebrune
 
@@ -416,16 +416,6 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Et vous l'avez laissée en bas.  
 > — Au bord du puits. J'ai soufflé sa lanterne et je l'ai poussée. Sa lanterne, je la lui rends demain.  
 
-#### La Mine des Nains — l'affaire Plombard
-- **Victime** : Plombard, l'alchimiste — Alchimiste ambulant, transforme l'or en dettes. Venu proposer ses services ; menace : « changer mes économies en plomb ».
-- **Coupable** : Grisou — Mineur nain, creuse plus vite qu'il ne réfléchit. Tic : « On creuse ? ».
-- **Introduction** : À la Mine des Nains, l'alchimiste Plombard, venu proposer ses services, est descendu plus bas que prévu. Sept mineurs et visiteurs étaient au fond. L'un d'eux était seul avec lui. Ici, tout le monde a une pioche, et personne n'a d'alibi.
-
-> — Personne d'autre n'était avec Plombard. Sauf vous.  
-> — Il a changé mes pépites en plomb, pour me montrer ce qu'il savait faire.  
-> — Il pouvait faire l'inverse ?  
-> — Il a dit qu'il fallait chercher la formule. On creuse ? j'ai dit. Je l'ai cherchée dans sa tête, à la pioche.  
-
 #### La Mine des Nains — l'affaire Ballot
 - **Victime** : Ballot, le colporteur — Colporteur, vend des objets dont personne ne veut. Venu vendre sa camelote ; menace : « me revendre ce qu'il m'avait déjà vendu ».
 - **Coupable** : Flammèche — Dragonnet, brûle tout ce qu'il touche. Tic : S'excuse avant même d'avoir brûlé quelque chose.
@@ -465,6 +455,26 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Il voulait l'impôt sur tout ce que je possède. Il a demandé où je cachais mes pépites.  
 > — Vous les lui avez montrées ?  
 > — J'ai dit : « On creuse ? » J'ai commencé sous ses pieds. Je réfléchis toujours après.  
+
+#### La Mine des Nains — l'affaire Chantefable
+- **Victime** : Chantefable, le troubadour — Troubadour itinérant, chante juste, et ça agace. Venu donner un concert ; menace : « chanter mieux que tout le monde ».
+- **Coupable** : Granit — Contremaître nain, compte les pépites et les pauses. Tic : Chronomètre tout le monde.
+- **Introduction** : À la Mine des Nains, le troubadour Chantefable, venu donner un concert, est descendu plus bas que prévu. Sept mineurs et visiteurs étaient au fond. L'un d'eux était seul avec lui. Ici, tout le monde a une pioche, et personne n'a d'alibi.
+
+> — Racontez-moi, pour Chantefable.  
+> — Il chantait mieux que tout le monde. Les mineurs s'arrêtaient pour l'écouter : trois pauses en une heure.  
+> — C'est beaucoup ?  
+> — C'est trois de trop. Je l'ai envoyé chanter au fond de la galerie qu'on n'étaie plus. J'ai compté jusqu'à la fin du refrain, puis j'ai retiré le dernier étai.  
+
+#### La Mine des Nains — l'affaire Plombard *(grille désactivée)*
+- **Victime** : Plombard, l'alchimiste — Alchimiste ambulant, transforme l'or en dettes. Venu proposer ses services ; menace : « changer mes économies en plomb ».
+- **Coupable** : Grisou — Mineur nain, creuse plus vite qu'il ne réfléchit. Tic : « On creuse ? ».
+- **Introduction** : À la Mine des Nains, l'alchimiste Plombard, venu proposer ses services, est descendu plus bas que prévu. Sept mineurs et visiteurs étaient au fond. L'un d'eux était seul avec lui. Ici, tout le monde a une pioche, et personne n'a d'alibi.
+
+> — Personne d'autre n'était avec Plombard. Sauf vous.  
+> — Il a changé mes pépites en plomb, pour me montrer ce qu'il savait faire.  
+> — Il pouvait faire l'inverse ?  
+> — Il a dit qu'il fallait chercher la formule. On creuse ? j'ai dit. Je l'ai cherchée dans sa tête, à la pioche.  
 
 #### La Mine des Nains — l'affaire Flamberge *(grille désactivée)*
 - **Victime** : Flamberge, la dresseuse — Dresseuse de dragons, surtout des petits. Venue recruter des bêtes pour son cirque ; menace : « m'emmener dans son cirque ».
@@ -600,15 +610,15 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Pendant que vous dormiez.  
 > — Je me réveille toujours au pire moment. Pour elle.  
 
-#### La Bibliothèque Interdite — l'affaire Tributin
-- **Victime** : Tributin, le percepteur — Percepteur du baron, compte même les miettes. Venu lever l'impôt de fin d'année ; menace : « me faire payer l'impôt sur tout ce que je possède ».
-- **Coupable** : Belladone — Comtesse vampire, végane (elle le jure). Tic : « Je ne bois jamais… de vin. ».
-- **Introduction** : À la Bibliothèque Interdite, le percepteur Tributin, venu lever l'impôt de fin d'année, a été retrouvé entre deux rayonnages. On m'a demandé d'enquêter en silence. Six lecteurs étaient là. L'un d'eux était seul avec lui. Je chuchote mes questions ; on me répond en hurlant « chut ».
+#### La Bibliothèque Interdite — l'affaire Badaud
+- **Victime** : Badaud, le touriste — Touriste, dessine tout au fusain, surtout ce qui est interdit. Venu visiter la baronnie ; menace : « faire mon portrait au fusain et le vendre à la foire ».
+- **Coupable** : Dewey — Bibliothécaire, réclame le silence en hurlant. Tic : « CHUT ! », en hurlant.
+- **Introduction** : À la Bibliothèque Interdite, le touriste Badaud, venu visiter la baronnie, a été retrouvé entre deux rayonnages. On m'a demandé d'enquêter en silence. Six lecteurs étaient là. L'un d'eux était seul avec lui. Je chuchote mes questions ; on me répond en hurlant « chut ».
 
-> — C'était vous, avec Tributin.  
-> — Il voulait taxer tout ce que je possède. Même mes bocaux de jus de betterave.  
-> — C'est du jus de betterave ?  
-> — Je ne bois jamais… de vin. Il a voulu goûter pour vérifier. Alors moi aussi, j'ai goûté. Lui.  
+> — Que s'est-il passé avec Badaud ?  
+> — Il dessinait la réserve interdite, page par page, du haut de l'échelle, pour vendre ça à la foire.  
+> — Il était discret, au moins ?  
+> — Il a fait tomber son fusain. Je lui ai crié « CHUT ! » d'en bas. On crie fort, quand on aime le silence. L'échelle n'a pas aimé non plus.  
 
 #### La Bibliothèque Interdite — l'affaire Refrain
 - **Victime** : Refrain, le troubadour — Troubadour itinérant, chante juste, et ça agace. Venu donner un concert ; menace : « chanter mieux que tout le monde ».
@@ -649,6 +659,16 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Elle voulait m'apprendre à nager de force. Dix écus le cours, payables à la fin.  
 > — Vous avez refusé ?  
 > — Je lui ai proposé de commencer par le plongeon, du haut de l'échelle des grimoires. Il n'y a pas eu de fin de cours, donc pas de facture.  
+
+#### La Bibliothèque Interdite — l'affaire Tributin *(grille désactivée)*
+- **Victime** : Tributin, le percepteur — Percepteur du baron, compte même les miettes. Venu lever l'impôt de fin d'année ; menace : « me faire payer l'impôt sur tout ce que je possède ».
+- **Coupable** : Belladone — Comtesse vampire, végane (elle le jure). Tic : « Je ne bois jamais… de vin. ».
+- **Introduction** : À la Bibliothèque Interdite, le percepteur Tributin, venu lever l'impôt de fin d'année, a été retrouvé entre deux rayonnages. On m'a demandé d'enquêter en silence. Six lecteurs étaient là. L'un d'eux était seul avec lui. Je chuchote mes questions ; on me répond en hurlant « chut ».
+
+> — C'était vous, avec Tributin.  
+> — Il voulait taxer tout ce que je possède. Même mes bocaux de jus de betterave.  
+> — C'est du jus de betterave ?  
+> — Je ne bois jamais… de vin. Il a voulu goûter pour vérifier. Alors moi aussi, j'ai goûté. Lui.  
 
 ### La Forge du Dragon
 
@@ -1266,16 +1286,6 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Elle était réussie ?  
 > — Elle fumait. J'ai demandé si c'était normal. Il a bu pour vérifier.  
 
-#### L'Université des Sortilèges — l'affaire Griffonne
-- **Victime** : Griffonne, la chasseuse de primes — Chasseuse de primes, a toujours un avis de recherche sur elle. Venue toucher une prime ; menace : « me livrer au baron contre trois écus ».
-- **Coupable** : Fiolius — Professeur de potions, note à l'odeur. Tic : Renifle avant de répondre.
-- **Introduction** : La veille de la remise des diplômes, l'Université des Sortilèges a perdu la chasseuse de primes Griffonne, venue toucher une prime. Dix membres de l'université travaillaient tard, ou faisaient semblant. L'un d'eux était seul avec elle. L'Académie d'en face nie tout en bloc, avant même que je demande.
-
-> — Pourquoi Griffonne ?  
-> — Elle avait un avis de recherche à mon nom, signé de l'Académie : « plagiat de thèse ».  
-> — C'était vrai ?  
-> — *Il renifle.* L'avis sentait Fizzlebarbe. Je lui ai offert de quoi se rafraîchir avant de m'emmener. Elle n'a emmené personne.  
-
 #### L'Université des Sortilèges — l'affaire Breloquin
 - **Victime** : Breloquin, le colporteur — Colporteur, vend des objets dont personne ne veut. Venu vendre sa camelote ; menace : « me revendre ce qu'il m'avait déjà vendu ».
 - **Coupable** : Fiolius — Professeur de potions, note à l'odeur. Tic : Renifle avant de répondre.
@@ -1326,6 +1336,16 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Une façon de parler.  
 > — Pas devant une djinn. Je n'ai pas de souffle à retenir. Alors j'ai retenu le sien.  
 
+#### L'Université des Sortilèges — l'affaire Péageon
+- **Victime** : Péageon, le percepteur — Percepteur du baron, compte même les miettes. Venu lever l'impôt de fin d'année ; menace : « me faire payer l'impôt sur tout ce que je possède ».
+- **Coupable** : Dewey — Bibliothécaire, réclame le silence en hurlant. Tic : « CHUT ! », en hurlant.
+- **Introduction** : La veille de la remise des diplômes, l'Université des Sortilèges a perdu le percepteur Péageon, venu lever l'impôt de fin d'année. Dix membres de l'université travaillaient tard, ou faisaient semblant. L'un d'eux était seul avec lui. L'Académie d'en face nie tout en bloc, avant même que je demande.
+
+> — Il n'y avait que vous et Péageon.  
+> — Il voulait l'impôt sur tout ce que je possède. Il a commencé à compter mes livres. À voix haute.  
+> — Il faut bien compter.  
+> — Pas à voix haute. Au troisième rayon, je l'ai fait taire. Avec le dictionnaire, l'édition complète.  
+
 #### L'Université des Sortilèges — l'affaire Brocarde *(grille désactivée)*
 - **Victime** : Brocarde, la baronne — Baronne voisine, jalouse de tout ce qui brille. Venue rendre une visite de courtoisie ; menace : « racheter la baronnie et me mettre dehors ».
 - **Coupable** : Capucine — Fée, doit trois tournées. Tic : « Je te le rends demain. ».
@@ -1335,6 +1355,16 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Elle voulait racheter l'Université, et ma poussière de fée avec, parce que ça brille.  
 > — Vous la lui avez vendue ?  
 > — Prêtée. Une poignée. Elle s'est envolée très haut. Ça ne dure qu'une heure ; elle me la rendra demain.  
+
+#### L'Université des Sortilèges — l'affaire Griffonne *(grille désactivée)*
+- **Victime** : Griffonne, la chasseuse de primes — Chasseuse de primes, a toujours un avis de recherche sur elle. Venue toucher une prime ; menace : « me livrer au baron contre trois écus ».
+- **Coupable** : Fiolius — Professeur de potions, note à l'odeur. Tic : Renifle avant de répondre.
+- **Introduction** : La veille de la remise des diplômes, l'Université des Sortilèges a perdu la chasseuse de primes Griffonne, venue toucher une prime. Dix membres de l'université travaillaient tard, ou faisaient semblant. L'un d'eux était seul avec elle. L'Académie d'en face nie tout en bloc, avant même que je demande.
+
+> — Pourquoi Griffonne ?  
+> — Elle avait un avis de recherche à mon nom, signé de l'Académie : « plagiat de thèse ».  
+> — C'était vrai ?  
+> — *Il renifle.* L'avis sentait Fizzlebarbe. Je lui ai offert de quoi se rafraîchir avant de m'emmener. Elle n'a emmené personne.  
 
 #### L'Université des Sortilèges — l'affaire Plectrude *(grille désactivée)*
 - **Victime** : Plectrude, la cousine — Cousine éloignée de tout le monde, venue pour l'héritage. Venue réclamer un héritage ; menace : « réclamer sa part de ce qui m'appartient ».

@@ -233,7 +233,7 @@
   "id": "forge--baronne",
   "place": "forge",
   "intro": "La Forge du Dragon fume plus que d'habitude : la baronne Ostentine, venue rendre une visite de courtoisie, n'en est pas ressortie. Six habitués de la forge étaient au travail, paraît-il. L'un d'eux était seul avec elle. Le dragon dort. J'aimerais qu'il continue.",
-  "epilogue": "— Vous étiez seul avec Ostentine.\n— Elle voulait racheter la baronnie et me mettre dehors. J'ai fait une opération comptable.\n— Vous l'avez tuée.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "epilogue": "— Parlons de Ostentine.\n— Elle voulait racheter la baronnie. Le prix, c'était le trésor du royaume.\n— Le trésor est vide.\n— Elle voulait le voir quand même. Je lui ai montré le creuset. Tout ce qui tombe dans le creuset appartient au royaume. Elle aussi, maintenant.",
   "clues": [
     {
       "who": "a",

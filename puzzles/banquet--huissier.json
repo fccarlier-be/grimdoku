@@ -196,7 +196,7 @@
   "id": "banquet--huissier",
   "place": "banquet",
   "intro": "Au Banquet des Gobelins, l'huissier Recouvrin, venu saisir des biens, est passé de la liste des invités à la carte du menu. On l'a retrouvé avant le dessert. Cinq invités se goinfraient. L'un d'eux était seul avec lui. On m'a servi une soupe. Je ne l'ai pas touchée.",
-  "epilogue": "— Vous étiez seul avec Recouvrin.\n— Il voulait saisir mes affaires. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "epilogue": "— Pourquoi Recouvrin ?\n— Il venait saisir mes affaires. À sa banque, on saisit d'abord et on demande ensuite.\n— Et vous ?\n— J'ai saisi le premier : lui. Puis je l'ai revendu aux cuisines, au poids. Techniquement, c'est légal : un bien saisi se revend.",
   "clues": [
     {
       "who": "a",

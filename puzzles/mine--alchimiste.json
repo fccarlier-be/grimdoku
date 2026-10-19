@@ -256,7 +256,7 @@
   "id": "mine--alchimiste",
   "place": "mine",
   "intro": "À la Mine des Nains, l'alchimiste Plombard, venu proposer ses services, est descendu plus bas que prévu. Sept mineurs et visiteurs étaient au fond. L'un d'eux était seul avec lui. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
-  "epilogue": "— Vous étiez seul avec Plombard.\n— Il voulait changer mes économies en plomb.\n— Et vous avez fait quoi ?\n— On a creusé. Un trou. À sa taille.",
+  "epilogue": "— Personne d'autre n'était avec Plombard. Sauf vous.\n— Il a changé mes pépites en plomb, pour me montrer ce qu'il savait faire.\n— Il pouvait faire l'inverse ?\n— Il a dit qu'il fallait chercher la formule. On creuse ? j'ai dit. Je l'ai cherchée dans sa tête, à la pioche.",
   "clues": [
     {
       "who": "a",

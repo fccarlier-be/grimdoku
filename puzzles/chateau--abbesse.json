@@ -250,7 +250,7 @@
   "id": "chateau--abbesse",
   "place": "chateau",
   "intro": "L'abbesse Patience était venue au Château de Mortebrune faire la quête. On m'a fait appeler au nom du roi, ce qui veut dire que c'est grave, ou qu'il s'ennuie. Six membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec elle.",
-  "epilogue": "— Vous étiez seul avec Patience.\n— Elle voulait me faire la morale. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
+  "epilogue": "— Vous étiez seul avec l'abbesse Patience.\n— Elle m'a fait la morale : un mort n'a rien à faire dans un château, il serait temps que je passe de l'autre côté.\n— Et vous êtes parti ?\n— Je lui ai montré l'autre côté, de près.",
   "clues": [
     {
       "who": "a",

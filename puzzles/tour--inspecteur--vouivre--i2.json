@@ -222,7 +222,7 @@
   "id": "tour--inspecteur--vouivre--i2",
   "place": "tour",
   "intro": "L'inspecteur des tavernes Gobelet était venu à la Tour de l'Archimage inspecter les lieux. On l'a retrouvé au pied d'une étagère de grimoires, sans vie. Cinq habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec lui. Ici, même les escaliers mentent.",
-  "epilogue": "— Vous étiez seul avec Gobelet.\n— Il voulait me coller un blâme. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
+  "epilogue": "— Gobelet. Racontez-moi.\n— Il a collé un blâme à la Tour : un fantôme dans la cave, ça fait fuir les clients.\n— Vous n'êtes pas un client.\n— Je suis le propriétaire. Je l'ai suivi en gémissant jusqu'en haut de l'échelle des grimoires. Il a voulu redescendre par le chemin le plus court.",
   "clues": [
     {
       "who": "a",

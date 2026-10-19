@@ -377,7 +377,7 @@
   "id": "universite--alchimiste",
   "place": "universite",
   "intro": "La veille de la remise des diplômes, l'Université des Sortilèges a perdu l'alchimiste Athanor, venu proposer ses services. Dix membres de l'université travaillaient tard, ou faisaient semblant. L'un d'eux était seul avec lui. L'Académie d'en face nie tout en bloc, avant même que je demande.",
-  "epilogue": "— Vous étiez seule avec Athanor.\n— Il voulait changer mes économies en plomb, alors j'ai lancé un sort de protection.\n— Et ?\n— C'est normal que ça fume encore ?",
+  "epilogue": "— Il n'y avait que vous et Athanor.\n— Il voulait changer mes économies en plomb. Pour le remercier, je lui ai fait goûter ma potion de diplôme.\n— Elle était réussie ?\n— Elle fumait. J'ai demandé si c'était normal. Il a bu pour vérifier.",
   "clues": [
     {
       "who": "a",

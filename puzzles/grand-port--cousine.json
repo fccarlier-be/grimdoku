@@ -323,7 +323,7 @@
   "id": "grand-port--cousine",
   "place": "grand-port",
   "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : la cousine Rotrude, venue réclamer un héritage, est morte sur les quais. Neuf habitués erraient dans la brume. L'un d'eux était seul avec elle.",
-  "epilogue": "— Vous étiez seul avec Rotrude.\n— Elle voulait réclamer sa part de ce qui m'appartient. J'ai fait une opération comptable.\n— Vous l'avez tuée.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "epilogue": "— Personne d'autre n'était avec Rotrude. Sauf vous.\n— Elle se disait ma cousine et réclamait sa part de ce qui m'appartient.\n— Qu'est-ce qui vous appartient ?\n— Officiellement, rien : tout est au nom du royaume. Je lui ai donné sa part du royaume, le fond du port. Techniquement, c'est légal : c'est domanial.",
   "clues": [
     {
       "who": "a",

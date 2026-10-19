@@ -189,7 +189,7 @@
   "id": "ferme--abbesse",
   "place": "ferme",
   "intro": "On dit la Ferme Hantée, et l'abbesse Austérine, venue faire la quête, va sûrement y contribuer. Cinq habitants de la ferme étaient là cette nuit. L'un d'eux était seul avec elle. Les poules, elles, refusent de témoigner.",
-  "epilogue": "— Vous étiez seul avec Austérine.\n— Elle voulait me faire la morale. Je dis ça, je dis rien.\n— Dites-le.\n— Une baguette de trois jours, ça assomme. Je dis ça, je dis rien.",
+  "epilogue": "— Pourquoi Austérine ?\n— Elle m'a fait la morale sur les ragots. Une heure. Je n'ai rien dit.\n— Rien du tout ?\n— Seulement que le four était peut-être encore chaud. Elle s'est penchée pour vérifier ; j'ai refermé la porte, pour garder la chaleur. Je dis ça, je dis rien.",
   "clues": [
     {
       "who": "a",

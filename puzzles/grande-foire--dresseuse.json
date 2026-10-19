@@ -425,7 +425,7 @@
   "id": "grande-foire--dresseuse",
   "place": "grande-foire",
   "intro": "Feu d'artifice à la Grande Foire des Mille Merveilles : tout le monde regardait le ciel, sauf la dresseuse Clownette, venue recruter des bêtes pour son cirque. Elle n'a pas vu le bouquet final. Onze forains et visiteurs juraient avoir le nez en l'air. L'un d'eux était seul avec elle.",
-  "epilogue": "— Vous étiez seul avec Clownette.\n— Elle voulait m'emmener dans son cirque. J'ai gardé mon calme : je suis végétarien depuis mardi.\n— On est jeudi.\n— Justement. C'était plus mardi.",
+  "epilogue": "— Que s'est-il passé avec Clownette ?\n— Elle voulait m'emmener dans son cirque, pour le numéro de l'ogre mangeur d'hommes.\n— Vous êtes végétarien.\n— Depuis mardi. Elle a dit que personne n'y croirait. Je lui ai prouvé que si : je ne l'ai pas mangée. Je me suis seulement assis dessus.",
   "clues": [
     {
       "who": "a",

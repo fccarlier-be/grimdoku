@@ -256,7 +256,7 @@
   "hiddenShapes": true,
   "hiddenMax": 3,
   "intro": "Le pont-levis est resté coincé toute la nuit, enfermant le messager Galopin, venu apporter une lettre du baron, avec les sept occupants de la Citadelle. Au matin, il n'avait plus aucune envie de sortir. L'un d'eux était seul avec lui. Au moins, personne n'a pu s'enfuir.",
-  "epilogue": "— Vous étiez seul avec Galopin.\n— Il voulait m'annoncer une mauvaise nouvelle. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "epilogue": "— Personne d'autre n'était avec Galopin. Sauf vous.\n— Il m'a annoncé que le baron envoyait un contrôleur des comptes.\n— Une mauvaise nouvelle, pour vous.\n— Pour lui. Je n'ai fait que retarder le courrier, au fond du puits de la Citadelle. Le porteur avec : il ne voulait pas le lâcher.",
   "clues": [
     {
       "who": "a",

@@ -268,7 +268,7 @@
   "id": "citadelle--huissier",
   "place": "citadelle",
   "intro": "Le pont-levis est resté coincé toute la nuit, enfermant l'huissier Crochard, venu saisir des biens, avec les huit occupants de la Citadelle. Au matin, il n'avait plus aucune envie de sortir. L'un d'eux était seul avec lui. Au moins, personne n'a pu s'enfuir.",
-  "epilogue": "— Vous étiez seul avec Crochard.\n— Il voulait saisir mes affaires. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "epilogue": "— Racontez-moi, pour Crochard.\n— Il voulait saisir mes affaires, pour une dette envers sa banque.\n— Vous avez remboursé ?\n— J'ai racheté sa banque pendant la nuit. Au matin, il était mon employé, et je l'ai licencié du haut du rempart. Techniquement, c'est légal : il était à l'essai.",
   "clues": [
     {
       "who": "a",

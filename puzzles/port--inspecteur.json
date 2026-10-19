@@ -247,7 +247,7 @@
   "id": "port--inspecteur",
   "place": "port",
   "intro": "Au Port des Contrebandiers, l'inspecteur des tavernes Flacon, venu inspecter les lieux, a été repêché à marée basse. Six habitués traînaient sur les quais. L'un d'eux était seul avec lui. Ici, tout le monde a quelque chose à cacher, généralement dans un tonneau.",
-  "epilogue": "— Vous étiez seul avec Flacon.\n— Il voulait me coller un blâme. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "epilogue": "— Flacon. Racontez-moi.\n— Il voulait coller un blâme à mon rhum : pas d'étiquette, pas de taxe.\n— Il avait raison.\n— Alors je lui ai fait goûter le stock. Tout le stock. Plus de rhum, plus de taxe, plus d'inspecteur.",
   "clues": [
     {
       "who": "a",

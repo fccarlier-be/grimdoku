@@ -247,7 +247,7 @@
   "id": "palais--inspecteur",
   "place": "palais",
   "intro": "Au Palais des Mille Vœux, l'inspecteur des tavernes Pinardon, venu inspecter les lieux, a fait un vœu de trop, ou en a croisé un. Six hôtes du palais étaient là. L'un d'eux était seul avec lui. La djinn m'a proposé de tout résoudre d'un claquement de doigts. J'ai lu les petites lignes.",
-  "epilogue": "— Vous étiez seul avec Pinardon, Majesté.\n— Il voulait me coller un blâme. À moi. Le roi.\n— Et vous l'avez supprimé ?\n— Disons que je l'ai… exonéré.",
+  "epilogue": "— Que s'est-il passé avec Pinardon, Majesté ?\n— Il a collé un blâme au palais : vin coupé à l'eau.\n— C'est vrai ?\n— Il a dit que mon vin était « à se noyer dedans ». C'est pas faux, j'ai dit. Je ne savais pas que c'était une expression.",
   "clues": [
     {
       "who": "a",

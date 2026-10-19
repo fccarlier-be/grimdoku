@@ -189,7 +189,7 @@
   "id": "moulin--alchimiste",
   "place": "moulin",
   "intro": "Au Moulin de Bois-Tordu, l'alchimiste Orpiment, venu proposer ses services, a fini plus plat qu'une galette. Cinq voisins traînaient dans le coin. L'un d'eux était seul avec lui. Le meunier m'a proposé de peser les suspects. J'ai refusé.",
-  "epilogue": "— Vous étiez seul avec Orpiment.\n— Il voulait changer mes économies en plomb. Ça m'a énervé.\n— Et ?\n— Mon bras gauche s'est décroché. Le seul qui avait encore sa main. Il l'a reçu sur la tête.",
+  "epilogue": "— Pourquoi Orpiment ?\n— Il voulait changer mes économies en plomb. Je n'ai pas d'économies : vingt ans d'apprentissage, jamais payé.\n— Alors il est reparti.\n— Il a voulu se payer sur ce qui me reste : il m'a arraché le bras pour le changer en or. Je l'ai repris. Par l'autre bout.",
   "clues": [
     {
       "who": "a",

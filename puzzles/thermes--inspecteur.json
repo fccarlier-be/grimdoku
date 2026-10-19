@@ -189,7 +189,7 @@
   "id": "thermes--inspecteur",
   "place": "thermes",
   "intro": "Aux Thermes Enchantés, l'inspecteur des tavernes Pichet, venu inspecter les lieux, a pris son dernier bain. Cinq baigneurs se prélassaient. L'un d'eux était seul avec lui. J'enquête en peignoir ; c'est le règlement, paraît-il.",
-  "epilogue": "— Vous étiez seule avec Pichet.\n— Il voulait me coller un blâme. Je lui ai mis deux sur dix.\n— Et ensuite ?\n— Ensuite, zéro.",
+  "epilogue": "— Que s'est-il passé avec Pichet ?\n— Il a mis un blâme aux Thermes. Moi, je leur avais mis huit sur dix.\n— Vous n'étiez pas d'accord.\n— Je l'ai invité à dîner, pour comparer nos palais. Je lui ai fait goûter mes champignons préférés. Il leur a mis dix sur dix. C'était sa dernière note.",
   "clues": [
     {
       "who": "a",

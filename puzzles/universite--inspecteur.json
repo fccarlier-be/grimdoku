@@ -377,7 +377,7 @@
   "id": "universite--inspecteur",
   "place": "universite",
   "intro": "La veille de la remise des diplômes, l'Université des Sortilèges a perdu l'inspecteur des tavernes Sirotin, venu inspecter les lieux. Dix membres de l'université travaillaient tard, ou faisaient semblant. L'un d'eux était seul avec lui. L'Académie d'en face nie tout en bloc, avant même que je demande.",
-  "epilogue": "— Vous étiez seul avec Sirotin.\n— (Il renifle.) Il voulait me coller un blâme.\n— Et votre potion ?\n— Elle sentait la mort. Excellente note.",
+  "epilogue": "— Et Sirotin ?\n— Il a collé un blâme à mon laboratoire : « Ceci n'est pas une taverne. »\n— Ce n'en est pas une.\n— *Il renifle.* Il sentait le vin. Je lui ai servi un verre de ma potion d'examen, en disant que c'était du cognac. Il lui a mis dix sur dix. C'était un examen de poisons.",
   "clues": [
     {
       "who": "a",

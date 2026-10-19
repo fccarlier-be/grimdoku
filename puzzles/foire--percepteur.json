@@ -226,7 +226,7 @@
   "id": "foire--percepteur",
   "place": "foire",
   "intro": "La Foire aux Sortilèges a perdu un client : le percepteur Fiscalin, venu lever l'impôt de fin d'année. Six forains juraient qu'ils tenaient leur stand. L'un d'eux était seul avec lui. Le bonimenteur m'a déjà proposé un élixir de vérité. Deux écus, garanti sans effet.",
-  "epilogue": "— Vous étiez seule avec Fiscalin.\n— Il voulait me faire payer l'impôt sur tout ce que je possède. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain.",
+  "epilogue": "— Et Fiscalin ?\n— Il voulait m'imposer sur tout ce que je possède.\n— Vous ne possédez que des dettes.\n— Il a voulu les taxer quand même. Il est monté au mât de la foire pour lire mes ardoises de plus haut. Je lui ai emprunté l'échelle. Je la rends demain.",
   "clues": [
     {
       "who": "a",

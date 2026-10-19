@@ -189,7 +189,7 @@
   "id": "moulin--abbesse",
   "place": "moulin",
   "intro": "Au Moulin de Bois-Tordu, l'abbesse Scholastique, venue faire la quête, a fini plus plate qu'une galette. Cinq voisins traînaient dans le coin. L'un d'eux était seul avec elle. Le meunier m'a proposé de peser les suspects. J'ai refusé.",
-  "epilogue": "— Vous étiez seule avec Scholastique.\n— Elle voulait me faire la morale. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain.",
+  "epilogue": "— Parlons de Scholastique.\n— Elle voulait que je donne pour son couvent. Tout de suite, pas demain.\n— Vous n'aviez rien ?\n— Elle m'a coursée jusqu'à la meule. Je suis passée par-dessus, en volant, et j'ai lâché le frein. Le don, je le fais demain.",
   "clues": [
     {
       "who": "a",

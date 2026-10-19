@@ -233,7 +233,7 @@
   "id": "forge--colporteur",
   "place": "forge",
   "intro": "La Forge du Dragon fume plus que d'habitude : le colporteur Trimballe, venu vendre sa camelote, n'en est pas ressorti. Six habitués de la forge étaient au travail, paraît-il. L'un d'eux était seul avec lui. Le dragon dort. J'aimerais qu'il continue.",
-  "epilogue": "— Vous étiez seul avec Trimballe.\n— Il voulait me revendre ce qu'il m'avait déjà vendu.\n— Et vous avez fait quoi ?\n— On a creusé. Un trou. À sa taille.",
+  "epilogue": "— Et Trimballe ?\n— Il voulait me revendre la pioche qu'il m'avait déjà vendue. Le manche casse au premier coup.\n— Il a cassé ?\n— Au premier coup, oui. Je lui ai montré sur lui.",
   "clues": [
     {
       "who": "a",

@@ -220,7 +220,7 @@
   "id": "forge--touriste--dragon-golem--i2-i2",
   "place": "forge",
   "intro": "La Forge du Dragon fume plus que d'habitude : le touriste Flânard, venu visiter la baronnie, n'en est pas ressorti. Cinq habitués de la forge étaient au travail, paraît-il. L'un d'eux était seul avec lui. Le dragon dort. J'aimerais qu'il continue.",
-  "epilogue": "— Vous étiez seul avec Flânard.\n— Il voulait faire mon portrait au fusain et le vendre à la foire, pendant ma sieste.\n— Et ?\n— Je me suis réveillé de mauvaise humeur. On ne réveille pas un dragon.",
+  "epilogue": "— Flânard. Racontez-moi.\n— Il voulait me dessiner endormi, pour la foire. Il s'est approché pour le profil.\n— Et vous vous êtes réveillé.\n— Quand il est entré dans ma gueule pour dessiner les dents. Je me réveille toujours au pire moment.",
   "clues": [
     {
       "who": "a",

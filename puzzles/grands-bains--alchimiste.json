@@ -330,7 +330,7 @@
   "id": "grands-bains--alchimiste",
   "place": "grands-bains",
   "intro": "Aux Grands Bains de Brumeval, on vient soigner ses rhumatismes, ses nerfs ou sa réputation. L'alchimiste Sublimin, venu proposer ses services, n'est pas ressorti du bain. Neuf curistes et employés barbotaient dans les parages. L'un d'eux était seul avec lui. Il fait quarante degrés, tout le monde transpire, et personne ne sait rien.",
-  "epilogue": "— Vous étiez seule avec Sublimin.\n— Je n'ai rien fait. (Blub.)\n— Vous faites des bulles.\n— Il voulait changer mes économies en plomb. Je l'ai juste invité à nager. (Blub, blub.)",
+  "epilogue": "— C'était vous, avec Sublimin.\n— Il a changé mes perles en plomb. Pour me rendre service, il a dit.\n— Vous le lui avez reproché.\n— Je lui ai mis les perles autour du cou, pour voir s'il nageait mieux que moi.",
   "clues": [
     {
       "who": "a",

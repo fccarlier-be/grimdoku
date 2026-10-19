@@ -265,7 +265,7 @@
   "id": "citadelle--chasseuse",
   "place": "citadelle",
   "intro": "Le pont-levis est resté coincé toute la nuit, enfermant la chasseuse de primes Corbine, venue toucher une prime, avec les huit occupants de la Citadelle. Au matin, elle n'avait plus aucune envie de sortir. L'un d'eux était seul avec elle. Au moins, personne n'a pu s'enfuir.",
-  "epilogue": "— Vous étiez seul avec Corbine.\n— « Elle voulait me livrer au baron contre trois écus, ô rage, ô désespoir… »\n— Répondez normalement.\n— J'ai chanté jusqu'à ce qu'elle s'arrête. Définitivement.",
+  "epilogue": "— Pourquoi Corbine ?\n— Coincés toute la nuit, et elle voulait me livrer au baron dès l'aube.\n— Une nuit, c'est long.\n— Elle s'est endormie au deuxième couplet. Je l'ai portée jusqu'au rempart en lui chantant une berceuse. Elle ne s'est réveillée qu'aux douves.",
   "clues": [
     {
       "who": "a",

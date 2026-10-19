@@ -20,6 +20,8 @@ const ONLY = arg('only', '');
 // (jeu jugé trop simple par François, 2026-10-16 : aucune grille ne place un personnage d'emblée, difficultés relevées)
 const TARGETS = { 6: [1, 2, 1, 2, 2, 1], 7: [2, 3, 2, 3, 2, 3, 2], 8: [3, 2, 3, 3, 2, 3, 3, 3] };
 const TRIES = { 6: 60, 7: 60, 8: 25, 9: 8, 10: 8, 11: 6, 12: 6 };
+// --tries=N : plus d'essais par graine pour toutes les tailles (coupable imposé : les grilles acceptables sont plus rares)
+if (arg('tries', '')) for (const k of Object.keys(TRIES)) TRIES[k] = Number(arg('tries', ''));
 const TIMEOUT = { 6: 60e3, 7: 120e3, 8: 300e3, 9: 400e3, 10: 500e3, 11: 600e3, 12: 700e3 };
 // grandes cartes (9×9 et plus) : pas de difficulté visée (trop lent à filtrer) ; sans placement direct, elles sont dures
 // graines propres à chaque affaire (sinon deux affaires d'un même décor tirent la même grille)

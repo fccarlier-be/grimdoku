@@ -222,7 +222,7 @@
   "id": "tour--messager--golem--i2",
   "place": "tour",
   "intro": "Le messager Hâtif était venu à la Tour de l'Archimage apporter une lettre du baron. On l'a retrouvé au pied d'une étagère de grimoires, sans vie. Cinq habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec lui. Ici, même les escaliers mentent.",
-  "epilogue": "— Vous étiez seul avec Hâtif.\n— Il voulait m'annoncer une mauvaise nouvelle. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
+  "epilogue": "— Et Hâtif ?\n— Il m'a annoncé que le baron me rayait des registres : « décédé ».\n— Vous l'êtes.\n— De mon vivant, on m'annonçait les choses à genoux. Il s'est mis à genoux pour ramasser sa lettre. Je suis sorti du plancher, nez à nez. Il est tombé à la renverse contre l'étagère, et les grimoires ont suivi.",
   "clues": [
     {
       "who": "a",

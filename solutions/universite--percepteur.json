@@ -1,0 +1,163 @@
+{
+ "positions": {
+  "k": [
+   4,
+   5
+  ],
+  "j": [
+   8,
+   10
+  ],
+  "g": [
+   2,
+   4
+  ],
+  "c": [
+   10,
+   6
+  ],
+  "i": [
+   5,
+   8
+  ],
+  "h": [
+   3,
+   3
+  ],
+  "f": [
+   7,
+   7
+  ],
+  "d": [
+   0,
+   0
+  ],
+  "a": [
+   1,
+   9
+  ],
+  "e": [
+   6,
+   2
+  ],
+  "b": [
+   9,
+   1
+  ]
+ },
+ "murderer": "f",
+ "cast": {
+  "j": "a",
+  "g": "b",
+  "c": "c",
+  "i": "d",
+  "h": "e",
+  "f": "f",
+  "d": "g",
+  "a": "h",
+  "e": "i",
+  "b": "j"
+ },
+ "nSolutions": 1,
+ "needsL2": false,
+ "clues": [
+  {
+   "who": "j",
+   "logic": {
+    "type": "inRoom",
+    "room": "H"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "westOf",
+    "other": "i"
+   }
+  },
+  {
+   "who": "i",
+   "logic": {
+    "type": "southOf",
+    "other": "h"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "a",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "champi"
+   }
+  },
+  {
+   "who": "e",
+   "logic": {
+    "type": "sameColAs",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "adjacentTo",
+    "object": "coffre"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "cristal"
+   }
+  },
+  {
+   "who": "b",
+   "logic": {
+    "type": "northOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "d",
+   "logic": {
+    "type": "westOf",
+    "other": "b"
+   }
+  },
+  {
+   "who": "g",
+   "logic": {
+    "type": "sameColAs",
+    "object": "arbre"
+   }
+  },
+  {
+   "who": "c",
+   "logic": {
+    "type": "sameColAs",
+    "object": "tapis"
+   }
+  },
+  {
+   "who": "f",
+   "logic": {
+    "type": "eastOf",
+    "other": "c"
+   }
+  },
+  {
+   "who": "h",
+   "logic": {
+    "type": "sameRowAs",
+    "object": "chaudron"
+   }
+  }
+ ]
+}

@@ -236,7 +236,7 @@
   "id": "tour--colporteur",
   "place": "tour",
   "intro": "Le colporteur Bazar était venu à la Tour de l'Archimage vendre sa camelote. On l'a retrouvé au pied d'une étagère de grimoires, sans vie. Six habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec lui. Ici, même les escaliers mentent.",
-  "epilogue": "— Vous étiez seul avec Bazar.\n— Il voulait me revendre ce qu'il m'avait déjà vendu. Ça m'a énervé.\n— Et ?\n— Mon bras gauche s'est décroché. Le seul qui avait encore sa main. Il l'a reçu sur la tête.",
+  "epilogue": "— Et Bazar ?\n— Il voulait me revendre ma propre main. Celle de l'accident, il y a vingt ans ; il l'avait trouvée dans la Tour.\n— Vous l'avez rachetée ?\n— Je me suis énervé. J'ai perdu l'autre. Je les ai ramassées toutes les deux, et je l'ai poussé contre l'étagère avec.",
   "clues": [
     {
       "who": "a",

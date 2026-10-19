@@ -425,7 +425,7 @@
   "id": "grande-foire--inspecteur",
   "place": "grande-foire",
   "intro": "Feu d'artifice à la Grande Foire des Mille Merveilles : tout le monde regardait le ciel, sauf l'inspecteur des tavernes Tastevin, venu inspecter les lieux. Il n'a pas vu le bouquet final. Onze forains et visiteurs juraient avoir le nez en l'air. L'un d'eux était seul avec lui.",
-  "epilogue": "— Vous étiez seul avec Tastevin.\n— Permettez que je vous vouvoie : il voulait me coller un blâme.\n— Et vous ?\n— Je lui ai vendu un élixir de longue vie. Il y avait une petite erreur sur l'étiquette.",
+  "epilogue": "— Il n'y avait que vous et Tastevin.\n— Il a collé un blâme à mes élixirs, monsieur. « Tous faux. »\n— Ils le sont.\n— Pas tous, monsieur. Je lui ai vendu le seul vrai : l'élixir de sommeil éternel. Je vous vouvoie, monsieur, mais je ne vous rembourse pas.",
   "clues": [
     {
       "who": "a",

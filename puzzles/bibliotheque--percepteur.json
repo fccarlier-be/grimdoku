@@ -240,7 +240,7 @@
   "id": "bibliotheque--percepteur",
   "place": "bibliotheque",
   "intro": "À la Bibliothèque Interdite, le percepteur Tributin, venu lever l'impôt de fin d'année, a été retrouvé entre deux rayonnages. On m'a demandé d'enquêter en silence. Six lecteurs étaient là. L'un d'eux était seul avec lui. Je chuchote mes questions ; on me répond en hurlant « chut ».",
-  "epilogue": "— Vous étiez seule avec Tributin.\n— Il voulait me faire payer l'impôt sur tout ce que je possède. Je lui ai proposé un verre.\n— De vin ?\n— Je ne bois jamais… de vin.",
+  "epilogue": "— C'était vous, avec Tributin.\n— Il voulait taxer tout ce que je possède. Même mes bocaux de jus de betterave.\n— C'est du jus de betterave ?\n— Je ne bois jamais… de vin. Il a voulu goûter pour vérifier. Alors moi aussi, j'ai goûté. Lui.",
   "clues": [
     {
       "who": "a",

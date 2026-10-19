@@ -243,7 +243,7 @@
   "id": "bibliotheque--abbesse",
   "place": "bibliotheque",
   "intro": "À la Bibliothèque Interdite, l'abbesse Hildegarde, venue faire la quête, a été retrouvée entre deux rayonnages. On m'a demandé d'enquêter en silence. Six lecteurs étaient là. L'un d'eux était seul avec elle. Je chuchote mes questions ; on me répond en hurlant « chut ».",
-  "epilogue": "— Vous étiez seul avec Hildegarde.\n— Elle voulait me faire la morale. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
+  "epilogue": "— Il n'y avait que vous et Hildegarde.\n— Elle m'a suivi de rayon en rayon pour me faire la morale. Je traverse les murs ; ses reproches, eux, me traversaient.\n— Vous pouviez partir.\n— Je suis entré dans l'étagère pour la semer. Elle a tiré sur les grimoires pour me déloger. L'étagère est venue avec.",
   "clues": [
     {
       "who": "a",

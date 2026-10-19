@@ -377,7 +377,7 @@
   "id": "universite--touriste",
   "place": "universite",
   "intro": "La veille de la remise des diplômes, l'Université des Sortilèges a perdu le touriste Octave, venu visiter la baronnie. Dix membres de l'université travaillaient tard, ou faisaient semblant. L'un d'eux était seul avec lui. L'Académie d'en face nie tout en bloc, avant même que je demande.",
-  "epilogue": "— Vous étiez seule avec Octave.\n— Il voulait faire mon portrait au fusain et le vendre à la foire, alors j'ai lancé un sort de protection.\n— Et ?\n— C'est normal que ça fume encore ?",
+  "epilogue": "— Racontez-moi, pour Octave.\n— Il me dessinait devant mon chaudron, pour la foire : « L'apprentie qui fait tout sauter ».\n— Et le chaudron a sauté.\n— Il m'a demandé : « C'est normal que ça fume ? » J'ai dit oui. D'habitude, c'est moi qui pose la question.",
   "clues": [
     {
       "who": "a",

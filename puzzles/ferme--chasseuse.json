@@ -189,7 +189,7 @@
   "id": "ferme--chasseuse",
   "place": "ferme",
   "intro": "On dit la Ferme Hantée, et la chasseuse de primes Épine, venue toucher une prime, va sûrement y contribuer. Cinq habitants de la ferme étaient là cette nuit. L'un d'eux était seul avec elle. Les poules, elles, refusent de témoigner.",
-  "epilogue": "— Vous étiez seul avec Épine.\n— Elle voulait me livrer au baron contre trois écus.\n— Et ?\n— Un sac de cinquante livres, lâché du grenier. Au poids, c'est honnête.",
+  "epilogue": "— Que s'est-il passé avec Épine ?\n— Elle voulait me livrer au baron contre trois écus. Je lui ai proposé de la payer en farine.\n— Combien ?\n— Un sac de cinquante livres, pesé avec le pouce. Il en faisait quatre-vingts quand je l'ai lâché sur elle. Au poids, c'est honnête.",
   "clues": [
     {
       "who": "a",

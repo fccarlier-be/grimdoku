@@ -268,7 +268,7 @@
   "id": "citadelle--baronne",
   "place": "citadelle",
   "intro": "Le pont-levis est resté coincé toute la nuit, enfermant la baronne Vanité, venue rendre une visite de courtoisie, avec les huit occupants de la Citadelle. Au matin, elle n'avait plus aucune envie de sortir. L'un d'eux était seul avec elle. Au moins, personne n'a pu s'enfuir.",
-  "epilogue": "— Vous étiez seul avec Vanité.\n— Elle voulait racheter la baronnie et me mettre dehors. J'ai fait une opération comptable.\n— Vous l'avez tuée.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "epilogue": "— Vanité. Racontez-moi.\n— Elle voulait racheter la baronnie. Je lui ai d'abord vendu la sortie de la Citadelle.\n— La sortie ?\n— Le pont-levis est payant. Elle a refusé de payer, alors je l'ai fait sortir par le chemin gratuit : par-dessus le rempart. Je ne fais jamais payer les douves.",
   "clues": [
     {
       "who": "a",

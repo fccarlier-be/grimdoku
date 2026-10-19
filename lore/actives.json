@@ -24,7 +24,7 @@
   "bibliotheque": [
     "bibliotheque--abbesse",
     "bibliotheque--baronne",
-    "bibliotheque--percepteur",
+    "bibliotheque--touriste",
     "bibliotheque--troubadour",
     "bibliotheque--colporteur--golem-dragon--i2-i2",
     "bibliotheque--cousine--golem-dragon--i2-i2"
@@ -33,7 +33,7 @@
     "mine--abbesse",
     "mine--messager--golem-dragon--i2-i2",
     "mine--colporteur",
-    "mine--alchimiste",
+    "mine--troubadour",
     "mine--nageuse--golem--i2",
     "mine--percepteur--dragon--i2"
   ],
@@ -110,7 +110,7 @@
     "universite--inspecteur",
     "universite--nageuse",
     "universite--messager",
-    "universite--chasseuse",
+    "universite--percepteur",
     "universite--huissier--vouivre--l4--cache"
   ],
   "bal": [

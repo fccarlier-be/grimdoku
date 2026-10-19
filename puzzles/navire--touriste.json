@@ -243,7 +243,7 @@
   "id": "navire--touriste",
   "place": "navire",
   "intro": "Le Navire Fantôme ne quitte jamais le port, et le touriste Ernest, venu à bord visiter la baronnie, non plus, désormais. Six membres de l'équipage traînaient sur le pont. L'un d'eux était seul avec lui. Le capitaine m'assure que c'est la faute de la tempête. Il n'y a pas de tempête.",
-  "epilogue": "— Vous étiez seule avec Ernest.\n— Je n'ai rien fait. (Blub.)\n— Vous faites des bulles.\n— Il voulait faire mon portrait au fusain et le vendre à la foire. Je l'ai juste invité à nager. (Blub, blub.)",
+  "epilogue": "— C'était vous, avec Ernest.\n— Il voulait me dessiner pour la foire : « La sirène du navire fantôme ».\n— Vous n'aimez pas poser ?\n— Il dessinait penché par-dessus bord. Je ne l'ai pas tiré par la manche. *Blop.*",
   "clues": [
     {
       "who": "a",

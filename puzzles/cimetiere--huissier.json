@@ -263,7 +263,7 @@
   "id": "cimetiere--huissier",
   "place": "cimetiere",
   "intro": "Au Cimetière de Minuit, on a retrouvé l'huissier Expulsin, venu saisir des biens. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Sept habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec lui. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
-  "epilogue": "— Vous étiez seul avec Expulsin.\n— Il voulait saisir mes affaires. Alors j'ai pris ses mesures.\n— Pour quoi faire ?\n— Le travail était à moitié fait. Autant le finir.",
+  "epilogue": "— Il n'y avait que vous et Expulsin.\n— Il voulait saisir mes affaires. Mes pelles, mes cercueils.\n— Même les vides ?\n— Surtout. Je lui ai proposé d'essayer le plus beau, fait à ses mesures en le voyant arriver. J'ai cloué le couvercle pour vérifier.",
   "clues": [
     {
       "who": "a",

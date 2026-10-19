@@ -256,7 +256,7 @@
   "id": "mine--dresseuse",
   "place": "mine",
   "intro": "À la Mine des Nains, la dresseuse Flamberge, venue recruter des bêtes pour son cirque, est descendue plus bas que prévu. Sept mineurs et visiteurs étaient au fond. L'un d'eux était seul avec elle. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
-  "epilogue": "— Vous étiez seul avec Flamberge.\n— Flamberge.\n— Pourquoi ?\n— Elle voulait m'emmener dans son cirque. Alors Bâfrin taper. Taper fort. Fort.",
+  "epilogue": "— Racontez-moi, pour Flamberge.\n— Flamberge.\n— Elle voulait vous emmener dans son cirque ?\n— Elle a ouvert la cage du monte-charge : « Allez, le troll, tu descends ! » Bâfrin mis elle dans cage. Lâché câble. Descends.",
   "clues": [
     {
       "who": "a",

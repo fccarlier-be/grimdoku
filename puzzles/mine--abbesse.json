@@ -256,7 +256,7 @@
   "id": "mine--abbesse",
   "place": "mine",
   "intro": "À la Mine des Nains, l'abbesse Bénédicte, venue faire la quête, est descendue plus bas que prévu. Sept mineurs et visiteurs étaient au fond. L'un d'eux était seul avec elle. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
-  "epilogue": "— Vous étiez seule avec Bénédicte.\n— Elle voulait me faire la morale. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain.",
+  "epilogue": "— Pourquoi Bénédicte ?\n— Elle m'a fait la morale sur mes dettes. Trois tournées, au fond de la mine, devant tout le monde.\n— Et vous l'avez laissée en bas.\n— Au bord du puits. J'ai soufflé sa lanterne et je l'ai poussée. Sa lanterne, je la lui rends demain.",
   "clues": [
     {
       "who": "a",

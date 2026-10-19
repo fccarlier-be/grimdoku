@@ -233,7 +233,7 @@
   "id": "forge--dresseuse",
   "place": "forge",
   "intro": "La Forge du Dragon fume plus que d'habitude : la dresseuse Fouettine, venue recruter des bêtes pour son cirque, n'en est pas ressortie. Six habitués de la forge étaient au travail, paraît-il. L'un d'eux était seul avec elle. Le dragon dort. J'aimerais qu'il continue.",
-  "epilogue": "— Vous étiez seul avec Fouettine.\n— Fouettine.\n— Pourquoi ?\n— Elle voulait m'emmener dans son cirque. Alors Bâfrin taper. Taper fort. Fort.",
+  "epilogue": "— C'était vous, avec Fouettine.\n— Fouettine.\n— Elle voulait vous emmener dans son cirque ?\n— Elle a claqué son fouet : « Hop ! Dans le cerceau de feu ! » Bâfrin lancé elle. Feu.",
   "clues": [
     {
       "who": "a",

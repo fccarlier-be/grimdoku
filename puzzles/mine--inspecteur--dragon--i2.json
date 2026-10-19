@@ -242,7 +242,7 @@
   "id": "mine--inspecteur--dragon--i2",
   "place": "mine",
   "intro": "À la Mine des Nains, l'inspecteur des tavernes Godet, venu inspecter les lieux, est descendu plus bas que prévu. Six mineurs et visiteurs étaient au fond. L'un d'eux était seul avec lui. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
-  "epilogue": "— Vous étiez seul avec Godet.\n— Il voulait me coller un blâme. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "epilogue": "— Que s'est-il passé avec Godet ?\n— Il voulait coller un blâme à la cantine de la mine. Un blâme, ça se paie.\n— Vous avez payé ?\n— Je l'ai passé aux pertes. Les pertes, on les jette au fond du puits. C'est une écriture comptable.",
   "clues": [
     {
       "who": "a",

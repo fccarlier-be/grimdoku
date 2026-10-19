@@ -243,7 +243,7 @@
   "id": "navire--nageuse",
   "place": "navire",
   "intro": "Le Navire Fantôme ne quitte jamais le port, et la maîtresse-nageuse Mouillette, venue à bord donner des cours de natation, non plus, désormais. Six membres de l'équipage traînaient sur le pont. L'un d'eux était seul avec elle. Le capitaine m'assure que c'est la faute de la tempête. Il n'y a pas de tempête.",
-  "epilogue": "— Vous étiez seul avec Mouillette.\n— Elle voulait m'apprendre à nager de force. Je lui ai indiqué la sortie.\n— Et ?\n— C'était le puits. Je me trompe toujours de direction.",
+  "epilogue": "— Personne d'autre n'était avec Mouillette. Sauf vous.\n— Elle m'a appelé « le pirate qui coule », devant tout l'équipage.\n— Et ?\n— Je l'ai jetée par-dessus bord, du côté de l'eau. Enfin, je croyais. C'était le côté du quai.",
   "clues": [
     {
       "who": "a",

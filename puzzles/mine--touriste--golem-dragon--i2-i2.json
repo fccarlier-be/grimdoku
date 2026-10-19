@@ -243,7 +243,7 @@
   "id": "mine--touriste--golem-dragon--i2-i2",
   "place": "mine",
   "intro": "À la Mine des Nains, le touriste Musard, venu visiter la baronnie, est descendu plus bas que prévu. Six mineurs et visiteurs étaient au fond. L'un d'eux était seul avec lui. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
-  "epilogue": "— Vous étiez seul avec Musard.\n— Il voulait faire mon portrait au fusain et le vendre à la foire. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "epilogue": "— Racontez-moi, pour Musard.\n— Il m'a dessiné au fond de la mine, à côté d'un coffre qui n'est déclaré nulle part. Il voulait vendre le dessin à la foire.\n— Le coffre de qui ?\n— Du royaume. Je lui ai vendu une visite de la galerie fermée. Aller simple : le retour était en supplément.",
   "clues": [
     {
       "who": "a",

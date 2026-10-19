@@ -243,7 +243,7 @@
   "id": "bibliotheque--alchimiste",
   "place": "bibliotheque",
   "intro": "À la Bibliothèque Interdite, l'alchimiste Bismuth, venu proposer ses services, a été retrouvé entre deux rayonnages. On m'a demandé d'enquêter en silence. Six lecteurs étaient là. L'un d'eux était seul avec lui. Je chuchote mes questions ; on me répond en hurlant « chut ».",
-  "epilogue": "— Vous étiez seul avec Bismuth.\n— Il voulait changer mes économies en plomb. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
+  "epilogue": "— Il n'y avait que vous et Bismuth.\n— Il a trouvé mes écus derrière les grimoires et voulu les changer en or. Le premier est sorti en plomb.\n— Vous étiez furieux.\n— Je me suis montré, tel que je suis depuis quatre siècles. Il a reculé jusqu'à la fenêtre. Puis un peu plus loin.",
   "clues": [
     {
       "who": "a",

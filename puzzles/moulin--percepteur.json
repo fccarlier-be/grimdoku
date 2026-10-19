@@ -189,7 +189,7 @@
   "id": "moulin--percepteur",
   "place": "moulin",
   "intro": "Au Moulin de Bois-Tordu, le percepteur Pressoux, venu lever l'impôt de fin d'année, a fini plus plat qu'une galette. Cinq voisins traînaient dans le coin. L'un d'eux était seul avec lui. Le meunier m'a proposé de peser les suspects. J'ai refusé.",
-  "epilogue": "— Vous étiez seule avec Pressoux.\n— Je n'ai rien fait. (Blub.)\n— Vous faites des bulles.\n— Il voulait me faire payer l'impôt sur tout ce que je possède. Je l'ai juste invité à nager. (Blub, blub.)",
+  "epilogue": "— C'était vous, avec Pressoux.\n— Il voulait l'impôt sur tout ce que je possède. Même sur l'eau du bief, parce que j'y vis.\n— Vous l'avez poussé sous la roue ?\n— Il a glissé tout seul. *Blop.* Tout seul. *Blop, blop.*",
   "clues": [
     {
       "who": "a",

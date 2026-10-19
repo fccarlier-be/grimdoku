@@ -189,7 +189,7 @@
   "id": "ferme--baronne",
   "place": "ferme",
   "intro": "On dit la Ferme Hantée, et la baronne Morgueline, venue rendre une visite de courtoisie, va sûrement y contribuer. Cinq habitants de la ferme étaient là cette nuit. L'un d'eux était seul avec elle. Les poules, elles, refusent de témoigner.",
-  "epilogue": "— Vous étiez seul avec Morgueline.\n— Elle voulait racheter la baronnie et me mettre dehors. Ça m'a énervé.\n— Et ?\n— Mon bras gauche s'est décroché. Le seul qui avait encore sa main. Elle l'a reçu sur la tête.",
+  "epilogue": "— Que s'est-il passé avec Morgueline ?\n— Elle voulait racheter la ferme et me mettre dehors. Je me suis énervé.\n— Qu'est-ce que vous avez perdu, cette fois ?\n— La tête. Je l'ai lancée sur elle. Elle a reculé en hurlant, jusqu'au puits. Moi, j'ai ramassé ma tête. Elle, personne ne l'a ramassée.",
   "clues": [
     {
       "who": "a",

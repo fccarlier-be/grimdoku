@@ -268,7 +268,7 @@
   "id": "citadelle--abbesse",
   "place": "citadelle",
   "intro": "Le pont-levis est resté coincé toute la nuit, enfermant l'abbesse Sobriété, venue faire la quête, avec les huit occupants de la Citadelle. Au matin, elle n'avait plus aucune envie de sortir. L'un d'eux était seul avec elle. Au moins, personne n'a pu s'enfuir.",
-  "epilogue": "— Vous étiez seul avec Sobriété.\n— « Elle voulait me faire la morale, ô rage, ô désespoir… »\n— Répondez normalement.\n— J'ai chanté jusqu'à ce qu'elle s'arrête. Définitivement.",
+  "epilogue": "— Il n'y avait que vous et Sobriété.\n— Elle m'a fait la morale : chanter faux, c'est un péché. Et Goémone mérite mieux qu'un pécheur.\n— Vous auriez pu en rire.\n— Personne ne parle de Goémone comme ça. Je l'ai étranglée avec la bandoulière de mon luth.",
   "clues": [
     {
       "who": "a",

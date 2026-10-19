@@ -443,5 +443,17 @@
   "grands-bains--baronne": {
     "status": "relire",
     "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "bibliotheque--touriste": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille (coupable imposé pour rééquilibrer : Dewey ou Granit)."
+  },
+  "universite--percepteur": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille (coupable imposé pour rééquilibrer : Dewey ou Granit)."
+  },
+  "mine--troubadour": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille (coupable imposé pour rééquilibrer : Dewey ou Granit)."
   }
 }

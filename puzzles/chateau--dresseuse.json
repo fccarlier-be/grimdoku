@@ -250,7 +250,7 @@
   "id": "chateau--dresseuse",
   "place": "chateau",
   "intro": "La dresseuse Fanfare était venue au Château de Mortebrune recruter des bêtes pour son cirque. On m'a fait appeler au nom du roi, ce qui veut dire que c'est grave, ou qu'il s'ennuie. Six membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec elle.",
-  "epilogue": "— Vous étiez seul avec Fanfare.\n— Je me lève. Je proteste. Je me rassois.\n— Pourquoi ?\n— Elle voulait m'emmener dans son cirque. J'ai dégainé. Je regrette. Je rengaine.",
+  "epilogue": "— Vous étiez seul avec Fanfare.\n— Elle voulait m'emmener dans son cirque, pour le numéro du chevalier qui terrasse le dragon. Pour la répétition, c'est elle qui faisait le dragon.\n— Une répétition.\n— J'ai annoncé : « Je terrasse le dragon. » Un chevalier ne fait jamais semblant.",
   "clues": [
     {
       "who": "a",

@@ -266,7 +266,7 @@
   "id": "cimetiere--inspecteur",
   "place": "cimetiere",
   "intro": "Au Cimetière de Minuit, on a retrouvé l'inspecteur des tavernes Picrate, venu inspecter les lieux. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Sept habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec lui. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
-  "epilogue": "— Vous étiez seul avec Picrate.\n— Il voulait me coller un blâme. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
+  "epilogue": "— Que s'est-il passé avec Picrate ?\n— Il a collé un blâme au cimetière : trop de courants d'air.\n— Les courants d'air, c'est vous.\n— Alors je lui en ai fait sentir un, dans le cou. Il a reculé. La tombe ouverte était juste derrière lui.",
   "clues": [
     {
       "who": "a",

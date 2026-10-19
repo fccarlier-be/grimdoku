@@ -323,7 +323,7 @@
   "id": "grand-port--colporteur",
   "place": "grand-port",
   "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : le colporteur Bradeur, venu vendre sa camelote, est mort sur les quais. Neuf habitués erraient dans la brume. L'un d'eux était seul avec lui.",
-  "epilogue": "— Vous étiez seul avec Bradeur.\n— Il voulait me revendre ce qu'il m'avait déjà vendu. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "epilogue": "— C'était vous, avec Bradeur.\n— Il voulait me revendre le coffre qu'il m'avait déjà vendu. Vide.\n— Le trésor du royaume aussi est vide.\n— C'était le même coffre. Je l'ai payé une deuxième fois, en le mettant dedans. Cette fois, il n'était pas vide.",
   "clues": [
     {
       "who": "a",

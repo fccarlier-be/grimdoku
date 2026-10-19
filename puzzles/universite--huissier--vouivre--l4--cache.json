@@ -347,7 +347,7 @@
   "hiddenShapes": true,
   "hiddenMax": 4,
   "intro": "La veille de la remise des diplômes, l'Université des Sortilèges a perdu l'huissier Gobetout, venu saisir des biens. Huit membres de l'université travaillaient tard, ou faisaient semblant. L'un d'eux était seul avec lui. L'Académie d'en face nie tout en bloc, avant même que je demande.",
-  "epilogue": "— Vous étiez seule avec Gobetout.\n— Il voulait saisir mes affaires, alors j'ai lancé un sort de protection.\n— Et ?\n— C'est normal que ça fume encore ?",
+  "epilogue": "— Gobetout. Racontez-moi.\n— Il a saisi mon chaudron. Encore chaud.\n— Vous l'avez prévenu ?\n— J'ai demandé : « C'est normal que ça fume ? » Il a répondu qu'il saisissait d'abord et qu'il demandait ensuite. Il n'a pas eu le temps de demander.",
   "clues": [
     {
       "who": "a",

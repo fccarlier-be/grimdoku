@@ -196,7 +196,7 @@
   "id": "banquet--messager",
   "place": "banquet",
   "intro": "Au Banquet des Gobelins, le messager Courandier, venu apporter une lettre du baron, est passé de la liste des invités à la carte du menu. On l'a retrouvé avant le dessert. Cinq invités se goinfraient. L'un d'eux était seul avec lui. On m'a servi une soupe. Je ne l'ai pas touchée.",
-  "epilogue": "— Vous étiez seul avec Courandier.\n— Il voulait m'annoncer une mauvaise nouvelle. Puis il a voulu filer.\n— Et ?\n— Chez moi, ce qui s'enfuit finit dans la marmite. C'est la règle de la maison.",
+  "epilogue": "— C'était vous, avec Courandier.\n— Il m'a apporté une mauvaise nouvelle du baron, puis il est reparti en courant.\n— Vous l'avez rattrapé.\n— Un messager du baron, à pleine vitesse ? Je n'avais jamais rien cuisiné d'aussi frais.",
   "clues": [
     {
       "who": "a",

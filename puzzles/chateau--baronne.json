@@ -250,7 +250,7 @@
   "id": "chateau--baronne",
   "place": "chateau",
   "intro": "La baronne Paonne était venue au Château de Mortebrune rendre une visite de courtoisie. On m'a fait appeler au nom du roi, ce qui veut dire que c'est grave, ou qu'il s'ennuie. Six membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec elle.",
-  "epilogue": "— Vous étiez seul avec Paonne.\n— Je me lève. Je proteste. Je me rassois.\n— Pourquoi ?\n— Elle voulait racheter la baronnie et me mettre dehors. J'ai dégainé. Je regrette. Je rengaine.",
+  "epilogue": "— Parlons de la baronne Paonne.\n— Elle voulait fondre mon armure pour en faire des chandeliers.\n— Pour une armure ?\n— Non. J'ai annoncé « Je dégaine » quand elle a ajouté : « De toute façon, vous ne rentrez plus dedans. » Ce qui est faux.",
   "clues": [
     {
       "who": "a",
