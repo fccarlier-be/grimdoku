@@ -44,6 +44,8 @@ const GUEST_NAME = {};
     for (const id of [...ids].sort()) { let k = hashId(id) % names.length; while (used.has(names[k])) k = (k + 1) % names.length; used.add(names[k]); GUEST_NAME[id] = names[k]; }
   }
 }
+// épilogues écrits pour une affaire précise (lore/epilogues.json, audit du lore) : à la place du gabarit du coupable
+const WRITTEN = fs.existsSync('lore/epilogues.json') ? JSON.parse(fs.readFileSync('lore/epilogues.json', 'utf8')) : {};
 const NOMBRES = ['zéro', 'un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf', 'dix', 'onze', 'douze'];
 const cap = (t) => t[0].toUpperCase() + t.slice(1);
 // « de » / « que » élidés devant une voyelle : d'Amphora, qu'Écarlate
@@ -148,7 +150,7 @@ for (const entry of MANIFEST) {
   // épilogue : le dialogue du coupable avec l'enquêteur (cast.json, propre au personnage, avec son tic) ; une scène écrite
   // à la main peut avoir le sien. Lignes « — … » : l'enquêteur, puis le coupable, en alternance.
   const mType = p.characters.find(c => c.id === s.murderer).archetype;
-  p.epilogue = fill(texts.epilogue || (texts.epilogues || {})[mType] || ARCHETYPES[mType].epilogue);
+  p.epilogue = fill(WRITTEN[entry.id] || texts.epilogue || (texts.epilogues || {})[mType] || ARCHETYPES[mType].epilogue);
   // texte généré : le nom ouvre la première phrase de chaque personnage, le pronom les suivantes
   const seen = new Set();
   p.clues = s.clues.map(cl => {

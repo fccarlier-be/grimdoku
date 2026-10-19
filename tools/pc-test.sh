@@ -12,7 +12,7 @@ COPYFILE_DISABLE=1 tar -czf "$PACK" --exclude .git --exclude node_modules --excl
 sh tools/pc.sh --scp "$PACK" grimdoku-gen/test.tgz
 # empreinte de tout ce dont dépend la construction des énigmes : si elle n'a pas changé depuis la dernière construction
 # réussie sur le PC, on ne reconstruit pas (seulement la page, rapide) — retour de François : pas de travail inutile
-HASH=$(cat solutions/*.json scenes/*.json cast.json cast.js engine.js build-puzzles.js big-cases.json | shasum | cut -c1-16)
+HASH=$(cat solutions/*.json scenes/*.json cast.json cast.js engine.js build-puzzles.js big-cases.json lore/epilogues.json | shasum | cut -c1-16)
 # idem pour les tests du moteur (unicité des solutions : jusqu'à 6 min pour une 12×12) : relancés seulement si les énigmes,
 # le moteur ou ces tests ont changé depuis leur dernier passage réussi ; les tests de l'appli tournent toujours
 EHASH=$(cat "$0" tests/engine.test.js | shasum | cut -c1-16)$HASH
