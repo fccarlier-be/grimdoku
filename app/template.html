@@ -699,20 +699,27 @@ html.plaques .tbtn.pen[aria-pressed="true"] { background: none; box-shadow: none
 /* l'illustration elle-même a les bords déchirés et brûlés, comme la carte de Brumeval (François, 2026-10-20 : pas de
    cadre de parchemin autour) : découpée par un masque au bord déchiré (bruit + déplacement, en SVG), avec un liseré brûlé dessous ;
    l'ombre portée suit la déchirure. Les sceaux, hors du masque, ne sont jamais rognés. */
-.scene-sheet { position: relative; transform: rotate(-.3deg); filter: drop-shadow(0 12px 20px rgba(0, 0, 0, .65)); }
+.scene-sheet {
+  position: relative; transform: rotate(-.3deg); filter: drop-shadow(0 12px 20px rgba(0, 0, 0, .65));
+  /* trois fois la même déchirure, de plus en plus serrée : trait d'encre, bord roussi, image (fondue dans le roussi) */
+  --torn-ink: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 660' preserveAspectRatio='none'%3E%3Cfilter id='t' x='-5%25' y='-5%25' width='110%25' height='110%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.018 .026' numOctaves='2' seed='11'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='24' xChannelSelector='R' yChannelSelector='G'/%3E%3C/filter%3E%3Crect x='12' y='12' width='976' height='636' fill='%23fff' filter='url(%23t)'/%3E%3C/svg%3E");
+  --torn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 660' preserveAspectRatio='none'%3E%3Cfilter id='t' x='-5%25' y='-5%25' width='110%25' height='110%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.018 .026' numOctaves='2' seed='11'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='24' xChannelSelector='R' yChannelSelector='G'/%3E%3C/filter%3E%3Crect x='14' y='14' width='972' height='632' fill='%23fff' filter='url(%23t)'/%3E%3C/svg%3E");
+  --torn-in: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 660' preserveAspectRatio='none'%3E%3Cfilter id='t' x='-5%25' y='-5%25' width='110%25' height='110%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.018 .026' numOctaves='2' seed='11'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='24' xChannelSelector='R' yChannelSelector='G'/%3E%3CfeGaussianBlur stdDeviation='4'/%3E%3C/filter%3E%3Crect x='19' y='19' width='962' height='622' fill='%23fff' filter='url(%23t)'/%3E%3C/svg%3E");
+}
+/* trait d'encre noir tout autour, comme le reste des dessins */
+.scene-sheet::before { content: ""; position: absolute; inset: 0; background: #17100a; -webkit-mask: var(--torn-ink) center / 100% 100% no-repeat; mask: var(--torn-ink) center / 100% 100% no-repeat; }
 .scene-img { position: relative; width: 100%; }
-.scene-img { --torn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 660' preserveAspectRatio='none'%3E%3Cfilter id='t' x='-5%25' y='-5%25' width='110%25' height='110%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.03 .045' numOctaves='5' seed='11'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='26' xChannelSelector='R' yChannelSelector='G'/%3E%3C/filter%3E%3Crect x='14' y='14' width='972' height='632' fill='%23fff' filter='url(%23t)'/%3E%3C/svg%3E"); --torn-in: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 660' preserveAspectRatio='none'%3E%3Cfilter id='t' x='-5%25' y='-5%25' width='110%25' height='110%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.03 .045' numOctaves='5' seed='11'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='26' xChannelSelector='R' yChannelSelector='G'/%3E%3C/filter%3E%3Crect x='20' y='20' width='960' height='620' fill='%23fff' filter='url(%23t)'/%3E%3C/svg%3E"); }
-/* le bord brûlé : la même déchirure, un peu plus large, en brun roussi sous l'image */
+/* bord roussi, discret : brun sourd sous le bord de l'image */
 .scene-img::before {
-  content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, #6b3a12 60%, #2a1204 100%);
+  content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, #7a5530 55%, #4a2e16 100%);
   -webkit-mask: var(--torn) center / 100% 100% no-repeat; mask: var(--torn) center / 100% 100% no-repeat;
 }
 .scene-art {
   position: absolute; inset: 0; background-size: cover; background-position: center;
   -webkit-mask: var(--torn-in) center / 100% 100% no-repeat; mask: var(--torn-in) center / 100% 100% no-repeat;
 }
-/* l'image roussie près du bord, qui s'éclaircit vers l'intérieur */
-.scene-art::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 30px 10px rgba(90, 45, 10, .55), inset 0 0 70px 16px rgba(140, 90, 40, .2); }
+/* l'image légèrement roussie près du bord */
+.scene-art::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 40px 12px rgba(90, 55, 20, .35); }
 .zone {
   position: absolute; width: 54px; height: 54px; margin: -27px 0 0 -27px; padding: 0; border: 0; border-radius: 50%;
   background: radial-gradient(circle at 35% 30%, #d4473b, #8e1f17 70%); display: grid; place-items: center;
