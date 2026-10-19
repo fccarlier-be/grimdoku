@@ -59,7 +59,7 @@ Fizzlebarbe n'a pas planifié tous les événements. Il ne savait pas exactement
 
 Augure est un corbeau qui ne parle pas : il écrit. Fizzlebarbe l'a chargé de recueillir des informations sur les prétendants et de rédiger des rapports. Augure a donc observé les personnages et produit les 23 lettres.
 
-Augure envoie aussi une copie de chaque rapport à l'enquêteur, sous sa porte, après qu'une première affaire a été résolue dans le lieu correspondant. Il attend de voir si l'enquêteur est capable d'établir les faits avant de lui confier le rapport lié au lieu. Il espère qu'un regard extérieur verra les liens que Fizzlebarbe refuse de prendre en considération. Il ne livre pas directement la solution, car il ne possède pas toute la vérité et ne veut pas révéler trop tôt sa propre implication.
+Augure envoie aussi une copie de chaque rapport à l'enquêteur, sous sa porte, quand la dernière affaire du lieu correspondant est résolue. Il attend de voir si l'enquêteur est capable d'établir les faits avant de lui confier le rapport lié au lieu. Il espère qu'un regard extérieur verra les liens que Fizzlebarbe refuse de prendre en considération. Il ne livre pas directement la solution, car il ne possède pas toute la vérité et ne veut pas révéler trop tôt sa propre implication.
 
 Augure n'est pas omniscient : il rapporte ce qu'il a vu, ce qu'on lui a dit ou ce qu'il a pu recouper. Certaines de ses phrases sont ironiques. Il peut se tromper sur l'interprétation d'un fait, mais une lettre ne doit pas devenir fausse uniquement pour forcer une révélation.
 
@@ -242,7 +242,7 @@ Les chemins ci-dessous proviennent du `LORE.md` fourni. Claude Code doit vérifi
 
 | Priorité | Source annoncée | Changement attendu | Précaution |
 |---|---|---|---|
-| P0 | `lore/lettres.json` | Remplacer les 23 lettres par les textes cibles de la section 4 ; conserver les identifiants, l'ordre, les lieux et la règle de déblocage. | Ne pas changer la logique « première enquête résolue dans un lieu ». Vérifier les accents et le format des données. |
+| P0 | `lore/lettres.json` | Remplacer les 23 lettres par les textes cibles de la section 4 ; conserver les identifiants, l'ordre, les lieux et la règle de déblocage. | Logique actuelle (2026-10-19) : la lettre est glissée sous la porte à la dernière enquête résolue du lieu, et reçue quand le joueur l'ouvre. Vérifier les accents et le format des données. |
 | P0 | `scenes/testament.json` | Revoir l'introduction de l'affaire finale et les épilogues pour que les mobiles restent valides mais n'affirment pas un canon unique du meurtrier. Ajouter une révélation commune après le verdict. | Les neuf suspects et leur association aux grilles doivent rester inchangés. Ne jamais révéler le coupable avant la victoire. |
 | P0 | `cast.json` | Mettre à jour les descriptions narratives d'Augure, de Fizzlebarbe et, au besoin, de Fernand, Fiolius, Dewey, Gribouille, Blafard et Fumerolle. | Ne pas modifier sans nécessité les `type`, `gender`, tics utilisés par l'interface, types de grands monstres ou compatibilités de lieu. |
 | P1 | `scenes/<lieu>.json` | Vérifier les introductions qui évoquent le testament, la propriété de la Tour, le départ de Fizzlebarbe ou des faits désormais clarifiés. Ne réécrire que les textes réellement contradictoires. | Les introductions doivent rester vraies même si un habitué mentionné n'est pas présent dans une enquête donnée. Ne pas relier leur vérité à la position d'une grille. |

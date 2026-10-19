@@ -17,8 +17,8 @@
     "note": ""
   },
   "chateau--touriste--dragon--i2": {
-    "status": "valide",
-    "note": ""
+    "status": "relire",
+    "note": "Repassé après la relecture extérieure : rouvert malgré ta validation, car on ne comprenait pas le meurtre. Seule la question de l'enquêteur change (« en morceaux sur sa tête »), ta chute est gardée."
   },
   "academie--chasseuse--golem--i2": {
     "status": "relire",
@@ -34,7 +34,7 @@
   },
   "banquet--nageuse": {
     "status": "relire",
-    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
   },
   "taverne--dresseuse": {
     "status": "relire",
@@ -50,7 +50,7 @@
   },
   "bibliotheque--nageuse": {
     "status": "relire",
-    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
   },
   "bibliotheque--percepteur": {
     "status": "relire",
@@ -130,7 +130,7 @@
   },
   "citadelle--baronne": {
     "status": "relire",
-    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
   },
   "citadelle--huissier": {
     "status": "relire",
@@ -150,7 +150,7 @@
   },
   "foire--troubadour": {
     "status": "relire",
-    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
   },
   "foire--colporteur--geant--i2": {
     "status": "relire",
@@ -222,10 +222,98 @@
   },
   "grands-bains--abbesse": {
     "status": "relire",
-    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
   },
   "grands-bains--messager--vouivre--l4--cache": {
     "status": "relire",
-    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+  },
+  "mine--abbesse": {
+    "status": "relire",
+    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+  },
+  "tour--baronne": {
+    "status": "relire",
+    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+  },
+  "mine--touriste--golem-dragon--i2-i2": {
+    "status": "relire",
+    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+  },
+  "mine--inspecteur--dragon--i2": {
+    "status": "relire",
+    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+  },
+  "forge--baronne": {
+    "status": "relire",
+    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+  },
+  "citadelle--messager--golem--l3--cache": {
+    "status": "relire",
+    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+  },
+  "grande-foire--percepteur": {
+    "status": "relire",
+    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+  },
+  "port--troubadour": {
+    "status": "relire",
+    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+  },
+  "port--inspecteur": {
+    "status": "relire",
+    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+  },
+  "grand-port--colporteur": {
+    "status": "relire",
+    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+  },
+  "grand-port--inspecteur": {
+    "status": "relire",
+    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+  },
+  "bibliotheque--alchimiste": {
+    "status": "relire",
+    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+  },
+  "bibliotheque--abbesse": {
+    "status": "relire",
+    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+  },
+  "cimetiere--inspecteur": {
+    "status": "relire",
+    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+  },
+  "citadelle--colporteur": {
+    "status": "relire",
+    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+  },
+  "tour--alchimiste": {
+    "status": "relire",
+    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+  },
+  "tour--inspecteur--vouivre--i2": {
+    "status": "relire",
+    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+  },
+  "tour--messager--golem--i2": {
+    "status": "relire",
+    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+  },
+  "thermes--inspecteur": {
+    "status": "relire",
+    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+  },
+  "banquet--inspecteur": {
+    "status": "relire",
+    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+  },
+  "mine--dresseuse": {
+    "status": "relire",
+    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+  },
+  "citadelle--abbesse": {
+    "status": "relire",
+    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
   }
 }

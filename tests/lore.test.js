@@ -51,7 +51,7 @@ test('les textes historiques (scenes/legacy) ne servent à aucune énigme', () =
 
 test('documents de référence : la lettre arrive à la dernière enquête du lieu, pas à la première', () => {
   for (const f of ['lore/lettres.json', 'lore/carte.json']) assert.doesNotMatch(J(f)._doc, /première enquête/, f);
-  assert.doesNotMatch(fs.readFileSync(path.join(ROOT, 'lore/GRIMDOKU_MATRICE_CONTINUITE.md'), 'utf8'), /lettre par lieu, obtenue à la première/);
+  for (const f of ['lore/GRIMDOKU_MATRICE_CONTINUITE.md', 'lore/LORE.md']) assert.doesNotMatch(fs.readFileSync(path.join(ROOT, f), 'utf8'), /première (enquête|affaire) (résolue|a été résolue)/, f);
 });
 
 test('affaire finale : toutes les lettres ; personne parmi les suspects ne reçoit la garde', () => {

@@ -185,7 +185,7 @@ Des petites histoires qui courent d'une enquête à l'autre, sans jamais compter
 
 Les enquêtes ordinaires se jouent dans n'importe quel ordre : c'est la chronologie du monde, pas un ordre imposé au joueur.
 #### Les lettres
-Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquêteur trouve **une lettre glissée sous sa porte**, signée « — A. ». Il y a **une lettre par lieu** (23 en tout), donnée par la **première enquête résolue dans ce lieu**. Elles se lisent dans **n'importe quel ordre**, chacune se comprend seule, aucune ne révèle la solution de l'enquête qui la donne (elle n'apparaît qu'après la victoire). Ce sont des rapports d'Augure sur les prétendants : ragots, caractère, et des indices qui se répondent (la clé et le grimoire, l'étage manquant des plans, la brume du port, la puissance mesurée par le Palais), qu'on relit autrement après la fin.
+Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquêteur trouve **une lettre glissée sous sa porte**, signée « — A. ». Il y a **une lettre par lieu** (23 en tout), reçue quand le joueur ouvre l'enveloppe (c'est elle qui ouvre alors les lieux suivants). Elles se lisent dans **n'importe quel ordre**, chacune se comprend seule, aucune ne révèle la solution de l'enquête qui la donne (elle n'apparaît qu'après la victoire). Ce sont des rapports d'Augure sur les prétendants : ragots, caractère, et des indices qui se répondent (la clé et le grimoire, l'étage manquant des plans, la brume du port, la puissance mesurée par le Palais), qu'on relit autrement après la fin.
 
 | Lieu | Lettre |
 | --- | --- |
@@ -216,7 +216,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 **Débloquer la fin** : avec **les 23 lettres** (toutes : décision de François, 2026-10-19), l'affaire finale s'ouvre. La fin est donc vraiment la fin : Fizzlebarbe ne peut plus réapparaître vivant dans une enquête jouée après sa mort.
 
 ## Les épilogues
-157 épilogues (147 grilles jouables, 10 grilles désactivées), dont **5 validés ✅**. Classés par lieu, dans l'ordre où le joueur les découvre. Pour chacun : la victime (son métier, ce qu'elle venait faire, la menace qu'elle représentait), le coupable (trait et tic), l'introduction de l'enquête, puis l'épilogue.
+157 épilogues (147 grilles jouables, 10 grilles désactivées), dont **4 validés ✅**. Classés par lieu, dans l'ordre où le joueur les découvre. Pour chacun : la victime (son métier, ce qu'elle venait faire, la menace qu'elle représentait), le coupable (trait et tic), l'introduction de l'enquête, puis l'épilogue.
 
 ### Le Château de Mortebrune
 
@@ -260,14 +260,14 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous aviez quelque chose à cacher, dans cette cave ?  
 > — Une bouteille, marquée « Ne pas boire ». Il l'a bue. Techniquement, c'est légal : il était prévenu.  
 
-#### Le Château de Mortebrune — l'affaire Promenin ✅ validé
+#### Le Château de Mortebrune — l'affaire Promenin
 - **Victime** : Promenin, le touriste — Touriste, dessine tout au fusain, surtout ce qui est interdit. Venu visiter la baronnie ; menace : « faire mon portrait au fusain et le vendre à la foire ».
 - **Coupable** : Fausset — Barde, chante faux. Tic : Transforme chaque conversation en couplet.
 - **Introduction** : Le touriste Promenin était venu au Château de Mortebrune visiter la baronnie. On m'a fait appeler au nom du roi, ce qui veut dire que c'est grave, ou qu'il s'ennuie. Cinq membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec lui.
 
 > — Vous étiez seul avec Promenin.  
 > — Il m'a dessiné en train de chanter. Il voulait vendre ça à la foire, sous le titre « Le barde qui chante faux ».  
-> — C'est votre luth, là, en morceaux ?  
+> — C'est votre luth, là, en morceaux sur sa tête ?  
 > — Il était faux, ce luth. Depuis le début. Ça s'entendait.  
 
 #### Le Château de Mortebrune — l'affaire Paonne *(grille désactivée)*
@@ -330,7 +330,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous étiez seul avec Brassée.  
 > — Elle voulait m'apprendre à nager de force. Dix écus la leçon, dans la grande marmite de soupe, faute de lac.  
 > — Et vous avez refusé ?  
-> — Elle a sauté dedans pour me montrer. J'ai remis le couvercle. Techniquement, c'est légal : elle y est entrée de son plein gré, et je n'ai rien payé.  
+> — Elle a sauté dedans pour me montrer. J'ai remis le couvercle. Dix écus d'économisés : la soupe ne m'a rien coûté.  
 
 #### Le Banquet des Gobelins — l'affaire Décanteur *(grille désactivée)*
 - **Victime** : Décanteur, l'inspecteur des tavernes — Inspecteur des tavernes, goûte tout, note tout. Venu inspecter les lieux ; menace : « me coller un blâme ».
@@ -340,7 +340,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous étiez seul avec Décanteur.  
 > — Décanteur.  
 > — Pourquoi lui ?  
-> — Il a passé le doigt sur les assiettes : « Blâme. Frottez plus fort ! » Bâfrin frotté. Lui aussi, sale.  
+> — Il a passé le doigt sur les assiettes : « Blâme. Tout est sale. Frottez plus fort ! » Bâfrin frotté lui, dans le bac. Fort.  
 
 ### Meurtre au Sanglier Borgne
 
@@ -404,7 +404,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous étiez seule avec Bénédicte.  
 > — Elle m'a fait la morale sur mes dettes. Trois tournées, au fond de la mine, devant tout le monde.  
 > — Et vous l'avez laissée en bas.  
-> — Je lui ai emprunté sa lanterne, pour remonter plus vite. Je la lui rends demain.  
+> — Au bord du puits. J'ai soufflé sa lanterne et je l'ai poussée. Sa lanterne, je la lui rends demain.  
 
 #### La Mine des Nains — l'affaire Ballot
 - **Victime** : Ballot, le colporteur — Colporteur, vend des objets dont personne ne veut. Venu vendre sa camelote ; menace : « me revendre ce qu'il m'avait déjà vendu ».
@@ -424,7 +424,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous étiez seul avec Flamberge.  
 > — Flamberge.  
 > — Elle voulait vous emmener dans son cirque ?  
-> — Elle a ouvert la cage du monte-charge : « Allez, le troll, tu descends ! » Bâfrin poussé elle dedans. Descends.  
+> — Elle a ouvert la cage du monte-charge : « Allez, le troll, tu descends ! » Bâfrin mis elle dans cage. Lâché câble. Descends.  
 
 #### La Mine des Nains — l'affaire Godet
 - **Victime** : Godet, l'inspecteur des tavernes — Inspecteur des tavernes, goûte tout, note tout. Venu inspecter les lieux ; menace : « me coller un blâme ».
@@ -434,7 +434,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous étiez seul avec Godet.  
 > — Il voulait coller un blâme à la cantine de la mine. Un blâme, ça se paie.  
 > — Vous avez payé ?  
-> — Je l'ai passé aux pertes. Les pertes, on les jette au fond du puits. Techniquement, c'est une écriture comptable.  
+> — Je l'ai passé aux pertes. Les pertes, on les jette au fond du puits. C'est une écriture comptable.  
 
 #### La Mine des Nains — l'affaire Sangsuard
 - **Victime** : Sangsuard, le percepteur — Percepteur du baron, compte même les miettes. Venu lever l'impôt de fin d'année ; menace : « me faire payer l'impôt sur tout ce que je possède ».
@@ -454,7 +454,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous étiez seul avec Musard.  
 > — Il m'a dessiné au fond de la mine, à côté d'un coffre qui n'est déclaré nulle part. Il voulait vendre le dessin à la foire.  
 > — Le coffre de qui ?  
-> — Du royaume. Je lui ai vendu une visite de la galerie fermée, aller simple. Techniquement, c'est légal : il a payé.  
+> — Du royaume. Je lui ai vendu une visite de la galerie fermée. Aller simple : le retour était en supplément.  
 
 ### Le Moulin de Bois-Tordu
 
@@ -528,7 +528,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous étiez seul avec Hildegarde.  
 > — Elle m'a suivi de rayon en rayon pour me faire la morale. Je traverse les murs ; ses reproches, eux, me traversaient.  
 > — Vous pouviez partir.  
-> — De mon vivant, on se taisait dans une bibliothèque. J'ai traversé l'étagère. L'étagère, elle, est tombée de son côté.  
+> — Je suis entré dans l'étagère pour la semer. Elle a tiré sur les grimoires pour me déloger. L'étagère est venue avec.  
 
 #### La Bibliothèque Interdite — l'affaire Mordache
 - **Victime** : Mordache, la chasseuse de primes — Chasseuse de primes, a toujours un avis de recherche sur elle. Venue toucher une prime ; menace : « me livrer au baron contre trois écus ».
@@ -558,7 +558,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous étiez seul avec Ruisselle.  
 > — Elle voulait m'apprendre à nager de force. Dix écus le cours, payables à la fin.  
 > — Vous avez refusé ?  
-> — Je lui ai proposé de commencer par le plongeon, du haut de l'échelle des grimoires. Il n'y a pas eu de fin de cours. Techniquement, je ne lui dois rien.  
+> — Je lui ai proposé de commencer par le plongeon, du haut de l'échelle des grimoires. Il n'y a pas eu de fin de cours, donc pas de facture.  
 
 #### La Bibliothèque Interdite — l'affaire Tributin
 - **Victime** : Tributin, le percepteur — Percepteur du baron, compte même les miettes. Venu lever l'impôt de fin d'année ; menace : « me faire payer l'impôt sur tout ce que je possède ».
@@ -588,7 +588,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous étiez seul avec Bismuth.  
 > — Il a trouvé mes écus derrière les grimoires et voulu les changer en or. Le premier est sorti en plomb.  
 > — Vous étiez furieux.  
-> — De mon vivant, on pendait les faux-monnayeurs. Mort, je l'ai seulement hanté jusqu'à la fenêtre. Il a préféré la fenêtre.  
+> — Je me suis montré, tel que je suis depuis quatre siècles. Il a reculé jusqu'à la fenêtre. Puis un peu plus loin.  
 
 ### La Forge du Dragon
 
@@ -610,7 +610,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous étiez seul avec Ostentine.  
 > — Elle voulait racheter la baronnie. Le prix, c'était le trésor du royaume.  
 > — Le trésor est vide.  
-> — Elle l'ignorait. Je lui ai proposé de vérifier au fond du creuset. Techniquement, c'est légal : c'est elle qui s'est penchée.  
+> — Elle voulait le voir quand même. Je lui ai montré le creuset. Tout ce qui tombe dans le creuset appartient au royaume. Elle aussi, maintenant.  
 
 #### La Forge du Dragon — l'affaire Fouettine
 - **Victime** : Fouettine, la dresseuse — Dresseuse de dragons, surtout des petits. Venue recruter des bêtes pour son cirque ; menace : « m'emmener dans son cirque ».
@@ -856,9 +856,9 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 - **Introduction** : Le pont-levis est resté coincé toute la nuit, enfermant l'abbesse Sobriété, venue faire la quête, avec les huit occupants de la Citadelle. Au matin, elle n'avait plus aucune envie de sortir. L'un d'eux était seul avec elle. Au moins, personne n'a pu s'enfuir.
 
 > — Vous étiez seul avec Sobriété.  
-> — Elle m'a fait la morale : chanter faux, c'est un péché.  
-> — Vous l'avez prise au mot ?  
-> — Je lui ai chanté un cantique, pour me faire pardonner. Elle a reculé sur le rempart. Le rempart était moins long que le cantique.  
+> — Elle m'a fait la morale : chanter faux, c'est un péché. Et Goémone mérite mieux qu'un pécheur.  
+> — Vous auriez pu en rire.  
+> — Personne ne parle de Goémone comme ça. Je l'ai étranglée avec la bandoulière de mon luth.  
 
 #### La Citadelle de Mortebrune — l'affaire Vanité
 - **Victime** : Vanité, la baronne — Baronne voisine, jalouse de tout ce qui brille. Venue rendre une visite de courtoisie ; menace : « racheter la baronnie et me mettre dehors ».
@@ -868,7 +868,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous étiez seul avec Vanité.  
 > — Elle voulait racheter la baronnie. Je lui ai d'abord vendu la sortie de la Citadelle.  
 > — La sortie ?  
-> — Le pont-levis est payant. Elle a refusé de payer, alors je l'ai fait sortir par le chemin gratuit : par-dessus le rempart. Techniquement, c'est légal : les douves sont gratuites.  
+> — Le pont-levis est payant. Elle a refusé de payer, alors je l'ai fait sortir par le chemin gratuit : par-dessus le rempart. Je ne fais jamais payer les douves.  
 
 #### La Citadelle de Mortebrune — l'affaire Toutvend
 - **Victime** : Toutvend, le colporteur — Colporteur, vend des objets dont personne ne veut. Venu vendre sa camelote ; menace : « me revendre ce qu'il m'avait déjà vendu ».
@@ -878,7 +878,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous étiez seul avec Toutvend.  
 > — Il voulait me revendre les chaînes qu'il m'avait déjà vendues. Des chaînes de fantôme, garanties bruyantes.  
 > — Elles ne marchaient pas ?  
-> — Elles traversaient tout, comme moi. Je les lui ai rendues, autour du cou. Lui, au moins, elles ne l'ont pas traversé. De mon vivant, on vendait de la qualité.  
+> — Elles traversaient tout, comme moi. Je les lui ai rendues, autour du cou. Lui, au moins, elles ne l'ont pas traversé.  
 
 #### La Citadelle de Mortebrune — l'affaire Bastringue
 - **Victime** : Bastringue, la dresseuse — Dresseuse de dragons, surtout des petits. Venue recruter des bêtes pour son cirque ; menace : « m'emmener dans son cirque ».
@@ -918,7 +918,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous étiez seul avec Galopin.  
 > — Il m'a annoncé que le baron envoyait un contrôleur des comptes.  
 > — Une mauvaise nouvelle, pour vous.  
-> — Pour lui. Je n'ai fait que retarder le courrier, au fond du puits de la Citadelle. Techniquement, c'est légal : retarder n'est pas voler.  
+> — Pour lui. Je n'ai fait que retarder le courrier, au fond du puits de la Citadelle. Le porteur avec : il ne voulait pas le lâcher.  
 
 #### La Citadelle de Mortebrune — l'affaire Corbine *(grille désactivée)*
 - **Victime** : Corbine, la chasseuse de primes — Chasseuse de primes, a toujours un avis de recherche sur elle. Venue toucher une prime ; menace : « me livrer au baron contre trois écus ».
@@ -1000,7 +1000,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous étiez seul avec Troubadin.  
 > — Il chantait mieux que tout le monde, sans payer le droit de place.  
 > — Il y a un droit de place ?  
-> — Depuis qu'il chantait. Il a refusé de payer ; je l'ai étranglé avec une corde de son luth. Techniquement, c'est légal : c'était une saisie.  
+> — Depuis qu'il chantait. Il a refusé de payer, alors je l'ai saisi. Son seul bien saisissable, c'était la corde de son luth. Je la lui ai serrée autour du cou.  
 
 ### Le Cimetière de Minuit
 
@@ -1052,7 +1052,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous étiez seul avec Picrate.  
 > — Il a collé un blâme au cimetière : trop de courants d'air.  
 > — Les courants d'air, c'est vous.  
-> — De mon vivant, on respectait les anciens. Je lui ai soufflé dans le cou. Il a reculé. La tombe ouverte était juste derrière.  
+> — Alors je lui en ai fait sentir un, dans le cou. Il a reculé. La tombe ouverte était juste derrière lui.  
 
 #### Le Cimetière de Minuit — l'affaire Prélevin
 - **Victime** : Prélevin, le percepteur — Percepteur du baron, compte même les miettes. Venu lever l'impôt de fin d'année ; menace : « me faire payer l'impôt sur tout ce que je possède ».
@@ -1166,7 +1166,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous étiez seul avec Soufrius.  
 > — Il voulait changer mes écus en plomb. Des écus à mon effigie.  
 > — Ils ne valent plus rien.  
-> — De mon vivant, ils valaient une fortune. Je l'ai regardé à travers l'étagère ; il a reculé dessus. Elle était moins solide que ma réputation.  
+> — Ils valaient une fortune. Je l'ai regardé à travers l'étagère ; il a reculé dessus. Elle était moins solide que ma réputation.  
 
 #### La Tour de l'Archimage — l'affaire Dorure
 - **Victime** : Dorure, la baronne — Baronne voisine, jalouse de tout ce qui brille. Venue rendre une visite de courtoisie ; menace : « racheter la baronnie et me mettre dehors ».
@@ -1176,7 +1176,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous étiez seul avec Dorure.  
 > — Elle voulait racheter la Tour. Ma Tour.  
 > — Ce n'est pas la vôtre.  
-> — De mon vivant, j'en avais les titres. Je lui ai dit où ils étaient : tout en haut de l'étagère. Elle a grimpé pour les lire.  
+> — De mon vivant, j'en avais les titres. Je lui ai dit qu'ils étaient tout en haut de l'étagère. Quand elle y est arrivée, je suis sorti du mur, juste à côté d'elle. Elle est redescendue plus vite.  
 
 #### La Tour de l'Archimage — l'affaire Adélaïde
 - **Victime** : Adélaïde, la cousine — Cousine éloignée de tout le monde, venue pour l'héritage. Venue réclamer un héritage ; menace : « réclamer sa part de ce qui m'appartient ».
@@ -1206,7 +1206,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous étiez seul avec Gobelet.  
 > — Il a collé un blâme à la Tour : un fantôme dans la cave, ça fait fuir les clients.  
 > — Vous n'êtes pas un client.  
-> — De mon vivant, j'étais le propriétaire. Je l'ai suivi en gémissant jusqu'en haut de l'échelle des grimoires. De mon vivant, on savait descendre une échelle.  
+> — Je suis le propriétaire. Je l'ai suivi en gémissant jusqu'en haut de l'échelle des grimoires. Il a voulu redescendre par le chemin le plus court.  
 
 #### La Tour de l'Archimage — l'affaire Hâtif
 - **Victime** : Hâtif, le messager — Messager du baron, porte toujours de mauvaises nouvelles. Venu apporter une lettre du baron ; menace : « m'annoncer une mauvaise nouvelle ».
@@ -1216,7 +1216,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous étiez seul avec Hâtif.  
 > — Il m'a annoncé que le baron me rayait des registres : « décédé ».  
 > — Vous l'êtes.  
-> — De mon vivant, on m'annonçait les choses à genoux. Il s'est mis à genoux, au pied de l'étagère, pour ramasser sa lettre. J'ai traversé l'étagère au même moment.  
+> — De mon vivant, on m'annonçait les choses à genoux. Il s'est mis à genoux pour ramasser sa lettre. Je suis sorti du plancher, nez à nez. Il est tombé à la renverse contre l'étagère, et les grimoires ont suivi.  
 
 #### La Tour de l'Archimage — l'affaire Couplet
 - **Victime** : Couplet, le troubadour — Troubadour itinérant, chante juste, et ça agace. Venu donner un concert ; menace : « chanter mieux que tout le monde ».
@@ -1248,7 +1248,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous étiez seul avec Flacon.  
 > — Il voulait coller un blâme à mon rhum : pas d'étiquette, pas de taxe.  
 > — Il avait raison.  
-> — Alors je lui ai fait goûter le stock. Tout le stock. Techniquement, c'est légal : on ne taxe pas ce qui est bu.  
+> — Alors je lui ai fait goûter le stock. Tout le stock. Plus de rhum, plus de taxe, plus d'inspecteur.  
 
 #### Le Port des Contrebandiers — l'affaire Missivin
 - **Victime** : Missivin, le messager — Messager du baron, porte toujours de mauvaises nouvelles. Venu apporter une lettre du baron ; menace : « m'annoncer une mauvaise nouvelle ».
@@ -1298,7 +1298,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous étiez seul avec Ritournel.  
 > — Il chantait mieux que tout le monde. Surtout une chanson sur mes caisses sans étiquette.  
 > — Elle était juste ?  
-> — Trop. Je l'ai engagé pour chanter sous l'eau, payé à la note tenue. Techniquement, c'est légal : il a signé.  
+> — Trop. Je l'ai engagé pour chanter sous l'eau, payé à la note tenue. Il a signé sans lire les petites lignes.  
 
 ### Le Bal Masqué
 
@@ -1442,7 +1442,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous étiez seul avec Taillefer.  
 > — Il voulait l'impôt sur tout ce que je possède. Il a commencé par les fusées du feu d'artifice.  
 > — Elles sont au royaume.  
-> — Achetées au nom du royaume, revendues au mien. Il a voulu les compter de près ; j'ai allumé pour qu'il y voie clair. Techniquement, c'est légal : c'était le spectacle prévu.  
+> — Achetées au nom du royaume, revendues au mien. Il a voulu les compter de près ; j'ai allumé pour qu'il y voie clair. Une fusée de moins à déclarer.  
 
 #### La Grande Foire des Mille Merveilles — l'affaire Ménestrin
 - **Victime** : Ménestrin, le troubadour — Troubadour itinérant, chante juste, et ça agace. Venu donner un concert ; menace : « chanter mieux que tout le monde ».
@@ -1484,7 +1484,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous étiez seul avec Bradeur.  
 > — Il voulait me revendre le coffre qu'il m'avait déjà vendu. Vide.  
 > — Le trésor du royaume aussi est vide.  
-> — C'était le même coffre. Je l'ai payé une deuxième fois, en le mettant dedans. Techniquement, c'est légal : je l'ai rempli.  
+> — C'était le même coffre. Je l'ai payé une deuxième fois, en le mettant dedans. Cette fois, il n'était pas vide.  
 
 #### Le Grand Port de Brumeval — l'affaire Rotrude
 - **Victime** : Rotrude, la cousine — Cousine éloignée de tout le monde, venue pour l'héritage. Venue réclamer un héritage ; menace : « réclamer sa part de ce qui m'appartient ».
@@ -1504,7 +1504,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous étiez seul avec Notard.  
 > — Il voulait coller un blâme à la taverne du port.  
 > — Vous n'êtes pas tavernier.  
-> — Actionnaire. Je lui ai offert un pot-de-vin ; il l'a refusé. Alors je lui ai offert le pot. Techniquement, c'est légal : sans le vin.  
+> — Actionnaire. Je lui ai offert un pot-de-vin ; il l'a refusé. Alors je lui ai offert le pot. Sans le vin. Sur la tête.  
 
 #### Le Grand Port de Brumeval — l'affaire Naïade
 - **Victime** : Naïade, la maîtresse-nageuse — Maîtresse-nageuse, sans permis ni maillot. Venue donner des cours de natation ; menace : « m'apprendre à nager de force ».
@@ -1648,7 +1648,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous étiez seule avec Pichet.  
 > — Il a mis un blâme aux Thermes. Moi, je leur avais mis huit sur dix.  
 > — Vous n'étiez pas d'accord.  
-> — Je lui ai mis zéro. Il a demandé une seconde lecture. Je l'ai gardé sous l'eau pour la relire.  
+> — Je l'ai invité à dîner, pour comparer nos palais. Je lui ai fait goûter mes champignons préférés. Il leur a mis dix sur dix. C'était sa dernière note.  
 
 #### Les Thermes Enchantés — l'affaire Bottin
 - **Victime** : Bottin, le messager — Messager du baron, porte toujours de mauvaises nouvelles. Venu apporter une lettre du baron ; menace : « m'annoncer une mauvaise nouvelle ».
@@ -1760,9 +1760,9 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 - **Introduction** : Aux Grands Bains de Brumeval, on vient soigner ses rhumatismes, ses nerfs ou sa réputation. L'abbesse Clémence, venue faire la quête, n'est pas ressortie du bain. Neuf curistes et employés barbotaient dans les parages. L'un d'eux était seul avec elle. Il fait quarante degrés, tout le monde transpire, et personne ne sait rien.
 
 > — Vous étiez seule avec Clémence.  
-> — Elle m'a fait la morale sur la gourmandise.  
+> — Elle m'a fait la morale sur la gourmandise. Elle a dit que je jugeais tout.  
 > — Elle avait ses raisons.  
-> — J'ai noté son sermon : un sur dix, trop long. Je lui ai tenu la tête sous l'eau jusqu'à ce qu'il raccourcisse.  
+> — Pour faire la paix, je lui ai offert une part de gâteau. Avec l'ingrédient que je réserve aux gens qui me font la morale.  
 
 #### Les Grands Bains de Brumeval — l'affaire Sublimin
 - **Victime** : Sublimin, l'alchimiste — Alchimiste ambulant, transforme l'or en dettes. Venu proposer ses services ; menace : « changer mes économies en plomb ».
@@ -1812,7 +1812,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous étiez seul avec Presto.  
 > — Presto.  
 > — Il vous a lu sa lettre ?  
-> — « Par ordre du baron, tous les bains sont fermés. Fermez tout ! » Bâfrin fermé. Le couvercle du bassin, sur lui.  
+> — « Par ordre du baron, les bains sont fermés. Fermez tout ! » Bâfrin fermé tout. Couvercle du bassin. Lui dessous.  
 
 #### Les Grands Bains de Brumeval — l'affaire Anatole
 - **Victime** : Anatole, le touriste — Touriste, dessine tout au fusain, surtout ce qui est interdit. Venu visiter la baronnie ; menace : « faire mon portrait au fusain et le vendre à la foire ».
