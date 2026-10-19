@@ -55,6 +55,14 @@ JSON.parse(fs.readFileSync(path.join(ROOT, 'big-cases.json'), 'utf8')).cases.for
   const size = loadScene(scenePath(c.scene)).size;
   jobs.push({ id: c.id, scene: c.scene, victim: c.victim, big: c.big, shapes: c.shapes, hidden: !!c.hidden, hiddenMax: c.hiddenMax, size, target: size >= 9 ? null : BIG_TARGETS[!!c.hidden][i % 5] });
 });
+// --force=<affaire>:<type>[,…] : coupable imposé (rééquilibrage des coupables, 2026-10-19) ; la lettre du coupable est
+// celle de son type dans la composition de l'affaire (compose), qu'on passe à gen.js (--murderer)
+const FORCE = Object.fromEntries((arg('force', '') ? arg('force', '').split(',') : []).map(x => x.split(':')));
+for (const job of jobs) if (FORCE[job.id]) {
+  const ch = compose(loadScene(scenePath(job.scene)), job).characters.find(c => c.archetype === FORCE[job.id] && c.role !== 'victim');
+  if (!ch) throw new Error(`${job.id} : ${FORCE[job.id]} n'est pas suspect dans cette affaire`);
+  job.murderer = ch.id;
+}
 // --only=<décor>[,<décor>…] : ces décors seulement (et leurs variantes « <décor>-2 »)
 const onlyList = ONLY ? ONLY.split(',') : [];
 const todo = jobs.filter(j => !fs.existsSync(path.join(ROOT, 'solutions', j.id + '.json')) && (!onlyList.length || onlyList.some(o => j.scene === o || j.scene.startsWith(o + '-'))));
@@ -87,6 +95,7 @@ function runGen(job, seed, skulls) {
     if (job.big) args.push(`--big=${job.big.map((t, i) => t + ':' + job.shapes[i]).join(',')}`);
     if (job.hidden) args.push('--hidden');
     if (job.hiddenMax) args.push(`--hidden-max=${job.hiddenMax}`);
+    if (job.murderer) args.push(`--murderer=${job.murderer}`);
     const child = spawn(process.execPath, args, { cwd: ROOT });
     (job.children = job.children || new Set()).add(child);
     child.on('close', () => job.children.delete(child));

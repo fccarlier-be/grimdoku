@@ -315,5 +315,133 @@
   "citadelle--abbesse": {
     "status": "relire",
     "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+  },
+  "taverne--inspecteur": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "bibliotheque--baronne": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "bibliotheque--colporteur--golem-dragon--i2-i2": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "mine--messager--golem-dragon--i2-i2": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "mine--alchimiste": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "mine--nageuse--golem--i2": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "academie--colporteur--geant--i2": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "academie--baronne": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "academie--percepteur": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "forge--colporteur": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "forge--cousine": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "forge--percepteur--golem--i2": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "cimetiere--messager": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "cimetiere--alchimiste--golem--i2": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "citadelle--cousine": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "citadelle--alchimiste": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "foire--percepteur": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "universite--colporteur": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "universite--inspecteur": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "universite--nageuse": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "universite--chasseuse": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "bal--colporteur": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "grande-foire--colporteur": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "grande-foire--abbesse": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "grande-foire--inspecteur": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "grande-foire--nageuse": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "tour--colporteur": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "tour--chasseuse": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "grand-port--baronne": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "navire--nageuse": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "palais--chasseuse": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+  },
+  "grands-bains--baronne": {
+    "status": "relire",
+    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
   }
 }

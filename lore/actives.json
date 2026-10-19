@@ -1,5 +1,5 @@
 {
-  "_doc": "Grilles actives par lieu (généré par tools/actives.js, modifiable à la main). Les autres grilles sont désactivées, pas supprimées.",
+  "_doc": "Grilles actives par lieu (généré par tools/actives.js, modifiable à la main). Les autres grilles sont désactivées, pas supprimées. Rééquilibrage des coupables (2026-10-19, demande de François) : 36 échanges entre grilles actives et désactivées d'un même lieu, la plus facile et la plus dure de chaque lieu gardées. Ne plus relancer tools/actives.js sans refaire ce rééquilibrage.",
   "chateau": [
     "chateau--abbesse",
     "chateau--dresseuse",
@@ -16,25 +16,25 @@
   ],
   "taverne": [
     "taverne--dresseuse",
-    "taverne--huissier",
+    "taverne--inspecteur",
     "taverne--messager",
     "taverne--nageuse",
     "taverne--percepteur"
   ],
   "bibliotheque": [
     "bibliotheque--abbesse",
-    "bibliotheque--nageuse",
+    "bibliotheque--baronne",
     "bibliotheque--percepteur",
     "bibliotheque--troubadour",
-    "bibliotheque--chasseuse--golem--i2",
+    "bibliotheque--colporteur--golem-dragon--i2-i2",
     "bibliotheque--cousine--golem-dragon--i2-i2"
   ],
   "mine": [
     "mine--abbesse",
-    "mine--dresseuse",
+    "mine--messager--golem-dragon--i2-i2",
     "mine--colporteur",
-    "mine--touriste--golem-dragon--i2-i2",
-    "mine--inspecteur--dragon--i2",
+    "mine--alchimiste",
+    "mine--nageuse--golem--i2",
     "mine--percepteur--dragon--i2"
   ],
   "moulin": [
@@ -47,10 +47,10 @@
   ],
   "academie": [
     "academie--abbesse",
-    "academie--nageuse",
+    "academie--colporteur--geant--i2",
     "academie--alchimiste",
-    "academie--troubadour",
-    "academie--cousine--golem--i2",
+    "academie--baronne",
+    "academie--percepteur",
     "academie--dresseuse--geant--i2"
   ],
   "ferme": [
@@ -63,9 +63,9 @@
   ],
   "forge": [
     "forge--baronne",
-    "forge--dresseuse",
-    "forge--huissier",
-    "forge--abbesse--dragon--i2",
+    "forge--colporteur",
+    "forge--cousine",
+    "forge--percepteur--golem--i2",
     "forge--messager--dragon-golem--i2-i2",
     "forge--touriste--dragon-golem--i2-i2"
   ],
@@ -80,8 +80,8 @@
   "cimetiere": [
     "cimetiere--huissier",
     "cimetiere--dresseuse",
-    "cimetiere--inspecteur",
-    "cimetiere--percepteur",
+    "cimetiere--messager",
+    "cimetiere--alchimiste--golem--i2",
     "cimetiere--touriste",
     "cimetiere--abbesse--geant--i2",
     "cimetiere--chasseuse--golem--i2"
@@ -90,8 +90,8 @@
     "citadelle--abbesse",
     "citadelle--colporteur",
     "citadelle--dresseuse",
-    "citadelle--baronne",
-    "citadelle--huissier",
+    "citadelle--cousine",
+    "citadelle--alchimiste",
     "citadelle--inspecteur--dragon--l3",
     "citadelle--messager--golem--l3--cache"
   ],
@@ -100,35 +100,35 @@
     "foire--baronne",
     "foire--touriste",
     "foire--alchimiste",
-    "foire--troubadour",
+    "foire--percepteur",
     "foire--colporteur--geant--i2",
     "foire--chasseuse--geant--i2"
   ],
   "universite": [
     "universite--alchimiste",
-    "universite--troubadour",
-    "universite--baronne",
-    "universite--touriste",
+    "universite--colporteur",
+    "universite--inspecteur",
+    "universite--nageuse",
     "universite--messager",
-    "universite--cousine--dragon--s4",
+    "universite--chasseuse",
     "universite--huissier--vouivre--l4--cache"
   ],
   "bal": [
     "bal--alchimiste",
     "bal--abbesse",
     "bal--huissier",
-    "bal--chasseuse",
-    "bal--dresseuse",
+    "bal--colporteur",
+    "bal--baronne",
     "bal--messager--geant-vouivre--i2-i2",
     "bal--nageuse--vouivre--i2"
   ],
   "grande-foire": [
     "grande-foire--cousine",
-    "grande-foire--percepteur",
+    "grande-foire--colporteur",
     "grande-foire--dresseuse",
-    "grande-foire--messager",
-    "grande-foire--troubadour",
-    "grande-foire--abbesse--geant--o4",
+    "grande-foire--abbesse",
+    "grande-foire--inspecteur",
+    "grande-foire--nageuse",
     "grande-foire--baronne--dragon-golem--t4-i2--cache"
   ],
   "port": [
@@ -144,8 +144,8 @@
     "tour--alchimiste",
     "tour--cousine",
     "tour--troubadour",
-    "tour--baronne",
-    "tour--inspecteur--vouivre--i2",
+    "tour--colporteur",
+    "tour--chasseuse",
     "tour--dresseuse--vouivre--i2",
     "tour--messager--golem--i2"
   ],
@@ -153,14 +153,14 @@
     "grand-port--colporteur",
     "grand-port--chasseuse",
     "grand-port--nageuse",
-    "grand-port--inspecteur",
-    "grand-port--cousine",
+    "grand-port--touriste--golem-geant--i3-i2",
+    "grand-port--baronne",
     "grand-port--abbesse--dragon--t4",
     "grand-port--percepteur--vouivre--l4--cache"
   ],
   "navire": [
     "navire--abbesse",
-    "navire--touriste",
+    "navire--nageuse",
     "navire--inspecteur",
     "navire--percepteur",
     "navire--alchimiste--dragon--i2",
@@ -169,7 +169,7 @@
   ],
   "palais": [
     "palais--baronne",
-    "palais--dresseuse",
+    "palais--chasseuse",
     "palais--inspecteur",
     "palais--cousine",
     "palais--abbesse--vouivre--i2",
@@ -186,9 +186,9 @@
   ],
   "grands-bains": [
     "grands-bains--colporteur",
-    "grands-bains--alchimiste",
+    "grands-bains--baronne",
     "grands-bains--dresseuse",
-    "grands-bains--touriste",
+    "grands-bains--cousine",
     "grands-bains--chasseuse",
     "grands-bains--abbesse",
     "grands-bains--messager--vouivre--l4--cache"
