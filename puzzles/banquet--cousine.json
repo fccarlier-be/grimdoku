@@ -196,7 +196,7 @@
   "id": "banquet--cousine",
   "place": "banquet",
   "intro": "Au Banquet des Gobelins, la cousine Ingeburge, venue réclamer un héritage, est passée de la liste des invités à la carte du menu. On l'a retrouvée avant le dessert. Cinq invités se goinfraient. L'un d'eux était seul avec elle. On m'a servi une soupe. Je ne l'ai pas touchée.",
-  "epilogue": "— Ingeburge. Racontez-moi.\n— Elle se disait ma cousine et réclamait sa part de ce qui m'appartient : la moitié de mon assiette de navets.\n— Vous ne partagez pas ?\n— Pas mes navets. Je ne mange que ça, depuis mardi. Elle, ce n'était pas un navet.",
+  "epilogue": "— Ingeburge. Racontez-moi.\n— Elle se disait ma cousine. Elle est venue réclamer sa part de l'héritage, et elle s'est assise à côté de moi.\n— Et alors ?\n— Je suis végétarien depuis mardi. Six jours. Elle sentait le rôti du dimanche… Je n'ai croqué qu'une fois. Bon, deux.",
   "clues": [
     {
       "who": "a",

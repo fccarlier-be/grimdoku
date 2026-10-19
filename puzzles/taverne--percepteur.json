@@ -189,7 +189,7 @@
   "id": "taverne--percepteur",
   "place": "taverne",
   "intro": "On m'a tiré du lit à l'aube. Le percepteur Corvéon, venu au Sanglier Borgne lever l'impôt de fin d'année, ne se réveillera plus. Cinq clients juraient dormir comme des loirs. L'un d'eux était avec lui. J'ai demandé un café ; on m'a servi une bière.",
-  "epilogue": "— Racontez-moi, pour Corvéon.\n— Il voulait m'imposer sur tout ce que je possède. Je ne possède que des dettes, et la plupart ici.\n— Il a bien dû trouver autre chose.\n— Le grimoire de Dewey. Alors j'ai éternué. Dans une taverne, avec tout ce houblon, ce n'est la faute de personne.",
+  "epilogue": "— Racontez-moi, pour Corvéon.\n— Il voulait m'imposer sur tout ce que je possède : des dettes, et le grimoire de Dewey.\n— Il a voulu le saisir.\n— Il m'a mis une bière sous le nez pour m'amadouer. Le sort est parti tout seul.",
   "clues": [
     {
       "who": "a",

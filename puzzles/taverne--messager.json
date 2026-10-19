@@ -189,7 +189,7 @@
   "id": "taverne--messager",
   "place": "taverne",
   "intro": "On m'a tiré du lit à l'aube. Le messager Hérautin, venu au Sanglier Borgne apporter une lettre du baron, ne se réveillera plus. Cinq clients juraient dormir comme des loirs. L'un d'eux était avec lui. J'ai demandé un café ; on m'a servi une bière.",
-  "epilogue": "— Que s'est-il passé avec Hérautin ?\n— Il m'a annoncé un nouvel impôt sur la bière. Puis il a demandé une chambre, gratuite, puisqu'il apportait la nouvelle.\n— Vous avez refusé.\n— Je l'ai bordé moi-même. Un oreiller, deux oreillers, bien serrés. Quatre écus, avec le drap.",
+  "epilogue": "— Que s'est-il passé avec Hérautin ?\n— Il m'a annoncé un nouvel impôt sur la bière. Puis il a demandé une chambre, gratuite, puisqu'il apportait la nouvelle.\n— Vous avez refusé.\n— Je l'ai bordé moi-même. Un oreiller, deux oreillers, bien serrés...",
   "clues": [
     {
       "who": "a",
