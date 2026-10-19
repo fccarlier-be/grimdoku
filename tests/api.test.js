@@ -71,7 +71,7 @@ test('page : connectée, elle fusionne sa progression avec celle du serveur', ()
   const cookie = sessionOf(await call('POST', '/login', { body: { credential: 'ok:777' } }));
   await call('PUT', '/progress', { cookie, body: { data: { lettres: ['moulin'], prologue: true }, rev: 0 } });
   const html = fs.readFileSync(path.join(__dirname, '..', 'dist', 'grimdoku.html'), 'utf8')
-    .replace('const ACCOUNT = null;', 'const ACCOUNT = {"clientId":"test"};');
+    .replace(/const ACCOUNT = [^;]*;/, 'const ACCOUNT = {"clientId":"test"};');
   const dom = new JSDOM(html, {
     runScripts: 'dangerously', url: 'http://localhost/', pretendToBeVisual: true,
     beforeParse(w) {

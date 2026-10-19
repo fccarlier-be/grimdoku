@@ -1,4 +1,7 @@
 {
-  "googleClientId": "",
-  "origins": ["https://grimdoku.fcold.org", "http://localhost:8095"]
+  "googleClientId": "538382082065-hi4cepgh9dks9g2k0qh50r3o4jra891c.apps.googleusercontent.com",
+  "origins": [
+    "https://grimdoku.fcold.org",
+    "http://localhost:8095"
+  ]
 }
