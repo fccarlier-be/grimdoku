@@ -1465,6 +1465,9 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     ctx = E.prepare(P);
     computeBadges(P);
     S = store.get('p:' + id, null);
+    // grille modifiée depuis la partie (personnages, indices) : les places sauvegardées ne valent plus. Une enquête déjà
+    // résolue se rouvre quand même résolue (« Revoir ») : sur sa solution, pas sur une grille vide
+    if (S && S.sig !== sigOf(P) && S.solved) S = Object.assign(blank(), { pos: JSON.parse(JSON.stringify(P.solution.positions)), solved: true, t: S.t });
     if (!S || S.sig !== sigOf(P)) S = blank();
     S.pencil = S.pencil || {};
     undo = []; selected = null;

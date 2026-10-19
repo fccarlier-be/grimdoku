@@ -89,6 +89,17 @@ test('scène d\'un lieu : le décor en grand, un sceau par enquête, la fiche la
   assert.equal(d.getElementById('zonePop').hidden, true, 'toucher ailleurs la referme');
   zones[1].click(); zones[1].click();
   assert.ok(location(w).includes('affaire/' + list[1].id), 'second toucher : on entre');
+  // « Revoir » une enquête résolue : sa grille résolue, pas une grille vide
+  w.grimGo('lieu/chateau');
+  d.querySelectorAll('.zone')[0].click(); d.querySelector('.zone-card').click();
+  assert.ok(location(w).includes('affaire/' + list[0].id));
+  assert.ok(d.querySelectorAll('.board .token').length > 0, 'grille résolue affichée');
+  // résolue avant que la grille change (signature périmée) : toujours résolue, sur sa solution
+  w.localStorage.setItem('grimdoku:p:' + list[0].id, JSON.stringify({ pos: {}, solved: true, sig: 'ancienne' }));
+  w.grimGo('lieu/chateau');
+  assert.ok(d.querySelectorAll('.zone')[0].classList.contains('done'));
+  w.grimGo('affaire/' + list[0].id);
+  assert.ok(d.querySelectorAll('.board .token').length > 0, 'grille périmée : la solution, pas une grille vide');
   assert.deepEqual(errors, []);
 });
 
