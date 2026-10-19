@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Grande Foire des Mille Merveilles — l'affaire Prudence",
+  "title": "La Grande Foire des Mille Merveilles — l'affaire Componcte",
   "decor": "foire",
   "size": 12,
   "rooms": {
@@ -413,7 +413,7 @@
     },
     {
       "id": "l",
-      "name": "Prudence",
+      "name": "Componcte",
       "gender": "f",
       "role": "victim",
       "icon": "📿",
@@ -424,8 +424,8 @@
   ],
   "id": "grande-foire--abbesse",
   "place": "grande-foire",
-  "intro": "Feu d'artifice à la Grande Foire des Mille Merveilles : tout le monde regardait le ciel, sauf l'abbesse Prudence, venue faire la quête, qui ne regardera plus rien. Onze forains et visiteurs juraient avoir le nez en l'air. L'un d'eux était seul avec elle.",
-  "epilogue": "— Vous étiez seul avec Prudence.\n— Pardon. Pardon pardon pardon.\n— Je n'ai encore rien dit.\n— Elle voulait me faire la morale. Alors j'ai éternué. Et quand j'éternue, je crache du feu.",
+  "intro": "Feu d'artifice à la Grande Foire des Mille Merveilles : tout le monde regardait le ciel, sauf l'abbesse Componcte, venue faire la quête. Elle n'a pas vu le bouquet final. Onze forains et visiteurs juraient avoir le nez en l'air. L'un d'eux était seul avec elle.",
+  "epilogue": "— Vous étiez seul avec Componcte.\n— Pardon. Pardon pardon pardon.\n— Je n'ai encore rien dit.\n— Elle voulait me faire la morale. Alors j'ai éternué. Et quand j'éternue, je crache du feu.",
   "clues": [
     {
       "who": "a",

@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Grand Port de Brumeval — l'affaire Ondine",
+  "title": "Le Grand Port de Brumeval — l'affaire Naïade",
   "decor": "port",
   "size": 10,
   "rooms": {
@@ -311,7 +311,7 @@
     },
     {
       "id": "j",
-      "name": "Ondine",
+      "name": "Naïade",
       "gender": "f",
       "role": "victim",
       "icon": "🛟",
@@ -322,8 +322,8 @@
   ],
   "id": "grand-port--nageuse",
   "place": "grand-port",
-  "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : la maîtresse-nageuse Ondine, venue donner des cours de natation, est morte sur les quais. Neuf habitués erraient dans la brume. L'un d'eux était seul avec elle.",
-  "epilogue": "— Vous étiez seul avec Ondine.\n— Elle voulait m'apprendre à nager de force. J'ai affronté des tempêtes, moi !\n— Vous n'avez jamais quitté le port.\n— Ce soir-là, la tempête, c'était moi. Avec une rame.",
+  "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : la maîtresse-nageuse Naïade, venue donner des cours de natation, est morte sur les quais. Neuf habitués erraient dans la brume. L'un d'eux était seul avec elle.",
+  "epilogue": "— Vous étiez seul avec Naïade.\n— Elle voulait m'apprendre à nager de force. J'ai affronté des tempêtes, moi !\n— Vous n'avez jamais quitté le port.\n— Ce soir-là, la tempête, c'était moi. Avec une rame.",
   "clues": [
     {
       "who": "a",

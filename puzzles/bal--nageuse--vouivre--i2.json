@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Bal Masqué — l'affaire Ondine",
+  "title": "Le Bal Masqué — l'affaire Palmette",
   "size": 8,
   "rooms": {
     "B": {
@@ -253,7 +253,7 @@
     },
     {
       "id": "g",
-      "name": "Ondine",
+      "name": "Palmette",
       "gender": "f",
       "role": "victim",
       "icon": "🛟",
@@ -265,8 +265,8 @@
   "decor": "bal",
   "id": "bal--nageuse--vouivre--i2",
   "place": "bal",
-  "intro": "Bal masqué au château : la maîtresse-nageuse Ondine, venue donner des cours de natation, n'a pas passé minuit. Six invités dansaient, ou le prétendent. L'un d'eux était seul avec elle. Le plus dur, ici, c'est de savoir qui est sous quel masque. Et qui ment dessous.",
-  "epilogue": "— Vous étiez seul avec Ondine.\n— Je me lève. Je proteste. Je me rassois.\n— Pourquoi ?\n— Elle voulait m'apprendre à nager de force. J'ai dégainé. Je regrette. Je rengaine.",
+  "intro": "Bal masqué au château : la maîtresse-nageuse Palmette, venue donner des cours de natation, n'a pas survécu jusqu'à minuit. Six invités dansaient, ou le prétendent. L'un d'eux était seul avec elle. Le plus dur, ici, c'est de savoir qui est sous quel masque. Et qui ment dessous.",
+  "epilogue": "— Vous étiez seul avec Palmette.\n— Je me lève. Je proteste. Je me rassois.\n— Pourquoi ?\n— Elle voulait m'apprendre à nager de force. J'ai dégainé. Je regrette. Je rengaine.",
   "clues": [
     {
       "who": "a",

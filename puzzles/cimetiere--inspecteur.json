@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Cimetière de Minuit — l'affaire Pinardon",
+  "title": "Le Cimetière de Minuit — l'affaire Picrate",
   "size": 8,
   "rooms": {
     "G": {
@@ -184,7 +184,7 @@
       "gender": "m",
       "role": "suspect",
       "icon": "🐦‍⬛",
-      "desc": "Corbeau, sait tout, ne dit rien",
+      "desc": "Corbeau, voit beaucoup, comprend moins, ne dit rien",
       "archetype": "corbeau",
       "tic": "Ne parle pas : il écrit"
     },
@@ -253,7 +253,7 @@
     },
     {
       "id": "h",
-      "name": "Pinardon",
+      "name": "Picrate",
       "gender": "m",
       "role": "victim",
       "icon": "🍷",
@@ -265,8 +265,8 @@
   "decor": "cimetiere",
   "id": "cimetiere--inspecteur",
   "place": "cimetiere",
-  "intro": "Au Cimetière de Minuit, on a retrouvé l'inspecteur des tavernes Pinardon, venu inspecter les lieux. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Sept habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec lui. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
-  "epilogue": "— Vous étiez seul avec Pinardon.\n— Il voulait me coller un blâme. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
+  "intro": "Au Cimetière de Minuit, on a retrouvé l'inspecteur des tavernes Picrate, venu inspecter les lieux. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Sept habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec lui. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
+  "epilogue": "— Vous étiez seul avec Picrate.\n— Il voulait me coller un blâme. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
   "clues": [
     {
       "who": "a",

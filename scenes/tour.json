@@ -2,8 +2,6 @@
   "scene": "tour",
   "formatVersion": 1,
   "title": "La Tour de l'Archimage",
-  "intro": "L'archimage {victime}, 412 ans, a enfin rendu son dernier sortilège. Sa tour grouille d'invités douteux, et un portail runique relie le laboratoire à la crypte… Qui l'a envoyé ad patres ?",
-  "epilogue": "{coupable} a traversé le portail runique de la crypte pour surgir dans le laboratoire, juste derrière {victime}. Mobile : il lui avait vendu un élixir de bronzage. Garanti sans effet secondaire.",
   "size": 7,
   "rooms": {
     "L": {
@@ -198,6 +196,6 @@
     }
   ],
   "auto": {
-    "intro": "{Titre} {victime} était monté{e} à la Tour de l'Archimage {motif}. On l'a retrouvé{e} au pied d'une étagère de grimoires, sans vie. {Nombre} habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec {lui}. Ici, même les escaliers mentent."
+    "intro": "{Titre} {victime} était venu{e} à la Tour de l'Archimage {motif}. On l'a retrouvé{e} au pied d'une étagère de grimoires, sans vie. {Nombre} habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec {lui}. Ici, même les escaliers mentent."
   }
 }

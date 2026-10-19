@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Grand Port de Brumeval — l'affaire Taxard",
+  "title": "Le Grand Port de Brumeval — l'affaire Dîmeaux",
   "decor": "port",
   "size": 10,
   "rooms": {
@@ -282,7 +282,7 @@
     },
     {
       "id": "h",
-      "name": "Taxard",
+      "name": "Dîmeaux",
       "gender": "m",
       "role": "victim",
       "icon": "🧾",
@@ -295,8 +295,8 @@
   "place": "grand-port",
   "hiddenShapes": true,
   "hiddenMax": 4,
-  "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : le percepteur Taxard, venu lever l'impôt de fin d'année, est mort sur les quais. Sept habitués erraient dans la brume. L'un d'eux était seul avec lui.",
-  "epilogue": "— Vous étiez seul avec Taxard.\n— Il voulait me faire payer l'impôt sur tout ce que je possède. J'ai affronté des tempêtes, moi !\n— Vous n'avez jamais quitté le port.\n— Ce soir-là, la tempête, c'était moi. Avec une rame.",
+  "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : le percepteur Dîmeaux, venu lever l'impôt de fin d'année, est mort sur les quais. Sept habitués erraient dans la brume. L'un d'eux était seul avec lui.",
+  "epilogue": "— Vous étiez seul avec Dîmeaux.\n— Il voulait me faire payer l'impôt sur tout ce que je possède. J'ai affronté des tempêtes, moi !\n— Vous n'avez jamais quitté le port.\n— Ce soir-là, la tempête, c'était moi. Avec une rame.",
   "clues": [
     {
       "who": "a",

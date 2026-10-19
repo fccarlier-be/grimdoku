@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Cimetière de Minuit — l'affaire Grisemotte",
+  "title": "Le Cimetière de Minuit — l'affaire Ombrelle",
   "size": 8,
   "rooms": {
     "G": {
@@ -239,7 +239,7 @@
     },
     {
       "id": "g",
-      "name": "Grisemotte",
+      "name": "Ombrelle",
       "gender": "f",
       "role": "victim",
       "icon": "👑",
@@ -251,8 +251,8 @@
   "decor": "cimetiere",
   "id": "cimetiere--baronne--geant--i2",
   "place": "cimetiere",
-  "intro": "Au Cimetière de Minuit, on a retrouvé la baronne de Grisemotte Grisemotte, venue rendre une visite de courtoisie. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Six habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec elle. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
-  "epilogue": "— Vous étiez seul avec Grisemotte.\n— Elle voulait racheter la baronnie et me mettre dehors. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
+  "intro": "Au Cimetière de Minuit, on a retrouvé la baronne Ombrelle, venue rendre une visite de courtoisie. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Six habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec elle. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
+  "epilogue": "— Vous étiez seul avec Ombrelle.\n— Elle voulait racheter la baronnie et me mettre dehors. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
   "clues": [
     {
       "who": "a",

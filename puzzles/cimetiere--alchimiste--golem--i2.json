@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Cimetière de Minuit — l'affaire Mercurio",
+  "title": "Le Cimetière de Minuit — l'affaire Aurifex",
   "size": 8,
   "rooms": {
     "G": {
@@ -239,7 +239,7 @@
     },
     {
       "id": "g",
-      "name": "Mercurio",
+      "name": "Aurifex",
       "gender": "m",
       "role": "victim",
       "icon": "⚗️",
@@ -251,8 +251,8 @@
   "decor": "cimetiere",
   "id": "cimetiere--alchimiste--golem--i2",
   "place": "cimetiere",
-  "intro": "Au Cimetière de Minuit, on a retrouvé l'alchimiste Mercurio, venu proposer ses services. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Six habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec lui. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
-  "epilogue": "— Vous étiez seul avec Mercurio.\n— Il voulait changer mes économies en plomb. Alors j'ai pris ses mesures.\n— Pour quoi faire ?\n— Le travail était à moitié fait. Autant le finir.",
+  "intro": "Au Cimetière de Minuit, on a retrouvé l'alchimiste Aurifex, venu proposer ses services. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Six habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec lui. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
+  "epilogue": "— Vous étiez seul avec Aurifex.\n— Il voulait changer mes économies en plomb. Alors j'ai pris ses mesures.\n— Pour quoi faire ?\n— Le travail était à moitié fait. Autant le finir.",
   "clues": [
     {
       "who": "a",

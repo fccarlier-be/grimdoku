@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Bal Masqué — l'affaire Saisitout",
+  "title": "Le Bal Masqué — l'affaire Grappin",
   "size": 8,
   "rooms": {
     "B": {
@@ -267,7 +267,7 @@
     },
     {
       "id": "h",
-      "name": "Saisitout",
+      "name": "Grappin",
       "gender": "m",
       "role": "victim",
       "icon": "📜",
@@ -279,8 +279,8 @@
   "decor": "bal",
   "id": "bal--huissier",
   "place": "bal",
-  "intro": "Bal masqué au château : l'huissier Saisitout, venu saisir des biens, n'a pas passé minuit. Sept invités dansaient, ou le prétendent. L'un d'eux était seul avec lui. Le plus dur, ici, c'est de savoir qui est sous quel masque. Et qui ment dessous.",
-  "epilogue": "— Vous étiez seul avec Saisitout, Majesté.\n— Il voulait saisir mes affaires. À moi. Le roi.\n— Et vous l'avez supprimé ?\n— Disons que je l'ai… exonéré.",
+  "intro": "Bal masqué au château : l'huissier Grappin, venu saisir des biens, n'a pas survécu jusqu'à minuit. Sept invités dansaient, ou le prétendent. L'un d'eux était seul avec lui. Le plus dur, ici, c'est de savoir qui est sous quel masque. Et qui ment dessous.",
+  "epilogue": "— Vous étiez seul avec Grappin, Majesté.\n— Il voulait saisir mes affaires. À moi. Le roi.\n— Et vous l'avez supprimé ?\n— Disons que je l'ai… exonéré.",
   "clues": [
     {
       "who": "a",

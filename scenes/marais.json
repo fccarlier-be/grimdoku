@@ -116,7 +116,6 @@
       ]
     }
   ],
-  "intro": "La sorcière {victime} ne touillera plus jamais son chaudron : on l'a retrouvée au petit matin dans la brume du marais. Cinq voisins pataugeaient dans le coin. Un seul était avec elle.",
   "characters": [
     {
       "id": "a",
@@ -149,13 +148,6 @@
       "role": "victim"
     }
   ],
-  "epilogues": {
-    "sirene": "{coupable} avoue : {victime} vidait sa mare goutte à goutte pour ses potions. Une sirène sans eau, c'est une sardine.",
-    "zombie": "{coupable} avoue, très lentement : {victime} venait le déterrer chaque fois qu'il lui manquait un ingrédient. Il voulait juste dormir.",
-    "crapaud": "{coupable} avoue : c'est {victime} qui l'avait changé en crapaud, et elle refusait le bisou du contre-sort. Il a perdu patience.",
-    "troll": "{coupable} avoue : {victime} avait transformé son pont en plongeoir à grenouilles. Personne ne touche au pont d'un troll.",
-    "elfe": "{coupable} avoue d'un air dégoûté : {victime} servait de la soupe de vase à ses invités et exigeait cinq étoiles."
-  },
   "auto": {
     "intro": "Le Marais des Brumes a rendu le corps de {titre} {victime}, venu{e} {motif}. Il garde le reste. {Nombre} habitants du marais pataugeaient dans le coin. L'un d'eux était seul avec {lui}. J'ai de la vase jusqu'aux genoux et zéro témoin fiable."
   }

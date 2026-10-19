@@ -1,8 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Tour de l'Archimage — l'affaire Gertrude",
-  "intro": "La dresseuse Gertrude était montée à la Tour de l'Archimage recruter des bêtes pour son cirque. On l'a retrouvée au pied d'une étagère de grimoires, sans vie. Cinq habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec elle. Ici, même les escaliers mentent.",
-  "epilogue": "— Vous étiez seule avec Gertrude.\n— Morte, elle est. Avant, elle voulait m'emmener dans son cirque.\n— Dans l'ordre, s'il vous plaît.\n— L'ordre, je finis toujours par le commencer.",
+  "title": "La Tour de l'Archimage — l'affaire Trapèze",
   "size": 7,
   "rooms": {
     "L": {
@@ -211,7 +209,7 @@
     },
     {
       "id": "f",
-      "name": "Gertrude",
+      "name": "Trapèze",
       "gender": "f",
       "role": "victim",
       "icon": "🎪",
@@ -223,6 +221,8 @@
   "decor": "tour",
   "id": "tour--dresseuse--vouivre--i2",
   "place": "tour",
+  "intro": "La dresseuse Trapèze était venue à la Tour de l'Archimage recruter des bêtes pour son cirque. On l'a retrouvée au pied d'une étagère de grimoires, sans vie. Cinq habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec elle. Ici, même les escaliers mentent.",
+  "epilogue": "— Vous étiez seule avec Trapèze.\n— Morte, elle est. Avant, elle voulait m'emmener dans son cirque.\n— Dans l'ordre, s'il vous plaît.\n— L'ordre, je finis toujours par le commencer.",
   "clues": [
     {
       "who": "a",

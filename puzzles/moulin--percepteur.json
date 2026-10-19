@@ -1,7 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Moulin de Bois-Tordu — l'affaire Taxard",
-  "intro": "Au Moulin de Bois-Tordu, le percepteur Taxard, venu lever l'impôt de fin d'année, a fini plus plat qu'une galette. Cinq voisins traînaient dans le coin. L'un d'eux était seul avec lui. Le meunier m'a proposé de peser les suspects. J'ai refusé.",
+  "title": "Le Moulin de Bois-Tordu — l'affaire Pressoux",
   "size": 6,
   "rooms": {
     "M": {
@@ -177,7 +176,7 @@
     },
     {
       "id": "f",
-      "name": "Taxard",
+      "name": "Pressoux",
       "gender": "m",
       "role": "victim",
       "icon": "🧾",
@@ -189,7 +188,8 @@
   "decor": "moulin",
   "id": "moulin--percepteur",
   "place": "moulin",
-  "epilogue": "— Vous étiez seule avec Taxard.\n— Je n'ai rien fait. (Blub.)\n— Vous faites des bulles.\n— Il voulait me faire payer l'impôt sur tout ce que je possède. Je l'ai juste invité à nager. (Blub, blub.)",
+  "intro": "Au Moulin de Bois-Tordu, le percepteur Pressoux, venu lever l'impôt de fin d'année, a fini plus plat qu'une galette. Cinq voisins traînaient dans le coin. L'un d'eux était seul avec lui. Le meunier m'a proposé de peser les suspects. J'ai refusé.",
+  "epilogue": "— Vous étiez seule avec Pressoux.\n— Je n'ai rien fait. (Blub.)\n— Vous faites des bulles.\n— Il voulait me faire payer l'impôt sur tout ce que je possède. Je l'ai juste invité à nager. (Blub, blub.)",
   "clues": [
     {
       "who": "a",

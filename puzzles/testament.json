@@ -4,7 +4,7 @@
   "decor": "tour",
   "size": 10,
   "final": true,
-  "intro": "Quinze lettres, et toutes semblaient mener ici. Fizzlebarbe, 412 ans, a été retrouvé mort dans sa Tour, la nuit où il devait enfin régler sa succession. Le projet de testament a disparu. Ses neuf héritiers présumés étaient tous là, et un seul était avec lui. Sur la rambarde, le corbeau me regarde comme s'il savait déjà quelque chose. Pour une fois, je lui poserai la question après avoir résolu l'affaire.",
+  "intro": "Toutes les lettres sont là, et toutes menaient ici. Fizzlebarbe, 412 ans, a été retrouvé mort dans sa Tour, la nuit où il devait enfin régler sa succession. Le projet de testament a disparu. Ses neuf héritiers présumés étaient tous là, et un seul était avec lui. Sur la rambarde, le corbeau me regarde comme s'il savait déjà quelque chose. Pour une fois, je lui poserai la question après avoir résolu l'affaire.",
   "rooms": {
     "O": {
       "name": "Observatoire",
@@ -293,7 +293,7 @@
       "gender": "m",
       "role": "suspect",
       "icon": "🐦‍⬛",
-      "desc": "Corbeau, sait tout, ne dit rien",
+      "desc": "Corbeau, voit beaucoup, comprend moins, ne dit rien",
       "archetype": "corbeau",
       "tic": "Ne parle pas : il écrit"
     },
@@ -319,10 +319,10 @@
     }
   ],
   "revelation": {
-    "lettre": "Si vous lisez ceci, c'est que je n'ai pas terminé ce que j'avais commencé. La Tour n'est pas un héritage : c'est une charge. Sous ses fondations se trouve le Nœud de Brume, qui aide à garder les six contrées en équilibre. Je l'ai gardé pendant quatre cent douze ans, et j'avais fini par croire que personne ne pourrait me remplacer.\nJ'ai demandé à mon corbeau de surveiller les prétendants. Il m'a rapporté leurs ambitions, leurs mensonges et leurs petites combines. Je pensais trouver la vérité dans leurs actes ; j'ai oublié de regarder les miens.\nLe document que vous cherchiez n'était qu'un projet. Ce que je voulais transmettre, c'était la garde, pas la propriété. J'ai cherché quelqu'un qui ne convoite pas la Tour. Il était sous mes yeux, mais j'étais trop occupé à le faire écrire pour le remarquer.",
+    "lettre": "Si vous lisez ceci, c'est que je n'ai pas terminé ce que j'avais commencé. La Tour n'est pas un héritage : c'est une charge. Sous ses fondations se trouve le Nœud de Brume, qui aide à garder les six contrées en équilibre. Je l'ai gardé pendant quatre siècles, et j'avais fini par croire que personne ne pourrait me remplacer.\nJ'ai demandé à mon corbeau de surveiller les prétendants. Il m'a rapporté leurs ambitions, leurs mensonges et leurs petites combines. Je pensais trouver la vérité dans leurs actes ; j'ai oublié de regarder les miens.\nLe document que vous cherchiez n'était qu'un projet. Ce que je voulais transmettre, c'était la garde, pas la propriété. J'ai cherché quelqu'un qui ne convoite pas la Tour. Il était sous mes yeux, mais j'étais trop occupé à le faire écrire pour le remarquer.",
     "signature": "Fizzlebarbe",
     "billet": "Les copies sous votre porte, c'était moi. Il ne me l'avait pas demandé. Vous, au moins, vous lisez jusqu'au bout.",
-    "apres": "Augure veille désormais sur les archives du Palier zéro, à titre provisoire. Il a demandé que ce soit écrit."
+    "apres": "J'ai scellé les archives du Palier zéro et gardé la clé. À titre provisoire, en attendant qu'un vrai gardien se présente. Je n'ai rien demandé.\nCette nuit-là, quelqu'un a déplacé les meubles de la Tour. Personne d'autre n'avait la clé."
   },
   "id": "testament",
   "place": "testament",

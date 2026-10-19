@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Grande Foire des Mille Merveilles — l'affaire Pinardon",
+  "title": "La Grande Foire des Mille Merveilles — l'affaire Tastevin",
   "decor": "foire",
   "size": 12,
   "rooms": {
@@ -413,7 +413,7 @@
     },
     {
       "id": "l",
-      "name": "Pinardon",
+      "name": "Tastevin",
       "gender": "m",
       "role": "victim",
       "icon": "🍷",
@@ -424,8 +424,8 @@
   ],
   "id": "grande-foire--inspecteur",
   "place": "grande-foire",
-  "intro": "Feu d'artifice à la Grande Foire des Mille Merveilles : tout le monde regardait le ciel, sauf l'inspecteur des tavernes Pinardon, venu inspecter les lieux, qui ne regardera plus rien. Onze forains et visiteurs juraient avoir le nez en l'air. L'un d'eux était seul avec lui.",
-  "epilogue": "— Vous étiez seul avec Pinardon.\n— Permettez que je vous vouvoie : il voulait me coller un blâme.\n— Et vous ?\n— Je lui ai vendu un élixir de longue vie. Il y avait une petite erreur sur l'étiquette.",
+  "intro": "Feu d'artifice à la Grande Foire des Mille Merveilles : tout le monde regardait le ciel, sauf l'inspecteur des tavernes Tastevin, venu inspecter les lieux. Il n'a pas vu le bouquet final. Onze forains et visiteurs juraient avoir le nez en l'air. L'un d'eux était seul avec lui.",
+  "epilogue": "— Vous étiez seul avec Tastevin.\n— Permettez que je vous vouvoie : il voulait me coller un blâme.\n— Et vous ?\n— Je lui ai vendu un élixir de longue vie. Il y avait une petite erreur sur l'étiquette.",
   "clues": [
     {
       "who": "a",

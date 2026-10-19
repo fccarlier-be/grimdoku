@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Grand Port de Brumeval — l'affaire Rapidon",
+  "title": "Le Grand Port de Brumeval — l'affaire Fileur",
   "decor": "port",
   "size": 10,
   "rooms": {
@@ -311,7 +311,7 @@
     },
     {
       "id": "j",
-      "name": "Rapidon",
+      "name": "Fileur",
       "gender": "m",
       "role": "victim",
       "icon": "✉️",
@@ -322,8 +322,8 @@
   ],
   "id": "grand-port--messager",
   "place": "grand-port",
-  "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : le messager Rapidon, venu apporter une lettre du baron, est mort sur les quais. Neuf habitués erraient dans la brume. L'un d'eux était seul avec lui.",
-  "epilogue": "— Vous étiez seule avec Rapidon.\n— Je n'ai rien fait. (Blub.)\n— Vous faites des bulles.\n— Il voulait m'annoncer une mauvaise nouvelle. Je l'ai juste invité à nager. (Blub, blub.)",
+  "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : le messager Fileur, venu apporter une lettre du baron, est mort sur les quais. Neuf habitués erraient dans la brume. L'un d'eux était seul avec lui.",
+  "epilogue": "— Vous étiez seule avec Fileur.\n— Je n'ai rien fait. (Blub.)\n— Vous faites des bulles.\n— Il voulait m'annoncer une mauvaise nouvelle. Je l'ai juste invité à nager. (Blub, blub.)",
   "clues": [
     {
       "who": "a",

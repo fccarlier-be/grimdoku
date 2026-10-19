@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Foire aux Sortilèges — l'affaire Gustave",
+  "title": "La Foire aux Sortilèges — l'affaire Visitin",
   "size": 7,
   "rooms": {
     "S": {
@@ -150,7 +150,6 @@
       ]
     }
   ],
-  "intro": "La Foire aux Sortilèges a perdu un client : le touriste Gustave, venu visiter la baronnie. Six forains juraient qu'ils tenaient leur stand. L'un d'eux était seul avec lui. Le bonimenteur m'a déjà proposé un élixir de vérité. Deux écus, garanti sans effet.",
   "characters": [
     {
       "id": "a",
@@ -214,7 +213,7 @@
     },
     {
       "id": "g",
-      "name": "Gustave",
+      "name": "Visitin",
       "gender": "m",
       "role": "victim",
       "icon": "🎒",
@@ -226,7 +225,8 @@
   "decor": "foire",
   "id": "foire--touriste",
   "place": "foire",
-  "epilogue": "— Vous étiez seul avec Gustave.\n— « Il voulait faire mon portrait au fusain et le vendre à la foire, ô rage, ô désespoir… »\n— Répondez normalement.\n— J'ai chanté jusqu'à ce qu'il s'arrête. Définitivement.",
+  "intro": "La Foire aux Sortilèges a perdu un client : le touriste Visitin, venu visiter la baronnie. Six forains juraient qu'ils tenaient leur stand. L'un d'eux était seul avec lui. Le bonimenteur m'a déjà proposé un élixir de vérité. Deux écus, garanti sans effet.",
+  "epilogue": "— Vous étiez seul avec Visitin.\n— « Il voulait faire mon portrait au fusain et le vendre à la foire, ô rage, ô désespoir… »\n— Répondez normalement.\n— J'ai chanté jusqu'à ce qu'il s'arrête. Définitivement.",
   "clues": [
     {
       "who": "a",

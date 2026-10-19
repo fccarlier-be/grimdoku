@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Grande Foire des Mille Merveilles — l'affaire Mercurio",
+  "title": "La Grande Foire des Mille Merveilles — l'affaire Philtron",
   "decor": "foire",
   "size": 12,
   "rooms": {
@@ -384,7 +384,7 @@
     },
     {
       "id": "j",
-      "name": "Mercurio",
+      "name": "Philtron",
       "gender": "m",
       "role": "victim",
       "icon": "⚗️",
@@ -395,8 +395,8 @@
   ],
   "id": "grande-foire--alchimiste--vouivre--s4",
   "place": "grande-foire",
-  "intro": "Feu d'artifice à la Grande Foire des Mille Merveilles : tout le monde regardait le ciel, sauf l'alchimiste Mercurio, venu proposer ses services, qui ne regardera plus rien. Neuf forains et visiteurs juraient avoir le nez en l'air. L'un d'eux était seul avec lui.",
-  "epilogue": "— Vous étiez seul avec Mercurio.\n— « Il voulait changer mes économies en plomb, ô rage, ô désespoir… »\n— Répondez normalement.\n— J'ai chanté jusqu'à ce qu'il s'arrête. Définitivement.",
+  "intro": "Feu d'artifice à la Grande Foire des Mille Merveilles : tout le monde regardait le ciel, sauf l'alchimiste Philtron, venu proposer ses services. Il n'a pas vu le bouquet final. Neuf forains et visiteurs juraient avoir le nez en l'air. L'un d'eux était seul avec lui.",
+  "epilogue": "— Vous étiez seul avec Philtron.\n— « Il voulait changer mes économies en plomb, ô rage, ô désespoir… »\n— Répondez normalement.\n— J'ai chanté jusqu'à ce qu'il s'arrête. Définitivement.",
   "clues": [
     {
       "who": "a",

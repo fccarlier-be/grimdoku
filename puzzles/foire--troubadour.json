@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Foire aux Sortilèges — l'affaire Lirelire",
+  "title": "La Foire aux Sortilèges — l'affaire Troubadin",
   "size": 7,
   "rooms": {
     "S": {
@@ -150,7 +150,6 @@
       ]
     }
   ],
-  "intro": "La Foire aux Sortilèges a perdu un client : le troubadour Lirelire, venu donner un concert. Six forains juraient qu'ils tenaient leur stand. L'un d'eux était seul avec lui. Le bonimenteur m'a déjà proposé un élixir de vérité. Deux écus, garanti sans effet.",
   "characters": [
     {
       "id": "a",
@@ -214,7 +213,7 @@
     },
     {
       "id": "g",
-      "name": "Lirelire",
+      "name": "Troubadin",
       "gender": "m",
       "role": "victim",
       "icon": "🪕",
@@ -226,7 +225,8 @@
   "decor": "foire",
   "id": "foire--troubadour",
   "place": "foire",
-  "epilogue": "— Vous étiez seul avec Lirelire.\n— Il voulait chanter mieux que tout le monde. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "intro": "La Foire aux Sortilèges a perdu un client : le troubadour Troubadin, venu donner un concert. Six forains juraient qu'ils tenaient leur stand. L'un d'eux était seul avec lui. Le bonimenteur m'a déjà proposé un élixir de vérité. Deux écus, garanti sans effet.",
+  "epilogue": "— Vous étiez seul avec Troubadin.\n— Il voulait chanter mieux que tout le monde. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
   "clues": [
     {
       "who": "a",

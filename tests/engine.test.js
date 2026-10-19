@@ -165,13 +165,17 @@ test('nouvelles règles : chaque pièce occupée, aucun placement direct, grand 
   }
 });
 
-test('bible du jeu : victimes de passage, noms fixes, une lettre par lieu', () => {
+test('bible du jeu : victimes de passage, noms fixes (la troupe) ou tirés de la liste (invités), une lettre par lieu', () => {
   const cast = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'cast.json'), 'utf8'));
   const lettres = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'lore', 'lettres.json'), 'utf8'));
   for (const p of PUZZLES) {
     const v = p.characters.find(c => c.role === 'victim');
     if (!p.final) assert.ok(cast[v.archetype].guest, `${p.id} : la victime est un invité de passage`);
-    for (const c of p.characters) assert.equal(c.name, cast[c.archetype].name, `${p.id} : nom fixe pour ${c.archetype}`);
+    // la troupe garde son nom fixe ; un invité (victime) prend un nom de sa liste, différent à chaque affaire (2026-10-19)
+    for (const c of p.characters) {
+      if (cast[c.archetype].guest) assert.ok((cast[c.archetype].names || [cast[c.archetype].name]).includes(c.name), `${p.id} : nom de la liste pour ${c.archetype}`);
+      else assert.equal(c.name, cast[c.archetype].name, `${p.id} : nom fixe pour ${c.archetype}`);
+    }
     assert.ok(p.place, `${p.id} : lieu`);
     if (!p.final) assert.ok(lettres.letters[p.place], `${p.id} : une lettre d'Augure pour ${p.place}`);
     assert.match(p.epilogue, /^— /, `${p.id} : épilogue en dialogue`);

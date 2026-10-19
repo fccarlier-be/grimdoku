@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "L'Université des Sortilèges — l'affaire Grisemotte",
+  "title": "L'Université des Sortilèges — l'affaire Brocarde",
   "decor": "academie",
   "size": 11,
   "rooms": {
@@ -365,7 +365,7 @@
     },
     {
       "id": "k",
-      "name": "Grisemotte",
+      "name": "Brocarde",
       "gender": "f",
       "role": "victim",
       "icon": "👑",
@@ -376,8 +376,8 @@
   ],
   "id": "universite--baronne",
   "place": "universite",
-  "intro": "La veille de la remise des diplômes, l'Université des Sortilèges a perdu la baronne de Grisemotte Grisemotte, venue rendre une visite de courtoisie. Dix membres de l'université travaillaient tard, ou faisaient semblant. L'un d'eux était seul avec elle. L'Académie d'en face nie tout en bloc, avant même que je demande.",
-  "epilogue": "— Vous étiez seule avec Grisemotte.\n— Elle voulait racheter la baronnie et me mettre dehors. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain.",
+  "intro": "La veille de la remise des diplômes, l'Université des Sortilèges a perdu la baronne Brocarde, venue rendre une visite de courtoisie. Dix membres de l'université travaillaient tard, ou faisaient semblant. L'un d'eux était seul avec elle. L'Académie d'en face nie tout en bloc, avant même que je demande.",
+  "epilogue": "— Vous étiez seule avec Brocarde.\n— Elle voulait racheter la baronnie et me mettre dehors. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain.",
   "clues": [
     {
       "who": "a",

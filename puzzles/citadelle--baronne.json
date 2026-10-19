@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Citadelle de Mortebrune — l'affaire Grisemotte",
+  "title": "La Citadelle de Mortebrune — l'affaire Vanité",
   "decor": "chateau",
   "size": 9,
   "rooms": {
@@ -256,7 +256,7 @@
     },
     {
       "id": "i",
-      "name": "Grisemotte",
+      "name": "Vanité",
       "gender": "f",
       "role": "victim",
       "icon": "👑",
@@ -267,8 +267,8 @@
   ],
   "id": "citadelle--baronne",
   "place": "citadelle",
-  "intro": "Le pont-levis est resté coincé toute la nuit, et la baronne de Grisemotte Grisemotte, venue rendre une visite de courtoisie, est restée coincée avec. Pour toujours. Huit occupants de la Citadelle ne pouvaient pas sortir. L'un d'eux était seul avec elle. Au moins, personne n'a pu s'enfuir.",
-  "epilogue": "— Vous étiez seul avec Grisemotte.\n— Elle voulait racheter la baronnie et me mettre dehors. J'ai fait une opération comptable.\n— Vous l'avez tuée.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "intro": "Le pont-levis est resté coincé toute la nuit, enfermant la baronne Vanité, venue rendre une visite de courtoisie, avec les huit occupants de la Citadelle. Au matin, elle n'avait plus aucune envie de sortir. L'un d'eux était seul avec elle. Au moins, personne n'a pu s'enfuir.",
+  "epilogue": "— Vous étiez seul avec Vanité.\n— Elle voulait racheter la baronnie et me mettre dehors. J'ai fait une opération comptable.\n— Vous l'avez tuée.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
   "clues": [
     {
       "who": "a",

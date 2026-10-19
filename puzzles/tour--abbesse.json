@@ -1,8 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Tour de l'Archimage — l'affaire Prudence",
-  "intro": "L'abbesse Prudence était montée à la Tour de l'Archimage faire la quête. On l'a retrouvée au pied d'une étagère de grimoires, sans vie. Six habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec elle. Ici, même les escaliers mentent.",
-  "epilogue": "— Vous étiez seul avec Prudence.\n— Elle voulait me faire la morale. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
+  "title": "La Tour de l'Archimage — l'affaire Humilité",
   "size": 7,
   "rooms": {
     "L": {
@@ -225,7 +223,7 @@
     },
     {
       "id": "g",
-      "name": "Prudence",
+      "name": "Humilité",
       "gender": "f",
       "role": "victim",
       "icon": "📿",
@@ -237,6 +235,8 @@
   "decor": "tour",
   "id": "tour--abbesse",
   "place": "tour",
+  "intro": "L'abbesse Humilité était venue à la Tour de l'Archimage faire la quête. On l'a retrouvée au pied d'une étagère de grimoires, sans vie. Six habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec elle. Ici, même les escaliers mentent.",
+  "epilogue": "— Vous étiez seul avec Humilité.\n— Elle voulait me faire la morale. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
   "clues": [
     {
       "who": "a",

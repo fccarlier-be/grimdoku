@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Forge du Dragon — l'affaire Rapidon",
+  "title": "La Forge du Dragon — l'affaire Trottin",
   "size": 7,
   "rooms": {
     "D": {
@@ -207,7 +207,7 @@
     },
     {
       "id": "f",
-      "name": "Rapidon",
+      "name": "Trottin",
       "gender": "m",
       "role": "victim",
       "icon": "✉️",
@@ -219,8 +219,8 @@
   "decor": "forge",
   "id": "forge--messager--dragon-golem--i2-i2",
   "place": "forge",
-  "intro": "La Forge du Dragon fume plus que d'habitude : le messager Rapidon, venu apporter une lettre du baron, n'en est pas ressorti. Cinq habitués de la forge étaient au travail, paraît-il. L'un d'eux était seul avec lui. Le dragon dort. J'aimerais qu'il continue.",
-  "epilogue": "— Vous étiez seul avec Rapidon.\n— …\n— Vous étiez seul avec Rapidon.\n— Il a dit : « Pousse-toi, tas de cailloux. » Je me suis poussé. Sur lui.",
+  "intro": "La Forge du Dragon fume plus que d'habitude : le messager Trottin, venu apporter une lettre du baron, n'en est pas ressorti. Cinq habitués de la forge étaient au travail, paraît-il. L'un d'eux était seul avec lui. Le dragon dort. J'aimerais qu'il continue.",
+  "epilogue": "— Vous étiez seul avec Trottin.\n— …\n— Vous étiez seul avec Trottin.\n— Il a dit : « Pousse-toi, tas de cailloux. » Je me suis poussé. Sur lui.",
   "clues": [
     {
       "who": "a",

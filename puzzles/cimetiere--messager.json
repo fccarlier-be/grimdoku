@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Cimetière de Minuit — l'affaire Rapidon",
+  "title": "Le Cimetière de Minuit — l'affaire Furtif",
   "size": 8,
   "rooms": {
     "G": {
@@ -227,7 +227,7 @@
       "gender": "m",
       "role": "suspect",
       "icon": "🐦‍⬛",
-      "desc": "Corbeau, sait tout, ne dit rien",
+      "desc": "Corbeau, voit beaucoup, comprend moins, ne dit rien",
       "archetype": "corbeau",
       "tic": "Ne parle pas : il écrit"
     },
@@ -253,7 +253,7 @@
     },
     {
       "id": "h",
-      "name": "Rapidon",
+      "name": "Furtif",
       "gender": "m",
       "role": "victim",
       "icon": "✉️",
@@ -265,8 +265,8 @@
   "decor": "cimetiere",
   "id": "cimetiere--messager",
   "place": "cimetiere",
-  "intro": "Au Cimetière de Minuit, on a retrouvé le messager Rapidon, venu apporter une lettre du baron. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Sept habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec lui. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
-  "epilogue": "— Vous étiez seul avec Rapidon.\n— Il voulait m'annoncer une mauvaise nouvelle. Alors j'ai pris ses mesures.\n— Pour quoi faire ?\n— Le travail était à moitié fait. Autant le finir.",
+  "intro": "Au Cimetière de Minuit, on a retrouvé le messager Furtif, venu apporter une lettre du baron. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Sept habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec lui. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
+  "epilogue": "— Vous étiez seul avec Furtif.\n— Il voulait m'annoncer une mauvaise nouvelle. Alors j'ai pris ses mesures.\n— Pour quoi faire ?\n— Le travail était à moitié fait. Autant le finir.",
   "clues": [
     {
       "who": "a",

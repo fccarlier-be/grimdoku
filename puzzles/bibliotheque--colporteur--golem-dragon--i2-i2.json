@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Bibliothèque Interdite — l'affaire Bricabrac",
+  "title": "La Bibliothèque Interdite — l'affaire Soldeur",
   "size": 7,
   "rooms": {
     "S": {
@@ -159,7 +159,6 @@
       ]
     }
   ],
-  "intro": "À la Bibliothèque Interdite, le colporteur Bricabrac, venu vendre sa camelote, a été retrouvé entre deux rayonnages. On m'a demandé d'enquêter en silence. Cinq lecteurs étaient là. L'un d'eux était seul avec lui. Je chuchote mes questions ; on me répond en hurlant « chut ».",
   "characters": [
     {
       "id": "a",
@@ -218,7 +217,7 @@
     },
     {
       "id": "f",
-      "name": "Bricabrac",
+      "name": "Soldeur",
       "gender": "m",
       "role": "victim",
       "icon": "🎒",
@@ -230,7 +229,8 @@
   "decor": "bibliotheque",
   "id": "bibliotheque--colporteur--golem-dragon--i2-i2",
   "place": "bibliotheque",
-  "epilogue": "— Vous étiez seule avec Bricabrac.\n— Il voulait me revendre ce qu'il m'avait déjà vendu. Je lui ai proposé un verre.\n— De vin ?\n— Je ne bois jamais… de vin.",
+  "intro": "À la Bibliothèque Interdite, le colporteur Soldeur, venu vendre sa camelote, a été retrouvé entre deux rayonnages. On m'a demandé d'enquêter en silence. Cinq lecteurs étaient là. L'un d'eux était seul avec lui. Je chuchote mes questions ; on me répond en hurlant « chut ».",
+  "epilogue": "— Vous étiez seule avec Soldeur.\n— Il voulait me revendre ce qu'il m'avait déjà vendu. Je lui ai proposé un verre.\n— De vin ?\n— Je ne bois jamais… de vin.",
   "clues": [
     {
       "who": "a",

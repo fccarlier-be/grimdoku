@@ -1,7 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Moulin de Bois-Tordu — l'affaire Mercurio",
-  "intro": "Au Moulin de Bois-Tordu, l'alchimiste Mercurio, venu proposer ses services, a fini plus plat qu'une galette. Cinq voisins traînaient dans le coin. L'un d'eux était seul avec lui. Le meunier m'a proposé de peser les suspects. J'ai refusé.",
+  "title": "Le Moulin de Bois-Tordu — l'affaire Orpiment",
   "size": 6,
   "rooms": {
     "M": {
@@ -177,7 +176,7 @@
     },
     {
       "id": "f",
-      "name": "Mercurio",
+      "name": "Orpiment",
       "gender": "m",
       "role": "victim",
       "icon": "⚗️",
@@ -189,7 +188,8 @@
   "decor": "moulin",
   "id": "moulin--alchimiste",
   "place": "moulin",
-  "epilogue": "— Vous étiez seul avec Mercurio.\n— Il voulait changer mes économies en plomb. Ça m'a énervé.\n— Et ?\n— J'ai perdu un bras. Il l'a reçu sur la tête.",
+  "intro": "Au Moulin de Bois-Tordu, l'alchimiste Orpiment, venu proposer ses services, a fini plus plat qu'une galette. Cinq voisins traînaient dans le coin. L'un d'eux était seul avec lui. Le meunier m'a proposé de peser les suspects. J'ai refusé.",
+  "epilogue": "— Vous étiez seul avec Orpiment.\n— Il voulait changer mes économies en plomb. Ça m'a énervé.\n— Et ?\n— Mon bras gauche s'est décroché. Le seul qui avait encore sa main. Il l'a reçu sur la tête.",
   "clues": [
     {
       "who": "a",

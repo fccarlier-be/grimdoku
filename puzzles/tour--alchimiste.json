@@ -1,8 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Tour de l'Archimage — l'affaire Mercurio",
-  "intro": "L'alchimiste Mercurio était monté à la Tour de l'Archimage proposer ses services. On l'a retrouvé au pied d'une étagère de grimoires, sans vie. Six habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec lui. Ici, même les escaliers mentent.",
-  "epilogue": "— Vous étiez seul avec Mercurio.\n— Il voulait changer mes économies en plomb. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
+  "title": "La Tour de l'Archimage — l'affaire Soufrius",
   "size": 7,
   "rooms": {
     "L": {
@@ -225,7 +223,7 @@
     },
     {
       "id": "g",
-      "name": "Mercurio",
+      "name": "Soufrius",
       "gender": "m",
       "role": "victim",
       "icon": "⚗️",
@@ -237,6 +235,8 @@
   "decor": "tour",
   "id": "tour--alchimiste",
   "place": "tour",
+  "intro": "L'alchimiste Soufrius était venu à la Tour de l'Archimage proposer ses services. On l'a retrouvé au pied d'une étagère de grimoires, sans vie. Six habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec lui. Ici, même les escaliers mentent.",
+  "epilogue": "— Vous étiez seul avec Soufrius.\n— Il voulait changer mes économies en plomb. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
   "clues": [
     {
       "who": "a",

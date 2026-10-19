@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Port des Contrebandiers — l'affaire Lirelire",
+  "title": "Le Port des Contrebandiers — l'affaire Ritournel",
   "size": 7,
   "rooms": {
     "Q": {
@@ -234,7 +234,7 @@
     },
     {
       "id": "g",
-      "name": "Lirelire",
+      "name": "Ritournel",
       "gender": "m",
       "role": "victim",
       "icon": "🪕",
@@ -246,8 +246,8 @@
   "decor": "port",
   "id": "port--troubadour",
   "place": "port",
-  "intro": "Au Port des Contrebandiers, le troubadour Lirelire, venu donner un concert, a été repêché à marée basse. Six habitués traînaient sur les quais. L'un d'eux était seul avec lui. Ici, tout le monde a quelque chose à cacher, généralement dans un tonneau.",
-  "epilogue": "— Vous étiez seul avec Lirelire.\n— Il voulait chanter mieux que tout le monde. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "intro": "Au Port des Contrebandiers, le troubadour Ritournel, venu donner un concert, a été repêché à marée basse. Six habitués traînaient sur les quais. L'un d'eux était seul avec lui. Ici, tout le monde a quelque chose à cacher, généralement dans un tonneau.",
+  "epilogue": "— Vous étiez seul avec Ritournel.\n— Il voulait chanter mieux que tout le monde. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
   "clues": [
     {
       "who": "a",

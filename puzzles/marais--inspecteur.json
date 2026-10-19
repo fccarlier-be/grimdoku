@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Marais des Brumes — l'affaire Pinardon",
+  "title": "Le Marais des Brumes — l'affaire Barrique",
   "size": 6,
   "rooms": {
     "H": {
@@ -116,7 +116,6 @@
       ]
     }
   ],
-  "intro": "Le Marais des Brumes a rendu le corps de l'inspecteur des tavernes Pinardon, venu inspecter les lieux. Il garde le reste. Cinq habitants du marais pataugeaient dans le coin. L'un d'eux était seul avec lui. J'ai de la vase jusqu'aux genoux et zéro témoin fiable.",
   "characters": [
     {
       "id": "a",
@@ -170,7 +169,7 @@
     },
     {
       "id": "f",
-      "name": "Pinardon",
+      "name": "Barrique",
       "gender": "m",
       "role": "victim",
       "icon": "🍷",
@@ -182,7 +181,8 @@
   "decor": "marais",
   "id": "marais--inspecteur",
   "place": "marais",
-  "epilogue": "— Vous étiez seule avec Pinardon.\n— Je n'ai rien fait. (Blub.)\n— Vous faites des bulles.\n— Il voulait me coller un blâme. Je l'ai juste invité à nager. (Blub, blub.)",
+  "intro": "Le Marais des Brumes a rendu le corps de l'inspecteur des tavernes Barrique, venu inspecter les lieux. Il garde le reste. Cinq habitants du marais pataugeaient dans le coin. L'un d'eux était seul avec lui. J'ai de la vase jusqu'aux genoux et zéro témoin fiable.",
+  "epilogue": "— Vous étiez seule avec Barrique.\n— Je n'ai rien fait. (Blub.)\n— Vous faites des bulles.\n— Il voulait me coller un blâme. Je l'ai juste invité à nager. (Blub, blub.)",
   "clues": [
     {
       "who": "a",

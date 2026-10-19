@@ -1,8 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Château de Mortebrune — l'affaire Bricabrac",
-  "intro": "Le colporteur Bricabrac était venu au Château de Mortebrune vendre sa camelote. Le roi m'a fait appeler, ce qui veut dire que c'est grave, ou qu'il s'ennuie. Six membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec lui.",
-  "epilogue": "— Vous étiez seul avec Bricabrac.\n— Pardon. Pardon pardon pardon.\n— Je n'ai encore rien dit.\n— Il voulait me revendre ce qu'il m'avait déjà vendu. Alors j'ai éternué. Et quand j'éternue, je crache du feu.",
+  "title": "Le Château de Mortebrune — l'affaire Colifichet",
   "size": 7,
   "rooms": {
     "G": {
@@ -236,7 +234,7 @@
     },
     {
       "id": "g",
-      "name": "Bricabrac",
+      "name": "Colifichet",
       "gender": "m",
       "role": "victim",
       "icon": "🎒",
@@ -248,6 +246,8 @@
   "decor": "chateau",
   "id": "chateau--colporteur",
   "place": "chateau",
+  "intro": "Le colporteur Colifichet était venu au Château de Mortebrune vendre sa camelote. On m'a fait appeler au nom du roi, ce qui veut dire que c'est grave, ou qu'il s'ennuie. Six membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec lui.",
+  "epilogue": "— Vous étiez seul avec Colifichet.\n— Pardon. Pardon pardon pardon.\n— Je n'ai encore rien dit.\n— Il voulait me revendre ce qu'il m'avait déjà vendu. Alors j'ai éternué. Et quand j'éternue, je crache du feu.",
   "clues": [
     {
       "who": "a",

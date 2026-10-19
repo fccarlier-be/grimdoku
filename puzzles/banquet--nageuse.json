@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Banquet des Gobelins — l'affaire Ondine",
+  "title": "Le Banquet des Gobelins — l'affaire Brassée",
   "size": 6,
   "rooms": {
     "K": {
@@ -183,7 +183,7 @@
     },
     {
       "id": "f",
-      "name": "Ondine",
+      "name": "Brassée",
       "gender": "f",
       "role": "victim",
       "icon": "🛟",
@@ -195,8 +195,8 @@
   "decor": "banquet",
   "id": "banquet--nageuse",
   "place": "banquet",
-  "intro": "Au Banquet des Gobelins, la maîtresse-nageuse Ondine, venue donner des cours de natation, est passée du côté des convives au côté du menu. Enfin, presque. Cinq invités se goinfraient. L'un d'eux était seul avec elle. On m'a servi une soupe. Je ne l'ai pas touchée.",
-  "epilogue": "— Vous étiez seul avec Ondine.\n— Elle voulait m'apprendre à nager de force. J'ai fait une opération comptable.\n— Vous l'avez tuée.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "intro": "Au Banquet des Gobelins, la maîtresse-nageuse Brassée, venue donner des cours de natation, est passée de la liste des invités à la carte du menu. On l'a retrouvée avant le dessert. Cinq invités se goinfraient. L'un d'eux était seul avec elle. On m'a servi une soupe. Je ne l'ai pas touchée.",
+  "epilogue": "— Vous étiez seul avec Brassée.\n— Elle voulait m'apprendre à nager de force. J'ai fait une opération comptable.\n— Vous l'avez tuée.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
   "clues": [
     {
       "who": "a",

@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "L'Académie de Magie — l'affaire Ondine",
+  "title": "L'Académie de Magie — l'affaire Trempette",
   "size": 7,
   "rooms": {
     "X": {
@@ -234,7 +234,7 @@
     },
     {
       "id": "g",
-      "name": "Ondine",
+      "name": "Trempette",
       "gender": "f",
       "role": "victim",
       "icon": "🛟",
@@ -246,8 +246,8 @@
   "decor": "academie",
   "id": "academie--nageuse",
   "place": "academie",
-  "intro": "À l'Académie de Magie, la maîtresse-nageuse Ondine, venue donner des cours de natation, a été retrouvée un soir d'examens. Six élèves et professeurs révisaient, paraît-il. L'un d'eux était seul avec elle. Ça sent le soufre, mais ici, ça sent toujours le soufre.",
-  "epilogue": "— Vous étiez seul avec Ondine.\n— Pardon. Pardon pardon pardon.\n— Je n'ai encore rien dit.\n— Elle voulait m'apprendre à nager de force. Alors j'ai éternué. Et quand j'éternue, je crache du feu.",
+  "intro": "À l'Académie de Magie, la maîtresse-nageuse Trempette, venue donner des cours de natation, a été retrouvée un soir d'examens. Six élèves et professeurs révisaient, paraît-il. L'un d'eux était seul avec elle. Ça sent le soufre, mais ici, ça sent toujours le soufre.",
+  "epilogue": "— Vous étiez seul avec Trempette.\n— Pardon. Pardon pardon pardon.\n— Je n'ai encore rien dit.\n— Elle voulait m'apprendre à nager de force. Alors j'ai éternué. Et quand j'éternue, je crache du feu.",
   "clues": [
     {
       "who": "a",

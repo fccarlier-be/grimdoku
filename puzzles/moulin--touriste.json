@@ -1,7 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Moulin de Bois-Tordu — l'affaire Gustave",
-  "intro": "Au Moulin de Bois-Tordu, le touriste Gustave, venu visiter la baronnie, a fini plus plat qu'une galette. Cinq voisins traînaient dans le coin. L'un d'eux était seul avec lui. Le meunier m'a proposé de peser les suspects. J'ai refusé.",
+  "title": "Le Moulin de Bois-Tordu — l'affaire Gaston",
   "size": 6,
   "rooms": {
     "M": {
@@ -177,7 +176,7 @@
     },
     {
       "id": "f",
-      "name": "Gustave",
+      "name": "Gaston",
       "gender": "m",
       "role": "victim",
       "icon": "🎒",
@@ -189,7 +188,8 @@
   "decor": "moulin",
   "id": "moulin--touriste",
   "place": "moulin",
-  "epilogue": "— Vous étiez seul avec Gustave.\n— Il voulait faire mon portrait au fusain et le vendre à la foire. Ça m'a énervé.\n— Et ?\n— J'ai perdu un bras. Il l'a reçu sur la tête.",
+  "intro": "Au Moulin de Bois-Tordu, le touriste Gaston, venu visiter la baronnie, a fini plus plat qu'une galette. Cinq voisins traînaient dans le coin. L'un d'eux était seul avec lui. Le meunier m'a proposé de peser les suspects. J'ai refusé.",
+  "epilogue": "— Vous étiez seul avec Gaston.\n— Il voulait faire mon portrait au fusain et le vendre à la foire. Ça m'a énervé.\n— Et ?\n— Mon bras gauche s'est décroché. Le seul qui avait encore sa main. Il l'a reçu sur la tête.",
   "clues": [
     {
       "who": "a",

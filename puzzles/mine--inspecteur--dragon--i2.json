@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Mine des Nains — l'affaire Pinardon",
+  "title": "La Mine des Nains — l'affaire Godet",
   "size": 8,
   "rooms": {
     "G": {
@@ -165,7 +165,6 @@
       ]
     }
   ],
-  "intro": "À la Mine des Nains, l'inspecteur des tavernes Pinardon, venu inspecter les lieux, est descendu plus bas que prévu. Six mineurs et visiteurs étaient au fond. L'un d'eux était seul avec lui. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
   "characters": [
     {
       "id": "a",
@@ -230,7 +229,7 @@
     },
     {
       "id": "g",
-      "name": "Pinardon",
+      "name": "Godet",
       "gender": "m",
       "role": "victim",
       "icon": "🍷",
@@ -242,7 +241,8 @@
   "decor": "mine",
   "id": "mine--inspecteur--dragon--i2",
   "place": "mine",
-  "epilogue": "— Vous étiez seul avec Pinardon.\n— Il voulait me coller un blâme. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "intro": "À la Mine des Nains, l'inspecteur des tavernes Godet, venu inspecter les lieux, est descendu plus bas que prévu. Six mineurs et visiteurs étaient au fond. L'un d'eux était seul avec lui. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
+  "epilogue": "— Vous étiez seul avec Godet.\n— Il voulait me coller un blâme. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
   "clues": [
     {
       "who": "a",

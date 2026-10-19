@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Foire aux Sortilèges — l'affaire Ondine",
+  "title": "La Foire aux Sortilèges — l'affaire Barbotte",
   "size": 7,
   "rooms": {
     "S": {
@@ -150,7 +150,6 @@
       ]
     }
   ],
-  "intro": "La Foire aux Sortilèges a perdu un client : la maîtresse-nageuse Ondine, venue donner des cours de natation. Six forains juraient qu'ils tenaient leur stand. L'un d'eux était seul avec elle. Le bonimenteur m'a déjà proposé un élixir de vérité. Deux écus, garanti sans effet.",
   "characters": [
     {
       "id": "a",
@@ -214,7 +213,7 @@
     },
     {
       "id": "g",
-      "name": "Ondine",
+      "name": "Barbotte",
       "gender": "f",
       "role": "victim",
       "icon": "🛟",
@@ -226,7 +225,8 @@
   "decor": "foire",
   "id": "foire--nageuse",
   "place": "foire",
-  "epilogue": "— Vous étiez seul avec Ondine.\n— Elle voulait m'apprendre à nager de force. J'ai fait une opération comptable.\n— Vous l'avez tuée.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "intro": "La Foire aux Sortilèges a perdu un client : la maîtresse-nageuse Barbotte, venue donner des cours de natation. Six forains juraient qu'ils tenaient leur stand. L'un d'eux était seul avec elle. Le bonimenteur m'a déjà proposé un élixir de vérité. Deux écus, garanti sans effet.",
+  "epilogue": "— Vous étiez seul avec Barbotte.\n— Elle voulait m'apprendre à nager de force. J'ai fait une opération comptable.\n— Vous l'avez tuée.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
   "clues": [
     {
       "who": "a",

@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "L'Académie de Magie — l'affaire Taxard",
+  "title": "L'Académie de Magie — l'affaire Ponctionnin",
   "size": 7,
   "rooms": {
     "X": {
@@ -234,7 +234,7 @@
     },
     {
       "id": "g",
-      "name": "Taxard",
+      "name": "Ponctionnin",
       "gender": "m",
       "role": "victim",
       "icon": "🧾",
@@ -246,8 +246,8 @@
   "decor": "academie",
   "id": "academie--percepteur",
   "place": "academie",
-  "intro": "À l'Académie de Magie, le percepteur Taxard, venu lever l'impôt de fin d'année, a été retrouvé un soir d'examens. Six élèves et professeurs révisaient, paraît-il. L'un d'eux était seul avec lui. Ça sent le soufre, mais ici, ça sent toujours le soufre.",
-  "epilogue": "— Vous étiez seule avec Taxard.\n— Il voulait me faire payer l'impôt sur tout ce que je possède, alors j'ai lancé un sort de protection.\n— Et ?\n— C'est normal que ça fume encore ?",
+  "intro": "À l'Académie de Magie, le percepteur Ponctionnin, venu lever l'impôt de fin d'année, a été retrouvé un soir d'examens. Six élèves et professeurs révisaient, paraît-il. L'un d'eux était seul avec lui. Ça sent le soufre, mais ici, ça sent toujours le soufre.",
+  "epilogue": "— Vous étiez seule avec Ponctionnin.\n— Il voulait me faire payer l'impôt sur tout ce que je possède, alors j'ai lancé un sort de protection.\n— Et ?\n— C'est normal que ça fume encore ?",
   "clues": [
     {
       "who": "a",

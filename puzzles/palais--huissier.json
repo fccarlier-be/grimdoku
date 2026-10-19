@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Palais des Mille Vœux — l'affaire Saisitout",
+  "title": "Le Palais des Mille Vœux — l'affaire Scellé",
   "size": 7,
   "rooms": {
     "T": {
@@ -234,7 +234,7 @@
     },
     {
       "id": "g",
-      "name": "Saisitout",
+      "name": "Scellé",
       "gender": "m",
       "role": "victim",
       "icon": "📜",
@@ -246,8 +246,8 @@
   "decor": "palais",
   "id": "palais--huissier",
   "place": "palais",
-  "intro": "Au Palais des Mille Vœux, l'huissier Saisitout, venu saisir des biens, a fait un vœu de trop, ou en a croisé un. Six hôtes du palais étaient là. L'un d'eux était seul avec lui. La djinn m'a proposé de tout résoudre d'un claquement de doigts. J'ai lu les petites lignes.",
-  "epilogue": "— Vous étiez seule avec Saisitout.\n— Il voulait saisir mes affaires. Je lui ai tiré la carte de la Mort.\n— Et ?\n— Je l'avais vu venir. Après coup, mais je l'avais vu.",
+  "intro": "Au Palais des Mille Vœux, l'huissier Scellé, venu saisir des biens, a fait un vœu de trop, ou en a croisé un. Six hôtes du palais étaient là. L'un d'eux était seul avec lui. La djinn m'a proposé de tout résoudre d'un claquement de doigts. J'ai lu les petites lignes.",
+  "epilogue": "— Vous étiez seule avec Scellé.\n— Il voulait saisir mes affaires. Je lui ai tiré la carte de la Mort.\n— Et ?\n— Je l'avais vu venir. Après coup, mais je l'avais vu.",
   "clues": [
     {
       "who": "a",

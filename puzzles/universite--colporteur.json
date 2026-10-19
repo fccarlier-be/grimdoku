@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "L'Université des Sortilèges — l'affaire Bricabrac",
+  "title": "L'Université des Sortilèges — l'affaire Breloquin",
   "decor": "academie",
   "size": 11,
   "rooms": {
@@ -365,7 +365,7 @@
     },
     {
       "id": "k",
-      "name": "Bricabrac",
+      "name": "Breloquin",
       "gender": "m",
       "role": "victim",
       "icon": "🎒",
@@ -376,8 +376,8 @@
   ],
   "id": "universite--colporteur",
   "place": "universite",
-  "intro": "La veille de la remise des diplômes, l'Université des Sortilèges a perdu le colporteur Bricabrac, venu vendre sa camelote. Dix membres de l'université travaillaient tard, ou faisaient semblant. L'un d'eux était seul avec lui. L'Académie d'en face nie tout en bloc, avant même que je demande.",
-  "epilogue": "— Vous étiez seul avec Bricabrac.\n— (Il renifle.) Il voulait me revendre ce qu'il m'avait déjà vendu.\n— Et votre potion ?\n— Elle sentait la mort. Excellente note.",
+  "intro": "La veille de la remise des diplômes, l'Université des Sortilèges a perdu le colporteur Breloquin, venu vendre sa camelote. Dix membres de l'université travaillaient tard, ou faisaient semblant. L'un d'eux était seul avec lui. L'Académie d'en face nie tout en bloc, avant même que je demande.",
+  "epilogue": "— Vous étiez seul avec Breloquin.\n— (Il renifle.) Il voulait me revendre ce qu'il m'avait déjà vendu.\n— Et votre potion ?\n— Elle sentait la mort. Excellente note.",
   "clues": [
     {
       "who": "a",

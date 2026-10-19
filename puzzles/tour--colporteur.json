@@ -1,8 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Tour de l'Archimage — l'affaire Bricabrac",
-  "intro": "Le colporteur Bricabrac était monté à la Tour de l'Archimage vendre sa camelote. On l'a retrouvé au pied d'une étagère de grimoires, sans vie. Six habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec lui. Ici, même les escaliers mentent.",
-  "epilogue": "— Vous étiez seul avec Bricabrac.\n— Il voulait me revendre ce qu'il m'avait déjà vendu. Ça m'a énervé.\n— Et ?\n— J'ai perdu un bras. Il l'a reçu sur la tête.",
+  "title": "La Tour de l'Archimage — l'affaire Bazar",
   "size": 7,
   "rooms": {
     "L": {
@@ -225,7 +223,7 @@
     },
     {
       "id": "g",
-      "name": "Bricabrac",
+      "name": "Bazar",
       "gender": "m",
       "role": "victim",
       "icon": "🎒",
@@ -237,6 +235,8 @@
   "decor": "tour",
   "id": "tour--colporteur",
   "place": "tour",
+  "intro": "Le colporteur Bazar était venu à la Tour de l'Archimage vendre sa camelote. On l'a retrouvé au pied d'une étagère de grimoires, sans vie. Six habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec lui. Ici, même les escaliers mentent.",
+  "epilogue": "— Vous étiez seul avec Bazar.\n— Il voulait me revendre ce qu'il m'avait déjà vendu. Ça m'a énervé.\n— Et ?\n— Mon bras gauche s'est décroché. Le seul qui avait encore sa main. Il l'a reçu sur la tête.",
   "clues": [
     {
       "who": "a",

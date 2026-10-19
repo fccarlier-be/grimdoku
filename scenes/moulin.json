@@ -2,14 +2,6 @@
   "scene": "moulin",
   "formatVersion": 1,
   "title": "Le Moulin de Bois-Tordu",
-  "intro": "Le meunier {victime} a été retrouvé ce matin, aussi raide qu'une meule. Cinq villageois rôdaient autour du moulin cette nuit. Un seul était avec lui.",
-  "epilogues": {
-    "fee": "{coupable} avoue en battant des ailes : {victime} lui vendait sa farine au prix de la poudre de fée. Elle a juste voulu lui rendre la monnaie de sa pièce.",
-    "troll": "{coupable} avoue la bouche pleine : {victime} lui facturait chaque miette tombée du moulin. Les miettes, c'était tout ce qu'il mangeait.",
-    "sirene": "{coupable} avoue en larmes : {victime} voulait assécher la mare pour agrandir son moulin. On ne touche pas à la maison d'une sirène.",
-    "zombie": "{coupable} avoue, ce qui lui prend un moment : {victime} l'avait embauché pour tourner la meule sans le payer. « Je suis mort, pas bénévole. »",
-    "dragonnet": "{coupable} avoue en fumant des naseaux : {victime} lui avait demandé de chauffer le four à pain. Gratuitement. Pour la quatorzième fois."
-  },
   "size": 6,
   "rooms": {
     "M": {

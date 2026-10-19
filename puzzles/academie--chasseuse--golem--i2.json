@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "L'Académie de Magie — l'affaire Vipérine",
+  "title": "L'Académie de Magie — l'affaire Primerose",
   "size": 7,
   "rooms": {
     "X": {
@@ -220,7 +220,7 @@
     },
     {
       "id": "f",
-      "name": "Vipérine",
+      "name": "Primerose",
       "gender": "f",
       "role": "victim",
       "icon": "🏹",
@@ -232,8 +232,8 @@
   "decor": "academie",
   "id": "academie--chasseuse--golem--i2",
   "place": "academie",
-  "intro": "À l'Académie de Magie, la chasseuse de primes Vipérine, venue toucher une prime, a été retrouvée un soir d'examens. Cinq élèves et professeurs révisaient, paraît-il. L'un d'eux était seul avec elle. Ça sent le soufre, mais ici, ça sent toujours le soufre.",
-  "epilogue": "— Vous étiez seule avec Vipérine.\n— Elle voulait me livrer au baron contre trois écus. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain.",
+  "intro": "À l'Académie de Magie, la chasseuse de primes Primerose, venue toucher une prime, a été retrouvée un soir d'examens. Cinq élèves et professeurs révisaient, paraît-il. L'un d'eux était seul avec elle. Ça sent le soufre, mais ici, ça sent toujours le soufre.",
+  "epilogue": "— Vous étiez seule avec Primerose.\n— Elle voulait me livrer au baron contre trois écus. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain.",
   "clues": [
     {
       "who": "a",

@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Grand Port de Brumeval — l'affaire Saisitout",
+  "title": "Le Grand Port de Brumeval — l'affaire Séquestre",
   "decor": "port",
   "size": 10,
   "rooms": {
@@ -311,7 +311,7 @@
     },
     {
       "id": "j",
-      "name": "Saisitout",
+      "name": "Séquestre",
       "gender": "m",
       "role": "victim",
       "icon": "📜",
@@ -322,8 +322,8 @@
   ],
   "id": "grand-port--huissier",
   "place": "grand-port",
-  "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : l'huissier Saisitout, venu saisir des biens, est mort sur les quais. Neuf habitués erraient dans la brume. L'un d'eux était seul avec lui.",
-  "epilogue": "— Vous étiez seul avec Saisitout.\n— Saisitout.\n— Pourquoi ?\n— Il voulait saisir mes affaires. Alors Bâfrin taper. Taper fort. Fort.",
+  "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : l'huissier Séquestre, venu saisir des biens, est mort sur les quais. Neuf habitués erraient dans la brume. L'un d'eux était seul avec lui.",
+  "epilogue": "— Vous étiez seul avec Séquestre.\n— Séquestre.\n— Pourquoi ?\n— Il voulait saisir mes affaires. Alors Bâfrin taper. Taper fort. Fort.",
   "clues": [
     {
       "who": "a",

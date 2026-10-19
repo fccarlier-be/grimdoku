@@ -1,8 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Château de Mortebrune — l'affaire Mercurio",
-  "intro": "L'alchimiste Mercurio était venu au Château de Mortebrune proposer ses services. Le roi m'a fait appeler, ce qui veut dire que c'est grave, ou qu'il s'ennuie. Six membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec lui.",
-  "epilogue": "— Vous étiez seul avec Mercurio.\n— Pardon. Pardon pardon pardon.\n— Je n'ai encore rien dit.\n— Il voulait changer mes économies en plomb. Alors j'ai éternué. Et quand j'éternue, je crache du feu.",
+  "title": "Le Château de Mortebrune — l'affaire Vitriol",
   "size": 7,
   "rooms": {
     "G": {
@@ -239,7 +237,7 @@
     },
     {
       "id": "g",
-      "name": "Mercurio",
+      "name": "Vitriol",
       "gender": "m",
       "role": "victim",
       "icon": "⚗️",
@@ -251,6 +249,8 @@
   "decor": "chateau",
   "id": "chateau--alchimiste",
   "place": "chateau",
+  "intro": "L'alchimiste Vitriol était venu au Château de Mortebrune proposer ses services. On m'a fait appeler au nom du roi, ce qui veut dire que c'est grave, ou qu'il s'ennuie. Six membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec lui.",
+  "epilogue": "— Vous étiez seul avec Vitriol.\n— Pardon. Pardon pardon pardon.\n— Je n'ai encore rien dit.\n— Il voulait changer mes économies en plomb. Alors j'ai éternué. Et quand j'éternue, je crache du feu.",
   "clues": [
     {
       "who": "a",

@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "L'Université des Sortilèges — l'affaire Vipérine",
+  "title": "L'Université des Sortilèges — l'affaire Griffonne",
   "decor": "academie",
   "size": 11,
   "rooms": {
@@ -362,7 +362,7 @@
     },
     {
       "id": "k",
-      "name": "Vipérine",
+      "name": "Griffonne",
       "gender": "f",
       "role": "victim",
       "icon": "🏹",
@@ -373,8 +373,8 @@
   ],
   "id": "universite--chasseuse",
   "place": "universite",
-  "intro": "La veille de la remise des diplômes, l'Université des Sortilèges a perdu la chasseuse de primes Vipérine, venue toucher une prime. Dix membres de l'université travaillaient tard, ou faisaient semblant. L'un d'eux était seul avec elle. L'Académie d'en face nie tout en bloc, avant même que je demande.",
-  "epilogue": "— Vous étiez seul avec Vipérine.\n— (Il renifle.) Elle voulait me livrer au baron contre trois écus.\n— Et votre potion ?\n— Elle sentait la mort. Excellente note.",
+  "intro": "La veille de la remise des diplômes, l'Université des Sortilèges a perdu la chasseuse de primes Griffonne, venue toucher une prime. Dix membres de l'université travaillaient tard, ou faisaient semblant. L'un d'eux était seul avec elle. L'Académie d'en face nie tout en bloc, avant même que je demande.",
+  "epilogue": "— Vous étiez seul avec Griffonne.\n— (Il renifle.) Elle voulait me livrer au baron contre trois écus.\n— Et votre potion ?\n— Elle sentait la mort. Excellente note.",
   "clues": [
     {
       "who": "a",

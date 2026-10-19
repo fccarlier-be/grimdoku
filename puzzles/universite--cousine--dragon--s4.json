@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "L'Université des Sortilèges — l'affaire Ermengarde",
+  "title": "L'Université des Sortilèges — l'affaire Plectrude",
   "decor": "academie",
   "size": 11,
   "rooms": {
@@ -333,7 +333,7 @@
     },
     {
       "id": "i",
-      "name": "Ermengarde",
+      "name": "Plectrude",
       "gender": "f",
       "role": "victim",
       "icon": "👒",
@@ -344,8 +344,8 @@
   ],
   "id": "universite--cousine--dragon--s4",
   "place": "universite",
-  "intro": "La veille de la remise des diplômes, l'Université des Sortilèges a perdu la cousine Ermengarde, venue réclamer un héritage. Huit membres de l'université travaillaient tard, ou faisaient semblant. L'un d'eux était seul avec elle. L'Académie d'en face nie tout en bloc, avant même que je demande.",
-  "epilogue": "— Vous étiez seule avec Ermengarde.\n— Elle voulait réclamer sa part de ce qui m'appartient, alors j'ai lancé un sort de protection.\n— Et ?\n— C'est normal que ça fume encore ?",
+  "intro": "La veille de la remise des diplômes, l'Université des Sortilèges a perdu la cousine Plectrude, venue réclamer un héritage. Huit membres de l'université travaillaient tard, ou faisaient semblant. L'un d'eux était seul avec elle. L'Académie d'en face nie tout en bloc, avant même que je demande.",
+  "epilogue": "— Vous étiez seule avec Plectrude.\n— Elle voulait réclamer sa part de ce qui m'appartient, alors j'ai lancé un sort de protection.\n— Et ?\n— C'est normal que ça fume encore ?",
   "clues": [
     {
       "who": "a",

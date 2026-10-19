@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "L'Université des Sortilèges — l'affaire Pinardon",
+  "title": "L'Université des Sortilèges — l'affaire Sirotin",
   "decor": "academie",
   "size": 11,
   "rooms": {
@@ -365,7 +365,7 @@
     },
     {
       "id": "k",
-      "name": "Pinardon",
+      "name": "Sirotin",
       "gender": "m",
       "role": "victim",
       "icon": "🍷",
@@ -376,8 +376,8 @@
   ],
   "id": "universite--inspecteur",
   "place": "universite",
-  "intro": "La veille de la remise des diplômes, l'Université des Sortilèges a perdu l'inspecteur des tavernes Pinardon, venu inspecter les lieux. Dix membres de l'université travaillaient tard, ou faisaient semblant. L'un d'eux était seul avec lui. L'Académie d'en face nie tout en bloc, avant même que je demande.",
-  "epilogue": "— Vous étiez seul avec Pinardon.\n— (Il renifle.) Il voulait me coller un blâme.\n— Et votre potion ?\n— Elle sentait la mort. Excellente note.",
+  "intro": "La veille de la remise des diplômes, l'Université des Sortilèges a perdu l'inspecteur des tavernes Sirotin, venu inspecter les lieux. Dix membres de l'université travaillaient tard, ou faisaient semblant. L'un d'eux était seul avec lui. L'Académie d'en face nie tout en bloc, avant même que je demande.",
+  "epilogue": "— Vous étiez seul avec Sirotin.\n— (Il renifle.) Il voulait me coller un blâme.\n— Et votre potion ?\n— Elle sentait la mort. Excellente note.",
   "clues": [
     {
       "who": "a",

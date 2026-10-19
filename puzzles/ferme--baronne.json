@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Ferme Hantée — l'affaire Grisemotte",
+  "title": "La Ferme Hantée — l'affaire Morgueline",
   "size": 6,
   "rooms": {
     "G": {
@@ -176,7 +176,7 @@
     },
     {
       "id": "f",
-      "name": "Grisemotte",
+      "name": "Morgueline",
       "gender": "f",
       "role": "victim",
       "icon": "👑",
@@ -188,8 +188,8 @@
   "decor": "ferme",
   "id": "ferme--baronne",
   "place": "ferme",
-  "intro": "On dit la Ferme Hantée, et la baronne de Grisemotte Grisemotte, venue rendre une visite de courtoisie, va sûrement y contribuer. Cinq habitants de la ferme étaient là cette nuit. L'un d'eux était seul avec elle. Les poules, elles, refusent de témoigner.",
-  "epilogue": "— Vous étiez seul avec Grisemotte.\n— Elle voulait racheter la baronnie et me mettre dehors. Ça m'a énervé.\n— Et ?\n— J'ai perdu un bras. Elle l'a reçu sur la tête.",
+  "intro": "On dit la Ferme Hantée, et la baronne Morgueline, venue rendre une visite de courtoisie, va sûrement y contribuer. Cinq habitants de la ferme étaient là cette nuit. L'un d'eux était seul avec elle. Les poules, elles, refusent de témoigner.",
+  "epilogue": "— Vous étiez seul avec Morgueline.\n— Elle voulait racheter la baronnie et me mettre dehors. Ça m'a énervé.\n— Et ?\n— Mon bras gauche s'est décroché. Le seul qui avait encore sa main. Elle l'a reçu sur la tête.",
   "clues": [
     {
       "who": "a",

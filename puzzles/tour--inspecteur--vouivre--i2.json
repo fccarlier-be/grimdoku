@@ -1,8 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Tour de l'Archimage — l'affaire Pinardon",
-  "intro": "L'inspecteur des tavernes Pinardon était monté à la Tour de l'Archimage inspecter les lieux. On l'a retrouvé au pied d'une étagère de grimoires, sans vie. Cinq habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec lui. Ici, même les escaliers mentent.",
-  "epilogue": "— Vous étiez seul avec Pinardon.\n— Il voulait me coller un blâme. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
+  "title": "La Tour de l'Archimage — l'affaire Gobelet",
   "size": 7,
   "rooms": {
     "L": {
@@ -211,7 +209,7 @@
     },
     {
       "id": "f",
-      "name": "Pinardon",
+      "name": "Gobelet",
       "gender": "m",
       "role": "victim",
       "icon": "🍷",
@@ -223,6 +221,8 @@
   "decor": "tour",
   "id": "tour--inspecteur--vouivre--i2",
   "place": "tour",
+  "intro": "L'inspecteur des tavernes Gobelet était venu à la Tour de l'Archimage inspecter les lieux. On l'a retrouvé au pied d'une étagère de grimoires, sans vie. Cinq habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec lui. Ici, même les escaliers mentent.",
+  "epilogue": "— Vous étiez seul avec Gobelet.\n— Il voulait me coller un blâme. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
   "clues": [
     {
       "who": "a",

@@ -364,6 +364,6 @@
     }
   ],
   "auto": {
-    "intro": "Feu d'artifice à la Grande Foire des Mille Merveilles : tout le monde regardait le ciel, sauf {titre} {victime}, venu{e} {motif}, qui ne regardera plus rien. {Nombre} forains et visiteurs juraient avoir le nez en l'air. L'un d'eux était seul avec {lui}."
+    "intro": "Feu d'artifice à la Grande Foire des Mille Merveilles : tout le monde regardait le ciel, sauf {titre} {victime}, venu{e} {motif}. {Il} n'a pas vu le bouquet final. {Nombre} forains et visiteurs juraient avoir le nez en l'air. L'un d'eux était seul avec {lui}."
   }
 }

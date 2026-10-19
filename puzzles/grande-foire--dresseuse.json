@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Grande Foire des Mille Merveilles — l'affaire Gertrude",
+  "title": "La Grande Foire des Mille Merveilles — l'affaire Clownette",
   "decor": "foire",
   "size": 12,
   "rooms": {
@@ -413,7 +413,7 @@
     },
     {
       "id": "l",
-      "name": "Gertrude",
+      "name": "Clownette",
       "gender": "f",
       "role": "victim",
       "icon": "🎪",
@@ -424,8 +424,8 @@
   ],
   "id": "grande-foire--dresseuse",
   "place": "grande-foire",
-  "intro": "Feu d'artifice à la Grande Foire des Mille Merveilles : tout le monde regardait le ciel, sauf la dresseuse Gertrude, venue recruter des bêtes pour son cirque, qui ne regardera plus rien. Onze forains et visiteurs juraient avoir le nez en l'air. L'un d'eux était seul avec elle.",
-  "epilogue": "— Vous étiez seul avec Gertrude.\n— Elle voulait m'emmener dans son cirque. J'ai gardé mon calme : je suis végétarien depuis mardi.\n— On est jeudi.\n— Justement. C'était plus mardi.",
+  "intro": "Feu d'artifice à la Grande Foire des Mille Merveilles : tout le monde regardait le ciel, sauf la dresseuse Clownette, venue recruter des bêtes pour son cirque. Elle n'a pas vu le bouquet final. Onze forains et visiteurs juraient avoir le nez en l'air. L'un d'eux était seul avec elle.",
+  "epilogue": "— Vous étiez seul avec Clownette.\n— Elle voulait m'emmener dans son cirque. J'ai gardé mon calme : je suis végétarien depuis mardi.\n— On est jeudi.\n— Justement. C'était plus mardi.",
   "clues": [
     {
       "who": "a",

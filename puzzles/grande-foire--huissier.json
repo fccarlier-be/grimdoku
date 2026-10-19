@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Grande Foire des Mille Merveilles — l'affaire Saisitout",
+  "title": "La Grande Foire des Mille Merveilles — l'affaire Mainbasse",
   "decor": "foire",
   "size": 12,
   "rooms": {
@@ -413,7 +413,7 @@
     },
     {
       "id": "l",
-      "name": "Saisitout",
+      "name": "Mainbasse",
       "gender": "m",
       "role": "victim",
       "icon": "📜",
@@ -424,8 +424,8 @@
   ],
   "id": "grande-foire--huissier",
   "place": "grande-foire",
-  "intro": "Feu d'artifice à la Grande Foire des Mille Merveilles : tout le monde regardait le ciel, sauf l'huissier Saisitout, venu saisir des biens, qui ne regardera plus rien. Onze forains et visiteurs juraient avoir le nez en l'air. L'un d'eux était seul avec lui.",
-  "epilogue": "— Vous étiez seule avec Saisitout.\n— Il voulait saisir mes affaires. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain.",
+  "intro": "Feu d'artifice à la Grande Foire des Mille Merveilles : tout le monde regardait le ciel, sauf l'huissier Mainbasse, venu saisir des biens. Il n'a pas vu le bouquet final. Onze forains et visiteurs juraient avoir le nez en l'air. L'un d'eux était seul avec lui.",
+  "epilogue": "— Vous étiez seule avec Mainbasse.\n— Il voulait saisir mes affaires. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain.",
   "clues": [
     {
       "who": "a",

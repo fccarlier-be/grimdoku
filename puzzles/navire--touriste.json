@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Navire Fantôme — l'affaire Gustave",
+  "title": "Le Navire Fantôme — l'affaire Ernest",
   "size": 7,
   "rooms": {
     "P": {
@@ -230,7 +230,7 @@
     },
     {
       "id": "g",
-      "name": "Gustave",
+      "name": "Ernest",
       "gender": "m",
       "role": "victim",
       "icon": "🎒",
@@ -242,8 +242,8 @@
   "decor": "navire",
   "id": "navire--touriste",
   "place": "navire",
-  "intro": "Le Navire Fantôme ne quitte jamais le port, et le touriste Gustave, venu à bord visiter la baronnie, non plus, désormais. Six membres de l'équipage traînaient sur le pont. L'un d'eux était seul avec lui. Le capitaine m'assure que c'est la faute de la tempête. Il n'y a pas de tempête.",
-  "epilogue": "— Vous étiez seule avec Gustave.\n— Je n'ai rien fait. (Blub.)\n— Vous faites des bulles.\n— Il voulait faire mon portrait au fusain et le vendre à la foire. Je l'ai juste invité à nager. (Blub, blub.)",
+  "intro": "Le Navire Fantôme ne quitte jamais le port, et le touriste Ernest, venu à bord visiter la baronnie, non plus, désormais. Six membres de l'équipage traînaient sur le pont. L'un d'eux était seul avec lui. Le capitaine m'assure que c'est la faute de la tempête. Il n'y a pas de tempête.",
+  "epilogue": "— Vous étiez seule avec Ernest.\n— Je n'ai rien fait. (Blub.)\n— Vous faites des bulles.\n— Il voulait faire mon portrait au fusain et le vendre à la foire. Je l'ai juste invité à nager. (Blub, blub.)",
   "clues": [
     {
       "who": "a",

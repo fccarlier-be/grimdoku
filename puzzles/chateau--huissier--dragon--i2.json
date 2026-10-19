@@ -1,8 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Château de Mortebrune — l'affaire Saisitout",
-  "intro": "L'huissier Saisitout était venu au Château de Mortebrune saisir des biens. Le roi m'a fait appeler, ce qui veut dire que c'est grave, ou qu'il s'ennuie. Cinq membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec lui.",
-  "epilogue": "— Vous étiez seul avec Saisitout.\n— « Il voulait saisir mes affaires, ô rage, ô désespoir… »\n— Répondez normalement.\n— J'ai chanté jusqu'à ce qu'il s'arrête. Définitivement.",
+  "title": "Le Château de Mortebrune — l'affaire Videtout",
   "size": 7,
   "rooms": {
     "G": {
@@ -222,7 +220,7 @@
     },
     {
       "id": "f",
-      "name": "Saisitout",
+      "name": "Videtout",
       "gender": "m",
       "role": "victim",
       "icon": "📜",
@@ -234,6 +232,8 @@
   "decor": "chateau",
   "id": "chateau--huissier--dragon--i2",
   "place": "chateau",
+  "intro": "L'huissier Videtout était venu au Château de Mortebrune saisir des biens. On m'a fait appeler au nom du roi, ce qui veut dire que c'est grave, ou qu'il s'ennuie. Cinq membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec lui.",
+  "epilogue": "— Vous étiez seul avec Videtout.\n— « Il voulait saisir mes affaires, ô rage, ô désespoir… »\n— Répondez normalement.\n— J'ai chanté jusqu'à ce qu'il s'arrête. Définitivement.",
   "clues": [
     {
       "who": "a",

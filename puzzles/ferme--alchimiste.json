@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Ferme Hantée — l'affaire Mercurio",
+  "title": "La Ferme Hantée — l'affaire Salpêtre",
   "size": 6,
   "rooms": {
     "G": {
@@ -176,7 +176,7 @@
     },
     {
       "id": "f",
-      "name": "Mercurio",
+      "name": "Salpêtre",
       "gender": "m",
       "role": "victim",
       "icon": "⚗️",
@@ -188,8 +188,8 @@
   "decor": "ferme",
   "id": "ferme--alchimiste",
   "place": "ferme",
-  "intro": "On dit la Ferme Hantée, et l'alchimiste Mercurio, venu proposer ses services, va sûrement y contribuer. Cinq habitants de la ferme étaient là cette nuit. L'un d'eux était seul avec lui. Les poules, elles, refusent de témoigner.",
-  "epilogue": "— Vous étiez seul avec Mercurio.\n— Mercurio.\n— Pourquoi ?\n— Il voulait changer mes économies en plomb. Alors Bâfrin taper. Taper fort. Fort.",
+  "intro": "On dit la Ferme Hantée, et l'alchimiste Salpêtre, venu proposer ses services, va sûrement y contribuer. Cinq habitants de la ferme étaient là cette nuit. L'un d'eux était seul avec lui. Les poules, elles, refusent de témoigner.",
+  "epilogue": "— Vous étiez seul avec Salpêtre.\n— Salpêtre.\n— Pourquoi ?\n— Il voulait changer mes économies en plomb. Alors Bâfrin taper. Taper fort. Fort.",
   "clues": [
     {
       "who": "a",

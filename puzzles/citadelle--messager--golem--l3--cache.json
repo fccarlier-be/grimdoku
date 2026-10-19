@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Citadelle de Mortebrune — l'affaire Rapidon",
+  "title": "La Citadelle de Mortebrune — l'affaire Galopin",
   "decor": "chateau",
   "size": 9,
   "rooms": {
@@ -242,7 +242,7 @@
     },
     {
       "id": "h",
-      "name": "Rapidon",
+      "name": "Galopin",
       "gender": "m",
       "role": "victim",
       "icon": "✉️",
@@ -255,8 +255,8 @@
   "place": "citadelle",
   "hiddenShapes": true,
   "hiddenMax": 3,
-  "intro": "Le pont-levis est resté coincé toute la nuit, et le messager Rapidon, venu apporter une lettre du baron, est resté coincé avec. Pour toujours. Sept occupants de la Citadelle ne pouvaient pas sortir. L'un d'eux était seul avec lui. Au moins, personne n'a pu s'enfuir.",
-  "epilogue": "— Vous étiez seul avec Rapidon.\n— Il voulait m'annoncer une mauvaise nouvelle. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "intro": "Le pont-levis est resté coincé toute la nuit, enfermant le messager Galopin, venu apporter une lettre du baron, avec les sept occupants de la Citadelle. Au matin, il n'avait plus aucune envie de sortir. L'un d'eux était seul avec lui. Au moins, personne n'a pu s'enfuir.",
+  "epilogue": "— Vous étiez seul avec Galopin.\n— Il voulait m'annoncer une mauvaise nouvelle. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
   "clues": [
     {
       "who": "a",

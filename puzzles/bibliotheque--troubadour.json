@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Bibliothèque Interdite — l'affaire Lirelire",
+  "title": "La Bibliothèque Interdite — l'affaire Refrain",
   "size": 7,
   "rooms": {
     "S": {
@@ -164,7 +164,6 @@
       ]
     }
   ],
-  "intro": "À la Bibliothèque Interdite, le troubadour Lirelire, venu donner un concert, a été retrouvé entre deux rayonnages. On m'a demandé d'enquêter en silence. Six lecteurs étaient là. L'un d'eux était seul avec lui. Je chuchote mes questions ; on me répond en hurlant « chut ».",
   "characters": [
     {
       "id": "a",
@@ -231,7 +230,7 @@
     },
     {
       "id": "g",
-      "name": "Lirelire",
+      "name": "Refrain",
       "gender": "m",
       "role": "victim",
       "icon": "🪕",
@@ -243,7 +242,8 @@
   "decor": "bibliotheque",
   "id": "bibliotheque--troubadour",
   "place": "bibliotheque",
-  "epilogue": "— Vous étiez seul avec Lirelire.\n— Il voulait chanter mieux que tout le monde. Atchoum ! Pardon : le houblon.\n— Et le sortilège ?\n— Il est parti tout seul, avec l'éternuement. Mais je visais bien.",
+  "intro": "À la Bibliothèque Interdite, le troubadour Refrain, venu donner un concert, a été retrouvé entre deux rayonnages. On m'a demandé d'enquêter en silence. Six lecteurs étaient là. L'un d'eux était seul avec lui. Je chuchote mes questions ; on me répond en hurlant « chut ».",
+  "epilogue": "— Vous étiez seul avec Refrain.\n— Il voulait chanter mieux que tout le monde. Atchoum ! Pardon : le houblon.\n— Et le sortilège ?\n— Il est parti tout seul, avec l'éternuement. Mais je visais bien.",
   "clues": [
     {
       "who": "a",

@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Mine des Nains — l'affaire Bricabrac",
+  "title": "La Mine des Nains — l'affaire Ballot",
   "size": 8,
   "rooms": {
     "E": {
@@ -170,7 +170,6 @@
       ]
     }
   ],
-  "intro": "À la Mine des Nains, le colporteur Bricabrac, venu vendre sa camelote, est descendu plus bas que prévu. Sept mineurs et visiteurs étaient au fond. L'un d'eux était seul avec lui. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
   "characters": [
     {
       "id": "a",
@@ -244,7 +243,7 @@
     },
     {
       "id": "h",
-      "name": "Bricabrac",
+      "name": "Ballot",
       "gender": "m",
       "role": "victim",
       "icon": "🎒",
@@ -256,7 +255,8 @@
   "decor": "mine",
   "id": "mine--colporteur",
   "place": "mine",
-  "epilogue": "— Vous étiez seul avec Bricabrac.\n— Pardon. Pardon pardon pardon.\n— Je n'ai encore rien dit.\n— Il voulait me revendre ce qu'il m'avait déjà vendu. Alors j'ai éternué. Et quand j'éternue, je crache du feu.",
+  "intro": "À la Mine des Nains, le colporteur Ballot, venu vendre sa camelote, est descendu plus bas que prévu. Sept mineurs et visiteurs étaient au fond. L'un d'eux était seul avec lui. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
+  "epilogue": "— Vous étiez seul avec Ballot.\n— Pardon. Pardon pardon pardon.\n— Je n'ai encore rien dit.\n— Il voulait me revendre ce qu'il m'avait déjà vendu. Alors j'ai éternué. Et quand j'éternue, je crache du feu.",
   "clues": [
     {
       "who": "a",

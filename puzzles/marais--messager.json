@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Marais des Brumes — l'affaire Rapidon",
+  "title": "Le Marais des Brumes — l'affaire Relais",
   "size": 6,
   "rooms": {
     "H": {
@@ -116,7 +116,6 @@
       ]
     }
   ],
-  "intro": "Le Marais des Brumes a rendu le corps de le messager Rapidon, venu apporter une lettre du baron. Il garde le reste. Cinq habitants du marais pataugeaient dans le coin. L'un d'eux était seul avec lui. J'ai de la vase jusqu'aux genoux et zéro témoin fiable.",
   "characters": [
     {
       "id": "a",
@@ -170,7 +169,7 @@
     },
     {
       "id": "f",
-      "name": "Rapidon",
+      "name": "Relais",
       "gender": "m",
       "role": "victim",
       "icon": "✉️",
@@ -182,7 +181,8 @@
   "decor": "marais",
   "id": "marais--messager",
   "place": "marais",
-  "epilogue": "— Vous étiez seul avec Rapidon.\n— Prince Ambroise, je vous prie.\n— Prince, vous étiez seul avec Rapidon.\n— Il voulait m'annoncer une mauvaise nouvelle au lieu de m'embrasser. Un prince a sa fierté. Et une langue très longue.",
+  "intro": "Le Marais des Brumes a rendu le corps de le messager Relais, venu apporter une lettre du baron. Il garde le reste. Cinq habitants du marais pataugeaient dans le coin. L'un d'eux était seul avec lui. J'ai de la vase jusqu'aux genoux et zéro témoin fiable.",
+  "epilogue": "— Vous étiez seul avec Relais.\n— Prince Ambroise, je vous prie.\n— Prince, vous étiez seul avec Relais.\n— Il voulait m'annoncer une mauvaise nouvelle au lieu de m'embrasser. Un prince a sa fierté. Et une langue très longue.",
   "clues": [
     {
       "who": "a",

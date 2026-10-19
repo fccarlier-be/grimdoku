@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Marais des Brumes — l'affaire Taxard",
+  "title": "Le Marais des Brumes — l'affaire Liardin",
   "size": 6,
   "rooms": {
     "H": {
@@ -116,7 +116,6 @@
       ]
     }
   ],
-  "intro": "Le Marais des Brumes a rendu le corps de le percepteur Taxard, venu lever l'impôt de fin d'année. Il garde le reste. Cinq habitants du marais pataugeaient dans le coin. L'un d'eux était seul avec lui. J'ai de la vase jusqu'aux genoux et zéro témoin fiable.",
   "characters": [
     {
       "id": "a",
@@ -170,7 +169,7 @@
     },
     {
       "id": "f",
-      "name": "Taxard",
+      "name": "Liardin",
       "gender": "m",
       "role": "victim",
       "icon": "🧾",
@@ -182,7 +181,8 @@
   "decor": "marais",
   "id": "marais--percepteur",
   "place": "marais",
-  "epilogue": "— Vous étiez seule avec Taxard.\n— Je n'ai rien fait. (Blub.)\n— Vous faites des bulles.\n— Il voulait me faire payer l'impôt sur tout ce que je possède. Je l'ai juste invité à nager. (Blub, blub.)",
+  "intro": "Le Marais des Brumes a rendu le corps de le percepteur Liardin, venu lever l'impôt de fin d'année. Il garde le reste. Cinq habitants du marais pataugeaient dans le coin. L'un d'eux était seul avec lui. J'ai de la vase jusqu'aux genoux et zéro témoin fiable.",
+  "epilogue": "— Vous étiez seule avec Liardin.\n— Je n'ai rien fait. (Blub.)\n— Vous faites des bulles.\n— Il voulait me faire payer l'impôt sur tout ce que je possède. Je l'ai juste invité à nager. (Blub, blub.)",
   "clues": [
     {
       "who": "a",

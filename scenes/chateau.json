@@ -2,8 +2,6 @@
   "scene": "chateau",
   "formatVersion": 1,
   "title": "Le Château de Mortebrune",
-  "intro": "Le roi {victime} a été retrouvé sans vie au petit matin, dans son propre château. Ses invités jurent tous qu'ils dormaient. L'un d'eux ment : il était seul avec lui.",
-  "epilogue": "{coupable} hantait ces murs quatre siècles avant que {victime} ne s'y installe sans demander. Il n'a jamais digéré l'expropriation. Le fantôme avoue tout, puis traverse le mur pour éviter le procès.",
   "size": 7,
   "rooms": {
     "C": {
@@ -217,6 +215,6 @@
     }
   ],
   "auto": {
-    "intro": "{Titre} {victime} était venu{e} au Château de Mortebrune {motif}. Le roi m'a fait appeler, ce qui veut dire que c'est grave, ou qu'il s'ennuie. {Nombre} membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec {lui}."
+    "intro": "{Titre} {victime} était venu{e} au Château de Mortebrune {motif}. On m'a fait appeler au nom du roi, ce qui veut dire que c'est grave, ou qu'il s'ennuie. {Nombre} membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec {lui}."
   }
 }

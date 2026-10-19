@@ -1,0 +1,69 @@
+{
+  "_doc": "Archives (2026-10-19, audit du lore) : textes de l'ancien modèle où la troupe pouvait être victime. Plus utilisés par la construction (les affaires automatiques prennent auto.intro et les épilogues de cast.json). Ne pas retoucher ici en croyant modifier le jeu.",
+  "bibliotheque": {
+    "intro": "La bibliothécaire {victime} a été retrouvée entre deux rayonnages, un « Chut ! » figé sur les lèvres. Six lecteurs nocturnes erraient dans la Bibliothèque Interdite. Un seul était avec elle.",
+    "epilogues": {
+      "mage": "{coupable} avoue en éternuant : {victime} lui réclamait trois siècles d'amendes de retard pour un grimoire de recettes de bière.",
+      "spectre": "{coupable} hantait la réserve depuis des siècles. {victime} voulait la transformer en salle de lecture « lumineuse et accueillante ». Insupportable.",
+      "vampire": "{coupable} avoue : {victime} avait ouvert les rideaux de la galerie « pour lire plus confortablement ». Il y a des choses qu'on ne fait pas à une comtesse.",
+      "djinn": "{coupable} avoue : {victime} avait rangé sa lampe au rayon « Objets trouvés ». Il y a quatre-vingts ans.",
+      "gobelin": "{coupable} revendait les livres rares au marché noir. {victime} venait de faire l'inventaire. Il a classé l'affaire.",
+      "archimage": "{coupable} avoue : {victime} avait rangé ses mémoires au rayon « Fiction ». Quatre cent douze ans de vérité, et on ose douter."
+    }
+  },
+  "chateau": {
+    "intro": "Le roi {victime} a été retrouvé sans vie au petit matin, dans son propre château. Ses invités jurent tous qu'ils dormaient. L'un d'eux ment : il était seul avec lui.",
+    "epilogue": "{coupable} hantait ces murs quatre siècles avant que {victime} ne s'y installe sans demander. Il n'a jamais digéré l'expropriation. Le fantôme avoue tout, puis traverse le mur pour éviter le procès."
+  },
+  "foire": {
+    "intro": "Le bonimenteur {victime}, maître de la Foire aux Sortilèges, a été retrouvé sous son propre chapiteau, la bouche enfin close. Six forains avaient une dent contre lui. Un seul était avec lui.",
+    "epilogues": {
+      "cartomancienne": "{coupable} l'avait vu dans les cartes : {victime} comptait la remplacer par une boule de cristal mécanique. Elle a préféré changer l'avenir elle-même.",
+      "barde": "{coupable} avoue en chanson (fausse) : {victime} l'obligeait à jouer la même ritournelle six fois par heure. Même un barde a ses limites.",
+      "gobelin": "{coupable} tenait la caisse de la foire. {victime} venait de découvrir que la caisse avait un double fond. Et un triple.",
+      "troll": "{coupable}, hercule de foire, en avait assez de soulever {victime} à bout de bras pour le final. Ce soir, il l'a posé. Brusquement.",
+      "fee": "{coupable} servait de « fée en bocal » au stand des merveilles. Quand {victime} a voulu refermer le couvercle, elle s'est rebiffée. Pour de bon.",
+      "dragonnet": "{coupable}, cracheur de feu vedette, touchait trois fois moins que ce qu'annonçait l'affiche. Il a négocié. Il a un peu trop soufflé."
+    }
+  },
+  "marais": {
+    "intro": "La sorcière {victime} ne touillera plus jamais son chaudron : on l'a retrouvée au petit matin dans la brume du marais. Cinq voisins pataugeaient dans le coin. Un seul était avec elle.",
+    "epilogues": {
+      "sirene": "{coupable} avoue : {victime} vidait sa mare goutte à goutte pour ses potions. Une sirène sans eau, c'est une sardine.",
+      "zombie": "{coupable} avoue, très lentement : {victime} venait le déterrer chaque fois qu'il lui manquait un ingrédient. Il voulait juste dormir.",
+      "crapaud": "{coupable} avoue : c'est {victime} qui l'avait changé en crapaud, et elle refusait le bisou du contre-sort. Il a perdu patience.",
+      "troll": "{coupable} avoue : {victime} avait transformé son pont en plongeoir à grenouilles. Personne ne touche au pont d'un troll.",
+      "elfe": "{coupable} avoue d'un air dégoûté : {victime} servait de la soupe de vase à ses invités et exigeait cinq étoiles."
+    }
+  },
+  "mine": {
+    "intro": "Le contremaître {victime} a été retrouvé au fond de la Mine des Nains, aussi froid que le granit. Sept ouvriers étaient descendus pour l'équipe de nuit. Un seul était avec lui.",
+    "epilogues": {
+      "mineur": "{coupable} avoue : {victime} lui retirait une pépite par pause, et il prenait beaucoup de pauses. C'était devenu une question de principe.",
+      "troll": "{coupable} avoue : {victime} l'utilisait comme étai depuis six mois. Un troll aussi a besoin de s'asseoir.",
+      "gobelin": "{coupable} avoue : {victime} avait remarqué que la mine produisait plus d'or que le coffre n'en contenait. Le gobelin avait une explication. Plusieurs, même.",
+      "dragonnet": "{coupable} servait de lampe et de soufflet sans être payé. Il a demandé une augmentation. {victime} a ri. Le dragonnet n'a pas ri.",
+      "chevalier": "{coupable} cherchait un trésor maudit dans la mine. {victime} voulait lui faire payer l'entrée. On ne fait pas payer un chevalier en quête.",
+      "fee": "{coupable} avoue : {victime} la gardait dans un bocal pour éclairer la galerie. Elle a fini par trouver la sortie. Et un gros caillou.",
+      "zombie": "{coupable} avoue, après réflexion : {victime} l'avait laissé sous un éboulement « pour gagner du temps ». Il a mis du temps, mais il est revenu."
+    }
+  },
+  "moulin": {
+    "intro": "Le meunier {victime} a été retrouvé ce matin, aussi raide qu'une meule. Cinq villageois rôdaient autour du moulin cette nuit. Un seul était avec lui.",
+    "epilogues": {
+      "fee": "{coupable} avoue en battant des ailes : {victime} lui vendait sa farine au prix de la poudre de fée. Elle a juste voulu lui rendre la monnaie de sa pièce.",
+      "troll": "{coupable} avoue la bouche pleine : {victime} lui facturait chaque miette tombée du moulin. Les miettes, c'était tout ce qu'il mangeait.",
+      "sirene": "{coupable} avoue en larmes : {victime} voulait assécher la mare pour agrandir son moulin. On ne touche pas à la maison d'une sirène.",
+      "zombie": "{coupable} avoue, ce qui lui prend un moment : {victime} l'avait embauché pour tourner la meule sans le payer. « Je suis mort, pas bénévole. »",
+      "dragonnet": "{coupable} avoue en fumant des naseaux : {victime} lui avait demandé de chauffer le four à pain. Gratuitement. Pour la quatorzième fois."
+    }
+  },
+  "taverne": {
+    "intro": "{victime}, tavernier nain et radin de compétition, a été retrouvé raide à l'aube. Personne ne le regrette, mais quelqu'un l'a aidé à partir. Place chaque client, trouve qui était seul avec lui.",
+    "epilogue": "{coupable} craque : {victime} voulait lui retenir trois mois de salaire pour UNE assiette mangée. « Elle était en terre cuite, elle avait l'air bonne ! »"
+  },
+  "tour": {
+    "intro": "L'archimage {victime}, 412 ans, a enfin rendu son dernier sortilège. Sa tour grouille d'invités douteux, et un portail runique relie le laboratoire à la crypte… Qui l'a envoyé ad patres ?",
+    "epilogue": "{coupable} a traversé le portail runique de la crypte pour surgir dans le laboratoire, juste derrière {victime}. Mobile : il lui avait vendu un élixir de bronzage. Garanti sans effet secondaire."
+  }
+}

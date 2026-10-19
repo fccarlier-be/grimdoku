@@ -1,7 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Moulin de Bois-Tordu — l'affaire Prudence",
-  "intro": "Au Moulin de Bois-Tordu, l'abbesse Prudence, venue faire la quête, a fini plus plate qu'une galette. Cinq voisins traînaient dans le coin. L'un d'eux était seul avec elle. Le meunier m'a proposé de peser les suspects. J'ai refusé.",
+  "title": "Le Moulin de Bois-Tordu — l'affaire Scholastique",
   "size": 6,
   "rooms": {
     "M": {
@@ -177,7 +176,7 @@
     },
     {
       "id": "f",
-      "name": "Prudence",
+      "name": "Scholastique",
       "gender": "f",
       "role": "victim",
       "icon": "📿",
@@ -189,7 +188,8 @@
   "decor": "moulin",
   "id": "moulin--abbesse",
   "place": "moulin",
-  "epilogue": "— Vous étiez seule avec Prudence.\n— Elle voulait me faire la morale. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain.",
+  "intro": "Au Moulin de Bois-Tordu, l'abbesse Scholastique, venue faire la quête, a fini plus plate qu'une galette. Cinq voisins traînaient dans le coin. L'un d'eux était seul avec elle. Le meunier m'a proposé de peser les suspects. J'ai refusé.",
+  "epilogue": "— Vous étiez seule avec Scholastique.\n— Elle voulait me faire la morale. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain.",
   "clues": [
     {
       "who": "a",

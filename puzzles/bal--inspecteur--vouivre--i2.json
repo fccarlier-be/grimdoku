@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Bal Masqué — l'affaire Pinardon",
+  "title": "Le Bal Masqué — l'affaire Carafon",
   "size": 8,
   "rooms": {
     "B": {
@@ -253,7 +253,7 @@
     },
     {
       "id": "g",
-      "name": "Pinardon",
+      "name": "Carafon",
       "gender": "m",
       "role": "victim",
       "icon": "🍷",
@@ -265,8 +265,8 @@
   "decor": "bal",
   "id": "bal--inspecteur--vouivre--i2",
   "place": "bal",
-  "intro": "Bal masqué au château : l'inspecteur des tavernes Pinardon, venu inspecter les lieux, n'a pas passé minuit. Six invités dansaient, ou le prétendent. L'un d'eux était seul avec lui. Le plus dur, ici, c'est de savoir qui est sous quel masque. Et qui ment dessous.",
-  "epilogue": "— Vous étiez seul avec Pinardon.\n— Il voulait me coller un blâme. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
+  "intro": "Bal masqué au château : l'inspecteur des tavernes Carafon, venu inspecter les lieux, n'a pas survécu jusqu'à minuit. Six invités dansaient, ou le prétendent. L'un d'eux était seul avec lui. Le plus dur, ici, c'est de savoir qui est sous quel masque. Et qui ment dessous.",
+  "epilogue": "— Vous étiez seul avec Carafon.\n— Il voulait me coller un blâme. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
   "clues": [
     {
       "who": "a",

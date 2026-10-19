@@ -1,7 +1,6 @@
 {
   "formatVersion": 1,
   "title": "Le Moulin de Bois-Tordu — l'affaire Ondine",
-  "intro": "Au Moulin de Bois-Tordu, la maîtresse-nageuse Ondine, venue donner des cours de natation, a fini plus plate qu'une galette. Cinq voisins traînaient dans le coin. L'un d'eux était seul avec elle. Le meunier m'a proposé de peser les suspects. J'ai refusé.",
   "size": 6,
   "rooms": {
     "M": {
@@ -189,7 +188,8 @@
   "decor": "moulin",
   "id": "moulin--nageuse",
   "place": "moulin",
-  "epilogue": "— Vous étiez seul avec Ondine.\n— Elle voulait m'apprendre à nager de force. Ça m'a énervé.\n— Et ?\n— J'ai perdu un bras. Elle l'a reçu sur la tête.",
+  "intro": "Au Moulin de Bois-Tordu, la maîtresse-nageuse Ondine, venue donner des cours de natation, a fini plus plate qu'une galette. Cinq voisins traînaient dans le coin. L'un d'eux était seul avec elle. Le meunier m'a proposé de peser les suspects. J'ai refusé.",
+  "epilogue": "— Vous étiez seul avec Ondine.\n— Elle voulait m'apprendre à nager de force. Ça m'a énervé.\n— Et ?\n— Mon bras gauche s'est décroché. Le seul qui avait encore sa main. Elle l'a reçu sur la tête.",
   "clues": [
     {
       "who": "a",

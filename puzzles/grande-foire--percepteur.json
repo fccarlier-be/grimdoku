@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Grande Foire des Mille Merveilles — l'affaire Taxard",
+  "title": "La Grande Foire des Mille Merveilles — l'affaire Taillefer",
   "decor": "foire",
   "size": 12,
   "rooms": {
@@ -413,7 +413,7 @@
     },
     {
       "id": "l",
-      "name": "Taxard",
+      "name": "Taillefer",
       "gender": "m",
       "role": "victim",
       "icon": "🧾",
@@ -424,8 +424,8 @@
   ],
   "id": "grande-foire--percepteur",
   "place": "grande-foire",
-  "intro": "Feu d'artifice à la Grande Foire des Mille Merveilles : tout le monde regardait le ciel, sauf le percepteur Taxard, venu lever l'impôt de fin d'année, qui ne regardera plus rien. Onze forains et visiteurs juraient avoir le nez en l'air. L'un d'eux était seul avec lui.",
-  "epilogue": "— Vous étiez seul avec Taxard.\n— Il voulait me faire payer l'impôt sur tout ce que je possède. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "intro": "Feu d'artifice à la Grande Foire des Mille Merveilles : tout le monde regardait le ciel, sauf le percepteur Taillefer, venu lever l'impôt de fin d'année. Il n'a pas vu le bouquet final. Onze forains et visiteurs juraient avoir le nez en l'air. L'un d'eux était seul avec lui.",
+  "epilogue": "— Vous étiez seul avec Taillefer.\n— Il voulait me faire payer l'impôt sur tout ce que je possède. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
   "clues": [
     {
       "who": "a",

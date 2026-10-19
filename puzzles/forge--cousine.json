@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Forge du Dragon — l'affaire Ermengarde",
+  "title": "La Forge du Dragon — l'affaire Gondeberge",
   "size": 7,
   "rooms": {
     "D": {
@@ -220,7 +220,7 @@
     },
     {
       "id": "g",
-      "name": "Ermengarde",
+      "name": "Gondeberge",
       "gender": "f",
       "role": "victim",
       "icon": "👒",
@@ -232,8 +232,8 @@
   "decor": "forge",
   "id": "forge--cousine",
   "place": "forge",
-  "intro": "La Forge du Dragon fume plus que d'habitude : la cousine Ermengarde, venue réclamer un héritage, n'en est pas ressortie. Six habitués de la forge étaient au travail, paraît-il. L'un d'eux était seul avec elle. Le dragon dort. J'aimerais qu'il continue.",
-  "epilogue": "— Vous étiez seul avec Ermengarde.\n— Elle voulait réclamer sa part de ce qui m'appartient.\n— Et vous avez fait quoi ?\n— On a creusé. Un trou. À sa taille.",
+  "intro": "La Forge du Dragon fume plus que d'habitude : la cousine Gondeberge, venue réclamer un héritage, n'en est pas ressortie. Six habitués de la forge étaient au travail, paraît-il. L'un d'eux était seul avec elle. Le dragon dort. J'aimerais qu'il continue.",
+  "epilogue": "— Vous étiez seul avec Gondeberge.\n— Elle voulait réclamer sa part de ce qui m'appartient.\n— Et vous avez fait quoi ?\n— On a creusé. Un trou. À sa taille.",
   "clues": [
     {
       "who": "a",

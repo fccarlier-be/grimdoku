@@ -1,8 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Tour de l'Archimage — l'affaire Grisemotte",
-  "intro": "La baronne de Grisemotte Grisemotte était montée à la Tour de l'Archimage rendre une visite de courtoisie. On l'a retrouvée au pied d'une étagère de grimoires, sans vie. Six habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec elle. Ici, même les escaliers mentent.",
-  "epilogue": "— Vous étiez seul avec Grisemotte.\n— Elle voulait racheter la baronnie et me mettre dehors. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
+  "title": "La Tour de l'Archimage — l'affaire Dorure",
   "size": 7,
   "rooms": {
     "L": {
@@ -225,7 +223,7 @@
     },
     {
       "id": "g",
-      "name": "Grisemotte",
+      "name": "Dorure",
       "gender": "f",
       "role": "victim",
       "icon": "👑",
@@ -237,6 +235,8 @@
   "decor": "tour",
   "id": "tour--baronne",
   "place": "tour",
+  "intro": "La baronne Dorure était venue à la Tour de l'Archimage rendre une visite de courtoisie. On l'a retrouvée au pied d'une étagère de grimoires, sans vie. Six habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec elle. Ici, même les escaliers mentent.",
+  "epilogue": "— Vous étiez seul avec Dorure.\n— Elle voulait racheter la baronnie et me mettre dehors. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
   "clues": [
     {
       "who": "a",

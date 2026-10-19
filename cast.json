@@ -1,5 +1,5 @@
 {
-  "_doc": "Personnages. Troupe récurrente (bible du jeu, 2026-10-17) : chaque type est UN personnage au nom fixe (name), avec un tic et un épilogue dialogué ({victime} {Il}/{il}/{lui}/{e} = la victime, {menace} = ce qu'un invité venait lui faire). La lettre (A, B…) n'est plus dans le nom : c'est une pastille, attribuée à chaque énigme selon la facilité. names (A…L) : anciens noms, gardés pour mémoire. guest : invité de passage (victime), avec motif et menace. desc/gender/icon/traits ne dépendent pas de la position.",
+  "_doc": "Personnages. Troupe récurrente (bible du jeu, 2026-10-17) : chaque type est UN personnage au nom fixe (name), avec un tic et un épilogue dialogué ({victime} {Il}/{il}/{lui}/{e} = la victime, {menace} = ce qu'un invité venait lui faire). La lettre (A, B…) n'est plus dans le nom : c'est une pastille, attribuée à chaque énigme selon la facilité. names (A…L) : anciens noms, gardés pour mémoire. guest : invité de passage (victime), avec motif et menace. desc/gender/icon/traits ne dépendent pas de la position. Invités : « names » = un nom par affaire (le premier est le nom par défaut), tiré par build-puzzles.js (décision de François, 2026-10-19 : un même visiteur ne meurt plus seize fois ; la profession et le portrait restent, Brumeval tue beaucoup de percepteurs).",
   "mage": {
     "icon": "🧙‍♂️",
     "gender": "m",
@@ -208,7 +208,7 @@
     },
     "name": "Fernand",
     "tic": "Perd un morceau quand il s'énerve",
-    "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}. Ça m'a énervé.\n— Et ?\n— J'ai perdu un bras. {Il} l'a reçu sur la tête."
+    "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}. Ça m'a énervé.\n— Et ?\n— Mon bras gauche s'est décroché. Le seul qui avait encore sa main. {Il} l'a reçu sur la tête."
   },
   "sirene": {
     "icon": "🧜‍♀️",
@@ -766,7 +766,7 @@
     "icon": "🐦‍⬛",
     "gender": "m",
     "title": "le corbeau",
-    "desc": "Corbeau, sait tout, ne dit rien",
+    "desc": "Corbeau, voit beaucoup, comprend moins, ne dit rien",
     "names": {
       "A": "Augure",
       "B": "Becquet",
@@ -889,7 +889,29 @@
     "icon": "🧾",
     "desc": "Percepteur du baron, compte même les miettes",
     "motif": "lever l'impôt de fin d'année",
-    "menace": "me faire payer l'impôt sur tout ce que je possède"
+    "menace": "me faire payer l'impôt sur tout ce que je possède",
+    "names": [
+      "Taxard",
+      "Gabelou",
+      "Péageon",
+      "Prélevin",
+      "Dîmeaux",
+      "Fiscalin",
+      "Taillefer",
+      "Corvéon",
+      "Douanin",
+      "Tributin",
+      "Grattesou",
+      "Rognard",
+      "Comptegrain",
+      "Pressoux",
+      "Tondulard",
+      "Écornifle",
+      "Liardin",
+      "Exactin",
+      "Sangsuard",
+      "Ponctionnin"
+    ]
   },
   "cousine": {
     "guest": true,
@@ -899,7 +921,29 @@
     "icon": "👒",
     "desc": "Cousine éloignée de tout le monde, venue pour l'héritage",
     "motif": "réclamer un héritage",
-    "menace": "réclamer sa part de ce qui m'appartient"
+    "menace": "réclamer sa part de ce qui m'appartient",
+    "names": [
+      "Ermengarde",
+      "Cunégonde",
+      "Frédégonde",
+      "Brunehaut",
+      "Mahaut",
+      "Aldegonde",
+      "Adélaïde",
+      "Berthilde",
+      "Clotilde",
+      "Ingeburge",
+      "Ragnhilde",
+      "Hermengilde",
+      "Rotrude",
+      "Gisèle",
+      "Plectrude",
+      "Bathilde",
+      "Sigrade",
+      "Théodelinde",
+      "Amalberge",
+      "Gondeberge"
+    ]
   },
   "inspecteur": {
     "guest": true,
@@ -909,7 +953,29 @@
     "icon": "🍷",
     "desc": "Inspecteur des tavernes, goûte tout, note tout",
     "motif": "inspecter les lieux",
-    "menace": "me coller un blâme"
+    "menace": "me coller un blâme",
+    "names": [
+      "Pinardon",
+      "Picrate",
+      "Tastevin",
+      "Gorgeon",
+      "Rinçon",
+      "Gouleyant",
+      "Lichard",
+      "Sirotin",
+      "Chopinet",
+      "Godet",
+      "Bouchonné",
+      "Carafon",
+      "Trinquet",
+      "Flacon",
+      "Pichet",
+      "Gobelet",
+      "Décanteur",
+      "Blâmard",
+      "Notard",
+      "Barrique"
+    ]
   },
   "touriste": {
     "guest": true,
@@ -919,7 +985,29 @@
     "icon": "🎒",
     "desc": "Touriste, dessine tout au fusain, surtout ce qui est interdit",
     "motif": "visiter la baronnie",
-    "menace": "faire mon portrait au fusain et le vendre à la foire"
+    "menace": "faire mon portrait au fusain et le vendre à la foire",
+    "names": [
+      "Gustave",
+      "Badaud",
+      "Flânard",
+      "Musard",
+      "Fusainot",
+      "Crayonnet",
+      "Souvenard",
+      "Promenin",
+      "Visitin",
+      "Gaston",
+      "Anatole",
+      "Ernest",
+      "Hippolyte",
+      "Léandre",
+      "Octave",
+      "Évariste",
+      "Théophile",
+      "Baguenaud",
+      "Lambin",
+      "Curiosus"
+    ]
   },
   "huissier": {
     "guest": true,
@@ -929,7 +1017,29 @@
     "icon": "📜",
     "desc": "Huissier de la banque gobeline, saisit d'abord, demande ensuite",
     "motif": "saisir des biens",
-    "menace": "saisir mes affaires"
+    "menace": "saisir mes affaires",
+    "names": [
+      "Saisitout",
+      "Raflard",
+      "Videtout",
+      "Embarquin",
+      "Confisquet",
+      "Ramassard",
+      "Séquestre",
+      "Grappin",
+      "Crochard",
+      "Mainbasse",
+      "Ratissard",
+      "Huissard",
+      "Scellé",
+      "Inventorin",
+      "Expulsin",
+      "Récupérin",
+      "Emportout",
+      "Rapinard",
+      "Gobetout",
+      "Recouvrin"
+    ]
   },
   "nageuse": {
     "guest": true,
@@ -939,7 +1049,29 @@
     "icon": "🛟",
     "desc": "Maîtresse-nageuse, sans permis ni maillot",
     "motif": "donner des cours de natation",
-    "menace": "m'apprendre à nager de force"
+    "menace": "m'apprendre à nager de force",
+    "names": [
+      "Ondine",
+      "Brassée",
+      "Crawline",
+      "Naïade",
+      "Mouillette",
+      "Clapote",
+      "Éclaboussine",
+      "Bouée",
+      "Nageoire",
+      "Marée",
+      "Écume",
+      "Bulle",
+      "Apnée",
+      "Trempette",
+      "Plongette",
+      "Vaguelette",
+      "Ruisselle",
+      "Barbotte",
+      "Palmette",
+      "Noyelle"
+    ]
   },
   "colporteur": {
     "guest": true,
@@ -949,7 +1081,29 @@
     "icon": "🎒",
     "desc": "Colporteur, vend des objets dont personne ne veut",
     "motif": "vendre sa camelote",
-    "menace": "me revendre ce qu'il m'avait déjà vendu"
+    "menace": "me revendre ce qu'il m'avait déjà vendu",
+    "names": [
+      "Bricabrac",
+      "Fourbi",
+      "Bazar",
+      "Babiolin",
+      "Camelot",
+      "Rossignol",
+      "Pacotillon",
+      "Toutvend",
+      "Bradeur",
+      "Fatras",
+      "Bimbelot",
+      "Breloquin",
+      "Chiffonnet",
+      "Rafistol",
+      "Ballot",
+      "Fouillis",
+      "Trimballe",
+      "Colifichet",
+      "Marchandin",
+      "Soldeur"
+    ]
   },
   "abbesse": {
     "guest": true,
@@ -959,7 +1113,29 @@
     "icon": "📿",
     "desc": "Abbesse, quête pour un couvent introuvable",
     "motif": "faire la quête",
-    "menace": "me faire la morale"
+    "menace": "me faire la morale",
+    "names": [
+      "Prudence",
+      "Bénédicte",
+      "Clémence",
+      "Humilité",
+      "Modestine",
+      "Pétronille",
+      "Ursule",
+      "Hildegarde",
+      "Scholastique",
+      "Radegonde",
+      "Sobriété",
+      "Austérine",
+      "Pénitence",
+      "Charité",
+      "Constance",
+      "Patience",
+      "Tempérance",
+      "Abstinence",
+      "Mortifia",
+      "Componcte"
+    ]
   },
   "troubadour": {
     "guest": true,
@@ -969,7 +1145,29 @@
     "icon": "🪕",
     "desc": "Troubadour itinérant, chante juste, et ça agace",
     "motif": "donner un concert",
-    "menace": "chanter mieux que tout le monde"
+    "menace": "chanter mieux que tout le monde",
+    "names": [
+      "Lirelire",
+      "Fredon",
+      "Ritournel",
+      "Refrain",
+      "Mandolin",
+      "Vielleux",
+      "Luthard",
+      "Couplet",
+      "Trémolo",
+      "Arpège",
+      "Rondeau",
+      "Virelai",
+      "Sérénadin",
+      "Tambourin",
+      "Flûtiau",
+      "Ménestrin",
+      "Troubadin",
+      "Chantefable",
+      "Lyrion",
+      "Pastourel"
+    ]
   },
   "chasseuse": {
     "guest": true,
@@ -979,7 +1177,29 @@
     "icon": "🏹",
     "desc": "Chasseuse de primes, a toujours un avis de recherche sur elle",
     "motif": "toucher une prime",
-    "menace": "me livrer au baron contre trois écus"
+    "menace": "me livrer au baron contre trois écus",
+    "names": [
+      "Vipérine",
+      "Traquette",
+      "Primerose",
+      "Carabine",
+      "Rapace",
+      "Fouine",
+      "Belette",
+      "Harpie",
+      "Griffonne",
+      "Arbalète",
+      "Embuscade",
+      "Pistarde",
+      "Sanguine",
+      "Corbine",
+      "Ronce",
+      "Épine",
+      "Mordache",
+      "Flèche",
+      "Lacette",
+      "Embûche"
+    ]
   },
   "alchimiste": {
     "guest": true,
@@ -989,17 +1209,61 @@
     "icon": "⚗️",
     "desc": "Alchimiste ambulant, transforme l'or en dettes",
     "motif": "proposer ses services",
-    "menace": "changer mes économies en plomb"
+    "menace": "changer mes économies en plomb",
+    "names": [
+      "Mercurio",
+      "Soufrius",
+      "Athanor",
+      "Plombard",
+      "Alambic",
+      "Distillon",
+      "Vitriol",
+      "Salpêtre",
+      "Antimoine",
+      "Cinabrin",
+      "Bismuth",
+      "Orpiment",
+      "Calcinus",
+      "Fumagal",
+      "Transmutin",
+      "Philtron",
+      "Sublimin",
+      "Azotin",
+      "Arsénio",
+      "Aurifex"
+    ]
   },
   "baronne": {
     "guest": true,
     "name": "Grisemotte",
     "gender": "f",
-    "title": "la baronne de Grisemotte",
+    "title": "la baronne",
     "icon": "👑",
     "desc": "Baronne voisine, jalouse de tout ce qui brille",
     "motif": "rendre une visite de courtoisie",
-    "menace": "racheter la baronnie et me mettre dehors"
+    "menace": "racheter la baronnie et me mettre dehors",
+    "names": [
+      "Grisemotte",
+      "Hautecuisse",
+      "Pincebec",
+      "Morgueline",
+      "Vanité",
+      "Clinquante",
+      "Dorure",
+      "Mirliflore",
+      "Pompadoure",
+      "Paonne",
+      "Fanfreluche",
+      "Brocarde",
+      "Altière",
+      "Rengorgée",
+      "Toupette",
+      "Ostentine",
+      "Jalousie",
+      "Hermine",
+      "Velours",
+      "Ombrelle"
+    ]
   },
   "dresseuse": {
     "guest": true,
@@ -1009,7 +1273,29 @@
     "icon": "🎪",
     "desc": "Dresseuse de dragons, surtout des petits",
     "motif": "recruter des bêtes pour son cirque",
-    "menace": "m'emmener dans son cirque"
+    "menace": "m'emmener dans son cirque",
+    "names": [
+      "Gertrude",
+      "Fouettine",
+      "Croquette",
+      "Griffette",
+      "Pattoune",
+      "Fanfare",
+      "Sifflette",
+      "Cerceline",
+      "Ombeline",
+      "Flamberge",
+      "Écaille",
+      "Muselle",
+      "Câline",
+      "Dragonette",
+      "Pirouette",
+      "Trapèze",
+      "Bastringue",
+      "Clownette",
+      "Grelotte",
+      "Ménagerie"
+    ]
   },
   "messager": {
     "guest": true,
@@ -1019,6 +1305,28 @@
     "icon": "✉️",
     "desc": "Messager du baron, porte toujours de mauvaises nouvelles",
     "motif": "apporter une lettre du baron",
-    "menace": "m'annoncer une mauvaise nouvelle"
+    "menace": "m'annoncer une mauvaise nouvelle",
+    "names": [
+      "Rapidon",
+      "Galopin",
+      "Trottin",
+      "Missivin",
+      "Courandier",
+      "Dépêchon",
+      "Hérautin",
+      "Presto",
+      "Véloce",
+      "Hâtif",
+      "Cavalcadin",
+      "Fileur",
+      "Sabot",
+      "Éperon",
+      "Postillon",
+      "Relais",
+      "Furtif",
+      "Bottin",
+      "Estafin",
+      "Ventrapat"
+    ]
   }
 }

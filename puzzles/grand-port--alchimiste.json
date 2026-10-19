@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Grand Port de Brumeval — l'affaire Mercurio",
+  "title": "Le Grand Port de Brumeval — l'affaire Transmutin",
   "decor": "port",
   "size": 10,
   "rooms": {
@@ -311,7 +311,7 @@
     },
     {
       "id": "j",
-      "name": "Mercurio",
+      "name": "Transmutin",
       "gender": "m",
       "role": "victim",
       "icon": "⚗️",
@@ -322,8 +322,8 @@
   ],
   "id": "grand-port--alchimiste",
   "place": "grand-port",
-  "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : l'alchimiste Mercurio, venu proposer ses services, est mort sur les quais. Neuf habitués erraient dans la brume. L'un d'eux était seul avec lui.",
-  "epilogue": "— Vous étiez seule avec Mercurio.\n— Je n'ai rien fait. (Blub.)\n— Vous faites des bulles.\n— Il voulait changer mes économies en plomb. Je l'ai juste invité à nager. (Blub, blub.)",
+  "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : l'alchimiste Transmutin, venu proposer ses services, est mort sur les quais. Neuf habitués erraient dans la brume. L'un d'eux était seul avec lui.",
+  "epilogue": "— Vous étiez seule avec Transmutin.\n— Je n'ai rien fait. (Blub.)\n— Vous faites des bulles.\n— Il voulait changer mes économies en plomb. Je l'ai juste invité à nager. (Blub, blub.)",
   "clues": [
     {
       "who": "a",

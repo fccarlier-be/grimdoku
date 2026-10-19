@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Mine des Nains — l'affaire Mercurio",
+  "title": "La Mine des Nains — l'affaire Plombard",
   "size": 8,
   "rooms": {
     "E": {
@@ -170,7 +170,6 @@
       ]
     }
   ],
-  "intro": "À la Mine des Nains, l'alchimiste Mercurio, venu proposer ses services, est descendu plus bas que prévu. Sept mineurs et visiteurs étaient au fond. L'un d'eux était seul avec lui. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
   "characters": [
     {
       "id": "a",
@@ -244,7 +243,7 @@
     },
     {
       "id": "h",
-      "name": "Mercurio",
+      "name": "Plombard",
       "gender": "m",
       "role": "victim",
       "icon": "⚗️",
@@ -256,7 +255,8 @@
   "decor": "mine",
   "id": "mine--alchimiste",
   "place": "mine",
-  "epilogue": "— Vous étiez seul avec Mercurio.\n— Il voulait changer mes économies en plomb.\n— Et vous avez fait quoi ?\n— On a creusé. Un trou. À sa taille.",
+  "intro": "À la Mine des Nains, l'alchimiste Plombard, venu proposer ses services, est descendu plus bas que prévu. Sept mineurs et visiteurs étaient au fond. L'un d'eux était seul avec lui. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
+  "epilogue": "— Vous étiez seul avec Plombard.\n— Il voulait changer mes économies en plomb.\n— Et vous avez fait quoi ?\n— On a creusé. Un trou. À sa taille.",
   "clues": [
     {
       "who": "a",

@@ -1,8 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Meurtre au Sanglier Borgne — l'affaire Saisitout",
-  "intro": "On m'a tiré du lit à l'aube. L'huissier Saisitout, venu au Sanglier Borgne saisir des biens, ne se réveillera plus. Cinq clients juraient dormir comme des loirs. L'un d'eux était avec lui. J'ai demandé un café ; on m'a servi une bière.",
-  "epilogue": "— Vous étiez seul avec Saisitout.\n— Saisitout.\n— Pourquoi ?\n— Il voulait saisir mes affaires. Alors Bâfrin taper. Taper fort. Fort.",
+  "title": "Meurtre au Sanglier Borgne — l'affaire Ramassard",
   "size": 6,
   "rooms": {
     "T": {
@@ -178,7 +176,7 @@
     },
     {
       "id": "f",
-      "name": "Saisitout",
+      "name": "Ramassard",
       "gender": "m",
       "role": "victim",
       "icon": "📜",
@@ -190,6 +188,8 @@
   "decor": "taverne",
   "id": "taverne--huissier",
   "place": "taverne",
+  "intro": "On m'a tiré du lit à l'aube. L'huissier Ramassard, venu au Sanglier Borgne saisir des biens, ne se réveillera plus. Cinq clients juraient dormir comme des loirs. L'un d'eux était avec lui. J'ai demandé un café ; on m'a servi une bière.",
+  "epilogue": "— Vous étiez seul avec Ramassard.\n— Ramassard.\n— Pourquoi ?\n— Il voulait saisir mes affaires. Alors Bâfrin taper. Taper fort. Fort.",
   "clues": [
     {
       "who": "a",

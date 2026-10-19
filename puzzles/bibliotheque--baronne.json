@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Bibliothèque Interdite — l'affaire Grisemotte",
+  "title": "La Bibliothèque Interdite — l'affaire Hautecuisse",
   "size": 7,
   "rooms": {
     "S": {
@@ -164,7 +164,6 @@
       ]
     }
   ],
-  "intro": "À la Bibliothèque Interdite, la baronne de Grisemotte Grisemotte, venue rendre une visite de courtoisie, a été retrouvée entre deux rayonnages. On m'a demandé d'enquêter en silence. Six lecteurs étaient là. L'un d'eux était seul avec elle. Je chuchote mes questions ; on me répond en hurlant « chut ».",
   "characters": [
     {
       "id": "a",
@@ -231,7 +230,7 @@
     },
     {
       "id": "g",
-      "name": "Grisemotte",
+      "name": "Hautecuisse",
       "gender": "f",
       "role": "victim",
       "icon": "👑",
@@ -243,7 +242,8 @@
   "decor": "bibliotheque",
   "id": "bibliotheque--baronne",
   "place": "bibliotheque",
-  "epilogue": "— Vous étiez seule avec Grisemotte.\n— Elle voulait racheter la baronnie et me mettre dehors. Je lui ai proposé un verre.\n— De vin ?\n— Je ne bois jamais… de vin.",
+  "intro": "À la Bibliothèque Interdite, la baronne Hautecuisse, venue rendre une visite de courtoisie, a été retrouvée entre deux rayonnages. On m'a demandé d'enquêter en silence. Six lecteurs étaient là. L'un d'eux était seul avec elle. Je chuchote mes questions ; on me répond en hurlant « chut ».",
+  "epilogue": "— Vous étiez seule avec Hautecuisse.\n— Elle voulait racheter la baronnie et me mettre dehors. Je lui ai proposé un verre.\n— De vin ?\n— Je ne bois jamais… de vin.",
   "clues": [
     {
       "who": "a",

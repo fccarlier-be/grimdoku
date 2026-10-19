@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Cimetière de Minuit — l'affaire Vipérine",
+  "title": "Le Cimetière de Minuit — l'affaire Ronce",
   "size": 8,
   "rooms": {
     "G": {
@@ -239,7 +239,7 @@
     },
     {
       "id": "g",
-      "name": "Vipérine",
+      "name": "Ronce",
       "gender": "f",
       "role": "victim",
       "icon": "🏹",
@@ -251,8 +251,8 @@
   "decor": "cimetiere",
   "id": "cimetiere--chasseuse--golem--i2",
   "place": "cimetiere",
-  "intro": "Au Cimetière de Minuit, on a retrouvé la chasseuse de primes Vipérine, venue toucher une prime. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Six habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec elle. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
-  "epilogue": "— Vous étiez seul avec Vipérine.\n— Elle voulait me livrer au baron contre trois écus. Alors j'ai pris ses mesures.\n— Pour quoi faire ?\n— Le travail était à moitié fait. Autant le finir.",
+  "intro": "Au Cimetière de Minuit, on a retrouvé la chasseuse de primes Ronce, venue toucher une prime. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Six habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec elle. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
+  "epilogue": "— Vous étiez seul avec Ronce.\n— Elle voulait me livrer au baron contre trois écus. Alors j'ai pris ses mesures.\n— Pour quoi faire ?\n— Le travail était à moitié fait. Autant le finir.",
   "clues": [
     {
       "who": "a",

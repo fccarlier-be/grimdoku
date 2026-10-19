@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "L'Académie de Magie — l'affaire Ermengarde",
+  "title": "L'Académie de Magie — l'affaire Ragnhilde",
   "size": 7,
   "rooms": {
     "X": {
@@ -220,7 +220,7 @@
     },
     {
       "id": "f",
-      "name": "Ermengarde",
+      "name": "Ragnhilde",
       "gender": "f",
       "role": "victim",
       "icon": "👒",
@@ -232,8 +232,8 @@
   "decor": "academie",
   "id": "academie--cousine--golem--i2",
   "place": "academie",
-  "intro": "À l'Académie de Magie, la cousine Ermengarde, venue réclamer un héritage, a été retrouvée un soir d'examens. Cinq élèves et professeurs révisaient, paraît-il. L'un d'eux était seul avec elle. Ça sent le soufre, mais ici, ça sent toujours le soufre.",
-  "epilogue": "— Vous étiez seule avec Ermengarde.\n— Elle voulait réclamer sa part de ce qui m'appartient. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain.",
+  "intro": "À l'Académie de Magie, la cousine Ragnhilde, venue réclamer un héritage, a été retrouvée un soir d'examens. Cinq élèves et professeurs révisaient, paraît-il. L'un d'eux était seul avec elle. Ça sent le soufre, mais ici, ça sent toujours le soufre.",
+  "epilogue": "— Vous étiez seule avec Ragnhilde.\n— Elle voulait réclamer sa part de ce qui m'appartient. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain.",
   "clues": [
     {
       "who": "a",

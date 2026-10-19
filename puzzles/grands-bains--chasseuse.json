@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Les Grands Bains de Brumeval — l'affaire Vipérine",
+  "title": "Les Grands Bains de Brumeval — l'affaire Rapace",
   "decor": "thermes",
   "size": 10,
   "rooms": {
@@ -318,7 +318,7 @@
     },
     {
       "id": "j",
-      "name": "Vipérine",
+      "name": "Rapace",
       "gender": "f",
       "role": "victim",
       "icon": "🏹",
@@ -329,8 +329,8 @@
   ],
   "id": "grands-bains--chasseuse",
   "place": "grands-bains",
-  "intro": "Aux Grands Bains de Brumeval, on vient soigner ses rhumatismes, ses nerfs ou sa réputation. La chasseuse de primes Vipérine, venue toucher une prime, n'est pas ressortie du bain. Neuf curistes et employés barbotaient dans les parages. L'un d'eux était seul avec elle. Il fait quarante degrés, tout le monde transpire, et personne ne sait rien.",
-  "epilogue": "— Vous étiez seul avec Vipérine.\n— Elle voulait me livrer au baron contre trois écus. De mon temps, on changeait ces gens-là en tabouret.\n— Vous l'avez changée en tabouret ?\n— Non. J'ai oublié la formule. Alors j'ai pris la canne.",
+  "intro": "Aux Grands Bains de Brumeval, on vient soigner ses rhumatismes, ses nerfs ou sa réputation. La chasseuse de primes Rapace, venue toucher une prime, n'est pas ressortie du bain. Neuf curistes et employés barbotaient dans les parages. L'un d'eux était seul avec elle. Il fait quarante degrés, tout le monde transpire, et personne ne sait rien.",
+  "epilogue": "— Vous étiez seul avec Rapace.\n— Elle voulait me livrer au baron contre trois écus. De mon temps, on changeait ces gens-là en tabouret.\n— Vous l'avez changée en tabouret ?\n— Non. J'ai oublié la formule. Alors j'ai pris la canne.",
   "clues": [
     {
       "who": "a",

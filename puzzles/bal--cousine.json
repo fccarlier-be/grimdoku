@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Bal Masqué — l'affaire Ermengarde",
+  "title": "Le Bal Masqué — l'affaire Hermengilde",
   "size": 8,
   "rooms": {
     "B": {
@@ -267,7 +267,7 @@
     },
     {
       "id": "h",
-      "name": "Ermengarde",
+      "name": "Hermengilde",
       "gender": "f",
       "role": "victim",
       "icon": "👒",
@@ -279,8 +279,8 @@
   "decor": "bal",
   "id": "bal--cousine",
   "place": "bal",
-  "intro": "Bal masqué au château : la cousine Ermengarde, venue réclamer un héritage, n'a pas passé minuit. Sept invités dansaient, ou le prétendent. L'un d'eux était seul avec elle. Le plus dur, ici, c'est de savoir qui est sous quel masque. Et qui ment dessous.",
-  "epilogue": "— Vous étiez seul avec Ermengarde.\n— Elle voulait réclamer sa part de ce qui m'appartient. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
+  "intro": "Bal masqué au château : la cousine Hermengilde, venue réclamer un héritage, n'a pas survécu jusqu'à minuit. Sept invités dansaient, ou le prétendent. L'un d'eux était seul avec elle. Le plus dur, ici, c'est de savoir qui est sous quel masque. Et qui ment dessous.",
+  "epilogue": "— Vous étiez seul avec Hermengilde.\n— Elle voulait réclamer sa part de ce qui m'appartient. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
   "clues": [
     {
       "who": "a",

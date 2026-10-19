@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Mine des Nains — l'affaire Taxard",
+  "title": "La Mine des Nains — l'affaire Sangsuard",
   "size": 8,
   "rooms": {
     "G": {
@@ -165,7 +165,6 @@
       ]
     }
   ],
-  "intro": "À la Mine des Nains, le percepteur Taxard, venu lever l'impôt de fin d'année, est descendu plus bas que prévu. Six mineurs et visiteurs étaient au fond. L'un d'eux était seul avec lui. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
   "characters": [
     {
       "id": "a",
@@ -230,7 +229,7 @@
     },
     {
       "id": "g",
-      "name": "Taxard",
+      "name": "Sangsuard",
       "gender": "m",
       "role": "victim",
       "icon": "🧾",
@@ -242,7 +241,8 @@
   "decor": "mine",
   "id": "mine--percepteur--dragon--i2",
   "place": "mine",
-  "epilogue": "— Vous étiez seul avec Taxard.\n— Il voulait me faire payer l'impôt sur tout ce que je possède.\n— Et vous avez fait quoi ?\n— On a creusé. Un trou. À sa taille.",
+  "intro": "À la Mine des Nains, le percepteur Sangsuard, venu lever l'impôt de fin d'année, est descendu plus bas que prévu. Six mineurs et visiteurs étaient au fond. L'un d'eux était seul avec lui. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
+  "epilogue": "— Vous étiez seul avec Sangsuard.\n— Il voulait me faire payer l'impôt sur tout ce que je possède.\n— Et vous avez fait quoi ?\n— On a creusé. Un trou. À sa taille.",
   "clues": [
     {
       "who": "a",

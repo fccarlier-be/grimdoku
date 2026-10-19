@@ -1,8 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Tour de l'Archimage — l'affaire Lirelire",
-  "intro": "Le troubadour Lirelire était monté à la Tour de l'Archimage donner un concert. On l'a retrouvé au pied d'une étagère de grimoires, sans vie. Six habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec lui. Ici, même les escaliers mentent.",
-  "epilogue": "— Vous étiez seul avec Lirelire.\n— Pardon. Pardon pardon pardon.\n— Je n'ai encore rien dit.\n— Il voulait chanter mieux que tout le monde. Alors j'ai éternué. Et quand j'éternue, je crache du feu.",
+  "title": "La Tour de l'Archimage — l'affaire Couplet",
   "size": 7,
   "rooms": {
     "L": {
@@ -222,7 +220,7 @@
     },
     {
       "id": "g",
-      "name": "Lirelire",
+      "name": "Couplet",
       "gender": "m",
       "role": "victim",
       "icon": "🪕",
@@ -234,6 +232,8 @@
   "decor": "tour",
   "id": "tour--troubadour",
   "place": "tour",
+  "intro": "Le troubadour Couplet était venu à la Tour de l'Archimage donner un concert. On l'a retrouvé au pied d'une étagère de grimoires, sans vie. Six habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec lui. Ici, même les escaliers mentent.",
+  "epilogue": "— Vous étiez seul avec Couplet.\n— Pardon. Pardon pardon pardon.\n— Je n'ai encore rien dit.\n— Il voulait chanter mieux que tout le monde. Alors j'ai éternué. Et quand j'éternue, je crache du feu.",
   "clues": [
     {
       "who": "a",

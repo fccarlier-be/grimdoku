@@ -1,8 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Château de Mortebrune — l'affaire Gertrude",
-  "intro": "La dresseuse Gertrude était venue au Château de Mortebrune recruter des bêtes pour son cirque. Le roi m'a fait appeler, ce qui veut dire que c'est grave, ou qu'il s'ennuie. Six membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec elle.",
-  "epilogue": "— Vous étiez seul avec Gertrude.\n— Je me lève. Je proteste. Je me rassois.\n— Pourquoi ?\n— Elle voulait m'emmener dans son cirque. J'ai dégainé. Je regrette. Je rengaine.",
+  "title": "Le Château de Mortebrune — l'affaire Fanfare",
   "size": 7,
   "rooms": {
     "G": {
@@ -239,7 +237,7 @@
     },
     {
       "id": "g",
-      "name": "Gertrude",
+      "name": "Fanfare",
       "gender": "f",
       "role": "victim",
       "icon": "🎪",
@@ -251,6 +249,8 @@
   "decor": "chateau",
   "id": "chateau--dresseuse",
   "place": "chateau",
+  "intro": "La dresseuse Fanfare était venue au Château de Mortebrune recruter des bêtes pour son cirque. On m'a fait appeler au nom du roi, ce qui veut dire que c'est grave, ou qu'il s'ennuie. Six membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec elle.",
+  "epilogue": "— Vous étiez seul avec Fanfare.\n— Je me lève. Je proteste. Je me rassois.\n— Pourquoi ?\n— Elle voulait m'emmener dans son cirque. J'ai dégainé. Je regrette. Je rengaine.",
   "clues": [
     {
       "who": "a",

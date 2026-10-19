@@ -35,7 +35,7 @@ Transformer les lettres d'Augure et l'affaire finale en un mystère cohérent, c
 
 ### 1.1 La Tour et le Nœud de Brume
 
-Il y a environ 412 ans, Fizzlebarbe a découvert un déséquilibre magique qui menaçait les six contrées de Brumeval. Il a installé sous sa Tour un dispositif de stabilisation appelé **le Nœud de Brume**. Ce dispositif n'est ni un trésor, ni une arme, ni une source d'énergie ordinaire. Il contribue à maintenir la stabilité des chemins, des frontières et de certains phénomènes magiques locaux.
+Il y a environ quatre siècles, Fizzlebarbe, alors jeune mage, a découvert un déséquilibre magique qui menaçait les six contrées de Brumeval. Il a installé sous sa Tour un dispositif de stabilisation appelé **le Nœud de Brume**. Ce dispositif n'est ni un trésor, ni une arme, ni une source d'énergie ordinaire. Il contribue à maintenir la stabilité des chemins, des frontières et de certains phénomènes magiques locaux.
 
 Le Nœud est relié symboliquement et magiquement aux six contrées : Mortebrune, la côte, Bois-Tordu, les Monts Grimaces, le quartier savant et les routes. Il ne faut pas détailler de mécanique magique supplémentaire sans nécessité narrative. Les effets observables sont limités : brume anormale, repères qui semblent changer, trajets qui ne conduisent pas où on l'attend et plans de la Tour incomplets.
 
@@ -97,7 +97,7 @@ Il ne faut donc pas écrire une chronologie qui affirme qu'Augure est obligatoir
 
 | Repère | Fait canonique | Ce que le joueur peut savoir avant la fin |
 |---|---|---|
-| Il y a environ 412 ans | Fizzlebarbe découvre le déséquilibre magique et établit le Nœud de Brume sous la Tour. Il devient gardien de la charge. | Rien de précis. Les documents historiques du Palier zéro confirmeront ce fait à la fin. |
+| Il y a environ quatre siècles | Fizzlebarbe, alors jeune mage, découvre le déséquilibre magique et établit le Nœud de Brume sous la Tour. Il devient gardien de la charge. | Rien de précis. Les documents historiques du Palier zéro confirmeront ce fait à la fin. |
 | Il y a environ 20 ans | Fernand, apprenti de Fizzlebarbe, perd une main pendant une réparation liée aux installations de la Tour. Il reste impayé et sans reconnaissance suffisante. | Une ancienne clé, l'accident et la rancune de Fernand apparaissent dans les rumeurs. Le lien avec le Nœud n'est pas encore compris. |
 | Il y a environ 11 ans | Gribouille emprunte le grimoire de Dewey puis le perd dans la Tour. Fizzlebarbe trouve l'ouvrage et y cache une clé de service. | Une dette de bibliothèque apparemment banale et une disparition mal expliquée. |
 | Quelques mois avant la fin | Fizzlebarbe envisage enfin de transmettre la garde. Il demande à Augure d'observer les personnes susceptibles de vouloir la Tour. | Les comportements des héritiers commencent à être consignés dans les lettres. Le sens exact de la surveillance demeure inconnu. |
@@ -304,7 +304,7 @@ La migration est acceptable seulement si toutes ces conditions sont remplies.
 ### Continuité
 
 - [ ] Les 23 lettres correspondent toujours aux 23 lieux et à leurs bons identifiants.
-- [ ] La progression reste une lettre par lieu, obtenue à la première enquête résolue dans ce lieu.
+- [ ] La progression reste une lettre par lieu, glissée sous la porte à la dernière enquête résolue dans ce lieu, et reçue quand le joueur l'ouvre.
 - [ ] Les lettres n'exigent aucun ordre de lecture.
 - [ ] Le document du notaire est un projet scellé non finalisé, récupéré par Augure.
 - [ ] Le grimoire de Dewey, la clé et l'accès au Palier zéro ont une relation stable dans tous les textes.
@@ -361,7 +361,7 @@ Quand le plan est approuvé :
 
 Tester au minimum :
 
-- le déblocage des lettres après une première enquête résolue dans chacun des lieux ;
+- le déblocage des lettres après la dernière enquête résolue dans chacun des lieux ;
 - l'affichage de la lettre dans la victoire et dans le carnet ;
 - le déblocage de l'affaire finale à 15 lettres ;
 - les neuf variantes de coupable final ;
@@ -401,3 +401,13 @@ Appliquées dans le jeu (en local) selon `lore/PLAN_MIGRATION_CANON.md` :
 3. **Fernand est mort dans l'accident** de la Tour, il y a vingt ans, et il est revenu en zombie, sans sa main.
 4. **Les lettres les plus longues** ont perdu une phrase (40 mots environ au maximum).
 5. **La révélation commune** est le champ `revelation` de `scenes/testament.json`, affichée après l'épilogue du coupable, quel qu'il soit (« 📜 Dans les archives du Palier zéro… »), et relisible depuis le verdict.
+
+## Annexe — décisions du 2026-10-19 (après l'audit du lore)
+
+- **Victimes** : le nom de la victime change à chaque affaire (liste de vingt noms par profession, `cast.json` → `names`). La profession, le portrait, le motif et la menace restent. Un même visiteur ne meurt plus plusieurs fois.
+- **Fin** : l'affaire finale ne s'ouvre qu'avec **toutes** les lettres (23). Fizzlebarbe ne peut plus réapparaître vivant dans une enquête jouée après sa mort.
+- **Après la révélation** : l'enquêteur scelle les archives du Palier zéro et garde la clé, à titre provisoire, quel que soit le coupable. Augure ne reçoit aucune charge (s'il est coupable, la lettre de Fizzlebarbe devient une ironie amère). Clin d'œil final : « Cette nuit-là, quelqu'un a déplacé les meubles de la Tour. Personne d'autre n'avait la clé. »
+- **Chronologie** : Fizzlebarbe a 412 ans ; il garde le Nœud depuis environ quatre siècles (installé quand il était jeune mage).
+- **Lettres** : glissées sous la porte à la dernière enquête résolue d'un lieu, reçues quand le joueur ouvre l'enveloppe (elles ouvrent alors les lieux suivants).
+- **Augure** : « voit beaucoup, comprend moins » — il n'est pas omniscient.
+

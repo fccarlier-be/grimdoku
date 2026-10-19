@@ -1,8 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Château de Mortebrune — l'affaire Ermengarde",
-  "intro": "La cousine Ermengarde était venue au Château de Mortebrune réclamer un héritage. Le roi m'a fait appeler, ce qui veut dire que c'est grave, ou qu'il s'ennuie. Six membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec elle.",
-  "epilogue": "— Vous étiez seul avec Ermengarde.\n— Je me lève. Je proteste. Je me rassois.\n— Pourquoi ?\n— Elle voulait réclamer sa part de ce qui m'appartient. J'ai dégainé. Je regrette. Je rengaine.",
+  "title": "Le Château de Mortebrune — l'affaire Gisèle",
   "size": 7,
   "rooms": {
     "G": {
@@ -239,7 +237,7 @@
     },
     {
       "id": "g",
-      "name": "Ermengarde",
+      "name": "Gisèle",
       "gender": "f",
       "role": "victim",
       "icon": "👒",
@@ -251,6 +249,8 @@
   "decor": "chateau",
   "id": "chateau--cousine",
   "place": "chateau",
+  "intro": "La cousine Gisèle était venue au Château de Mortebrune réclamer un héritage. On m'a fait appeler au nom du roi, ce qui veut dire que c'est grave, ou qu'il s'ennuie. Six membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec elle.",
+  "epilogue": "— Vous étiez seul avec Gisèle.\n— Je me lève. Je proteste. Je me rassois.\n— Pourquoi ?\n— Elle voulait réclamer sa part de ce qui m'appartient. J'ai dégainé. Je regrette. Je rengaine.",
   "clues": [
     {
       "who": "a",

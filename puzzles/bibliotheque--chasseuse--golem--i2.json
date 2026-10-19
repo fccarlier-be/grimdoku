@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Bibliothèque Interdite — l'affaire Vipérine",
+  "title": "La Bibliothèque Interdite — l'affaire Mordache",
   "size": 7,
   "rooms": {
     "S": {
@@ -159,7 +159,6 @@
       ]
     }
   ],
-  "intro": "À la Bibliothèque Interdite, la chasseuse de primes Vipérine, venue toucher une prime, a été retrouvée entre deux rayonnages. On m'a demandé d'enquêter en silence. Cinq lecteurs étaient là. L'un d'eux était seul avec elle. Je chuchote mes questions ; on me répond en hurlant « chut ».",
   "characters": [
     {
       "id": "a",
@@ -217,7 +216,7 @@
     },
     {
       "id": "f",
-      "name": "Vipérine",
+      "name": "Mordache",
       "gender": "f",
       "role": "victim",
       "icon": "🏹",
@@ -229,7 +228,8 @@
   "decor": "bibliotheque",
   "id": "bibliotheque--chasseuse--golem--i2",
   "place": "bibliotheque",
-  "epilogue": "— Vous étiez seul avec Vipérine.\n— Elle voulait me livrer au baron contre trois écus. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
+  "intro": "À la Bibliothèque Interdite, la chasseuse de primes Mordache, venue toucher une prime, a été retrouvée entre deux rayonnages. On m'a demandé d'enquêter en silence. Cinq lecteurs étaient là. L'un d'eux était seul avec elle. Je chuchote mes questions ; on me répond en hurlant « chut ».",
+  "epilogue": "— Vous étiez seul avec Mordache.\n— Elle voulait me livrer au baron contre trois écus. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
   "clues": [
     {
       "who": "a",

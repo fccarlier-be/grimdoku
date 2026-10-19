@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "L'Académie de Magie — l'affaire Prudence",
+  "title": "L'Académie de Magie — l'affaire Ursule",
   "size": 7,
   "rooms": {
     "X": {
@@ -234,7 +234,7 @@
     },
     {
       "id": "g",
-      "name": "Prudence",
+      "name": "Ursule",
       "gender": "f",
       "role": "victim",
       "icon": "📿",
@@ -246,8 +246,8 @@
   "decor": "academie",
   "id": "academie--abbesse",
   "place": "academie",
-  "intro": "À l'Académie de Magie, l'abbesse Prudence, venue faire la quête, a été retrouvée un soir d'examens. Six élèves et professeurs révisaient, paraît-il. L'un d'eux était seul avec elle. Ça sent le soufre, mais ici, ça sent toujours le soufre.",
-  "epilogue": "— Vous étiez seul avec Prudence.\n— Elle voulait me faire la morale. Atchoum ! Pardon : le houblon.\n— Et le sortilège ?\n— Il est parti tout seul, avec l'éternuement. Mais je visais bien.",
+  "intro": "À l'Académie de Magie, l'abbesse Ursule, venue faire la quête, a été retrouvée un soir d'examens. Six élèves et professeurs révisaient, paraît-il. L'un d'eux était seul avec elle. Ça sent le soufre, mais ici, ça sent toujours le soufre.",
+  "epilogue": "— Vous étiez seul avec Ursule.\n— Elle voulait me faire la morale. Atchoum ! Pardon : le houblon.\n— Et le sortilège ?\n— Il est parti tout seul, avec l'éternuement. Mais je visais bien.",
   "clues": [
     {
       "who": "a",

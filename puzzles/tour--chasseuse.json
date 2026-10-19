@@ -1,8 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Tour de l'Archimage — l'affaire Vipérine",
-  "intro": "La chasseuse de primes Vipérine était montée à la Tour de l'Archimage toucher une prime. On l'a retrouvée au pied d'une étagère de grimoires, sans vie. Six habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec elle. Ici, même les escaliers mentent.",
-  "epilogue": "— Vous étiez seul avec Vipérine.\n— Pardon. Pardon pardon pardon.\n— Je n'ai encore rien dit.\n— Elle voulait me livrer au baron contre trois écus. Alors j'ai éternué. Et quand j'éternue, je crache du feu.",
+  "title": "La Tour de l'Archimage — l'affaire Belette",
   "size": 7,
   "rooms": {
     "L": {
@@ -225,7 +223,7 @@
     },
     {
       "id": "g",
-      "name": "Vipérine",
+      "name": "Belette",
       "gender": "f",
       "role": "victim",
       "icon": "🏹",
@@ -237,6 +235,8 @@
   "decor": "tour",
   "id": "tour--chasseuse",
   "place": "tour",
+  "intro": "La chasseuse de primes Belette était venue à la Tour de l'Archimage toucher une prime. On l'a retrouvée au pied d'une étagère de grimoires, sans vie. Six habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec elle. Ici, même les escaliers mentent.",
+  "epilogue": "— Vous étiez seul avec Belette.\n— Pardon. Pardon pardon pardon.\n— Je n'ai encore rien dit.\n— Elle voulait me livrer au baron contre trois écus. Alors j'ai éternué. Et quand j'éternue, je crache du feu.",
   "clues": [
     {
       "who": "a",

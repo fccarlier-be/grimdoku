@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Banquet des Gobelins — l'affaire Saisitout",
+  "title": "Le Banquet des Gobelins — l'affaire Recouvrin",
   "size": 6,
   "rooms": {
     "K": {
@@ -183,7 +183,7 @@
     },
     {
       "id": "f",
-      "name": "Saisitout",
+      "name": "Recouvrin",
       "gender": "m",
       "role": "victim",
       "icon": "📜",
@@ -195,8 +195,8 @@
   "decor": "banquet",
   "id": "banquet--huissier",
   "place": "banquet",
-  "intro": "Au Banquet des Gobelins, l'huissier Saisitout, venu saisir des biens, est passé du côté des convives au côté du menu. Enfin, presque. Cinq invités se goinfraient. L'un d'eux était seul avec lui. On m'a servi une soupe. Je ne l'ai pas touchée.",
-  "epilogue": "— Vous étiez seul avec Saisitout.\n— Il voulait saisir mes affaires. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "intro": "Au Banquet des Gobelins, l'huissier Recouvrin, venu saisir des biens, est passé de la liste des invités à la carte du menu. On l'a retrouvé avant le dessert. Cinq invités se goinfraient. L'un d'eux était seul avec lui. On m'a servi une soupe. Je ne l'ai pas touchée.",
+  "epilogue": "— Vous étiez seul avec Recouvrin.\n— Il voulait saisir mes affaires. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
   "clues": [
     {
       "who": "a",

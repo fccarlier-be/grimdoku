@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Grand Port de Brumeval — l'affaire Grisemotte",
+  "title": "Le Grand Port de Brumeval — l'affaire Pompadoure",
   "decor": "port",
   "size": 10,
   "rooms": {
@@ -311,7 +311,7 @@
     },
     {
       "id": "j",
-      "name": "Grisemotte",
+      "name": "Pompadoure",
       "gender": "f",
       "role": "victim",
       "icon": "👑",
@@ -322,8 +322,8 @@
   ],
   "id": "grand-port--baronne",
   "place": "grand-port",
-  "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : la baronne de Grisemotte Grisemotte, venue rendre une visite de courtoisie, est morte sur les quais. Neuf habitués erraient dans la brume. L'un d'eux était seul avec elle.",
-  "epilogue": "— Vous étiez seule avec Grisemotte.\n— Elle voulait racheter la baronnie et me mettre dehors. Je lui ai proposé un verre.\n— De vin ?\n— Je ne bois jamais… de vin.",
+  "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : la baronne Pompadoure, venue rendre une visite de courtoisie, est morte sur les quais. Neuf habitués erraient dans la brume. L'un d'eux était seul avec elle.",
+  "epilogue": "— Vous étiez seule avec Pompadoure.\n— Elle voulait racheter la baronnie et me mettre dehors. Je lui ai proposé un verre.\n— De vin ?\n— Je ne bois jamais… de vin.",
   "clues": [
     {
       "who": "a",

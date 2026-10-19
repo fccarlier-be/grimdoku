@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Bal Masqué — l'affaire Vipérine",
+  "title": "Le Bal Masqué — l'affaire Lacette",
   "size": 8,
   "rooms": {
     "B": {
@@ -267,7 +267,7 @@
     },
     {
       "id": "h",
-      "name": "Vipérine",
+      "name": "Lacette",
       "gender": "f",
       "role": "victim",
       "icon": "🏹",
@@ -279,8 +279,8 @@
   "decor": "bal",
   "id": "bal--chasseuse",
   "place": "bal",
-  "intro": "Bal masqué au château : la chasseuse de primes Vipérine, venue toucher une prime, n'a pas passé minuit. Sept invités dansaient, ou le prétendent. L'un d'eux était seul avec elle. Le plus dur, ici, c'est de savoir qui est sous quel masque. Et qui ment dessous.",
-  "epilogue": "— Vous étiez seul avec Vipérine.\n— « Elle voulait me livrer au baron contre trois écus, ô rage, ô désespoir… »\n— Répondez normalement.\n— J'ai chanté jusqu'à ce qu'elle s'arrête. Définitivement.",
+  "intro": "Bal masqué au château : la chasseuse de primes Lacette, venue toucher une prime, n'a pas survécu jusqu'à minuit. Sept invités dansaient, ou le prétendent. L'un d'eux était seul avec elle. Le plus dur, ici, c'est de savoir qui est sous quel masque. Et qui ment dessous.",
+  "epilogue": "— Vous étiez seul avec Lacette.\n— « Elle voulait me livrer au baron contre trois écus, ô rage, ô désespoir… »\n— Répondez normalement.\n— J'ai chanté jusqu'à ce qu'elle s'arrête. Définitivement.",
   "clues": [
     {
       "who": "a",

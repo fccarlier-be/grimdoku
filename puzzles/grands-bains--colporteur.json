@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Les Grands Bains de Brumeval — l'affaire Bricabrac",
+  "title": "Les Grands Bains de Brumeval — l'affaire Pacotillon",
   "decor": "thermes",
   "size": 10,
   "rooms": {
@@ -318,7 +318,7 @@
     },
     {
       "id": "j",
-      "name": "Bricabrac",
+      "name": "Pacotillon",
       "gender": "m",
       "role": "victim",
       "icon": "🎒",
@@ -329,8 +329,8 @@
   ],
   "id": "grands-bains--colporteur",
   "place": "grands-bains",
-  "intro": "Aux Grands Bains de Brumeval, on vient soigner ses rhumatismes, ses nerfs ou sa réputation. Le colporteur Bricabrac, venu vendre sa camelote, n'est pas ressorti du bain. Neuf curistes et employés barbotaient dans les parages. L'un d'eux était seul avec lui. Il fait quarante degrés, tout le monde transpire, et personne ne sait rien.",
-  "epilogue": "— Vous étiez seule avec Bricabrac.\n— Je n'ai rien fait. (Blub.)\n— Vous faites des bulles.\n— Il voulait me revendre ce qu'il m'avait déjà vendu. Je l'ai juste invité à nager. (Blub, blub.)",
+  "intro": "Aux Grands Bains de Brumeval, on vient soigner ses rhumatismes, ses nerfs ou sa réputation. Le colporteur Pacotillon, venu vendre sa camelote, n'est pas ressorti du bain. Neuf curistes et employés barbotaient dans les parages. L'un d'eux était seul avec lui. Il fait quarante degrés, tout le monde transpire, et personne ne sait rien.",
+  "epilogue": "— Vous étiez seule avec Pacotillon.\n— Je n'ai rien fait. (Blub.)\n— Vous faites des bulles.\n— Il voulait me revendre ce qu'il m'avait déjà vendu. Je l'ai juste invité à nager. (Blub, blub.)",
   "clues": [
     {
       "who": "a",

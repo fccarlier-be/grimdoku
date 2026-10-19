@@ -6,7 +6,7 @@
   "decor": "tour",
   "size": 10,
   "final": true,
-  "intro": "Quinze lettres, et toutes semblaient mener ici. Fizzlebarbe, 412 ans, a été retrouvé mort dans sa Tour, la nuit où il devait enfin régler sa succession. Le projet de testament a disparu. Ses neuf héritiers présumés étaient tous là, et un seul était avec lui. Sur la rambarde, le corbeau me regarde comme s'il savait déjà quelque chose. Pour une fois, je lui poserai la question après avoir résolu l'affaire.",
+  "intro": "Toutes les lettres sont là, et toutes menaient ici. Fizzlebarbe, 412 ans, a été retrouvé mort dans sa Tour, la nuit où il devait enfin régler sa succession. Le projet de testament a disparu. Ses neuf héritiers présumés étaient tous là, et un seul était avec lui. Sur la rambarde, le corbeau me regarde comme s'il savait déjà quelque chose. Pour une fois, je lui poserai la question après avoir résolu l'affaire.",
   "rooms": {
     "O": {
       "name": "Observatoire",
@@ -269,7 +269,7 @@
   ],
   "epilogues": {
     "gobelin": "— Vous étiez seul avec Fizzlebarbe.\n— Il allait régler sa succession. Et la Tour était déjà en gage chez les gobelins.\n— Donc ?\n— Donc, techniquement, il valait mieux qu'il ne règle rien. C'est légal. Presque.",
-    "zombie": "— Vous étiez seul avec lui.\n— Vingt ans de salaire, il me devait. Il m'a tendu une pièce. Une seule.\n— Et ?\n— Je me suis énervé. J'ai perdu un bras. Il tenait un chandelier.",
+    "zombie": "— Vous étiez seul avec lui.\n— Vingt ans de salaire, il me devait. Il m'a tendu une pièce. Une seule.\n— Et ?\n— Je me suis énervé. Mon bras gauche s'est décroché, celui qui avait encore sa main. Elle tenait un chandelier.",
     "professeur": "— Vous étiez seul avec lui.\n— (Il renifle.) Il sentait la fin.\n— Vous l'avez aidé ?\n— Je l'ai noté. Zéro. Il a mal pris la note.",
     "apprentie": "— Vous étiez seule avec lui.\n— Je voulais juste ouvrir son coffre. Avec la permission. Presque.\n— Et ?\n— C'est normal que la Tour fume encore ?",
     "spectre": "— Vous étiez seul avec lui.\n— De mon vivant, cette Tour était à moi.\n— Et maintenant ?\n— Maintenant, nous voilà deux fantômes à nous la disputer. Ça promet.",
@@ -279,9 +279,9 @@
     "corbeau": "— Vous étiez seul avec lui.\n— (Billet : « Des mois à espionner tout le monde pour lui. Pas un merci. »)\n— Et ?\n— (Billet : « Il voulait que je continue. Pour l'éternité, sans doute. J'ai donné ma démission. »)"
   },
   "revelation": {
-    "lettre": "Si vous lisez ceci, c'est que je n'ai pas terminé ce que j'avais commencé. La Tour n'est pas un héritage : c'est une charge. Sous ses fondations se trouve le Nœud de Brume, qui aide à garder les six contrées en équilibre. Je l'ai gardé pendant quatre cent douze ans, et j'avais fini par croire que personne ne pourrait me remplacer.\nJ'ai demandé à mon corbeau de surveiller les prétendants. Il m'a rapporté leurs ambitions, leurs mensonges et leurs petites combines. Je pensais trouver la vérité dans leurs actes ; j'ai oublié de regarder les miens.\nLe document que vous cherchiez n'était qu'un projet. Ce que je voulais transmettre, c'était la garde, pas la propriété. J'ai cherché quelqu'un qui ne convoite pas la Tour. Il était sous mes yeux, mais j'étais trop occupé à le faire écrire pour le remarquer.",
+    "lettre": "Si vous lisez ceci, c'est que je n'ai pas terminé ce que j'avais commencé. La Tour n'est pas un héritage : c'est une charge. Sous ses fondations se trouve le Nœud de Brume, qui aide à garder les six contrées en équilibre. Je l'ai gardé pendant quatre siècles, et j'avais fini par croire que personne ne pourrait me remplacer.\nJ'ai demandé à mon corbeau de surveiller les prétendants. Il m'a rapporté leurs ambitions, leurs mensonges et leurs petites combines. Je pensais trouver la vérité dans leurs actes ; j'ai oublié de regarder les miens.\nLe document que vous cherchiez n'était qu'un projet. Ce que je voulais transmettre, c'était la garde, pas la propriété. J'ai cherché quelqu'un qui ne convoite pas la Tour. Il était sous mes yeux, mais j'étais trop occupé à le faire écrire pour le remarquer.",
     "signature": "Fizzlebarbe",
     "billet": "Les copies sous votre porte, c'était moi. Il ne me l'avait pas demandé. Vous, au moins, vous lisez jusqu'au bout.",
-    "apres": "Augure veille désormais sur les archives du Palier zéro, à titre provisoire. Il a demandé que ce soit écrit."
+    "apres": "J'ai scellé les archives du Palier zéro et gardé la clé. À titre provisoire, en attendant qu'un vrai gardien se présente. Je n'ai rien demandé.\nCette nuit-là, quelqu'un a déplacé les meubles de la Tour. Personne d'autre n'avait la clé."
   }
 }

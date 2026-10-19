@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "L'Université des Sortilèges — l'affaire Mercurio",
+  "title": "L'Université des Sortilèges — l'affaire Athanor",
   "decor": "academie",
   "size": 11,
   "rooms": {
@@ -365,7 +365,7 @@
     },
     {
       "id": "k",
-      "name": "Mercurio",
+      "name": "Athanor",
       "gender": "m",
       "role": "victim",
       "icon": "⚗️",
@@ -376,8 +376,8 @@
   ],
   "id": "universite--alchimiste",
   "place": "universite",
-  "intro": "La veille de la remise des diplômes, l'Université des Sortilèges a perdu l'alchimiste Mercurio, venu proposer ses services. Dix membres de l'université travaillaient tard, ou faisaient semblant. L'un d'eux était seul avec lui. L'Académie d'en face nie tout en bloc, avant même que je demande.",
-  "epilogue": "— Vous étiez seule avec Mercurio.\n— Il voulait changer mes économies en plomb, alors j'ai lancé un sort de protection.\n— Et ?\n— C'est normal que ça fume encore ?",
+  "intro": "La veille de la remise des diplômes, l'Université des Sortilèges a perdu l'alchimiste Athanor, venu proposer ses services. Dix membres de l'université travaillaient tard, ou faisaient semblant. L'un d'eux était seul avec lui. L'Académie d'en face nie tout en bloc, avant même que je demande.",
+  "epilogue": "— Vous étiez seule avec Athanor.\n— Il voulait changer mes économies en plomb, alors j'ai lancé un sort de protection.\n— Et ?\n— C'est normal que ça fume encore ?",
   "clues": [
     {
       "who": "a",

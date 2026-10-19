@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Foire aux Sortilèges — l'affaire Grisemotte",
+  "title": "La Foire aux Sortilèges — l'affaire Clinquante",
   "size": 7,
   "rooms": {
     "S": {
@@ -150,7 +150,6 @@
       ]
     }
   ],
-  "intro": "La Foire aux Sortilèges a perdu un client : la baronne de Grisemotte Grisemotte, venue rendre une visite de courtoisie. Six forains juraient qu'ils tenaient leur stand. L'un d'eux était seul avec elle. Le bonimenteur m'a déjà proposé un élixir de vérité. Deux écus, garanti sans effet.",
   "characters": [
     {
       "id": "a",
@@ -214,7 +213,7 @@
     },
     {
       "id": "g",
-      "name": "Grisemotte",
+      "name": "Clinquante",
       "gender": "f",
       "role": "victim",
       "icon": "👑",
@@ -226,7 +225,8 @@
   "decor": "foire",
   "id": "foire--baronne",
   "place": "foire",
-  "epilogue": "— Vous étiez seul avec Grisemotte.\n— « Elle voulait racheter la baronnie et me mettre dehors, ô rage, ô désespoir… »\n— Répondez normalement.\n— J'ai chanté jusqu'à ce qu'elle s'arrête. Définitivement.",
+  "intro": "La Foire aux Sortilèges a perdu un client : la baronne Clinquante, venue rendre une visite de courtoisie. Six forains juraient qu'ils tenaient leur stand. L'un d'eux était seul avec elle. Le bonimenteur m'a déjà proposé un élixir de vérité. Deux écus, garanti sans effet.",
+  "epilogue": "— Vous étiez seul avec Clinquante.\n— « Elle voulait racheter la baronnie et me mettre dehors, ô rage, ô désespoir… »\n— Répondez normalement.\n— J'ai chanté jusqu'à ce qu'elle s'arrête. Définitivement.",
   "clues": [
     {
       "who": "a",

@@ -169,7 +169,6 @@
       ]
     }
   ],
-  "intro": "La bibliothécaire {victime} a été retrouvée entre deux rayonnages, un « Chut ! » figé sur les lèvres. Six lecteurs nocturnes erraient dans la Bibliothèque Interdite. Un seul était avec elle.",
   "characters": [
     {
       "id": "a",
@@ -207,14 +206,6 @@
       "role": "victim"
     }
   ],
-  "epilogues": {
-    "mage": "{coupable} avoue en éternuant : {victime} lui réclamait trois siècles d'amendes de retard pour un grimoire de recettes de bière.",
-    "spectre": "{coupable} hantait la réserve depuis des siècles. {victime} voulait la transformer en salle de lecture « lumineuse et accueillante ». Insupportable.",
-    "vampire": "{coupable} avoue : {victime} avait ouvert les rideaux de la galerie « pour lire plus confortablement ». Il y a des choses qu'on ne fait pas à une comtesse.",
-    "djinn": "{coupable} avoue : {victime} avait rangé sa lampe au rayon « Objets trouvés ». Il y a quatre-vingts ans.",
-    "gobelin": "{coupable} revendait les livres rares au marché noir. {victime} venait de faire l'inventaire. Il a classé l'affaire.",
-    "archimage": "{coupable} avoue : {victime} avait rangé ses mémoires au rayon « Fiction ». Quatre cent douze ans de vérité, et on ose douter."
-  },
   "auto": {
     "intro": "À la Bibliothèque Interdite, {titre} {victime}, venu{e} {motif}, a été retrouvé{e} entre deux rayonnages. On m'a demandé d'enquêter en silence. {Nombre} lecteurs étaient là. L'un d'eux était seul avec {lui}. Je chuchote mes questions ; on me répond en hurlant « chut »."
   }

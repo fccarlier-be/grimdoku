@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Cimetière de Minuit — l'affaire Lirelire",
+  "title": "Le Cimetière de Minuit — l'affaire Flûtiau",
   "size": 8,
   "rooms": {
     "G": {
@@ -204,7 +204,7 @@
       "gender": "m",
       "role": "suspect",
       "icon": "🐦‍⬛",
-      "desc": "Corbeau, sait tout, ne dit rien",
+      "desc": "Corbeau, voit beaucoup, comprend moins, ne dit rien",
       "archetype": "corbeau",
       "tic": "Ne parle pas : il écrit"
     },
@@ -253,7 +253,7 @@
     },
     {
       "id": "h",
-      "name": "Lirelire",
+      "name": "Flûtiau",
       "gender": "m",
       "role": "victim",
       "icon": "🪕",
@@ -265,8 +265,8 @@
   "decor": "cimetiere",
   "id": "cimetiere--troubadour",
   "place": "cimetiere",
-  "intro": "Au Cimetière de Minuit, on a retrouvé le troubadour Lirelire, venu donner un concert. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Sept habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec lui. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
-  "epilogue": "— Vous étiez seule avec Lirelire.\n— Il voulait chanter mieux que tout le monde. Je lui ai proposé un verre.\n— De vin ?\n— Je ne bois jamais… de vin.",
+  "intro": "Au Cimetière de Minuit, on a retrouvé le troubadour Flûtiau, venu donner un concert. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Sept habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec lui. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
+  "epilogue": "— Vous étiez seule avec Flûtiau.\n— Il voulait chanter mieux que tout le monde. Je lui ai proposé un verre.\n— De vin ?\n— Je ne bois jamais… de vin.",
   "clues": [
     {
       "who": "a",

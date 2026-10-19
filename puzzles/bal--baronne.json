@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Bal Masqué — l'affaire Grisemotte",
+  "title": "Le Bal Masqué — l'affaire Mirliflore",
   "size": 8,
   "rooms": {
     "B": {
@@ -267,7 +267,7 @@
     },
     {
       "id": "h",
-      "name": "Grisemotte",
+      "name": "Mirliflore",
       "gender": "f",
       "role": "victim",
       "icon": "👑",
@@ -279,8 +279,8 @@
   "decor": "bal",
   "id": "bal--baronne",
   "place": "bal",
-  "intro": "Bal masqué au château : la baronne de Grisemotte Grisemotte, venue rendre une visite de courtoisie, n'a pas passé minuit. Sept invités dansaient, ou le prétendent. L'un d'eux était seul avec elle. Le plus dur, ici, c'est de savoir qui est sous quel masque. Et qui ment dessous.",
-  "epilogue": "— Vous étiez seule avec Grisemotte.\n— Elle voulait racheter la baronnie et me mettre dehors. Puis elle a dit : « Je voudrais qu'on me laisse tranquille pour l'éternité. »\n— Et ?\n— J'exauce au pied de la lettre.",
+  "intro": "Bal masqué au château : la baronne Mirliflore, venue rendre une visite de courtoisie, n'a pas survécu jusqu'à minuit. Sept invités dansaient, ou le prétendent. L'un d'eux était seul avec elle. Le plus dur, ici, c'est de savoir qui est sous quel masque. Et qui ment dessous.",
+  "epilogue": "— Vous étiez seule avec Mirliflore.\n— Elle voulait racheter la baronnie et me mettre dehors. Puis elle a dit : « Je voudrais qu'on me laisse tranquille pour l'éternité. »\n— Et ?\n— J'exauce au pied de la lettre.",
   "clues": [
     {
       "who": "a",

@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Bibliothèque Interdite — l'affaire Mercurio",
+  "title": "La Bibliothèque Interdite — l'affaire Bismuth",
   "size": 7,
   "rooms": {
     "S": {
@@ -164,7 +164,6 @@
       ]
     }
   ],
-  "intro": "À la Bibliothèque Interdite, l'alchimiste Mercurio, venu proposer ses services, a été retrouvé entre deux rayonnages. On m'a demandé d'enquêter en silence. Six lecteurs étaient là. L'un d'eux était seul avec lui. Je chuchote mes questions ; on me répond en hurlant « chut ».",
   "characters": [
     {
       "id": "a",
@@ -231,7 +230,7 @@
     },
     {
       "id": "g",
-      "name": "Mercurio",
+      "name": "Bismuth",
       "gender": "m",
       "role": "victim",
       "icon": "⚗️",
@@ -243,7 +242,8 @@
   "decor": "bibliotheque",
   "id": "bibliotheque--alchimiste",
   "place": "bibliotheque",
-  "epilogue": "— Vous étiez seul avec Mercurio.\n— Il voulait changer mes économies en plomb. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
+  "intro": "À la Bibliothèque Interdite, l'alchimiste Bismuth, venu proposer ses services, a été retrouvé entre deux rayonnages. On m'a demandé d'enquêter en silence. Six lecteurs étaient là. L'un d'eux était seul avec lui. Je chuchote mes questions ; on me répond en hurlant « chut ».",
+  "epilogue": "— Vous étiez seul avec Bismuth.\n— Il voulait changer mes économies en plomb. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
   "clues": [
     {
       "who": "a",

@@ -1,8 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Meurtre au Sanglier Borgne — l'affaire Pinardon",
-  "intro": "On m'a tiré du lit à l'aube. L'inspecteur des tavernes Pinardon, venu au Sanglier Borgne inspecter les lieux, ne se réveillera plus. Cinq clients juraient dormir comme des loirs. L'un d'eux était avec lui. J'ai demandé un café ; on m'a servi une bière.",
-  "epilogue": "— Vous étiez seule avec Pinardon.\n— Il voulait me coller un blâme. Je lui ai mis deux sur dix.\n— Et ensuite ?\n— Ensuite, zéro.",
+  "title": "Meurtre au Sanglier Borgne — l'affaire Rinçon",
   "size": 6,
   "rooms": {
     "T": {
@@ -178,7 +176,7 @@
     },
     {
       "id": "f",
-      "name": "Pinardon",
+      "name": "Rinçon",
       "gender": "m",
       "role": "victim",
       "icon": "🍷",
@@ -190,6 +188,8 @@
   "decor": "taverne",
   "id": "taverne--inspecteur",
   "place": "taverne",
+  "intro": "On m'a tiré du lit à l'aube. L'inspecteur des tavernes Rinçon, venu au Sanglier Borgne inspecter les lieux, ne se réveillera plus. Cinq clients juraient dormir comme des loirs. L'un d'eux était avec lui. J'ai demandé un café ; on m'a servi une bière.",
+  "epilogue": "— Vous étiez seule avec Rinçon.\n— Il voulait me coller un blâme. Je lui ai mis deux sur dix.\n— Et ensuite ?\n— Ensuite, zéro.",
   "clues": [
     {
       "who": "a",

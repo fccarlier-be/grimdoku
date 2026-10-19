@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Cimetière de Minuit — l'affaire Ondine",
+  "title": "Le Cimetière de Minuit — l'affaire Vaguelette",
   "size": 8,
   "rooms": {
     "G": {
@@ -184,7 +184,7 @@
       "gender": "m",
       "role": "suspect",
       "icon": "🐦‍⬛",
-      "desc": "Corbeau, sait tout, ne dit rien",
+      "desc": "Corbeau, voit beaucoup, comprend moins, ne dit rien",
       "archetype": "corbeau",
       "tic": "Ne parle pas : il écrit"
     },
@@ -253,7 +253,7 @@
     },
     {
       "id": "h",
-      "name": "Ondine",
+      "name": "Vaguelette",
       "gender": "f",
       "role": "victim",
       "icon": "🛟",
@@ -265,8 +265,8 @@
   "decor": "cimetiere",
   "id": "cimetiere--nageuse",
   "place": "cimetiere",
-  "intro": "Au Cimetière de Minuit, on a retrouvé la maîtresse-nageuse Ondine, venue donner des cours de natation. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Sept habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec elle. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
-  "epilogue": "— Vous étiez seul avec Ondine.\n— Elle voulait m'apprendre à nager de force. Ça m'a énervé.\n— Et ?\n— J'ai perdu un bras. Elle l'a reçu sur la tête.",
+  "intro": "Au Cimetière de Minuit, on a retrouvé la maîtresse-nageuse Vaguelette, venue donner des cours de natation. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Sept habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec elle. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
+  "epilogue": "— Vous étiez seul avec Vaguelette.\n— Elle voulait m'apprendre à nager de force. Ça m'a énervé.\n— Et ?\n— Mon bras gauche s'est décroché. Le seul qui avait encore sa main. Elle l'a reçu sur la tête.",
   "clues": [
     {
       "who": "a",

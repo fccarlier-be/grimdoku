@@ -1,5 +1,5 @@
 # Grimdoku — le lore complet
-*Document généré à partir des données du jeu le 2026-10-18 (`lore/LORE.md`). Il contient tout le lore : le monde, chaque personnage et toutes ses répliques, les invités, les lieux, les lettres d'Augure, l'affaire finale et sa révélation, et la façon dont tout cela s'articule avec le jeu. Il ne contient aucune solution d'énigme.*
+*Document généré à partir des données du jeu le 2026-10-19 (`lore/LORE.md`). Il contient tout le lore : le monde, chaque personnage et toutes ses répliques, les invités, les lieux, les lettres d'Augure, l'affaire finale et sa révélation, et la façon dont tout cela s'articule avec le jeu. Il ne contient aucune solution d'énigme.*
 **Attention : ce document dévoile la fin du fil rouge (le Nœud de Brume, le Palier zéro, qui écrit les lettres et pourquoi).**
 Le canon de référence est `lore/GRIMDOKU_MATRICE_CONTINUITE.md` (vérité fixe, chronologie, connaissances des personnages) ; les décisions d'application sont dans `lore/PLAN_MIGRATION_CANON.md`.
 
@@ -94,7 +94,7 @@ On l'entend à trois endroits :
 2. Placer tout le monde : une personne par ligne et par colonne, un suspect par pièce, la victime seule avec son meurtrier.
 3. Quand la dernière enquête d'un lieu est résolue, une lettre sur ce lieu glisse sous ma porte, signée « A. ».
 4. Les lettres s'empilent sur le bureau, à côté des dossiers classés et du carnet des habitants croisés.
-5. À quinze lettres, quelque chose arrivera. Toutes les lettres semblent y mener.
+5. Quand toutes les lettres seront réunies, quelque chose arrivera. Elles semblent toutes y mener.
 *Pour l'instant, une seule porte m'est ouverte : celle du château de Mortebrune.*
 
 Ensuite, le bureau : seul le château est ouvert, les autres lieux se découvrent au fil des lettres (section 11).
@@ -204,7 +204,7 @@ Exemple rempli : pour Capucine face à Prudence l'abbesse, « {Il} voulait {mena
 > — Vous étiez seul avec {victime}.  
 > — {Il} voulait {menace}. Ça m'a énervé.  
 > — Et ?  
-> — J'ai perdu un bras. {Il} l'a reçu sur la tête.
+> — Mon bras gauche s'est décroché. Le seul qui avait encore sa main. {Il} l'a reçu sur la tête.
 
 ### Goémone — Sirène
 - **Type** : `sirene` · féminin
@@ -472,7 +472,7 @@ Exemple rempli : pour Capucine face à Prudence l'abbesse, « {Il} voulait {mena
 
 ### Augure — Corbeau
 - **Type** : `corbeau` · masculin
-- **Trait** : Corbeau, sait tout, ne dit rien
+- **Trait** : Corbeau, voit beaucoup, comprend moins, ne dit rien
 - **Tic de langage** : Ne parle pas : il écrit
 - **Où on le croise** : Le Cimetière de Minuit
 - **Épilogue quand il est coupable** :
@@ -548,28 +548,30 @@ Les mobiles viennent de ces liens. Ils nourrissent les épilogues, les lettres d
 | Dewey et Gribouille | Gribouille a emprunté un grimoire il y a onze ans | Dewey le cherche dans toute la baronnie, en criant |
 | Esbroufe et Clairvoya | Associés à la foire : lui vend les élixirs, elle prédit qu'ils marchent | Leurs clients reviennent rarement contents |
 | Frégaton et Bâbord | Le capitaine qui ne part jamais, le pirate qui se perd toujours | Ils se disputent le même navire depuis vingt ans |
-| Augure et tous | Le corbeau sait tout et l'écrit | Chacun le soupçonne, personne ne l'attrape — et pour cause (section 9) |
+| Augure et tous | Le corbeau voit beaucoup et l'écrit (sans tout comprendre) | Chacun le soupçonne, personne ne l'attrape — et pour cause (section 9) |
 
 ## 6. Les invités de passage (les victimes)
 La victime est **toujours un invité de passage**, un personnage d'un jour venu de l'extérieur, souvent pour embêter quelqu'un. La troupe reste ainsi vivante d'une enquête à l'autre. Seule exception : l'affaire finale, où meurt Fizzlebarbe (section 9).
 Chaque invité a un **motif** (pourquoi il est venu, cité dans l'introduction : « venu{e} … ») et une **menace** (ce qu'il venait faire au coupable, citée dans l'épilogue). Sa carte de victime affiche sa description, puis « La victime. Elle était seule avec son meurtrier. »
 
+Depuis le 2026-10-19 (audit du lore), **le nom de la victime change à chaque affaire** : la profession, le portrait, le motif et la menace restent, le nom est tiré d'une liste de vingt (`names` dans `cast.json`, tirage sans doublon par `build-puzzles.js`). Un même visiteur ne meurt donc plus seize fois ; Brumeval tue simplement beaucoup de percepteurs.
+
 | Invité | Nom | Description | Motif (« venu… ») | Menace (dans l'épilogue) |
 | --- | --- | --- | --- | --- |
-| le percepteur (`percepteur`) | Taxard (m) | Percepteur du baron, compte même les miettes | lever l'impôt de fin d'année | me faire payer l'impôt sur tout ce que je possède |
-| la cousine (`cousine`) | Ermengarde (f) | Cousine éloignée de tout le monde, venue pour l'héritage | réclamer un héritage | réclamer sa part de ce qui m'appartient |
-| l'inspecteur des tavernes (`inspecteur`) | Pinardon (m) | Inspecteur des tavernes, goûte tout, note tout | inspecter les lieux | me coller un blâme |
-| le touriste (`touriste`) | Gustave (m) | Touriste, dessine tout au fusain, surtout ce qui est interdit | visiter la baronnie | faire mon portrait au fusain et le vendre à la foire |
-| l'huissier (`huissier`) | Saisitout (m) | Huissier de la banque gobeline, saisit d'abord, demande ensuite | saisir des biens | saisir mes affaires |
-| la maîtresse-nageuse (`nageuse`) | Ondine (f) | Maîtresse-nageuse, sans permis ni maillot | donner des cours de natation | m'apprendre à nager de force |
-| le colporteur (`colporteur`) | Bricabrac (m) | Colporteur, vend des objets dont personne ne veut | vendre sa camelote | me revendre ce qu'il m'avait déjà vendu |
-| l'abbesse (`abbesse`) | Prudence (f) | Abbesse, quête pour un couvent introuvable | faire la quête | me faire la morale |
-| le troubadour (`troubadour`) | Lirelire (m) | Troubadour itinérant, chante juste, et ça agace | donner un concert | chanter mieux que tout le monde |
-| la chasseuse de primes (`chasseuse`) | Vipérine (f) | Chasseuse de primes, a toujours un avis de recherche sur elle | toucher une prime | me livrer au baron contre trois écus |
-| l'alchimiste (`alchimiste`) | Mercurio (m) | Alchimiste ambulant, transforme l'or en dettes | proposer ses services | changer mes économies en plomb |
-| la baronne de Grisemotte (`baronne`) | Grisemotte (f) | Baronne voisine, jalouse de tout ce qui brille | rendre une visite de courtoisie | racheter la baronnie et me mettre dehors |
-| la dresseuse (`dresseuse`) | Gertrude (f) | Dresseuse de dragons, surtout des petits | recruter des bêtes pour son cirque | m'emmener dans son cirque |
-| le messager (`messager`) | Rapidon (m) | Messager du baron, porte toujours de mauvaises nouvelles | apporter une lettre du baron | m'annoncer une mauvaise nouvelle |
+| le percepteur (`percepteur`) | Taxard, Gabelou, Péageon, Prélevin, Dîmeaux, Fiscalin, Taillefer, Corvéon, Douanin, Tributin, Grattesou, Rognard, Comptegrain, Pressoux, Tondulard, Écornifle, Liardin, Exactin, Sangsuard, Ponctionnin (m) | Percepteur du baron, compte même les miettes | lever l'impôt de fin d'année | me faire payer l'impôt sur tout ce que je possède |
+| la cousine (`cousine`) | Ermengarde, Cunégonde, Frédégonde, Brunehaut, Mahaut, Aldegonde, Adélaïde, Berthilde, Clotilde, Ingeburge, Ragnhilde, Hermengilde, Rotrude, Gisèle, Plectrude, Bathilde, Sigrade, Théodelinde, Amalberge, Gondeberge (f) | Cousine éloignée de tout le monde, venue pour l'héritage | réclamer un héritage | réclamer sa part de ce qui m'appartient |
+| l'inspecteur des tavernes (`inspecteur`) | Pinardon, Picrate, Tastevin, Gorgeon, Rinçon, Gouleyant, Lichard, Sirotin, Chopinet, Godet, Bouchonné, Carafon, Trinquet, Flacon, Pichet, Gobelet, Décanteur, Blâmard, Notard, Barrique (m) | Inspecteur des tavernes, goûte tout, note tout | inspecter les lieux | me coller un blâme |
+| le touriste (`touriste`) | Gustave, Badaud, Flânard, Musard, Fusainot, Crayonnet, Souvenard, Promenin, Visitin, Gaston, Anatole, Ernest, Hippolyte, Léandre, Octave, Évariste, Théophile, Baguenaud, Lambin, Curiosus (m) | Touriste, dessine tout au fusain, surtout ce qui est interdit | visiter la baronnie | faire mon portrait au fusain et le vendre à la foire |
+| l'huissier (`huissier`) | Saisitout, Raflard, Videtout, Embarquin, Confisquet, Ramassard, Séquestre, Grappin, Crochard, Mainbasse, Ratissard, Huissard, Scellé, Inventorin, Expulsin, Récupérin, Emportout, Rapinard, Gobetout, Recouvrin (m) | Huissier de la banque gobeline, saisit d'abord, demande ensuite | saisir des biens | saisir mes affaires |
+| la maîtresse-nageuse (`nageuse`) | Ondine, Brassée, Crawline, Naïade, Mouillette, Clapote, Éclaboussine, Bouée, Nageoire, Marée, Écume, Bulle, Apnée, Trempette, Plongette, Vaguelette, Ruisselle, Barbotte, Palmette, Noyelle (f) | Maîtresse-nageuse, sans permis ni maillot | donner des cours de natation | m'apprendre à nager de force |
+| le colporteur (`colporteur`) | Bricabrac, Fourbi, Bazar, Babiolin, Camelot, Rossignol, Pacotillon, Toutvend, Bradeur, Fatras, Bimbelot, Breloquin, Chiffonnet, Rafistol, Ballot, Fouillis, Trimballe, Colifichet, Marchandin, Soldeur (m) | Colporteur, vend des objets dont personne ne veut | vendre sa camelote | me revendre ce qu'il m'avait déjà vendu |
+| l'abbesse (`abbesse`) | Prudence, Bénédicte, Clémence, Humilité, Modestine, Pétronille, Ursule, Hildegarde, Scholastique, Radegonde, Sobriété, Austérine, Pénitence, Charité, Constance, Patience, Tempérance, Abstinence, Mortifia, Componcte (f) | Abbesse, quête pour un couvent introuvable | faire la quête | me faire la morale |
+| le troubadour (`troubadour`) | Lirelire, Fredon, Ritournel, Refrain, Mandolin, Vielleux, Luthard, Couplet, Trémolo, Arpège, Rondeau, Virelai, Sérénadin, Tambourin, Flûtiau, Ménestrin, Troubadin, Chantefable, Lyrion, Pastourel (m) | Troubadour itinérant, chante juste, et ça agace | donner un concert | chanter mieux que tout le monde |
+| la chasseuse de primes (`chasseuse`) | Vipérine, Traquette, Primerose, Carabine, Rapace, Fouine, Belette, Harpie, Griffonne, Arbalète, Embuscade, Pistarde, Sanguine, Corbine, Ronce, Épine, Mordache, Flèche, Lacette, Embûche (f) | Chasseuse de primes, a toujours un avis de recherche sur elle | toucher une prime | me livrer au baron contre trois écus |
+| l'alchimiste (`alchimiste`) | Mercurio, Soufrius, Athanor, Plombard, Alambic, Distillon, Vitriol, Salpêtre, Antimoine, Cinabrin, Bismuth, Orpiment, Calcinus, Fumagal, Transmutin, Philtron, Sublimin, Azotin, Arsénio, Aurifex (m) | Alchimiste ambulant, transforme l'or en dettes | proposer ses services | changer mes économies en plomb |
+| la baronne (`baronne`) | Grisemotte, Hautecuisse, Pincebec, Morgueline, Vanité, Clinquante, Dorure, Mirliflore, Pompadoure, Paonne, Fanfreluche, Brocarde, Altière, Rengorgée, Toupette, Ostentine, Jalousie, Hermine, Velours, Ombrelle (f) | Baronne voisine, jalouse de tout ce qui brille | rendre une visite de courtoisie | racheter la baronnie et me mettre dehors |
+| la dresseuse (`dresseuse`) | Gertrude, Fouettine, Croquette, Griffette, Pattoune, Fanfare, Sifflette, Cerceline, Ombeline, Flamberge, Écaille, Muselle, Câline, Dragonette, Pirouette, Trapèze, Bastringue, Clownette, Grelotte, Ménagerie (f) | Dresseuse de dragons, surtout des petits | recruter des bêtes pour son cirque | m'emmener dans son cirque |
+| le messager (`messager`) | Rapidon, Galopin, Trottin, Missivin, Courandier, Dépêchon, Hérautin, Presto, Véloce, Hâtif, Cavalcadin, Fileur, Sabot, Éperon, Postillon, Relais, Furtif, Bottin, Estafin, Ventrapat (m) | Messager du baron, porte toujours de mauvaises nouvelles | apporter une lettre du baron | m'annoncer une mauvaise nouvelle |
 
 Dans chaque lieu, les invités sont tous différents d'une enquête à l'autre ; le titre d'une enquête est « <lieu> — l'affaire <invité> ».
 
@@ -581,10 +583,10 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 - **Contrée** : Mortebrune, le chef-lieu · **carte** : 7×7 · **enquêtes** : 13
 - **Pièces** : Chapelle, Grande salle, Cuisines, Armurerie, Tour, Jardin, Donjon (la plus petite est fusionnée avec une voisine quand il y a plus de pièces que de suspects : chaque pièce doit être occupée)
 - **Habitués** : Gontran, Bakchich, Fausset, Aëlys, Blafard, Flammèche, Dagobert
-- **Invités** (enquêtes normales) : Prudence (l'abbesse), Mercurio (l'alchimiste), Grisemotte (la baronne de Grisemotte), Vipérine (la chasseuse de primes), Bricabrac (le colporteur), Ermengarde (la cousine), Gertrude (la dresseuse)
+- **Invités** (enquêtes normales) : Prudence (l'abbesse), Mercurio (l'alchimiste), Grisemotte (la baronne), Vipérine (la chasseuse de primes), Bricabrac (le colporteur), Ermengarde (la cousine), Gertrude (la dresseuse)
 - **Enquêtes à grands monstres** : Cendrebrune (forme I2) — victime Saisitout ; Caillasse (forme I2) — victime Pinardon ; Cendrebrune (forme I2) — victime Rapidon ; Cendrebrune (forme I2) — victime Ondine ; Caillasse (forme I2) — victime Taxard ; Cendrebrune (forme I2) — victime Gustave
 - **Introduction** :
-> {Titre} {victime} était venu{e} au Château de Mortebrune {motif}. Le roi m'a fait appeler, ce qui veut dire que c'est grave, ou qu'il s'ennuie. {Nombre} membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec {lui}.
+> {Titre} {victime} était venu{e} au Château de Mortebrune {motif}. On m'a fait appeler au nom du roi, ce qui veut dire que c'est grave, ou qu'il s'ennuie. {Nombre} membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec {lui}.
 - **Lettre d'Augure** :
 > Bakchich a mis la Tour de l'Archimage en garantie d'un prêt. Le prêteur n'a jamais vu le moindre titre de propriété. Bakchich appelle ça une formalité. — A.
 
@@ -592,10 +594,10 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 - **Contrée** : Mortebrune, le chef-lieu · **carte** : 9×9 · **enquêtes** : 12 · illustration reprise de « chateau »
 - **Pièces** : Remparts, Cour d'honneur, Tour de guet, Armurerie, Jardin, Écuries, Oubliettes, Salle du trône (la plus petite est fusionnée avec une voisine quand il y a plus de pièces que de suspects : chaque pièce doit être occupée)
 - **Habitués** : Gontran, Bakchich, Fausset, Aëlys, Blafard, Flammèche, Dagobert, Ciguë, Festin
-- **Invités** (enquêtes normales) : Lirelire (le troubadour), Prudence (l'abbesse), Mercurio (l'alchimiste), Grisemotte (la baronne de Grisemotte), Vipérine (la chasseuse de primes), Bricabrac (le colporteur), Ermengarde (la cousine), Gertrude (la dresseuse), Saisitout (l'huissier)
+- **Invités** (enquêtes normales) : Lirelire (le troubadour), Prudence (l'abbesse), Mercurio (l'alchimiste), Grisemotte (la baronne), Vipérine (la chasseuse de primes), Bricabrac (le colporteur), Ermengarde (la cousine), Gertrude (la dresseuse), Saisitout (l'huissier)
 - **Enquêtes à grands monstres** : Cendrebrune (forme L3) — victime Pinardon ; Caillasse (forme L3, cachée) — victime Rapidon ; Escabeau (forme I2) — victime Ondine
 - **Introduction** :
-> Le pont-levis est resté coincé toute la nuit, et {titre} {victime}, venu{e} {motif}, est resté{e} coincé{e} avec. Pour toujours. {Nombre} occupants de la Citadelle ne pouvaient pas sortir. L'un d'eux était seul avec {lui}. Au moins, personne n'a pu s'enfuir.
+> Le pont-levis est resté coincé toute la nuit, enfermant {titre} {victime}, venu{e} {motif}, avec les {nombre} occupants de la Citadelle. Au matin, {il} n'avait plus aucune envie de sortir. L'un d'eux était seul avec {lui}. Au moins, personne n'a pu s'enfuir.
 - **Lettre d'Augure** :
 > Blafard m'a montré ses titres de propriété. Le papier est authentique, et plus vieux que la baronnie. Le droit qu'il prétend en tirer l'est beaucoup moins. — A.
 
@@ -603,10 +605,10 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 - **Contrée** : Mortebrune, le chef-lieu · **carte** : 8×8 · **enquêtes** : 12
 - **Pièces** : Balcon, Salle de bal, Escalier d'honneur, Vestiaire, Buffet, Salon des miroirs, Jardin d'hiver, Boudoir (la plus petite est fusionnée avec une voisine quand il y a plus de pièces que de suspects : chaque pièce doit être occupée)
 - **Habitués** : Blafard, Dagobert, Gontran, Aëlys, Fausset, Capucine, Fumerolle, Belladone
-- **Invités** (enquêtes normales) : Prudence (l'abbesse), Mercurio (l'alchimiste), Grisemotte (la baronne de Grisemotte), Vipérine (la chasseuse de primes), Bricabrac (le colporteur), Ermengarde (la cousine), Gertrude (la dresseuse), Saisitout (l'huissier)
+- **Invités** (enquêtes normales) : Prudence (l'abbesse), Mercurio (l'alchimiste), Grisemotte (la baronne), Vipérine (la chasseuse de primes), Bricabrac (le colporteur), Ermengarde (la cousine), Gertrude (la dresseuse), Saisitout (l'huissier)
 - **Enquêtes à grands monstres** : Glissandra (forme I2) — victime Pinardon ; Escabeau et Glissandra (forme I2, I2) — victime Rapidon ; Glissandra (forme I2) — victime Ondine ; Escabeau et Glissandra (forme I2, I2) — victime Taxard
 - **Introduction** :
-> Bal masqué au château : {titre} {victime}, venu{e} {motif}, n'a pas passé minuit. {Nombre} invités dansaient, ou le prétendent. L'un d'eux était seul avec {lui}. Le plus dur, ici, c'est de savoir qui est sous quel masque. Et qui ment dessous.
+> Bal masqué au château : {titre} {victime}, venu{e} {motif}, n'a pas survécu jusqu'à minuit. {Nombre} invités dansaient, ou le prétendent. L'un d'eux était seul avec {lui}. Le plus dur, ici, c'est de savoir qui est sous quel masque. Et qui ment dessous.
 - **Lettre d'Augure** :
 > Au bal masqué, Fumerolle a promis la Tour à trois invités. Quand on lui a fait remarquer qu'ils ne pouvaient pas tous en hériter, elle a répondu qu'un vœu bien formulé ne se contredit jamais, et en a formulé un quatrième. — A.
 
@@ -625,10 +627,10 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 - **Contrée** : Mortebrune, le chef-lieu · **carte** : 7×7 · **enquêtes** : 11
 - **Pièces** : Laboratoire, Observatoire, Bibliothèque, Hall, Crypte, Jardin, Escalier (la plus petite est fusionnée avec une voisine quand il y a plus de pièces que de suspects : chaque pièce doit être occupée)
 - **Habitués** : Blafard, Flammèche, Fernand, Goémone, Belladone, Fumerolle, Fizzlebarbe
-- **Invités** (enquêtes normales) : Lirelire (le troubadour), Prudence (l'abbesse), Mercurio (l'alchimiste), Grisemotte (la baronne de Grisemotte), Vipérine (la chasseuse de primes), Bricabrac (le colporteur), Ermengarde (la cousine)
+- **Invités** (enquêtes normales) : Lirelire (le troubadour), Prudence (l'abbesse), Mercurio (l'alchimiste), Grisemotte (la baronne), Vipérine (la chasseuse de primes), Bricabrac (le colporteur), Ermengarde (la cousine)
 - **Enquêtes à grands monstres** : Glissandra (forme I2) — victime Gertrude ; Caillasse (forme I2) — victime Saisitout ; Glissandra (forme I2) — victime Pinardon ; Caillasse (forme I2) — victime Rapidon
 - **Introduction** :
-> {Titre} {victime} était monté{e} à la Tour de l'Archimage {motif}. On l'a retrouvé{e} au pied d'une étagère de grimoires, sans vie. {Nombre} habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec {lui}. Ici, même les escaliers mentent.
+> {Titre} {victime} était venu{e} à la Tour de l'Archimage {motif}. On l'a retrouvé{e} au pied d'une étagère de grimoires, sans vie. {Nombre} habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec {lui}. Ici, même les escaliers mentent.
 - **Lettre d'Augure** :
 > Fizzlebarbe a changé trois fois de serrure ce mois-ci. Il prétend que quelqu'un fouille son bureau. Curieusement, il ne m'a pas demandé de trouver le voleur, mais de dresser la liste de tous ceux qui ont essayé. — A.
 
@@ -646,7 +648,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 - **Contrée** : La côte · **carte** : 10×10 · **enquêtes** : 13 · illustration reprise de « port »
 - **Pièces** : Quais, Entrepôt, Taverne du Kraken, Capitainerie, Chantier naval, Marché aux poissons, Galion, Phare, Douane (la plus petite est fusionnée avec une voisine quand il y a plus de pièces que de suspects : chaque pièce doit être occupée)
 - **Habitués** : Bâbord, Frégaton, Écho-Écho, Goémone, Grippesou, Bâfrin, Bakchich, Belladone, Esbroufe, Fernand
-- **Invités** (enquêtes normales) : Mercurio (l'alchimiste), Grisemotte (la baronne de Grisemotte), Vipérine (la chasseuse de primes), Bricabrac (le colporteur), Ermengarde (la cousine), Gertrude (la dresseuse), Saisitout (l'huissier), Pinardon (l'inspecteur des tavernes), Rapidon (le messager), Ondine (la maîtresse-nageuse)
+- **Invités** (enquêtes normales) : Mercurio (l'alchimiste), Grisemotte (la baronne), Vipérine (la chasseuse de primes), Bricabrac (le colporteur), Ermengarde (la cousine), Gertrude (la dresseuse), Saisitout (l'huissier), Pinardon (l'inspecteur des tavernes), Rapidon (le messager), Ondine (la maîtresse-nageuse)
 - **Enquêtes à grands monstres** : Cendrebrune (forme T4) — victime Prudence ; Glissandra (forme L4, cachée) — victime Taxard ; Caillasse et Escabeau (forme I3, I2) — victime Gustave
 - **Introduction** :
 > Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : {titre} {victime}, venu{e} {motif}, est mort{e} sur les quais. {Nombre} habitués erraient dans la brume. L'un d'eux était seul avec {lui}.
@@ -678,7 +680,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 - **Contrée** : La côte · **carte** : 10×10 · **enquêtes** : 12 · illustration reprise de « thermes »
 - **Pièces** : Grand bassin, Hammam, Sauna, Vestiaires, Bassin des sirènes, Salon de thé, Jardin des cures, Salle des massages, Bains de boue (la plus petite est fusionnée avec une voisine quand il y a plus de pièces que de suspects : chaque pièce doit être occupée)
 - **Habitués** : Goémone, Aëlys, Bâfrin, Capucine, Grippesou, Belladone, Esbroufe, Fumerolle, Fizzlebarbe, Dagobert
-- **Invités** (enquêtes normales) : Gustave (le touriste), Lirelire (le troubadour), Prudence (l'abbesse), Mercurio (l'alchimiste), Grisemotte (la baronne de Grisemotte), Vipérine (la chasseuse de primes), Bricabrac (le colporteur), Ermengarde (la cousine), Gertrude (la dresseuse), Saisitout (l'huissier)
+- **Invités** (enquêtes normales) : Gustave (le touriste), Lirelire (le troubadour), Prudence (l'abbesse), Mercurio (l'alchimiste), Grisemotte (la baronne), Vipérine (la chasseuse de primes), Bricabrac (le colporteur), Ermengarde (la cousine), Gertrude (la dresseuse), Saisitout (l'huissier)
 - **Enquêtes à grands monstres** : Escabeau (forme T4) — victime Pinardon ; Glissandra (forme L4, cachée) — victime Rapidon
 - **Introduction** :
 > Aux Grands Bains de Brumeval, on vient soigner ses rhumatismes, ses nerfs ou sa réputation. {Titre} {victime}, venu{e} {motif}, n'est pas ressorti{e} du bain. {Nombre} curistes et employés barbotaient dans les parages. L'un d'eux était seul avec {lui}. Il fait quarante degrés, tout le monde transpire, et personne ne sait rien.
@@ -703,13 +705,13 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 - **Introduction** :
 > Au Moulin de Bois-Tordu, {titre} {victime}, venu{e} {motif}, a fini plus plat{e} qu'une galette. {Nombre} voisins traînaient dans le coin. L'un d'eux était seul avec {lui}. Le meunier m'a proposé de peser les suspects. J'ai refusé.
 - **Lettre d'Augure** :
-> Fernand a fait refaire une clé de la Tour. Il dit en avoir eu une avant l'accident, celui qui l'a tué. Quand je lui ai demandé ce qu'elle ouvrait, il a serré sa main manquante et changé de sujet. — A.
+> Fernand a fait refaire une clé de la Tour. Il dit en avoir eu une avant l'accident, celui qui l'a tué. Quand je lui ai demandé ce qu'elle ouvrait, il a frotté son moignon et changé de sujet. — A.
 
 ### La Ferme Hantée
 - **Contrée** : La campagne de Bois-Tordu · **carte** : 6×6 · **enquêtes** : 6
 - **Pièces** : Grange, Étable, Poulailler, Fournil, Potager (la plus petite est fusionnée avec une voisine quand il y a plus de pièces que de suspects : chaque pièce doit être occupée)
 - **Habitués** : Briochon, Bâfrin, Fernand, Capucine, Flammèche, Farinard
-- **Invités** (enquêtes normales) : Lirelire (le troubadour), Prudence (l'abbesse), Mercurio (l'alchimiste), Grisemotte (la baronne de Grisemotte), Vipérine (la chasseuse de primes), Bricabrac (le colporteur)
+- **Invités** (enquêtes normales) : Lirelire (le troubadour), Prudence (l'abbesse), Mercurio (l'alchimiste), Grisemotte (la baronne), Vipérine (la chasseuse de primes), Bricabrac (le colporteur)
 - **Introduction** :
 > On dit la Ferme Hantée, et {titre} {victime}, venu{e} {motif}, va sûrement y contribuer. {Nombre} habitants de la ferme étaient là cette nuit. L'un d'eux était seul avec {lui}. Les poules, elles, refusent de témoigner.
 - **Lettre d'Augure** :
@@ -729,7 +731,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 - **Contrée** : Les Monts Grimaces · **carte** : 8×8 · **enquêtes** : 14
 - **Pièces** : Entrée, Galerie, Forge, Puits, Filon, Dortoir, Cantine, Salle des coffres (la plus petite est fusionnée avec une voisine quand il y a plus de pièces que de suspects : chaque pièce doit être occupée)
 - **Habitués** : Grisou, Bâfrin, Bakchich, Flammèche, Gontran, Capucine, Fernand, Granit
-- **Invités** (enquêtes normales) : Lirelire (le troubadour), Prudence (l'abbesse), Mercurio (l'alchimiste), Grisemotte (la baronne de Grisemotte), Vipérine (la chasseuse de primes), Bricabrac (le colporteur), Ermengarde (la cousine), Gertrude (la dresseuse)
+- **Invités** (enquêtes normales) : Lirelire (le troubadour), Prudence (l'abbesse), Mercurio (l'alchimiste), Grisemotte (la baronne), Vipérine (la chasseuse de primes), Bricabrac (le colporteur), Ermengarde (la cousine), Gertrude (la dresseuse)
 - **Enquêtes à grands monstres** : Caillasse (forme I2) — victime Saisitout ; Cendrebrune (forme I2) — victime Pinardon ; Caillasse et Cendrebrune (forme I2, I2) — victime Rapidon ; Caillasse (forme I2) — victime Ondine ; Cendrebrune (forme I2) — victime Taxard ; Caillasse et Cendrebrune (forme I2, I2) — victime Gustave
 - **Introduction** :
 > À la Mine des Nains, {titre} {victime}, venu{e} {motif}, est descendu{e} plus bas que prévu. {Nombre} mineurs et visiteurs étaient au fond. L'un d'eux était seul avec {lui}. Ici, tout le monde a une pioche, et personne n'a d'alibi.
@@ -740,7 +742,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 - **Contrée** : Les Monts Grimaces · **carte** : 7×7 · **enquêtes** : 13
 - **Pièces** : Antre du dragon, Forge, Armurerie, Fonderie, Réserve de charbon, Atelier, Cour (la plus petite est fusionnée avec une voisine quand il y a plus de pièces que de suspects : chaque pièce doit être occupée)
 - **Habitués** : Grisou, Gontran, Bakchich, Bâfrin, Festin, Gribouille, Flammèche
-- **Invités** (enquêtes normales) : Grisemotte (la baronne de Grisemotte), Vipérine (la chasseuse de primes), Bricabrac (le colporteur), Ermengarde (la cousine), Gertrude (la dresseuse), Saisitout (l'huissier), Pinardon (l'inspecteur des tavernes)
+- **Invités** (enquêtes normales) : Grisemotte (la baronne), Vipérine (la chasseuse de primes), Bricabrac (le colporteur), Ermengarde (la cousine), Gertrude (la dresseuse), Saisitout (l'huissier), Pinardon (l'inspecteur des tavernes)
 - **Enquêtes à grands monstres** : Cendrebrune (forme I2) — victime Prudence ; Caillasse (forme I2) — victime Mercurio ; Cendrebrune et Caillasse (forme I2, I2) — victime Rapidon ; Cendrebrune (forme I2) — victime Ondine ; Caillasse (forme I2) — victime Taxard ; Cendrebrune et Caillasse (forme I2, I2) — victime Gustave
 - **Introduction** :
 > La Forge du Dragon fume plus que d'habitude : {titre} {victime}, venu{e} {motif}, n'en est pas ressorti{e}. {Nombre} habitués de la forge étaient au travail, paraît-il. L'un d'eux était seul avec {lui}. Le dragon dort. J'aimerais qu'il continue.
@@ -753,7 +755,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 - **Habitués** : Bakchich, Bâfrin, Festin, Fausset, Briochon, Fricot
 - **Invités** (enquêtes normales) : Ermengarde (la cousine), Gertrude (la dresseuse), Saisitout (l'huissier), Pinardon (l'inspecteur des tavernes), Rapidon (le messager), Ondine (la maîtresse-nageuse)
 - **Introduction** :
-> Au Banquet des Gobelins, {titre} {victime}, venu{e} {motif}, est passé{e} du côté des convives au côté du menu. Enfin, presque. {Nombre} invités se goinfraient. L'un d'eux était seul avec {lui}. On m'a servi une soupe. Je ne l'ai pas touchée.
+> Au Banquet des Gobelins, {titre} {victime}, venu{e} {motif}, est passé{e} de la liste des invités à la carte du menu. On l'a retrouvé{e} avant le dessert. {Nombre} invités se goinfraient. L'un d'eux était seul avec {lui}. On m'a servi une soupe. Je ne l'ai pas touchée.
 - **Lettre d'Augure** :
 > Au Banquet des Gobelins, Bakchich a porté un toast « au futur propriétaire de la Tour », en levant son verre vers lui-même. Puis il a demandé si les gobelins prêtaient sans garantie. Personne n'a eu le cœur de répondre. — A.
 
@@ -761,7 +763,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 - **Contrée** : Le quartier savant · **carte** : 7×7 · **enquêtes** : 11
 - **Pièces** : Tour d'astronomie, Salle de cours, Bureau du directeur, Dortoir, Laboratoire, Réfectoire, Serre (la plus petite est fusionnée avec une voisine quand il y a plus de pièces que de suspects : chaque pièce doit être occupée)
 - **Habitués** : Brindille, Gribouille, Capucine, Flammèche, Fumerolle, Aëlys, Fiolius
-- **Invités** (enquêtes normales) : Ondine (la maîtresse-nageuse), Taxard (le percepteur), Gustave (le touriste), Lirelire (le troubadour), Prudence (l'abbesse), Mercurio (l'alchimiste), Grisemotte (la baronne de Grisemotte)
+- **Invités** (enquêtes normales) : Ondine (la maîtresse-nageuse), Taxard (le percepteur), Gustave (le touriste), Lirelire (le troubadour), Prudence (l'abbesse), Mercurio (l'alchimiste), Grisemotte (la baronne)
 - **Enquêtes à grands monstres** : Caillasse (forme I2) — victime Vipérine ; Escabeau (forme I2) — victime Bricabrac ; Caillasse (forme I2) — victime Ermengarde ; Escabeau (forme I2) — victime Gertrude
 - **Introduction** :
 > À l'Académie de Magie, {titre} {victime}, venu{e} {motif}, a été retrouvé{e} un soir d'examens. {Nombre} élèves et professeurs révisaient, paraît-il. L'un d'eux était seul avec {lui}. Ça sent le soufre, mais ici, ça sent toujours le soufre.
@@ -772,7 +774,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 - **Contrée** : Le quartier savant · **carte** : 11×11 · **enquêtes** : 14 · illustration reprise de « academie »
 - **Pièces** : Amphithéâtre, Grande bibliothèque, Serre, Dortoir, Laboratoire, Cour, Réfectoire, Observatoire, Salle des duels, Bureau du doyen (la plus petite est fusionnée avec une voisine quand il y a plus de pièces que de suspects : chaque pièce doit être occupée)
 - **Habitués** : Fizzlebarbe, Brindille, Fiolius, Gribouille, Capucine, Fumerolle, Dewey, Flammèche, Ambroise, Blafard, Clairvoya
-- **Invités** (enquêtes normales) : Pinardon (l'inspecteur des tavernes), Rapidon (le messager), Ondine (la maîtresse-nageuse), Taxard (le percepteur), Gustave (le touriste), Lirelire (le troubadour), Prudence (l'abbesse), Mercurio (l'alchimiste), Grisemotte (la baronne de Grisemotte), Vipérine (la chasseuse de primes), Bricabrac (le colporteur)
+- **Invités** (enquêtes normales) : Pinardon (l'inspecteur des tavernes), Rapidon (le messager), Ondine (la maîtresse-nageuse), Taxard (le percepteur), Gustave (le touriste), Lirelire (le troubadour), Prudence (l'abbesse), Mercurio (l'alchimiste), Grisemotte (la baronne), Vipérine (la chasseuse de primes), Bricabrac (le colporteur)
 - **Enquêtes à grands monstres** : Cendrebrune (forme S4) — victime Ermengarde ; Caillasse (forme O4) — victime Gertrude ; Glissandra (forme L4, cachée) — victime Saisitout
 - **Introduction** :
 > La veille de la remise des diplômes, l'Université des Sortilèges a perdu {titre} {victime}, venu{e} {motif}. {Nombre} membres de l'université travaillaient tard, ou faisaient semblant. L'un d'eux était seul avec {lui}. L'Académie d'en face nie tout en bloc, avant même que je demande.
@@ -783,7 +785,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 - **Contrée** : Le quartier savant · **carte** : 7×7 · **enquêtes** : 10
 - **Pièces** : Scriptorium, Rayonnages, Bureau, Salle de lecture, Galerie, Réserve, Archives (la plus petite est fusionnée avec une voisine quand il y a plus de pièces que de suspects : chaque pièce doit être occupée)
 - **Habitués** : Gribouille, Blafard, Belladone, Fumerolle, Bakchich, Fizzlebarbe, Dewey
-- **Invités** (enquêtes normales) : Ondine (la maîtresse-nageuse), Taxard (le percepteur), Gustave (le touriste), Lirelire (le troubadour), Prudence (l'abbesse), Mercurio (l'alchimiste), Grisemotte (la baronne de Grisemotte)
+- **Invités** (enquêtes normales) : Ondine (la maîtresse-nageuse), Taxard (le percepteur), Gustave (le touriste), Lirelire (le troubadour), Prudence (l'abbesse), Mercurio (l'alchimiste), Grisemotte (la baronne)
 - **Enquêtes à grands monstres** : Caillasse (forme I2) — victime Vipérine ; Caillasse et Cendrebrune (forme I2, I2) — victime Bricabrac ; Caillasse et Cendrebrune (forme I2, I2) — victime Ermengarde
 - **Introduction** :
 > À la Bibliothèque Interdite, {titre} {victime}, venu{e} {motif}, a été retrouvé{e} entre deux rayonnages. On m'a demandé d'enquêter en silence. {Nombre} lecteurs étaient là. L'un d'eux était seul avec {lui}. Je chuchote mes questions ; on me répond en hurlant « chut ».
@@ -794,7 +796,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 - **Contrée** : Sur la route · **carte** : 7×7 · **enquêtes** : 9
 - **Pièces** : Roulotte, Stands, Buvette, Coulisses, Chapiteau, Ménagerie, Manège (la plus petite est fusionnée avec une voisine quand il y a plus de pièces que de suspects : chaque pièce doit être occupée)
 - **Habitués** : Clairvoya, Fausset, Bakchich, Bâfrin, Capucine, Flammèche, Esbroufe
-- **Invités** (enquêtes normales) : Ondine (la maîtresse-nageuse), Taxard (le percepteur), Gustave (le touriste), Lirelire (le troubadour), Prudence (l'abbesse), Mercurio (l'alchimiste), Grisemotte (la baronne de Grisemotte)
+- **Invités** (enquêtes normales) : Ondine (la maîtresse-nageuse), Taxard (le percepteur), Gustave (le touriste), Lirelire (le troubadour), Prudence (l'abbesse), Mercurio (l'alchimiste), Grisemotte (la baronne)
 - **Enquêtes à grands monstres** : Escabeau (forme I2) — victime Vipérine ; Escabeau (forme I2) — victime Bricabrac
 - **Introduction** :
 > La Foire aux Sortilèges a perdu un client : {titre} {victime}, venu{e} {motif}. {Nombre} forains juraient qu'ils tenaient leur stand. L'un d'eux était seul avec {lui}. Le bonimenteur m'a déjà proposé un élixir de vérité. Deux écus, garanti sans effet.
@@ -808,7 +810,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 - **Invités** (enquêtes normales) : Vipérine (la chasseuse de primes), Bricabrac (le colporteur), Ermengarde (la cousine), Gertrude (la dresseuse), Saisitout (l'huissier), Pinardon (l'inspecteur des tavernes), Rapidon (le messager), Ondine (la maîtresse-nageuse), Taxard (le percepteur), Gustave (le touriste), Lirelire (le troubadour), Prudence (l'abbesse)
 - **Enquêtes à grands monstres** : Glissandra (forme S4) — victime Mercurio ; Cendrebrune et Caillasse (forme T4, I2, cachée) — victime Grisemotte ; Escabeau (forme O4) — victime Prudence
 - **Introduction** :
-> Feu d'artifice à la Grande Foire des Mille Merveilles : tout le monde regardait le ciel, sauf {titre} {victime}, venu{e} {motif}, qui ne regardera plus rien. {Nombre} forains et visiteurs juraient avoir le nez en l'air. L'un d'eux était seul avec {lui}.
+> Feu d'artifice à la Grande Foire des Mille Merveilles : tout le monde regardait le ciel, sauf {titre} {victime}, venu{e} {motif}. {Il} n'a pas vu le bouquet final. {Nombre} forains et visiteurs juraient avoir le nez en l'air. L'un d'eux était seul avec {lui}.
 - **Lettre d'Augure** :
 > À la Grande Foire, Fiolius a acheté une malle assez grande pour un grimoire. Ou pour un archimage. Il dit qu'elle servira à déménager du matériel de la Tour vers l'Université. Il n'a demandé l'autorisation à personne. — A.
 
@@ -816,7 +818,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 - **Contrée** : Sur la route · **carte** : 7×7 · **enquêtes** : 11
 - **Pièces** : Observatoire, Salle du trône, Trésor, Salle des lampes, Jardins suspendus, Bazar, Hammam (la plus petite est fusionnée avec une voisine quand il y a plus de pièces que de suspects : chaque pièce doit être occupée)
 - **Habitués** : Dagobert, Clairvoya, Esbroufe, Bakchich, Belladone, Fizzlebarbe, Fumerolle
-- **Invités** (enquêtes normales) : Grisemotte (la baronne de Grisemotte), Vipérine (la chasseuse de primes), Bricabrac (le colporteur), Ermengarde (la cousine), Gertrude (la dresseuse), Saisitout (l'huissier), Pinardon (l'inspecteur des tavernes)
+- **Invités** (enquêtes normales) : Grisemotte (la baronne), Vipérine (la chasseuse de primes), Bricabrac (le colporteur), Ermengarde (la cousine), Gertrude (la dresseuse), Saisitout (l'huissier), Pinardon (l'inspecteur des tavernes)
 - **Enquêtes à grands monstres** : Glissandra (forme I2) — victime Prudence ; Cendrebrune (forme I2) — victime Mercurio ; Glissandra (forme I2) — victime Rapidon ; Cendrebrune (forme I2) — victime Ondine
 - **Introduction** :
 > Au Palais des Mille Vœux, {titre} {victime}, venu{e} {motif}, a fait un vœu de trop, ou en a croisé un. {Nombre} hôtes du palais étaient là. L'un d'eux était seul avec {lui}. La djinn m'a proposé de tout résoudre d'un claquement de doigts. J'ai lu les petites lignes.
@@ -830,7 +832,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 - **La Tour est une charge, pas un bien** : Fizzlebarbe n'en est pas le propriétaire mais le gardien. La garde peut se transmettre ; la Tour ne se vend pas, ne se met pas en gage et ne se lègue pas comme une maison.
 - **Le testament n'était qu'un projet** de transmission, confié sous scellé au notaire, jamais finalisé. Les prétendants se battent pour une propriété qu'aucun ne peut posséder.
 - **Fizzlebarbe** : compétent, mais très mauvais pour faire confiance. Il a fait surveiller les prétendants par Augure sans jamais leur expliquer ce qu'il cherchait à transmettre, ni demander à Augure ce que lui voulait.
-- **Augure** écrit les rapports pour Fizzlebarbe et, dans son dos, en glisse des copies sous la porte de l'enquêteur, après qu'une première affaire a été résolue dans le lieu concerné : il espère qu'un regard extérieur verra ce que son maître refuse de voir. Il n'est pas omniscient. C'est lui qui a repris le projet chez le notaire (d'où la plume noire), de peur qu'un prétendant s'en serve.
+- **Augure** écrit les rapports pour Fizzlebarbe et, dans son dos, en glisse des copies sous la porte de l'enquêteur, quand la dernière affaire du lieu concerné est résolue : il espère qu'un regard extérieur verra ce que son maître refuse de voir. Il n'est pas omniscient. C'est lui qui a repris le projet chez le notaire (d'où la plume noire), de peur qu'un prétendant s'en serve.
 - **Le grimoire et la clé** : il y a onze ans, Gribouille a perdu dans la Tour le grimoire emprunté à Dewey. Fizzlebarbe l'a retrouvé et y a caché une clé de service, qui ouvre un premier accès vers le Palier zéro (pas le contrôle du Nœud). Dewey retrouve le livre sans comprendre ce que cache la reliure.
 - **Fernand** : apprenti de Fizzlebarbe, il est mort il y a vingt ans pendant une réparation liée aux installations de la Tour, et il est revenu en zombie, sans sa main. Négligence et conflit de travail, pas tentative de meurtre : jamais payé, jamais reconnu, jamais prévenu des risques.
 ### Chronologie de référence
@@ -844,7 +846,8 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 | Peu avant la fin | Serrures changées, coffre anti-magie commandé, projet scellé chez le notaire ; Augure reprend le projet et glisse ses copies sous la porte de l'enquêteur. |
 | La nuit de l'affaire finale | Fizzlebarbe est tué avant d'avoir transmis la garde ; le coupable est celui que désigne la grille. |
 | Après le verdict | Les archives du Palier zéro révèlent le Nœud, la charge et le rôle d'Augure. |
-| Suite prévue | Fizzlebarbe revient en spectre ; Augure veille sur les archives à titre provisoire. |
+| Après le verdict | L'enquêteur scelle les archives du Palier zéro et garde la clé, à titre provisoire, quel que soit le coupable (Augure compris). |
+| Suite prévue | Fizzlebarbe revient en spectre (« quelqu'un a déplacé les meubles de la Tour ») et reprend la garde à sa façon. |
 
 Les enquêtes ordinaires se jouent dans n'importe quel ordre : c'est la chronologie du monde, pas un ordre imposé au joueur.
 ### Les lettres
@@ -863,7 +866,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 | Les Thermes Enchantés | Aux Thermes, Fumerolle a dit : « Le vieux veut léguer la Tour à celui qui le mérite. Personne ne le mérite. » Puis elle m'a demandé si un vœu pouvait modifier un titre de propriété. Elle préfère les génies aux notaires. |
 | Les Grands Bains de Brumeval | Aux Grands Bains, Fizzlebarbe a confié à son masseur qu'il « changerait tout » après sa cure : il ne voulait peut-être plus transmettre un bâtiment, mais une tâche. Le reste s'est perdu dans les huiles. |
 | Meurtre au Sanglier Borgne | Gribouille doit quarante écus au Sanglier Borgne. Il promet de tout rembourser « dès que la Tour sera à lui ». Il promet aussi depuis onze ans de rendre le grimoire de Dewey. Les deux promesses ont le même calendrier. |
-| Le Moulin de Bois-Tordu | Fernand a fait refaire une clé de la Tour. Il dit en avoir eu une avant l'accident, celui qui l'a tué. Quand je lui ai demandé ce qu'elle ouvrait, il a serré sa main manquante et changé de sujet. |
+| Le Moulin de Bois-Tordu | Fernand a fait refaire une clé de la Tour. Il dit en avoir eu une avant l'accident, celui qui l'a tué. Quand je lui ai demandé ce qu'elle ouvrait, il a frotté son moignon et changé de sujet. |
 | La Ferme Hantée | Briochon raconte que le testament existe, qu'il est caché, et qu'il n'en dira pas plus. Il a seulement entendu parler d'un document préparatoire. Le reste, il l'a brodé avec beaucoup de conviction. |
 | Le Marais des Brumes | Ciguë vend une potion qui révèle certaines encres invisibles. Dewey en a acheté trois, « pour retrouver un livre ». Je ne sais pas ce qui l'inquiète le plus : l'encre, le livre ou le reçu. |
 | La Mine des Nains | Granit a reçu commande d'un coffre à l'épreuve de la magie, à livrer dans la Tour. Le client a payé d'avance et demandé qu'on ne grave aucun nom. Granit a quand même chronométré la livraison. |
@@ -876,7 +879,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 | La Grande Foire des Mille Merveilles | À la Grande Foire, Fiolius a acheté une malle assez grande pour un grimoire. Ou pour un archimage. Il dit qu'elle servira à déménager du matériel de la Tour vers l'Université. Il n'a demandé l'autorisation à personne. |
 | Le Palais des Mille Vœux | Le Palais des Mille Vœux a proposé d'acheter la Tour pour en faire une lampe géante. Ses émissaires y avaient mesuré une puissance qu'ils ne savaient pas expliquer. Fizzlebarbe a répondu à leur seconde visite par un éclair. |
 
-**Débloquer la fin** : avec **15 lettres**, l'affaire finale s'ouvre (pas besoin de tout finir, ni d'une combinaison précise de lettres).
+**Débloquer la fin** : avec **les 23 lettres** (toutes : décision de François, 2026-10-19), l'affaire finale s'ouvre. La fin est donc vraiment la fin : Fizzlebarbe ne peut plus réapparaître vivant dans une enquête jouée après sa mort.
 
 ## 9. L'affaire finale : le testament de Fizzlebarbe
 **La Tour de l'Archimage — Le testament de Fizzlebarbe** (c'est ainsi que la baronnie appelle l'affaire) : carte 10×10, la Tour de l'Archimage, la nuit où Fizzlebarbe devait régler sa succession.
@@ -885,7 +888,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 - **Suspects, les neuf prétendants** : Bakchich, Fernand, Fiolius, Brindille, Blafard, Dewey, Gribouille, Fumerolle, Augure
 - **Vérité fixe / vérité variable** : le meurtrier est celui que désigne la grille (n'importe lequel des neuf) ; son épilogue donne son mobile. Tout le reste (le Nœud, le Palier zéro, le projet de transmission, le rôle d'Augure) est vrai quel que soit le coupable.
 - **Introduction** :
-> Quinze lettres, et toutes semblaient mener ici. Fizzlebarbe, 412 ans, a été retrouvé mort dans sa Tour, la nuit où il devait enfin régler sa succession. Le projet de testament a disparu. Ses neuf héritiers présumés étaient tous là, et un seul était avec lui. Sur la rambarde, le corbeau me regarde comme s'il savait déjà quelque chose. Pour une fois, je lui poserai la question après avoir résolu l'affaire.
+> Toutes les lettres sont là, et toutes menaient ici. Fizzlebarbe, 412 ans, a été retrouvé mort dans sa Tour, la nuit où il devait enfin régler sa succession. Le projet de testament a disparu. Ses neuf héritiers présumés étaient tous là, et un seul était avec lui. Sur la rambarde, le corbeau me regarde comme s'il savait déjà quelque chose. Pour une fois, je lui poserai la question après avoir résolu l'affaire.
 - **Épilogues** : chaque prétendant a le sien, quatre répliques, propre à son mobile (des croyances fausses sur la Tour, pour la plupart).
 
 **Si le coupable est Bakchich** :
@@ -898,7 +901,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous étiez seul avec lui.  
 > — Vingt ans de salaire, il me devait. Il m'a tendu une pièce. Une seule.  
 > — Et ?  
-> — Je me suis énervé. J'ai perdu un bras. Il tenait un chandelier.
+> — Je me suis énervé. Mon bras gauche s'est décroché, celui qui avait encore sa main. Elle tenait un chandelier.
 
 **Si le coupable est Fiolius** :
 > — Vous étiez seul avec lui.  
@@ -945,7 +948,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 ### La révélation commune
 Après l'épilogue, quel que soit le coupable, la scène du verdict propose « 📜 Dans les archives du Palier zéro… » : la lettre de Fizzlebarbe, puis le billet d'Augure. Le verdict, dans la colonne, permet de la relire.
 **La lettre de Fizzlebarbe**
-> Si vous lisez ceci, c'est que je n'ai pas terminé ce que j'avais commencé. La Tour n'est pas un héritage : c'est une charge. Sous ses fondations se trouve le Nœud de Brume, qui aide à garder les six contrées en équilibre. Je l'ai gardé pendant quatre cent douze ans, et j'avais fini par croire que personne ne pourrait me remplacer.  
+> Si vous lisez ceci, c'est que je n'ai pas terminé ce que j'avais commencé. La Tour n'est pas un héritage : c'est une charge. Sous ses fondations se trouve le Nœud de Brume, qui aide à garder les six contrées en équilibre. Je l'ai gardé pendant quatre siècles, et j'avais fini par croire que personne ne pourrait me remplacer.  
 >   
 > J'ai demandé à mon corbeau de surveiller les prétendants. Il m'a rapporté leurs ambitions, leurs mensonges et leurs petites combines. Je pensais trouver la vérité dans leurs actes ; j'ai oublié de regarder les miens.  
 >   
@@ -953,7 +956,8 @@ Après l'épilogue, quel que soit le coupable, la scène du verdict propose « �
 > **Fizzlebarbe**
 **Le billet d'Augure**
 > Les copies sous votre porte, c'était moi. Il ne me l'avait pas demandé. Vous, au moins, vous lisez jusqu'au bout. — A.
-*Augure veille désormais sur les archives du Palier zéro, à titre provisoire. Il a demandé que ce soit écrit.*
+*J'ai scellé les archives du Palier zéro et gardé la clé. À titre provisoire, en attendant qu'un vrai gardien se présente. Je n'ai rien demandé.
+Cette nuit-là, quelqu'un a déplacé les meubles de la Tour. Personne d'autre n'avait la clé.*
 **Ce que ça règle** : la Tour était une charge, le testament un projet, la garde reste à transmettre. Augure, qui ne convoitait pas la Tour, veille sur les archives sans en être propriétaire. Fizzlebarbe reviendra en spectre, furieux que sa succession ne soit pas terminée ; Blafard l'accueillera dans la confrérie des défunts mécontents.
 
 ## 10. Gags récurrents
@@ -995,7 +999,7 @@ Des petites histoires qui courent d'une enquête à l'autre, sans jamais compter
 5. **L'enquête** : à la première ouverture, une **scène au centre de l'écran** montre l'illustration du décor, le titre et l'introduction de l'enquêteur (« À l'enquête »). Le titre en haut la rouvre à tout moment.
 6. **La victoire** : le tampon « Affaire résolue », puis une **scène centrée** : le portrait du coupable, « Seul suspect dans la pièce de <victime>. » et l'épilogue dialogué. Si l'enquête apporte une lettre : « 📜 Une lettre a été glissée sous la porte… » ouvre **la lettre en grand** (cachet de cire « A », lieu, texte, « — A. »), annonce les lieux qui s'ouvrent sur la carte et la progression, avec « Plus tard » ou « 🗺️ Retour au bureau ».
 7. **Lettres, dossiers, carnet** : les lettres reçues (les nouvelles marquées, lues dès qu'on ouvre le courrier) ; les dossiers en cours et classés ; le carnet avec les **fiches de la troupe croisée** (portrait, nom, trait, tic, gags qui se voient) et « 📜 Revoir le prologue ».
-8. **L'affaire finale** : à 15 lettres, **une enveloppe scellée** apparaît sur le bureau (absente avant). Elle n'est dans aucun lieu.
+8. **L'affaire finale** : à 23 lettres, **une enveloppe scellée** apparaît sur le bureau (absente avant). Elle n'est dans aucun lieu.
 ### Les règles du jeu liées au lore (écran des règles)
 - La victime est un invité de passage ; les suspects sont les habitués, qu'on retrouve d'une enquête à l'autre.
 - Chacun porte une pastille avec l'initiale de son nom (deux lettres si deux noms commencent pareil) ; les fiches vont de la plus facile à placer à la plus difficile.

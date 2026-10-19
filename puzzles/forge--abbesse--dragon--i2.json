@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Forge du Dragon — l'affaire Prudence",
+  "title": "La Forge du Dragon — l'affaire Constance",
   "size": 7,
   "rooms": {
     "D": {
@@ -206,7 +206,7 @@
     },
     {
       "id": "f",
-      "name": "Prudence",
+      "name": "Constance",
       "gender": "f",
       "role": "victim",
       "icon": "📿",
@@ -218,8 +218,8 @@
   "decor": "forge",
   "id": "forge--abbesse--dragon--i2",
   "place": "forge",
-  "intro": "La Forge du Dragon fume plus que d'habitude : l'abbesse Prudence, venue faire la quête, n'en est pas ressortie. Cinq habitués de la forge étaient au travail, paraît-il. L'un d'eux était seul avec elle. Le dragon dort. J'aimerais qu'il continue.",
-  "epilogue": "— Vous étiez seul avec Prudence.\n— Elle voulait me faire la morale.\n— Et vous avez fait quoi ?\n— On a creusé. Un trou. À sa taille.",
+  "intro": "La Forge du Dragon fume plus que d'habitude : l'abbesse Constance, venue faire la quête, n'en est pas ressortie. Cinq habitués de la forge étaient au travail, paraît-il. L'un d'eux était seul avec elle. Le dragon dort. J'aimerais qu'il continue.",
+  "epilogue": "— Vous étiez seul avec Constance.\n— Elle voulait me faire la morale.\n— Et vous avez fait quoi ?\n— On a creusé. Un trou. À sa taille.",
   "clues": [
     {
       "who": "a",

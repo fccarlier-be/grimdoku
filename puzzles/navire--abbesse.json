@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Navire Fantôme — l'affaire Prudence",
+  "title": "Le Navire Fantôme — l'affaire Mortifia",
   "size": 7,
   "rooms": {
     "P": {
@@ -230,7 +230,7 @@
     },
     {
       "id": "g",
-      "name": "Prudence",
+      "name": "Mortifia",
       "gender": "f",
       "role": "victim",
       "icon": "📿",
@@ -242,8 +242,8 @@
   "decor": "navire",
   "id": "navire--abbesse",
   "place": "navire",
-  "intro": "Le Navire Fantôme ne quitte jamais le port, et l'abbesse Prudence, venue à bord faire la quête, non plus, désormais. Six membres de l'équipage traînaient sur le pont. L'un d'eux était seul avec elle. Le capitaine m'assure que c'est la faute de la tempête. Il n'y a pas de tempête.",
-  "epilogue": "— Vous étiez seul avec Prudence.\n— Seul avec Prudence ! Seul avec Prudence !\n— Pourquoi ?\n— Elle voulait me faire la morale ! Coup de bec ! Coup de bec !",
+  "intro": "Le Navire Fantôme ne quitte jamais le port, et l'abbesse Mortifia, venue à bord faire la quête, non plus, désormais. Six membres de l'équipage traînaient sur le pont. L'un d'eux était seul avec elle. Le capitaine m'assure que c'est la faute de la tempête. Il n'y a pas de tempête.",
+  "epilogue": "— Vous étiez seul avec Mortifia.\n— Seul avec Mortifia ! Seul avec Mortifia !\n— Pourquoi ?\n— Elle voulait me faire la morale ! Coup de bec ! Coup de bec !",
   "clues": [
     {
       "who": "a",

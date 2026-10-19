@@ -1,8 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Château de Mortebrune — l'affaire Ondine",
-  "intro": "La maîtresse-nageuse Ondine était venue au Château de Mortebrune donner des cours de natation. Le roi m'a fait appeler, ce qui veut dire que c'est grave, ou qu'il s'ennuie. Cinq membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec elle.",
-  "epilogue": "— Vous étiez seul avec Ondine.\n— Elle voulait m'apprendre à nager de force, pendant ma sieste.\n— Et ?\n— Je me suis réveillé de mauvaise humeur. On ne réveille pas un dragon.",
+  "title": "Le Château de Mortebrune — l'affaire Plongette",
   "size": 7,
   "rooms": {
     "G": {
@@ -222,7 +220,7 @@
     },
     {
       "id": "f",
-      "name": "Ondine",
+      "name": "Plongette",
       "gender": "f",
       "role": "victim",
       "icon": "🛟",
@@ -234,6 +232,8 @@
   "decor": "chateau",
   "id": "chateau--nageuse--dragon--i2",
   "place": "chateau",
+  "intro": "La maîtresse-nageuse Plongette était venue au Château de Mortebrune donner des cours de natation. On m'a fait appeler au nom du roi, ce qui veut dire que c'est grave, ou qu'il s'ennuie. Cinq membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec elle.",
+  "epilogue": "— Vous étiez seul avec Plongette.\n— Elle voulait m'apprendre à nager de force, pendant ma sieste.\n— Et ?\n— Je me suis réveillé de mauvaise humeur. On ne réveille pas un dragon.",
   "clues": [
     {
       "who": "a",

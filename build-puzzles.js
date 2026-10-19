@@ -17,7 +17,7 @@ const MANIFEST = [
 // par habitué victime, dès que solutions/<décor>--<type>.json existe (produit par gen.js --victim=<type>).
 // Une affaire par habitué absent, avec un invité de passage pour victime (autoCases, cast.js).
 const baseOf = (name) => { const raw = JSON.parse(fs.readFileSync(`scenes/${name}.json`, 'utf8')); return raw.extends || name; };
-for (const f of fs.readdirSync('scenes').sort()) {
+for (const f of fs.readdirSync('scenes').filter(n => n.endsWith('.json')).sort()) { // scenes/legacy : archives
   const name = f.replace(/\.json$/, '');
   const scene = loadScene(`scenes/${f}`);
   // les variantes (« extends ») réutilisent un décor : pas d'affaires automatiques en double
@@ -29,6 +29,21 @@ for (const f of fs.readdirSync('scenes').sort()) {
 for (const c of JSON.parse(fs.readFileSync('big-cases.json', 'utf8')).cases)
   if (fs.existsSync(`solutions/${c.id}.json`)) MANIFEST.push(c);
 
+// Nom de la victime (invité) : un par affaire, tiré de sa liste (cast.json, « names ») — décision de François, 2026-10-19 :
+// un même visiteur ne meurt plus seize fois ; la profession et le portrait restent. Tirage déterministe et sans doublon
+// pour un même type : les affaires sont prises dans l'ordre de leur identifiant, chacune part d'une place tirée de son
+// identifiant et prend le premier nom libre.
+const hashId = (s) => [...s].reduce((h, ch) => (h * 31 + ch.charCodeAt(0)) % 1000003, 7);
+const GUEST_NAME = {};
+{
+  const byType = {};
+  for (const e of MANIFEST) { const t = e.guest || (ARCHETYPES[e.victim] && ARCHETYPES[e.victim].guest ? e.victim : null); if (t) (byType[t] = byType[t] || []).push(e.id); }
+  for (const [t, ids] of Object.entries(byType)) {
+    const names = ARCHETYPES[t].names || [ARCHETYPES[t].name], used = new Set();
+    if (ids.length > names.length) throw new Error(`cast.json : ${t} est victime de ${ids.length} affaires pour ${names.length} noms`);
+    for (const id of [...ids].sort()) { let k = hashId(id) % names.length; while (used.has(names[k])) k = (k + 1) % names.length; used.add(names[k]); GUEST_NAME[id] = names[k]; }
+  }
+}
 const NOMBRES = ['zéro', 'un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf', 'dix', 'onze', 'douze'];
 const cap = (t) => t[0].toUpperCase() + t.slice(1);
 // « de » / « que » élidés devant une voyelle : d'Amphora, qu'Écarlate
@@ -114,6 +129,7 @@ for (const entry of MANIFEST) {
   delete p.auto;
   const nameOf = (id) => p.characters.find(c => c.id === id).name;
   const victim = p.characters.find(c => c.role === 'victim');
+  if (victim.guest && GUEST_NAME[entry.id]) victim.name = GUEST_NAME[entry.id];
   if (scene.subtitle) p.title = `${scene.title} — ${scene.subtitle}`;
   if (auto) p.title = `${scene.title} — l'affaire ${victim.name}`;
   // même décor, même victime qu'une affaire déjà publiée (grands personnages de tailles différentes) : la seconde affaire

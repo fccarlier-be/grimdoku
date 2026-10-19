@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Bal Masqué — l'affaire Mercurio",
+  "title": "Le Bal Masqué — l'affaire Arsénio",
   "size": 8,
   "rooms": {
     "B": {
@@ -267,7 +267,7 @@
     },
     {
       "id": "h",
-      "name": "Mercurio",
+      "name": "Arsénio",
       "gender": "m",
       "role": "victim",
       "icon": "⚗️",
@@ -279,8 +279,8 @@
   "decor": "bal",
   "id": "bal--alchimiste",
   "place": "bal",
-  "intro": "Bal masqué au château : l'alchimiste Mercurio, venu proposer ses services, n'a pas passé minuit. Sept invités dansaient, ou le prétendent. L'un d'eux était seul avec lui. Le plus dur, ici, c'est de savoir qui est sous quel masque. Et qui ment dessous.",
-  "epilogue": "— Vous étiez seul avec Mercurio.\n— « Il voulait changer mes économies en plomb, ô rage, ô désespoir… »\n— Répondez normalement.\n— J'ai chanté jusqu'à ce qu'il s'arrête. Définitivement.",
+  "intro": "Bal masqué au château : l'alchimiste Arsénio, venu proposer ses services, n'a pas survécu jusqu'à minuit. Sept invités dansaient, ou le prétendent. L'un d'eux était seul avec lui. Le plus dur, ici, c'est de savoir qui est sous quel masque. Et qui ment dessous.",
+  "epilogue": "— Vous étiez seul avec Arsénio.\n— « Il voulait changer mes économies en plomb, ô rage, ô désespoir… »\n— Répondez normalement.\n— J'ai chanté jusqu'à ce qu'il s'arrête. Définitivement.",
   "clues": [
     {
       "who": "a",

@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Port des Contrebandiers — l'affaire Rapidon",
+  "title": "Le Port des Contrebandiers — l'affaire Missivin",
   "size": 7,
   "rooms": {
     "Q": {
@@ -234,7 +234,7 @@
     },
     {
       "id": "g",
-      "name": "Rapidon",
+      "name": "Missivin",
       "gender": "m",
       "role": "victim",
       "icon": "✉️",
@@ -246,8 +246,8 @@
   "decor": "port",
   "id": "port--messager",
   "place": "port",
-  "intro": "Au Port des Contrebandiers, le messager Rapidon, venu apporter une lettre du baron, a été repêché à marée basse. Six habitués traînaient sur les quais. L'un d'eux était seul avec lui. Ici, tout le monde a quelque chose à cacher, généralement dans un tonneau.",
-  "epilogue": "— Vous étiez seul avec Rapidon.\n— Rapidon.\n— Pourquoi ?\n— Il voulait m'annoncer une mauvaise nouvelle. Alors Bâfrin taper. Taper fort. Fort.",
+  "intro": "Au Port des Contrebandiers, le messager Missivin, venu apporter une lettre du baron, a été repêché à marée basse. Six habitués traînaient sur les quais. L'un d'eux était seul avec lui. Ici, tout le monde a quelque chose à cacher, généralement dans un tonneau.",
+  "epilogue": "— Vous étiez seul avec Missivin.\n— Missivin.\n— Pourquoi ?\n— Il voulait m'annoncer une mauvaise nouvelle. Alors Bâfrin taper. Taper fort. Fort.",
   "clues": [
     {
       "who": "a",

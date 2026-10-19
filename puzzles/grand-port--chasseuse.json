@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Grand Port de Brumeval — l'affaire Vipérine",
+  "title": "Le Grand Port de Brumeval — l'affaire Harpie",
   "decor": "port",
   "size": 10,
   "rooms": {
@@ -311,7 +311,7 @@
     },
     {
       "id": "j",
-      "name": "Vipérine",
+      "name": "Harpie",
       "gender": "f",
       "role": "victim",
       "icon": "🏹",
@@ -322,8 +322,8 @@
   ],
   "id": "grand-port--chasseuse",
   "place": "grand-port",
-  "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : la chasseuse de primes Vipérine, venue toucher une prime, est morte sur les quais. Neuf habitués erraient dans la brume. L'un d'eux était seul avec elle.",
-  "epilogue": "— Vous étiez seul avec Vipérine.\n— Elle voulait me livrer au baron contre trois écus. Je lui ai indiqué la sortie.\n— Et ?\n— C'était le puits. Je me trompe toujours de direction.",
+  "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : la chasseuse de primes Harpie, venue toucher une prime, est morte sur les quais. Neuf habitués erraient dans la brume. L'un d'eux était seul avec elle.",
+  "epilogue": "— Vous étiez seul avec Harpie.\n— Elle voulait me livrer au baron contre trois écus. Je lui ai indiqué la sortie.\n— Et ?\n— C'était le puits. Je me trompe toujours de direction.",
   "clues": [
     {
       "who": "a",

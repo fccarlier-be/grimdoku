@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Navire Fantôme — l'affaire Ondine",
+  "title": "Le Navire Fantôme — l'affaire Mouillette",
   "size": 7,
   "rooms": {
     "P": {
@@ -230,7 +230,7 @@
     },
     {
       "id": "g",
-      "name": "Ondine",
+      "name": "Mouillette",
       "gender": "f",
       "role": "victim",
       "icon": "🛟",
@@ -242,8 +242,8 @@
   "decor": "navire",
   "id": "navire--nageuse",
   "place": "navire",
-  "intro": "Le Navire Fantôme ne quitte jamais le port, et la maîtresse-nageuse Ondine, venue à bord donner des cours de natation, non plus, désormais. Six membres de l'équipage traînaient sur le pont. L'un d'eux était seul avec elle. Le capitaine m'assure que c'est la faute de la tempête. Il n'y a pas de tempête.",
-  "epilogue": "— Vous étiez seul avec Ondine.\n— Elle voulait m'apprendre à nager de force. Je lui ai indiqué la sortie.\n— Et ?\n— C'était le puits. Je me trompe toujours de direction.",
+  "intro": "Le Navire Fantôme ne quitte jamais le port, et la maîtresse-nageuse Mouillette, venue à bord donner des cours de natation, non plus, désormais. Six membres de l'équipage traînaient sur le pont. L'un d'eux était seul avec elle. Le capitaine m'assure que c'est la faute de la tempête. Il n'y a pas de tempête.",
+  "epilogue": "— Vous étiez seul avec Mouillette.\n— Elle voulait m'apprendre à nager de force. Je lui ai indiqué la sortie.\n— Et ?\n— C'était le puits. Je me trompe toujours de direction.",
   "clues": [
     {
       "who": "a",

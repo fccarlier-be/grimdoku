@@ -170,7 +170,6 @@
       ]
     }
   ],
-  "intro": "À la Mine des Nains, la chasseuse de primes Vipérine, venue toucher une prime, est descendue plus bas que prévu. Sept mineurs et visiteurs étaient au fond. L'un d'eux était seul avec elle. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
   "characters": [
     {
       "id": "a",
@@ -256,6 +255,7 @@
   "decor": "mine",
   "id": "mine--chasseuse",
   "place": "mine",
+  "intro": "À la Mine des Nains, la chasseuse de primes Vipérine, venue toucher une prime, est descendue plus bas que prévu. Sept mineurs et visiteurs étaient au fond. L'un d'eux était seul avec elle. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
   "epilogue": "— Vous étiez seule avec Vipérine.\n— Elle voulait me livrer au baron contre trois écus. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain.",
   "clues": [
     {

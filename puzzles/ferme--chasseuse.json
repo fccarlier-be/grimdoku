@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Ferme Hantée — l'affaire Vipérine",
+  "title": "La Ferme Hantée — l'affaire Épine",
   "size": 6,
   "rooms": {
     "G": {
@@ -176,7 +176,7 @@
     },
     {
       "id": "f",
-      "name": "Vipérine",
+      "name": "Épine",
       "gender": "f",
       "role": "victim",
       "icon": "🏹",
@@ -188,8 +188,8 @@
   "decor": "ferme",
   "id": "ferme--chasseuse",
   "place": "ferme",
-  "intro": "On dit la Ferme Hantée, et la chasseuse de primes Vipérine, venue toucher une prime, va sûrement y contribuer. Cinq habitants de la ferme étaient là cette nuit. L'un d'eux était seul avec elle. Les poules, elles, refusent de témoigner.",
-  "epilogue": "— Vous étiez seul avec Vipérine.\n— Elle voulait me livrer au baron contre trois écus.\n— Et ?\n— Un sac de cinquante livres, lâché du grenier. Au poids, c'est honnête.",
+  "intro": "On dit la Ferme Hantée, et la chasseuse de primes Épine, venue toucher une prime, va sûrement y contribuer. Cinq habitants de la ferme étaient là cette nuit. L'un d'eux était seul avec elle. Les poules, elles, refusent de témoigner.",
+  "epilogue": "— Vous étiez seul avec Épine.\n— Elle voulait me livrer au baron contre trois écus.\n— Et ?\n— Un sac de cinquante livres, lâché du grenier. Au poids, c'est honnête.",
   "clues": [
     {
       "who": "a",

@@ -1,8 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Tour de l'Archimage — l'affaire Saisitout",
-  "intro": "L'huissier Saisitout était monté à la Tour de l'Archimage saisir des biens. On l'a retrouvé au pied d'une étagère de grimoires, sans vie. Cinq habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec lui. Ici, même les escaliers mentent.",
-  "epilogue": "— Vous étiez seul avec Saisitout.\n— Il voulait saisir mes affaires. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
+  "title": "La Tour de l'Archimage — l'affaire Ratissard",
   "size": 7,
   "rooms": {
     "L": {
@@ -211,7 +209,7 @@
     },
     {
       "id": "f",
-      "name": "Saisitout",
+      "name": "Ratissard",
       "gender": "m",
       "role": "victim",
       "icon": "📜",
@@ -223,6 +221,8 @@
   "decor": "tour",
   "id": "tour--huissier--golem--i2",
   "place": "tour",
+  "intro": "L'huissier Ratissard était venu à la Tour de l'Archimage saisir des biens. On l'a retrouvé au pied d'une étagère de grimoires, sans vie. Cinq habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec lui. Ici, même les escaliers mentent.",
+  "epilogue": "— Vous étiez seul avec Ratissard.\n— Il voulait saisir mes affaires. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
   "clues": [
     {
       "who": "a",

@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Grand Port de Brumeval — l'affaire Pinardon",
+  "title": "Le Grand Port de Brumeval — l'affaire Notard",
   "decor": "port",
   "size": 10,
   "rooms": {
@@ -311,7 +311,7 @@
     },
     {
       "id": "j",
-      "name": "Pinardon",
+      "name": "Notard",
       "gender": "m",
       "role": "victim",
       "icon": "🍷",
@@ -322,8 +322,8 @@
   ],
   "id": "grand-port--inspecteur",
   "place": "grand-port",
-  "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : l'inspecteur des tavernes Pinardon, venu inspecter les lieux, est mort sur les quais. Neuf habitués erraient dans la brume. L'un d'eux était seul avec lui.",
-  "epilogue": "— Vous étiez seul avec Pinardon.\n— Il voulait me coller un blâme. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : l'inspecteur des tavernes Notard, venu inspecter les lieux, est mort sur les quais. Neuf habitués erraient dans la brume. L'un d'eux était seul avec lui.",
+  "epilogue": "— Vous étiez seul avec Notard.\n— Il voulait me coller un blâme. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
   "clues": [
     {
       "who": "a",

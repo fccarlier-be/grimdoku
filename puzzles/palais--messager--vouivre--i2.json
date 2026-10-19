@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Palais des Mille Vœux — l'affaire Rapidon",
+  "title": "Le Palais des Mille Vœux — l'affaire Véloce",
   "size": 7,
   "rooms": {
     "T": {
@@ -220,7 +220,7 @@
     },
     {
       "id": "f",
-      "name": "Rapidon",
+      "name": "Véloce",
       "gender": "m",
       "role": "victim",
       "icon": "✉️",
@@ -232,8 +232,8 @@
   "decor": "palais",
   "id": "palais--messager--vouivre--i2",
   "place": "palais",
-  "intro": "Au Palais des Mille Vœux, le messager Rapidon, venu apporter une lettre du baron, a fait un vœu de trop, ou en a croisé un. Cinq hôtes du palais étaient là. L'un d'eux était seul avec lui. La djinn m'a proposé de tout résoudre d'un claquement de doigts. J'ai lu les petites lignes.",
-  "epilogue": "— Vous étiez seul avec Rapidon, Majesté.\n— Il voulait m'annoncer une mauvaise nouvelle. À moi. Le roi.\n— Et vous l'avez supprimé ?\n— Disons que je l'ai… exonéré.",
+  "intro": "Au Palais des Mille Vœux, le messager Véloce, venu apporter une lettre du baron, a fait un vœu de trop, ou en a croisé un. Cinq hôtes du palais étaient là. L'un d'eux était seul avec lui. La djinn m'a proposé de tout résoudre d'un claquement de doigts. J'ai lu les petites lignes.",
+  "epilogue": "— Vous étiez seul avec Véloce, Majesté.\n— Il voulait m'annoncer une mauvaise nouvelle. À moi. Le roi.\n— Et vous l'avez supprimé ?\n— Disons que je l'ai… exonéré.",
   "clues": [
     {
       "who": "a",

@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Citadelle de Mortebrune — l'affaire Prudence",
+  "title": "La Citadelle de Mortebrune — l'affaire Sobriété",
   "decor": "chateau",
   "size": 9,
   "rooms": {
@@ -256,7 +256,7 @@
     },
     {
       "id": "i",
-      "name": "Prudence",
+      "name": "Sobriété",
       "gender": "f",
       "role": "victim",
       "icon": "📿",
@@ -267,8 +267,8 @@
   ],
   "id": "citadelle--abbesse",
   "place": "citadelle",
-  "intro": "Le pont-levis est resté coincé toute la nuit, et l'abbesse Prudence, venue faire la quête, est restée coincée avec. Pour toujours. Huit occupants de la Citadelle ne pouvaient pas sortir. L'un d'eux était seul avec elle. Au moins, personne n'a pu s'enfuir.",
-  "epilogue": "— Vous étiez seul avec Prudence.\n— « Elle voulait me faire la morale, ô rage, ô désespoir… »\n— Répondez normalement.\n— J'ai chanté jusqu'à ce qu'elle s'arrête. Définitivement.",
+  "intro": "Le pont-levis est resté coincé toute la nuit, enfermant l'abbesse Sobriété, venue faire la quête, avec les huit occupants de la Citadelle. Au matin, elle n'avait plus aucune envie de sortir. L'un d'eux était seul avec elle. Au moins, personne n'a pu s'enfuir.",
+  "epilogue": "— Vous étiez seul avec Sobriété.\n— « Elle voulait me faire la morale, ô rage, ô désespoir… »\n— Répondez normalement.\n— J'ai chanté jusqu'à ce qu'elle s'arrête. Définitivement.",
   "clues": [
     {
       "who": "a",

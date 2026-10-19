@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Citadelle de Mortebrune — l'affaire Lirelire",
+  "title": "La Citadelle de Mortebrune — l'affaire Luthard",
   "decor": "chateau",
   "size": 9,
   "rooms": {
@@ -256,7 +256,7 @@
     },
     {
       "id": "i",
-      "name": "Lirelire",
+      "name": "Luthard",
       "gender": "m",
       "role": "victim",
       "icon": "🪕",
@@ -267,8 +267,8 @@
   ],
   "id": "citadelle--troubadour",
   "place": "citadelle",
-  "intro": "Le pont-levis est resté coincé toute la nuit, et le troubadour Lirelire, venu donner un concert, est resté coincé avec. Pour toujours. Huit occupants de la Citadelle ne pouvaient pas sortir. L'un d'eux était seul avec lui. Au moins, personne n'a pu s'enfuir.",
-  "epilogue": "— Vous étiez seul avec Lirelire.\n— Il voulait chanter mieux que tout le monde. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "intro": "Le pont-levis est resté coincé toute la nuit, enfermant le troubadour Luthard, venu donner un concert, avec les huit occupants de la Citadelle. Au matin, il n'avait plus aucune envie de sortir. L'un d'eux était seul avec lui. Au moins, personne n'a pu s'enfuir.",
+  "epilogue": "— Vous étiez seul avec Luthard.\n— Il voulait chanter mieux que tout le monde. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
   "clues": [
     {
       "who": "a",

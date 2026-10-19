@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Forge du Dragon — l'affaire Taxard",
+  "title": "La Forge du Dragon — l'affaire Gabelou",
   "size": 7,
   "rooms": {
     "D": {
@@ -206,7 +206,7 @@
     },
     {
       "id": "f",
-      "name": "Taxard",
+      "name": "Gabelou",
       "gender": "m",
       "role": "victim",
       "icon": "🧾",
@@ -218,8 +218,8 @@
   "decor": "forge",
   "id": "forge--percepteur--golem--i2",
   "place": "forge",
-  "intro": "La Forge du Dragon fume plus que d'habitude : le percepteur Taxard, venu lever l'impôt de fin d'année, n'en est pas ressorti. Cinq habitués de la forge étaient au travail, paraît-il. L'un d'eux était seul avec lui. Le dragon dort. J'aimerais qu'il continue.",
-  "epilogue": "— Vous étiez seul avec Taxard.\n— Je me lève. Je proteste. Je me rassois.\n— Pourquoi ?\n— Il voulait me faire payer l'impôt sur tout ce que je possède. J'ai dégainé. Je regrette. Je rengaine.",
+  "intro": "La Forge du Dragon fume plus que d'habitude : le percepteur Gabelou, venu lever l'impôt de fin d'année, n'en est pas ressorti. Cinq habitués de la forge étaient au travail, paraît-il. L'un d'eux était seul avec lui. Le dragon dort. J'aimerais qu'il continue.",
+  "epilogue": "— Vous étiez seul avec Gabelou.\n— Je me lève. Je proteste. Je me rassois.\n— Pourquoi ?\n— Il voulait me faire payer l'impôt sur tout ce que je possède. J'ai dégainé. Je regrette. Je rengaine.",
   "clues": [
     {
       "who": "a",

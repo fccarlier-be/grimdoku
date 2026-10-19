@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Les Grands Bains de Brumeval — l'affaire Lirelire",
+  "title": "Les Grands Bains de Brumeval — l'affaire Trémolo",
   "decor": "thermes",
   "size": 10,
   "rooms": {
@@ -318,7 +318,7 @@
     },
     {
       "id": "j",
-      "name": "Lirelire",
+      "name": "Trémolo",
       "gender": "m",
       "role": "victim",
       "icon": "🪕",
@@ -329,8 +329,8 @@
   ],
   "id": "grands-bains--troubadour",
   "place": "grands-bains",
-  "intro": "Aux Grands Bains de Brumeval, on vient soigner ses rhumatismes, ses nerfs ou sa réputation. Le troubadour Lirelire, venu donner un concert, n'est pas ressorti du bain. Neuf curistes et employés barbotaient dans les parages. L'un d'eux était seul avec lui. Il fait quarante degrés, tout le monde transpire, et personne ne sait rien.",
-  "epilogue": "— Vous étiez seule avec Lirelire.\n— Il voulait chanter mieux que tout le monde. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain.",
+  "intro": "Aux Grands Bains de Brumeval, on vient soigner ses rhumatismes, ses nerfs ou sa réputation. Le troubadour Trémolo, venu donner un concert, n'est pas ressorti du bain. Neuf curistes et employés barbotaient dans les parages. L'un d'eux était seul avec lui. Il fait quarante degrés, tout le monde transpire, et personne ne sait rien.",
+  "epilogue": "— Vous étiez seule avec Trémolo.\n— Il voulait chanter mieux que tout le monde. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain.",
   "clues": [
     {
       "who": "a",

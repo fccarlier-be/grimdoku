@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Mine des Nains — l'affaire Gertrude",
+  "title": "La Mine des Nains — l'affaire Flamberge",
   "size": 8,
   "rooms": {
     "E": {
@@ -170,7 +170,6 @@
       ]
     }
   ],
-  "intro": "À la Mine des Nains, la dresseuse Gertrude, venue recruter des bêtes pour son cirque, est descendue plus bas que prévu. Sept mineurs et visiteurs étaient au fond. L'un d'eux était seul avec elle. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
   "characters": [
     {
       "id": "a",
@@ -244,7 +243,7 @@
     },
     {
       "id": "h",
-      "name": "Gertrude",
+      "name": "Flamberge",
       "gender": "f",
       "role": "victim",
       "icon": "🎪",
@@ -256,7 +255,8 @@
   "decor": "mine",
   "id": "mine--dresseuse",
   "place": "mine",
-  "epilogue": "— Vous étiez seul avec Gertrude.\n— Gertrude.\n— Pourquoi ?\n— Elle voulait m'emmener dans son cirque. Alors Bâfrin taper. Taper fort. Fort.",
+  "intro": "À la Mine des Nains, la dresseuse Flamberge, venue recruter des bêtes pour son cirque, est descendue plus bas que prévu. Sept mineurs et visiteurs étaient au fond. L'un d'eux était seul avec elle. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
+  "epilogue": "— Vous étiez seul avec Flamberge.\n— Flamberge.\n— Pourquoi ?\n— Elle voulait m'emmener dans son cirque. Alors Bâfrin taper. Taper fort. Fort.",
   "clues": [
     {
       "who": "a",

@@ -159,7 +159,6 @@
       ]
     }
   ],
-  "intro": "À la Bibliothèque Interdite, la cousine Ermengarde, venue réclamer un héritage, a été retrouvée entre deux rayonnages. On m'a demandé d'enquêter en silence. Cinq lecteurs étaient là. L'un d'eux était seul avec elle. Je chuchote mes questions ; on me répond en hurlant « chut ».",
   "characters": [
     {
       "id": "a",
@@ -230,6 +229,7 @@
   "decor": "bibliotheque",
   "id": "bibliotheque--cousine--golem-dragon--i2-i2",
   "place": "bibliotheque",
+  "intro": "À la Bibliothèque Interdite, la cousine Ermengarde, venue réclamer un héritage, a été retrouvée entre deux rayonnages. On m'a demandé d'enquêter en silence. Cinq lecteurs étaient là. L'un d'eux était seul avec elle. Je chuchote mes questions ; on me répond en hurlant « chut ».",
   "epilogue": "— Vous étiez seul avec Ermengarde.\n— Elle voulait réclamer sa part de ce qui m'appartient, pendant ma sieste.\n— Et ?\n— Je me suis réveillé de mauvaise humeur. On ne réveille pas un dragon.",
   "clues": [
     {

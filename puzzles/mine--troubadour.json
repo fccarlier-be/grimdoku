@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Mine des Nains — l'affaire Lirelire",
+  "title": "La Mine des Nains — l'affaire Chantefable",
   "size": 8,
   "rooms": {
     "E": {
@@ -170,7 +170,6 @@
       ]
     }
   ],
-  "intro": "À la Mine des Nains, le troubadour Lirelire, venu donner un concert, est descendu plus bas que prévu. Sept mineurs et visiteurs étaient au fond. L'un d'eux était seul avec lui. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
   "characters": [
     {
       "id": "a",
@@ -244,7 +243,7 @@
     },
     {
       "id": "h",
-      "name": "Lirelire",
+      "name": "Chantefable",
       "gender": "m",
       "role": "victim",
       "icon": "🪕",
@@ -256,7 +255,8 @@
   "decor": "mine",
   "id": "mine--troubadour",
   "place": "mine",
-  "epilogue": "— Vous étiez seul avec Lirelire.\n— Il voulait chanter mieux que tout le monde. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "intro": "À la Mine des Nains, le troubadour Chantefable, venu donner un concert, est descendu plus bas que prévu. Sept mineurs et visiteurs étaient au fond. L'un d'eux était seul avec lui. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
+  "epilogue": "— Vous étiez seul avec Chantefable.\n— Il voulait chanter mieux que tout le monde. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
   "clues": [
     {
       "who": "a",

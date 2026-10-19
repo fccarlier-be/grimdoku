@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Les Grands Bains de Brumeval — l'affaire Ermengarde",
+  "title": "Les Grands Bains de Brumeval — l'affaire Cunégonde",
   "decor": "thermes",
   "size": 10,
   "rooms": {
@@ -318,7 +318,7 @@
     },
     {
       "id": "j",
-      "name": "Ermengarde",
+      "name": "Cunégonde",
       "gender": "f",
       "role": "victim",
       "icon": "👒",
@@ -329,8 +329,8 @@
   ],
   "id": "grands-bains--cousine",
   "place": "grands-bains",
-  "intro": "Aux Grands Bains de Brumeval, on vient soigner ses rhumatismes, ses nerfs ou sa réputation. La cousine Ermengarde, venue réclamer un héritage, n'est pas ressortie du bain. Neuf curistes et employés barbotaient dans les parages. L'un d'eux était seul avec elle. Il fait quarante degrés, tout le monde transpire, et personne ne sait rien.",
-  "epilogue": "— Vous étiez seule avec Ermengarde.\n— Elle voulait réclamer sa part de ce qui m'appartient. Je lui ai mis deux sur dix.\n— Et ensuite ?\n— Ensuite, zéro.",
+  "intro": "Aux Grands Bains de Brumeval, on vient soigner ses rhumatismes, ses nerfs ou sa réputation. La cousine Cunégonde, venue réclamer un héritage, n'est pas ressortie du bain. Neuf curistes et employés barbotaient dans les parages. L'un d'eux était seul avec elle. Il fait quarante degrés, tout le monde transpire, et personne ne sait rien.",
+  "epilogue": "— Vous étiez seule avec Cunégonde.\n— Elle voulait réclamer sa part de ce qui m'appartient. Je lui ai mis deux sur dix.\n— Et ensuite ?\n— Ensuite, zéro.",
   "clues": [
     {
       "who": "a",

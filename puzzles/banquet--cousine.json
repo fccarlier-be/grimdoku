@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Banquet des Gobelins — l'affaire Ermengarde",
+  "title": "Le Banquet des Gobelins — l'affaire Ingeburge",
   "size": 6,
   "rooms": {
     "K": {
@@ -183,7 +183,7 @@
     },
     {
       "id": "f",
-      "name": "Ermengarde",
+      "name": "Ingeburge",
       "gender": "f",
       "role": "victim",
       "icon": "👒",
@@ -195,8 +195,8 @@
   "decor": "banquet",
   "id": "banquet--cousine",
   "place": "banquet",
-  "intro": "Au Banquet des Gobelins, la cousine Ermengarde, venue réclamer un héritage, est passée du côté des convives au côté du menu. Enfin, presque. Cinq invités se goinfraient. L'un d'eux était seul avec elle. On m'a servi une soupe. Je ne l'ai pas touchée.",
-  "epilogue": "— Vous étiez seul avec Ermengarde.\n— Elle voulait réclamer sa part de ce qui m'appartient. J'ai gardé mon calme : je suis végétarien depuis mardi.\n— On est jeudi.\n— Justement. C'était plus mardi.",
+  "intro": "Au Banquet des Gobelins, la cousine Ingeburge, venue réclamer un héritage, est passée de la liste des invités à la carte du menu. On l'a retrouvée avant le dessert. Cinq invités se goinfraient. L'un d'eux était seul avec elle. On m'a servi une soupe. Je ne l'ai pas touchée.",
+  "epilogue": "— Vous étiez seul avec Ingeburge.\n— Elle voulait réclamer sa part de ce qui m'appartient. J'ai gardé mon calme : je suis végétarien depuis mardi.\n— On est jeudi.\n— Justement. C'était plus mardi.",
   "clues": [
     {
       "who": "a",

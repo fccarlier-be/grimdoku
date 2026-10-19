@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Grande Foire des Mille Merveilles — l'affaire Rapidon",
+  "title": "La Grande Foire des Mille Merveilles — l'affaire Cavalcadin",
   "decor": "foire",
   "size": 12,
   "rooms": {
@@ -413,7 +413,7 @@
     },
     {
       "id": "l",
-      "name": "Rapidon",
+      "name": "Cavalcadin",
       "gender": "m",
       "role": "victim",
       "icon": "✉️",
@@ -424,8 +424,8 @@
   ],
   "id": "grande-foire--messager",
   "place": "grande-foire",
-  "intro": "Feu d'artifice à la Grande Foire des Mille Merveilles : tout le monde regardait le ciel, sauf le messager Rapidon, venu apporter une lettre du baron, qui ne regardera plus rien. Onze forains et visiteurs juraient avoir le nez en l'air. L'un d'eux était seul avec lui.",
-  "epilogue": "— Vous étiez seul avec Rapidon.\n— « Il voulait m'annoncer une mauvaise nouvelle, ô rage, ô désespoir… »\n— Répondez normalement.\n— J'ai chanté jusqu'à ce qu'il s'arrête. Définitivement.",
+  "intro": "Feu d'artifice à la Grande Foire des Mille Merveilles : tout le monde regardait le ciel, sauf le messager Cavalcadin, venu apporter une lettre du baron. Il n'a pas vu le bouquet final. Onze forains et visiteurs juraient avoir le nez en l'air. L'un d'eux était seul avec lui.",
+  "epilogue": "— Vous étiez seul avec Cavalcadin.\n— « Il voulait m'annoncer une mauvaise nouvelle, ô rage, ô désespoir… »\n— Répondez normalement.\n— J'ai chanté jusqu'à ce qu'il s'arrête. Définitivement.",
   "clues": [
     {
       "who": "a",

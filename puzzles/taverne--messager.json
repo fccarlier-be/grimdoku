@@ -1,8 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Meurtre au Sanglier Borgne — l'affaire Rapidon",
-  "intro": "On m'a tiré du lit à l'aube. Le messager Rapidon, venu au Sanglier Borgne apporter une lettre du baron, ne se réveillera plus. Cinq clients juraient dormir comme des loirs. L'un d'eux était avec lui. J'ai demandé un café ; on m'a servi une bière.",
-  "epilogue": "— Vous étiez seul avec Rapidon.\n— Il voulait m'annoncer une mauvaise nouvelle. Un écu, deux écus, trois écus…\n— Vous comptez quoi ?\n— Ce qu'il me devait. Et ce que l'enterrement va me coûter.",
+  "title": "Meurtre au Sanglier Borgne — l'affaire Hérautin",
   "size": 6,
   "rooms": {
     "T": {
@@ -178,7 +176,7 @@
     },
     {
       "id": "f",
-      "name": "Rapidon",
+      "name": "Hérautin",
       "gender": "m",
       "role": "victim",
       "icon": "✉️",
@@ -190,6 +188,8 @@
   "decor": "taverne",
   "id": "taverne--messager",
   "place": "taverne",
+  "intro": "On m'a tiré du lit à l'aube. Le messager Hérautin, venu au Sanglier Borgne apporter une lettre du baron, ne se réveillera plus. Cinq clients juraient dormir comme des loirs. L'un d'eux était avec lui. J'ai demandé un café ; on m'a servi une bière.",
+  "epilogue": "— Vous étiez seul avec Hérautin.\n— Il voulait m'annoncer une mauvaise nouvelle. Un écu, deux écus, trois écus…\n— Vous comptez quoi ?\n— Ce qu'il me devait. Et ce que l'enterrement va me coûter.",
   "clues": [
     {
       "who": "a",

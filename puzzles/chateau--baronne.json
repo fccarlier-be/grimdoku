@@ -1,8 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Château de Mortebrune — l'affaire Grisemotte",
-  "intro": "La baronne de Grisemotte Grisemotte était venue au Château de Mortebrune rendre une visite de courtoisie. Le roi m'a fait appeler, ce qui veut dire que c'est grave, ou qu'il s'ennuie. Six membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec elle.",
-  "epilogue": "— Vous étiez seul avec Grisemotte.\n— Je me lève. Je proteste. Je me rassois.\n— Pourquoi ?\n— Elle voulait racheter la baronnie et me mettre dehors. J'ai dégainé. Je regrette. Je rengaine.",
+  "title": "Le Château de Mortebrune — l'affaire Paonne",
   "size": 7,
   "rooms": {
     "G": {
@@ -239,7 +237,7 @@
     },
     {
       "id": "g",
-      "name": "Grisemotte",
+      "name": "Paonne",
       "gender": "f",
       "role": "victim",
       "icon": "👑",
@@ -251,6 +249,8 @@
   "decor": "chateau",
   "id": "chateau--baronne",
   "place": "chateau",
+  "intro": "La baronne Paonne était venue au Château de Mortebrune rendre une visite de courtoisie. On m'a fait appeler au nom du roi, ce qui veut dire que c'est grave, ou qu'il s'ennuie. Six membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec elle.",
+  "epilogue": "— Vous étiez seul avec Paonne.\n— Je me lève. Je proteste. Je me rassois.\n— Pourquoi ?\n— Elle voulait racheter la baronnie et me mettre dehors. J'ai dégainé. Je regrette. Je rengaine.",
   "clues": [
     {
       "who": "a",

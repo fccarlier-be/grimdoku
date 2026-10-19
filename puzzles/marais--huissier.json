@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Marais des Brumes — l'affaire Saisitout",
+  "title": "Le Marais des Brumes — l'affaire Inventorin",
   "size": 6,
   "rooms": {
     "H": {
@@ -116,7 +116,6 @@
       ]
     }
   ],
-  "intro": "Le Marais des Brumes a rendu le corps de l'huissier Saisitout, venu saisir des biens. Il garde le reste. Cinq habitants du marais pataugeaient dans le coin. L'un d'eux était seul avec lui. J'ai de la vase jusqu'aux genoux et zéro témoin fiable.",
   "characters": [
     {
       "id": "a",
@@ -170,7 +169,7 @@
     },
     {
       "id": "f",
-      "name": "Saisitout",
+      "name": "Inventorin",
       "gender": "m",
       "role": "victim",
       "icon": "📜",
@@ -182,7 +181,8 @@
   "decor": "marais",
   "id": "marais--huissier",
   "place": "marais",
-  "epilogue": "— Vous étiez seul avec Saisitout.\n— Saisitout.\n— Pourquoi ?\n— Il voulait saisir mes affaires. Alors Bâfrin taper. Taper fort. Fort.",
+  "intro": "Le Marais des Brumes a rendu le corps de l'huissier Inventorin, venu saisir des biens. Il garde le reste. Cinq habitants du marais pataugeaient dans le coin. L'un d'eux était seul avec lui. J'ai de la vase jusqu'aux genoux et zéro témoin fiable.",
+  "epilogue": "— Vous étiez seul avec Inventorin.\n— Inventorin.\n— Pourquoi ?\n— Il voulait saisir mes affaires. Alors Bâfrin taper. Taper fort. Fort.",
   "clues": [
     {
       "who": "a",

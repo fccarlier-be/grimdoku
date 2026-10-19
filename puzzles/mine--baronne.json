@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Mine des Nains — l'affaire Grisemotte",
+  "title": "La Mine des Nains — l'affaire Hermine",
   "size": 8,
   "rooms": {
     "E": {
@@ -170,7 +170,6 @@
       ]
     }
   ],
-  "intro": "À la Mine des Nains, la baronne de Grisemotte Grisemotte, venue rendre une visite de courtoisie, est descendue plus bas que prévu. Sept mineurs et visiteurs étaient au fond. L'un d'eux était seul avec elle. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
   "characters": [
     {
       "id": "a",
@@ -244,7 +243,7 @@
     },
     {
       "id": "h",
-      "name": "Grisemotte",
+      "name": "Hermine",
       "gender": "f",
       "role": "victim",
       "icon": "👑",
@@ -256,7 +255,8 @@
   "decor": "mine",
   "id": "mine--baronne",
   "place": "mine",
-  "epilogue": "— Vous étiez seule avec Grisemotte.\n— Elle voulait racheter la baronnie et me mettre dehors. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain.",
+  "intro": "À la Mine des Nains, la baronne Hermine, venue rendre une visite de courtoisie, est descendue plus bas que prévu. Sept mineurs et visiteurs étaient au fond. L'un d'eux était seul avec elle. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
+  "epilogue": "— Vous étiez seule avec Hermine.\n— Elle voulait racheter la baronnie et me mettre dehors. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain.",
   "clues": [
     {
       "who": "a",

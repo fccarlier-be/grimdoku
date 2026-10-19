@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Grande Foire des Mille Merveilles — l'affaire Grisemotte",
+  "title": "La Grande Foire des Mille Merveilles — l'affaire Velours",
   "decor": "foire",
   "size": 12,
   "rooms": {
@@ -385,7 +385,7 @@
     },
     {
       "id": "j",
-      "name": "Grisemotte",
+      "name": "Velours",
       "gender": "f",
       "role": "victim",
       "icon": "👑",
@@ -398,8 +398,8 @@
   "place": "grande-foire",
   "hiddenShapes": true,
   "hiddenMax": 4,
-  "intro": "Feu d'artifice à la Grande Foire des Mille Merveilles : tout le monde regardait le ciel, sauf la baronne de Grisemotte Grisemotte, venue rendre une visite de courtoisie, qui ne regardera plus rien. Neuf forains et visiteurs juraient avoir le nez en l'air. L'un d'eux était seul avec elle.",
-  "epilogue": "— Vous étiez seule avec Grisemotte.\n— Elle voulait racheter la baronnie et me mettre dehors. Je lui ai tiré la carte de la Mort.\n— Et ?\n— Je l'avais vu venir. Après coup, mais je l'avais vu.",
+  "intro": "Feu d'artifice à la Grande Foire des Mille Merveilles : tout le monde regardait le ciel, sauf la baronne Velours, venue rendre une visite de courtoisie. Elle n'a pas vu le bouquet final. Neuf forains et visiteurs juraient avoir le nez en l'air. L'un d'eux était seul avec elle.",
+  "epilogue": "— Vous étiez seule avec Velours.\n— Elle voulait racheter la baronnie et me mettre dehors. Je lui ai tiré la carte de la Mort.\n— Et ?\n— Je l'avais vu venir. Après coup, mais je l'avais vu.",
   "clues": [
     {
       "who": "a",

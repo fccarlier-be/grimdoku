@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Les Grands Bains de Brumeval — l'affaire Rapidon",
+  "title": "Les Grands Bains de Brumeval — l'affaire Presto",
   "decor": "thermes",
   "size": 10,
   "rooms": {
@@ -289,7 +289,7 @@
     },
     {
       "id": "h",
-      "name": "Rapidon",
+      "name": "Presto",
       "gender": "m",
       "role": "victim",
       "icon": "✉️",
@@ -302,8 +302,8 @@
   "place": "grands-bains",
   "hiddenShapes": true,
   "hiddenMax": 4,
-  "intro": "Aux Grands Bains de Brumeval, on vient soigner ses rhumatismes, ses nerfs ou sa réputation. Le messager Rapidon, venu apporter une lettre du baron, n'est pas ressorti du bain. Sept curistes et employés barbotaient dans les parages. L'un d'eux était seul avec lui. Il fait quarante degrés, tout le monde transpire, et personne ne sait rien.",
-  "epilogue": "— Vous étiez seul avec Rapidon.\n— Rapidon.\n— Pourquoi ?\n— Il voulait m'annoncer une mauvaise nouvelle. Alors Bâfrin taper. Taper fort. Fort.",
+  "intro": "Aux Grands Bains de Brumeval, on vient soigner ses rhumatismes, ses nerfs ou sa réputation. Le messager Presto, venu apporter une lettre du baron, n'est pas ressorti du bain. Sept curistes et employés barbotaient dans les parages. L'un d'eux était seul avec lui. Il fait quarante degrés, tout le monde transpire, et personne ne sait rien.",
+  "epilogue": "— Vous étiez seul avec Presto.\n— Presto.\n— Pourquoi ?\n— Il voulait m'annoncer une mauvaise nouvelle. Alors Bâfrin taper. Taper fort. Fort.",
   "clues": [
     {
       "who": "a",

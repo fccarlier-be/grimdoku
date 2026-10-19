@@ -134,3 +134,12 @@ Reconstruire : `npm run build` (retire de `puzzles/` les énigmes sans solution)
 - Changelog en 4 blocs : Fonctionnalités / Corrections / Technique / Vérification-déploiement.
 - Toujours donner les commandes de build + déploiement à chaque livraison.
 - **Crayon de couleur** (François, 2026-10-19) : chaque toucher sur le Crayon change sa couleur — gris, puis la couleur de chaque personnage dans l'ordre des fiches, puis rangé (`settings.cross` = false | true | id du personnage ; pastille avec l'initiale sur le bouton). Une croix est « r,c » (grise) ou « r,c@id » (`S.marks`) ; même couleur = effacée, autre couleur = recolorée. **Appui long sur le Crayon** : roue des couleurs (`penWheel` : gris, chaque personnage, ranger).
+- **Audit du lore (2026-10-19)** : `lore/GRIMDOKU_AUDIT_LORE_2026-10-19.md` (fait par ChatGPT, à la demande de François). Décisions appliquées :
+  - **victimes** : nom différent à chaque affaire (`names` dans `cast.json`, 20 par profession ; tirage sans doublon dans `build-puzzles.js`, `GUEST_NAME`) ; la profession, le portrait, le motif et la menace restent ;
+  - **fin** : l'affaire finale s'ouvre avec **toutes** les lettres (`need` = 23) ;
+  - **après la révélation** : l'enquêteur scelle les archives et garde la clé, quel que soit le coupable (Augure ne reçoit rien), clin d'œil au retour en spectre de Fizzlebarbe (`revelation.apres`) ;
+  - corrections : « la baronne » (plus « la baronne de Grisemotte Grisemotte »), Augure « voit beaucoup, comprend moins », Fernand (bras gauche, moignon), le Nœud a environ quatre siècles (Fizzlebarbe 412 ans), intros du Château, de la Citadelle, de la Tour, du Banquet, de la Grande Foire et du Bal ;
+  - **archives** : `scenes/legacy/` (variantes « -2 » et anciens intro/épilogues des décors, plus utilisés : ne pas les retoucher en croyant modifier le jeu) ;
+  - **garde-fous** : `tests/lore.test.js` (variables oubliées, nom répété, victimes uniques, textes historiques, déclencheur des lettres, garde finale, canon).
+  - Reste à faire : réécrire les épilogues (un par grille active, par lots validés par François), puis réviser le fil rouge (clés, potion, Grands Bains).
+

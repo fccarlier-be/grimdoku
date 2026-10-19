@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Bal Masqué — l'affaire Taxard",
+  "title": "Le Bal Masqué — l'affaire Comptegrain",
   "size": 8,
   "rooms": {
     "B": {
@@ -254,7 +254,7 @@
     },
     {
       "id": "g",
-      "name": "Taxard",
+      "name": "Comptegrain",
       "gender": "m",
       "role": "victim",
       "icon": "🧾",
@@ -266,8 +266,8 @@
   "decor": "bal",
   "id": "bal--percepteur--geant-vouivre--i2-i2",
   "place": "bal",
-  "intro": "Bal masqué au château : le percepteur Taxard, venu lever l'impôt de fin d'année, n'a pas passé minuit. Six invités dansaient, ou le prétendent. L'un d'eux était seul avec lui. Le plus dur, ici, c'est de savoir qui est sous quel masque. Et qui ment dessous.",
-  "epilogue": "— Vous étiez seul avec Taxard, Majesté.\n— Il voulait me faire payer l'impôt sur tout ce que je possède. À moi. Le roi.\n— Et vous l'avez supprimé ?\n— Disons que je l'ai… exonéré.",
+  "intro": "Bal masqué au château : le percepteur Comptegrain, venu lever l'impôt de fin d'année, n'a pas survécu jusqu'à minuit. Six invités dansaient, ou le prétendent. L'un d'eux était seul avec lui. Le plus dur, ici, c'est de savoir qui est sous quel masque. Et qui ment dessous.",
+  "epilogue": "— Vous étiez seul avec Comptegrain, Majesté.\n— Il voulait me faire payer l'impôt sur tout ce que je possède. À moi. Le roi.\n— Et vous l'avez supprimé ?\n— Disons que je l'ai… exonéré.",
   "clues": [
     {
       "who": "a",

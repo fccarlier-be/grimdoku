@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Cimetière de Minuit — l'affaire Gertrude",
+  "title": "Le Cimetière de Minuit — l'affaire Griffette",
   "size": 8,
   "rooms": {
     "G": {
@@ -227,7 +227,7 @@
       "gender": "m",
       "role": "suspect",
       "icon": "🐦‍⬛",
-      "desc": "Corbeau, sait tout, ne dit rien",
+      "desc": "Corbeau, voit beaucoup, comprend moins, ne dit rien",
       "archetype": "corbeau",
       "tic": "Ne parle pas : il écrit"
     },
@@ -253,7 +253,7 @@
     },
     {
       "id": "h",
-      "name": "Gertrude",
+      "name": "Griffette",
       "gender": "f",
       "role": "victim",
       "icon": "🎪",
@@ -265,8 +265,8 @@
   "decor": "cimetiere",
   "id": "cimetiere--dresseuse",
   "place": "cimetiere",
-  "intro": "Au Cimetière de Minuit, on a retrouvé la dresseuse Gertrude, venue recruter des bêtes pour son cirque. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Sept habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec elle. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
-  "epilogue": "— Vous étiez seule avec Gertrude.\n— Elle voulait m'emmener dans son cirque. Ça m'a coupé l'appétit.\n— Et ?\n— Je l'ai changée en crapaud. Et l'appétit m'est revenu.",
+  "intro": "Au Cimetière de Minuit, on a retrouvé la dresseuse Griffette, venue recruter des bêtes pour son cirque. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Sept habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec elle. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
+  "epilogue": "— Vous étiez seule avec Griffette.\n— Elle voulait m'emmener dans son cirque. Ça m'a coupé l'appétit.\n— Et ?\n— Je l'ai changée en crapaud. Et l'appétit m'est revenu.",
   "clues": [
     {
       "who": "a",

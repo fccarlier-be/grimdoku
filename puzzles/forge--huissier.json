@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Forge du Dragon — l'affaire Saisitout",
+  "title": "La Forge du Dragon — l'affaire Embarquin",
   "size": 7,
   "rooms": {
     "D": {
@@ -220,7 +220,7 @@
     },
     {
       "id": "g",
-      "name": "Saisitout",
+      "name": "Embarquin",
       "gender": "m",
       "role": "victim",
       "icon": "📜",
@@ -232,8 +232,8 @@
   "decor": "forge",
   "id": "forge--huissier",
   "place": "forge",
-  "intro": "La Forge du Dragon fume plus que d'habitude : l'huissier Saisitout, venu saisir des biens, n'en est pas ressorti. Six habitués de la forge étaient au travail, paraît-il. L'un d'eux était seul avec lui. Le dragon dort. J'aimerais qu'il continue.",
-  "epilogue": "— Vous étiez seul avec Saisitout.\n— Saisitout.\n— Pourquoi ?\n— Il voulait saisir mes affaires. Alors Bâfrin taper. Taper fort. Fort.",
+  "intro": "La Forge du Dragon fume plus que d'habitude : l'huissier Embarquin, venu saisir des biens, n'en est pas ressorti. Six habitués de la forge étaient au travail, paraît-il. L'un d'eux était seul avec lui. Le dragon dort. J'aimerais qu'il continue.",
+  "epilogue": "— Vous étiez seul avec Embarquin.\n— Embarquin.\n— Pourquoi ?\n— Il voulait saisir mes affaires. Alors Bâfrin taper. Taper fort. Fort.",
   "clues": [
     {
       "who": "a",

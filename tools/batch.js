@@ -39,7 +39,7 @@ for (const e of MANIFEST) {
   const size = loadScene(scenePath(e.scene)).size;
   jobs.push({ id: e.id, scene: e.scene, victim: null, size, target: size >= 9 ? null : HAND_TARGET[e.id] ?? 1 });
 }
-for (const f of fs.readdirSync(path.join(ROOT, 'scenes')).sort()) {
+for (const f of fs.readdirSync(path.join(ROOT, 'scenes')).filter(n => n.endsWith('.json')).sort()) { // scenes/legacy : archives
   const name = f.replace(/\.json$/, '');
   const scene = loadScene(scenePath(name));
   // les variantes (« extends ») réutilisent un décor : pas d'affaires automatiques en double

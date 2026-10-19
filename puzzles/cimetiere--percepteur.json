@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Cimetière de Minuit — l'affaire Taxard",
+  "title": "Le Cimetière de Minuit — l'affaire Prélevin",
   "size": 8,
   "rooms": {
     "G": {
@@ -253,7 +253,7 @@
     },
     {
       "id": "h",
-      "name": "Taxard",
+      "name": "Prélevin",
       "gender": "m",
       "role": "victim",
       "icon": "🧾",
@@ -265,8 +265,8 @@
   "decor": "cimetiere",
   "id": "cimetiere--percepteur",
   "place": "cimetiere",
-  "intro": "Au Cimetière de Minuit, on a retrouvé le percepteur Taxard, venu lever l'impôt de fin d'année. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Sept habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec lui. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
-  "epilogue": "— Vous étiez seul avec Taxard.\n— Il voulait me faire payer l'impôt sur tout ce que je possède. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
+  "intro": "Au Cimetière de Minuit, on a retrouvé le percepteur Prélevin, venu lever l'impôt de fin d'année. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Sept habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec lui. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
+  "epilogue": "— Vous étiez seul avec Prélevin.\n— Il voulait me faire payer l'impôt sur tout ce que je possède. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
   "clues": [
     {
       "who": "a",

@@ -22,6 +22,7 @@ Get-CimInstance Win32_Process | Where-Object { $_.Name -eq "node.exe" -and ($_.C
 New-Item -ItemType Directory -Force $t | Out-Null
 $same = (Test-Path "$t\build.hash") -and ((Get-Content "$t\build.hash") -eq "'$HASH'") -and (Test-Path "$t\puzzles")
 if (-not $same) { Remove-Item -Recurse -Force "$t\puzzles", "$t\solutions", "$t\build.hash" -ErrorAction SilentlyContinue }
+Remove-Item -Recurse -Force "$t\scenes" -ErrorAction SilentlyContinue
 tar -xzf "$d\test.tgz" -C $t; Set-Location $t
 New-Item -ItemType Directory -Force deploy\grimdoku\site, puzzles | Out-Null
 if (-not (Test-Path node_modules\jsdom)) { npm.cmd install --no-audit --no-fund --loglevel=error 2>&1 | Out-Null }

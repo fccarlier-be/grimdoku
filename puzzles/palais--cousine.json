@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Palais des Mille Vœux — l'affaire Ermengarde",
+  "title": "Le Palais des Mille Vœux — l'affaire Brunehaut",
   "size": 7,
   "rooms": {
     "T": {
@@ -234,7 +234,7 @@
     },
     {
       "id": "g",
-      "name": "Ermengarde",
+      "name": "Brunehaut",
       "gender": "f",
       "role": "victim",
       "icon": "👒",
@@ -246,8 +246,8 @@
   "decor": "palais",
   "id": "palais--cousine",
   "place": "palais",
-  "intro": "Au Palais des Mille Vœux, la cousine Ermengarde, venue réclamer un héritage, a fait un vœu de trop, ou en a croisé un. Six hôtes du palais étaient là. L'un d'eux était seul avec elle. La djinn m'a proposé de tout résoudre d'un claquement de doigts. J'ai lu les petites lignes.",
-  "epilogue": "— Vous étiez seul avec Ermengarde.\n— Elle voulait réclamer sa part de ce qui m'appartient. De mon temps, on changeait ces gens-là en tabouret.\n— Vous l'avez changée en tabouret ?\n— Non. J'ai oublié la formule. Alors j'ai pris la canne.",
+  "intro": "Au Palais des Mille Vœux, la cousine Brunehaut, venue réclamer un héritage, a fait un vœu de trop, ou en a croisé un. Six hôtes du palais étaient là. L'un d'eux était seul avec elle. La djinn m'a proposé de tout résoudre d'un claquement de doigts. J'ai lu les petites lignes.",
+  "epilogue": "— Vous étiez seul avec Brunehaut.\n— Elle voulait réclamer sa part de ce qui m'appartient. De mon temps, on changeait ces gens-là en tabouret.\n— Vous l'avez changée en tabouret ?\n— Non. J'ai oublié la formule. Alors j'ai pris la canne.",
   "clues": [
     {
       "who": "a",

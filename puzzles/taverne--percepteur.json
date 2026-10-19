@@ -1,8 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Meurtre au Sanglier Borgne — l'affaire Taxard",
-  "intro": "On m'a tiré du lit à l'aube. Le percepteur Taxard, venu au Sanglier Borgne lever l'impôt de fin d'année, ne se réveillera plus. Cinq clients juraient dormir comme des loirs. L'un d'eux était avec lui. J'ai demandé un café ; on m'a servi une bière.",
-  "epilogue": "— Vous étiez seul avec Taxard.\n— Il voulait me faire payer l'impôt sur tout ce que je possède. Atchoum ! Pardon : le houblon.\n— Et le sortilège ?\n— Il est parti tout seul, avec l'éternuement. Mais je visais bien.",
+  "title": "Meurtre au Sanglier Borgne — l'affaire Corvéon",
   "size": 6,
   "rooms": {
     "T": {
@@ -178,7 +176,7 @@
     },
     {
       "id": "f",
-      "name": "Taxard",
+      "name": "Corvéon",
       "gender": "m",
       "role": "victim",
       "icon": "🧾",
@@ -190,6 +188,8 @@
   "decor": "taverne",
   "id": "taverne--percepteur",
   "place": "taverne",
+  "intro": "On m'a tiré du lit à l'aube. Le percepteur Corvéon, venu au Sanglier Borgne lever l'impôt de fin d'année, ne se réveillera plus. Cinq clients juraient dormir comme des loirs. L'un d'eux était avec lui. J'ai demandé un café ; on m'a servi une bière.",
+  "epilogue": "— Vous étiez seul avec Corvéon.\n— Il voulait me faire payer l'impôt sur tout ce que je possède. Atchoum ! Pardon : le houblon.\n— Et le sortilège ?\n— Il est parti tout seul, avec l'éternuement. Mais je visais bien.",
   "clues": [
     {
       "who": "a",

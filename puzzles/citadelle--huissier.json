@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Citadelle de Mortebrune — l'affaire Saisitout",
+  "title": "La Citadelle de Mortebrune — l'affaire Crochard",
   "decor": "chateau",
   "size": 9,
   "rooms": {
@@ -256,7 +256,7 @@
     },
     {
       "id": "i",
-      "name": "Saisitout",
+      "name": "Crochard",
       "gender": "m",
       "role": "victim",
       "icon": "📜",
@@ -267,8 +267,8 @@
   ],
   "id": "citadelle--huissier",
   "place": "citadelle",
-  "intro": "Le pont-levis est resté coincé toute la nuit, et l'huissier Saisitout, venu saisir des biens, est resté coincé avec. Pour toujours. Huit occupants de la Citadelle ne pouvaient pas sortir. L'un d'eux était seul avec lui. Au moins, personne n'a pu s'enfuir.",
-  "epilogue": "— Vous étiez seul avec Saisitout.\n— Il voulait saisir mes affaires. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "intro": "Le pont-levis est resté coincé toute la nuit, enfermant l'huissier Crochard, venu saisir des biens, avec les huit occupants de la Citadelle. Au matin, il n'avait plus aucune envie de sortir. L'un d'eux était seul avec lui. Au moins, personne n'a pu s'enfuir.",
+  "epilogue": "— Vous étiez seul avec Crochard.\n— Il voulait saisir mes affaires. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
   "clues": [
     {
       "who": "a",

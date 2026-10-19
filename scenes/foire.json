@@ -155,7 +155,6 @@
       ]
     }
   ],
-  "intro": "Le bonimenteur {victime}, maître de la Foire aux Sortilèges, a été retrouvé sous son propre chapiteau, la bouche enfin close. Six forains avaient une dent contre lui. Un seul était avec lui.",
   "characters": [
     {
       "id": "a",
@@ -193,14 +192,6 @@
       "role": "victim"
     }
   ],
-  "epilogues": {
-    "cartomancienne": "{coupable} l'avait vu dans les cartes : {victime} comptait la remplacer par une boule de cristal mécanique. Elle a préféré changer l'avenir elle-même.",
-    "barde": "{coupable} avoue en chanson (fausse) : {victime} l'obligeait à jouer la même ritournelle six fois par heure. Même un barde a ses limites.",
-    "gobelin": "{coupable} tenait la caisse de la foire. {victime} venait de découvrir que la caisse avait un double fond. Et un triple.",
-    "troll": "{coupable}, hercule de foire, en avait assez de soulever {victime} à bout de bras pour le final. Ce soir, il l'a posé. Brusquement.",
-    "fee": "{coupable} servait de « fée en bocal » au stand des merveilles. Quand {victime} a voulu refermer le couvercle, elle s'est rebiffée. Pour de bon.",
-    "dragonnet": "{coupable}, cracheur de feu vedette, touchait trois fois moins que ce qu'annonçait l'affiche. Il a négocié. Il a un peu trop soufflé."
-  },
   "auto": {
     "intro": "La Foire aux Sortilèges a perdu un client : {titre} {victime}, venu{e} {motif}. {Nombre} forains juraient qu'ils tenaient leur stand. L'un d'eux était seul avec {lui}. Le bonimenteur m'a déjà proposé un élixir de vérité. Deux écus, garanti sans effet."
   }

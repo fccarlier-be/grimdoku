@@ -1,8 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Château de Mortebrune — l'affaire Rapidon",
-  "intro": "Le messager Rapidon était venu au Château de Mortebrune apporter une lettre du baron. Le roi m'a fait appeler, ce qui veut dire que c'est grave, ou qu'il s'ennuie. Cinq membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec lui.",
-  "epilogue": "— Vous étiez seul avec Rapidon.\n— Il voulait m'annoncer une mauvaise nouvelle. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "title": "Le Château de Mortebrune — l'affaire Sabot",
   "size": 7,
   "rooms": {
     "G": {
@@ -222,7 +220,7 @@
     },
     {
       "id": "f",
-      "name": "Rapidon",
+      "name": "Sabot",
       "gender": "m",
       "role": "victim",
       "icon": "✉️",
@@ -234,6 +232,8 @@
   "decor": "chateau",
   "id": "chateau--messager--dragon--i2",
   "place": "chateau",
+  "intro": "Le messager Sabot était venu au Château de Mortebrune apporter une lettre du baron. On m'a fait appeler au nom du roi, ce qui veut dire que c'est grave, ou qu'il s'ennuie. Cinq membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec lui.",
+  "epilogue": "— Vous étiez seul avec Sabot.\n— Il voulait m'annoncer une mauvaise nouvelle. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
   "clues": [
     {
       "who": "a",

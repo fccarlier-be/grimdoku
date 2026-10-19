@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Les Grands Bains de Brumeval — l'affaire Prudence",
+  "title": "Les Grands Bains de Brumeval — l'affaire Clémence",
   "decor": "thermes",
   "size": 10,
   "rooms": {
@@ -318,7 +318,7 @@
     },
     {
       "id": "j",
-      "name": "Prudence",
+      "name": "Clémence",
       "gender": "f",
       "role": "victim",
       "icon": "📿",
@@ -329,8 +329,8 @@
   ],
   "id": "grands-bains--abbesse",
   "place": "grands-bains",
-  "intro": "Aux Grands Bains de Brumeval, on vient soigner ses rhumatismes, ses nerfs ou sa réputation. L'abbesse Prudence, venue faire la quête, n'est pas ressortie du bain. Neuf curistes et employés barbotaient dans les parages. L'un d'eux était seul avec elle. Il fait quarante degrés, tout le monde transpire, et personne ne sait rien.",
-  "epilogue": "— Vous étiez seule avec Prudence.\n— Elle voulait me faire la morale. Je lui ai mis deux sur dix.\n— Et ensuite ?\n— Ensuite, zéro.",
+  "intro": "Aux Grands Bains de Brumeval, on vient soigner ses rhumatismes, ses nerfs ou sa réputation. L'abbesse Clémence, venue faire la quête, n'est pas ressortie du bain. Neuf curistes et employés barbotaient dans les parages. L'un d'eux était seul avec elle. Il fait quarante degrés, tout le monde transpire, et personne ne sait rien.",
+  "epilogue": "— Vous étiez seule avec Clémence.\n— Elle voulait me faire la morale. Je lui ai mis deux sur dix.\n— Et ensuite ?\n— Ensuite, zéro.",
   "clues": [
     {
       "who": "a",

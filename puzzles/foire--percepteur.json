@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Foire aux Sortilèges — l'affaire Taxard",
+  "title": "La Foire aux Sortilèges — l'affaire Fiscalin",
   "size": 7,
   "rooms": {
     "S": {
@@ -150,7 +150,6 @@
       ]
     }
   ],
-  "intro": "La Foire aux Sortilèges a perdu un client : le percepteur Taxard, venu lever l'impôt de fin d'année. Six forains juraient qu'ils tenaient leur stand. L'un d'eux était seul avec lui. Le bonimenteur m'a déjà proposé un élixir de vérité. Deux écus, garanti sans effet.",
   "characters": [
     {
       "id": "a",
@@ -214,7 +213,7 @@
     },
     {
       "id": "g",
-      "name": "Taxard",
+      "name": "Fiscalin",
       "gender": "m",
       "role": "victim",
       "icon": "🧾",
@@ -226,7 +225,8 @@
   "decor": "foire",
   "id": "foire--percepteur",
   "place": "foire",
-  "epilogue": "— Vous étiez seule avec Taxard.\n— Il voulait me faire payer l'impôt sur tout ce que je possède. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain.",
+  "intro": "La Foire aux Sortilèges a perdu un client : le percepteur Fiscalin, venu lever l'impôt de fin d'année. Six forains juraient qu'ils tenaient leur stand. L'un d'eux était seul avec lui. Le bonimenteur m'a déjà proposé un élixir de vérité. Deux écus, garanti sans effet.",
+  "epilogue": "— Vous étiez seule avec Fiscalin.\n— Il voulait me faire payer l'impôt sur tout ce que je possède. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain.",
   "clues": [
     {
       "who": "a",

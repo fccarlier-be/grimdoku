@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "L'Université des Sortilèges — l'affaire Gertrude",
+  "title": "L'Université des Sortilèges — l'affaire Grelotte",
   "decor": "academie",
   "size": 11,
   "rooms": {
@@ -348,7 +348,7 @@
     },
     {
       "id": "j",
-      "name": "Gertrude",
+      "name": "Grelotte",
       "gender": "f",
       "role": "victim",
       "icon": "🎪",
@@ -359,8 +359,8 @@
   ],
   "id": "universite--dresseuse--golem--o4",
   "place": "universite",
-  "intro": "La veille de la remise des diplômes, l'Université des Sortilèges a perdu la dresseuse Gertrude, venue recruter des bêtes pour son cirque. Neuf membres de l'université travaillaient tard, ou faisaient semblant. L'un d'eux était seul avec elle. L'Académie d'en face nie tout en bloc, avant même que je demande.",
-  "epilogue": "— Vous étiez seul avec Gertrude.\n— Pardon. Pardon pardon pardon.\n— Je n'ai encore rien dit.\n— Elle voulait m'emmener dans son cirque. Alors j'ai éternué. Et quand j'éternue, je crache du feu.",
+  "intro": "La veille de la remise des diplômes, l'Université des Sortilèges a perdu la dresseuse Grelotte, venue recruter des bêtes pour son cirque. Neuf membres de l'université travaillaient tard, ou faisaient semblant. L'un d'eux était seul avec elle. L'Académie d'en face nie tout en bloc, avant même que je demande.",
+  "epilogue": "— Vous étiez seul avec Grelotte.\n— Pardon. Pardon pardon pardon.\n— Je n'ai encore rien dit.\n— Elle voulait m'emmener dans son cirque. Alors j'ai éternué. Et quand j'éternue, je crache du feu.",
   "clues": [
     {
       "who": "a",

@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "L'Académie de Magie — l'affaire Lirelire",
+  "title": "L'Académie de Magie — l'affaire Rondeau",
   "size": 7,
   "rooms": {
     "X": {
@@ -234,7 +234,7 @@
     },
     {
       "id": "g",
-      "name": "Lirelire",
+      "name": "Rondeau",
       "gender": "m",
       "role": "victim",
       "icon": "🪕",
@@ -246,8 +246,8 @@
   "decor": "academie",
   "id": "academie--troubadour",
   "place": "academie",
-  "intro": "À l'Académie de Magie, le troubadour Lirelire, venu donner un concert, a été retrouvé un soir d'examens. Six élèves et professeurs révisaient, paraît-il. L'un d'eux était seul avec lui. Ça sent le soufre, mais ici, ça sent toujours le soufre.",
-  "epilogue": "— Vous étiez seule avec Lirelire.\n— Il voulait chanter mieux que tout le monde. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain.",
+  "intro": "À l'Académie de Magie, le troubadour Rondeau, venu donner un concert, a été retrouvé un soir d'examens. Six élèves et professeurs révisaient, paraît-il. L'un d'eux était seul avec lui. Ça sent le soufre, mais ici, ça sent toujours le soufre.",
+  "epilogue": "— Vous étiez seule avec Rondeau.\n— Il voulait chanter mieux que tout le monde. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain.",
   "clues": [
     {
       "who": "a",

@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Ferme Hantée — l'affaire Prudence",
+  "title": "La Ferme Hantée — l'affaire Austérine",
   "size": 6,
   "rooms": {
     "G": {
@@ -176,7 +176,7 @@
     },
     {
       "id": "f",
-      "name": "Prudence",
+      "name": "Austérine",
       "gender": "f",
       "role": "victim",
       "icon": "📿",
@@ -188,8 +188,8 @@
   "decor": "ferme",
   "id": "ferme--abbesse",
   "place": "ferme",
-  "intro": "On dit la Ferme Hantée, et l'abbesse Prudence, venue faire la quête, va sûrement y contribuer. Cinq habitants de la ferme étaient là cette nuit. L'un d'eux était seul avec elle. Les poules, elles, refusent de témoigner.",
-  "epilogue": "— Vous étiez seul avec Prudence.\n— Elle voulait me faire la morale. Je dis ça, je dis rien.\n— Dites-le.\n— Une baguette de trois jours, ça assomme. Je dis ça, je dis rien.",
+  "intro": "On dit la Ferme Hantée, et l'abbesse Austérine, venue faire la quête, va sûrement y contribuer. Cinq habitants de la ferme étaient là cette nuit. L'un d'eux était seul avec elle. Les poules, elles, refusent de témoigner.",
+  "epilogue": "— Vous étiez seul avec Austérine.\n— Elle voulait me faire la morale. Je dis ça, je dis rien.\n— Dites-le.\n— Une baguette de trois jours, ça assomme. Je dis ça, je dis rien.",
   "clues": [
     {
       "who": "a",

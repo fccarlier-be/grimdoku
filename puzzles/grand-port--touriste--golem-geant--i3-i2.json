@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Grand Port de Brumeval — l'affaire Gustave",
+  "title": "Le Grand Port de Brumeval — l'affaire Théophile",
   "decor": "port",
   "size": 10,
   "rooms": {
@@ -283,7 +283,7 @@
     },
     {
       "id": "h",
-      "name": "Gustave",
+      "name": "Théophile",
       "gender": "m",
       "role": "victim",
       "icon": "🎒",
@@ -294,8 +294,8 @@
   ],
   "id": "grand-port--touriste--golem-geant--i3-i2",
   "place": "grand-port",
-  "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : le touriste Gustave, venu visiter la baronnie, est mort sur les quais. Sept habitués erraient dans la brume. L'un d'eux était seul avec lui.",
-  "epilogue": "— Vous étiez seul avec Gustave.\n— Il voulait faire mon portrait au fusain et le vendre à la foire. Je lui ai indiqué la sortie.\n— Et ?\n— C'était le puits. Je me trompe toujours de direction.",
+  "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : le touriste Théophile, venu visiter la baronnie, est mort sur les quais. Sept habitués erraient dans la brume. L'un d'eux était seul avec lui.",
+  "epilogue": "— Vous étiez seul avec Théophile.\n— Il voulait faire mon portrait au fusain et le vendre à la foire. Je lui ai indiqué la sortie.\n— Et ?\n— C'était le puits. Je me trompe toujours de direction.",
   "clues": [
     {
       "who": "a",

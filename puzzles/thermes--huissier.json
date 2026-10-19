@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Les Thermes Enchantés — l'affaire Saisitout",
+  "title": "Les Thermes Enchantés — l'affaire Récupérin",
   "size": 6,
   "rooms": {
     "V": {
@@ -176,7 +176,7 @@
     },
     {
       "id": "f",
-      "name": "Saisitout",
+      "name": "Récupérin",
       "gender": "m",
       "role": "victim",
       "icon": "📜",
@@ -188,8 +188,8 @@
   "decor": "thermes",
   "id": "thermes--huissier",
   "place": "thermes",
-  "intro": "Aux Thermes Enchantés, l'huissier Saisitout, venu saisir des biens, a pris son dernier bain. Cinq baigneurs se prélassaient. L'un d'eux était seul avec lui. J'enquête en peignoir ; c'est le règlement, paraît-il.",
-  "epilogue": "— Vous étiez seule avec Saisitout.\n— Je n'ai rien fait. (Blub.)\n— Vous faites des bulles.\n— Il voulait saisir mes affaires. Je l'ai juste invité à nager. (Blub, blub.)",
+  "intro": "Aux Thermes Enchantés, l'huissier Récupérin, venu saisir des biens, a pris son dernier bain. Cinq baigneurs se prélassaient. L'un d'eux était seul avec lui. J'enquête en peignoir ; c'est le règlement, paraît-il.",
+  "epilogue": "— Vous étiez seule avec Récupérin.\n— Je n'ai rien fait. (Blub.)\n— Vous faites des bulles.\n— Il voulait saisir mes affaires. Je l'ai juste invité à nager. (Blub, blub.)",
   "clues": [
     {
       "who": "a",

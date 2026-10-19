@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "L'Université des Sortilèges — l'affaire Prudence",
+  "title": "L'Université des Sortilèges — l'affaire Modestine",
   "decor": "academie",
   "size": 11,
   "rooms": {
@@ -365,7 +365,7 @@
     },
     {
       "id": "k",
-      "name": "Prudence",
+      "name": "Modestine",
       "gender": "f",
       "role": "victim",
       "icon": "📿",
@@ -376,8 +376,8 @@
   ],
   "id": "universite--abbesse",
   "place": "universite",
-  "intro": "La veille de la remise des diplômes, l'Université des Sortilèges a perdu l'abbesse Prudence, venue faire la quête. Dix membres de l'université travaillaient tard, ou faisaient semblant. L'un d'eux était seul avec elle. L'Académie d'en face nie tout en bloc, avant même que je demande.",
-  "epilogue": "— Vous étiez seul avec Prudence.\n— Elle voulait me faire la morale. Atchoum ! Pardon : le houblon.\n— Et le sortilège ?\n— Il est parti tout seul, avec l'éternuement. Mais je visais bien.",
+  "intro": "La veille de la remise des diplômes, l'Université des Sortilèges a perdu l'abbesse Modestine, venue faire la quête. Dix membres de l'université travaillaient tard, ou faisaient semblant. L'un d'eux était seul avec elle. L'Académie d'en face nie tout en bloc, avant même que je demande.",
+  "epilogue": "— Vous étiez seul avec Modestine.\n— Elle voulait me faire la morale. Atchoum ! Pardon : le houblon.\n— Et le sortilège ?\n— Il est parti tout seul, avec l'éternuement. Mais je visais bien.",
   "clues": [
     {
       "who": "a",

@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Marais des Brumes — l'affaire Gertrude",
+  "title": "Le Marais des Brumes — l'affaire Ombeline",
   "size": 6,
   "rooms": {
     "H": {
@@ -116,7 +116,6 @@
       ]
     }
   ],
-  "intro": "Le Marais des Brumes a rendu le corps de la dresseuse Gertrude, venue recruter des bêtes pour son cirque. Il garde le reste. Cinq habitants du marais pataugeaient dans le coin. L'un d'eux était seul avec elle. J'ai de la vase jusqu'aux genoux et zéro témoin fiable.",
   "characters": [
     {
       "id": "a",
@@ -170,7 +169,7 @@
     },
     {
       "id": "f",
-      "name": "Gertrude",
+      "name": "Ombeline",
       "gender": "f",
       "role": "victim",
       "icon": "🎪",
@@ -182,7 +181,8 @@
   "decor": "marais",
   "id": "marais--dresseuse",
   "place": "marais",
-  "epilogue": "— Vous étiez seul avec Gertrude.\n— Prince Ambroise, je vous prie.\n— Prince, vous étiez seul avec Gertrude.\n— Elle voulait m'emmener dans son cirque au lieu de m'embrasser. Un prince a sa fierté. Et une langue très longue.",
+  "intro": "Le Marais des Brumes a rendu le corps de la dresseuse Ombeline, venue recruter des bêtes pour son cirque. Il garde le reste. Cinq habitants du marais pataugeaient dans le coin. L'un d'eux était seul avec elle. J'ai de la vase jusqu'aux genoux et zéro témoin fiable.",
+  "epilogue": "— Vous étiez seul avec Ombeline.\n— Prince Ambroise, je vous prie.\n— Prince, vous étiez seul avec Ombeline.\n— Elle voulait m'emmener dans son cirque au lieu de m'embrasser. Un prince a sa fierté. Et une langue très longue.",
   "clues": [
     {
       "who": "a",

@@ -1,6 +1,6 @@
 {
-  "_doc": "Lettres d'Augure (fil rouge, canon de lore/GRIMDOKU_MATRICE_CONTINUITE.md) : rapports qu'Augure rédige pour Fizzlebarbe sur les prétendants à la Tour, dont il glisse des copies sous la porte de l'enquêteur. Une par lieu, donnée par la première enquête résolue dans ce lieu ; lisibles dans n'importe quel ordre ; aucune ne révèle la solution de l'enquête qui la donne. need : nombre de lettres qui débloque l'affaire finale (scenes/testament.json).",
-  "need": 15,
+  "_doc": "Lettres d'Augure (fil rouge, canon de lore/GRIMDOKU_MATRICE_CONTINUITE.md) : rapports qu'Augure rédige pour Fizzlebarbe sur les prétendants à la Tour, dont il glisse des copies sous la porte de l'enquêteur. Une par lieu, glissée sous la porte à la dernière enquête résolue du lieu, reçue quand le joueur l'ouvre (elle ouvre alors les lieux suivants) ; lisibles dans n'importe quel ordre ; aucune ne révèle la solution de l'enquête qui la donne. need : nombre de lettres qui débloque l'affaire finale (toutes, décision de François, 2026-10-19) (scenes/testament.json).",
+  "need": 23,
   "letters": {
     "taverne": "Gribouille doit quarante écus au Sanglier Borgne. Il promet de tout rembourser « dès que la Tour sera à lui ». Il promet aussi depuis onze ans de rendre le grimoire de Dewey. Les deux promesses ont le même calendrier.",
     "tour": "Fizzlebarbe a changé trois fois de serrure ce mois-ci. Il prétend que quelqu'un fouille son bureau. Curieusement, il ne m'a pas demandé de trouver le voleur, mais de dresser la liste de tous ceux qui ont essayé.",
@@ -8,7 +8,7 @@
     "citadelle": "Blafard m'a montré ses titres de propriété. Le papier est authentique, et plus vieux que la baronnie. Le droit qu'il prétend en tirer l'est beaucoup moins.",
     "bal": "Au bal masqué, Fumerolle a promis la Tour à trois invités. Quand on lui a fait remarquer qu'ils ne pouvaient pas tous en hériter, elle a répondu qu'un vœu bien formulé ne se contredit jamais, et en a formulé un quatrième.",
     "cimetiere": "Glas a déjà creusé une tombe au nom de Fizzlebarbe. L'archimage lui aurait demandé de « prévoir toutes les éventualités ». Je lui ai demandé s'il avait aussi prévu de vérifier que le vieux était mort. Il a pris des notes.",
-    "moulin": "Fernand a fait refaire une clé de la Tour. Il dit en avoir eu une avant l'accident, celui qui l'a tué. Quand je lui ai demandé ce qu'elle ouvrait, il a serré sa main manquante et changé de sujet.",
+    "moulin": "Fernand a fait refaire une clé de la Tour. Il dit en avoir eu une avant l'accident, celui qui l'a tué. Quand je lui ai demandé ce qu'elle ouvrait, il a frotté son moignon et changé de sujet.",
     "ferme": "Briochon raconte que le testament existe, qu'il est caché, et qu'il n'en dira pas plus. Il a seulement entendu parler d'un document préparatoire. Le reste, il l'a brodé avec beaucoup de conviction.",
     "marais": "Ciguë vend une potion qui révèle certaines encres invisibles. Dewey en a acheté trois, « pour retrouver un livre ». Je ne sais pas ce qui l'inquiète le plus : l'encre, le livre ou le reçu.",
     "foire": "Clairvoya a prédit à Brindille qu'elle hériterait d'une tour. Esbroufe lui a aussitôt vendu un plan de la Tour. Il y manque un étage, mais il garantit que le document est complet.",

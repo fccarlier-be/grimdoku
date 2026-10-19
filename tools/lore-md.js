@@ -14,7 +14,7 @@ const tpl = fs.readFileSync(path.join(ROOT, 'app/template.html'), 'utf8');
 const hints = [...tpl.slice(tpl.indexOf('const HINT_TEXT = ['), tpl.indexOf('];', tpl.indexOf('const HINT_TEXT = ['))).matchAll(/`([^`]*)`/g)].map(m => m[1].replace(/\$\{n\}/g, '<personnage>'));
 const TECH = ['indice', 'case unique', 'ligne réservée', 'position relative', 'seul candidat', 'pièces', 'groupes'];
 const scenes = {};
-for (const f of fs.readdirSync(path.join(ROOT, 'scenes'))) {
+for (const f of fs.readdirSync(path.join(ROOT, 'scenes')).filter(n => n.endsWith('.json'))) { // scenes/legacy : archives
   const raw = J('scenes/' + f);
   if (raw.extends || !raw.auto) continue;
   scenes[f.replace('.json', '')] = loadScene(path.join(ROOT, 'scenes', f));
@@ -111,13 +111,14 @@ P('## 5. Les liens entre personnages',
   '| Dewey et Gribouille | Gribouille a emprunté un grimoire il y a onze ans | Dewey le cherche dans toute la baronnie, en criant |',
   '| Esbroufe et Clairvoya | Associés à la foire : lui vend les élixirs, elle prédit qu\'ils marchent | Leurs clients reviennent rarement contents |',
   '| Frégaton et Bâbord | Le capitaine qui ne part jamais, le pirate qui se perd toujours | Ils se disputent le même navire depuis vingt ans |',
-  '| Augure et tous | Le corbeau sait tout et l\'écrit | Chacun le soupçonne, personne ne l\'attrape — et pour cause (section 9) |');
+  '| Augure et tous | Le corbeau voit beaucoup et l\'écrit (sans tout comprendre) | Chacun le soupçonne, personne ne l\'attrape — et pour cause (section 9) |');
 
 P('## 6. Les invités de passage (les victimes)',
   'La victime est **toujours un invité de passage**, un personnage d\'un jour venu de l\'extérieur, souvent pour embêter quelqu\'un. La troupe reste ainsi vivante d\'une enquête à l\'autre. Seule exception : l\'affaire finale, où meurt Fizzlebarbe (section 9).',
   'Chaque invité a un **motif** (pourquoi il est venu, cité dans l\'introduction : « venu{e} … ») et une **menace** (ce qu\'il venait faire au coupable, citée dans l\'épilogue). Sa carte de victime affiche sa description, puis « La victime. Elle était seule avec son meurtrier. »', '',
+  'Depuis le 2026-10-19 (audit du lore), **le nom de la victime change à chaque affaire** : la profession, le portrait, le motif et la menace restent, le nom est tiré d\'une liste de vingt (`names` dans `cast.json`, tirage sans doublon par `build-puzzles.js`). Un même visiteur ne meurt donc plus seize fois ; Brumeval tue simplement beaucoup de percepteurs.', '',
   '| Invité | Nom | Description | Motif (« venu… ») | Menace (dans l\'épilogue) |', '| --- | --- | --- | --- | --- |',
-  ...guests.map(([t, a]) => `| ${a.title} (\`${t}\`) | ${a.name} (${a.gender === 'f' ? 'f' : 'm'}) | ${a.desc} | ${a.motif} | ${a.menace} |`), '',
+  ...guests.map(([t, a]) => `| ${a.title} (\`${t}\`) | ${(a.names || [a.name]).join(', ')} (${a.gender === 'f' ? 'f' : 'm'}) | ${a.desc} | ${a.motif} | ${a.menace} |`), '',
   'Dans chaque lieu, les invités sont tous différents d\'une enquête à l\'autre ; le titre d\'une enquête est « <lieu> — l\'affaire <invité> ».');
 
 P('## 7. Les lieux, un par un',
@@ -148,7 +149,7 @@ P('## 8. Le fil rouge : la vérité cachée et les lettres d\'Augure',
   '- **La Tour est une charge, pas un bien** : Fizzlebarbe n\'en est pas le propriétaire mais le gardien. La garde peut se transmettre ; la Tour ne se vend pas, ne se met pas en gage et ne se lègue pas comme une maison.',
   '- **Le testament n\'était qu\'un projet** de transmission, confié sous scellé au notaire, jamais finalisé. Les prétendants se battent pour une propriété qu\'aucun ne peut posséder.',
   '- **Fizzlebarbe** : compétent, mais très mauvais pour faire confiance. Il a fait surveiller les prétendants par Augure sans jamais leur expliquer ce qu\'il cherchait à transmettre, ni demander à Augure ce que lui voulait.',
-  '- **Augure** écrit les rapports pour Fizzlebarbe et, dans son dos, en glisse des copies sous la porte de l\'enquêteur, après qu\'une première affaire a été résolue dans le lieu concerné : il espère qu\'un regard extérieur verra ce que son maître refuse de voir. Il n\'est pas omniscient. C\'est lui qui a repris le projet chez le notaire (d\'où la plume noire), de peur qu\'un prétendant s\'en serve.',
+  '- **Augure** écrit les rapports pour Fizzlebarbe et, dans son dos, en glisse des copies sous la porte de l\'enquêteur, quand la dernière affaire du lieu concerné est résolue : il espère qu\'un regard extérieur verra ce que son maître refuse de voir. Il n\'est pas omniscient. C\'est lui qui a repris le projet chez le notaire (d\'où la plume noire), de peur qu\'un prétendant s\'en serve.',
   '- **Le grimoire et la clé** : il y a onze ans, Gribouille a perdu dans la Tour le grimoire emprunté à Dewey. Fizzlebarbe l\'a retrouvé et y a caché une clé de service, qui ouvre un premier accès vers le Palier zéro (pas le contrôle du Nœud). Dewey retrouve le livre sans comprendre ce que cache la reliure.',
   '- **Fernand** : apprenti de Fizzlebarbe, il est mort il y a vingt ans pendant une réparation liée aux installations de la Tour, et il est revenu en zombie, sans sa main. Négligence et conflit de travail, pas tentative de meurtre : jamais payé, jamais reconnu, jamais prévenu des risques.',
   '### Chronologie de référence', '',
@@ -160,13 +161,13 @@ P('## 8. Le fil rouge : la vérité cachée et les lettres d\'Augure',
   '| Peu avant la fin | Serrures changées, coffre anti-magie commandé, projet scellé chez le notaire ; Augure reprend le projet et glisse ses copies sous la porte de l\'enquêteur. |',
   '| La nuit de l\'affaire finale | Fizzlebarbe est tué avant d\'avoir transmis la garde ; le coupable est celui que désigne la grille. |',
   '| Après le verdict | Les archives du Palier zéro révèlent le Nœud, la charge et le rôle d\'Augure. |',
-  '| Suite prévue | Fizzlebarbe revient en spectre ; Augure veille sur les archives à titre provisoire. |', '',
+  '| Après le verdict | L\'enquêteur scelle les archives du Palier zéro et garde la clé, à titre provisoire, quel que soit le coupable (Augure compris). |', '| Suite prévue | Fizzlebarbe revient en spectre (« quelqu\'un a déplacé les meubles de la Tour ») et reprend la garde à sa façon. |', '',
   'Les enquêtes ordinaires se jouent dans n\'importe quel ordre : c\'est la chronologie du monde, pas un ordre imposé au joueur.',
   '### Les lettres',
   `Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquêteur trouve **une lettre glissée sous sa porte**, signée « — A. ». Il y a **une lettre par lieu** (${Object.keys(lettres.letters).length} en tout), donnée par la **première enquête résolue dans ce lieu**. Elles se lisent dans **n'importe quel ordre**, chacune se comprend seule, aucune ne révèle la solution de l'enquête qui la donne (elle n'apparaît qu'après la victoire). Ce sont des rapports d'Augure sur les prétendants : ragots, caractère, et des indices qui se répondent (la clé et le grimoire, l'étage manquant des plans, la brume du port, la puissance mesurée par le Palais), qu'on relit autrement après la fin.`, '',
   '| Lieu | Lettre |', '| --- | --- |',
   ...order.filter(n => lettres.letters[n]).map(n => `| ${scenes[n] ? scenes[n].title : n} | ${lettres.letters[n]} |`), '',
-  `**Débloquer la fin** : avec **${lettres.need} lettres**, l'affaire finale s'ouvre (pas besoin de tout finir, ni d'une combinaison précise de lettres).`);
+  `**Débloquer la fin** : avec **les ${lettres.need} lettres** (toutes : décision de François, 2026-10-19), l'affaire finale s'ouvre. La fin est donc vraiment la fin : Fizzlebarbe ne peut plus réapparaître vivant dans une enquête jouée après sa mort.`);
 
 P('## 9. L\'affaire finale : le testament de Fizzlebarbe',
   `**${testament.title} — ${testament.subtitle}** (c'est ainsi que la baronnie appelle l'affaire) : carte ${testament.size}×${testament.size}, la Tour de l'Archimage, la nuit où Fizzlebarbe devait régler sa succession.`,

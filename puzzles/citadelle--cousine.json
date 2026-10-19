@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Citadelle de Mortebrune — l'affaire Ermengarde",
+  "title": "La Citadelle de Mortebrune — l'affaire Clotilde",
   "decor": "chateau",
   "size": 9,
   "rooms": {
@@ -256,7 +256,7 @@
     },
     {
       "id": "i",
-      "name": "Ermengarde",
+      "name": "Clotilde",
       "gender": "f",
       "role": "victim",
       "icon": "👒",
@@ -267,8 +267,8 @@
   ],
   "id": "citadelle--cousine",
   "place": "citadelle",
-  "intro": "Le pont-levis est resté coincé toute la nuit, et la cousine Ermengarde, venue réclamer un héritage, est restée coincée avec. Pour toujours. Huit occupants de la Citadelle ne pouvaient pas sortir. L'un d'eux était seul avec elle. Au moins, personne n'a pu s'enfuir.",
-  "epilogue": "— Vous étiez seule avec Ermengarde.\n— Elle voulait réclamer sa part de ce qui m'appartient. Ça m'a coupé l'appétit.\n— Et ?\n— Je l'ai changée en crapaud. Et l'appétit m'est revenu.",
+  "intro": "Le pont-levis est resté coincé toute la nuit, enfermant la cousine Clotilde, venue réclamer un héritage, avec les huit occupants de la Citadelle. Au matin, elle n'avait plus aucune envie de sortir. L'un d'eux était seul avec elle. Au moins, personne n'a pu s'enfuir.",
+  "epilogue": "— Vous étiez seule avec Clotilde.\n— Elle voulait réclamer sa part de ce qui m'appartient. Ça m'a coupé l'appétit.\n— Et ?\n— Je l'ai changée en crapaud. Et l'appétit m'est revenu.",
   "clues": [
     {
       "who": "a",

@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Navire Fantôme — l'affaire Taxard",
+  "title": "Le Navire Fantôme — l'affaire Tondulard",
   "size": 7,
   "rooms": {
     "P": {
@@ -227,7 +227,7 @@
     },
     {
       "id": "g",
-      "name": "Taxard",
+      "name": "Tondulard",
       "gender": "m",
       "role": "victim",
       "icon": "🧾",
@@ -239,8 +239,8 @@
   "decor": "navire",
   "id": "navire--percepteur",
   "place": "navire",
-  "intro": "Le Navire Fantôme ne quitte jamais le port, et le percepteur Taxard, venu à bord lever l'impôt de fin d'année, non plus, désormais. Six membres de l'équipage traînaient sur le pont. L'un d'eux était seul avec lui. Le capitaine m'assure que c'est la faute de la tempête. Il n'y a pas de tempête.",
-  "epilogue": "— Vous étiez seule avec Taxard.\n— Il voulait me faire payer l'impôt sur tout ce que je possède. Je lui ai proposé un verre.\n— De vin ?\n— Je ne bois jamais… de vin.",
+  "intro": "Le Navire Fantôme ne quitte jamais le port, et le percepteur Tondulard, venu à bord lever l'impôt de fin d'année, non plus, désormais. Six membres de l'équipage traînaient sur le pont. L'un d'eux était seul avec lui. Le capitaine m'assure que c'est la faute de la tempête. Il n'y a pas de tempête.",
+  "epilogue": "— Vous étiez seule avec Tondulard.\n— Il voulait me faire payer l'impôt sur tout ce que je possède. Je lui ai proposé un verre.\n— De vin ?\n— Je ne bois jamais… de vin.",
   "clues": [
     {
       "who": "a",

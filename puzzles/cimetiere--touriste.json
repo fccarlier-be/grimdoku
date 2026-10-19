@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Cimetière de Minuit — l'affaire Gustave",
+  "title": "Le Cimetière de Minuit — l'affaire Curiosus",
   "size": 8,
   "rooms": {
     "G": {
@@ -204,7 +204,7 @@
       "gender": "m",
       "role": "suspect",
       "icon": "🐦‍⬛",
-      "desc": "Corbeau, sait tout, ne dit rien",
+      "desc": "Corbeau, voit beaucoup, comprend moins, ne dit rien",
       "archetype": "corbeau",
       "tic": "Ne parle pas : il écrit"
     },
@@ -253,7 +253,7 @@
     },
     {
       "id": "h",
-      "name": "Gustave",
+      "name": "Curiosus",
       "gender": "m",
       "role": "victim",
       "icon": "🎒",
@@ -265,8 +265,8 @@
   "decor": "cimetiere",
   "id": "cimetiere--touriste",
   "place": "cimetiere",
-  "intro": "Au Cimetière de Minuit, on a retrouvé le touriste Gustave, venu visiter la baronnie. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Sept habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec lui. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
-  "epilogue": "— Vous étiez seul avec Gustave.\n— (Le corbeau vous tend un billet : « Il voulait faire mon portrait au fusain et le vendre à la foire. »)\n— Et ensuite ?\n— (Deuxième billet : « Ensuite, plus rien. »)",
+  "intro": "Au Cimetière de Minuit, on a retrouvé le touriste Curiosus, venu visiter la baronnie. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Sept habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec lui. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
+  "epilogue": "— Vous étiez seul avec Curiosus.\n— (Le corbeau vous tend un billet : « Il voulait faire mon portrait au fusain et le vendre à la foire. »)\n— Et ensuite ?\n— (Deuxième billet : « Ensuite, plus rien. »)",
   "clues": [
     {
       "who": "a",

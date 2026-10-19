@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Forge du Dragon — l'affaire Ondine",
+  "title": "La Forge du Dragon — l'affaire Crawline",
   "size": 7,
   "rooms": {
     "D": {
@@ -206,7 +206,7 @@
     },
     {
       "id": "f",
-      "name": "Ondine",
+      "name": "Crawline",
       "gender": "f",
       "role": "victim",
       "icon": "🛟",
@@ -218,8 +218,8 @@
   "decor": "forge",
   "id": "forge--nageuse--dragon--i2",
   "place": "forge",
-  "intro": "La Forge du Dragon fume plus que d'habitude : la maîtresse-nageuse Ondine, venue donner des cours de natation, n'en est pas ressortie. Cinq habitués de la forge étaient au travail, paraît-il. L'un d'eux était seul avec elle. Le dragon dort. J'aimerais qu'il continue.",
-  "epilogue": "— Vous étiez seul avec Ondine.\n— Elle voulait m'apprendre à nager de force. J'ai fait une opération comptable.\n— Vous l'avez tuée.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "intro": "La Forge du Dragon fume plus que d'habitude : la maîtresse-nageuse Crawline, venue donner des cours de natation, n'en est pas ressortie. Cinq habitués de la forge étaient au travail, paraît-il. L'un d'eux était seul avec elle. Le dragon dort. J'aimerais qu'il continue.",
+  "epilogue": "— Vous étiez seul avec Crawline.\n— Elle voulait m'apprendre à nager de force. J'ai fait une opération comptable.\n— Vous l'avez tuée.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
   "clues": [
     {
       "who": "a",

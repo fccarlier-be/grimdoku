@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Bibliothèque Interdite — l'affaire Gustave",
+  "title": "La Bibliothèque Interdite — l'affaire Badaud",
   "size": 7,
   "rooms": {
     "S": {
@@ -164,7 +164,6 @@
       ]
     }
   ],
-  "intro": "À la Bibliothèque Interdite, le touriste Gustave, venu visiter la baronnie, a été retrouvé entre deux rayonnages. On m'a demandé d'enquêter en silence. Six lecteurs étaient là. L'un d'eux était seul avec lui. Je chuchote mes questions ; on me répond en hurlant « chut ».",
   "characters": [
     {
       "id": "a",
@@ -231,7 +230,7 @@
     },
     {
       "id": "g",
-      "name": "Gustave",
+      "name": "Badaud",
       "gender": "m",
       "role": "victim",
       "icon": "🎒",
@@ -243,7 +242,8 @@
   "decor": "bibliotheque",
   "id": "bibliotheque--touriste",
   "place": "bibliotheque",
-  "epilogue": "— Vous étiez seul avec Gustave.\n— Il voulait faire mon portrait au fusain et le vendre à la foire. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
+  "intro": "À la Bibliothèque Interdite, le touriste Badaud, venu visiter la baronnie, a été retrouvé entre deux rayonnages. On m'a demandé d'enquêter en silence. Six lecteurs étaient là. L'un d'eux était seul avec lui. Je chuchote mes questions ; on me répond en hurlant « chut ».",
+  "epilogue": "— Vous étiez seul avec Badaud.\n— Il voulait faire mon portrait au fusain et le vendre à la foire. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
   "clues": [
     {
       "who": "a",

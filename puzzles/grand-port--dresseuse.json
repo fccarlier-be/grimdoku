@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Grand Port de Brumeval — l'affaire Gertrude",
+  "title": "Le Grand Port de Brumeval — l'affaire Écaille",
   "decor": "port",
   "size": 10,
   "rooms": {
@@ -311,7 +311,7 @@
     },
     {
       "id": "j",
-      "name": "Gertrude",
+      "name": "Écaille",
       "gender": "f",
       "role": "victim",
       "icon": "🎪",
@@ -322,8 +322,8 @@
   ],
   "id": "grand-port--dresseuse",
   "place": "grand-port",
-  "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : la dresseuse Gertrude, venue recruter des bêtes pour son cirque, est morte sur les quais. Neuf habitués erraient dans la brume. L'un d'eux était seul avec elle.",
-  "epilogue": "— Vous étiez seul avec Gertrude.\n— Elle voulait m'emmener dans son cirque. J'ai fait une opération comptable.\n— Vous l'avez tuée.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : la dresseuse Écaille, venue recruter des bêtes pour son cirque, est morte sur les quais. Neuf habitués erraient dans la brume. L'un d'eux était seul avec elle.",
+  "epilogue": "— Vous étiez seul avec Écaille.\n— Elle voulait m'emmener dans son cirque. J'ai fait une opération comptable.\n— Vous l'avez tuée.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
   "clues": [
     {
       "who": "a",

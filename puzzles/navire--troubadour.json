@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Navire Fantôme — l'affaire Lirelire",
+  "title": "Le Navire Fantôme — l'affaire Vielleux",
   "size": 7,
   "rooms": {
     "P": {
@@ -230,7 +230,7 @@
     },
     {
       "id": "g",
-      "name": "Lirelire",
+      "name": "Vielleux",
       "gender": "m",
       "role": "victim",
       "icon": "🪕",
@@ -242,8 +242,8 @@
   "decor": "navire",
   "id": "navire--troubadour",
   "place": "navire",
-  "intro": "Le Navire Fantôme ne quitte jamais le port, et le troubadour Lirelire, venu à bord donner un concert, non plus, désormais. Six membres de l'équipage traînaient sur le pont. L'un d'eux était seul avec lui. Le capitaine m'assure que c'est la faute de la tempête. Il n'y a pas de tempête.",
-  "epilogue": "— Vous étiez seul avec Lirelire.\n— Seul avec Lirelire ! Seul avec Lirelire !\n— Pourquoi ?\n— Il voulait chanter mieux que tout le monde ! Coup de bec ! Coup de bec !",
+  "intro": "Le Navire Fantôme ne quitte jamais le port, et le troubadour Vielleux, venu à bord donner un concert, non plus, désormais. Six membres de l'équipage traînaient sur le pont. L'un d'eux était seul avec lui. Le capitaine m'assure que c'est la faute de la tempête. Il n'y a pas de tempête.",
+  "epilogue": "— Vous étiez seul avec Vielleux.\n— Seul avec Vielleux ! Seul avec Vielleux !\n— Pourquoi ?\n— Il voulait chanter mieux que tout le monde ! Coup de bec ! Coup de bec !",
   "clues": [
     {
       "who": "a",

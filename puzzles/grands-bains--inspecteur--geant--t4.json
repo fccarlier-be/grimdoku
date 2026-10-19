@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Les Grands Bains de Brumeval — l'affaire Pinardon",
+  "title": "Les Grands Bains de Brumeval — l'affaire Gorgeon",
   "decor": "thermes",
   "size": 10,
   "rooms": {
@@ -289,7 +289,7 @@
     },
     {
       "id": "h",
-      "name": "Pinardon",
+      "name": "Gorgeon",
       "gender": "m",
       "role": "victim",
       "icon": "🍷",
@@ -300,8 +300,8 @@
   ],
   "id": "grands-bains--inspecteur--geant--t4",
   "place": "grands-bains",
-  "intro": "Aux Grands Bains de Brumeval, on vient soigner ses rhumatismes, ses nerfs ou sa réputation. L'inspecteur des tavernes Pinardon, venu inspecter les lieux, n'est pas ressorti du bain. Sept curistes et employés barbotaient dans les parages. L'un d'eux était seul avec lui. Il fait quarante degrés, tout le monde transpire, et personne ne sait rien.",
-  "epilogue": "— Vous étiez seule avec Pinardon.\n— Il voulait me coller un blâme. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain.",
+  "intro": "Aux Grands Bains de Brumeval, on vient soigner ses rhumatismes, ses nerfs ou sa réputation. L'inspecteur des tavernes Gorgeon, venu inspecter les lieux, n'est pas ressorti du bain. Sept curistes et employés barbotaient dans les parages. L'un d'eux était seul avec lui. Il fait quarante degrés, tout le monde transpire, et personne ne sait rien.",
+  "epilogue": "— Vous étiez seule avec Gorgeon.\n— Il voulait me coller un blâme. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain.",
   "clues": [
     {
       "who": "a",

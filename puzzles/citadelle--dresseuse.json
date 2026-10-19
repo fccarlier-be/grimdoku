@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Citadelle de Mortebrune — l'affaire Gertrude",
+  "title": "La Citadelle de Mortebrune — l'affaire Bastringue",
   "decor": "chateau",
   "size": 9,
   "rooms": {
@@ -256,7 +256,7 @@
     },
     {
       "id": "i",
-      "name": "Gertrude",
+      "name": "Bastringue",
       "gender": "f",
       "role": "victim",
       "icon": "🎪",
@@ -267,8 +267,8 @@
   ],
   "id": "citadelle--dresseuse",
   "place": "citadelle",
-  "intro": "Le pont-levis est resté coincé toute la nuit, et la dresseuse Gertrude, venue recruter des bêtes pour son cirque, est restée coincée avec. Pour toujours. Huit occupants de la Citadelle ne pouvaient pas sortir. L'un d'eux était seul avec elle. Au moins, personne n'a pu s'enfuir.",
-  "epilogue": "— Vous étiez seul avec Gertrude.\n— Je me lève. Je proteste. Je me rassois.\n— Pourquoi ?\n— Elle voulait m'emmener dans son cirque. J'ai dégainé. Je regrette. Je rengaine.",
+  "intro": "Le pont-levis est resté coincé toute la nuit, enfermant la dresseuse Bastringue, venue recruter des bêtes pour son cirque, avec les huit occupants de la Citadelle. Au matin, elle n'avait plus aucune envie de sortir. L'un d'eux était seul avec elle. Au moins, personne n'a pu s'enfuir.",
+  "epilogue": "— Vous étiez seul avec Bastringue.\n— Je me lève. Je proteste. Je me rassois.\n— Pourquoi ?\n— Elle voulait m'emmener dans son cirque. J'ai dégainé. Je regrette. Je rengaine.",
   "clues": [
     {
       "who": "a",

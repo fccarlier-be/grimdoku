@@ -1,5 +1,5 @@
 {
-  "_doc": "Carte de la baronnie de Brumeval : image = illustration retenue (assets/map/<image>), ratio = ses proportions ; contrées et lieux ; pos = position de chaque repère en % de l'illustration. start = seul lieu ouvert au départ ; unlock = lieux ouverts par la première enquête résolue dans un lieu (sa lettre anonyme en parle) — décision de François, 2026-10-18 : les lieux se débloquent au fil de l'histoire.",
+  "_doc": "Carte de la baronnie de Brumeval : image = illustration retenue (assets/map/<image>), ratio = ses proportions ; contrées et lieux ; pos = position de chaque repère en % de l'illustration. start = seul lieu ouvert au départ ; unlock = lieux ouverts par la lettre d'un lieu (glissée sous la porte à sa dernière enquête résolue, ouverte par le joueur) (sa lettre anonyme en parle) — décision de François, 2026-10-18 : les lieux se débloquent au fil de l'histoire.",
   "contrees": [
     {
       "nom": "Mortebrune, le chef-lieu",

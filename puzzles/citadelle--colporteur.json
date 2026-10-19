@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Citadelle de Mortebrune — l'affaire Bricabrac",
+  "title": "La Citadelle de Mortebrune — l'affaire Toutvend",
   "decor": "chateau",
   "size": 9,
   "rooms": {
@@ -256,7 +256,7 @@
     },
     {
       "id": "i",
-      "name": "Bricabrac",
+      "name": "Toutvend",
       "gender": "m",
       "role": "victim",
       "icon": "🎒",
@@ -267,8 +267,8 @@
   ],
   "id": "citadelle--colporteur",
   "place": "citadelle",
-  "intro": "Le pont-levis est resté coincé toute la nuit, et le colporteur Bricabrac, venu vendre sa camelote, est resté coincé avec. Pour toujours. Huit occupants de la Citadelle ne pouvaient pas sortir. L'un d'eux était seul avec lui. Au moins, personne n'a pu s'enfuir.",
-  "epilogue": "— Vous étiez seul avec Bricabrac.\n— Il voulait me revendre ce qu'il m'avait déjà vendu. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
+  "intro": "Le pont-levis est resté coincé toute la nuit, enfermant le colporteur Toutvend, venu vendre sa camelote, avec les huit occupants de la Citadelle. Au matin, il n'avait plus aucune envie de sortir. L'un d'eux était seul avec lui. Au moins, personne n'a pu s'enfuir.",
+  "epilogue": "— Vous étiez seul avec Toutvend.\n— Il voulait me revendre ce qu'il m'avait déjà vendu. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
   "clues": [
     {
       "who": "a",

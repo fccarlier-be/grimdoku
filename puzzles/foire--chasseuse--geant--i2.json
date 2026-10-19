@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Foire aux Sortilèges — l'affaire Vipérine",
+  "title": "La Foire aux Sortilèges — l'affaire Sanguine",
   "size": 7,
   "rooms": {
     "S": {
@@ -145,7 +145,6 @@
       ]
     }
   ],
-  "intro": "La Foire aux Sortilèges a perdu un client : la chasseuse de primes Vipérine, venue toucher une prime. Cinq forains juraient qu'ils tenaient leur stand. L'un d'eux était seul avec elle. Le bonimenteur m'a déjà proposé un élixir de vérité. Deux écus, garanti sans effet.",
   "characters": [
     {
       "id": "a",
@@ -200,7 +199,7 @@
     },
     {
       "id": "f",
-      "name": "Vipérine",
+      "name": "Sanguine",
       "gender": "f",
       "role": "victim",
       "icon": "🏹",
@@ -212,7 +211,8 @@
   "decor": "foire",
   "id": "foire--chasseuse--geant--i2",
   "place": "foire",
-  "epilogue": "— Vous étiez seul avec Vipérine.\n— Elle voulait me livrer au baron contre trois écus. Je me suis levé d'un coup.\n— Et ?\n— Pardon, plafond. Pardon, Vipérine.",
+  "intro": "La Foire aux Sortilèges a perdu un client : la chasseuse de primes Sanguine, venue toucher une prime. Cinq forains juraient qu'ils tenaient leur stand. L'un d'eux était seul avec elle. Le bonimenteur m'a déjà proposé un élixir de vérité. Deux écus, garanti sans effet.",
+  "epilogue": "— Vous étiez seul avec Sanguine.\n— Elle voulait me livrer au baron contre trois écus. Je me suis levé d'un coup.\n— Et ?\n— Pardon, plafond. Pardon, Sanguine.",
   "clues": [
     {
       "who": "a",

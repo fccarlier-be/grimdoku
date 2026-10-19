@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Forge du Dragon — l'affaire Pinardon",
+  "title": "La Forge du Dragon — l'affaire Lichard",
   "size": 7,
   "rooms": {
     "D": {
@@ -220,7 +220,7 @@
     },
     {
       "id": "g",
-      "name": "Pinardon",
+      "name": "Lichard",
       "gender": "m",
       "role": "victim",
       "icon": "🍷",
@@ -232,8 +232,8 @@
   "decor": "forge",
   "id": "forge--inspecteur",
   "place": "forge",
-  "intro": "La Forge du Dragon fume plus que d'habitude : l'inspecteur des tavernes Pinardon, venu inspecter les lieux, n'en est pas ressorti. Six habitués de la forge étaient au travail, paraît-il. L'un d'eux était seul avec lui. Le dragon dort. J'aimerais qu'il continue.",
-  "epilogue": "— Vous étiez seul avec Pinardon.\n— Il voulait me coller un blâme. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
+  "intro": "La Forge du Dragon fume plus que d'habitude : l'inspecteur des tavernes Lichard, venu inspecter les lieux, n'en est pas ressorti. Six habitués de la forge étaient au travail, paraît-il. L'un d'eux était seul avec lui. Le dragon dort. J'aimerais qu'il continue.",
+  "epilogue": "— Vous étiez seul avec Lichard.\n— Il voulait me coller un blâme. J'ai fait une opération comptable.\n— Vous l'avez tué.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal.",
   "clues": [
     {
       "who": "a",

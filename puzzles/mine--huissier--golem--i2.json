@@ -165,7 +165,6 @@
       ]
     }
   ],
-  "intro": "À la Mine des Nains, l'huissier Saisitout, venu saisir des biens, est descendu plus bas que prévu. Six mineurs et visiteurs étaient au fond. L'un d'eux était seul avec lui. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
   "characters": [
     {
       "id": "a",
@@ -242,6 +241,7 @@
   "decor": "mine",
   "id": "mine--huissier--golem--i2",
   "place": "mine",
+  "intro": "À la Mine des Nains, l'huissier Saisitout, venu saisir des biens, est descendu plus bas que prévu. Six mineurs et visiteurs étaient au fond. L'un d'eux était seul avec lui. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
   "epilogue": "— Vous étiez seul avec Saisitout.\n— Saisitout.\n— Pourquoi ?\n— Il voulait saisir mes affaires. Alors Bâfrin taper. Taper fort. Fort.",
   "clues": [
     {

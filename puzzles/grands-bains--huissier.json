@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Les Grands Bains de Brumeval — l'affaire Saisitout",
+  "title": "Les Grands Bains de Brumeval — l'affaire Confisquet",
   "decor": "thermes",
   "size": 10,
   "rooms": {
@@ -318,7 +318,7 @@
     },
     {
       "id": "j",
-      "name": "Saisitout",
+      "name": "Confisquet",
       "gender": "m",
       "role": "victim",
       "icon": "📜",
@@ -329,8 +329,8 @@
   ],
   "id": "grands-bains--huissier",
   "place": "grands-bains",
-  "intro": "Aux Grands Bains de Brumeval, on vient soigner ses rhumatismes, ses nerfs ou sa réputation. L'huissier Saisitout, venu saisir des biens, n'est pas ressorti du bain. Neuf curistes et employés barbotaient dans les parages. L'un d'eux était seul avec lui. Il fait quarante degrés, tout le monde transpire, et personne ne sait rien.",
-  "epilogue": "— Vous étiez seule avec Saisitout.\n— Je n'ai rien fait. (Blub.)\n— Vous faites des bulles.\n— Il voulait saisir mes affaires. Je l'ai juste invité à nager. (Blub, blub.)",
+  "intro": "Aux Grands Bains de Brumeval, on vient soigner ses rhumatismes, ses nerfs ou sa réputation. L'huissier Confisquet, venu saisir des biens, n'est pas ressorti du bain. Neuf curistes et employés barbotaient dans les parages. L'un d'eux était seul avec lui. Il fait quarante degrés, tout le monde transpire, et personne ne sait rien.",
+  "epilogue": "— Vous étiez seule avec Confisquet.\n— Je n'ai rien fait. (Blub.)\n— Vous faites des bulles.\n— Il voulait saisir mes affaires. Je l'ai juste invité à nager. (Blub, blub.)",
   "clues": [
     {
       "who": "a",

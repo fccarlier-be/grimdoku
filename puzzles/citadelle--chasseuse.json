@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Citadelle de Mortebrune — l'affaire Vipérine",
+  "title": "La Citadelle de Mortebrune — l'affaire Corbine",
   "decor": "chateau",
   "size": 9,
   "rooms": {
@@ -253,7 +253,7 @@
     },
     {
       "id": "i",
-      "name": "Vipérine",
+      "name": "Corbine",
       "gender": "f",
       "role": "victim",
       "icon": "🏹",
@@ -264,8 +264,8 @@
   ],
   "id": "citadelle--chasseuse",
   "place": "citadelle",
-  "intro": "Le pont-levis est resté coincé toute la nuit, et la chasseuse de primes Vipérine, venue toucher une prime, est restée coincée avec. Pour toujours. Huit occupants de la Citadelle ne pouvaient pas sortir. L'un d'eux était seul avec elle. Au moins, personne n'a pu s'enfuir.",
-  "epilogue": "— Vous étiez seul avec Vipérine.\n— « Elle voulait me livrer au baron contre trois écus, ô rage, ô désespoir… »\n— Répondez normalement.\n— J'ai chanté jusqu'à ce qu'elle s'arrête. Définitivement.",
+  "intro": "Le pont-levis est resté coincé toute la nuit, enfermant la chasseuse de primes Corbine, venue toucher une prime, avec les huit occupants de la Citadelle. Au matin, elle n'avait plus aucune envie de sortir. L'un d'eux était seul avec elle. Au moins, personne n'a pu s'enfuir.",
+  "epilogue": "— Vous étiez seul avec Corbine.\n— « Elle voulait me livrer au baron contre trois écus, ô rage, ô désespoir… »\n— Répondez normalement.\n— J'ai chanté jusqu'à ce qu'elle s'arrête. Définitivement.",
   "clues": [
     {
       "who": "a",

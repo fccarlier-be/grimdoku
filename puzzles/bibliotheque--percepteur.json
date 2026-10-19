@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "La Bibliothèque Interdite — l'affaire Taxard",
+  "title": "La Bibliothèque Interdite — l'affaire Tributin",
   "size": 7,
   "rooms": {
     "S": {
@@ -164,7 +164,6 @@
       ]
     }
   ],
-  "intro": "À la Bibliothèque Interdite, le percepteur Taxard, venu lever l'impôt de fin d'année, a été retrouvé entre deux rayonnages. On m'a demandé d'enquêter en silence. Six lecteurs étaient là. L'un d'eux était seul avec lui. Je chuchote mes questions ; on me répond en hurlant « chut ».",
   "characters": [
     {
       "id": "a",
@@ -228,7 +227,7 @@
     },
     {
       "id": "g",
-      "name": "Taxard",
+      "name": "Tributin",
       "gender": "m",
       "role": "victim",
       "icon": "🧾",
@@ -240,7 +239,8 @@
   "decor": "bibliotheque",
   "id": "bibliotheque--percepteur",
   "place": "bibliotheque",
-  "epilogue": "— Vous étiez seule avec Taxard.\n— Il voulait me faire payer l'impôt sur tout ce que je possède. Je lui ai proposé un verre.\n— De vin ?\n— Je ne bois jamais… de vin.",
+  "intro": "À la Bibliothèque Interdite, le percepteur Tributin, venu lever l'impôt de fin d'année, a été retrouvé entre deux rayonnages. On m'a demandé d'enquêter en silence. Six lecteurs étaient là. L'un d'eux était seul avec lui. Je chuchote mes questions ; on me répond en hurlant « chut ».",
+  "epilogue": "— Vous étiez seule avec Tributin.\n— Il voulait me faire payer l'impôt sur tout ce que je possède. Je lui ai proposé un verre.\n— De vin ?\n— Je ne bois jamais… de vin.",
   "clues": [
     {
       "who": "a",

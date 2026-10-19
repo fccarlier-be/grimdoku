@@ -163,6 +163,6 @@
     }
   ],
   "auto": {
-    "intro": "Au Banquet des Gobelins, {titre} {victime}, venu{e} {motif}, est passé{e} du côté des convives au côté du menu. Enfin, presque. {Nombre} invités se goinfraient. L'un d'eux était seul avec {lui}. On m'a servi une soupe. Je ne l'ai pas touchée."
+    "intro": "Au Banquet des Gobelins, {titre} {victime}, venu{e} {motif}, est passé{e} de la liste des invités à la carte du menu. On l'a retrouvé{e} avant le dessert. {Nombre} invités se goinfraient. L'un d'eux était seul avec {lui}. On m'a servi une soupe. Je ne l'ai pas touchée."
   }
 }

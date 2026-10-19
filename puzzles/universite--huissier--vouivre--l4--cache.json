@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "L'Université des Sortilèges — l'affaire Saisitout",
+  "title": "L'Université des Sortilèges — l'affaire Gobetout",
   "decor": "academie",
   "size": 11,
   "rooms": {
@@ -333,7 +333,7 @@
     },
     {
       "id": "i",
-      "name": "Saisitout",
+      "name": "Gobetout",
       "gender": "m",
       "role": "victim",
       "icon": "📜",
@@ -346,8 +346,8 @@
   "place": "universite",
   "hiddenShapes": true,
   "hiddenMax": 4,
-  "intro": "La veille de la remise des diplômes, l'Université des Sortilèges a perdu l'huissier Saisitout, venu saisir des biens. Huit membres de l'université travaillaient tard, ou faisaient semblant. L'un d'eux était seul avec lui. L'Académie d'en face nie tout en bloc, avant même que je demande.",
-  "epilogue": "— Vous étiez seule avec Saisitout.\n— Il voulait saisir mes affaires, alors j'ai lancé un sort de protection.\n— Et ?\n— C'est normal que ça fume encore ?",
+  "intro": "La veille de la remise des diplômes, l'Université des Sortilèges a perdu l'huissier Gobetout, venu saisir des biens. Huit membres de l'université travaillaient tard, ou faisaient semblant. L'un d'eux était seul avec lui. L'Académie d'en face nie tout en bloc, avant même que je demande.",
+  "epilogue": "— Vous étiez seule avec Gobetout.\n— Il voulait saisir mes affaires, alors j'ai lancé un sort de protection.\n— Et ?\n— C'est normal que ça fume encore ?",
   "clues": [
     {
       "who": "a",

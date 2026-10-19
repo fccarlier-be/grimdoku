@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "title": "Le Bal Masqué — l'affaire Gertrude",
+  "title": "Le Bal Masqué — l'affaire Pattoune",
   "size": 8,
   "rooms": {
     "B": {
@@ -267,7 +267,7 @@
     },
     {
       "id": "h",
-      "name": "Gertrude",
+      "name": "Pattoune",
       "gender": "f",
       "role": "victim",
       "icon": "🎪",
@@ -279,8 +279,8 @@
   "decor": "bal",
   "id": "bal--dresseuse",
   "place": "bal",
-  "intro": "Bal masqué au château : la dresseuse Gertrude, venue recruter des bêtes pour son cirque, n'a pas passé minuit. Sept invités dansaient, ou le prétendent. L'un d'eux était seul avec elle. Le plus dur, ici, c'est de savoir qui est sous quel masque. Et qui ment dessous.",
-  "epilogue": "— Vous étiez seul avec Gertrude.\n— Elle voulait m'emmener dans son cirque. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
+  "intro": "Bal masqué au château : la dresseuse Pattoune, venue recruter des bêtes pour son cirque, n'a pas survécu jusqu'à minuit. Sept invités dansaient, ou le prétendent. L'un d'eux était seul avec elle. Le plus dur, ici, c'est de savoir qui est sous quel masque. Et qui ment dessous.",
+  "epilogue": "— Vous étiez seul avec Pattoune.\n— Elle voulait m'emmener dans son cirque. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile.",
   "clues": [
     {
       "who": "a",
