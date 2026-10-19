@@ -693,11 +693,23 @@ html.plaques .tbtn.pen[aria-pressed="true"] { background: none; box-shadow: none
 #app.scene-page .lead { max-width: none; }
 .linkbtn { align-self: flex-start; border: 0; background: none; padding: 2px 0; color: var(--muted); font-size: 14px; text-decoration: underline; text-underline-offset: 3px; }
 .linkbtn:hover { color: var(--candle); }
-/* ordinateur : l'image entière tient dans l'écran, sous l'en-tête */
-.scene { position: relative; align-self: center; width: min(100%, calc((100dvh - 190px) * var(--r, 1.5))); min-width: min(100%, 560px); contain: inline-size; border-radius: 6px; box-shadow: 0 0 0 1px rgba(0, 0, 0, .6), 0 10px 30px rgba(0, 0, 0, .55); overflow: hidden; }
-.scene-img { position: relative; width: 100%; background-size: cover; background-position: center; }
-/* bords dans l'ombre, comme le bureau : les sceaux ressortent */
-.scene-img::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(120% 100% at 50% 45%, transparent 55%, rgba(8, 5, 12, .55)); }
+/* ordinateur : la feuille entière tient dans l'écran, sous l'en-tête */
+.scene { position: relative; align-self: center; width: min(100%, calc((100dvh - 230px) * var(--r, 1.5) + 44px)); min-width: min(100%, 560px); contain: inline-size; }
+/* l'illustration imprimée sur une feuille de parchemin aux bords déchirés et brûlés, comme la carte de Brumeval :
+   le papier sur un calque à part (#torn ne déforme ni l'image ni les sceaux), l'image fondue dans le papier sur ses bords */
+.scene-sheet { position: relative; isolation: isolate; padding: 22px; transform: rotate(-.3deg); filter: drop-shadow(0 14px 22px rgba(0, 0, 0, .6)); }
+.scene-sheet::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; border-radius: 4px;
+  background: radial-gradient(ellipse at 50% 50%, transparent 62%, rgba(120, 66, 18, .35) 100%), var(--parch-tex, none) center / 240px, linear-gradient(#ead7aa, #d9bf88);
+  box-shadow: inset 0 0 22px 5px rgba(90, 45, 10, .7), inset 0 0 4px 1px rgba(50, 22, 5, .8);
+  filter: url(#torn);
+}
+.scene-img { position: relative; width: 100%; }
+.scene-art {
+  position: absolute; inset: 0; background-size: cover; background-position: center; mix-blend-mode: multiply;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 3.5%, #000 96.5%, transparent), linear-gradient(transparent, #000 5%, #000 95%, transparent);
+  -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent, #000 3.5%, #000 96.5%, transparent), linear-gradient(transparent, #000 5%, #000 95%, transparent); mask-composite: intersect;
+}
 .zone {
   position: absolute; width: 54px; height: 54px; margin: -27px 0 0 -27px; padding: 0; border: 0; border-radius: 50%;
   background: radial-gradient(circle at 35% 30%, #d4473b, #8e1f17 70%); display: grid; place-items: center;
@@ -721,9 +733,10 @@ html.plaques .tbtn.pen[aria-pressed="true"] { background: none; box-shadow: none
 .zone-go { grid-column: 1 / -1; justify-self: end; font: 400 18px/1 var(--f-display); color: #7a2a1e; }
 @media (max-width: 699px) {
   /* téléphone : l'image prend la hauteur, déborde sur les côtés et glisse sous le doigt */
-  .scene { width: auto; min-width: 0; align-self: stretch; margin-inline: -16px; border-radius: 0; overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; scrollbar-width: none; }
+  .scene { width: auto; min-width: 0; align-self: stretch; margin-inline: -16px; overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; scrollbar-width: none; padding-block: 6px 18px; }
   .scene::-webkit-scrollbar { display: none; }
-  .scene-img { width: auto; height: min(68dvh, 560px); }
+  .scene-sheet { width: max-content; padding: 14px; margin-inline: 6px; transform: none; }
+  .scene-img { width: auto; height: min(66dvh, 540px); }
 }
 
 /* panneau du son : barre de volume */
@@ -1240,7 +1253,8 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
   // l'enquête. Sur téléphone, l'image prend la hauteur et glisse sous le doigt.
   const sceneOf = (pl, list) => { const sc = MEDIA.scenes && MEDIA.scenes[pl]; return sc && sc.places.length >= list.length ? sc : null; };
   function sceneHtml(sc, list) {
-    return `<div class="scene" id="scene" style="--r:${sc.ratio[0] / sc.ratio[1]}"><div class="scene-img" style="aspect-ratio:${sc.ratio[0]} / ${sc.ratio[1]};background-image:url(${sc.img})">
+    return `<div class="scene" id="scene" style="--r:${sc.ratio[0] / sc.ratio[1]}"><div class="scene-sheet"><div class="scene-img" style="aspect-ratio:${sc.ratio[0]} / ${sc.ratio[1]}">
+      <span class="scene-art" style="background-image:url(${sc.img})"></span>
       ${list.map((p, i) => {
         const st = store.get('p:' + p.id, null), done = st && st.solved, started = st && Object.keys(st.pos || {}).length;
         const v = p.characters.find(c => c.role === 'victim');
@@ -1248,7 +1262,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
           aria-label="${esc(p.title)} — ${done ? 'résolue' : started ? 'en cours' : 'nouvelle'}" title="${esc(p.title)}">${face(v)}${done ? '<span class="zone-mark" aria-hidden="true">✓</span>' : ''}</button>`;
       }).join('')}
       <div class="zone-pop" id="zonePop" hidden></div>
-    </div></div>`;
+    </div></div></div>`;
   }
   function bindScene(list, enter) {
     const pop = document.getElementById('zonePop'), img = $app.querySelector('.scene-img');

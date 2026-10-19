@@ -77,7 +77,7 @@ test('scène d\'un lieu : le décor en grand, un sceau par enquête, la fiche la
   const list = PUZZLES.filter(p => p.place === 'chateau' && !p.final);
   solve(w, list[0]);
   w.grimGo('lieu/chateau');
-  assert.ok(d.querySelector('#scene .scene-img').style.backgroundImage.includes('decor-grand-chateau'), 'le décor en grand');
+  assert.ok(d.querySelector('#scene .scene-art').style.backgroundImage.includes('decor-grand-chateau'), 'le décor en grand');
   const zones = [...d.querySelectorAll('.zone')];
   assert.deepEqual(zones.map(z => z.dataset.id), [...list.map(p => p.id)], 'un sceau par enquête, dans l\'ordre');
   assert.ok(zones[0].classList.contains('done') && zones[1].classList.contains('new'), 'résolue / nouvelle');
