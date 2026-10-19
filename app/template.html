@@ -140,6 +140,9 @@ header.top { display: flex; align-items: center; gap: 10px; }
   font-size: 9px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap;
   color: rgba(43, 32, 22, .72); line-height: 1;
 }
+.cell .mark.manual.colored { color: var(--cc); font-weight: 700; -webkit-text-stroke: .5px rgba(0, 0, 0, .35); opacity: .95; }
+.tbtn.pen { position: relative; }
+.pen-dot { position: absolute; top: -9px; right: -9px; min-width: 20px; height: 20px; padding: 0 3px; border-radius: 99px; display: grid; place-items: center; background: var(--cc); color: #fff; font: 700 11px/1 var(--f-body); box-shadow: 0 0 0 2px #f3e6c8, 0 2px 3px rgba(0, 0, 0, .4); }
 .cell .mark.manual { color: #4f6b8f; font-weight: 400; font-size: 1em; -webkit-text-stroke: 0; opacity: .9; }
 .cell .mark { position: absolute; inset: 0; z-index: 4; display: grid; place-items: center; color: var(--ink); font-size: 1.2em; font-weight: 700; line-height: 1; pointer-events: none; }
 /* lettres au crayon : dans le coin, couleur du personnage, le meuble reste visible */
@@ -1311,6 +1314,8 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
 
   // ---------- partie ----------
   // signature d'une énigme : une sauvegarde faite sur une autre version est ignorée
+  // croix au crayon : grise, ou de la couleur du personnage choisi au crayon
+  const markHtml = (m) => { const ch = ctx.chars[m.split('@')[1]]; return ch ? `<span class="mark manual colored" style="--cc:${colorOf(ch)}">✕</span>` : '<span class="mark manual">✕</span>'; };
   const blank = () => ({ pos: {}, pencil: {}, marks: [], done: [], solved: false, sig: sigOf(P) });
   const sigOf = (p) => p.characters.map(c => c.id + ':' + c.name).join('|') + '#' + p.clues.length;
   function open(id) {
@@ -1518,7 +1523,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
       // croix automatiques (lignes/colonnes des personnages confirmés) à l'encre : certaines ;
       // croix manuelles au crayon : simples hypothèses du joueur
       const auto = settings.shade && (usedR.has(r) || usedC.has(c));
-      const mark = who ? '' : auto ? '<span class="mark">✕</span>' : S.marks.includes(r + ',' + c) ? '<span class="mark manual">✕</span>' : '';
+      const mark = who ? '' : auto ? '<span class="mark">✕</span>' : markAt(r + ',' + c) ? markHtml(markAt(r + ',' + c)) : '';
       const aria = `${P.rooms[room].name}, ligne ${r + 1}, colonne ${c + 1}${def ? ', ' + def.name : ''}${ch ? ', ' + ch.name : ''}`;
       if (P.rooms[room].floor) cls.push('fl-' + P.rooms[room].floor);
       cells += `<button class="${cls.join(' ')}" style="--room: var(--r${roomIdx(room) % 8}); --bp: ${c % 2 * 100}% ${r % 2 * 100}%" data-r="${r}" data-c="${c}" aria-label="${esc(aria)}">${label}${objHtml}${tok}${pencils}${mark}</button>`;
@@ -1567,7 +1572,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
       ${S.solved ? verdictHtml() : `<div class="dock">
         <div class="tools">
           <button class="tbtn" id="hintBtn" aria-label="Indice">${toolIcon('indice')}<span class="lbl">Indice</span></button>
-          <button class="tbtn pen" id="penBtn" aria-pressed="${!!settings.cross}" title="Crayon : un toucher barre une case d'une croix (ou l'efface). Les lettres s'écrivent en choisissant un personnage.">${toolIcon('crayon')}<span class="lbl">Crayon</span></button>
+          <button class="tbtn pen" id="penBtn" aria-pressed="${!!settings.cross}" title="Crayon : un toucher barre une case d'une croix (ou l'efface). Les lettres s'écrivent en choisissant un personnage. Touche-le encore pour changer de couleur.">${toolIcon('crayon')}<span class="lbl">Crayon</span>${penChar() ? `<span class="pen-dot" style="--cc:${colorOf(penChar())}">${letterOf(penChar())}</span>` : ''}</button>
           <span class="spacer"></span>
           <button class="tbtn" id="undo" aria-label="Annuler" ${undo.length ? '' : 'disabled'}>${toolIcon('annuler')}<span class="lbl">Annuler</span></button>
           <button class="accuse" id="accuse" ${allPlaced ? '' : 'disabled'}>Accuser</button>
@@ -1614,9 +1619,12 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     if (S.solved) return bindVerdict();
     document.getElementById('hintBtn').onclick = hint;
     document.getElementById('penBtn').onclick = () => {
-      // deux modes séparés : crayon = croix ; un personnage choisi = ses lettres
-      settings.cross = !settings.cross; store.set('settings', settings);
-      if (settings.cross) selected = null;
+      // deux modes séparés : crayon = croix ; un personnage choisi = ses lettres.
+      // Clics successifs : gris, puis la couleur de chaque personnage (ordre des fiches), puis éteint
+      const order = [true, ...P.characters.map(c => c.id), false];
+      const at = order.indexOf(penChar() ? settings.cross : !!settings.cross);
+      settings.cross = order[(at + 1) % order.length]; store.set('settings', settings);
+      if (settings.cross) { selected = null; const ch = penChar(); toast(ch ? `Crayon : couleur de ${ch.name}` : settings.cross ? 'Crayon gris' : 'Crayon rangé'); }
       render();
     };
     document.getElementById('undo').onclick = () => { if (!undo.length) return; S = JSON.parse(undo.pop()); save(); render(); };
@@ -1669,11 +1677,16 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     render();
   }
 
+  // couleur du crayon : gris (true) ou celle d'un personnage (son id) ; une croix est « r,c » (gris) ou « r,c@id »
+  const penChar = () => typeof settings.cross === 'string' && ctx.chars[settings.cross] ? ctx.chars[settings.cross] : null;
+  const markKey = (m) => m.split('@')[0];
+  const markAt = (k) => S.marks.find(m => markKey(m) === k);
   function toggleMark(r, c) {
     if (charAt(r, c)) return;
     snapshot();
-    const k = r + ',' + c;
-    S.marks = S.marks.includes(k) ? S.marks.filter(x => x !== k) : S.marks.concat(k);
+    const k = r + ',' + c, ch = penChar(), mine = ch ? k + '@' + ch.id : k, old = markAt(k);
+    // même couleur : on efface ; autre couleur : on recolore ; rien : on barre
+    S.marks = S.marks.filter(m => markKey(m) !== k).concat(old === mine ? [] : [mine]);
     if (navigator.vibrate) try { navigator.vibrate(10); } catch (e) {}
     save(); render();
   }
@@ -1704,7 +1717,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     snapshot();
     const list = S.pencil[selected] || [];
     S.pencil[selected] = list.includes(k) ? list.filter(x => x !== k) : list.concat(k);
-    S.marks = S.marks.filter(x => x !== k);
+    S.marks = S.marks.filter(x => markKey(x) !== k);
     save(); render();
   }
 
@@ -1758,7 +1771,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     S.pos[id] = v;
     delete S.pencil[id];
     const ks = E.cellsOf(v).map(rc => rc.join(','));
-    S.marks = S.marks.filter(x => !ks.includes(x));
+    S.marks = S.marks.filter(x => !ks.includes(markKey(x)));
     selected = null;
     if (navigator.vibrate) try { navigator.vibrate(20); } catch (e) {}
     save(); render();

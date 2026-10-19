@@ -173,7 +173,7 @@ test('régression : vérification en direct d\'un indice relatif dont l\'autre p
   assert.deepEqual(errors, [], 'pas d\'erreur JavaScript');
 });
 
-test('✏️ Crayon : toucher une case la barre, encore une fois efface la croix ; choisir un personnage l\'éteint', () => {
+test('Crayon : toucher une case la barre, encore une fois efface la croix ; choisir un personnage l\'éteint', () => {
   const { w, d, cell, pick, openCase, PUZZLES } = open();
   const p = PUZZLES[0];
   openCase(p.id);
@@ -198,6 +198,30 @@ test('✏️ Crayon : toucher une case la barre, encore une fois efface la croix
   assert.ok(cell(r, c).querySelector('.pencil') && !cell(r, c).querySelector('.mark'), 'personnage choisi : sa lettre');
   d.getElementById('penBtn').click();
   assert.equal(d.querySelector('.chip[aria-pressed="true"]'), null, 'allumer le crayon désélectionne le personnage');
+});
+
+test('Crayon de couleur : chaque toucher change sa couleur (gris, puis chaque personnage, puis rangé) ; croix recolorée', () => {
+  const { w, d, cell, openCase, PUZZLES } = open();
+  const p = PUZZLES[0];
+  openCase(p.id);
+  const free = [...d.querySelectorAll('.cell')].find(el => !el.querySelector('.obj'));
+  const [r, c] = [+free.dataset.r, +free.dataset.c];
+  d.getElementById('penBtn').click(); // gris
+  assert.equal(d.querySelector('.pen-dot'), null, 'gris : pas de pastille');
+  cell(r, c).click();
+  assert.ok(cell(r, c).querySelector('.mark.manual:not(.colored)'), 'croix grise');
+  d.getElementById('penBtn').click(); // couleur du 1er personnage
+  const first = p.characters[0];
+  assert.ok(d.querySelector('.pen-dot'), 'pastille de couleur sur le crayon');
+  assert.equal(JSON.parse(w.localStorage.getItem('grimdoku:settings')).cross, first.id, 'couleur retenue');
+  cell(r, c).click();
+  assert.ok(cell(r, c).querySelector('.mark.colored'), 'autre couleur : la croix est recolorée, pas effacée');
+  cell(r, c).click();
+  assert.equal(cell(r, c).querySelector('.mark'), null, 'même couleur : effacée');
+  for (let i = 1; i < p.characters.length; i++) d.getElementById('penBtn').click();
+  assert.ok(d.querySelector('.pen-dot'), 'dernier personnage');
+  d.getElementById('penBtn').click();
+  assert.equal(d.getElementById('penBtn').getAttribute('aria-pressed'), 'false', 'puis le crayon se range');
 });
 
 test('indice : désigne le prochain personnage à déduire, ou signale une erreur', () => {
