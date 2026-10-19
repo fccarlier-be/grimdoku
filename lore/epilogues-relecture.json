@@ -70,7 +70,7 @@
   },
   "academie--abbesse": {
     "status": "relire",
-    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+    "note": "Repassé : accident absurde ou trait mieux respecté."
   },
   "ferme--abbesse": {
     "status": "relire",
@@ -178,7 +178,7 @@
   },
   "bal--nageuse--vouivre--i2": {
     "status": "relire",
-    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+    "note": "Repassé : accident absurde ou trait mieux respecté."
   },
   "grande-foire--troubadour": {
     "status": "relire",
@@ -198,11 +198,11 @@
   },
   "grand-port--nageuse": {
     "status": "relire",
-    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+    "note": "Repassé : accident absurde ou trait mieux respecté."
   },
   "palais--baronne": {
     "status": "relire",
-    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+    "note": "Repassé : accident absurde ou trait mieux respecté."
   },
   "palais--dresseuse": {
     "status": "relire",
@@ -314,7 +314,7 @@
   },
   "citadelle--abbesse": {
     "status": "relire",
-    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+    "note": "Repassé : accident absurde ou trait mieux respecté."
   },
   "taverne--inspecteur": {
     "status": "valide",
@@ -338,7 +338,7 @@
   },
   "mine--nageuse--golem--i2": {
     "status": "relire",
-    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+    "note": "Repassé : accident absurde ou trait mieux respecté."
   },
   "academie--colporteur--geant--i2": {
     "status": "relire",
@@ -350,11 +350,11 @@
   },
   "academie--percepteur": {
     "status": "relire",
-    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+    "note": "Repassé : accident absurde ou trait mieux respecté."
   },
   "forge--colporteur": {
     "status": "relire",
-    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+    "note": "Repassé : accident absurde ou trait mieux respecté."
   },
   "forge--cousine": {
     "status": "relire",
@@ -378,7 +378,7 @@
   },
   "citadelle--alchimiste": {
     "status": "relire",
-    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+    "note": "Repassé : accident absurde ou trait mieux respecté."
   },
   "foire--percepteur": {
     "status": "relire",
@@ -406,7 +406,7 @@
   },
   "grande-foire--colporteur": {
     "status": "relire",
-    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+    "note": "Repassé : accident absurde ou trait mieux respecté."
   },
   "grande-foire--abbesse": {
     "status": "relire",
@@ -418,11 +418,11 @@
   },
   "grande-foire--nageuse": {
     "status": "relire",
-    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+    "note": "Repassé : accident absurde ou trait mieux respecté."
   },
   "tour--colporteur": {
     "status": "relire",
-    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+    "note": "Repassé : accident absurde ou trait mieux respecté."
   },
   "tour--chasseuse": {
     "status": "relire",
@@ -473,5 +473,13 @@
   },
   "taverne--percepteur": {
     "status": "valide"
+  },
+  "marais--dresseuse": {
+    "status": "relire",
+    "note": "Repassé : accident absurde ou trait mieux respecté."
+  },
+  "marais--percepteur": {
+    "status": "relire",
+    "note": "Repassé : accident absurde ou trait mieux respecté."
   }
 }
