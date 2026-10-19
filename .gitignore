@@ -13,3 +13,6 @@ deploy/grimdoku/site/media/
 deploy/grimdoku/epi/
 deploy/grimdoku/epi.htpasswd
 lore/.epi-sync
+deploy/grimdoku/site/*.png
+deploy/grimdoku/site/favicon.ico
+deploy/grimdoku/site/manifest.webmanifest

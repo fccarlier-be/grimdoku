@@ -403,6 +403,34 @@ def desk():
         print(f'bureau {src.name} → {out.name} {img.size} ({out.stat().st_size // 1024} Ko)')
 
 
+ICON_DIR = ROOT / 'icon'     # icône de l'appli (icone.png|jpeg, carrée, fond plein jusqu'aux bords)
+ICON_OUT = ICON_DIR / 'web'  # tailles produites, copiées par build-app.js à la racine du site
+ICON_SAFE = 0.8              # icône « maskable » : sujet réduit dans les 80 % centraux (Android la découpe)
+ICON_FAVICON = (120, 120, 920, 920)  # favicon : recadrée sur le sceau (lisible en 16 px), en pixels de l'image 1024
+
+
+def icons():
+    # icône PWA, icône Apple et favicon tirées de assets/icon/icone.*
+    src = next((p for p in sources(ICON_DIR) if p.stem == 'icone'), None) if ICON_DIR.exists() else None
+    if not src:
+        return
+    ICON_OUT.mkdir(exist_ok=True)
+    img = Image.open(src).convert('RGB')
+    img = img.resize((1024, 1024), Image.LANCZOS)
+    corners = [img.getpixel(p) for p in ((0, 0), (1023, 0), (0, 1023), (1023, 1023))]
+    bg = tuple(sorted(c[i] for c in corners)[1] for i in range(3))
+    for name, size in (('icon-512', 512), ('icon-192', 192), ('apple-touch-icon', 180)):
+        img.resize((size, size), Image.LANCZOS).save(ICON_OUT / f'{name}.png', optimize=True)
+    mask = Image.new('RGB', (512, 512), bg)
+    inner = round(512 * ICON_SAFE)
+    mask.paste(img.resize((inner, inner), Image.LANCZOS), ((512 - inner) // 2,) * 2)
+    mask.save(ICON_OUT / 'icon-maskable-512.png', optimize=True)
+    fav = img.crop(ICON_FAVICON)
+    fav.resize((32, 32), Image.LANCZOS).save(ICON_OUT / 'favicon-32.png', optimize=True)
+    fav.resize((48, 48), Image.LANCZOS).save(ICON_OUT / 'favicon.ico', sizes=[(16, 16), (32, 32), (48, 48)])
+    print(f'icône {src.name} → {", ".join(sorted(p.name for p in ICON_OUT.iterdir()))}')
+
+
 def carte():
     # carte de la baronnie (assets/map/brumeval.png|jpeg) → brumeval.webp, 2400 px de large au plus (servie à côté de la page)
     if not MAP_DIR.exists():
@@ -510,6 +538,7 @@ def main():
     decors()
     carte()
     desk()
+    icons()
 
 
 if __name__ == '__main__':

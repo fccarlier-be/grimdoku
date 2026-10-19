@@ -137,6 +137,30 @@ for (const decor of [...new Set(puzzles.map(p => p.decor).filter(Boolean))].sort
   const f = `assets/decors/${decor}.webp`;
   if (fs.existsSync(f)) { copyMedia(f, `decor-${decor}.webp`); media.decors.push(decor); } else missing.push('décor ' + decor);
 }
+// icône de l'appli (assets/icon/web, produite par tools/images.py) : favicon, icône Apple et manifeste PWA,
+// à la racine du site (le navigateur demande /favicon.ico de lui-même)
+const SITE = ['dist', 'deploy/grimdoku/site'];
+const ICONS = ['favicon.ico', 'favicon-32.png', 'apple-touch-icon.png', 'icon-192.png', 'icon-512.png', 'icon-maskable-512.png'];
+let iconTags = '';
+if (ICONS.every(f => fs.existsSync(`assets/icon/web/${f}`))) {
+  const manifest = {
+    name: 'Grimdoku', short_name: 'Grimdoku', lang: 'fr',
+    description: 'Enquêtes de logique dans la baronnie de Brumeval',
+    start_url: './', scope: './', display: 'standalone', orientation: 'any',
+    background_color: '#16111d', theme_color: '#16111d',
+    icons: [
+      { src: 'icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
+      { src: 'icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any' },
+      { src: 'icon-maskable-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+    ],
+  };
+  for (const d of SITE) {
+    for (const f of ICONS) { fs.copyFileSync(`assets/icon/web/${f}`, `${d}/${f}`); fs.chmodSync(`${d}/${f}`, 0o644); }
+    fs.writeFileSync(`${d}/manifest.webmanifest`, JSON.stringify(manifest, null, 2) + '\n');
+    fs.chmodSync(`${d}/manifest.webmanifest`, 0o644);
+  }
+  iconTags = '<link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">\n<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">\n<link rel="apple-touch-icon" href="apple-touch-icon.png">\n<link rel="manifest" href="manifest.webmanifest">';
+} else missing.push('icône (assets/icon/icone.*)');
 // bible du jeu : lettres d'Augure (lore/lettres.json) et troupe récurrente (cast.json : nom fixe, trait, tic) pour le carnet
 const LETTRES = JSON.parse(fs.readFileSync('lore/lettres.json', 'utf8'));
 const CARTE = JSON.parse(fs.readFileSync('lore/carte.json', 'utf8'));
@@ -150,6 +174,7 @@ const out = t.replace('/*__ENGINE__*/', () => engine)
   .replace('/*__MEDIA__*/', () => JSON.stringify(media))
   .replace('/*__LORE__*/', () => JSON.stringify(lore))
   .replace('<!--__SPRITE__-->', () => sprite)
+  .replace('<!--__ICONS__-->', () => iconTags)
   .replace('/*__FLOORS__*/', () => floorCss.join('\n'));
 fs.mkdirSync('dist', { recursive: true });
 fs.writeFileSync('dist/grimdoku.html', out);
