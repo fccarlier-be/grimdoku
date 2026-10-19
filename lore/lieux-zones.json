@@ -1,0 +1,21 @@
+{
+  "_doc": "Scènes des lieux (François, 2026-10-20 : profiter des décors) : la page d'un lieu montre son décor en grand (assets/decors/grand/<decor>.webp, ratio = largeur / hauteur) avec un sceau par enquête. places = [x, y] en % de l'illustration, dans l'ordre des enquêtes du lieu (de la plus facile à la plus dure) : la première enquête prend la première place. Un lieu absent d'ici, ou avec moins de places que d'enquêtes, garde la liste de vignettes.",
+  "lieux": {
+    "chateau": {
+      "decor": "chateau",
+      "ratio": [
+        1184,
+        776
+      ],
+      "places": [
+        [34.5, 72],
+        [69.5, 62],
+        [59, 38],
+        [81, 24],
+        [27, 11],
+        [18, 40],
+        [12, 62]
+      ]
+    }
+  }
+}

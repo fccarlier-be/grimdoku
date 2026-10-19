@@ -137,6 +137,16 @@ for (const decor of [...new Set(puzzles.map(p => p.decor).filter(Boolean))].sort
   const f = `assets/decors/${decor}.webp`;
   if (fs.existsSync(f)) { copyMedia(f, `decor-${decor}.webp`); media.decors.push(decor); } else missing.push('décor ' + decor);
 }
+// scènes des lieux : le décor en grand (assets/decors/grand/<décor>.webp) et les sceaux des enquêtes posés dessus
+// (lore/lieux-zones.json : places en % de l'illustration, de la plus facile à la plus dure) ; sans places, la liste
+const ZONES = JSON.parse(fs.readFileSync('lore/lieux-zones.json', 'utf8'));
+media.scenes = {};
+for (const [pl, z] of Object.entries(ZONES.lieux)) {
+  const f = `assets/decors/grand/${z.decor}.webp`;
+  if (!fs.existsSync(f)) { missing.push('décor en grand ' + z.decor); continue; }
+  copyMedia(f, `decor-grand-${z.decor}.webp`);
+  media.scenes[pl] = { img: `media/decor-grand-${z.decor}.webp`, ratio: z.ratio, places: z.places };
+}
 // icône de l'appli (assets/icon/web, produite par tools/images.py) : favicon, icône Apple et manifeste PWA,
 // à la racine du site (le navigateur demande /favicon.ico de lui-même)
 const SITE = ['dist', 'deploy/grimdoku/site'];

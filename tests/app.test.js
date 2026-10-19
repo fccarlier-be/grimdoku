@@ -66,9 +66,35 @@ test('accueil → Jouer → bureau : la carte ouverte, seul le château accessib
   assert.ok(!location(w).includes('lieu/taverne') || d.querySelector('.bureau, .hero'), 'un lieu fermé ne s\'ouvre pas');
   assert.equal(d.querySelector('.case'), null);
   w.grimGo('lieu/chateau');
-  const diff = [...d.querySelectorAll('.case')].map(b => PUZZLES.find(p => p.id === b.dataset.id));
+  const diff = [...d.querySelectorAll('.case, .zone')].map(b => PUZZLES.find(p => p.id === b.dataset.id));
   assert.ok(diff.length && diff.every(p => p.place === 'chateau'), 'le château liste ses enquêtes');
   assert.equal(d.body.textContent.includes('💀'), false, 'pas de crânes affichés');
+  assert.deepEqual(errors, []);
+});
+
+test('scène d\'un lieu : le décor en grand, un sceau par enquête, la fiche lance l\'enquête ; la liste reste possible', () => {
+  const { w, d, PUZZLES, errors } = open();
+  const list = PUZZLES.filter(p => p.place === 'chateau' && !p.final);
+  solve(w, list[0]);
+  w.grimGo('lieu/chateau');
+  assert.ok(d.querySelector('#scene .scene-img').style.backgroundImage.includes('decor-grand-chateau'), 'le décor en grand');
+  const zones = [...d.querySelectorAll('.zone')];
+  assert.deepEqual(zones.map(z => z.dataset.id), [...list.map(p => p.id)], 'un sceau par enquête, dans l\'ordre');
+  assert.ok(zones[0].classList.contains('done') && zones[1].classList.contains('new'), 'résolue / nouvelle');
+  assert.equal(d.querySelector('.cases'), null, 'plus de vignettes');
+  zones[1].click();
+  assert.equal(d.getElementById('zonePop').hidden, false, 'le sceau ouvre sa fiche');
+  assert.ok(!/—/.test(d.querySelector('.zone-card h3').textContent), 'titre sans le nom du lieu');
+  d.querySelector('.scene-img').click();
+  assert.equal(d.getElementById('zonePop').hidden, true, 'toucher ailleurs la referme');
+  zones[1].click(); zones[1].click();
+  assert.ok(location(w).includes('affaire/' + list[1].id), 'second toucher : on entre');
+  w.grimGo('lieu/chateau');
+  d.getElementById('lieuVue').click();
+  assert.equal(d.querySelector('.zone'), null);
+  assert.deepEqual([...d.querySelectorAll('.cases .case')].map(b => b.dataset.id), [...list.map(p => p.id)], 'la liste, au choix');
+  d.getElementById('lieuVue').click();
+  assert.ok(d.querySelector('.zone'), 'et retour à la scène');
   assert.deepEqual(errors, []);
 });
 
@@ -97,7 +123,7 @@ test('déblocage : chaque lieu résolu ouvre les suivants, et tous les lieux son
   assert.equal(d.querySelectorAll('.cord, .desk-string line').length, L.unlock[L.start].filter(pl => places.includes(pl)).length, 'chaque nouveau clou relié par le fil rouge');
   const nx = L.unlock[L.start][0];
   w.grimGo('lieu/' + nx);
-  assert.ok(d.querySelector('.case'), 'un lieu ouvert s\'ouvre');
+  assert.ok(d.querySelector('.case, .zone'), 'un lieu ouvert s\'ouvre');
   w.grimGo('bureau');
   assert.equal(d.querySelector(`.dot.fresh[data-place="${nx}"]`), null, 'plus « nouveau » une fois visité');
   assert.deepEqual(errors, []);
@@ -391,7 +417,7 @@ test('carte de Brumeval : tous lieux ouverts, un repère par lieu, chaque lieu l
   let n = 0;
   for (const pl of places) {
     w.grimGo('lieu/' + pl);
-    const ids = [...d.querySelectorAll('.case')].map(b => b.dataset.id);
+    const ids = [...d.querySelectorAll('.case, .zone')].map(b => b.dataset.id);
     assert.ok(ids.length && ids.every(id => PUZZLES.find(p => p.id === id).place === pl), `${pl} : ses enquêtes`);
     n += ids.length;
   }
@@ -433,7 +459,8 @@ test('pastille = initiale du nom (deux lettres si besoin), ordre des fiches inch
   const { w, d, PUZZLES } = open();
   const p = PUZZLES.find(q => !q.final && q.place === 'chateau');
   w.grimGo('lieu/' + p.place);
-  d.querySelector(`.case[data-id="${p.id}"]`).click();
+  d.querySelector(`.zone[data-id="${p.id}"]`).click(); // scène du lieu : le sceau ouvre la fiche, la fiche l'enquête
+  d.querySelector(`.zone-card[data-id="${p.id}"]`).click();
   const badges = [...d.querySelectorAll('.clue .em .letter')].map(e => e.textContent);
   const names = [...d.querySelectorAll('.clue .who')].map(e => e.textContent.trim());
   badges.forEach((b, i) => assert.ok(names[i].normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().startsWith(b.toLowerCase()), `${b} = début de ${names[i]}`));

@@ -377,11 +377,18 @@ def decors():
     if not DECOR_DIR.exists():
         return
     for src in sources(DECOR_DIR):
-        img = trim_white(Image.open(src).convert('RGB'))
+        full = trim_white(Image.open(src).convert('RGB'))
+        img = full.copy()
         img.thumbnail((720, 720), Image.LANCZOS)
         out = DECOR_DIR / (type_name(src.stem) + '.webp')
         img.save(out, 'WEBP', quality=84, method=6)
         print(f'décor {src.name} → {out.name} {img.size} ({out.stat().st_size // 1024} Ko)')
+        # grande version : la scène d'un lieu, en plein écran, avec les sceaux des enquêtes (lore/lieux-zones.json)
+        full.thumbnail((1600, 1600), Image.LANCZOS)
+        (DECOR_DIR / 'grand').mkdir(exist_ok=True)
+        out = DECOR_DIR / 'grand' / (type_name(src.stem) + '.webp')
+        full.save(out, 'WEBP', quality=82, method=6)
+        print(f'décor {src.name} → grand/{out.name} {full.size} ({out.stat().st_size // 1024} Ko)')
 
 
 MAP_DIR = ROOT / 'map'
