@@ -127,8 +127,6 @@ function checks(it, text) {
   const lines = text.split('\n').map(l => l.trim()).filter(Boolean), out = [];
   if (lines.length !== 4) out.push(lines.length + ' répliques (règle : quatre)');
   if (lines.some(l => !l.startsWith('— '))) out.push('une réplique ne commence pas par « — »');
-  const seul = it.culprit.gender === 'f' ? 'seule' : 'seul';
-  if (lines[0] && !lines[0].startsWith('— Vous étiez ' + seul + ' avec')) out.push('1re réplique : « Vous étiez ' + seul + ' avec… » attendu');
   if (lines[0] && !lines[0].includes(it.victim.name)) out.push('le nom de la victime (' + it.victim.name + ') manque dans la 1re réplique');
   return out.join(' · ');
 }

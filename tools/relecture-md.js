@@ -37,7 +37,7 @@ P('# Grimdoku — dossier de relecture des épilogues',
   'Merci de relire les épilogues ci-dessous à la lumière du lore et des règles d\'écriture, et de signaler pour chacun ce qui ne va pas : mobile trop faible pour ce personnage, meurtre qui ne se comprend pas, chute qui ne fait pas sourire, gag plaqué, contradiction avec le canon, répétitions entre épilogues, français maladroit. Proposer une réécriture quand c\'est utile. Les épilogues marqués ✅ ont déjà été validés par l\'auteur : les relire seulement si un problème grave saute aux yeux.');
 
 P('## Règles d\'écriture des épilogues',
-  '1. **Quatre répliques** : enquêteur, coupable, enquêteur, coupable. La première est le rituel « Vous étiez seul(e) avec <victime>. »',
+  '1. **Quatre répliques** : enquêteur, coupable, enquêteur, coupable. La première nomme la victime et met le coupable face à elle, avec une formule variée (« Parlons de… », « Il n\'y avait que vous et… », « Pourquoi… ? »…) : le rituel « Vous étiez seul(e) avec… » ne doit pas revenir systématiquement.',
   '2. **Le tic du personnage devient un raisonnement ou une action**, pas une ponctuation ajoutée à la fin.',
   '3. **Le mobile doit être assez fort pour que CE personnage tue.** Le vrai mobile touche son point sensible ; la menace de la victime n\'est que le déclencheur.',
   '4. **La chute doit faire comprendre le meurtre.** Un jeu de mots qui sonne bien sans dire l\'acte ne suffit pas.',
