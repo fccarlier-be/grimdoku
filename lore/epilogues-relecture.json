@@ -5,12 +5,12 @@
     "note": ""
   },
   "chateau--cousine": {
-    "status": "relire",
+    "status": "valide",
     "note": "Réécrit d'après ta note (« Partager ne veut pas dire tuer ») : elle réclame l'épée de famille, il la lui « donne », pointe la première."
   },
   "chateau--dresseuse": {
     "status": "relire",
-    "note": "Réécrit d'après ta note (armure et numéro incohérents) : elle veut Flammèche ; le dragonnet obéit à son sifflet, pas à Gontran, qui dégaine ; Flammèche reste assis."
+    "note": "Réécrit d'après ta note (« Gontran tuerait Fanfare juste parce que Flammèche lui obéit ? ») : le mobile devient l'honneur du chevalier. Elle veut un combat truqué ; un chevalier ne fait jamais semblant."
   },
   "chateau--inspecteur--golem--i2": {
     "status": "valide",
