@@ -1,8 +1,12 @@
-// Grimdoku — page de relecture des épilogues (lore/epilogues.json) : lire chaque scène dans son contexte (lieu, victime,
-// coupable, introduction), la modifier, lui donner un statut (à relire, validé, à revoir) et une note.
-// Les modifications sont écrites directement dans lore/epilogues.json ; statuts et notes dans lore/epilogues-relecture.json.
-// ⚠️ La page révèle le coupable de chaque enquête.
-// Usage : node tools/relecture.js   puis ouvrir http://localhost:8096
+// Grimdoku — page de relecture des épilogues : lire chaque scène dans son contexte (lieu, victime, coupable, introduction),
+// la modifier, lui donner un statut (à relire, validé, à revoir) et une note. ⚠️ La page révèle le coupable de chaque enquête.
+//
+// Deux usages :
+// - en local : node tools/relecture.js  puis http://localhost:8096 — contexte lu dans le projet, modifications écrites
+//   dans lore/epilogues.json et lore/epilogues-relecture.json ;
+// - sur le VPS (grimdoku.fcold.org/epi, derrière nginx et un mot de passe) : EPI_BUNDLE = contexte figé au moment de la
+//   mise en ligne (tools/epi-pack.js), EPI_DATA = dossier des épilogues modifiables, gardé hors des mises en ligne
+//   (initialisé depuis EPI_SEED s'il est vide). Synchronisation avec le projet : tools/epi-sync.sh (GET /export, POST /import).
 'use strict';
 const http = require('http');
 const fs = require('fs');
@@ -10,9 +14,22 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
 const PORT = +process.env.PORT || 8096;
-const F_EPI = path.join(ROOT, 'lore/epilogues.json');
-const F_REV = path.join(ROOT, 'lore/epilogues-relecture.json');
+const HOST = process.env.HOST || '127.0.0.1';
+const SERVER = !!process.env.EPI_BUNDLE;
+const DATA = SERVER ? process.env.EPI_DATA : path.join(ROOT, 'lore');
+const F_EPI = path.join(DATA, 'epilogues.json');
+const F_REV = path.join(DATA, 'epilogues-relecture.json');
 const J = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8'));
+const read = (f, def) => fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : def;
+// écriture sûre : fichier temporaire puis renommage (jamais de fichier à moitié écrit)
+const write = (f, obj) => { fs.writeFileSync(f + '.tmp', JSON.stringify(obj, null, 2) + '\n'); fs.renameSync(f + '.tmp', f); };
+const REV_DOC = 'Relecture des épilogues (tools/relecture.js) : statut (relire, valide, revoir) et note de François, par énigme.';
+
+if (SERVER) { // première mise en route sur le VPS : les épilogues de départ
+  fs.mkdirSync(DATA, { recursive: true });
+  for (const f of ['epilogues.json', 'epilogues-relecture.json'])
+    if (!fs.existsSync(path.join(DATA, f)) && fs.existsSync(path.join(process.env.EPI_SEED, f))) fs.copyFileSync(path.join(process.env.EPI_SEED, f), path.join(DATA, f));
+}
 
 // lieux dans l'ordre du jeu : départ, puis ceux qu'ouvre chaque lettre (lore/carte.json)
 function placeOrder() {
@@ -21,42 +38,55 @@ function placeOrder() {
   return order;
 }
 
-function data() {
-  const cast = J('cast.json'), epi = J('lore/epilogues.json');
-  const rev = fs.existsSync(F_REV) ? JSON.parse(fs.readFileSync(F_REV, 'utf8')) : {};
-  const actives = new Set(Object.entries(J('lore/actives.json')).filter(([k]) => k !== '_doc').flatMap(([, ids]) => ids));
-  const order = placeOrder();
-  const items = [];
-  for (const id of Object.keys(epi)) {
-    if (id === '_doc') continue;
+// contexte de chaque épilogue (lieu, victime, coupable, introduction), lu dans le projet ; figé dans EPI_BUNDLE sur le VPS
+function context(ids) {
+  const cast = J('cast.json');
+  const actives = new Set(Object.entries(J('lore/actives.json')).filter(([k]) => k !== '_doc').flatMap(([, v]) => v));
+  const order = placeOrder(), out = {};
+  for (const id of ids) {
     const file = path.join(ROOT, 'puzzles', id + '.json');
     if (!fs.existsSync(file)) continue;
     const p = JSON.parse(fs.readFileSync(file, 'utf8'));
     const m = p.characters.find(c => c.id === p.solution.murderer), v = p.characters.find(c => c.role === 'victim');
     const a = cast[m.archetype], g = cast[v.archetype];
-    items.push({
+    out[id] = {
       id, place: p.place, placeTitle: p.title.split(' — ')[0], title: p.title, rank: order.indexOf(p.place), active: actives.has(id),
       victim: { name: v.name, title: g.title || '', desc: g.desc || '', motif: g.motif || '', menace: g.menace || '', gender: g.gender },
-      culprit: { name: a.name, desc: a.desc, tic: a.tic, gender: a.gender },
-      intro: p.intro, text: epi[id], status: (rev[id] || {}).status || 'relire', note: (rev[id] || {}).note || ''
-    });
+      culprit: { name: a.name, desc: a.desc, tic: a.tic, gender: a.gender }, intro: p.intro
+    };
   }
+  return out;
+}
+
+function data() {
+  const epi = read(F_EPI, {}), rev = read(F_REV, {});
+  const ctx = SERVER ? JSON.parse(fs.readFileSync(process.env.EPI_BUNDLE, 'utf8')) : context(Object.keys(epi));
+  const items = Object.keys(epi).filter(id => id !== '_doc' && ctx[id])
+    .map(id => ({ ...ctx[id], text: epi[id], status: (rev[id] || {}).status || 'relire', note: (rev[id] || {}).note || '' }));
   items.sort((x, y) => (x.rank - y.rank) || (y.active - x.active) || x.id.localeCompare(y.id));
   return items;
 }
 
 function save(body) {
   const { id, text, status, note } = body;
-  const epi = J('lore/epilogues.json');
+  const epi = read(F_EPI, {});
   if (!epi[id]) throw new Error('épilogue inconnu : ' + id);
   const lines = String(text).replace(/\r/g, '').split('\n').map(l => l.trim()).filter(Boolean);
   if (!lines.length || lines.some(l => !l.startsWith('— '))) throw new Error('chaque réplique doit commencer par « — »');
   epi[id] = lines.join('\n');                       // même clé : l'ordre du fichier est conservé
-  fs.writeFileSync(F_EPI, JSON.stringify(epi, null, 2) + '\n');
-  const rev = fs.existsSync(F_REV) ? JSON.parse(fs.readFileSync(F_REV, 'utf8')) : { _doc: 'Relecture des épilogues (tools/relecture.js) : statut (relire, valide, revoir) et note de François, par énigme.' };
+  write(F_EPI, epi);
+  const rev = read(F_REV, { _doc: REV_DOC });
   rev[id] = { status: ['relire', 'valide', 'revoir'].includes(status) ? status : 'relire', note: String(note || '') };
-  fs.writeFileSync(F_REV, JSON.stringify(rev, null, 2) + '\n');
+  write(F_REV, rev);
   return { ok: true, text: epi[id] };
+}
+
+// synchronisation avec le projet (tools/epi-sync.sh) : tout lire, ou tout remplacer
+const exportAll = () => ({ epilogues: read(F_EPI, {}), relecture: read(F_REV, { _doc: REV_DOC }) });
+function importAll(body) {
+  if (!body || typeof body.epilogues !== 'object' || typeof body.relecture !== 'object') throw new Error('attendu : { epilogues, relecture }');
+  write(F_EPI, body.epilogues); write(F_REV, body.relecture);
+  return { ok: true, epilogues: Object.keys(body.epilogues).length - 1 };
 }
 
 const PAGE = String.raw`<!doctype html>
@@ -180,7 +210,7 @@ window.addEventListener('beforeunload', (e) => { if (document.querySelector('.ca
 async function saveCard(c) {
   const it = itemOf(c);
   const body = { id: it.id, text: $('.ed', c).value, note: $('.note', c).value, status: ($('.st[aria-pressed="true"]', c) || {}).dataset?.st || 'relire' };
-  const r = await fetch('/save', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+  const r = await fetch('save', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
   const out = await r.json();
   if (!r.ok) { $('.msg', c).style.color = '#a3312a'; $('.msg', c).textContent = out.error; return; }
   Object.assign(it, { text: out.text, note: body.note, status: body.status });
@@ -191,7 +221,7 @@ async function saveCard(c) {
   if (document.querySelector('.card.dirty') && !confirm('Des modifications ne sont pas enregistrées. Changer de filtre quand même ?')) return;
   draw();
 }));
-fetch('/data').then(r => r.json()).then(items => {
+fetch('data').then(r => r.json()).then(items => {
   ITEMS = items;
   const places = [...new Map(items.map(it => [it.place, it.placeTitle])).entries()];
   $('#fPlace').innerHTML += places.map(([k, t]) => '<option value="' + k + '">' + esc(t) + '</option>').join('');
@@ -201,20 +231,24 @@ fetch('/data').then(r => r.json()).then(items => {
 });
 </script></body></html>`;
 
-http.createServer((req, res) => {
+module.exports = { context };
+if (require.main === module) http.createServer((req, res) => {
   const send = (code, type, body) => { res.writeHead(code, { 'Content-Type': type + '; charset=utf-8', 'Cache-Control': 'no-store' }); res.end(body); };
+  const url = req.url.split('?')[0];
+  const post = (fn) => {
+    let raw = '';
+    req.on('data', c => { raw += c; if (raw.length > 4e6) req.destroy(); });
+    req.on('end', () => {
+      try { send(200, 'application/json', JSON.stringify(fn(JSON.parse(raw)))); }
+      catch (e) { send(400, 'application/json', JSON.stringify({ error: e.message })); }
+    });
+  };
   try {
-    if (req.method === 'GET' && req.url === '/') return send(200, 'text/html', PAGE);
-    if (req.method === 'GET' && req.url === '/data') return send(200, 'application/json', JSON.stringify(data()));
-    if (req.method === 'POST' && req.url === '/save') {
-      let raw = '';
-      req.on('data', c => { raw += c; if (raw.length > 1e6) req.destroy(); });
-      req.on('end', () => {
-        try { send(200, 'application/json', JSON.stringify(save(JSON.parse(raw)))); }
-        catch (e) { send(400, 'application/json', JSON.stringify({ error: e.message })); }
-      });
-      return;
-    }
+    if (req.method === 'GET' && url === '/') return send(200, 'text/html', PAGE);
+    if (req.method === 'GET' && url === '/data') return send(200, 'application/json', JSON.stringify(data()));
+    if (req.method === 'GET' && url === '/export') return send(200, 'application/json', JSON.stringify(exportAll()));
+    if (req.method === 'POST' && url === '/save') return post(save);
+    if (req.method === 'POST' && url === '/import') return post(importAll);
     send(404, 'text/plain', 'introuvable');
   } catch (e) { send(500, 'text/plain', e.message); }
-}).listen(PORT, '127.0.0.1', () => console.log(`Relecture des épilogues : http://localhost:${PORT}  (Ctrl+C pour arrêter)`));
+}).listen(PORT, HOST, () => console.log(`Relecture des épilogues : http://${HOST === '0.0.0.0' ? 'localhost' : HOST}:${PORT}  (Ctrl+C pour arrêter)`));

@@ -22,7 +22,11 @@ fi
 N=$(ls puzzles | grep -c '\.json$'); W=$(ls solutions | grep -c '\.json$')
 if [ "$N" -lt "$W" ]; then echo "❌ $N énigme(s) pour $W solutions : rien n'est mis en ligne"; exit 1; fi
 cmp -s dist/grimdoku.html deploy/grimdoku/site/index.html
-COPYFILE_DISABLE=1 tar -C deploy/grimdoku -czf - --exclude .DS_Store . \
+# relecture des épilogues (/epi) : serveur et contexte de cette version ; les épilogues modifiés en ligne (epi/data)
+# restent sur le VPS, jamais envoyés ni écrasés
+node tools/epi-pack.js
+[ -f deploy/grimdoku/epi.htpasswd ] || { echo "❌ deploy/grimdoku/epi.htpasswd manquant (mot de passe de /epi)"; exit 1; }
+COPYFILE_DISABLE=1 tar -C deploy/grimdoku -czf - --exclude .DS_Store --exclude ./epi/data . \
   | ssh -o BatchMode=yes fserver "ssh -o BatchMode=yes vps 'tar -xzf - -C ~/grimdoku 2>&1 | grep -v \"unknown extended header\"; ~/grimdoku/update.sh'"
 LIVE=$(mktemp)
 curl -fsS https://grimdoku.fcold.org/ -o "$LIVE"

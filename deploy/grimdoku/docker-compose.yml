@@ -9,6 +9,27 @@ services:
       - ./site:/usr/share/nginx/html:ro
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
       - ./logs:/var/log/grimdoku   # journal des votes de difficulté (notes.log), gardé hors du conteneur
+      - ./epi.htpasswd:/etc/nginx/epi.htpasswd:ro   # mot de passe de la relecture des épilogues (/epi/)
+    networks:
+      - serveur_default
+
+  # Relecture des épilogues (grimdoku.fcold.org/epi, derrière nginx et un mot de passe) : tools/relecture.js en mode
+  # serveur. Pas de "ports" : seul nginx le joint, sur le réseau Docker. Les épilogues modifiés en ligne sont dans
+  # ./epi/data (jamais écrasé par une mise en ligne) ; ./epi/app est remplacé à chaque mise en ligne (tools/epi-pack.js).
+  grimdoku-epi:
+    image: node:22-alpine
+    container_name: grimdoku-epi
+    restart: unless-stopped
+    command: ["node", "/app/relecture.js"]
+    environment:
+      - EPI_BUNDLE=/app/bundle.json
+      - EPI_SEED=/app/seed
+      - EPI_DATA=/data
+      - HOST=0.0.0.0
+      - PORT=8096
+    volumes:
+      - ./epi/app:/app:ro
+      - ./epi/data:/data
     networks:
       - serveur_default
 

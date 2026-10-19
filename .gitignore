@@ -8,3 +8,8 @@ deploy/grimdoku/site/index.html
 *.zip
 .DS_Store
 deploy/grimdoku/site/media/
+
+# relecture des épilogues : copie préparée par tools/epi-pack.js, mot de passe (jamais dans le dépôt)
+deploy/grimdoku/epi/
+deploy/grimdoku/epi.htpasswd
+lore/.epi-sync
