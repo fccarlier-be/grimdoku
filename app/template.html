@@ -33,7 +33,8 @@
   --f-body: "Alegreya Sans", "Avenir Next", "Segoe UI", system-ui, sans-serif;
   --radius: 10px;
 }
-html, body { background: var(--night); color: var(--fg); }
+html { background: var(--night); color: var(--fg); }
+body { color: var(--fg); }
 body {
   font-family: var(--f-body); font-size: 16px; line-height: 1.4;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
@@ -480,7 +481,10 @@ header.top { display: flex; align-items: center; gap: 10px; }
 .case:nth-child(even) { transform: rotate(.3deg); }
 .case:hover::before { box-shadow: inset 0 0 0 2px var(--candle), inset 0 0 12px rgba(120, 66, 18, .35), 0 6px 14px rgba(0, 0, 0, .5); }
 /* fond : bureau d'enquêteur en bois sombre (texture « bureau ») ; sans texture, la nuit violette */
-html, body { background: var(--desk-tex, none) center top / 640px, var(--night); }
+/* le bois une seule fois, sur toute la fenêtre : peint aussi sur body (décalé par sa marge), il laissait voir une bande
+   de planches décalées sur les bords de l'écran (François, 2026-10-20) */
+html { background: var(--desk-tex, none) center top / 640px, var(--night); }
+body { background: transparent; }
 /* fiches de suspect : posées un peu de travers ; la fiche choisie se redresse et se soulève */
 .clue { border: 0; transition: transform .15s; }
 .clue:nth-child(3n+1) { transform: rotate(-.7deg); }
