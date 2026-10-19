@@ -112,7 +112,7 @@ for (let d = 0; d <= 5; d++) {
   if (fs.existsSync(f)) { copyMedia(f, `niveau-${d}.webp`); media.levels[d] = `media/niveau-${d}.webp`; } else missing.push('vignette niveau ' + d);
 }
 // objets du bureau de l'enquêteur (assets/desk/<objet>.webp, préparés par tools/images.py) : sans image, dessin CSS
-for (const obj of ['dossiers', 'lettres', 'carnet', 'enveloppe', 'papier-1', 'papier-2', 'papier-3', 'support-papier', 'clou-fer', 'clou-laiton', 'clou-rouille', 'clou-tete', 'corde-rouge', 'bouton-retour', 'bouton-son', 'bouton-muet', 'bouton-aide', 'bouton-options', 'bouton-principal', 'bouton-secondaire']) {
+for (const obj of ['dossiers', 'lettres', 'carnet', 'enveloppe', 'papier-1', 'papier-2', 'papier-3', 'support-papier', 'clou-fer', 'clou-laiton', 'clou-rouille', 'clou-tete', 'corde-rouge', 'bouton-retour', 'bouton-son', 'bouton-muet', 'bouton-aide', 'bouton-options', 'bouton-principal', 'bouton-secondaire', 'outil-indice', 'outil-crayon', 'outil-annuler']) {
   const f = `assets/desk/${obj}.webp`;
   if (fs.existsSync(f)) { copyMedia(f, `desk-${obj}.webp`); media.desk[obj] = `media/desk-${obj}.webp`; }
 }

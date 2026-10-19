@@ -589,6 +589,16 @@ html.plaques .tbtn { background: none; box-shadow: none; border-radius: 0; borde
   border-image: var(--bouton-secondaire) 40 48 fill / 10px 14px stretch; color: #3b2a18; filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, .35)); }
 html.plaques #app.game .tbtn { height: 46px; border-radius: 0; }
 html.plaques .tbtn { white-space: nowrap; }
+/* objet de l'outil : à gauche du libellé ; sur téléphone, au-dessus d'un petit libellé */
+.tbtn:has(.tool-ico) { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.tool-ico { width: 30px; height: 30px; object-fit: contain; filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, .35)); transition: transform .15s ease; }
+@media (hover: hover) { .tbtn:hover:not(:disabled) .tool-ico { transform: rotate(-8deg) scale(1.1); } }
+#hintBtn:hover .tool-ico { animation: flicker .5s ease-in-out infinite alternate; }
+@keyframes flicker { to { filter: brightness(1.25) drop-shadow(0 0 6px rgba(255, 190, 90, .8)); } }
+.tbtn.pen[aria-pressed="true"] .tool-ico { filter: drop-shadow(0 0 5px rgba(255, 220, 160, .7)); }
+.tbtn:disabled .tool-ico { filter: grayscale(1) opacity(.5); }
+@media (max-width: 899px) { .tbtn:has(.tool-ico) { flex-direction: column; gap: 0; line-height: 1; } .tbtn:has(.tool-ico) .lbl { font-size: 11px; } .tool-ico { width: 24px; height: 24px; }
+  html.plaques #app.game .tbtn:has(.tool-ico) { height: 52px; } }
 @media (max-width: 899px) { html.plaques .tbtn { border-width: 8px 10px; border-image-width: 8px 10px; padding: 0 4px; } html.plaques #accuse { border-width: 10px 12px; border-image-width: 10px 12px; } }
 html.plaques .tbtn:disabled { opacity: 1; color: rgba(59, 42, 24, .45); filter: grayscale(.6) brightness(.9) drop-shadow(1px 1px 1px rgba(0, 0, 0, .25)); }
 html.plaques .tbtn.pen[aria-pressed="true"] { background: none; box-shadow: none; border-image-source: var(--bouton-principal); color: #fbe7cf; text-shadow: 0 1px 1px rgba(0, 0, 0, .45); }
@@ -1246,6 +1256,8 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
       setVolume(v) { settings.volume = v; if (v > 0) settings.sound = true; store.set('settings', settings); this.unlock(); apply(); }
     };
   })();
+  // outils de l'enquête : objet d'époque dessiné (assets/desk/outil-*), sinon le libellé seul
+  const toolIcon = (k) => MEDIA.desk && MEDIA.desk['outil-' + k] ? `<img class="tool-ico" src="${MEDIA.desk['outil-' + k]}" alt="" aria-hidden="true">` : '';
   const soundBtn = () => sound.available ? `<button class="iconbtn soundbtn ${sound.icon() === '🔇' ? 'muet' : ''}" aria-label="Couper ou remettre le son">${sound.icon()}</button>` : '';
   ['pointerdown', 'keydown'].forEach(ev => document.addEventListener(ev, () => sound.unlock(), { once: true }));
   // 🔊 ouvre un petit panneau : barre de volume et Couper / Remettre (se ferme en touchant ailleurs)
@@ -1554,10 +1566,10 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
       ${specials.length ? `<div class="special">${specials.join('')}</div>` : ''}
       ${S.solved ? verdictHtml() : `<div class="dock">
         <div class="tools">
-          <button class="tbtn" id="hintBtn" aria-label="Indice"><span class="lbl">Indice</span></button>
-          <button class="tbtn pen" id="penBtn" aria-pressed="${!!settings.cross}" title="Crayon : un toucher barre une case d'une croix (ou l'efface). Les lettres s'écrivent en choisissant un personnage."><span class="lbl">Crayon</span></button>
+          <button class="tbtn" id="hintBtn" aria-label="Indice">${toolIcon('indice')}<span class="lbl">Indice</span></button>
+          <button class="tbtn pen" id="penBtn" aria-pressed="${!!settings.cross}" title="Crayon : un toucher barre une case d'une croix (ou l'efface). Les lettres s'écrivent en choisissant un personnage.">${toolIcon('crayon')}<span class="lbl">Crayon</span></button>
           <span class="spacer"></span>
-          <button class="tbtn" id="undo" aria-label="Annuler" ${undo.length ? '' : 'disabled'}><span class="lbl">Annuler</span></button>
+          <button class="tbtn" id="undo" aria-label="Annuler" ${undo.length ? '' : 'disabled'}>${toolIcon('annuler')}<span class="lbl">Annuler</span></button>
           <button class="accuse" id="accuse" ${allPlaced ? '' : 'disabled'}>Accuser</button>
         </div>
         <div class="tray" id="tray">${cast.map(ch => `
