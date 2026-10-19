@@ -72,7 +72,7 @@ test('accueil → Jouer → bureau : la carte ouverte, seul le château accessib
   assert.deepEqual(errors, []);
 });
 
-test('scène d\'un lieu : le décor en grand, un sceau par enquête, la fiche lance l\'enquête ; la liste reste possible', () => {
+test('scène d\'un lieu : le décor en grand, un sceau par enquête, la fiche lance l\'enquête', () => {
   const { w, d, PUZZLES, errors } = open();
   const list = PUZZLES.filter(p => p.place === 'chateau' && !p.final);
   solve(w, list[0]);
@@ -89,12 +89,6 @@ test('scène d\'un lieu : le décor en grand, un sceau par enquête, la fiche la
   assert.equal(d.getElementById('zonePop').hidden, true, 'toucher ailleurs la referme');
   zones[1].click(); zones[1].click();
   assert.ok(location(w).includes('affaire/' + list[1].id), 'second toucher : on entre');
-  w.grimGo('lieu/chateau');
-  d.getElementById('lieuVue').click();
-  assert.equal(d.querySelector('.zone'), null);
-  assert.deepEqual([...d.querySelectorAll('.cases .case')].map(b => b.dataset.id), [...list.map(p => p.id)], 'la liste, au choix');
-  d.getElementById('lieuVue').click();
-  assert.ok(d.querySelector('.zone'), 'et retour à la scène');
   assert.deepEqual(errors, []);
 });
 

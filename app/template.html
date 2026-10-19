@@ -691,9 +691,6 @@ html.plaques .tbtn.pen[aria-pressed="true"] { background: none; box-shadow: none
 /* scène d'un lieu : le décor en grand, les sceaux des enquêtes posés dessus (lore/lieux-zones.json) */
 #app.scene-page { max-width: 1180px; }
 #app.scene-page .lead { max-width: none; }
-.linkbtn { align-self: flex-start; border: 0; background: none; padding: 2px 0; color: var(--muted); font-size: 14px; text-decoration: underline; text-underline-offset: 3px; }
-.linkbtn:hover { color: var(--candle); }
-.linkbtn.under { align-self: center; margin-top: 4px; }
 /* ordinateur : l'illustration entière tient dans l'écran, sous l'en-tête */
 .scene { position: relative; align-self: center; width: min(100%, calc((100dvh - 230px) * var(--r, 1.5))); min-width: min(100%, 560px); contain: inline-size; }
 /* l'illustration elle-même a les bords déchirés et brûlés, comme la carte de Brumeval (François, 2026-10-20 : pas de
@@ -702,7 +699,7 @@ html.plaques .tbtn.pen[aria-pressed="true"] { background: none; box-shadow: none
 .scene-sheet {
   position: relative; transform: rotate(-.3deg); filter: drop-shadow(0 12px 20px rgba(0, 0, 0, .65));
   /* trois fois la même déchirure, de plus en plus serrée : trait d'encre, bord roussi, image (fondue dans le roussi) */
-  --torn-ink: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 660' preserveAspectRatio='none'%3E%3Cfilter id='t' x='-5%25' y='-5%25' width='110%25' height='110%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.018 .026' numOctaves='2' seed='11'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='24' xChannelSelector='R' yChannelSelector='G'/%3E%3C/filter%3E%3Crect x='12' y='12' width='976' height='636' fill='%23fff' filter='url(%23t)'/%3E%3C/svg%3E");
+  --torn-ink: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 660' preserveAspectRatio='none'%3E%3Cfilter id='t' x='-5%25' y='-5%25' width='110%25' height='110%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.018 .026' numOctaves='2' seed='11'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='24' xChannelSelector='R' yChannelSelector='G'/%3E%3C/filter%3E%3Crect x='10.5' y='10.5' width='979' height='639' fill='%23fff' filter='url(%23t)'/%3E%3C/svg%3E");
   --torn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 660' preserveAspectRatio='none'%3E%3Cfilter id='t' x='-5%25' y='-5%25' width='110%25' height='110%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.018 .026' numOctaves='2' seed='11'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='24' xChannelSelector='R' yChannelSelector='G'/%3E%3C/filter%3E%3Crect x='14' y='14' width='972' height='632' fill='%23fff' filter='url(%23t)'/%3E%3C/svg%3E");
   --torn-in: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 660' preserveAspectRatio='none'%3E%3Cfilter id='t' x='-5%25' y='-5%25' width='110%25' height='110%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.018 .026' numOctaves='2' seed='11'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='24' xChannelSelector='R' yChannelSelector='G'/%3E%3CfeGaussianBlur stdDeviation='4'/%3E%3C/filter%3E%3Crect x='19' y='19' width='962' height='622' fill='%23fff' filter='url(%23t)'/%3E%3C/svg%3E");
 }
@@ -1246,17 +1243,14 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     $app.innerHTML = pageHead('Retour au bureau', esc(placeTitle(pl))) + `
       ${pendingLetter(pl) ? '<button class="btn primary" id="lieuLetter">Ouvrir la lettre glissée sous la porte</button>' : ''}
       <p class="lead">${letters().includes(pl) ? `<i>${esc(LORE.letters[pl])}</i> — A.` : pendingLetter(pl) ? 'Toutes les enquêtes de ce lieu sont résolues.' : `${list.length - solvedIn(list) > 1 ? `Encore ${list.length - solvedIn(list)} enquêtes ici` : 'Une dernière enquête ici'}, et une lettre sur ce lieu glissera sous ta porte.`} <span class="count">${solvedIn(list)} / ${list.length} résolues</span></p>
-      ${scene && !settings.lieuListe ? sceneHtml(scene, list) + '<button class="linkbtn under" id="lieuVue">Voir la liste des enquêtes</button>'
-        : (scene ? '<button class="linkbtn" id="lieuVue">Voir le lieu</button>' : '') + `<div class="cases">${list.map(caseHtml).join('')}</div>`}`;
-    $app.classList.toggle('scene-page', !!scene && !settings.lieuListe);
+      ${scene ? sceneHtml(scene, list) : `<div class="cases">${list.map(caseHtml).join('')}</div>`}`;
+    $app.classList.toggle('scene-page', !!scene);
     document.getElementById('back').onclick = () => go('bureau');
     document.getElementById('rulesBtn').onclick = rules;
     const enter = (id) => { caseBack = 'lieu'; go('affaire/' + id); };
     $app.querySelectorAll('.cases .case').forEach(b => b.onclick = () => enter(b.dataset.id));
     const ll = document.getElementById('lieuLetter'); if (ll) ll.onclick = () => openLetter(pl);
-    const vue = document.getElementById('lieuVue');
-    if (vue) vue.onclick = () => { settings.lieuListe = !settings.lieuListe; store.set('settings', settings); lieuPage(pl); };
-    if (scene && !settings.lieuListe) bindScene(list, enter);
+    if (scene) bindScene(list, enter);
   }
   // scène d'un lieu (François, 2026-10-20 : « l'illustration de l'endroit en grand avec quelques zones cliquables ») :
   // le décor en grand, un sceau par enquête (lore/lieux-zones.json) ; toucher un sceau ouvre sa fiche, la fiche lance
