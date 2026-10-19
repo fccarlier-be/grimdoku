@@ -224,6 +224,22 @@ test('Crayon de couleur : chaque toucher change sa couleur (gris, puis chaque pe
   assert.equal(d.getElementById('penBtn').getAttribute('aria-pressed'), 'false', 'puis le crayon se range');
 });
 
+test('Crayon : appui long = roue des couleurs (gris, chaque personnage, ranger)', async () => {
+  const { w, d, fire, openCase, PUZZLES } = open();
+  const p = PUZZLES[0];
+  openCase(p.id);
+  const pen = d.getElementById('penBtn');
+  fire(pen, 'pointerdown'); await sleep(900); fire(pen, 'pointerup'); pen.click();
+  const items = [...d.querySelectorAll('.pen-wheel [data-pen]')];
+  assert.equal(items.length, p.characters.length + 2, 'gris + un par personnage + ranger');
+  assert.equal(d.getElementById('penBtn').getAttribute('aria-pressed'), 'false', 'le toucher qui suit l\'appui long ne change rien');
+  const last = p.characters[p.characters.length - 1];
+  d.querySelector(`.pen-wheel [data-pen="${last.id}"]`).click();
+  assert.equal(d.querySelector('.pen-wheel'), null, 'roue refermée');
+  assert.equal(JSON.parse(w.localStorage.getItem('grimdoku:settings')).cross, last.id, 'couleur choisie dans la roue');
+  assert.ok(d.querySelector('.pen-dot'), 'pastille sur le crayon');
+});
+
 test('indice : désigne le prochain personnage à déduire, ou signale une erreur', () => {
   const { PUZZLES } = open();
   const p = PUZZLES[0];

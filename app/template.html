@@ -876,6 +876,12 @@ html.plaques .tbtn.pen[aria-pressed="true"] { background: none; box-shadow: none
 .wheel-item.sel { box-shadow: 0 0 0 3px var(--candle), 0 0 12px rgba(240, 169, 58, .8); }
 .wheel-item.victim { box-shadow: 0 0 0 2.5px var(--blood), 0 3px 6px rgba(0, 0, 0, .4); }
 .wheel-item.placed { opacity: .6; }
+/* roue des couleurs du crayon */
+.pen-wheel .wheel-cell { text-align: center; line-height: 1.15; }
+.pen-wheel .wheel-item.colored { box-shadow: 0 0 0 3px var(--cc), 0 3px 6px rgba(0, 0, 0, .4); }
+.pen-wheel .wheel-item.sel { box-shadow: 0 0 0 3px var(--cc, #4f6b8f), 0 0 0 6px var(--candle), 0 0 12px rgba(240, 169, 58, .8); }
+.pw-grey { color: #4f6b8f; font: 700 24px/1 var(--f-body); }
+.pw-off { font: 400 13px/1 var(--f-display); color: #6e5434; }
 /* ================= survol et sélection plus visibles (demande de François, 2026-10-18) ================= */
 /* personnage choisi : sa fiche se soulève avec un halo doré, son médaillon prend un anneau doré, les autres s'estompent */
 .clue, .chip, .token { transition: transform .15s ease, opacity .15s ease, box-shadow .15s ease, filter .15s ease; }
@@ -1618,14 +1624,19 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     document.querySelectorAll('[data-rate]').forEach(b => b.onclick = () => rate(+b.dataset.rate));
     if (S.solved) return bindVerdict();
     document.getElementById('hintBtn').onclick = hint;
-    document.getElementById('penBtn').onclick = () => {
-      // deux modes séparés : crayon = croix ; un personnage choisi = ses lettres.
-      // Clics successifs : gris, puis la couleur de chaque personnage (ordre des fiches), puis éteint
+    // deux modes séparés : crayon = croix ; un personnage choisi = ses lettres.
+    // Toucher court : couleur suivante (gris, puis chaque personnage dans l'ordre des fiches, puis rangé) ;
+    // appui long : la roue des couleurs
+    const penBtn = document.getElementById('penBtn');
+    let penT = null, penLong = false;
+    penBtn.addEventListener('pointerdown', () => { penLong = false; penT = setTimeout(() => { penLong = true; penWheel(penBtn); }, WHEEL_MS); });
+    ['pointerup', 'pointerleave', 'pointercancel'].forEach(ev => penBtn.addEventListener(ev, () => clearTimeout(penT)));
+    penBtn.addEventListener('contextmenu', e => e.preventDefault());
+    penBtn.onclick = () => {
+      if (penLong) { penLong = false; return; }
       const order = [true, ...P.characters.map(c => c.id), false];
       const at = order.indexOf(penChar() ? settings.cross : !!settings.cross);
-      settings.cross = order[(at + 1) % order.length]; store.set('settings', settings);
-      if (settings.cross) { selected = null; const ch = penChar(); toast(ch ? `Crayon : couleur de ${ch.name}` : settings.cross ? 'Crayon gris' : 'Crayon rangé'); }
-      render();
+      setPen(order[(at + 1) % order.length]);
     };
     document.getElementById('undo').onclick = () => { if (!undo.length) return; S = JSON.parse(undo.pop()); save(); render(); };
     document.getElementById('accuse').onclick = accuse;
@@ -1723,6 +1734,34 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
 
   // Roue des personnages : ceux qui peuvent se tenir sur la case (le personnage choisi en premier, puis l'ordre des fiches,
   // la victime à la fin) ; en toucher un le place là (un grand personnage : avec ses lettres au crayon voisines).
+  // couleur du crayon : true = gris, id = couleur d'un personnage, false = rangé
+  function setPen(v) {
+    settings.cross = v; store.set('settings', settings);
+    if (v) { selected = null; const ch = penChar(); toast(ch ? `Crayon : couleur de ${ch.name}` : 'Crayon gris'); } else toast('Crayon rangé');
+    render();
+  }
+  // roue des couleurs du crayon (appui long sur le Crayon) : gris, chaque personnage, ranger
+  function penWheel(btn) {
+    const list = [{ v: 'true', html: '<span class="pw-grey">✕</span>', name: 'Crayon gris' },
+      ...P.characters.map(ch => ({ v: ch.id, html: `${face(ch)}<span class="letter" style="--cc:${colorOf(ch)}">${letterOf(ch)}</span>`, name: `Couleur de ${ch.name}`, cc: colorOf(ch) })),
+      { v: 'false', html: '<span class="pw-off">Ranger</span>', name: 'Ranger le crayon' }];
+    const cur = penChar() ? settings.cross : String(!!settings.cross);
+    const box = btn.getBoundingClientRect();
+    const R = Math.max(70, 26 + list.length * 7), size = 2 * R + 56;
+    const cx = Math.min(Math.max(box.left + box.width / 2, size / 2 + 4), innerWidth - size / 2 - 4);
+    const cy = Math.min(Math.max(box.top + box.height / 2, size / 2 + 4), innerHeight - size / 2 - 4);
+    $layer.innerHTML = `<div class="wheel-layer" id="wheelLayer"><div class="wheel pen-wheel" style="left:${cx}px;top:${cy}px;width:${size}px;height:${size}px">
+      <span class="wheel-cell">Couleur<br>du crayon</span>
+      ${list.map((it, i) => {
+        const a = -Math.PI / 2 + i * 2 * Math.PI / list.length;
+        return `<button class="wheel-item ${it.v === cur ? 'sel' : ''} ${it.cc ? 'colored' : ''}" data-pen="${it.v}" title="${esc(it.name)}" aria-label="${esc(it.name)}" style="left:${size / 2 + R * Math.cos(a)}px;top:${size / 2 + R * Math.sin(a)}px;${it.cc ? `--cc:${it.cc}` : ''}">${it.html}</button>`;
+      }).join('')}</div></div>`;
+    document.getElementById('wheelLayer').onclick = (e) => {
+      const it = e.target.closest('[data-pen]');
+      close();
+      if (it) setPen(it.dataset.pen === 'true' ? true : it.dataset.pen === 'false' ? false : it.dataset.pen);
+    };
+  }
   function wheel(r, c, el) {
     const cast = [...P.characters].sort((a, b) => (a.role === 'victim') - (b.role === 'victim'));
     const list = cast.filter(ch => E.canStand(ctx, ch.id, r, c)).sort((a, b) => (b.id === selected) - (a.id === selected));
