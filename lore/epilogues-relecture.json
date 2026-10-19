@@ -1,0 +1,23 @@
+{
+  "_doc": "Relecture des épilogues (tools/relecture.js) : statut (relire, valide, revoir) et note de François, par énigme.",
+  "chateau--abbesse": {
+    "status": "valide",
+    "note": ""
+  },
+  "chateau--cousine": {
+    "status": "relire",
+    "note": "Réécrit d'après ta note (« Partager ne veut pas dire tuer ») : elle réclame l'épée de famille, il la lui « donne », pointe la première."
+  },
+  "chateau--dresseuse": {
+    "status": "relire",
+    "note": "Réécrit d'après ta note (armure et numéro incohérents) : elle veut Flammèche ; le dragonnet obéit à son sifflet, pas à Gontran, qui dégaine ; Flammèche reste assis."
+  },
+  "chateau--inspecteur--golem--i2": {
+    "status": "valide",
+    "note": ""
+  },
+  "chateau--touriste--dragon--i2": {
+    "status": "valide",
+    "note": ""
+  }
+}
