@@ -461,8 +461,7 @@
     "note": "Nul. On ne tue pas pour une demi-assiette de navets. A la limite on pourrait dire que l'ogre, récemment devenu végétarien, a craqué en croquant sa cousine."
   },
   "banquet--dresseuse": {
-    "status": "valide",
-    "note": "La chute est nulle. On comprend l'intention mais ça n'est ni drôle, ni naturel comme dialogue."
+    "status": "valide"
   },
   "banquet--messager": {
     "status": "valide",
@@ -473,7 +472,6 @@
     "note": ""
   },
   "taverne--percepteur": {
-    "status": "valide",
-    "note": "Quel est le rapport entre le grimoire et l'éternuement?..."
+    "status": "valide"
   }
 }
