@@ -229,8 +229,8 @@
     "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
   },
   "mine--abbesse": {
-    "status": "relire",
-    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+    "status": "revoir",
+    "note": "Pas drôle, pas absurde, nul."
   },
   "tour--baronne": {
     "status": "relire",
@@ -329,7 +329,7 @@
     "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
   },
   "mine--messager--golem-dragon--i2-i2": {
-    "status": "relire",
+    "status": "valide",
     "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
   },
   "mine--alchimiste": {
@@ -337,8 +337,8 @@
     "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
   },
   "mine--nageuse--golem--i2": {
-    "status": "relire",
-    "note": "Repassé : accident absurde ou trait mieux respecté."
+    "status": "revoir",
+    "note": "Pas drôle, et un dragonnet dans l'eau ne doit pas pouvoir faire grand chose..."
   },
   "academie--colporteur--geant--i2": {
     "status": "relire",
@@ -453,7 +453,7 @@
     "note": "Repassé : nouvelle grille (coupable imposé pour rééquilibrer : Dewey ou Granit)."
   },
   "mine--troubadour": {
-    "status": "relire",
+    "status": "valide",
     "note": "Repassé : nouvelle grille (coupable imposé pour rééquilibrer : Dewey ou Granit)."
   },
   "banquet--cousine": {
@@ -481,5 +481,13 @@
   "marais--percepteur": {
     "status": "relire",
     "note": "Repassé : accident absurde ou trait mieux respecté."
+  },
+  "mine--colporteur": {
+    "status": "revoir",
+    "note": "Pourquoi vendre des gants ignifugés à un dragon?..."
+  },
+  "mine--percepteur--dragon--i2": {
+    "status": "revoir",
+    "note": "Il y a de l'idée mais la dernière réponse ne semble pas naturelle/cohérente avec le reste du dialogue."
   }
 }
