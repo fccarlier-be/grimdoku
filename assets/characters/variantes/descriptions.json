@@ -200,7 +200,7 @@
     ]
   },
   "inspecteur": {
-    "kind": "MEDIEVAL TAVERN INSPECTORS (men who taste and grade every tavern, each with a glass or a tankard, a notebook and a judging look)",
+    "kind": "MEDIEVAL TAVERN INSPECTORS (official tasting inspectors on duty: each wears a sober official coat or tabard with a brass inspector's badge pinned on the chest and an official cap or hat, carries a closed inspection notebook and a pencil, and holds a wine glass, a tankard or a tasting spoon with a judging, critical expression)",
     "people": "men",
     "pronoun": "his",
     "sheets": [
@@ -221,6 +221,18 @@
         "2. Top right: a dandy inspector in his thirties with curly blond hair and a feathered hat, a blue velvet coat, a lace handkerchief.",
         "3. Bottom left: a stocky inspector in his forties with a broken nose and a short black beard, a leather apron, a bread loaf.",
         "4. Bottom right: a sly inspector in his sixties with a hooked nose and a grey goatee, a purple coat, a small brass bell."
+      ],
+      [
+        "1. Top left: a thin severe inspector in his fifties with a long nose and pince-nez, a dark green official coat with a brass badge, a black cap, sniffing a wine glass with disdain.",
+        "2. Top right: a round inspector in his forties with olive skin and a neat goatee, a navy tabard with a brass badge, a flat official hat, tasting soup from a silver spoon.",
+        "3. Bottom left: an old inspector in his seventies with a bald head, white sideburns and a magnifying monocle, a brown official coat with a brass badge, holding up a tankard to inspect it.",
+        "4. Bottom right: a young stiff inspector in his twenties with dark skin and a thin moustache, a grey official coat with a brass badge, a tall cap, writing in a closed-cover notebook with a pencil."
+      ],
+      [
+        "1. Top left: a gaunt inspector in his sixties with sunken cheeks and a pointed grey beard, a black official coat with a brass badge, a wide-brimmed official hat, swirling a wine glass.",
+        "2. Top right: a plump inspector in his thirties with red hair and freckles, a mustard official tabard with a brass badge, a round cap, biting into a bread roll with a frown.",
+        "3. Bottom left: a stern inspector in her fifties with a tight grey bun and spectacles, a dark red official coat with a brass badge, holding a tankard at arm's length.",
+        "4. Bottom right: a pompous inspector in his forties with a big curled moustache, a teal official coat with a brass badge and a sash, a tricorn hat, tasting from a small silver cup."
       ]
     ]
   },
