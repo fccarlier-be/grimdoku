@@ -365,6 +365,24 @@ test('son : le sceau du son ouvre la barre de volume, le réglage est retenu ; b
 });
 
 // François, 2026-10-20 : « Je ne veux PLUS JAMAIS d'emoji dans le jeu »
+// François, 2026-10-20 : « que toutes les victimes aient un visage différent »
+test('visages des victimes : tous différents, et leur portrait est bien servi', () => {
+  const { d, PUZZLES, openCase } = open();
+  const fs = require('fs'), path = require('path');
+  const actives = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'lore', 'actives.json'), 'utf8'));
+  const on = new Set(Object.entries(actives).filter(([k]) => k !== '_doc').flatMap(([, v]) => v));
+  const faces = PUZZLES.filter(p => on.has(p.id)).map(p => { const v = p.characters.find(c => c.role === 'victim'); return v.face || v.archetype; });
+  assert.equal(new Set(faces).size, faces.length, 'un visage par victime active');
+  const p = PUZZLES.find(q => on.has(q.id) && q.characters.find(c => c.role === 'victim').face);
+  const v = p.characters.find(c => c.role === 'victim');
+  openCase(p.id);
+  assert.ok(d.querySelector(`use[href="#chr-${v.face}"]`), 'la victime affiche son propre visage');
+  const sym = d.getElementById('chr-' + v.face);
+  assert.ok(sym, 'son portrait existe');
+  const img = sym.querySelector('image').getAttribute('href');
+  assert.ok(fs.existsSync(path.join(__dirname, '..', 'dist', img)), 'fichier servi : ' + img);
+});
+
 test('aucun emoji à l\'écran', () => {
   const { w, d, PUZZLES, openCase } = open();
   const EMOJI = /[\p{Extended_Pictographic}\u{1F1E6}-\u{1F1FF}]/u;

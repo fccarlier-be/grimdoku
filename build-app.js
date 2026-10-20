@@ -55,6 +55,38 @@ for (const type of Object.keys(ARCHETYPES)) {
   const viewBox = (svg.match(/viewBox="([^"]+)"/) || [])[1] || '0 0 64 64';
   symbols.push(`<symbol id="chr-${type}" viewBox="${viewBox}">${svg.replace(/^<svg[^>]*>/, '').replace(/<\/svg>$/, '')}</symbol>`);
 }
+// visages des victimes (François, 2026-10-20 : « que toutes les victimes aient un visage différent ») : pour chaque type
+// d'invité, le portrait du type et ses variantes (assets/characters/<type>-N.webp, planches découpées par tools/images.py) ;
+// chaque victime active reçoit un visage à elle (c.face), jamais deux fois le même dans tout le jeu tant qu'il y en a assez,
+// et jamais deux fois le même dans un lieu. Variantes servies dans media/ (pas dans la page : elle resterait trop lourde).
+const faceFiles = {};
+{
+  const actives = fs.existsSync('lore/actives.json') ? JSON.parse(fs.readFileSync('lore/actives.json', 'utf8')) : {};
+  const order = Object.entries(actives).filter(([k]) => k !== '_doc').flatMap(([, ids]) => ids); // lieu par lieu
+  const byType = {};
+  for (const p of puzzles) {
+    const v = p.characters.find(c => c.role === 'victim');
+    if (!v || !ARCHETYPES[v.archetype] || !ARCHETYPES[v.archetype].guest) continue;
+    (byType[v.archetype] = byType[v.archetype] || []).push({ p, v });
+  }
+  for (const [type, list] of Object.entries(byType)) {
+    const variants = fs.readdirSync('assets/characters').filter(f => new RegExp(`^${type}-\\d+\\.webp$`).test(f))
+      .sort((a, b) => +a.match(/-(\d+)\./)[1] - +b.match(/-(\d+)\./)[1]).map(f => f.replace(/\.webp$/, ''));
+    if (!variants.length) continue;
+    const faces = [type, ...variants];
+    // victimes actives d'abord, dans l'ordre des lieux ; les grilles désactivées ensuite (visages réutilisés)
+    const rank = (x) => { const i = order.indexOf(x.p.id); return i < 0 ? 1e6 : i; };
+    list.sort((a, b) => rank(a) - rank(b) || a.p.id.localeCompare(b.p.id));
+    list.forEach((x, i) => {
+      let k = i % faces.length;
+      // dans un même lieu, jamais deux fois le même visage
+      const taken = new Set(list.slice(0, i).filter(y => y.p.place === x.p.place).map(y => y.v.face));
+      for (let n = 0; n < faces.length && taken.has(faces[k]); n++) k = (k + 1) % faces.length;
+      x.v.face = faces[k];
+    });
+    for (const f of variants) faceFiles[f] = `assets/characters/${f}.webp`;
+  }
+}
 // grands personnages : leur portrait (<type>.webp, buste tiré de l'image entière par tools/images.py) sur chacune de leurs cases
 // sols : assets/floors/<matière>.webp → une classe .fl-<matière> par matière (texture teintée par la couleur de la pièce) ;
 // parchemin.webp → fond du cadre de la carte. Sans texture : couleur unie de la pièce (repli).
@@ -127,6 +159,10 @@ for (const [dir, key, prefix] of [['assets/characters/croquis', 'sketches', 'cro
 // décor du bureau (assets/desk/deco-<objet>.webp : loupe, encrier, bougie…), dans l'ordre alphabétique
 if (fs.existsSync('assets/desk')) for (const f of fs.readdirSync('assets/desk').filter(n => /^deco-.*\.webp$/.test(n)).sort()) {
   copyMedia(`assets/desk/${f}`, `desk-${f}`); media.deskDeco.push(`media/desk-${f}`);
+}
+for (const [f, src] of Object.entries(faceFiles)) {
+  copyMedia(src, `visage-${f}.webp`);
+  symbols.push(`<symbol id="chr-${f}" viewBox="0 0 64 64"><image href="media/visage-${f}.webp" width="64" height="64"/></symbol>`);
 }
 // carte de la baronnie (assets/map/brumeval.webp, préparée par tools/images.py) : servie à côté de la page
 {

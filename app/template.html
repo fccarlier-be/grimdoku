@@ -1554,7 +1554,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     return out;
   }
   // portrait d'un personnage (assets/characters), découpé en rond ; l'emoji ne sert plus qu'en secours
-  const face = (ch) => `<span class="face"><svg class="portrait" role="img" aria-label="${esc(ch.name)}"><use href="#chr-${ch.archetype}"/></svg></span>`;
+  const face = (ch) => `<span class="face"><svg class="portrait" role="img" aria-label="${esc(ch.name)}"><use href="#chr-${ch.face || ch.archetype}"/></svg></span>`;
   const ico = (type) => `<svg class="ico"><use href="#obj-${type}"/></svg>`;
   // Pastille d'un personnage = l'initiale de son nom (demande de François, 2026-10-18) ; si plusieurs personnages de
   // l'énigme la partagent, le plus court début de nom qui les distingue (Fa, Fl…). L'ordre des fiches ne change pas :
