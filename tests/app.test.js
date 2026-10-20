@@ -688,3 +688,38 @@ test('lettres anonymes : le nom d\'Augure n\'apparaît nulle part avant la rév�
   const corbeau = PUZZLES.flatMap(p => p.characters).find(c => c.archetype === 'corbeau');
   assert.ok(corbeau && !/lettre/i.test(corbeau.desc), 'la fiche du corbeau ne dit pas qu\'il écrit les lettres');
 });
+
+test('page des statistiques : lit les journaux du compteur et des votes, sans solution ni emoji', async () => {
+  const STATS = fs.readFileSync(path.join(__dirname, '..', 'dist', 'stats', 'index.html'), 'utf8');
+  const META = JSON.parse(STATS.match(/const META = (\{.*?\});\n/s)[1]);
+  const ids = Object.keys(META).filter(id => !META[id].off);
+  assert.ok(ids.length > 100, 'les grilles sont décrites');
+  for (const m of Object.values(META)) assert.deepEqual(Object.keys(m).filter(k => !['t', 'pl', 'pn', 'n', 'd', 'off'].includes(k)), [], 'titre, lieu, taille, difficulté : rien d\'autre');
+  assert.ok(!/murderer|solution|positions/.test(JSON.stringify(META)), 'aucune solution');
+  const now = Date.now(), iso = (t) => new Date(t).toISOString().replace(/\.\d+Z$/, '+00:00');
+  const journal = [
+    `${iso(now - 3 * 864e5)} visite aaa111 - -`, `${iso(now - 3 * 864e5 + 6e4)} ouverte aaa111 ${ids[0]} 6`, `${iso(now - 3 * 864e5 + 6e5)} resolue aaa111 ${ids[0]} 6`,
+    `${iso(now - 6e5)} visite aaa111 - -`, `${iso(now - 5e5)} ouverte aaa111 ${ids[1]} 6`,
+    `${iso(now - 4e5)} visite bbb222 - -`, `${iso(now - 3e5)} ouverte bbb222 ${ids[0]} 6`, 'ligne abîmée', ''].join('\n');
+  const notes = [`${iso(now - 3 * 864e5)} ${ids[0]} 4 aaa111 1 6`, `${iso(now - 3 * 864e5)} test-claude 3 verif 0 6`].join('\n');
+  const dom = new JSDOM(STATS, { runScripts: 'dangerously', url: 'http://localhost/stats/', beforeParse(w) {
+    w.fetch = async (u) => ({ ok: true, status: 200, text: async () => (String(u) === 'journal' ? journal : notes) });
+  } });
+  const w = dom.window, d = w.document, errors = [];
+  w.addEventListener('error', e => errors.push(e.message));
+  for (let i = 0; i < 50 && !d.querySelector('.kpis'); i++) await new Promise(r => setTimeout(r, 10));
+  const kpi = (label) => [...d.querySelectorAll('.kpi')].find(k => k.textContent.includes(label)).querySelector('b').textContent;
+  assert.equal(kpi('joueurs uniques'), '2');
+  assert.equal(kpi('affaires ouvertes'), '3');
+  assert.equal(kpi('revenus un autre jour'), '1');
+  const row = [...d.querySelectorAll('#cases tbody tr')].find(tr => tr.textContent.includes(META[ids[0]].t));
+  assert.ok(row, 'l\'affaire ouverte est listée sous son titre');
+  const cells = [...row.children].map(td => td.textContent.trim());
+  assert.deepEqual([cells[4], cells[5], cells[6], cells[8], cells[9]], ['2', '1', '1', '4.0', '1'], 'ouverte par 2, résolue par 1, 1 abandon, note 4 (vote de test ignoré)');
+  d.querySelector('[data-days="0"]').click();
+  assert.equal(d.querySelector('[data-days="0"]').getAttribute('aria-pressed'), 'true', 'période « Tout »');
+  assert.equal(kpi('joueurs uniques'), '2');
+  assert.ok(!/\p{Extended_Pictographic}/u.test(d.body.textContent), 'aucun emoji');
+  assert.deepEqual(errors, []);
+  w.close();
+});

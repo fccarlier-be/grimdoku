@@ -191,6 +191,12 @@ for (const d of SITE_PAGES) {
   fs.mkdirSync(d, { recursive: true });
   for (const f of ['connexion.html', 'confidentialite.html', 'pages.css']) { fs.copyFileSync(`app/${f}`, `${d}/${f}`); fs.chmodSync(`${d}/${f}`, 0o644); }
 }
+// page des statistiques (stats/, derrière le mot de passe de la relecture : nginx location /stats/) : titre, lieu, taille et
+// difficulté calculée de chaque grille, jamais de solution
+const statsMeta = {};
+for (const p of puzzles) statsMeta[p.id] = { t: p.title, pl: p.place || p.decor, pn: String(p.title).split(' — ')[0], n: p.size, d: p.difficulty, ...(p.off ? { off: 1 } : {}) };
+const statsPage = fs.readFileSync('app/stats.html', 'utf8').replace('/*__META__*/{}', () => JSON.stringify(statsMeta).replace(/</g, '\\u003c'));
+for (const d of SITE_PAGES) { fs.mkdirSync(`${d}/stats`, { recursive: true }); fs.writeFileSync(`${d}/stats/index.html`, statsPage); fs.chmodSync(`${d}/stats/index.html`, 0o644); }
 for (const [src, name] of [['assets/floors/parchemin.webp', 'parchemin.webp'], ['assets/floors/bureau.webp', 'fond-bureau.webp']]) if (fs.existsSync(src)) copyMedia(src, name);
 // icône de l'appli (assets/icon/web, produite par tools/images.py) : favicon, icône Apple et manifeste PWA,
 // à la racine du site (le navigateur demande /favicon.ico de lui-même)

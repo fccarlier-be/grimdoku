@@ -6,6 +6,11 @@ docker compose up -d
 # nginx.conf est monté comme fichier : remplacé sur l'hôte, le conteneur garde l'ancien.
 # S'il a changé, on recrée le conteneur (1 à 2 s de coupure) ; sinon un simple rechargement suffit.
 if [ "$(docker compose exec -T grimdoku cat /etc/nginx/conf.d/default.conf | md5sum)" != "$(md5sum < nginx.conf)" ]; then
+  # vérifiée d'abord dans un conteneur jetable, sans réseau : invalide, on ne relance rien (le site garde l'ancienne)
+  if ! docker run --rm --network none -v "$PWD/nginx.conf:/etc/nginx/conf.d/default.conf:ro" \
+      -v "$PWD/epi.htpasswd:/etc/nginx/epi.htpasswd:ro" -v "$PWD/logs:/var/log/grimdoku" nginx:1.27-alpine nginx -t -q; then
+    echo "ERREUR : nginx.conf invalide, rien n'est relancé (le site tourne encore avec l'ancienne configuration)"; exit 1
+  fi
   echo "nginx.conf modifié : conteneur recréé"
   docker compose up -d --force-recreate
 else

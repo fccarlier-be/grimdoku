@@ -33,7 +33,16 @@ http.createServer((req, res) => {
     res.writeHead(204, { 'Cache-Control': 'no-store' }); return res.end();
   }
   if (req.url.startsWith('/api/')) { req.url = req.url.slice(4); return api(req, res); } // comme nginx : /api/x → /x
-  const rel = decodeURIComponent(req.url.split('?')[0]).replace(/^\/+/, '') || 'index.html';
+  // page des statistiques : ses journaux sont ceux du dossier de données (en ligne : logs/, derrière un mot de passe)
+  const JOURNAUX = { '/stats/journal': 'stats.log', '/stats/notes': 'notes.log' };
+  if (JOURNAUX[u.pathname]) {
+    const f = path.join(DATA, JOURNAUX[u.pathname]);
+    if (!fs.existsSync(f)) { res.writeHead(404); return res.end(); }
+    res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'no-store' }); return fs.createReadStream(f).pipe(res);
+  }
+  if (u.pathname === '/stats') { res.writeHead(301, { Location: '/stats/' }); return res.end(); }
+  let rel = decodeURIComponent(req.url.split('?')[0]).replace(/^\/+/, '') || 'index.html';
+  if (rel.endsWith('/')) rel += 'index.html';
   const f = path.join(SITE, rel);
   if (!f.startsWith(SITE + path.sep) || !fs.existsSync(f) || !fs.statSync(f).isFile()) { res.writeHead(404); return res.end('introuvable'); }
   res.writeHead(200, { 'Content-Type': TYPES[path.extname(f)] || 'application/octet-stream', 'Cache-Control': 'no-cache' });
