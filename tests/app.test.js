@@ -280,10 +280,10 @@ test('indice : désigne le prochain personnage à déduire, ou signale une erreu
     d.getElementById('hintBtn').click();
     const sel = d.querySelector('.chip[aria-pressed="true"]');
     assert.ok(sel, 'un personnage est sélectionné');
-    // billet anonyme signé « A. » (Augure, jamais nommé), qui reste ouvert jusqu'à un clic ailleurs
+    // billet apporté par le corbeau (son portrait, ni nom ni signature « A. »), ouvert jusqu'à un clic ailleurs
     const billet = () => d.querySelector('.billet');
-    assert.ok(billet() && /— A\.$/.test(billet().querySelector('.billet-sign').textContent), 'billet signé A.');
-    assert.ok(!/Augure/.test(billet().textContent), 'Augure jamais nommé');
+    assert.ok(billet() && billet().querySelector('.billet-corbeau use[href="#chr-corbeau"]'), 'portrait du corbeau');
+    assert.ok(!/Augure|— A\./.test(billet().textContent), 'ni nom ni signature');
     const tap = (el) => el.dispatchEvent(new d.defaultView.Event('pointerdown', { bubbles: true }));
     tap(billet().querySelector('p'));
     assert.ok(billet(), 'un clic dans le billet ne le ferme pas');
