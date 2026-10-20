@@ -117,7 +117,7 @@ test('inscription au registre : bouton du jeu, page Google, retour sur connexion
     assert.match(btn.textContent, /Inscription au registre de Brumeval/);
     assert.match(btn.textContent, /connexion avec Google/);
     d.getElementById('privacyBtn').click();
-    assert.deepStrictEqual(left, ['confidentialite.html'], 'Confidentialité : un bouton');
+    assert.deepStrictEqual(left, ['confidentialite.html#/bureau'], 'Confidentialité : un bouton, qui ramènera au bureau');
     left.length = 0;
     btn.click();
     const u = new URL(left[0]);

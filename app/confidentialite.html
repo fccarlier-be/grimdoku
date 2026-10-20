@@ -26,7 +26,11 @@
   <h2>Tes droits</h2>
   <p>Dans le jeu, dans <b>Options → Sauvegarde</b> : « Se déconnecter » arrête la sauvegarde, et « Effacer ma sauvegarde en ligne » supprime définitivement ta progression de notre serveur. Ta progression reste alors seulement sur ton appareil.</p>
 
-  <p class="retour"><a href="./">Retour au jeu</a></p>
+  <p class="retour"><a href="./" id="retour">Retour au jeu</a></p>
 </main>
+<script>
+  // ouverte depuis le jeu avec l'écran de départ (#/bureau…) : « Retour au jeu » y ramène
+  if (/^#\/[\w\/-]*$/.test(location.hash)) document.getElementById('retour').href = './' + location.hash;
+</script>
 </body>
 </html>

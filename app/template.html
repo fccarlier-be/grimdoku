@@ -725,8 +725,8 @@ html.plaques .tbtn.pen[aria-pressed="true"] { background: none; box-shadow: none
 @media (min-width: 900px) { #app:not(.game) .cases { grid-template-columns: 1fr 1fr; } }
 
 /* ---------- son, vignettes des niveaux, décors des enquêtes ---------- */
-.herosound { position: absolute; top: 0; right: 0; z-index: 3; }
-@media (min-width: 700px) { .herosound { top: 14px; right: 14px; } }
+/* sceau du son de l'accueil : en haut à droite de l'écran, à la même place que sur les autres écrans, hors de l'affiche */
+.herosound { position: fixed; top: 12px; right: max(16px, env(safe-area-inset-right, 0px)); z-index: 3; }
 .lvlimg { width: 58%; max-width: 150px; aspect-ratio: 1; object-fit: contain; margin: -4px 0 -2px; filter: drop-shadow(0 3px 3px rgba(60, 30, 5, .35)); }
 .lvl:hover .lvlimg { transform: rotate(-3deg) scale(1.05); transition: transform .2s; }
 /* le bandeau en haut, la ligne portrait-titre-tampon prend toute la hauteur restante : une carte étirée par sa voisine
@@ -2407,7 +2407,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     if (!cloud.on()) return;
     const box = document.getElementById('account');
     // Confidentialité : un bouton comme les autres (François, 2026-10-20), la page s'ouvre à la place du jeu (« Retour au jeu »)
-    document.getElementById('privacyBtn').onclick = () => window.grimLeave('confidentialite.html');
+    document.getElementById('privacyBtn').onclick = () => window.grimLeave('confidentialite.html' + location.hash); // « Retour au jeu » ramène à cet écran
     const redraw = () => { if (document.body.contains(box)) { box.outerHTML = accountHtml().replace(/^<div class="sect">Sauvegarde<\/div>/, ''); bindAccount(); } };
     if (cloud.linked()) {
       document.getElementById('logoutBtn').onclick = async () => {
