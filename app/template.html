@@ -1531,6 +1531,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     undo = []; selected = null;
     render();
     window.scrollTo(0, 0);
+    if (!S.solved) stat('ouverte', P);
     // première ouverture : l'enquêteur raconte l'affaire (bible du jeu : sa voix ouvre chaque enquête)
     if (!store.get('seen:' + id, false)) { store.set('seen:' + id, true); introSheet(); }
   }
@@ -1885,13 +1886,24 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
   }
   // Note de difficulté ressentie (0 à 5) : gardée ici, et envoyée au serveur (GET /note, réponse vide ; nginx l'inscrit
   // dans un journal, résumé par tools/notes.sh). v : identifiant anonyme tiré au hasard, pour compter un vote par joueur.
+  const vid = () => { if (!settings.vid) { settings.vid = Math.random().toString(36).slice(2, 10); store.set('settings', settings); } return settings.vid; };
   function rate(k) {
     store.set('rate:' + P.id, k);
-    if (!settings.vid) { settings.vid = Math.random().toString(36).slice(2, 10); store.set('settings', settings); }
-    const q = `note?g=${encodeURIComponent(P.id)}&d=${k}&v=${settings.vid}&s=${S.solved ? 1 : 0}&n=${P.size}`;
+    const q = `note?g=${encodeURIComponent(P.id)}&d=${k}&v=${vid()}&s=${S.solved ? 1 : 0}&n=${P.size}`;
     try { if (window.fetch) fetch(q, { cache: 'no-store', keepalive: true }).catch(() => {}); } catch (e) { /* hors ligne : tant pis */ }
     render();
     toast('Merci ! Ta note aide à classer les enquêtes.');
+  }
+  // Compteur anonyme (François, 2026-10-20 : joueurs uniques, heures de jeu, grilles faites) : GET /stat, réponse vide,
+  // nginx l'inscrit dans un journal (résumé : tools/stats.sh). e : visite (au plus une par jour et par appareil),
+  // ouverte, resolue ; v : le même identifiant anonyme que les notes ; ni nom, ni adresse. ?nostat : ne plus compter
+  // cet appareil (les parties de François).
+  function stat(e, p) {
+    try {
+      if (settings.nostat || typeof fetch !== 'function' || !/^https?:$/.test(location.protocol)) return;
+      const q = `stat?e=${e}&v=${vid()}` + (p ? `&g=${encodeURIComponent(p.id)}&n=${p.size}` : '');
+      fetch(q, { cache: 'no-store', keepalive: true }).catch(() => {});
+    } catch (err) { /* hors ligne ou stockage bloqué : tant pis */ }
   }
 
   function pick(id) {
@@ -2084,6 +2096,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
       return toast("Tout semble coller… mais ce n'est pas la bonne scène. Un indice t'a peut-être échappé.", true);
     }
     S.solved = true; selected = null; save();
+    stat('resolue', P);
     render.newLetter = pendingLetter(P.place) ? P.place : null; // glissée sous la porte : à ouvrir
     render.newPlaces = [];
     render();
@@ -2458,5 +2471,8 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
   // de retour de l'inscription au registre (connexion.html) : on le dit, la synchronisation part juste après
   try { if (localStorage.getItem('grimdoku:inscrit')) { localStorage.removeItem('grimdoku:inscrit'); toast('Te voilà inscrit au registre de Brumeval : ta progression te suit partout.'); } } catch (e) { /* stockage bloqué */ }
   cloud.sync();
+  // une visite par jour et par appareil (date locale gardée dans les réglages, qui ne voyagent pas)
+  if (/[?&]nostat\b/.test(location.search) && !settings.nostat) { settings.nostat = true; store.set('settings', settings); toast('Cet appareil n\'est plus compté dans les statistiques.'); }
+  { const day = new Date().toDateString(); if (settings.statDay !== day) { settings.statDay = day; store.set('settings', settings); stat('visite'); } }
 })();
 </script>

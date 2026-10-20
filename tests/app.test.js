@@ -16,19 +16,20 @@ const opened = [];
 test.after(() => opened.forEach(w => w.close()));
 
 // ouvre l'appli ; settings / saves : contenu du localStorage avant le chargement
-// net : un réseau (fetch) qui répond « non connecté », pour que la sauvegarde en ligne (registre) soit proposée
-function open({ settings, saves = {}, net = false } = {}) {
+// net : un réseau (fetch) qui répond « non connecté », pour que la sauvegarde en ligne (registre) soit proposée ;
+// calls : liste où noter chaque adresse demandée à ce réseau ; url : adresse de la page
+function open({ settings, saves = {}, net = false, calls = null, url = 'http://localhost/' } = {}) {
   // une seule page jsdom vivante à la fois : chacune pèse lourd (toutes les énigmes, images, scènes du lore) et les garder
   // toutes ouvertes jusqu'à la fin de la série épuisait la mémoire (constaté le 2026-10-18)
   while (opened.length) { try { opened.pop().close(); } catch (e) { /* déjà fermée */ } }
   const dom = new JSDOM(HTML, {
-    runScripts: 'dangerously', url: 'http://localhost/', pretendToBeVisual: true,
+    runScripts: 'dangerously', url, pretendToBeVisual: true,
     beforeParse(w) {
       w.scrollTo = () => {};
       w.HTMLElement.prototype.scrollIntoView = () => {};
       if (settings) w.localStorage.setItem('grimdoku:settings', JSON.stringify(settings));
       for (const [id, s] of Object.entries(saves)) w.localStorage.setItem('grimdoku:p:' + id, JSON.stringify(s));
-      if (net) w.fetch = async () => ({ ok: false, status: 401, json: async () => ({}) });
+      if (net || calls) w.fetch = async (u) => { if (calls) calls.push(String(u)); return { ok: false, status: 401, json: async () => ({}) }; };
     }
   });
   const w = dom.window, d = w.document;
@@ -156,6 +157,32 @@ test('chaque affaire : la bonne carte mène à la victoire', () => {
     assert.deepEqual(errors, []);
     w.close();
   }
+});
+
+test('compteur anonyme : une visite par jour, ouverture et résolution d\'une affaire ; ?nostat ne compte plus l\'appareil', () => {
+  const calls = [];
+  const { errors, PUZZLES } = open({ calls });
+  const stats = () => calls.filter(u => u.startsWith('stat?'));
+  assert.equal(stats().length, 1, 'une visite au lancement');
+  const [visite] = stats();
+  assert.match(visite, /^stat\?e=visite&v=[a-z0-9]+$/, 'ni affaire ni rien d\'autre que l\'identifiant anonyme');
+  const p = PUZZLES[0];
+  const v = visite.split('v=')[1];
+  const { d: d2, openCase: open2 } = open({ calls, saves: { [p.id]: { pos: p.solution.positions, pencil: {}, marks: [], done: [], solved: false, sig: sigOf(p) } },
+    settings: { vid: v, statDay: new Date().toDateString() } });
+  assert.equal(stats().length, 1, 'pas de seconde visite le même jour');
+  open2(p.id);
+  assert.equal(stats()[1], `stat?e=ouverte&v=${v}&g=${encodeURIComponent(p.id)}&n=${p.size}`);
+  d2.getElementById('accuse').click();
+  assert.equal(stats()[2], `stat?e=resolue&v=${v}&g=${encodeURIComponent(p.id)}&n=${p.size}`);
+  d2.getElementById('back').click(); open2(p.id);
+  assert.equal(stats().length, 3, 'revoir une affaire résolue ne compte pas');
+  const none = [];
+  const { openCase: open3, w: w3 } = open({ calls: none, url: 'http://localhost/?nostat' });
+  open3(PUZZLES[1].id);
+  assert.deepEqual(none.filter(u => u.startsWith('stat?')), [], '?nostat : rien n\'est envoyé');
+  assert.equal(JSON.parse(w3.localStorage.getItem('grimdoku:settings')).nostat, true, 'retenu sur l\'appareil');
+  assert.deepEqual(errors, []);
 });
 
 test('mauvaise carte : pas de victoire', () => {
