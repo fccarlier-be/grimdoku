@@ -225,27 +225,21 @@
     ]
   },
   "touriste": {
-    "kind": "MEDIEVAL-FANTASY TOURISTS (curious travellers who sketch everything in charcoal, each with a sketchbook, a travel bag and a sunburn or a straw hat)",
+    "kind": "MEDIEVAL TRAVELLERS AND SIGHTSEERS of the Middle Ages (curious visitors touring the barony: each wears simple medieval travelling clothes (wool tunic, cloak or hooded cape, a straw hat, felt hat or hood) with a leather pilgrim satchel, and holds a typical traveller object: a leather-bound sketchbook and a stick of charcoal, a walking staff, a souvenir (carved wooden figurine, pilgrim badge, small clay flask), a rolled parchment map or a bundle on a stick, with an amazed, curious expression). Nothing modern: NO camera, NO glasses, NO backpack, NO bowler hat, NO flat cap, NO pith helmet, NO safari hat, NO scarf, NO buttons, NO waistcoat, NO spiral notebook, NO pencil, NO cigar",
     "people": "men",
     "pronoun": "his",
     "sheets": [
       [
-        "1. Top left: a cheerful sunburnt tourist in his forties with a big straw hat and a loud striped tunic, a charcoal stick behind his ear.",
-        "2. Top right: a skinny young tourist in his twenties with thick round spectacles and a mop of curly hair, a backpack, a sketchbook.",
-        "3. Bottom left: an old tourist in his seventies with dark skin, a white moustache and a pith helmet, a walking stick and a map.",
-        "4. Bottom right: a plump bald tourist in his fifties with a peeling red nose, a flowery shirt-like tunic, a souvenir wooden sword."
+        "1. Top left: a lanky young traveller in his twenties with a big Adam apple and a sunburnt nose, a wide straw hat with a scallop-shell pilgrim badge, a pale blue tunic, a long walking staff, gaping in wonder.",
+        "2. Top right: a plump traveller in his fifties with rosy cheeks and a double chin, a green hooded cloak, munching a big pretzel, a cloth bundle on a stick over his shoulder.",
+        "3. Bottom left: an old traveller in his seventies with a long white beard, a brown felt hat, a patched grey cloak, unrolling a parchment map with a puzzled frown.",
+        "4. Bottom right: a cheerful traveller in his thirties with dark skin and a big gap-toothed grin, a red felt hood, an ochre tunic, holding up a carved wooden souvenir figurine."
       ],
       [
-        "1. Top left: a tall tourist in his thirties with a blond beard and a beret, a green cloak, sketching with his tongue out.",
-        "2. Top right: a nervous tourist in his sixties with a long face and a neck pillow, a brown travel coat, clutching a guidebook.",
-        "3. Bottom left: a jolly tourist in his twenties with olive skin and a gap-toothed grin, a red cap, a bag full of souvenirs.",
-        "4. Bottom right: a grumpy tourist in his fifties with bushy eyebrows and a sunhat with a veil against insects, a grey tunic, a spyglass."
-      ],
-      [
-        "1. Top left: a wiry tourist in his forties with a shaved head, a bushy black beard and a sunburnt scalp, a sky-blue tunic, a charcoal pencil in his teeth.",
-        "2. Top right: a very old tourist in his eighties with a white fringe of hair, a hearing horn and a delighted smile, a mustard travel cloak, a small easel on his back.",
-        "3. Bottom left: a lanky tourist in his twenties with dark skin, a tall feathered cap and wide amazed eyes, an orange scarf, a closed sketchbook under his arm.",
-        "4. Bottom right: a stout tourist in his sixties with ginger mutton chops and a bowler-like felt hat, a tartan waistcoat, a wooden souvenir mug."
+        "1. Top left: a nervous traveller in his forties with a thin moustache and big worried eyes, a purple beret, a grey wool cloak, clutching a leather purse to his chest.",
+        "2. Top right: a stocky traveller in his thirties with a red beard and freckles, a floppy brown hood, a mustard tunic, drawing in a leather-bound sketchbook with a stick of charcoal.",
+        "3. Bottom left: a jolly traveller in his sixties, bald with grey side tufts, a dark green tunic with a rope belt, drinking from a small clay souvenir flask.",
+        "4. Bottom right: a young dandy traveller in his twenties with long black curls, a feathered felt hat covered in pilgrim badges, a burgundy cloak, pointing excitedly off to the side."
       ]
     ]
   },
