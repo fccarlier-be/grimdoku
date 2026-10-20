@@ -568,12 +568,14 @@ test('registre : invitation juste après le prologue, refus poli avec avertissem
   for (let i = 0; i < w.eval('LORE').prologue.length; i++) d.getElementById('prologueNext').click();
   const inv = d.querySelector('.invite');
   assert.ok(inv && d.querySelector('.bureau'), 'invitation sur le bureau');
+  assert.ok(d.getElementById('deskEncrier').classList.contains('lit'), 'l\'encrier luit pendant l\'invitation');
   assert.match(inv.textContent, /registre de Brumeval/);
   assert.match(inv.textContent, /conserver l'avancement de ses enquêtes/);
   assert.match(d.querySelector('.invite-alpha').textContent, /alpha/);
   assert.match(d.querySelector('.invite-alpha').textContent, /mise à jour/);
   d.getElementById('inviteNo').click();
   assert.equal(d.querySelector('.invite'), null, 'refus : refermée');
+  assert.ok(!d.getElementById('deskEncrier').classList.contains('lit'), 'puis ne luit plus');
   assert.match(d.querySelector('.toast').textContent, /encrier/);
   w.grimGo('');
   d.getElementById('playBtn').click();
