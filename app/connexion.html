@@ -1,20 +1,21 @@
 <!doctype html>
 <html lang="fr">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
 <title>Registre de Brumeval</title>
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pirata+One&family=IM+Fell+English:ital@0;1&family=Alegreya+Sans:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="pages.css">
+<meta name="robots" content="noindex">
 <!-- Retour de la connexion Google (OpenID Connect, réponse id_token) lancée par le jeu (cloud.startLogin), dans le même
      onglet : vérifie state et nonce, ouvre la session (api/login, cookie limité à /api/) puis ramène au jeu, à l'écran
      de départ ; en cas d'échec, le dit avec un lien vers le jeu. -->
-<style>
-  body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 16px; box-sizing: border-box;
-    background: #16111d; color: #efe3cc; font: 17px/1.5 Georgia, serif; text-align: center; }
-  main { max-width: 420px; }
-  h1 { font-weight: 400; font-size: 26px; color: #e0a64b; margin: 0 0 10px; }
-  a { color: #e0a64b; }
-</style>
-<main><h1>Registre de Brumeval</h1><p id="msg">Inscription en cours…</p><p id="back" hidden><a href="./">Revenir au jeu</a></p></main>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="torn" x="-4%" y="-4%" width="108%" height="108%"><feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="3" seed="11" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="11" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
+<main><h1>Registre de Brumeval</h1><p id="msg">Inscription en cours…</p><p id="back" class="retour" hidden><a href="./">Revenir au jeu</a></p></main>
 <script>
 (async () => {
   const msg = document.getElementById('msg');
@@ -38,4 +39,5 @@
   location.replace(home(want)); // replace : « précédent » ne repasse pas par cette page
 })();
 </script>
+</body>
 </html>

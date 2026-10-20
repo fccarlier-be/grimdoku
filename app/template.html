@@ -467,17 +467,27 @@ header.top { display: flex; align-items: center; gap: 10px; }
    Dans ces éléments, les couleurs de base passent de « clair sur nuit » à « encre sur parchemin » :
    les règles plus haut s'adaptent sans être réécrites. Le papier est dessiné par ::before (bords
    un peu déchirés par le filtre #torn-s), pour que le filtre ne touche pas le texte. */
-.clue, .dock, .verdictcard, .special, .rate, .sheet, .chip, .case {
+.clue, .dock, .verdictcard, .special, .rate, .sheet, .chip, .case, .toast {
   --fg: var(--ink); --muted: #6e5434; --line: rgba(43, 32, 22, .38);
   --board: transparent; --board-2: rgba(43, 32, 22, .08); --red-ink: #a3312a; --sepia: #8a4b12;
   position: relative; isolation: isolate; color: var(--ink); background: transparent; border-color: transparent;
 }
-.clue::before, .dock::before, .verdictcard::before, .special::before, .rate::before, .sheet::before, .chip::before, .case::before {
+.clue::before, .dock::before, .verdictcard::before, .special::before, .rate::before, .sheet::before, .chip::before, .case::before, .toast::before {
   content: ""; position: absolute; inset: 0; z-index: -1; border-radius: 3px;
   background: var(--parch-tex, none) center / 240px, linear-gradient(#f1e3c2, #e3cfa3);
   box-shadow: inset 0 0 0 1.5px rgba(43, 32, 22, .5), inset 0 0 12px rgba(120, 66, 18, .35), 0 3px 8px rgba(0, 0, 0, .45);
   filter: url(#torn-s);
 }
+/* messages (indices, confirmations, erreurs : toast) : un billet de parchemin écrit à la plume, comme le reste
+   (François, 2026-10-20) ; une erreur a l'encre rouge et un liseré rouge */
+.toast { position: fixed; border: 0; border-radius: 0; padding: 12px 22px; box-shadow: none; font: 400 18px/1.3 var(--f-hand); color: var(--ink);
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, .55)); }
+.toast.bad { color: var(--red-ink); }
+.toast.bad::before { box-shadow: inset 0 0 0 2px rgba(163, 49, 42, .75), inset 0 0 12px rgba(120, 66, 18, .35), 0 3px 8px rgba(0, 0, 0, .45); }
+/* lien « Confidentialité » des options : à la plume, encre rouge */
+.sheet .small a { color: #7a2a1e; font: italic 400 16px var(--f-hand); text-decoration: underline; text-decoration-style: wavy; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+@media (hover: hover) { .sheet .small a:hover { color: #a3312a; } }
+.sheet .small { opacity: 1; }
 .chip::before { border-radius: 99px; filter: none; }
 .case { border: 0; }
 .case:nth-child(odd) { transform: rotate(-.4deg); }

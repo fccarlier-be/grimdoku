@@ -147,9 +147,14 @@ for (const [pl, z] of Object.entries(ZONES.lieux)) {
   copyMedia(f, `scene-${z.decor}.webp`); // pas « decor-grand-… » : decor-grand-port serait aussi le petit décor du grand port
   media.scenes[pl] = { img: `media/scene-${z.decor}.webp`, ratio: z.ratio, places: z.places };
 }
-// page de retour de la connexion Google (registre de Brumeval, app/connexion.html), à la racine du site
 const SITE_PAGES = ['dist', 'deploy/grimdoku/site'];
-SITE_PAGES.forEach(d => { fs.mkdirSync(d, { recursive: true }); fs.copyFileSync('app/connexion.html', `${d}/connexion.html`); fs.chmodSync(`${d}/connexion.html`, 0o644); });
+// pages annexes (confidentialité, retour de connexion Google) et leur habillage commun, à la racine du site ;
+// leurs textures (parchemin, bois du bureau) dans media/
+for (const d of SITE_PAGES) {
+  fs.mkdirSync(d, { recursive: true });
+  for (const f of ['connexion.html', 'confidentialite.html', 'pages.css']) { fs.copyFileSync(`app/${f}`, `${d}/${f}`); fs.chmodSync(`${d}/${f}`, 0o644); }
+}
+for (const [src, name] of [['assets/floors/parchemin.webp', 'parchemin.webp'], ['assets/floors/bureau.webp', 'fond-bureau.webp']]) if (fs.existsSync(src)) copyMedia(src, name);
 // icône de l'appli (assets/icon/web, produite par tools/images.py) : favicon, icône Apple et manifeste PWA,
 // à la racine du site (le navigateur demande /favicon.ico de lui-même)
 const SITE = ['dist', 'deploy/grimdoku/site'];
