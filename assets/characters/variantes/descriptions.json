@@ -200,39 +200,27 @@
     ]
   },
   "inspecteur": {
-    "kind": "MEDIEVAL TAVERN INSPECTORS (official tasting inspectors on duty: each wears a sober official coat or tabard with a brass inspector's badge pinned on the chest and an official cap or hat, carries a closed inspection notebook and a pencil, and holds a wine glass, a tankard or a tasting spoon with a judging, critical expression)",
+    "kind": "MEDIEVAL TAVERN INSPECTORS of the Middle Ages (official wine and ale tasters serving the baron: each wears a long wool tabard over a tunic, the tabard bearing a simple embroidered heraldic emblem of a wine cup, a medieval hat (chaperon, felt hood, coif or soft beret), a heavy chain of office with a round lead seal, and holds a small shallow silver tasting cup, a wooden or pewter tankard, a ladle or a ledger with a goose quill, with a judging, critical expression). Nothing modern: NO badge pinned on the chest, NO buttons, NO uniform, NO cap, NO top hat, NO bowler hat, NO tie, NO waistcoat, NO pencil, NO pen, NO glasses or monocle",
     "people": "men",
     "pronoun": "his",
     "sheets": [
       [
-        "1. Top left: a portly inspector in his fifties with a waxed curly moustache and a red nose, a brown bowler hat, holding a wine glass to the light.",
-        "2. Top right: a thin young inspector in his twenties with a pointed chin and a monocle, a checked waistcoat, sniffing a tankard.",
-        "3. Bottom left: an old inspector in his seventies with dark skin, a white beard and half-moon glasses, a burgundy coat, a notebook.",
-        "4. Bottom right: a bald inspector in his forties with a double chin and a napkin tucked in his collar, a green tunic, a spoon."
+        "1. Top left: a thin severe inspector in his fifties with a long nose and hollow cheeks, a dark green tabard, a black felt hood, sniffing a silver tasting cup with disdain.",
+        "2. Top right: a round inspector in his forties with olive skin and a neat goatee, a navy-blue tabard, a soft red beret, tasting soup from a wooden ladle.",
+        "3. Bottom left: an old bald inspector in his seventies with white sideburns and squinting eyes, a brown tabard, raising a pewter tankard to inspect it.",
+        "4. Bottom right: a young stiff inspector in his twenties with dark skin and a thin moustache, a grey tabard, a white linen coif, writing in a leather ledger with a goose quill."
       ],
       [
-        "1. Top left: a lanky inspector in his thirties with greasy black hair and a long nose, a grey coat, spitting wine into a bucket.",
-        "2. Top right: a jolly round inspector in his sixties with rosy cheeks and a bushy grey beard, a red hat, a tankard of beer.",
-        "3. Bottom left: a severe inspector in his fifties with olive skin, a thin moustache and narrowed eyes, a black waistcoat, a quill.",
-        "4. Bottom right: a nervous inspector in his twenties with freckles and messy red hair, oversized spectacles, a cheese on a plate."
+        "1. Top left: a gaunt inspector in his sixties with sunken cheeks and a pointed grey beard, a black tabard, a tall brown chaperon with a long tail, swirling wine in a silver tasting cup.",
+        "2. Top right: a plump inspector in his thirties with red hair and freckles, a mustard tabard, a green felt hood, biting into a bread roll with a frown.",
+        "3. Bottom left: a stern inspector in her fifties with a tight grey braid under a white wimple, a dark red tabard, holding a tankard at arm length.",
+        "4. Bottom right: a pompous inspector in his forties with a big curled moustache, a teal tabard with a sash, a large padded chaperon, tasting from a small silver cup with his little finger raised."
       ],
       [
-        "1. Top left: a grumpy inspector in his seventies with bushy white eyebrows and a drooping moustache, a fur hat, a pewter cup.",
-        "2. Top right: a dandy inspector in his thirties with curly blond hair and a feathered hat, a blue velvet coat, a lace handkerchief.",
-        "3. Bottom left: a stocky inspector in his forties with a broken nose and a short black beard, a leather apron, a bread loaf.",
-        "4. Bottom right: a sly inspector in his sixties with a hooked nose and a grey goatee, a purple coat, a small brass bell."
-      ],
-      [
-        "1. Top left: a thin severe inspector in his fifties with a long nose and pince-nez, a dark green official coat with a brass badge, a black cap, sniffing a wine glass with disdain.",
-        "2. Top right: a round inspector in his forties with olive skin and a neat goatee, a navy tabard with a brass badge, a flat official hat, tasting soup from a silver spoon.",
-        "3. Bottom left: an old inspector in his seventies with a bald head, white sideburns and a magnifying monocle, a brown official coat with a brass badge, holding up a tankard to inspect it.",
-        "4. Bottom right: a young stiff inspector in his twenties with dark skin and a thin moustache, a grey official coat with a brass badge, a tall cap, writing in a closed-cover notebook with a pencil."
-      ],
-      [
-        "1. Top left: a gaunt inspector in his sixties with sunken cheeks and a pointed grey beard, a black official coat with a brass badge, a wide-brimmed official hat, swirling a wine glass.",
-        "2. Top right: a plump inspector in his thirties with red hair and freckles, a mustard official tabard with a brass badge, a round cap, biting into a bread roll with a frown.",
-        "3. Bottom left: a stern inspector in her fifties with a tight grey bun and spectacles, a dark red official coat with a brass badge, holding a tankard at arm's length.",
-        "4. Bottom right: a pompous inspector in his forties with a big curled moustache, a teal official coat with a brass badge and a sash, a tricorn hat, tasting from a small silver cup."
+        "1. Top left: a grumpy inspector in his seventies with bushy white eyebrows and a drooping moustache, a fur-trimmed hood, a slate-blue tabard, a wooden cup.",
+        "2. Top right: a dandy inspector in his thirties with curly blond hair, a feathered velvet beret, a purple tabard, holding a wax seal stamp.",
+        "3. Bottom left: a stocky inspector in his forties with a broken nose and a short black beard, an ochre tabard, a leather skullcap, breaking a cheese wheel in half.",
+        "4. Bottom right: a sly inspector in his sixties with a hooked nose and a grey goatee, a burgundy tabard, a grey felt hood, shaking a small brass hand bell."
       ]
     ]
   },
