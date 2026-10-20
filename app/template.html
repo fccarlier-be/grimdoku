@@ -370,12 +370,11 @@ header.top { display: flex; align-items: center; gap: 10px; }
 .sheet-body { max-height: 85vh; overflow-y: auto; padding: 18px; display: flex; flex-direction: column; gap: 10px; align-items: inherit; text-align: inherit; align-self: stretch; box-sizing: border-box; }
 .sheet h2 { font-family: var(--f-display); font-weight: 400; font-size: 28px; margin: 0; color: var(--candle); line-height: 1; }
 .sheet p, .sheet li { margin: 0; font-size: 15px; }
-/* sauvegarde en ligne : le registre de Brumeval (connexion Google en petit dessous), lien de confidentialité */
+/* sauvegarde en ligne : le registre de Brumeval (connexion Google en petit dessous) */
 .btn.registre { display: flex; width: fit-content; margin: 8px auto 10px; flex-direction: column; align-items: center; gap: 2px; line-height: 1.15; padding-block: 8px; }
 .btn.registre span { font-family: var(--f-display); font-weight: 400; font-size: 20px; }
 .btn.registre small { display: inline-flex; align-items: center; gap: 5px; font: 400 11px/1 var(--f-body); letter-spacing: .02em; opacity: .85; }
 .g-logo { width: 12px; height: 12px; background: #fff; border-radius: 50%; padding: 1px; box-sizing: content-box; }
-.sheet .small { font-size: 13px; opacity: .8; }
 .sheet ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
 .sheet .row { display: flex; gap: 8px; justify-content: flex-end; flex-wrap: wrap; margin-top: 6px; }
 .btn { border: 1px solid var(--line); background: var(--board-2); border-radius: 99px; padding: 10px 16px; min-height: 44px; }
@@ -497,10 +496,6 @@ header.top { display: flex; align-items: center; gap: 10px; }
   box-shadow: 0 0 0 3px #2b2016, 0 4px 10px rgba(0, 0, 0, .5); transform: rotate(-4deg); }
 .billet-corbeau .face, .billet-corbeau .portrait { display: block; width: 100%; height: 100%; }
 @keyframes billet-in { from { opacity: 0; transform: translateX(-50%) translateY(10px) rotate(-.8deg); } }
-/* lien « Confidentialité » des options : à la plume, encre rouge */
-.sheet .small a { color: #7a2a1e; font: italic 400 16px var(--f-hand); text-decoration: underline; text-decoration-style: wavy; text-decoration-thickness: 1px; text-underline-offset: 4px; }
-@media (hover: hover) { .sheet .small a:hover { color: #a3312a; } }
-.sheet .small { opacity: 1; }
 .chip::before { border-radius: 99px; filter: none; }
 .case { border: 0; }
 .case:nth-child(odd) { transform: rotate(-.4deg); }
@@ -2331,14 +2326,16 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     if (!cloud.on()) return '';
     return `<div class="sect">Sauvegarde</div><div id="account">${cloud.linked()
       ? `<p>Ta progression est sauvegardée avec ton compte Google : tu la retrouves sur tous tes appareils.</p>
-        <div class="row"><button class="btn" id="logoutBtn">Se déconnecter</button><button class="btn" id="forgetBtn">Effacer ma sauvegarde en ligne</button></div>`
+        <div class="row"><button class="btn" id="logoutBtn">Se déconnecter</button><button class="btn" id="forgetBtn">Effacer ma sauvegarde en ligne</button><button class="btn" id="privacyBtn">Confidentialité</button></div>`
       : `<p>Inscris-toi au registre de Brumeval pour retrouver ta progression sur tous tes appareils. Seule ta progression est gardée, rattachée à un numéro anonyme : ni nom, ni adresse.</p>
-        <button class="btn primary registre" id="registreBtn"><span>Inscription au registre de Brumeval</span><small>${GOOGLE_G} connexion avec Google</small></button>`}
-      <p class="small"><a href="confidentialite.html" target="_blank" rel="noopener">Confidentialité</a></p></div>`;
+        <button class="btn primary registre" id="registreBtn"><span>Inscription au registre de Brumeval</span><small>${GOOGLE_G} connexion avec Google</small></button>
+        <div class="row"><button class="btn" id="privacyBtn">Confidentialité</button></div>`}</div>`;
   }
   function bindAccount() {
     if (!cloud.on()) return;
     const box = document.getElementById('account');
+    // Confidentialité : un bouton comme les autres (François, 2026-10-20), la page s'ouvre à la place du jeu (« Retour au jeu »)
+    document.getElementById('privacyBtn').onclick = () => window.grimLeave('confidentialite.html');
     const redraw = () => { if (document.body.contains(box)) { box.outerHTML = accountHtml().replace(/^<div class="sect">Sauvegarde<\/div>/, ''); bindAccount(); } };
     if (cloud.linked()) {
       document.getElementById('logoutBtn').onclick = async () => {

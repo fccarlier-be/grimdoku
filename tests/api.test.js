@@ -116,6 +116,9 @@ test('inscription au registre : bouton du jeu, page Google, retour sur connexion
     const btn = d.getElementById('registreBtn');
     assert.match(btn.textContent, /Inscription au registre de Brumeval/);
     assert.match(btn.textContent, /connexion avec Google/);
+    d.getElementById('privacyBtn').click();
+    assert.deepStrictEqual(left, ['confidentialite.html'], 'Confidentialité : un bouton');
+    left.length = 0;
     btn.click();
     const u = new URL(left[0]);
     assert.strictEqual(u.origin + u.pathname, 'https://accounts.google.com/o/oauth2/v2/auth');
