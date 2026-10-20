@@ -2,108 +2,336 @@
   "_doc": "Variantes de visages des victimes (François, 2026-10-20) : par type, le sujet de la planche (kind, people, pronoun) et 4 bustes par planche, tous différents. Planches générées dans Gemini (prompt : tools/variantes : début commun + descriptions + fin commune), découpées par tools/images.py variants().",
   "messager": {
     "kind": "MEDIEVAL ROYAL MESSENGERS (couriers of a small baron, each with a tabard in slate blue and ochre, a satchel or a sealed scroll, always bringing bad news)",
-    "people": "men", "pronoun": "his",
+    "people": "men",
+    "pronoun": "his",
     "sheets": [
-      ["1. Top left: a lanky teenage messenger of about sixteen with big ears, a cracking-voice expression and a cap too large for him, holding a sealed scroll at arm's length.", "2. Top right: a portly middle-aged messenger in his forties, red-faced and out of breath, sweat on his bald forehead, a satchel bursting with letters.", "3. Bottom left: an old grey-bearded messenger in his seventies with a hunched back and a hearing horn, a faded tabard, squinting at a letter.", "4. Bottom right: a dashing messenger in his twenties with dark skin, a thin moustache and a feathered cap, a confident wink, a scroll tucked under his arm."],
-      ["1. Top left: a nervous messenger in his thirties with a long nose, round eyes and chewed fingernails, a green cap, clutching a black-sealed letter.", "2. Top right: a stocky messenger in his fifties with a broken nose and a scar on his chin, a leather helmet, a heavy courier bag.", "3. Bottom left: a cheerful freckled messenger in his twenties with curly orange hair and a gap-toothed grin, a slightly torn tabard, waving a scroll.", "4. Bottom right: a gloomy messenger in his sixties with deep eye bags and a drooping grey moustache, a black hood, holding a scroll with a sad sigh."],
-      ["1. Top left: a tiny skinny messenger in his twenties with olive skin, huge eyes and a bowl haircut, a horn slung over his shoulder.", "2. Top right: a pompous messenger in his forties with a double chin and a curled moustache, an over-decorated tabard with brass buttons, reading a proclamation.", "3. Bottom left: a muddy exhausted messenger in his thirties with a three-day beard and messy black hair, a torn cloak, a broken quill behind his ear.", "4. Bottom right: a bald elderly messenger in his eighties with half-moon spectacles and a white goatee, a dusty satchel, holding a very long scroll unrolling to the floor."],
-      ["1. Top left: a muscular messenger in his twenties with a square jaw and a short blond beard, a dented tin cap, a wax seal stamp hanging from his belt.", "2. Top right: a weaselly messenger in his fifties with a pointed chin, slicked-back hair and shifty eyes, a dark purple cape, hiding a letter behind his back.", "3. Bottom left: a sunburnt messenger in his forties with a peeling nose, a straw-filled hat and a resigned smile, a waterskin on his shoulder.", "4. Bottom right: a shy messenger in his teens with dark skin, short braids and a timid smile, a too-big tabard, holding a tiny scroll in both hands."]
+      [
+        "1. Top left: a lanky teenage messenger of about sixteen with big ears, a cracking-voice expression and a cap too large for him, holding a sealed scroll at arm's length.",
+        "2. Top right: a portly middle-aged messenger in his forties, red-faced and out of breath, sweat on his bald forehead, a satchel bursting with letters.",
+        "3. Bottom left: an old grey-bearded messenger in his seventies with a hunched back and a hearing horn, a faded tabard, squinting at a letter.",
+        "4. Bottom right: a dashing messenger in his twenties with dark skin, a thin moustache and a feathered cap, a confident wink, a scroll tucked under his arm."
+      ],
+      [
+        "1. Top left: a nervous messenger in his thirties with a long nose, round eyes and chewed fingernails, a green cap, clutching a black-sealed letter.",
+        "2. Top right: a stocky messenger in his fifties with a broken nose and a scar on his chin, a leather helmet, a heavy courier bag.",
+        "3. Bottom left: a cheerful freckled messenger in his twenties with curly orange hair and a gap-toothed grin, a slightly torn tabard, waving a scroll.",
+        "4. Bottom right: a gloomy messenger in his sixties with deep eye bags and a drooping grey moustache, a black hood, holding a scroll with a sad sigh."
+      ],
+      [
+        "1. Top left: a tiny skinny messenger in his twenties with olive skin, huge eyes and a bowl haircut, a horn slung over his shoulder.",
+        "2. Top right: a pompous messenger in his forties with a double chin and a curled moustache, an over-decorated tabard with brass buttons, reading a proclamation.",
+        "3. Bottom left: a muddy exhausted messenger in his thirties with a three-day beard and messy black hair, a torn cloak, a broken quill behind his ear.",
+        "4. Bottom right: a bald elderly messenger in his eighties with half-moon spectacles and a white goatee, a dusty satchel, holding a very long scroll unrolling to the floor."
+      ],
+      [
+        "1. Top left: a muscular messenger in his twenties with a square jaw and a short blond beard, a dented tin cap, a wax seal stamp hanging from his belt.",
+        "2. Top right: a weaselly messenger in his fifties with a pointed chin, slicked-back hair and shifty eyes, a dark purple cape, hiding a letter behind his back.",
+        "3. Bottom left: a sunburnt messenger in his forties with a peeling nose, a straw-filled hat and a resigned smile, a waterskin on his shoulder.",
+        "4. Bottom right: a shy messenger in his teens with dark skin, short braids and a timid smile, a too-big tabard, holding a tiny scroll in both hands."
+      ]
     ]
   },
   "nageuse": {
     "kind": "MEDIEVAL-FANTASY SWIMMING MISTRESSES (bossy bath attendants and swimming teachers, each in an old-fashioned striped full-body bathing costume, with a whistle)",
-    "people": "women", "pronoun": "her",
+    "people": "women",
+    "pronoun": "her",
     "sheets": [
-      ["1. Top left: a tall athletic swimming mistress in her thirties with short wet black hair, a square jaw and a stern frown, a red and white striped costume, a whistle in her mouth.", "2. Top right: a round jolly swimming mistress in her fifties with rosy cheeks and grey curls under a frilly bathing cap, a green and white striped costume, holding a cork float.", "3. Bottom left: a very old wiry swimming mistress in her eighties with dark brown skin and white hair in a bun, a blue striped costume, pointing sternly.", "4. Bottom right: a young freckled swimming mistress in her twenties with a long red braid, a yellow and black striped costume, a rubber swimming ring on her shoulder."],
-      ["1. Top left: a muscular swimming mistress in her forties with a broken nose and very short blond hair, a navy striped costume, arms crossed.", "2. Top right: an elegant swimming mistress in her thirties with olive skin, thin eyebrows and a beauty mark, a purple striped costume, a sun parasol.", "3. Bottom left: a grumpy swimming mistress in her sixties with a long face, round goggles pushed up on her forehead and a pinched mouth, a brown striped costume.", "4. Bottom right: a cheerful plump swimming mistress in her forties with a double chin and a big laugh, an orange striped costume, holding a wooden bucket of water."],
-      ["1. Top left: a lanky nervous swimming mistress in her twenties with buck teeth and big round eyes, a teal striped costume, clutching a long wooden pole.", "2. Top right: a severe swimming mistress in her fifties with dark skin, high cheekbones and a tight grey bun, a black and white striped costume, a pocket hourglass.", "3. Bottom left: a sunburnt swimming mistress in her thirties with a peeling nose, wild sun-bleached curls and a bossy grin, a red striped costume.", "4. Bottom right: a tiny elderly swimming mistress in her seventies with thick glasses and a frilly bathing cap, a lilac striped costume, blowing her whistle angrily."],
-      ["1. Top left: a broad-shouldered swimming mistress in her forties with a crew cut and a scar on her eyebrow, a grey striped costume, a coiled rope on her shoulder.", "2. Top right: a dreamy young swimming mistress in her twenties with long wet black hair and seaweed tangled in it, a sea-green striped costume.", "3. Bottom left: a tough old swimming mistress in her sixties with a weathered tanned face and a missing tooth, a faded blue striped costume, holding a fishing net.", "4. Bottom right: a prim swimming mistress in her thirties with a pointed nose, a monocle and a neat brown bob, a mustard striped costume, writing on a slate."]
+      [
+        "1. Top left: a tall athletic swimming mistress in her thirties with short wet black hair, a square jaw and a stern frown, a red and white striped costume, a whistle in her mouth.",
+        "2. Top right: a round jolly swimming mistress in her fifties with rosy cheeks and grey curls under a frilly bathing cap, a green and white striped costume, holding a cork float.",
+        "3. Bottom left: a very old wiry swimming mistress in her eighties with dark brown skin and white hair in a bun, a blue striped costume, pointing sternly.",
+        "4. Bottom right: a young freckled swimming mistress in her twenties with a long red braid, a yellow and black striped costume, a rubber swimming ring on her shoulder."
+      ],
+      [
+        "1. Top left: a muscular swimming mistress in her forties with a broken nose and very short blond hair, a navy striped costume, arms crossed.",
+        "2. Top right: an elegant swimming mistress in her thirties with olive skin, thin eyebrows and a beauty mark, a purple striped costume, a sun parasol.",
+        "3. Bottom left: a grumpy swimming mistress in her sixties with a long face, round goggles pushed up on her forehead and a pinched mouth, a brown striped costume.",
+        "4. Bottom right: a cheerful plump swimming mistress in her forties with a double chin and a big laugh, an orange striped costume, holding a wooden bucket of water."
+      ],
+      [
+        "1. Top left: a lanky nervous swimming mistress in her twenties with buck teeth and big round eyes, a teal striped costume, clutching a long wooden pole.",
+        "2. Top right: a severe swimming mistress in her fifties with dark skin, high cheekbones and a tight grey bun, a black and white striped costume, a pocket hourglass.",
+        "3. Bottom left: a sunburnt swimming mistress in her thirties with a peeling nose, wild sun-bleached curls and a bossy grin, a red striped costume.",
+        "4. Bottom right: a tiny elderly swimming mistress in her seventies with thick glasses and a frilly bathing cap, a lilac striped costume, blowing her whistle angrily."
+      ],
+      [
+        "1. Top left: a broad-shouldered swimming mistress in her forties with a crew cut and a scar on her eyebrow, a grey striped costume, a coiled rope on her shoulder.",
+        "2. Top right: a dreamy young swimming mistress in her twenties with long wet black hair and seaweed tangled in it, a sea-green striped costume.",
+        "3. Bottom left: a tough old swimming mistress in her sixties with a weathered tanned face and a missing tooth, a faded blue striped costume, holding a fishing net.",
+        "4. Bottom right: a prim swimming mistress in her thirties with a pointed nose, a monocle and a neat brown bob, a mustard striped costume, writing on a slate."
+      ]
     ]
   },
   "alchimiste": {
     "kind": "MEDIEVAL TRAVELLING ALCHEMISTS (shifty potion sellers, each with flasks, goggles, a stained apron or singed clothes)",
-    "people": "men", "pronoun": "his",
+    "people": "men",
+    "pronoun": "his",
     "sheets": [
-      ["1. Top left: a gaunt alchemist in his sixties with a long white beard singed at the tip and wild hair, round brass goggles, a smoking blue flask.", "2. Top right: a chubby young alchemist in his twenties with rosy cheeks and soot on his nose, a leather apron, holding a bubbling red potion.", "3. Bottom left: a sly alchemist in his forties with dark skin, a pointed goatee and gold earrings, a purple robe with stars, offering a tiny vial.", "4. Bottom right: a nervous bald alchemist in his fifties with burnt eyebrows and a twitching eye, a lab coat full of holes, a cracked flask."],
-      ["1. Top left: a tall alchemist in his thirties with a hooked nose and slicked black hair, a high collar cape, holding a skull-shaped bottle.", "2. Top right: a jolly fat alchemist in his sixties with a red nose and a frizzy grey beard, a brown hood, a mortar and pestle.", "3. Bottom left: a young alchemist in his twenties with olive skin, thick round spectacles and an eager smile, a green apron, a smoking test tube.", "4. Bottom right: a grim old alchemist in his eighties with deep wrinkles and a long thin moustache, a black skullcap, a glowing yellow orb."],
-      ["1. Top left: a red-haired alchemist in his forties with a bushy beard and freckles, a stained orange tunic, a funnel stuck in his belt.", "2. Top right: a dapper alchemist in his thirties with a pencil moustache and a top hat, a dark green waistcoat, juggling two flasks.", "3. Bottom left: a hunched alchemist in his seventies with a huge nose wart and squinting eyes, a patched grey robe, a dead frog in a jar.", "4. Bottom right: a cheerful alchemist in his fifties with dark brown skin, a shaved head and a white beard, a blue apron, a rainbow-coloured potion."]
+      [
+        "1. Top left: a gaunt alchemist in his sixties with a long white beard singed at the tip and wild hair, round brass goggles, a smoking blue flask.",
+        "2. Top right: a chubby young alchemist in his twenties with rosy cheeks and soot on his nose, a leather apron, holding a bubbling red potion.",
+        "3. Bottom left: a sly alchemist in his forties with dark skin, a pointed goatee and gold earrings, a purple robe with stars, offering a tiny vial.",
+        "4. Bottom right: a nervous bald alchemist in his fifties with burnt eyebrows and a twitching eye, a lab coat full of holes, a cracked flask."
+      ],
+      [
+        "1. Top left: a tall alchemist in his thirties with a hooked nose and slicked black hair, a high collar cape, holding a skull-shaped bottle.",
+        "2. Top right: a jolly fat alchemist in his sixties with a red nose and a frizzy grey beard, a brown hood, a mortar and pestle.",
+        "3. Bottom left: a young alchemist in his twenties with olive skin, thick round spectacles and an eager smile, a green apron, a smoking test tube.",
+        "4. Bottom right: a grim old alchemist in his eighties with deep wrinkles and a long thin moustache, a black skullcap, a glowing yellow orb."
+      ],
+      [
+        "1. Top left: a red-haired alchemist in his forties with a bushy beard and freckles, a stained orange tunic, a funnel stuck in his belt.",
+        "2. Top right: a dapper alchemist in his thirties with a pencil moustache and a top hat, a dark green waistcoat, juggling two flasks.",
+        "3. Bottom left: a hunched alchemist in his seventies with a huge nose wart and squinting eyes, a patched grey robe, a dead frog in a jar.",
+        "4. Bottom right: a cheerful alchemist in his fifties with dark brown skin, a shaved head and a white beard, a blue apron, a rainbow-coloured potion."
+      ],
+      [
+        "1. Top left: a twitchy young alchemist in his twenties with spiky blue-dyed hair and a burnt fringe, a yellow apron, a fizzing green test tube.",
+        "2. Top right: a heavy-set alchemist in his fifties with olive skin, a thick black beard and bushy eyebrows, a maroon robe, a small iron cauldron.",
+        "3. Bottom left: an elderly alchemist in his seventies with a tiny white goatee and a tall pointed hat, a midnight-blue robe, a glowing pink crystal.",
+        "4. Bottom right: a lean alchemist in his forties with a shaved head, a scarred cheek and a gold monocle, a black leather apron, a vial of silver liquid."
+      ]
     ]
   },
   "baronne": {
     "kind": "MEDIEVAL-FANTASY HAUGHTY NOBLEWOMEN (jealous neighbouring baronesses, each richly dressed with jewels, a wig or a hat, and a fan or a lorgnette)",
-    "people": "women", "pronoun": "her",
+    "people": "women",
+    "pronoun": "her",
     "sheets": [
-      ["1. Top left: a tall thin baroness in her sixties with a long pale face and a towering white powdered wig, a pearl choker, a lace fan.", "2. Top right: a plump baroness in her fifties with ruddy cheeks and a double chin, a huge feathered hat, a dark red velvet gown, a jewelled lorgnette.", "3. Bottom left: an elderly baroness in her eighties with dark skin, silver hair under a turban, gold hoop earrings, a sceptical raised eyebrow.", "4. Bottom right: a young baroness in her twenties with blonde ringlets, a sharp nose and a spoiled pout, a sky-blue gown with bows, a tiny lap dog."],
-      ["1. Top left: a stern baroness in her forties with black hair in a tight bun, a sharp jaw and a diamond tiara, an emerald gown, arms crossed.", "2. Top right: a jolly round baroness in her sixties with red curls and a beauty spot, a mustard gown with ruffles, a cake in her hand.", "3. Bottom left: a sour baroness in her seventies with a hooked nose and pursed lips, a black mourning dress with a veil, a cane topped with gold.", "4. Bottom right: an elegant baroness in her thirties with olive skin and arched eyebrows, a purple gown, a ruby necklace, a mysterious smile behind a fan."],
-      ["1. Top left: a bony baroness in her fifties with sunken cheeks and grey hair piled high with ribbons, a lavender gown, a hand mirror.", "2. Top right: a broad-shouldered baroness in her forties with a strong chin and a hunting hat with a pheasant feather, a brown riding jacket.", "3. Bottom left: a tiny old baroness in her nineties with a wrinkled smile, an enormous pearl necklace and a lace cap, a teacup.", "4. Bottom right: a vain baroness in her thirties with chestnut hair in an elaborate braid crown, a peacock-blue gown, admiring her own rings."]
+      [
+        "1. Top left: a tall thin baroness in her sixties with a long pale face and a towering white powdered wig, a pearl choker, a lace fan.",
+        "2. Top right: a plump baroness in her fifties with ruddy cheeks and a double chin, a huge feathered hat, a dark red velvet gown, a jewelled lorgnette.",
+        "3. Bottom left: an elderly baroness in her eighties with dark skin, silver hair under a turban, gold hoop earrings, a sceptical raised eyebrow.",
+        "4. Bottom right: a young baroness in her twenties with blonde ringlets, a sharp nose and a spoiled pout, a sky-blue gown with bows, a tiny lap dog."
+      ],
+      [
+        "1. Top left: a stern baroness in her forties with black hair in a tight bun, a sharp jaw and a diamond tiara, an emerald gown, arms crossed.",
+        "2. Top right: a jolly round baroness in her sixties with red curls and a beauty spot, a mustard gown with ruffles, a cake in her hand.",
+        "3. Bottom left: a sour baroness in her seventies with a hooked nose and pursed lips, a black mourning dress with a veil, a cane topped with gold.",
+        "4. Bottom right: an elegant baroness in her thirties with olive skin and arched eyebrows, a purple gown, a ruby necklace, a mysterious smile behind a fan."
+      ],
+      [
+        "1. Top left: a bony baroness in her fifties with sunken cheeks and grey hair piled high with ribbons, a lavender gown, a hand mirror.",
+        "2. Top right: a broad-shouldered baroness in her forties with a strong chin and a hunting hat with a pheasant feather, a brown riding jacket.",
+        "3. Bottom left: a tiny old baroness in her nineties with a wrinkled smile, an enormous pearl necklace and a lace cap, a teacup.",
+        "4. Bottom right: a vain baroness in her thirties with chestnut hair in an elaborate braid crown, a peacock-blue gown, admiring her own rings."
+      ],
+      [
+        "1. Top left: a sly baroness in her forties with olive skin, sharp cat-like eyes and a black lace mantilla, a crimson gown, a jewelled dagger-shaped hairpin.",
+        "2. Top right: a cheerful plump baroness in her seventies with white curls and a lace cap, a pale green gown, a basket of roses.",
+        "3. Bottom left: a severe baroness in her fifties with dark brown skin, high cheekbones and a gold circlet, a deep blue gown with a fur collar.",
+        "4. Bottom right: a young baroness in her twenties with copper hair in two coiled buns and a bored pout, a lilac gown, a tiny jewelled box."
+      ]
     ]
   },
   "dresseuse": {
     "kind": "MEDIEVAL-FANTASY DRAGON TRAINERS (burly cheerful women who train small dragons, each with leather gloves, singe marks, a whip or a treat)",
-    "people": "women", "pronoun": "her",
+    "people": "women",
+    "pronoun": "her",
     "sheets": [
-      ["1. Top left: a big muscular dragon trainer in her forties with short red hair and a confident grin, a red ringmaster jacket, a coiled whip.", "2. Top right: a wiry dragon trainer in her twenties with dark skin, braided hair and a soot-streaked face, a leather vest, a baby dragon on her shoulder.", "3. Bottom left: a grizzled old dragon trainer in her seventies with an eyepatch and a white braid, a scorched apron, a bucket of coal.", "4. Bottom right: a plump jolly dragon trainer in her fifties with rosy cheeks and a bandaged hand, a green jacket, holding a sausage as a treat."],
-      ["1. Top left: a tall stern dragon trainer in her thirties with a shaved head and burn scars on her arms, black leather armour, a long pole.", "2. Top right: a young dragon trainer in her teens with wild blonde hair half singed off and a gap-toothed laugh, oversized gloves.", "3. Bottom left: a stocky dragon trainer in her sixties with olive skin, a grey bun and a pipe in her mouth, a brass helmet with goggles.", "4. Bottom right: a nervous dragon trainer in her forties with frizzy brown hair standing on end, smoke rising from her hair, a fire bucket."],
-      ["1. Top left: a cheerful dragon trainer in her twenties with freckles and two black pigtails, a blue jacket with brass buttons, a whistle.", "2. Top right: a tough dragon trainer in her fifties with dark brown skin, a broken nose and short white curls, a heavy fur collar.", "3. Bottom left: a slim dragon trainer in her thirties with a long auburn ponytail and a sly smile, an orange scarf, a small dragon egg in her hands.", "4. Bottom right: a grumpy old dragon trainer in her eighties with a hooked nose and a felt hat with a burnt brim, leaning on a charred staff."]
+      [
+        "1. Top left: a big muscular dragon trainer in her forties with short red hair and a confident grin, a red ringmaster jacket, a coiled whip.",
+        "2. Top right: a wiry dragon trainer in her twenties with dark skin, braided hair and a soot-streaked face, a leather vest, a baby dragon on her shoulder.",
+        "3. Bottom left: a grizzled old dragon trainer in her seventies with an eyepatch and a white braid, a scorched apron, a bucket of coal.",
+        "4. Bottom right: a plump jolly dragon trainer in her fifties with rosy cheeks and a bandaged hand, a green jacket, holding a sausage as a treat."
+      ],
+      [
+        "1. Top left: a tall stern dragon trainer in her thirties with a shaved head and burn scars on her arms, black leather armour, a long pole.",
+        "2. Top right: a young dragon trainer in her teens with wild blonde hair half singed off and a gap-toothed laugh, oversized gloves.",
+        "3. Bottom left: a stocky dragon trainer in her sixties with olive skin, a grey bun and a pipe in her mouth, a brass helmet with goggles.",
+        "4. Bottom right: a nervous dragon trainer in her forties with frizzy brown hair standing on end, smoke rising from her hair, a fire bucket."
+      ],
+      [
+        "1. Top left: a cheerful dragon trainer in her twenties with freckles and two black pigtails, a blue jacket with brass buttons, a whistle.",
+        "2. Top right: a tough dragon trainer in her fifties with dark brown skin, a broken nose and short white curls, a heavy fur collar.",
+        "3. Bottom left: a slim dragon trainer in her thirties with a long auburn ponytail and a sly smile, an orange scarf, a small dragon egg in her hands.",
+        "4. Bottom right: a grumpy old dragon trainer in her eighties with a hooked nose and a felt hat with a burnt brim, leaning on a charred staff."
+      ]
     ]
   },
   "percepteur": {
     "kind": "MEDIEVAL TAX COLLECTORS (smug collectors of the baron's taxes, each with a ledger, a quill, a coin purse or an official hat)",
-    "people": "men", "pronoun": "his",
+    "people": "men",
+    "pronoun": "his",
     "sheets": [
-      ["1. Top left: a fat tax collector in his fifties with a triple chin and tiny eyes, a tall black hat with a brass badge, counting coins.", "2. Top right: a young tax collector in his twenties with a pimply face, a thin neck and a giant ledger, an eager smile.", "3. Bottom left: an old tax collector in his eighties with a long white beard and thick spectacles, a dusty grey coat, an abacus.", "4. Bottom right: a stern tax collector in his forties with dark skin, a shaved head and a neat moustache, a dark red coat, a scroll of debts."],
-      ["1. Top left: a weaselly tax collector in his thirties with a pointed nose, slicked black hair and a thin smile, a green coat with silver buttons.", "2. Top right: a bald tax collector in his sixties with a monocle and bushy sideburns, a purple waistcoat, weighing coins on small scales.", "3. Bottom left: a jolly tax collector in his forties with red cheeks and a curly brown beard, a brown hat, a bulging coin bag.", "4. Bottom right: a gaunt tax collector in his fifties with sunken eyes and a long chin, a black cloak, a quill dripping red ink."],
-      ["1. Top left: a short stocky tax collector in his thirties with olive skin, a unibrow and a stubborn frown, a blue tunic, a wax seal stamp.", "2. Top right: a nervous tax collector in his twenties with frizzy red hair and freckles, oversized spectacles, dropping papers.", "3. Bottom left: a pompous tax collector in his sixties with a powdered wig and a double chin, a gold-trimmed coat, a magnifying glass.", "4. Bottom right: a sly old tax collector in his seventies with a hooked nose and a grey goatee, a tricorn hat, rubbing his hands."]
+      [
+        "1. Top left: a fat tax collector in his fifties with a triple chin and tiny eyes, a tall black hat with a brass badge, counting coins.",
+        "2. Top right: a young tax collector in his twenties with a pimply face, a thin neck and a giant ledger, an eager smile.",
+        "3. Bottom left: an old tax collector in his eighties with a long white beard and thick spectacles, a dusty grey coat, an abacus.",
+        "4. Bottom right: a stern tax collector in his forties with dark skin, a shaved head and a neat moustache, a dark red coat, a scroll of debts."
+      ],
+      [
+        "1. Top left: a weaselly tax collector in his thirties with a pointed nose, slicked black hair and a thin smile, a green coat with silver buttons.",
+        "2. Top right: a bald tax collector in his sixties with a monocle and bushy sideburns, a purple waistcoat, weighing coins on small scales.",
+        "3. Bottom left: a jolly tax collector in his forties with red cheeks and a curly brown beard, a brown hat, a bulging coin bag.",
+        "4. Bottom right: a gaunt tax collector in his fifties with sunken eyes and a long chin, a black cloak, a quill dripping red ink."
+      ],
+      [
+        "1. Top left: a short stocky tax collector in his thirties with olive skin, a unibrow and a stubborn frown, a blue tunic, a wax seal stamp.",
+        "2. Top right: a nervous tax collector in his twenties with frizzy red hair and freckles, oversized spectacles, dropping papers.",
+        "3. Bottom left: a pompous tax collector in his sixties with a powdered wig and a double chin, a gold-trimmed coat, a magnifying glass.",
+        "4. Bottom right: a sly old tax collector in his seventies with a hooked nose and a grey goatee, a tricorn hat, rubbing his hands."
+      ]
     ]
   },
   "cousine": {
     "kind": "MEDIEVAL-FANTASY GREEDY DISTANT COUSINS (women who turn up for an inheritance, each in outdated over-decorated travelling clothes, with a family tree, a lorgnette or luggage)",
-    "people": "women", "pronoun": "her",
+    "people": "women",
+    "pronoun": "her",
     "sheets": [
-      ["1. Top left: a tall bony cousin in her sixties with a long nose and a huge purple feathered hat, a rolled family tree under her arm.", "2. Top right: a plump cousin in her forties with rosy cheeks and brown ringlets, an orange travelling dress with too many bows, a carpet bag.", "3. Bottom left: an old cousin in her eighties with dark skin, white hair under a lace bonnet and a sly smile, a cane, a pearl brooch.", "4. Bottom right: a young cousin in her twenties with blonde braids and a fake sweet smile, a mint-green dress, a lorgnette."],
-      ["1. Top left: a sharp-faced cousin in her fifties with black hair streaked with grey and thin lips, a dark green cape, a magnifying glass.", "2. Top right: a jolly round cousin in her sixties with a double chin and red curls, a yellow dress and a hat with fake fruit.", "3. Bottom left: a nervous cousin in her thirties with olive skin, frizzy hair and wide eyes, a blue shawl, clutching a will.", "4. Bottom right: a grumpy cousin in her seventies with a hooked nose and a hairy mole, a black dress with a veil, a fan."],
-      ["1. Top left: a tall elegant cousin in her forties with high cheekbones and a red turban with a jewel, a fur stole.", "2. Top right: a tiny cousin in her fifties with thick spectacles and a grey bun, a brown dress, a notebook listing family silver.", "3. Bottom left: a cheerful cousin in her thirties with freckles and auburn hair, a tartan travelling coat, a hatbox.", "4. Bottom right: a stern cousin in her sixties with dark brown skin and a tight bun, a burgundy dress with a high lace collar, a pocket watch."]
+      [
+        "1. Top left: a tall bony cousin in her sixties with a long nose and a huge purple feathered hat, a rolled family tree under her arm.",
+        "2. Top right: a plump cousin in her forties with rosy cheeks and brown ringlets, an orange travelling dress with too many bows, a carpet bag.",
+        "3. Bottom left: an old cousin in her eighties with dark skin, white hair under a lace bonnet and a sly smile, a cane, a pearl brooch.",
+        "4. Bottom right: a young cousin in her twenties with blonde braids and a fake sweet smile, a mint-green dress, a lorgnette."
+      ],
+      [
+        "1. Top left: a sharp-faced cousin in her fifties with black hair streaked with grey and thin lips, a dark green cape, a magnifying glass.",
+        "2. Top right: a jolly round cousin in her sixties with a double chin and red curls, a yellow dress and a hat with fake fruit.",
+        "3. Bottom left: a nervous cousin in her thirties with olive skin, frizzy hair and wide eyes, a blue shawl, clutching a will.",
+        "4. Bottom right: a grumpy cousin in her seventies with a hooked nose and a hairy mole, a black dress with a veil, a fan."
+      ],
+      [
+        "1. Top left: a tall elegant cousin in her forties with high cheekbones and a red turban with a jewel, a fur stole.",
+        "2. Top right: a tiny cousin in her fifties with thick spectacles and a grey bun, a brown dress, a notebook listing family silver.",
+        "3. Bottom left: a cheerful cousin in her thirties with freckles and auburn hair, a tartan travelling coat, a hatbox.",
+        "4. Bottom right: a stern cousin in her sixties with dark brown skin and a tight bun, a burgundy dress with a high lace collar, a pocket watch."
+      ]
     ]
   },
   "inspecteur": {
     "kind": "MEDIEVAL TAVERN INSPECTORS (men who taste and grade every tavern, each with a glass or a tankard, a notebook and a judging look)",
-    "people": "men", "pronoun": "his",
+    "people": "men",
+    "pronoun": "his",
     "sheets": [
-      ["1. Top left: a portly inspector in his fifties with a waxed curly moustache and a red nose, a brown bowler hat, holding a wine glass to the light.", "2. Top right: a thin young inspector in his twenties with a pointed chin and a monocle, a checked waistcoat, sniffing a tankard.", "3. Bottom left: an old inspector in his seventies with dark skin, a white beard and half-moon glasses, a burgundy coat, a notebook.", "4. Bottom right: a bald inspector in his forties with a double chin and a napkin tucked in his collar, a green tunic, a spoon."],
-      ["1. Top left: a lanky inspector in his thirties with greasy black hair and a long nose, a grey coat, spitting wine into a bucket.", "2. Top right: a jolly round inspector in his sixties with rosy cheeks and a bushy grey beard, a red hat, a tankard of beer.", "3. Bottom left: a severe inspector in his fifties with olive skin, a thin moustache and narrowed eyes, a black waistcoat, a quill.", "4. Bottom right: a nervous inspector in his twenties with freckles and messy red hair, oversized spectacles, a cheese on a plate."],
-      ["1. Top left: a grumpy inspector in his seventies with bushy white eyebrows and a drooping moustache, a fur hat, a pewter cup.", "2. Top right: a dandy inspector in his thirties with curly blond hair and a feathered hat, a blue velvet coat, a lace handkerchief.", "3. Bottom left: a stocky inspector in his forties with a broken nose and a short black beard, a leather apron, a bread loaf.", "4. Bottom right: a sly inspector in his sixties with a hooked nose and a grey goatee, a purple coat, a small brass bell."]
+      [
+        "1. Top left: a portly inspector in his fifties with a waxed curly moustache and a red nose, a brown bowler hat, holding a wine glass to the light.",
+        "2. Top right: a thin young inspector in his twenties with a pointed chin and a monocle, a checked waistcoat, sniffing a tankard.",
+        "3. Bottom left: an old inspector in his seventies with dark skin, a white beard and half-moon glasses, a burgundy coat, a notebook.",
+        "4. Bottom right: a bald inspector in his forties with a double chin and a napkin tucked in his collar, a green tunic, a spoon."
+      ],
+      [
+        "1. Top left: a lanky inspector in his thirties with greasy black hair and a long nose, a grey coat, spitting wine into a bucket.",
+        "2. Top right: a jolly round inspector in his sixties with rosy cheeks and a bushy grey beard, a red hat, a tankard of beer.",
+        "3. Bottom left: a severe inspector in his fifties with olive skin, a thin moustache and narrowed eyes, a black waistcoat, a quill.",
+        "4. Bottom right: a nervous inspector in his twenties with freckles and messy red hair, oversized spectacles, a cheese on a plate."
+      ],
+      [
+        "1. Top left: a grumpy inspector in his seventies with bushy white eyebrows and a drooping moustache, a fur hat, a pewter cup.",
+        "2. Top right: a dandy inspector in his thirties with curly blond hair and a feathered hat, a blue velvet coat, a lace handkerchief.",
+        "3. Bottom left: a stocky inspector in his forties with a broken nose and a short black beard, a leather apron, a bread loaf.",
+        "4. Bottom right: a sly inspector in his sixties with a hooked nose and a grey goatee, a purple coat, a small brass bell."
+      ]
     ]
   },
   "touriste": {
     "kind": "MEDIEVAL-FANTASY TOURISTS (curious travellers who sketch everything in charcoal, each with a sketchbook, a travel bag and a sunburn or a straw hat)",
-    "people": "men", "pronoun": "his",
+    "people": "men",
+    "pronoun": "his",
     "sheets": [
-      ["1. Top left: a cheerful sunburnt tourist in his forties with a big straw hat and a loud striped tunic, a charcoal stick behind his ear.", "2. Top right: a skinny young tourist in his twenties with thick round spectacles and a mop of curly hair, a backpack, a sketchbook.", "3. Bottom left: an old tourist in his seventies with dark skin, a white moustache and a pith helmet, a walking stick and a map.", "4. Bottom right: a plump bald tourist in his fifties with a peeling red nose, a flowery shirt-like tunic, a souvenir wooden sword."],
-      ["1. Top left: a tall tourist in his thirties with a blond beard and a beret, a green cloak, sketching with his tongue out.", "2. Top right: a nervous tourist in his sixties with a long face and a neck pillow, a brown travel coat, clutching a guidebook.", "3. Bottom left: a jolly tourist in his twenties with olive skin and a gap-toothed grin, a red cap, a bag full of souvenirs.", "4. Bottom right: a grumpy tourist in his fifties with bushy eyebrows and a sunhat with a veil against insects, a grey tunic, a spyglass."]
+      [
+        "1. Top left: a cheerful sunburnt tourist in his forties with a big straw hat and a loud striped tunic, a charcoal stick behind his ear.",
+        "2. Top right: a skinny young tourist in his twenties with thick round spectacles and a mop of curly hair, a backpack, a sketchbook.",
+        "3. Bottom left: an old tourist in his seventies with dark skin, a white moustache and a pith helmet, a walking stick and a map.",
+        "4. Bottom right: a plump bald tourist in his fifties with a peeling red nose, a flowery shirt-like tunic, a souvenir wooden sword."
+      ],
+      [
+        "1. Top left: a tall tourist in his thirties with a blond beard and a beret, a green cloak, sketching with his tongue out.",
+        "2. Top right: a nervous tourist in his sixties with a long face and a neck pillow, a brown travel coat, clutching a guidebook.",
+        "3. Bottom left: a jolly tourist in his twenties with olive skin and a gap-toothed grin, a red cap, a bag full of souvenirs.",
+        "4. Bottom right: a grumpy tourist in his fifties with bushy eyebrows and a sunhat with a veil against insects, a grey tunic, a spyglass."
+      ]
     ]
   },
   "chasseuse": {
     "kind": "MEDIEVAL-FANTASY BOUNTY HUNTERS (lean tough women, each with a wanted poster, a crossbow strap, leather gear and a scar or a hat)",
-    "people": "women", "pronoun": "her",
+    "people": "women",
+    "pronoun": "her",
     "sheets": [
-      ["1. Top left: a lean bounty hunter in her thirties with a scar across one cheek and a wide-brimmed dark hat, a rolled wanted poster.", "2. Top right: a muscular bounty hunter in her forties with dark skin and short grey dreadlocks, a fur-lined coat, a crossbow on her back.", "3. Bottom left: an old bounty hunter in her sixties with an eyepatch and a white braid, a leather coat full of straps, a coil of rope.", "4. Bottom right: a young bounty hunter in her twenties with freckles and a red ponytail, a green hood, a dagger and a cocky grin."],
-      ["1. Top left: a tall bounty hunter in her fifties with a shaved head and a tattooed scalp, black leather armour, a heavy chain.", "2. Top right: a small wiry bounty hunter in her thirties with olive skin and a sharp nose, a purple scarf over her mouth, a pair of throwing knives.", "3. Bottom left: a grumpy bounty hunter in her forties with a broken nose and messy brown hair, a dusty brown coat, a pipe.", "4. Bottom right: a cool bounty hunter in her twenties with long black hair and a feathered tricorn hat, a blue coat, a spyglass."]
+      [
+        "1. Top left: a lean bounty hunter in her thirties with a scar across one cheek and a wide-brimmed dark hat, a rolled wanted poster.",
+        "2. Top right: a muscular bounty hunter in her forties with dark skin and short grey dreadlocks, a fur-lined coat, a crossbow on her back.",
+        "3. Bottom left: an old bounty hunter in her sixties with an eyepatch and a white braid, a leather coat full of straps, a coil of rope.",
+        "4. Bottom right: a young bounty hunter in her twenties with freckles and a red ponytail, a green hood, a dagger and a cocky grin."
+      ],
+      [
+        "1. Top left: a tall bounty hunter in her fifties with a shaved head and a tattooed scalp, black leather armour, a heavy chain.",
+        "2. Top right: a small wiry bounty hunter in her thirties with olive skin and a sharp nose, a purple scarf over her mouth, a pair of throwing knives.",
+        "3. Bottom left: a grumpy bounty hunter in her forties with a broken nose and messy brown hair, a dusty brown coat, a pipe.",
+        "4. Bottom right: a cool bounty hunter in her twenties with long black hair and a feathered tricorn hat, a blue coat, a spyglass."
+      ]
     ]
   },
   "huissier": {
     "kind": "GOBLIN BAILIFFS OF THE GOBLIN BANK (grey or green goblins with big ears, each in a stiff dark suit with an official sealed parchment, a monocle or a ledger)",
-    "people": "goblins", "pronoun": "his",
+    "people": "goblins",
+    "pronoun": "his",
     "sheets": [
-      ["1. Top left: a tall thin grey goblin bailiff with a long nose and a monocle, a black suit with a stiff collar, holding up a sealed parchment.", "2. Top right: a fat green goblin bailiff with a double chin and tiny eyes, a brown suit, a padlock and chain.", "3. Bottom left: an old wrinkled goblin bailiff with white tufts of hair in his ears and half-moon spectacles, a dusty grey suit, a ledger.", "4. Bottom right: a young eager goblin bailiff with big yellow eyes and pointy teeth, a bowler hat, a red wax seal stamp."],
-      ["1. Top left: a stern olive-green goblin bailiff with a scar over one eye and a top hat, a dark purple suit, an inventory list.", "2. Top right: a tiny nervous goblin bailiff with huge ears and thick round spectacles, a grey waistcoat, a quill and an inkpot.", "3. Bottom left: a smug bald goblin bailiff with a gold tooth and a thin moustache, a dark green suit with brass buttons, a money bag.", "4. Bottom right: a grumpy hunchbacked goblin bailiff with warts and bushy eyebrows, a black cloak, a crowbar."]
+      [
+        "1. Top left: a tall thin grey goblin bailiff with a long nose and a monocle, a black suit with a stiff collar, holding up a sealed parchment.",
+        "2. Top right: a fat green goblin bailiff with a double chin and tiny eyes, a brown suit, a padlock and chain.",
+        "3. Bottom left: an old wrinkled goblin bailiff with white tufts of hair in his ears and half-moon spectacles, a dusty grey suit, a ledger.",
+        "4. Bottom right: a young eager goblin bailiff with big yellow eyes and pointy teeth, a bowler hat, a red wax seal stamp."
+      ],
+      [
+        "1. Top left: a stern olive-green goblin bailiff with a scar over one eye and a top hat, a dark purple suit, an inventory list.",
+        "2. Top right: a tiny nervous goblin bailiff with huge ears and thick round spectacles, a grey waistcoat, a quill and an inkpot.",
+        "3. Bottom left: a smug bald goblin bailiff with a gold tooth and a thin moustache, a dark green suit with brass buttons, a money bag.",
+        "4. Bottom right: a grumpy hunchbacked goblin bailiff with warts and bushy eyebrows, a black cloak, a crowbar."
+      ]
     ]
   },
   "troubadour": {
     "kind": "MEDIEVAL TROUBADOURS (very pleased-with-themselves travelling singers, each with an instrument, a feathered hat or colourful clothes)",
-    "people": "men", "pronoun": "his",
+    "people": "men",
+    "pronoun": "his",
     "sheets": [
-      ["1. Top left: a handsome troubadour in his twenties with golden curls and a feathered beret, a yellow and green doublet, a lute, eyes closed mid-song.", "2. Top right: a portly troubadour in his fifties with a big red beard and a jolly laugh, a red hat, a hurdy-gurdy.", "3. Bottom left: an old troubadour in his seventies with dark skin, a white goatee and a purple turban, a small harp.", "4. Bottom right: a lanky troubadour in his thirties with long black hair and a thin moustache, a blue velvet cape, a flute."],
-      ["1. Top left: a smug troubadour in his forties with slicked brown hair and a chin dimple, an orange doublet, a mandolin.", "2. Top right: a young troubadour in his teens with freckles and a mop of red hair, a green cap with a long feather, a tambourine.", "3. Bottom left: a dramatic troubadour in his sixties with wild grey hair and bushy eyebrows, a black cloak, a viol and bow.", "4. Bottom right: a cheerful troubadour in his twenties with olive skin and a wide grin, a striped teal and white doublet, bagpipes."]
+      [
+        "1. Top left: a handsome troubadour in his twenties with golden curls and a feathered beret, a yellow and green doublet, a lute, eyes closed mid-song.",
+        "2. Top right: a portly troubadour in his fifties with a big red beard and a jolly laugh, a red hat, a hurdy-gurdy.",
+        "3. Bottom left: an old troubadour in his seventies with dark skin, a white goatee and a purple turban, a small harp.",
+        "4. Bottom right: a lanky troubadour in his thirties with long black hair and a thin moustache, a blue velvet cape, a flute."
+      ],
+      [
+        "1. Top left: a smug troubadour in his forties with slicked brown hair and a chin dimple, an orange doublet, a mandolin.",
+        "2. Top right: a young troubadour in his teens with freckles and a mop of red hair, a green cap with a long feather, a tambourine.",
+        "3. Bottom left: a dramatic troubadour in his sixties with wild grey hair and bushy eyebrows, a black cloak, a viol and bow.",
+        "4. Bottom right: a cheerful troubadour in his twenties with olive skin and a wide grin, a striped teal and white doublet, bagpipes."
+      ]
+    ]
+  },
+  "abbesse": {
+    "kind": "MEDIEVAL ABBESSES (Catholic nuns of the Middle Ages, each wearing a nun's habit, a veil and a white wimple framing the face)",
+    "people": "women",
+    "pronoun": "her",
+    "sheets": [
+      null,
+      null,
+      null,
+      null,
+      [
+        "1. Top left: a lanky abbess in her forties with a long freckled face, a pointed chin and a mischievous grin, an ochre-brown habit, holding a slingshot made of wood.",
+        "2. Top right: a stout abbess in her sixties with olive skin, heavy black eyebrows and a stern mouth, a dark red habit, a large iron cross on a chain.",
+        "3. Bottom left: a sleepy abbess in her seventies with drooping eyelids, round rosy cheeks and a yawning mouth, a cream habit, a candle stub in a holder.",
+        "4. Bottom right: a fierce abbess in her fifties with dark brown skin, a strong jaw and a crooked nose, a slate-blue habit, holding a broom like a weapon."
+      ]
+    ]
+  },
+  "colporteur": {
+    "kind": "MEDIEVAL TRAVELLING PEDDLERS (men selling useless junk on the road, each with a pack, trinkets or wares)",
+    "people": "men",
+    "pronoun": "his",
+    "sheets": [
+      null,
+      null,
+      null,
+      null,
+      [
+        "1. Top left: a cross-eyed peddler in his thirties with a big crooked nose and a straggly brown beard, a pointed yellow hood, holding up a broken lantern.",
+        "2. Top right: a tall bony peddler in his fifties with very dark skin, a long grey braid and a calm smile, a sea-green tunic, a necklace of wooden whistles.",
+        "3. Bottom left: a chubby peddler in his twenties with a round baby face, a blond bowl cut and a big grin, a red waistcoat, holding a wooden duck toy.",
+        "4. Bottom right: a wizened peddler in his eighties with a toothless smile, enormous ears and a bald spotted head, a moth-eaten black coat, holding a single sock."
+      ]
     ]
   }
 }

@@ -1,5 +1,5 @@
 {
-  "_doc": "Variantes écartées après vérification (numéros de <type>-N.webp) : texte dans l'image (bulle, écriture lisible), doublon ou raté. tools/images.py variants() ne les produit pas.",
+  "_doc": "Variantes écartées après vérification (numéros de <type>-N.webp) : texte dans l'image (bulle, écriture lisible), doublon ou raté. tools/images.py variants() ne les produit pas. Aussi : refusés par François (mal détourés ou pas conformes à ses attentes).",
   "messager": [
     9,
     11
@@ -8,12 +8,30 @@
     2
   ],
   "baronne": [
-    2
+    2,
+    5
   ],
   "dresseuse": [
     2
   ],
   "cousine": [
     2
+  ],
+  "colporteur": [
+    3,
+    4,
+    6,
+    8,
+    12,
+    15
+  ],
+  "alchimiste": [
+    8,
+    10
+  ],
+  "abbesse": [
+    3,
+    4,
+    5
   ]
 }
