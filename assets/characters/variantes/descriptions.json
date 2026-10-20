@@ -32,33 +32,34 @@
     ]
   },
   "nageuse": {
-    "kind": "MEDIEVAL-FANTASY SWIMMING MISTRESSES (bossy bath attendants and swimming teachers, each in an old-fashioned striped full-body bathing costume, with a whistle)",
+    "kind": "MEDIEVAL BATH-HOUSE MISTRESSES AND SWIMMING TEACHERS of the Middle Ages (bossy women who run the public baths and teach swimming: each wears medieval bathing clothes — a long loose linen bathing shift or a laced linen chemise with rolled sleeves, a linen coif or a head kerchief, sometimes a leather apron; NO stripes, NO swimsuit, NO whistle; to give orders they use a small brass hand bell, a cow horn, a wooden clapper or a long wooden pole)",
     "people": "women",
     "pronoun": "her",
+    "new": true,
     "sheets": [
       [
-        "1. Top left: a tall athletic swimming mistress in her thirties with short wet black hair, a square jaw and a stern frown, a red and white striped costume, a whistle in her mouth.",
-        "2. Top right: a round jolly swimming mistress in her fifties with rosy cheeks and grey curls under a frilly bathing cap, a green and white striped costume, holding a cork float.",
-        "3. Bottom left: a very old wiry swimming mistress in her eighties with dark brown skin and white hair in a bun, a blue striped costume, pointing sternly.",
-        "4. Bottom right: a young freckled swimming mistress in her twenties with a long red braid, a yellow and black striped costume, a rubber swimming ring on her shoulder."
+        "1. Top left: a tall athletic bath mistress in her thirties with short wet black hair, a square jaw and a stern frown, a damp white linen shift, a small brass hand bell.",
+        "2. Top right: a round jolly bath mistress in her fifties with rosy cheeks and grey curls under a linen coif, a cream chemise with rolled sleeves, a cork float on a rope.",
+        "3. Bottom left: a very old wiry bath mistress in her eighties with dark brown skin and white hair in a kerchief, an undyed linen shift, pointing sternly with a long wooden pole.",
+        "4. Bottom right: a young freckled bath mistress in her twenties with a long red braid, a pale blue linen shift, a cow horn on a cord around her neck."
       ],
       [
-        "1. Top left: a muscular swimming mistress in her forties with a broken nose and very short blond hair, a navy striped costume, arms crossed.",
-        "2. Top right: an elegant swimming mistress in her thirties with olive skin, thin eyebrows and a beauty mark, a purple striped costume, a sun parasol.",
-        "3. Bottom left: a grumpy swimming mistress in her sixties with a long face, round goggles pushed up on her forehead and a pinched mouth, a brown striped costume.",
-        "4. Bottom right: a cheerful plump swimming mistress in her forties with a double chin and a big laugh, an orange striped costume, holding a wooden bucket of water."
+        "1. Top left: a muscular bath mistress in her forties with a broken nose and cropped blond hair, a grey linen chemise and a leather apron, arms crossed.",
+        "2. Top right: an elegant bath mistress in her thirties with olive skin and a beauty mark, a fine white linen shift and a green head kerchief, a bundle of bath towels.",
+        "3. Bottom left: a grumpy bath mistress in her sixties with a long face and a pinched mouth, a brown linen coif, a wooden clapper in her hand.",
+        "4. Bottom right: a cheerful plump bath mistress in her forties with a double chin and a big laugh, an ochre linen chemise, a wooden bucket of steaming water."
       ],
       [
-        "1. Top left: a lanky nervous swimming mistress in her twenties with buck teeth and big round eyes, a teal striped costume, clutching a long wooden pole.",
-        "2. Top right: a severe swimming mistress in her fifties with dark skin, high cheekbones and a tight grey bun, a black and white striped costume, a pocket hourglass.",
-        "3. Bottom left: a sunburnt swimming mistress in her thirties with a peeling nose, wild sun-bleached curls and a bossy grin, a red striped costume.",
-        "4. Bottom right: a tiny elderly swimming mistress in her seventies with thick glasses and a frilly bathing cap, a lilac striped costume, blowing her whistle angrily."
+        "1. Top left: a lanky nervous bath mistress in her twenties with buck teeth and big round eyes, a wet linen shift, clutching a long wooden pole.",
+        "2. Top right: a severe bath mistress in her fifties with dark skin, high cheekbones and a tight grey bun, a black linen apron over a white chemise, a small hourglass.",
+        "3. Bottom left: a sunburnt bath mistress in her thirties with a peeling nose and wild sun-bleached curls, a faded red linen shift, a coil of rope.",
+        "4. Bottom right: a tiny elderly bath mistress in her seventies with thick round spectacles and a frilly linen cap, a lavender-grey shift, ringing a brass hand bell angrily."
       ],
       [
-        "1. Top left: a broad-shouldered swimming mistress in her forties with a crew cut and a scar on her eyebrow, a grey striped costume, a coiled rope on her shoulder.",
-        "2. Top right: a dreamy young swimming mistress in her twenties with long wet black hair and seaweed tangled in it, a sea-green striped costume.",
-        "3. Bottom left: a tough old swimming mistress in her sixties with a weathered tanned face and a missing tooth, a faded blue striped costume, holding a fishing net.",
-        "4. Bottom right: a prim swimming mistress in her thirties with a pointed nose, a monocle and a neat brown bob, a mustard striped costume, writing on a slate."
+        "1. Top left: a broad-shouldered bath mistress in her forties with a crew cut and a scar on her eyebrow, a sleeveless leather jerkin over a linen shift, a long boathook.",
+        "2. Top right: a dreamy young bath mistress in her twenties with long wet black hair and seaweed tangled in it, a sea-green linen shift.",
+        "3. Bottom left: a tough old bath mistress in her sixties with a weathered tanned face and a missing tooth, a patched linen chemise, a fishing net over her shoulder.",
+        "4. Bottom right: a prim bath mistress in her thirties with a pointed nose, a monocle and a neat brown bob under a linen coif, a mustard chemise, a wooden scrubbing brush."
       ]
     ]
   },
