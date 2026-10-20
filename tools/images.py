@@ -233,29 +233,41 @@ def split_sheet(img):
 
 
 def variants():
-    # variantes de visages des victimes (François, 2026-10-20 : des visages différents sans 133 images) : une planche par
-    # type → <type>-2.webp, <type>-3.webp… (même cadrage et détourage que les portraits)
+    # variantes de visages des victimes (François, 2026-10-20 : un visage différent par victime) : une ou plusieurs
+    # planches par type (<type>.png, <type>-2.png, <type>-3.png…) → <type>-2.webp, <type>-3.webp… numérotés à la suite
+    # (planche par planche, ligne par ligne). Les anciennes variantes du type sont retirées d'abord (rien de périmé).
+    import re
     if not VAR_DIR.exists():
         return
+    sheets = {}
     for src in sources(VAR_DIR):
-        name = CHAR_ALIAS.get(src.stem.lower(), src.stem.lower())
-        sheet = Image.open(src).convert('RGB')
-        boxes = sorted(split_sheet(sheet), key=lambda b: (round(b[1] / 100), b[0]))  # lecture : ligne par ligne
-        for i, (x0, y0, x1, y1) in enumerate(boxes):
-            bust = sheet.crop((x0, y0, x1, y1))
-            # sur un carré magenta, buste posé en bas au centre (coupé aux épaules), comme un portrait seul
-            side = max(bust.size)
-            sq = Image.new('RGB', (side, side), (255, 0, 255))
-            sq.paste(bust, ((side - bust.width) // 2, side - bust.height))
-            zoom, cx, cy = VAR_CROP
-            c = round(side * zoom)
-            left = min(max(0, round(side * cx - c / 2)), side - c)
-            top = min(max(0, round(side * cy - c / 2)), side - c)
-            img = sq.crop((left, top, left + c, top + c))
-            img = key_out(img.resize((SIZE * 2, SIZE * 2), Image.LANCZOS)).resize((SIZE, SIZE), Image.LANCZOS)
-            out = DIR / f'{name}-{i + 2}.webp'
-            img.save(out, 'WEBP', quality=82, method=6)
-        print(f'variantes {src.name} → {name}-2 à {name}-{len(boxes) + 1}.webp ({len(boxes)} visages)')
+        m = re.match(r'^(.*?)(?:-(\d+))?$', src.stem.lower())
+        name = CHAR_ALIAS.get(m.group(1), m.group(1))
+        sheets.setdefault(name, []).append((int(m.group(2) or 1), src))
+    for name, group in sheets.items():
+        for old in DIR.glob(f'{name}-*.webp'):
+            if re.fullmatch(rf'{re.escape(name)}-\d+\.webp', old.name):
+                old.unlink()
+        n = 1
+        for _, src in sorted(group):
+            sheet = Image.open(src).convert('RGB')
+            boxes = sorted(split_sheet(sheet), key=lambda b: (round(b[1] / 100), b[0]))  # lecture : ligne par ligne
+            for (x0, y0, x1, y1) in boxes:
+                bust = sheet.crop((x0, y0, x1, y1))
+                # sur un carré magenta, buste posé en bas au centre (coupé aux épaules), comme un portrait seul
+                side = max(bust.size)
+                sq = Image.new('RGB', (side, side), (255, 0, 255))
+                sq.paste(bust, ((side - bust.width) // 2, side - bust.height))
+                zoom, cx, cy = VAR_CROP
+                c = round(side * zoom)
+                left = min(max(0, round(side * cx - c / 2)), side - c)
+                top = min(max(0, round(side * cy - c / 2)), side - c)
+                img = sq.crop((left, top, left + c, top + c))
+                img = key_out(img.resize((SIZE * 2, SIZE * 2), Image.LANCZOS)).resize((SIZE, SIZE), Image.LANCZOS)
+                n += 1
+                img.save(DIR / f'{name}-{n}.webp', 'WEBP', quality=82, method=6)
+            print(f'variantes {src.name} : {len(boxes)} visages')
+        print(f'{name} : {n - 1} variantes ({name}-2 à {name}-{n}.webp)')
 
 
 VAR_CROP = (0.86, 0.5, 0.42)  # cadrage des variantes dans leur carré (zoom, centre x, centre y)
