@@ -484,6 +484,18 @@ header.top { display: flex; align-items: center; gap: 10px; }
   filter: drop-shadow(0 8px 16px rgba(0, 0, 0, .55)); }
 .toast.bad { color: var(--red-ink); }
 .toast.bad::before { box-shadow: inset 0 0 0 2px rgba(163, 49, 42, .75), inset 0 0 12px rgba(120, 66, 18, .35), 0 3px 8px rgba(0, 0, 0, .45); }
+/* billet d'indice, anonyme et signé « A. », cacheté de rouge comme les lettres ; reste ouvert jusqu'à un clic ailleurs */
+.billet { position: fixed; left: 50%; bottom: calc(130px + env(safe-area-inset-bottom, 0px)); z-index: 31; width: min(90vw, 440px); box-sizing: border-box;
+  transform: translateX(-50%) rotate(-.8deg); padding: 18px 24px 14px 30px; color: var(--ink); isolation: isolate; filter: drop-shadow(0 10px 18px rgba(0, 0, 0, .6));
+  animation: billet-in .25s ease-out; }
+.billet::before { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: 3px;
+  background: var(--parch-tex, none) center / 240px, linear-gradient(#f1e3c2, #e3cfa3);
+  box-shadow: inset 0 0 0 1.5px rgba(43, 32, 22, .5), inset 0 0 14px rgba(120, 66, 18, .4); filter: url(#torn-s); }
+.billet p { margin: 0; font: 400 18px/1.4 var(--f-hand); }
+.billet.bad p { color: #a3312a; }
+.billet .billet-sign { margin-top: 6px; text-align: right; font: 400 24px/1 var(--f-quill); color: #7a2a1e; }
+.billet .seal-a { position: absolute; left: -16px; top: -16px; width: 42px; height: 42px; font-size: 21px; }
+@keyframes billet-in { from { opacity: 0; transform: translateX(-50%) translateY(10px) rotate(-.8deg); } }
 /* lien « Confidentialité » des options : à la plume, encre rouge */
 .sheet .small a { color: #7a2a1e; font: italic 400 16px var(--f-hand); text-decoration: underline; text-decoration-style: wavy; text-decoration-thickness: 1px; text-underline-offset: 4px; }
 @media (hover: hover) { .sheet .small a:hover { color: #a3312a; } }
@@ -1115,7 +1127,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
         <h1 class="sr-only">Bureau de l'enquêteur</h1>
         <span class="spacer"></span>
         ${soundBtn()}
-        ${cloud.on() ? '<button class="iconbtn" id="opts" aria-label="Options">⚙︎</button>' : ''}
+        ${cloud.on() ? '<button class="iconbtn" id="opts" aria-label="Options"></button>' : ''}
         <button class="iconbtn" id="rulesBtn" aria-label="Règles">?</button>
       </header>
       <div class="bureau ${MEDIA.desk['clou-fer'] ? 'clous' : ''}" style="${['clou-fer', 'clou-laiton', 'clou-rouille', 'clou-tete', 'corde-rouge'].filter(k => MEDIA.desk[k]).map(k => `--${k}:url(${MEDIA.desk[k]})`).join(';')}">
@@ -1352,12 +1364,12 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
 
   // Ambiance sonore : une boucle pour l'accueil et les menus (menu), une pour les cartes (carte), en fondu.
   // Les navigateurs bloquent le son avant le premier geste : il démarre au premier toucher. Volume par Web Audio
-  // (sur iPhone, le volume d'un élément audio ne se règle pas). 🔊 / 🔇 sur chaque écran ; réglage gardé.
+  // (sur iPhone, le volume d'un élément audio ne se règle pas). Sceau son / muet sur chaque écran ; réglage gardé.
   // Les morceaux n'ont pas besoin de boucler d'eux-mêmes : chaque piste a deux lecteurs, et 4 s avant la fin
   // l'autre repart du début en fondu enchaîné (XFADE) — boucle sans coupure, quel que soit le morceau.
   const sound = (() => {
     const XFADE = 4, TAIL = 1.5, MAX = 0.55; // TAIL : fin du morceau ignorée (les générateurs y mettent souvent un fondu)
-    // volume choisi par le joueur (0 à 1, barre du panneau 🔊), 0,6 par défaut ; « Couper » le met en sourdine sans l'oublier
+    // volume choisi par le joueur (0 à 1, barre du panneau du son), 0,6 par défaut ; « Couper » le met en sourdine sans l'oublier
     const vol = () => (typeof settings.volume === 'number' ? settings.volume : 0.6);
     const tracks = {};
     for (const [k, src] of Object.entries(MEDIA.audio || {})) {
@@ -1397,7 +1409,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     }
     return {
       available: Object.keys(tracks).length > 0,
-      icon: () => (on() ? '🔊' : '🔇'),
+      muted: () => !on(),
       set(k) { want = tracks[k] ? k : null; apply(); },
       unlock() {
         if (ac || !this.available) return;
@@ -1420,10 +1432,10 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
   })();
   // outils de l'enquête : objet d'époque dessiné (assets/desk/outil-*), sinon le libellé seul
   const toolIcon = (k) => MEDIA.desk && MEDIA.desk['outil-' + k] ? `<img class="tool-ico" src="${MEDIA.desk['outil-' + k]}" alt="" aria-hidden="true">` : '';
-  const soundBtn = () => sound.available ? `<button class="iconbtn soundbtn ${sound.icon() === '🔇' ? 'muet' : ''}" aria-label="Couper ou remettre le son">${sound.icon()}</button>` : '';
+  const soundBtn = () => sound.available ? `<button class="iconbtn soundbtn ${sound.muted() ? 'muet' : ''}" aria-label="Couper ou remettre le son"></button>` : '';
   ['pointerdown', 'keydown'].forEach(ev => document.addEventListener(ev, () => sound.unlock(), { once: true }));
-  // 🔊 ouvre un petit panneau : barre de volume et Couper / Remettre (se ferme en touchant ailleurs)
-  const refreshIcons = () => document.querySelectorAll('.soundbtn').forEach(x => { x.textContent = sound.icon(); x.classList.toggle('muet', sound.icon() === '🔇'); });
+  // le sceau du son ouvre un petit panneau : barre de volume et Couper / Remettre (se ferme en touchant ailleurs)
+  const refreshIcons = () => document.querySelectorAll('.soundbtn').forEach(x => x.classList.toggle('muet', sound.muted()));
   function soundPanel(btn) {
     const old = document.querySelector('.soundpop');
     if (old) { old.remove(); return; }
@@ -1452,6 +1464,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
   function show(route) {
     const [page, arg] = route.split('/');
     $app.classList.remove('desk', 'scene-page');
+    closeBillet();
     sound.set(page === 'affaire' ? 'carte' : 'menu');
     // anciennes adresses (tailles, carte) : le bureau
     if (['bureau', 'tailles', 'niveaux', 'taille', 'carte'].includes(page)) bureauPage();
@@ -1694,12 +1707,12 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
 
     const specials = [];
     if (P.characters.some(c => (c.traits || []).includes('spectre')))
-      specials.push(`<span><b>👻 Spectre</b> : peut se tenir sur les meubles bloquants (tables, statues…). Il respecte quand même lignes et colonnes.</span>`);
+      specials.push(`<span><b>Spectre</b> : peut se tenir sur les meubles bloquants (tables, statues…). Il respecte quand même lignes et colonnes.</span>`);
     if (P.characters.some(c => c.shape))
-      specials.push(`<span><b>🐉 Grand personnage</b> : il occupe plusieurs cases, et chacune prend sa ligne et sa colonne. Toutes ses cases sont dans la même pièce, jamais sur un meuble. Sa forme peut être tournée ou retournée.${P.hiddenShapes ? ` <b>Sa forme est inconnue</b> : ${hiddenSizes()}.` : ''} Pour le placer : choisis-le, touche chacune de ses cases pour y écrire sa lettre, puis appui long sur l'une d'elles.</span>`);
+      specials.push(`<span><b>Grand personnage</b> : il occupe plusieurs cases, et chacune prend sa ligne et sa colonne. Toutes ses cases sont dans la même pièce, jamais sur un meuble. Sa forme peut être tournée ou retournée.${P.hiddenShapes ? ` <b>Sa forme est inconnue</b> : ${hiddenSizes()}.` : ''} Pour le placer : choisis-le, touche chacune de ses cases pour y écrire sa lettre, puis appui long sur l'une d'elles.</span>`);
     const links = {};
     P.objects.filter(o => o.type === 'portail').forEach(o => (links[o.link] = links[o.link] || []).push(P.rooms[P.layout[o.at[0]][o.at[1]]].name));
-    Object.values(links).forEach(l => specials.push(`<span><b>🌀 Portail</b> : ${esc(l[0])} et ${esc(l[1])} comptent comme une seule pièce.</span>`));
+    Object.values(links).forEach(l => specials.push(`<span><b>Portail</b> : ${esc(l[0])} et ${esc(l[1])} comptent comme une seule pièce.</span>`));
 
     // la victime est toujours présentée en dernier : c'est en la plaçant qu'on démasque le coupable
     const lastIfVictim = (a, b) => (a.role === 'victim') - (b.role === 'victim');
@@ -1714,7 +1727,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
         <button class="hdtitle" id="introBtn" aria-label="Lire l'affaire">${esc(P.title)}</button>
         <span class="spacer"></span>
         ${soundBtn()}
-        <button class="iconbtn" id="opts" aria-label="Options">⚙︎</button>
+        <button class="iconbtn" id="opts" aria-label="Options"></button>
         <button class="iconbtn" id="rulesBtn" aria-label="Règles">?</button>
       </header>
       <div class="play">
@@ -1973,31 +1986,44 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     save(); render();
   }
 
-  // 💡 Indice : signale d'abord une erreur parmi les personnages confirmés, sinon désigne le prochain
-  // personnage qu'on peut déduire et le raisonnement à utiliser (jamais la case).
-  // ce que l'enquêteur marmonne en relisant ses notes (bible du jeu : compétent, épuisé, poli)
+  // Indice : signale d'abord une erreur parmi les personnages confirmés, sinon désigne le prochain personnage qu'on peut
+  // déduire et le raisonnement à utiliser (jamais la case). Il arrive en billet anonyme signé « A. », comme les lettres
+  // (François, 2026-10-20 : l'indice amené par Augure, sans le nommer — canon : Augure met sur la voie, ne livre pas la
+  // solution) ; le billet reste ouvert jusqu'à un clic ailleurs (les indices deviendront payants : on ne le perd pas).
+  // Voix d'Augure : sèche, précise, un rien moqueuse.
   const HINT_TEXT = [
-    (n) => `Relisons la fiche de ${n}. Ses indices ne laissent qu'une case. Bon.`,
-    (n) => `${n}… On retire les lignes et les colonnes déjà prises : il ne reste qu'une case. Évidemment.`,
-    (n) => `Quelqu'un n'a plus qu'une ligne possible, ou qu'une colonne : elle est à lui, les autres n'ont rien à y faire. Ça suffit pour placer ${n}.`,
-    (n) => `Nord, sud, est, ouest. Les positions relatives coincent ${n}. Ce n'est pas sorcier. Enfin, pas ici.`,
-    (n) => `Une ligne, ou une colonne, où un seul personnage peut encore aller. C'est ${n}. Il fallait la voir.`,
-    (n) => `La règle des pièces : un suspect par pièce, la victime avec un seul, et pas une pièce vide. Ça place ${n}.`,
-    (n) => `Quelques-uns se partagent exactement autant de lignes qu'ils sont. Personne d'autre n'y entre. Ça place ${n}.`
+    (n) => `Relis la fiche de ${n}. Ses indices ne lui laissent qu'une case. Je n'ai pas eu besoin d'en lire davantage.`,
+    (n) => `Retire à ${n} les lignes et les colonnes déjà prises. Il ne lui reste qu'une case.`,
+    (n) => `Quelqu'un n'a plus qu'une ligne possible, ou qu'une colonne : elle est à lui, et à personne d'autre. Cela suffit pour placer ${n}.`,
+    (n) => `Nord, sud, est, ouest. Les positions des uns par rapport aux autres coincent ${n}. Encore faut-il les lire ensemble.`,
+    (n) => `Il existe une ligne, ou une colonne, où un seul personnage peut encore aller. C'est ${n}. Elle était sous tes yeux.`,
+    (n) => `Un suspect par pièce, la victime avec un seul, aucune pièce vide. Ces trois règles placent ${n}.`,
+    (n) => `Quelques-uns se partagent exactement autant de lignes qu'ils sont. Personne d'autre n'y entre. Cela place ${n}.`
   ];
+  function billet(text, bad) {
+    closeBillet();
+    const b = document.createElement('div');
+    b.className = 'billet' + (bad ? ' bad' : ''); b.setAttribute('role', 'status');
+    b.innerHTML = `<span class="seal-a" aria-hidden="true">A</span><p>${esc(text)}</p><p class="billet-sign">— A.</p>`;
+    document.body.appendChild(b);
+  }
+  const closeBillet = () => document.querySelectorAll('.billet').forEach(b => b.remove());
+  // un clic (ou un toucher) hors du billet le referme ; Échap aussi
+  document.addEventListener('pointerdown', (e) => { if (!e.target.closest('.billet')) closeBillet(); }, true);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeBillet(); });
   function hint() {
     const sol = P.solution.positions;
     const wrong = Object.keys(S.pos).find(id => E.posKey(S.pos[id]) !== E.posKey(sol[id]));
-    if (wrong) { pickOnly(wrong); render(); return toast(`Quelque chose cloche : ${ctx.chars[wrong].name} n'est pas à sa place.`, true, 5000); }
+    if (wrong) { pickOnly(wrong); render(); return billet(`Quelque chose cloche : ${ctx.chars[wrong].name} n'est pas à sa place.`, true); }
     hint.steps = hint.steps && hint.for === P.id ? hint.steps : E.humanSolve(P, P.clues, 2).steps;
     hint.for = P.id;
     for (const st of hint.steps) {
       const id = st.ids.find(x => !S.pos[x]);
       if (!id) continue;
       pickOnly(id); render();
-      return toast('💡 ' + HINT_TEXT[st.tech](ctx.chars[id].name), false, 6000);
+      return billet(HINT_TEXT[st.tech](ctx.chars[id].name));
     }
-    toast('Tout le monde est à sa place : il ne reste plus qu\'à accuser !', false, 4000);
+    billet('Tout le monde est à sa place. Il ne reste plus qu\'à accuser.');
   }
 
   function accuse() {

@@ -280,7 +280,15 @@ test('indice : désigne le prochain personnage à déduire, ou signale une erreu
     d.getElementById('hintBtn').click();
     const sel = d.querySelector('.chip[aria-pressed="true"]');
     assert.ok(sel, 'un personnage est sélectionné');
-    assert.match(d.querySelector('.toast').textContent, /💡/);
+    // billet anonyme signé « A. » (Augure, jamais nommé), qui reste ouvert jusqu'à un clic ailleurs
+    const billet = () => d.querySelector('.billet');
+    assert.ok(billet() && /— A\.$/.test(billet().querySelector('.billet-sign').textContent), 'billet signé A.');
+    assert.ok(!/Augure/.test(billet().textContent), 'Augure jamais nommé');
+    const tap = (el) => el.dispatchEvent(new d.defaultView.Event('pointerdown', { bubbles: true }));
+    tap(billet().querySelector('p'));
+    assert.ok(billet(), 'un clic dans le billet ne le ferme pas');
+    tap(d.body);
+    assert.equal(billet(), null, 'un clic ailleurs le ferme');
     // l'indice ne donne pas la case : aucun pion ni lettre posés
     assert.equal(d.querySelectorAll('.token, .pencil').length, 0);
   }
@@ -290,7 +298,7 @@ test('indice : désigne le prochain personnage à déduire, ou signale une erreu
     const { d, openCase } = open({ saves: { [p.id]: { pos, pencil: {}, marks: [], done: [], solved: false, sig: sigOf(p) } } });
     openCase(p.id);
     d.getElementById('hintBtn').click();
-    assert.match(d.querySelector('.toast').textContent, /pas à sa place/);
+    assert.match(d.querySelector('.billet.bad').textContent, /pas à sa place/);
   }
 });
 
@@ -316,7 +324,7 @@ test('grand personnage : lettres au crayon sur ses cases, puis appui long ; form
   assert.deepEqual(errors, []);
 });
 
-test('son : 🔊 ouvre la barre de volume, le réglage est retenu ; barre à zéro = 🔇', () => {
+test('son : le sceau du son ouvre la barre de volume, le réglage est retenu ; barre à zéro = sceau muet', () => {
   const { w, d, errors } = open();
   const btn = d.querySelector('.soundbtn');
   if (!btn) return; // pas de musique dans ce build
@@ -326,10 +334,37 @@ test('son : 🔊 ouvre la barre de volume, le réglage est retenu ; barre à zé
   range.value = '25'; range.dispatchEvent(new w.Event('input', { bubbles: true }));
   assert.equal(JSON.parse(w.localStorage.getItem('grimdoku:settings')).volume, 0.25, 'volume retenu');
   range.value = '0'; range.dispatchEvent(new w.Event('input', { bubbles: true }));
-  assert.equal(d.querySelector('.soundbtn').textContent, '🔇');
+  assert.ok(d.querySelector('.soundbtn').classList.contains('muet'));
   d.body.click();
   assert.equal(d.querySelector('.soundpop'), null, 'fermé en touchant ailleurs');
   assert.deepEqual(errors, []);
+});
+
+// François, 2026-10-20 : « Je ne veux PLUS JAMAIS d'emoji dans le jeu »
+test('aucun emoji à l\'écran', () => {
+  const { w, d, PUZZLES, openCase } = open();
+  const EMOJI = /[\p{Extended_Pictographic}\u{1F1E6}-\u{1F1FF}]/u;
+  // texte affiché (hors scripts et styles) et libellés (aria-label, title, alt)
+  const shown = () => {
+    const out = [], tw = d.createTreeWalker(d.body, w.NodeFilter.SHOW_TEXT);
+    for (let n; (n = tw.nextNode());) if (!n.parentElement.closest('script, style')) out.push(n.data);
+    for (const el of d.body.querySelectorAll('[aria-label], [title], [alt]')) out.push(el.getAttribute('aria-label') || '', el.getAttribute('title') || '', el.getAttribute('alt') || '');
+    return out.join(' ');
+  };
+  const check = (where) => { const m = shown().match(EMOJI); assert.equal(m, null, `${where} : ${m && m[0]}`); };
+  check('accueil');
+  w.localStorage.setItem('grimdoku:prologue', 'true');
+  w.localStorage.setItem('grimdoku:lettres', JSON.stringify(Object.keys(w.eval('LORE').letters)));
+  for (const r of ['bureau', 'dossiers', 'lettres', 'carnet', 'lieu/chateau']) { w.grimGo(r); check(r); }
+  // une enquête de chaque sorte de règle spéciale (spectre, grand personnage, portail), règles et indice ouverts
+  const kinds = [(p) => p.characters.some(c => (c.traits || []).includes('spectre')), (p) => p.characters.some(c => c.shape), (p) => p.objects.some(o => o.type === 'portail'), () => true];
+  for (const k of kinds) {
+    const p = PUZZLES.find(q => !q.off && k(q));
+    if (!p) continue;
+    openCase(p.id); check(p.id);
+    d.getElementById('hintBtn').click(); check(p.id + ' (indice)');
+    d.getElementById('rulesBtn').click(); check(p.id + ' (règles)');
+  }
 });
 
 test('notation de la difficulté ressentie : 0 à 5 sous la carte, retenue, identifiant anonyme', () => {
