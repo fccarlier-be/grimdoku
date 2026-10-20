@@ -201,6 +201,66 @@ def portraits():
         print(f'portrait {src.name} → {out.name} ({out.stat().st_size // 1024} Ko)')
 
 
+VAR_DIR = DIR / 'variantes'  # planches de variantes : <type>.(png|jpeg), 2 × 2 (ou plus) bustes sur fond magenta
+
+
+def split_sheet(img):
+    """Découpe une planche en silhouettes : bandes de lignes sans personnage, puis colonnes vides dans chaque bande
+    (robuste si le générateur décale ses personnages ; il suffit qu'ils ne se touchent pas)."""
+    rgb = img.convert('RGB')
+    w, h = rgb.size
+    px = rgb.load()
+    on = lambda x, y: not (px[x, y][0] > 170 and px[x, y][2] > 170 and px[x, y][1] < 110)  # pas magenta
+    step = 2
+    def runs(flags, min_len):
+        out, start = [], None
+        for i, f in enumerate(flags + [False]):
+            if f and start is None:
+                start = i
+            elif not f and start is not None:
+                if i - start >= min_len:
+                    out.append((start, i))
+                start = None
+        return out
+    rows = [sum(on(x, y) for x in range(0, w, step * 4)) > 1 for y in range(0, h, step)]
+    pieces = []
+    for y0, y1 in runs(rows, 40 // step):
+        y0, y1 = y0 * step, min(h, y1 * step)
+        cols = [sum(on(x, y) for y in range(y0, y1, step * 4)) > 1 for x in range(0, w, step)]
+        for x0, x1 in runs(cols, 40 // step):
+            pieces.append((x0 * step, y0, min(w, x1 * step), y1))
+    return pieces
+
+
+def variants():
+    # variantes de visages des victimes (François, 2026-10-20 : des visages différents sans 133 images) : une planche par
+    # type → <type>-2.webp, <type>-3.webp… (même cadrage et détourage que les portraits)
+    if not VAR_DIR.exists():
+        return
+    for src in sources(VAR_DIR):
+        name = CHAR_ALIAS.get(src.stem.lower(), src.stem.lower())
+        sheet = Image.open(src).convert('RGB')
+        boxes = sorted(split_sheet(sheet), key=lambda b: (round(b[1] / 100), b[0]))  # lecture : ligne par ligne
+        for i, (x0, y0, x1, y1) in enumerate(boxes):
+            bust = sheet.crop((x0, y0, x1, y1))
+            # sur un carré magenta, buste posé en bas au centre (coupé aux épaules), comme un portrait seul
+            side = max(bust.size)
+            sq = Image.new('RGB', (side, side), (255, 0, 255))
+            sq.paste(bust, ((side - bust.width) // 2, side - bust.height))
+            zoom, cx, cy = VAR_CROP
+            c = round(side * zoom)
+            left = min(max(0, round(side * cx - c / 2)), side - c)
+            top = min(max(0, round(side * cy - c / 2)), side - c)
+            img = sq.crop((left, top, left + c, top + c))
+            img = key_out(img.resize((SIZE * 2, SIZE * 2), Image.LANCZOS)).resize((SIZE, SIZE), Image.LANCZOS)
+            out = DIR / f'{name}-{i + 2}.webp'
+            img.save(out, 'WEBP', quality=82, method=6)
+        print(f'variantes {src.name} → {name}-2 à {name}-{len(boxes) + 1}.webp ({len(boxes)} visages)')
+
+
+VAR_CROP = (0.86, 0.5, 0.42)  # cadrage des variantes dans leur carré (zoom, centre x, centre y)
+
+
 def objects():
     for src in sources(OBJ_DIR):
         name = type_name(src.stem)
@@ -537,6 +597,7 @@ def sketches():
 
 def main():
     portraits()
+    variants()
     sketches()
     objects()
     floors()
