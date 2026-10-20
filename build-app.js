@@ -147,6 +147,9 @@ for (const [pl, z] of Object.entries(ZONES.lieux)) {
   copyMedia(f, `scene-${z.decor}.webp`); // pas « decor-grand-… » : decor-grand-port serait aussi le petit décor du grand port
   media.scenes[pl] = { img: `media/scene-${z.decor}.webp`, ratio: z.ratio, places: z.places };
 }
+// page de retour de la connexion Google (registre de Brumeval, app/connexion.html), à la racine du site
+const SITE_PAGES = ['dist', 'deploy/grimdoku/site'];
+SITE_PAGES.forEach(d => { fs.mkdirSync(d, { recursive: true }); fs.copyFileSync('app/connexion.html', `${d}/connexion.html`); fs.chmodSync(`${d}/connexion.html`, 0o644); });
 // icône de l'appli (assets/icon/web, produite par tools/images.py) : favicon, icône Apple et manifeste PWA,
 // à la racine du site (le navigateur demande /favicon.ico de lui-même)
 const SITE = ['dist', 'deploy/grimdoku/site'];
