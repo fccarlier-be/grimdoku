@@ -4,8 +4,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Registre de Brumeval</title>
-<!-- Retour de la connexion Google (OpenID Connect, réponse id_token) lancée par le jeu (cloud.startLogin) : vérifie
-     state et nonce, ouvre la session (api/login, cookie limité à /api/), prévient le jeu puis se ferme. -->
+<!-- Retour de la connexion Google (OpenID Connect, réponse id_token) lancée par le jeu (cloud.startLogin), dans le même
+     onglet : vérifie state et nonce, ouvre la session (api/login, cookie limité à /api/) puis ramène au jeu, à l'écran
+     de départ ; en cas d'échec, le dit avec un lien vers le jeu. -->
 <style>
   body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 16px; box-sizing: border-box;
     background: #16111d; color: #efe3cc; font: 17px/1.5 Georgia, serif; text-align: center; }
@@ -18,10 +19,12 @@
 (async () => {
   const msg = document.getElementById('msg');
   const end = (text) => { msg.textContent = text; document.getElementById('back').hidden = false; };
+  const home = (want) => './' + (want && /^#\/[\w\/-]*$/.test(want.back || '') ? want.back : '');
   const f = new URLSearchParams(location.hash.slice(1));
   history.replaceState(null, '', location.pathname); // le jeton ne reste pas dans l'adresse ni dans l'historique
   let want = null;
   try { want = JSON.parse(localStorage.getItem('grimdoku:oauth')); localStorage.removeItem('grimdoku:oauth'); } catch (e) { /* stockage bloqué */ }
+  document.querySelector('#back a').href = home(want);
   if (f.get('error')) return end('Inscription annulée.');
   const token = f.get('id_token');
   if (!token || !want || f.get('state') !== want.state || Date.now() - want.t > 10 * 60 * 1000) return end('Inscription refusée : demande périmée. Recommence depuis le jeu.');
@@ -30,10 +33,9 @@
   if (!claims || claims.nonce !== want.nonce) return end('Inscription refusée : réponse inattendue. Recommence depuis le jeu.');
   const r = await fetch('api/login', { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ credential: token }) }).catch(() => null);
   if (!r || !r.ok) return end('Le registre est fermé pour l\'instant. Réessaie un peu plus tard.');
-  try { localStorage.setItem('grimdoku:compte', 'true'); } catch (e) { /* le jeu le verra à la prochaine synchronisation */ }
-  try { new BroadcastChannel('grimdoku').postMessage('compte'); } catch (e) { /* navigateur ancien : le signal « storage » suffit */ }
-  end('Te voilà inscrit au registre de Brumeval. Tu peux revenir au jeu.');
-  setTimeout(() => window.close(), 800); // fenêtre ouverte par le jeu ; sinon (même onglet), le lien ramène au jeu
+  try { localStorage.setItem('grimdoku:compte', 'true'); localStorage.setItem('grimdoku:inscrit', '1'); } catch (e) { /* stockage bloqué */ }
+  msg.textContent = 'Te voilà inscrit au registre de Brumeval. Retour au jeu…';
+  location.replace(home(want)); // replace : « précédent » ne repasse pas par cette page
 })();
 </script>
 </html>

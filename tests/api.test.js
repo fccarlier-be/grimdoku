@@ -93,31 +93,31 @@ test('page : connectée, elle fusionne sa progression avec celle du serveur', ()
   } finally { dom.window.close(); }
 }));
 
-// registre de Brumeval (François, 2026-10-20) : bouton du jeu → page Google dans une fenêtre (openid seulement)
-// → connexion.html vérifie state et nonce, ouvre la session, prévient le jeu
-test('inscription au registre : bouton du jeu, page Google, retour sur connexion.html', async () => {
+// registre de Brumeval (François, 2026-10-20) : bouton du jeu → page Google dans le même onglet (openid seulement)
+// → connexion.html vérifie state et nonce, ouvre la session et ramène au jeu, à l'écran de départ
+test('inscription au registre : bouton du jeu, page Google, retour sur connexion.html puis au jeu', async () => {
   const { JSDOM } = require('jsdom');
   const html = fs.readFileSync(path.join(__dirname, '..', 'dist', 'grimdoku.html'), 'utf8')
     .replace(/const ACCOUNT = [^;]*;/, 'const ACCOUNT = {"clientId":"test"};');
-  const opened = [];
+  const left = [];
   const dom = new JSDOM(html, {
     runScripts: 'dangerously', url: 'https://grimdoku.fcold.org/', pretendToBeVisual: true,
     beforeParse(w) {
       w.scrollTo = () => {};
       w.localStorage.setItem('grimdoku:prologue', 'true');
       w.fetch = async () => ({ ok: false, status: 401, json: async () => ({}) });
-      w.open = (u) => { opened.push(u); return {}; };
     },
   });
   const w = dom.window, d = w.document;
   try {
+    w.grimLeave = (u) => left.push(u);
     w.grimGo('bureau');
     d.getElementById('opts').click();
     const btn = d.getElementById('registreBtn');
     assert.match(btn.textContent, /Inscription au registre de Brumeval/);
     assert.match(btn.textContent, /connexion avec Google/);
     btn.click();
-    const u = new URL(opened[0]);
+    const u = new URL(left[0]);
     assert.strictEqual(u.origin + u.pathname, 'https://accounts.google.com/o/oauth2/v2/auth');
     assert.strictEqual(u.searchParams.get('scope'), 'openid', 'ni nom ni adresse demandés');
     assert.strictEqual(u.searchParams.get('response_type'), 'id_token');
@@ -125,6 +125,7 @@ test('inscription au registre : bouton du jeu, page Google, retour sur connexion
     const req = JSON.parse(w.localStorage.getItem('grimdoku:oauth'));
     assert.strictEqual(u.searchParams.get('state'), req.state);
     assert.strictEqual(u.searchParams.get('nonce'), req.nonce);
+    assert.strictEqual(req.back, '#/bureau', 'on reviendra au bureau');
 
     // retour de Google sur connexion.html (même site, même stockage)
     const b64 = (o) => Buffer.from(JSON.stringify(o)).toString('base64url');
@@ -137,29 +138,42 @@ test('inscription au registre : bouton du jeu, page Google, retour sur connexion
         beforeParse(cw) {
           for (const [k, v] of Object.entries(store)) cw.localStorage.setItem(k, v);
           cw.fetch = async (url, o) => { posted.push([url, JSON.parse(o.body)]); return { ok: true }; };
-          cw.close = () => {};
         },
       });
       await new Promise(r => setTimeout(r, 50));
-      const out = { posted, msg: c.window.document.getElementById('msg').textContent, compte: c.window.localStorage.getItem('grimdoku:compte'), url: c.window.location.href };
+      const cd = c.window.document;
+      const out = { posted, msg: cd.getElementById('msg').textContent, link: cd.querySelector('#back a').getAttribute('href'),
+        compte: c.window.localStorage.getItem('grimdoku:compte'), inscrit: c.window.localStorage.getItem('grimdoku:inscrit'), url: c.window.location.href };
       c.window.close();
       return out;
     };
     const saved = { 'grimdoku:oauth': w.localStorage.getItem('grimdoku:oauth') };
     const bad = await back(`id_token=${token('autre')}&state=${req.state}`, saved);
     assert.deepStrictEqual(bad.posted, [], 'nonce différent : refusé');
+    assert.strictEqual(bad.link, './#/bureau', 'lien de retour vers l\'écran de départ');
     const stale = await back(`id_token=${token(req.nonce)}&state=faux`, saved);
     assert.deepStrictEqual(stale.posted, [], 'state différent : refusé');
     const ok = await back(`id_token=${token(req.nonce)}&state=${req.state}`, saved);
     assert.deepStrictEqual(ok.posted, [['api/login', { credential: token(req.nonce) }]]);
     assert.strictEqual(ok.compte, 'true');
+    assert.strictEqual(ok.inscrit, '1');
     assert.ok(!ok.url.includes('id_token'), 'le jeton ne reste pas dans l\'adresse');
     assert.match(ok.msg, /inscrit au registre/);
-
-    // le jeu reçoit le signal : inscrit, le bouton laisse place à la déconnexion
-    w.localStorage.setItem('grimdoku:compte', 'true');
-    w.dispatchEvent(new w.StorageEvent('storage', { key: 'grimdoku:compte', newValue: 'true' }));
-    assert.ok(d.getElementById('logoutBtn'), 'inscrit');
-    assert.strictEqual(d.getElementById('registreBtn'), null);
   } finally { w.close(); }
+
+  // de retour dans le jeu : le message, une seule fois, et la sauvegarde active
+  const toasts = new JSDOM(html, {
+    runScripts: 'dangerously', url: 'https://grimdoku.fcold.org/#/bureau', pretendToBeVisual: true,
+    beforeParse(w) {
+      w.scrollTo = () => {};
+      w.localStorage.setItem('grimdoku:prologue', 'true');
+      w.localStorage.setItem('grimdoku:compte', 'true');
+      w.localStorage.setItem('grimdoku:inscrit', '1');
+      w.fetch = async () => ({ ok: false, status: 401, json: async () => ({}) });
+    },
+  });
+  try {
+    assert.match(toasts.window.document.body.textContent, /inscrit au registre de Brumeval/);
+    assert.strictEqual(toasts.window.localStorage.getItem('grimdoku:inscrit'), null, 'message montré une seule fois');
+  } finally { toasts.window.close(); }
 });

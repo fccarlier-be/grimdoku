@@ -5,7 +5,7 @@
 (function (root) {
   'use strict';
   const LISTS = ['lettres', 'lettres-lues', 'lieux-vus']; // ce qu'on a reçu, lu ou vu ne se perd pas : union
-  const LOCAL = ['settings', 'compte', 'oauth'];          // propres à l'appareil (oauth : connexion en cours)
+  const LOCAL = ['settings', 'compte', 'oauth', 'inscrit']; // propres à l'appareil (oauth, inscrit : connexion en cours)
   const keep = (k) => !LOCAL.includes(k);
   // état d'une affaire : le plus récent l'emporte (t, posé à chaque sauvegarde) ; sans date, la résolue, puis la plus avancée
   function newer(a, b) {
