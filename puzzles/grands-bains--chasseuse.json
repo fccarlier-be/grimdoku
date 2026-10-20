@@ -268,11 +268,11 @@
     },
     {
       "id": "e",
-      "name": "Grippesou",
+      "name": "Aagrid",
       "gender": "m",
       "role": "suspect",
       "icon": "🧔‍♂️",
-      "desc": "Tavernier nain, radin légendaire",
+      "desc": "Tenancier le plus *SYMPA* de la baronnie",
       "archetype": "tavernier",
       "tic": "Compte à voix basse en parlant"
     },
@@ -334,7 +334,7 @@
   "clues": [
     {
       "who": "a",
-      "text": "Fizzlebarbe était à l'est de Grippesou.",
+      "text": "Fizzlebarbe était à l'est d'Aagrid.",
       "logic": {
         "type": "eastOf",
         "other": "e"
@@ -382,7 +382,7 @@
     },
     {
       "who": "e",
-      "text": "Grippesou était sur la même ligne qu'une barque.",
+      "text": "Aagrid était sur la même ligne qu'une barque.",
       "logic": {
         "type": "sameRowAs",
         "object": "barque"

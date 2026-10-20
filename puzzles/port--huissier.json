@@ -204,11 +204,11 @@
     },
     {
       "id": "d",
-      "name": "Grippesou",
+      "name": "Aagrid",
       "gender": "m",
       "role": "suspect",
       "icon": "🧔‍♂️",
-      "desc": "Tavernier nain, radin légendaire",
+      "desc": "Tenancier le plus *SYMPA* de la baronnie",
       "archetype": "tavernier",
       "tic": "Compte à voix basse en parlant"
     },
@@ -283,7 +283,7 @@
     },
     {
       "who": "d",
-      "text": "Grippesou était à côté d'une table.",
+      "text": "Aagrid était à côté d'une table.",
       "logic": {
         "type": "adjacentTo",
         "object": "table"
@@ -299,7 +299,7 @@
     },
     {
       "who": "f",
-      "text": "Goémone était à l'est de Grippesou.",
+      "text": "Goémone était à l'est d'Aagrid.",
       "logic": {
         "type": "eastOf",
         "other": "d"

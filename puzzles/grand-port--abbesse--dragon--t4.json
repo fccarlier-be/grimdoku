@@ -221,11 +221,11 @@
     },
     {
       "id": "b",
-      "name": "Grippesou",
+      "name": "Aagrid",
       "gender": "m",
       "role": "suspect",
       "icon": "🧔‍♂️",
-      "desc": "Tavernier nain, radin légendaire",
+      "desc": "Tenancier le plus *SYMPA* de la baronnie",
       "archetype": "tavernier",
       "tic": "Compte à voix basse en parlant"
     },
@@ -314,7 +314,7 @@
     },
     {
       "who": "b",
-      "text": "Grippesou était dans la même colonne qu'un tonneau.",
+      "text": "Aagrid était dans la même colonne qu'un tonneau.",
       "logic": {
         "type": "sameColAs",
         "object": "tonneau"
@@ -362,7 +362,7 @@
     },
     {
       "who": "g",
-      "text": "Goémone était au sud de Grippesou.",
+      "text": "Goémone était au sud d'Aagrid.",
       "logic": {
         "type": "southOf",
         "other": "b"

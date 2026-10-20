@@ -242,11 +242,11 @@
     },
     {
       "id": "d",
-      "name": "Grippesou",
+      "name": "Aagrid",
       "gender": "m",
       "role": "suspect",
       "icon": "🧔‍♂️",
-      "desc": "Tavernier nain, radin légendaire",
+      "desc": "Tenancier le plus *SYMPA* de la baronnie",
       "archetype": "tavernier",
       "tic": "Compte à voix basse en parlant"
     },
@@ -339,7 +339,7 @@
     },
     {
       "who": "d",
-      "text": "Grippesou était à l'est de Caillasse.",
+      "text": "Aagrid était à l'est de Caillasse.",
       "logic": {
         "type": "eastOf",
         "other": "g"

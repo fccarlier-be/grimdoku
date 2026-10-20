@@ -136,11 +136,11 @@
     },
     {
       "id": "b",
-      "name": "Grippesou",
+      "name": "Aagrid",
       "gender": "m",
       "role": "suspect",
       "icon": "🧔‍♂️",
-      "desc": "Tavernier nain, radin légendaire",
+      "desc": "Tenancier le plus *SYMPA* de la baronnie",
       "archetype": "tavernier",
       "tic": "Compte à voix basse en parlant"
     },
@@ -193,7 +193,7 @@
   "clues": [
     {
       "who": "a",
-      "text": "Aëlys était au nord de Grippesou.",
+      "text": "Aëlys était au nord d'Aagrid.",
       "logic": {
         "type": "northOf",
         "other": "b"
@@ -209,7 +209,7 @@
     },
     {
       "who": "b",
-      "text": "Grippesou était dans la même colonne qu'un chaudron.",
+      "text": "Aagrid était dans la même colonne qu'un chaudron.",
       "logic": {
         "type": "sameColAs",
         "object": "chaudron"
@@ -233,7 +233,7 @@
     },
     {
       "who": "d",
-      "text": "Gribouille était à l'est de Grippesou.",
+      "text": "Gribouille était à l'est d'Aagrid.",
       "logic": {
         "type": "eastOf",
         "other": "b"

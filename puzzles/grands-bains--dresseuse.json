@@ -228,11 +228,11 @@
   "characters": [
     {
       "id": "a",
-      "name": "Grippesou",
+      "name": "Aagrid",
       "gender": "m",
       "role": "suspect",
       "icon": "🧔‍♂️",
-      "desc": "Tavernier nain, radin légendaire",
+      "desc": "Tenancier le plus *SYMPA* de la baronnie",
       "archetype": "tavernier",
       "tic": "Compte à voix basse en parlant"
     },
@@ -334,7 +334,7 @@
   "clues": [
     {
       "who": "a",
-      "text": "Grippesou était à côté d'un lit.",
+      "text": "Aagrid était à côté d'un lit.",
       "logic": {
         "type": "adjacentTo",
         "object": "lit"

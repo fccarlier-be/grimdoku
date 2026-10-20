@@ -1,5 +1,5 @@
 # Grimdoku — le lore complet
-*Document généré à partir des données du jeu le 2026-10-19 (`lore/LORE.md`). Il contient tout le lore : le monde, chaque personnage et toutes ses répliques, les invités, les lieux, les lettres d'Augure, l'affaire finale et sa révélation, et la façon dont tout cela s'articule avec le jeu. Il ne contient aucune solution d'énigme.*
+*Document généré à partir des données du jeu le 2026-10-20 (`lore/LORE.md`). Il contient tout le lore : le monde, chaque personnage et toutes ses répliques, les invités, les lieux, les lettres d'Augure, l'affaire finale et sa révélation, et la façon dont tout cela s'articule avec le jeu. Il ne contient aucune solution d'énigme.*
 **Attention : ce document dévoile la fin du fil rouge (le Nœud de Brume, le Palier zéro, qui écrit les lettres et pourquoi).**
 Le canon de référence est `lore/GRIMDOKU_MATRICE_CONTINUITE.md` (vérité fixe, chronologie, connaissances des personnages) ; les décisions d'application sont dans `lore/PLAN_MIGRATION_CANON.md`.
 
@@ -54,13 +54,13 @@ On l'entend à trois endroits :
 
 | Technique | Ce qu'il marmonne |
 | --- | --- |
-| indice | Relisons la fiche de <personnage>. Ses indices ne laissent qu'une case. Bon. |
-| case unique | <personnage>… On retire les lignes et les colonnes déjà prises : il ne reste qu'une case. Évidemment. |
-| ligne réservée | Quelqu'un n'a plus qu'une ligne possible, ou qu'une colonne : elle est à lui, les autres n'ont rien à y faire. Ça suffit pour placer <personnage>. |
-| position relative | Nord, sud, est, ouest. Les positions relatives coincent <personnage>. Ce n'est pas sorcier. Enfin, pas ici. |
-| seul candidat | Une ligne, ou une colonne, où un seul personnage peut encore aller. C'est <personnage>. Il fallait la voir. |
-| pièces | La règle des pièces : un suspect par pièce, la victime avec un seul, et pas une pièce vide. Ça place <personnage>. |
-| groupes | Quelques-uns se partagent exactement autant de lignes qu'ils sont. Personne d'autre n'y entre. Ça place <personnage>. |
+| indice | Relis la fiche de <personnage>. Ses indices ne lui laissent qu'une case. Je n'ai pas eu besoin d'en lire davantage. |
+| case unique | Retire à <personnage> les lignes et les colonnes déjà prises. Il ne lui reste qu'une case. |
+| ligne réservée | Quelqu'un n'a plus qu'une ligne possible, ou qu'une colonne : elle est à lui, et à personne d'autre. Cela suffit pour placer <personnage>. |
+| position relative | Nord, sud, est, ouest. Les positions des uns par rapport aux autres coincent <personnage>. Encore faut-il les lire ensemble. |
+| seul candidat | Il existe une ligne, ou une colonne, où un seul personnage peut encore aller. C'est <personnage>. Elle était sous tes yeux. |
+| pièces | Un suspect par pièce, la victime avec un seul, aucune pièce vide. Ces trois règles placent <personnage>. |
+| groupes | Quelques-uns se partagent exactement autant de lignes qu'ils sont. Personne d'autre n'y entre. Cela place <personnage>. |
 
    Si un personnage confirmé est mal placé, le bouton le signale d'abord : « Quelque chose cloche : <personnage> n'est pas à sa place. »
 3. **Le verdict** : c'est lui qui ouvre chaque épilogue (« Vous étiez seul avec… ») et donne la réplique au coupable.
@@ -161,9 +161,9 @@ Exemple rempli : pour Capucine face à Prudence l'abbesse, « {Il} voulait {mena
 > — Alors ?  
 > — Alors je lui ai pris la vie. Je la lui rends demain.
 
-### Grippesou — Tavernier nain
+### Aagrid — Tenancier le plus *SYMPA* de la baronnie
 - **Type** : `tavernier` · masculin
-- **Trait** : Tavernier nain, radin légendaire
+- **Trait** : Tenancier le plus *SYMPA* de la baronnie
 - **Tic de langage** : Compte à voix basse en parlant
 - **Où on le croise** : Le Grand Port de Brumeval · Les Grands Bains de Brumeval · Le Port des Contrebandiers · Meurtre au Sanglier Borgne · Les Thermes Enchantés
 - **Épilogue quand il est coupable** :
@@ -534,8 +534,8 @@ Les mobiles viennent de ces liens. Ils nourrissent les épilogues, les lettres d
 
 | Entre | Lien | Ce que ça donne |
 | --- | --- | --- |
-| Grippesou et Capucine | Trois tournées impayées, devenues trois cents avec les intérêts | Le tavernier tient un registre des dettes de toute la baronnie |
-| Grippesou et Bâfrin | Patron et plongeur, payé en restes | Bâfrin casse une assiette par jour, Grippesou la retient sur sa paie |
+| Aagrid et Capucine | Trois tournées impayées, devenues trois cents avec les intérêts | Le tavernier tient un registre des dettes de toute la baronnie |
+| Aagrid et Bâfrin | Patron et plongeur, payé en restes | Bâfrin casse une assiette par jour, Aagrid la retient sur sa paie |
 | Dagobert et Bakchich | Le roi et son trésorier ; le trésor est vide, personne ne sait pourquoi | Toute enquête au château finit par une question d'argent |
 | Dagobert et Blafard | Blafard était châtelain avant Dagobert et n'a jamais rendu les clés | Querelle de propriété vieille de quatre siècles |
 | Gontran et Flammèche | Le chevalier l'a adopté « pour le dresser » | C'est surtout l'armure de Gontran qui fond |
@@ -591,7 +591,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 > Bakchich a mis la Tour de l'Archimage en garantie d'un prêt. Le prêteur n'a jamais vu le moindre titre de propriété. Bakchich appelle ça une formalité. — A.
 
 ### La Citadelle de Mortebrune
-- **Contrée** : Mortebrune, le chef-lieu · **carte** : 9×9 · **enquêtes** : 12 · illustration reprise de « chateau »
+- **Contrée** : Mortebrune, le chef-lieu · **carte** : 9×9 · **enquêtes** : 12
 - **Pièces** : Remparts, Cour d'honneur, Tour de guet, Armurerie, Jardin, Écuries, Oubliettes, Salle du trône (la plus petite est fusionnée avec une voisine quand il y a plus de pièces que de suspects : chaque pièce doit être occupée)
 - **Habitués** : Gontran, Bakchich, Fausset, Aëlys, Blafard, Flammèche, Dagobert, Ciguë, Festin
 - **Invités** (enquêtes normales) : Lirelire (le troubadour), Prudence (l'abbesse), Mercurio (l'alchimiste), Grisemotte (la baronne), Vipérine (la chasseuse de primes), Bricabrac (le colporteur), Ermengarde (la cousine), Gertrude (la dresseuse), Saisitout (l'huissier)
@@ -637,7 +637,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 ### Le Port des Contrebandiers
 - **Contrée** : La côte · **carte** : 7×7 · **enquêtes** : 7
 - **Pièces** : Phare, Quai, Douane, Taverne du port, Chantier naval, Entrepôt, Marché aux poissons (la plus petite est fusionnée avec une voisine quand il y a plus de pièces que de suspects : chaque pièce doit être occupée)
-- **Habitués** : Bâbord, Frégaton, Écho-Écho, Goémone, Bakchich, Bâfrin, Grippesou
+- **Habitués** : Bâbord, Frégaton, Écho-Écho, Goémone, Bakchich, Bâfrin, Aagrid
 - **Invités** (enquêtes normales) : Saisitout (l'huissier), Pinardon (l'inspecteur des tavernes), Rapidon (le messager), Ondine (la maîtresse-nageuse), Taxard (le percepteur), Gustave (le touriste), Lirelire (le troubadour)
 - **Introduction** :
 > Au Port des Contrebandiers, {titre} {victime}, venu{e} {motif}, a été repêché{e} à marée basse. {Nombre} habitués traînaient sur les quais. L'un d'eux était seul avec {lui}. Ici, tout le monde a quelque chose à cacher, généralement dans un tonneau.
@@ -645,9 +645,9 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 > Fiolius a fait livrer douze bocaux vides à son nom, avec la mention « échantillons de la Tour ». Il affirme qu'ils sont indispensables à une étude. Il ne m'a pas dit ce qu'il compte mettre dedans. — A.
 
 ### Le Grand Port de Brumeval
-- **Contrée** : La côte · **carte** : 10×10 · **enquêtes** : 13 · illustration reprise de « port »
+- **Contrée** : La côte · **carte** : 10×10 · **enquêtes** : 13
 - **Pièces** : Quais, Entrepôt, Taverne du Kraken, Capitainerie, Chantier naval, Marché aux poissons, Galion, Phare, Douane (la plus petite est fusionnée avec une voisine quand il y a plus de pièces que de suspects : chaque pièce doit être occupée)
-- **Habitués** : Bâbord, Frégaton, Écho-Écho, Goémone, Grippesou, Bâfrin, Bakchich, Belladone, Esbroufe, Fernand
+- **Habitués** : Bâbord, Frégaton, Écho-Écho, Goémone, Aagrid, Bâfrin, Bakchich, Belladone, Esbroufe, Fernand
 - **Invités** (enquêtes normales) : Mercurio (l'alchimiste), Grisemotte (la baronne), Vipérine (la chasseuse de primes), Bricabrac (le colporteur), Ermengarde (la cousine), Gertrude (la dresseuse), Saisitout (l'huissier), Pinardon (l'inspecteur des tavernes), Rapidon (le messager), Ondine (la maîtresse-nageuse)
 - **Enquêtes à grands monstres** : Cendrebrune (forme T4) — victime Prudence ; Glissandra (forme L4, cachée) — victime Taxard ; Caillasse et Escabeau (forme I3, I2) — victime Gustave
 - **Introduction** :
@@ -669,7 +669,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 ### Les Thermes Enchantés
 - **Contrée** : La côte · **carte** : 6×6 · **enquêtes** : 6
 - **Pièces** : Vestiaire, Bassin chaud, Bassin froid, Sauna, Salle de massage (la plus petite est fusionnée avec une voisine quand il y a plus de pièces que de suspects : chaque pièce doit être occupée)
-- **Habitués** : Goémone, Aëlys, Bâfrin, Capucine, Gribouille, Grippesou
+- **Habitués** : Goémone, Aëlys, Bâfrin, Capucine, Gribouille, Aagrid
 - **Invités** (enquêtes normales) : Ermengarde (la cousine), Gertrude (la dresseuse), Saisitout (l'huissier), Pinardon (l'inspecteur des tavernes), Rapidon (le messager), Ondine (la maîtresse-nageuse)
 - **Introduction** :
 > Aux Thermes Enchantés, {titre} {victime}, venu{e} {motif}, a pris son dernier bain. {Nombre} baigneurs se prélassaient. L'un d'eux était seul avec {lui}. J'enquête en peignoir ; c'est le règlement, paraît-il.
@@ -677,9 +677,9 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 > Aux Thermes, Fumerolle a dit : « Le vieux veut léguer la Tour à celui qui le mérite. Personne ne le mérite. » Puis elle m'a demandé si un vœu pouvait modifier un titre de propriété. Elle préfère les génies aux notaires. — A.
 
 ### Les Grands Bains de Brumeval
-- **Contrée** : La côte · **carte** : 10×10 · **enquêtes** : 12 · illustration reprise de « thermes »
+- **Contrée** : La côte · **carte** : 10×10 · **enquêtes** : 12
 - **Pièces** : Grand bassin, Hammam, Sauna, Vestiaires, Bassin des sirènes, Salon de thé, Jardin des cures, Salle des massages, Bains de boue (la plus petite est fusionnée avec une voisine quand il y a plus de pièces que de suspects : chaque pièce doit être occupée)
-- **Habitués** : Goémone, Aëlys, Bâfrin, Capucine, Grippesou, Belladone, Esbroufe, Fumerolle, Fizzlebarbe, Dagobert
+- **Habitués** : Goémone, Aëlys, Bâfrin, Capucine, Aagrid, Belladone, Esbroufe, Fumerolle, Fizzlebarbe, Dagobert
 - **Invités** (enquêtes normales) : Gustave (le touriste), Lirelire (le troubadour), Prudence (l'abbesse), Mercurio (l'alchimiste), Grisemotte (la baronne), Vipérine (la chasseuse de primes), Bricabrac (le colporteur), Ermengarde (la cousine), Gertrude (la dresseuse), Saisitout (l'huissier)
 - **Enquêtes à grands monstres** : Escabeau (forme T4) — victime Pinardon ; Glissandra (forme L4, cachée) — victime Rapidon
 - **Introduction** :
@@ -690,7 +690,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 ### Meurtre au Sanglier Borgne
 - **Contrée** : La campagne de Bois-Tordu · **carte** : 6×6 · **enquêtes** : 6
 - **Pièces** : Salle commune, Cuisine, Cave, Chambre, Écurie (la plus petite est fusionnée avec une voisine quand il y a plus de pièces que de suspects : chaque pièce doit être occupée)
-- **Habitués** : Gribouille, Fausset, Bâfrin, Aëlys, Capucine, Grippesou
+- **Habitués** : Gribouille, Fausset, Bâfrin, Aëlys, Capucine, Aagrid
 - **Invités** (enquêtes normales) : Gertrude (la dresseuse), Saisitout (l'huissier), Pinardon (l'inspecteur des tavernes), Rapidon (le messager), Ondine (la maîtresse-nageuse), Taxard (le percepteur)
 - **Introduction** :
 > On m'a tiré du lit à l'aube. {Titre} {victime}, venu{e} au Sanglier Borgne {motif}, ne se réveillera plus. {Nombre} clients juraient dormir comme des loirs. L'un d'eux était avec {lui}. J'ai demandé un café ; on m'a servi une bière.
@@ -771,7 +771,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 > Brindille s'entraîne en secret au sort qui ouvre les serrures magiques. Trois portes de l'Académie ont déjà explosé. La quatrième s'est déplacée de deux pas vers la gauche. Le directeur appelle cela un progrès. — A.
 
 ### L'Université des Sortilèges
-- **Contrée** : Le quartier savant · **carte** : 11×11 · **enquêtes** : 14 · illustration reprise de « academie »
+- **Contrée** : Le quartier savant · **carte** : 11×11 · **enquêtes** : 14
 - **Pièces** : Amphithéâtre, Grande bibliothèque, Serre, Dortoir, Laboratoire, Cour, Réfectoire, Observatoire, Salle des duels, Bureau du doyen (la plus petite est fusionnée avec une voisine quand il y a plus de pièces que de suspects : chaque pièce doit être occupée)
 - **Habitués** : Fizzlebarbe, Brindille, Fiolius, Gribouille, Capucine, Fumerolle, Dewey, Flammèche, Ambroise, Blafard, Clairvoya
 - **Invités** (enquêtes normales) : Pinardon (l'inspecteur des tavernes), Rapidon (le messager), Ondine (la maîtresse-nageuse), Taxard (le percepteur), Gustave (le touriste), Lirelire (le troubadour), Prudence (l'abbesse), Mercurio (l'alchimiste), Grisemotte (la baronne), Vipérine (la chasseuse de primes), Bricabrac (le colporteur)
@@ -804,7 +804,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 > Clairvoya a prédit à Brindille qu'elle hériterait d'une tour. Esbroufe lui a aussitôt vendu un plan de la Tour. Il y manque un étage, mais il garantit que le document est complet. — A.
 
 ### La Grande Foire des Mille Merveilles
-- **Contrée** : Sur la route · **carte** : 12×12 · **enquêtes** : 15 · illustration reprise de « foire »
+- **Contrée** : Sur la route · **carte** : 12×12 · **enquêtes** : 15
 - **Pièces** : Chapiteau, Ménagerie, Grande roue, Stand de tir, Piste aux étoiles, Roulottes, Cabinet des curiosités, Labyrinthe, Buvette, Tente de la voyante, Manège (la plus petite est fusionnée avec une voisine quand il y a plus de pièces que de suspects : chaque pièce doit être occupée)
 - **Habitués** : Esbroufe, Clairvoya, Fausset, Bakchich, Bâfrin, Capucine, Flammèche, Festin, Fricot, Briochon, Farinard, Aëlys
 - **Invités** (enquêtes normales) : Vipérine (la chasseuse de primes), Bricabrac (le colporteur), Ermengarde (la cousine), Gertrude (la dresseuse), Saisitout (l'huissier), Pinardon (l'inspecteur des tavernes), Rapidon (le messager), Ondine (la maîtresse-nageuse), Taxard (le percepteur), Gustave (le touriste), Lirelire (le troubadour), Prudence (l'abbesse)
@@ -962,7 +962,7 @@ Cette nuit-là, quelqu'un a déplacé les meubles de la Tour. Personne d'autre n
 
 ## 10. Gags récurrents
 Des petites histoires qui courent d'une enquête à l'autre, sans jamais compter pour la solution :
-- **Le registre de Grippesou** : la dette de Capucine grossit. Dans le carnet, sa fiche affiche « Dette au Sanglier Borgne : N tournées » (3 de départ, plus 3 par enquête résolue où l'on a croisé Capucine).
+- **Le registre de Aagrid** : la dette de Capucine grossit. Dans le carnet, sa fiche affiche « Dette au Sanglier Borgne : N tournées » (3 de départ, plus 3 par enquête résolue où l'on a croisé Capucine).
 - **Le navire qui ne part pas** : dans chaque enquête du port, Frégaton annonce qu'il lève l'ancre demain. Sa fiche tient le compte : « Départs annoncés : N. Départs effectués : 0. »
 - **Festin et le mardi** : végétarien « depuis mardi », quel que soit le jour (affiché sur sa fiche).
 - **« De mon temps » contre « de mon vivant »** : Fizzlebarbe et Blafard se disputent le titre du plus vieux de la baronnie.

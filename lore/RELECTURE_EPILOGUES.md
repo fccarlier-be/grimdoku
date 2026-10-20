@@ -1,5 +1,5 @@
 # Grimdoku — dossier de relecture des épilogues
-*Généré le 2026-10-19 par `node tools/relecture-md.js`. ⚠️ Ce document révèle le coupable de chaque enquête et la vérité du fil rouge.*
+*Généré le 2026-10-20 par `node tools/relecture-md.js`. ⚠️ Ce document révèle le coupable de chaque enquête et la vérité du fil rouge.*
 ## Ce qu'on attend de la relecture
 Grimdoku est un jeu de logique (placer des personnages sur une carte d'après des indices pour trouver qui était seul avec la victime), habillé d'un lore humoristique dans l'esprit de *Kaamelott*. Après chaque enquête résolue, un **épilogue** de quatre répliques montre l'enquêteur face au coupable.
 Merci de relire les épilogues ci-dessous à la lumière du lore et des règles d'écriture, et de signaler pour chacun ce qui ne va pas : mobile trop faible pour ce personnage, meurtre qui ne se comprend pas, chute qui ne fait pas sourire, gag plaqué, contradiction avec le canon, répétitions entre épilogues, français maladroit. Proposer une réécriture quand c'est utile. Les épilogues marqués ✅ ont déjà été validés par l'auteur : les relire seulement si un problème grave saute aux yeux.
@@ -49,13 +49,13 @@ On l'entend à trois endroits :
 
 | Technique | Ce qu'il marmonne |
 | --- | --- |
-| indice | Relisons la fiche de <personnage>. Ses indices ne laissent qu'une case. Bon. |
-| case unique | <personnage>… On retire les lignes et les colonnes déjà prises : il ne reste qu'une case. Évidemment. |
-| ligne réservée | Quelqu'un n'a plus qu'une ligne possible, ou qu'une colonne : elle est à lui, les autres n'ont rien à y faire. Ça suffit pour placer <personnage>. |
-| position relative | Nord, sud, est, ouest. Les positions relatives coincent <personnage>. Ce n'est pas sorcier. Enfin, pas ici. |
-| seul candidat | Une ligne, ou une colonne, où un seul personnage peut encore aller. C'est <personnage>. Il fallait la voir. |
-| pièces | La règle des pièces : un suspect par pièce, la victime avec un seul, et pas une pièce vide. Ça place <personnage>. |
-| groupes | Quelques-uns se partagent exactement autant de lignes qu'ils sont. Personne d'autre n'y entre. Ça place <personnage>. |
+| indice | Relis la fiche de <personnage>. Ses indices ne lui laissent qu'une case. Je n'ai pas eu besoin d'en lire davantage. |
+| case unique | Retire à <personnage> les lignes et les colonnes déjà prises. Il ne lui reste qu'une case. |
+| ligne réservée | Quelqu'un n'a plus qu'une ligne possible, ou qu'une colonne : elle est à lui, et à personne d'autre. Cela suffit pour placer <personnage>. |
+| position relative | Nord, sud, est, ouest. Les positions des uns par rapport aux autres coincent <personnage>. Encore faut-il les lire ensemble. |
+| seul candidat | Il existe une ligne, ou une colonne, où un seul personnage peut encore aller. C'est <personnage>. Elle était sous tes yeux. |
+| pièces | Un suspect par pièce, la victime avec un seul, aucune pièce vide. Ces trois règles placent <personnage>. |
+| groupes | Quelques-uns se partagent exactement autant de lignes qu'ils sont. Personne d'autre n'y entre. Cela place <personnage>. |
 
    Si un personnage confirmé est mal placé, le bouton le signale d'abord : « Quelque chose cloche : <personnage> n'est pas à sa place. »
 3. **Le verdict** : c'est lui qui ouvre chaque épilogue (« Vous étiez seul avec… ») et donne la réplique au coupable.
@@ -70,7 +70,7 @@ Les habitués de Brumeval reviennent d'une enquête à l'autre ; aucun ne meurt 
 | **Bâfrin** (m) | `troll` | Troll, plongeur à mi-temps | Répète le dernier mot de la phrase des autres | Le Banquet des Gobelins · La Ferme Hantée · La Foire aux Sortilèges · La Forge du Dragon · Le Grand Port de Brumeval · La Grande Foire des Mille Merveilles · Les Grands Bains de Brumeval · Le Marais des Brumes · La Mine des Nains · Le Moulin de Bois-Tordu · Le Port des Contrebandiers · Meurtre au Sanglier Borgne · Les Thermes Enchantés |
 | **Aëlys** (f) | `elfe` | Elfe, critique gastronomique | Note tout sur dix, les gens compris | L'Académie de Magie · Le Bal Masqué · Le Château de Mortebrune · La Citadelle de Mortebrune · La Grande Foire des Mille Merveilles · Les Grands Bains de Brumeval · Le Marais des Brumes · Meurtre au Sanglier Borgne · Les Thermes Enchantés |
 | **Capucine** (f) | `fee` | Fée, doit trois tournées | « Je te le rends demain. » | L'Académie de Magie · Le Bal Masqué · La Ferme Hantée · La Foire aux Sortilèges · La Grande Foire des Mille Merveilles · Les Grands Bains de Brumeval · La Mine des Nains · Le Moulin de Bois-Tordu · Meurtre au Sanglier Borgne · Les Thermes Enchantés · L'Université des Sortilèges |
-| **Grippesou** (m) | `tavernier` | Tavernier nain, radin légendaire | Compte à voix basse en parlant | Le Grand Port de Brumeval · Les Grands Bains de Brumeval · Le Port des Contrebandiers · Meurtre au Sanglier Borgne · Les Thermes Enchantés |
+| **Aagrid** (m) | `tavernier` | Tenancier le plus *SYMPA* de la baronnie | Compte à voix basse en parlant | Le Grand Port de Brumeval · Les Grands Bains de Brumeval · Le Port des Contrebandiers · Meurtre au Sanglier Borgne · Les Thermes Enchantés |
 | **Blafard** (m) | `spectre` | Spectre, ancien châtelain. Traverse les meubles, pas les reproches | « De mon vivant… » | Le Bal Masqué · La Bibliothèque Interdite · Le Château de Mortebrune · Le Cimetière de Minuit · La Citadelle de Mortebrune · Le Navire Fantôme · La Tour de l'Archimage · L'Université des Sortilèges |
 | **Flammèche** (m) | `dragonnet` | Dragonnet, brûle tout ce qu'il touche | S'excuse avant même d'avoir brûlé quelque chose | L'Académie de Magie · Le Château de Mortebrune · La Citadelle de Mortebrune · La Ferme Hantée · La Foire aux Sortilèges · La Forge du Dragon · La Grande Foire des Mille Merveilles · La Mine des Nains · Le Moulin de Bois-Tordu · La Tour de l'Archimage · L'Université des Sortilèges |
 | **Fernand** (m) | `zombie` | Zombie, ancien apprenti. Ancien tout court | Perd un morceau quand il s'énerve | Le Cimetière de Minuit · La Ferme Hantée · Le Grand Port de Brumeval · Le Marais des Brumes · La Mine des Nains · Le Moulin de Bois-Tordu · Le Navire Fantôme · La Tour de l'Archimage |
@@ -109,8 +109,8 @@ Les mobiles viennent de ces liens. Ils nourrissent les épilogues, les lettres d
 
 | Entre | Lien | Ce que ça donne |
 | --- | --- | --- |
-| Grippesou et Capucine | Trois tournées impayées, devenues trois cents avec les intérêts | Le tavernier tient un registre des dettes de toute la baronnie |
-| Grippesou et Bâfrin | Patron et plongeur, payé en restes | Bâfrin casse une assiette par jour, Grippesou la retient sur sa paie |
+| Aagrid et Capucine | Trois tournées impayées, devenues trois cents avec les intérêts | Le tavernier tient un registre des dettes de toute la baronnie |
+| Aagrid et Bâfrin | Patron et plongeur, payé en restes | Bâfrin casse une assiette par jour, Aagrid la retient sur sa paie |
 | Dagobert et Bakchich | Le roi et son trésorier ; le trésor est vide, personne ne sait pourquoi | Toute enquête au château finit par une question d'argent |
 | Dagobert et Blafard | Blafard était châtelain avant Dagobert et n'a jamais rendu les clés | Querelle de propriété vieille de quatre siècles |
 | Gontran et Flammèche | Le chevalier l'a adopté « pour le dresser » | C'est surtout l'armure de Gontran qui fond |
@@ -150,7 +150,7 @@ Depuis le 2026-10-19 (audit du lore), **le nom de la victime change à chaque af
 Dans chaque lieu, les invités sont tous différents d'une enquête à l'autre ; le titre d'une enquête est « <lieu> — l'affaire <invité> ».
 ### 10. Gags récurrents
 Des petites histoires qui courent d'une enquête à l'autre, sans jamais compter pour la solution :
-- **Le registre de Grippesou** : la dette de Capucine grossit. Dans le carnet, sa fiche affiche « Dette au Sanglier Borgne : N tournées » (3 de départ, plus 3 par enquête résolue où l'on a croisé Capucine).
+- **Le registre de Aagrid** : la dette de Capucine grossit. Dans le carnet, sa fiche affiche « Dette au Sanglier Borgne : N tournées » (3 de départ, plus 3 par enquête résolue où l'on a croisé Capucine).
 - **Le navire qui ne part pas** : dans chaque enquête du port, Frégaton annonce qu'il lève l'ancre demain. Sa fiche tient le compte : « Départs annoncés : N. Départs effectués : 0. »
 - **Festin et le mardi** : végétarien « depuis mardi », quel que soit le jour (affiché sur sa fiche).
 - **« De mon temps » contre « de mon vivant »** : Fizzlebarbe et Blafard se disputent le titre du plus vieux de la baronnie.
@@ -216,7 +216,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 **Débloquer la fin** : avec **les 23 lettres** (toutes : décision de François, 2026-10-19), l'affaire finale s'ouvre. La fin est donc vraiment la fin : Fizzlebarbe ne peut plus réapparaître vivant dans une enquête jouée après sa mort.
 
 ## Les épilogues
-192 épilogues (147 grilles jouables, 45 grilles désactivées), dont **4 validés ✅**. Classés par lieu, dans l'ordre où le joueur les découvre. Pour chacun : la victime (son métier, ce qu'elle venait faire, la menace qu'elle représentait), le coupable (trait et tic), l'introduction de l'enquête, puis l'épilogue.
+192 épilogues (147 grilles jouables, 45 grilles désactivées), dont **17 validés ✅**. Classés par lieu, dans l'ordre où le joueur les découvre. Pour chacun : la victime (son métier, ce qu'elle venait faire, la menace qu'elle représentait), le coupable (trait et tic), l'introduction de l'enquête, puis l'épilogue.
 
 ### Le Château de Mortebrune
 
@@ -260,7 +260,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous aviez quelque chose à cacher, dans cette cave ?  
 > — Une bouteille, marquée « Ne pas boire ». Il l'a bue. Techniquement, c'est légal : il était prévenu.  
 
-#### Le Château de Mortebrune — l'affaire Promenin
+#### Le Château de Mortebrune — l'affaire Promenin ✅ validé
 - **Victime** : Promenin, le touriste — Touriste, dessine tout au fusain, surtout ce qui est interdit. Venu visiter la baronnie ; menace : « faire mon portrait au fusain et le vendre à la foire ».
 - **Coupable** : Fausset — Barde, chante faux. Tic : Transforme chaque conversation en couplet.
 - **Introduction** : Le touriste Promenin était venu au Château de Mortebrune visiter la baronnie. On m'a fait appeler au nom du roi, ce qui veut dire que c'est grave, ou qu'il s'ennuie. Cinq membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec lui.
@@ -282,27 +282,28 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 
 ### Le Banquet des Gobelins
 
-#### Le Banquet des Gobelins — l'affaire Ingeburge
+#### Le Banquet des Gobelins — l'affaire Ingeburge ✅ validé
 - **Victime** : Ingeburge, la cousine — Cousine éloignée de tout le monde, venue pour l'héritage. Venue réclamer un héritage ; menace : « réclamer sa part de ce qui m'appartient ».
 - **Coupable** : Festin — Ogre, végétarien depuis mardi. Tic : Compte les jours depuis mardi.
 - **Introduction** : Au Banquet des Gobelins, la cousine Ingeburge, venue réclamer un héritage, est passée de la liste des invités à la carte du menu. On l'a retrouvée avant le dessert. Cinq invités se goinfraient. L'un d'eux était seul avec elle. On m'a servi une soupe. Je ne l'ai pas touchée.
+- **Note de l'auteur** : Nul. On ne tue pas pour une demi-assiette de navets. A la limite on pourrait dire que l'ogre, récemment devenu végétarien, a craqué en croquant sa cousine.
 
 > — Ingeburge. Racontez-moi.  
-> — Elle se disait ma cousine et réclamait sa part de ce qui m'appartient : la moitié de mon assiette de navets.  
-> — Vous ne partagez pas ?  
-> — Pas mes navets. Je ne mange que ça, depuis mardi. Elle, ce n'était pas un navet.  
+> — Elle se disait ma cousine. Elle est venue réclamer sa part de l'héritage, et elle s'est assise à côté de moi.  
+> — Et alors ?  
+> — Je suis végétarien depuis mardi. Six jours. Elle sentait le rôti du dimanche… Je n'ai croqué qu'une fois. Bon, deux.  
 
-#### Le Banquet des Gobelins — l'affaire Croquette
+#### Le Banquet des Gobelins — l'affaire Croquette ✅ validé
 - **Victime** : Croquette, la dresseuse — Dresseuse de dragons, surtout des petits. Venue recruter des bêtes pour son cirque ; menace : « m'emmener dans son cirque ».
 - **Coupable** : Fausset — Barde, chante faux. Tic : Transforme chaque conversation en couplet.
 - **Introduction** : Au Banquet des Gobelins, la dresseuse Croquette, venue recruter des bêtes pour son cirque, est passée de la liste des invités à la carte du menu. On l'a retrouvée avant le dessert. Cinq invités se goinfraient. L'un d'eux était seul avec elle. On m'a servi une soupe. Je ne l'ai pas touchée.
 
 > — Pourquoi Croquette ?  
-> — « Elle voulait m'engager, la dresseuse de dragons, / pour faire peur à ses bêtes avec mes chansons… »  
-> — Et ensuite ?  
-> — « … Je n'ai pas apprécié, alors je l'ai… » Non. Je ne trouve pas la rime. C'est pour ça que je n'en parle pas.  
+> — Elle voulait m'emmener dans son cirque. Pas pour chanter : pour faire peur à ses dragons.  
+> — Vous l'avez mal pris.  
+> — J'ai accepté une audition. J'ai chanté, ses petits dragons ont pris peur et craché du feu. Heureusement j'étais derrière elle...  
 
-#### Le Banquet des Gobelins — l'affaire Recouvrin
+#### Le Banquet des Gobelins — l'affaire Recouvrin ✅ validé
 - **Victime** : Recouvrin, l'huissier — Huissier de la banque gobeline, saisit d'abord, demande ensuite. Venu saisir des biens ; menace : « saisir mes affaires ».
 - **Coupable** : Bakchich — Gobelin, trésorier du royaume (non déclaré). Tic : « Techniquement, c'est légal. ».
 - **Introduction** : Au Banquet des Gobelins, l'huissier Recouvrin, venu saisir des biens, est passé de la liste des invités à la carte du menu. On l'a retrouvé avant le dessert. Cinq invités se goinfraient. L'un d'eux était seul avec lui. On m'a servi une soupe. Je ne l'ai pas touchée.
@@ -310,9 +311,9 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Pourquoi Recouvrin ?  
 > — Il venait saisir mes affaires. À sa banque, on saisit d'abord et on demande ensuite.  
 > — Et vous ?  
-> — J'ai saisi le premier : lui. Puis je l'ai revendu aux cuisines, au poids. Techniquement, c'est légal : un bien saisi se revend.  
+> — J'ai saisi le premier : lui. Puis je l'ai revendu aux cuisines, au poids. Techniquement, c'est légal : un bien saisi peut être revendu.  
 
-#### Le Banquet des Gobelins — l'affaire Courandier
+#### Le Banquet des Gobelins — l'affaire Courandier ✅ validé
 - **Victime** : Courandier, le messager — Messager du baron, porte toujours de mauvaises nouvelles. Venu apporter une lettre du baron ; menace : « m'annoncer une mauvaise nouvelle ».
 - **Coupable** : Fricot — Chef gobelin, goûte tout, surtout ce qui bouge encore. Tic : Juge chaque plat à sa capacité à s'enfuir.
 - **Introduction** : Au Banquet des Gobelins, le messager Courandier, venu apporter une lettre du baron, est passé de la liste des invités à la carte du menu. On l'a retrouvé avant le dessert. Cinq invités se goinfraient. L'un d'eux était seul avec lui. On m'a servi une soupe. Je ne l'ai pas touchée.
@@ -320,9 +321,9 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — C'était vous, avec Courandier.  
 > — Il m'a apporté une mauvaise nouvelle du baron, puis il est reparti en courant.  
 > — Vous l'avez rattrapé.  
-> — Un messager du baron, à pleine vitesse ? Je n'avais jamais rien cuisiné d'aussi frais.  
+> — Un messager du baron, en pleine forme ? Je n'avais jamais rien cuisiné d'aussi frais.  
 
-#### Le Banquet des Gobelins — l'affaire Brassée
+#### Le Banquet des Gobelins — l'affaire Brassée ✅ validé
 - **Victime** : Brassée, la maîtresse-nageuse — Maîtresse-nageuse, sans permis ni maillot. Venue donner des cours de natation ; menace : « m'apprendre à nager de force ».
 - **Coupable** : Bakchich — Gobelin, trésorier du royaume (non déclaré). Tic : « Techniquement, c'est légal. ».
 - **Introduction** : Au Banquet des Gobelins, la maîtresse-nageuse Brassée, venue donner des cours de natation, est passée de la liste des invités à la carte du menu. On l'a retrouvée avant le dessert. Cinq invités se goinfraient. L'un d'eux était seul avec elle. On m'a servi une soupe. Je ne l'ai pas touchée.
@@ -330,7 +331,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Que s'est-il passé avec Brassée ?  
 > — Elle voulait m'apprendre à nager de force. Dix écus la leçon, dans la grande marmite de soupe, faute de lac.  
 > — Et vous avez refusé ?  
-> — Elle a sauté dedans pour me montrer. J'ai remis le couvercle. Dix écus d'économisés : la soupe ne m'a rien coûté.  
+> — Elle a sauté dedans pour me montrer. J'ai remis le couvercle. Dix écus d'économisés et un bon bouillon, gratuit en prime !  
 
 #### Le Banquet des Gobelins — l'affaire Décanteur *(grille désactivée)*
 - **Victime** : Décanteur, l'inspecteur des tavernes — Inspecteur des tavernes, goûte tout, note tout. Venu inspecter les lieux ; menace : « me coller un blâme ».
@@ -344,7 +345,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 
 ### Meurtre au Sanglier Borgne
 
-#### Meurtre au Sanglier Borgne — l'affaire Câline
+#### Meurtre au Sanglier Borgne — l'affaire Câline ✅ validé
 - **Victime** : Câline, la dresseuse — Dresseuse de dragons, surtout des petits. Venue recruter des bêtes pour son cirque ; menace : « m'emmener dans son cirque ».
 - **Coupable** : Fausset — Barde, chante faux. Tic : Transforme chaque conversation en couplet.
 - **Introduction** : On m'a tiré du lit à l'aube. La dresseuse Câline, venue au Sanglier Borgne recruter des bêtes pour son cirque, ne se réveillera plus. Cinq clients juraient dormir comme des loirs. L'un d'eux était avec elle. J'ai demandé un café ; on m'a servi une bière.
@@ -352,29 +353,30 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Il n'y avait que vous et Câline.  
 > — Elle voulait m'emmener dans son cirque, pour endormir ses bêtes avec mes chansons.  
 > — Venant d'une dresseuse, c'est presque un compliment.  
-> — Elle a ronflé au deuxième couplet. J'ai fini la chanson en lui tenant le nez, pour qu'elle arrête. La chanson est longue.  
+> — Elle a ronflé au deuxième couplet. J'ai fini la chanson en lui tenant le nez, pour qu'elle arrête. C'était une longue chanson...  
 
-#### Meurtre au Sanglier Borgne — l'affaire Rinçon
+#### Meurtre au Sanglier Borgne — l'affaire Rinçon ✅ validé
 - **Victime** : Rinçon, l'inspecteur des tavernes — Inspecteur des tavernes, goûte tout, note tout. Venu inspecter les lieux ; menace : « me coller un blâme ».
 - **Coupable** : Aëlys — Elfe, critique gastronomique. Tic : Note tout sur dix, les gens compris.
 - **Introduction** : On m'a tiré du lit à l'aube. L'inspecteur des tavernes Rinçon, venu au Sanglier Borgne inspecter les lieux, ne se réveillera plus. Cinq clients juraient dormir comme des loirs. L'un d'eux était avec lui. J'ai demandé un café ; on m'a servi une bière.
+- **Note de l'auteur** : Ca ne va pas, on ne sait plus si Aëlys est critique ou chef... A revoir...
 
 > — Racontez-moi, pour Rinçon.  
 > — Il a donné trois étoiles au Sanglier Borgne. Moi, je lui avais mis deux sur dix.  
 > — Vous n'étiez pas d'accord.  
-> — Deux critiques pour une seule auberge, c'est un de trop. Je lui ai servi le ragoût de la maison, réchauffé trois fois, avec un ingrédient à moi. Il a dormi comme un loir. Puis plus du tout.  
+> — Je l'ai mis au défi de finir le seul plat que j'avais noté zéro. Il a tout fini, pour me donner tort. Il avait tort : ça méritait bien zéro.  
 
-#### Meurtre au Sanglier Borgne — l'affaire Hérautin
+#### Meurtre au Sanglier Borgne — l'affaire Hérautin ✅ validé
 - **Victime** : Hérautin, le messager — Messager du baron, porte toujours de mauvaises nouvelles. Venu apporter une lettre du baron ; menace : « m'annoncer une mauvaise nouvelle ».
-- **Coupable** : Grippesou — Tavernier nain, radin légendaire. Tic : Compte à voix basse en parlant.
+- **Coupable** : Aagrid — Tenancier le plus *SYMPA* de la baronnie. Tic : Compte à voix basse en parlant.
 - **Introduction** : On m'a tiré du lit à l'aube. Le messager Hérautin, venu au Sanglier Borgne apporter une lettre du baron, ne se réveillera plus. Cinq clients juraient dormir comme des loirs. L'un d'eux était avec lui. J'ai demandé un café ; on m'a servi une bière.
 
 > — Que s'est-il passé avec Hérautin ?  
 > — Il m'a annoncé un nouvel impôt sur la bière. Puis il a demandé une chambre, gratuite, puisqu'il apportait la nouvelle.  
 > — Vous avez refusé.  
-> — Je l'ai bordé moi-même. Un oreiller, deux oreillers, bien serrés. Quatre écus, avec le drap.  
+> — Je l'ai bordé moi-même. Un oreiller, deux oreillers, bien serrés...  
 
-#### Meurtre au Sanglier Borgne — l'affaire Apnée
+#### Meurtre au Sanglier Borgne — l'affaire Apnée ✅ validé
 - **Victime** : Apnée, la maîtresse-nageuse — Maîtresse-nageuse, sans permis ni maillot. Venue donner des cours de natation ; menace : « m'apprendre à nager de force ».
 - **Coupable** : Bâfrin — Troll, plongeur à mi-temps. Tic : Répète le dernier mot de la phrase des autres.
 - **Introduction** : On m'a tiré du lit à l'aube. La maîtresse-nageuse Apnée, venue au Sanglier Borgne donner des cours de natation, ne se réveillera plus. Cinq clients juraient dormir comme des loirs. L'un d'eux était avec elle. J'ai demandé un café ; on m'a servi une bière.
@@ -384,15 +386,15 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Elle voulait vous apprendre à nager ?  
 > — Dans le bac à vaisselle. Elle a dit : « La tête sous l'eau, et on compte jusqu'à dix ! » Bâfrin mis sa tête à elle. Bâfrin compte mal. Cent.  
 
-#### Meurtre au Sanglier Borgne — l'affaire Corvéon
+#### Meurtre au Sanglier Borgne — l'affaire Corvéon ✅ validé
 - **Victime** : Corvéon, le percepteur — Percepteur du baron, compte même les miettes. Venu lever l'impôt de fin d'année ; menace : « me faire payer l'impôt sur tout ce que je possède ».
 - **Coupable** : Gribouille — Mage, allergique au houblon. Tic : Éternue avant chaque sortilège.
 - **Introduction** : On m'a tiré du lit à l'aube. Le percepteur Corvéon, venu au Sanglier Borgne lever l'impôt de fin d'année, ne se réveillera plus. Cinq clients juraient dormir comme des loirs. L'un d'eux était avec lui. J'ai demandé un café ; on m'a servi une bière.
 
 > — Racontez-moi, pour Corvéon.  
-> — Il voulait m'imposer sur tout ce que je possède. Je ne possède que des dettes, et la plupart ici.  
-> — Il a bien dû trouver autre chose.  
-> — Le grimoire de Dewey. Alors j'ai éternué. Dans une taverne, avec tout ce houblon, ce n'est la faute de personne.  
+> — Il voulait m'imposer sur tout ce que je possède : des dettes, et le grimoire de Dewey.  
+> — Il a voulu le saisir.  
+> — Il m'a mis une bière sous le nez pour m'amadouer. Le sort est parti tout seul.  
 
 #### Meurtre au Sanglier Borgne — l'affaire Ramassard *(grille désactivée)*
 - **Victime** : Ramassard, l'huissier — Huissier de la banque gobeline, saisit d'abord, demande ensuite. Venu saisir des biens ; menace : « saisir mes affaires ».
@@ -406,27 +408,29 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 
 ### La Mine des Nains
 
-#### La Mine des Nains — l'affaire Bénédicte
+#### La Mine des Nains — l'affaire Bénédicte ⚠️ à revoir
 - **Victime** : Bénédicte, l'abbesse — Abbesse, quête pour un couvent introuvable. Venue faire la quête ; menace : « me faire la morale ».
 - **Coupable** : Capucine — Fée, doit trois tournées. Tic : « Je te le rends demain. ».
 - **Introduction** : À la Mine des Nains, l'abbesse Bénédicte, venue faire la quête, est descendue plus bas que prévu. Sept mineurs et visiteurs étaient au fond. L'un d'eux était seul avec elle. Ici, tout le monde a une pioche, et personne n'a d'alibi.
+- **Note de l'auteur** : Pas drôle, pas absurde, nul.
 
 > — Pourquoi Bénédicte ?  
 > — Elle m'a fait la morale sur mes dettes. Trois tournées, au fond de la mine, devant tout le monde.  
 > — Et vous l'avez laissée en bas.  
 > — Au bord du puits. J'ai soufflé sa lanterne et je l'ai poussée. Sa lanterne, je la lui rends demain.  
 
-#### La Mine des Nains — l'affaire Ballot
+#### La Mine des Nains — l'affaire Ballot ⚠️ à revoir
 - **Victime** : Ballot, le colporteur — Colporteur, vend des objets dont personne ne veut. Venu vendre sa camelote ; menace : « me revendre ce qu'il m'avait déjà vendu ».
 - **Coupable** : Flammèche — Dragonnet, brûle tout ce qu'il touche. Tic : S'excuse avant même d'avoir brûlé quelque chose.
 - **Introduction** : À la Mine des Nains, le colporteur Ballot, venu vendre sa camelote, est descendu plus bas que prévu. Sept mineurs et visiteurs étaient au fond. L'un d'eux était seul avec lui. Ici, tout le monde a une pioche, et personne n'a d'alibi.
+- **Note de l'auteur** : Pourquoi vendre des gants ignifugés à un dragon?...
 
 > — C'était vous, avec Ballot.  
 > — Il voulait me revendre les gants ignifugés qu'il m'avait déjà vendus. Ils avaient brûlé au premier essayage.  
 > — Alors vous vous êtes fâché.  
 > — Pardon. Pardon. Je me suis excusé avant, comme toujours. Il n'a pas reculé à temps.  
 
-#### La Mine des Nains — l'affaire Ventrapat
+#### La Mine des Nains — l'affaire Ventrapat ✅ validé
 - **Victime** : Ventrapat, le messager — Messager du baron, porte toujours de mauvaises nouvelles. Venu apporter une lettre du baron ; menace : « m'annoncer une mauvaise nouvelle ».
 - **Coupable** : Grisou — Mineur nain, creuse plus vite qu'il ne réfléchit. Tic : « On creuse ? ».
 - **Introduction** : À la Mine des Nains, le messager Ventrapat, venu apporter une lettre du baron, est descendu plus bas que prévu. Six mineurs et visiteurs étaient au fond. L'un d'eux était seul avec lui. Ici, tout le monde a une pioche, et personne n'a d'alibi.
@@ -434,29 +438,31 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Ventrapat. Racontez-moi.  
 > — Il m'a annoncé que le baron fermait la mine.  
 > — Et vous ?  
-> — Une mine fermée, ça se rouvre en creusant. On creuse ? J'ai ouvert un passage, juste au-dessus de lui.  
+> — Une mine fermée, ça se rouvre en creusant. Je n'y peux rien s'il était en dessous du trou que je creusais...  
 
-#### La Mine des Nains — l'affaire Bulle
+#### La Mine des Nains — l'affaire Bulle ⚠️ à revoir
 - **Victime** : Bulle, la maîtresse-nageuse — Maîtresse-nageuse, sans permis ni maillot. Venue donner des cours de natation ; menace : « m'apprendre à nager de force ».
 - **Coupable** : Flammèche — Dragonnet, brûle tout ce qu'il touche. Tic : S'excuse avant même d'avoir brûlé quelque chose.
 - **Introduction** : À la Mine des Nains, la maîtresse-nageuse Bulle, venue donner des cours de natation, est descendue plus bas que prévu. Six mineurs et visiteurs étaient au fond. L'un d'eux était seul avec elle. Ici, tout le monde a une pioche, et personne n'a d'alibi.
+- **Note de l'auteur** : Pas drôle, et un dragonnet dans l'eau ne doit pas pouvoir faire grand chose...
 
 > — Parlons de Bulle.  
 > — Elle voulait m'apprendre à nager dans la galerie inondée.  
 > — Vous avez refusé.  
-> — Pardon, j'ai dit. Puis j'ai éternué, près de la poche de gaz. La galerie n'est plus inondée.  
+> — Pardon, j'ai dit, avant. Elle m'a jeté à l'eau quand même. La galerie a bouilli d'un coup, avec elle dedans.  
 
-#### La Mine des Nains — l'affaire Sangsuard
+#### La Mine des Nains — l'affaire Sangsuard ⚠️ à revoir
 - **Victime** : Sangsuard, le percepteur — Percepteur du baron, compte même les miettes. Venu lever l'impôt de fin d'année ; menace : « me faire payer l'impôt sur tout ce que je possède ».
 - **Coupable** : Grisou — Mineur nain, creuse plus vite qu'il ne réfléchit. Tic : « On creuse ? ».
 - **Introduction** : À la Mine des Nains, le percepteur Sangsuard, venu lever l'impôt de fin d'année, est descendu plus bas que prévu. Six mineurs et visiteurs étaient au fond. L'un d'eux était seul avec lui. Ici, tout le monde a une pioche, et personne n'a d'alibi.
+- **Note de l'auteur** : Il y a de l'idée mais la dernière réponse ne semble pas naturelle/cohérente avec le reste du dialogue.
 
 > — Racontez-moi, pour Sangsuard.  
 > — Il voulait l'impôt sur tout ce que je possède. Il a demandé où je cachais mes pépites.  
 > — Vous les lui avez montrées ?  
 > — J'ai dit : « On creuse ? » J'ai commencé sous ses pieds. Je réfléchis toujours après.  
 
-#### La Mine des Nains — l'affaire Chantefable
+#### La Mine des Nains — l'affaire Chantefable ✅ validé
 - **Victime** : Chantefable, le troubadour — Troubadour itinérant, chante juste, et ça agace. Venu donner un concert ; menace : « chanter mieux que tout le monde ».
 - **Coupable** : Granit — Contremaître nain, compte les pépites et les pauses. Tic : Chronomètre tout le monde.
 - **Introduction** : À la Mine des Nains, le troubadour Chantefable, venu donner un concert, est descendu plus bas que prévu. Sept mineurs et visiteurs étaient au fond. L'un d'eux était seul avec lui. Ici, tout le monde a une pioche, et personne n'a d'alibi.
@@ -690,7 +696,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Et Trimballe ?  
 > — Il voulait me revendre la pioche qu'il m'avait déjà vendue. Le manche casse au premier coup.  
 > — Il a cassé ?  
-> — Au premier coup, oui. Je lui ai montré sur lui.  
+> — Je lui ai montré. On creuse ? Au premier coup, le manche a cassé et le fer est parti tout seul. Lui, il était juste derrière.  
 
 #### La Forge du Dragon — l'affaire Gondeberge
 - **Victime** : Gondeberge, la cousine — Cousine éloignée de tout le monde, venue pour l'héritage. Venue réclamer un héritage ; menace : « réclamer sa part de ce qui m'appartient ».
@@ -834,7 +840,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Il n'y avait que vous et Ombeline.  
 > — Prince Ambroise, je vous prie. Elle voulait exhiber le prince dans son cirque, comme un vulgaire crapaud.  
 > — Et alors ?  
-> — Pour l'affiche, elle m'a embrassé. Je suis resté crapaud. Elle, la peau de prince ne lui a pas réussi.  
+> — Pour l'affiche, elle m'a embrassé. Je suis resté crapaud. Prince, mais crapaud du marais : venimeux. Elle l'a appris trop tard.  
 
 #### Le Marais des Brumes — l'affaire Inventorin
 - **Victime** : Inventorin, l'huissier — Huissier de la banque gobeline, saisit d'abord, demande ensuite. Venu saisir des biens ; menace : « saisir mes affaires ».
@@ -884,7 +890,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Personne d'autre n'était avec Liardin. Sauf vous.  
 > — Il voulait taxer l'eau du marais, au litre, parce que j'y vis.  
 > — Et il est tombé dedans.  
-> — Il a glissé. *Blop.* Il a sauté. *Blop, blop.* Bon. Je l'ai aidé à mesurer de plus près.  
+> — Il a voulu mesurer la profondeur. Je lui ai dit qu'il avait pied partout. *Blop.*  
 
 ### L'Académie de Magie
 
@@ -896,7 +902,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Pourquoi Ursule ?  
 > — Elle m'a fait la morale sur la bière, un soir d'examens. À moi, qui suis allergique au houblon.  
 > — Vous lui avez expliqué ?  
-> — Elle ne s'est pas tue. Alors je lui ai lancé un sort. J'éternue toujours avant ; cette fois, je n'ai pas raté.  
+> — Elle me l'a faite de très près, en me soufflant au visage. Elle avait bu. J'ai éternué, et le sort que je révisais est parti tout seul.  
 
 #### L'Académie de Magie — l'affaire Azotin
 - **Victime** : Azotin, l'alchimiste — Alchimiste ambulant, transforme l'or en dettes. Venu proposer ses services ; menace : « changer mes économies en plomb ».
@@ -946,7 +952,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Il n'y avait que vous et Ponctionnin.  
 > — Il voulait taxer mes chaudrons. Même les trois qui ont explosé.  
 > — Ils n'existent plus.  
-> — C'est ce que je lui ai dit. Il a exigé le quatrième. Je le lui ai donné, plein, la mèche allumée.  
+> — Il a exigé le quatrième, celui qui chauffait. Il l'a serré dans ses bras pour l'emporter. J'ai demandé : « C'est normal que ça fume ? » Ça a fait quatre.  
 
 #### L'Académie de Magie — l'affaire Primerose *(grille désactivée)*
 - **Victime** : Primerose, la chasseuse de primes — Chasseuse de primes, a toujours un avis de recherche sur elle. Venue toucher une prime ; menace : « me livrer au baron contre trois écus ».
@@ -997,8 +1003,8 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 
 > — Il n'y avait que vous et Sobriété.  
 > — Elle m'a fait la morale : chanter faux, c'est un péché. Et Goémone mérite mieux qu'un pécheur.  
-> — Vous auriez pu en rire.  
-> — Personne ne parle de Goémone comme ça. Je l'ai étranglée avec la bandoulière de mon luth.  
+> — Elle vous a fait taire ?  
+> — Elle s'est bouché les oreilles avec de la cire de bougie, pour ne plus m'entendre. Quand j'ai chanté « Gare à la herse ! », ça a marché.  
 
 #### La Citadelle de Mortebrune — l'affaire Fumagal
 - **Victime** : Fumagal, l'alchimiste — Alchimiste ambulant, transforme l'or en dettes. Venu proposer ses services ; menace : « changer mes économies en plomb ».
@@ -1008,7 +1014,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Parlons de Fumagal.  
 > — Il a dit que mes potions, c'était de la cuisine. Que lui, il faisait de la science.  
 > — Vous l'avez mal pris.  
-> — Je lui ai fait goûter ma cuisine. Le pont-levis était coincé : il a eu toute la nuit pour finir son assiette.  
+> — Je lui ai servi ma soupe, pour qu'il juge. Il en a repris trois fois : « De la chimie très ordinaire. » Il ne savait pas lire les étiquettes de mes bocaux. Moi non plus.  
 
 #### La Citadelle de Mortebrune — l'affaire Toutvend
 - **Victime** : Toutvend, le colporteur — Colporteur, vend des objets dont personne ne veut. Venu vendre sa camelote ; menace : « me revendre ce qu'il m'avait déjà vendu ».
@@ -1426,7 +1432,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Et Bazar ?  
 > — Il voulait me revendre ma propre main. Celle de l'accident, il y a vingt ans ; il l'avait trouvée dans la Tour.  
 > — Vous l'avez rachetée ?  
-> — Je me suis énervé. J'ai perdu l'autre. Je les ai ramassées toutes les deux, et je l'ai poussé contre l'étagère avec.  
+> — Je me suis énervé et j'ai perdu un pied. Il a voulu le ramasser aussi, pour faire la paire. Il a glissé dessus, dans l'escalier de la Tour.  
 
 #### La Tour de l'Archimage — l'affaire Adélaïde
 - **Victime** : Adélaïde, la cousine — Cousine éloignée de tout le monde, venue pour l'héritage. Venue réclamer un héritage ; menace : « réclamer sa part de ce qui m'appartient ».
@@ -1629,8 +1635,8 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 
 > — Vous étiez seul avec Palmette.  
 > — Elle voulait m'apprendre à nager. Elle a dit : « Ôtez cette armure. »  
-> — Et vous ?  
-> — Un chevalier ne se laisse pas désarmer. Elle a tiré sur les sangles. J'ai annoncé : « Je me défends. »  
+> — Vous avez refusé.  
+> — Elle a tiré sur les sangles. J'ai annoncé : « Attention, ça va sauter. » Mon armure est trop petite depuis Noël : la boucle est partie en pleine tempe.  
 
 #### Le Bal Masqué — l'affaire Lacette *(grille désactivée)*
 - **Victime** : Lacette, la chasseuse de primes — Chasseuse de primes, a toujours un avis de recherche sur elle. Venue toucher une prime ; menace : « me livrer au baron contre trois écus ».
@@ -1682,7 +1688,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Personne d'autre n'était avec Rafistol. Sauf vous.  
 > — Il voulait me revendre le poulet qu'il m'avait déjà vendu. Empaillé.  
 > — Il ne s'enfuyait pas.  
-> — Aucun intérêt. Lui, en revanche, s'est enfui très vite quand j'ai sorti le couteau. Excellent.  
+> — Aucun intérêt. Lui, en revanche, s'est enfui très vite quand j'ai sorti le couteau. Un régal, à rattraper.  
 
 #### La Grande Foire des Mille Merveilles — l'affaire Théodelinde
 - **Victime** : Théodelinde, la cousine — Cousine éloignée de tout le monde, venue pour l'héritage. Venue réclamer un héritage ; menace : « réclamer sa part de ce qui m'appartient ».
@@ -1722,7 +1728,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Pourquoi Marée ?  
 > — Elle voulait m'apprendre à nager. Je lui ai tiré les cartes, pour savoir comment finirait la leçon.  
 > — Et alors ?  
-> — Je n'ai rien vu. J'ai horreur de ne rien voir. Je l'ai tenue sous l'eau pour savoir comment ça finissait. Je l'avais vu venir, après.  
+> — Elles disaient que la leçon finirait mal. Elle a ri et elle a plongé. Moi, je regardais encore les cartes ; je n'ai pas vu qu'elle ne remontait pas. Je l'avais vu venir, après.  
 
 #### La Grande Foire des Mille Merveilles — l'affaire Abstinence *(grille désactivée)*
 - **Victime** : Abstinence, l'abbesse — Abbesse, quête pour un couvent introuvable. Venue faire la quête ; menace : « me faire la morale ».
@@ -1768,7 +1774,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 
 #### Le Grand Port de Brumeval — l'affaire Tempérance
 - **Victime** : Tempérance, l'abbesse — Abbesse, quête pour un couvent introuvable. Venue faire la quête ; menace : « me faire la morale ».
-- **Coupable** : Grippesou — Tavernier nain, radin légendaire. Tic : Compte à voix basse en parlant.
+- **Coupable** : Aagrid — Tenancier le plus *SYMPA* de la baronnie. Tic : Compte à voix basse en parlant.
 - **Introduction** : Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : l'abbesse Tempérance, venue faire la quête, est morte sur les quais. Sept habitués erraient dans la brume. L'un d'eux était seul avec elle.
 
 > — Tempérance. Racontez-moi.  
@@ -1814,7 +1820,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Que s'est-il passé avec Naïade ?  
 > — Elle a compris que je ne savais pas nager. Elle voulait le dire à tout le port.  
 > — Et alors ?  
-> — Je lui ai donné rendez-vous au large, en barque, pour en parler. Elle a nagé jusque-là. J'ai juste oublié la barque. Je ne quitte jamais le port.  
+> — Je lui ai prouvé le contraire : j'ai sauté du quai. Elle a plongé pour me repêcher. Moi, on m'a repêché.  
 
 #### Le Grand Port de Brumeval — l'affaire Dîmeaux
 - **Victime** : Dîmeaux, le percepteur — Percepteur du baron, compte même les miettes. Venu lever l'impôt de fin d'année ; menace : « me faire payer l'impôt sur tout ce que je possède ».
@@ -2030,7 +2036,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — C'était vous, avec Pincebec.  
 > — Elle voulait racheter le palais. Je lui ai prédit qu'elle y finirait ses jours.  
 > — Ça l'a rassurée.  
-> — Elle a demandé quand. J'ai horreur des clients pressés : je l'ai poussée dans la fontaine aux vœux. Je l'avais vu venir, après.  
+> — Elle a demandé quand. Je l'ai vu dans ma boule : ce soir, dans la fontaine. J'ai couru la prévenir, les yeux dans la boule, et je l'ai bousculée dedans. Je l'avais vu venir, après.  
 
 #### Le Palais des Mille Vœux — l'affaire Traquette
 - **Victime** : Traquette, la chasseuse de primes — Chasseuse de primes, a toujours un avis de recherche sur elle. Venue toucher une prime ; menace : « me livrer au baron contre trois écus ».

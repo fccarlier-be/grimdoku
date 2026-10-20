@@ -263,6 +263,8 @@ header.top { display: flex; align-items: center; gap: 10px; }
 .nb-photo::before { top: -8px; left: -18px; transform: rotate(-38deg); } .nb-photo::after { bottom: -8px; right: -18px; transform: rotate(-38deg); }
 .nb-name { font: 400 40px/68px var(--f-quill); margin: 0; color: #2b1d10; }
 .nb-desc { font: italic 400 19px/34px var(--f-hand); margin: 0 0 0 4px; color: #6e5434; }
+.trait-em { font-weight: 700; }
+.nb-desc .trait-em { color: #a3201a; }
 .nb-tic { font: 400 24px/34px var(--f-quill); margin: 0 0 0 4px; color: #2e2014; }
 .nb-seen { font: 400 22px/34px var(--f-quill); margin: 0 0 0 4px; color: #3b2a18; }
 .nb-seen span { color: #7a5c38; }
@@ -1060,6 +1062,8 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
   const $app = document.getElementById('app');
   const $layer = document.getElementById('layer');
   const esc = (s) => String(s).replace(/[&<>"]/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch]));
+  // trait d'un personnage : *mot* = mis en évidence (« le plus *SYMPA* » : clin d'œil au bar d'un ami de François)
+  const descHtml = (s) => esc(s || '').replace(/\*([^*]+)\*/g, '<strong class="trait-em">$1</strong>');
   const store = {
     get(k, d) { try { const v = localStorage.getItem('grimdoku:' + k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
     set(k, v) { try { localStorage.setItem('grimdoku:' + k, JSON.stringify(v)); } catch (e) {} if (window.GrimSync && GrimSync.keep(k)) try { cloud.later(); } catch (e) { /* pas encore prêt */ } }
@@ -1245,7 +1249,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
       return `<div class="fiche nb-fiche">
         ${(MEDIA.sketches || []).includes(t) ? `<img class="nb-sketch" src="media/croquis-${t}.webp" alt="" aria-hidden="true">` : `<span class="nb-photo" style="--tilt:${[-3, 2.5, -1.5, 3.5][i % 4]}deg" aria-hidden="true">${face({ archetype: t, name: c.name, role: 'suspect', icon: c.icon })}</span>`}
         <h3 class="nb-name">${esc(c.name)}</h3>
-        <p class="nb-desc">${esc(c.desc)}</p>
+        <p class="nb-desc">${descHtml(c.desc)}</p>
         <p class="nb-tic">${esc(c.tic)}</p>
         ${g ? `<p class="nb-gag gag">${esc(g)}</p>` : ''}
         <p class="nb-seen"><span>Vu à :</span> ${[...seenAt[t]].map(pl => esc(placeTitle(pl))).join(', ')}</p>
@@ -1798,7 +1802,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
           const text = items.map(x => emph(x.cl)).join(' ');
           return `<div class="clue ${ch.role === 'victim' ? 'victim' : ''} ${done ? 'done' : ''} ${S.pos[ch.id] ? 'placed' : ''} ${idx.some(i => viol.has(i)) ? 'violated' : ''} ${selected === ch.id ? 'sel' : ''}">
             <button class="em" data-pick="${ch.id}" aria-label="Sélectionner ${esc(ch.name)}">${face(ch)}<span class="letter" style="--cc:${colorOf(ch)}">${letterOf(ch)}</span></button>
-            <div style="min-width:0"><div class="who">${esc(ch.name)} <small>${esc(ch.desc || '')}</small>${shapeHtml(ch)}</div>${ch.role === 'victim'
+            <div style="min-width:0"><div class="who">${esc(ch.name)} <small>${descHtml(ch.desc)}</small>${shapeHtml(ch)}</div>${ch.role === 'victim'
               ? `<p><b class="lead-victim">La victime.</b> ${text ? text + ' ' : ''}Elle était <b>seule avec son meurtrier</b>.</p>`
               : `<p>${text}</p>`}</div>
             ${idx.length ? `<button class="tick" data-done="${idx.join(',')}" aria-label="Marquer comme utilisé" aria-pressed="${done}">✓</button>` : ''}

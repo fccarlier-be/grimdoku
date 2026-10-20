@@ -281,11 +281,11 @@
     },
     {
       "id": "g",
-      "name": "Grippesou",
+      "name": "Aagrid",
       "gender": "m",
       "role": "suspect",
       "icon": "🧔‍♂️",
-      "desc": "Tavernier nain, radin légendaire",
+      "desc": "Tenancier le plus *SYMPA* de la baronnie",
       "archetype": "tavernier",
       "tic": "Compte à voix basse en parlant"
     },
@@ -391,7 +391,7 @@
     },
     {
       "who": "f",
-      "text": "Elle était à l'est de Grippesou.",
+      "text": "Elle était à l'est d'Aagrid.",
       "logic": {
         "type": "eastOf",
         "other": "g"
@@ -399,7 +399,7 @@
     },
     {
       "who": "g",
-      "text": "Grippesou était sur la même ligne qu'un coffre.",
+      "text": "Aagrid était sur la même ligne qu'un coffre.",
       "logic": {
         "type": "sameRowAs",
         "object": "coffre"

@@ -241,11 +241,11 @@
     },
     {
       "id": "c",
-      "name": "Grippesou",
+      "name": "Aagrid",
       "gender": "m",
       "role": "suspect",
       "icon": "🧔‍♂️",
-      "desc": "Tavernier nain, radin légendaire",
+      "desc": "Tenancier le plus *SYMPA* de la baronnie",
       "archetype": "tavernier",
       "tic": "Compte à voix basse en parlant"
     },
@@ -351,7 +351,7 @@
     },
     {
       "who": "c",
-      "text": "Grippesou était au sud de Bakchich.",
+      "text": "Aagrid était au sud de Bakchich.",
       "logic": {
         "type": "southOf",
         "other": "b"
@@ -383,7 +383,7 @@
     },
     {
       "who": "e",
-      "text": "Fernand était à l'est de Grippesou.",
+      "text": "Fernand était à l'est d'Aagrid.",
       "logic": {
         "type": "eastOf",
         "other": "c"

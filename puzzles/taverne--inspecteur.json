@@ -146,11 +146,11 @@
     },
     {
       "id": "c",
-      "name": "Grippesou",
+      "name": "Aagrid",
       "gender": "m",
       "role": "suspect",
       "icon": "🧔‍♂️",
-      "desc": "Tavernier nain, radin légendaire",
+      "desc": "Tenancier le plus *SYMPA* de la baronnie",
       "archetype": "tavernier",
       "tic": "Compte à voix basse en parlant"
     },
@@ -201,7 +201,7 @@
     },
     {
       "who": "b",
-      "text": "Capucine était à l'ouest de Grippesou.",
+      "text": "Capucine était à l'ouest d'Aagrid.",
       "logic": {
         "type": "westOf",
         "other": "c"
@@ -209,7 +209,7 @@
     },
     {
       "who": "c",
-      "text": "Grippesou était au sud d'Aëlys.",
+      "text": "Aagrid était au sud d'Aëlys.",
       "logic": {
         "type": "southOf",
         "other": "d"

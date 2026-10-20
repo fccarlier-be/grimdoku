@@ -262,11 +262,11 @@
     },
     {
       "id": "f",
-      "name": "Grippesou",
+      "name": "Aagrid",
       "gender": "m",
       "role": "suspect",
       "icon": "🧔‍♂️",
-      "desc": "Tavernier nain, radin légendaire",
+      "desc": "Tenancier le plus *SYMPA* de la baronnie",
       "archetype": "tavernier",
       "tic": "Compte à voix basse en parlant"
     },
@@ -324,7 +324,7 @@
     },
     {
       "who": "b",
-      "text": "Glissandra était à l'ouest de Grippesou.",
+      "text": "Glissandra était à l'ouest d'Aagrid.",
       "logic": {
         "type": "westOf",
         "other": "f"
@@ -372,7 +372,7 @@
     },
     {
       "who": "d",
-      "text": "Elle était au sud de Grippesou.",
+      "text": "Elle était au sud d'Aagrid.",
       "logic": {
         "type": "southOf",
         "other": "f"
@@ -388,7 +388,7 @@
     },
     {
       "who": "e",
-      "text": "Il était à l'est de Grippesou.",
+      "text": "Il était à l'est d'Aagrid.",
       "logic": {
         "type": "eastOf",
         "other": "f"
@@ -396,7 +396,7 @@
     },
     {
       "who": "f",
-      "text": "Grippesou était à l'est de Frégaton.",
+      "text": "Aagrid était à l'est de Frégaton.",
       "logic": {
         "type": "eastOf",
         "other": "a"

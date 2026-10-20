@@ -553,6 +553,20 @@ test('carnet : un vrai carnet, page de garde puis un habitant par page, on tourn
   assert.deepEqual(errors, []);
 });
 
+test('Aagrid, le tavernier : toujours ce nom, « SYMPA » mis en évidence dans le carnet, sans astérisque', () => {
+  const { w, d, errors, PUZZLES } = open();
+  const withTav = PUZZLES.filter(p => p.characters.some(c => c.archetype === 'tavernier'));
+  assert.ok(withTav.length > 0);
+  for (const p of withTav) assert.equal(p.characters.find(c => c.archetype === 'tavernier').name, 'Aagrid', p.id);
+  solve(w, withTav.find(p => !p.final && !p.off));
+  w.grimGo('carnet');
+  while (!d.getElementById('nbNext').hidden && d.querySelector('.nb-name')?.textContent !== 'Aagrid') d.getElementById('nbNext').click();
+  const desc = d.querySelector('.nb-fiche .nb-desc');
+  assert.equal(desc.querySelector('.trait-em').textContent, 'SYMPA');
+  assert.ok(!desc.textContent.includes('*'));
+  assert.deepEqual(errors, []);
+});
+
 test('appui long : la roue des personnages, on y choisit qui placer (sans l\'avoir choisi avant)', async () => {
   const { d, cell, hold, openCase, errors, PUZZLES } = open();
   const p = PUZZLES.find(q => !q.final && !q.characters.some(c => c.shape));
@@ -696,7 +710,8 @@ test('page des statistiques : lit les journaux du compteur et des votes, sans so
   assert.ok(ids.length > 100, 'les grilles sont décrites');
   for (const m of Object.values(META)) assert.deepEqual(Object.keys(m).filter(k => !['t', 'pl', 'pn', 'n', 'd', 'off'].includes(k)), [], 'titre, lieu, taille, difficulté : rien d\'autre');
   assert.ok(!/murderer|solution|positions/.test(JSON.stringify(META)), 'aucune solution');
-  const now = Date.now(), iso = (t) => new Date(t).toISOString().replace(/\.\d+Z$/, '+00:00');
+  // « maintenant » du journal : vers midi à Paris (le dernier passé), pour qu'aucun joueur ne soit à cheval sur minuit
+  const noon = new Date().setUTCHours(11, 0, 0, 0), now = noon <= Date.now() ? noon : noon - 864e5, iso = (t) => new Date(t).toISOString().replace(/\.\d+Z$/, '+00:00');
   const journal = [
     `${iso(now - 3 * 864e5)} visite aaa111 - -`, `${iso(now - 3 * 864e5 + 6e4)} ouverte aaa111 ${ids[0]} 6`, `${iso(now - 3 * 864e5 + 6e5)} resolue aaa111 ${ids[0]} 6`,
     `${iso(now - 6e5)} visite aaa111 - -`, `${iso(now - 5e5)} ouverte aaa111 ${ids[1]} 6`,

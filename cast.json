@@ -119,7 +119,7 @@
     "icon": "🧔‍♂️",
     "gender": "m",
     "title": "le tavernier",
-    "desc": "Tavernier nain, radin légendaire",
+    "desc": "Tenancier le plus *SYMPA* de la baronnie",
     "names": {
       "A": "Aspre",
       "B": "Besant",
@@ -134,7 +134,7 @@
       "K": "Kreuzer",
       "L": "Liard"
     },
-    "name": "Grippesou",
+    "name": "Aagrid",
     "tic": "Compte à voix basse en parlant",
     "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}. Un écu, deux écus, trois écus…\n— Vous comptez quoi ?\n— Ce qu'{il} me devait. Et ce que l'enterrement va me coûter."
   },

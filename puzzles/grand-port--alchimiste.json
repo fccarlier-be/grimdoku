@@ -271,11 +271,11 @@
     },
     {
       "id": "f",
-      "name": "Grippesou",
+      "name": "Aagrid",
       "gender": "m",
       "role": "suspect",
       "icon": "🧔‍♂️",
-      "desc": "Tavernier nain, radin légendaire",
+      "desc": "Tenancier le plus *SYMPA* de la baronnie",
       "archetype": "tavernier",
       "tic": "Compte à voix basse en parlant"
     },
@@ -399,7 +399,7 @@
     },
     {
       "who": "f",
-      "text": "Grippesou était dans la même colonne qu'un chariot de mine.",
+      "text": "Aagrid était dans la même colonne qu'un chariot de mine.",
       "logic": {
         "type": "sameColAs",
         "object": "chariot"
@@ -415,7 +415,7 @@
     },
     {
       "who": "g",
-      "text": "Frégaton était à l'ouest de Grippesou.",
+      "text": "Frégaton était à l'ouest d'Aagrid.",
       "logic": {
         "type": "westOf",
         "other": "f"

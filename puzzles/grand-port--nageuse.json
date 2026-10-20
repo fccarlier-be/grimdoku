@@ -281,11 +281,11 @@
     },
     {
       "id": "g",
-      "name": "Grippesou",
+      "name": "Aagrid",
       "gender": "m",
       "role": "suspect",
       "icon": "🧔‍♂️",
-      "desc": "Tavernier nain, radin légendaire",
+      "desc": "Tenancier le plus *SYMPA* de la baronnie",
       "archetype": "tavernier",
       "tic": "Compte à voix basse en parlant"
     },
@@ -391,7 +391,7 @@
     },
     {
       "who": "g",
-      "text": "Grippesou était à côté d'un fauteuil.",
+      "text": "Aagrid était à côté d'un fauteuil.",
       "logic": {
         "type": "adjacentTo",
         "object": "fauteuil"

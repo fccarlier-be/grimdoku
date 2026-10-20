@@ -259,11 +259,11 @@
     },
     {
       "id": "e",
-      "name": "Grippesou",
+      "name": "Aagrid",
       "gender": "m",
       "role": "suspect",
       "icon": "🧔‍♂️",
-      "desc": "Tavernier nain, radin légendaire",
+      "desc": "Tenancier le plus *SYMPA* de la baronnie",
       "archetype": "tavernier",
       "tic": "Compte à voix basse en parlant"
     },
@@ -345,7 +345,7 @@
     },
     {
       "who": "e",
-      "text": "Grippesou était sur la même ligne qu'une statue.",
+      "text": "Aagrid était sur la même ligne qu'une statue.",
       "logic": {
         "type": "sameRowAs",
         "object": "statue"

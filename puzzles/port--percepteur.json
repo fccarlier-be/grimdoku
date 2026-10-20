@@ -174,11 +174,11 @@
   "characters": [
     {
       "id": "a",
-      "name": "Grippesou",
+      "name": "Aagrid",
       "gender": "m",
       "role": "suspect",
       "icon": "🧔‍♂️",
-      "desc": "Tavernier nain, radin légendaire",
+      "desc": "Tenancier le plus *SYMPA* de la baronnie",
       "archetype": "tavernier",
       "tic": "Compte à voix basse en parlant"
     },
@@ -251,7 +251,7 @@
   "clues": [
     {
       "who": "a",
-      "text": "Grippesou était sur la même ligne qu'un canon.",
+      "text": "Aagrid était sur la même ligne qu'un canon.",
       "logic": {
         "type": "sameRowAs",
         "object": "canon"
@@ -307,7 +307,7 @@
     },
     {
       "who": "e",
-      "text": "Frégaton était à l'ouest de Grippesou.",
+      "text": "Frégaton était à l'ouest d'Aagrid.",
       "logic": {
         "type": "westOf",
         "other": "a"

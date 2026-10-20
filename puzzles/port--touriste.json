@@ -184,11 +184,11 @@
     },
     {
       "id": "b",
-      "name": "Grippesou",
+      "name": "Aagrid",
       "gender": "m",
       "role": "suspect",
       "icon": "🧔‍♂️",
-      "desc": "Tavernier nain, radin légendaire",
+      "desc": "Tenancier le plus *SYMPA* de la baronnie",
       "archetype": "tavernier",
       "tic": "Compte à voix basse en parlant"
     },
@@ -251,7 +251,7 @@
   "clues": [
     {
       "who": "a",
-      "text": "Frégaton était au nord de Grippesou.",
+      "text": "Frégaton était au nord d'Aagrid.",
       "logic": {
         "type": "northOf",
         "other": "b"
@@ -267,7 +267,7 @@
     },
     {
       "who": "b",
-      "text": "Grippesou était sur la même ligne qu'une chaise.",
+      "text": "Aagrid était sur la même ligne qu'une chaise.",
       "logic": {
         "type": "sameRowAs",
         "object": "chaise"

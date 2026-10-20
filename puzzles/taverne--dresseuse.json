@@ -146,11 +146,11 @@
     },
     {
       "id": "c",
-      "name": "Grippesou",
+      "name": "Aagrid",
       "gender": "m",
       "role": "suspect",
       "icon": "🧔‍♂️",
-      "desc": "Tavernier nain, radin légendaire",
+      "desc": "Tenancier le plus *SYMPA* de la baronnie",
       "archetype": "tavernier",
       "tic": "Compte à voix basse en parlant"
     },
@@ -209,7 +209,7 @@
     },
     {
       "who": "c",
-      "text": "Grippesou était sur la même ligne qu'un tonneau.",
+      "text": "Aagrid était sur la même ligne qu'un tonneau.",
       "logic": {
         "type": "sameRowAs",
         "object": "tonneau"
@@ -225,7 +225,7 @@
     },
     {
       "who": "e",
-      "text": "Aëlys était à l'ouest de Grippesou.",
+      "text": "Aëlys était à l'ouest d'Aagrid.",
       "logic": {
         "type": "westOf",
         "other": "c"

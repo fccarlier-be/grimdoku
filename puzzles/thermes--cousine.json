@@ -156,11 +156,11 @@
     },
     {
       "id": "d",
-      "name": "Grippesou",
+      "name": "Aagrid",
       "gender": "m",
       "role": "suspect",
       "icon": "🧔‍♂️",
-      "desc": "Tavernier nain, radin légendaire",
+      "desc": "Tenancier le plus *SYMPA* de la baronnie",
       "archetype": "tavernier",
       "tic": "Compte à voix basse en parlant"
     },
@@ -209,7 +209,7 @@
     },
     {
       "who": "c",
-      "text": "Bâfrin était à l'est de Grippesou.",
+      "text": "Bâfrin était à l'est d'Aagrid.",
       "logic": {
         "type": "eastOf",
         "other": "d"
@@ -233,7 +233,7 @@
     },
     {
       "who": "d",
-      "text": "Grippesou n'était pas à côté d'un lit.",
+      "text": "Aagrid n'était pas à côté d'un lit.",
       "logic": {
         "type": "notAdjacentTo",
         "object": "lit"

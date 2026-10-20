@@ -271,11 +271,11 @@
     },
     {
       "id": "f",
-      "name": "Grippesou",
+      "name": "Aagrid",
       "gender": "m",
       "role": "suspect",
       "icon": "🧔‍♂️",
-      "desc": "Tavernier nain, radin légendaire",
+      "desc": "Tenancier le plus *SYMPA* de la baronnie",
       "archetype": "tavernier",
       "tic": "Compte à voix basse en parlant"
     },
@@ -335,7 +335,7 @@
     },
     {
       "who": "b",
-      "text": "Goémone était à l'est de Grippesou.",
+      "text": "Goémone était à l'est d'Aagrid.",
       "logic": {
         "type": "eastOf",
         "other": "f"
@@ -391,7 +391,7 @@
     },
     {
       "who": "f",
-      "text": "Grippesou était au nord de Bâbord.",
+      "text": "Aagrid était au nord de Bâbord.",
       "logic": {
         "type": "northOf",
         "other": "i"

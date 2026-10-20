@@ -166,11 +166,11 @@
     },
     {
       "id": "e",
-      "name": "Grippesou",
+      "name": "Aagrid",
       "gender": "m",
       "role": "suspect",
       "icon": "🧔‍♂️",
-      "desc": "Tavernier nain, radin légendaire",
+      "desc": "Tenancier le plus *SYMPA* de la baronnie",
       "archetype": "tavernier",
       "tic": "Compte à voix basse en parlant"
     },
@@ -193,7 +193,7 @@
   "clues": [
     {
       "who": "a",
-      "text": "Capucine était au sud de Grippesou.",
+      "text": "Capucine était au sud d'Aagrid.",
       "logic": {
         "type": "southOf",
         "other": "e"
@@ -241,7 +241,7 @@
     },
     {
       "who": "e",
-      "text": "Grippesou était dans le bassin chaud.",
+      "text": "Aagrid était dans le bassin chaud.",
       "logic": {
         "type": "inRoom",
         "room": "C"

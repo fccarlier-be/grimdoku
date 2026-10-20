@@ -211,7 +211,7 @@ Cette classification sert à répartir l'effort d'écriture. Elle ne change ni l
 
 ### Groupe B — Relations récurrentes qui donnent de l'épaisseur au monde
 
-Grippesou, Capucine, Bâfrin, Dagobert, Gontran, Flammèche, Fausset, Goémone, Aëlys, Fricot, Ciguë, Ambroise, Granit, Glas, Clairvoya, Esbroufe, Frégaton et Bâbord.
+Aagrid, Capucine, Bâfrin, Dagobert, Gontran, Flammèche, Fausset, Goémone, Aëlys, Fricot, Ciguë, Ambroise, Granit, Glas, Clairvoya, Esbroufe, Frégaton et Bâbord.
 
 Leurs gags doivent évoluer par petites conséquences : une dette augmente, une relation se tend, un témoin déforme son récit, une rivalité oblige deux personnages à collaborer. Ils ne doivent pas tous devenir des pièces du Nœud ni des membres d'une conspiration.
 
