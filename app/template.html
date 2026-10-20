@@ -655,6 +655,7 @@ html.plaques .tbtn { white-space: nowrap; }
 @keyframes flicker { to { filter: brightness(1.25) drop-shadow(0 0 6px rgba(255, 190, 90, .8)); } }
 .tbtn.pen[aria-pressed="true"] .tool-ico { filter: drop-shadow(0 0 5px rgba(255, 220, 160, .7)); }
 .tbtn:disabled .tool-ico { filter: grayscale(1) opacity(.5); }
+.tbtn.armed .lbl { color: #a3312a; font-weight: 700; }
 @media (max-width: 899px) { .tbtn:has(.tool-ico) { flex-direction: column; gap: 0; line-height: 1; } .tbtn:has(.tool-ico) .lbl { font-size: 11px; } .tool-ico { width: 24px; height: 24px; }
   html.plaques #app.game .tbtn:has(.tool-ico) { height: 52px; } }
 @media (max-width: 899px) { html.plaques .tbtn { border-width: 8px 10px; border-image-width: 8px 10px; padding: 0 4px; } html.plaques #accuse { border-width: 10px 12px; border-image-width: 10px 12px; } }
@@ -1586,6 +1587,8 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     return esc(cl.text).replace(new RegExp(`(?<!\\p{L})(${pats.join('|')})(?!\\p{L})`, 'giu'), '<b>$1</b>');
   }
   const snapshot = () => { undo.push(JSON.stringify(S)); if (undo.length > 100) undo.shift(); };
+  // rien sur la grille : ni pion, ni lettre, ni croix, ni fiche cochée
+  const blankBoard = () => !Object.keys(S.pos).length && !Object.keys(S.pencil || {}).some(k => (S.pencil[k] || []).length) && !(S.marks || []).length && !(S.done || []).length;
   const charAt = (r, c) => Object.keys(S.pos).find(id => E.cellsOf(S.pos[id]).some(([a, b]) => a === r && b === c));
   const isBig = (id) => !!ctx.chars[id].shape;
   const hiddenSizes = () => P.hiddenMax === 3 ? '2 ou 3 cases' : '2 à 4 cases';
@@ -1777,6 +1780,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
           <button class="tbtn pen" id="penBtn" aria-pressed="${!!settings.cross}" title="Crayon : un toucher barre une case d'une croix (ou l'efface). Les lettres s'écrivent en choisissant un personnage. Touche-le encore pour changer de couleur.">${toolIcon('crayon')}<span class="lbl">Crayon</span>${penChar() ? `<span class="pen-dot" style="--cc:${colorOf(penChar())}">${letterOf(penChar())}</span>` : ''}</button>
           <span class="spacer"></span>
           <button class="tbtn" id="undo" aria-label="Annuler" ${undo.length ? '' : 'disabled'}>${toolIcon('annuler')}<span class="lbl">Annuler</span></button>
+          <button class="tbtn" id="wipe" aria-label="Tout effacer" ${blankBoard() ? 'disabled' : ''}>${toolIcon('effacer')}<span class="lbl">Effacer</span></button>
           <button class="accuse" id="accuse" ${allPlaced ? '' : 'disabled'}>Accuser</button>
         </div>
         <div class="tray" id="tray">${cast.map(ch => `
@@ -1835,6 +1839,17 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
       setPen(order[(at + 1) % order.length]);
     };
     document.getElementById('undo').onclick = () => { if (!undo.length) return; S = JSON.parse(undo.pop()); save(); render(); };
+    // Effacer : toute la grille d'un coup (pions, lettres, croix, fiches cochées), après confirmation ; « Annuler » la rend
+    document.getElementById('wipe').onclick = (e) => {
+      const btn = e.currentTarget;
+      if (!btn.dataset.armed) {
+        btn.dataset.armed = '1'; btn.querySelector('.lbl').textContent = 'Sûr ?'; btn.classList.add('armed');
+        setTimeout(() => { if (document.body.contains(btn)) { delete btn.dataset.armed; btn.querySelector('.lbl').textContent = 'Effacer'; btn.classList.remove('armed'); } }, 3000);
+        return;
+      }
+      snapshot(); S = blank(); selected = null; save(); render();
+      toast('Grille effacée. « Annuler » la rend si besoin.');
+    };
     document.getElementById('accuse').onclick = accuse;
     document.querySelectorAll('.chip').forEach(b => b.onclick = () => pick(b.dataset.id));
     document.querySelectorAll('[data-pick]').forEach(b => b.onclick = () => { pick(b.dataset.pick); document.getElementById('board').scrollIntoView({ behavior: 'smooth', block: 'center' }); });

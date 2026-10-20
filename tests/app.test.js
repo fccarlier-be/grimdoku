@@ -304,6 +304,28 @@ test('indice : désigne le prochain personnage à déduire, ou signale une erreu
   }
 });
 
+// François, 2026-10-20 : un outil pour tout effacer (boule de parchemin froissée), avec confirmation ; « Annuler » le rattrape
+test('Effacer : toute la grille d\'un coup, après confirmation, et « Annuler » la rend', () => {
+  const { PUZZLES } = open();
+  const p = PUZZLES.find(q => !q.off && !q.final);
+  const ids = Object.keys(p.solution.positions);
+  const pos = { [ids[0]]: p.solution.positions[ids[0]], [ids[1]]: p.solution.positions[ids[1]] };
+  const { w, d, openCase, errors } = open({ saves: { [p.id]: { pos, pencil: {}, marks: [], done: [], solved: false, sig: sigOf(p) } } });
+  openCase(p.id);
+  const tokens = () => d.querySelectorAll('.board .token').length;
+  assert.equal(tokens(), 2);
+  d.getElementById('wipe').click();
+  assert.equal(tokens(), 2, 'premier clic : confirmation demandée');
+  assert.match(d.getElementById('wipe').textContent, /Sûr/);
+  d.getElementById('wipe').click();
+  assert.equal(tokens(), 0, 'grille effacée');
+  assert.deepEqual(JSON.parse(w.localStorage.getItem('grimdoku:p:' + p.id)).pos, {}, 'et sauvegardée');
+  assert.ok(d.getElementById('wipe').disabled, 'rien à effacer : grisé');
+  d.getElementById('undo').click();
+  assert.equal(tokens(), 2, 'Annuler la rend');
+  assert.deepEqual(errors, []);
+});
+
 test('grand personnage : lettres au crayon sur ses cases, puis appui long ; forme incomplète refusée', async () => {
   const { PUZZLES } = open();
   const p = PUZZLES.find(q => q.characters.some(c => c.shape) && !q.hiddenShapes);
