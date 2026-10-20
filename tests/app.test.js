@@ -16,7 +16,8 @@ const opened = [];
 test.after(() => opened.forEach(w => w.close()));
 
 // ouvre l'appli ; settings / saves : contenu du localStorage avant le chargement
-function open({ settings, saves = {} } = {}) {
+// net : un réseau (fetch) qui répond « non connecté », pour que la sauvegarde en ligne (registre) soit proposée
+function open({ settings, saves = {}, net = false } = {}) {
   // une seule page jsdom vivante à la fois : chacune pèse lourd (toutes les énigmes, images, scènes du lore) et les garder
   // toutes ouvertes jusqu'à la fin de la série épuisait la mémoire (constaté le 2026-10-18)
   while (opened.length) { try { opened.pop().close(); } catch (e) { /* déjà fermée */ } }
@@ -27,6 +28,7 @@ function open({ settings, saves = {} } = {}) {
       w.HTMLElement.prototype.scrollIntoView = () => {};
       if (settings) w.localStorage.setItem('grimdoku:settings', JSON.stringify(settings));
       for (const [id, s] of Object.entries(saves)) w.localStorage.setItem('grimdoku:p:' + id, JSON.stringify(s));
+      if (net) w.fetch = async () => ({ ok: false, status: 401, json: async () => ({}) });
     }
   });
   const w = dom.window, d = w.document;
@@ -554,6 +556,40 @@ test('prologue : à la première partie, quatre scènes, puis le bureau ; se rev
   w.grimGo('carnet');
   d.getElementById('prologueBtn').click();
   assert.ok(d.querySelector('.prologue-story'), 'se revoit depuis le carnet');
+});
+
+// François, 2026-10-20 : juste après le prologue, le bureau assombri sauf l'encrier, une invitation au registre de
+// Brumeval (connexion Google), qu'on peut refuser poliment (avertissement « alpha ») ; l'encrier la garde ensuite
+test('registre : invitation juste après le prologue, refus poli avec avertissement alpha, l\'encrier la rouvre', () => {
+  const { w, d, errors } = open({ net: true });
+  const left = [];
+  w.grimLeave = (u) => left.push(u);
+  d.getElementById('playBtn').click();
+  for (let i = 0; i < w.eval('LORE').prologue.length; i++) d.getElementById('prologueNext').click();
+  const inv = d.querySelector('.invite');
+  assert.ok(inv && d.querySelector('.bureau'), 'invitation sur le bureau');
+  assert.match(inv.textContent, /registre de Brumeval/);
+  assert.match(inv.textContent, /conserver l'avancement de ses enquêtes/);
+  assert.match(d.querySelector('.invite-alpha').textContent, /alpha/);
+  assert.match(d.querySelector('.invite-alpha').textContent, /mise à jour/);
+  d.getElementById('inviteNo').click();
+  assert.equal(d.querySelector('.invite'), null, 'refus : refermée');
+  assert.match(d.querySelector('.toast').textContent, /encrier/);
+  w.grimGo('');
+  d.getElementById('playBtn').click();
+  assert.equal(d.querySelector('.invite'), null, 'une seule fois');
+  d.getElementById('deskEncrier').click();
+  assert.ok(d.querySelector('.invite'), 'l\'encrier la rouvre');
+  d.querySelector('.invite-hole').click();
+  assert.equal(new URL(left[0]).hostname, 'accounts.google.com', 'tremper la plume : connexion Google');
+  assert.deepEqual(errors, []);
+});
+
+test('registre : « Passer » le prologue mène aussi à l\'invitation', () => {
+  const { d } = open({ net: true });
+  d.getElementById('playBtn').click();
+  d.querySelector('.prologue-story [data-close]').click();
+  assert.ok(d.querySelector('.invite'));
 });
 
 test('lettre anonyme : annonce les lieux ouverts, « Retour au bureau » y mène', () => {
