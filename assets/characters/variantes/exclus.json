@@ -1,0 +1,4 @@
+{
+  "_doc": "Variantes écartées après vérification (numéros de <type>-N.webp) : texte dans l'image (bulle, écriture lisible), doublon ou raté. tools/images.py variants() ne les produit pas.",
+  "messager": [9, 11]
+}

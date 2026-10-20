@@ -244,6 +244,8 @@ def variants():
         m = re.match(r'^(.*?)(?:-(\d+))?$', src.stem.lower())
         name = CHAR_ALIAS.get(m.group(1), m.group(1))
         sheets.setdefault(name, []).append((int(m.group(2) or 1), src))
+    import json
+    excl = json.loads((VAR_DIR / 'exclus.json').read_text()) if (VAR_DIR / 'exclus.json').exists() else {}
     for name, group in sheets.items():
         for old in DIR.glob(f'{name}-*.webp'):
             if re.fullmatch(rf'{re.escape(name)}-\d+\.webp', old.name):
@@ -265,9 +267,11 @@ def variants():
                 img = sq.crop((left, top, left + c, top + c))
                 img = key_out(img.resize((SIZE * 2, SIZE * 2), Image.LANCZOS)).resize((SIZE, SIZE), Image.LANCZOS)
                 n += 1
+                if n in excl.get(name, []):  # écartée (texte dans l'image, raté…) : variantes/exclus.json
+                    continue
                 img.save(DIR / f'{name}-{n}.webp', 'WEBP', quality=82, method=6)
             print(f'variantes {src.name} : {len(boxes)} visages')
-        print(f'{name} : {n - 1} variantes ({name}-2 à {name}-{n}.webp)')
+        print(f'{name} : {n - 1 - len(excl.get(name, []))} variantes ({name}-2 à {name}-{n}.webp, sans {excl.get(name, [])})')
 
 
 VAR_CROP = (0.86, 0.5, 0.42)  # cadrage des variantes dans leur carré (zoom, centre x, centre y)
