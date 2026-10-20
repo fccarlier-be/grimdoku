@@ -4,8 +4,11 @@
 # identifiant tiré au hasard par l'appareil.
 # Usage : sh tools/stats.sh            (lecture seule sur le VPS, par fserver)
 #         sh tools/stats.sh <fichier>  (journal déjà rapatrié, par ex. depuis le PC quand fserver demande un mot de passe)
+#         sh tools/stats.sh --local    (parties jouées sur node tools/local.js, http://localhost:8095)
 set -e
 cd "$(dirname "$0")/.."
+if [ "$1" = "--local" ]; then set -- "$(node -e 'console.log(require("path").join(process.env.API_DATA || require("path").join(require("os").tmpdir(), "grimdoku-api-local"), "stats.log"))')"
+  [ -f "$1" ] || { echo "aucun événement en local pour l’instant ($1)"; exit 0; }; fi
 if [ -n "$1" ]; then LOG="$1"; else
   LOG=$(mktemp)
   ssh -o BatchMode=yes fserver "ssh -o BatchMode=yes vps 'cat ~/grimdoku/logs/stats.log 2>/dev/null'" > "$LOG"

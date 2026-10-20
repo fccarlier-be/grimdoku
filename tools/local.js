@@ -21,7 +21,17 @@ const api = createServer({ dataDir: DATA, secret: fs.readFileSync(sf, 'utf8').tr
   .listeners('request')[0];
 
 const TYPES = { '.html': 'text/html; charset=utf-8', '.webp': 'image/webp', '.png': 'image/png', '.ico': 'image/x-icon', '.mp3': 'audio/mpeg', '.m4a': 'audio/mp4', '.json': 'application/json', '.webmanifest': 'application/manifest+json', '.js': 'text/javascript', '.css': 'text/css' };
+// votes et compteur anonyme, comme nginx (deploy/grimdoku/nginx.conf) : réponse vide, une ligne au même format dans
+// DATA/notes.log et DATA/stats.log (résumé : sh tools/stats.sh <DATA>/stats.log)
+const LOGS = { '/note': ['notes.log', ['g', 'd', 'v', 's', 'n']], '/stat': ['stats.log', ['e', 'v', 'g', 'n']] };
 http.createServer((req, res) => {
+  const u = new URL(req.url, 'http://localhost');
+  if (LOGS[u.pathname]) {
+    const [file, args] = LOGS[u.pathname];
+    const t = new Date().toISOString().replace(/\.\d+Z$/, '+00:00');
+    fs.appendFileSync(path.join(DATA, file), [t, ...args.map(a => u.searchParams.get(a) || '-')].join(' ') + '\n');
+    res.writeHead(204, { 'Cache-Control': 'no-store' }); return res.end();
+  }
   if (req.url.startsWith('/api/')) { req.url = req.url.slice(4); return api(req, res); } // comme nginx : /api/x → /x
   const rel = decodeURIComponent(req.url.split('?')[0]).replace(/^\/+/, '') || 'index.html';
   const f = path.join(SITE, rel);
