@@ -13,6 +13,6 @@ for i, f in enumerate(fs):
     bg = Image.new('RGBA', (240, 240), (239, 224, 189, 255)); bg.alpha_composite(im)
     m = Image.new('L', (240, 240), 0); ImageDraw.Draw(m).ellipse((0, 0, 239, 239), fill=255)
     x, y = (i % cols) * 270 + 15, (i // cols) * 290 + 10
-    sheet.paste(bg, (x, y), m); d.text((x + 105, y + 250), 'actuel' if i == 0 else str(i + 1), fill=(240, 220, 180))
+    sheet.paste(bg, (x, y), m); d.text((x + 105, y + 250), 'actuel' if i == 0 else f.stem.rsplit('-', 1)[1], fill=(240, 220, 180))
 out = ROOT / 'apercus' / f'{t}-visages.png'
 sheet.save(out); print(out, len(fs) - 1, 'variantes')
