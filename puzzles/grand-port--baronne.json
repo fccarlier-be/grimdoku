@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
   "title": "Le Grand Port de Brumeval — l'affaire Pompadoure",
-  "decor": "port",
+  "decor": "grand-port",
   "size": 10,
   "rooms": {
     "Q": {

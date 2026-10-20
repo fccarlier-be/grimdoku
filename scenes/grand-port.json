@@ -2,7 +2,7 @@
   "scene": "grand-port",
   "formatVersion": 1,
   "title": "Le Grand Port de Brumeval",
-  "decor": "port",
+  "decor": "grand-port",
   "size": 10,
   "rooms": {
     "Q": {

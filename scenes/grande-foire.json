@@ -2,7 +2,7 @@
   "scene": "grande-foire",
   "formatVersion": 1,
   "title": "La Grande Foire des Mille Merveilles",
-  "decor": "foire",
+  "decor": "grande-foire",
   "size": 12,
   "rooms": {
     "A": {

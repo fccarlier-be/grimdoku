@@ -2,7 +2,7 @@
   "scene": "grands-bains",
   "formatVersion": 1,
   "title": "Les Grands Bains de Brumeval",
-  "decor": "thermes",
+  "decor": "grands-bains",
   "size": 10,
   "rooms": {
     "A": {

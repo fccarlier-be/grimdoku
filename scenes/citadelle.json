@@ -2,7 +2,7 @@
   "scene": "citadelle",
   "formatVersion": 1,
   "title": "La Citadelle de Mortebrune",
-  "decor": "chateau",
+  "decor": "citadelle",
   "size": 9,
   "rooms": {
     "R": {

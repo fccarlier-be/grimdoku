@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
   "title": "La Citadelle de Mortebrune — l'affaire Crochard",
-  "decor": "chateau",
+  "decor": "citadelle",
   "size": 9,
   "rooms": {
     "R": {

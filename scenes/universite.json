@@ -2,7 +2,7 @@
   "scene": "universite",
   "formatVersion": 1,
   "title": "L'Université des Sortilèges",
-  "decor": "academie",
+  "decor": "universite",
   "size": 11,
   "rooms": {
     "A": {

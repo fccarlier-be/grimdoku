@@ -144,8 +144,8 @@ media.scenes = {};
 for (const [pl, z] of Object.entries(ZONES.lieux)) {
   const f = `assets/decors/grand/${z.decor}.webp`;
   if (!fs.existsSync(f)) { missing.push('décor en grand ' + z.decor); continue; }
-  copyMedia(f, `decor-grand-${z.decor}.webp`);
-  media.scenes[pl] = { img: `media/decor-grand-${z.decor}.webp`, ratio: z.ratio, places: z.places };
+  copyMedia(f, `scene-${z.decor}.webp`); // pas « decor-grand-… » : decor-grand-port serait aussi le petit décor du grand port
+  media.scenes[pl] = { img: `media/scene-${z.decor}.webp`, ratio: z.ratio, places: z.places };
 }
 // icône de l'appli (assets/icon/web, produite par tools/images.py) : favicon, icône Apple et manifeste PWA,
 // à la racine du site (le navigateur demande /favicon.ico de lui-même)
