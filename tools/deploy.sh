@@ -24,6 +24,8 @@ if [ "$N" -lt "$W" ]; then echo "❌ $N énigme(s) pour $W solutions : rien n'es
 cmp -s dist/grimdoku.html deploy/grimdoku/site/index.html
 # relecture des épilogues (/epi) : serveur et contexte de cette version ; les épilogues modifiés en ligne (epi/data)
 # restent sur le VPS, jamais envoyés ni écrasés ; de même les progressions des joueurs (api-data)
+# relectures faites en ligne et pas encore dans le projet : on s'arrête (règle de François, 2026-10-21)
+sh tools/epi-sync.sh check || exit 1
 node tools/epi-pack.js
 [ -f deploy/grimdoku/epi.htpasswd ] || { echo "❌ deploy/grimdoku/epi.htpasswd manquant (mot de passe de /epi)"; exit 1; }
 COPYFILE_DISABLE=1 tar -C deploy/grimdoku -czf - --exclude .DS_Store --exclude ./epi/data --exclude ./api-data . \

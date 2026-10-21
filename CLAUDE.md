@@ -98,6 +98,7 @@ Reconstruire : `npm run build` (retire de `puzzles/` les énigmes sans solution)
 - **Accès** : depuis le Mac, toujours **via fserver** : `ssh fserver ssh vps …` (sur fserver, l'alias `vps` = utilisateur `franky`, clé `~/.ssh/ovh_vps`, par Tailscale ; `vps-public` en secours). `franky` est dans le groupe `docker` (pas de sudo). L'alias `jungly` du Mac (utilisateur `ubuntu`) ne sert pas : pas de droits Docker.
 - **Piège des guillemets** : deux sauts SSH retirent une couche de guillemets ; ce qui suit `;`/`&&` s'exécuterait sur fserver. Utiliser `ssh fserver ssh vps bash -s <<'EOF' … EOF`, ou `ssh fserver "ssh vps '…'"` quand stdin sert à un envoi.
 - **Sur le VPS** : `~/grimdoku` (conteneur `grimdoku`), à côté de `~/serveur` (Jungly, Deducio, plantes, cloudflared) qu'on ne touche pas. cloudflared (conteneur, tunnel **vps-ovh**, géré dans Zero Trust) joint `http://grimdoku:80` par le réseau `serveur_default`. **N'ouvrir aucun port.** Ne rien modifier d'autre sans demander ; montrer chaque commande VPS avant de la lancer.
+- **Avant toute mise en ligne, vérifier les relectures en ligne** (François, 2026-10-21 : ne pas écraser des relectures pas encore prises en compte) : `sh tools/epi-sync.sh check` (épilogues, statuts/notes et mises en situation modifiés en ligne et absents du projet ; erreur s'il y en a → rapatrier et fusionner, refaire le build). `tools/deploy.sh` le lance ; le lancer aussi avant de donner la commande de mise en ligne à François, et avant tout `epi-sync push`.
 - **Déployer une mise à jour** :
   ```sh
   npm run build && npm test
