@@ -18,6 +18,6 @@ const ids = fs.readdirSync(path.join(ROOT, 'puzzles')).filter(f => f.endsWith('.
 const ctx = context(ids);
 fs.writeFileSync(path.join(OUT, 'bundle.json'), JSON.stringify(ctx));
 fs.copyFileSync(path.join(__dirname, 'relecture.js'), path.join(OUT, 'relecture.js'));
-for (const f of ['epilogues.json', 'epilogues-relecture.json'])
+for (const f of ['epilogues.json', 'epilogues-relecture.json', 'intros.json'])
   if (fs.existsSync(path.join(ROOT, 'lore', f))) fs.copyFileSync(path.join(ROOT, 'lore', f), path.join(OUT, 'seed', f));
 console.log(`deploy/grimdoku/epi/app : ${Object.keys(ctx).length} énigmes en contexte, ${Object.keys(epi).length - 1} épilogues de départ`);

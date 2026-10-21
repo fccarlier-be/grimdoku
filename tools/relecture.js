@@ -19,6 +19,9 @@ const SERVER = !!process.env.EPI_BUNDLE;
 const DATA = SERVER ? process.env.EPI_DATA : path.join(ROOT, 'lore');
 const F_EPI = path.join(DATA, 'epilogues.json');
 const F_REV = path.join(DATA, 'epilogues-relecture.json');
+// mises en situation (lore/intros.json : grilles = corps de chaque intro, gabarits {victime}…), modifiables aussi
+// (François, 2026-10-21 : « au cas où elles ne me plaisent pas »)
+const F_INTRO = path.join(DATA, 'intros.json');
 const J = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8'));
 const read = (f, def) => fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : def;
 // écriture sûre : fichier temporaire puis renommage (jamais de fichier à moitié écrit)
@@ -27,7 +30,7 @@ const REV_DOC = 'Relecture des épilogues (tools/relecture.js) : statut (relire,
 
 if (SERVER) { // première mise en route sur le VPS : les épilogues de départ
   fs.mkdirSync(DATA, { recursive: true });
-  for (const f of ['epilogues.json', 'epilogues-relecture.json'])
+  for (const f of ['epilogues.json', 'epilogues-relecture.json', 'intros.json'])
     if (!fs.existsSync(path.join(DATA, f)) && fs.existsSync(path.join(process.env.EPI_SEED, f))) fs.copyFileSync(path.join(process.env.EPI_SEED, f), path.join(DATA, f));
 }
 
@@ -52,25 +55,47 @@ function context(ids) {
     out[id] = {
       id, place: p.place, placeTitle: p.title.split(' — ')[0], title: p.title, rank: order.indexOf(p.place), active: actives.has(id),
       victim: { name: v.name, title: g.title || '', desc: g.desc || '', motif: g.motif || '', menace: g.menace || '', gender: g.gender },
-      culprit: { name: a.name, desc: a.desc, tic: a.tic, gender: a.gender }, intro: p.introBody || p.intro, introWritten: !!p.introBody
+      culprit: { name: a.name, desc: a.desc, tic: a.tic, gender: a.gender }, intro: p.introBody || p.intro, introWritten: !!p.introBody,
+      vars: varsOf(p, v, g)
     };
   }
   return out;
 }
 
+// valeurs des gabarits d'une grille (comme fill dans build-puzzles.js) : la mise en situation se relit remplie, et une
+// version modifiée en ligne se range en gabarit
+const NOMBRES = ['zéro', 'un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf', 'dix', 'onze', 'douze'];
+const cap = (t) => t.charAt(0).toUpperCase() + t.slice(1);
+function varsOf(p, v, g) {
+  const f = g.gender === 'f', nb = NOMBRES[p.characters.length - 1], title = g.title || '';
+  return { victime: v.name, titre: title, Titre: cap(title), e: f ? 'e' : '', il: f ? 'elle' : 'il', Il: f ? 'Elle' : 'Il', lui: f ? 'elle' : 'lui',
+    nombre: nb, Nombre: cap(nb), motif: g.motif || '' };
+}
+const fill = (t, vars) => t.replace(/\{(\w+)\}/g, (m, k) => (k in vars ? vars[k] : m))
+  .replace(/\b([Dd]e|[Qq]ue|[Jj]usque) (?=[AEIOUYÀÂÉÈÊËÎÏÔÛ][a-zàâéèêëîïôûç])/g, (m, w) => w.slice(0, -1) + "'");
+
 function data() {
-  const epi = read(F_EPI, {}), rev = read(F_REV, {});
+  const epi = read(F_EPI, {}), rev = read(F_REV, {}), intros = (read(F_INTRO, {}).grilles) || {};
   const ctx = SERVER ? JSON.parse(fs.readFileSync(process.env.EPI_BUNDLE, 'utf8')) : context(Object.keys(epi));
   const items = Object.keys(epi).filter(id => id !== '_doc' && ctx[id])
-    .map(id => ({ ...ctx[id], text: epi[id], status: (rev[id] || {}).status || 'relire', note: (rev[id] || {}).note || '' }));
+    .map(id => ({ ...ctx[id], ...(intros[id] && ctx[id].vars ? { intro: fill(intros[id], ctx[id].vars), introWritten: true } : {}), text: epi[id], status: (rev[id] || {}).status || 'relire', note: (rev[id] || {}).note || '' }));
   items.sort((x, y) => (x.rank - y.rank) || (y.active - x.active) || x.id.localeCompare(y.id));
   return items;
 }
 
 function save(body) {
-  const { id, text, status, note } = body;
+  const { id, text, status, note, intro } = body;
   const epi = read(F_EPI, {});
   if (!epi[id]) throw new Error('épilogue inconnu : ' + id);
+  if (intro != null) { // mise en situation modifiée : un seul paragraphe, rangé en gabarit (le nom de la victime → {victime})
+    const t = String(intro).replace(/\s+/g, ' ').trim();
+    if (!t) throw new Error('la mise en situation est vide');
+    const ctx = SERVER ? JSON.parse(fs.readFileSync(process.env.EPI_BUNDLE, 'utf8'))[id] : context([id])[id];
+    const all = read(F_INTRO, { lieux: {}, grilles: {} });
+    all.grilles = all.grilles || {};
+    all.grilles[id] = ctx && ctx.vars ? t.split(ctx.vars.victime).join('{victime}') : t;
+    write(F_INTRO, all);
+  }
   const lines = String(text).replace(/\r/g, '').split('\n').map(l => l.trim()).filter(Boolean);
   if (!lines.length || lines.some(l => !l.startsWith('— '))) throw new Error('chaque réplique doit commencer par « — »');
   epi[id] = lines.join('\n');                       // même clé : l'ordre du fichier est conservé
@@ -78,14 +103,16 @@ function save(body) {
   const rev = read(F_REV, { _doc: REV_DOC });
   rev[id] = { status: ['relire', 'valide', 'revoir'].includes(status) ? status : 'relire', note: String(note || '') };
   write(F_REV, rev);
-  return { ok: true, text: epi[id] };
+  const intros = read(F_INTRO, {}).grilles || {}, ctx = SERVER ? JSON.parse(fs.readFileSync(process.env.EPI_BUNDLE, 'utf8'))[id] : context([id])[id];
+  return { ok: true, text: epi[id], intro: intros[id] && ctx && ctx.vars ? fill(intros[id], ctx.vars) : undefined };
 }
 
 // synchronisation avec le projet (tools/epi-sync.sh) : tout lire, ou tout remplacer
-const exportAll = () => ({ epilogues: read(F_EPI, {}), relecture: read(F_REV, { _doc: REV_DOC }) });
+const exportAll = () => ({ epilogues: read(F_EPI, {}), relecture: read(F_REV, { _doc: REV_DOC }), intros: read(F_INTRO, null) });
 function importAll(body) {
   if (!body || typeof body.epilogues !== 'object' || typeof body.relecture !== 'object') throw new Error('attendu : { epilogues, relecture }');
   write(F_EPI, body.epilogues); write(F_REV, body.relecture);
+  if (body.intros && typeof body.intros === 'object') write(F_INTRO, body.intros);
   return { ok: true, epilogues: Object.keys(body.epilogues).length - 1 };
 }
 
@@ -114,6 +141,7 @@ main { max-width: 900px; margin: 0 auto; padding: 16px; display: flex; flex-dire
 .ctx i { color: var(--muted); }
 details { font-size: 14px; color: #4b3822; margin: 4px 0 8px; }
 .intro { margin: 6px 0 10px; padding: 8px 12px; border-left: 3px solid #b58a4a; background: rgba(181, 138, 74, .1); font-size: 15px; line-height: 1.45; color: #3b2a18; }
+.intro textarea { min-height: 70px; background: #fffdf6; font-size: 15px; }
 .intro .lbl { display: block; font: 600 12px/1.4 sans-serif; text-transform: uppercase; letter-spacing: .05em; color: #8a6a3e; margin-bottom: 2px; }
 summary { cursor: pointer; color: var(--muted); }
 .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -171,7 +199,8 @@ function card(it) {
     '</div>' +
     // l'intro juste avant l'épilogue (François, 2026-10-21 : difficile à relire sans elle) ; écrite pour la grille, ou
     // ancienne intro commune du lieu ; l'ouverture du lieu (selon le rang de l'affaire) n'est pas reprise
-    '<div class="intro"><span class="lbl">' + (it.introWritten ? 'Mise en situation' : 'Mise en situation (ancienne, commune au lieu)') + '</span>' + esc(it.intro) + '</div>' +
+    '<div class="intro"><span class="lbl">' + (it.introWritten ? 'Mise en situation (modifiable)' : 'Mise en situation (ancienne, commune au lieu ; modifiable)') + '</span>' +
+      '<textarea class="intro-ed" spellcheck="true">' + esc(it.intro) + '</textarea></div>' +
     '<div class="cols"><textarea class="ed" spellcheck="true">' + esc(it.text) + '</textarea><div class="preview">' + preview(it.text) + '</div></div>' +
     '<div class="checks">' + esc(checks(it, it.text)) + '</div>' +
     '<textarea class="note" placeholder="Note (facultative) : ce qui ne va pas, une idée…">' + esc(it.note) + '</textarea>' +
@@ -182,7 +211,7 @@ function card(it) {
 function filtered() {
   const pl = $('#fPlace').value, cu = $('#fCulprit').value, st = $('#fStatus').value, q = $('#fText').value.trim().toLowerCase(), off = $('#fOff').checked;
   return ITEMS.filter(it => (off || it.active) && (!pl || it.place === pl) && (!cu || it.culprit.name === cu) && (!st || it.status === st) &&
-    (!q || (it.text + ' ' + it.title + ' ' + it.culprit.name + ' ' + it.note).toLowerCase().includes(q)));
+    (!q || (it.text + ' ' + it.intro + ' ' + it.title + ' ' + it.culprit.name + ' ' + it.note).toLowerCase().includes(q)));
 }
 function stats() {
   const act = ITEMS.filter(it => it.active || $('#fOff').checked), n = (s) => act.filter(it => it.status === s).length;
@@ -199,6 +228,7 @@ function dirty(c, on) { c.classList.toggle('dirty', on); $('.save', c).disabled 
 document.addEventListener('input', (e) => {
   const c = e.target.closest('.card'); if (!c) return;
   const it = itemOf(c); current = c;
+  if (e.target.classList.contains('intro-ed')) c.dataset.introDirty = '1';
   if (e.target.classList.contains('ed')) { $('.preview', c).innerHTML = preview(e.target.value); $('.checks', c).textContent = checks(it, e.target.value); }
   dirty(c, true); $('.msg', c).textContent = '';
 });
@@ -214,10 +244,12 @@ window.addEventListener('beforeunload', (e) => { if (document.querySelector('.ca
 async function saveCard(c) {
   const it = itemOf(c);
   const body = { id: it.id, text: $('.ed', c).value, note: $('.note', c).value, status: ($('.st[aria-pressed="true"]', c) || {}).dataset?.st || 'relire' };
+  if (c.dataset.introDirty) body.intro = $('.intro-ed', c).value; // la mise en situation, seulement si elle a été touchée
   const r = await fetch('save', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
   const out = await r.json();
   if (!r.ok) { $('.msg', c).style.color = '#a3312a'; $('.msg', c).textContent = out.error; return; }
   Object.assign(it, { text: out.text, note: body.note, status: body.status });
+  if (out.intro) { it.intro = out.intro; it.introWritten = true; $('.intro-ed', c).value = out.intro; delete c.dataset.introDirty; }
   $('.ed', c).value = out.text; dirty(c, false); c.className = 'card ' + it.status;
   $('.msg', c).style.color = ''; $('.msg', c).textContent = 'Enregistré ✓'; stats();
 }
