@@ -1,12 +1,12 @@
 {
-  "_doc": "Pièces à conviction (phase 3, bureau qui évolue ; François, 2026-10-21) : un souvenir par lieu terminé (placeDone), posé directement sur le bureau, sans lien avec une enquête, ni cliquable. « place » = [gauche, haut, largeur] en % de la carte et angle en degrés (CSS écrit par build-app.js). « image » = description pour Gemini (planches 2×2 assets/pieces/planche-N.png, découpées par tools/images.py pieces).",
+  "_doc": "Pièces à conviction (phase 3, bureau qui évolue ; François, 2026-10-21) : un souvenir par lieu terminé (placeDone), posé directement sur le bureau, sans lien avec une enquête, ni cliquable. « place » = [gauche, haut, largeur] en % de la carte et angle en degrés (CSS écrit par build-app.js) ; « dessus » : par-dessus les objets du bureau. « image » = description pour Gemini (planches 2×2 assets/pieces/planche-N.png, découpées par tools/images.py pieces).",
   "pieces": {
     "chateau": {
       "nom": "Le gobelet ébréché du roi",
       "image": "a chipped royal silver goblet",
       "place": [
-        3.7,
-        88.5,
+        5,
+        94,
         9.2,
         -30
       ]
@@ -165,11 +165,12 @@
       "nom": "La lampe aux vœux",
       "image": "an ornate golden oriental oil lamp",
       "place": [
-        -18.3,
-        59,
-        8.3,
-        0
-      ]
+        -17,
+        53,
+        11,
+        -6
+      ],
+      "dessus": true
     },
     "thermes": {
       "nom": "L'éponge pétrifiée",

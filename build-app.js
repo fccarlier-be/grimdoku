@@ -262,8 +262,9 @@ const out = t.replace('/*__ENGINE__*/', () => engine)
   .replace('<!--__SPRITE__-->', () => sprite)
   .replace('<!--__ICONS__-->', () => iconTags)
   .replace('/*__FLOORS__*/', () => floorCss.join('\n'))
-  // place de chaque pièce à conviction sur le bureau : [gauche, haut, largeur] en % de la carte, angle en degrés
-  .replace('/*__PIECES__*/', () => Object.entries(PIECES).filter(([, p]) => p.place).map(([pl, p]) => `.desk-piece.pc-${pl} { left: ${p.place[0]}%; top: ${p.place[1]}%; width: ${p.place[2]}%; transform: rotate(${p.place[3]}deg); }`).join('\n'));
+  // place de chaque pièce à conviction sur le bureau : [gauche, haut, largeur] en % de la carte, angle en degrés ;
+  // « dessus » : posée par-dessus les objets du bureau (lampe : elle tient sur une pile, rien ne tient sur elle)
+  .replace('/*__PIECES__*/', () => Object.entries(PIECES).filter(([, p]) => p.place).map(([pl, p]) => `.desk-piece.pc-${pl} { left: ${p.place[0]}%; top: ${p.place[1]}%; width: ${p.place[2]}%; transform: rotate(${p.place[3]}deg);${p.dessus ? ' z-index: 5;' : ''} }`).join('\n'));
 fs.mkdirSync('dist', { recursive: true });
 fs.writeFileSync('dist/grimdoku.html', out);
 console.log('dist/grimdoku.html', out.length, 'octets,', symbols.length, 'dessins, dont', objImages, 'objet(s) et', images, 'portrait(s) illustrés');

@@ -640,12 +640,25 @@ ZENITH = {'a': ['dossiers', 'lettres', 'carnet', 'enveloppe'], 'b': ['mur', 'jou
           'c': ['deco-3-bougie', 'papier-1', 'papier-3', 'support-papier']}
 
 
+def glass(img):
+    # verre de la loupe (repeint en bleu pâle au détourage) : translucide, on voit la carte au travers
+    px = img.load()
+    for y in range(img.height):
+        for x in range(img.width):
+            r, g, b, a = px[x, y]
+            if a > 200 and b > r + 25 and b >= g:
+                px[x, y] = (r, g, b, 60)
+    return img
+
+
 def zenith():
     for sheet, names in ZENITH.items():
         src = DESK_DIR / 'zenith' / f'planche-{sheet}.png'
         if not src.exists():
             continue
         for name, img in zip(names, quad_cells(key_out_outside(Image.open(src)))):
+            if name == 'deco-1-loupe':
+                img = glass(img)
             img.thumbnail((640, 640), Image.LANCZOS)
             img.save(DESK_DIR / f'{name}.webp', 'WEBP', quality=88, method=6)
         print(f'bureau (vue du dessus) planche-{sheet} → {", ".join(names)}')
