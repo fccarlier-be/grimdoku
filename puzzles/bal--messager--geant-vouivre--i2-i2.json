@@ -192,7 +192,6 @@
       "name": "Blafard",
       "gender": "m",
       "role": "suspect",
-      "icon": "👻",
       "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
       "archetype": "spectre",
       "traits": [
@@ -205,7 +204,6 @@
       "name": "Escabeau",
       "gender": "m",
       "role": "suspect",
-      "icon": "🦶",
       "desc": "Géant, toujours couché : aucun plafond n'est assez haut",
       "archetype": "geant",
       "tic": "Se cogne, s'excuse auprès du plafond",
@@ -216,7 +214,6 @@
       "name": "Dagobert",
       "gender": "m",
       "role": "suspect",
-      "icon": "🤴",
       "desc": "Roi, avare de compliments et de tout le reste",
       "archetype": "roi",
       "tic": "« C'est pas faux. », à tout ce qu'il ne comprend pas"
@@ -226,7 +223,6 @@
       "name": "Aëlys",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧝‍♀️",
       "desc": "Elfe, critique gastronomique",
       "archetype": "elfe",
       "tic": "Note tout sur dix, les gens compris"
@@ -236,7 +232,6 @@
       "name": "Glissandra",
       "gender": "f",
       "role": "suspect",
-      "icon": "🐍",
       "desc": "Vouivre, serpent ailé, très longue à se retourner",
       "archetype": "vouivre",
       "tic": "Commence ses phrases par la fin",
@@ -247,7 +242,6 @@
       "name": "Gontran",
       "gender": "m",
       "role": "suspect",
-      "icon": "🤺",
       "desc": "Chevalier, armure trop petite depuis Noël",
       "archetype": "chevalier",
       "tic": "Annonce chacune de ses actions à voix haute"
@@ -257,7 +251,6 @@
       "name": "Rapidon",
       "gender": "m",
       "role": "victim",
-      "icon": "✉️",
       "desc": "Messager du baron, porte toujours de mauvaises nouvelles",
       "archetype": "messager",
       "guest": true

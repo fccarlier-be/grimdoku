@@ -170,7 +170,6 @@
       "name": "Fumerolle",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧞‍♀️",
       "desc": "Djinn, a déjà exaucé deux vœux de trop",
       "archetype": "djinn",
       "tic": "Prend tout au pied de la lettre"
@@ -180,7 +179,6 @@
       "name": "Fizzlebarbe",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧙‍♂️",
       "desc": "Archimage, 412 ans, toujours pas de successeur",
       "archetype": "archimage",
       "tic": "« De mon temps… » (en concurrence avec Blafard)"
@@ -190,7 +188,6 @@
       "name": "Bakchich",
       "gender": "m",
       "role": "suspect",
-      "icon": "👺",
       "desc": "Gobelin, trésorier du royaume (non déclaré)",
       "archetype": "gobelin",
       "tic": "« Techniquement, c'est légal. »"
@@ -200,7 +197,6 @@
       "name": "Gribouille",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧙‍♂️",
       "desc": "Mage, allergique au houblon",
       "archetype": "mage",
       "tic": "Éternue avant chaque sortilège"
@@ -210,7 +206,6 @@
       "name": "Blafard",
       "gender": "m",
       "role": "suspect",
-      "icon": "👻",
       "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
       "archetype": "spectre",
       "traits": [
@@ -223,7 +218,6 @@
       "name": "Dewey",
       "gender": "f",
       "role": "suspect",
-      "icon": "👩‍🏫",
       "desc": "Bibliothécaire, réclame le silence en hurlant",
       "archetype": "bibliothecaire",
       "tic": "« CHUT ! », en hurlant"
@@ -233,7 +227,6 @@
       "name": "Badaud",
       "gender": "m",
       "role": "victim",
-      "icon": "🎒",
       "desc": "Touriste, dessine tout au fusain, surtout ce qui est interdit",
       "archetype": "touriste",
       "guest": true

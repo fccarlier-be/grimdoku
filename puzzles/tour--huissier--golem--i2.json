@@ -158,7 +158,6 @@
       "name": "Flammèche",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐉",
       "desc": "Dragonnet, brûle tout ce qu'il touche",
       "archetype": "dragonnet",
       "tic": "S'excuse avant même d'avoir brûlé quelque chose"
@@ -168,7 +167,6 @@
       "name": "Blafard",
       "gender": "m",
       "role": "suspect",
-      "icon": "👻",
       "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
       "archetype": "spectre",
       "traits": [
@@ -181,7 +179,6 @@
       "name": "Fernand",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧟",
       "desc": "Zombie, ancien apprenti. Ancien tout court",
       "archetype": "zombie",
       "tic": "Perd un morceau quand il s'énerve"
@@ -191,7 +188,6 @@
       "name": "Goémone",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧜‍♀️",
       "desc": "Sirène, venue pour l'aquarium",
       "archetype": "sirene",
       "tic": "Fait des bulles quand elle ment"
@@ -201,7 +197,6 @@
       "name": "Caillasse",
       "gender": "m",
       "role": "suspect",
-      "icon": "🪨",
       "desc": "Golem de pierre, lent mais très appliqué",
       "archetype": "golem",
       "tic": "Exécute les ordres au mot près, avec un temps de retard",
@@ -212,7 +207,6 @@
       "name": "Ratissard",
       "gender": "m",
       "role": "victim",
-      "icon": "📜",
       "desc": "Huissier de la banque gobeline, saisit d'abord, demande ensuite",
       "archetype": "huissier",
       "guest": true

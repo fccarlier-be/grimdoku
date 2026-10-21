@@ -214,7 +214,6 @@
       "name": "Bâbord",
       "gender": "m",
       "role": "suspect",
-      "icon": "🏴‍☠️",
       "desc": "Pirate, a perdu une jambe, un œil et le sens de l'orientation",
       "archetype": "pirate",
       "tic": "Indique toujours la mauvaise direction"
@@ -224,7 +223,6 @@
       "name": "Aagrid",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧔‍♂️",
       "desc": "Tenancier le plus *SYMPA* de la baronnie",
       "archetype": "tavernier",
       "tic": "Compte à voix basse en parlant"
@@ -234,7 +232,6 @@
       "name": "Cendrebrune",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐉",
       "desc": "Dragon adulte, toujours lové dans un coin",
       "archetype": "dragon",
       "tic": "Se réveille aux pires moments",
@@ -245,7 +242,6 @@
       "name": "Frégaton",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧑‍✈️",
       "desc": "Capitaine, n'a jamais quitté le port",
       "archetype": "capitaine",
       "tic": "Raconte des tempêtes qu'il n'a jamais vues"
@@ -255,7 +251,6 @@
       "name": "Écho-Écho",
       "gender": "m",
       "role": "suspect",
-      "icon": "🦜",
       "desc": "Perroquet, répète tous les secrets",
       "archetype": "perroquet",
       "tic": "Répète tout, dans le désordre"
@@ -265,7 +260,6 @@
       "name": "Bâfrin",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧌",
       "desc": "Troll, plongeur à mi-temps",
       "archetype": "troll",
       "tic": "Répète le dernier mot de la phrase des autres"
@@ -275,7 +269,6 @@
       "name": "Goémone",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧜‍♀️",
       "desc": "Sirène, venue pour l'aquarium",
       "archetype": "sirene",
       "tic": "Fait des bulles quand elle ment"
@@ -285,7 +278,6 @@
       "name": "Tempérance",
       "gender": "f",
       "role": "victim",
-      "icon": "📿",
       "desc": "Abbesse, quête pour un couvent introuvable",
       "archetype": "abbesse",
       "guest": true

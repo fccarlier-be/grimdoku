@@ -1,4 +1,4 @@
-// Garde-fous du lore (audit du 2026-10-19, lore/GRIMDOKU_AUDIT_LORE_2026-10-19.md) : empêchent le retour des
+// Garde-fous du lore (audit du 2026-10-19, lore/archives/relectures-externes/2026-10-19-audit-lore-chatgpt.md) : empêchent le retour des
 // contradictions déjà corrigées. Lit les énigmes construites (puzzles/) et les données du lore ; rapide.
 'use strict';
 const test = require('node:test');

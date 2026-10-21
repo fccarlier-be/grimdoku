@@ -136,7 +136,6 @@
       "name": "Bâfrin",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧌",
       "desc": "Troll, plongeur à mi-temps",
       "archetype": "troll",
       "tic": "Répète le dernier mot de la phrase des autres"
@@ -146,7 +145,6 @@
       "name": "Fausset",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧑‍🎤",
       "desc": "Barde, chante faux",
       "archetype": "barde",
       "tic": "Transforme chaque conversation en couplet"
@@ -156,7 +154,6 @@
       "name": "Bakchich",
       "gender": "m",
       "role": "suspect",
-      "icon": "👺",
       "desc": "Gobelin, trésorier du royaume (non déclaré)",
       "archetype": "gobelin",
       "tic": "« Techniquement, c'est légal. »"
@@ -166,7 +163,6 @@
       "name": "Briochon",
       "gender": "m",
       "role": "suspect",
-      "icon": "👨‍🍳",
       "desc": "Boulanger, pétrit plus de ragots que de pâte",
       "archetype": "boulanger",
       "tic": "« Je dis ça, je dis rien. »"
@@ -176,7 +172,6 @@
       "name": "Fricot",
       "gender": "m",
       "role": "suspect",
-      "icon": "👨‍🍳",
       "desc": "Chef gobelin, goûte tout, surtout ce qui bouge encore",
       "archetype": "chef",
       "tic": "Juge chaque plat à sa capacité à s'enfuir"
@@ -186,7 +181,6 @@
       "name": "Recouvrin",
       "gender": "m",
       "role": "victim",
-      "icon": "📜",
       "desc": "Huissier de la banque gobeline, saisit d'abord, demande ensuite",
       "archetype": "huissier",
       "guest": true

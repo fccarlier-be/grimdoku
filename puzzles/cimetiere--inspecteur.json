@@ -183,7 +183,6 @@
       "name": "Augure",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐦‍⬛",
       "desc": "Corbeau, voit beaucoup, comprend moins, ne dit rien",
       "archetype": "corbeau",
       "tic": "Ne parle pas : il écrit"
@@ -193,7 +192,6 @@
       "name": "Blafard",
       "gender": "m",
       "role": "suspect",
-      "icon": "👻",
       "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
       "archetype": "spectre",
       "traits": [
@@ -206,7 +204,6 @@
       "name": "Ambroise",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐸",
       "desc": "Crapaud, prince déchu, attend toujours son bisou",
       "archetype": "crapaud",
       "tic": "Rappelle son titre toutes les deux phrases"
@@ -216,7 +213,6 @@
       "name": "Glas",
       "gender": "m",
       "role": "suspect",
-      "icon": "⚰️",
       "desc": "Fossoyeur, creuse en sifflotant",
       "archetype": "fossoyeur",
       "tic": "Prend les mesures des gens qu'il rencontre"
@@ -226,7 +222,6 @@
       "name": "Gontran",
       "gender": "m",
       "role": "suspect",
-      "icon": "🤺",
       "desc": "Chevalier, armure trop petite depuis Noël",
       "archetype": "chevalier",
       "tic": "Annonce chacune de ses actions à voix haute"
@@ -236,7 +231,6 @@
       "name": "Belladone",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧛‍♀️",
       "desc": "Comtesse vampire, végane (elle le jure)",
       "archetype": "vampire",
       "tic": "« Je ne bois jamais… de vin. »"
@@ -246,7 +240,6 @@
       "name": "Ciguë",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧙‍♀️",
       "desc": "Sorcière des marais, cuisine tout ce qui coasse",
       "archetype": "sorciere",
       "tic": "Regarde Ambroise avec appétit"
@@ -256,7 +249,6 @@
       "name": "Picrate",
       "gender": "m",
       "role": "victim",
-      "icon": "🍷",
       "desc": "Inspecteur des tavernes, goûte tout, note tout",
       "archetype": "inspecteur",
       "guest": true

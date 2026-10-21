@@ -171,7 +171,6 @@
       "name": "Aëlys",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧝‍♀️",
       "desc": "Elfe, critique gastronomique",
       "archetype": "elfe",
       "tic": "Note tout sur dix, les gens compris"
@@ -181,7 +180,6 @@
       "name": "Flammèche",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐉",
       "desc": "Dragonnet, brûle tout ce qu'il touche",
       "archetype": "dragonnet",
       "tic": "S'excuse avant même d'avoir brûlé quelque chose"
@@ -191,7 +189,6 @@
       "name": "Bakchich",
       "gender": "m",
       "role": "suspect",
-      "icon": "👺",
       "desc": "Gobelin, trésorier du royaume (non déclaré)",
       "archetype": "gobelin",
       "tic": "« Techniquement, c'est légal. »"
@@ -201,7 +198,6 @@
       "name": "Blafard",
       "gender": "m",
       "role": "suspect",
-      "icon": "👻",
       "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
       "archetype": "spectre",
       "traits": [
@@ -214,7 +210,6 @@
       "name": "Cendrebrune",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐉",
       "desc": "Dragon adulte, toujours lové dans un coin",
       "archetype": "dragon",
       "tic": "Se réveille aux pires moments",
@@ -225,7 +220,6 @@
       "name": "Gontran",
       "gender": "m",
       "role": "suspect",
-      "icon": "🤺",
       "desc": "Chevalier, armure trop petite depuis Noël",
       "archetype": "chevalier",
       "tic": "Annonce chacune de ses actions à voix haute"
@@ -235,7 +229,6 @@
       "name": "Fausset",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧑‍🎤",
       "desc": "Barde, chante faux",
       "archetype": "barde",
       "tic": "Transforme chaque conversation en couplet"
@@ -245,7 +238,6 @@
       "name": "Blâmard",
       "gender": "m",
       "role": "victim",
-      "icon": "🍷",
       "desc": "Inspecteur des tavernes, goûte tout, note tout",
       "archetype": "inspecteur",
       "guest": true

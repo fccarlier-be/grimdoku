@@ -23,7 +23,7 @@ function resolve(scene, cast = {}) {
     const src = byId[cast[slot.id] || slot.id];
     const a = ARCHETYPES[src.archetype];
     if (!a) throw new Error(`${scene.id} : type de personnage inconnu « ${src.archetype} »`);
-    const ch = { id: slot.id, name: a.name, gender: a.gender, role: src.role, icon: a.icon, desc: a.desc, archetype: src.archetype };
+    const ch = { id: slot.id, name: a.name, gender: a.gender, role: src.role, desc: a.desc, archetype: src.archetype };
     if (a.traits) ch.traits = a.traits;
     if (a.guest) ch.guest = true; // invité de passage
     if (a.tic) ch.tic = a.tic;

@@ -183,7 +183,6 @@
       "name": "Augure",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐦‍⬛",
       "desc": "Corbeau, voit beaucoup, comprend moins, ne dit rien",
       "archetype": "corbeau",
       "tic": "Ne parle pas : il écrit"
@@ -193,7 +192,6 @@
       "name": "Belladone",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧛‍♀️",
       "desc": "Comtesse vampire, végane (elle le jure)",
       "archetype": "vampire",
       "tic": "« Je ne bois jamais… de vin. »"
@@ -203,7 +201,6 @@
       "name": "Glas",
       "gender": "m",
       "role": "suspect",
-      "icon": "⚰️",
       "desc": "Fossoyeur, creuse en sifflotant",
       "archetype": "fossoyeur",
       "tic": "Prend les mesures des gens qu'il rencontre"
@@ -213,7 +210,6 @@
       "name": "Fernand",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧟",
       "desc": "Zombie, ancien apprenti. Ancien tout court",
       "archetype": "zombie",
       "tic": "Perd un morceau quand il s'énerve"
@@ -223,7 +219,6 @@
       "name": "Ambroise",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐸",
       "desc": "Crapaud, prince déchu, attend toujours son bisou",
       "archetype": "crapaud",
       "tic": "Rappelle son titre toutes les deux phrases"
@@ -233,7 +228,6 @@
       "name": "Gontran",
       "gender": "m",
       "role": "suspect",
-      "icon": "🤺",
       "desc": "Chevalier, armure trop petite depuis Noël",
       "archetype": "chevalier",
       "tic": "Annonce chacune de ses actions à voix haute"
@@ -243,7 +237,6 @@
       "name": "Blafard",
       "gender": "m",
       "role": "suspect",
-      "icon": "👻",
       "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
       "archetype": "spectre",
       "traits": [
@@ -256,7 +249,6 @@
       "name": "Vaguelette",
       "gender": "f",
       "role": "victim",
-      "icon": "🛟",
       "desc": "Maîtresse-nageuse, sans permis ni maillot",
       "archetype": "nageuse",
       "guest": true

@@ -1,7 +1,6 @@
 {
   "_doc": "Personnages. Troupe récurrente (bible du jeu, 2026-10-17) : chaque type est UN personnage au nom fixe (name), avec un tic et un épilogue dialogué ({victime} {Il}/{il}/{lui}/{e} = la victime, {menace} = ce qu'un invité venait lui faire). La lettre (A, B…) n'est plus dans le nom : c'est une pastille, attribuée à chaque énigme selon la facilité. names (A…L) : anciens noms, gardés pour mémoire. guest : invité de passage (victime), avec motif et menace. desc/gender/icon/traits ne dépendent pas de la position. Invités : « names » = un nom par affaire (le premier est le nom par défaut), tiré par build-puzzles.js (décision de François, 2026-10-19 : un même visiteur ne meurt plus seize fois ; la profession et le portrait restent, Brumeval tue beaucoup de percepteurs).",
   "mage": {
-    "icon": "🧙‍♂️",
     "gender": "m",
     "title": "le mage",
     "desc": "Mage, allergique au houblon",
@@ -24,7 +23,6 @@
     "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}. Atchoum ! Pardon : le houblon.\n— Et le sortilège ?\n— Il est parti tout seul, avec l'éternuement. Mais je visais bien."
   },
   "barde": {
-    "icon": "🧑‍🎤",
     "gender": "m",
     "title": "le barde",
     "desc": "Barde, chante faux",
@@ -47,7 +45,6 @@
     "epilogue": "— Vous étiez seul avec {victime}.\n— « {Il} voulait {menace}, ô rage, ô désespoir… »\n— Répondez normalement.\n— J'ai chanté jusqu'à ce qu'{il} s'arrête. Définitivement."
   },
   "troll": {
-    "icon": "🧌",
     "gender": "m",
     "title": "le troll",
     "desc": "Troll, plongeur à mi-temps",
@@ -70,7 +67,6 @@
     "epilogue": "— Vous étiez seul avec {victime}.\n— {victime}.\n— Pourquoi ?\n— {Il} voulait {menace}. Alors Bâfrin taper. Taper fort. Fort."
   },
   "elfe": {
-    "icon": "🧝‍♀️",
     "gender": "f",
     "title": "l'elfe",
     "desc": "Elfe, critique gastronomique",
@@ -93,7 +89,6 @@
     "epilogue": "— Vous étiez seule avec {victime}.\n— {Il} voulait {menace}. Je lui ai mis deux sur dix.\n— Et ensuite ?\n— Ensuite, zéro."
   },
   "fee": {
-    "icon": "🧚",
     "gender": "f",
     "title": "la fée",
     "desc": "Fée, doit trois tournées",
@@ -116,7 +111,6 @@
     "epilogue": "— Vous étiez seule avec {victime}.\n— {Il} voulait {menace}. Moi qui dois déjà trois tournées !\n— Alors ?\n— Alors je lui ai pris la vie. Je la lui rends demain."
   },
   "tavernier": {
-    "icon": "🧔‍♂️",
     "gender": "m",
     "title": "le tavernier",
     "desc": "Tenancier le plus *SYMPA* de la baronnie",
@@ -139,7 +133,6 @@
     "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}. Un écu, deux écus, trois écus…\n— Vous comptez quoi ?\n— Ce qu'{il} me devait. Et ce que l'enterrement va me coûter."
   },
   "spectre": {
-    "icon": "👻",
     "gender": "m",
     "title": "le spectre",
     "traits": [
@@ -165,7 +158,6 @@
     "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}. De mon vivant, on aurait appelé ça un affront.\n— Et de votre mort ?\n— Un mobile."
   },
   "dragonnet": {
-    "icon": "🐉",
     "gender": "m",
     "title": "le dragonnet",
     "desc": "Dragonnet, brûle tout ce qu'il touche",
@@ -188,7 +180,6 @@
     "epilogue": "— Vous étiez seul avec {victime}.\n— Pardon. Pardon pardon pardon.\n— Je n'ai encore rien dit.\n— {Il} voulait {menace}. Alors j'ai éternué. Et quand j'éternue, je crache du feu."
   },
   "zombie": {
-    "icon": "🧟",
     "gender": "m",
     "title": "le zombie",
     "desc": "Zombie, ancien apprenti. Ancien tout court",
@@ -211,7 +202,6 @@
     "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}. Ça m'a énervé.\n— Et ?\n— Mon bras gauche s'est décroché. Le seul qui avait encore sa main. {Il} l'a reçu sur la tête."
   },
   "sirene": {
-    "icon": "🧜‍♀️",
     "gender": "f",
     "title": "la sirène",
     "desc": "Sirène, venue pour l'aquarium",
@@ -234,7 +224,6 @@
     "epilogue": "— Vous étiez seule avec {victime}.\n— Je n'ai rien fait. (Blub.)\n— Vous faites des bulles.\n— {Il} voulait {menace}. Je l'ai juste invité{e} à nager. (Blub, blub.)"
   },
   "vampire": {
-    "icon": "🧛‍♀️",
     "gender": "f",
     "title": "la comtesse",
     "desc": "Comtesse vampire, végane (elle le jure)",
@@ -257,7 +246,6 @@
     "epilogue": "— Vous étiez seule avec {victime}.\n— {Il} voulait {menace}. Je lui ai proposé un verre.\n— De vin ?\n— Je ne bois jamais… de vin."
   },
   "djinn": {
-    "icon": "🧞‍♀️",
     "gender": "f",
     "title": "la djinn",
     "desc": "Djinn, a déjà exaucé deux vœux de trop",
@@ -280,7 +268,6 @@
     "epilogue": "— Vous étiez seule avec {victime}.\n— {Il} voulait {menace}. Puis {il} a dit : « Je voudrais qu'on me laisse tranquille pour l'éternité. »\n— Et ?\n— J'exauce au pied de la lettre."
   },
   "archimage": {
-    "icon": "🧙‍♂️",
     "gender": "m",
     "title": "l'archimage",
     "desc": "Archimage, 412 ans, toujours pas de successeur",
@@ -303,7 +290,6 @@
     "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}. De mon temps, on changeait ces gens-là en tabouret.\n— Vous l'avez changé{e} en tabouret ?\n— Non. J'ai oublié la formule. Alors j'ai pris la canne."
   },
   "chevalier": {
-    "icon": "🤺",
     "gender": "m",
     "title": "le chevalier",
     "desc": "Chevalier, armure trop petite depuis Noël",
@@ -326,7 +312,6 @@
     "epilogue": "— Vous étiez seul avec {victime}.\n— Je me lève. Je proteste. Je me rassois.\n— Pourquoi ?\n— {Il} voulait {menace}. J'ai dégainé. Je regrette. Je rengaine."
   },
   "gobelin": {
-    "icon": "👺",
     "gender": "m",
     "title": "le gobelin",
     "desc": "Gobelin, trésorier du royaume (non déclaré)",
@@ -349,7 +334,6 @@
     "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}. J'ai fait une opération comptable.\n— Vous l'avez tué{e}.\n— Techniquement, c'est légal. Enfin, c'est pas encore illégal."
   },
   "roi": {
-    "icon": "🤴",
     "gender": "m",
     "title": "le roi",
     "desc": "Roi, avare de compliments et de tout le reste",
@@ -372,7 +356,6 @@
     "epilogue": "— Vous étiez seul avec {victime}, Majesté.\n— {Il} voulait {menace}. À moi. Le roi.\n— Et vous l'avez supprimé{e} ?\n— Disons que je l'ai… exonéré{e}."
   },
   "meunier": {
-    "icon": "👨‍🌾",
     "gender": "m",
     "title": "le meunier",
     "desc": "Meunier, pèse le grain avec le pouce",
@@ -395,7 +378,6 @@
     "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}.\n— Et ?\n— Un sac de cinquante livres, lâché du grenier. Au poids, c'est honnête."
   },
   "boulanger": {
-    "icon": "👨‍🍳",
     "gender": "m",
     "title": "le boulanger",
     "desc": "Boulanger, pétrit plus de ragots que de pâte",
@@ -418,7 +400,6 @@
     "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}. Je dis ça, je dis rien.\n— Dites-le.\n— Une baguette de trois jours, ça assomme. Je dis ça, je dis rien."
   },
   "bonimenteur": {
-    "icon": "🎩",
     "gender": "m",
     "title": "le bonimenteur",
     "desc": "Bonimenteur, vend du rêve au kilo",
@@ -441,7 +422,6 @@
     "epilogue": "— Vous étiez seul avec {victime}.\n— Permettez que je vous vouvoie : {il} voulait {menace}.\n— Et vous ?\n— Je lui ai vendu un élixir de longue vie. Il y avait une petite erreur sur l'étiquette."
   },
   "cartomancienne": {
-    "icon": "🔮",
     "gender": "f",
     "title": "la cartomancienne",
     "desc": "Cartomancienne, voit l'avenir, rate le présent",
@@ -464,7 +444,6 @@
     "epilogue": "— Vous étiez seule avec {victime}.\n— {Il} voulait {menace}. Je lui ai tiré la carte de la Mort.\n— Et ?\n— Je l'avais vu venir. Après coup, mais je l'avais vu."
   },
   "sorciere": {
-    "icon": "🧙‍♀️",
     "gender": "f",
     "title": "la sorcière",
     "desc": "Sorcière des marais, cuisine tout ce qui coasse",
@@ -487,7 +466,6 @@
     "epilogue": "— Vous étiez seule avec {victime}.\n— {Il} voulait {menace}. Ça m'a coupé l'appétit.\n— Et ?\n— Je l'ai changé{e} en crapaud. Et l'appétit m'est revenu."
   },
   "crapaud": {
-    "icon": "🐸",
     "gender": "m",
     "title": "le crapaud",
     "desc": "Crapaud, prince déchu, attend toujours son bisou",
@@ -510,7 +488,6 @@
     "epilogue": "— Vous étiez seul avec {victime}.\n— Prince Ambroise, je vous prie.\n— Prince, vous étiez seul avec {victime}.\n— {Il} voulait {menace} au lieu de m'embrasser. Un prince a sa fierté. Et une langue très longue."
   },
   "bibliothecaire": {
-    "icon": "👩‍🏫",
     "gender": "f",
     "title": "la bibliothécaire",
     "desc": "Bibliothécaire, réclame le silence en hurlant",
@@ -533,7 +510,6 @@
     "epilogue": "— Vous étiez seule avec {victime}.\n— CHUT !\n— Je vous pose une question.\n— {Il} voulait {menace} À VOIX HAUTE. CHUT, j'ai dit."
   },
   "contremaitre": {
-    "icon": "👷",
     "gender": "m",
     "title": "le contremaître",
     "desc": "Contremaître nain, compte les pépites et les pauses",
@@ -556,7 +532,6 @@
     "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}. En plein temps de travail.\n— Combien de temps ?\n— Quatre minutes. Je l'ai noté{e} absent{e}. Pour toujours."
   },
   "mineur": {
-    "icon": "⛏️",
     "gender": "m",
     "title": "le mineur",
     "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
@@ -579,7 +554,6 @@
     "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}.\n— Et vous avez fait quoi ?\n— On a creusé. Un trou. À sa taille."
   },
   "pirate": {
-    "icon": "🏴‍☠️",
     "gender": "m",
     "title": "le pirate",
     "desc": "Pirate, a perdu une jambe, un œil et le sens de l'orientation",
@@ -602,7 +576,6 @@
     "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}. Je lui ai indiqué la sortie.\n— Et ?\n— C'était le puits. Je me trompe toujours de direction."
   },
   "capitaine": {
-    "icon": "🧑‍✈️",
     "gender": "m",
     "title": "le capitaine",
     "desc": "Capitaine, n'a jamais quitté le port",
@@ -625,7 +598,6 @@
     "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}. J'ai affronté des tempêtes, moi !\n— Vous n'avez jamais quitté le port.\n— Ce soir-là, la tempête, c'était moi. Avec une rame."
   },
   "perroquet": {
-    "icon": "🦜",
     "gender": "m",
     "title": "le perroquet",
     "desc": "Perroquet, répète tous les secrets",
@@ -648,7 +620,6 @@
     "epilogue": "— Vous étiez seul avec {victime}.\n— Seul avec {victime} ! Seul avec {victime} !\n— Pourquoi ?\n— {Il} voulait {menace} ! Coup de bec ! Coup de bec !"
   },
   "apprentie": {
-    "icon": "🧙‍♀️",
     "gender": "f",
     "title": "l'apprentie",
     "desc": "Apprentie sorcière, a déjà fait exploser trois chaudrons",
@@ -671,7 +642,6 @@
     "epilogue": "— Vous étiez seule avec {victime}.\n— {Il} voulait {menace}, alors j'ai lancé un sort de protection.\n— Et ?\n— C'est normal que ça fume encore ?"
   },
   "professeur": {
-    "icon": "👨‍🏫",
     "gender": "m",
     "title": "le professeur",
     "desc": "Professeur de potions, note à l'odeur",
@@ -694,7 +664,6 @@
     "epilogue": "— Vous étiez seul avec {victime}.\n— (Il renifle.) {Il} voulait {menace}.\n— Et votre potion ?\n— Elle sentait la mort. Excellente note."
   },
   "chef": {
-    "icon": "👨‍🍳",
     "gender": "m",
     "title": "le chef",
     "desc": "Chef gobelin, goûte tout, surtout ce qui bouge encore",
@@ -717,7 +686,6 @@
     "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}. Puis {il} a voulu filer.\n— Et ?\n— Chez moi, ce qui s'enfuit finit dans la marmite. C'est la règle de la maison."
   },
   "ogre": {
-    "icon": "👹",
     "gender": "m",
     "title": "l'ogre",
     "desc": "Ogre, végétarien depuis mardi",
@@ -740,7 +708,6 @@
     "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}. J'ai gardé mon calme : je suis végétarien depuis mardi.\n— On est jeudi.\n— Justement. C'était plus mardi."
   },
   "fossoyeur": {
-    "icon": "⚰️",
     "gender": "m",
     "title": "le fossoyeur",
     "desc": "Fossoyeur, creuse en sifflotant",
@@ -763,7 +730,6 @@
     "epilogue": "— Vous étiez seul avec {victime}.\n— {Il} voulait {menace}. Alors j'ai pris ses mesures.\n— Pour quoi faire ?\n— Le travail était à moitié fait. Autant le finir."
   },
   "corbeau": {
-    "icon": "🐦‍⬛",
     "gender": "m",
     "title": "le corbeau",
     "desc": "Corbeau, voit beaucoup, comprend moins, ne dit rien",
@@ -786,7 +752,6 @@
     "epilogue": "— Vous étiez seul avec {victime}.\n— (Le corbeau vous tend un billet : « {Il} voulait {menace}. »)\n— Et ensuite ?\n— (Deuxième billet : « Ensuite, plus rien. »)"
   },
   "geant": {
-    "icon": "🦶",
     "gender": "m",
     "title": "le géant",
     "big": true,
@@ -810,7 +775,6 @@
     "tic": "Se cogne, s'excuse auprès du plafond"
   },
   "golem": {
-    "icon": "🪨",
     "gender": "m",
     "title": "le golem",
     "big": true,
@@ -834,7 +798,6 @@
     "tic": "Exécute les ordres au mot près, avec un temps de retard"
   },
   "vouivre": {
-    "icon": "🐍",
     "gender": "f",
     "title": "la vouivre",
     "big": true,
@@ -858,7 +821,6 @@
     "tic": "Commence ses phrases par la fin"
   },
   "dragon": {
-    "icon": "🐉",
     "gender": "m",
     "title": "le dragon",
     "big": true,
@@ -886,7 +848,6 @@
     "name": "Taxard",
     "gender": "m",
     "title": "le percepteur",
-    "icon": "🧾",
     "desc": "Percepteur du baron, compte même les miettes",
     "motif": "lever l'impôt de fin d'année",
     "menace": "me faire payer l'impôt sur tout ce que je possède",
@@ -918,7 +879,6 @@
     "name": "Ermengarde",
     "gender": "f",
     "title": "la cousine",
-    "icon": "👒",
     "desc": "Cousine éloignée de tout le monde, venue pour l'héritage",
     "motif": "réclamer un héritage",
     "menace": "réclamer sa part de ce qui m'appartient",
@@ -950,7 +910,6 @@
     "name": "Pinardon",
     "gender": "m",
     "title": "l'inspecteur des tavernes",
-    "icon": "🍷",
     "desc": "Inspecteur des tavernes, goûte tout, note tout",
     "motif": "inspecter les lieux",
     "menace": "me coller un blâme",
@@ -982,7 +941,6 @@
     "name": "Gustave",
     "gender": "m",
     "title": "le touriste",
-    "icon": "🎒",
     "desc": "Touriste, dessine tout au fusain, surtout ce qui est interdit",
     "motif": "visiter la baronnie",
     "menace": "faire mon portrait au fusain et le vendre à la foire",
@@ -1014,7 +972,6 @@
     "name": "Saisitout",
     "gender": "m",
     "title": "l'huissier",
-    "icon": "📜",
     "desc": "Huissier de la banque gobeline, saisit d'abord, demande ensuite",
     "motif": "saisir des biens",
     "menace": "saisir mes affaires",
@@ -1046,7 +1003,6 @@
     "name": "Ondine",
     "gender": "f",
     "title": "la maîtresse-nageuse",
-    "icon": "🛟",
     "desc": "Maîtresse-nageuse, sans permis ni maillot",
     "motif": "donner des cours de natation",
     "menace": "m'apprendre à nager de force",
@@ -1078,7 +1034,6 @@
     "name": "Bricabrac",
     "gender": "m",
     "title": "le colporteur",
-    "icon": "🎒",
     "desc": "Colporteur, vend des objets dont personne ne veut",
     "motif": "vendre sa camelote",
     "menace": "me revendre ce qu'il m'avait déjà vendu",
@@ -1110,7 +1065,6 @@
     "name": "Prudence",
     "gender": "f",
     "title": "l'abbesse",
-    "icon": "📿",
     "desc": "Abbesse, quête pour un couvent introuvable",
     "motif": "faire la quête",
     "menace": "me faire la morale",
@@ -1142,7 +1096,6 @@
     "name": "Lirelire",
     "gender": "m",
     "title": "le troubadour",
-    "icon": "🪕",
     "desc": "Troubadour itinérant, chante juste, et ça agace",
     "motif": "donner un concert",
     "menace": "chanter mieux que tout le monde",
@@ -1174,7 +1127,6 @@
     "name": "Vipérine",
     "gender": "f",
     "title": "la chasseuse de primes",
-    "icon": "🏹",
     "desc": "Chasseuse de primes, a toujours un avis de recherche sur elle",
     "motif": "toucher une prime",
     "menace": "me livrer au baron contre trois écus",
@@ -1206,7 +1158,6 @@
     "name": "Mercurio",
     "gender": "m",
     "title": "l'alchimiste",
-    "icon": "⚗️",
     "desc": "Alchimiste ambulant, transforme l'or en dettes",
     "motif": "proposer ses services",
     "menace": "changer mes économies en plomb",
@@ -1238,7 +1189,6 @@
     "name": "Grisemotte",
     "gender": "f",
     "title": "la baronne",
-    "icon": "👑",
     "desc": "Baronne voisine, jalouse de tout ce qui brille",
     "motif": "rendre une visite de courtoisie",
     "menace": "racheter la baronnie et me mettre dehors",
@@ -1270,7 +1220,6 @@
     "name": "Gertrude",
     "gender": "f",
     "title": "la dresseuse",
-    "icon": "🎪",
     "desc": "Dresseuse de dragons, surtout des petits",
     "motif": "recruter des bêtes pour son cirque",
     "menace": "m'emmener dans son cirque",
@@ -1302,7 +1251,6 @@
     "name": "Rapidon",
     "gender": "m",
     "title": "le messager",
-    "icon": "✉️",
     "desc": "Messager du baron, porte toujours de mauvaises nouvelles",
     "motif": "apporter une lettre du baron",
     "menace": "m'annoncer une mauvaise nouvelle",

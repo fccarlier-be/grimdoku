@@ -129,7 +129,6 @@
       "name": "Aëlys",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧝‍♀️",
       "desc": "Elfe, critique gastronomique",
       "archetype": "elfe",
       "tic": "Note tout sur dix, les gens compris"
@@ -139,7 +138,6 @@
       "name": "Goémone",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧜‍♀️",
       "desc": "Sirène, venue pour l'aquarium",
       "archetype": "sirene",
       "tic": "Fait des bulles quand elle ment"
@@ -149,7 +147,6 @@
       "name": "Aagrid",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧔‍♂️",
       "desc": "Tenancier le plus *SYMPA* de la baronnie",
       "archetype": "tavernier",
       "tic": "Compte à voix basse en parlant"
@@ -159,7 +156,6 @@
       "name": "Capucine",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧚",
       "desc": "Fée, doit trois tournées",
       "archetype": "fee",
       "tic": "« Je te le rends demain. »"
@@ -169,7 +165,6 @@
       "name": "Gribouille",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧙‍♂️",
       "desc": "Mage, allergique au houblon",
       "archetype": "mage",
       "tic": "Éternue avant chaque sortilège"
@@ -179,7 +174,6 @@
       "name": "Récupérin",
       "gender": "m",
       "role": "victim",
-      "icon": "📜",
       "desc": "Huissier de la banque gobeline, saisit d'abord, demande ensuite",
       "archetype": "huissier",
       "guest": true

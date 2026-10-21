@@ -176,7 +176,6 @@
       "name": "Dagobert",
       "gender": "m",
       "role": "suspect",
-      "icon": "🤴",
       "desc": "Roi, avare de compliments et de tout le reste",
       "archetype": "roi",
       "tic": "« C'est pas faux. », à tout ce qu'il ne comprend pas"
@@ -186,7 +185,6 @@
       "name": "Aëlys",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧝‍♀️",
       "desc": "Elfe, critique gastronomique",
       "archetype": "elfe",
       "tic": "Note tout sur dix, les gens compris"
@@ -196,7 +194,6 @@
       "name": "Gontran",
       "gender": "m",
       "role": "suspect",
-      "icon": "🤺",
       "desc": "Chevalier, armure trop petite depuis Noël",
       "archetype": "chevalier",
       "tic": "Annonce chacune de ses actions à voix haute"
@@ -206,7 +203,6 @@
       "name": "Ciguë",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧙‍♀️",
       "desc": "Sorcière des marais, cuisine tout ce qui coasse",
       "archetype": "sorciere",
       "tic": "Regarde Ambroise avec appétit"
@@ -216,7 +212,6 @@
       "name": "Fausset",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧑‍🎤",
       "desc": "Barde, chante faux",
       "archetype": "barde",
       "tic": "Transforme chaque conversation en couplet"
@@ -226,7 +221,6 @@
       "name": "Bakchich",
       "gender": "m",
       "role": "suspect",
-      "icon": "👺",
       "desc": "Gobelin, trésorier du royaume (non déclaré)",
       "archetype": "gobelin",
       "tic": "« Techniquement, c'est légal. »"
@@ -236,7 +230,6 @@
       "name": "Festin",
       "gender": "m",
       "role": "suspect",
-      "icon": "👹",
       "desc": "Ogre, végétarien depuis mardi",
       "archetype": "ogre",
       "tic": "Compte les jours depuis mardi"
@@ -246,7 +239,6 @@
       "name": "Blafard",
       "gender": "m",
       "role": "suspect",
-      "icon": "👻",
       "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
       "archetype": "spectre",
       "traits": [
@@ -259,7 +251,6 @@
       "name": "Toutvend",
       "gender": "m",
       "role": "victim",
-      "icon": "🎒",
       "desc": "Colporteur, vend des objets dont personne ne veut",
       "archetype": "colporteur",
       "guest": true

@@ -129,7 +129,6 @@
       "name": "Fausset",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧑‍🎤",
       "desc": "Barde, chante faux",
       "archetype": "barde",
       "tic": "Transforme chaque conversation en couplet"
@@ -139,7 +138,6 @@
       "name": "Gribouille",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧙‍♂️",
       "desc": "Mage, allergique au houblon",
       "archetype": "mage",
       "tic": "Éternue avant chaque sortilège"
@@ -149,7 +147,6 @@
       "name": "Bâfrin",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧌",
       "desc": "Troll, plongeur à mi-temps",
       "archetype": "troll",
       "tic": "Répète le dernier mot de la phrase des autres"
@@ -159,7 +156,6 @@
       "name": "Aëlys",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧝‍♀️",
       "desc": "Elfe, critique gastronomique",
       "archetype": "elfe",
       "tic": "Note tout sur dix, les gens compris"
@@ -169,7 +165,6 @@
       "name": "Aagrid",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧔‍♂️",
       "desc": "Tenancier le plus *SYMPA* de la baronnie",
       "archetype": "tavernier",
       "tic": "Compte à voix basse en parlant"
@@ -179,7 +174,6 @@
       "name": "Apnée",
       "gender": "f",
       "role": "victim",
-      "icon": "🛟",
       "desc": "Maîtresse-nageuse, sans permis ni maillot",
       "archetype": "nageuse",
       "guest": true

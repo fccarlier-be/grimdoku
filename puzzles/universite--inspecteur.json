@@ -265,7 +265,6 @@
       "name": "Blafard",
       "gender": "m",
       "role": "suspect",
-      "icon": "👻",
       "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
       "archetype": "spectre",
       "traits": [
@@ -278,7 +277,6 @@
       "name": "Dewey",
       "gender": "f",
       "role": "suspect",
-      "icon": "👩‍🏫",
       "desc": "Bibliothécaire, réclame le silence en hurlant",
       "archetype": "bibliothecaire",
       "tic": "« CHUT ! », en hurlant"
@@ -288,7 +286,6 @@
       "name": "Gribouille",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧙‍♂️",
       "desc": "Mage, allergique au houblon",
       "archetype": "mage",
       "tic": "Éternue avant chaque sortilège"
@@ -298,7 +295,6 @@
       "name": "Flammèche",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐉",
       "desc": "Dragonnet, brûle tout ce qu'il touche",
       "archetype": "dragonnet",
       "tic": "S'excuse avant même d'avoir brûlé quelque chose"
@@ -308,7 +304,6 @@
       "name": "Fiolius",
       "gender": "m",
       "role": "suspect",
-      "icon": "👨‍🏫",
       "desc": "Professeur de potions, note à l'odeur",
       "archetype": "professeur",
       "tic": "Renifle avant de répondre"
@@ -318,7 +313,6 @@
       "name": "Brindille",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧙‍♀️",
       "desc": "Apprentie sorcière, a déjà fait exploser trois chaudrons",
       "archetype": "apprentie",
       "tic": "« C'est normal que ça fume ? »"
@@ -328,7 +322,6 @@
       "name": "Capucine",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧚",
       "desc": "Fée, doit trois tournées",
       "archetype": "fee",
       "tic": "« Je te le rends demain. »"
@@ -338,7 +331,6 @@
       "name": "Clairvoya",
       "gender": "f",
       "role": "suspect",
-      "icon": "🔮",
       "desc": "Cartomancienne, voit l'avenir, rate le présent",
       "archetype": "cartomancienne",
       "tic": "« Je l'avais vu venir. », toujours après coup"
@@ -348,7 +340,6 @@
       "name": "Ambroise",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐸",
       "desc": "Crapaud, prince déchu, attend toujours son bisou",
       "archetype": "crapaud",
       "tic": "Rappelle son titre toutes les deux phrases"
@@ -358,7 +349,6 @@
       "name": "Fumerolle",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧞‍♀️",
       "desc": "Djinn, a déjà exaucé deux vœux de trop",
       "archetype": "djinn",
       "tic": "Prend tout au pied de la lettre"
@@ -368,7 +358,6 @@
       "name": "Sirotin",
       "gender": "m",
       "role": "victim",
-      "icon": "🍷",
       "desc": "Inspecteur des tavernes, goûte tout, note tout",
       "archetype": "inspecteur",
       "guest": true

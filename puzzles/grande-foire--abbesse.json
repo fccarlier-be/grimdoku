@@ -306,7 +306,6 @@
       "name": "Flammèche",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐉",
       "desc": "Dragonnet, brûle tout ce qu'il touche",
       "archetype": "dragonnet",
       "tic": "S'excuse avant même d'avoir brûlé quelque chose"
@@ -316,7 +315,6 @@
       "name": "Fausset",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧑‍🎤",
       "desc": "Barde, chante faux",
       "archetype": "barde",
       "tic": "Transforme chaque conversation en couplet"
@@ -326,7 +324,6 @@
       "name": "Fricot",
       "gender": "m",
       "role": "suspect",
-      "icon": "👨‍🍳",
       "desc": "Chef gobelin, goûte tout, surtout ce qui bouge encore",
       "archetype": "chef",
       "tic": "Juge chaque plat à sa capacité à s'enfuir"
@@ -336,7 +333,6 @@
       "name": "Bâfrin",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧌",
       "desc": "Troll, plongeur à mi-temps",
       "archetype": "troll",
       "tic": "Répète le dernier mot de la phrase des autres"
@@ -346,7 +342,6 @@
       "name": "Capucine",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧚",
       "desc": "Fée, doit trois tournées",
       "archetype": "fee",
       "tic": "« Je te le rends demain. »"
@@ -356,7 +351,6 @@
       "name": "Festin",
       "gender": "m",
       "role": "suspect",
-      "icon": "👹",
       "desc": "Ogre, végétarien depuis mardi",
       "archetype": "ogre",
       "tic": "Compte les jours depuis mardi"
@@ -366,7 +360,6 @@
       "name": "Bakchich",
       "gender": "m",
       "role": "suspect",
-      "icon": "👺",
       "desc": "Gobelin, trésorier du royaume (non déclaré)",
       "archetype": "gobelin",
       "tic": "« Techniquement, c'est légal. »"
@@ -376,7 +369,6 @@
       "name": "Clairvoya",
       "gender": "f",
       "role": "suspect",
-      "icon": "🔮",
       "desc": "Cartomancienne, voit l'avenir, rate le présent",
       "archetype": "cartomancienne",
       "tic": "« Je l'avais vu venir. », toujours après coup"
@@ -386,7 +378,6 @@
       "name": "Farinard",
       "gender": "m",
       "role": "suspect",
-      "icon": "👨‍🌾",
       "desc": "Meunier, pèse le grain avec le pouce",
       "archetype": "meunier",
       "tic": "« Au poids, c'est honnête. »"
@@ -396,7 +387,6 @@
       "name": "Esbroufe",
       "gender": "m",
       "role": "suspect",
-      "icon": "🎩",
       "desc": "Bonimenteur, vend du rêve au kilo",
       "archetype": "bonimenteur",
       "tic": "Vouvoie tout le monde, y compris les poules"
@@ -406,7 +396,6 @@
       "name": "Briochon",
       "gender": "m",
       "role": "suspect",
-      "icon": "👨‍🍳",
       "desc": "Boulanger, pétrit plus de ragots que de pâte",
       "archetype": "boulanger",
       "tic": "« Je dis ça, je dis rien. »"
@@ -416,7 +405,6 @@
       "name": "Componcte",
       "gender": "f",
       "role": "victim",
-      "icon": "📿",
       "desc": "Abbesse, quête pour un couvent introuvable",
       "archetype": "abbesse",
       "guest": true

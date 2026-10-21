@@ -172,7 +172,6 @@
       "name": "Dagobert",
       "gender": "m",
       "role": "suspect",
-      "icon": "🤴",
       "desc": "Roi, avare de compliments et de tout le reste",
       "archetype": "roi",
       "tic": "« C'est pas faux. », à tout ce qu'il ne comprend pas"
@@ -182,7 +181,6 @@
       "name": "Esbroufe",
       "gender": "m",
       "role": "suspect",
-      "icon": "🎩",
       "desc": "Bonimenteur, vend du rêve au kilo",
       "archetype": "bonimenteur",
       "tic": "Vouvoie tout le monde, y compris les poules"
@@ -192,7 +190,6 @@
       "name": "Bakchich",
       "gender": "m",
       "role": "suspect",
-      "icon": "👺",
       "desc": "Gobelin, trésorier du royaume (non déclaré)",
       "archetype": "gobelin",
       "tic": "« Techniquement, c'est légal. »"
@@ -202,7 +199,6 @@
       "name": "Glissandra",
       "gender": "f",
       "role": "suspect",
-      "icon": "🐍",
       "desc": "Vouivre, serpent ailé, très longue à se retourner",
       "archetype": "vouivre",
       "tic": "Commence ses phrases par la fin",
@@ -213,7 +209,6 @@
       "name": "Clairvoya",
       "gender": "f",
       "role": "suspect",
-      "icon": "🔮",
       "desc": "Cartomancienne, voit l'avenir, rate le présent",
       "archetype": "cartomancienne",
       "tic": "« Je l'avais vu venir. », toujours après coup"
@@ -223,7 +218,6 @@
       "name": "Véloce",
       "gender": "m",
       "role": "victim",
-      "icon": "✉️",
       "desc": "Messager du baron, porte toujours de mauvaises nouvelles",
       "archetype": "messager",
       "guest": true

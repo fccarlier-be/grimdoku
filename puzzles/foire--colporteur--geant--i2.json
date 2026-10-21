@@ -151,7 +151,6 @@
       "name": "Bakchich",
       "gender": "m",
       "role": "suspect",
-      "icon": "👺",
       "desc": "Gobelin, trésorier du royaume (non déclaré)",
       "archetype": "gobelin",
       "tic": "« Techniquement, c'est légal. »"
@@ -161,7 +160,6 @@
       "name": "Fausset",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧑‍🎤",
       "desc": "Barde, chante faux",
       "archetype": "barde",
       "tic": "Transforme chaque conversation en couplet"
@@ -171,7 +169,6 @@
       "name": "Escabeau",
       "gender": "m",
       "role": "suspect",
-      "icon": "🦶",
       "desc": "Géant, toujours couché : aucun plafond n'est assez haut",
       "archetype": "geant",
       "tic": "Se cogne, s'excuse auprès du plafond",
@@ -182,7 +179,6 @@
       "name": "Bâfrin",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧌",
       "desc": "Troll, plongeur à mi-temps",
       "archetype": "troll",
       "tic": "Répète le dernier mot de la phrase des autres"
@@ -192,7 +188,6 @@
       "name": "Clairvoya",
       "gender": "f",
       "role": "suspect",
-      "icon": "🔮",
       "desc": "Cartomancienne, voit l'avenir, rate le présent",
       "archetype": "cartomancienne",
       "tic": "« Je l'avais vu venir. », toujours après coup"
@@ -202,7 +197,6 @@
       "name": "Marchandin",
       "gender": "m",
       "role": "victim",
-      "icon": "🎒",
       "desc": "Colporteur, vend des objets dont personne ne veut",
       "archetype": "colporteur",
       "guest": true

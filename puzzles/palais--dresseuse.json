@@ -177,7 +177,6 @@
       "name": "Bakchich",
       "gender": "m",
       "role": "suspect",
-      "icon": "👺",
       "desc": "Gobelin, trésorier du royaume (non déclaré)",
       "archetype": "gobelin",
       "tic": "« Techniquement, c'est légal. »"
@@ -187,7 +186,6 @@
       "name": "Fumerolle",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧞‍♀️",
       "desc": "Djinn, a déjà exaucé deux vœux de trop",
       "archetype": "djinn",
       "tic": "Prend tout au pied de la lettre"
@@ -197,7 +195,6 @@
       "name": "Fizzlebarbe",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧙‍♂️",
       "desc": "Archimage, 412 ans, toujours pas de successeur",
       "archetype": "archimage",
       "tic": "« De mon temps… » (en concurrence avec Blafard)"
@@ -207,7 +204,6 @@
       "name": "Esbroufe",
       "gender": "m",
       "role": "suspect",
-      "icon": "🎩",
       "desc": "Bonimenteur, vend du rêve au kilo",
       "archetype": "bonimenteur",
       "tic": "Vouvoie tout le monde, y compris les poules"
@@ -217,7 +213,6 @@
       "name": "Dagobert",
       "gender": "m",
       "role": "suspect",
-      "icon": "🤴",
       "desc": "Roi, avare de compliments et de tout le reste",
       "archetype": "roi",
       "tic": "« C'est pas faux. », à tout ce qu'il ne comprend pas"
@@ -227,7 +222,6 @@
       "name": "Clairvoya",
       "gender": "f",
       "role": "suspect",
-      "icon": "🔮",
       "desc": "Cartomancienne, voit l'avenir, rate le présent",
       "archetype": "cartomancienne",
       "tic": "« Je l'avais vu venir. », toujours après coup"
@@ -237,7 +231,6 @@
       "name": "Muselle",
       "gender": "f",
       "role": "victim",
-      "icon": "🎪",
       "desc": "Dresseuse de dragons, surtout des petits",
       "archetype": "dresseuse",
       "guest": true

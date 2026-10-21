@@ -255,7 +255,6 @@
       "name": "Capucine",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧚",
       "desc": "Fée, doit trois tournées",
       "archetype": "fee",
       "tic": "« Je te le rends demain. »"
@@ -265,7 +264,6 @@
       "name": "Dewey",
       "gender": "f",
       "role": "suspect",
-      "icon": "👩‍🏫",
       "desc": "Bibliothécaire, réclame le silence en hurlant",
       "archetype": "bibliothecaire",
       "tic": "« CHUT ! », en hurlant"
@@ -275,7 +273,6 @@
       "name": "Brindille",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧙‍♀️",
       "desc": "Apprentie sorcière, a déjà fait exploser trois chaudrons",
       "archetype": "apprentie",
       "tic": "« C'est normal que ça fume ? »"
@@ -285,7 +282,6 @@
       "name": "Fumerolle",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧞‍♀️",
       "desc": "Djinn, a déjà exaucé deux vœux de trop",
       "archetype": "djinn",
       "tic": "Prend tout au pied de la lettre"
@@ -295,7 +291,6 @@
       "name": "Cendrebrune",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐉",
       "desc": "Dragon adulte, toujours lové dans un coin",
       "archetype": "dragon",
       "tic": "Se réveille aux pires moments",
@@ -306,7 +301,6 @@
       "name": "Gribouille",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧙‍♂️",
       "desc": "Mage, allergique au houblon",
       "archetype": "mage",
       "tic": "Éternue avant chaque sortilège"
@@ -316,7 +310,6 @@
       "name": "Fiolius",
       "gender": "m",
       "role": "suspect",
-      "icon": "👨‍🏫",
       "desc": "Professeur de potions, note à l'odeur",
       "archetype": "professeur",
       "tic": "Renifle avant de répondre"
@@ -326,7 +319,6 @@
       "name": "Fizzlebarbe",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧙‍♂️",
       "desc": "Archimage, 412 ans, toujours pas de successeur",
       "archetype": "archimage",
       "tic": "« De mon temps… » (en concurrence avec Blafard)"
@@ -336,7 +328,6 @@
       "name": "Plectrude",
       "gender": "f",
       "role": "victim",
-      "icon": "👒",
       "desc": "Cousine éloignée de tout le monde, venue pour l'héritage",
       "archetype": "cousine",
       "guest": true

@@ -170,7 +170,6 @@
       "name": "Dewey",
       "gender": "f",
       "role": "suspect",
-      "icon": "👩‍🏫",
       "desc": "Bibliothécaire, réclame le silence en hurlant",
       "archetype": "bibliothecaire",
       "tic": "« CHUT ! », en hurlant"
@@ -180,7 +179,6 @@
       "name": "Bakchich",
       "gender": "m",
       "role": "suspect",
-      "icon": "👺",
       "desc": "Gobelin, trésorier du royaume (non déclaré)",
       "archetype": "gobelin",
       "tic": "« Techniquement, c'est légal. »"
@@ -190,7 +188,6 @@
       "name": "Belladone",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧛‍♀️",
       "desc": "Comtesse vampire, végane (elle le jure)",
       "archetype": "vampire",
       "tic": "« Je ne bois jamais… de vin. »"
@@ -200,7 +197,6 @@
       "name": "Gribouille",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧙‍♂️",
       "desc": "Mage, allergique au houblon",
       "archetype": "mage",
       "tic": "Éternue avant chaque sortilège"
@@ -210,7 +206,6 @@
       "name": "Fizzlebarbe",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧙‍♂️",
       "desc": "Archimage, 412 ans, toujours pas de successeur",
       "archetype": "archimage",
       "tic": "« De mon temps… » (en concurrence avec Blafard)"
@@ -220,7 +215,6 @@
       "name": "Fumerolle",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧞‍♀️",
       "desc": "Djinn, a déjà exaucé deux vœux de trop",
       "archetype": "djinn",
       "tic": "Prend tout au pied de la lettre"
@@ -230,7 +224,6 @@
       "name": "Tributin",
       "gender": "m",
       "role": "victim",
-      "icon": "🧾",
       "desc": "Percepteur du baron, compte même les miettes",
       "archetype": "percepteur",
       "guest": true

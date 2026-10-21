@@ -20,5 +20,10 @@ deploy/grimdoku/site/manifest.webmanifest
 deploy/grimdoku/api-data/
 deploy/grimdoku/site/connexion.html
 deploy/grimdoku/site/confidentialite.html
+deploy/grimdoku/site/stats/
 deploy/grimdoku/site/pages.css
 apercus/
+
+# caches Python
+__pycache__/
+*.pyc

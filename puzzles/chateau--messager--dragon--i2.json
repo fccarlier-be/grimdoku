@@ -172,7 +172,6 @@
       "name": "Gontran",
       "gender": "m",
       "role": "suspect",
-      "icon": "🤺",
       "desc": "Chevalier, armure trop petite depuis Noël",
       "archetype": "chevalier",
       "tic": "Annonce chacune de ses actions à voix haute"
@@ -182,7 +181,6 @@
       "name": "Aëlys",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧝‍♀️",
       "desc": "Elfe, critique gastronomique",
       "archetype": "elfe",
       "tic": "Note tout sur dix, les gens compris"
@@ -192,7 +190,6 @@
       "name": "Cendrebrune",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐉",
       "desc": "Dragon adulte, toujours lové dans un coin",
       "archetype": "dragon",
       "tic": "Se réveille aux pires moments",
@@ -203,7 +200,6 @@
       "name": "Bakchich",
       "gender": "m",
       "role": "suspect",
-      "icon": "👺",
       "desc": "Gobelin, trésorier du royaume (non déclaré)",
       "archetype": "gobelin",
       "tic": "« Techniquement, c'est légal. »"
@@ -213,7 +209,6 @@
       "name": "Fausset",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧑‍🎤",
       "desc": "Barde, chante faux",
       "archetype": "barde",
       "tic": "Transforme chaque conversation en couplet"
@@ -223,7 +218,6 @@
       "name": "Sabot",
       "gender": "m",
       "role": "victim",
-      "icon": "✉️",
       "desc": "Messager du baron, porte toujours de mauvaises nouvelles",
       "archetype": "messager",
       "guest": true

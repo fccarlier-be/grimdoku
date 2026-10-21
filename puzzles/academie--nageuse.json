@@ -177,7 +177,6 @@
       "name": "Gribouille",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧙‍♂️",
       "desc": "Mage, allergique au houblon",
       "archetype": "mage",
       "tic": "Éternue avant chaque sortilège"
@@ -187,7 +186,6 @@
       "name": "Capucine",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧚",
       "desc": "Fée, doit trois tournées",
       "archetype": "fee",
       "tic": "« Je te le rends demain. »"
@@ -197,7 +195,6 @@
       "name": "Aëlys",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧝‍♀️",
       "desc": "Elfe, critique gastronomique",
       "archetype": "elfe",
       "tic": "Note tout sur dix, les gens compris"
@@ -207,7 +204,6 @@
       "name": "Fumerolle",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧞‍♀️",
       "desc": "Djinn, a déjà exaucé deux vœux de trop",
       "archetype": "djinn",
       "tic": "Prend tout au pied de la lettre"
@@ -217,7 +213,6 @@
       "name": "Fiolius",
       "gender": "m",
       "role": "suspect",
-      "icon": "👨‍🏫",
       "desc": "Professeur de potions, note à l'odeur",
       "archetype": "professeur",
       "tic": "Renifle avant de répondre"
@@ -227,7 +222,6 @@
       "name": "Flammèche",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐉",
       "desc": "Dragonnet, brûle tout ce qu'il touche",
       "archetype": "dragonnet",
       "tic": "S'excuse avant même d'avoir brûlé quelque chose"
@@ -237,7 +231,6 @@
       "name": "Trempette",
       "gender": "f",
       "role": "victim",
-      "icon": "🛟",
       "desc": "Maîtresse-nageuse, sans permis ni maillot",
       "archetype": "nageuse",
       "guest": true

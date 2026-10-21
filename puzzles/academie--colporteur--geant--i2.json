@@ -172,7 +172,6 @@
       "name": "Flammèche",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐉",
       "desc": "Dragonnet, brûle tout ce qu'il touche",
       "archetype": "dragonnet",
       "tic": "S'excuse avant même d'avoir brûlé quelque chose"
@@ -182,7 +181,6 @@
       "name": "Capucine",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧚",
       "desc": "Fée, doit trois tournées",
       "archetype": "fee",
       "tic": "« Je te le rends demain. »"
@@ -192,7 +190,6 @@
       "name": "Brindille",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧙‍♀️",
       "desc": "Apprentie sorcière, a déjà fait exploser trois chaudrons",
       "archetype": "apprentie",
       "tic": "« C'est normal que ça fume ? »"
@@ -202,7 +199,6 @@
       "name": "Escabeau",
       "gender": "m",
       "role": "suspect",
-      "icon": "🦶",
       "desc": "Géant, toujours couché : aucun plafond n'est assez haut",
       "archetype": "geant",
       "tic": "Se cogne, s'excuse auprès du plafond",
@@ -213,7 +209,6 @@
       "name": "Gribouille",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧙‍♂️",
       "desc": "Mage, allergique au houblon",
       "archetype": "mage",
       "tic": "Éternue avant chaque sortilège"
@@ -223,7 +218,6 @@
       "name": "Chiffonnet",
       "gender": "m",
       "role": "victim",
-      "icon": "🎒",
       "desc": "Colporteur, vend des objets dont personne ne veut",
       "archetype": "colporteur",
       "guest": true

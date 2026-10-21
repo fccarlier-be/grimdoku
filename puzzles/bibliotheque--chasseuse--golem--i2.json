@@ -165,7 +165,6 @@
       "name": "Blafard",
       "gender": "m",
       "role": "suspect",
-      "icon": "👻",
       "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
       "archetype": "spectre",
       "traits": [
@@ -178,7 +177,6 @@
       "name": "Caillasse",
       "gender": "m",
       "role": "suspect",
-      "icon": "🪨",
       "desc": "Golem de pierre, lent mais très appliqué",
       "archetype": "golem",
       "tic": "Exécute les ordres au mot près, avec un temps de retard",
@@ -189,7 +187,6 @@
       "name": "Gribouille",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧙‍♂️",
       "desc": "Mage, allergique au houblon",
       "archetype": "mage",
       "tic": "Éternue avant chaque sortilège"
@@ -199,7 +196,6 @@
       "name": "Belladone",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧛‍♀️",
       "desc": "Comtesse vampire, végane (elle le jure)",
       "archetype": "vampire",
       "tic": "« Je ne bois jamais… de vin. »"
@@ -209,7 +205,6 @@
       "name": "Fumerolle",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧞‍♀️",
       "desc": "Djinn, a déjà exaucé deux vœux de trop",
       "archetype": "djinn",
       "tic": "Prend tout au pied de la lettre"
@@ -219,7 +214,6 @@
       "name": "Mordache",
       "gender": "f",
       "role": "victim",
-      "icon": "🏹",
       "desc": "Chasseuse de primes, a toujours un avis de recherche sur elle",
       "archetype": "chasseuse",
       "guest": true

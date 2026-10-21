@@ -158,7 +158,6 @@
       "name": "Bakchich",
       "gender": "m",
       "role": "suspect",
-      "icon": "👺",
       "desc": "Gobelin, trésorier du royaume (non déclaré)",
       "archetype": "gobelin",
       "tic": "« Techniquement, c'est légal. »"
@@ -168,7 +167,6 @@
       "name": "Gontran",
       "gender": "m",
       "role": "suspect",
-      "icon": "🤺",
       "desc": "Chevalier, armure trop petite depuis Noël",
       "archetype": "chevalier",
       "tic": "Annonce chacune de ses actions à voix haute"
@@ -178,7 +176,6 @@
       "name": "Grisou",
       "gender": "m",
       "role": "suspect",
-      "icon": "⛏️",
       "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
       "archetype": "mineur",
       "tic": "« On creuse ? »"
@@ -188,7 +185,6 @@
       "name": "Bâfrin",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧌",
       "desc": "Troll, plongeur à mi-temps",
       "archetype": "troll",
       "tic": "Répète le dernier mot de la phrase des autres"
@@ -198,7 +194,6 @@
       "name": "Caillasse",
       "gender": "m",
       "role": "suspect",
-      "icon": "🪨",
       "desc": "Golem de pierre, lent mais très appliqué",
       "archetype": "golem",
       "tic": "Exécute les ordres au mot près, avec un temps de retard",
@@ -209,7 +204,6 @@
       "name": "Mercurio",
       "gender": "m",
       "role": "victim",
-      "icon": "⚗️",
       "desc": "Alchimiste ambulant, transforme l'or en dettes",
       "archetype": "alchimiste",
       "guest": true

@@ -231,7 +231,6 @@
       "name": "Esbroufe",
       "gender": "m",
       "role": "suspect",
-      "icon": "🎩",
       "desc": "Bonimenteur, vend du rêve au kilo",
       "archetype": "bonimenteur",
       "tic": "Vouvoie tout le monde, y compris les poules"
@@ -241,7 +240,6 @@
       "name": "Aëlys",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧝‍♀️",
       "desc": "Elfe, critique gastronomique",
       "archetype": "elfe",
       "tic": "Note tout sur dix, les gens compris"
@@ -251,7 +249,6 @@
       "name": "Aagrid",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧔‍♂️",
       "desc": "Tenancier le plus *SYMPA* de la baronnie",
       "archetype": "tavernier",
       "tic": "Compte à voix basse en parlant"
@@ -261,7 +258,6 @@
       "name": "Bâfrin",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧌",
       "desc": "Troll, plongeur à mi-temps",
       "archetype": "troll",
       "tic": "Répète le dernier mot de la phrase des autres"
@@ -271,7 +267,6 @@
       "name": "Dagobert",
       "gender": "m",
       "role": "suspect",
-      "icon": "🤴",
       "desc": "Roi, avare de compliments et de tout le reste",
       "archetype": "roi",
       "tic": "« C'est pas faux. », à tout ce qu'il ne comprend pas"
@@ -281,7 +276,6 @@
       "name": "Capucine",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧚",
       "desc": "Fée, doit trois tournées",
       "archetype": "fee",
       "tic": "« Je te le rends demain. »"
@@ -291,7 +285,6 @@
       "name": "Fumerolle",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧞‍♀️",
       "desc": "Djinn, a déjà exaucé deux vœux de trop",
       "archetype": "djinn",
       "tic": "Prend tout au pied de la lettre"
@@ -301,7 +294,6 @@
       "name": "Fizzlebarbe",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧙‍♂️",
       "desc": "Archimage, 412 ans, toujours pas de successeur",
       "archetype": "archimage",
       "tic": "« De mon temps… » (en concurrence avec Blafard)"
@@ -311,7 +303,6 @@
       "name": "Belladone",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧛‍♀️",
       "desc": "Comtesse vampire, végane (elle le jure)",
       "archetype": "vampire",
       "tic": "« Je ne bois jamais… de vin. »"
@@ -321,7 +312,6 @@
       "name": "Anatole",
       "gender": "m",
       "role": "victim",
-      "icon": "🎒",
       "desc": "Touriste, dessine tout au fusain, surtout ce qui est interdit",
       "archetype": "touriste",
       "guest": true

@@ -170,7 +170,6 @@
       "name": "Écho-Écho",
       "gender": "m",
       "role": "suspect",
-      "icon": "🦜",
       "desc": "Perroquet, répète tous les secrets",
       "archetype": "perroquet",
       "tic": "Répète tout, dans le désordre"
@@ -180,7 +179,6 @@
       "name": "Frégaton",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧑‍✈️",
       "desc": "Capitaine, n'a jamais quitté le port",
       "archetype": "capitaine",
       "tic": "Raconte des tempêtes qu'il n'a jamais vues"
@@ -190,7 +188,6 @@
       "name": "Belladone",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧛‍♀️",
       "desc": "Comtesse vampire, végane (elle le jure)",
       "archetype": "vampire",
       "tic": "« Je ne bois jamais… de vin. »"
@@ -200,7 +197,6 @@
       "name": "Goémone",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧜‍♀️",
       "desc": "Sirène, venue pour l'aquarium",
       "archetype": "sirene",
       "tic": "Fait des bulles quand elle ment"
@@ -210,7 +206,6 @@
       "name": "Bâbord",
       "gender": "m",
       "role": "suspect",
-      "icon": "🏴‍☠️",
       "desc": "Pirate, a perdu une jambe, un œil et le sens de l'orientation",
       "archetype": "pirate",
       "tic": "Indique toujours la mauvaise direction"
@@ -220,7 +215,6 @@
       "name": "Blafard",
       "gender": "m",
       "role": "suspect",
-      "icon": "👻",
       "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
       "archetype": "spectre",
       "traits": [
@@ -233,7 +227,6 @@
       "name": "Ernest",
       "gender": "m",
       "role": "victim",
-      "icon": "🎒",
       "desc": "Touriste, dessine tout au fusain, surtout ce qui est interdit",
       "archetype": "touriste",
       "guest": true

@@ -165,7 +165,6 @@
       "name": "Gribouille",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧙‍♂️",
       "desc": "Mage, allergique au houblon",
       "archetype": "mage",
       "tic": "Éternue avant chaque sortilège"
@@ -175,7 +174,6 @@
       "name": "Caillasse",
       "gender": "m",
       "role": "suspect",
-      "icon": "🪨",
       "desc": "Golem de pierre, lent mais très appliqué",
       "archetype": "golem",
       "tic": "Exécute les ordres au mot près, avec un temps de retard",
@@ -186,7 +184,6 @@
       "name": "Cendrebrune",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐉",
       "desc": "Dragon adulte, toujours lové dans un coin",
       "archetype": "dragon",
       "tic": "Se réveille aux pires moments",
@@ -197,7 +194,6 @@
       "name": "Blafard",
       "gender": "m",
       "role": "suspect",
-      "icon": "👻",
       "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
       "archetype": "spectre",
       "traits": [
@@ -210,7 +206,6 @@
       "name": "Belladone",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧛‍♀️",
       "desc": "Comtesse vampire, végane (elle le jure)",
       "archetype": "vampire",
       "tic": "« Je ne bois jamais… de vin. »"
@@ -220,7 +215,6 @@
       "name": "Ermengarde",
       "gender": "f",
       "role": "victim",
-      "icon": "👒",
       "desc": "Cousine éloignée de tout le monde, venue pour l'héritage",
       "archetype": "cousine",
       "guest": true

@@ -177,7 +177,6 @@
       "name": "Bakchich",
       "gender": "m",
       "role": "suspect",
-      "icon": "👺",
       "desc": "Gobelin, trésorier du royaume (non déclaré)",
       "archetype": "gobelin",
       "tic": "« Techniquement, c'est légal. »"
@@ -187,7 +186,6 @@
       "name": "Bâfrin",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧌",
       "desc": "Troll, plongeur à mi-temps",
       "archetype": "troll",
       "tic": "Répète le dernier mot de la phrase des autres"
@@ -197,7 +195,6 @@
       "name": "Écho-Écho",
       "gender": "m",
       "role": "suspect",
-      "icon": "🦜",
       "desc": "Perroquet, répète tous les secrets",
       "archetype": "perroquet",
       "tic": "Répète tout, dans le désordre"
@@ -207,7 +204,6 @@
       "name": "Bâbord",
       "gender": "m",
       "role": "suspect",
-      "icon": "🏴‍☠️",
       "desc": "Pirate, a perdu une jambe, un œil et le sens de l'orientation",
       "archetype": "pirate",
       "tic": "Indique toujours la mauvaise direction"
@@ -217,7 +213,6 @@
       "name": "Aagrid",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧔‍♂️",
       "desc": "Tenancier le plus *SYMPA* de la baronnie",
       "archetype": "tavernier",
       "tic": "Compte à voix basse en parlant"
@@ -227,7 +222,6 @@
       "name": "Goémone",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧜‍♀️",
       "desc": "Sirène, venue pour l'aquarium",
       "archetype": "sirene",
       "tic": "Fait des bulles quand elle ment"
@@ -237,7 +231,6 @@
       "name": "Flacon",
       "gender": "m",
       "role": "victim",
-      "icon": "🍷",
       "desc": "Inspecteur des tavernes, goûte tout, note tout",
       "archetype": "inspecteur",
       "guest": true

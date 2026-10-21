@@ -1258,7 +1258,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     const fiche = (t, i) => {
       const c = LORE.troupe[t], g = gag(t);
       return `<div class="fiche nb-fiche">
-        ${(MEDIA.sketches || []).includes(t) ? `<img class="nb-sketch" src="media/croquis-${t}.webp" alt="" aria-hidden="true">` : `<span class="nb-photo" style="--tilt:${[-3, 2.5, -1.5, 3.5][i % 4]}deg" aria-hidden="true">${face({ archetype: t, name: c.name, role: 'suspect', icon: c.icon })}</span>`}
+        ${(MEDIA.sketches || []).includes(t) ? `<img class="nb-sketch" src="media/croquis-${t}.webp" alt="" aria-hidden="true">` : `<span class="nb-photo" style="--tilt:${[-3, 2.5, -1.5, 3.5][i % 4]}deg" aria-hidden="true">${face({ archetype: t, name: c.name, role: 'suspect' })}</span>`}
         <h3 class="nb-name">${esc(c.name)}</h3>
         <p class="nb-desc">${descHtml(c.desc)}</p>
         <p class="nb-tic">${esc(c.tic)}</p>

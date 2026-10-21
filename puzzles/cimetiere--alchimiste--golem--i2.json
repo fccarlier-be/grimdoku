@@ -178,7 +178,6 @@
       "name": "Blafard",
       "gender": "m",
       "role": "suspect",
-      "icon": "👻",
       "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
       "archetype": "spectre",
       "traits": [
@@ -191,7 +190,6 @@
       "name": "Ciguë",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧙‍♀️",
       "desc": "Sorcière des marais, cuisine tout ce qui coasse",
       "archetype": "sorciere",
       "tic": "Regarde Ambroise avec appétit"
@@ -201,7 +199,6 @@
       "name": "Glas",
       "gender": "m",
       "role": "suspect",
-      "icon": "⚰️",
       "desc": "Fossoyeur, creuse en sifflotant",
       "archetype": "fossoyeur",
       "tic": "Prend les mesures des gens qu'il rencontre"
@@ -211,7 +208,6 @@
       "name": "Caillasse",
       "gender": "m",
       "role": "suspect",
-      "icon": "🪨",
       "desc": "Golem de pierre, lent mais très appliqué",
       "archetype": "golem",
       "tic": "Exécute les ordres au mot près, avec un temps de retard",
@@ -222,7 +218,6 @@
       "name": "Fernand",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧟",
       "desc": "Zombie, ancien apprenti. Ancien tout court",
       "archetype": "zombie",
       "tic": "Perd un morceau quand il s'énerve"
@@ -232,7 +227,6 @@
       "name": "Belladone",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧛‍♀️",
       "desc": "Comtesse vampire, végane (elle le jure)",
       "archetype": "vampire",
       "tic": "« Je ne bois jamais… de vin. »"
@@ -242,7 +236,6 @@
       "name": "Aurifex",
       "gender": "m",
       "role": "victim",
-      "icon": "⚗️",
       "desc": "Alchimiste ambulant, transforme l'or en dettes",
       "archetype": "alchimiste",
       "guest": true

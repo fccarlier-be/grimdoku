@@ -129,7 +129,6 @@
       "name": "Bâfrin",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧌",
       "desc": "Troll, plongeur à mi-temps",
       "archetype": "troll",
       "tic": "Répète le dernier mot de la phrase des autres"
@@ -139,7 +138,6 @@
       "name": "Capucine",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧚",
       "desc": "Fée, doit trois tournées",
       "archetype": "fee",
       "tic": "« Je te le rends demain. »"
@@ -149,7 +147,6 @@
       "name": "Farinard",
       "gender": "m",
       "role": "suspect",
-      "icon": "👨‍🌾",
       "desc": "Meunier, pèse le grain avec le pouce",
       "archetype": "meunier",
       "tic": "« Au poids, c'est honnête. »"
@@ -159,7 +156,6 @@
       "name": "Flammèche",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐉",
       "desc": "Dragonnet, brûle tout ce qu'il touche",
       "archetype": "dragonnet",
       "tic": "S'excuse avant même d'avoir brûlé quelque chose"
@@ -169,7 +165,6 @@
       "name": "Goémone",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧜‍♀️",
       "desc": "Sirène, venue pour l'aquarium",
       "archetype": "sirene",
       "tic": "Fait des bulles quand elle ment"
@@ -179,7 +174,6 @@
       "name": "Mandolin",
       "gender": "m",
       "role": "victim",
-      "icon": "🪕",
       "desc": "Troubadour itinérant, chante juste, et ça agace",
       "archetype": "troubadour",
       "guest": true

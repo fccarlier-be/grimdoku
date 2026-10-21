@@ -122,7 +122,6 @@
       "name": "Bâfrin",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧌",
       "desc": "Troll, plongeur à mi-temps",
       "archetype": "troll",
       "tic": "Répète le dernier mot de la phrase des autres"
@@ -132,7 +131,6 @@
       "name": "Aëlys",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧝‍♀️",
       "desc": "Elfe, critique gastronomique",
       "archetype": "elfe",
       "tic": "Note tout sur dix, les gens compris"
@@ -142,7 +140,6 @@
       "name": "Goémone",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧜‍♀️",
       "desc": "Sirène, venue pour l'aquarium",
       "archetype": "sirene",
       "tic": "Fait des bulles quand elle ment"
@@ -152,7 +149,6 @@
       "name": "Ambroise",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐸",
       "desc": "Crapaud, prince déchu, attend toujours son bisou",
       "archetype": "crapaud",
       "tic": "Rappelle son titre toutes les deux phrases"
@@ -162,7 +158,6 @@
       "name": "Fernand",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧟",
       "desc": "Zombie, ancien apprenti. Ancien tout court",
       "archetype": "zombie",
       "tic": "Perd un morceau quand il s'énerve"
@@ -172,7 +167,6 @@
       "name": "Liardin",
       "gender": "m",
       "role": "victim",
-      "icon": "🧾",
       "desc": "Percepteur du baron, compte même les miettes",
       "archetype": "percepteur",
       "guest": true

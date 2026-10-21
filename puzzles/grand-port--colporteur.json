@@ -224,7 +224,6 @@
       "name": "Belladone",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧛‍♀️",
       "desc": "Comtesse vampire, végane (elle le jure)",
       "archetype": "vampire",
       "tic": "« Je ne bois jamais… de vin. »"
@@ -234,7 +233,6 @@
       "name": "Écho-Écho",
       "gender": "m",
       "role": "suspect",
-      "icon": "🦜",
       "desc": "Perroquet, répète tous les secrets",
       "archetype": "perroquet",
       "tic": "Répète tout, dans le désordre"
@@ -244,7 +242,6 @@
       "name": "Bakchich",
       "gender": "m",
       "role": "suspect",
-      "icon": "👺",
       "desc": "Gobelin, trésorier du royaume (non déclaré)",
       "archetype": "gobelin",
       "tic": "« Techniquement, c'est légal. »"
@@ -254,7 +251,6 @@
       "name": "Fernand",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧟",
       "desc": "Zombie, ancien apprenti. Ancien tout court",
       "archetype": "zombie",
       "tic": "Perd un morceau quand il s'énerve"
@@ -264,7 +260,6 @@
       "name": "Aagrid",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧔‍♂️",
       "desc": "Tenancier le plus *SYMPA* de la baronnie",
       "archetype": "tavernier",
       "tic": "Compte à voix basse en parlant"
@@ -274,7 +269,6 @@
       "name": "Bâbord",
       "gender": "m",
       "role": "suspect",
-      "icon": "🏴‍☠️",
       "desc": "Pirate, a perdu une jambe, un œil et le sens de l'orientation",
       "archetype": "pirate",
       "tic": "Indique toujours la mauvaise direction"
@@ -284,7 +278,6 @@
       "name": "Esbroufe",
       "gender": "m",
       "role": "suspect",
-      "icon": "🎩",
       "desc": "Bonimenteur, vend du rêve au kilo",
       "archetype": "bonimenteur",
       "tic": "Vouvoie tout le monde, y compris les poules"
@@ -294,7 +287,6 @@
       "name": "Frégaton",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧑‍✈️",
       "desc": "Capitaine, n'a jamais quitté le port",
       "archetype": "capitaine",
       "tic": "Raconte des tempêtes qu'il n'a jamais vues"
@@ -304,7 +296,6 @@
       "name": "Bâfrin",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧌",
       "desc": "Troll, plongeur à mi-temps",
       "archetype": "troll",
       "tic": "Répète le dernier mot de la phrase des autres"
@@ -314,7 +305,6 @@
       "name": "Bradeur",
       "gender": "m",
       "role": "victim",
-      "icon": "🎒",
       "desc": "Colporteur, vend des objets dont personne ne veut",
       "archetype": "colporteur",
       "guest": true

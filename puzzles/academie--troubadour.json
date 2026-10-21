@@ -177,7 +177,6 @@
       "name": "Gribouille",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧙‍♂️",
       "desc": "Mage, allergique au houblon",
       "archetype": "mage",
       "tic": "Éternue avant chaque sortilège"
@@ -187,7 +186,6 @@
       "name": "Capucine",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧚",
       "desc": "Fée, doit trois tournées",
       "archetype": "fee",
       "tic": "« Je te le rends demain. »"
@@ -197,7 +195,6 @@
       "name": "Brindille",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧙‍♀️",
       "desc": "Apprentie sorcière, a déjà fait exploser trois chaudrons",
       "archetype": "apprentie",
       "tic": "« C'est normal que ça fume ? »"
@@ -207,7 +204,6 @@
       "name": "Aëlys",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧝‍♀️",
       "desc": "Elfe, critique gastronomique",
       "archetype": "elfe",
       "tic": "Note tout sur dix, les gens compris"
@@ -217,7 +213,6 @@
       "name": "Fumerolle",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧞‍♀️",
       "desc": "Djinn, a déjà exaucé deux vœux de trop",
       "archetype": "djinn",
       "tic": "Prend tout au pied de la lettre"
@@ -227,7 +222,6 @@
       "name": "Fiolius",
       "gender": "m",
       "role": "suspect",
-      "icon": "👨‍🏫",
       "desc": "Professeur de potions, note à l'odeur",
       "archetype": "professeur",
       "tic": "Renifle avant de répondre"
@@ -237,7 +231,6 @@
       "name": "Rondeau",
       "gender": "m",
       "role": "victim",
-      "icon": "🪕",
       "desc": "Troubadour itinérant, chante juste, et ça agace",
       "archetype": "troubadour",
       "guest": true

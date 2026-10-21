@@ -163,7 +163,6 @@
       "name": "Grisou",
       "gender": "m",
       "role": "suspect",
-      "icon": "⛏️",
       "desc": "Mineur nain, creuse plus vite qu'il ne réfléchit",
       "archetype": "mineur",
       "tic": "« On creuse ? »"
@@ -173,7 +172,6 @@
       "name": "Gribouille",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧙‍♂️",
       "desc": "Mage, allergique au houblon",
       "archetype": "mage",
       "tic": "Éternue avant chaque sortilège"
@@ -183,7 +181,6 @@
       "name": "Gontran",
       "gender": "m",
       "role": "suspect",
-      "icon": "🤺",
       "desc": "Chevalier, armure trop petite depuis Noël",
       "archetype": "chevalier",
       "tic": "Annonce chacune de ses actions à voix haute"
@@ -193,7 +190,6 @@
       "name": "Bakchich",
       "gender": "m",
       "role": "suspect",
-      "icon": "👺",
       "desc": "Gobelin, trésorier du royaume (non déclaré)",
       "archetype": "gobelin",
       "tic": "« Techniquement, c'est légal. »"
@@ -203,7 +199,6 @@
       "name": "Festin",
       "gender": "m",
       "role": "suspect",
-      "icon": "👹",
       "desc": "Ogre, végétarien depuis mardi",
       "archetype": "ogre",
       "tic": "Compte les jours depuis mardi"
@@ -213,7 +208,6 @@
       "name": "Flammèche",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐉",
       "desc": "Dragonnet, brûle tout ce qu'il touche",
       "archetype": "dragonnet",
       "tic": "S'excuse avant même d'avoir brûlé quelque chose"
@@ -223,7 +217,6 @@
       "name": "Gondeberge",
       "gender": "f",
       "role": "victim",
-      "icon": "👒",
       "desc": "Cousine éloignée de tout le monde, venue pour l'héritage",
       "archetype": "cousine",
       "guest": true

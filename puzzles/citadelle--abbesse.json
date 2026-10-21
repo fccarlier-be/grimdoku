@@ -176,7 +176,6 @@
       "name": "Blafard",
       "gender": "m",
       "role": "suspect",
-      "icon": "👻",
       "desc": "Spectre, ancien châtelain. Traverse les meubles, pas les reproches",
       "archetype": "spectre",
       "traits": [
@@ -189,7 +188,6 @@
       "name": "Aëlys",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧝‍♀️",
       "desc": "Elfe, critique gastronomique",
       "archetype": "elfe",
       "tic": "Note tout sur dix, les gens compris"
@@ -199,7 +197,6 @@
       "name": "Gontran",
       "gender": "m",
       "role": "suspect",
-      "icon": "🤺",
       "desc": "Chevalier, armure trop petite depuis Noël",
       "archetype": "chevalier",
       "tic": "Annonce chacune de ses actions à voix haute"
@@ -209,7 +206,6 @@
       "name": "Flammèche",
       "gender": "m",
       "role": "suspect",
-      "icon": "🐉",
       "desc": "Dragonnet, brûle tout ce qu'il touche",
       "archetype": "dragonnet",
       "tic": "S'excuse avant même d'avoir brûlé quelque chose"
@@ -219,7 +215,6 @@
       "name": "Dagobert",
       "gender": "m",
       "role": "suspect",
-      "icon": "🤴",
       "desc": "Roi, avare de compliments et de tout le reste",
       "archetype": "roi",
       "tic": "« C'est pas faux. », à tout ce qu'il ne comprend pas"
@@ -229,7 +224,6 @@
       "name": "Fausset",
       "gender": "m",
       "role": "suspect",
-      "icon": "🧑‍🎤",
       "desc": "Barde, chante faux",
       "archetype": "barde",
       "tic": "Transforme chaque conversation en couplet"
@@ -239,7 +233,6 @@
       "name": "Ciguë",
       "gender": "f",
       "role": "suspect",
-      "icon": "🧙‍♀️",
       "desc": "Sorcière des marais, cuisine tout ce qui coasse",
       "archetype": "sorciere",
       "tic": "Regarde Ambroise avec appétit"
@@ -249,7 +242,6 @@
       "name": "Festin",
       "gender": "m",
       "role": "suspect",
-      "icon": "👹",
       "desc": "Ogre, végétarien depuis mardi",
       "archetype": "ogre",
       "tic": "Compte les jours depuis mardi"
@@ -259,7 +251,6 @@
       "name": "Sobriété",
       "gender": "f",
       "role": "victim",
-      "icon": "📿",
       "desc": "Abbesse, quête pour un couvent introuvable",
       "archetype": "abbesse",
       "guest": true

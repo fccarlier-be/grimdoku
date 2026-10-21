@@ -228,7 +228,7 @@ const CARTE = JSON.parse(fs.readFileSync('lore/carte.json', 'utf8'));
 const PROLOGUE = JSON.parse(fs.readFileSync('lore/prologue.json', 'utf8')).scenes;
 const INTROS = fs.existsSync('lore/intros.json') ? JSON.parse(fs.readFileSync('lore/intros.json', 'utf8')).lieux : {}; // ouvertures des intros par lieu
 const lore = { prologue: PROLOGUE, need: LETTRES.need, letters: LETTRES.letters, troupe: {}, contrees: CARTE.contrees, pos: CARTE.pos, ratio: CARTE.ratio || [3, 2], start: CARTE.start, unlock: CARTE.unlock || {}, intros: INTROS };
-for (const [t, a] of Object.entries(ARCHETYPES)) if (!a.guest) lore.troupe[t] = { name: a.name, desc: a.desc, tic: a.tic, icon: a.icon };
+for (const [t, a] of Object.entries(ARCHETYPES)) if (!a.guest) lore.troupe[t] = { name: a.name, desc: a.desc, tic: a.tic };
 const sprite = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>${defs.join('')}</defs>${symbols.join('')}</svg>`;
 
 // sauvegarde en ligne (compte Google) : fusion des progressions (app/sync.js) et identifiant client Google
