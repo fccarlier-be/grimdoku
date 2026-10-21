@@ -1,0 +1,82 @@
+{
+  "_doc": "Phase 2 de la roadmap (François, 2026-10-21) : le fil rouge dévoilé pendant le jeu. Le mur de l'affaire de la Tour se construit au rythme des lettres ouvertes (nombre, pas ordre : l'ordre des lieux est libre). 'declics' : note de l'enquêteur à N lettres ; 'questions' : petites questions, ouvertes à leur première pièce, fermées par une déduction quand toutes leurs pièces sont là ; 'pieces' : une par lettre (lieu → question, étiquette épinglée) ; 'visites' : trois scènes à la Tour, Fizzlebarbe vivant. Jamais le nom d'Augure avant la révélation ; jamais d'indice sur les grilles. Relu contre lore/GRIMDOKU_MATRICE_CONTINUITE.md.",
+  "declics": [
+    { "lettres": 1, "mur": false, "texte": "Quelqu'un glisse sous ma porte les petits secrets du coin, signés d'un simple A. Charmant. Inutile, mais charmant." },
+    { "lettres": 3, "mur": true, "question": "Coïncidence ?", "texte": "Trois lettres, trois ragots, et chaque fois la Tour de l'Archimage. Je les ai punaisées au mur, pour voir. Coïncidence ?" },
+    { "lettres": 6, "mur": true, "question": "Qui veut vraiment la Tour ?", "texte": "Tout le monde lorgne la Tour, et son propriétaire change ses serrures. Il est temps de faire la liste. Qui la veut vraiment ?" },
+    { "lettres": 12, "mur": true, "question": "Que cache la Tour ?", "texte": "Des clés, des plans qui mentent, un étage qui n'existe pas. Je me suis trompé de question : ce n'est pas qui veut la Tour, c'est ce qu'elle cache." },
+    { "lettres": 18, "mur": true, "question": "Que veut transmettre Fizzlebarbe ?", "texte": "Le vieil archimage ne parle plus d'héritage. Il parle de transmettre. On ne transmet pas un bâtiment. Alors quoi ?" },
+    { "lettres": 23, "mur": true, "question": "Toutes les lettres menaient ici.", "texte": "Vingt-trois lettres, et le mur est plein. Ce matin, une enveloppe scellée m'attendait sur le bureau. Je crois que je sais d'où elle vient. Je n'en suis pas sûr, et c'est bien le problème." }
+  ],
+  "questions": {
+    "heritiers": {
+      "titre": "Qui se croit héritier ?",
+      "deduction": "Un trésorier, un fantôme, une djinn, un professeur : chacun se voit déjà propriétaire. Aucun n'a de titre qui tienne. Soit ils se trompent tous, soit cette Tour ne s'hérite pas comme une maison."
+    },
+    "grimoire": {
+      "titre": "Que cache le grimoire de Dewey ?",
+      "deduction": "Un livre emprunté il y a onze ans, perdu dans la Tour, recousu par quelqu'un, et une clé forgée exprès glissée entre ses pages. On ne cache pas une clé dans un livre volé par hasard. Celle-ci ouvre quelque chose que personne ne doit trouver."
+    },
+    "plans": {
+      "titre": "Qu'est-ce qui manque sur les plans ?",
+      "deduction": "Deux escaliers vers le même palier, un étage absent du plan, une vieille clé d'avant l'accident. Il y a dans cette Tour un endroit qui n'est sur aucun papier."
+    },
+    "brume": {
+      "titre": "Pourquoi la brume se comporte-t-elle bizarrement ?",
+      "deduction": "Du brouillard qui vient du mauvais côté, des portes qui se déplacent, une puissance que même des djinns ne savent pas mesurer. Quelque chose tient la baronnie en place. Et ce quelque chose faiblit, au même rythme que le vieil archimage."
+    },
+    "enveloppe": {
+      "titre": "Qui a pris l'enveloppe du notaire ?",
+      "deduction": "Ce n'était pas un testament, seulement un projet. Celui qui l'a pris n'a laissé qu'une plume noire. Un voleur aurait pris un vrai testament. Celui-là voulait seulement qu'on ne s'en serve pas."
+    },
+    "fizzlebarbe": {
+      "titre": "Que veut vraiment Fizzlebarbe ?",
+      "deduction": "Il ne cherche pas son voleur, il dresse une liste. Il commande un coffre que la magie ne peut pas ouvrir. Il ne veut plus léguer un bâtiment, mais une tâche. Ce vieux mage fait passer un examen à toute la baronnie, sans dire à personne qu'il y a une épreuve."
+    }
+  },
+  "pieces": {
+    "chateau": { "question": "heritiers", "etiquette": "Bakchich : la Tour en gage, sans titre." },
+    "banquet": { "question": "heritiers", "etiquette": "Bakchich trinque au futur propriétaire : lui-même." },
+    "citadelle": { "question": "heritiers", "etiquette": "Blafard : des titres authentiques, et aucun droit." },
+    "bal": { "question": "heritiers", "etiquette": "Fumerolle a promis la Tour à trois invités." },
+    "thermes": { "question": "heritiers", "etiquette": "Fumerolle : un vœu peut-il changer un titre ?" },
+    "port": { "question": "heritiers", "etiquette": "Fiolius : douze bocaux « échantillons de la Tour »." },
+    "grande-foire": { "question": "heritiers", "etiquette": "Fiolius : une malle assez grande pour un archimage." },
+    "taverne": { "question": "grimoire", "etiquette": "Gribouille doit un grimoire à Dewey depuis onze ans." },
+    "marais": { "question": "grimoire", "etiquette": "Dewey achète de quoi lire l'encre invisible." },
+    "forge": { "question": "grimoire", "etiquette": "Une clé unique, glissée dans un grimoire." },
+    "bibliotheque": { "question": "grimoire", "etiquette": "Le grimoire retrouvé, une fente recousue." },
+    "moulin": { "question": "plans", "etiquette": "Fernand : une clé d'avant l'accident." },
+    "universite": { "question": "plans", "etiquette": "Deux escaliers, le même palier, rien entre." },
+    "foire": { "question": "plans", "etiquette": "Le plan d'Esbroufe : il manque un étage." },
+    "navire": { "question": "brume", "etiquette": "Le brouillard venait du mauvais côté du port." },
+    "academie": { "question": "brume", "etiquette": "Une porte s'est déplacée de deux pas." },
+    "palais": { "question": "brume", "etiquette": "Une puissance que le Palais ne sait pas expliquer." },
+    "grand-port": { "question": "enveloppe", "etiquette": "Chez le notaire : une plume noire." },
+    "ferme": { "question": "enveloppe", "etiquette": "Briochon : un « document préparatoire »." },
+    "tour": { "question": "fizzlebarbe", "etiquette": "Trois serrures, et la liste de ceux qui ont essayé." },
+    "cimetiere": { "question": "fizzlebarbe", "etiquette": "Glas a creusé une tombe « pour toutes les éventualités »." },
+    "mine": { "question": "fizzlebarbe", "etiquette": "Un coffre à l'épreuve de la magie, sans nom." },
+    "grands-bains": { "question": "fizzlebarbe", "etiquette": "« Plus un bâtiment, mais une tâche. »" }
+  },
+  "visites": [
+    {
+      "lettres": 6,
+      "titre": "Une convocation à la Tour",
+      "texte": "Le billet était court et sans politesse : « Montez. — F. » La Tour de l'Archimage a trois serrures neuves, et son propriétaire a mis un long moment à les ouvrir.\nFizzlebarbe a quatre cent douze ans et l'œil d'un homme qui en a vu passer d'autres. « On fouille mon bureau. Je ne vous demande pas de trouver qui : je le sais, ou je le saurai. Je voulais voir à quoi ressemble l'enquêteur dont tout le monde parle. »\nIl m'a regardé longtemps, puis il a dit : « Moyen. » Et il m'a raccompagné.\nSur la rambarde de l'escalier, un corbeau écrivait. Avec une plume, sur un carnet. Il s'est arrêté quand je suis passé.",
+      "note": "Un corbeau qui écrit. J'ai déjà vu cette écriture quelque part."
+    },
+    {
+      "lettres": 12,
+      "titre": "L'escalier qui ne mène nulle part",
+      "texte": "Cette fois, Fizzlebarbe m'a fait monter. Au troisième palier, un escalier repart vers le haut et s'arrête net contre un mur lisse. « Ne posez pas de questions sur celui-là. »\nJ'en ai posé une quand même. Il a soupiré, comme on soupire depuis des siècles. « Un apprenti l'a réparé, autrefois. Ça lui a coûté plus cher que prévu. Beaucoup plus. » Un silence. « De mon temps, on ne payait pas les apprentis : on les formait. Celui-là n'a pas eu le temps d'être formé. »\nIl n'a rien ajouté. En redescendant, j'ai compté les marches. À la montée, il y en avait trois de plus.",
+      "note": "Un apprenti, une réparation, une dette jamais réglée. Et un escalier qui mène quelque part, puisqu'on m'interdit d'en parler."
+    },
+    {
+      "lettres": 18,
+      "titre": "Ce que l'on transmet",
+      "texte": "La brume entrait par les fenêtres de la Tour. Fizzlebarbe ne s'en souciait plus : assis, une couverture sur les genoux, il avait l'air d'avoir enfin son âge.\n« On me demande tous les jours à qui je léguerai la Tour. Ce que je cherche à transmettre n'est pas un bâtiment. » Il m'a regardé. « Si l'on vous confiait une chose que personne ne doit voir, et dont tout le monde dépend, à qui la donneriez-vous ? »\nJ'ai répondu : « À quelqu'un qui n'en voudrait pas. »\nIl n'a rien dit. Il a regardé le corbeau, longtemps, comme on regarde une chose qu'on a sous les yeux depuis trop longtemps pour la voir.",
+      "note": "Il ne cherche pas un héritier. Il cherche quelqu'un à qui confier quelque chose. Et il ne sait pas à qui."
+    }
+  ]
+}
