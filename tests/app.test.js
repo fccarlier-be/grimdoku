@@ -8,9 +8,9 @@ const { JSDOM } = require('jsdom');
 
 const HTML = fs.readFileSync(path.join(__dirname, '..', 'dist', 'grimdoku.html'), 'utf8');
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+const location = (w) => w.location.hash;
 const ENGINE = require('../engine.js'); // solveur humain : ordre des déductions (conseils « pourquoi »)
 const sigOf = (p) => p.characters.map(c => c.id + ':' + c.name).join('|') + '#' + p.clues.length;
-const location = (w) => w.location.hash;
 const solve = (w, p) => w.localStorage.setItem('grimdoku:p:' + p.id, JSON.stringify({ pos: p.solution.positions, pencil: {}, marks: [], done: [], solved: true, sig: sigOf(p) }));
 
 const opened = [];
@@ -768,6 +768,51 @@ test('lettre anonyme : annonce les lieux ouverts, « Retour au bureau » y mène
   assert.ok(d.querySelector('.story-newplaces'), 'nouveaux lieux annoncés');
   d.getElementById('toCarnet').click();
   assert.ok(w.location.hash.includes('bureau') && d.querySelector('#deskLettres .newmark'), 'bureau, lettre non lue signalée');
+});
+
+test('fil rouge : le mur à la 3e lettre, visites puis déclic au bureau, déductions, brume ; jamais le nom d\'Augure', async () => {
+  const FR = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'lore', 'fil-rouge.json'), 'utf8'));
+  const { w, d, errors } = open({ settings: { tuto: { choisir: true } } });
+  const shown = () => d.getElementById('app').textContent + d.getElementById('layer').textContent;
+  const setLetters = (l) => w.localStorage.setItem('grimdoku:lettres', JSON.stringify(l));
+  const story = () => d.querySelector('#layer .story');
+  // deux lettres : pas encore de mur, mais la toute première note de l'enquêteur
+  setLetters(['chateau', 'banquet']); w.grimGo('bureau'); await sleep(30);
+  assert.equal(d.getElementById('deskMur'), null, 'pas de mur avant la 3e lettre');
+  assert.ok(story() && story().classList.contains('declic') && shown().includes(FR.declics[0].texte), 'première note : quelqu\'un glisse des lettres');
+  d.querySelector('[data-close]').click();
+  // trois : le mur apparaît, avec son déclic
+  setLetters(['chateau', 'banquet', 'taverne']); w.grimGo('bureau'); await sleep(30);
+  assert.ok(d.getElementById('deskMur'), 'le mur est sur le bureau');
+  assert.ok(shown().includes(FR.declics[1].texte), 'déclic de la 3e lettre');
+  d.getElementById('toMur').click();
+  assert.match(w.location.hash, /#\/mur$/);
+  assert.equal(d.querySelector('.mur-q').textContent, FR.declics[1].question);
+  assert.equal(d.querySelectorAll('.mur-pin:not(.vide)').length, 3, 'une pièce par lettre');
+  assert.equal(d.querySelector('.mur-ded'), null, 'aucune question encore complète');
+  // six lettres : la visite à la Tour passe avant le déclic
+  const six = ['chateau', 'banquet', 'taverne', 'marais', 'forge', 'bibliotheque'];
+  setLetters(six); w.grimGo('bureau'); await sleep(30);
+  assert.ok(story().classList.contains('visite') && shown().includes(FR.visites[0].titre), 'visite à 6 lettres');
+  d.querySelector('[data-close]').click(); await sleep(30);
+  assert.ok(story() && story().classList.contains('declic') && shown().includes(FR.declics[2].texte), 'puis le déclic');
+  d.querySelector('[data-close]').click();
+  // grimoire : taverne, marais, forge, bibliothèque → la question est complète, sa déduction s'écrit
+  w.grimGo('mur');
+  assert.ok([...d.querySelectorAll('.mur-ded')].some(x => x.textContent === FR.questions.grimoire.deduction), 'déduction du grimoire');
+  assert.ok(d.querySelector('[data-visite="6"]'), 'la visite se relit depuis le mur');
+  // la brume s'épaissit avec les lettres
+  w.grimGo('bureau'); await sleep(30);
+  const b6 = +d.querySelector('.desk-brume').style.getPropertyValue('--b');
+  setLetters(Object.keys(FR.pieces).slice(0, 20)); w.grimGo('bureau'); await sleep(30);
+  while (story()) { d.querySelector('[data-close]').click(); await sleep(30); }
+  assert.ok(+d.querySelector('.desk-brume').style.getPropertyValue('--b') > b6, 'brume plus dense');
+  // jamais le nom d'Augure, à aucun moment
+  w.grimGo('mur');
+  assert.ok(!/Augure/.test(shown()), 'mur');
+  for (const v of FR.visites) assert.ok(!/Augure/.test(v.texte + v.note));
+  for (const dc of FR.declics) assert.ok(!/Augure/.test(dc.texte + (dc.question || '')));
+  assert.deepEqual(errors, []);
 });
 
 test('lettres anonymes : le nom d\'Augure n\'apparaît nulle part avant la révélation de l\'affaire finale', () => {

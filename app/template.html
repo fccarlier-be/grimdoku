@@ -992,6 +992,42 @@ html.plaques .tbtn.pen[aria-pressed="true"] { background: none; box-shadow: none
   .desk-paper, .desk-photo, .desk-glow { display: none; }
   .dot { width: 20px; height: 20px; font-size: 11px; }
 }
+/* le mur de l'affaire de la Tour (phase 2) : un tableau de liège sur le bureau, et sa page */
+.desk-item.dk-mur { width: 15%; right: -15%; top: 17%; transform: rotate(4deg); }
+.liege { position: relative; display: block; aspect-ratio: 4 / 3; border-radius: 3px; border: 5px solid #6b4423;
+  background: radial-gradient(circle at 30% 30%, #c99a63, #a87a48 70%); box-sizing: border-box; }
+.liege::before, .liege::after { content: ""; position: absolute; background: #f3e6c8; box-shadow: 1px 2px 2px rgba(0, 0, 0, .35); }
+.liege::before { width: 34%; height: 40%; left: 12%; top: 16%; transform: rotate(-6deg); }
+.liege::after { width: 30%; height: 34%; right: 12%; bottom: 14%; transform: rotate(5deg); }
+@media (max-aspect-ratio: 1/1) { .desk-item.dk-mur { grid-area: tc; transform: rotate(-3deg); } .bureau:has(.dk-mur) .desk-deco.s0 { display: none; } }
+/* la brume autour de la Tour, sur la carte : s'épaissit au fil des lettres, se lève après la révélation */
+.desk-brume { position: absolute; left: var(--x); top: var(--y); width: 34%; aspect-ratio: 1.4; transform: translate(-50%, -50%); pointer-events: none; z-index: 1;
+  border-radius: 50%; filter: blur(5px); animation: brume 14s ease-in-out infinite alternate;
+  background: radial-gradient(ellipse 45% 40% at 35% 45%, rgba(236, 239, 246, var(--b)), transparent 70%),
+    radial-gradient(ellipse 40% 35% at 65% 55%, rgba(226, 230, 240, var(--b)), transparent 70%),
+    radial-gradient(ellipse 60% 50% at 50% 50%, rgba(214, 219, 232, calc(var(--b) * .7)), transparent 75%); }
+@keyframes brume { to { transform: translate(-48%, -52%) scale(1.06); } }
+@media (prefers-reduced-motion: reduce) { .desk-brume { animation: none; } }
+.mur { max-width: 1100px; margin: 0 auto; padding: 8px 16px 40px; }
+.mur-board { position: relative; padding: 22px 18px; border-radius: 6px; border: 10px solid #5a381c;
+  background: radial-gradient(circle at 25% 20%, #caa06a, #a57646 75%); box-shadow: inset 0 0 30px rgba(60, 30, 10, .5), 0 12px 30px rgba(0, 0, 0, .5); }
+.mur .mur-q { margin: 0 0 16px; text-align: center; font: 400 clamp(24px, 4vw, 36px)/1.2 var(--f-display); color: #fbeed3; letter-spacing: .01em; text-shadow: 0 2px 4px rgba(0, 0, 0, .6); }
+.mur-notes { margin: 0 auto 20px; max-width: 640px; padding: 12px 16px; background: #f4e8cc; transform: rotate(-.6deg); box-shadow: 2px 4px 8px rgba(0, 0, 0, .4); }
+.mur-notes p { margin: 0 0 6px; font: 400 18px/1.4 var(--f-hand); color: var(--ink); }
+.mur-notes p:last-child { margin: 0; }
+.mur-qs { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
+.mur-sec { padding: 10px 12px 12px; background: rgba(40, 22, 8, .25); border-radius: 4px; }
+.mur-sec h3 { margin: 0 0 8px; font: 600 15px/1.3 var(--f-body); color: #fff4dc; }
+.mur-sec h3 small { font-weight: 400; opacity: .8; }
+.mur-pin { position: relative; margin: 0 0 8px; padding: 8px 10px 8px 12px; background: #fbf3e0; color: var(--ink); font: 400 16px/1.35 var(--f-hand);
+  box-shadow: 1px 3px 4px rgba(0, 0, 0, .4); }
+.mur-pin:nth-child(odd) { transform: rotate(-1.2deg); } .mur-pin:nth-child(even) { transform: rotate(1deg); }
+.mur-pin::before { content: ""; position: absolute; top: -5px; left: 50%; width: 10px; height: 10px; margin-left: -5px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #e0574a, #8c1f16); }
+.mur-pin small { display: block; font: 600 11px/1.3 var(--f-body); letter-spacing: .04em; text-transform: uppercase; color: #8a6a3e; }
+.mur-pin.vide { background: transparent; box-shadow: none; border: 1px dashed rgba(255, 244, 220, .5); color: rgba(255, 244, 220, .7); text-align: center; }
+.mur-pin.vide::before { display: none; }
+.mur-ded { margin: 10px 0 0; padding: 8px 10px; border-left: 3px solid #a3201a; background: rgba(251, 243, 224, .92); color: #7a1a12; font: 400 17px/1.4 var(--f-hand); }
+.mur-visites { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
 /* prologue et fil rouge */
 .story-img.map { height: 190px; background-size: contain; background-color: transparent; box-shadow: none; }
 .story-text.aside { font-style: italic; color: var(--muted); }
@@ -1192,6 +1228,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
             return `<span class="cord" style="left:${x1}%;top:${y1}%;width:${Math.hypot(dx, dy).toFixed(2)}%;transform:rotate(${(Math.atan2(dy, dx) * 180 / Math.PI).toFixed(1)}deg)" aria-hidden="true"></span>`;
           }).join('') : strings.length ? `<svg class="desk-string" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">${strings.map(([[x1, y1], [x2, y2]]) => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/>`).join('')}</svg>` : ''}
           ${order.map(dot).join('')}
+          ${brume()}
         </div>
         ${photos.map((pl, i) => `<button class="desk-photo ph${i} ${MEDIA.desk['support-papier'] ? 'img' : ''}" style="${MEDIA.desk['support-papier'] ? `--support:url(${MEDIA.desk['support-papier']})` : ''}" data-place="${pl}" title="${esc(placeTitle(pl))}" aria-label="${esc(placeTitle(pl))}"><span style="background-image:url(media/croquis-lieu-${photoOf(pl)}.webp)"></span></button>`).join('')}
         ${deco.slice(0, 3).map((src, i) => cloud.on() && /encrier/.test(src)
@@ -1200,6 +1237,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
         ${item('dk-dossiers', 'deskDossiers', `Dossiers classés (${nSolved})`, img('dossiers', 'pile'))}
         ${item(`dk-lettres ${nu ? 'unread' : ''}`, 'deskLettres', `Lettres anonymes (${nl})`, img('lettres', 'liasse'), nu ? `<span class="newmark" aria-label="${nu} non lue${nu > 1 ? 's' : ''}"></span>` : '')}
         ${item('dk-carnet', 'deskCarnet', "Carnet d'enquête", img('carnet', 'cuir'))}
+        ${murOpen() ? item('dk-mur', 'deskMur', "L'affaire de la Tour", img('mur', 'liege')) : ''}
         ${fin ? item(`dk-enveloppe ${isSolved(FINAL) ? '' : 'fresh'}`, 'deskFinal', 'Une enveloppe scellée', img('enveloppe', 'env')) : ''}
         <span class="desk-glow" aria-hidden="true"></span>
        </div>
@@ -1212,6 +1250,8 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     // une lettre attend d'être ouverte : on l'ouvre sur le bureau ; sinon, le courrier
     document.getElementById('deskLettres').onclick = () => pendingLetters().length ? openLetter(pendingLetters()[0]) : go('lettres');
     document.getElementById('deskCarnet').onclick = () => go('carnet');
+    const mur = document.getElementById('deskMur'); if (mur) mur.onclick = () => go('mur');
+    setTimeout(filRougeNext, 0); // une visite ou un déclic dû : au retour au bureau
     const f = document.getElementById('deskFinal'); if (f) f.onclick = () => { caseBack = 'bureau'; go('affaire/' + FINAL.id); };
     // l'encrier : le registre de Brumeval (inscription, ou sa sauvegarde une fois inscrit)
     const ink = document.getElementById('deskEncrier'); if (ink) ink.onclick = () => (cloud.linked() ? deskOptions() : invite(false));
@@ -1527,6 +1567,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     else if (page === 'dossiers') dossiersPage();
     else if (page === 'lettres') lettresPage();
     else if (page === 'carnet') carnetPage();
+    else if (page === 'mur') murPage();
     else if (page === 'lieu' && placeCases(arg).length && unlockedPlaces().has(arg)) lieuPage(arg);
     else if (page === 'affaire' && FINAL && arg === FINAL.id && !finalUnlocked()) bureauPage(); // pas encore arrivée
     else if (page === 'affaire' && PUZZLES.some(p => p.id === arg && !p.off)) open(arg);
@@ -2268,6 +2309,73 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     };
   }
 
+  // ---------- le fil rouge pendant le jeu (phase 2 de la roadmap) ----------
+  // Le mur de l'affaire de la Tour se construit au rythme des lettres OUVERTES (leur nombre, pas leur ordre : l'ordre des
+  // lieux est libre) : déclics de l'enquêteur (lore/fil-rouge.json, « declics »), une pièce épinglée par lettre sous une
+  // petite question, une déduction quand une question est complète ; trois visites à la Tour (Fizzlebarbe vivant) à 6,
+  // 12 et 18 lettres. Montrés au retour au bureau, une scène à la fois (grimdoku:filrouge = ce qui a été vu). Jamais le
+  // nom d'Augure avant la révélation (test).
+  const FR = LORE.filRouge || { declics: [], questions: {}, pieces: {}, visites: [] };
+  const frSeen = () => store.get('filrouge', []);
+  const frMark = (k) => { const s = frSeen(); if (!s.includes(k)) store.set('filrouge', s.concat(k)); };
+  const murOpen = () => FR.declics.some(d => d.mur && letters().length >= d.lettres);
+  // la question en tête du mur : celle du dernier déclic atteint
+  const murQuestion = () => { const n = letters().length; return FR.declics.filter(d => d.mur && d.lettres <= n).pop(); };
+  function filRougeNext() {
+    if (!$app.classList.contains('desk') || document.getElementById('ov')) return;
+    const n = letters().length, seen = frSeen();
+    // d'abord les visites dues (dans l'ordre), puis le dernier déclic atteint (les précédents, dépassés, sont tenus pour vus)
+    const v = FR.visites.find(x => x.lettres <= n && !seen.includes('visite-' + x.lettres));
+    if (v) { frMark('visite-' + v.lettres); return visiteStory(v); }
+    const due = FR.declics.filter(d => d.lettres <= n && !seen.includes('declic-' + d.lettres));
+    if (!due.length) return;
+    due.forEach(d => frMark('declic-' + d.lettres));
+    declicStory(due[due.length - 1]);
+  }
+  const paras = (t) => t.split('\n').map(x => `<p class="story-text">${esc(x)}</p>`).join('');
+  function visiteStory(v) {
+    story(`${MEDIA.decors.includes('tour') ? `<div class="story-img" style="background-image:url(media/decor-tour.webp)"></div>` : ''}
+      <h2>${esc(v.titre)}</h2>${paras(v.texte)}<p class="story-text"><i>${esc(v.note)}</i></p>
+      <div class="row"><button class="btn primary" data-close>Redescendre</button></div>`, 'visite');
+  }
+  function declicStory(d) {
+    const ov = story(`<p class="env-title">Mes notes</p>${paras(d.texte)}
+      <div class="row">${d.mur ? '<button class="btn primary" id="toMur">Voir le mur</button><button class="btn" data-close>Plus tard</button>' : '<button class="btn primary" data-close>Compris</button>'}</div>`, 'declic');
+    const b = ov.querySelector('#toMur'); if (b) b.onclick = () => { close(); go('mur'); };
+  }
+  // la brume autour de la Tour : de plus en plus dense au fil des lettres ; levée une fois l'affaire finale résolue
+  function brume() {
+    const pos = LORE.pos && LORE.pos.tour, n = letters().length;
+    if (!pos || !n || (FINAL && isSolved(FINAL))) return '';
+    const b = (0.3 + 0.6 * Math.min(n, LORE.need) / LORE.need).toFixed(2);
+    return `<span class="desk-brume" style="--x:${pos[0]}%;--y:${pos[1]}%;--b:${b}" aria-hidden="true"></span>`;
+  }
+  function murPage() {
+    P = null;
+    $app.classList.remove('game');
+    if (!murOpen()) return bureauPage();
+    const got = letters(), n = got.length, q = murQuestion();
+    const notes = FR.declics.filter(d => d.lettres <= n).map(d => `<p>${esc(d.texte)}</p>`).join('');
+    const secs = Object.entries(FR.questions).map(([k, Q]) => {
+      const all = Object.entries(FR.pieces).filter(([, p]) => p.question === k), mine = all.filter(([pl]) => got.includes(pl));
+      if (!mine.length) return ''; // une question n'apparaît qu'avec sa première pièce
+      const full = mine.length === all.length;
+      return `<section class="mur-sec"><h3>${esc(Q.titre)} <small>${mine.length} / ${all.length}</small></h3>
+        ${mine.map(([pl, p]) => `<div class="mur-pin"><small>${esc(placeTitle(pl))}</small>${esc(p.etiquette)}</div>`).join('')}
+        ${full ? `<p class="mur-ded">${esc(Q.deduction)}</p>` : `<div class="mur-pin vide">${all.length - mine.length} pièce${all.length - mine.length > 1 ? 's' : ''} à trouver</div>`}</section>`;
+    }).join('');
+    const vues = FR.visites.filter(v => frSeen().includes('visite-' + v.lettres));
+    $app.innerHTML = pageHead('Retour au bureau', "L'affaire de la Tour") + `
+      <div class="mur"><div class="mur-board">
+        <h2 class="mur-q">${esc(q.question)}</h2>
+        <div class="mur-notes">${notes}</div>
+        <div class="mur-qs">${secs}</div>
+        ${vues.length ? `<div class="mur-visites">${vues.map(v => `<button class="btn" data-visite="${v.lettres}">Relire : ${esc(v.titre)}</button>`).join('')}</div>` : ''}
+      </div></div>`;
+    document.getElementById('back').onclick = () => go('bureau');
+    $app.querySelectorAll('[data-visite]').forEach(b => b.onclick = () => visiteStory(FR.visites.find(v => v.lettres === +b.dataset.visite)));
+  }
+
   const placeTitle = (place) => { const p = PUZZLES.find(q => q.place === place && !q.final); return p ? p.title.split(' — ')[0] : place; };
   // épilogue : un dialogue (« — » en début de ligne), l'enquêteur puis le coupable
   const dialogue = (text) => text.split('\n').map((l, i) => `<p class="epl ${i % 2 ? 'them' : 'me'}">${esc(l)}</p>`).join('');
@@ -2414,7 +2522,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     const ov = document.getElementById('ov');
     ov.onclick = (e) => { if (e.target === ov || e.target.hasAttribute('data-close')) close(); };
   }
-  function close() { $layer.innerHTML = ''; tutoShow(); }
+  function close() { $layer.innerHTML = ''; tutoShow(); filRougeNext(); }
   // Scène du lore, au centre de l'écran (intro, verdict, lettre d'Augure) : plus visible qu'une fenêtre en bas de page
   function story(html, cls = '') {
     $layer.innerHTML = `<div class="overlay center" id="ov"><div class="sheet story ${cls}" role="dialog" aria-modal="true"><div class="sheet-body">${html}</div></div></div>`;
