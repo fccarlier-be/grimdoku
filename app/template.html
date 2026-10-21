@@ -526,6 +526,12 @@ header.top { display: flex; align-items: center; gap: 10px; }
   box-shadow: inset 0 0 0 1.5px rgba(43, 32, 22, .5), inset 0 0 14px rgba(120, 66, 18, .4); filter: url(#torn-s); }
 .billet p { margin: 0; font: 400 18px/1.4 var(--f-hand); }
 .billet.bad p { color: #a3312a; }
+.cachets { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 10px 0; }
+.cachet { font: 600 13px/1 var(--f-body); padding: 7px 10px; border-radius: 99px; border: 2px solid #a3201a; color: #a3201a; transform: rotate(-3deg); }
+.cachet.off { border-color: rgba(120, 90, 60, .4); color: rgba(120, 90, 60, .55); text-decoration: line-through; transform: none; }
+.cachet.on { background: rgba(163, 32, 26, .08); }
+.gain { font: 600 14px/1 var(--f-body); color: #7a5a1a; align-self: center; }
+.tbtn .cout { display: inline-block; min-width: 16px; padding: 0 4px; border-radius: 99px; background: #7a3b1d; color: #fff8e6; font: 600 11px/16px var(--f-body); }
 /* conseil de l'enquêteur (apprentissage progressif) : au-dessus des outils, comme le billet d'indice (qui le remplace) */
 .conseil { position: fixed; left: 50%; bottom: calc(130px + env(safe-area-inset-bottom, 0px)); z-index: 32; width: min(90vw, 460px); box-sizing: border-box;
   transform: translateX(-50%) rotate(.6deg); padding: 14px 18px 12px; color: var(--ink); isolation: isolate; filter: drop-shadow(0 10px 18px rgba(0, 0, 0, .6));
@@ -1276,6 +1282,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     const solved = CASES.filter(isSolved), started = CASES.filter(p => !isSolved(p) && Object.keys((store.get('p:' + p.id, null) || {}).pos || {}).length);
     $app.innerHTML = pageHead('Retour au bureau', 'Dossiers') + `
       ${started.length ? `<section class="carnet-sec"><h2>En cours <small>${started.length}</small></h2><div class="cases">${started.map(caseHtml).join('')}</div></section>` : ''}
+      <p class="lead bourse">Bourse : ${ecusTxt(ecus())} · cachets : ${Object.values(store.get('cachets', {})).reduce((n, l) => n + l.length, 0)}</p>
       <section class="carnet-sec"><h2>Classés <small>${solved.length} / ${CASES.length}</small></h2>
         ${solved.length ? `<div class="cases">${solved.map(caseHtml).join('')}</div>` : '<p class="lead">Aucun dossier classé pour l\'instant. Le château attend.</p>'}</section>
       ${archivesOpen() ? `<section class="carnet-sec"><h2>Archives non classées <small>${OFF.filter(isSolved).length} / ${OFF.length}</small></h2>
@@ -1920,7 +1927,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
       ${specials.length ? `<div class="special">${specials.join('')}</div>` : ''}
       ${S.solved ? verdictHtml() : `<div class="dock">
         <div class="tools">
-          <button class="tbtn" id="hintBtn" aria-label="Indice">${toolIcon('indice')}<span class="lbl">Indice</span></button>
+          <button class="tbtn" id="hintBtn" aria-label="Indice (${hintCost() ? ecusTxt(hintCost()) : 'gratuit'})" title="${hintCost() ? ecusTxt(hintCost()) + ' · bourse : ' + ecusTxt(ecus()) : 'Gratuit, mais adieu le cachet « sans indice »'}">${toolIcon('indice')}<span class="lbl">Indice${hintCost() ? ` <small class="cout">${hintCost()}</small>` : ''}</span></button>
           <button class="tbtn pen" id="penBtn" aria-pressed="${!!settings.cross}" title="Crayon : un toucher barre une case d'une croix (ou l'efface). Les lettres s'écrivent en choisissant un personnage. Touche-le encore pour changer de couleur.">${toolIcon('crayon')}<span class="lbl">Crayon</span>${penChar() ? `<span class="pen-dot" style="--cc:${colorOf(penChar())}">${letterOf(penChar())}</span>` : ''}</button>
           <span class="spacer"></span>
           <button class="tbtn" id="undo" aria-label="Annuler" ${undo.length ? '' : 'disabled'}>${toolIcon('annuler')}<span class="lbl">Annuler</span></button>
@@ -2272,6 +2279,29 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     if (st && ctx.chars[id].role !== 'victim') why(WHY_TEXT[st.tech](ctx.chars[id].name));
   }
 
+  // ---------- gamification (phase 3) : cachets, écus, indices payants ----------
+  // Cachets d'une enquête : « sans indice » et « sans fausse accusation » (S.hints, S.errs), gardés au meilleur par
+  // affaire (grimdoku:cachets) même si on la rejoue. Écus (grimdoku:ecus, 5 au départ) : gagnés à la première résolution
+  // d'une affaire (3) et à chaque cachet obtenu pour la première fois (2) ; on ne gagne jamais deux fois la même chose.
+  // Indices (règle de François, 2026-10-21) : le premier d'une enquête est gratuit mais fait perdre le cachet « sans
+  // indice » ; les suivants coûtent 1, 2, 3… écus ; redemander l'indice dont on n'a pas encore profité (même personnage,
+  // toujours pas à sa place) ne coûte rien.
+  const CACHETS = { 'sans-indice': 'Sans indice', 'sans-erreur': 'Sans fausse accusation' };
+  const ecus = () => store.get('ecus', 5);
+  const cachetsOf = (id) => (store.get('cachets', {})[id] || []);
+  const hintCost = () => (S.hints || 0) === 0 ? 0 : S.hints;
+  const ecusTxt = (n) => `${n} écu${n > 1 ? 's' : ''}`;
+  function reward() { // à la résolution : cachets de cette partie, écus gagnés pour ce qui est nouveau
+    const now = Object.keys(CACHETS).filter(k => k === 'sans-indice' ? !S.hints : !S.errs);
+    const all = store.get('cachets', {}), before = all[P.id] || [], paid = store.get('ecus-payes', []);
+    const fresh = now.filter(k => !before.includes(k));
+    let gain = fresh.length * 2;
+    if (!paid.includes(P.id)) { gain += 3; store.set('ecus-payes', paid.concat(P.id)); }
+    all[P.id] = [...new Set(before.concat(now))]; store.set('cachets', all);
+    if (gain) store.set('ecus', ecus() + gain);
+    return { now, gain };
+  }
+
   // Indice : signale d'abord une erreur parmi les personnages confirmés, sinon désigne le prochain personnage qu'on peut
   // déduire et le raisonnement à utiliser (jamais la case). C'est Augure qui l'apporte (François, 2026-10-20) : un billet
   // avec le portrait du corbeau, qui accompagne ainsi l'enquêteur tout au long du jeu, sans nom ni signature « A. » — rien
@@ -2302,15 +2332,25 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
   function hint() {
     const sol = P.solution.positions;
     const wrong = Object.keys(S.pos).find(id => E.posKey(S.pos[id]) !== E.posKey(sol[id]));
-    if (wrong) { pickOnly(wrong); render(); return billet(`Quelque chose cloche : ${ctx.chars[wrong].name} n'est pas à sa place.`, true); }
+    // payer l'aide (ou non : même aide pas encore exploitée) ; false si la bourse ne suffit pas
+    const pay = (target) => {
+      if (S.hintFor === target) return true;
+      const cost = hintCost();
+      if (cost > ecus()) { billet(`Cet indice coûte ${ecusTxt(cost)}, et ta bourse n'en contient que ${ecus()}. Résous d'autres affaires pour la remplir.`, true); return false; }
+      if (cost) store.set('ecus', ecus() - cost);
+      S.hints = (S.hints || 0) + 1; S.hintFor = target; save(); stat('indice', P, S.hints);
+      return true;
+    };
+    const left = () => (S.hints ? ` (Prochain indice : ${ecusTxt(hintCost())} ; bourse : ${ecusTxt(ecus())}.)` : '');
+    if (wrong) { if (!pay('!' + wrong)) return; pickOnly(wrong); render(); return billet(`Quelque chose cloche : ${ctx.chars[wrong].name} n'est pas à sa place.${left()}`, true); }
     hint.steps = hint.steps && hint.for === P.id ? hint.steps : E.humanSolve(P, P.clues, 2).steps;
     hint.for = P.id;
     for (const st of hint.steps) {
       const id = st.ids.find(x => !S.pos[x]);
       if (!id) continue;
+      if (!pay(id)) return;
       pickOnly(id); render();
-      S.hints = (S.hints || 0) + 1; save(); stat('indice', P, S.hints);
-      return billet(HINT_TEXT[st.tech](ctx.chars[id].name));
+      return billet(HINT_TEXT[st.tech](ctx.chars[id].name) + left());
     }
     billet('Tout le monde est à sa place. Il ne reste plus qu\'à accuser.');
   }
@@ -2318,23 +2358,24 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
   function accuse() {
     const errs = E.checkPlacement(P, S.pos);
     const kind = ['row', 'col', 'shape', 'room', 'empty'].find(k => errs.some(e => e.kind === k));
-    if (kind) stat('erreur', P, kind); // accusation refusée : ce qui cloche (statistiques)
+    if (kind) { stat('erreur', P, kind); S.errs = (S.errs || 0) + 1; save(); } // accusation refusée : statistiques et cachet
     if (errs.some(e => e.kind === 'row')) return toast('Deux personnes partagent une ligne. Une seule par ligne !', true);
     if (errs.some(e => e.kind === 'col')) return toast('Deux personnes partagent une colonne. Une seule par colonne !', true);
     if (errs.some(e => e.kind === 'shape')) return toast('Un grand personnage n\'a pas la bonne forme.', true);
     if (errs.some(e => e.kind === 'room')) return toast('Deux suspects partagent une pièce : seule la pièce du crime abrite deux personnes.', true);
     if (errs.some(e => e.kind === 'empty')) return toast('Une pièce est vide : chaque pièce est occupée.', true);
     const m = E.murdererOf(ctx, S.pos);
-    if (!m) { stat('erreur', P, 'meurtre'); return toast('La victime doit être seule avec exactement un suspect dans sa pièce.', true); }
+    if (!m) { stat('erreur', P, 'meurtre'); S.errs = (S.errs || 0) + 1; save(); return toast('La victime doit être seule avec exactement un suspect dans sa pièce.', true); }
     const ok = Object.keys(P.solution.positions).every(id => S.pos[id] && E.posKey(S.pos[id]) === E.posKey(P.solution.positions[id]));
     if (!ok) {
       const v = violated();
-      stat('erreur', P, v.size ? 'indices' : 'scene');
+      stat('erreur', P, v.size ? 'indices' : 'scene'); S.errs = (S.errs || 0) + 1; save();
       if (v.size) { settings.live = true; store.set('settings', settings); render(); return toast(`${v.size} indice${v.size > 1 ? 's' : ''} ne colle${v.size > 1 ? 'nt' : ''} pas. Ils sont surlignés en rouge.`, true); }
       return toast("Tout semble coller… mais ce n'est pas la bonne scène. Un indice t'a peut-être échappé.", true);
     }
     S.rank = rankOf(P); // l'intro garde l'ouverture sous laquelle l'affaire a été résolue
     S.solved = true; selected = null; save();
+    render.reward = reward();
     if ((dailyCase() || {}).id === P.id) dailySolved();
     stat('resolue', P, Math.round((S.play || 0) / 1000));
     render.newLetter = pendingLetter(P.place) ? P.place : null; // glissée sous la porte : à ouvrir
@@ -2537,6 +2578,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
       <b class="culprit">${esc(k.name)}</b>
       <p class="why">Seul suspect dans la pièce de ${esc(v.name)}.</p>
       <div class="epi">${dialogue(P.epilogue)}</div>
+      ${render.reward ? `<p class="cachets">${Object.entries(CACHETS).map(([k, l]) => `<span class="cachet ${render.reward.now.includes(k) ? 'on' : 'off'}">${l}</span>`).join('')}${render.reward.gain ? `<span class="gain">+${ecusTxt(render.reward.gain)}</span>` : ''}</p>` : ''}
       ${newLetter ? '' : leftHtml()}
       <div class="row">${P.revelation ? `<button class="btn primary" id="toReveal">Dans les archives du Palier zéro…</button>`
         : newLetter ? `<button class="btn primary" id="toLetter">Une lettre a été glissée sous la porte…</button>` : `<button class="btn primary" data-close>Fermer</button>`}</div>`, 'verdict-story');

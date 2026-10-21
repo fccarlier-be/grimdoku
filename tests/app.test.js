@@ -672,6 +672,39 @@ test('affaire du jour (grille désactivée, même pour tous à une date, série)
   assert.deepEqual(errors, []);
 });
 
+test('gamification : cachets (sans indice, sans fausse accusation), écus gagnés une fois, indices payants', () => {
+  const { w, d, openCase, errors, PUZZLES } = open({ settings: { tuto: { choisir: true } } });
+  const ecus = () => JSON.parse(w.localStorage.getItem('grimdoku:ecus') || '5');
+  const [a, b] = PUZZLES.filter(p => !p.final && !p.characters.some(c => c.shape)).slice(5, 7);
+  // affaire résolue sans aide : les deux cachets, 3 + 2 + 2 écus
+  w.localStorage.setItem('grimdoku:p:' + a.id, JSON.stringify({ pos: a.solution.positions, pencil: {}, marks: [], done: [], solved: false, sig: sigOf(a) }));
+  openCase(a.id); d.querySelector('[data-close]')?.click();
+  d.getElementById('accuse').click();
+  assert.equal(d.querySelectorAll('.cachet.on').length, 2, 'deux cachets');
+  assert.equal(ecus(), 5 + 7, '3 pour l\'affaire, 2 par cachet');
+  // rejouée : rien de plus à gagner
+  w.localStorage.setItem('grimdoku:p:' + a.id, JSON.stringify({ pos: a.solution.positions, pencil: {}, marks: [], done: [], solved: false, sig: sigOf(a) }));
+  openCase(a.id); d.getElementById('accuse').click();
+  assert.equal(ecus(), 12, 'jamais deux fois');
+  // indices : le premier gratuit, le suivant 1 écu, redemander le même ne coûte rien
+  openCase(b.id); d.querySelector('[data-close]')?.click();
+  d.getElementById('hintBtn').click();
+  assert.equal(ecus(), 12, 'premier indice gratuit');
+  d.getElementById('hintBtn').click();
+  assert.equal(ecus(), 12, 'le même indice, pas encore exploité : gratuit');
+  const id = JSON.parse(w.localStorage.getItem('grimdoku:p:' + b.id)).hintFor;
+  w.localStorage.setItem('grimdoku:p:' + b.id, JSON.stringify(Object.assign(JSON.parse(w.localStorage.getItem('grimdoku:p:' + b.id)), { pos: { [id]: b.solution.positions[id] } })));
+  openCase(b.id); d.getElementById('hintBtn').click();
+  assert.equal(ecus(), 11, 'deuxième indice : 1 écu');
+  assert.match(d.getElementById('hintBtn').textContent, /2/, 'le prochain coûtera 2');
+  // sans indice : le cachet est perdu pour cette partie
+  const st = JSON.parse(w.localStorage.getItem('grimdoku:p:' + b.id));
+  w.localStorage.setItem('grimdoku:p:' + b.id, JSON.stringify(Object.assign(st, { pos: b.solution.positions })));
+  openCase(b.id); d.getElementById('accuse').click();
+  assert.ok(d.querySelector('.cachet.off'), 'cachet « sans indice » perdu');
+  assert.deepEqual(errors, []);
+});
+
 test('conseils de l\'enquêteur : un à la fois, « pourquoi » pendant la première enquête, plus ensuite', async () => {
   const { w, d, pick, hold, openCase, errors, PUZZLES } = open();
   const p = PUZZLES.find(q => q.place === 'chateau' && !q.characters.some(c => c.shape));
