@@ -252,8 +252,8 @@
   "id": "cimetiere--alchimiste--golem--i2",
   "place": "cimetiere",
   "intro": "Au Cimetière de Minuit, on a retrouvé l'alchimiste Aurifex, venu proposer ses services. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Six habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec lui. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
-  "introBody": "L'alchimiste Aurifex proposait de tout changer en plomb, « ça dure plus longtemps », et il trouvait que le cimetière manquait de solidité. Il a accepté un essai gratuit. On l'a retrouvé enfermé dans son propre argument.",
-  "epilogue": "— Parlons d'Aurifex.\n— Il voulait changer mes économies en plomb. Mes économies, ce sont mes cercueils d'avance.\n— En plomb, ils dureraient.\n— C'est ce qu'il a dit. Je lui ai offert le premier, à l'essai. Doublé de plomb, il ne s'ouvre plus de l'intérieur.",
+  "introBody": "L'alchimiste Aurifex proposait de tout changer en plomb, « ça dure plus longtemps », et il trouvait que le cimetière manquait de solidité. Il a voulu juger sur pièce. La pièce est une tombe de plus.",
+  "epilogue": "— Vous étiez seul avec Aurifex.\n— Il prêchait le plomb : « Ça dure plus longtemps. » Mes tombes ne duraient pas, à l'entendre : il tapait chaque pierre pour le prouver.\n— Et vous ?\n— Je creusais, dans la fosse de la semaine. Sa main tapait les bords, ma pelle creusait. Ma pelle a attrapé son talon. Il est tombé vérifier le fond — sur la tête. Le fond est dur : ça durera, maintenant qu'il y est.",
   "clues": [
     {
       "who": "a",

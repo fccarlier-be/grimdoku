@@ -243,8 +243,8 @@
   "id": "navire--inspecteur",
   "place": "navire",
   "intro": "Le Navire Fantôme ne quitte jamais le port, et l'inspecteur des tavernes Trinquet, venu à bord inspecter les lieux, non plus, désormais. Six membres de l'équipage traînaient sur le pont. L'un d'eux était seul avec lui. Le capitaine m'assure que c'est la faute de la tempête. Il n'y a pas de tempête.",
-  "introBody": "L'inspecteur des tavernes Trinquet a collé un blâme au navire, faute de taverne, et il voulait goûter le contenu de chaque tonneau avant de partir. On l'a encouragé à se pencher. On l'a retrouvé la tête la première dans le dernier tonneau.",
-  "epilogue": "— Que s'est-il passé avec Trinquet ?\n— « Blâme ! Pas de taverne sur ce rafiot ! » Blâme ! Blâme !\n— Et ensuite ?\n— Secret de l'équipage : « Le meilleur rhum est tout au fond du dernier tonneau ! » Coco répète. Tout au fond ! Monsieur se penche. Plus au fond ! Plouf !",
+  "introBody": "L'inspecteur des tavernes Trinquet a collé un blâme au navire, faute de taverne, et il voulait goûter le contenu de chaque tonneau avant de partir. Il a voulu goûter d'avance, au mauvais endroit, à la mauvaise heure. On l'a retrouvé sous la palanquée de midi, sa liste de blâmes intacte.",
+  "epilogue": "— Que s'est-il passé avec Trinquet ?\n— « Blâme ! Pas de taverne sur ce rafiot ! » Blâme ! Blâme !\n— Et ensuite ?\n— Secret du maître d'équipage : « La palanquée de rhum descend dans la cale à midi pile ! » Coco répète. Midi pile. Monsieur dessous, pour goûter d'avance. La palanquée a goûté Monsieur.",
   "clues": [
     {
       "who": "a",

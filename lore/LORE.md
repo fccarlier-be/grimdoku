@@ -750,11 +750,11 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 - **Habitués** : Gribouille, Fausset, Bâfrin, Aëlys, Capucine, Aagrid
 - **Victimes des enquêtes actives** : Câline (la dresseuse), Rinçon (l'inspecteur des tavernes), Hérautin (le messager), Apnée (la maîtresse-nageuse), Corvéon (le percepteur)
 - **Ouvertures des intros** (selon le nombre d'affaires déjà résolues dans le lieu ; suivies de la mise en situation propre à chaque enquête) :
-  - première venue : Au Sanglier Borgne, le tenancier m'a accueilli comme un vieil ami, puis il a compté mes pas jusqu'au comptoir. J'ai demandé un café ; on m'a servi une bière.
-  - 2e affaire : Retour au Sanglier Borgne. Aagrid m'a servi une bière avant que je dise un mot, et l'a notée sur mon ardoise.
-  - 3e affaire : Troisième mort au Sanglier Borgne. Mon ardoise a désormais sa propre ligne, entre celle de la fée et celle du mage.
-  - 4e affaire : Quatrième affaire à la taverne. Les habitués me gardent un tabouret ; Aagrid me compte le tabouret.
-  - dernière : Dernière affaire au Sanglier Borgne, j'espère. Aagrid m'a offert la bière, la première gratuite de l'histoire de la maison ; elle avait un arrière-goût de poire et de cognac, et ça m'a inquiété plus que le cadavre.
+  - première venue : Au Sanglier Borgne, on m'a accueilli comme un vieil ami, avant même de savoir mon nom. J'ai demandé un café ; on m'a servi une bière.
+  - 2e affaire : Retour au Sanglier Borgne. On m'a servi une bière avant que je dise un mot, et on l'a notée sur mon ardoise.
+  - 3e affaire : Troisième mort au Sanglier Borgne. Mon ardoise a désormais sa propre ligne, entre deux habitués qui doivent bien plus que moi.
+  - 4e affaire : Quatrième affaire à la taverne. Les habitués me gardent un tabouret, et ma bière arrive avant moi.
+  - dernière : Dernière affaire au Sanglier Borgne, j'espère. On m'a offert la bière, la première gratuite de l'histoire de la maison ; elle avait un arrière-goût de poire et de cognac, et ça m'a inquiété plus que le cadavre.
 - **Lettre d'Augure** :
 > Gribouille doit quarante écus au Sanglier Borgne. Il promet de tout rembourser « dès que la Tour sera à lui ». Il promet aussi depuis onze ans de rendre le grimoire de Dewey. Les deux promesses ont le même calendrier. — A.
 
@@ -811,11 +811,11 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 - **Enquêtes à grands monstres** : Caillasse (forme I2) — victime Saisitout ; Cendrebrune (forme I2) — victime Pinardon ; Caillasse et Cendrebrune (forme I2, I2) — victime Rapidon ; Caillasse (forme I2) — victime Ondine ; Cendrebrune (forme I2) — victime Taxard ; Caillasse et Cendrebrune (forme I2, I2) — victime Gustave
 - **Ouvertures des intros** (selon le nombre d'affaires déjà résolues dans le lieu ; suivies de la mise en situation propre à chaque enquête) :
   - première venue : À la Mine des Nains, on m'a tendu un casque et une lanterne. Ici, tout le monde a une pioche, et personne n'a d'alibi.
-  - 2e affaire : Retour à la Mine des Nains. Le contremaître a chronométré ma descente : trop lente, paraît-il.
+  - 2e affaire : Retour à la Mine des Nains. On m'a rendu mon casque ; il a gardé la forme de ma dernière bosse.
   - 3e affaire : Troisième mort au fond de la mine. Les nains m'ont donné ma propre pioche, « au cas où ». Je ne sais toujours pas au cas où quoi.
-  - 4e affaire : Quatrième affaire à la mine. On m'a demandé « On creuse ? » avant même de me dire bonjour. J'ai dit non ; ils ont creusé quand même.
-  - 5e affaire : Cinquième descente à la mine. Le contremaître m'a compté une pause de trop, et l'a retenue sur une paie que je ne touche pas.
-  - dernière : Dernière descente à la Mine des Nains, j'espère. Ce matin, le contremaître a arrêté son chronomètre en me voyant : il dit que, pour moi, le temps est compté.
+  - 4e affaire : Quatrième affaire à la mine. Les galeries se ressemblent toutes ; j'ai fini par semer des miettes, comme dans les contes.
+  - 5e affaire : Cinquième descente à la mine. Ma lanterne grésille quand je passe ; les nains trouvent ça de mauvais augure, et eux, les augures, ils les prennent au sérieux.
+  - dernière : Dernière descente à la Mine des Nains, j'espère. Ce matin, toutes les lampes se sont tournées vers moi en même temps. Même ici, on m'attend.
 - **Lettre d'Augure** :
 > Granit a reçu commande d'un coffre à l'épreuve de la magie, à livrer dans la Tour. Le client a payé d'avance et demandé qu'on ne grave aucun nom. Granit a quand même chronométré la livraison. — A.
 
@@ -827,10 +827,10 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 - **Enquêtes à grands monstres** : Cendrebrune (forme I2) — victime Prudence ; Caillasse (forme I2) — victime Mercurio ; Cendrebrune et Caillasse (forme I2, I2) — victime Rapidon ; Cendrebrune (forme I2) — victime Ondine ; Caillasse (forme I2) — victime Taxard ; Cendrebrune et Caillasse (forme I2, I2) — victime Gustave
 - **Ouvertures des intros** (selon le nombre d'affaires déjà résolues dans le lieu ; suivies de la mise en situation propre à chaque enquête) :
   - première venue : La Forge du Dragon fume plus que d'habitude. Le dragon dort ; j'aimerais qu'il continue.
-  - 2e affaire : Retour à la Forge du Dragon. Le dragon dort toujours, et j'ai appris à marcher sur la pointe des pieds.
+  - 2e affaire : Retour à la Forge du Dragon. J'ai appris à marcher sur la pointe des pieds, et à ne pas demander pourquoi le sol est tiède.
   - 3e affaire : Troisième mort à la forge. La fumée me connaît maintenant ; elle me suit jusqu'à l'auberge.
   - 4e affaire : Quatrième affaire à la forge. On m'a forgé un tabouret à mon nom ; il est encore tiède, et un peu tordu.
-  - 5e affaire : Cinquième visite à la Forge du Dragon. Le dragon ronfle plus fort ; les habitués disent qu'il rêve de moi.
+  - 5e affaire : Cinquième visite à la Forge du Dragon. On m'a forgé une clé du lieu ; elle ouvre toutes les portes, sauf celle qu'on entend grincer la nuit.
   - dernière : Dernière affaire à la Forge du Dragon, j'espère. Même les enclumes se sont tues quand je suis entré.
 - **Lettre d'Augure** :
 > Fizzlebarbe a fait forger une clé unique. Le forgeron l'a vu la glisser entre les pages d'un grimoire qui n'aurait jamais dû se trouver dans la Tour. Ici, les secrets s'empilent mieux que les livres. — A.
@@ -890,8 +890,8 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
 - **Enquêtes à grands monstres** : Caillasse (forme I2) — victime Vipérine ; Caillasse et Cendrebrune (forme I2, I2) — victime Bricabrac ; Caillasse et Cendrebrune (forme I2, I2) — victime Ermengarde
 - **Ouvertures des intros** (selon le nombre d'affaires déjà résolues dans le lieu ; suivies de la mise en situation propre à chaque enquête) :
   - première venue : À la Bibliothèque Interdite, on m'a demandé d'enquêter en silence. Je chuchote mes questions ; on me répond en hurlant « chut ».
-  - 2e affaire : Retour à la Bibliothèque Interdite. Le bibliothécaire m'a délivré une carte de lecteur, et un avertissement pour bruit de pas.
-  - 3e affaire : Troisième mort à la bibliothèque. J'ai appris à enquêter par écrit ; on me rend mes billets annotés, avec les fautes en rouge.
+  - 2e affaire : Retour à la Bibliothèque Interdite. On m'a délivré une carte de lecteur, et un avertissement pour bruit de pas.
+  - 3e affaire : Troisième mort à la bibliothèque. J'ai appris à enquêter par écrit ; ici, même mes questions finissent au registre.
   - 4e affaire : Quatrième affaire chez les livres. Mon dossier a désormais une cote, rangé entre « Crimes » et « Crimes, suite ».
   - 5e affaire : Cinquième visite à la bibliothèque. Je chuchote si bas que je ne m'entends plus moi-même ; on m'a quand même dit « chut ».
   - dernière : Dernière affaire à la Bibliothèque Interdite, j'espère. Pour la première fois, personne n'a crié « chut » quand je suis entré, et ce silence-là m'a glacé.

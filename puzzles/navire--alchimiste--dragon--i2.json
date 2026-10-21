@@ -230,7 +230,7 @@
   "place": "navire",
   "intro": "Le Navire Fantôme ne quitte jamais le port, et l'alchimiste Cinabrin, venu à bord proposer ses services, non plus, désormais. Cinq membres de l'équipage traînaient sur le pont. L'un d'eux était seul avec lui. Le capitaine m'assure que c'est la faute de la tempête. Il n'y a pas de tempête.",
   "introBody": "L'alchimiste Cinabrin voulait changer en plomb les économies de l'équipage, et il cherchait surtout où elles étaient cachées. Quelqu'un lui a soufflé une cachette. Il est allé y regarder de très près.",
-  "epilogue": "— Racontez-moi, pour Cinabrin.\n— « Je change vos économies en plomb, gratuitement ! » Gratuit ! Coco méfiant !\n— Il cherchait où elles étaient cachées.\n— Secret de Bâbord : « Le trésor est caché dans le canon ! » Monsieur passe la tête dedans. Coco répète le canonnier : « Mèche ! Feu ! » Coco tient la mèche. Boum !",
+  "epilogue": "— Racontez-moi, pour Cinabrin.\n— « Je change vos économies en plomb, gratuitement ! » Gratuit ! Coco méfiant !\n— Il cherchait où elles étaient cachées.\n— Secret de Bâbord : « Le trésor est caché dans le canon ! » Coco répète le canonnier : « Mèche ! Feu ! » Le canon fait ce qu'il sait faire : à côté, devant, partout. Monsieur était dans le partout.",
   "clues": [
     {
       "who": "a",

@@ -256,8 +256,8 @@
   "hiddenShapes": true,
   "hiddenMax": 3,
   "intro": "Le pont-levis est resté coincé toute la nuit, enfermant le messager Galopin, venu apporter une lettre du baron, avec les sept occupants de la Citadelle. Au matin, il n'avait plus aucune envie de sortir. L'un d'eux était seul avec lui. Au moins, personne n'a pu s'enfuir.",
-  "introBody": "Le messager Galopin apportait une lettre du baron annonçant une visite très désagréable pour certains, et il refusait de la lâcher avant de l'avoir remise en mains propres. On a retrouvé la lettre et le messager ensemble, au fond du puits.",
-  "epilogue": "— Personne d'autre n'était avec Galopin. Sauf vous.\n— Il m'a annoncé que le baron envoyait un contrôleur des comptes.\n— Une mauvaise nouvelle, pour vous.\n— Pour lui. Je n'ai fait que retarder le courrier, au fond du puits de la Citadelle. Le porteur avec : il ne voulait pas le lâcher.",
+  "introBody": "Le messager Galopin apportait une lettre du baron annonçant une visite très désagréable pour certains, et il refusait de la lâcher avant de l'avoir remise en mains propres. On l'a retrouvé la lettre toujours en main, pliée.",
+  "epilogue": "— Personne d'autre n'était avec Galopin. Sauf vous.\n— Il m'a apporté une lettre du baron : le baron envoie un contrôleur des comptes.\n— Une mauvaise nouvelle, pour vous.\n— Pour lui. Une lettre non remise n'existe pas, c'est la règle de la poste. Il ne la lâchait pas ; je l'ai aidé à la garder. Mon registre des dettes pèse vingt ans de comptes : je le lui ai fait reconnaître de près. Techniquement, le courrier est en attente d'acheminement. Pour très longtemps.",
   "clues": [
     {
       "who": "a",

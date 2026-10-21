@@ -178,11 +178,11 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 
 **Ouvertures**
 
-- *Première venue* : Au Sanglier Borgne, le tenancier m'a accueilli comme un vieil ami, puis il a compté mes pas jusqu'au comptoir. J'ai demandé un café ; on m'a servi une bière.
-- *2e affaire* : Retour au Sanglier Borgne. Aagrid m'a servi une bière avant que je dise un mot, et l'a notée sur mon ardoise.
-- *3e affaire* : Troisième mort au Sanglier Borgne. Mon ardoise a désormais sa propre ligne, entre celle de la fée et celle du mage.
-- *4e affaire* : Quatrième affaire à la taverne. Les habitués me gardent un tabouret ; Aagrid me compte le tabouret.
-- *Dernière* : Dernière affaire au Sanglier Borgne, j'espère. Aagrid m'a offert la bière, la première gratuite de l'histoire de la maison ; elle avait un arrière-goût de poire et de cognac, et ça m'a inquiété plus que le cadavre.
+- *Première venue* : Au Sanglier Borgne, on m'a accueilli comme un vieil ami, avant même de savoir mon nom. J'ai demandé un café ; on m'a servi une bière.
+- *2e affaire* : Retour au Sanglier Borgne. On m'a servi une bière avant que je dise un mot, et on l'a notée sur mon ardoise.
+- *3e affaire* : Troisième mort au Sanglier Borgne. Mon ardoise a désormais sa propre ligne, entre deux habitués qui doivent bien plus que moi.
+- *4e affaire* : Quatrième affaire à la taverne. Les habitués me gardent un tabouret, et ma bière arrive avant moi.
+- *Dernière* : Dernière affaire au Sanglier Borgne, j'espère. On m'a offert la bière, la première gratuite de l'histoire de la maison ; elle avait un arrière-goût de poire et de cognac, et ça m'a inquiété plus que le cadavre.
 
 ### 3.1. l'affaire Câline (6×6) — coupable : Fausset
 
@@ -253,22 +253,22 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 **Épilogue** :
 
 > — Racontez-moi, pour Corvéon.  
-> — Il voulait m'imposer sur tout ce que je possède : des dettes, et le grimoire de Dewey.  
-> — Il a voulu le saisir.  
-> — Il m'a mis une bière sous le nez pour m'amadouer. Le sort est parti tout seul.  
+> — Il voulait m'imposer sur tout ce que je possède : des dettes, surtout, et ma baguette.  
+> — Il a voulu la saisir.  
+> — Il m'a mis une bière sous le nez pour m'amadouer. Atchoum ! Le sort de saisie est parti tout seul : le percepteur, c'est lui qu'il a saisi.  
 
-*Relecture : validé*
+*Relecture : à relire*
 
 ## 4. La Mine des Nains
 
 **Ouvertures**
 
 - *Première venue* : À la Mine des Nains, on m'a tendu un casque et une lanterne. Ici, tout le monde a une pioche, et personne n'a d'alibi.
-- *2e affaire* : Retour à la Mine des Nains. Le contremaître a chronométré ma descente : trop lente, paraît-il.
+- *2e affaire* : Retour à la Mine des Nains. On m'a rendu mon casque ; il a gardé la forme de ma dernière bosse.
 - *3e affaire* : Troisième mort au fond de la mine. Les nains m'ont donné ma propre pioche, « au cas où ». Je ne sais toujours pas au cas où quoi.
-- *4e affaire* : Quatrième affaire à la mine. On m'a demandé « On creuse ? » avant même de me dire bonjour. J'ai dit non ; ils ont creusé quand même.
-- *5e affaire* : Cinquième descente à la mine. Le contremaître m'a compté une pause de trop, et l'a retenue sur une paie que je ne touche pas.
-- *Dernière* : Dernière descente à la Mine des Nains, j'espère. Ce matin, le contremaître a arrêté son chronomètre en me voyant : il dit que, pour moi, le temps est compté.
+- *4e affaire* : Quatrième affaire à la mine. Les galeries se ressemblent toutes ; j'ai fini par semer des miettes, comme dans les contes.
+- *5e affaire* : Cinquième descente à la mine. Ma lanterne grésille quand je passe ; les nains trouvent ça de mauvais augure, et eux, les augures, ils les prennent au sérieux.
+- *Dernière* : Dernière descente à la Mine des Nains, j'espère. Ce matin, toutes les lampes se sont tournées vers moi en même temps. Même ici, on m'attend.
 
 ### 4.1. l'affaire Bénédicte (8×8) — coupable : Capucine
 
@@ -324,11 +324,11 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 **Épilogue** :
 
 > — Ventrapat. Racontez-moi.  
-> — Il m'a annoncé que le baron fermait la mine.  
+> — Il m'a annoncé que le baron fermait la mine, debout au milieu de la galerie, sa lettre à la main.  
 > — Et vous ?  
-> — Une mine fermée, ça se rouvre en creusant. Je n'y peux rien s'il était en dessous du trou que je creusais...  
+> — Une mine fermée, ça se rouvre en creusant. J'ai donné le premier coup sous ses pieds : la dalle s'est ouverte, et lui avec. Je creuse plus vite que je ne réfléchis.  
 
-*Relecture : validé*
+*Relecture : à relire*
 
 ### 4.5. l'affaire Bulle (8×8) — coupable : Flammèche
 
@@ -354,9 +354,9 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 **Épilogue** :
 
 > — Racontez-moi, pour Sangsuard.  
-> — Il voulait l'impôt sur mes pépites. Il ne me croyait pas quand je disais qu'elles étaient sous ses pieds.  
-> — Alors vous lui avez montré.  
-> — J'ai dit : « On creuse ? » Il a dit oui, sans bouger. Je creuse plus vite que je ne réfléchis : le trou faisait vingt toises avant que je pense à lui dire de se pousser.  
+> — Il voulait l'impôt sur mes pépites. Il ne me croyait pas quand je disais qu'elles descendaient toutes seules.  
+> — Elles descendent ?  
+> — Dans les chariots, sur la pente, jusqu'en bas. Il a tenu à vérifier un chargement, debout sur la voie, sa liste à la main. Le chariot est arrivé à l'heure. Sa liste ne comptait pas les chariots.  
 
 *Relecture : à relire*
 
@@ -466,8 +466,8 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 **Ouvertures**
 
 - *Première venue* : À la Bibliothèque Interdite, on m'a demandé d'enquêter en silence. Je chuchote mes questions ; on me répond en hurlant « chut ».
-- *2e affaire* : Retour à la Bibliothèque Interdite. Le bibliothécaire m'a délivré une carte de lecteur, et un avertissement pour bruit de pas.
-- *3e affaire* : Troisième mort à la bibliothèque. J'ai appris à enquêter par écrit ; on me rend mes billets annotés, avec les fautes en rouge.
+- *2e affaire* : Retour à la Bibliothèque Interdite. On m'a délivré une carte de lecteur, et un avertissement pour bruit de pas.
+- *3e affaire* : Troisième mort à la bibliothèque. J'ai appris à enquêter par écrit ; ici, même mes questions finissent au registre.
 - *4e affaire* : Quatrième affaire chez les livres. Mon dossier a désormais une cote, rangé entre « Crimes » et « Crimes, suite ».
 - *5e affaire* : Cinquième visite à la bibliothèque. Je chuchote si bas que je ne m'entends plus moi-même ; on m'a quand même dit « chut ».
 - *Dernière* : Dernière affaire à la Bibliothèque Interdite, j'espère. Pour la première fois, personne n'a crié « chut » quand je suis entré, et ce silence-là m'a glacé.
@@ -556,9 +556,9 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 **Épilogue** :
 
 > — Ermengarde. Racontez-moi.  
-> — Elle se disait ma cousine, par la branche des dragons de sa mère. Elle venait chercher sa part de mon trésor.  
-> — Pendant que vous dormiez.  
-> — Je me réveille toujours au pire moment. Pour elle.  
+> — Elle se disait ma cousine, par la branche des dragons de sa mère, et fouillait les rayonnages sans bruit, pour sa part de mon trésor.  
+> — Elle vous a réveillé ?  
+> — Elle m'a tapé dessus, pour vérifier que je dormais. On ne tape pas un dragon : ma queue s'est réveillée aussi. Elle rend les politesses d'un seul coup, ma queue. Ermengarde a reçu la mienne.  
 
 *Relecture : à relire*
 
@@ -567,10 +567,10 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 **Ouvertures**
 
 - *Première venue* : La Forge du Dragon fume plus que d'habitude. Le dragon dort ; j'aimerais qu'il continue.
-- *2e affaire* : Retour à la Forge du Dragon. Le dragon dort toujours, et j'ai appris à marcher sur la pointe des pieds.
+- *2e affaire* : Retour à la Forge du Dragon. J'ai appris à marcher sur la pointe des pieds, et à ne pas demander pourquoi le sol est tiède.
 - *3e affaire* : Troisième mort à la forge. La fumée me connaît maintenant ; elle me suit jusqu'à l'auberge.
 - *4e affaire* : Quatrième affaire à la forge. On m'a forgé un tabouret à mon nom ; il est encore tiède, et un peu tordu.
-- *5e affaire* : Cinquième visite à la Forge du Dragon. Le dragon ronfle plus fort ; les habitués disent qu'il rêve de moi.
+- *5e affaire* : Cinquième visite à la Forge du Dragon. On m'a forgé une clé du lieu ; elle ouvre toutes les portes, sauf celle qu'on entend grincer la nuit.
 - *Dernière* : Dernière affaire à la Forge du Dragon, j'espère. Même les enclumes se sont tues quand je suis entré.
 
 ### 7.1. l'affaire Ostentine (7×7) — coupable : Bakchich
@@ -612,9 +612,9 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 **Épilogue** :
 
 > — Vous étiez seul avec Gondeberge.  
-> — Elle réclamait sa part de la galerie que j'ai creusée sous la forge.  
+> — Elle réclamait sa part de tout, même de la galerie que j'ai creusée sous la forge.  
 > — Elle était à vous ?  
-> — Je l'ai creusée. Je lui ai donné sa part : le bout, là où ça s'effondre.  
+> — Je l'ai creusée. J'ai dit : « On creuse ? » Elle a dit oui. Sa part, c'était le bout, juste sous l'atelier : le plancher a pris sa part aussi. Il s'est écroulé, et elle avec, dedans.  
 
 *Relecture : à relire*
 
@@ -859,9 +859,9 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 **Épilogue** :
 
 > — Personne d'autre n'était avec Liardin. Sauf vous.  
-> — Il voulait taxer l'eau du marais, au litre, parce que j'y vis.  
-> — Et il est tombé dedans.  
-> — Il a voulu mesurer la profondeur. Je lui ai dit qu'il avait pied partout. *Blop.*  
+> — Il voulait taxer l'eau du marais au litre, parce que j'y vis. Pour son calcul, il lui fallait la profondeur exacte.  
+> — Il a mesuré.  
+> — Je lui ai montré où commencer : la vase des roseaux, la plus ferme, lui ai-je dit. (Blop.) Elle ne l'est pas. La vase du marais avale ce qu'on lui confie. Je lui ai confié Liardin.  
 
 *Relecture : à relire*
 
@@ -895,14 +895,14 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 
 *Pièce du crime : Réfectoire (meubles : table, chaise). Suspects : Fumerolle, Flammèche, Gribouille, Aëlys, Capucine, Brindille.*
 
-**Intro** : La baronne Grisemotte voulait racheter l'Académie et mettre dehors tous ceux qui lui devaient de l'argent. Elle a passé la soirée à dresser la liste, de très près, en postillonnant. Elle ne l'a jamais finie.
+**Intro** : La baronne Grisemotte voulait racheter l'Académie et mettre dehors tous ceux qui lui devaient de l'argent. Elle a passé la soirée à dresser la liste, à voix haute, pour bien la faire goûter à tout le monde. Elle ne l'a jamais finie.
 
 **Épilogue** :
 
-> — Parlons de Grisemotte.  
-> — Elle voulait racheter l'Académie et me mettre dehors, avec mes dettes.  
-> — Vous lui avez répondu ?  
-> — Elle s'est penchée sur moi pour me menacer. Elle sentait la bière. J'ai éternué, et le sort que je tenais prêt est parti. Je le tenais prêt pour elle, remarquez.  
+> — Vous étiez seul avec Grisemotte.  
+> — Elle dressait la liste de mes dettes sur ma table, pour racheter l'Académie avec. C'est moi qui connais le mieux mes dettes : je les entretiens.  
+> — Vous avez réclamé ?  
+> — J'ai préparé un sort pour changer sa liste en fumée, pour souffler dessus. Atchoum ! Le sort est parti, avec l'éternuement. La fumée, c'est elle. Je le regrette presque : sa liste était très bonne.  
 
 *Relecture : à relire*
 
@@ -962,7 +962,7 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 > — Et Sifflette ?  
 > — Elle voulait m'emmener dans son cirque : « Le géant debout ! » Elle a crié « Hop ! », et je me suis levé.  
 > — Vous ne vous levez jamais.  
-> — Pardon, plafond. Lui, il est tombé sur elle. Moi, je me suis excusé auprès du bon.  
+> — Pardon, plafond. Une poutre m'a suivi dans ma levée, et elle est tombée sur Sifflette. Je me suis excusé auprès du plafond : c'est lui qui l'a lâchée. On ne peut pas tout se reprocher, surtout quand on est poli.  
 
 *Relecture : à relire*
 
@@ -1072,14 +1072,14 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 
 *Pièce du crime : Jardin (meubles : arbre, champi). Suspects : Gontran, Fausset, Blafard, Bakchich, Aëlys, Caillasse, Flammèche.*
 
-**Intro** : Le messager Galopin apportait une lettre du baron annonçant une visite très désagréable pour certains, et il refusait de la lâcher avant de l'avoir remise en mains propres. On a retrouvé la lettre et le messager ensemble, au fond du puits.
+**Intro** : Le messager Galopin apportait une lettre du baron annonçant une visite très désagréable pour certains, et il refusait de la lâcher avant de l'avoir remise en mains propres. On l'a retrouvé la lettre toujours en main, pliée.
 
 **Épilogue** :
 
 > — Personne d'autre n'était avec Galopin. Sauf vous.  
-> — Il m'a annoncé que le baron envoyait un contrôleur des comptes.  
+> — Il m'a apporté une lettre du baron : le baron envoie un contrôleur des comptes.  
 > — Une mauvaise nouvelle, pour vous.  
-> — Pour lui. Je n'ai fait que retarder le courrier, au fond du puits de la Citadelle. Le porteur avec : il ne voulait pas le lâcher.  
+> — Pour lui. Une lettre non remise n'existe pas, c'est la règle de la poste. Il ne la lâchait pas ; je l'ai aidé à la garder. Mon registre des dettes pèse vingt ans de comptes : je le lui ai fait reconnaître de près. Techniquement, le courrier est en attente d'acheminement. Pour très longtemps.  
 
 *Relecture : à relire*
 
@@ -1231,14 +1231,14 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 
 *Pièce du crime : Chapelle (meubles : statue, pupitre, sarcophage). Suspects : Gontran, Blafard, Belladone, Ambroise, Augure, Fernand, Ciguë.*
 
-**Intro** : La dresseuse Griffette cherchait au cimetière une bête rare pour son cirque, et elle avait repéré la plus rare de toutes. Quelqu'un tenait à la garder. On a retrouvé ses vêtements, vides.
+**Intro** : La dresseuse Griffette cherchait au cimetière une bête rare pour son cirque, et elle avait repéré la plus rare de toutes. Quelqu'un tenait à la garder, pour une grande occasion. Elle a voulu se servir elle-même.
 
 **Épilogue** :
 
 > — Que s'est-il passé avec Griffette ?  
 > — Elle voulait emmener Ambroise dans son cirque. Mon Ambroise. Je le garde pour une grande occasion.  
-> — Quelle occasion ?  
-> — Une recette. Elle, je l'ai changée en grenouille, pour qu'elle voie l'effet. Puis elle a coassé près de ma marmite.  
+> — Elle a essayé de l'attraper ?  
+> — À mains nues. On ne prend pas la bête d'une sorcière comme ça. Ma louche de cuivre lui a servi la leçon, d'un seul coup. La grande occasion, c'était aujourd'hui.  
 
 *Relecture : à relire*
 
@@ -1291,14 +1291,14 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 
 *Pièce du crime : Allée des ifs (meubles : arbre, tombe). Suspects : Blafard, Ciguë, Glas, Caillasse, Fernand, Belladone.*
 
-**Intro** : L'alchimiste Aurifex proposait de tout changer en plomb, « ça dure plus longtemps », et il trouvait que le cimetière manquait de solidité. Il a accepté un essai gratuit. On l'a retrouvé enfermé dans son propre argument.
+**Intro** : L'alchimiste Aurifex proposait de tout changer en plomb, « ça dure plus longtemps », et il trouvait que le cimetière manquait de solidité. Il a voulu juger sur pièce. La pièce est une tombe de plus.
 
 **Épilogue** :
 
-> — Parlons d'Aurifex.  
-> — Il voulait changer mes économies en plomb. Mes économies, ce sont mes cercueils d'avance.  
-> — En plomb, ils dureraient.  
-> — C'est ce qu'il a dit. Je lui ai offert le premier, à l'essai. Doublé de plomb, il ne s'ouvre plus de l'intérieur.  
+> — Vous étiez seul avec Aurifex.  
+> — Il prêchait le plomb : « Ça dure plus longtemps. » Mes tombes ne duraient pas, à l'entendre : il tapait chaque pierre pour le prouver.  
+> — Et vous ?  
+> — Je creusais, dans la fosse de la semaine. Sa main tapait les bords, ma pelle creusait. Ma pelle a attrapé son talon. Il est tombé vérifier le fond — sur la tête. Le fond est dur : ça durera, maintenant qu'il y est.  
 
 *Relecture : à relire*
 
@@ -1408,14 +1408,14 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 
 *Pièce du crime : Grande bibliothèque (meubles : etagere, fauteuil, tapis). Suspects : Dewey, Fiolius, Capucine, Ambroise, Flammèche, Blafard, Gribouille, Fumerolle, Clairvoya, Fizzlebarbe.*
 
-**Intro** : Le messager Éperon apportait les résultats du concours des diplômes, et l'Université n'était pas la gagnante. Il venait tout droit de l'Académie, et il ne s'en cachait pas. On lui a offert un remontant pour la route.
+**Intro** : Le messager Éperon apportait les résultats du concours des diplômes, et l'Université n'était pas la gagnante. Il venait tout droit de l'Académie, et il ne s'en cachait pas. On lui a fait goûter la spécialité de la maison, pour la route.
 
 **Épilogue** :
 
 > — Que s'est-il passé avec Éperon ?  
-> — Il m'a annoncé que l'Académie avait gagné le concours des diplômes. L'Académie de Fizzlebarbe.  
+> — *Il renifle.* Il m'a apporté les résultats du concours : l'Académie gagne. L'Académie de Fizzlebarbe.  
 > — Ce n'était pas sa faute.  
-> — *Il renifle.* Il sentait l'Académie. Je lui ai offert un remontant. Zéro sur vingt, à l'odeur ; je l'avais préparé exprès.  
+> — Il sentait l'Académie, en plus. J'ai testé sur lui ma potion d'oubli, la dernière du trimestre. Trop forte : il a tout oublié, jusqu'à respirer. Dix-huit sur vingt, avec réserve : l'oubli, ça se dosait.  
 
 *Relecture : à relire*
 
@@ -1597,14 +1597,14 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 
 *Pièce du crime : Chantier naval (meubles : barque, enclume). Suspects : Aagrid, Écho-Écho, Bâbord, Bâfrin, Frégaton, Goémone.*
 
-**Intro** : Le percepteur Rognard voulait l'impôt sur tout ce que possédaient les gens du port, et il s'est fait remettre une carte au trésor en paiement. Il a demandé son chemin. On le lui a indiqué.
+**Intro** : Le percepteur Rognard voulait l'impôt sur tout ce que possédaient les gens du port, et il s'est fait remettre une carte au trésor en paiement. Il a demandé son chemin. On le lui a indiqué. On l'a retrouvé sa carte toujours en main.
 
 **Épilogue** :
 
 > — C'était vous, avec Rognard.  
-> — Il voulait l'impôt sur tout ce que je possède.  
-> — Vous ne possédez rien.  
-> — Une carte au trésor. Je la lui ai donnée, avec mes indications. Il les a suivies à la lettre. Personne ne fait jamais ça.  
+> — Il voulait l'impôt sur tout ce que je possède. Je ne possède qu'une carte au trésor : je l'ai payée avec.  
+> — Une carte au trésor, ça se suit.  
+> — Il l'a suivie à la lettre, ce qui ne m'arrive jamais à moi. Au bout, il n'y avait rien, et il a voulu me la faire payer deux fois. Je me trompe toujours de direction ; ma jambe de bois, elle, vole droit. Il l'a reçue en pleine face. Il n'a rien eu à redire.  
 
 *Relecture : à relire*
 
@@ -1633,8 +1633,8 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 
 > — Flacon. Racontez-moi.  
 > — Il voulait coller un blâme à mon rhum : pas d'étiquette, pas de taxe.  
-> — Il avait raison.  
-> — Alors je lui ai fait goûter le stock. Tout le stock. Plus de rhum, plus de taxe, plus d'inspecteur.  
+> — Il avait raison ?  
+> — Un inspecteur goûte avant de blâmer, c'est l'usage. Je l'ai appliqué à la lettre, tonneau par tonneau, et à chaque santé je le resservais : « À la vôtre ! » Le dernier, il l'a bu à ma santé. Plus de rhum, plus de taxe, plus d'inspecteur.  
 
 *Relecture : à relire*
 
@@ -1699,7 +1699,7 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 
 *Pièce du crime : Salle de bal (meubles : chaise, tapis, statue). Suspects : Capucine, Blafard, Gontran, Aëlys, Fumerolle, Belladone, Dagobert.*
 
-**Intro** : Le colporteur Fatras revendait au bal des bijoux de seconde main, dont certains semblaient avoir déjà appartenu à un invité. Il a trouvé un acheteur pour sa plus belle pièce. L'acheteur a payé comptant, et lourdement.
+**Intro** : Le colporteur Fatras revendait au bal des bijoux de seconde main, dont certains semblaient avoir déjà appartenu à un invité. Il a trouvé preneur pour sa plus belle pièce, et l'affaire s'est conclue à la nuit tombée. Personne n'a vu l'acheteur repartir.
 
 **Épilogue** :
 
@@ -2065,14 +2065,14 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 
 *Pièce du crime : Cale (meubles : tonneau, coffre). Suspects : Goémone, Blafard, Frégaton, Fernand, Belladone, Écho-Écho.*
 
-**Intro** : L'inspecteur des tavernes Trinquet a collé un blâme au navire, faute de taverne, et il voulait goûter le contenu de chaque tonneau avant de partir. On l'a encouragé à se pencher. On l'a retrouvé la tête la première dans le dernier tonneau.
+**Intro** : L'inspecteur des tavernes Trinquet a collé un blâme au navire, faute de taverne, et il voulait goûter le contenu de chaque tonneau avant de partir. Il a voulu goûter d'avance, au mauvais endroit, à la mauvaise heure. On l'a retrouvé sous la palanquée de midi, sa liste de blâmes intacte.
 
 **Épilogue** :
 
 > — Que s'est-il passé avec Trinquet ?  
 > — « Blâme ! Pas de taverne sur ce rafiot ! » Blâme ! Blâme !  
 > — Et ensuite ?  
-> — Secret de l'équipage : « Le meilleur rhum est tout au fond du dernier tonneau ! » Coco répète. Tout au fond ! Monsieur se penche. Plus au fond ! Plouf !  
+> — Secret du maître d'équipage : « La palanquée de rhum descend dans la cale à midi pile ! » Coco répète. Midi pile. Monsieur dessous, pour goûter d'avance. La palanquée a goûté Monsieur.  
 
 *Relecture : à relire*
 
@@ -2102,7 +2102,7 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 > — Racontez-moi, pour Cinabrin.  
 > — « Je change vos économies en plomb, gratuitement ! » Gratuit ! Coco méfiant !  
 > — Il cherchait où elles étaient cachées.  
-> — Secret de Bâbord : « Le trésor est caché dans le canon ! » Monsieur passe la tête dedans. Coco répète le canonnier : « Mèche ! Feu ! » Coco tient la mèche. Boum !  
+> — Secret de Bâbord : « Le trésor est caché dans le canon ! » Coco répète le canonnier : « Mèche ! Feu ! » Le canon fait ce qu'il sait faire : à côté, devant, partout. Monsieur était dans le partout.  
 
 *Relecture : à relire*
 
@@ -2268,14 +2268,14 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 
 *Pièce du crime : Hammam (meubles : tapis, chaise). Suspects : Belladone, Dagobert, Bakchich, Clairvoya, Esbroufe, Fizzlebarbe.*
 
-**Intro** : L'inspecteur des tavernes Pinardon a goûté le vin du palais et l'a trouvé coupé à l'eau. Il a lancé une expression malheureuse devant la mauvaise personne. On l'a retrouvé noyé dans le vin qu'il critiquait.
+**Intro** : L'inspecteur des tavernes Pinardon a goûté le vin du palais et l'a trouvé coupé à l'eau. Il a lancé une expression malheureuse devant la mauvaise personne. On l'a retrouvé noyé, son blâme encore à la main.
 
 **Épilogue** :
 
 > — Que s'est-il passé avec Pinardon, Majesté ?  
-> — Il a collé un blâme au palais : vin coupé à l'eau.  
+> — Il a collé un blâme au palais : mon vin est coupé à l'eau.  
 > — C'est vrai ?  
-> — Il a dit que mon vin était « à se noyer dedans ». C'est pas faux, j'ai dit. Je ne savais pas que c'était une expression.  
+> — Il a dit que mon vin était « à s'y noyer ». C'est pas faux, j'ai dit. Je ne savais pas que c'était une expression. Je l'ai aidé à vérifier dans le bain : le bain, lui, n'était pas coupé.  
 
 *Relecture : à relire*
 
@@ -2318,9 +2318,9 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 **Épilogue** :
 
 > — Prudence. Racontez-moi.  
-> — Elle m'a fait la morale, madame : vendre du rêve, c'est mentir.  
-> — Vous lui avez répondu ?  
-> — Je lui ai vendu un vœu de sainteté : « Monter au ciel sans attendre. » Je vouvoie même les vœux, madame. Ils obéissent mieux.  
+> — Elle m'a fait la morale, madame : vendre du rêve, c'est mentir. Je ne mens jamais sur la marchandise, madame.  
+> — Vous lui avez vendu un vœu.  
+> — « Monter au ciel sans attendre. » La livraison, je l'assure moi-même : je l'ai hissée à la corde des lampes, jusqu'en haut, et j'ai lâché. Le ciel, madame, c'est ce qu'on atteint en descendant assez vite.  
 
 *Relecture : à relire*
 
@@ -2335,7 +2335,7 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 > — Personne d'autre n'était avec Calcinus. Sauf vous, Majesté.  
 > — Il a dit qu'il pouvait changer n'importe quoi en or. « Même un roi. »  
 > — Et vous l'avez cru ?  
-> — C'est pas faux, j'ai dit. Je l'ai laissé essayer sur lui-même. Il a réussi. Je l'ai fait fondre, pour les dettes du royaume.  
+> — C'est pas faux, j'ai dit. Je l'ai laissé essayer sur lui-même. Il a réussi. Je l'ai fait fondre ensuite, pour les dettes du royaume.  
 
 *Relecture : à relire*
 
@@ -2348,9 +2348,9 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 **Épilogue** :
 
 > — Et Nageoire ?  
-> — Elle voulait m'apprendre à nager, madame.  
-> — Vous avez refusé ?  
-> — Je lui ai vendu un vœu à la place : « Ne plus jamais avoir besoin d'air. » Il a marché tout de suite. Je vends du rêve, madame. Pas de la garantie.  
+> — Elle voulait m'apprendre à nager de force, madame. Je lui ai plutôt vendu l'élixir du grand plongeur d'Orient : « Trois minutes sous l'eau, sans battre des pieds. »  
+> — Et il a marché ?  
+> — Parfaitement, madame. Madame n'a pas battu des pieds une seule seconde. Il y avait une petite erreur sur l'étiquette : c'était l'élixir d'arrêt. Ces fioles se ressemblent, madame. C'est tout le mal de mon métier.  
 
 *Relecture : à relire*
 

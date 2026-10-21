@@ -250,7 +250,7 @@
   },
   "citadelle--messager--golem--l3--cache": {
     "status": "relire",
-    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+    "note": "Réécrit d'après la relecture de Mistral (2026-10-21). Avant : « — Personne d'autre n'était avec Galopin. Sauf vous. / — Il m'a annoncé que le baron envoyait un contrôleur des comptes. / — Une mauvaise nouvelle, pour vous. / — Pour lui. Je n'ai fait que retarder le courrier, au fond du puits de la Citadelle. Le porteur avec : il ne voulait pas le lâcher. »"
   },
   "grande-foire--percepteur": {
     "status": "relire",
@@ -262,7 +262,7 @@
   },
   "port--inspecteur": {
     "status": "relire",
-    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+    "note": "Réécrit d'après la relecture de Mistral (2026-10-21). Avant : « — Flacon. Racontez-moi. / — Il voulait coller un blâme à mon rhum : pas d'étiquette, pas de taxe. / — Il avait raison. / — Alors je lui ai fait goûter le stock. Tout le stock. Plus de rhum, plus de taxe, plus d'inspecteur. »"
   },
   "grand-port--colporteur": {
     "status": "relire",
@@ -329,8 +329,8 @@
     "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
   },
   "mine--messager--golem-dragon--i2-i2": {
-    "status": "valide",
-    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+    "status": "relire",
+    "note": "Réécrit d'après la relecture de Mistral (2026-10-21). Avant : « — Ventrapat. Racontez-moi. / — Il m'a annoncé que le baron fermait la mine. / — Et vous ? / — Une mine fermée, ça se rouvre en creusant. Je n'y peux rien s'il était en dessous du trou que je creusais... »"
   },
   "mine--alchimiste": {
     "status": "relire",
@@ -346,7 +346,7 @@
   },
   "academie--baronne": {
     "status": "relire",
-    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+    "note": "Réécrit d'après la relecture de Mistral (2026-10-21). Avant : « — Parlons de Grisemotte. / — Elle voulait racheter l'Académie et me mettre dehors, avec mes dettes. / — Vous lui avez répondu ? / — Elle s'est penchée sur moi pour me menacer. Elle sentait la bière. J'ai éternué, et le sort que je tenais prêt est parti. Je le tenais prêt pour elle, remarquez. »"
   },
   "academie--percepteur": {
     "status": "relire",
@@ -358,7 +358,7 @@
   },
   "forge--cousine": {
     "status": "relire",
-    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+    "note": "Réécrit d'après la relecture de Mistral (2026-10-21). Avant : « — Vous étiez seul avec Gondeberge. / — Elle réclamait sa part de la galerie que j'ai creusée sous la forge. / — Elle était à vous ? / — Je l'ai creusée. Je lui ai donné sa part : le bout, là où ça s'effondre. »"
   },
   "forge--percepteur--golem--i2": {
     "status": "relire",
@@ -370,7 +370,7 @@
   },
   "cimetiere--alchimiste--golem--i2": {
     "status": "relire",
-    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+    "note": "Réécrit d'après la relecture de Mistral (2026-10-21). Avant : « — Parlons de Aurifex. / — Il voulait changer mes économies en plomb. Mes économies, ce sont mes cercueils d'avance. / — En plomb, ils dureraient. / — C'est ce qu'il a dit. Je lui ai offert le premier, à l'essai. Doublé de plomb, il ne s'ouvre plus de l'intérieur. »"
   },
   "citadelle--cousine": {
     "status": "relire",
@@ -472,7 +472,8 @@
     "note": "Ne cite plus une autre pièce que celle du crime (2026-10-21). Avant : « — Je l'ai bordé moi-même. » | Ne cite plus une autre pièce que celle du crime (2026-10-21). Avant : « Puis il a demandé une chambre, gratuite, puisqu'il apportait la nouvelle. »"
   },
   "taverne--percepteur": {
-    "status": "valide"
+    "status": "relire",
+    "note": "Réécrit d'après la relecture de Mistral (2026-10-21). Avant : « — Racontez-moi, pour Corvéon. / — Il voulait m'imposer sur tout ce que je possède : des dettes, et le grimoire de Dewey. / — Il a voulu le saisir. / — Il m'a mis une bière sous le nez pour m'amadouer. Le sort est parti tout seul. »"
   },
   "marais--dresseuse": {
     "status": "relire",
@@ -480,7 +481,7 @@
   },
   "marais--percepteur": {
     "status": "relire",
-    "note": "Repassé : accident absurde ou trait mieux respecté."
+    "note": "Réécrit d'après la relecture de Mistral (2026-10-21). Avant : « — Personne d'autre n'était avec Liardin. Sauf vous. / — Il voulait taxer l'eau du marais, au litre, parce que j'y vis. / — Et il est tombé dedans. / — Il a voulu mesurer la profondeur. Je lui ai dit qu'il avait pied partout. *Blop.* »"
   },
   "mine--colporteur": {
     "status": "relire",
@@ -488,7 +489,7 @@
   },
   "mine--percepteur--dragon--i2": {
     "status": "relire",
-    "note": "Réécrit avec la nouvelle intro (2026-10-21), d'après ta note : « Il y a de l'idée mais la dernière réponse ne semble pas naturelle/cohérente avec le reste du dialogue. »"
+    "note": "Réécrit d'après la relecture de Mistral (2026-10-21). Avant : « — Racontez-moi, pour Sangsuard. / — Il voulait l'impôt sur mes pépites. Il ne me croyait pas quand je disais qu'elles étaient sous ses pieds. / — Alors vous lui avez montré. / — J'ai dit : « On creuse ? » Il a dit oui, sans bouger. Je creuse plus vite que je ne réfléchis : le trou faisait vingt toises avant que je pense à lui dire de se pousser. »"
   },
   "citadelle--inspecteur--dragon--l3": {
     "status": "relire",
@@ -516,11 +517,11 @@
   },
   "navire--inspecteur": {
     "status": "relire",
-    "note": "Écho-Écho : désordre lisible (relecture extérieure) (2026-10-21). Avant : « — Que s'est-il passé avec Trinquet ? / — Blâme ! Coco ! Blâme ! / — Il a mis un blâme au navire. / — Goûte ! Tonneau ! Plus près ! Plus près ! Plouf ! »"
+    "note": "Réécrit d'après la relecture de Mistral (2026-10-21). Avant : « — Que s'est-il passé avec Trinquet ? / — « Blâme ! Pas de taverne sur ce rafiot ! » Blâme ! Blâme ! / — Et ensuite ? / — Secret de l'équipage : « Le meilleur rhum est tout au fond du dernier tonneau ! » Coco répète. Tout au fond ! Monsieur se penche. Plus au fond ! Plouf ! »"
   },
   "navire--alchimiste--dragon--i2": {
     "status": "relire",
-    "note": "Écho-Écho : désordre lisible ; le dragon n'est pas dans la pièce du crime (2026-10-21). Avant : « — Racontez-moi, pour Cinabrin. / — Plomb ! Économies ! Coco ! / — Il voulait changer vos économies en plomb. / — Trésor ! Sous le dragon ! Réveille ! Pas ! Réveille ! »"
+    "note": "Réécrit d'après la relecture de Mistral (2026-10-21). Avant : « — Racontez-moi, pour Cinabrin. / — « Je change vos économies en plomb, gratuitement ! » Gratuit ! Coco méfiant ! / — Il cherchait où elles étaient cachées. / — Secret de Bâbord : « Le trésor est caché dans le canon ! » Monsieur passe la tête dedans. Coco répète le canonnier : « Mèche ! Feu ! » Coco tient la mèche. Boum ! »"
   },
   "navire--baronne--geant--i2": {
     "status": "relire",
@@ -576,10 +577,38 @@
   },
   "palais--alchimiste--dragon--i2": {
     "status": "relire",
-    "note": "Accordé à la pièce du crime de la solution (2026-10-21). Avant : « Je l'ai laissé essayer sur lui-même, devant le dragon. Le dragon aime l'or. »"
+    "note": "Réécrit d'après la relecture de Mistral (2026-10-21). Avant : « — Personne d'autre n'était avec Calcinus. Sauf vous, Majesté. / — Il a dit qu'il pouvait changer n'importe quoi en or. « Même un roi. » / — Et vous l'avez cru ? / — C'est pas faux, j'ai dit. Je l'ai laissé essayer sur lui-même. Il a réussi. Je l'ai fait fondre, pour les dettes du royaume. »"
   },
   "palais--nageuse--dragon--i2": {
     "status": "relire",
-    "note": "Accordé à la pièce du crime de la solution (2026-10-21). Avant : « « Respirer sous l'eau. » »"
+    "note": "Réécrit d'après la relecture de Mistral (2026-10-21). Avant : « — Et Nageoire ? / — Elle voulait m'apprendre à nager, madame. / — Vous avez refusé ? / — Je lui ai vendu un vœu à la place : « Ne plus jamais avoir besoin d'air. » Il a marché tout de suite. Je vends du rêve, madame. Pas de la garantie. »"
+  },
+  "bibliotheque--cousine--golem-dragon--i2-i2": {
+    "status": "relire",
+    "note": "Réécrit d'après la relecture de Mistral (2026-10-21). Avant : « — Ermengarde. Racontez-moi. / — Elle se disait ma cousine, par la branche des dragons de sa mère. Elle venait chercher sa part de mon trésor. / — Pendant que vous dormiez. / — Je me réveille toujours au pire moment. Pour elle. »"
+  },
+  "academie--dresseuse--geant--i2": {
+    "status": "relire",
+    "note": "Réécrit d'après la relecture de Mistral (2026-10-21). Avant : « — Et Sifflette ? / — Elle voulait m'emmener dans son cirque : « Le géant debout ! » Elle a crié « Hop ! », et je me suis levé. / — Vous ne vous levez jamais. / — Pardon, plafond. Lui, il est tombé sur elle. Moi, je me suis excusé auprès du bon. »"
+  },
+  "cimetiere--dresseuse": {
+    "status": "relire",
+    "note": "Réécrit d'après la relecture de Mistral (2026-10-21). Avant : « — Que s'est-il passé avec Griffette ? / — Elle voulait emmener Ambroise dans son cirque. Mon Ambroise. Je le garde pour une grande occasion. / — Quelle occasion ? / — Une recette. Elle, je l'ai changée en grenouille, pour qu'elle voie l'effet. Puis elle a coassé près de ma marmite. »"
+  },
+  "universite--messager": {
+    "status": "relire",
+    "note": "Réécrit d'après la relecture de Mistral (2026-10-21). Avant : « — Que s'est-il passé avec Éperon ? / — Il m'a annoncé que l'Académie avait gagné le concours des diplômes. L'Académie de Fizzlebarbe. / — Ce n'était pas sa faute. / — *Il renifle.* Il sentait l'Académie. Je lui ai offert un remontant. Zéro sur vingt, à l'odeur ; je l'avais préparé exprès. »"
+  },
+  "port--percepteur": {
+    "status": "relire",
+    "note": "Réécrit d'après la relecture de Mistral (2026-10-21). Avant : « — C'était vous, avec Rognard. / — Il voulait l'impôt sur tout ce que je possède. / — Vous ne possédez rien. / — Une carte au trésor. Je la lui ai donnée, avec mes indications. Il les a suivies à la lettre. Personne ne fait jamais ça. »"
+  },
+  "palais--inspecteur": {
+    "status": "relire",
+    "note": "Réécrit d'après la relecture de Mistral (2026-10-21). Avant : « — Que s'est-il passé avec Pinardon, Majesté ? / — Il a collé un blâme au palais : vin coupé à l'eau. / — C'est vrai ? / — Il a dit que mon vin était « à se noyer dedans ». C'est pas faux, j'ai dit. Je ne savais pas que c'était une expression. »"
+  },
+  "palais--abbesse--vouivre--i2": {
+    "status": "relire",
+    "note": "Réécrit d'après la relecture de Mistral (2026-10-21). Avant : « — Prudence. Racontez-moi. / — Elle m'a fait la morale, madame : vendre du rêve, c'est mentir. / — Vous lui avez répondu ? / — Je lui ai vendu un vœu de sainteté : « Monter au ciel sans attendre. » Je vouvoie même les vœux, madame. Ils obéissent mieux. »"
   }
 }

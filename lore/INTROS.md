@@ -42,11 +42,11 @@ Généré par `node tools/intros-md.js` depuis `lore/intros.json` (ne pas édite
 
 **Ouvertures**
 
-- *Première venue* : Au Sanglier Borgne, le tenancier m'a accueilli comme un vieil ami, puis il a compté mes pas jusqu'au comptoir. J'ai demandé un café ; on m'a servi une bière.
-- *2e affaire* : Retour au Sanglier Borgne. Aagrid m'a servi une bière avant que je dise un mot, et l'a notée sur mon ardoise.
-- *3e affaire* : Troisième mort au Sanglier Borgne. Mon ardoise a désormais sa propre ligne, entre celle de la fée et celle du mage.
-- *4e affaire* : Quatrième affaire à la taverne. Les habitués me gardent un tabouret ; Aagrid me compte le tabouret.
-- *Dernière* : Dernière affaire au Sanglier Borgne, j'espère. Aagrid m'a offert la bière, la première gratuite de l'histoire de la maison ; elle avait un arrière-goût de poire et de cognac, et ça m'a inquiété plus que le cadavre.
+- *Première venue* : Au Sanglier Borgne, on m'a accueilli comme un vieil ami, avant même de savoir mon nom. J'ai demandé un café ; on m'a servi une bière.
+- *2e affaire* : Retour au Sanglier Borgne. On m'a servi une bière avant que je dise un mot, et on l'a notée sur mon ardoise.
+- *3e affaire* : Troisième mort au Sanglier Borgne. Mon ardoise a désormais sa propre ligne, entre deux habitués qui doivent bien plus que moi.
+- *4e affaire* : Quatrième affaire à la taverne. Les habitués me gardent un tabouret, et ma bière arrive avant moi.
+- *Dernière* : Dernière affaire au Sanglier Borgne, j'espère. On m'a offert la bière, la première gratuite de l'histoire de la maison ; elle avait un arrière-goût de poire et de cognac, et ça m'a inquiété plus que le cadavre.
 
 **Mises en situation**
 
@@ -61,11 +61,11 @@ Généré par `node tools/intros-md.js` depuis `lore/intros.json` (ne pas édite
 **Ouvertures**
 
 - *Première venue* : À la Mine des Nains, on m'a tendu un casque et une lanterne. Ici, tout le monde a une pioche, et personne n'a d'alibi.
-- *2e affaire* : Retour à la Mine des Nains. Le contremaître a chronométré ma descente : trop lente, paraît-il.
+- *2e affaire* : Retour à la Mine des Nains. On m'a rendu mon casque ; il a gardé la forme de ma dernière bosse.
 - *3e affaire* : Troisième mort au fond de la mine. Les nains m'ont donné ma propre pioche, « au cas où ». Je ne sais toujours pas au cas où quoi.
-- *4e affaire* : Quatrième affaire à la mine. On m'a demandé « On creuse ? » avant même de me dire bonjour. J'ai dit non ; ils ont creusé quand même.
-- *5e affaire* : Cinquième descente à la mine. Le contremaître m'a compté une pause de trop, et l'a retenue sur une paie que je ne touche pas.
-- *Dernière* : Dernière descente à la Mine des Nains, j'espère. Ce matin, le contremaître a arrêté son chronomètre en me voyant : il dit que, pour moi, le temps est compté.
+- *4e affaire* : Quatrième affaire à la mine. Les galeries se ressemblent toutes ; j'ai fini par semer des miettes, comme dans les contes.
+- *5e affaire* : Cinquième descente à la mine. Ma lanterne grésille quand je passe ; les nains trouvent ça de mauvais augure, et eux, les augures, ils les prennent au sérieux.
+- *Dernière* : Dernière descente à la Mine des Nains, j'espère. Ce matin, toutes les lampes se sont tournées vers moi en même temps. Même ici, on m'attend.
 
 **Mises en situation**
 
@@ -101,8 +101,8 @@ Généré par `node tools/intros-md.js` depuis `lore/intros.json` (ne pas édite
 **Ouvertures**
 
 - *Première venue* : À la Bibliothèque Interdite, on m'a demandé d'enquêter en silence. Je chuchote mes questions ; on me répond en hurlant « chut ».
-- *2e affaire* : Retour à la Bibliothèque Interdite. Le bibliothécaire m'a délivré une carte de lecteur, et un avertissement pour bruit de pas.
-- *3e affaire* : Troisième mort à la bibliothèque. J'ai appris à enquêter par écrit ; on me rend mes billets annotés, avec les fautes en rouge.
+- *2e affaire* : Retour à la Bibliothèque Interdite. On m'a délivré une carte de lecteur, et un avertissement pour bruit de pas.
+- *3e affaire* : Troisième mort à la bibliothèque. J'ai appris à enquêter par écrit ; ici, même mes questions finissent au registre.
 - *4e affaire* : Quatrième affaire chez les livres. Mon dossier a désormais une cote, rangé entre « Crimes » et « Crimes, suite ».
 - *5e affaire* : Cinquième visite à la bibliothèque. Je chuchote si bas que je ne m'entends plus moi-même ; on m'a quand même dit « chut ».
 - *Dernière* : Dernière affaire à la Bibliothèque Interdite, j'espère. Pour la première fois, personne n'a crié « chut » quand je suis entré, et ce silence-là m'a glacé.
@@ -121,10 +121,10 @@ Généré par `node tools/intros-md.js` depuis `lore/intros.json` (ne pas édite
 **Ouvertures**
 
 - *Première venue* : La Forge du Dragon fume plus que d'habitude. Le dragon dort ; j'aimerais qu'il continue.
-- *2e affaire* : Retour à la Forge du Dragon. Le dragon dort toujours, et j'ai appris à marcher sur la pointe des pieds.
+- *2e affaire* : Retour à la Forge du Dragon. J'ai appris à marcher sur la pointe des pieds, et à ne pas demander pourquoi le sol est tiède.
 - *3e affaire* : Troisième mort à la forge. La fumée me connaît maintenant ; elle me suit jusqu'à l'auberge.
 - *4e affaire* : Quatrième affaire à la forge. On m'a forgé un tabouret à mon nom ; il est encore tiède, et un peu tordu.
-- *5e affaire* : Cinquième visite à la Forge du Dragon. Le dragon ronfle plus fort ; les habitués disent qu'il rêve de moi.
+- *5e affaire* : Cinquième visite à la Forge du Dragon. On m'a forgé une clé du lieu ; elle ouvre toutes les portes, sauf celle qu'on entend grincer la nuit.
 - *Dernière* : Dernière affaire à la Forge du Dragon, j'espère. Même les enclumes se sont tues quand je suis entré.
 
 **Mises en situation**
@@ -192,7 +192,7 @@ Généré par `node tools/intros-md.js` depuis `lore/intros.json` (ne pas édite
 - *l'affaire Ursule* : L'abbesse Ursule faisait la quête un soir d'examens, et elle accompagnait chaque pièce d'un sermon contre la boisson. Les élèves révisaient ; elle ne les a pas laissés réviser. On l'a retrouvée en plein sermon, figée au milieu d'un mot.
 - *l'affaire Chiffonnet* : Le colporteur Chiffonnet vendait aux élèves des chaudrons « garantis incassables », et il remboursait volontiers, après démonstration. Quelqu'un a demandé la démonstration.
 - *l'affaire Azotin* : L'alchimiste Azotin proposait aux élèves de transformer leurs économies, et il leur dictait ses formules pour qu'ils s'entraînent. Quelqu'un a récité de travers. On l'a retrouvé lourd comme du plomb, et pour cause.
-- *l'affaire Grisemotte* : La baronne Grisemotte voulait racheter l'Académie et mettre dehors tous ceux qui lui devaient de l'argent. Elle a passé la soirée à dresser la liste, de très près, en postillonnant. Elle ne l'a jamais finie.
+- *l'affaire Grisemotte* : La baronne Grisemotte voulait racheter l'Académie et mettre dehors tous ceux qui lui devaient de l'argent. Elle a passé la soirée à dresser la liste, à voix haute, pour bien la faire goûter à tout le monde. Elle ne l'a jamais finie.
 - *l'affaire Ponctionnin* : Le percepteur Ponctionnin voulait taxer tout le matériel de l'Académie, pièce par pièce, et emporter un gage sur-le-champ. Il a choisi un gage encore chaud.
 - *l'affaire Sifflette* : La dresseuse Sifflette cherchait un numéro spectaculaire pour son cirque. Elle a cru l'avoir trouvé, et elle a lancé un « Hop ! » sonore. Le plafond n'a pas apprécié.
 
@@ -216,7 +216,7 @@ Généré par `node tools/intros-md.js` depuis `lore/intros.json` (ne pas édite
 - *l'affaire Clotilde* : La cousine Clotilde réclamait sa part d'un héritage, et elle avait jeté son dévolu sur un vieux secret de famille, transmis de bouche à oreille. Elle a insisté pour l'apprendre. Elle l'a appris de l'intérieur.
 - *l'affaire Fumagal* : L'alchimiste Fumagal méprisait les potions des autres, qu'il traitait de bricolage, et il se vantait de faire de la vraie science. Il a goûté tout ce qu'on lui a servi, pour juger. Il a eu tort de reprendre.
 - *l'affaire Blâmard* : L'inspecteur des tavernes Blâmard a inspecté la Citadelle comme une auberge, et il a tout noté, le bruit compris. Il a donné deux étoiles, en se plaignant. On lui a fait visiter le reste ; il n'a pas fini la visite.
-- *l'affaire Galopin* : Le messager Galopin apportait une lettre du baron annonçant une visite très désagréable pour certains, et il refusait de la lâcher avant de l'avoir remise en mains propres. On a retrouvé la lettre et le messager ensemble, au fond du puits.
+- *l'affaire Galopin* : Le messager Galopin apportait une lettre du baron annonçant une visite très désagréable pour certains, et il refusait de la lâcher avant de l'avoir remise en mains propres. On l'a retrouvé la lettre toujours en main, pliée.
 
 ## La Foire aux Sortilèges
 
@@ -255,9 +255,9 @@ Généré par `node tools/intros-md.js` depuis `lore/intros.json` (ne pas édite
 **Mises en situation**
 
 - *l'affaire Expulsin* : L'huissier Expulsin est venu saisir des biens au cimetière, et il a tout inventorié, jusqu'aux cercueils vides. Il voulait savoir ce qu'ils valaient de l'intérieur. On l'a retrouvé là où il voulait regarder.
-- *l'affaire Griffette* : La dresseuse Griffette cherchait au cimetière une bête rare pour son cirque, et elle avait repéré la plus rare de toutes. Quelqu'un tenait à la garder. On a retrouvé ses vêtements, vides.
+- *l'affaire Griffette* : La dresseuse Griffette cherchait au cimetière une bête rare pour son cirque, et elle avait repéré la plus rare de toutes. Quelqu'un tenait à la garder, pour une grande occasion. Elle a voulu se servir elle-même.
 - *l'affaire Furtif* : Le messager Furtif apportait un nouvel édit du baron sur les enterrements, et il est arrivé un samedi soir, en retard. Il voulait repartir avant minuit. Il est resté.
-- *l'affaire Aurifex* : L'alchimiste Aurifex proposait de tout changer en plomb, « ça dure plus longtemps », et il trouvait que le cimetière manquait de solidité. Il a accepté un essai gratuit. On l'a retrouvé enfermé dans son propre argument.
+- *l'affaire Aurifex* : L'alchimiste Aurifex proposait de tout changer en plomb, « ça dure plus longtemps », et il trouvait que le cimetière manquait de solidité. Il a voulu juger sur pièce. La pièce est une tombe de plus.
 - *l'affaire Curiosus* : Le touriste Curiosus revenait chaque soir dessiner le même coin du cimetière, le nez en l'air. Il cherchait toujours le meilleur angle. Il ne regardait jamais où il mettait les pieds.
 - *l'affaire Radegonde* : L'abbesse Radegonde faisait la quête entre les tombes, et elle reprochait aux habitués leurs drôles de manies. Elle trouvait le cimetière beaucoup trop accueillant. On lui a pourtant trouvé une place.
 - *l'affaire Ronce* : La chasseuse de primes Ronce était venue capturer une tête mise à prix, et pour surprendre sa cible, elle s'est cachée dans le meilleur endroit du cimetière. Elle a attendu longtemps. On l'a retrouvée là, au même endroit.
@@ -280,7 +280,7 @@ Généré par `node tools/intros-md.js` depuis `lore/intros.json` (ne pas édite
 - *l'affaire Breloquin* : Le colporteur Breloquin revendait des fioles à bas prix aux étudiants, sans jamais dire d'où elles venaient. Certaines avaient déjà un propriétaire. On l'a retrouvé au milieu de sa marchandise, toutes les fioles débouchées.
 - *l'affaire Sirotin* : L'inspecteur des tavernes Sirotin cherchait de quoi boire à l'Université, et il a goûté tout ce qui ressemblait à un alcool. Il notait chaque verre sur dix. Le dernier a obtenu la note maximale.
 - *l'affaire Bouée* : La nageuse Bouée donnait sa leçon de respiration à tous ceux qui voulaient bien l'écouter, et aux autres. Elle répétait sans cesse la même consigne. Quelqu'un a fini par l'écouter.
-- *l'affaire Éperon* : Le messager Éperon apportait les résultats du concours des diplômes, et l'Université n'était pas la gagnante. Il venait tout droit de l'Académie, et il ne s'en cachait pas. On lui a offert un remontant pour la route.
+- *l'affaire Éperon* : Le messager Éperon apportait les résultats du concours des diplômes, et l'Université n'était pas la gagnante. Il venait tout droit de l'Académie, et il ne s'en cachait pas. On lui a fait goûter la spécialité de la maison, pour la route.
 - *l'affaire Péageon* : Le percepteur Péageon a voulu taxer chaque livre de l'Université, et il les comptait à voix haute, un par un. Il y en avait beaucoup. Il n'est pas allé au bout du compte.
 - *l'affaire Gobetout* : L'huissier Gobetout saisissait d'abord et posait les questions ensuite, et il a saisi tout ce qui traînait sur les paillasses. Certaines choses étaient encore chaudes. Il n'a jamais eu le temps de poser ses questions.
 
@@ -322,7 +322,7 @@ Généré par `node tools/intros-md.js` depuis `lore/intros.json` (ne pas édite
 
 - *l'affaire Raflard* : L'huissier Raflard est venu saisir des biens au port, et il a tout annoncé à voix haute, devant tout le monde. On l'a repêché au pied d'une planche qui dépassait un peu trop.
 - *l'affaire Missivin* : Le messager Missivin lisait une lettre du baron qui ordonnait de jeter par-dessus bord toute la marchandise sans étiquette. Il l'a lue debout, au bord de l'eau, en articulant bien. On l'a repêché à marée basse.
-- *l'affaire Rognard* : Le percepteur Rognard voulait l'impôt sur tout ce que possédaient les gens du port, et il s'est fait remettre une carte au trésor en paiement. Il a demandé son chemin. On le lui a indiqué.
+- *l'affaire Rognard* : Le percepteur Rognard voulait l'impôt sur tout ce que possédaient les gens du port, et il s'est fait remettre une carte au trésor en paiement. Il a demandé son chemin. On le lui a indiqué. On l'a retrouvé sa carte toujours en main.
 - *l'affaire Ritournel* : Le troubadour Ritournel chantait sur le port une chanson qui en disait beaucoup trop sur certaines caisses. On lui a proposé un contrat très généreux. Il l'a signé sans le lire.
 - *l'affaire Flacon* : L'inspecteur des tavernes Flacon voulait coller un blâme à tout le rhum sans étiquette du port. Il a exigé de goûter avant de rédiger. Il a beaucoup goûté.
 - *l'affaire Clapote* : La nageuse Clapote voulait apprendre à nager aux gens du port, en commençant par les plus têtus. Son premier élève a voulu lui donner une leçon à son tour. Elle n'a pas aimé la sienne.
@@ -345,7 +345,7 @@ Généré par `node tools/intros-md.js` depuis `lore/intros.json` (ne pas édite
 - *l'affaire Arsénio* : L'alchimiste Arsénio était venu proposer ses services, masqué pour passer inaperçu, et on l'a pris pour quelqu'un d'autre toute la soirée. À minuit, il a ôté son masque en riant. On le lui a remis, un peu trop serré.
 - *l'affaire Charité* : L'abbesse Charité faisait la quête parmi les masques, et elle exigeait qu'on donne jusqu'à ce que ça fasse mal. Elle a insisté auprès de chaque invité. On l'a retrouvée à côté d'un chandelier en or, un peu cabossé.
 - *l'affaire Grappin* : L'huissier Grappin venait saisir des biens pour éponger des dettes, et il avait dressé la liste de ce qu'il emporterait. Il parlait volontiers de trancher dans le vif. Quelqu'un l'a entendu de travers.
-- *l'affaire Fatras* : Le colporteur Fatras revendait au bal des bijoux de seconde main, dont certains semblaient avoir déjà appartenu à un invité. Il a trouvé un acheteur pour sa plus belle pièce. L'acheteur a payé comptant, et lourdement.
+- *l'affaire Fatras* : Le colporteur Fatras revendait au bal des bijoux de seconde main, dont certains semblaient avoir déjà appartenu à un invité. Il a trouvé preneur pour sa plus belle pièce, et l'affaire s'est conclue à la nuit tombée. Personne n'a vu l'acheteur repartir.
 - *l'affaire Mirliflore* : La baronne Mirliflore rendait une visite de courtoisie, et elle complimentait chaque bijou du bal avec un peu trop d'enthousiasme. Elle répétait qu'elle aurait tout donné pour certains. On l'a retrouvée parée d'un collier qui n'était pas le sien.
 - *l'affaire Rapidon* : Le messager Rapidon exigeait qu'on s'incline devant la lettre du baron, chacun à son tour et bien bas. Il a fait le tour des invités. Le dernier s'est incliné avec beaucoup trop de bonne volonté.
 - *l'affaire Palmette* : La nageuse Palmette voulait donner une leçon de natation au milieu du bal, et elle exigeait qu'on se mette en tenue. Certains invités tenaient beaucoup à leur costume. Elle a tiré un peu trop fort.
@@ -410,7 +410,7 @@ Généré par `node tools/intros-md.js` depuis `lore/intros.json` (ne pas édite
 
 - *l'affaire Mortifia* : L'abbesse Mortifia faisait la quête à bord, en jurant que chaque écu irait au couvent. Quelqu'un a laissé entendre le contraire, devant tout l'équipage. Elle a perdu l'équilibre en voulant le faire taire.
 - *l'affaire Mouillette* : La nageuse Mouillette se moquait, devant tout l'équipage, de ceux qui ne savaient pas nager. Quelqu'un a voulu lui offrir un bain. On l'a retrouvée à sec, ce qui pour une nageuse est une drôle de fin.
-- *l'affaire Trinquet* : L'inspecteur des tavernes Trinquet a collé un blâme au navire, faute de taverne, et il voulait goûter le contenu de chaque tonneau avant de partir. On l'a encouragé à se pencher. On l'a retrouvé la tête la première dans le dernier tonneau.
+- *l'affaire Trinquet* : L'inspecteur des tavernes Trinquet a collé un blâme au navire, faute de taverne, et il voulait goûter le contenu de chaque tonneau avant de partir. Il a voulu goûter d'avance, au mauvais endroit, à la mauvaise heure. On l'a retrouvé sous la palanquée de midi, sa liste de blâmes intacte.
 - *l'affaire Tondulard* : Le percepteur Tondulard voulait taxer tout ce qui se buvait à bord, et il exigeait de vérifier chaque déclaration lui-même. Il a insisté sur une cave un peu particulière. On l'a retrouvé au matin, la déclaration à la main.
 - *l'affaire Cinabrin* : L'alchimiste Cinabrin voulait changer en plomb les économies de l'équipage, et il cherchait surtout où elles étaient cachées. Quelqu'un lui a soufflé une cachette. Il est allé y regarder de très près.
 - *l'affaire Fanfreluche* : La baronne Fanfreluche voulait racheter le navire et mettre l'équipage dehors, et elle avait un faible pour tout ce qui brillait. Quelqu'un lui a signalé un bijou caché tout au fond d'un coffre. Elle s'est penchée pour le prendre.
@@ -452,7 +452,7 @@ Généré par `node tools/intros-md.js` depuis `lore/intros.json` (ne pas édite
 
 - *l'affaire Pincebec* : La baronne Pincebec voulait racheter le palais, et elle répétait qu'elle comptait bien y finir ses jours. Elle a été exaucée plus vite que prévu. On l'a retrouvée le soir même, et elle n'est jamais repartie.
 - *l'affaire Traquette* : La chasseuse de primes Traquette venait arrêter quelqu'un pour une vieille affaire, une prime à la clé, et elle donnait des ordres à tout le monde. Elle a ordonné à quelqu'un de rentrer chez lui. On ne l'a retrouvée nulle part, mais on l'entend parfois, de très loin.
-- *l'affaire Pinardon* : L'inspecteur des tavernes Pinardon a goûté le vin du palais et l'a trouvé coupé à l'eau. Il a lancé une expression malheureuse devant la mauvaise personne. On l'a retrouvé noyé dans le vin qu'il critiquait.
+- *l'affaire Pinardon* : L'inspecteur des tavernes Pinardon a goûté le vin du palais et l'a trouvé coupé à l'eau. Il a lancé une expression malheureuse devant la mauvaise personne. On l'a retrouvé noyé, son blâme encore à la main.
 - *l'affaire Brunehaut* : La cousine Brunehaut réclamait sa part d'un héritage avant même qu'il y ait un mort pour le laisser. Elle a demandé un peu trop tôt. On l'a retrouvée changée en pierre, l'air très patient.
 - *l'affaire Prudence* : L'abbesse Prudence faisait la quête au palais, et elle sermonnait tous ceux qui vendaient du rêve. Elle a fini par acheter un vœu, pour montrer l'exemple. Il a été exaucé.
 - *l'affaire Calcinus* : L'alchimiste Calcinus se vantait de pouvoir changer n'importe quoi en or, et même n'importe qui. On l'a laissé essayer sur lui-même. Il a brillé un instant, puis plus du tout.

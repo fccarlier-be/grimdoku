@@ -19,6 +19,11 @@ test('aucune variable de gabarit oubliée dans les textes générés', () => {
   for (const p of PUZZLES) assert.doesNotMatch(p.title + p.intro + (p.introBody || '') + p.epilogue, /\{[A-Za-z]+\}/, p.id);
 });
 
+test('chaque épilogue d\'une grille active a quatre répliques (enquêteur, coupable, enquêteur, coupable)', () => {
+  for (const p of PUZZLES.filter(q => ACTIVES.has(q.id)))
+    assert.equal(p.epilogue.split('\n').filter(l => l.startsWith('—')).length, 4, p.id);
+});
+
 test('élision devant un nom qui commence par une voyelle (« Parlons d\'Ostentine », pas « de Ostentine »)', () => {
   for (const p of PUZZLES) assert.doesNotMatch(p.intro + (p.introBody || '') + p.epilogue,
     /(^|[^\p{L}])(de|que|jusque) [AEIOUYÀÂÉÈÊËÎÏÔÛ][a-zàâéèêëîïôûç]/u, p.id);
