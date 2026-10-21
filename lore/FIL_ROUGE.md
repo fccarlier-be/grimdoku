@@ -155,3 +155,53 @@ Chaque lettre épingle une pièce (l'étiquette ci-dessous) sous une question. L
 > Il n'a rien dit. Il a regardé le corbeau, longtemps, comme on regarde une chose qu'on a sous les yeux depuis trop longtemps pour la voir.
 
 *Note de l'enquêteur* : Il ne cherche pas un héritier. Il cherche quelqu'un à qui confier quelque chose. Et il ne sait pas à qui.
+
+## 4. Les archives du Palier zéro (après la révélation)
+
+Trouvées après l'affaire finale. Chacune répond à des questions du mur (entre parenthèses).
+
+### Le registre des réparations
+
+*Écrit de la main de Fizzlebarbe, il y a vingt ans* — répond à : Qu'est-ce qui manque sur les plans ?
+
+> Réparation du conduit nord du Nœud. Fuite de brume au troisième palier.  
+>
+> Apprenti : Fernand. Bonne main, bon œil, pose trop de questions.  
+>
+> Risques : je ne les lui ai pas dits. Il aurait refusé, et il fallait que ce soit fait.  
+>
+> La réparation tient. Fernand, non. Il a perdu la main, puis le reste.  
+>
+> Salaire : à régler.  
+>
+> La ligne n'a jamais été barrée.
+
+### Une note glissée dans le registre
+
+*Fizzlebarbe, il y a onze ans* — répond à : Que cache le grimoire de Dewey ?
+
+> Retrouvé dans l'escalier un grimoire de la bibliothèque, tamponné, perdu par le jeune Gribouille un soir où il n'avait rien à faire ici.  
+>
+> J'y ai glissé la clé de service du Palier zéro. Personne ne cherche une clé dans un livre que personne ne lit.  
+>
+> Dewey le réclamera un jour. D'ici là, il garde la porte mieux que moi.
+
+### Le vrai plan de la Tour
+
+*Un parchemin plié en quatre, sans signature* — répond à : Qu'est-ce qui manque sur les plans ? ; Qui se croit héritier ?
+
+> Entre le troisième et le quatrième palier, un étage que les plans publics n'ont jamais montré : le Palier zéro, rangé dans un pli de la Tour.  
+>
+> Deux escaliers y mènent ; un seul en revient. Ceux qui montent comptent trois marches de plus qu'en descendant.  
+>
+> En marge, de la main de Fizzlebarbe : « La Tour n'est à personne. Elle est à celui qui la garde. »
+
+### Le relevé des brumes
+
+*Tenu depuis quatre siècles, les dernières pages d'une écriture tremblante* — répond à : Pourquoi la brume se comporte-t-elle bizarrement ? ; Que veut vraiment Fizzlebarbe ?
+
+> Le Nœud tient les six contrées comme une main tient des rênes : sans qu'on la voie, tant qu'elle ne lâche pas.  
+>
+> Cette année : la brume descend de la Tour par temps calme ; à l'Académie, une porte a fait deux pas ; au Palais, des djinns ont mesuré quelque chose sans savoir quoi.  
+>
+> Dernière ligne : « Je tiens de moins en moins bien. Il faut que quelqu'un prenne les rênes. Je ne sais pas encore qui, et je n'ose pas le leur dire. »

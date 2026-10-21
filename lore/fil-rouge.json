@@ -1,5 +1,5 @@
 {
-  "_doc": "Phase 2 de la roadmap (François, 2026-10-21) : le fil rouge dévoilé pendant le jeu. Le mur de l'affaire de la Tour se construit au rythme des lettres ouvertes (nombre, pas ordre : l'ordre des lieux est libre). 'declics' : note de l'enquêteur à N lettres ; 'questions' : petites questions, ouvertes à leur première pièce, fermées par une déduction quand toutes leurs pièces sont là ; 'pieces' : une par lettre (lieu → question, étiquette épinglée) ; 'visites' : trois scènes à la Tour, Fizzlebarbe vivant. Jamais le nom d'Augure avant la révélation ; jamais d'indice sur les grilles. Relu contre lore/GRIMDOKU_MATRICE_CONTINUITE.md.",
+  "_doc": "Phase 2 de la roadmap (François, 2026-10-21) : le fil rouge dévoilé pendant le jeu. Le mur de l'affaire de la Tour se construit au rythme des lettres ouvertes (nombre, pas ordre : l'ordre des lieux est libre). 'declics' : note de l'enquêteur à N lettres ; 'questions' : petites questions, ouvertes à leur première pièce, fermées par une déduction quand toutes leurs pièces sont là ; 'pieces' : une par lettre (lieu → question, étiquette épinglée) ; 'visites' : trois scènes à la Tour, Fizzlebarbe vivant. Jamais le nom d'Augure avant la révélation ; jamais d'indice sur les grilles. Relu contre lore/GRIMDOKU_MATRICE_CONTINUITE.md. 'archives' : les archives du Palier zéro, trouvées après la révélation de l'affaire finale (elles confirment ce que le mur faisait deviner).",
   "declics": [
     {
       "lettres": 1,
@@ -175,6 +175,42 @@
       "titre": "Ce que l'on transmet",
       "texte": "La brume entrait par les fenêtres de la Tour. Fizzlebarbe ne s'en souciait plus : assis, une couverture sur les genoux, il avait l'air d'avoir enfin son âge.\n« On me demande tous les jours à qui je léguerai la Tour. Ce que je cherche à transmettre n'est pas un bâtiment. » Il m'a regardé. « Si l'on vous confiait une chose que personne ne doit voir, et dont tout le monde dépend, à qui la donneriez-vous ? »\nJ'ai répondu : « À quelqu'un qui n'en voudrait pas. »\nIl n'a rien dit. Il a regardé le corbeau, longtemps, comme on regarde une chose qu'on a sous les yeux depuis trop longtemps pour la voir.",
       "note": "Il ne cherche pas un héritier. Il cherche quelqu'un à qui confier quelque chose. Et il ne sait pas à qui."
+    }
+  ],
+  "archives": [
+    {
+      "titre": "Le registre des réparations",
+      "sous": "Écrit de la main de Fizzlebarbe, il y a vingt ans",
+      "repond": [
+        "plans"
+      ],
+      "texte": "Réparation du conduit nord du Nœud. Fuite de brume au troisième palier.\nApprenti : Fernand. Bonne main, bon œil, pose trop de questions.\nRisques : je ne les lui ai pas dits. Il aurait refusé, et il fallait que ce soit fait.\nLa réparation tient. Fernand, non. Il a perdu la main, puis le reste.\nSalaire : à régler.\nLa ligne n'a jamais été barrée."
+    },
+    {
+      "titre": "Une note glissée dans le registre",
+      "sous": "Fizzlebarbe, il y a onze ans",
+      "repond": [
+        "grimoire"
+      ],
+      "texte": "Retrouvé dans l'escalier un grimoire de la bibliothèque, tamponné, perdu par le jeune Gribouille un soir où il n'avait rien à faire ici.\nJ'y ai glissé la clé de service du Palier zéro. Personne ne cherche une clé dans un livre que personne ne lit.\nDewey le réclamera un jour. D'ici là, il garde la porte mieux que moi."
+    },
+    {
+      "titre": "Le vrai plan de la Tour",
+      "sous": "Un parchemin plié en quatre, sans signature",
+      "repond": [
+        "plans",
+        "heritiers"
+      ],
+      "texte": "Entre le troisième et le quatrième palier, un étage que les plans publics n'ont jamais montré : le Palier zéro, rangé dans un pli de la Tour.\nDeux escaliers y mènent ; un seul en revient. Ceux qui montent comptent trois marches de plus qu'en descendant.\nEn marge, de la main de Fizzlebarbe : « La Tour n'est à personne. Elle est à celui qui la garde. »"
+    },
+    {
+      "titre": "Le relevé des brumes",
+      "sous": "Tenu depuis quatre siècles, les dernières pages d'une écriture tremblante",
+      "repond": [
+        "brume",
+        "fizzlebarbe"
+      ],
+      "texte": "Le Nœud tient les six contrées comme une main tient des rênes : sans qu'on la voie, tant qu'elle ne lâche pas.\nCette année : la brume descend de la Tour par temps calme ; à l'Académie, une porte a fait deux pas ; au Palais, des djinns ont mesuré quelque chose sans savoir quoi.\nDernière ligne : « Je tiens de moins en moins bien. Il faut que quelqu'un prenne les rênes. Je ne sais pas encore qui, et je n'ose pas le leur dire. »"
     }
   ]
 }

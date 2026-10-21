@@ -20,6 +20,9 @@ const out = ['# Le fil rouge pendant le jeu — textes à relire', '',
     return [`### ${Q.titre} (${ps.length} pièces)`, '', ...ps.map(([pl, p]) => `- **${title(pl)}** — *« ${p.etiquette} »*  \n  Lettre : ${L[pl]}`), '', '**Déduction** :', '', q(Q.deduction), ''];
   }),
   '## 3. Les trois visites à la Tour', '',
-  ...F.visites.flatMap(v => [`### À ${v.lettres} lettres — ${v.titre}`, '', q(v.texte), '', `*Note de l'enquêteur* : ${v.note}`, ''])];
+  ...F.visites.flatMap(v => [`### À ${v.lettres} lettres — ${v.titre}`, '', q(v.texte), '', `*Note de l'enquêteur* : ${v.note}`, '']),
+  '## 4. Les archives du Palier zéro (après la révélation)', '',
+  'Trouvées après l\'affaire finale. Chacune répond à des questions du mur (entre parenthèses).', '',
+  ...(F.archives || []).flatMap(a => [`### ${a.titre}`, '', `*${a.sous}* — répond à : ${a.repond.map(k => F.questions[k].titre).join(' ; ')}`, '', q(a.texte), ''])];
 fs.writeFileSync(path.join(ROOT, 'lore/FIL_ROUGE.md'), out.join('\n'));
 console.log('lore/FIL_ROUGE.md');
