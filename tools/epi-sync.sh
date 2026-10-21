@@ -24,6 +24,7 @@ case "$1" in
       const ids=new Set([...Object.keys(o.epilogues),...Object.keys(o.relecture),...Object.keys(OG)]);ids.delete('_doc');const diff=[];
       for(const id of ids){const w=[];if(o.epilogues[id]!==E[id])w.push('épilogue');if(JSON.stringify(o.relecture[id])!==JSON.stringify(R[id]))w.push('statut/note');
         if(o.intros&&OG[id]!==G[id])w.push('mise en situation');if(w.length)diff.push(id+' : '+w.join(', '));}
+      const C=JSON.parse(fs.readFileSync('lore/carnet-decouvertes.json','utf8'));if(o.carnet&&JSON.stringify(o.carnet)!==JSON.stringify(C))diff.push('carnet des habitués (découvertes)');
       if(diff.length){console.log('❌ relecture en ligne différente du projet ('+diff.length+') :\n  '+diff.join('\n  ')+'\n→ sh tools/epi-sync.sh pull, vérifier, refaire le build');process.exit(1)}
       console.log('✅ relecture en ligne identique au projet')" || exit 1
     echo "$NOW" > "$STAMP" ;;
@@ -32,13 +33,14 @@ case "$1" in
       fs.writeFileSync('lore/epilogues.json',JSON.stringify(o.epilogues,null,2)+'\n');
       fs.writeFileSync('lore/epilogues-relecture.json',JSON.stringify(o.relecture,null,2)+'\n');
       if(o.intros&&o.intros.grilles)fs.writeFileSync('lore/intros.json',JSON.stringify(o.intros,null,2)+'\n');
+      if(o.carnet)fs.writeFileSync('lore/carnet-decouvertes.json',JSON.stringify(o.carnet,null,2)+'\n');
       console.log(Object.keys(o.epilogues).length-1+' épilogues récupérés')"
     echo "$NOW" > "$STAMP"
-    git diff --stat lore/epilogues.json lore/epilogues-relecture.json lore/intros.json ;;
+    git diff --stat lore/epilogues.json lore/epilogues-relecture.json lore/intros.json lore/carnet-decouvertes.json ;;
   push)
     if [ -f "$STAMP" ] && [ "$(cat "$STAMP")" != "$NOW" ]; then
       echo "❌ des épilogues ont été modifiés en ligne depuis le dernier pull : sh tools/epi-sync.sh pull d'abord"; exit 1; fi
-    node -e "const fs=require('fs');process.stdout.write(JSON.stringify({epilogues:JSON.parse(fs.readFileSync('lore/epilogues.json','utf8')),relecture:JSON.parse(fs.readFileSync('lore/epilogues-relecture.json','utf8')),intros:JSON.parse(fs.readFileSync('lore/intros.json','utf8'))}))" \
+    node -e "const fs=require('fs');process.stdout.write(JSON.stringify({epilogues:JSON.parse(fs.readFileSync('lore/epilogues.json','utf8')),relecture:JSON.parse(fs.readFileSync('lore/epilogues-relecture.json','utf8')),intros:JSON.parse(fs.readFileSync('lore/intros.json','utf8')),carnet:JSON.parse(fs.readFileSync('lore/carnet-decouvertes.json','utf8'))}))" \
       | curl -fsS -u "francois:$PASS" -X POST -H 'Content-Type: application/json' --data-binary @- "$URL/import"; echo
     curl -fsS -u "francois:$PASS" "$URL/export" | shasum | cut -c1-16 > "$STAMP" ;;
   *) echo "usage : sh tools/epi-sync.sh pull|push|check"; exit 1 ;;

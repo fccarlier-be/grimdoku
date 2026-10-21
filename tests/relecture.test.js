@@ -16,7 +16,8 @@ test('relecture : la mise en situation se modifie comme l\'épilogue', async () 
   const id = 'taverne--inspecteur';
   fs.writeFileSync(path.join(tmp, 'bundle.json'), JSON.stringify(context([id])));
   fs.mkdirSync(path.join(tmp, 'seed'));
-  for (const f of ['epilogues.json', 'epilogues-relecture.json', 'intros.json']) fs.copyFileSync(path.join(ROOT, 'lore', f), path.join(tmp, 'seed', f));
+  fs.writeFileSync(path.join(tmp, 'noms.json'), JSON.stringify({ gobelin: 'Bakchich', roi: 'Dagobert' }));
+  for (const f of ['epilogues.json', 'epilogues-relecture.json', 'intros.json', 'carnet-decouvertes.json']) fs.copyFileSync(path.join(ROOT, 'lore', f), path.join(tmp, 'seed', f));
   const port = 20000 + Math.floor(Math.random() * 20000);
   const srv = spawn(process.execPath, [path.join(ROOT, 'tools/relecture.js')], {
     env: { ...process.env, EPI_BUNDLE: path.join(tmp, 'bundle.json'), EPI_SEED: path.join(tmp, 'seed'), EPI_DATA: path.join(tmp, 'data'), PORT: String(port) },
@@ -36,6 +37,14 @@ test('relecture : la mise en situation se modifie comme l\'épilogue', async () 
     const exp = await (await fetch(url + 'export')).json();
     assert.equal(exp.intros.grilles[id], saved, 'exportée pour epi-sync');
     assert.ok((await (await fetch(url)).text()).includes('intro-ed'), 'champ modifiable dans la page');
+    // carnet des habitués : seul le texte des découvertes se modifie
+    const carnet = await (await fetch(url + 'carnet')).json();
+    const bak = carnet.find(h => h.t === 'gobelin');
+    assert.equal(bak.nom, 'Bakchich');
+    const textes = bak.l.map((d, i) => i === 0 ? d.texte + ' Retouché.' : d.texte);
+    assert.ok((await (await fetch(url + 'carnet-save', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ t: 'gobelin', textes }) })).json()).ok);
+    const exp2 = await (await fetch(url + 'export')).json();
+    assert.ok(exp2.carnet.gobelin[0].texte.endsWith('Retouché.') && exp2.carnet.gobelin[0].seuil === 3, 'enregistré, seuil inchangé');
   } finally {
     srv.kill();
     fs.rmSync(tmp, { recursive: true, force: true });

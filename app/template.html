@@ -265,6 +265,11 @@ header.top { display: flex; align-items: center; gap: 10px; }
 .nb-desc { font: italic 400 19px/34px var(--f-hand); margin: 0 0 0 4px; color: #6e5434; }
 .trait-em { font-weight: 700; }
 .nb-desc .trait-em { color: #a3201a; }
+.nb-decs { margin: 10px 0 0 4px; }
+.nb-dec { margin: 0 0 8px; font: 400 18px/30px var(--f-hand); color: #3a2a18; }
+.nb-dec.relation::before { content: "· "; color: #a3201a; }
+.nb-dec.neuve { background: linear-gradient(transparent 60%, rgba(240, 169, 58, .35) 60%); }
+.nb-next { margin: 0; font: italic 400 16px/28px var(--f-hand); color: #8a6a3e; }
 .nb-tic { font: 400 24px/34px var(--f-quill); margin: 0 0 0 4px; color: #2e2014; }
 .nb-seen { font: 400 22px/34px var(--f-quill); margin: 0 0 0 4px; color: #3b2a18; }
 .nb-seen span { color: #7a5c38; }
@@ -1237,7 +1242,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
           : `<img class="desk-deco s${i}" src="${src}" alt="" aria-hidden="true">`).join('')}
         ${item('dk-dossiers', 'deskDossiers', `Dossiers classés (${nSolved})`, img('dossiers', 'pile'))}
         ${item(`dk-lettres ${nu ? 'unread' : ''}`, 'deskLettres', `Lettres anonymes (${nl})`, img('lettres', 'liasse'), nu ? `<span class="newmark" aria-label="${nu} non lue${nu > 1 ? 's' : ''}"></span>` : '')}
-        ${item('dk-carnet', 'deskCarnet', "Carnet d'enquête", img('carnet', 'cuir'))}
+        ${item('dk-carnet', 'deskCarnet', "Carnet d'enquête", img('carnet', 'cuir'), newDecouvertes().length ? `<span class="newmark" aria-label="nouvelles découvertes"></span>` : '')}
         ${murOpen() ? item('dk-mur', 'deskMur', "L'affaire de la Tour", img('mur', 'liege')) : ''}
         ${fin ? item(`dk-enveloppe ${isSolved(FINAL) ? '' : 'fresh'}`, 'deskFinal', 'Une enveloppe scellée', img('enveloppe', 'env')) : ''}
         <span class="desk-glow" aria-hidden="true"></span>
@@ -1290,6 +1295,23 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
   // Carnet d'enquête : un vrai carnet ouvert, un habitant croisé par page (enquêtes résolues), écriture d'époque ;
   // page de garde avec le prologue à relire. Double page sur ordinateur, une page sur téléphone.
   let carnetAt = 0; // première page affichée
+  // découvertes du carnet (lore/carnet-decouvertes.json) : une par seuil de rencontres (enquêtes résolues où l'habitué
+  // était là) ; nouvelles = pas encore vues (grimdoku:decouvertes-vues), signalées sur la fiche et sur le bureau
+  const metCount = () => {
+    const met = {};
+    for (const p of CASES.filter(isSolved)) for (const c of p.characters) if (!c.guest && LORE.troupe[c.archetype]) met[c.archetype] = (met[c.archetype] || 0) + 1;
+    return met;
+  };
+  const decKey = (t, d) => t + ':' + d.seuil;
+  const newDecouvertes = () => { const met = metCount(), vues = store.get('decouvertes-vues', []);
+    return Object.entries(LORE.carnet || {}).flatMap(([t, l]) => l.filter(d => (met[t] || 0) >= d.seuil && !vues.includes(decKey(t, d))).map(d => decKey(t, d))); };
+  function decouvertes(t, n) {
+    const l = (LORE.carnet || {})[t] || [], vues = store.get('decouvertes-vues', []);
+    if (!l.length) return '';
+    const got = l.filter(d => n >= d.seuil), next = l.find(d => n < d.seuil);
+    return `<div class="nb-decs">${got.map(d => `<p class="nb-dec ${d.genre}${vues.includes(decKey(t, d)) ? '' : ' neuve'}" data-k="${decKey(t, d)}">${esc(d.texte)}</p>`).join('')}
+      ${next ? `<p class="nb-next">Encore ${next.seuil - n} rencontre${next.seuil - n > 1 ? 's' : ''} avant d'en apprendre plus.</p>` : ''}</div>`;
+  }
   function carnetPage() {
     P = null;
     $app.classList.remove('game');
@@ -1309,6 +1331,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
         <p class="nb-owner">tenu par l'Enquêteur de la baronnie de Brumeval</p>
         <p class="nb-tally">${known.length ? `${known.length} habitant${known.length > 1 ? 's' : ''} croisé${known.length > 1 ? 's' : ''} sur ${total}` : 'Personne encore. Résoudre une enquête pour faire connaissance.'}</p>
         <button class="nb-link" id="prologueBtn">Relire le prologue</button>
+        ${newDecouvertes().length ? `<p class="nb-tally"><b>${newDecouvertes().length} nouvelle${newDecouvertes().length > 1 ? 's' : ''} découverte${newDecouvertes().length > 1 ? 's' : ''}</b> dans ces pages.</p>` : ''}
       </div>`;
     const fiche = (t, i) => {
       const c = LORE.troupe[t], g = gag(t);
@@ -1320,6 +1343,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
         ${g ? `<p class="nb-gag gag">${esc(g)}</p>` : ''}
         <p class="nb-seen"><span>Vu à :</span> ${[...seenAt[t]].map(pl => esc(placeTitle(pl))).join(', ')}</p>
         <p class="nb-met">Croisé${met[t] > 1 ? ` ${met[t]} fois` : ' une fois'}.</p>
+        ${decouvertes(t, met[t])}
       </div>`;
     };
     const pages = [garde, ...known.map(fiche)];
@@ -1342,6 +1366,9 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
       document.getElementById('nbPrev').hidden = carnetAt === 0;
       document.getElementById('nbNext').hidden = carnetAt + n >= pages.length;
       const pb = document.getElementById('prologueBtn'); if (pb) pb.onclick = () => prologue();
+      // découvertes affichées : lues (elles restent surlignées le temps de cette visite)
+      const ks = [...box.querySelectorAll('.nb-dec.neuve')].map(x => x.dataset.k);
+      if (ks.length) store.set('decouvertes-vues', [...new Set(store.get('decouvertes-vues', []).concat(ks))]);
     };
     const turn = (dir) => { const n = spread(), to = carnetAt + dir * n; if (to < 0 || to >= pages.length) return; carnetAt = to; draw(dir); };
     document.getElementById('nbPrev').onclick = () => turn(-1);

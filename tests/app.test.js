@@ -614,6 +614,31 @@ test('intros : l\'ouverture du lieu suit le rang de l\'affaire, le corps est pro
   assert.deepEqual(errors, []);
 });
 
+test('carnet : les découvertes se débloquent au fil des rencontres, signalées puis lues ; aucun secret du fil rouge', () => {
+  const DEC = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'lore', 'carnet-decouvertes.json'), 'utf8'));
+  const CAST = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'cast.json'), 'utf8'));
+  for (const [t, l] of Object.entries(DEC)) if (t !== '_doc') {
+    assert.ok(CAST[t] && !CAST[t].guest, t + ' : un habitué');
+    for (const d of l) {
+      assert.ok(!/Nœud|Palier zéro/.test(d.texte), t + ' : pas de secret du fil rouge');
+      if (d.avec) assert.ok(CAST[d.avec], t + ' : relation avec un habitué connu');
+    }
+  }
+  const { w, d, errors, PUZZLES } = open();
+  const withBak = PUZZLES.filter(p => !p.final && p.characters.some(c => c.archetype === 'gobelin')).slice(0, 3);
+  withBak.forEach(p => solve(w, p));
+  w.grimGo('bureau');
+  assert.ok(d.querySelector('#deskCarnet .newmark'), 'le carnet signale une nouvelle découverte');
+  w.grimGo('carnet');
+  const bakPage = () => [...d.querySelectorAll('.nb-fiche')].find(f => f.querySelector('.nb-name').textContent === 'Bakchich');
+  while (!d.getElementById('nbNext').hidden && !bakPage()) d.getElementById('nbNext').click();
+  const dec = bakPage().querySelector('.nb-dec');
+  assert.ok(dec && dec.classList.contains('neuve') && dec.textContent === DEC.gobelin[0].texte, 'Bakchich : la découverte des 3 rencontres');
+  assert.ok(JSON.parse(w.localStorage.getItem('grimdoku:decouvertes-vues')).includes('gobelin:3'), 'vue, donc lue');
+  assert.match(bakPage().querySelector('.nb-next').textContent, /rencontres? avant/);
+  assert.deepEqual(errors, []);
+});
+
 test('conseils de l\'enquêteur : un à la fois, « pourquoi » pendant la première enquête, plus ensuite', async () => {
   const { w, d, pick, hold, openCase, errors, PUZZLES } = open();
   const p = PUZZLES.find(q => q.place === 'chateau' && !q.characters.some(c => c.shape));

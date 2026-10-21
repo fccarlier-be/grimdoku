@@ -1,0 +1,185 @@
+{
+  "_doc": "Découvertes du carnet (phase 2, « carnet à découvrir ») : écrites par Mistral sur le cahier des charges de Claude, relues et corrigées (2026-10-21). Par habitué (identifiant de cast.json) : une découverte se débloque quand le joueur a résolu « seuil » enquêtes où ce personnage était suspect. genre : relation (avec = l'autre habitué), anecdote, contradiction. Jamais le Nœud, le Palier zéro ni le rôle d'Augure.",
+  "troll": [
+    { "seuil": 3, "genre": "relation", "avec": "tavernier", "texte": "Le Sanglier Borgne l'emploie comme plongeur, payé en restes. Une assiette cassée par jour, une assiette mangée par jour : Aagrid appelle ça l'équilibre de la maison, et aucun des deux ne propose de le rompre." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Sa vaisselle serait la plus propre de la baronnie. Je n'ai jamais vérifié la première moitié ; la seconde, le séchage, est une hécatombe que le tavernier note à part." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Il se présente comme un brise-tout, et il l'est. Au Grand Port, pourtant, c'est lui qui raccommode les filets et recolle les avirons à l'aube, sans en parler à personne." }
+  ],
+  "gobelin": [
+    { "seuil": 3, "genre": "relation", "avec": "roi", "texte": "Le trésor du roi est vide, et personne ne sait pourquoi. Bakchich, lui, le sait très bien, et le trouve en parfaite santé chaque fois qu'on le lui demande." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Mon salaire a été fixé avec lui à mon arrivée. Je n'ai rien touché ; il me jure que c'est noté quelque part, ce qui m'inquiète un peu plus chaque trimestre." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Tout est toujours en règle chez lui, la règle en moins. Je n'ai jamais vu personne tenir autant à des lois que personne n'a jamais écrites." }
+  ],
+  "dragonnet": [
+    { "seuil": 3, "genre": "relation", "avec": "chevalier", "texte": "Gontran l'a « adopté pour le dresser ». Trois leçons plus tard, c'est le dresseur qui fond : l'armure du chevalier a perdu sa forme, et le chevalier, son avance." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Il dort sur des dalles de pierre, par égard pour les planchers. La Forge lui en a prêté trois ; elles sont tièdes au matin, et le forgeron les lui rend le soir." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Il se présente partout comme un fléau. Les mères de Bois-Tordu le laissent entrer pour réchauffer la soupe, et il n'a jamais brûlé une louche." }
+  ],
+  "fee": [
+    { "seuil": 3, "genre": "relation", "avec": "tavernier", "texte": "Trois tournées à Aagrid, parties à trois cents écus avec les intérêts. Chacun jure que l'autre compte mal, et le registre du Sanglier Borgne a fini par prendre parti pour lui-même." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Au dernier solstice, elle a payé une tournée générale. Personne ne l'a vue sortir une pièce, et Aagrid, qui compte tout, cherche encore laquelle." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Elle jure sa pauvreté à qui veut l'entendre. Je l'ai vue régler une cure entière aux Thermes, en or, sans compter ; elle dit que c'est l'or de quelqu'un d'autre." }
+  ],
+  "elfe": [
+    { "seuil": 3, "genre": "relation", "avec": "chef", "texte": "Deux sur dix au Banquet des Gobelins, et Fricot ne l'a pas digéré. Il rêve de lui faire goûter sa marmite, elle rêve d'être ailleurs ; leur guerre mijote toute seule." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Elle a dressé la carte des meilleures tables de la baronnie. Les trois premières sont chez elle ; les autres contestent, ce qui ne les a pas fait monter d'un cran." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Elle juge toutes les cuisines de la baronnie, et elle a raison. Je ne l'ai jamais vue cuisiner : à l'entendre, c'est précisément ce qui la qualifie." }
+  ],
+  "sirene": [
+    { "seuil": 3, "genre": "relation", "avec": "barde", "texte": "Fausset lui écrit des chansons, et elle les chante juste. C'est le seul moyen, pour un barde qui chante faux, d'être chanté juste dans la baronnie ; il appelle ça une collaboration, elle appelle ça de la charité." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Elle est venue à Brumeval pour l'aquarium du Grand Port. Personne n'a osé lui dire qu'il n'existe pas ; elle l'attend dans le bief, et commence à trouver le temps long." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Elle assure que l'eau est son élément. C'est pourtant la première à s'abriter quand il pleut : l'eau, dit-elle, ne lui plaît que dans le bon sens." }
+  ],
+  "spectre": [
+    { "seuil": 3, "genre": "relation", "avec": "roi", "texte": "Châtelain avant Dagobert, il n'a jamais rendu les clés. Le roi fait changer les serrures ; le spectre traverse les murailles. La guerre est froide, et les clés toujours neuves." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "De son vivant, il a fait bâtir la moitié du château. Mort, il le traverse d'un bout à l'autre et trouve ça plus rapide ; l'architecture, elle, ne s'est jamais prononcée." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Il ne craint plus rien, à l'entendre : ni fer, ni nuit, ni roi. Il contourne pourtant toujours le même fauteuil, dans la même aile, et n'a jamais dit pourquoi." }
+  ],
+  "barde": [
+    { "seuil": 3, "genre": "relation", "avec": "sirene", "texte": "Il écrit des chansons pour Goémone, qui les chante juste. Il appelle ça son œuvre ; elle ne l'a jamais contredit, et ça dure, disent les foires, faute d'espoir des deux côtés." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Sa mère, racontent les foires, était muse ; son père, joueur de vielle. La légende tient debout à moitié, comme ses accords." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Il jure qu'il chante juste, et que ce sont les autres qui se trompent. Je l'ai entendu deux fois ; les deux fois, même le silence a déraillé." }
+  ],
+  "zombie": [
+    { "seuil": 3, "genre": "relation", "avec": "archimage", "texte": "Il fut l'apprenti de Fizzlebarbe. Une réparation à la Tour, il y a vingt ans, lui a coûté une main, puis la vie ; il en parle peu, et surtout à sa manche vide." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Il a refusé la main de bois du charpentier du port : elle ne transpirerait pas, dit-il, et la sueur est ce qui lui reste de vivant." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Il se dit mort et n'attendant plus rien. Chaque fin de mois, pourtant, il passe sous les fenêtres de la Tour, comme par hasard, à l'heure où l'on payait les apprentis." }
+  ],
+  "vampire": [
+    { "seuil": 3, "genre": "relation", "avec": "spectre", "texte": "Au cimetière, la comtesse et le spectre se tiennent compagnie. Aucun des deux n'admet être mort, et c'est le seul point de leur entente." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Elle vit de la seule fortune qui ne vieillit pas : les bijoux de famille, en changeant de famille chaque siècle. C'est, dit-elle, le seul héritage honnête." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Curiste fidèle des Thermes, elle n'y a jamais trempé un pied. Quarante degrés, disent les baigneurs ; elle, dit-elle, se conserve mieux au frais." }
+  ],
+  "chevalier": [
+    { "seuil": 3, "genre": "relation", "avec": "roi", "texte": "Le seul chevalier que Dagobert ait jamais gardé sans le perdre. Un chevalier ridicule, dit le roi, c'est un chevalier qui reste ; et Gontran reste." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Il a fait fondre trois armures cette année : une à la Forge, une près du dragonnet, et la troisième sert de grille au four du boulanger, qui l'a payée en pain. Le chevalier a trouvé ça honorable." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "La meilleure épée du royaume, à l'entendre. Je l'ai vu battu en duel par un rideau ; à sa décharge, le rideau était accroché à une tringle." }
+  ],
+  "djinn": [
+    { "seuil": 3, "genre": "relation", "avec": "archimage", "texte": "Elle rend visite à la Tour de l'Archimage plus souvent qu'à son propre palais. Fizzlebarbe lui interdit le seuil ; elle prend la cheminée. Ce que chacun vient y chercher, aucun des deux ne le dit." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Elle a exaucé deux vœux de trop, et les compte encore. L'un pour une servante, l'autre pour elle-même ; elle refuse de dire lequel a mal tourné." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Elle se dit ambassadrice d'un pays lointain dont elle est la seule à connaître le nom. L'ambassade, ce sont ses appartements ; le pays, disent les sceptiques, c'est elle aussi. Elle sourit, ce qui ne prouve rien." }
+  ],
+  "mage": [
+    { "seuil": 3, "genre": "relation", "avec": "bibliothecaire", "texte": "Il doit un grimoire à Dewey depuis onze ans. Il promet de le rendre dès que possible, elle promet de le retrouver avant ; aucun des deux ne ment, et le livre dort quelque part." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Il a fréquenté les deux écoles de la baronnie, et chacune l'a rendu à sa famille : l'Académie invoque la foudre, l'Université une fuite de flacons ; lui parle d'un malentendu d'allergie." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Il jure ne jamais viser personne. Ses sorts partent pourtant toujours seuls, disent ses excuses, et tombent toujours sur des gens qu'il n'aime pas." }
+  ],
+  "tavernier": [
+    { "seuil": 3, "genre": "relation", "avec": "troll", "texte": "Sa vaisselle et son plongeur tiennent le même registre : ce que l'un casse, l'autre le mange, et ce que l'un doit, l'autre le lave. Aagrid appelle ça une paie d'avance, et ne s'est jamais plaint que du calme." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "L'enseigne du Sanglier Borgne vient d'un vrai sanglier, borgne, qui a tenu le comptoir une saison avant lui. Aagrid assure qu'il a gardé toute la clientèle." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Le tenancier le plus SYMPA de la baronnie n'a jamais refusé une tournée. Il ne l'a jamais offerte non plus : il l'oublie parfois sur l'ardoise, ce qui, dit-il, n'est pas la même chose." }
+  ],
+  "bonimenteur": [
+    { "seuil": 3, "genre": "relation", "avec": "cartomancienne", "texte": "Ils tiennent le stand le plus rentable de la Foire : lui vend l'élixir, elle prédit qu'il marche. Le client revient rarement se plaindre ; elle lui a prédit qu'il ne le ferait pas." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Il a vendu le même miroir à la comtesse Belladone trois foires de suite, en le retournant entre chaque vente. Elle le trouve chaque fois singulier ; lui trouve ça encourageant." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Rien de ce qu'il vend ne marche, et il le sait mieux que personne. Il s'achète pourtant chaque mois, à son propre stand, une once d'élixir de longue vie, en faisant mine de ne pas se connaître." }
+  ],
+  "roi": [
+    { "seuil": 3, "genre": "relation", "avec": "spectre", "texte": "Blafard, châtelain avant lui, n'a jamais rendu les clés. Dagobert fait changer les serrures à chaque génération de forgerons, et appelle ça l'entretien du domaine." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Ma lettre de nomination était écrite sur un parchemin qui avait déjà servi. Le roi appelle ça de la continuité ; c'est le seul parchemin du royaume qu'on n'a jamais remplacé." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Il se dit pauvre comme un roi dépossédé, et le royaume le croit. Le pont-levis de la Citadelle a pourtant des charnières d'argent massif ; seuls les corbeaux les ont remarquées, et les corbeaux ne parlent pas." }
+  ],
+  "cartomancienne": [
+    { "seuil": 3, "genre": "relation", "avec": "djinn", "texte": "Au Palais des Mille Vœux, elle précède Fumerolle d'une carte : l'une annonce ce qui va arriver, l'autre s'arrange pour que cela arrive. Le Palais juge le duo cher, mais jamais surpris." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Sa carte de la Mort porte mon portrait, sans mon accord. Elle me rassure : c'est celle qui sort le moins dans ses tirages. Je ne sais pas quoi en conclure." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Elle refuse de tirer ses propres cartes : l'avenir, dit-elle, se respecte. On l'a vue les tirer en cachette, les ranger vite, et ne rien dire du résultat, même après coup." }
+  ],
+  "archimage": [
+    { "seuil": 3, "genre": "relation", "avec": "professeur", "texte": "Fiolius l'accuse d'avoir copié sa thèse ; il l'accuse d'avoir copié la sienne, deux siècles plus tôt. Le seul point d'accord entre l'Académie et l'Université, c'est de ne jamais trancher." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Ses plans de la Tour ne se ressemblent jamais deux fois. Il le jure sur sa barbe : c'est l'architecte qui vieillit mal, pas la Tour." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Il n'aurait pas mis le nez dehors depuis dix ans, à l'entendre. Les Grands Bains lui gardent pourtant un peignoir brodé d'un F, changé à chaque saison." }
+  ],
+  "perroquet": [
+    { "seuil": 3, "genre": "relation", "avec": "capitaine", "texte": "Frégaton raconte ses tempêtes, Bâbord le contredit ; le perroquet mélange les deux versions, et c'est la sienne qui reste dans les tavernes du port." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Il ne retient que ce que les gens voudraient taire. Le reste, il l'appelle « rumeur » et l'oublie avec une constance parfaite." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Il répète tous les secrets, jure l'équipage. Le sien, pourtant, personne ne l'a jamais entendu : ni son île, ni son âge, ni le nom qu'il portait avant la cale." }
+  ],
+  "pirate": [
+    { "seuil": 3, "genre": "relation", "avec": "capitaine", "texte": "Ils se disputent le même navire depuis vingt ans : Frégaton ne l'a jamais mené au large, Bâbord ne l'a jamais retrouvé deux fois au même quai. Le navire, lui, ne bouge pas, et s'en porte mieux." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Il a servi sur trois navires avant le Navire Fantôme, et les a quittés chacun à la première escale, c'est-à-dire avant d'embarquer. Il appelle ça son tour du monde." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Il se perd toujours, à l'entendre. Il rentre pourtant au port chaque soir par le plus court chemin, même dans la brume : chez lui, ce sont les directions qu'il donne qui se perdent." }
+  ],
+  "ogre": [
+    { "seuil": 3, "genre": "relation", "avec": "chef", "texte": "Fricot lui garde une marmite au chaud, « au cas où le mardi finirait mal ». Festin la remercie chaque fois, la finit chaque fois, et aucun des deux n'appelle ça de la viande." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Devenu végétarien, il a repeint la porte du Banquet en vert. Personne n'a osé lui dire que chez les gobelins, le vert est la couleur du dessert." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Il ne mange plus que ce que la terre donne. Le fromage est « ce que la terre donne à la vache », la vache « ce que la terre donne au pré » ; le raisonnement tient, la terrine aussi." }
+  ],
+  "meunier": [
+    { "seuil": 3, "genre": "relation", "avec": "boulanger", "texte": "Il livre sa farine à Briochon, et Briochon le paie en histoires. Le sac part pesé, la nouvelle revient alourdie ; aucun des deux ne s'est jamais plaint du compte." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Il ne moud jamais après le coucher du soleil : les meules, dit-il, font leurs comptes la nuit, et il ne veut pas déranger une addition en cours." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Il jure n'avoir jamais triché sur un sac de sa vie. Chaque sac marqué de sa fleur part pourtant avec deux poignées de moins : la part du vent, dit-il, et le vent ne s'est jamais plaint." }
+  ],
+  "sorciere": [
+    { "seuil": 3, "genre": "relation", "avec": "crapaud", "texte": "Elle regarde Ambroise comme on regarde une recette qu'on n'a pas encore osé faire. Il attend un bisou, elle attend une occasion ; personne ne repart content." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Son livre de recettes vient de sa grand-mère, sorcière du même marais. Chaque page commence par le même conseil : « Prends ce qui saute »." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Elle jure que sa cuisine est la plus douce de la baronnie, et c'est vrai : ce qui y passe meurt sans douleur, et surtout sans le savoir." }
+  ],
+  "boulanger": [
+    { "seuil": 3, "genre": "relation", "avec": "tavernier", "texte": "Il fournit le Sanglier Borgne en pain rassis pour les soupes ; Aagrid le paie en nouvelles. Le pain, dit Briochon, c'est l'intérêt de ses ragots." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Trois familles de Bois-Tordu prétendent posséder le même levain que lui, hérité de la même grand-mère. Leurs pains n'ont jamais eu le même goût ; c'est le seul procès que personne n'a osé porter." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Il jure ne rien inventer, jamais. Il oublie seulement de fermer la bouche entre deux vérités, et c'est là, paraît-il, que tout se passe." }
+  ],
+  "crapaud": [
+    { "seuil": 3, "genre": "relation", "avec": "fossoyeur", "texte": "Glas lui a creusé sa tombe d'avance, aux mesures d'un prince. Ambroise a fait corriger deux fois la profondeur : il faut, dit-il, garder assez de place pour une couronne." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Il a gardé la bague de sa principauté, trop grande pour sa patte. Les mauvais jours, il la serre ; à Brumeval, les mauvais jours durent depuis un moment." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Il assure qu'un bisou le délivrerait. Chaque candidate, à l'entendre, n'est pas la bonne : ses critères tiennent sur quatre pages, et la patience de la baronnie, à peine sur deux." }
+  ],
+  "capitaine": [
+    { "seuil": 3, "genre": "relation", "avec": "bonimenteur", "texte": "Esbroufe revend ses tempêtes en récits à la foire. Aucune n'a jamais eu lieu, ce qui n'a jamais dérangé personne au port, ni freiné les ventes." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Ses amarres sont les plus tendues du Grand Port, vérifiées chaque matin. C'est pour « tenir la mer à distance », dit-il ; la mer ne l'a jamais contredit." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Il n'a jamais eu le mal de mer, à l'entendre. Il n'a jamais eu la mer du tout, ce qui, en toute rigueur, l'innocente ; il appelle ça une précaution de marin." }
+  ],
+  "golem": [
+    { "seuil": 3, "genre": "relation", "avec": "mineur", "texte": "Grisou creuse plus vite qu'il ne réfléchit, Caillasse réfléchit plus vite qu'il ne marche. À eux deux, ils feraient un nain complet ; la Mine les engage toujours séparément." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Un sculpteur l'a taillé dans la carrière des Monts Grimaces et l'a signé au burin, sous le talon. Il n'a jamais demandé qu'on lui lise la signature." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Il se dit lent, et il l'est. Il part donc trois heures avant tout le monde, si bien qu'il n'a jamais été en retard de sa vie : c'est le plus ponctuel de la baronnie." }
+  ],
+  "dragon": [
+    { "seuil": 3, "genre": "relation", "avec": "dragonnet", "texte": "Le grand et le petit se tiennent compagnie à la Forge : l'un dort sur ce qu'il garde, l'autre brûle ce qu'il touche. Le forgeron compte son stock chaque soir, et le retrouve toujours au compte exact." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Le métal refroidit moins vite quand il dort à côté. Les forgerons appellent ça « le tirage du maître », et n'ont jamais osé le remercier, de peur de le réveiller." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Il dort toujours dans le même coin, depuis un siècle. On lui en a proposé de meilleurs, au soleil ; il a refusé, parce que celui-ci « connaît sa forme », et la Forge a trouvé l'argument solide." }
+  ],
+  "apprentie": [
+    { "seuil": 3, "genre": "relation", "avec": "bibliothecaire", "texte": "Elle a fait déplacer une porte de l'Académie de deux pas vers la gauche. Dewey l'a cataloguée sous « portes, déplacements », sans hurler pour une fois, et la fiche reste sa préférée." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Elle a appris les potions en cachette, sur les rebuts de l'Académie. Ses premiers essais ont servi de mortier aux murs du dortoir ; les murs n'ont plus bougé depuis, ce qui, à l'Académie, compte pour un miracle." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Elle affirme tout maîtriser, et le prouve : chaque explosion a eu lieu exactement là où elle l'avait calculée. Le calcul, apparemment, ne portait que sur l'endroit." }
+  ],
+  "chef": [
+    { "seuil": 3, "genre": "relation", "avec": "elfe", "texte": "Il mijote une revanche sur Aëlys : lui faire goûter sa marmite, dans le calme, et attendre la note. Le calme, chez lui, est un projet à long terme ; la marmite, elle, mijote depuis trois lunes." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Sa marmite vient de son père, qui l'avait volée à son oncle. Cinq générations de vol au Banquet, et c'est la seule tradition que personne n'y a jamais discutée." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Il affirme ne rien forcer : ce qui entre dans la marmite y va de son plein gré. Le plein gré des volailles de la cour est difficile à vérifier, surtout après." }
+  ],
+  "bibliothecaire": [
+    { "seuil": 3, "genre": "relation", "avec": "mage", "texte": "Onze ans que le grimoire prêté à Gribouille court la baronnie, onze ans qu'elle court après en criant son titre. Le silence de la Bibliothèque a pris un accent de chasse." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Elle catalogue tout ce qui ne bouge pas. La statue de la salle de lecture a une fiche, la fiche a une fiche, et le lecteur qui s'endort en a deux." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Elle exige le silence absolu, et le plus fort possible. Hurler le silence, chez elle, n'est pas du bruit : c'est une doctrine." }
+  ],
+  "mineur": [
+    { "seuil": 3, "genre": "relation", "avec": "contremaitre", "texte": "Granit le tient à l'œil, lui tient la pioche ; c'est leur langue commune. Un jour de grand calme, il a creusé une salle avec des bancs, pour les pauses. Granit l'a notée « pause élargie », et la salle porte encore ce nom." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Il a gagné trois fois le concours de vitesse de la Mine, et l'a perdu trois fois aussi : il creuse si vite que les juges ne retrouvent plus la ligne d'arrivée." },
+    { "seuil": 10, "genre": "contradiction", "avec": null, "texte": "Il jure ne s'être jamais perdu sous terre. Il possède pourtant la plus belle collection de plans de la Mine, tous annotés « deuxième à gauche », de mains différentes." }
+  ],
+  "professeur": [
+    { "seuil": 3, "genre": "relation", "avec": "archimage", "texte": "Sa thèse aurait été copiée par Fizzlebarbe, et il le soutient partout où l'on sert à boire. Le délai ne le gêne pas : un procès, dit-il, c'est une expérience qui mijote." },
+    { "seuil": 6, "genre": "contradiction", "avec": null, "texte": "Il juge à l'odeur et s'en vante ; il ne supporte pourtant pas qu'on renifle devant lui. Le flair, chez lui, est un privilège de professeur, pas une politesse." }
+  ],
+  "geant": [
+    { "seuil": 3, "genre": "relation", "avec": "vouivre", "texte": "Aux Grands Bains, il partage le bassin froid avec Glissandra : aucun des deux ne se retourne vite, et le personnel a renoncé à y faire entrer d'autres curistes." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Il n'a jamais vu le haut d'une porte de la baronnie. Il en connaît en revanche tous les dessous, ce qui, dit-il, est une expertise de charpentier, et personne n'est en mesure de le contredire." }
+  ],
+  "vouivre": [
+    { "seuil": 3, "genre": "relation", "avec": "geant", "texte": "Elle partage le bassin froid des Grands Bains avec Escabeau, chacun son tour. Le personnel règle les autres entrées sur l'intervalle entre leurs deux bains." },
+    { "seuil": 6, "genre": "anecdote", "avec": null, "texte": "Elle dort enroulée autour du clocher du Grand Port. La cloche sonne depuis au rythme de sa respiration, et la ville, qui s'y est faite, jure que c'est l'heure juste." }
+  ],
+  "fossoyeur": [
+    { "seuil": 3, "genre": "relation", "avec": "crapaud", "texte": "Ambroise lui a fait reprendre trois fois ses mesures, pour qu'elles soient prises « en prince ». Glas a obéi, puis ajouté à son registre une colonne en couronnes : la plus regardée du cimetière." },
+    { "seuil": 6, "genre": "contradiction", "avec": null, "texte": "Il jure ne jamais presser personne. Il a pourtant fait, pour chacun, la moitié du travail d'avance, et il appelle ça un service ; les intéressés ont un autre mot pour ce service, qu'ils ne prononcent qu'en son absence." }
+  ],
+  "corbeau": [
+    { "seuil": 3, "genre": "relation", "avec": "spectre", "texte": "Il tient compagnie à Blafard, les nuits claires, sur la plus haute branche du cimetière. Le spectre ne s'est jamais plaint du voisinage, ce qui, de la part d'un mort, est le plus chaud des compliments." }
+  ],
+  "contremaitre": [
+    { "seuil": 3, "genre": "anecdote", "avec": null, "texte": "Il a pris deux congés en vingt ans. Le second lui a paru long, dit-il ; la Mine n'a jamais su quoi faire de lui ce jour-là, et lui non plus." }
+  ]
+}

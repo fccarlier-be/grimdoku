@@ -22,6 +22,11 @@ const F_REV = path.join(DATA, 'epilogues-relecture.json');
 // mises en situation (lore/intros.json : grilles = corps de chaque intro, gabarits {victime}…), modifiables aussi
 // (François, 2026-10-21 : « au cas où elles ne me plaisent pas »)
 const F_INTRO = path.join(DATA, 'intros.json');
+// découvertes du carnet (lore/carnet-decouvertes.json), modifiables aussi (François, 2026-10-21)
+const F_CARNET = path.join(DATA, 'carnet-decouvertes.json');
+// noms des habitués (pour le carnet) : cast.json en local, noms.json préparé par epi-pack sur le VPS
+const noms = () => SERVER ? JSON.parse(fs.readFileSync(path.join(path.dirname(process.env.EPI_BUNDLE), 'noms.json'), 'utf8'))
+  : Object.fromEntries(Object.entries(J('cast.json')).filter(([k, a]) => k !== '_doc' && !a.guest).map(([k, a]) => [k, a.name]));
 const J = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8'));
 const read = (f, def) => fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : def;
 // écriture sûre : fichier temporaire puis renommage (jamais de fichier à moitié écrit)
@@ -30,7 +35,7 @@ const REV_DOC = 'Relecture des épilogues (tools/relecture.js) : statut (relire,
 
 if (SERVER) { // première mise en route sur le VPS : les épilogues de départ
   fs.mkdirSync(DATA, { recursive: true });
-  for (const f of ['epilogues.json', 'epilogues-relecture.json', 'intros.json'])
+  for (const f of ['epilogues.json', 'epilogues-relecture.json', 'intros.json', 'carnet-decouvertes.json'])
     if (!fs.existsSync(path.join(DATA, f)) && fs.existsSync(path.join(process.env.EPI_SEED, f))) fs.copyFileSync(path.join(process.env.EPI_SEED, f), path.join(DATA, f));
 }
 
@@ -108,11 +113,21 @@ function save(body) {
 }
 
 // synchronisation avec le projet (tools/epi-sync.sh) : tout lire, ou tout remplacer
-const exportAll = () => ({ epilogues: read(F_EPI, {}), relecture: read(F_REV, { _doc: REV_DOC }), intros: read(F_INTRO, null) });
+const exportAll = () => ({ epilogues: read(F_EPI, {}), relecture: read(F_REV, { _doc: REV_DOC }), intros: read(F_INTRO, null), carnet: read(F_CARNET, null) });
+// carnet : les découvertes de chaque habitué (seuil, genre, avec : fixés ; seul le texte se modifie)
+function carnetData() { const c = read(F_CARNET, {}), n = noms(); return Object.entries(c).filter(([k]) => k !== '_doc').map(([t, l]) => ({ t, nom: n[t] || t, l: l.map(d => ({ ...d, avecNom: d.avec ? (n[d.avec] || d.avec) : null })) })); }
+function carnetSave(body) {
+  const c = read(F_CARNET, {}), l = c[body.t];
+  if (!l || !Array.isArray(body.textes) || body.textes.length !== l.length) throw new Error('habitué inconnu : ' + body.t);
+  body.textes.forEach((x, i) => { const t = String(x).replace(/\s+/g, ' ').trim(); if (!t) throw new Error('une découverte est vide'); l[i].texte = t; });
+  write(F_CARNET, c);
+  return { ok: true };
+}
 function importAll(body) {
   if (!body || typeof body.epilogues !== 'object' || typeof body.relecture !== 'object') throw new Error('attendu : { epilogues, relecture }');
   write(F_EPI, body.epilogues); write(F_REV, body.relecture);
   if (body.intros && typeof body.intros === 'object') write(F_INTRO, body.intros);
+  if (body.carnet && typeof body.carnet === 'object') write(F_CARNET, body.carnet);
   return { ok: true, epilogues: Object.keys(body.epilogues).length - 1 };
 }
 
@@ -160,9 +175,12 @@ textarea { width: 100%; min-height: 150px; font: 15px/1.5 Georgia, serif; paddin
 .save:disabled { opacity: .4; cursor: default; }
 .msg { font: 13px system-ui, sans-serif; color: var(--ok); }
 .empty { color: #e8d9b8; text-align: center; }
+.tab { margin-left: 10px; font: 600 13px system-ui, sans-serif; background: #f0a93a; color: #2b1d10; border: 0; padding: 5px 10px; border-radius: 99px; cursor: pointer; vertical-align: middle; }
+.dec { margin: 8px 0; } .dec .lbl { font: 600 12px system-ui, sans-serif; color: #8a6a3e; text-transform: uppercase; letter-spacing: .04em; }
+.dec textarea { min-height: 64px; }
 </style></head><body>
 <header>
-  <h1>Relecture des épilogues</h1>
+  <h1>Relecture des épilogues <button class="tab" id="tabCarnet" type="button">Carnet des habitués</button></h1>
   <div class="warn">⚠️ Cette page révèle le coupable de chaque enquête. Ctrl+S (⌘S) enregistre la scène en cours d'édition.</div>
   <div class="bar">
     <select id="fPlace"><option value="">Tous les lieux</option></select>
@@ -236,9 +254,9 @@ document.addEventListener('focusin', (e) => { const c = e.target.closest && e.ta
 document.addEventListener('click', (e) => {
   const c = e.target.closest('.card'); if (!c) return;
   if (e.target.dataset.st) { c.querySelectorAll('.st').forEach(b => b.setAttribute('aria-pressed', b === e.target)); c.className = 'card ' + e.target.dataset.st; dirty(c, true); current = c; }
-  if (e.target.classList.contains('save')) saveCard(c);
+  if (e.target.classList.contains('save') && !e.target.classList.contains('carnet-save')) saveCard(c);
 });
-document.addEventListener('keydown', (e) => { if ((e.ctrlKey || e.metaKey) && e.key === 's') { e.preventDefault(); if (current && !$('.save', current).disabled) saveCard(current); } });
+document.addEventListener('keydown', (e) => { if ((e.ctrlKey || e.metaKey) && e.key === 's') { e.preventDefault(); if (current && !$('.save', current).disabled) { if (current.classList.contains('carnet-card')) $('.save', current).click(); else saveCard(current); } } });
 window.addEventListener('beforeunload', (e) => { if (document.querySelector('.card.dirty')) { e.preventDefault(); e.returnValue = ''; } });
 
 async function saveCard(c) {
@@ -257,6 +275,31 @@ async function saveCard(c) {
   if (document.querySelector('.card.dirty') && !confirm('Des modifications ne sont pas enregistrées. Changer de filtre quand même ?')) return;
   draw();
 }));
+// carnet des habitués : une carte par habitué, une zone de texte par découverte (seuil et genre fixés)
+let CARNET = null;
+async function showCarnet() {
+  if (document.querySelector('.card.dirty') && !confirm('Des modifications ne sont pas enregistrées. Changer de vue quand même ?')) return;
+  const on = $('#tabCarnet').dataset.on !== '1';
+  $('#tabCarnet').dataset.on = on ? '1' : ''; $('#tabCarnet').textContent = on ? 'Épilogues' : 'Carnet des habitués';
+  $('.bar').style.display = on ? 'none' : '';
+  if (!on) return draw();
+  CARNET = await (await fetch('carnet')).json();
+  const G = { relation: 'relation', anecdote: 'anecdote', contradiction: 'contradiction' };
+  $('#list').innerHTML = CARNET.map(h => '<article class="card carnet-card" data-t="' + h.t + '"><h2>' + esc(h.nom) + '</h2>' +
+    h.l.map(d => '<div class="dec"><span class="lbl">À ' + d.seuil + ' rencontres · ' + G[d.genre] + (d.avecNom ? ' avec ' + esc(d.avecNom) : '') + '</span>' +
+      '<textarea class="dec-ed" spellcheck="true">' + esc(d.texte) + '</textarea></div>').join('') +
+    '<div class="actions"><span class="msg"></span><button class="save carnet-save" disabled>Enregistrer</button></div></article>').join('');
+  $('#stats').textContent = CARNET.length + ' habitués · ' + CARNET.reduce((n, h) => n + h.l.length, 0) + ' découvertes';
+}
+$('#tabCarnet').onclick = showCarnet;
+document.addEventListener('click', async (e) => {
+  if (!e.target.classList.contains('carnet-save')) return;
+  const c = e.target.closest('.card'), textes = [...c.querySelectorAll('.dec-ed')].map(x => x.value);
+  const r = await fetch('carnet-save', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ t: c.dataset.t, textes }) });
+  const out = await r.json();
+  $('.msg', c).style.color = r.ok ? '' : '#a3312a'; $('.msg', c).textContent = r.ok ? 'Enregistré ✓' : out.error;
+  if (r.ok) dirty(c, false);
+});
 fetch('data').then(r => r.json()).then(items => {
   ITEMS = items;
   const places = [...new Map(items.map(it => [it.place, it.placeTitle])).entries()];
@@ -284,6 +327,8 @@ if (require.main === module) http.createServer((req, res) => {
     if (req.method === 'GET' && url === '/data') return send(200, 'application/json', JSON.stringify(data()));
     if (req.method === 'GET' && url === '/export') return send(200, 'application/json', JSON.stringify(exportAll()));
     if (req.method === 'POST' && url === '/save') return post(save);
+    if (req.method === 'GET' && url === '/carnet') return send(200, 'application/json', JSON.stringify(carnetData()));
+    if (req.method === 'POST' && url === '/carnet-save') return post(carnetSave);
     if (req.method === 'POST' && url === '/import') return post(importAll);
     send(404, 'text/plain', 'introuvable');
   } catch (e) { send(500, 'text/plain', e.message); }

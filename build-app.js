@@ -228,8 +228,10 @@ const CARTE = JSON.parse(fs.readFileSync('lore/carte.json', 'utf8'));
 const PROLOGUE = JSON.parse(fs.readFileSync('lore/prologue.json', 'utf8')).scenes;
 // fil rouge pendant le jeu (phase 2) : mur de l'affaire de la Tour, déclics, visites à la Tour
 const FIL_ROUGE = (() => { const f = JSON.parse(fs.readFileSync('lore/fil-rouge.json', 'utf8')); delete f._doc; return f; })();
+// découvertes du carnet (phase 2) : par habitué, débloquées au fil des rencontres
+const CARNET = (() => { const f = JSON.parse(fs.readFileSync('lore/carnet-decouvertes.json', 'utf8')); delete f._doc; return f; })();
 const INTROS = fs.existsSync('lore/intros.json') ? JSON.parse(fs.readFileSync('lore/intros.json', 'utf8')).lieux : {}; // ouvertures des intros par lieu
-const lore = { prologue: PROLOGUE, need: LETTRES.need, letters: LETTRES.letters, troupe: {}, contrees: CARTE.contrees, pos: CARTE.pos, ratio: CARTE.ratio || [3, 2], start: CARTE.start, unlock: CARTE.unlock || {}, intros: INTROS, filRouge: FIL_ROUGE };
+const lore = { prologue: PROLOGUE, need: LETTRES.need, letters: LETTRES.letters, troupe: {}, contrees: CARTE.contrees, pos: CARTE.pos, ratio: CARTE.ratio || [3, 2], start: CARTE.start, unlock: CARTE.unlock || {}, intros: INTROS, filRouge: FIL_ROUGE, carnet: CARNET };
 for (const [t, a] of Object.entries(ARCHETYPES)) if (!a.guest) lore.troupe[t] = { name: a.name, desc: a.desc, tic: a.tic };
 const sprite = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>${defs.join('')}</defs>${symbols.join('')}</svg>`;
 
