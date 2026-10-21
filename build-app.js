@@ -125,7 +125,7 @@ for (const [name, sel] of [['titre', '.herotitle .logo'], ['jouer', '.herobtn']]
 const { execFileSync } = require('child_process');
 const MEDIA = ['dist/media', 'deploy/grimdoku/site/media'];
 MEDIA.forEach(d => { fs.rmSync(d, { recursive: true, force: true }); fs.mkdirSync(d, { recursive: true }); }); // vidé : rien de périmé en ligne
-const media = { audio: {}, levels: [], decors: [], desk: {}, deskDeco: [], sketches: [], placeSketches: [] };
+const media = { audio: {}, levels: [], decors: [], desk: {}, deskDeco: [], sketches: [], placeSketches: [], mur: {}, pieces: [] };
 // lisibles par le serveur web quelle que soit leur origine (un fichier sorti d'un zip peut être en 600)
 const copyMedia = (src, name) => MEDIA.forEach(d => { fs.copyFileSync(src, `${d}/${name}`); fs.chmodSync(`${d}/${name}`, 0o644); });
 for (const track of ['menu', 'carte']) {
@@ -145,9 +145,20 @@ for (let d = 0; d <= 5; d++) {
   if (fs.existsSync(f)) { copyMedia(f, `niveau-${d}.webp`); media.levels[d] = `media/niveau-${d}.webp`; } else missing.push('vignette niveau ' + d);
 }
 // objets du bureau de l'enquêteur (assets/desk/<objet>.webp, préparés par tools/images.py) : sans image, dessin CSS
-for (const obj of ['dossiers', 'lettres', 'carnet', 'enveloppe', 'mur', 'jour', 'piece', 'papier-1', 'papier-2', 'papier-3', 'support-papier', 'clou-fer', 'clou-laiton', 'clou-rouille', 'clou-tete', 'corde-rouge', 'bouton-retour', 'bouton-son', 'bouton-muet', 'bouton-aide', 'bouton-options', 'bouton-principal', 'bouton-secondaire', 'outil-indice', 'outil-crayon', 'outil-annuler', 'outil-effacer']) {
+for (const obj of ['dossiers', 'lettres', 'carnet', 'enveloppe', 'mur', 'jour', 'piece', 'caisse', 'papier-1', 'papier-2', 'papier-3', 'support-papier', 'clou-fer', 'clou-laiton', 'clou-rouille', 'clou-tete', 'corde-rouge', 'bouton-retour', 'bouton-son', 'bouton-muet', 'bouton-aide', 'bouton-options', 'bouton-principal', 'bouton-secondaire', 'outil-indice', 'outil-crayon', 'outil-annuler', 'outil-effacer']) {
   const f = `assets/desk/${obj}.webp`;
   if (fs.existsSync(f)) { copyMedia(f, `desk-${obj}.webp`); media.desk[obj] = `media/desk-${obj}.webp`; }
+}
+const PIECES = JSON.parse(fs.readFileSync('lore/pieces.json', 'utf8')).pieces; // pièces à conviction (phase 3)
+// page du mur (assets/mur/<élément>.webp : tableau de liège encadré, papiers vierges, punaise) et pièces à conviction
+// (assets/pieces/<lieu>.webp), préparés par tools/images.py ; sans image, dessin CSS ou nom seul
+for (const k of ['tableau', 'note', 'carte', 'bande', 'punaise']) {
+  const f = `assets/mur/${k}.webp`;
+  if (fs.existsSync(f)) { copyMedia(f, `mur-${k}.webp`); media.mur[k] = `media/mur-${k}.webp`; }
+}
+for (const pl of Object.keys(PIECES)) {
+  const f = `assets/pieces/${pl}.webp`;
+  if (fs.existsSync(f)) { copyMedia(f, `piece-${pl}.webp`); media.pieces.push(pl); }
 }
 // croquis à la plume (préparés par tools/images.py) : personnages pour le carnet (assets/characters/croquis/<type>.webp),
 // lieux pour les feuilles épinglées du bureau (assets/decors/croquis/<décor>.webp)
@@ -233,7 +244,7 @@ const CARNET = (() => { const f = JSON.parse(fs.readFileSync('lore/carnet-decouv
 // rangs de l'enquêteur (phase 3) : promotions signées par Dagobert
 const RANGS = JSON.parse(fs.readFileSync('lore/rangs.json', 'utf8')).rangs;
 const INTROS = fs.existsSync('lore/intros.json') ? JSON.parse(fs.readFileSync('lore/intros.json', 'utf8')).lieux : {}; // ouvertures des intros par lieu
-const lore = { prologue: PROLOGUE, need: LETTRES.need, letters: LETTRES.letters, troupe: {}, contrees: CARTE.contrees, pos: CARTE.pos, ratio: CARTE.ratio || [3, 2], start: CARTE.start, unlock: CARTE.unlock || {}, intros: INTROS, filRouge: FIL_ROUGE, carnet: CARNET, rangs: RANGS };
+const lore = { prologue: PROLOGUE, need: LETTRES.need, letters: LETTRES.letters, troupe: {}, contrees: CARTE.contrees, pos: CARTE.pos, ratio: CARTE.ratio || [3, 2], start: CARTE.start, unlock: CARTE.unlock || {}, intros: INTROS, filRouge: FIL_ROUGE, carnet: CARNET, rangs: RANGS, pieces: PIECES };
 for (const [t, a] of Object.entries(ARCHETYPES)) if (!a.guest) lore.troupe[t] = { name: a.name, desc: a.desc, tic: a.tic };
 const sprite = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>${defs.join('')}</defs>${symbols.join('')}</svg>`;
 

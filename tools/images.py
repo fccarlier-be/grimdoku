@@ -611,6 +611,65 @@ def sketches():
         print(f'croquis des lieux → {dec_dir.relative_to(ROOT.parent)}/')
 
 
+def quad_cells(img):
+    # planche 2×2 détourée (RGBA) : coupe à la ligne la plus vide (entre 30 et 70 % de la hauteur), puis dans chaque
+    # bande à la colonne la plus vide ; renvoie les 4 objets recadrés, dans l'ordre de lecture
+    a = img.getchannel('A').point(lambda v: 255 if v > 24 else 0)
+    w, h = a.size
+    px = a.load()
+    def emptiest(n, lo, hi, count):
+        return min(range(int(n * lo), int(n * hi)), key=count)
+    y = emptiest(h, .3, .7, lambda r: sum(1 for x in range(0, w, 2) if px[x, r]))
+    out = []
+    for (t, b) in ((0, y), (y, h)):
+        x = emptiest(w, .3, .7, lambda c: sum(1 for r in range(t, b, 2) if px[c, r]))
+        for (l, r) in ((0, x), (x, w)):
+            cell = img.crop((l, t, r, b))
+            box = cell.getchannel('A').point(lambda v: 255 if v > 24 else 0).getbbox()
+            out.append(cell.crop(box) if box else cell)
+    return out
+
+
+PIECES_DIR = ROOT / 'pieces'  # pièces à conviction : planche-1..6.png (2×2, ordre de lore/pieces.json, puis la caisse)
+MUR_DIR = ROOT / 'mur'        # page du mur : tableau.png (liège encadré vide), papiers.png (note, carte, bande, punaise)
+
+
+def pieces():
+    import json
+    if not PIECES_DIR.exists():
+        return
+    names = list(json.loads((ROOT.parent / 'lore' / 'pieces.json').read_text())['pieces']) + ['caisse']
+    sheets = sorted(PIECES_DIR.glob('planche-*.png'), key=lambda f: int(f.stem.split('-')[1]))
+    for sheet in sheets:
+        n = int(sheet.stem.split('-')[1])
+        for i, img in enumerate(quad_cells(key_out_outside(Image.open(sheet)))):
+            k = (n - 1) * 4 + i
+            if k >= len(names):
+                break
+            name = names[k]
+            img.thumbnail((520, 520) if name == 'caisse' else (256, 256), Image.LANCZOS)
+            out = (DESK_DIR if name == 'caisse' else PIECES_DIR) / f'{name}.webp'
+            img.save(out, 'WEBP', quality=86, method=6)
+        print(f'pièces à conviction {sheet.name} → {", ".join(names[(n - 1) * 4:n * 4])}')
+
+
+def mur():
+    if not MUR_DIR.exists():
+        return
+    src = MUR_DIR / 'tableau.png'
+    if src.exists():
+        img = key_out_outside(Image.open(src))
+        img = img.crop(img.getchannel('A').point(lambda v: 255 if v > 24 else 0).getbbox())
+        img.thumbnail((1400, 1400), Image.LANCZOS)
+        img.save(MUR_DIR / 'tableau.webp', 'WEBP', quality=86, method=6)
+    src = MUR_DIR / 'papiers.png'
+    if src.exists():
+        for name, img in zip(['note', 'carte', 'bande', 'punaise'], quad_cells(key_out_outside(Image.open(src)))):
+            img.thumbnail((96, 96) if name == 'punaise' else (640, 640), Image.LANCZOS)
+            img.save(MUR_DIR / f'{name}.webp', 'WEBP', quality=86, method=6)
+    print('mur : tableau, note, carte, bande, punaise')
+
+
 def main():
     portraits()
     variants()
@@ -622,8 +681,15 @@ def main():
     decors()
     carte()
     desk()
+    pieces()
+    mur()
     icons()
 
 
 if __name__ == '__main__':
-    main()
+    import sys
+    if sys.argv[1:]:  # seulement les étapes nommées (ex. : images.py pieces mur)
+        for step in sys.argv[1:]:
+            globals()[step]()
+    else:
+        main()

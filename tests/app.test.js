@@ -641,6 +641,28 @@ test('carnet : les découvertes se débloquent au fil des rencontres, signalées
   assert.deepEqual(errors, []);
 });
 
+test('pièces à conviction : une par lieu terminé, dans la caisse du bureau', () => {
+  const { w, d, errors } = open({ settings: { tuto: { choisir: true } } });
+  const ALL = w.eval('PUZZLES'), chateau = ALL.filter(p => p.place === 'chateau' && !p.off && !p.final);
+  w.grimGo('bureau');
+  assert.equal(d.getElementById('deskCaisse'), null, 'pas de caisse avant le premier lieu terminé');
+  for (const p of chateau.slice(0, -1)) w.localStorage.setItem('grimdoku:p:' + p.id, JSON.stringify({ pos: p.solution.positions, pencil: {}, marks: [], done: [], solved: true, sig: sigOf(p) }));
+  w.grimGo('bureau');
+  assert.equal(d.getElementById('deskCaisse'), null, 'lieu pas encore terminé');
+  const last = chateau[chateau.length - 1];
+  w.localStorage.setItem('grimdoku:p:' + last.id, JSON.stringify({ pos: last.solution.positions, pencil: {}, marks: [], done: [], solved: true, sig: sigOf(last) }));
+  w.grimGo('bureau');
+  assert.ok(d.querySelector('#deskCaisse .newmark'), 'la caisse apparaît, avec une pièce nouvelle');
+  d.getElementById('deskCaisse').click();
+  assert.match(w.location.hash, /#\/pieces$/);
+  const txt = d.getElementById('app').textContent;
+  assert.ok(txt.includes('Le gobelet ébréché du roi') && txt.includes('1 / 23'), 'la pièce du château, sur 23');
+  assert.equal(d.querySelectorAll('.piece-slot:not(.vide)').length, 1);
+  w.grimGo('bureau');
+  assert.equal(d.querySelector('#deskCaisse .newmark'), null, 'vue : plus de signal');
+  assert.deepEqual(errors, []);
+});
+
 test('affaire du jour (grille désactivée, même pour tous à une date, série) ; archives non classées après la finale', () => {
   const { w, d, errors } = open({ settings: { tuto: { choisir: true } } });
   const ALL = w.eval('PUZZLES'), OFF = ALL.filter(p => p.off && !p.final), fin = ALL.find(p => p.final);

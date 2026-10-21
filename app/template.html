@@ -1019,6 +1019,28 @@ html.plaques .tbtn.pen[aria-pressed="true"] { background: none; box-shadow: none
 .desk-item.dk-jour:has(> img) .newmark { top: 50%; right: 40%; }
 @media (max-aspect-ratio: 1/1) { .desk-item.dk-jour:has(> img)::after { font-size: clamp(7px, 2.3vw, 11px); } }
 @media (max-aspect-ratio: 1/1) { .desk-item.dk-jour { grid-area: bc; transform: rotate(3deg); } .bureau:has(.dk-jour) .desk-deco.s1 { display: none; } }
+.desk-item.dk-caisse { width: 13%; left: -14%; top: 61%; transform: rotate(4deg); }
+@media (max-aspect-ratio: 1/1) { .desk-item.dk-caisse { grid-row: 4; grid-column: 2; transform: rotate(-2deg); } }
+.caisse { position: relative; display: block; aspect-ratio: 4 / 3; border: 5px solid #6b4423; background: repeating-linear-gradient(#a8743f 0 22%, #6b4423 22% 25%); box-sizing: border-box; }
+.pieces { max-width: 1100px; margin: 0 auto; padding: 8px 16px 40px; }
+.pieces-count { margin: 0 0 12px; text-align: center; font: 400 22px/1 var(--f-display); color: #fbeed3; }
+.pieces-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+.piece-slot { margin: 0; padding: 12px; border-radius: 6px; background: rgba(30, 18, 8, .55); box-shadow: inset 0 0 18px rgba(0, 0, 0, .5); display: flex; flex-direction: column; align-items: center; text-align: center; color: #fbeed3; }
+.piece-slot img { width: 110px; height: 110px; object-fit: contain; filter: drop-shadow(3px 5px 4px rgba(0, 0, 0, .55)); }
+.piece-slot figcaption { display: flex; flex-direction: column; gap: 3px; margin-top: 8px; }
+.piece-slot b { font: 400 19px/1.15 var(--f-display); }
+.piece-slot small { font: 600 11px/1.3 var(--f-body); letter-spacing: .04em; text-transform: uppercase; color: #d9b98a; }
+.piece-slot span { font: 400 16px/1.35 var(--f-hand); color: #f4e8cc; }
+.piece-slot.neuve { box-shadow: inset 0 0 18px rgba(0, 0, 0, .5), 0 0 0 2px rgba(240, 169, 58, .7); }
+.piece-slot.vide { justify-content: center; min-height: 120px; background: transparent; border: 1px dashed rgba(255, 244, 220, .3); box-shadow: none; color: rgba(255, 244, 220, .55); }
+/* page du mur illustrée : cadre et liège en border-image (le liège est étiré au centre : répété, il laissait une couture), papiers vierges, punaises */
+.mur-img .mur-board { border-style: solid; border-width: 38px; border-radius: 0; border-image: var(--mur-tableau) 46 fill / 38px stretch; background: none; box-shadow: none; filter: drop-shadow(0 12px 18px rgba(0, 0, 0, .5)); }
+.mur-img .mur-notes, .mur-img .mur-pin:not(.vide) { background: var(--mur-carte) center / 100% 100% no-repeat; box-shadow: none; filter: drop-shadow(1px 3px 3px rgba(0, 0, 0, .45)); }
+.mur-img .mur-notes { padding: 22px 28px; }
+.mur-img .mur-pin:not(.vide) { padding: 14px 16px 12px 18px; }
+.mur-img .mur-ded { border-left: 0; background: var(--mur-bande) center / 100% 100% no-repeat; padding: 14px 26px; }
+.mur-img .mur-pin::before { top: -12px; width: 20px; height: 26px; margin-left: -10px; border-radius: 0; background: var(--mur-punaise) center / contain no-repeat; }
+@media (max-aspect-ratio: 1/1) { .mur-img .mur-board { border-width: 20px; border-image-width: 20px; padding: 14px 8px; } }
 .liege { position: relative; display: block; aspect-ratio: 4 / 3; border-radius: 3px; border: 5px solid #6b4423;
   background: radial-gradient(circle at 30% 30%, #c99a63, #a87a48 70%); box-sizing: border-box; }
 .liege::before, .liege::after { content: ""; position: absolute; background: #f3e6c8; box-shadow: 1px 2px 2px rgba(0, 0, 0, .35); }
@@ -1134,6 +1156,8 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
 }
 // pièce d'or de la bourse : illustration si présente, sinon dessin CSS
 if (MEDIA.desk && MEDIA.desk.piece) { document.documentElement.classList.add('piece-img'); document.documentElement.style.setProperty('--piece', `url(${MEDIA.desk.piece})`); }
+// page du mur : tableau de liège, papiers et punaise illustrés si présents (sinon dessins CSS)
+if (MEDIA.mur && MEDIA.mur.tableau) { document.documentElement.classList.add('mur-img'); for (const [k, u] of Object.entries(MEDIA.mur)) document.documentElement.style.setProperty('--mur-' + k, `url(${u})`); }
 (function () {
   'use strict';
   const E = window.GrimEngine;
@@ -1267,6 +1291,7 @@ if (MEDIA.desk && MEDIA.desk.piece) { document.documentElement.classList.add('pi
         ${item(`dk-lettres ${nu ? 'unread' : ''}`, 'deskLettres', `Lettres anonymes (${nl})`, img('lettres', 'liasse'), nu ? `<span class="newmark" aria-label="${nu} non lue${nu > 1 ? 's' : ''}"></span>` : '')}
         ${item('dk-carnet', 'deskCarnet', "Carnet d'enquête", img('carnet', 'cuir'), newDecouvertes().length ? `<span class="newmark" aria-label="nouvelles découvertes"></span>` : '')}
         ${murOpen() ? item('dk-mur', 'deskMur', "L'affaire de la Tour", img('mur', 'liege')) : ''}
+        ${piecesGot().length ? item('dk-caisse', 'deskCaisse', `Pièces à conviction (${piecesGot().length} / ${Object.keys(LORE.pieces).length})`, img('caisse', 'caisse'), newPieces().length ? '<span class="newmark" aria-label="nouvelle pièce à conviction"></span>' : '') : ''}
         ${dailyCase() ? item('dk-jour', 'deskJour', `L'affaire du jour${jour().serie ? ` · série : ${jour().serie}` : ''}`, img('jour', 'gazette'), isSolved(dailyCase()) ? '' : '<span class="newmark" aria-label="affaire du jour à résoudre"></span>') : ''}
         ${fin ? item(`dk-enveloppe ${isSolved(FINAL) ? '' : 'fresh'}`, 'deskFinal', 'Une enveloppe scellée', img('enveloppe', 'env')) : ''}
         <span class="desk-glow" aria-hidden="true"></span>
@@ -1281,6 +1306,7 @@ if (MEDIA.desk && MEDIA.desk.piece) { document.documentElement.classList.add('pi
     document.getElementById('deskLettres').onclick = () => pendingLetters().length ? openLetter(pendingLetters()[0]) : go('lettres');
     document.getElementById('deskCarnet').onclick = () => go('carnet');
     const mur = document.getElementById('deskMur'); if (mur) mur.onclick = () => go('mur');
+    const caisse = document.getElementById('deskCaisse'); if (caisse) caisse.onclick = () => go('pieces');
     const dj = document.getElementById('deskJour'); if (dj) dj.onclick = () => { caseBack = 'bureau'; go('affaire/' + dailyCase().id); };
     setTimeout(filRougeNext, 0); // une visite ou un déclic dû : au retour au bureau
     const f = document.getElementById('deskFinal'); if (f) f.onclick = () => { caseBack = 'bureau'; go('affaire/' + FINAL.id); };
@@ -1655,6 +1681,7 @@ if (MEDIA.desk && MEDIA.desk.piece) { document.documentElement.classList.add('pi
     else if (page === 'lettres') lettresPage();
     else if (page === 'carnet') carnetPage();
     else if (page === 'mur') murPage();
+    else if (page === 'pieces') piecesPage();
     else if (page === 'lieu' && placeCases(arg).length && unlockedPlaces().has(arg)) lieuPage(arg);
     else if (page === 'affaire' && FINAL && arg === FINAL.id && !finalUnlocked()) bureauPage(); // pas encore arrivée
     else if (page === 'affaire' && playable(arg)) open(arg);
@@ -2475,6 +2502,24 @@ if (MEDIA.desk && MEDIA.desk.piece) { document.documentElement.classList.add('pi
   const FR = LORE.filRouge || { declics: [], questions: {}, pieces: {}, visites: [] };
   const frSeen = () => store.get('filrouge', []);
   const frMark = (k) => { const s = frSeen(); if (!s.includes(k)) store.set('filrouge', s.concat(k)); };
+  // pièces à conviction (phase 3, bureau qui évolue) : une par lieu terminé (lore/pieces.json), dans la caisse du bureau
+  const piecesGot = () => Object.keys(LORE.pieces).filter(placeDone);
+  const newPieces = () => { const vues = store.get('pieces-vues', []); return piecesGot().filter(pl => !vues.includes(pl)); };
+  function piecesPage() {
+    P = null;
+    $app.classList.remove('game');
+    const got = piecesGot(), all = Object.keys(LORE.pieces), known = unlockedPlaces(), vues = store.get('pieces-vues', []);
+    if (!got.length) return bureauPage();
+    $app.innerHTML = pageHead('Retour au bureau', 'Pièces à conviction') + `
+      <div class="pieces"><p class="pieces-count">${got.length} / ${all.length}</p><div class="pieces-grid">${all.map(pl => {
+        if (!got.includes(pl)) return `<div class="piece-slot vide"><small>${known.has(pl) ? esc(placeTitle(pl)) : 'Lieu inconnu'}</small></div>`;
+        const pc = LORE.pieces[pl];
+        return `<figure class="piece-slot${vues.includes(pl) ? '' : ' neuve'}">${MEDIA.pieces.includes(pl) ? `<img src="media/piece-${pl}.webp" alt="">` : ''}
+          <figcaption><b>${esc(pc.nom)}</b><small>${esc(placeTitle(pl))}</small><span>${esc(pc.note)}</span></figcaption></figure>`;
+      }).join('')}</div></div>`;
+    store.set('pieces-vues', [...new Set([...vues, ...got])]);
+    document.getElementById('back').onclick = () => go('bureau');
+  }
   const murOpen = () => FR.declics.some(d => d.mur && letters().length >= d.lettres);
   // la question en tête du mur : celle du dernier déclic atteint
   const murQuestion = () => { const n = letters().length; return FR.declics.filter(d => d.mur && d.lettres <= n).pop(); };

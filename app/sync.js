@@ -4,7 +4,7 @@
 // Partagé par la page (window.GrimSync) et les tests (require).
 (function (root) {
   'use strict';
-  const LISTS = ['lettres', 'lettres-lues', 'lieux-vus', 'filrouge', 'rangs-vus', 'decouvertes-vues', 'ecus-payes']; // ce qu'on a reçu, lu, vu ou touché ne se perd pas : union
+  const LISTS = ['lettres', 'lettres-lues', 'lieux-vus', 'filrouge', 'rangs-vus', 'decouvertes-vues', 'ecus-payes', 'pieces-vues']; // ce qu'on a reçu, lu, vu ou touché ne se perd pas : union
   const LOCAL = ['settings', 'compte', 'oauth', 'inscrit', 'invite']; // propres à l'appareil (oauth, inscrit : connexion en cours ; invite : invitation au registre vue)
   const keep = (k) => !LOCAL.includes(k);
   // état d'une affaire : le plus récent l'emporte (t, posé à chaque sauvegarde) ; sans date, la résolue, puis la plus avancée
