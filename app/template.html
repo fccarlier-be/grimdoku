@@ -526,6 +526,10 @@ header.top { display: flex; align-items: center; gap: 10px; }
   box-shadow: inset 0 0 0 1.5px rgba(43, 32, 22, .5), inset 0 0 14px rgba(120, 66, 18, .4); filter: url(#torn-s); }
 .billet p { margin: 0; font: 400 18px/1.4 var(--f-hand); }
 .billet.bad p { color: #a3312a; }
+.bourse-chip { display: inline-flex; align-items: center; gap: 5px; margin-right: 6px; padding: 4px 10px 4px 6px; border-radius: 99px; background: rgba(20, 12, 6, .55);
+  color: #f6d98a; font: 600 15px/1 var(--f-body); box-shadow: inset 0 0 0 1px rgba(246, 217, 138, .35); }
+.bourse-chip i { width: 18px; height: 18px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #ffe9a3, #d9a521 55%, #8f6410); box-shadow: inset 0 0 0 2px rgba(120, 80, 10, .5); }
+.courrier-roi { margin: 28px 0 10px; text-align: center; font: 400 24px/1.2 var(--f-display); color: #f3e6c8; }
 .cachets { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 10px 0; }
 .cachet { font: 600 13px/1 var(--f-body); padding: 7px 10px; border-radius: 99px; border: 2px solid #a3201a; color: #a3201a; transform: rotate(-3deg); }
 .cachet.off { border-color: rgba(120, 90, 60, .4); color: rgba(120, 90, 60, .55); text-decoration: line-through; transform: none; }
@@ -1231,6 +1235,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
         <button class="iconbtn" id="back" aria-label="Retour à l'accueil">‹</button>
         <h1 class="sr-only">Bureau de l'enquêteur</h1>
         <span class="spacer"></span>
+        ${bourseHtml()}
         ${soundBtn()}
         ${cloud.on() ? '<button class="iconbtn" id="opts" aria-label="Options"></button>' : ''}
         <button class="iconbtn" id="rulesBtn" aria-label="Règles">?</button>
@@ -1305,7 +1310,11 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
           ${LORE.letters[pl].split('\n').map(par => `<p>${esc(par)}</p>`).join('')}
           <span class="lettre-sign">A.</span>
           ${fresh.includes(pl) ? '<span class="lettre-seal" aria-hidden="true">A</span>' : '<span class="lettre-seal broken" aria-hidden="true"><i></i><i></i></span>'}</article>`).join('')}</div>`
-        : '<p class="courrier-vide">Personne ne m\'a encore écrit.</p>'}`;
+        : '<p class="courrier-vide">Personne ne m\'a encore écrit.</p>'}
+      ${RANGS.filter(r => r.lettre && store.get('rangs-vus', []).includes(r.seuil)).length ? `<h2 class="courrier-roi">Lettres du roi</h2><div class="courrier">${RANGS.filter(r => r.lettre && store.get('rangs-vus', []).includes(r.seuil)).reverse().map(r => `<article class="lettre">
+          <span class="lettre-lieu">Château de Mortebrune — ${esc(r.titre)}</span>
+          ${r.lettre.split('\n').map(par => `<p>${esc(par)}</p>`).join('')}
+          <span class="lettre-sign">Dagobert</span><span class="lettre-seal broken" aria-hidden="true"><i></i><i></i></span></article>`).join('')}</div>` : ''}`;
     document.getElementById('back').onclick = () => go('bureau');
     document.getElementById('rulesBtn').onclick = rules;
   }
@@ -1345,7 +1354,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     const known = Object.keys(LORE.troupe).filter(t => met[t]), total = Object.keys(LORE.troupe).length;
     const garde = `<div class="nb-garde">
         <h2>Carnet d'enquête</h2>
-        <p class="nb-owner">tenu par l'Enquêteur de la baronnie de Brumeval</p>
+        <p class="nb-owner">tenu par ${/^[AEIOUÉ]/.test(rangOf().titre) ? "l'" : 'le '}${esc(rangOf().titre)}${rangOf().seuil ? ', à Brumeval' : ' de Brumeval'}</p>
         <p class="nb-tally">${known.length ? `${known.length} habitant${known.length > 1 ? 's' : ''} croisé${known.length > 1 ? 's' : ''} sur ${total}` : 'Personne encore. Résoudre une enquête pour faire connaissance.'}</p>
         <button class="nb-link" id="prologueBtn">Relire le prologue</button>
         ${newDecouvertes().length ? `<p class="nb-tally"><b>${newDecouvertes().length} nouvelle${newDecouvertes().length > 1 ? 's' : ''} découverte${newDecouvertes().length > 1 ? 's' : ''}</b> dans ces pages.</p>` : ''}
@@ -1906,6 +1915,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
         <button class="iconbtn" id="back" aria-label="Retour aux affaires">‹</button>
         <button class="hdtitle" id="introBtn" aria-label="Lire l'affaire">${esc(P.title)}</button>
         <span class="spacer"></span>
+        ${bourseHtml()}
         ${soundBtn()}
         <button class="iconbtn" id="opts" aria-label="Options"></button>
         <button class="iconbtn" id="rulesBtn" aria-label="Règles">?</button>
@@ -2280,6 +2290,8 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
   }
 
   // ---------- gamification (phase 3) : cachets, écus, indices payants ----------
+  // la bourse, toujours visible en haut du bureau et des enquêtes (demande de François, 2026-10-21)
+  const bourseHtml = () => `<span class="bourse-chip" title="Bourse : ${ecusTxt(ecus())}" aria-label="Bourse : ${ecusTxt(ecus())}"><i aria-hidden="true"></i>${ecus()}</span>`;
   // Cachets d'une enquête : « sans indice » et « sans fausse accusation » (S.hints, S.errs), gardés au meilleur par
   // affaire (grimdoku:cachets) même si on la rejoue. Écus (grimdoku:ecus, 5 au départ) : gagnés à la première résolution
   // d'une affaire (3) et à chaque cachet obtenu pour la première fois (2) ; on ne gagne jamais deux fois la même chose.
@@ -2337,7 +2349,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
       if (S.hintFor === target) return true;
       const cost = hintCost();
       if (cost > ecus()) { billet(`Cet indice coûte ${ecusTxt(cost)}, et ta bourse n'en contient que ${ecus()}. Résous d'autres affaires pour la remplir.`, true); return false; }
-      if (cost) store.set('ecus', ecus() - cost);
+      if (cost) { store.set('ecus', ecus() - cost); document.querySelectorAll('.bourse-chip').forEach(b => { b.lastChild.textContent = ecus(); }); }
       S.hints = (S.hints || 0) + 1; S.hintFor = target; save(); stat('indice', P, S.hints);
       return true;
     };
@@ -2450,8 +2462,23 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
   const murOpen = () => FR.declics.some(d => d.mur && letters().length >= d.lettres);
   // la question en tête du mur : celle du dernier déclic atteint
   const murQuestion = () => { const n = letters().length; return FR.declics.filter(d => d.mur && d.lettres <= n).pop(); };
+  // rangs de l'enquêteur (lore/rangs.json) : au nombre d'enquêtes résolues (hors affaire du jour et archives) ; la
+  // promotion arrive au bureau (lettre scellée « D » de Dagobert), avant les visites et les déclics ; seul le dernier
+  // rang atteint s'affiche, les précédents sont tenus pour lus (grimdoku:rangs-vus)
+  const RANGS = LORE.rangs || [{ seuil: 0, titre: 'Enquêteur de la baronnie', lettre: null }];
+  const rangOf = () => { const n = solvedIn(CASES); return RANGS.filter(r => r.seuil <= n).pop(); };
+  function promotionStory(r) {
+    story(`<div class="seal-a" aria-hidden="true">D</div>
+      <small class="story-from">Château de Mortebrune · une lettre du roi</small>
+      ${r.lettre.split('\n').map(par => `<p class="story-letter">${esc(par)}</p>`).join('')}
+      <p class="story-sign">Dagobert, roi de Brumeval</p>
+      <p class="story-count">Nouveau titre : <b>${esc(r.titre)}</b></p>
+      <div class="row"><button class="btn primary" data-close>Ranger la lettre</button></div>`, 'letter-story promotion-story');
+  }
   function filRougeNext() {
     if (!$app.classList.contains('desk') || document.getElementById('ov')) return;
+    const vus = store.get('rangs-vus', []), dus = RANGS.filter(r => r.lettre && r.seuil <= solvedIn(CASES) && !vus.includes(r.seuil));
+    if (dus.length) { store.set('rangs-vus', vus.concat(dus.map(r => r.seuil))); return promotionStory(dus[dus.length - 1]); }
     const n = letters().length, seen = frSeen();
     // d'abord les visites dues (dans l'ordre), puis le dernier déclic atteint (les précédents, dépassés, sont tenus pour vus)
     const v = FR.visites.find(x => x.lettres <= n && !seen.includes('visite-' + x.lettres));

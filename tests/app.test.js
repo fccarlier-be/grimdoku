@@ -705,6 +705,27 @@ test('gamification : cachets (sans indice, sans fausse accusation), écus gagné
   assert.deepEqual(errors, []);
 });
 
+test('rangs : promotion de Dagobert au bureau, titre dans le carnet, lettre dans le courrier ; bourse visible', async () => {
+  const RANGS = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'lore', 'rangs.json'), 'utf8')).rangs;
+  const { w, d, errors, PUZZLES } = open({ settings: { tuto: { choisir: true } } });
+  w.localStorage.setItem('grimdoku:ecus', '9');
+  w.grimGo('bureau');
+  assert.match(d.querySelector('.bourse-chip').textContent, /9/, 'bourse sur le bureau');
+  PUZZLES.filter(p => !p.final).slice(0, 16).forEach(p => solve(w, p));
+  w.grimGo('bureau'); await sleep(30);
+  const st = d.querySelector('#layer .promotion-story');
+  assert.ok(st && st.textContent.includes(RANGS[2].titre), 'seule la dernière promotion atteinte (15 enquêtes)');
+  st.querySelector('[data-close]').click(); await sleep(30);
+  assert.equal(d.querySelector('#layer .promotion-story'), null, 'pas de seconde lettre pour le rang dépassé');
+  w.grimGo('carnet');
+  assert.match(d.querySelector('.nb-owner').textContent, new RegExp(RANGS[2].titre));
+  w.grimGo('lettres');
+  assert.match(d.getElementById('app').textContent, /Lettres du roi/);
+  w.grimGo('affaire/' + PUZZLES[20].id);
+  assert.ok(d.querySelector('.bourse-chip'), 'bourse dans les enquêtes');
+  assert.deepEqual(errors, []);
+});
+
 test('conseils de l\'enquêteur : un à la fois, « pourquoi » pendant la première enquête, plus ensuite', async () => {
   const { w, d, pick, hold, openCase, errors, PUZZLES } = open();
   const p = PUZZLES.find(q => q.place === 'chateau' && !q.characters.some(c => c.shape));
