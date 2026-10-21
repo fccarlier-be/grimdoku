@@ -529,6 +529,7 @@ header.top { display: flex; align-items: center; gap: 10px; }
 .bourse-chip { display: inline-flex; align-items: center; gap: 5px; margin-right: 6px; padding: 4px 10px 4px 6px; border-radius: 99px; background: rgba(20, 12, 6, .55);
   color: #f6d98a; font: 600 15px/1 var(--f-body); box-shadow: inset 0 0 0 1px rgba(246, 217, 138, .35); }
 .bourse-chip i { width: 18px; height: 18px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #ffe9a3, #d9a521 55%, #8f6410); box-shadow: inset 0 0 0 2px rgba(120, 80, 10, .5); }
+.piece-img .bourse-chip i { background: var(--piece) center / contain no-repeat; box-shadow: none; border-radius: 0; width: 20px; height: 20px; }
 .courrier-roi { margin: 28px 0 10px; text-align: center; font: 400 24px/1.2 var(--f-display); color: #f3e6c8; }
 .cachets { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 10px 0; }
 .cachet { font: 600 13px/1 var(--f-body); padding: 7px 10px; border-radius: 99px; border: 2px solid #a3201a; color: #a3201a; transform: rotate(-3deg); }
@@ -1013,6 +1014,10 @@ html.plaques .tbtn.pen[aria-pressed="true"] { background: none; box-shadow: none
 .desk-item.dk-jour { width: 10%; right: -10%; top: 37%; transform: rotate(8deg); } /* sous le mur, même inclinaison */
 .gazette { position: relative; display: block; aspect-ratio: 3 / 4; background: repeating-linear-gradient(#efe4cc 0 6px, #d8c9a8 6px 7px), #efe4cc; border: 2px solid #8a6a3e; border-radius: 2px; }
 .gazette::before { content: "Affaire du jour"; position: absolute; left: 6%; right: 6%; top: 6%; padding: 3px 0; background: #efe4cc; font: 400 clamp(10px, 1.1vw, 15px)/1.1 var(--f-display); color: #3b2a18; text-align: center; border-bottom: 2px solid #3b2a18; }
+/* gazette illustrée : le titre est écrit dans le bandeau vide du haut de la feuille */
+.desk-item.dk-jour:has(> img)::after { content: "Affaire du jour"; position: absolute; left: 30%; top: 12%; width: 58%; transform: rotate(11deg); font: 400 clamp(6px, .62vw, 11px)/1 var(--f-display); white-space: nowrap; color: #3b2a18; text-align: center; pointer-events: none; }
+.desk-item.dk-jour:has(> img) .newmark { top: 50%; right: 40%; }
+@media (max-aspect-ratio: 1/1) { .desk-item.dk-jour:has(> img)::after { font-size: clamp(7px, 2.3vw, 11px); } }
 @media (max-aspect-ratio: 1/1) { .desk-item.dk-jour { grid-area: bc; transform: rotate(3deg); } .bureau:has(.dk-jour) .desk-deco.s1 { display: none; } }
 .liege { position: relative; display: block; aspect-ratio: 4 / 3; border-radius: 3px; border: 5px solid #6b4423;
   background: radial-gradient(circle at 30% 30%, #c99a63, #a87a48 70%); box-sizing: border-box; }
@@ -1127,6 +1132,8 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
   for (const k of ['bouton-principal', 'bouton-secondaire']) document.documentElement.style.setProperty('--' + k, `url(${MEDIA.desk[k]})`);
   for (const k of ['bouton-retour', 'bouton-son', 'bouton-muet', 'bouton-aide', 'bouton-options']) if (MEDIA.desk[k]) document.documentElement.style.setProperty('--' + k, `url(${MEDIA.desk[k]})`);
 }
+// pièce d'or de la bourse : illustration si présente, sinon dessin CSS
+if (MEDIA.desk && MEDIA.desk.piece) { document.documentElement.classList.add('piece-img'); document.documentElement.style.setProperty('--piece', `url(${MEDIA.desk.piece})`); }
 (function () {
   'use strict';
   const E = window.GrimEngine;
