@@ -9,7 +9,9 @@ const { JSDOM } = require('jsdom');
 const HTML = fs.readFileSync(path.join(__dirname, '..', 'dist', 'grimdoku.html'), 'utf8');
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 const location = (w) => w.location.hash;
-const ENGINE = require('../engine.js'); // solveur humain : ordre des déductions (conseils « pourquoi »)
+const ENGINE = require('../engine.js');
+// quatre affaires du fichier des énigmes construites (écus rétroactifs)
+const PUZZLES_FOR_RETRO = () => { const h = fs.readFileSync(path.join(__dirname, '..', 'dist', 'grimdoku.html'), 'utf8'); return fs.readdirSync(path.join(__dirname, '..', 'puzzles')).slice(0, 4).map(f => JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'puzzles', f), 'utf8'))).filter(() => h); }; // solveur humain : ordre des déductions (conseils « pourquoi »)
 const sigOf = (p) => p.characters.map(c => c.id + ':' + c.name).join('|') + '#' + p.clues.length;
 const solve = (w, p) => w.localStorage.setItem('grimdoku:p:' + p.id, JSON.stringify({ pos: p.solution.positions, pencil: {}, marks: [], done: [], solved: true, sig: sigOf(p) }));
 
@@ -703,6 +705,15 @@ test('gamification : cachets (sans indice, sans fausse accusation), écus gagné
   openCase(b.id); d.getElementById('accuse').click();
   assert.ok(d.querySelector('.cachet.off'), 'cachet « sans indice » perdu');
   assert.deepEqual(errors, []);
+});
+
+test('écus rétroactifs : 3 par enquête résolue avant leur arrivée, une seule fois', () => {
+  const { w, PUZZLES } = open({ saves: Object.fromEntries(PUZZLES_FOR_RETRO().map(p => [p.id, { pos: p.solution.positions, pencil: {}, marks: [], done: [], solved: true, sig: sigOf(p) }])) });
+  assert.equal(JSON.parse(w.localStorage.getItem('grimdoku:ecus')), 5 + 3 * 4);
+  assert.equal(JSON.parse(w.localStorage.getItem('grimdoku:ecus-retro')), true);
+  w.grimGo('bureau');
+  assert.equal(JSON.parse(w.localStorage.getItem('grimdoku:ecus')), 17, 'pas deux fois');
+  void PUZZLES;
 });
 
 test('rangs : promotion de Dagobert au bureau, titre dans le carnet, lettre dans le courrier ; bourse visible', async () => {

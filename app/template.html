@@ -2303,6 +2303,14 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
   const cachetsOf = (id) => (store.get('cachets', {})[id] || []);
   const hintCost = () => (S.hints || 0) === 0 ? 0 : S.hints;
   const ecusTxt = (n) => `${n} écu${n > 1 ? 's' : ''}`;
+  // écus rétroactifs (François, 2026-10-21 : « 39 grilles et seulement 5 pièces ») : une seule fois, 3 écus par
+  // affaire déjà résolue avant l'arrivée des écus (les cachets ne se rendent pas : on ne sait pas comment elle l'a été)
+  function retroEcus() {
+    if (store.get('ecus-retro', false)) return;
+    const paid = store.get('ecus-payes', []), todo = PUZZLES.filter(p => isSolved(p) && !paid.includes(p.id)).map(p => p.id);
+    if (todo.length) { store.set('ecus', ecus() + 3 * todo.length); store.set('ecus-payes', paid.concat(todo)); }
+    store.set('ecus-retro', true);
+  }
   function reward() { // à la résolution : cachets de cette partie, écus gagnés pour ce qui est nouveau
     const now = Object.keys(CACHETS).filter(k => k === 'sans-indice' ? !S.hints : !S.errs);
     const all = store.get('cachets', {}), before = all[P.id] || [], paid = store.get('ecus-payes', []);
@@ -2442,6 +2450,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
   const archivesOpen = () => !!(FINAL && isSolved(FINAL));
   const playable = (id) => { const p = PUZZLES.find(q => q.id === id); return !!p && (!p.off || archivesOpen() || (dailyCase() || {}).id === id); }; // la finale : déblocage vérifié avant
   window.grimJour = { dailyCase, yesterday }; // tests
+  retroEcus();
   function dailySolved() { // à la résolution : la série du jour
     const j = jour();
     if (j.last === today()) return;
