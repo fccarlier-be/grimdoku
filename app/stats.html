@@ -101,14 +101,14 @@ td.title { white-space: normal; min-width: 220px; }
   const placeName = (pl) => { for (const m of Object.values(META)) if (m.pl === pl) return m.pn; return pl; };
   const pct = (a, b) => b ? Math.round(a * 100 / b) + ' %' : '–';
 
-  // journaux nginx : « date e v g n » (compteur) et « date g d v s n » (votes)
+  // journaux nginx : « date e v g n x » (compteur ; x : n-ième indice, ce qui clochait, secondes de jeu) et « date g d v s n » (votes)
   function parseStats(txt) {
     const out = [];
     for (const line of txt.split('\n')) {
-      const [t, e, v, g, n] = line.trim().split(' ');
-      if (!t || !/^(visite|ouverte|resolue)$/.test(e) || !/^[a-z0-9]{1,16}$/.test(v || '')) continue;
+      const [t, e, v, g, n, x] = line.trim().split(' ');
+      if (!t || !/^(visite|ouverte|resolue|indice|erreur)$/.test(e) || !/^[a-z0-9]{1,16}$/.test(v || '')) continue;
       const d = new Date(t); if (isNaN(d)) continue;
-      out.push({ d, e, v, g: g && g !== '-' ? decodeURIComponent(g) : null, n: +n || null });
+      out.push({ d, e, v, g: g && g !== '-' ? decodeURIComponent(g) : null, n: +n || null, x: x && x !== '-' ? decodeURIComponent(x) : null });
     }
     return out;
   }
@@ -162,6 +162,11 @@ td.title { white-space: normal; min-width: 220px; }
     const todayP = new Set(ALL.filter(x => dayKey(x.d) === today).map(x => x.v)).size;
     const solvedPer = P.map(o => o.r.size).sort((a, b) => a - b);
     const median = solvedPer.length ? solvedPer[Math.floor(solvedPer.length / 2)] : 0;
+    // indices demandés, accusations refusées, temps de jeu réel des affaires résolues (secondes, envoyé à la résolution)
+    const hintsN = ev.filter(x => x.e === 'indice').length, errsN = ev.filter(x => x.e === 'erreur').length;
+    const med = (a) => { const t = a.filter(x => x > 0).sort((p, q) => p - q); return t.length ? t[Math.floor(t.length / 2)] : null; };
+    const mmss = (sec) => sec == null ? '–' : sec < 60 ? sec + ' s' : Math.floor(sec / 60) + ' min' + (sec % 60 >= 30 && sec < 600 ? ' ½' : '');
+    const timeMed = med(ev.filter(x => x.e === 'resolue').map(x => +x.x));
 
     let html = `<section class="kpis">
       <div class="kpi"><b>${players.size}</b><span>joueurs uniques</span></div>
@@ -171,6 +176,9 @@ td.title { white-space: normal; min-width: 220px; }
       <div class="kpi"><b>${opens}</b><span>affaires ouvertes</span></div>
       <div class="kpi"><b>${wins}</b><span>affaires résolues (${pct(wins, opens)})</span></div>
       <div class="kpi"><b>${median}</b><span>résolues par joueur (médiane)</span></div>
+      <div class="kpi"><b>${hintsN}</b><span>indices demandés</span></div>
+      <div class="kpi"><b>${errsN}</b><span>accusations refusées</span></div>
+      <div class="kpi"><b>${mmss(timeMed)}</b><span>temps de jeu par affaire (médiane)</span></div>
     </section><div class="grid">`;
 
     // par jour
@@ -218,18 +226,26 @@ td.title { white-space: normal; min-width: 220px; }
 
     // affaires : ouvertures, résolutions, abandons, note ressentie (dernier vote de chaque joueur)
     const gr = {};
-    const row = (g) => gr[g] = gr[g] || { g, o: new Set(), r: new Set(), notes: {} };
-    for (const x of ev) if (x.g) { const o = row(x.g); if (x.e === 'ouverte') o.o.add(x.v); if (x.e === 'resolue') o.r.add(x.v); }
+    const row = (g) => gr[g] = gr[g] || { g, o: new Set(), r: new Set(), notes: {}, hints: 0, errs: 0, times: [] };
+    for (const x of ev) if (x.g) {
+      const o = row(x.g);
+      if (x.e === 'ouverte') o.o.add(x.v);
+      if (x.e === 'resolue') { o.r.add(x.v); if (+x.x > 0) o.times.push(+x.x); }
+      if (x.e === 'indice') o.hints++;
+      if (x.e === 'erreur') o.errs++;
+    }
     for (const x of notes) row(x.g).notes[x.v] = x.note;
     const rows = Object.values(gr).map(o => {
       const m = META[o.g] || {}, ns = Object.values(o.notes);
       const ab = [...o.o].filter(v => !o.r.has(v)).length;
       return { g: o.g, title: m.t || o.g, place: placeName(placeOf(o.g)), size: m.n || null, calc: m.d ?? null,
         open: o.o.size, win: o.r.size, ab, rate: o.o.size ? o.r.size / Math.max(o.o.size, o.r.size) : null,
-        votes: ns.length, felt: ns.length ? ns.reduce((a, b) => a + b, 0) / ns.length : null };
+        votes: ns.length, felt: ns.length ? ns.reduce((a, b) => a + b, 0) / ns.length : null,
+        hints: o.hints, errs: o.errs, time: med(o.times) };
     });
     const COLS = [['title', 'Affaire'], ['place', 'Lieu'], ['size', 'Taille', 1], ['calc', 'Difficulté calculée', 1], ['open', 'Ouverte par', 1],
-      ['win', 'Résolue par', 1], ['ab', 'Abandons', 1], ['rate', 'Réussite', 1], ['felt', 'Ressentie (0-5)', 1], ['votes', 'Votes', 1]];
+      ['win', 'Résolue par', 1], ['ab', 'Abandons', 1], ['rate', 'Réussite', 1], ['felt', 'Ressentie (0-5)', 1], ['votes', 'Votes', 1],
+      ['hints', 'Indices', 1], ['errs', 'Accusations refusées', 1], ['time', 'Temps (médiane)', 1]];
     rows.sort((a, b) => { const x = a[sort.key], y = b[sort.key]; if (x === y) return a.title.localeCompare(b.title); if (x === null) return 1; if (y === null) return -1;
       return (typeof x === 'string' ? x.localeCompare(y) : x - y) * sort.dir; });
     html += `<section class="card wide"><h2>Affaires</h2><p class="sub">Cliquer un en-tête pour trier. « Abandons » : joueurs qui l'ont ouverte sans la résoudre (pour l'instant).</p>
@@ -238,7 +254,8 @@ td.title { white-space: normal; min-width: 220px; }
         <td class="num">${r.calc ?? '–'}</td><td class="num">${r.open}</td><td class="num">${r.win}</td>
         <td class="num">${r.ab ? `<span class="tag${r.ab >= 3 && r.ab > r.win ? ' bad' : ''}">${r.ab}</span>` : 0}</td>
         <td class="num">${r.rate === null ? '–' : `<span class="tag${r.rate >= .8 ? ' good' : r.rate < .5 && r.open >= 3 ? ' bad' : ''}">${Math.round(r.rate * 100)} %</span>`}</td>
-        <td class="num">${r.felt === null ? '–' : r.felt.toFixed(1)}</td><td class="num">${r.votes}</td></tr>`).join('')}
+        <td class="num">${r.felt === null ? '–' : r.felt.toFixed(1)}</td><td class="num">${r.votes}</td>
+        <td class="num">${r.hints}</td><td class="num">${r.errs ? `<span class="tag${r.errs >= 3 ? ' bad' : ''}">${r.errs}</span>` : 0}</td><td class="num">${mmss(r.time)}</td></tr>`).join('')}
       </tbody></table></div>` : '<p class="empty">Aucune affaire ouverte.</p>'}</section>`;
 
     html += '</div>';

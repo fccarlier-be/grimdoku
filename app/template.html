@@ -520,6 +520,20 @@ header.top { display: flex; align-items: center; gap: 10px; }
   box-shadow: inset 0 0 0 1.5px rgba(43, 32, 22, .5), inset 0 0 14px rgba(120, 66, 18, .4); filter: url(#torn-s); }
 .billet p { margin: 0; font: 400 18px/1.4 var(--f-hand); }
 .billet.bad p { color: #a3312a; }
+/* conseil de l'enquêteur (apprentissage progressif) : au-dessus des outils, comme le billet d'indice (qui le remplace) */
+.conseil { position: fixed; left: 50%; bottom: calc(130px + env(safe-area-inset-bottom, 0px)); z-index: 32; width: min(90vw, 460px); box-sizing: border-box;
+  transform: translateX(-50%) rotate(.6deg); padding: 14px 18px 12px; color: var(--ink); isolation: isolate; filter: drop-shadow(0 10px 18px rgba(0, 0, 0, .6));
+  animation: billet-in .25s ease-out; }
+.conseil::before { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: 3px;
+  background: var(--parch-tex, none) center / 240px, linear-gradient(#f4e8cc, #e6d4ab);
+  box-shadow: inset 0 0 0 1.5px rgba(43, 32, 22, .5), inset 0 0 14px rgba(120, 66, 18, .35); filter: url(#torn-s); }
+.conseil .lbl { display: block; font: 600 12px/1.3 var(--f-body, sans-serif); letter-spacing: .06em; text-transform: uppercase; color: #8a6a3e; margin-bottom: 4px; }
+.conseil p { margin: 0; font: 400 18px/1.4 var(--f-hand); }
+.conseil .row { display: flex; justify-content: flex-end; margin-top: 8px; }
+.conseil button { font: 600 14px/1 var(--f-body, sans-serif); color: #fff8e6; background: #7a3b1d; border: 0; border-radius: 6px; padding: 8px 14px; cursor: pointer; }
+@media (min-width: 900px) and (hover: hover) { /* ordinateur : en bas de la colonne d'outils, sans cacher la carte */
+  .conseil { left: auto; right: 18px; top: auto; bottom: 24px; width: 300px; transform: rotate(.6deg); } }
+.conseil.pourquoi::before { background: var(--parch-tex, none) center / 240px, linear-gradient(#eef0d8, #dfe0b8); }
 .billet-corbeau { position: absolute; left: -26px; top: 50%; margin-top: -36px; width: 72px; height: 72px; border-radius: 50%; overflow: hidden; background: #efe0bd;
   box-shadow: 0 0 0 3px #2b2016, 0 4px 10px rgba(0, 0, 0, .5); transform: rotate(-4deg); }
 .billet-corbeau .face, .billet-corbeau .portrait { display: block; width: 100%; height: 100%; }
@@ -1506,7 +1520,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
   function show(route) {
     const [page, arg] = route.split('/');
     $app.classList.remove('desk', 'scene-page');
-    closeBillet(); closeInvite();
+    closeBillet(); closeInvite(); document.querySelectorAll('.conseil').forEach(x => x.remove());
     sound.set(page === 'affaire' ? 'carte' : 'menu');
     // anciennes adresses (tailles, carte) : le bureau
     if (['bureau', 'tailles', 'niveaux', 'taille', 'carte'].includes(page)) bureauPage();
@@ -1548,11 +1562,20 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     window.scrollTo(0, 0);
     if (!S.solved) stat('ouverte', P);
     // première ouverture : l'enquêteur raconte l'affaire (bible du jeu : sa voix ouvre chaque enquête)
-    if (!store.get('seen:' + id, false)) { store.set('seen:' + id, true); introSheet(); }
+    if (!store.get('seen:' + id, false)) { store.set('seen:' + id, true); introSheet(); document.querySelectorAll('.conseil').forEach(x => x.remove()); } // le conseil attend la fin de l'intro
   }
   const introSheet = () => story(`${MEDIA.decors.includes(P.decor) ? `<div class="story-img" style="background-image:url(media/decor-${P.decor}.webp)"></div>` : ''}
       <h2>${esc(P.title)}</h2><p class="story-text">${esc(introOf(P, S))}</p><div class="row"><button class="btn primary" data-close>À l'enquête</button></div>`, 'intro');
-  const save = () => { S.t = Date.now(); store.set('p:' + P.id, S); }; // t : la sauvegarde la plus récente l'emporte entre appareils
+  const save = () => { S.t = Date.now(); store.set('p:' + P.id, S); };
+  // temps de jeu réel d'une affaire (statistiques) : de geste en geste sur sa page ; une pause de plus d'une minute ne
+  // compte pas. Gardé dans la sauvegarde (S.play, millisecondes), envoyé à la résolution
+  let lastAct = 0;
+  document.addEventListener('pointerdown', () => {
+    if (!onCase() || S.solved) { lastAct = 0; return; }
+    const now = Date.now();
+    if (lastAct && now - lastAct < 60000) S.play = (S.play || 0) + (now - lastAct);
+    lastAct = now;
+  }, true); // t : la sauvegarde la plus récente l'emporte entre appareils
   const WHEEL_MS = 450; // appui long : la roue des personnages s'ouvre au bout de WHEEL_MS
   // une couleur par personnage (lettres au crayon, pastilles) ; la victime en rouge
   const PALETTE = ['#b5562e', '#3f8a3a', '#2f7f86', '#6a4c9c', '#b8862a', '#3d6db5', '#8a6a4a', '#9c4a7a'];
@@ -1821,6 +1844,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
         }).join('')}
       </div>`;
     bind();
+    tutoCheck();
     if (S.solved && !render.shownWin) { /* rien : la victoire s'affiche à l'accusation */ }
   }
 
@@ -1913,10 +1937,11 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
   // nginx l'inscrit dans un journal (résumé : tools/stats.sh). e : visite (au plus une par jour et par appareil),
   // ouverte, resolue ; v : le même identifiant anonyme que les notes ; ni nom, ni adresse. ?nostat : ne plus compter
   // cet appareil (les parties de François).
-  function stat(e, p) {
+  // x : détail de l'événement (indice : n-ième indice de l'affaire ; erreur : ce qui cloche ; resolue : secondes de jeu)
+  function stat(e, p, x) {
     try {
       if (settings.nostat || typeof fetch !== 'function' || !/^https?:$/.test(location.protocol)) return;
-      const q = `stat?e=${e}&v=${vid()}` + (p ? `&g=${encodeURIComponent(p.id)}&n=${p.size}` : '');
+      const q = `stat?e=${e}&v=${vid()}` + (p ? `&g=${encodeURIComponent(p.id)}&n=${p.size}` : '') + (x != null ? `&x=${encodeURIComponent(x)}` : '');
       fetch(q, { cache: 'no-store', keepalive: true }).catch(() => {});
     } catch (err) { /* hors ligne ou stockage bloqué : tant pis */ }
   }
@@ -2051,7 +2076,96 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     S.marks = S.marks.filter(x => !ks.includes(markKey(x)));
     selected = null;
     if (navigator.vibrate) try { navigator.vibrate(20); } catch (e) {}
-    save(); render();
+    save(); render(); tutoPlaced(id);
+  }
+
+  // ---------- conseils de l'enquêteur (phase 1 de la roadmap : apprentissage progressif) ----------
+  // La première fois qu'un geste ou une règle sert, une note courte de l'enquêteur l'explique, une à la fois ; lue
+  // (« Compris »), elle ne revient plus (settings.tuto). Pendant la toute première enquête, chaque bon placement est
+  // suivi d'une note qui dit POURQUOI il était juste (technique du solveur humain). « Revoir les conseils » (options).
+  const TUTO = {
+    choisir: 'Pour commencer, touche la fiche d\'un suspect, ou son portrait : ses indices s\'allument sur la carte.',
+    placer: 'Les cases surlignées sont celles que nomment ses indices. Quand tu es sûr de toi, appuie longuement sur une case pour l\'y placer.',
+    croix: 'Une seule personne par ligne et par colonne : les croix noires marquent maintenant les cases interdites.',
+    indice: 'Bloqué ? Le bouton Indice nomme le prochain personnage qu\'on peut déduire, et dit pourquoi. Jamais la case.',
+    victime: 'Reste la victime. Elle n\'a pas d\'indice : elle était seule avec son meurtrier, dans la seule pièce qui peut abriter deux personnes.',
+    accuser: 'Tout le monde est à sa place. Il ne reste qu\'à accuser.',
+    crayon: 'Le crayon sert à noter tes hypothèses : allumé, il barre une case d\'une croix. Touche-le encore pour changer de couleur.',
+    bloquant: 'Tables, tonneaux, statues : ces meubles sont bloquants, personne ne s\'y tient. Chaises, lits et tapis sont praticables, et un indice dit toujours qui s\'y trouve.',
+    relatif: '« Au nord de » veut dire plus haut sur la carte, dans n\'importe quelle colonne. Ces indices se lisent à deux : place d\'abord l\'autre personnage.',
+    portail: 'Deux pièces reliées par un portail comptent comme une seule pièce.',
+    spectre: 'Un spectre peut se tenir sur les meubles bloquants. Il respecte quand même lignes et colonnes.',
+    grand: 'Un grand personnage occupe plusieurs cases, toutes dans la même pièce et hors des meubles. Marque ses cases au crayon, puis appuie longuement sur l\'une d\'elles.',
+    cache: 'Ici, on ne connaît pas la forme du grand personnage : à toi de déduire combien de cases il occupe.'
+  };
+  // pourquoi un placement était juste (première enquête), par technique du solveur humain (engine.js, TECH)
+  const WHY_TEXT = [
+    (n) => `Bien vu. Les indices de ${n}, lus ensemble, ne lui laissaient qu'une case.`,
+    (n) => `Exact. Une fois retirées les lignes et les colonnes déjà prises, il ne restait qu'une case à ${n}.`,
+    (n) => `Juste. Quelqu'un était coincé sur une ligne ou une colonne : elle ne pouvait être à personne d'autre, et ${n} n'avait plus que cette case.`,
+    (n) => `Bien lu. Nord, sud, est, ouest : les positions des autres ne laissaient que cette case à ${n}.`,
+    (n) => `C'est ça. Sur cette ligne ou cette colonne, personne d'autre que ${n} ne pouvait aller.`,
+    (n) => `Exact. Un suspect par pièce, aucune pièce vide, la victime avec un seul : il ne restait que cette place à ${n}.`,
+    (n) => `Bien vu. Quelques personnages se partageaient exactement autant de lignes qu'ils sont : ${n} n'avait plus le choix.`
+  ];
+  const tutoSeen = (k) => !!(settings.tuto || {})[k];
+  // ce qui est utile à l'instant (recalculé à chaque rendu), montré par ordre de priorité : les gestes avant les règles
+  const TUTO_ORDER = ['choisir', 'placer', 'croix', 'bloquant', 'relatif', 'grand', 'cache', 'spectre', 'portail', 'indice', 'crayon', 'victime', 'accuser'];
+  let tutoQueue = [];
+  function tuto(k) { if (!tutoSeen(k) && !tutoQueue.includes(k)) tutoQueue.push(k); }
+  const onCase = () => !!(P && S && document.getElementById('board'));
+  function tutoShow() {
+    if (!onCase() || document.querySelector('.conseil') || document.getElementById('ov')) return;
+    const k = TUTO_ORDER.find(x => tutoQueue.includes(x) && !tutoSeen(x));
+    if (!k) return;
+    const n = document.createElement('div');
+    n.className = 'conseil'; n.setAttribute('role', 'status'); n.dataset.k = k;
+    n.innerHTML = `<span class="lbl">Mes notes</span><p>${esc(TUTO[k])}</p><div class="row"><button type="button">Compris</button></div>`;
+    n.querySelector('button').onclick = () => {
+      settings.tuto = Object.assign({}, settings.tuto, { [k]: true }); store.set('settings', settings);
+      n.remove(); tutoCheck();
+    };
+    document.body.appendChild(n);
+  }
+  // note « pourquoi » (première enquête) : passe devant les conseils, s'efface seule
+  function why(text) {
+    document.querySelectorAll('.conseil').forEach(x => x.remove());
+    const n = document.createElement('div');
+    n.className = 'conseil pourquoi'; n.setAttribute('role', 'status');
+    n.innerHTML = `<span class="lbl">Mes notes</span><p>${esc(text)}</p>`;
+    document.body.appendChild(n);
+    clearTimeout(why.t); why.t = setTimeout(() => { n.remove(); tutoShow(); }, 5000);
+  }
+  const firstCase = () => P && !P.final && solvedIn(CASES) === 0;
+  // ce qui mérite une note maintenant, selon l'état de la partie et ce que contient l'affaire
+  function tutoCheck() {
+    tutoQueue = [];
+    const shown = document.querySelector('.conseil:not(.pourquoi)');
+    if (!onCase() || S.solved) { if (shown) shown.remove(); return; }
+    const placed = Object.keys(S.pos), victim = P.characters.find(c => c.role === 'victim');
+    const suspectsLeft = P.characters.filter(c => c.role !== 'victim' && !S.pos[c.id]).length;
+    if (!placed.length) tuto(selected ? 'placer' : 'choisir');
+    if (placed.length) tuto('croix');
+    if (placed.length >= 2 && suspectsLeft) tuto('indice');
+    if (!suspectsLeft && !S.pos[victim.id]) tuto('victime');
+    if (P.characters.every(c => S.pos[c.id])) tuto('accuser');
+    if (!firstCase()) tuto('crayon');
+    if (P.objects.some(o => E.OBJECTS[o.type].blocking)) tuto('bloquant');
+    if (P.clues.some(cl => ['northOf', 'southOf', 'eastOf', 'westOf'].includes(cl.logic.type))) tuto('relatif');
+    if (P.objects.some(o => o.type === 'portail')) tuto('portail');
+    if (P.characters.some(c => (c.traits || []).includes('spectre'))) tuto('spectre');
+    if (P.characters.some(c => c.shape)) tuto('grand');
+    if (P.hiddenShapes) tuto('cache');
+    if (shown && !tutoQueue.includes(shown.dataset.k)) shown.remove(); // devenu inutile (ex. « choisir » une fois choisi)
+    tutoShow();
+  }
+  // après un placement : pendant la première enquête, dire pourquoi il était juste
+  function tutoPlaced(id) {
+    if (!firstCase() || E.posKey(S.pos[id]) !== E.posKey(P.solution.positions[id])) return;
+    hint.steps = hint.steps && hint.for === P.id ? hint.steps : E.humanSolve(P, P.clues, 2).steps;
+    hint.for = P.id;
+    const st = hint.steps.find(x => x.ids.includes(id));
+    if (st && ctx.chars[id].role !== 'victim') why(WHY_TEXT[st.tech](ctx.chars[id].name));
   }
 
   // Indice : signale d'abord une erreur parmi les personnages confirmés, sinon désigne le prochain personnage qu'on peut
@@ -2072,6 +2186,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
   function billet(text, bad) {
     closeBillet();
     const b = document.createElement('div');
+    document.querySelectorAll('.conseil').forEach(x => x.remove()); // le billet prend la place du conseil, qui reviendra
     b.className = 'billet' + (bad ? ' bad' : ''); b.setAttribute('role', 'status');
     b.innerHTML = `<span class="billet-corbeau">${face({ archetype: 'corbeau', name: 'Le corbeau' })}</span><p>${esc(text)}</p>`;
     document.body.appendChild(b);
@@ -2090,6 +2205,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
       const id = st.ids.find(x => !S.pos[x]);
       if (!id) continue;
       pickOnly(id); render();
+      S.hints = (S.hints || 0) + 1; save(); stat('indice', P, S.hints);
       return billet(HINT_TEXT[st.tech](ctx.chars[id].name));
     }
     billet('Tout le monde est à sa place. Il ne reste plus qu\'à accuser.');
@@ -2097,22 +2213,25 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
 
   function accuse() {
     const errs = E.checkPlacement(P, S.pos);
+    const kind = ['row', 'col', 'shape', 'room', 'empty'].find(k => errs.some(e => e.kind === k));
+    if (kind) stat('erreur', P, kind); // accusation refusée : ce qui cloche (statistiques)
     if (errs.some(e => e.kind === 'row')) return toast('Deux personnes partagent une ligne. Une seule par ligne !', true);
     if (errs.some(e => e.kind === 'col')) return toast('Deux personnes partagent une colonne. Une seule par colonne !', true);
     if (errs.some(e => e.kind === 'shape')) return toast('Un grand personnage n\'a pas la bonne forme.', true);
     if (errs.some(e => e.kind === 'room')) return toast('Deux suspects partagent une pièce : seule la pièce du crime abrite deux personnes.', true);
     if (errs.some(e => e.kind === 'empty')) return toast('Une pièce est vide : chaque pièce est occupée.', true);
     const m = E.murdererOf(ctx, S.pos);
-    if (!m) return toast('La victime doit être seule avec exactement un suspect dans sa pièce.', true);
+    if (!m) { stat('erreur', P, 'meurtre'); return toast('La victime doit être seule avec exactement un suspect dans sa pièce.', true); }
     const ok = Object.keys(P.solution.positions).every(id => S.pos[id] && E.posKey(S.pos[id]) === E.posKey(P.solution.positions[id]));
     if (!ok) {
       const v = violated();
+      stat('erreur', P, v.size ? 'indices' : 'scene');
       if (v.size) { settings.live = true; store.set('settings', settings); render(); return toast(`${v.size} indice${v.size > 1 ? 's' : ''} ne colle${v.size > 1 ? 'nt' : ''} pas. Ils sont surlignés en rouge.`, true); }
       return toast("Tout semble coller… mais ce n'est pas la bonne scène. Un indice t'a peut-être échappé.", true);
     }
     S.rank = rankOf(P); // l'intro garde l'ouverture sous laquelle l'affaire a été résolue
     S.solved = true; selected = null; save();
-    stat('resolue', P);
+    stat('resolue', P, Math.round((S.play || 0) / 1000));
     render.newLetter = pendingLetter(P.place) ? P.place : null; // glissée sous la porte : à ouvrir
     render.newPlaces = [];
     render();
@@ -2296,7 +2415,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     const ov = document.getElementById('ov');
     ov.onclick = (e) => { if (e.target === ov || e.target.hasAttribute('data-close')) close(); };
   }
-  function close() { $layer.innerHTML = ''; }
+  function close() { $layer.innerHTML = ''; tutoShow(); }
   // Scène du lore, au centre de l'écran (intro, verdict, lettre d'Augure) : plus visible qu'une fenêtre en bas de page
   function story(html, cls = '') {
     $layer.innerHTML = `<div class="overlay center" id="ov"><div class="sheet story ${cls}" role="dialog" aria-modal="true"><div class="sheet-body">${html}</div></div></div>`;
@@ -2348,11 +2467,13 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
       ${accountHtml()}
       <div class="row">
         <button class="btn" id="resetBtn">Recommencer l'affaire</button>
+        <button class="btn" id="tutoBtn">Revoir les conseils</button>
         <button class="btn primary" data-close>Fermer</button>
       </div>`);
     document.getElementById('optShade').onchange = (e) => { settings.shade = e.target.checked; store.set('settings', settings); render(); };
     document.getElementById('optLive').onchange = (e) => { settings.live = e.target.checked; store.set('settings', settings); render(); };
     bindAccount();
+    document.getElementById('tutoBtn').onclick = () => { settings.tuto = {}; store.set('settings', settings); close(); render(); };
     document.getElementById('resetBtn').onclick = (e) => {
       if (e.target.dataset.armed) { snapshot(); S = blank(); save(); close(); render(); return; }
       e.target.dataset.armed = '1'; e.target.textContent = 'Sûr ? Tout effacer';

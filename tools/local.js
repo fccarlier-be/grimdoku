@@ -23,7 +23,7 @@ const api = createServer({ dataDir: DATA, secret: fs.readFileSync(sf, 'utf8').tr
 const TYPES = { '.html': 'text/html; charset=utf-8', '.webp': 'image/webp', '.png': 'image/png', '.ico': 'image/x-icon', '.mp3': 'audio/mpeg', '.m4a': 'audio/mp4', '.json': 'application/json', '.webmanifest': 'application/manifest+json', '.js': 'text/javascript', '.css': 'text/css' };
 // votes et compteur anonyme, comme nginx (deploy/grimdoku/nginx.conf) : réponse vide, une ligne au même format dans
 // DATA/notes.log et DATA/stats.log (résumé : sh tools/stats.sh <DATA>/stats.log)
-const LOGS = { '/note': ['notes.log', ['g', 'd', 'v', 's', 'n']], '/stat': ['stats.log', ['e', 'v', 'g', 'n']] };
+const LOGS = { '/note': ['notes.log', ['g', 'd', 'v', 's', 'n']], '/stat': ['stats.log', ['e', 'v', 'g', 'n', 'x']] };
 http.createServer((req, res) => {
   const u = new URL(req.url, 'http://localhost');
   if (LOGS[u.pathname]) {

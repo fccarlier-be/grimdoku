@@ -8,6 +8,7 @@ const { JSDOM } = require('jsdom');
 
 const HTML = fs.readFileSync(path.join(__dirname, '..', 'dist', 'grimdoku.html'), 'utf8');
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+const ENGINE = require('../engine.js'); // solveur humain : ordre des déductions (conseils « pourquoi »)
 const sigOf = (p) => p.characters.map(c => c.id + ':' + c.name).join('|') + '#' + p.clues.length;
 const location = (w) => w.location.hash;
 const solve = (w, p) => w.localStorage.setItem('grimdoku:p:' + p.id, JSON.stringify({ pos: p.solution.positions, pencil: {}, marks: [], done: [], solved: true, sig: sigOf(p) }));
@@ -174,9 +175,23 @@ test('compteur anonyme : une visite par jour, ouverture et résolution d\'une af
   open2(p.id);
   assert.equal(stats()[1], `stat?e=ouverte&v=${v}&g=${encodeURIComponent(p.id)}&n=${p.size}`);
   d2.getElementById('accuse').click();
-  assert.equal(stats()[2], `stat?e=resolue&v=${v}&g=${encodeURIComponent(p.id)}&n=${p.size}`);
+  assert.equal(stats()[2], `stat?e=resolue&v=${v}&g=${encodeURIComponent(p.id)}&n=${p.size}&x=0`, 'résolue, avec le temps de jeu en secondes');
   d2.getElementById('back').click(); open2(p.id);
   assert.equal(stats().length, 3, 'revoir une affaire résolue ne compte pas');
+  // indice demandé et accusation refusée : comptés, avec leur détail
+  const q = PUZZLES[2];
+  // scène complète mais fausse : deux suspects échangés (le bouton Accuser ne s'allume qu'une fois tout le monde placé)
+  const sus = q.characters.filter(c => c.role !== 'victim' && !c.shape).map(c => c.id);
+  const wrong = Object.assign({}, q.solution.positions, { [sus[0]]: q.solution.positions[sus[1]], [sus[1]]: q.solution.positions[sus[0]] });
+  const { d: d4, openCase: open4 } = open({ calls, settings: { vid: v, statDay: new Date().toDateString() },
+    saves: { [q.id]: { pos: wrong, pencil: {}, marks: [], done: [], solved: false, sig: sigOf(q) } } });
+  open4(q.id); d4.querySelector('[data-close]')?.click();
+  d4.getElementById('accuse').click();
+  assert.match(stats().pop(), /^stat\?e=erreur&v=[a-z0-9]+&g=[^&]+&n=\d+&x=(row|col|room|empty|meurtre|indices|scene|shape)$/, 'accusation refusée, et pourquoi');
+  const q2 = PUZZLES[3];
+  open4(q2.id); d4.querySelector('[data-close]')?.click();
+  d4.getElementById('hintBtn').click();
+  assert.equal(stats().pop(), `stat?e=indice&v=${v}&g=${encodeURIComponent(q2.id)}&n=${q2.size}&x=1`, 'premier indice de l\'affaire');
   const none = [];
   const { openCase: open3, w: w3 } = open({ calls: none, url: 'http://localhost/?nostat' });
   open3(PUZZLES[1].id);
@@ -599,6 +614,38 @@ test('intros : l\'ouverture du lieu suit le rang de l\'affaire, le corps est pro
   assert.deepEqual(errors, []);
 });
 
+test('conseils de l\'enquêteur : un à la fois, « pourquoi » pendant la première enquête, plus ensuite', async () => {
+  const { w, d, pick, hold, openCase, errors, PUZZLES } = open();
+  const p = PUZZLES.find(q => q.place === 'chateau' && !q.characters.some(c => c.shape));
+  openCase(p.id);
+  assert.equal(d.querySelector('.conseil'), null, 'pas de conseil par-dessus l\'intro');
+  d.querySelector('[data-close]').click();
+  const note = () => d.querySelector('.conseil:not(.pourquoi)');
+  assert.ok(note() && /touche la fiche/.test(note().textContent), 'premier conseil : choisir un suspect');
+  assert.equal(d.querySelectorAll('.conseil').length, 1, 'un seul à la fois');
+  // le premier suspect déductible, placé à sa vraie case : la note dit pourquoi
+  const id = ENGINE.humanSolve(p, p.clues, 2).steps[0].ids[0];
+  pick(id);
+  assert.ok(!note() || !/touche la fiche/.test(note().textContent), '« choisir » disparaît une fois un suspect choisi');
+  const [r, c] = p.solution.positions[id];
+  await hold(r, c, id);
+  const why = d.querySelector('.conseil.pourquoi');
+  assert.ok(why && why.textContent.includes(p.characters.find(x => x.id === id).name), 'pourquoi ce placement était juste');
+  // lu : il ne revient plus
+  why.remove(); d.querySelector('.chip').click(); d.querySelector('.chip').click(); // un rendu : le conseil suivant s'affiche
+  note().querySelector('button').click();
+  const seen = JSON.parse(w.localStorage.getItem('grimdoku:settings')).tuto;
+  assert.ok(Object.values(seen).some(Boolean), 'conseil lu, retenu');
+  // une enquête déjà résolue ailleurs : plus de « pourquoi » (ce n'est plus la première enquête)
+  const other = PUZZLES.find(q => q.place === 'chateau' && q.id !== p.id && !q.characters.some(x => x.shape));
+  w.localStorage.setItem('grimdoku:p:' + p.id, JSON.stringify({ pos: p.solution.positions, pencil: {}, marks: [], done: [], solved: true, sig: sigOf(p) }));
+  openCase(other.id); d.querySelector('[data-close]')?.click();
+  const id2 = ENGINE.humanSolve(other, other.clues, 2).steps[0].ids[0];
+  pick(id2); await hold(...other.solution.positions[id2], id2);
+  assert.equal(d.querySelector('.conseil.pourquoi'), null, 'plus de « pourquoi » après la première enquête');
+  assert.deepEqual(errors, []);
+});
+
 test('appui long : la roue des personnages, on y choisit qui placer (sans l\'avoir choisi avant)', async () => {
   const { d, cell, hold, openCase, errors, PUZZLES } = open();
   const p = PUZZLES.find(q => !q.final && !q.characters.some(c => c.shape));
@@ -747,7 +794,8 @@ test('page des statistiques : lit les journaux du compteur et des votes, sans so
   const journal = [
     `${iso(now - 3 * 864e5)} visite aaa111 - -`, `${iso(now - 3 * 864e5 + 6e4)} ouverte aaa111 ${ids[0]} 6`, `${iso(now - 3 * 864e5 + 6e5)} resolue aaa111 ${ids[0]} 6`,
     `${iso(now - 6e5)} visite aaa111 - -`, `${iso(now - 5e5)} ouverte aaa111 ${ids[1]} 6`,
-    `${iso(now - 4e5)} visite bbb222 - -`, `${iso(now - 3e5)} ouverte bbb222 ${ids[0]} 6`, 'ligne abîmée', ''].join('\n');
+    `${iso(now - 4e5)} visite bbb222 - -`, `${iso(now - 3e5)} ouverte bbb222 ${ids[0]} 6`, 'ligne abîmée',
+    `${iso(now - 2e5)} indice bbb222 ${ids[0]} 6 1`, `${iso(now - 1e5)} erreur bbb222 ${ids[0]} 6 room`, ''].join('\n');
   const notes = [`${iso(now - 3 * 864e5)} ${ids[0]} 4 aaa111 1 6`, `${iso(now - 3 * 864e5)} test-claude 3 verif 0 6`].join('\n');
   const dom = new JSDOM(STATS, { runScripts: 'dangerously', url: 'http://localhost/stats/', beforeParse(w) {
     w.fetch = async (u) => ({ ok: true, status: 200, text: async () => (String(u) === 'journal' ? journal : notes) });
@@ -759,6 +807,8 @@ test('page des statistiques : lit les journaux du compteur et des votes, sans so
   assert.equal(kpi('joueurs uniques'), '2');
   assert.equal(kpi('affaires ouvertes'), '3');
   assert.equal(kpi('revenus un autre jour'), '1');
+  assert.equal(kpi('indices demandés'), '1');
+  assert.equal(kpi('accusations refusées'), '1');
   const row = [...d.querySelectorAll('#cases tbody tr')].find(tr => tr.textContent.includes(META[ids[0]].t));
   assert.ok(row, 'l\'affaire ouverte est listée sous son titre');
   const cells = [...row.children].map(td => td.textContent.trim());
