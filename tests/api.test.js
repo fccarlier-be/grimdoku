@@ -66,6 +66,20 @@ test('serveur : connexion, lecture, écriture, conflit, déconnexion, effacement
   assert.deepStrictEqual(await (await call('GET', '/progress', { cookie })).json(), { rev: 0, data: {} });
 }));
 
+test('fusion : écus, cachets, scènes et rangs vus, série du jour (gamification)', () => {
+  const m = merge(
+    { ecus: 40, cachets: { a: ['sans-indice'] }, 'ecus-payes': ['a'], 'rangs-vus': [5], filrouge: ['declic-3'], jour: { serie: 2, last: '2026-10-20' }, 'ecus-retro': false },
+    { ecus: 55, cachets: { a: ['sans-erreur'], b: ['sans-indice'] }, 'ecus-payes': ['b'], 'rangs-vus': [15], filrouge: ['visite-6'], jour: { serie: 3, last: '2026-10-21' }, 'ecus-retro': true });
+  assert.equal(m.ecus, 55, 'la bourse la plus haute');
+  assert.deepEqual(m.cachets.a.sort(), ['sans-erreur', 'sans-indice']);
+  assert.deepEqual(m.cachets.b, ['sans-indice']);
+  assert.deepEqual(m['ecus-payes'].sort(), ['a', 'b']);
+  assert.deepEqual(m['rangs-vus'].sort(), [15, 5]);
+  assert.deepEqual(m.filrouge.sort(), ['declic-3', 'visite-6']);
+  assert.equal(m.jour.serie, 3, 'la série la plus récente');
+  assert.equal(m['ecus-retro'], true);
+});
+
 test('page : connectée, elle fusionne sa progression avec celle du serveur', () => withServer(async (call) => {
   const { JSDOM } = require('jsdom');
   const cookie = sessionOf(await call('POST', '/login', { body: { credential: 'ok:777' } }));

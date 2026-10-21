@@ -4,7 +4,7 @@
 // Partagé par la page (window.GrimSync) et les tests (require).
 (function (root) {
   'use strict';
-  const LISTS = ['lettres', 'lettres-lues', 'lieux-vus']; // ce qu'on a reçu, lu ou vu ne se perd pas : union
+  const LISTS = ['lettres', 'lettres-lues', 'lieux-vus', 'filrouge', 'rangs-vus', 'decouvertes-vues', 'ecus-payes']; // ce qu'on a reçu, lu, vu ou touché ne se perd pas : union
   const LOCAL = ['settings', 'compte', 'oauth', 'inscrit', 'invite']; // propres à l'appareil (oauth, inscrit : connexion en cours ; invite : invitation au registre vue)
   const keep = (k) => !LOCAL.includes(k);
   // état d'une affaire : le plus récent l'emporte (t, posé à chaque sauvegarde) ; sans date, la résolue, puis la plus avancée
@@ -23,7 +23,12 @@
       else if (b === undefined || b === null) out[k] = a;
       else if (LISTS.includes(k)) out[k] = [...new Set([].concat(a, b))];
       else if (k.startsWith('p:')) out[k] = newer(a, b);
-      else if (k === 'prologue' || k.startsWith('seen:')) out[k] = !!(a || b);
+      else if (k === 'prologue' || k === 'ecus-retro' || k.startsWith('seen:')) out[k] = !!(a || b);
+      // gamification (2026-10-21) : cachets réunis par affaire ; bourse : la plus haute (pas de double crédit) ;
+      // série du jour : la plus récente
+      else if (k === 'cachets') { out[k] = Object.assign({}, b); for (const [id, l] of Object.entries(a)) out[k][id] = [...new Set([].concat(l, b[id] || []))]; }
+      else if (k === 'ecus') out[k] = Math.max(+a || 0, +b || 0);
+      else if (k === 'jour') out[k] = (a.last || '') >= (b.last || '') ? a : b;
       else out[k] = a; // note de difficulté… : celle de cet appareil
     }
     return out;
