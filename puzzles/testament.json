@@ -311,12 +311,12 @@
   "revelation": {
     "lettre": "Si vous lisez ceci, c'est que je n'ai pas terminé ce que j'avais commencé. La Tour n'est pas un héritage : c'est une charge. Sous ses fondations se trouve le Nœud de Brume, qui aide à garder les six contrées en équilibre. Je l'ai gardé pendant quatre siècles, et j'avais fini par croire que personne ne pourrait me remplacer.\nJ'ai demandé à mon corbeau de surveiller les prétendants. Il m'a rapporté leurs ambitions, leurs mensonges et leurs petites combines. Je pensais trouver la vérité dans leurs actes ; j'ai oublié de regarder les miens.\nLe document que vous cherchiez n'était qu'un projet. Ce que je voulais transmettre, c'était la garde, pas la propriété. J'ai cherché quelqu'un qui ne convoite pas la Tour. Il était sous mes yeux, mais j'étais trop occupé à le faire écrire pour le remarquer.",
     "signature": "Fizzlebarbe",
-    "billet": "Les copies sous votre porte, c'était moi. Il ne me l'avait pas demandé. Vous, au moins, vous lisez jusqu'au bout.",
-    "apres": "J'ai scellé les archives du Palier zéro et gardé la clé. À titre provisoire, en attendant qu'un vrai gardien se présente. Je n'ai rien demandé.\nCette nuit-là, quelqu'un a déplacé les meubles de la Tour. Personne d'autre n'avait la clé."
+    "billet": "Les copies sous votre porte, c'était moi. Il ne me l'avait pas demandé. L'enveloppe du notaire aussi : je l'ai mise à l'abri. Ce n'était qu'un projet. Vous, au moins, vous lisez jusqu'au bout.",
+    "apres": "J'ai scellé les archives du Palier zéro et gardé la clé. À titre provisoire, en attendant qu'un vrai gardien se présente. Je n'ai rien demandé.\nAprès votre départ, cette nuit-là, quelqu'un a déplacé les meubles de la Tour. Personne d'autre n'avait la clé."
   },
   "id": "testament",
   "place": "testament",
-  "epilogue": "— Vous étiez seul avec Fizzlebarbe.\n— Il allait régler sa succession. Et la Tour était déjà en gage chez les gobelins.\n— Donc ?\n— Donc, techniquement, il valait mieux qu'il ne règle rien. C'est légal. Presque.",
+  "epilogue": "— Vous étiez seul avec Fizzlebarbe.\n— Il allait régler sa succession. Or la Tour était en gage chez les gobelins : réglée ailleurs, c'est moi qu'on saisissait.\n— Vous êtes venu chercher le titre.\n— Dans son coffre à l'épreuve de la magie, oui. Il m'a agrippé le poignet, penché sur le bord ; j'ai retiré mes deux mains, et le couvercle s'est refermé sur sa nuque. Techniquement, c'est le coffre.",
   "clues": [
     {
       "who": "a",

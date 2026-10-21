@@ -1017,9 +1017,9 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 
 **Si le coupable est Bakchich** :
 > — Vous étiez seul avec Fizzlebarbe.  
-> — Il allait régler sa succession. Et la Tour était déjà en gage chez les gobelins.  
-> — Donc ?  
-> — Donc, techniquement, il valait mieux qu'il ne règle rien. C'est légal. Presque.
+> — Il allait régler sa succession. Or la Tour était en gage chez les gobelins : réglée ailleurs, c'est moi qu'on saisissait.  
+> — Vous êtes venu chercher le titre.  
+> — Dans son coffre à l'épreuve de la magie, oui. Il m'a agrippé le poignet, penché sur le bord ; j'ai retiré mes deux mains, et le couvercle s'est refermé sur sa nuque. Techniquement, c'est le coffre.
 
 **Si le coupable est Fernand** :
 > — Vous étiez seul avec lui.  
@@ -1029,27 +1029,27 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 
 **Si le coupable est Fiolius** :
 > — Vous étiez seul avec lui.  
-> — (Il renifle.) Il sentait la fin.  
-> — Vous l'avez aidé ?  
-> — Je l'ai noté. Zéro. Il a mal pris la note.
+> — (Il renifle.) Sa Tour sentait l'abandon. Je venais l'étiqueter : « Annexe de l'Université ».  
+> — Il s'est interposé.  
+> — Je l'ai écarté d'une main. Sa tempe a rencontré le coffre : le fer est à l'épreuve de la magie, pas le crâne. À l'odeur, je l'ai noté : zéro.
 
 **Si le coupable est Brindille** :
 > — Vous étiez seule avec lui.  
 > — Je voulais juste ouvrir son coffre. Avec la permission. Presque.  
 > — Et ?  
-> — C'est normal que la Tour fume encore ?
+> — Mon sort a rebondi : le coffre a fait un bond de deux pas et l'a pris à la tempe. C'est normal que la Tour fume encore ?
 
 **Si le coupable est Blafard** :
 > — Vous étiez seul avec lui.  
-> — De mon vivant, cette Tour était à moi.  
-> — Et maintenant ?  
-> — Maintenant, nous voilà deux fantômes à nous la disputer. Ça promet.
+> — De mon vivant, cette Tour était à moi. Je suis venu le lui rappeler, debout sur son lit.  
+> — Et ?  
+> — De ma mort, on me voit moins venir. Il a reculé d'un pas ; le coffre à l'épreuve de la magie, lui, ne recule pas. Voilà deux fantômes pour une Tour. Ça promet.
 
 **Si le coupable est Dewey** :
 > — Vous étiez seule avec lui.  
-> — Il avait caché quelque chose dans un livre de MA bibliothèque.  
+> — Il avait recousu la reliure d'un livre de MA bibliothèque, avec quelque chose caché dedans.  
 > — Ce n'est pas un mobile.  
-> — CHUT. C'en est un.
+> — Je l'ai réclamé à minuit. Il me l'a tendu de son lit, en riant ; j'ai tiré le livre, il a suivi hors du lit, et le plancher l'a reçu la tempe la première. CHUT. C'en est un.
 
 **Si le coupable est Gribouille** :
 > — Vous étiez seul avec lui.  
@@ -1067,7 +1067,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous étiez seul avec lui.  
 > — (Billet : « Des mois à espionner tout le monde pour lui. Pas un merci. »)  
 > — Et ?  
-> — (Billet : « Il voulait que je continue. Pour l'éternité, sans doute. J'ai donné ma démission. »)
+> — (Billet : « J'ai posé ma démission sur son oreiller. Il s'est levé d'un bond pour me rattraper. À quatre cents ans, on ne se lève plus d'un bond. Il est retombé, et ne s'est pas relevé. »)
 
 ### La révélation commune
 Après l'épilogue, quel que soit le coupable, la scène du verdict propose « 📜 Dans les archives du Palier zéro… » : la lettre de Fizzlebarbe, puis le billet d'Augure. Le verdict, dans la colonne, permet de la relire.
@@ -1079,9 +1079,9 @@ Après l'épilogue, quel que soit le coupable, la scène du verdict propose « �
 > Le document que vous cherchiez n'était qu'un projet. Ce que je voulais transmettre, c'était la garde, pas la propriété. J'ai cherché quelqu'un qui ne convoite pas la Tour. Il était sous mes yeux, mais j'étais trop occupé à le faire écrire pour le remarquer.
 > **Fizzlebarbe**
 **Le billet d'Augure**
-> Les copies sous votre porte, c'était moi. Il ne me l'avait pas demandé. Vous, au moins, vous lisez jusqu'au bout. — A.
+> Les copies sous votre porte, c'était moi. Il ne me l'avait pas demandé. L'enveloppe du notaire aussi : je l'ai mise à l'abri. Ce n'était qu'un projet. Vous, au moins, vous lisez jusqu'au bout. — A.
 *J'ai scellé les archives du Palier zéro et gardé la clé. À titre provisoire, en attendant qu'un vrai gardien se présente. Je n'ai rien demandé.
-Cette nuit-là, quelqu'un a déplacé les meubles de la Tour. Personne d'autre n'avait la clé.*
+Après votre départ, cette nuit-là, quelqu'un a déplacé les meubles de la Tour. Personne d'autre n'avait la clé.*
 **Ce que ça règle** : la Tour était une charge, le testament un projet, la garde reste à transmettre. Augure, qui ne convoitait pas la Tour, veille sur les archives sans en être propriétaire. Fizzlebarbe reviendra en spectre, furieux que sa succession ne soit pas terminée ; Blafard l'accueillera dans la confrérie des défunts mécontents.
 
 ## 10. Gags récurrents

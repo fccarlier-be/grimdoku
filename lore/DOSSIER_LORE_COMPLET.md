@@ -1034,9 +1034,9 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 
 **Si le coupable est Bakchich** :
 > — Vous étiez seul avec Fizzlebarbe.  
-> — Il allait régler sa succession. Et la Tour était déjà en gage chez les gobelins.  
-> — Donc ?  
-> — Donc, techniquement, il valait mieux qu'il ne règle rien. C'est légal. Presque.
+> — Il allait régler sa succession. Or la Tour était en gage chez les gobelins : réglée ailleurs, c'est moi qu'on saisissait.  
+> — Vous êtes venu chercher le titre.  
+> — Dans son coffre à l'épreuve de la magie, oui. Il m'a agrippé le poignet, penché sur le bord ; j'ai retiré mes deux mains, et le couvercle s'est refermé sur sa nuque. Techniquement, c'est le coffre.
 
 **Si le coupable est Fernand** :
 > — Vous étiez seul avec lui.  
@@ -1046,27 +1046,27 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 
 **Si le coupable est Fiolius** :
 > — Vous étiez seul avec lui.  
-> — (Il renifle.) Il sentait la fin.  
-> — Vous l'avez aidé ?  
-> — Je l'ai noté. Zéro. Il a mal pris la note.
+> — (Il renifle.) Sa Tour sentait l'abandon. Je venais l'étiqueter : « Annexe de l'Université ».  
+> — Il s'est interposé.  
+> — Je l'ai écarté d'une main. Sa tempe a rencontré le coffre : le fer est à l'épreuve de la magie, pas le crâne. À l'odeur, je l'ai noté : zéro.
 
 **Si le coupable est Brindille** :
 > — Vous étiez seule avec lui.  
 > — Je voulais juste ouvrir son coffre. Avec la permission. Presque.  
 > — Et ?  
-> — C'est normal que la Tour fume encore ?
+> — Mon sort a rebondi : le coffre a fait un bond de deux pas et l'a pris à la tempe. C'est normal que la Tour fume encore ?
 
 **Si le coupable est Blafard** :
 > — Vous étiez seul avec lui.  
-> — De mon vivant, cette Tour était à moi.  
-> — Et maintenant ?  
-> — Maintenant, nous voilà deux fantômes à nous la disputer. Ça promet.
+> — De mon vivant, cette Tour était à moi. Je suis venu le lui rappeler, debout sur son lit.  
+> — Et ?  
+> — De ma mort, on me voit moins venir. Il a reculé d'un pas ; le coffre à l'épreuve de la magie, lui, ne recule pas. Voilà deux fantômes pour une Tour. Ça promet.
 
 **Si le coupable est Dewey** :
 > — Vous étiez seule avec lui.  
-> — Il avait caché quelque chose dans un livre de MA bibliothèque.  
+> — Il avait recousu la reliure d'un livre de MA bibliothèque, avec quelque chose caché dedans.  
 > — Ce n'est pas un mobile.  
-> — CHUT. C'en est un.
+> — Je l'ai réclamé à minuit. Il me l'a tendu de son lit, en riant ; j'ai tiré le livre, il a suivi hors du lit, et le plancher l'a reçu la tempe la première. CHUT. C'en est un.
 
 **Si le coupable est Gribouille** :
 > — Vous étiez seul avec lui.  
@@ -1084,7 +1084,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous étiez seul avec lui.  
 > — (Billet : « Des mois à espionner tout le monde pour lui. Pas un merci. »)  
 > — Et ?  
-> — (Billet : « Il voulait que je continue. Pour l'éternité, sans doute. J'ai donné ma démission. »)
+> — (Billet : « J'ai posé ma démission sur son oreiller. Il s'est levé d'un bond pour me rattraper. À quatre cents ans, on ne se lève plus d'un bond. Il est retombé, et ne s'est pas relevé. »)
 
 #### La révélation commune
 Après l'épilogue, quel que soit le coupable, la scène du verdict propose « 📜 Dans les archives du Palier zéro… » : la lettre de Fizzlebarbe, puis le billet d'Augure. Le verdict, dans la colonne, permet de la relire.
@@ -1096,9 +1096,9 @@ Après l'épilogue, quel que soit le coupable, la scène du verdict propose « �
 > Le document que vous cherchiez n'était qu'un projet. Ce que je voulais transmettre, c'était la garde, pas la propriété. J'ai cherché quelqu'un qui ne convoite pas la Tour. Il était sous mes yeux, mais j'étais trop occupé à le faire écrire pour le remarquer.
 > **Fizzlebarbe**
 **Le billet d'Augure**
-> Les copies sous votre porte, c'était moi. Il ne me l'avait pas demandé. Vous, au moins, vous lisez jusqu'au bout. — A.
+> Les copies sous votre porte, c'était moi. Il ne me l'avait pas demandé. L'enveloppe du notaire aussi : je l'ai mise à l'abri. Ce n'était qu'un projet. Vous, au moins, vous lisez jusqu'au bout. — A.
 *J'ai scellé les archives du Palier zéro et gardé la clé. À titre provisoire, en attendant qu'un vrai gardien se présente. Je n'ai rien demandé.
-Cette nuit-là, quelqu'un a déplacé les meubles de la Tour. Personne d'autre n'avait la clé.*
+Après votre départ, cette nuit-là, quelqu'un a déplacé les meubles de la Tour. Personne d'autre n'avait la clé.*
 **Ce que ça règle** : la Tour était une charge, le testament un projet, la garde reste à transmettre. Augure, qui ne convoitait pas la Tour, veille sur les archives sans en être propriétaire. Fizzlebarbe reviendra en spectre, furieux que sa succession ne soit pas terminée ; Blafard l'accueillera dans la confrérie des défunts mécontents.
 
 ### 10. Gags récurrents
@@ -1245,7 +1245,7 @@ Dewey finit par retrouver le grimoire, mais son objectif initial est simplement 
 
 #### 1.7 Fernand et l'accident
 
-Fernand travaillait autrefois comme apprenti auprès de Fizzlebarbe. Environ vingt ans avant l'affaire finale, il a participé à une réparation liée aux installations de la Tour et a perdu une main. Fizzlebarbe n'a pas reconnu correctement sa contribution, ne lui a pas payé tout ce qui lui était dû et ne lui a pas expliqué tous les risques. Fernand conserve une rancune légitime, un accès ancien et le sentiment d'avoir été abandonné.
+Fernand travaillait autrefois comme apprenti auprès de Fizzlebarbe. Environ vingt ans avant l'affaire finale, il a participé à une réparation liée aux installations de la Tour et y a perdu une main, puis la vie : c'est cet accident qui a fait de lui un zombie (décision de François, 2026-10-21, sur la lettre du Moulin). Cela reste une négligence, pas un meurtre. Fizzlebarbe n'a pas reconnu correctement sa contribution, ne lui a pas payé tout ce qui lui était dû et ne lui a pas expliqué tous les risques. Fernand conserve une rancune légitime, un accès ancien et le sentiment d'avoir été abandonné.
 
 L'accident ne doit pas être révélé comme une tentative de meurtre de Fizzlebarbe sans preuve nouvelle. Le canon présent le traite comme une négligence et un conflit de responsabilité, pas comme un assassinat organisé.
 
@@ -1264,7 +1264,7 @@ Il ne faut donc pas écrire une chronologie qui affirme qu'Augure est obligatoir
 | Repère | Fait canonique | Ce que le joueur peut savoir avant la fin |
 |---|---|---|
 | Il y a environ quatre siècles | Fizzlebarbe, alors jeune mage, découvre le déséquilibre magique et établit le Nœud de Brume sous la Tour. Il devient gardien de la charge. | Rien de précis. Les documents historiques du Palier zéro confirmeront ce fait à la fin. |
-| Il y a environ 20 ans | Fernand, apprenti de Fizzlebarbe, perd une main pendant une réparation liée aux installations de la Tour. Il reste impayé et sans reconnaissance suffisante. | Une ancienne clé, l'accident et la rancune de Fernand apparaissent dans les rumeurs. Le lien avec le Nœud n'est pas encore compris. |
+| Il y a environ 20 ans | Fernand, apprenti de Fizzlebarbe, perd une main et la vie (il revient en zombie) pendant une réparation liée aux installations de la Tour. Il reste impayé et sans reconnaissance suffisante. | Une ancienne clé, l'accident et la rancune de Fernand apparaissent dans les rumeurs. Le lien avec le Nœud n'est pas encore compris. |
 | Il y a environ 11 ans | Gribouille emprunte le grimoire de Dewey puis le perd dans la Tour. Fizzlebarbe trouve l'ouvrage et y cache une clé de service. | Une dette de bibliothèque apparemment banale et une disparition mal expliquée. |
 | Quelques mois avant la fin | Fizzlebarbe envisage enfin de transmettre la garde. Il demande à Augure d'observer les personnes susceptibles de vouloir la Tour. | Les comportements des héritiers commencent à être consignés dans les lettres. Le sens exact de la surveillance demeure inconnu. |
 | Même période | Les rumeurs d'un héritage se propagent. Bakchich fait des promesses financières, Blafard sort ses titres, Fiolius dessine ses projets, Brindille expérimente les serrures et d'autres cherchent des accès ou des documents. | La Tour semble être un bien convoité par plusieurs personnes. |
@@ -1287,7 +1287,7 @@ Les colonnes distinguent la vérité réelle, la croyance du personnage et la li
 | **Fizzlebarbe** | Le Nœud existe ; la Tour est une charge de gardiennage ; le Palier zéro contient les archives ; Augure surveille les prétendants. | Il croit que l'observation secrète lui permettra de choisir un successeur impartial. | Il ne connaît pas avec certitude le coupable futur. Il sous-estime les conséquences de son silence et la lassitude d'Augure. |
 | **Augure** | Il écrit les rapports ; il a observé les tentatives d'accès ; il a récupéré le projet du notaire ; il sait que Fizzlebarbe prépare une transmission. | Il pense que son travail aide son maître, puis que transmettre des copies à l'enquêteur peut faire apparaître la vérité. | Il ne connaît pas nécessairement tous les détails du Nœud. La révélation complète provient des archives et du document de Fizzlebarbe, pas d'une omniscience d'Augure. |
 | **Bakchich** | Il a tenté d'utiliser la Tour comme garantie et a cherché des partenaires financiers. | Il présente sa combine comme un montage légal ou presque légal. | Il ne possède aucun titre valide et ignore la véritable fonction de la Tour. |
-| **Fernand** | Il a travaillé avec Fizzlebarbe, perdu une main dans l'accident, attendu son salaire et conservé le souvenir d'un accès ancien. | Il considère que Fizzlebarbe lui doit réparation, argent et reconnaissance. | Il ne sait pas ce qu'est réellement le Nœud. Son ressentiment ne prouve pas qu'il soit forcément le meurtrier. |
+| **Fernand** | Il a travaillé avec Fizzlebarbe, perdu une main et la vie dans l'accident (par sa négligence), attendu son salaire et conservé le souvenir d'un accès ancien. | Il considère que Fizzlebarbe lui doit réparation, argent et reconnaissance. | Il ne sait pas ce qu'est réellement le Nœud. Son ressentiment ne prouve pas qu'il soit forcément le meurtrier. |
 | **Fiolius** | Il a étudié les installations et les plans disponibles ; il veut rattacher la Tour à l'Université. | Il présente son ambition comme une nécessité scientifique. | Il n'a ni autorité ni droits sur la charge. Il ne comprend pas le Nœud dans son ensemble. |
 | **Brindille** | Elle expérimente les serrures magiques et a provoqué plusieurs dégâts en essayant de les ouvrir. | Elle pense que réussir à ouvrir les serrures prouvera ses compétences. | Elle ne comprend pas la fonction du Palier zéro ni les risques du dispositif. |
 | **Blafard** | Il possède d'anciens documents associés à la Tour et à un droit antérieur à la baronnie actuelle. | Il affirme que ses titres lui donnent encore la propriété. | Ses documents ne lui confèrent pas la charge actuelle. Il ignore le statut complet du Nœud. |
