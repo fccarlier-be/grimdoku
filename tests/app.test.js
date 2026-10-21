@@ -627,6 +627,7 @@ test('conseils de l\'enquêteur : un à la fois, « pourquoi » pendant la premi
   const id = ENGINE.humanSolve(p, p.clues, 2).steps[0].ids[0];
   pick(id);
   assert.ok(!note() || !/touche la fiche/.test(note().textContent), '« choisir » disparaît une fois un suspect choisi');
+  assert.equal(JSON.parse(w.localStorage.getItem('grimdoku:settings')).tuto.choisir, true, 'fait, donc lu : il ne reviendra pas à la grille suivante (François, 2026-10-21)');
   const [r, c] = p.solution.positions[id];
   await hold(r, c, id);
   const why = d.querySelector('.conseil.pourquoi');

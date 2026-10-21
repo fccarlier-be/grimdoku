@@ -2109,6 +2109,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     (n) => `Bien vu. Quelques personnages se partageaient exactement autant de lignes qu'ils sont : ${n} n'avait plus le choix.`
   ];
   const tutoSeen = (k) => !!(settings.tuto || {})[k];
+  const tutoDone = (k) => { settings.tuto = Object.assign({}, settings.tuto, { [k]: true }); store.set('settings', settings); };
   // ce qui est utile à l'instant (recalculé à chaque rendu), montré par ordre de priorité : les gestes avant les règles
   const TUTO_ORDER = ['choisir', 'placer', 'croix', 'bloquant', 'relatif', 'grand', 'cache', 'spectre', 'portail', 'indice', 'crayon', 'victime', 'accuser'];
   let tutoQueue = [];
@@ -2121,10 +2122,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     const n = document.createElement('div');
     n.className = 'conseil'; n.setAttribute('role', 'status'); n.dataset.k = k;
     n.innerHTML = `<span class="lbl">Mes notes</span><p>${esc(TUTO[k])}</p><div class="row"><button type="button">Compris</button></div>`;
-    n.querySelector('button').onclick = () => {
-      settings.tuto = Object.assign({}, settings.tuto, { [k]: true }); store.set('settings', settings);
-      n.remove(); tutoCheck();
-    };
+    n.querySelector('button').onclick = () => { tutoDone(k); n.remove(); tutoCheck(); };
     document.body.appendChild(n);
   }
   // note « pourquoi » (première enquête) : passe devant les conseils, s'efface seule
@@ -2156,7 +2154,8 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     if (P.characters.some(c => (c.traits || []).includes('spectre'))) tuto('spectre');
     if (P.characters.some(c => c.shape)) tuto('grand');
     if (P.hiddenShapes) tuto('cache');
-    if (shown && !tutoQueue.includes(shown.dataset.k)) shown.remove(); // devenu inutile (ex. « choisir » une fois choisi)
+    // devenu inutile parce que le joueur a fait ce qu'il disait (ex. « choisir » une fois un suspect choisi) : lu, comme « Compris »
+    if (shown && !tutoQueue.includes(shown.dataset.k)) { tutoDone(shown.dataset.k); shown.remove(); }
     tutoShow();
   }
   // après un placement : pendant la première enquête, dire pourquoi il était juste
