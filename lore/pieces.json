@@ -1,5 +1,5 @@
 {
-  "_doc": "Pièces à conviction (phase 3, bureau qui évolue ; François, 2026-10-21) : un souvenir par lieu terminé (placeDone), posé directement sur le bureau, sans lien avec une enquête, ni cliquable. « place » = [gauche, haut, largeur] en % de la carte et angle en degrés (CSS écrit par build-app.js) ; « dessus » : par-dessus les objets du bureau ; « miroir » : retournée. « image » = description pour Gemini (planches 2×2 assets/pieces/planche-N.png, découpées par tools/images.py pieces).",
+  "_doc": "Pièces à conviction (phase 3, bureau qui évolue ; François, 2026-10-21) : un souvenir par lieu terminé (placeDone), posé directement sur le bureau, sans lien avec une enquête, ni cliquable. « place » = [gauche, haut, largeur] en % de la carte et angle en degrés (CSS écrit par build-app.js) ; « dessus » : par-dessus les objets du bureau ; « miroir » : retournée (« horizontal » : sur l'axe horizontal, sinon vertical). « image » = description pour Gemini (planches 2×2 assets/pieces/planche-N.png, découpées par tools/images.py pieces).",
   "pieces": {
     "chateau": {
       "nom": "Le gobelet ébréché du roi",
@@ -10,7 +10,7 @@
         9.2,
         -30
       ],
-      "miroir": true
+      "miroir": "horizontal"
     },
     "taverne": {
       "nom": "La chope cabossée",
