@@ -1000,7 +1000,7 @@ html.plaques .tbtn.pen[aria-pressed="true"] { background: none; box-shadow: none
 }
 /* le mur de l'affaire de la Tour (phase 2) : un tableau de liège sur le bureau, et sa page */
 .desk-item.dk-mur { width: 15%; right: -15%; top: 17%; transform: rotate(4deg); }
-.desk-item.dk-jour { width: 10%; right: -14%; top: 37%; transform: rotate(4deg); } /* sous le mur, même inclinaison */
+.desk-item.dk-jour { width: 10%; right: -10%; top: 37%; transform: rotate(8deg); } /* sous le mur, même inclinaison */
 .gazette { position: relative; display: block; aspect-ratio: 3 / 4; background: repeating-linear-gradient(#efe4cc 0 6px, #d8c9a8 6px 7px), #efe4cc; border: 2px solid #8a6a3e; border-radius: 2px; }
 .gazette::before { content: "Affaire du jour"; position: absolute; left: 6%; right: 6%; top: 6%; padding: 3px 0; background: #efe4cc; font: 400 clamp(10px, 1.1vw, 15px)/1.1 var(--f-display); color: #3b2a18; text-align: center; border-bottom: 2px solid #3b2a18; }
 @media (max-aspect-ratio: 1/1) { .desk-item.dk-jour { grid-area: bc; transform: rotate(3deg); } .bureau:has(.dk-jour) .desk-deco.s1 { display: none; } }
