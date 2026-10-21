@@ -9,15 +9,15 @@
     "note": "Accordé à la nouvelle intro (2026-10-21), chute gardée. Avant : Réécrit d'après ta note (« Partager ne veut pas dire tuer ») : elle réclame l'épée de famille, il la lui « donne », pointe la première. | « — Elle réclamait sa part de l'héritage familial : l'épée de mes ancêtres. »"
   },
   "chateau--dresseuse": {
-    "status": "relire",
+    "status": "valide",
     "note": "Accordé à la nouvelle intro (2026-10-21), chute gardée. Avant : Réécrit d'après ta note (« Gontran tuerait Fanfare juste parce que Flammèche lui obéit ? ») : le mobile devient l'honneur du chevalier. Elle veut un combat truqué ; un chevalier ne fait jamais semblant. | « — Elle voulait m'emmener dans son cirque, pour le numéro du chevalier qui terrasse le dragon. »"
   },
   "chateau--inspecteur--golem--i2": {
-    "status": "relire",
+    "status": "valide",
     "note": "Seconde passe de Mistral (2026-10-21). Avant : « — Vous étiez seul avec Gouleyant. / — Il goûtait tout, il notait tout. Il voulait coller un blâme à la cave du roi. / — Vous aviez quelque chose à cacher, dans cette cave ? / — Une bouteille, marquée « Ne pas boire ». Il l'a bue, et il a commencé à la noter. Techniquement, c'est légal : il était prévenu. »"
   },
   "chateau--touriste--dragon--i2": {
-    "status": "relire",
+    "status": "valide",
     "note": "Accordé à la nouvelle intro (2026-10-21), chute gardée. Avant : Repassé après la relecture extérieure : rouvert malgré ta validation, car on ne comprenait pas le meurtre. Seule la question de l'enquêteur change (« en morceaux sur sa tête »), ta chute est gardée. | « — Il m'a dessiné en train de chanter. Il voulait vendre ça à la foire, sous le titre « Le barde qui chante faux ». »"
   },
   "academie--chasseuse--golem--i2": {
@@ -29,11 +29,11 @@
     "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
   },
   "banquet--huissier": {
-    "status": "relire",
+    "status": "valide",
     "note": "Seconde passe de Mistral (2026-10-21). Avant : « — Pourquoi Recouvrin ? / — Il venait saisir mes affaires. À sa banque, on saisit d'abord et on demande ensuite. / — Et vous ? / — J'ai saisi le premier : lui. Puis je l'ai revendu aux cuisines, au poids, sur sa propre balance. Techniquement, c'est légal : un bien saisi peut être revendu. »"
   },
   "banquet--nageuse": {
-    "status": "relire",
+    "status": "valide",
     "note": "Seconde passe de Mistral (2026-10-21). Avant : « — Que s'est-il passé avec Brassée ? / — Elle voulait m'apprendre à nager de force. Dix écus la leçon, dans la grande marmite de soupe, faute de lac. / — Et vous avez refusé ? / — Elle a sauté dedans pour me montrer. J'ai remis le couvercle. Dix écus d'économisés et un bon bouillon, gratuit en prime ! »"
   },
   "taverne--dresseuse": {
@@ -45,7 +45,7 @@
     "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
   },
   "taverne--nageuse": {
-    "status": "relire",
+    "status": "valide",
     "note": "Accordé à la pièce du crime de la solution (2026-10-21). Avant : « — Dans le bac à vaisselle. »"
   },
   "bibliotheque--nageuse": {
@@ -468,11 +468,11 @@
     "note": ""
   },
   "taverne--messager": {
-    "status": "relire",
+    "status": "valide",
     "note": "Seconde passe de Mistral (2026-10-21). Avant : « — Que s'est-il passé avec Hérautin ? / — Il m'a annoncé un nouvel impôt sur la bière. Puis il a demandé à dormir ici, gratuitement, puisqu'il apportait la nouvelle. / — Vous avez refusé. / — Je l'ai bordé moi-même, sur le banc. Un oreiller, deux oreillers, bien serrés... »"
   },
   "taverne--percepteur": {
-    "status": "relire",
+    "status": "valide",
     "note": "Réécrit d'après la relecture de Mistral (2026-10-21). Avant : « — Racontez-moi, pour Corvéon. / — Il voulait m'imposer sur tout ce que je possède : des dettes, et le grimoire de Dewey. / — Il a voulu le saisir. / — Il m'a mis une bière sous le nez pour m'amadouer. Le sort est parti tout seul. »"
   },
   "marais--dresseuse": {

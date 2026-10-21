@@ -190,33 +190,33 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 | Lieu | Lettre |
 | --- | --- |
 | Le Château de Mortebrune | Bakchich a mis la Tour de l'Archimage en garantie d'un prêt. Le prêteur n'a jamais vu le moindre titre de propriété. Bakchich appelle ça une formalité. |
-| La Citadelle de Mortebrune | Blafard m'a montré ses titres de propriété. Le papier est authentique, et plus vieux que la baronnie. Le droit qu'il prétend en tirer l'est beaucoup moins. |
-| Le Bal Masqué | Au bal masqué, Fumerolle a promis la Tour à trois invités. Quand on lui a fait remarquer qu'ils ne pouvaient pas tous en hériter, elle a répondu qu'un vœu bien formulé ne se contredit jamais, et en a formulé un quatrième. |
-| Le Cimetière de Minuit | Glas a déjà creusé une tombe au nom de Fizzlebarbe. L'archimage lui aurait demandé de « prévoir toutes les éventualités ». Je lui ai demandé s'il avait aussi prévu de vérifier que le vieux était mort. Il a pris des notes. |
-| La Tour de l'Archimage | Fizzlebarbe a changé trois fois de serrure ce mois-ci. Il prétend que quelqu'un fouille son bureau. Curieusement, il ne m'a pas demandé de trouver le voleur, mais de dresser la liste de tous ceux qui ont essayé. |
+| La Citadelle de Mortebrune | Blafard m'a montré ses titres de propriété. Le papier est authentique, mais il porte sur le terrain, pas sur la Tour, et il date d'avant sa mort. À Brumeval, les morts n'héritent pas : ils hantent. |
+| Le Bal Masqué | Au bal masqué, Fumerolle a promis la Tour à trois invités différents, contre un vœu chacun. Quand je lui ai fait remarquer qu'une tour ne se partage pas en trois, elle a souri : « Je n'ai jamais dit qu'ils l'auraient en même temps. » |
+| Le Cimetière de Minuit | Glas a déjà creusé une tombe au nom de Fizzlebarbe. L'archimage lui aurait demandé de « prévoir toutes les éventualités ». Je lui ai demandé s'il avait aussi prévu de vérifier que le vieux était mort avant de l'enterrer. Il a pris des notes. |
+| La Tour de l'Archimage | Fizzlebarbe a changé trois fois de serrure ce mois-ci : quelqu'un essaie d'entrer dans son bureau. Rien n'a disparu. Curieusement, il ne veut pas savoir qui : il m'a demandé la liste de tous ceux qui ont essayé, et de ce qu'ils cherchaient. |
 | Le Port des Contrebandiers | Fiolius a fait livrer douze bocaux vides à son nom, avec la mention « échantillons de la Tour ». Il affirme qu'ils sont indispensables à une étude. Il ne m'a pas dit ce qu'il compte mettre dedans. |
-| Le Grand Port de Brumeval | Le notaire avait reçu un projet de testament sous enveloppe scellée. Le lendemain, l'enveloppe avait disparu. Sur le bureau, une plume noire. Le notaire jure avoir entendu un battement d'ailes ; il jure aussi qu'il dormait. |
-| Le Navire Fantôme | Frégaton jure avoir vu Fizzlebarbe embarquer pour « un voyage sans retour ». Le navire n'a pas quitté le quai. Ce soir-là, pourtant, le brouillard venait du mauvais côté du port. Frégaton refuse ce détail : il gâche son histoire. |
+| Le Grand Port de Brumeval | Le notaire avait reçu un projet de testament sous enveloppe scellée. Le lendemain, l'enveloppe avait disparu. Sur le bureau, une plume noire. Le notaire jure avoir entendu un battement d'ailes. Il n'a pas d'oiseau. |
+| Le Navire Fantôme | Frégaton jure avoir vu la brume quitter la Tour de l'Archimage, une nuit sans vent, et descendre jusqu'au port comme un troupeau qu'on mène. Il en a tiré une histoire de tempête, bien sûr. Pour une fois, je crois qu'il n'a rien inventé, sauf l'orage. |
 | Les Thermes Enchantés | Aux Thermes, Fumerolle a dit : « Le vieux veut léguer la Tour à celui qui le mérite. Personne ne le mérite. » Puis elle m'a demandé si un vœu pouvait modifier un titre de propriété. Elle préfère les génies aux notaires. |
-| Les Grands Bains de Brumeval | Aux Grands Bains, Fizzlebarbe a confié à son masseur qu'il « changerait tout » après sa cure : il ne voulait peut-être plus transmettre un bâtiment, mais une tâche. Le reste s'est perdu dans les huiles. |
+| Les Grands Bains de Brumeval | Aux Grands Bains, Fizzlebarbe a confié à son masseur qu'on se trompait tous : il n'avait jamais eu l'intention de léguer un bâtiment, mais une tâche. Le masseur a demandé laquelle. Le reste s'est perdu dans les huiles. |
 | Meurtre au Sanglier Borgne | Gribouille doit quarante écus au Sanglier Borgne. Il promet de tout rembourser « dès que la Tour sera à lui ». Il promet aussi depuis onze ans de rendre le grimoire de Dewey. Les deux promesses ont le même calendrier. |
 | Le Moulin de Bois-Tordu | Fernand a fait refaire une clé de la Tour. Il dit en avoir eu une avant l'accident, celui qui l'a tué. Quand je lui ai demandé ce qu'elle ouvrait, il a frotté son moignon et changé de sujet. |
-| La Ferme Hantée | Briochon raconte que le testament existe, qu'il est caché, et qu'il n'en dira pas plus. Il a seulement entendu parler d'un document préparatoire. Le reste, il l'a brodé avec beaucoup de conviction. |
+| La Ferme Hantée | Briochon raconte que le testament existe, qu'il est caché, et qu'il n'en dira pas plus. Il le tient du commis du notaire, qui achète son pain chez lui. Le commis n'a parlé que d'un « document préparatoire » ; Briochon a brodé le reste, avec beaucoup de conviction. |
 | Le Marais des Brumes | Ciguë vend une potion qui révèle certaines encres invisibles. Dewey en a acheté trois, « pour retrouver un livre ». Je ne sais pas ce qui l'inquiète le plus : l'encre, le livre ou le reçu. |
-| La Mine des Nains | Granit a reçu commande d'un coffre à l'épreuve de la magie, à livrer dans la Tour. Le client a payé d'avance et demandé qu'on ne grave aucun nom. Granit a quand même chronométré la livraison. |
-| La Forge du Dragon | Fizzlebarbe a fait forger une clé unique. Le forgeron l'a vu la glisser entre les pages d'un grimoire qui n'aurait jamais dû se trouver dans la Tour. Ici, les secrets s'empilent mieux que les livres. |
+| La Mine des Nains | Granit a reçu commande d'un coffre à l'épreuve de la magie, à livrer dans la Tour. Le client a payé d'avance et n'a pas voulu que son nom figure sur le bon de commande. Granit a quand même chronométré la livraison. |
+| La Forge du Dragon | Fizzlebarbe a fait forger une clé unique, si fine qu'elle tient entre deux pages. Le forgeron l'a vu la glisser dans un vieux grimoire, avec un tampon de bibliothèque sur la tranche. Fizzlebarbe n'a jamais emprunté un livre de sa vie. |
 | Le Banquet des Gobelins | Au Banquet des Gobelins, Bakchich a porté un toast « au futur propriétaire de la Tour », en levant son verre vers lui-même. Puis il a demandé si les gobelins prêtaient sans garantie. Personne n'a eu le cœur de répondre. |
 | L'Académie de Magie | Brindille s'entraîne en secret au sort qui ouvre les serrures magiques. Trois portes de l'Académie ont déjà explosé. La quatrième s'est déplacée de deux pas vers la gauche. Le directeur appelle cela un progrès. |
-| L'Université des Sortilèges | Fiolius a écrit « Annexe de l'Université » sur les plans de la Tour, à l'encre sympathique. Elle se voit très bien. Sur une coupe, deux escaliers mènent au même palier, mais aucun plan ne montre ce qui les relie. |
+| L'Université des Sortilèges | Fiolius a écrit « Annexe de l'Université » sur les plans de la Tour, à l'encre invisible. Elle se voit très bien. Sur une coupe, deux escaliers mènent au même palier, mais aucun plan ne montre ce qui les relie. |
 | La Bibliothèque Interdite | Dewey a enfin retrouvé le grimoire emprunté par Gribouille, au fond de la Tour. Sous la reliure, une petite fente a été refermée avec soin. Dewey hésite à la cataloguer comme réparation, fraude ou insulte. |
 | La Foire aux Sortilèges | Clairvoya a prédit à Brindille qu'elle hériterait d'une tour. Esbroufe lui a aussitôt vendu un plan de la Tour. Il y manque un étage, mais il garantit que le document est complet. |
-| La Grande Foire des Mille Merveilles | À la Grande Foire, Fiolius a acheté une malle assez grande pour un grimoire. Ou pour un archimage. Il dit qu'elle servira à déménager du matériel de la Tour vers l'Université. Il n'a demandé l'autorisation à personne. |
+| La Grande Foire des Mille Merveilles | À la Grande Foire, Fiolius a acheté une malle assez grande pour un archimage. Il dit qu'elle servira à déménager les grimoires de la Tour vers l'Université. Il n'a demandé l'autorisation à personne. |
 | Le Palais des Mille Vœux | Le Palais des Mille Vœux a proposé d'acheter la Tour pour en faire une lampe géante. Ses émissaires y avaient mesuré une puissance qu'ils ne savaient pas expliquer. Fizzlebarbe a répondu à leur seconde visite par un éclair. |
 
 **Débloquer la fin** : avec **les 23 lettres** (toutes : décision de François, 2026-10-19), l'affaire finale s'ouvre. La fin est donc vraiment la fin : Fizzlebarbe ne peut plus réapparaître vivant dans une enquête jouée après sa mort.
 
 ## Les épilogues
-192 épilogues (147 grilles jouables, 45 grilles désactivées), dont **7 validés ✅**. Classés par lieu, dans l'ordre où le joueur les découvre. Pour chacun : la victime (son métier, ce qu'elle venait faire, la menace qu'elle représentait), le coupable (trait et tic), l'introduction de l'enquête, puis l'épilogue.
+192 épilogues (147 grilles jouables, 45 grilles désactivées), dont **15 validés ✅**. Classés par lieu, dans l'ordre où le joueur les découvre. Pour chacun : la victime (son métier, ce qu'elle venait faire, la menace qu'elle représentait), le coupable (trait et tic), l'introduction de l'enquête, puis l'épilogue.
 
 ### Le Château de Mortebrune
 
@@ -241,7 +241,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous avez refusé ?  
 > — J'ai annoncé : « Je vous la donne. » Pointe la première.  
 
-#### Le Château de Mortebrune — l'affaire Fanfare
+#### Le Château de Mortebrune — l'affaire Fanfare ✅ validé
 - **Victime** : Fanfare, la dresseuse — Dresseuse de dragons, surtout des petits. Venue recruter des bêtes pour son cirque ; menace : « m'emmener dans son cirque ».
 - **Coupable** : Gontran — Chevalier, armure trop petite depuis Noël. Tic : Annonce chacune de ses actions à voix haute.
 - **Introduction** : La dresseuse Fanfare cherchait des bêtes pour son cirque, et elle a mesuré tout ce qui avait des griffes au château, plus deux ou trois choses qui n'en avaient pas. Au matin, son numéro était annulé. Tout le monde jure avoir dormi ; quelqu'un, pourtant, n'a pas fermé l'œil.
@@ -249,10 +249,10 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 
 > — Vous étiez seul avec Fanfare.  
 > — Elle m'a pris mes mesures, comme à une bête de foire : elle voulait le numéro du chevalier qui terrasse le dragon. Pour la répétition, c'est elle qui faisait le dragon.  
-> — Une répétition.  
+> — Une répétition? Mais encore?  
 > — J'ai annoncé : « Je terrasse le dragon. » Un chevalier ne fait jamais semblant.  
 
-#### Le Château de Mortebrune — l'affaire Gouleyant
+#### Le Château de Mortebrune — l'affaire Gouleyant ✅ validé
 - **Victime** : Gouleyant, l'inspecteur des tavernes — Inspecteur des tavernes, goûte tout, note tout. Venu inspecter les lieux ; menace : « me coller un blâme ».
 - **Coupable** : Bakchich — Gobelin, trésorier du royaume (non déclaré). Tic : « Techniquement, c'est légal. ».
 - **Introduction** : L'inspecteur des tavernes Gouleyant n'avait aucune taverne à inspecter au château, alors il a inspecté tout ce qui se boit, en notant chaque verre dans son registre. La dernière ligne est illisible. Cinq témoins, cinq versions de la soirée : une seule est la bonne.
@@ -261,9 +261,9 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous étiez seul avec Gouleyant.  
 > — Il goûtait tout, il notait tout. Il voulait coller un blâme à la cave du roi.  
 > — Vous aviez quelque chose à cacher, dans cette cave ?  
-> — Une bouteille, marquée « Ne pas boire ». Je la lui ai servie : c'est la seule que je défends dans cette cave. Il l'a bue pour prouver que je cachais du bon. Il a bu la preuve du contraire. Techniquement, c'est légal : il était prévenu par écrit.  
+> — Une bouteille, marquée « Ne pas boire ». Il l'a bue pour prouver que je cachais du bon.... Techniquement, c'est légal : il était prévenu par écrit.  
 
-#### Le Château de Mortebrune — l'affaire Promenin
+#### Le Château de Mortebrune — l'affaire Promenin ✅ validé
 - **Victime** : Promenin, le touriste — Touriste, dessine tout au fusain, surtout ce qui est interdit. Venu visiter la baronnie ; menace : « faire mon portrait au fusain et le vendre à la foire ».
 - **Coupable** : Fausset — Barde, chante faux. Tic : Transforme chaque conversation en couplet.
 - **Introduction** : Le touriste Promenin avait commencé sa visite de la baronnie par le château, et il dessinait tout : les tours, les tapisseries, les habitants, surtout ceux qui ne voulaient pas. On a retrouvé son carnet de croquis ouvert sur une page blanche. La page d'avant a été arrachée.
@@ -307,7 +307,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous l'avez mal pris.  
 > — J'ai accepté une audition. J'ai chanté, ses petits dragons ont pris peur et craché du feu. Heureusement j'étais derrière elle...  
 
-#### Le Banquet des Gobelins — l'affaire Recouvrin
+#### Le Banquet des Gobelins — l'affaire Recouvrin ✅ validé
 - **Victime** : Recouvrin, l'huissier — Huissier de la banque gobeline, saisit d'abord, demande ensuite. Venu saisir des biens ; menace : « saisir mes affaires ».
 - **Coupable** : Bakchich — Gobelin, trésorier du royaume (non déclaré). Tic : « Techniquement, c'est légal. ».
 - **Introduction** : L'huissier Recouvrin est arrivé avec un registre et une balance, pour saisir tout ce qui avait de la valeur au banquet. Il a commencé par l'argenterie. Il n'a pas eu le temps de finir son tour.
@@ -316,7 +316,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Pourquoi Recouvrin ?  
 > — Il venait saisir mes affaires. On saisit d'abord, on demande ensuite : c'est sa maison qui a écrit la règle.  
 > — Et vous avez saisi l'huissier.  
-> — Un bien saisi, ça se pèse : je l'ai accroché au crochet de sa balance romaine. Il a pesé le temps d'un inventaire, puis il n'a plus rien pesé du tout. Techniquement, c'est une saisie régulière.  
+> — Un bien saisi, ça se pèse : je l'ai accroché au crochet de sa balance romaine. Techniquement, c'est une saisie régulière.  
 
 #### Le Banquet des Gobelins — l'affaire Courandier ✅ validé
 - **Victime** : Courandier, le messager — Messager du baron, porte toujours de mauvaises nouvelles. Venu apporter une lettre du baron ; menace : « m'annoncer une mauvaise nouvelle ».
@@ -328,7 +328,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous l'avez rattrapé.  
 > — Un messager du baron, en pleine forme ? Je n'avais jamais rien cuisiné d'aussi frais.  
 
-#### Le Banquet des Gobelins — l'affaire Brassée
+#### Le Banquet des Gobelins — l'affaire Brassée ✅ validé
 - **Victime** : Brassée, la maîtresse-nageuse — Maîtresse-nageuse, sans permis ni maillot. Venue donner des cours de natation ; menace : « m'apprendre à nager de force ».
 - **Coupable** : Bakchich — Gobelin, trésorier du royaume (non déclaré). Tic : « Techniquement, c'est légal. ».
 - **Introduction** : La nageuse Brassée cherchait un lac pour ses leçons, à dix écus la leçon payables à la sortie du bain ; au Banquet des Gobelins, elle n'a trouvé que la grande marmite. Cinq convives jurent n'avoir rien vu, ce qui est étrange autour d'une marmite de cette taille.
@@ -337,7 +337,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Que s'est-il passé avec Brassée ?  
 > — Elle voulait m'apprendre à nager de force. Dix écus la leçon, dans la grande marmite de soupe, faute de lac.  
 > — Et vous avez refusé ?  
-> — Elle a sauté dedans pour me montrer que l'eau était bonne. J'ai remis le couvercle : dix écus d'économisés, et le bouillon s'est amélioré tout seul. Techniquement, c'est légal.  
+> — Elle a sauté dedans pour me montrer que l'eau était bonne. J'ai remis le couvercle : dix écus d'économisés, et le bouillon gratuit en prime ! Une opération parfaite !  
 
 #### Le Banquet des Gobelins — l'affaire Décanteur *(grille désactivée)*
 - **Victime** : Décanteur, l'inspecteur des tavernes — Inspecteur des tavernes, goûte tout, note tout. Venu inspecter les lieux ; menace : « me coller un blâme ».
@@ -372,10 +372,10 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous n'étiez pas d'accord.  
 > — Je l'ai mis au défi de finir le seul plat que j'avais noté zéro. Il a tout fini, pour me donner tort. Il avait tort : ça méritait bien zéro.  
 
-#### Meurtre au Sanglier Borgne — l'affaire Hérautin
+#### Meurtre au Sanglier Borgne — l'affaire Hérautin ✅ validé
 - **Victime** : Hérautin, le messager — Messager du baron, porte toujours de mauvaises nouvelles. Venu apporter une lettre du baron ; menace : « m'annoncer une mauvaise nouvelle ».
 - **Coupable** : Aagrid — Tenancier le plus *SYMPA* de la baronnie. Tic : Compte à voix basse en parlant.
-- **Introduction** : Le messager Hérautin a lu à voix haute une lettre du baron annonçant un nouvel impôt sur la bière, devant une salle pleine de buveurs. Ensuite, au nom du baron, il a réclamé tout ce qui était gratuit dans la maison : une bière, un repas, un lit. On ne l'a revu qu'au matin, très bien bordé.
+- **Introduction** : Le messager Hérautin a lu à voix haute une lettre du baron annonçant un nouvel impôt sur la bière, devant une salle pleine de buveurs. Ensuite, au nom du baron, il a réclamé la boisson, le repas et l'hébergement gratuit. On ne l'a revu qu'au matin, très bien bordé.
 - **Note de l'auteur** : Seconde passe de Mistral (2026-10-21). Avant : « — Que s'est-il passé avec Hérautin ? / — Il m'a annoncé un nouvel impôt sur la bière. Puis il a demandé à dormir ici, gratuitement, puisqu'il apportait la nouvelle. / — Vous avez refusé. / — Je l'ai bordé moi-même, sur le banc. Un oreiller, deux oreillers, bien serrés... »
 
 > — Que s'est-il passé avec Hérautin ?  
@@ -383,7 +383,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous avez refusé.  
 > — Je l'ai bordé moi-même, au coin du feu, à même le plancher : un client du baron, ça se borde bien. Un oreiller, deux oreillers, bien serrés...  
 
-#### Meurtre au Sanglier Borgne — l'affaire Apnée
+#### Meurtre au Sanglier Borgne — l'affaire Apnée ✅ validé
 - **Victime** : Apnée, la maîtresse-nageuse — Maîtresse-nageuse, sans permis ni maillot. Venue donner des cours de natation ; menace : « m'apprendre à nager de force ».
 - **Coupable** : Bâfrin — Troll, plongeur à mi-temps. Tic : Répète le dernier mot de la phrase des autres.
 - **Introduction** : La nageuse Apnée n'a pas trouvé de lac à Brumeval, alors elle a donné sa leçon dans le plus grand baquet de la taverne. Elle voulait des élèves, de gré ou de force. Le cours a duré bien plus longtemps que prévu.
@@ -392,9 +392,9 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Racontez-moi, pour Apnée.  
 > — Apnée.  
 > — Elle voulait vous apprendre à nager ?  
-> — Dans le baquet de rinçage, au milieu de la salle. Elle a dit : « La tête sous l'eau, et on compte jusqu'à dix ! » Bâfrin mis sa tête à elle. Bâfrin compte mal. Cent.  
+> — Dans le baquet de rinçage, au milieu de la salle. Elle a dit : « La tête sous l'eau, et on compte jusqu'à dix ! » Bâfrin mis sa tête à elle. Bâfrin compte mal.  
 
-#### Meurtre au Sanglier Borgne — l'affaire Corvéon
+#### Meurtre au Sanglier Borgne — l'affaire Corvéon ✅ validé
 - **Victime** : Corvéon, le percepteur — Percepteur du baron, compte même les miettes. Venu lever l'impôt de fin d'année ; menace : « me faire payer l'impôt sur tout ce que je possède ».
 - **Coupable** : Gribouille — Mage, allergique au houblon. Tic : Éternue avant chaque sortilège.
 - **Introduction** : Le percepteur Corvéon est venu lever l'impôt de fin d'année et dresser la liste de ce que chacun possède au Sanglier Borgne. La liste était courte : des dettes, surtout. Cinq habitués, pas un sou à saisir entre eux, et il a quand même trouvé quelque chose.
@@ -402,7 +402,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Racontez-moi, pour Corvéon.  
 > — Il voulait m'imposer sur tout ce que je possède : des dettes, surtout, et ma baguette.  
 > — Il a voulu la saisir.  
-> — Il m'a mis une bière sous le nez pour m'amadouer. Atchoum ! Le sort de saisie est parti tout seul : le percepteur, c'est lui qu'il a saisi.  
+> — Il m'a mis une bière sous le nez pour m'amadouer. Atchoum ! Le sort est parti tout seul !  
 
 #### Meurtre au Sanglier Borgne — l'affaire Ramassard *(grille désactivée)*
 - **Victime** : Ramassard, l'huissier — Huissier de la banque gobeline, saisit d'abord, demande ensuite. Venu saisir des biens ; menace : « saisir mes affaires ».

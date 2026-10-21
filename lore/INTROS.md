@@ -52,7 +52,7 @@ Généré par `node tools/intros-md.js` depuis `lore/intros.json` (ne pas édite
 
 - *l'affaire Câline* : La dresseuse Câline cherchait de quoi calmer ses bêtes avant le spectacle. Elle a lancé un appel à la cantonade, et tout le Sanglier Borgne a eu une idée. Au matin, on l'a retrouvée endormie pour de bon.
 - *l'affaire Rinçon* : L'inspecteur des tavernes Rinçon a goûté chaque plat de la carte, puis il a accroché trois étoiles au-dessus du comptoir. Trois étoiles au Sanglier Borgne : tout le monde n'a pas apprécié. On a retrouvé son assiette propre comme un sou neuf.
-- *l'affaire Hérautin* : Le messager Hérautin a lu à voix haute une lettre du baron annonçant un nouvel impôt sur la bière, devant une salle pleine de buveurs. Ensuite, au nom du baron, il a réclamé tout ce qui était gratuit dans la maison : une bière, un repas, un lit. On ne l'a revu qu'au matin, très bien bordé.
+- *l'affaire Hérautin* : Le messager Hérautin a lu à voix haute une lettre du baron annonçant un nouvel impôt sur la bière, devant une salle pleine de buveurs. Ensuite, au nom du baron, il a réclamé la boisson, le repas et l'hébergement gratuit. On ne l'a revu qu'au matin, très bien bordé.
 - *l'affaire Apnée* : La nageuse Apnée n'a pas trouvé de lac à Brumeval, alors elle a donné sa leçon dans le plus grand baquet de la taverne. Elle voulait des élèves, de gré ou de force. Le cours a duré bien plus longtemps que prévu.
 - *l'affaire Corvéon* : Le percepteur Corvéon est venu lever l'impôt de fin d'année et dresser la liste de ce que chacun possède au Sanglier Borgne. La liste était courte : des dettes, surtout. Cinq habitués, pas un sou à saisir entre eux, et il a quand même trouvé quelque chose.
 

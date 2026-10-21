@@ -107,6 +107,7 @@ td.title { white-space: normal; min-width: 220px; }
     for (const line of txt.split('\n')) {
       const [t, e, v, g, n, x] = line.trim().split(' ');
       if (!t || !/^(visite|ouverte|resolue|indice|erreur)$/.test(e) || !/^[a-z0-9]{1,16}$/.test(v || '')) continue;
+      if (v === 'verifclaude') continue; // événement de vérification envoyé par Claude le 2026-10-21 : pas un joueur
       const d = new Date(t); if (isNaN(d)) continue;
       out.push({ d, e, v, g: g && g !== '-' ? decodeURIComponent(g) : null, n: +n || null, x: x && x !== '-' ? decodeURIComponent(x) : null });
     }

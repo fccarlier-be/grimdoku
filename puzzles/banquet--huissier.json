@@ -191,7 +191,7 @@
   "place": "banquet",
   "intro": "Au Banquet des Gobelins, l'huissier Recouvrin, venu saisir des biens, est passé de la liste des invités à la carte du menu. On l'a retrouvé avant le dessert. Cinq invités se goinfraient. L'un d'eux était seul avec lui. On m'a servi une soupe. Je ne l'ai pas touchée.",
   "introBody": "L'huissier Recouvrin est arrivé avec un registre et une balance, pour saisir tout ce qui avait de la valeur au banquet. Il a commencé par l'argenterie. Il n'a pas eu le temps de finir son tour.",
-  "epilogue": "— Pourquoi Recouvrin ?\n— Il venait saisir mes affaires. On saisit d'abord, on demande ensuite : c'est sa maison qui a écrit la règle.\n— Et vous avez saisi l'huissier.\n— Un bien saisi, ça se pèse : je l'ai accroché au crochet de sa balance romaine. Il a pesé le temps d'un inventaire, puis il n'a plus rien pesé du tout. Techniquement, c'est une saisie régulière.",
+  "epilogue": "— Pourquoi Recouvrin ?\n— Il venait saisir mes affaires. On saisit d'abord, on demande ensuite : c'est sa maison qui a écrit la règle.\n— Et vous avez saisi l'huissier.\n— Un bien saisi, ça se pèse : je l'ai accroché au crochet de sa balance romaine. Techniquement, c'est une saisie régulière.",
   "clues": [
     {
       "who": "a",

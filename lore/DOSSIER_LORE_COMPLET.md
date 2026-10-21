@@ -1540,10 +1540,10 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 
 > — Vous étiez seul avec Fanfare.  
 > — Elle m'a pris mes mesures, comme à une bête de foire : elle voulait le numéro du chevalier qui terrasse le dragon. Pour la répétition, c'est elle qui faisait le dragon.  
-> — Une répétition.  
+> — Une répétition? Mais encore?  
 > — J'ai annoncé : « Je terrasse le dragon. » Un chevalier ne fait jamais semblant.  
 
-*Relecture : à relire*
+*Relecture : validé*
 
 #### 1.3. l'affaire Gisèle (7×7) — coupable : Gontran
 
@@ -1571,9 +1571,9 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 > — Vous étiez seul avec Gouleyant.  
 > — Il goûtait tout, il notait tout. Il voulait coller un blâme à la cave du roi.  
 > — Vous aviez quelque chose à cacher, dans cette cave ?  
-> — Une bouteille, marquée « Ne pas boire ». Je la lui ai servie : c'est la seule que je défends dans cette cave. Il l'a bue pour prouver que je cachais du bon. Il a bu la preuve du contraire. Techniquement, c'est légal : il était prévenu par écrit.  
+> — Une bouteille, marquée « Ne pas boire ». Il l'a bue pour prouver que je cachais du bon.... Techniquement, c'est légal : il était prévenu par écrit.  
 
-*Relecture : à relire*
+*Relecture : validé*
 
 #### 1.5. l'affaire Promenin (7×7) — coupable : Fausset
 
@@ -1588,7 +1588,7 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 > — C'est votre luth, là, en morceaux sur sa tête ?  
 > — Il était faux, ce luth. Depuis le début. Ça s'entendait.  
 
-*Relecture : à relire*
+*Relecture : validé*
 
 ### 2. Le Banquet des Gobelins
 
@@ -1626,9 +1626,9 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 > — Pourquoi Recouvrin ?  
 > — Il venait saisir mes affaires. On saisit d'abord, on demande ensuite : c'est sa maison qui a écrit la règle.  
 > — Et vous avez saisi l'huissier.  
-> — Un bien saisi, ça se pèse : je l'ai accroché au crochet de sa balance romaine. Il a pesé le temps d'un inventaire, puis il n'a plus rien pesé du tout. Techniquement, c'est une saisie régulière.  
+> — Un bien saisi, ça se pèse : je l'ai accroché au crochet de sa balance romaine. Techniquement, c'est une saisie régulière.  
 
-*Relecture : à relire*
+*Relecture : validé*
 
 #### 2.3. l'affaire Courandier (6×6) — coupable : Fricot
 
@@ -1656,9 +1656,9 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 > — Que s'est-il passé avec Brassée ?  
 > — Elle voulait m'apprendre à nager de force. Dix écus la leçon, dans la grande marmite de soupe, faute de lac.  
 > — Et vous avez refusé ?  
-> — Elle a sauté dedans pour me montrer que l'eau était bonne. J'ai remis le couvercle : dix écus d'économisés, et le bouillon s'est amélioré tout seul. Techniquement, c'est légal.  
+> — Elle a sauté dedans pour me montrer que l'eau était bonne. J'ai remis le couvercle : dix écus d'économisés, et le bouillon gratuit en prime ! Une opération parfaite !  
 
-*Relecture : à relire*
+*Relecture : validé*
 
 #### 2.5. l'affaire Ingeburge (6×6) — coupable : Festin
 
@@ -1719,7 +1719,7 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 
 *Pièce du crime : Salle commune (meubles : table, chaise). Suspects : Aagrid, Fausset, Gribouille, Capucine, Bâfrin.*
 
-**Intro** : Le messager Hérautin a lu à voix haute une lettre du baron annonçant un nouvel impôt sur la bière, devant une salle pleine de buveurs. Ensuite, au nom du baron, il a réclamé tout ce qui était gratuit dans la maison : une bière, un repas, un lit. On ne l'a revu qu'au matin, très bien bordé.
+**Intro** : Le messager Hérautin a lu à voix haute une lettre du baron annonçant un nouvel impôt sur la bière, devant une salle pleine de buveurs. Ensuite, au nom du baron, il a réclamé la boisson, le repas et l'hébergement gratuit. On ne l'a revu qu'au matin, très bien bordé.
 
 **Épilogue** :
 
@@ -1728,7 +1728,7 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 > — Vous avez refusé.  
 > — Je l'ai bordé moi-même, au coin du feu, à même le plancher : un client du baron, ça se borde bien. Un oreiller, deux oreillers, bien serrés...  
 
-*Relecture : à relire*
+*Relecture : validé*
 
 #### 3.4. l'affaire Apnée (6×6) — coupable : Bâfrin
 
@@ -1741,9 +1741,9 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 > — Racontez-moi, pour Apnée.  
 > — Apnée.  
 > — Elle voulait vous apprendre à nager ?  
-> — Dans le baquet de rinçage, au milieu de la salle. Elle a dit : « La tête sous l'eau, et on compte jusqu'à dix ! » Bâfrin mis sa tête à elle. Bâfrin compte mal. Cent.  
+> — Dans le baquet de rinçage, au milieu de la salle. Elle a dit : « La tête sous l'eau, et on compte jusqu'à dix ! » Bâfrin mis sa tête à elle. Bâfrin compte mal.  
 
-*Relecture : à relire*
+*Relecture : validé*
 
 #### 3.5. l'affaire Corvéon (6×6) — coupable : Gribouille
 
@@ -1756,9 +1756,9 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 > — Racontez-moi, pour Corvéon.  
 > — Il voulait m'imposer sur tout ce que je possède : des dettes, surtout, et ma baguette.  
 > — Il a voulu la saisir.  
-> — Il m'a mis une bière sous le nez pour m'amadouer. Atchoum ! Le sort de saisie est parti tout seul : le percepteur, c'est lui qu'il a saisi.  
+> — Il m'a mis une bière sous le nez pour m'amadouer. Atchoum ! Le sort est parti tout seul !  
 
-*Relecture : à relire*
+*Relecture : validé*
 
 ### 4. La Mine des Nains
 
