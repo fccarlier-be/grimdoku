@@ -230,7 +230,7 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Et vous êtes parti ?  
 > — Je lui ai montré l'autre côté, de près.  
 
-#### Le Château de Mortebrune — l'affaire Gisèle
+#### Le Château de Mortebrune — l'affaire Gisèle ✅ validé
 - **Victime** : Gisèle, la cousine — Cousine éloignée de tout le monde, venue pour l'héritage. Venue réclamer un héritage ; menace : « réclamer sa part de ce qui m'appartient ».
 - **Coupable** : Gontran — Chevalier, armure trop petite depuis Noël. Tic : Annonce chacune de ses actions à voix haute.
 - **Introduction** : La cousine Gisèle était arrivée avec un vieux parchemin de famille et la ferme intention de repartir avec quelque chose de précieux. Elle avait fait l'inventaire de la moitié du château avant le dîner ; elle n'a jamais commencé l'autre moitié. Les six membres de la cour présents assurent qu'ils n'avaient rien à cacher, ce qui fait beaucoup de monde.
@@ -256,12 +256,12 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 - **Victime** : Gouleyant, l'inspecteur des tavernes — Inspecteur des tavernes, goûte tout, note tout. Venu inspecter les lieux ; menace : « me coller un blâme ».
 - **Coupable** : Bakchich — Gobelin, trésorier du royaume (non déclaré). Tic : « Techniquement, c'est légal. ».
 - **Introduction** : L'inspecteur des tavernes Gouleyant n'avait aucune taverne à inspecter au château, alors il a inspecté tout ce qui se boit, en notant chaque verre dans son registre. La dernière ligne est illisible. Cinq témoins, cinq versions de la soirée : une seule est la bonne.
-- **Note de l'auteur** : Accordé à la nouvelle intro (2026-10-21), chute gardée. Avant : « Il l'a bue. »
+- **Note de l'auteur** : Seconde passe de Mistral (2026-10-21). Avant : « — Vous étiez seul avec Gouleyant. / — Il goûtait tout, il notait tout. Il voulait coller un blâme à la cave du roi. / — Vous aviez quelque chose à cacher, dans cette cave ? / — Une bouteille, marquée « Ne pas boire ». Il l'a bue, et il a commencé à la noter. Techniquement, c'est légal : il était prévenu. »
 
 > — Vous étiez seul avec Gouleyant.  
 > — Il goûtait tout, il notait tout. Il voulait coller un blâme à la cave du roi.  
 > — Vous aviez quelque chose à cacher, dans cette cave ?  
-> — Une bouteille, marquée « Ne pas boire ». Il l'a bue, et il a commencé à la noter. Techniquement, c'est légal : il était prévenu.  
+> — Une bouteille, marquée « Ne pas boire ». Je la lui ai servie : c'est la seule que je défends dans cette cave. Il l'a bue pour prouver que je cachais du bon. Il a bu la preuve du contraire. Techniquement, c'est légal : il était prévenu par écrit.  
 
 #### Le Château de Mortebrune — l'affaire Promenin
 - **Victime** : Promenin, le touriste — Touriste, dessine tout au fusain, surtout ce qui est interdit. Venu visiter la baronnie ; menace : « faire mon portrait au fusain et le vendre à la foire ».
@@ -310,13 +310,13 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 #### Le Banquet des Gobelins — l'affaire Recouvrin
 - **Victime** : Recouvrin, l'huissier — Huissier de la banque gobeline, saisit d'abord, demande ensuite. Venu saisir des biens ; menace : « saisir mes affaires ».
 - **Coupable** : Bakchich — Gobelin, trésorier du royaume (non déclaré). Tic : « Techniquement, c'est légal. ».
-- **Introduction** : L'huissier Recouvrin est arrivé avec un registre et une balance, pour saisir tout ce qui avait de la valeur sur la table. Il a commencé par l'argenterie. Il n'a pas eu le temps de finir le tour de la table.
-- **Note de l'auteur** : Accordé à la nouvelle intro (2026-10-21, la balance), chute gardée. Avant : « Puis je l'ai revendu aux cuisines, au poids. » | Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué.
+- **Introduction** : L'huissier Recouvrin est arrivé avec un registre et une balance, pour saisir tout ce qui avait de la valeur au banquet. Il a commencé par l'argenterie. Il n'a pas eu le temps de finir son tour.
+- **Note de l'auteur** : Seconde passe de Mistral (2026-10-21). Avant : « — Pourquoi Recouvrin ? / — Il venait saisir mes affaires. À sa banque, on saisit d'abord et on demande ensuite. / — Et vous ? / — J'ai saisi le premier : lui. Puis je l'ai revendu aux cuisines, au poids, sur sa propre balance. Techniquement, c'est légal : un bien saisi peut être revendu. »
 
 > — Pourquoi Recouvrin ?  
-> — Il venait saisir mes affaires. À sa banque, on saisit d'abord et on demande ensuite.  
-> — Et vous ?  
-> — J'ai saisi le premier : lui. Puis je l'ai revendu aux cuisines, au poids, sur sa propre balance. Techniquement, c'est légal : un bien saisi peut être revendu.  
+> — Il venait saisir mes affaires. On saisit d'abord, on demande ensuite : c'est sa maison qui a écrit la règle.  
+> — Et vous avez saisi l'huissier.  
+> — Un bien saisi, ça se pèse : je l'ai accroché au crochet de sa balance romaine. Il a pesé le temps d'un inventaire, puis il n'a plus rien pesé du tout. Techniquement, c'est une saisie régulière.  
 
 #### Le Banquet des Gobelins — l'affaire Courandier ✅ validé
 - **Victime** : Courandier, le messager — Messager du baron, porte toujours de mauvaises nouvelles. Venu apporter une lettre du baron ; menace : « m'annoncer une mauvaise nouvelle ».
@@ -328,15 +328,16 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 > — Vous l'avez rattrapé.  
 > — Un messager du baron, en pleine forme ? Je n'avais jamais rien cuisiné d'aussi frais.  
 
-#### Le Banquet des Gobelins — l'affaire Brassée ✅ validé
+#### Le Banquet des Gobelins — l'affaire Brassée
 - **Victime** : Brassée, la maîtresse-nageuse — Maîtresse-nageuse, sans permis ni maillot. Venue donner des cours de natation ; menace : « m'apprendre à nager de force ».
 - **Coupable** : Bakchich — Gobelin, trésorier du royaume (non déclaré). Tic : « Techniquement, c'est légal. ».
 - **Introduction** : La nageuse Brassée cherchait un lac pour ses leçons, à dix écus la leçon payables à la sortie du bain ; au Banquet des Gobelins, elle n'a trouvé que la grande marmite. Cinq convives jurent n'avoir rien vu, ce qui est étrange autour d'une marmite de cette taille.
+- **Note de l'auteur** : Seconde passe de Mistral (2026-10-21). Avant : « — Que s'est-il passé avec Brassée ? / — Elle voulait m'apprendre à nager de force. Dix écus la leçon, dans la grande marmite de soupe, faute de lac. / — Et vous avez refusé ? / — Elle a sauté dedans pour me montrer. J'ai remis le couvercle. Dix écus d'économisés et un bon bouillon, gratuit en prime ! »
 
 > — Que s'est-il passé avec Brassée ?  
 > — Elle voulait m'apprendre à nager de force. Dix écus la leçon, dans la grande marmite de soupe, faute de lac.  
 > — Et vous avez refusé ?  
-> — Elle a sauté dedans pour me montrer. J'ai remis le couvercle. Dix écus d'économisés et un bon bouillon, gratuit en prime !  
+> — Elle a sauté dedans pour me montrer que l'eau était bonne. J'ai remis le couvercle : dix écus d'économisés, et le bouillon s'est amélioré tout seul. Techniquement, c'est légal.  
 
 #### Le Banquet des Gobelins — l'affaire Décanteur *(grille désactivée)*
 - **Victime** : Décanteur, l'inspecteur des tavernes — Inspecteur des tavernes, goûte tout, note tout. Venu inspecter les lieux ; menace : « me coller un blâme ».
@@ -375,12 +376,12 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 - **Victime** : Hérautin, le messager — Messager du baron, porte toujours de mauvaises nouvelles. Venu apporter une lettre du baron ; menace : « m'annoncer une mauvaise nouvelle ».
 - **Coupable** : Aagrid — Tenancier le plus *SYMPA* de la baronnie. Tic : Compte à voix basse en parlant.
 - **Introduction** : Le messager Hérautin a lu à voix haute une lettre du baron annonçant un nouvel impôt sur la bière, devant une salle pleine de buveurs. Ensuite, au nom du baron, il a réclamé tout ce qui était gratuit dans la maison : une bière, un repas, un lit. On ne l'a revu qu'au matin, très bien bordé.
-- **Note de l'auteur** : Ne cite plus une autre pièce que celle du crime (2026-10-21). Avant : « — Je l'ai bordé moi-même. » | Ne cite plus une autre pièce que celle du crime (2026-10-21). Avant : « Puis il a demandé une chambre, gratuite, puisqu'il apportait la nouvelle. »
+- **Note de l'auteur** : Seconde passe de Mistral (2026-10-21). Avant : « — Que s'est-il passé avec Hérautin ? / — Il m'a annoncé un nouvel impôt sur la bière. Puis il a demandé à dormir ici, gratuitement, puisqu'il apportait la nouvelle. / — Vous avez refusé. / — Je l'ai bordé moi-même, sur le banc. Un oreiller, deux oreillers, bien serrés... »
 
 > — Que s'est-il passé avec Hérautin ?  
 > — Il m'a annoncé un nouvel impôt sur la bière. Puis il a demandé à dormir ici, gratuitement, puisqu'il apportait la nouvelle.  
 > — Vous avez refusé.  
-> — Je l'ai bordé moi-même, sur le banc. Un oreiller, deux oreillers, bien serrés...  
+> — Je l'ai bordé moi-même, au coin du feu, à même le plancher : un client du baron, ça se borde bien. Un oreiller, deux oreillers, bien serrés...  
 
 #### Meurtre au Sanglier Borgne — l'affaire Apnée
 - **Victime** : Apnée, la maîtresse-nageuse — Maîtresse-nageuse, sans permis ni maillot. Venue donner des cours de natation ; menace : « m'apprendre à nager de force ».
@@ -523,11 +524,12 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 - **Victime** : Scholastique, l'abbesse — Abbesse, quête pour un couvent introuvable. Venue faire la quête ; menace : « me faire la morale ».
 - **Coupable** : Capucine — Fée, doit trois tournées. Tic : « Je te le rends demain. ».
 - **Introduction** : L'abbesse Scholastique faisait la quête au moulin, et elle voulait l'argent tout de suite, pas plus tard. Elle a poursuivi son dernier donateur jusqu'à la meule. Quelqu'un a lâché le frein.
+- **Note de l'auteur** : Seconde passe de Mistral (2026-10-21). Avant : « — Parlons de Scholastique. / — Elle voulait que je donne pour son couvent. Tout de suite, pas demain. / — Vous n'aviez rien ? / — Elle m'a coursée jusqu'à la meule. Je suis passée par-dessus, en volant, et j'ai lâché le frein. Le don, je le fais demain. »
 
 > — Parlons de Scholastique.  
-> — Elle voulait que je donne pour son couvent. Tout de suite, pas demain.  
-> — Vous n'aviez rien ?  
-> — Elle m'a coursée jusqu'à la meule. Je suis passée par-dessus, en volant, et j'ai lâché le frein. Le don, je le fais demain.  
+> — Elle voulait que je donne pour son couvent, tout de suite, pas demain.  
+> — Vous n'aviez rien.  
+> — Elle m'a coursée jusqu'à la meule, en courant après moi par-dessus. J'ai lâché le frein en volant : la meule tournait déjà quand elle y a posé le pied. Tout de suite, comme elle voulait. Le don, je le fais demain.  
 
 #### Le Moulin de Bois-Tordu — l'affaire Orpiment
 - **Victime** : Orpiment, l'alchimiste — Alchimiste ambulant, transforme l'or en dettes. Venu proposer ses services ; menace : « changer mes économies en plomb ».
@@ -542,13 +544,13 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 #### Le Moulin de Bois-Tordu — l'affaire Ondine
 - **Victime** : Ondine, la maîtresse-nageuse — Maîtresse-nageuse, sans permis ni maillot. Venue donner des cours de natation ; menace : « m'apprendre à nager de force ».
 - **Coupable** : Fernand — Zombie, ancien apprenti. Ancien tout court. Tic : Perd un morceau quand il s'énerve.
-- **Introduction** : La nageuse Ondine enseignait à sa façon : les mouvements d'abord, à sec, et l'eau seulement ensuite. Au Moulin de Bois-Tordu, son dernier élève a mis beaucoup trop d'énergie dans la brasse.
-- **Note de l'auteur** : Accordé à la pièce du crime de la solution (2026-10-21) (pas de bief ni de roue dans la pièce) ; réécrit.
+- **Introduction** : La nageuse Ondine enseignait à sa façon : les mouvements d'abord, à sec, et l'eau seulement ensuite. Au moulin de Bois-Tordu, son dernier élève a eu un coup de fatigue en plein cours. La leçon ne reprendra pas.
+- **Note de l'auteur** : Seconde passe de Mistral (2026-10-21). Avant : « — C'était vous, avec Ondine. / — Elle voulait m'apprendre la brasse, à sec d'abord, sous les pommiers. « Battez des bras ! Plus fort ! Vous nagez comme un mort ! » / — Ça vous a vexé. / — Je me suis énervé. Quand je m'énerve, je perds un morceau : mon bras est parti tout seul, en plein dans sa tempe. Elle voulait de l'énergie. »
 
 > — C'était vous, avec Ondine.  
-> — Elle voulait m'apprendre la brasse, à sec d'abord, sous les pommiers. « Battez des bras ! Plus fort ! Vous nagez comme un mort ! »  
-> — Ça vous a vexé.  
-> — Je me suis énervé. Quand je m'énerve, je perds un morceau : mon bras est parti tout seul, en plein dans sa tempe. Elle voulait de l'énergie.  
+> — Elle m'apprenait la brasse, à sec, sous les pommiers. « Battez des bras ! Plus fort ! Vous nagez comme un mort ! »  
+> — Ça vous a énervé.  
+> — J'ai perdu ma jambe gauche, d'un grand coup. Elle faisait la planche sur le dos, dans l'herbe, très professionnelle. La jambe lui est tombée dessus : une jambe de zombie, ça pèse.  
 
 #### Le Moulin de Bois-Tordu — l'affaire Pressoux
 - **Victime** : Pressoux, le percepteur — Percepteur du baron, compte même les miettes. Venu lever l'impôt de fin d'année ; menace : « me faire payer l'impôt sur tout ce que je possède ».
@@ -566,12 +568,12 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 - **Victime** : Gaston, le touriste — Touriste, dessine tout au fusain, surtout ce qui est interdit. Venu visiter la baronnie ; menace : « faire mon portrait au fusain et le vendre à la foire ».
 - **Coupable** : Fernand — Zombie, ancien apprenti. Ancien tout court. Tic : Perd un morceau quand il s'énerve.
 - **Introduction** : Le touriste Gaston dessinait les curiosités de la baronnie pour les vendre à la foire, et au moulin, il n'a pas manqué de modèles. On l'a retrouvé aplati, son fusain à la main. Son dernier dessin n'est pas fini.
-- **Note de l'auteur** : Accordé à la pièce du crime de la solution (2026-10-21). Avant : « — Il s'est glissé sous la meule pour la ramasser. Il tenait à un modèle complet. Moi, j'ai remis la meule en marche. »
+- **Note de l'auteur** : Seconde passe de Mistral (2026-10-21). Avant : « — Racontez-moi, pour Gaston. / — Il voulait me dessiner pour la foire : « Le zombie du moulin ». Je me suis énervé, j'ai perdu une oreille. / — Et lui ? / — Elle avait roulé sous la statue. Il s'est glissé dessous pour la ramasser : il tenait à un modèle complet. Je me suis énervé encore, et j'ai donné un coup de pied dans le socle. »
 
 > — Racontez-moi, pour Gaston.  
 > — Il voulait me dessiner pour la foire : « Le zombie du moulin ». Je me suis énervé, j'ai perdu une oreille.  
 > — Et lui ?  
-> — Elle avait roulé sous la statue. Il s'est glissé dessous pour la ramasser : il tenait à un modèle complet. Je me suis énervé encore, et j'ai donné un coup de pied dans le socle.  
+> — Elle avait roulé sous la statue. Il s'est penché pour la ramasser : il tenait à un modèle complet. Je me suis énervé encore, et j'ai donné un coup de pied dans le socle.  
 
 #### Le Moulin de Bois-Tordu — l'affaire Mandolin
 - **Victime** : Mandolin, le troubadour — Troubadour itinérant, chante juste, et ça agace. Venu donner un concert ; menace : « chanter mieux que tout le monde ».
@@ -869,12 +871,13 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 #### Le Marais des Brumes — l'affaire Barrique
 - **Victime** : Barrique, l'inspecteur des tavernes — Inspecteur des tavernes, goûte tout, note tout. Venu inspecter les lieux ; menace : « me coller un blâme ».
 - **Coupable** : Goémone — Sirène, venue pour l'aquarium. Tic : Fait des bulles quand elle ment.
-- **Introduction** : L'inspecteur des tavernes Barrique cherchait une taverne dans le marais, et il n'a trouvé que de l'eau, beaucoup d'eau. Il s'apprêtait à rédiger un blâme quand quelqu'un lui a indiqué une meilleure adresse. Il a suivi l'indication jusqu'au bout.
+- **Introduction** : L'inspecteur des tavernes Barrique cherchait une taverne dans le marais, et il n'a trouvé que de l'eau, beaucoup d'eau. Il s'apprêtait à blâmer le marais entier. On lui a fait goûter la spécialité du terroir avant qu'il n'écrive.
+- **Note de l'auteur** : Seconde passe de Mistral (2026-10-21). Avant : « — Que s'est-il passé avec Barrique ? / — Il voulait coller un blâme au marais : trop d'eau, pas assez de bière. / — Vous l'avez fait taire ? / — Je lui ai chanté où trouver une meilleure taverne. Au fond du marais. Il m'a suivie. Ils me suivent tous. »
 
 > — Que s'est-il passé avec Barrique ?  
-> — Il voulait coller un blâme au marais : trop d'eau, pas assez de bière.  
-> — Vous l'avez fait taire ?  
-> — Je lui ai chanté où trouver une meilleure taverne. Au fond du marais. Il m'a suivie. Ils me suivent tous.  
+> — Il voulait coller un blâme au marais : trop d'eau, pas assez de bière. Le marais a sa fierté.  
+> — Vous avez protesté ?  
+> — Je lui ai servi la boisson du terroir, pour son rapport. (Blop.) Une bière, presque. Le grand champi de l'îlot, à l'eau de tourbe — celui que même Ciguë cueille avec des gants. Il a goûté sans poser de question. Le champi a fini l'inspecteur avant le rapport.  
 
 #### Le Marais des Brumes — l'affaire Relais
 - **Victime** : Relais, le messager — Messager du baron, porte toujours de mauvaises nouvelles. Venu apporter une lettre du baron ; menace : « m'annoncer une mauvaise nouvelle ».
@@ -943,21 +946,23 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 - **Victime** : Chiffonnet, le colporteur — Colporteur, vend des objets dont personne ne veut. Venu vendre sa camelote ; menace : « me revendre ce qu'il m'avait déjà vendu ».
 - **Coupable** : Brindille — Apprentie sorcière, a déjà fait exploser trois chaudrons. Tic : « C'est normal que ça fume ? ».
 - **Introduction** : Le colporteur Chiffonnet vendait aux élèves des chaudrons « garantis incassables », et il remboursait volontiers, après démonstration. Quelqu'un a demandé la démonstration.
+- **Note de l'auteur** : Seconde passe de Mistral (2026-10-21). Avant : « — Vous étiez seule avec Chiffonnet. / — Il voulait me revendre le chaudron incassable qu'il m'avait déjà vendu. / — Il avait cassé ? / — Explosé. Je lui ai montré comment, en le remplissant devant lui. J'ai demandé : « C'est normal que ça fume ? » Cette fois, je connaissais la réponse. »
 
 > — Vous étiez seule avec Chiffonnet.  
-> — Il voulait me revendre le chaudron incassable qu'il m'avait déjà vendu.  
-> — Il avait cassé ?  
-> — Explosé. Je lui ai montré comment, en le remplissant devant lui. J'ai demandé : « C'est normal que ça fume ? » Cette fois, je connaissais la réponse.  
+> — Il me revendait le chaudron incassable qu'il m'avait déjà vendu. Il le garantissait sur sa parole.  
+> — Et la garantie ?  
+> — Je l'ai testée à sa façon : lâché du haut de l'étagère, sur lui. Il tenait à voir de près si ça cassait. Le chaudron n'a rien.  
 
 #### L'Académie de Magie — l'affaire Sifflette
 - **Victime** : Sifflette, la dresseuse — Dresseuse de dragons, surtout des petits. Venue recruter des bêtes pour son cirque ; menace : « m'emmener dans son cirque ».
 - **Coupable** : Escabeau — Géant, toujours couché : aucun plafond n'est assez haut. Tic : Se cogne, s'excuse auprès du plafond.
 - **Introduction** : La dresseuse Sifflette cherchait un numéro spectaculaire pour son cirque. Elle a cru l'avoir trouvé, et elle a lancé un « Hop ! » sonore. Le plafond n'a pas apprécié.
+- **Note de l'auteur** : Seconde passe de Mistral (2026-10-21). Avant : « — Et Sifflette ? / — Elle voulait m'emmener dans son cirque : « Le géant debout ! » Elle a crié « Hop ! », et je me suis levé. / — Vous ne vous levez jamais. / — Pardon, plafond. Une poutre m'a suivi dans ma levée, et elle est tombée sur Sifflette. Je me suis excusé auprès du plafond : c'est lui qui l'a lâchée. On ne peut pas tout se reprocher, surtout quand on est poli. »
 
 > — Et Sifflette ?  
 > — Elle voulait m'emmener dans son cirque : « Le géant debout ! » Elle a crié « Hop ! », et je me suis levé.  
 > — Vous ne vous levez jamais.  
-> — Pardon, plafond. Une poutre m'a suivi dans ma levée, et elle est tombée sur Sifflette. Je me suis excusé auprès du plafond : c'est lui qui l'a lâchée. On ne peut pas tout se reprocher, surtout quand on est poli.  
+> — Pardon, plafond. Une poutre est tombée. Pardon, Sifflette.  
 
 #### L'Académie de Magie — l'affaire Ponctionnin
 - **Victime** : Ponctionnin, le percepteur — Percepteur du baron, compte même les miettes. Venu lever l'impôt de fin d'année ; menace : « me faire payer l'impôt sur tout ce que je possède ».
@@ -1150,12 +1155,12 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 - **Victime** : Sanguine, la chasseuse de primes — Chasseuse de primes, a toujours un avis de recherche sur elle. Venue toucher une prime ; menace : « me livrer au baron contre trois écus ».
 - **Coupable** : Escabeau — Géant, toujours couché : aucun plafond n'est assez haut. Tic : Se cogne, s'excuse auprès du plafond.
 - **Introduction** : La chasseuse de primes Sanguine était venue capturer quelqu'un pour une prime de trois écus, et elle comptait bien attacher sa prise solidement. Elle a voulu serrer le nœud elle-même. Elle s'est prise dedans.
-- **Note de l'auteur** : Escabeau : l'excuse au plafond gardée pour une seule scène (2026-10-21). Avant : « — Personne d'autre n'était avec Sanguine. Sauf vous. / — Elle voulait me livrer au baron, contre trois écus. / — Pour un géant ? / — Elle est montée sur moi pour serrer le nœud. Je me suis retourné pour m'excuser auprès du plafond. Elle était de l'autre côté. »
+- **Note de l'auteur** : Seconde passe de Mistral (2026-10-21). Avant : « — Personne d'autre n'était avec Sanguine. Sauf vous. / — Elle voulait me livrer au baron, contre trois écus. Elle est montée sur moi pour me passer une corde autour du cou. / — Il en faut beaucoup, pour un géant. / — Elle s'est prise dedans en redescendant, et elle est restée pendue à mon épaule. Je n'ai pas osé bouger, de peur de la faire tomber. Toute la nuit. »
 
 > — Personne d'autre n'était avec Sanguine. Sauf vous.  
 > — Elle voulait me livrer au baron, contre trois écus. Elle est montée sur moi pour me passer une corde autour du cou.  
 > — Il en faut beaucoup, pour un géant.  
-> — Elle s'est prise dedans en redescendant, et elle est restée pendue à mon épaule. Je n'ai pas osé bouger, de peur de la faire tomber. Toute la nuit.  
+> — Elle s'est prise dedans en redescendant, et elle est tombée de tout mon haut, la corde au cou. Je n'ai pas osé bouger de la nuit, de peur de lui marcher dessus.  
 
 #### La Foire aux Sortilèges — l'affaire Marchandin
 - **Victime** : Marchandin, le colporteur — Colporteur, vend des objets dont personne ne veut. Venu vendre sa camelote ; menace : « me revendre ce qu'il m'avait déjà vendu ».
@@ -1203,11 +1208,12 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 - **Victime** : Radegonde, l'abbesse — Abbesse, quête pour un couvent introuvable. Venue faire la quête ; menace : « me faire la morale ».
 - **Coupable** : Glas — Fossoyeur, creuse en sifflotant. Tic : Prend les mesures des gens qu'il rencontre.
 - **Introduction** : L'abbesse Radegonde faisait la quête entre les tombes, et elle reprochait aux habitués leurs drôles de manies. Elle trouvait le cimetière beaucoup trop accueillant. On lui a pourtant trouvé une place.
+- **Note de l'auteur** : Seconde passe de Mistral (2026-10-21). Avant : « — Et Radegonde ? / — Elle m'a fait la morale : on ne prend pas les mesures des vivants. / — Vous aviez pris les siennes ? / — En la voyant arriver. Ç'aurait été dommage de gâcher une si belle tombe. »
 
-> — Et Radegonde ?  
-> — Elle m'a fait la morale : on ne prend pas les mesures des vivants.  
-> — Vous aviez pris les siennes ?  
-> — En la voyant arriver. Ç'aurait été dommage de gâcher une si belle tombe.  
+> — Vous étiez seul avec Radegonde.  
+> — Elle visitait la crypte pour son couvent : « Au frais, au calme, on s'y installerait bien. » Elle vérifiait chaque place, du regard.  
+> — Elle en a trouvé une.  
+> — La meilleure, disait-elle. Je portais le couvercle des fondateurs, pour la visite. Elle a trouvé que j'allais lentement. Le couvercle, lui, allait vite : je le lui ai fait voir de près. La place n'est plus à louer.  
 
 #### Le Cimetière de Minuit — l'affaire Aurifex
 - **Victime** : Aurifex, l'alchimiste — Alchimiste ambulant, transforme l'or en dettes. Venu proposer ses services ; menace : « changer mes économies en plomb ».
@@ -1263,12 +1269,12 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 - **Victime** : Curiosus, le touriste — Touriste, dessine tout au fusain, surtout ce qui est interdit. Venu visiter la baronnie ; menace : « faire mon portrait au fusain et le vendre à la foire ».
 - **Coupable** : Augure — Corbeau, voit beaucoup, comprend moins, ne dit rien. Tic : Ne parle pas : il écrit.
 - **Introduction** : Le touriste Curiosus revenait chaque soir dessiner le même coin du cimetière, le nez en l'air. Il cherchait toujours le meilleur angle. Il ne regardait jamais où il mettait les pieds.
-- **Note de l'auteur** : Accordé à la pièce du crime de la solution (2026-10-21). Avant : « Moi, je regardais la fosse. » » | Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué.
+- **Note de l'auteur** : Seconde passe de Mistral (2026-10-21). Avant : « — Personne d'autre n'était avec Curiosus. Sauf vous. / — *Il écrit :* « Il me dessinait chaque soir, au même endroit. On ne m'observe pas. C'est moi qui observe. » / — Vous pouviez vous envoler. / — *Il écrit :* « Je me suis envolé. Il m'a suivi en regardant en l'air. Moi, je regardais le sarcophage ouvert. » »
 
 > — Personne d'autre n'était avec Curiosus. Sauf vous.  
 > — *Il écrit :* « Il me dessinait chaque soir, au même endroit. On ne m'observe pas. C'est moi qui observe. »  
 > — Vous pouviez vous envoler.  
-> — *Il écrit :* « Je me suis envolé. Il m'a suivi en regardant en l'air. Moi, je regardais le sarcophage ouvert. »  
+> — *Il écrit :* « Je me suis envolé. Il m'a suivi en regardant en l'air, jusqu'à la trappe du clocher. Moi, je regardais où je vais. »  
 
 #### Le Cimetière de Minuit — l'affaire Picrate *(grille désactivée)*
 - **Victime** : Picrate, l'inspecteur des tavernes — Inspecteur des tavernes, goûte tout, note tout. Venu inspecter les lieux ; menace : « me coller un blâme ».
@@ -1429,13 +1435,13 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 #### La Tour de l'Archimage — l'affaire Soufrius
 - **Victime** : Soufrius, l'alchimiste — Alchimiste ambulant, transforme l'or en dettes. Venu proposer ses services ; menace : « changer mes économies en plomb ».
 - **Coupable** : Blafard — Spectre, ancien châtelain. Traverse les meubles, pas les reproches. Tic : « De mon vivant… ».
-- **Introduction** : L'alchimiste Soufrius proposait de changer en plomb les vieilles pièces de la Tour, qui ne valaient plus rien selon lui. Il a insulté au passage la valeur de quelques souvenirs. On l'a retrouvé la tête la première dans un chaudron.
-- **Note de l'auteur** : Il n'y a pas d'étagère dans la pièce du crime : le chaudron (2026-10-21). Avant : « Je l'ai regardé à travers l'étagère ; il a reculé dessus. Elle était moins solide que ma réputation. » | Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif.
+- **Introduction** : L'alchimiste Soufrius proposait de changer en plomb les vieilles pièces de la Tour, qui ne valaient plus rien selon lui. Il a insulté au passage la valeur de quelques souvenirs. On l'a retrouvé ébouillanté, sa fiole intacte : il n'a rien eu le temps de changer du tout.
+- **Note de l'auteur** : Seconde passe de Mistral (2026-10-21). Avant : « — Parlons de Soufrius. / — Il voulait changer mes écus en plomb. Des écus à mon effigie. / — Ils ne valent plus rien. / — Ils valaient une fortune. Je suis sorti du chaudron qui bouillait, juste sous son nez. Il a eu si peur qu'il est tombé dedans, la tête la première. »
 
 > — Parlons de Soufrius.  
 > — Il voulait changer mes écus en plomb. Des écus à mon effigie.  
 > — Ils ne valent plus rien.  
-> — Ils valaient une fortune. Je suis sorti du chaudron qui bouillait, juste sous son nez. Il a eu si peur qu'il est tombé dedans, la tête la première.  
+> — Ils valaient une fortune. Je me suis baigné dans son chaudron, mes écus sur le ventre. Il a voulu nous repêcher, sa louche et lui. Le chaudron a basculé. Moi, ça me baigne ; lui, ça l'a bouilli.  
 
 #### La Tour de l'Archimage — l'affaire Belette
 - **Victime** : Belette, la chasseuse de primes — Chasseuse de primes, a toujours un avis de recherche sur elle. Venue toucher une prime ; menace : « me livrer au baron contre trois écus ».
@@ -1557,12 +1563,12 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 - **Victime** : Clapote, la maîtresse-nageuse — Maîtresse-nageuse, sans permis ni maillot. Venue donner des cours de natation ; menace : « m'apprendre à nager de force ».
 - **Coupable** : Frégaton — Capitaine, n'a jamais quitté le port. Tic : Raconte des tempêtes qu'il n'a jamais vues.
 - **Introduction** : La nageuse Clapote voulait apprendre à nager aux gens du port, en commençant par les plus têtus. Son premier élève a voulu lui donner une leçon à son tour. Elle n'a pas aimé la sienne.
-- **Note de l'auteur** : Accordé à la pièce du crime de la solution (2026-10-21). Avant : « — J'ai affronté cent tempêtes. Je lui ai montré comment on survit à la pire : on s'accroche à quelqu'un qui sait nager. Elle a coulé la première. »
+- **Note de l'auteur** : Seconde passe de Mistral (2026-10-21). Avant : « — Racontez-moi, pour Clapote. / — Elle voulait m'apprendre à nager. À moi, un capitaine. / — Vous savez nager ? / — J'ai affronté cent tempêtes. Je lui ai montré comment on survit à la pire : enfermé dans un tonneau. Elle a voulu essayer. J'ai rempli le tonneau, pour faire la mer. »
 
 > — Racontez-moi, pour Clapote.  
 > — Elle voulait m'apprendre à nager. À moi, un capitaine.  
 > — Vous savez nager ?  
-> — J'ai affronté cent tempêtes. Je lui ai montré comment on survit à la pire : enfermé dans un tonneau. Elle a voulu essayer. J'ai rempli le tonneau, pour faire la mer.  
+> — J'ai affronté cent tempêtes. Je lui en ai fait une, à l'eau du port, sur le plancher de l'entrepôt. Dans une vague, on tient bon, sinon on coule. Je l'ai tenue. Elle n'a pas eu à apprendre.  
 
 #### Le Port des Contrebandiers — l'affaire Rognard
 - **Victime** : Rognard, le percepteur — Percepteur du baron, compte même les miettes. Venu lever l'impôt de fin d'année ; menace : « me faire payer l'impôt sur tout ce que je possède ».
@@ -1601,11 +1607,12 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 - **Victime** : Charité, l'abbesse — Abbesse, quête pour un couvent introuvable. Venue faire la quête ; menace : « me faire la morale ».
 - **Coupable** : Dagobert — Roi, avare de compliments et de tout le reste. Tic : « C'est pas faux. », à tout ce qu'il ne comprend pas.
 - **Introduction** : L'abbesse Charité faisait la quête parmi les masques, et elle exigeait qu'on donne jusqu'à ce que ça fasse mal. Elle a insisté auprès de chaque invité. On l'a retrouvée à côté d'un chandelier en or, un peu cabossé.
+- **Note de l'auteur** : Seconde passe de Mistral (2026-10-21). Avant : « — C'était vous, avec Charité, Majesté. / — Elle m'a fait la morale : un roi doit donner jusqu'à ce que ça fasse mal. / — Et vous avez donné ? / — C'est pas faux, j'ai dit. Je lui ai donné le chandelier en or. Sur la tête. Puis je l'ai repris. »
 
 > — C'était vous, avec Charité, Majesté.  
 > — Elle m'a fait la morale : un roi doit donner jusqu'à ce que ça fasse mal.  
 > — Et vous avez donné ?  
-> — C'est pas faux, j'ai dit. Je lui ai donné le chandelier en or. Sur la tête. Puis je l'ai repris.  
+> — Le chandelier en or, sur la tête. Puis je l'ai repris. Donner, ça fait mal ; perdre, ça fait plus mal.  
 
 #### Le Bal Masqué — l'affaire Arsénio
 - **Victime** : Arsénio, l'alchimiste — Alchimiste ambulant, transforme l'or en dettes. Venu proposer ses services ; menace : « changer mes économies en plomb ».
@@ -1926,23 +1933,23 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 - **Victime** : Fanfreluche, la baronne — Baronne voisine, jalouse de tout ce qui brille. Venue rendre une visite de courtoisie ; menace : « racheter la baronnie et me mettre dehors ».
 - **Coupable** : Écho-Écho — Perroquet, répète tous les secrets. Tic : Répète tout, dans le désordre.
 - **Introduction** : La baronne Fanfreluche voulait racheter le navire et mettre l'équipage dehors, et elle avait un faible pour tout ce qui brillait. Quelqu'un lui a signalé un bijou caché tout au fond d'un coffre. Elle s'est penchée pour le prendre.
-- **Note de l'auteur** : Écho-Écho : désordre lisible ; le géant n'est pas dans la pièce du crime (2026-10-21). Avant : « — Fanfreluche. Racontez-moi. / — Racheter ! Navire ! Dehors ! / — Elle voulait racheter le navire et vous mettre dehors. / — Bijou ! Brille ! Sous le géant ! Retourne ! Pardon, plafond ! »
+- **Note de l'auteur** : Seconde passe de Mistral (2026-10-21). Avant : « — Fanfreluche. Racontez-moi. / — « J'achète ce rafiot, et tout le monde dehors ! » Dehors ! Coco aussi ! / — Et le bijou qu'elle cherchait ? / — Secret du mousse : « J'ai caché la bague au fond du grand coffre ! » Coco répète. Dame entre dans le coffre. Coco saute sur le couvercle. Clac ! « Bien au chaud ! » »
 
 > — Fanfreluche. Racontez-moi.  
 > — « J'achète ce rafiot, et tout le monde dehors ! » Dehors ! Coco aussi !  
 > — Et le bijou qu'elle cherchait ?  
-> — Secret du mousse : « J'ai caché la bague au fond du grand coffre ! » Coco répète. Dame entre dans le coffre. Coco saute sur le couvercle. Clac ! « Bien au chaud ! »  
+> — Secret du mousse : « J'ai caché la bague au fond du grand coffre ! » Coco répète. Dame plonge la main au fond. Coco saute sur le couvercle. Clac ! Sur la main. Sur le crâne. « Bien au chaud ! »  
 
 #### Le Navire Fantôme — l'affaire Fouine
 - **Victime** : Fouine, la chasseuse de primes — Chasseuse de primes, a toujours un avis de recherche sur elle. Venue toucher une prime ; menace : « me livrer au baron contre trois écus ».
 - **Coupable** : Écho-Écho — Perroquet, répète tous les secrets. Tic : Répète tout, dans le désordre.
 - **Introduction** : La chasseuse de primes Fouine cherchait à bord une tête mise à prix, et elle fouillait chaque cachette du navire. Elle a fini par entendre sa proie lui répondre. Elle a suivi la voix.
-- **Note de l'auteur** : Écho-Écho : désordre lisible ; le dragon n'est pas dans la pièce du crime (2026-10-21). Avant : « — Et Fouine ? / — Prime ! Trois écus ! Coco ! / — Elle voulait vous livrer au baron. / — Cachette ! Gueule ! Dragon ! Ouvre ! Ferme ! »
+- **Note de l'auteur** : Seconde passe de Mistral (2026-10-21). Avant : « — Et Fouine ? / — « Trois écus pour la tête de ce perroquet ! » Tête de Coco ! Trois écus ! Coco vexé ! / — Elle vous a trouvé ? / — « Sors de ta cachette, sale bestiole ! » Coco répète, du fond du grand chaudron. Dame se penche. Coco ressort. Dame, non. Feu allumé dessous. »
 
 > — Et Fouine ?  
 > — « Trois écus pour la tête de ce perroquet ! » Tête de Coco ! Trois écus ! Coco vexé !  
 > — Elle vous a trouvé ?  
-> — « Sors de ta cachette, sale bestiole ! » Coco répète, du fond du grand chaudron. Dame se penche. Coco ressort. Dame, non. Feu allumé dessous.  
+> — Coco a répété, du fond du grand chaudron : « Sors de ta cachette, sale bestiole ! » Dame se penche. Coco ressort, coup de bec sur le nez. Dame tombe à la renverse, le crâne sur le tonneau. Coco a des ailes ; Dame, non.  
 
 #### Le Navire Fantôme — l'affaire Trinquet
 - **Victime** : Trinquet, l'inspecteur des tavernes — Inspecteur des tavernes, goûte tout, note tout. Venu inspecter les lieux ; menace : « me coller un blâme ».
@@ -2030,12 +2037,12 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 - **Victime** : Bottin, le messager — Messager du baron, porte toujours de mauvaises nouvelles. Venu apporter une lettre du baron ; menace : « m'annoncer une mauvaise nouvelle ».
 - **Coupable** : Goémone — Sirène, venue pour l'aquarium. Tic : Fait des bulles quand elle ment.
 - **Introduction** : Le messager Bottin apportait une nouvelle chanson de la part du barde, et il tenait à la chanter lui-même, devant tous les baigneurs. Il chantait faux, par fidélité à l'auteur. On l'a retrouvé allongé, la bouche encore ouverte.
-- **Note de l'auteur** : Accordé à la pièce du crime de la solution (2026-10-21). Avant : « — Il a tenu à me la chanter. Je lui ai montré comment on chante juste, sous l'eau. Il n'a pas tenu la note. »
+- **Note de l'auteur** : Seconde passe de Mistral (2026-10-21). Avant : « — Racontez-moi, pour Bottin. / — Il m'a apporté une mauvaise nouvelle : une nouvelle chanson de Fausset. / — Vous pouviez refuser la lettre. / — Il a tenu à me la chanter, allongé sur la table de massage. Je lui ai posé des algues sur le visage, comme on fait en mer. Très serrées. Il n'a pas tenu la note. »
 
 > — Racontez-moi, pour Bottin.  
 > — Il m'a apporté une mauvaise nouvelle : une nouvelle chanson de Fausset.  
 > — Vous pouviez refuser la lettre.  
-> — Il a tenu à me la chanter, allongé sur la table de massage. Je lui ai posé des algues sur le visage, comme on fait en mer. Très serrées. Il n'a pas tenu la note.  
+> — Il a tenu à me la chanter, les yeux fermés, pour l'art. Je lui ai posé des algues sur le visage, comme on fait en mer. Très serrées. Il n'a pas tenu la note.  
 
 #### Les Thermes Enchantés — l'affaire Éclaboussine
 - **Victime** : Éclaboussine, la maîtresse-nageuse — Maîtresse-nageuse, sans permis ni maillot. Venue donner des cours de natation ; menace : « m'apprendre à nager de force ».

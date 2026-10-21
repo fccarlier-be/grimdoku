@@ -57,7 +57,7 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 > — Vous avez refusé ?  
 > — J'ai annoncé : « Je vous la donne. » Pointe la première.  
 
-*Relecture : à relire*
+*Relecture : validé*
 
 ### 1.4. l'affaire Gouleyant (7×7) — coupable : Bakchich
 
@@ -70,7 +70,7 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 > — Vous étiez seul avec Gouleyant.  
 > — Il goûtait tout, il notait tout. Il voulait coller un blâme à la cave du roi.  
 > — Vous aviez quelque chose à cacher, dans cette cave ?  
-> — Une bouteille, marquée « Ne pas boire ». Il l'a bue, et il a commencé à la noter. Techniquement, c'est légal : il était prévenu.  
+> — Une bouteille, marquée « Ne pas boire ». Je la lui ai servie : c'est la seule que je défends dans cette cave. Il l'a bue pour prouver que je cachais du bon. Il a bu la preuve du contraire. Techniquement, c'est légal : il était prévenu par écrit.  
 
 *Relecture : à relire*
 
@@ -118,14 +118,14 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 
 *Pièce du crime : Cour (meubles : arbre, champi). Suspects : Bâfrin, Fausset, Bakchich, Briochon, Fricot.*
 
-**Intro** : L'huissier Recouvrin est arrivé avec un registre et une balance, pour saisir tout ce qui avait de la valeur sur la table. Il a commencé par l'argenterie. Il n'a pas eu le temps de finir le tour de la table.
+**Intro** : L'huissier Recouvrin est arrivé avec un registre et une balance, pour saisir tout ce qui avait de la valeur au banquet. Il a commencé par l'argenterie. Il n'a pas eu le temps de finir son tour.
 
 **Épilogue** :
 
 > — Pourquoi Recouvrin ?  
-> — Il venait saisir mes affaires. À sa banque, on saisit d'abord et on demande ensuite.  
-> — Et vous ?  
-> — J'ai saisi le premier : lui. Puis je l'ai revendu aux cuisines, au poids, sur sa propre balance. Techniquement, c'est légal : un bien saisi peut être revendu.  
+> — Il venait saisir mes affaires. On saisit d'abord, on demande ensuite : c'est sa maison qui a écrit la règle.  
+> — Et vous avez saisi l'huissier.  
+> — Un bien saisi, ça se pèse : je l'ai accroché au crochet de sa balance romaine. Il a pesé le temps d'un inventaire, puis il n'a plus rien pesé du tout. Techniquement, c'est une saisie régulière.  
 
 *Relecture : à relire*
 
@@ -155,9 +155,9 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 > — Que s'est-il passé avec Brassée ?  
 > — Elle voulait m'apprendre à nager de force. Dix écus la leçon, dans la grande marmite de soupe, faute de lac.  
 > — Et vous avez refusé ?  
-> — Elle a sauté dedans pour me montrer. J'ai remis le couvercle. Dix écus d'économisés et un bon bouillon, gratuit en prime !  
+> — Elle a sauté dedans pour me montrer que l'eau était bonne. J'ai remis le couvercle : dix écus d'économisés, et le bouillon s'est amélioré tout seul. Techniquement, c'est légal.  
 
-*Relecture : validé*
+*Relecture : à relire*
 
 ### 2.5. l'affaire Ingeburge (6×6) — coupable : Festin
 
@@ -225,7 +225,7 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 > — Que s'est-il passé avec Hérautin ?  
 > — Il m'a annoncé un nouvel impôt sur la bière. Puis il a demandé à dormir ici, gratuitement, puisqu'il apportait la nouvelle.  
 > — Vous avez refusé.  
-> — Je l'ai bordé moi-même, sur le banc. Un oreiller, deux oreillers, bien serrés...  
+> — Je l'ai bordé moi-même, au coin du feu, à même le plancher : un client du baron, ça se borde bien. Un oreiller, deux oreillers, bien serrés...  
 
 *Relecture : à relire*
 
@@ -380,9 +380,9 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 **Épilogue** :
 
 > — Parlons de Scholastique.  
-> — Elle voulait que je donne pour son couvent. Tout de suite, pas demain.  
-> — Vous n'aviez rien ?  
-> — Elle m'a coursée jusqu'à la meule. Je suis passée par-dessus, en volant, et j'ai lâché le frein. Le don, je le fais demain.  
+> — Elle voulait que je donne pour son couvent, tout de suite, pas demain.  
+> — Vous n'aviez rien.  
+> — Elle m'a coursée jusqu'à la meule, en courant après moi par-dessus. J'ai lâché le frein en volant : la meule tournait déjà quand elle y a posé le pied. Tout de suite, comme elle voulait. Le don, je le fais demain.  
 
 *Relecture : à relire*
 
@@ -405,14 +405,14 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 
 *Pièce du crime : Verger (meubles : arbre, champi). Suspects : Fernand, Flammèche, Bâfrin, Farinard, Goémone.*
 
-**Intro** : La nageuse Ondine enseignait à sa façon : les mouvements d'abord, à sec, et l'eau seulement ensuite. Au Moulin de Bois-Tordu, son dernier élève a mis beaucoup trop d'énergie dans la brasse.
+**Intro** : La nageuse Ondine enseignait à sa façon : les mouvements d'abord, à sec, et l'eau seulement ensuite. Au moulin de Bois-Tordu, son dernier élève a eu un coup de fatigue en plein cours. La leçon ne reprendra pas.
 
 **Épilogue** :
 
 > — C'était vous, avec Ondine.  
-> — Elle voulait m'apprendre la brasse, à sec d'abord, sous les pommiers. « Battez des bras ! Plus fort ! Vous nagez comme un mort ! »  
-> — Ça vous a vexé.  
-> — Je me suis énervé. Quand je m'énerve, je perds un morceau : mon bras est parti tout seul, en plein dans sa tempe. Elle voulait de l'énergie.  
+> — Elle m'apprenait la brasse, à sec, sous les pommiers. « Battez des bras ! Plus fort ! Vous nagez comme un mort ! »  
+> — Ça vous a énervé.  
+> — J'ai perdu ma jambe gauche, d'un grand coup. Elle faisait la planche sur le dos, dans l'herbe, très professionnelle. La jambe lui est tombée dessus : une jambe de zombie, ça pèse.  
 
 *Relecture : à relire*
 
@@ -442,7 +442,7 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 > — Racontez-moi, pour Gaston.  
 > — Il voulait me dessiner pour la foire : « Le zombie du moulin ». Je me suis énervé, j'ai perdu une oreille.  
 > — Et lui ?  
-> — Elle avait roulé sous la statue. Il s'est glissé dessous pour la ramasser : il tenait à un modèle complet. Je me suis énervé encore, et j'ai donné un coup de pied dans le socle.  
+> — Elle avait roulé sous la statue. Il s'est penché pour la ramasser : il tenait à un modèle complet. Je me suis énervé encore, et j'ai donné un coup de pied dans le socle.  
 
 *Relecture : à relire*
 
@@ -809,14 +809,14 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 
 *Pièce du crime : Îlot (meubles : arbre, champi). Suspects : Bâfrin, Ciguë, Aëlys, Fernand, Goémone.*
 
-**Intro** : L'inspecteur des tavernes Barrique cherchait une taverne dans le marais, et il n'a trouvé que de l'eau, beaucoup d'eau. Il s'apprêtait à rédiger un blâme quand quelqu'un lui a indiqué une meilleure adresse. Il a suivi l'indication jusqu'au bout.
+**Intro** : L'inspecteur des tavernes Barrique cherchait une taverne dans le marais, et il n'a trouvé que de l'eau, beaucoup d'eau. Il s'apprêtait à blâmer le marais entier. On lui a fait goûter la spécialité du terroir avant qu'il n'écrive.
 
 **Épilogue** :
 
 > — Que s'est-il passé avec Barrique ?  
-> — Il voulait coller un blâme au marais : trop d'eau, pas assez de bière.  
-> — Vous l'avez fait taire ?  
-> — Je lui ai chanté où trouver une meilleure taverne. Au fond du marais. Il m'a suivie. Ils me suivent tous.  
+> — Il voulait coller un blâme au marais : trop d'eau, pas assez de bière. Le marais a sa fierté.  
+> — Vous avez protesté ?  
+> — Je lui ai servi la boisson du terroir, pour son rapport. (Blop.) Une bière, presque. Le grand champi de l'îlot, à l'eau de tourbe — celui que même Ciguë cueille avec des gants. Il a goûté sans poser de question. Le champi a fini l'inspecteur avant le rapport.  
 
 *Relecture : à relire*
 
@@ -945,9 +945,9 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 **Épilogue** :
 
 > — Vous étiez seule avec Chiffonnet.  
-> — Il voulait me revendre le chaudron incassable qu'il m'avait déjà vendu.  
-> — Il avait cassé ?  
-> — Explosé. Je lui ai montré comment, en le remplissant devant lui. J'ai demandé : « C'est normal que ça fume ? » Cette fois, je connaissais la réponse.  
+> — Il me revendait le chaudron incassable qu'il m'avait déjà vendu. Il le garantissait sur sa parole.  
+> — Et la garantie ?  
+> — Je l'ai testée à sa façon : lâché du haut de l'étagère, sur lui. Il tenait à voir de près si ça cassait. Le chaudron n'a rien.  
 
 *Relecture : à relire*
 
@@ -962,7 +962,7 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 > — Et Sifflette ?  
 > — Elle voulait m'emmener dans son cirque : « Le géant debout ! » Elle a crié « Hop ! », et je me suis levé.  
 > — Vous ne vous levez jamais.  
-> — Pardon, plafond. Une poutre m'a suivi dans ma levée, et elle est tombée sur Sifflette. Je me suis excusé auprès du plafond : c'est lui qui l'a lâchée. On ne peut pas tout se reprocher, surtout quand on est poli.  
+> — Pardon, plafond. Une poutre est tombée. Pardon, Sifflette.  
 
 *Relecture : à relire*
 
@@ -1196,7 +1196,7 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 > — Personne d'autre n'était avec Sanguine. Sauf vous.  
 > — Elle voulait me livrer au baron, contre trois écus. Elle est montée sur moi pour me passer une corde autour du cou.  
 > — Il en faut beaucoup, pour un géant.  
-> — Elle s'est prise dedans en redescendant, et elle est restée pendue à mon épaule. Je n'ai pas osé bouger, de peur de la faire tomber. Toute la nuit.  
+> — Elle s'est prise dedans en redescendant, et elle est tombée de tout mon haut, la corde au cou. Je n'ai pas osé bouger de la nuit, de peur de lui marcher dessus.  
 
 *Relecture : à relire*
 
@@ -1268,7 +1268,7 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 > — Personne d'autre n'était avec Curiosus. Sauf vous.  
 > — *Il écrit :* « Il me dessinait chaque soir, au même endroit. On ne m'observe pas. C'est moi qui observe. »  
 > — Vous pouviez vous envoler.  
-> — *Il écrit :* « Je me suis envolé. Il m'a suivi en regardant en l'air. Moi, je regardais le sarcophage ouvert. »  
+> — *Il écrit :* « Je me suis envolé. Il m'a suivi en regardant en l'air, jusqu'à la trappe du clocher. Moi, je regardais où je vais. »  
 
 *Relecture : à relire*
 
@@ -1280,10 +1280,10 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 
 **Épilogue** :
 
-> — Et Radegonde ?  
-> — Elle m'a fait la morale : on ne prend pas les mesures des vivants.  
-> — Vous aviez pris les siennes ?  
-> — En la voyant arriver. Ç'aurait été dommage de gâcher une si belle tombe.  
+> — Vous étiez seul avec Radegonde.  
+> — Elle visitait la crypte pour son couvent : « Au frais, au calme, on s'y installerait bien. » Elle vérifiait chaque place, du regard.  
+> — Elle en a trouvé une.  
+> — La meilleure, disait-elle. Je portais le couvercle des fondateurs, pour la visite. Elle a trouvé que j'allais lentement. Le couvercle, lui, allait vite : je le lui ai fait voir de près. La place n'est plus à louer.  
 
 *Relecture : à relire*
 
@@ -1450,14 +1450,14 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 
 *Pièce du crime : Laboratoire (meubles : portail, chaudron). Suspects : Goémone, Fumerolle, Flammèche, Fizzlebarbe, Blafard, Belladone.*
 
-**Intro** : L'alchimiste Soufrius proposait de changer en plomb les vieilles pièces de la Tour, qui ne valaient plus rien selon lui. Il a insulté au passage la valeur de quelques souvenirs. On l'a retrouvé la tête la première dans un chaudron.
+**Intro** : L'alchimiste Soufrius proposait de changer en plomb les vieilles pièces de la Tour, qui ne valaient plus rien selon lui. Il a insulté au passage la valeur de quelques souvenirs. On l'a retrouvé ébouillanté, sa fiole intacte : il n'a rien eu le temps de changer du tout.
 
 **Épilogue** :
 
 > — Parlons de Soufrius.  
 > — Il voulait changer mes écus en plomb. Des écus à mon effigie.  
 > — Ils ne valent plus rien.  
-> — Ils valaient une fortune. Je suis sorti du chaudron qui bouillait, juste sous son nez. Il a eu si peur qu'il est tombé dedans, la tête la première.  
+> — Ils valaient une fortune. Je me suis baigné dans son chaudron, mes écus sur le ventre. Il a voulu nous repêcher, sa louche et lui. Le chaudron a basculé. Moi, ça me baigne ; lui, ça l'a bouilli.  
 
 *Relecture : à relire*
 
@@ -1649,7 +1649,7 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 > — Racontez-moi, pour Clapote.  
 > — Elle voulait m'apprendre à nager. À moi, un capitaine.  
 > — Vous savez nager ?  
-> — J'ai affronté cent tempêtes. Je lui ai montré comment on survit à la pire : enfermé dans un tonneau. Elle a voulu essayer. J'ai rempli le tonneau, pour faire la mer.  
+> — J'ai affronté cent tempêtes. Je lui en ai fait une, à l'eau du port, sur le plancher de l'entrepôt. Dans une vague, on tient bon, sinon on coule. Je l'ai tenue. Elle n'a pas eu à apprendre.  
 
 *Relecture : à relire*
 
@@ -1721,7 +1721,7 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 > — C'était vous, avec Charité, Majesté.  
 > — Elle m'a fait la morale : un roi doit donner jusqu'à ce que ça fasse mal.  
 > — Et vous avez donné ?  
-> — C'est pas faux, j'ai dit. Je lui ai donné le chandelier en or. Sur la tête. Puis je l'ai repris.  
+> — Le chandelier en or, sur la tête. Puis je l'ai repris. Donner, ça fait mal ; perdre, ça fait plus mal.  
 
 *Relecture : à relire*
 
@@ -2117,7 +2117,7 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 > — Fanfreluche. Racontez-moi.  
 > — « J'achète ce rafiot, et tout le monde dehors ! » Dehors ! Coco aussi !  
 > — Et le bijou qu'elle cherchait ?  
-> — Secret du mousse : « J'ai caché la bague au fond du grand coffre ! » Coco répète. Dame entre dans le coffre. Coco saute sur le couvercle. Clac ! « Bien au chaud ! »  
+> — Secret du mousse : « J'ai caché la bague au fond du grand coffre ! » Coco répète. Dame plonge la main au fond. Coco saute sur le couvercle. Clac ! Sur la main. Sur le crâne. « Bien au chaud ! »  
 
 *Relecture : à relire*
 
@@ -2132,7 +2132,7 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 > — Et Fouine ?  
 > — « Trois écus pour la tête de ce perroquet ! » Tête de Coco ! Trois écus ! Coco vexé !  
 > — Elle vous a trouvé ?  
-> — « Sors de ta cachette, sale bestiole ! » Coco répète, du fond du grand chaudron. Dame se penche. Coco ressort. Dame, non. Feu allumé dessous.  
+> — Coco a répété, du fond du grand chaudron : « Sors de ta cachette, sale bestiole ! » Dame se penche. Coco ressort, coup de bec sur le nez. Dame tombe à la renverse, le crâne sur le tonneau. Coco a des ailes ; Dame, non.  
 
 *Relecture : à relire*
 
@@ -2218,7 +2218,7 @@ Dans chaque lieu, l'intro affichée = l'ouverture (selon le nombre d'affaires d�
 > — Racontez-moi, pour Bottin.  
 > — Il m'a apporté une mauvaise nouvelle : une nouvelle chanson de Fausset.  
 > — Vous pouviez refuser la lettre.  
-> — Il a tenu à me la chanter, allongé sur la table de massage. Je lui ai posé des algues sur le visage, comme on fait en mer. Très serrées. Il n'a pas tenu la note.  
+> — Il a tenu à me la chanter, les yeux fermés, pour l'art. Je lui ai posé des algues sur le visage, comme on fait en mer. Très serrées. Il n'a pas tenu la note.  
 
 *Relecture : à relire*
 

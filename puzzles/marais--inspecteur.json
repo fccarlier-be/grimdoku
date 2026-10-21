@@ -182,8 +182,8 @@
   "id": "marais--inspecteur",
   "place": "marais",
   "intro": "Le Marais des Brumes a rendu le corps de l'inspecteur des tavernes Barrique, venu inspecter les lieux. Il garde le reste. Cinq habitants du marais pataugeaient dans le coin. L'un d'eux était seul avec lui. J'ai de la vase jusqu'aux genoux et zéro témoin fiable.",
-  "introBody": "L'inspecteur des tavernes Barrique cherchait une taverne dans le marais, et il n'a trouvé que de l'eau, beaucoup d'eau. Il s'apprêtait à rédiger un blâme quand quelqu'un lui a indiqué une meilleure adresse. Il a suivi l'indication jusqu'au bout.",
-  "epilogue": "— Que s'est-il passé avec Barrique ?\n— Il voulait coller un blâme au marais : trop d'eau, pas assez de bière.\n— Vous l'avez fait taire ?\n— Je lui ai chanté où trouver une meilleure taverne. Au fond du marais. Il m'a suivie. Ils me suivent tous.",
+  "introBody": "L'inspecteur des tavernes Barrique cherchait une taverne dans le marais, et il n'a trouvé que de l'eau, beaucoup d'eau. Il s'apprêtait à blâmer le marais entier. On lui a fait goûter la spécialité du terroir avant qu'il n'écrive.",
+  "epilogue": "— Que s'est-il passé avec Barrique ?\n— Il voulait coller un blâme au marais : trop d'eau, pas assez de bière. Le marais a sa fierté.\n— Vous avez protesté ?\n— Je lui ai servi la boisson du terroir, pour son rapport. (Blop.) Une bière, presque. Le grand champi de l'îlot, à l'eau de tourbe — celui que même Ciguë cueille avec des gants. Il a goûté sans poser de question. Le champi a fini l'inspecteur avant le rapport.",
   "clues": [
     {
       "who": "a",

@@ -5,7 +5,7 @@
     "note": ""
   },
   "chateau--cousine": {
-    "status": "relire",
+    "status": "valide",
     "note": "Accordé à la nouvelle intro (2026-10-21), chute gardée. Avant : Réécrit d'après ta note (« Partager ne veut pas dire tuer ») : elle réclame l'épée de famille, il la lui « donne », pointe la première. | « — Elle réclamait sa part de l'héritage familial : l'épée de mes ancêtres. »"
   },
   "chateau--dresseuse": {
@@ -14,7 +14,7 @@
   },
   "chateau--inspecteur--golem--i2": {
     "status": "relire",
-    "note": "Accordé à la nouvelle intro (2026-10-21), chute gardée. Avant : « Il l'a bue. »"
+    "note": "Seconde passe de Mistral (2026-10-21). Avant : « — Vous étiez seul avec Gouleyant. / — Il goûtait tout, il notait tout. Il voulait coller un blâme à la cave du roi. / — Vous aviez quelque chose à cacher, dans cette cave ? / — Une bouteille, marquée « Ne pas boire ». Il l'a bue, et il a commencé à la noter. Techniquement, c'est légal : il était prévenu. »"
   },
   "chateau--touriste--dragon--i2": {
     "status": "relire",
@@ -30,11 +30,11 @@
   },
   "banquet--huissier": {
     "status": "relire",
-    "note": "Accordé à la nouvelle intro (2026-10-21, la balance), chute gardée. Avant : « Puis je l'ai revendu aux cuisines, au poids. » | Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+    "note": "Seconde passe de Mistral (2026-10-21). Avant : « — Pourquoi Recouvrin ? / — Il venait saisir mes affaires. À sa banque, on saisit d'abord et on demande ensuite. / — Et vous ? / — J'ai saisi le premier : lui. Puis je l'ai revendu aux cuisines, au poids, sur sa propre balance. Techniquement, c'est légal : un bien saisi peut être revendu. »"
   },
   "banquet--nageuse": {
-    "status": "valide",
-    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+    "status": "relire",
+    "note": "Seconde passe de Mistral (2026-10-21). Avant : « — Que s'est-il passé avec Brassée ? / — Elle voulait m'apprendre à nager de force. Dix écus la leçon, dans la grande marmite de soupe, faute de lac. / — Et vous avez refusé ? / — Elle a sauté dedans pour me montrer. J'ai remis le couvercle. Dix écus d'économisés et un bon bouillon, gratuit en prime ! »"
   },
   "taverne--dresseuse": {
     "status": "valide",
@@ -62,11 +62,11 @@
   },
   "moulin--abbesse": {
     "status": "relire",
-    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+    "note": "Seconde passe de Mistral (2026-10-21). Avant : « — Parlons de Scholastique. / — Elle voulait que je donne pour son couvent. Tout de suite, pas demain. / — Vous n'aviez rien ? / — Elle m'a coursée jusqu'à la meule. Je suis passée par-dessus, en volant, et j'ai lâché le frein. Le don, je le fais demain. »"
   },
   "moulin--nageuse": {
     "status": "relire",
-    "note": "Accordé à la pièce du crime de la solution (2026-10-21) (pas de bief ni de roue dans la pièce) ; réécrit."
+    "note": "Seconde passe de Mistral (2026-10-21). Avant : « — C'était vous, avec Ondine. / — Elle voulait m'apprendre la brasse, à sec d'abord, sous les pommiers. « Battez des bras ! Plus fort ! Vous nagez comme un mort ! » / — Ça vous a vexé. / — Je me suis énervé. Quand je m'énerve, je perds un morceau : mon bras est parti tout seul, en plein dans sa tempe. Elle voulait de l'énergie. »"
   },
   "academie--abbesse": {
     "status": "relire",
@@ -118,7 +118,7 @@
   },
   "cimetiere--touriste": {
     "status": "relire",
-    "note": "Accordé à la pièce du crime de la solution (2026-10-21). Avant : « Moi, je regardais la fosse. » » | Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+    "note": "Seconde passe de Mistral (2026-10-21). Avant : « — Personne d'autre n'était avec Curiosus. Sauf vous. / — *Il écrit :* « Il me dessinait chaque soir, au même endroit. On ne m'observe pas. C'est moi qui observe. » / — Vous pouviez vous envoler. / — *Il écrit :* « Je me suis envolé. Il m'a suivi en regardant en l'air. Moi, je regardais le sarcophage ouvert. » »"
   },
   "cimetiere--chasseuse--golem--i2": {
     "status": "relire",
@@ -166,7 +166,7 @@
   },
   "bal--abbesse": {
     "status": "relire",
-    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+    "note": "Seconde passe de Mistral (2026-10-21). Avant : « — C'était vous, avec Charité, Majesté. / — Elle m'a fait la morale : un roi doit donner jusqu'à ce que ça fasse mal. / — Et vous avez donné ? / — C'est pas faux, j'ai dit. Je lui ai donné le chandelier en or. Sur la tête. Puis je l'ai repris. »"
   },
   "bal--chasseuse": {
     "status": "relire",
@@ -290,7 +290,7 @@
   },
   "tour--alchimiste": {
     "status": "relire",
-    "note": "Il n'y a pas d'étagère dans la pièce du crime : le chaudron (2026-10-21). Avant : « Je l'ai regardé à travers l'étagère ; il a reculé dessus. Elle était moins solide que ma réputation. » | Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+    "note": "Seconde passe de Mistral (2026-10-21). Avant : « — Parlons de Soufrius. / — Il voulait changer mes écus en plomb. Des écus à mon effigie. / — Ils ne valent plus rien. / — Ils valaient une fortune. Je suis sorti du chaudron qui bouillait, juste sous son nez. Il a eu si peur qu'il est tombé dedans, la tête la première. »"
   },
   "tour--inspecteur--vouivre--i2": {
     "status": "relire",
@@ -342,7 +342,7 @@
   },
   "academie--colporteur--geant--i2": {
     "status": "relire",
-    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+    "note": "Seconde passe de Mistral (2026-10-21). Avant : « — Vous étiez seule avec Chiffonnet. / — Il voulait me revendre le chaudron incassable qu'il m'avait déjà vendu. / — Il avait cassé ? / — Explosé. Je lui ai montré comment, en le remplissant devant lui. J'ai demandé : « C'est normal que ça fume ? » Cette fois, je connaissais la réponse. »"
   },
   "academie--baronne": {
     "status": "relire",
@@ -469,7 +469,7 @@
   },
   "taverne--messager": {
     "status": "relire",
-    "note": "Ne cite plus une autre pièce que celle du crime (2026-10-21). Avant : « — Je l'ai bordé moi-même. » | Ne cite plus une autre pièce que celle du crime (2026-10-21). Avant : « Puis il a demandé une chambre, gratuite, puisqu'il apportait la nouvelle. »"
+    "note": "Seconde passe de Mistral (2026-10-21). Avant : « — Que s'est-il passé avec Hérautin ? / — Il m'a annoncé un nouvel impôt sur la bière. Puis il a demandé à dormir ici, gratuitement, puisqu'il apportait la nouvelle. / — Vous avez refusé. / — Je l'ai bordé moi-même, sur le banc. Un oreiller, deux oreillers, bien serrés... »"
   },
   "taverne--percepteur": {
     "status": "relire",
@@ -525,15 +525,15 @@
   },
   "navire--baronne--geant--i2": {
     "status": "relire",
-    "note": "Écho-Écho : désordre lisible ; le géant n'est pas dans la pièce du crime (2026-10-21). Avant : « — Fanfreluche. Racontez-moi. / — Racheter ! Navire ! Dehors ! / — Elle voulait racheter le navire et vous mettre dehors. / — Bijou ! Brille ! Sous le géant ! Retourne ! Pardon, plafond ! »"
+    "note": "Seconde passe de Mistral (2026-10-21). Avant : « — Fanfreluche. Racontez-moi. / — « J'achète ce rafiot, et tout le monde dehors ! » Dehors ! Coco aussi ! / — Et le bijou qu'elle cherchait ? / — Secret du mousse : « J'ai caché la bague au fond du grand coffre ! » Coco répète. Dame entre dans le coffre. Coco saute sur le couvercle. Clac ! « Bien au chaud ! » »"
   },
   "navire--chasseuse--dragon--i2": {
     "status": "relire",
-    "note": "Écho-Écho : désordre lisible ; le dragon n'est pas dans la pièce du crime (2026-10-21). Avant : « — Et Fouine ? / — Prime ! Trois écus ! Coco ! / — Elle voulait vous livrer au baron. / — Cachette ! Gueule ! Dragon ! Ouvre ! Ferme ! »"
+    "note": "Seconde passe de Mistral (2026-10-21). Avant : « — Et Fouine ? / — « Trois écus pour la tête de ce perroquet ! » Tête de Coco ! Trois écus ! Coco vexé ! / — Elle vous a trouvé ? / — « Sors de ta cachette, sale bestiole ! » Coco répète, du fond du grand chaudron. Dame se penche. Coco ressort. Dame, non. Feu allumé dessous. »"
   },
   "foire--chasseuse--geant--i2": {
     "status": "relire",
-    "note": "Escabeau : l'excuse au plafond gardée pour une seule scène (2026-10-21). Avant : « — Personne d'autre n'était avec Sanguine. Sauf vous. / — Elle voulait me livrer au baron, contre trois écus. / — Pour un géant ? / — Elle est montée sur moi pour serrer le nœud. Je me suis retourné pour m'excuser auprès du plafond. Elle était de l'autre côté. »"
+    "note": "Seconde passe de Mistral (2026-10-21). Avant : « — Personne d'autre n'était avec Sanguine. Sauf vous. / — Elle voulait me livrer au baron, contre trois écus. Elle est montée sur moi pour me passer une corde autour du cou. / — Il en faut beaucoup, pour un géant. / — Elle s'est prise dedans en redescendant, et elle est restée pendue à mon épaule. Je n'ai pas osé bouger, de peur de la faire tomber. Toute la nuit. »"
   },
   "bal--messager--geant-vouivre--i2-i2": {
     "status": "relire",
@@ -561,11 +561,11 @@
   },
   "moulin--touriste": {
     "status": "relire",
-    "note": "Accordé à la pièce du crime de la solution (2026-10-21). Avant : « — Il s'est glissé sous la meule pour la ramasser. Il tenait à un modèle complet. Moi, j'ai remis la meule en marche. »"
+    "note": "Seconde passe de Mistral (2026-10-21). Avant : « — Racontez-moi, pour Gaston. / — Il voulait me dessiner pour la foire : « Le zombie du moulin ». Je me suis énervé, j'ai perdu une oreille. / — Et lui ? / — Elle avait roulé sous la statue. Il s'est glissé dessous pour la ramasser : il tenait à un modèle complet. Je me suis énervé encore, et j'ai donné un coup de pied dans le socle. »"
   },
   "port--nageuse": {
     "status": "relire",
-    "note": "Accordé à la pièce du crime de la solution (2026-10-21). Avant : « — J'ai affronté cent tempêtes. Je lui ai montré comment on survit à la pire : on s'accroche à quelqu'un qui sait nager. Elle a coulé la première. »"
+    "note": "Seconde passe de Mistral (2026-10-21). Avant : « — Racontez-moi, pour Clapote. / — Elle voulait m'apprendre à nager. À moi, un capitaine. / — Vous savez nager ? / — J'ai affronté cent tempêtes. Je lui ai montré comment on survit à la pire : enfermé dans un tonneau. Elle a voulu essayer. J'ai rempli le tonneau, pour faire la mer. »"
   },
   "grand-port--percepteur--vouivre--l4--cache": {
     "status": "relire",
@@ -573,7 +573,7 @@
   },
   "thermes--messager": {
     "status": "relire",
-    "note": "Accordé à la pièce du crime de la solution (2026-10-21). Avant : « — Il a tenu à me la chanter. Je lui ai montré comment on chante juste, sous l'eau. Il n'a pas tenu la note. »"
+    "note": "Seconde passe de Mistral (2026-10-21). Avant : « — Racontez-moi, pour Bottin. / — Il m'a apporté une mauvaise nouvelle : une nouvelle chanson de Fausset. / — Vous pouviez refuser la lettre. / — Il a tenu à me la chanter, allongé sur la table de massage. Je lui ai posé des algues sur le visage, comme on fait en mer. Très serrées. Il n'a pas tenu la note. »"
   },
   "palais--alchimiste--dragon--i2": {
     "status": "relire",
@@ -589,7 +589,7 @@
   },
   "academie--dresseuse--geant--i2": {
     "status": "relire",
-    "note": "Réécrit d'après la relecture de Mistral (2026-10-21). Avant : « — Et Sifflette ? / — Elle voulait m'emmener dans son cirque : « Le géant debout ! » Elle a crié « Hop ! », et je me suis levé. / — Vous ne vous levez jamais. / — Pardon, plafond. Lui, il est tombé sur elle. Moi, je me suis excusé auprès du bon. »"
+    "note": "Seconde passe de Mistral (2026-10-21). Avant : « — Et Sifflette ? / — Elle voulait m'emmener dans son cirque : « Le géant debout ! » Elle a crié « Hop ! », et je me suis levé. / — Vous ne vous levez jamais. / — Pardon, plafond. Une poutre m'a suivi dans ma levée, et elle est tombée sur Sifflette. Je me suis excusé auprès du plafond : c'est lui qui l'a lâchée. On ne peut pas tout se reprocher, surtout quand on est poli. »"
   },
   "cimetiere--dresseuse": {
     "status": "relire",
@@ -610,5 +610,13 @@
   "palais--abbesse--vouivre--i2": {
     "status": "relire",
     "note": "Réécrit d'après la relecture de Mistral (2026-10-21). Avant : « — Prudence. Racontez-moi. / — Elle m'a fait la morale, madame : vendre du rêve, c'est mentir. / — Vous lui avez répondu ? / — Je lui ai vendu un vœu de sainteté : « Monter au ciel sans attendre. » Je vouvoie même les vœux, madame. Ils obéissent mieux. »"
+  },
+  "marais--inspecteur": {
+    "status": "relire",
+    "note": "Seconde passe de Mistral (2026-10-21). Avant : « — Que s'est-il passé avec Barrique ? / — Il voulait coller un blâme au marais : trop d'eau, pas assez de bière. / — Vous l'avez fait taire ? / — Je lui ai chanté où trouver une meilleure taverne. Au fond du marais. Il m'a suivie. Ils me suivent tous. »"
+  },
+  "cimetiere--abbesse--geant--i2": {
+    "status": "relire",
+    "note": "Seconde passe de Mistral (2026-10-21). Avant : « — Et Radegonde ? / — Elle m'a fait la morale : on ne prend pas les mesures des vivants. / — Vous aviez pris les siennes ? / — En la voyant arriver. Ç'aurait été dommage de gâcher une si belle tombe. »"
   }
 }

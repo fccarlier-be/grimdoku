@@ -267,7 +267,7 @@
   "place": "cimetiere",
   "intro": "Au Cimetière de Minuit, on a retrouvé le touriste Curiosus, venu visiter la baronnie. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Sept habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec lui. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
   "introBody": "Le touriste Curiosus revenait chaque soir dessiner le même coin du cimetière, le nez en l'air. Il cherchait toujours le meilleur angle. Il ne regardait jamais où il mettait les pieds.",
-  "epilogue": "— Personne d'autre n'était avec Curiosus. Sauf vous.\n— *Il écrit :* « Il me dessinait chaque soir, au même endroit. On ne m'observe pas. C'est moi qui observe. »\n— Vous pouviez vous envoler.\n— *Il écrit :* « Je me suis envolé. Il m'a suivi en regardant en l'air. Moi, je regardais le sarcophage ouvert. »",
+  "epilogue": "— Personne d'autre n'était avec Curiosus. Sauf vous.\n— *Il écrit :* « Il me dessinait chaque soir, au même endroit. On ne m'observe pas. C'est moi qui observe. »\n— Vous pouviez vous envoler.\n— *Il écrit :* « Je me suis envolé. Il m'a suivi en regardant en l'air, jusqu'à la trappe du clocher. Moi, je regardais où je vais. »",
   "clues": [
     {
       "who": "a",

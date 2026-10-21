@@ -33,7 +33,7 @@ Généré par `node tools/intros-md.js` depuis `lore/intros.json` (ne pas édite
 **Mises en situation**
 
 - *l'affaire Croquette* : La dresseuse Croquette était venue avec trois petits dragons en cage, à la recherche d'un numéro qui leur ferait peur. Entre le fromage et le dessert, elle a annoncé des auditions. On l'a retrouvée roussie, et ses dragons tremblaient encore.
-- *l'affaire Recouvrin* : L'huissier Recouvrin est arrivé avec un registre et une balance, pour saisir tout ce qui avait de la valeur sur la table. Il a commencé par l'argenterie. Il n'a pas eu le temps de finir le tour de la table.
+- *l'affaire Recouvrin* : L'huissier Recouvrin est arrivé avec un registre et une balance, pour saisir tout ce qui avait de la valeur au banquet. Il a commencé par l'argenterie. Il n'a pas eu le temps de finir son tour.
 - *l'affaire Courandier* : Le messager Courandier a traversé le banquet au pas de course avec une lettre du baron, de celles qu'on remet en mains propres avant de s'enfuir. Il s'est enfui. Pas assez vite.
 - *l'affaire Brassée* : La nageuse Brassée cherchait un lac pour ses leçons, à dix écus la leçon payables à la sortie du bain ; au Banquet des Gobelins, elle n'a trouvé que la grande marmite. Cinq convives jurent n'avoir rien vu, ce qui est étrange autour d'une marmite de cette taille.
 - *l'affaire Ingeburge* : La cousine Ingeburge réclamait sa part d'héritage à toute la tablée, et pour ne rien manquer, elle changeait de place à chaque plat. Au dessert, personne ne se souvenait où elle s'était assise en dernier, et c'est bien tout le problème.
@@ -91,7 +91,7 @@ Généré par `node tools/intros-md.js` depuis `lore/intros.json` (ne pas édite
 
 - *l'affaire Scholastique* : L'abbesse Scholastique faisait la quête au moulin, et elle voulait l'argent tout de suite, pas plus tard. Elle a poursuivi son dernier donateur jusqu'à la meule. Quelqu'un a lâché le frein.
 - *l'affaire Orpiment* : L'alchimiste Orpiment proposait de changer en or tout ce qu'on lui confiait, et il se payait d'avance. Au moulin, personne n'avait d'économies. Il a donc cherché autre chose à transformer.
-- *l'affaire Ondine* : La nageuse Ondine enseignait à sa façon : les mouvements d'abord, à sec, et l'eau seulement ensuite. Au Moulin de Bois-Tordu, son dernier élève a mis beaucoup trop d'énergie dans la brasse.
+- *l'affaire Ondine* : La nageuse Ondine enseignait à sa façon : les mouvements d'abord, à sec, et l'eau seulement ensuite. Au moulin de Bois-Tordu, son dernier élève a eu un coup de fatigue en plein cours. La leçon ne reprendra pas.
 - *l'affaire Pressoux* : Le percepteur Pressoux voulait taxer tout ce qui se trouvait au moulin : le grain, la farine, et jusqu'aux pommes. On l'a retrouvé la tête contre une pierre. Les cinq voisins ont tous entendu un bruit, mais aucun le même.
 - *l'affaire Gaston* : Le touriste Gaston dessinait les curiosités de la baronnie pour les vendre à la foire, et au moulin, il n'a pas manqué de modèles. On l'a retrouvé aplati, son fusain à la main. Son dernier dessin n'est pas fini.
 - *l'affaire Mandolin* : Le troubadour Mandolin chantait partout une chanson sur les petits secrets du voisinage, et il chantait juste, ce qui aggravait les choses. Il s'était installé sous la meule, pour l'acoustique. C'était une mauvaise idée.
@@ -171,7 +171,7 @@ Généré par `node tools/intros-md.js` depuis `lore/intros.json` (ne pas édite
 
 - *l'affaire Ombeline* : La dresseuse Ombeline cherchait au marais une bête rare à mettre sur son affiche. Elle a cru l'avoir trouvée. On l'a retrouvée raide, les lèvres bleues.
 - *l'affaire Inventorin* : L'huissier Inventorin est venu saisir des biens dans un marais, ce qui demande de l'imagination. Il a tout noté, les nénuphars compris, et décrété que le reste ne valait rien. On l'a retrouvé là où il avait envoyé tout le reste.
-- *l'affaire Barrique* : L'inspecteur des tavernes Barrique cherchait une taverne dans le marais, et il n'a trouvé que de l'eau, beaucoup d'eau. Il s'apprêtait à rédiger un blâme quand quelqu'un lui a indiqué une meilleure adresse. Il a suivi l'indication jusqu'au bout.
+- *l'affaire Barrique* : L'inspecteur des tavernes Barrique cherchait une taverne dans le marais, et il n'a trouvé que de l'eau, beaucoup d'eau. Il s'apprêtait à blâmer le marais entier. On lui a fait goûter la spécialité du terroir avant qu'il n'écrive.
 - *l'affaire Relais* : Le messager Relais apportait une lettre du baron qui n'allait faire plaisir à personne, et il a tenu à la lire en entier, à voix haute. Il était pressé de repartir ; on l'a retenu pour un défi. Il n'a jamais rejoint la rive.
 - *l'affaire Noyelle* : La nageuse Noyelle voulait donner des cours à tout ce qui bougeait dans la vase. Elle insistait beaucoup sur la respiration. On l'a retrouvée au fond, sans plus aucun conseil à donner.
 - *l'affaire Liardin* : Le percepteur Liardin voulait taxer le marais au litre, et pour son calcul, il lui fallait la profondeur exacte. Il a demandé conseil sur place. On lui a donné le mauvais.
@@ -298,7 +298,7 @@ Généré par `node tools/intros-md.js` depuis `lore/intros.json` (ne pas édite
 
 **Mises en situation**
 
-- *l'affaire Soufrius* : L'alchimiste Soufrius proposait de changer en plomb les vieilles pièces de la Tour, qui ne valaient plus rien selon lui. Il a insulté au passage la valeur de quelques souvenirs. On l'a retrouvé la tête la première dans un chaudron.
+- *l'affaire Soufrius* : L'alchimiste Soufrius proposait de changer en plomb les vieilles pièces de la Tour, qui ne valaient plus rien selon lui. Il a insulté au passage la valeur de quelques souvenirs. On l'a retrouvé ébouillanté, sa fiole intacte : il n'a rien eu le temps de changer du tout.
 - *l'affaire Adélaïde* : La cousine Adélaïde réclamait sa part d'un héritage sans très bien savoir en quoi il consistait, alors elle a décidé que sa part serait la première chose qu'elle attraperait. Elle a attrapé quelque chose. Les grimoires d'à côté n'ont pas survécu non plus.
 - *l'affaire Couplet* : Le troubadour Couplet donnait un concert au pied des grimoires, et il réclamait une ambiance à la hauteur de sa voix. Il chantait juste, ce qui est rare dans la baronnie. Il a tendu sa partition au mauvais moment.
 - *l'affaire Bazar* : Le colporteur Bazar vendait des objets trouvés dans la Tour, et certains avaient encore leur propriétaire. Il a proposé un lot à moitié prix, pour faire la paire. Il a glissé sur la marchandise.
