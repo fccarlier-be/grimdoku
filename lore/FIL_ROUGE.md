@@ -1,6 +1,6 @@
 # Le fil rouge pendant le jeu — textes à relire
 
-Généré depuis `lore/fil-rouge.json` (c'est ce fichier qu'on modifie). Phase 2 de la roadmap : le mur de l'affaire de la Tour, les petites questions, et les trois visites à Fizzlebarbe. Les seuils comptent les lettres **ouvertes**, quel que soit l'ordre des lieux.
+Généré par `node tools/fil-rouge-md.js` depuis `lore/fil-rouge.json` (et les lettres de `lore/lettres.json`) : c'est là qu'on modifie. Phase 2 de la roadmap : le mur de l'affaire de la Tour, les petites questions, et les trois visites à Fizzlebarbe. Les seuils comptent les lettres **ouvertes**, quel que soit l'ordre des lieux.
 
 ## 1. Les déclics de l'enquêteur (le mur se construit)
 
@@ -39,15 +39,15 @@ Chaque lettre épingle une pièce (l'étiquette ci-dessous) sous une question. L
 - **Le Banquet des Gobelins** — *« Bakchich trinque au futur propriétaire : lui-même. »*  
   Lettre : Au Banquet des Gobelins, Bakchich a porté un toast « au futur propriétaire de la Tour », en levant son verre vers lui-même. Puis il a demandé si les gobelins prêtaient sans garantie. Personne n'a eu le cœur de répondre.
 - **La Citadelle de Mortebrune** — *« Blafard : des titres authentiques, et aucun droit. »*  
-  Lettre : Blafard m'a montré ses titres de propriété. Le papier est authentique, et plus vieux que la baronnie. Le droit qu'il prétend en tirer l'est beaucoup moins.
+  Lettre : Blafard m'a montré ses titres de propriété. Le papier est authentique, mais il porte sur le terrain, pas sur la Tour, et il date d'avant sa mort. À Brumeval, les morts n'héritent pas : ils hantent.
 - **Le Bal Masqué** — *« Fumerolle a promis la Tour à trois invités. »*  
-  Lettre : Au bal masqué, Fumerolle a promis la Tour à trois invités. Quand on lui a fait remarquer qu'ils ne pouvaient pas tous en hériter, elle a répondu qu'un vœu bien formulé ne se contredit jamais, et en a formulé un quatrième.
+  Lettre : Au bal masqué, Fumerolle a promis la Tour à trois invités différents, contre un vœu chacun. Quand je lui ai fait remarquer qu'une tour ne se partage pas en trois, elle a souri : « Je n'ai jamais dit qu'ils l'auraient en même temps. »
 - **Les Thermes Enchantés** — *« Fumerolle : un vœu peut-il changer un titre ? »*  
   Lettre : Aux Thermes, Fumerolle a dit : « Le vieux veut léguer la Tour à celui qui le mérite. Personne ne le mérite. » Puis elle m'a demandé si un vœu pouvait modifier un titre de propriété. Elle préfère les génies aux notaires.
 - **Le Port des Contrebandiers** — *« Fiolius : douze bocaux « échantillons de la Tour ». »*  
   Lettre : Fiolius a fait livrer douze bocaux vides à son nom, avec la mention « échantillons de la Tour ». Il affirme qu'ils sont indispensables à une étude. Il ne m'a pas dit ce qu'il compte mettre dedans.
 - **La Grande Foire des Mille Merveilles** — *« Fiolius : une malle assez grande pour un archimage. »*  
-  Lettre : À la Grande Foire, Fiolius a acheté une malle assez grande pour un grimoire. Ou pour un archimage. Il dit qu'elle servira à déménager du matériel de la Tour vers l'Université. Il n'a demandé l'autorisation à personne.
+  Lettre : À la Grande Foire, Fiolius a acheté une malle assez grande pour un archimage. Il dit qu'elle servira à déménager les grimoires de la Tour vers l'Université. Il n'a demandé l'autorisation à personne.
 
 **Déduction** :
 
@@ -59,21 +59,21 @@ Chaque lettre épingle une pièce (l'étiquette ci-dessous) sous une question. L
   Lettre : Gribouille doit quarante écus au Sanglier Borgne. Il promet de tout rembourser « dès que la Tour sera à lui ». Il promet aussi depuis onze ans de rendre le grimoire de Dewey. Les deux promesses ont le même calendrier.
 - **Le Marais des Brumes** — *« Dewey achète de quoi lire l'encre invisible. »*  
   Lettre : Ciguë vend une potion qui révèle certaines encres invisibles. Dewey en a acheté trois, « pour retrouver un livre ». Je ne sais pas ce qui l'inquiète le plus : l'encre, le livre ou le reçu.
-- **La Forge du Dragon** — *« Une clé unique, glissée dans un grimoire. »*  
-  Lettre : Fizzlebarbe a fait forger une clé unique. Le forgeron l'a vu la glisser entre les pages d'un grimoire qui n'aurait jamais dû se trouver dans la Tour. Ici, les secrets s'empilent mieux que les livres.
+- **La Forge du Dragon** — *« Une clé unique, glissée dans un livre de bibliothèque. »*  
+  Lettre : Fizzlebarbe a fait forger une clé unique, si fine qu'elle tient entre deux pages. Le forgeron l'a vu la glisser dans un vieux grimoire, avec un tampon de bibliothèque sur la tranche. Fizzlebarbe n'a jamais emprunté un livre de sa vie.
 - **La Bibliothèque Interdite** — *« Le grimoire retrouvé, une fente recousue. »*  
   Lettre : Dewey a enfin retrouvé le grimoire emprunté par Gribouille, au fond de la Tour. Sous la reliure, une petite fente a été refermée avec soin. Dewey hésite à la cataloguer comme réparation, fraude ou insulte.
 
 **Déduction** :
 
-> Un livre emprunté il y a onze ans, perdu dans la Tour, recousu par quelqu'un, et une clé forgée exprès glissée entre ses pages. On ne cache pas une clé dans un livre volé par hasard. Celle-ci ouvre quelque chose que personne ne doit trouver.
+> Un livre emprunté il y a onze ans, perdu dans la Tour, recousu par quelqu'un, et une clé forgée exprès glissée entre ses pages. On ne cache pas une clé dans un livre de bibliothèque par hasard. Celle-ci ouvre quelque chose que personne ne doit trouver.
 
 ### Qu'est-ce qui manque sur les plans ? (3 pièces)
 
 - **Le Moulin de Bois-Tordu** — *« Fernand : une clé d'avant l'accident. »*  
   Lettre : Fernand a fait refaire une clé de la Tour. Il dit en avoir eu une avant l'accident, celui qui l'a tué. Quand je lui ai demandé ce qu'elle ouvrait, il a frotté son moignon et changé de sujet.
 - **L'Université des Sortilèges** — *« Deux escaliers, le même palier, rien entre. »*  
-  Lettre : Fiolius a écrit « Annexe de l'Université » sur les plans de la Tour, à l'encre sympathique. Elle se voit très bien. Sur une coupe, deux escaliers mènent au même palier, mais aucun plan ne montre ce qui les relie.
+  Lettre : Fiolius a écrit « Annexe de l'Université » sur les plans de la Tour, à l'encre invisible. Elle se voit très bien. Sur une coupe, deux escaliers mènent au même palier, mais aucun plan ne montre ce qui les relie.
 - **La Foire aux Sortilèges** — *« Le plan d'Esbroufe : il manque un étage. »*  
   Lettre : Clairvoya a prédit à Brindille qu'elle hériterait d'une tour. Esbroufe lui a aussitôt vendu un plan de la Tour. Il y manque un étage, mais il garantit que le document est complet.
 
@@ -83,8 +83,8 @@ Chaque lettre épingle une pièce (l'étiquette ci-dessous) sous une question. L
 
 ### Pourquoi la brume se comporte-t-elle bizarrement ? (3 pièces)
 
-- **Le Navire Fantôme** — *« Le brouillard venait du mauvais côté du port. »*  
-  Lettre : Frégaton jure avoir vu Fizzlebarbe embarquer pour « un voyage sans retour ». Le navire n'a pas quitté le quai. Ce soir-là, pourtant, le brouillard venait du mauvais côté du port. Frégaton refuse ce détail : il gâche son histoire.
+- **Le Navire Fantôme** — *« Une nuit sans vent, la brume est descendue de la Tour. »*  
+  Lettre : Frégaton jure avoir vu la brume quitter la Tour de l'Archimage, une nuit sans vent, et descendre jusqu'au port comme un troupeau qu'on mène. Il en a tiré une histoire de tempête, bien sûr. Pour une fois, je crois qu'il n'a rien inventé, sauf l'orage.
 - **L'Académie de Magie** — *« Une porte s'est déplacée de deux pas. »*  
   Lettre : Brindille s'entraîne en secret au sort qui ouvre les serrures magiques. Trois portes de l'Académie ont déjà explosé. La quatrième s'est déplacée de deux pas vers la gauche. Le directeur appelle cela un progrès.
 - **Le Palais des Mille Vœux** — *« Une puissance que le Palais ne sait pas expliquer. »*  
@@ -92,14 +92,14 @@ Chaque lettre épingle une pièce (l'étiquette ci-dessous) sous une question. L
 
 **Déduction** :
 
-> Du brouillard qui vient du mauvais côté, des portes qui se déplacent, une puissance que même des djinns ne savent pas mesurer. Quelque chose tient la baronnie en place. Et ce quelque chose faiblit, au même rythme que le vieil archimage.
+> De la brume qui descend de la Tour une nuit sans vent, des portes qui se déplacent, une puissance que même des djinns ne savent pas mesurer. Quelque chose, dans cette Tour, tient la baronnie en place. Et ce quelque chose faiblit, au même rythme que le vieil archimage.
 
 ### Qui a pris l'enveloppe du notaire ? (2 pièces)
 
 - **Le Grand Port de Brumeval** — *« Chez le notaire : une plume noire. »*  
-  Lettre : Le notaire avait reçu un projet de testament sous enveloppe scellée. Le lendemain, l'enveloppe avait disparu. Sur le bureau, une plume noire. Le notaire jure avoir entendu un battement d'ailes ; il jure aussi qu'il dormait.
+  Lettre : Le notaire avait reçu un projet de testament sous enveloppe scellée. Le lendemain, l'enveloppe avait disparu. Sur le bureau, une plume noire. Le notaire jure avoir entendu un battement d'ailes. Il n'a pas d'oiseau.
 - **La Ferme Hantée** — *« Briochon : un « document préparatoire ». »*  
-  Lettre : Briochon raconte que le testament existe, qu'il est caché, et qu'il n'en dira pas plus. Il a seulement entendu parler d'un document préparatoire. Le reste, il l'a brodé avec beaucoup de conviction.
+  Lettre : Briochon raconte que le testament existe, qu'il est caché, et qu'il n'en dira pas plus. Il le tient du commis du notaire, qui achète son pain chez lui. Le commis n'a parlé que d'un « document préparatoire » ; Briochon a brodé le reste, avec beaucoup de conviction.
 
 **Déduction** :
 
@@ -107,18 +107,18 @@ Chaque lettre épingle une pièce (l'étiquette ci-dessous) sous une question. L
 
 ### Que veut vraiment Fizzlebarbe ? (4 pièces)
 
-- **La Tour de l'Archimage** — *« Trois serrures, et la liste de ceux qui ont essayé. »*  
-  Lettre : Fizzlebarbe a changé trois fois de serrure ce mois-ci. Il prétend que quelqu'un fouille son bureau. Curieusement, il ne m'a pas demandé de trouver le voleur, mais de dresser la liste de tous ceux qui ont essayé.
+- **La Tour de l'Archimage** — *« Trois serrures, rien de volé, et la liste de ceux qui ont essayé. »*  
+  Lettre : Fizzlebarbe a changé trois fois de serrure ce mois-ci : quelqu'un essaie d'entrer dans son bureau. Rien n'a disparu. Curieusement, il ne veut pas savoir qui : il m'a demandé la liste de tous ceux qui ont essayé, et de ce qu'ils cherchaient.
 - **Le Cimetière de Minuit** — *« Glas a creusé une tombe « pour toutes les éventualités ». »*  
-  Lettre : Glas a déjà creusé une tombe au nom de Fizzlebarbe. L'archimage lui aurait demandé de « prévoir toutes les éventualités ». Je lui ai demandé s'il avait aussi prévu de vérifier que le vieux était mort. Il a pris des notes.
-- **La Mine des Nains** — *« Un coffre à l'épreuve de la magie, sans nom. »*  
-  Lettre : Granit a reçu commande d'un coffre à l'épreuve de la magie, à livrer dans la Tour. Le client a payé d'avance et demandé qu'on ne grave aucun nom. Granit a quand même chronométré la livraison.
-- **Les Grands Bains de Brumeval** — *« « Plus un bâtiment, mais une tâche. » »*  
-  Lettre : Aux Grands Bains, Fizzlebarbe a confié à son masseur qu'il « changerait tout » après sa cure : il ne voulait peut-être plus transmettre un bâtiment, mais une tâche. Le reste s'est perdu dans les huiles.
+  Lettre : Glas a déjà creusé une tombe au nom de Fizzlebarbe. L'archimage lui aurait demandé de « prévoir toutes les éventualités ». Je lui ai demandé s'il avait aussi prévu de vérifier que le vieux était mort avant de l'enterrer. Il a pris des notes.
+- **La Mine des Nains** — *« Un coffre à l'épreuve de la magie, commandé sans nom. »*  
+  Lettre : Granit a reçu commande d'un coffre à l'épreuve de la magie, à livrer dans la Tour. Le client a payé d'avance et n'a pas voulu que son nom figure sur le bon de commande. Granit a quand même chronométré la livraison.
+- **Les Grands Bains de Brumeval** — *« « Jamais un bâtiment, mais une tâche. » »*  
+  Lettre : Aux Grands Bains, Fizzlebarbe a confié à son masseur qu'on se trompait tous : il n'avait jamais eu l'intention de léguer un bâtiment, mais une tâche. Le masseur a demandé laquelle. Le reste s'est perdu dans les huiles.
 
 **Déduction** :
 
-> Il ne cherche pas son voleur, il dresse une liste. Il commande un coffre que la magie ne peut pas ouvrir. Il ne veut plus léguer un bâtiment, mais une tâche. Ce vieux mage fait passer un examen à toute la baronnie, sans dire à personne qu'il y a une épreuve.
+> Il ne cherche pas qui fouille son bureau, il dresse une liste. Il commande un coffre que la magie ne peut pas ouvrir. Il n'a jamais voulu léguer un bâtiment, mais une tâche. Ce vieux mage fait passer un examen à toute la baronnie, sans dire à personne qu'il y a une épreuve.
 
 ## 3. Les trois visites à la Tour
 
@@ -130,13 +130,13 @@ Chaque lettre épingle une pièce (l'étiquette ci-dessous) sous une question. L
 >
 > Il m'a regardé longtemps, puis il a dit : « Moyen. » Et il m'a raccompagné.  
 >
-> Sur la rambarde de l'escalier, un corbeau écrivait. Avec une plume, sur un carnet. Il s'est arrêté quand je suis passé.
+> Sur la rambarde de l'escalier, un corbeau écrivait, une plume dans la patte, sur un petit parchemin. Il l'a roulé quand je suis passé.
 
 *Note de l'enquêteur* : Un corbeau qui écrit. J'ai déjà vu cette écriture quelque part.
 
 ### À 12 lettres — L'escalier qui ne mène nulle part
 
-> Cette fois, Fizzlebarbe m'a fait monter. Au troisième palier, un escalier repart vers le haut et s'arrête net contre un mur lisse. « Ne posez pas de questions sur celui-là. »  
+> Cette fois, Fizzlebarbe m'a fait monter : quelqu'un avait forcé une porte au troisième palier, et il voulait que je voie les traces, « pour l'exemple ». Juste à côté, un escalier repart vers le haut et s'arrête net contre un mur lisse. « Ne posez pas de questions sur celui-là. »  
 >
 > J'en ai posé une quand même. Il a soupiré, comme on soupire depuis des siècles. « Un apprenti l'a réparé, autrefois. Ça lui a coûté plus cher que prévu. Beaucoup plus. » Un silence. « De mon temps, on ne payait pas les apprentis : on les formait. Celui-là n'a pas eu le temps d'être formé. »  
 >

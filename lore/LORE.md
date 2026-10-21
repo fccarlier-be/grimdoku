@@ -609,7 +609,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
   - 6e affaire : Sixième affaire à la Citadelle. On m'a proposé une chambre ; j'ai demandé laquelle n'avait pas encore servi de scène de crime.
   - dernière : Dernière affaire à la Citadelle de Mortebrune, j'espère. Le pont-levis est resté grand ouvert, et pour la première fois, personne ne s'enfuit.
 - **Lettre d'Augure** :
-> Blafard m'a montré ses titres de propriété. Le papier est authentique, et plus vieux que la baronnie. Le droit qu'il prétend en tirer l'est beaucoup moins. — A.
+> Blafard m'a montré ses titres de propriété. Le papier est authentique, mais il porte sur le terrain, pas sur la Tour, et il date d'avant sa mort. À Brumeval, les morts n'héritent pas : ils hantent. — A.
 
 ### Le Bal Masqué
 - **Contrée** : Mortebrune, le chef-lieu · **carte** : 8×8 · **enquêtes** : 12
@@ -626,7 +626,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
   - 6e affaire : Sixième affaire au bal. Les invités ôtent leur masque en me voyant, pour gagner du temps.
   - dernière : Dernier bal masqué, j'espère. À minuit, tout le monde a ôté son masque d'un coup, et pour une fois, personne ne mentait dessous.
 - **Lettre d'Augure** :
-> Au bal masqué, Fumerolle a promis la Tour à trois invités. Quand on lui a fait remarquer qu'ils ne pouvaient pas tous en hériter, elle a répondu qu'un vœu bien formulé ne se contredit jamais, et en a formulé un quatrième. — A.
+> Au bal masqué, Fumerolle a promis la Tour à trois invités différents, contre un vœu chacun. Quand je lui ai fait remarquer qu'une tour ne se partage pas en trois, elle a souri : « Je n'ai jamais dit qu'ils l'auraient en même temps. » — A.
 
 ### Le Cimetière de Minuit
 - **Contrée** : Mortebrune, le chef-lieu · **carte** : 8×8 · **enquêtes** : 12
@@ -643,7 +643,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
   - 6e affaire : Sixième affaire au cimetière. Les chouettes ne s'envolent plus quand j'arrive : elles se poussent juste un peu.
   - dernière : Dernière affaire au Cimetière de Minuit, j'espère. Le brouillard s'est levé à mon arrivée, comme un rideau qu'on tire à la fin d'une pièce.
 - **Lettre d'Augure** :
-> Glas a déjà creusé une tombe au nom de Fizzlebarbe. L'archimage lui aurait demandé de « prévoir toutes les éventualités ». Je lui ai demandé s'il avait aussi prévu de vérifier que le vieux était mort. Il a pris des notes. — A.
+> Glas a déjà creusé une tombe au nom de Fizzlebarbe. L'archimage lui aurait demandé de « prévoir toutes les éventualités ». Je lui ai demandé s'il avait aussi prévu de vérifier que le vieux était mort avant de l'enterrer. Il a pris des notes. — A.
 
 ### La Tour de l'Archimage
 - **Contrée** : Mortebrune, le chef-lieu · **carte** : 7×7 · **enquêtes** : 11
@@ -660,7 +660,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
   - 6e affaire : Sixième affaire à la Tour. J'ai pris l'habitude de monter à reculons, pour voir venir les étagères.
   - dernière : Dernière affaire à la Tour de l'Archimage, j'espère. Pour une fois, les marches m'ont mené exactement où je voulais aller, et je me suis demandé ce qu'elles cachaient.
 - **Lettre d'Augure** :
-> Fizzlebarbe a changé trois fois de serrure ce mois-ci. Il prétend que quelqu'un fouille son bureau. Curieusement, il ne m'a pas demandé de trouver le voleur, mais de dresser la liste de tous ceux qui ont essayé. — A.
+> Fizzlebarbe a changé trois fois de serrure ce mois-ci : quelqu'un essaie d'entrer dans son bureau. Rien n'a disparu. Curieusement, il ne veut pas savoir qui : il m'a demandé la liste de tous ceux qui ont essayé, et de ce qu'ils cherchaient. — A.
 
 ### Le Port des Contrebandiers
 - **Contrée** : La côte · **carte** : 7×7 · **enquêtes** : 7
@@ -693,7 +693,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
   - 6e affaire : Sixième affaire au Grand Port. Le brouillard s'est écarté à mon passage, ce qui a beaucoup inquiété les marins.
   - dernière : Dernière affaire au Grand Port, j'espère. Ce matin, pour la première fois, il n'y avait pas de brouillard, et tout le monde avait l'air de se sentir tout nu.
 - **Lettre d'Augure** :
-> Le notaire avait reçu un projet de testament sous enveloppe scellée. Le lendemain, l'enveloppe avait disparu. Sur le bureau, une plume noire. Le notaire jure avoir entendu un battement d'ailes ; il jure aussi qu'il dormait. — A.
+> Le notaire avait reçu un projet de testament sous enveloppe scellée. Le lendemain, l'enveloppe avait disparu. Sur le bureau, une plume noire. Le notaire jure avoir entendu un battement d'ailes. Il n'a pas d'oiseau. — A.
 
 ### Le Navire Fantôme
 - **Contrée** : La côte · **carte** : 7×7 · **enquêtes** : 11
@@ -710,7 +710,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
   - 6e affaire : Sixième affaire sur le Navire Fantôme. Le capitaine jure que le navire a bougé cette nuit. Il a peut-être raison : les amarres sont un peu plus tendues.
   - dernière : Dernière affaire à bord du Navire Fantôme, j'espère. Pour la première fois, le capitaine n'a parlé d'aucune tempête, et c'est le calme qui m'a fait peur.
 - **Lettre d'Augure** :
-> Frégaton jure avoir vu Fizzlebarbe embarquer pour « un voyage sans retour ». Le navire n'a pas quitté le quai. Ce soir-là, pourtant, le brouillard venait du mauvais côté du port. Frégaton refuse ce détail : il gâche son histoire. — A.
+> Frégaton jure avoir vu la brume quitter la Tour de l'Archimage, une nuit sans vent, et descendre jusqu'au port comme un troupeau qu'on mène. Il en a tiré une histoire de tempête, bien sûr. Pour une fois, je crois qu'il n'a rien inventé, sauf l'orage. — A.
 
 ### Les Thermes Enchantés
 - **Contrée** : La côte · **carte** : 6×6 · **enquêtes** : 6
@@ -742,7 +742,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
   - 6e affaire : Sixième affaire aux Grands Bains. Les curistes ont commencé à m'appeler « docteur », et je n'ose plus les détromper.
   - dernière : Dernière affaire aux Grands Bains de Brumeval, j'espère. Pour une fois, l'eau était froide, et tout le monde s'est mis à parler.
 - **Lettre d'Augure** :
-> Aux Grands Bains, Fizzlebarbe a confié à son masseur qu'il « changerait tout » après sa cure : il ne voulait peut-être plus transmettre un bâtiment, mais une tâche. Le reste s'est perdu dans les huiles. — A.
+> Aux Grands Bains, Fizzlebarbe a confié à son masseur qu'on se trompait tous : il n'avait jamais eu l'intention de léguer un bâtiment, mais une tâche. Le masseur a demandé laquelle. Le reste s'est perdu dans les huiles. — A.
 
 ### Meurtre au Sanglier Borgne
 - **Contrée** : La campagne de Bois-Tordu · **carte** : 6×6 · **enquêtes** : 6
@@ -786,7 +786,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
   - 5e affaire : Cinquième visite à la ferme. Une poule a fini par me parler. Elle a dit « cot ». J'ai noté.
   - dernière : Dernière affaire à la Ferme Hantée, j'espère. Les poules se sont alignées pour me regarder arriver, comme on salue un collègue.
 - **Lettre d'Augure** :
-> Briochon raconte que le testament existe, qu'il est caché, et qu'il n'en dira pas plus. Il a seulement entendu parler d'un document préparatoire. Le reste, il l'a brodé avec beaucoup de conviction. — A.
+> Briochon raconte que le testament existe, qu'il est caché, et qu'il n'en dira pas plus. Il le tient du commis du notaire, qui achète son pain chez lui. Le commis n'a parlé que d'un « document préparatoire » ; Briochon a brodé le reste, avec beaucoup de conviction. — A.
 
 ### Le Marais des Brumes
 - **Contrée** : La campagne de Bois-Tordu · **carte** : 6×6 · **enquêtes** : 6
@@ -817,7 +817,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
   - 5e affaire : Cinquième descente à la mine. Ma lanterne grésille quand je passe ; les nains trouvent ça de mauvais augure, et eux, les augures, ils les prennent au sérieux.
   - dernière : Dernière descente à la Mine des Nains, j'espère. Ce matin, toutes les lampes se sont tournées vers moi en même temps. Même ici, on m'attend.
 - **Lettre d'Augure** :
-> Granit a reçu commande d'un coffre à l'épreuve de la magie, à livrer dans la Tour. Le client a payé d'avance et demandé qu'on ne grave aucun nom. Granit a quand même chronométré la livraison. — A.
+> Granit a reçu commande d'un coffre à l'épreuve de la magie, à livrer dans la Tour. Le client a payé d'avance et n'a pas voulu que son nom figure sur le bon de commande. Granit a quand même chronométré la livraison. — A.
 
 ### La Forge du Dragon
 - **Contrée** : Les Monts Grimaces · **carte** : 7×7 · **enquêtes** : 13
@@ -833,7 +833,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
   - 5e affaire : Cinquième visite à la Forge du Dragon. On m'a forgé une clé du lieu ; elle ouvre toutes les portes, sauf celle qu'on entend grincer la nuit.
   - dernière : Dernière affaire à la Forge du Dragon, j'espère. Même les enclumes se sont tues quand je suis entré.
 - **Lettre d'Augure** :
-> Fizzlebarbe a fait forger une clé unique. Le forgeron l'a vu la glisser entre les pages d'un grimoire qui n'aurait jamais dû se trouver dans la Tour. Ici, les secrets s'empilent mieux que les livres. — A.
+> Fizzlebarbe a fait forger une clé unique, si fine qu'elle tient entre deux pages. Le forgeron l'a vu la glisser dans un vieux grimoire, avec un tampon de bibliothèque sur la tranche. Fizzlebarbe n'a jamais emprunté un livre de sa vie. — A.
 
 ### Le Banquet des Gobelins
 - **Contrée** : Les Monts Grimaces · **carte** : 6×6 · **enquêtes** : 6
@@ -880,7 +880,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
   - 6e affaire : Sixième affaire à l'Université. L'Académie d'en face a cessé de nier ; elle se contente de rire.
   - dernière : Dernière affaire à l'Université des Sortilèges, j'espère. Demain, on remet enfin les diplômes, à condition qu'il reste quelqu'un pour les recevoir.
 - **Lettre d'Augure** :
-> Fiolius a écrit « Annexe de l'Université » sur les plans de la Tour, à l'encre sympathique. Elle se voit très bien. Sur une coupe, deux escaliers mènent au même palier, mais aucun plan ne montre ce qui les relie. — A.
+> Fiolius a écrit « Annexe de l'Université » sur les plans de la Tour, à l'encre invisible. Elle se voit très bien. Sur une coupe, deux escaliers mènent au même palier, mais aucun plan ne montre ce qui les relie. — A.
 
 ### La Bibliothèque Interdite
 - **Contrée** : Le quartier savant · **carte** : 7×7 · **enquêtes** : 10
@@ -930,7 +930,7 @@ Gabarits des introductions : `{Titre}`/`{titre}` = titre de l'invité (« le per
   - 6e affaire : Sixième affaire à la Grande Foire. Le bouquet final a éclaté pile à mon arrivée, et je n'ai pas su si c'était un hommage ou une diversion.
   - dernière : Dernière affaire à la Grande Foire des Mille Merveilles, j'espère. Ce soir, pas de feu d'artifice : tout le monde me regardait, moi.
 - **Lettre d'Augure** :
-> À la Grande Foire, Fiolius a acheté une malle assez grande pour un grimoire. Ou pour un archimage. Il dit qu'elle servira à déménager du matériel de la Tour vers l'Université. Il n'a demandé l'autorisation à personne. — A.
+> À la Grande Foire, Fiolius a acheté une malle assez grande pour un archimage. Il dit qu'elle servira à déménager les grimoires de la Tour vers l'Université. Il n'a demandé l'autorisation à personne. — A.
 
 ### Le Palais des Mille Vœux
 - **Contrée** : Sur la route · **carte** : 7×7 · **enquêtes** : 11
@@ -980,27 +980,27 @@ Quand la dernière enquête d'un lieu est résolue (5 à 7 par lieu), l'enquête
 | Lieu | Lettre |
 | --- | --- |
 | Le Château de Mortebrune | Bakchich a mis la Tour de l'Archimage en garantie d'un prêt. Le prêteur n'a jamais vu le moindre titre de propriété. Bakchich appelle ça une formalité. |
-| La Citadelle de Mortebrune | Blafard m'a montré ses titres de propriété. Le papier est authentique, et plus vieux que la baronnie. Le droit qu'il prétend en tirer l'est beaucoup moins. |
-| Le Bal Masqué | Au bal masqué, Fumerolle a promis la Tour à trois invités. Quand on lui a fait remarquer qu'ils ne pouvaient pas tous en hériter, elle a répondu qu'un vœu bien formulé ne se contredit jamais, et en a formulé un quatrième. |
-| Le Cimetière de Minuit | Glas a déjà creusé une tombe au nom de Fizzlebarbe. L'archimage lui aurait demandé de « prévoir toutes les éventualités ». Je lui ai demandé s'il avait aussi prévu de vérifier que le vieux était mort. Il a pris des notes. |
-| La Tour de l'Archimage | Fizzlebarbe a changé trois fois de serrure ce mois-ci. Il prétend que quelqu'un fouille son bureau. Curieusement, il ne m'a pas demandé de trouver le voleur, mais de dresser la liste de tous ceux qui ont essayé. |
+| La Citadelle de Mortebrune | Blafard m'a montré ses titres de propriété. Le papier est authentique, mais il porte sur le terrain, pas sur la Tour, et il date d'avant sa mort. À Brumeval, les morts n'héritent pas : ils hantent. |
+| Le Bal Masqué | Au bal masqué, Fumerolle a promis la Tour à trois invités différents, contre un vœu chacun. Quand je lui ai fait remarquer qu'une tour ne se partage pas en trois, elle a souri : « Je n'ai jamais dit qu'ils l'auraient en même temps. » |
+| Le Cimetière de Minuit | Glas a déjà creusé une tombe au nom de Fizzlebarbe. L'archimage lui aurait demandé de « prévoir toutes les éventualités ». Je lui ai demandé s'il avait aussi prévu de vérifier que le vieux était mort avant de l'enterrer. Il a pris des notes. |
+| La Tour de l'Archimage | Fizzlebarbe a changé trois fois de serrure ce mois-ci : quelqu'un essaie d'entrer dans son bureau. Rien n'a disparu. Curieusement, il ne veut pas savoir qui : il m'a demandé la liste de tous ceux qui ont essayé, et de ce qu'ils cherchaient. |
 | Le Port des Contrebandiers | Fiolius a fait livrer douze bocaux vides à son nom, avec la mention « échantillons de la Tour ». Il affirme qu'ils sont indispensables à une étude. Il ne m'a pas dit ce qu'il compte mettre dedans. |
-| Le Grand Port de Brumeval | Le notaire avait reçu un projet de testament sous enveloppe scellée. Le lendemain, l'enveloppe avait disparu. Sur le bureau, une plume noire. Le notaire jure avoir entendu un battement d'ailes ; il jure aussi qu'il dormait. |
-| Le Navire Fantôme | Frégaton jure avoir vu Fizzlebarbe embarquer pour « un voyage sans retour ». Le navire n'a pas quitté le quai. Ce soir-là, pourtant, le brouillard venait du mauvais côté du port. Frégaton refuse ce détail : il gâche son histoire. |
+| Le Grand Port de Brumeval | Le notaire avait reçu un projet de testament sous enveloppe scellée. Le lendemain, l'enveloppe avait disparu. Sur le bureau, une plume noire. Le notaire jure avoir entendu un battement d'ailes. Il n'a pas d'oiseau. |
+| Le Navire Fantôme | Frégaton jure avoir vu la brume quitter la Tour de l'Archimage, une nuit sans vent, et descendre jusqu'au port comme un troupeau qu'on mène. Il en a tiré une histoire de tempête, bien sûr. Pour une fois, je crois qu'il n'a rien inventé, sauf l'orage. |
 | Les Thermes Enchantés | Aux Thermes, Fumerolle a dit : « Le vieux veut léguer la Tour à celui qui le mérite. Personne ne le mérite. » Puis elle m'a demandé si un vœu pouvait modifier un titre de propriété. Elle préfère les génies aux notaires. |
-| Les Grands Bains de Brumeval | Aux Grands Bains, Fizzlebarbe a confié à son masseur qu'il « changerait tout » après sa cure : il ne voulait peut-être plus transmettre un bâtiment, mais une tâche. Le reste s'est perdu dans les huiles. |
+| Les Grands Bains de Brumeval | Aux Grands Bains, Fizzlebarbe a confié à son masseur qu'on se trompait tous : il n'avait jamais eu l'intention de léguer un bâtiment, mais une tâche. Le masseur a demandé laquelle. Le reste s'est perdu dans les huiles. |
 | Meurtre au Sanglier Borgne | Gribouille doit quarante écus au Sanglier Borgne. Il promet de tout rembourser « dès que la Tour sera à lui ». Il promet aussi depuis onze ans de rendre le grimoire de Dewey. Les deux promesses ont le même calendrier. |
 | Le Moulin de Bois-Tordu | Fernand a fait refaire une clé de la Tour. Il dit en avoir eu une avant l'accident, celui qui l'a tué. Quand je lui ai demandé ce qu'elle ouvrait, il a frotté son moignon et changé de sujet. |
-| La Ferme Hantée | Briochon raconte que le testament existe, qu'il est caché, et qu'il n'en dira pas plus. Il a seulement entendu parler d'un document préparatoire. Le reste, il l'a brodé avec beaucoup de conviction. |
+| La Ferme Hantée | Briochon raconte que le testament existe, qu'il est caché, et qu'il n'en dira pas plus. Il le tient du commis du notaire, qui achète son pain chez lui. Le commis n'a parlé que d'un « document préparatoire » ; Briochon a brodé le reste, avec beaucoup de conviction. |
 | Le Marais des Brumes | Ciguë vend une potion qui révèle certaines encres invisibles. Dewey en a acheté trois, « pour retrouver un livre ». Je ne sais pas ce qui l'inquiète le plus : l'encre, le livre ou le reçu. |
-| La Mine des Nains | Granit a reçu commande d'un coffre à l'épreuve de la magie, à livrer dans la Tour. Le client a payé d'avance et demandé qu'on ne grave aucun nom. Granit a quand même chronométré la livraison. |
-| La Forge du Dragon | Fizzlebarbe a fait forger une clé unique. Le forgeron l'a vu la glisser entre les pages d'un grimoire qui n'aurait jamais dû se trouver dans la Tour. Ici, les secrets s'empilent mieux que les livres. |
+| La Mine des Nains | Granit a reçu commande d'un coffre à l'épreuve de la magie, à livrer dans la Tour. Le client a payé d'avance et n'a pas voulu que son nom figure sur le bon de commande. Granit a quand même chronométré la livraison. |
+| La Forge du Dragon | Fizzlebarbe a fait forger une clé unique, si fine qu'elle tient entre deux pages. Le forgeron l'a vu la glisser dans un vieux grimoire, avec un tampon de bibliothèque sur la tranche. Fizzlebarbe n'a jamais emprunté un livre de sa vie. |
 | Le Banquet des Gobelins | Au Banquet des Gobelins, Bakchich a porté un toast « au futur propriétaire de la Tour », en levant son verre vers lui-même. Puis il a demandé si les gobelins prêtaient sans garantie. Personne n'a eu le cœur de répondre. |
 | L'Académie de Magie | Brindille s'entraîne en secret au sort qui ouvre les serrures magiques. Trois portes de l'Académie ont déjà explosé. La quatrième s'est déplacée de deux pas vers la gauche. Le directeur appelle cela un progrès. |
-| L'Université des Sortilèges | Fiolius a écrit « Annexe de l'Université » sur les plans de la Tour, à l'encre sympathique. Elle se voit très bien. Sur une coupe, deux escaliers mènent au même palier, mais aucun plan ne montre ce qui les relie. |
+| L'Université des Sortilèges | Fiolius a écrit « Annexe de l'Université » sur les plans de la Tour, à l'encre invisible. Elle se voit très bien. Sur une coupe, deux escaliers mènent au même palier, mais aucun plan ne montre ce qui les relie. |
 | La Bibliothèque Interdite | Dewey a enfin retrouvé le grimoire emprunté par Gribouille, au fond de la Tour. Sous la reliure, une petite fente a été refermée avec soin. Dewey hésite à la cataloguer comme réparation, fraude ou insulte. |
 | La Foire aux Sortilèges | Clairvoya a prédit à Brindille qu'elle hériterait d'une tour. Esbroufe lui a aussitôt vendu un plan de la Tour. Il y manque un étage, mais il garantit que le document est complet. |
-| La Grande Foire des Mille Merveilles | À la Grande Foire, Fiolius a acheté une malle assez grande pour un grimoire. Ou pour un archimage. Il dit qu'elle servira à déménager du matériel de la Tour vers l'Université. Il n'a demandé l'autorisation à personne. |
+| La Grande Foire des Mille Merveilles | À la Grande Foire, Fiolius a acheté une malle assez grande pour un archimage. Il dit qu'elle servira à déménager les grimoires de la Tour vers l'Université. Il n'a demandé l'autorisation à personne. |
 | Le Palais des Mille Vœux | Le Palais des Mille Vœux a proposé d'acheter la Tour pour en faire une lampe géante. Ses émissaires y avaient mesuré une puissance qu'ils ne savaient pas expliquer. Fizzlebarbe a répondu à leur seconde visite par un éclair. |
 
 **Débloquer la fin** : avec **les 23 lettres** (toutes : décision de François, 2026-10-19), l'affaire finale s'ouvre. La fin est donc vraiment la fin : Fizzlebarbe ne peut plus réapparaître vivant dans une enquête jouée après sa mort.

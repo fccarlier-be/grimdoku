@@ -151,6 +151,8 @@ Les colonnes distinguent la vérité réelle, la croyance du personnage et la li
 
 ## 4. Matrice des 23 lettres : fonction et texte cible
 
+> **Révision du 2026-10-21** (relecture de François) : douze lettres réécrites pour être compréhensibles seules (Citadelle, Bal, Grande Foire, Forge, Université, Navire, Grand Port, Ferme, Tour, Cimetière, Mine, Grands Bains). Les textes en jeu, dans `lore/lettres.json`, font foi ; ceux du tableau ci-dessous sont les cibles d'origine. Grands Bains : Fizzlebarbe n'a **jamais** voulu léguer un bâtiment, mais une tâche.
+
 **Règles d'écriture pour cette série :** les lettres sont signées « — A. », restent courtes, fonctionnent isolément et mélangent ragot, caractère et indice. Une lettre peut être comique sans faire progresser directement le mystère ; aucune ne doit raconter un fait qui contredit le canon. Les textes ci-dessous sont des remplacements proposés pour `lore/lettres.json`, à adapter au format exact du fichier après inspection.
 
 | # | Lieu | Fonction narrative | Texte cible proposé |
