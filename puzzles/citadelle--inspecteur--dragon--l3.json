@@ -254,7 +254,8 @@
   "id": "citadelle--inspecteur--dragon--l3",
   "place": "citadelle",
   "intro": "Le pont-levis est resté coincé toute la nuit, enfermant l'inspecteur des tavernes Blâmard, venu inspecter les lieux, avec les sept occupants de la Citadelle. Au matin, il n'avait plus aucune envie de sortir. L'un d'eux était seul avec lui. Au moins, personne n'a pu s'enfuir.",
-  "epilogue": "— Personne d'autre n'était avec Blâmard. Sauf vous.\n— Il a donné deux étoiles à la Citadelle : « Fantômes bruyants. »\n— Il fallait l'ignorer.\n— De mon vivant, on pendait les critiques. Mort, je lui ai seulement fait visiter les oubliettes. C'est la pièce qu'on montre en dernier.",
+  "introBody": "L'inspecteur des tavernes Blâmard a inspecté la Citadelle comme une auberge, et il a tout noté, le bruit compris. Il a donné deux étoiles, en se plaignant. On lui a fait visiter le reste ; il n'a pas fini la visite.",
+  "epilogue": "— Personne d'autre n'était avec Blâmard. Sauf vous.\n— Il a donné deux étoiles à la Citadelle : « Fantômes bruyants. »\n— Il fallait l'ignorer.\n— De mon vivant, on pendait les critiques. Mort, je lui ai seulement fait visiter les marches qu'on ne remonte pas. C'est la visite qu'on garde pour la fin.",
   "clues": [
     {
       "who": "a",

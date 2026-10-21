@@ -220,6 +220,7 @@
   "id": "forge--messager--dragon-golem--i2-i2",
   "place": "forge",
   "intro": "La Forge du Dragon fume plus que d'habitude : le messager Trottin, venu apporter une lettre du baron, n'en est pas ressorti. Cinq habitués de la forge étaient au travail, paraît-il. L'un d'eux était seul avec lui. Le dragon dort. J'aimerais qu'il continue.",
+  "introBody": "Le messager Trottin apportait une mauvaise nouvelle du baron, et il avait l'habitude de faire asseoir les gens avant de la lire. Il a demandé à tout le monde de s'asseoir. Quelqu'un a mis du temps.",
   "epilogue": "— Racontez-moi, pour Trottin.\n— Il a dit : « Asseyez-vous, j'ai une mauvaise nouvelle. »\n— Et vous vous êtes assis.\n— Un peu plus tard. Entre-temps, il s'était approché pour me lire la lettre.",
   "clues": [
     {

@@ -250,7 +250,8 @@
   "id": "chateau--cousine",
   "place": "chateau",
   "intro": "La cousine Gisèle était venue au Château de Mortebrune réclamer un héritage. On m'a fait appeler au nom du roi, ce qui veut dire que c'est grave, ou qu'il s'ennuie. Six membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec elle.",
-  "epilogue": "— Vous étiez seul avec Gisèle.\n— Elle réclamait sa part de l'héritage familial : l'épée de mes ancêtres.\n— Vous avez refusé ?\n— J'ai annoncé : « Je vous la donne. » Pointe la première.",
+  "introBody": "La cousine Gisèle était arrivée avec un vieux parchemin de famille et la ferme intention de repartir avec quelque chose de précieux. Elle avait fait l'inventaire de la moitié du château avant le dîner ; elle n'a jamais commencé l'autre moitié. Les six membres de la cour présents assurent qu'ils n'avaient rien à cacher, ce qui fait beaucoup de monde.",
+  "epilogue": "— Vous étiez seul avec Gisèle.\n— Elle avait mis l'épée de mes ancêtres en tête de son inventaire, comme sa part de l'héritage.\n— Vous avez refusé ?\n— J'ai annoncé : « Je vous la donne. » Pointe la première.",
   "clues": [
     {
       "who": "a",

@@ -77,7 +77,7 @@ for (const it of items) {
   P(`#### ${it.p.title}${status}${actives.has(it.id) ? '' : ' *(grille désactivée)*'}`,
     `- **Victime** : ${it.v.name}, ${g.title} — ${g.desc}. Venu${it.v.gender === 'f' ? 'e' : ''} ${g.motif} ; menace : « ${g.menace} ».`,
     `- **Coupable** : ${a.name} — ${a.desc}. Tic : ${a.tic}.`,
-    `- **Introduction** : ${it.p.intro}`,
+    `- **Introduction** : ${it.p.introBody || it.p.intro}`,
     // notes de l'auteur seulement (pas celles laissées par l'outil lors des réécritures)
     ...(r.note && !/^(Réécrit|Repassé)/.test(r.note) ? [`- **Note de l'auteur** : ${r.note}`] : []), '',
     ...epi[it.id].split('\n').map(l => '> ' + l + '  '));

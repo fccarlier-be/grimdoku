@@ -46,6 +46,8 @@ const GUEST_NAME = {};
 }
 // épilogues écrits pour une affaire précise (lore/epilogues.json, audit du lore) : à la place du gabarit du coupable
 const WRITTEN = fs.existsSync('lore/epilogues.json') ? JSON.parse(fs.readFileSync('lore/epilogues.json', 'utf8')) : {};
+// intros écrites pour une grille précise (lore/intros.json, corps ; l'ouverture du lieu dépend du rang, dans l'appli)
+const INTROS = fs.existsSync('lore/intros.json') ? JSON.parse(fs.readFileSync('lore/intros.json', 'utf8')).grilles : {};
 const NOMBRES = ['zéro', 'un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf', 'dix', 'onze', 'douze'];
 const cap = (t) => t[0].toUpperCase() + t.slice(1);
 // « de » / « que » élidés devant une voyelle : d'Amphora, qu'Écarlate
@@ -147,6 +149,7 @@ for (const entry of MANIFEST) {
     .replace(/\{il\}/g, f ? 'elle' : 'il').replace(/\{Il\}/g, f ? 'Elle' : 'Il').replace(/\{lui\}/g, f ? 'elle' : 'lui')
     .replace(/\{nombre\}/g, nb).replace(/\{Nombre\}/g, cap(nb));
   p.intro = fill(texts.intro);
+  if (INTROS[entry.id]) p.introBody = fill(INTROS[entry.id]);
   // épilogue : le dialogue du coupable avec l'enquêteur (cast.json, propre au personnage, avec son tic) ; une scène écrite
   // à la main peut avoir le sien. Lignes « — … » : l'enquêteur, puis le coupable, en alternance.
   const mType = p.characters.find(c => c.id === s.murderer).archetype;

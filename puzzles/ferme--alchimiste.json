@@ -189,6 +189,7 @@
   "id": "ferme--alchimiste",
   "place": "ferme",
   "intro": "On dit la Ferme Hantée, et l'alchimiste Salpêtre, venu proposer ses services, va sûrement y contribuer. Cinq habitants de la ferme étaient là cette nuit. L'un d'eux était seul avec lui. Les poules, elles, refusent de témoigner.",
+  "introBody": "L'alchimiste Salpêtre proposait de changer en or les économies des habitants : il suffisait de tout mettre dans son chaudron et de touiller. Il a refait la démonstration plusieurs fois dans la soirée. La dernière a mal tourné.",
   "epilogue": "— Racontez-moi, pour Salpêtre.\n— Salpêtre.\n— Qu'est-ce qu'il voulait ?\n— Changer les économies de Bâfrin en or. Il a dit : « Tu mets tout dans le chaudron et tu touilles. » Bâfrin mis lui dedans. Touillé.",
   "clues": [
     {

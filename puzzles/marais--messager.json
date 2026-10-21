@@ -182,6 +182,7 @@
   "id": "marais--messager",
   "place": "marais",
   "intro": "Le Marais des Brumes a rendu le corps de le messager Relais, venu apporter une lettre du baron. Il garde le reste. Cinq habitants du marais pataugeaient dans le coin. L'un d'eux était seul avec lui. J'ai de la vase jusqu'aux genoux et zéro témoin fiable.",
+  "introBody": "Le messager Relais apportait une lettre du baron qui n'allait faire plaisir à personne, et il a tenu à la lire en entier, à voix haute. Il était pressé de repartir ; on l'a retenu pour un défi. Il n'a jamais rejoint la rive.",
   "epilogue": "— C'était vous, avec Relais.\n— Il m'a annoncé que le baron rayait mon titre. Il a dit : « l'ex-prince Ambroise ». Prince, je vous prie.\n— Et vous ?\n— Un prince a droit au duel. Je l'ai défié au saut de nénuphar. Je saute mieux que lui, c'était prévisible.",
   "clues": [
     {

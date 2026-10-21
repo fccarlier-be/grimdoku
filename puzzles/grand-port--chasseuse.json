@@ -323,7 +323,8 @@
   "id": "grand-port--chasseuse",
   "place": "grand-port",
   "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : la chasseuse de primes Harpie, venue toucher une prime, est morte sur les quais. Neuf habitués erraient dans la brume. L'un d'eux était seul avec elle.",
-  "epilogue": "— Que s'est-il passé avec Harpie ?\n— Elle voulait me livrer au baron. Elle m'a dit : « Montre-moi le chemin du château. »\n— Vous le lui avez montré.\n— Tout droit, dans le brouillard. Pour une fois, je savais très bien où était le bord du quai.",
+  "introBody": "La chasseuse de primes Harpie cherchait quelqu'un sur le port pour une prime, et elle comptait le ramener au château avant le lever du jour. Dans le brouillard, elle s'est fiée au premier guide venu.",
+  "epilogue": "— Que s'est-il passé avec Harpie ?\n— Elle voulait me livrer au baron. Elle m'a dit : « Montre-moi le chemin du château. »\n— Vous le lui avez montré.\n— Tout droit, dans le brouillard. Pour une fois, je savais très bien où était le bord.",
   "clues": [
     {
       "who": "a",

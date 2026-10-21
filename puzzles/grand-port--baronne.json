@@ -323,7 +323,8 @@
   "id": "grand-port--baronne",
   "place": "grand-port",
   "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : la baronne Pompadoure, venue rendre une visite de courtoisie, est morte sur les quais. Neuf habitués erraient dans la brume. L'un d'eux était seul avec elle.",
-  "epilogue": "— Et Pompadoure ?\n— Elle a dit qu'une baronne passait avant une comtesse.\n— C'est le protocole.\n— Pas dans le brouillard. Je l'ai raccompagnée au bout du quai, en la laissant passer devant. Jusqu'au bout.",
+  "introBody": "La baronne Pompadoure rendait une visite de courtoisie, et elle tenait à passer la première partout, au nom du protocole. Dans le brouillard, on l'a laissée passer devant. Elle est passée devant jusqu'au bout.",
+  "epilogue": "— Et Pompadoure ?\n— Elle a dit qu'une baronne passait avant une comtesse.\n— C'est le protocole.\n— Pas dans le brouillard. Je l'ai raccompagnée au bout de la jetée, en la laissant passer devant. Jusqu'au bout.",
   "clues": [
     {
       "who": "a",

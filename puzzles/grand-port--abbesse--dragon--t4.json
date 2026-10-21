@@ -294,7 +294,8 @@
   "id": "grand-port--abbesse--dragon--t4",
   "place": "grand-port",
   "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : l'abbesse Tempérance, venue faire la quête, est morte sur les quais. Sept habitués erraient dans la brume. L'un d'eux était seul avec elle.",
-  "epilogue": "— Tempérance. Racontez-moi.\n— Elle faisait la quête. Elle m'a fait la morale : un écu pour le couvent, ce n'est rien.\n— Vous l'avez donné ?\n— Je l'ai raccompagnée jusqu'au bord du quai. Un pas, deux pas, trois pas, quatre. Le quai en fait trois.",
+  "introBody": "L'abbesse Tempérance faisait la quête sur le port, et elle trouvait qu'un écu, ce n'était vraiment rien. On l'a raccompagnée poliment dans le brouillard. Elle n'est jamais arrivée.",
+  "epilogue": "— Tempérance. Racontez-moi.\n— Elle faisait la quête. Elle m'a fait la morale : un écu pour le couvent, ce n'est rien.\n— Vous l'avez donné ?\n— Je l'ai raccompagnée jusqu'au bord de l'eau. Un pas, deux pas, trois pas, quatre. Il n'en restait que trois.",
   "clues": [
     {
       "who": "a",

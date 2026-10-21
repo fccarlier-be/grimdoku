@@ -212,6 +212,7 @@
   "id": "foire--colporteur--geant--i2",
   "place": "foire",
   "intro": "La Foire aux Sortilèges a perdu un client : le colporteur Marchandin, venu vendre sa camelote. Cinq forains juraient qu'ils tenaient leur stand. L'un d'eux était seul avec lui. Le bonimenteur m'a déjà proposé un élixir de vérité. Deux écus, garanti sans effet.",
+  "introBody": "Le colporteur Marchandin vendait des méthodes miracles en dix leçons, et il ne remboursait jamais : selon lui, c'était toujours la faute de l'élève. Un ancien client est venu réclamer.",
   "epilogue": "— Racontez-moi, pour Marchandin.\n— Il voulait me revendre la méthode qu'il m'avait déjà vendue : « Chantez juste en dix leçons ».\n— Elle n'a pas marché.\n— Il a dit que je n'avais pas fini les leçons. Je lui ai fait avaler la méthode. Les dix leçons.",
   "clues": [
     {

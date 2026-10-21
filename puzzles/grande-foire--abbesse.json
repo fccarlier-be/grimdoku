@@ -425,6 +425,7 @@
   "id": "grande-foire--abbesse",
   "place": "grande-foire",
   "intro": "Feu d'artifice à la Grande Foire des Mille Merveilles : tout le monde regardait le ciel, sauf l'abbesse Componcte, venue faire la quête. Elle n'a pas vu le bouquet final. Onze forains et visiteurs juraient avoir le nez en l'air. L'un d'eux était seul avec elle.",
+  "introBody": "L'abbesse Componcte faisait la quête avec un seau d'eau bénite, pour guérir tous ceux qui en avaient besoin, de force s'il le fallait. Elle a trouvé quelqu'un qui en avait grand besoin, selon elle. On l'a retrouvée près de son seau vide.",
   "epilogue": "— Parlons de Componcte.\n— Elle a voulu m'éteindre avec un seau d'eau bénite, pour me guérir du feu.\n— Ça vous a fait mal ?\n— Pardon, j'ai dit, avant. La vapeur était très chaude, et elle était penchée juste au-dessus.",
   "clues": [
     {

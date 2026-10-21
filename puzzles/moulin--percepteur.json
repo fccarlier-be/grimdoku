@@ -189,6 +189,7 @@
   "id": "moulin--percepteur",
   "place": "moulin",
   "intro": "Au Moulin de Bois-Tordu, le percepteur Pressoux, venu lever l'impôt de fin d'année, a fini plus plat qu'une galette. Cinq voisins traînaient dans le coin. L'un d'eux était seul avec lui. Le meunier m'a proposé de peser les suspects. J'ai refusé.",
+  "introBody": "Le percepteur Pressoux voulait taxer tout ce qui se trouvait au moulin : le grain, la farine, et jusqu'aux pommes. On l'a retrouvé sous la roue. Les cinq voisins ont tous entendu un bruit, mais aucun le même.",
   "epilogue": "— C'était vous, avec Pressoux.\n— Il voulait l'impôt sur tout ce que je possède. Même sur l'eau du bief, parce que j'y vis.\n— Vous l'avez poussé sous la roue ?\n— Il a glissé tout seul. *Blop.* Tout seul. *Blop, blop.*",
   "clues": [
     {

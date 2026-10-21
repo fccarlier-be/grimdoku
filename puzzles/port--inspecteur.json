@@ -247,6 +247,7 @@
   "id": "port--inspecteur",
   "place": "port",
   "intro": "Au Port des Contrebandiers, l'inspecteur des tavernes Flacon, venu inspecter les lieux, a été repêché à marée basse. Six habitués traînaient sur les quais. L'un d'eux était seul avec lui. Ici, tout le monde a quelque chose à cacher, généralement dans un tonneau.",
+  "introBody": "L'inspecteur des tavernes Flacon voulait coller un blâme à tout le rhum sans étiquette du port. Il a exigé de goûter avant de rédiger. Il a beaucoup goûté.",
   "epilogue": "— Flacon. Racontez-moi.\n— Il voulait coller un blâme à mon rhum : pas d'étiquette, pas de taxe.\n— Il avait raison.\n— Alors je lui ai fait goûter le stock. Tout le stock. Plus de rhum, plus de taxe, plus d'inspecteur.",
   "clues": [
     {

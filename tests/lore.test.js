@@ -16,7 +16,7 @@ const ACTIVES = new Set(Object.entries(J('lore/actives.json')).filter(([k]) => k
 const victimOf = (p) => p.characters.find(c => c.role === 'victim');
 
 test('aucune variable de gabarit oubliée dans les textes générés', () => {
-  for (const p of PUZZLES) assert.doesNotMatch(p.title + p.intro + p.epilogue, /\{[A-Za-z]+\}/, p.id);
+  for (const p of PUZZLES) assert.doesNotMatch(p.title + p.intro + (p.introBody || '') + p.epilogue, /\{[A-Za-z]+\}/, p.id);
 });
 
 test('le titre et le nom de la victime ne se répètent pas (« la baronne de Grisemotte Grisemotte »)', () => {

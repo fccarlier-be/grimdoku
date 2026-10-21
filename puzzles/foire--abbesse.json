@@ -226,6 +226,7 @@
   "id": "foire--abbesse",
   "place": "foire",
   "intro": "La Foire aux Sortilèges a perdu un client : l'abbesse Pénitence, venue faire la quête. Six forains juraient qu'ils tenaient leur stand. L'un d'eux était seul avec elle. Le bonimenteur m'a déjà proposé un élixir de vérité. Deux écus, garanti sans effet.",
+  "introBody": "L'abbesse Pénitence faisait la quête entre les attractions, et elle sermonnait tous ceux qui vivaient de magie. À la Foire aux Sortilèges, ça faisait beaucoup de monde. Elle a fini par rire au mauvais moment.",
   "epilogue": "— Parlons de Pénitence.\n— Elle m'a fait la morale : lire l'avenir, c'est un péché.\n— Vous lui avez tiré les cartes quand même.\n— La Mort, à l'endroit. Elle a ri. J'ai horreur qu'on doute de mes cartes : je les ai aidées à avoir raison. Je l'avais vu venir, après.",
   "clues": [
     {

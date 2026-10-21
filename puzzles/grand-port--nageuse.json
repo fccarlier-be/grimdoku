@@ -323,7 +323,8 @@
   "id": "grand-port--nageuse",
   "place": "grand-port",
   "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : la maîtresse-nageuse Naïade, venue donner des cours de natation, est morte sur les quais. Neuf habitués erraient dans la brume. L'un d'eux était seul avec elle.",
-  "epilogue": "— Que s'est-il passé avec Naïade ?\n— Elle a compris que je ne savais pas nager. Elle voulait le dire à tout le port.\n— Et alors ?\n— Je lui ai prouvé le contraire : j'ai sauté du quai. Elle a plongé pour me repêcher. Moi, on m'a repêché.",
+  "introBody": "La nageuse Naïade avait découvert qu'un habitué du port ne savait pas nager, et elle comptait bien le crier sur tous les toits. Elle a fini par plonger pour sauver quelqu'un. Elle n'est pas remontée.",
+  "epilogue": "— Que s'est-il passé avec Naïade ?\n— Elle a compris que je ne savais pas nager. Elle voulait le dire à tout le port.\n— Et alors ?\n— Je lui ai prouvé le contraire : j'ai sauté à l'eau. Elle a plongé pour me repêcher. Moi, on m'a repêché.",
   "clues": [
     {
       "who": "a",

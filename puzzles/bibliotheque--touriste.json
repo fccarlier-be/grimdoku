@@ -243,7 +243,8 @@
   "id": "bibliotheque--touriste",
   "place": "bibliotheque",
   "intro": "À la Bibliothèque Interdite, le touriste Badaud, venu visiter la baronnie, a été retrouvé entre deux rayonnages. On m'a demandé d'enquêter en silence. Six lecteurs étaient là. L'un d'eux était seul avec lui. Je chuchote mes questions ; on me répond en hurlant « chut ».",
-  "epilogue": "— Que s'est-il passé avec Badaud ?\n— Il dessinait la réserve interdite, page par page, du haut de l'échelle, pour vendre ça à la foire.\n— Il était discret, au moins ?\n— Il a fait tomber son fusain. Je lui ai crié « CHUT ! » d'en bas. On crie fort, quand on aime le silence. L'échelle n'a pas aimé non plus.",
+  "introBody": "Le touriste Badaud dessinait les livres interdits pour vendre ses croquis à la foire, perché en haut d'une échelle pour ne rien manquer. Il était discret, presque. On l'a retrouvé au pied de l'échelle, son fusain un peu plus loin.",
+  "epilogue": "— Que s'est-il passé avec Badaud ?\n— Il dessinait les livres interdits, page par page, du haut de l'échelle, pour vendre ça à la foire.\n— Il était discret, au moins ?\n— Il a fait tomber son fusain. Je lui ai crié « CHUT ! » d'en bas. On crie fort, quand on aime le silence. L'échelle n'a pas aimé non plus.",
   "clues": [
     {
       "who": "a",

@@ -236,7 +236,8 @@
   "id": "tour--alchimiste",
   "place": "tour",
   "intro": "L'alchimiste Soufrius était venu à la Tour de l'Archimage proposer ses services. On l'a retrouvé au pied d'une étagère de grimoires, sans vie. Six habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec lui. Ici, même les escaliers mentent.",
-  "epilogue": "— Parlons de Soufrius.\n— Il voulait changer mes écus en plomb. Des écus à mon effigie.\n— Ils ne valent plus rien.\n— Ils valaient une fortune. Je l'ai regardé à travers l'étagère ; il a reculé dessus. Elle était moins solide que ma réputation.",
+  "introBody": "L'alchimiste Soufrius proposait de changer en plomb les vieilles pièces de la Tour, qui ne valaient plus rien selon lui. Il a insulté au passage la valeur de quelques souvenirs. On l'a retrouvé la tête la première dans un chaudron.",
+  "epilogue": "— Parlons de Soufrius.\n— Il voulait changer mes écus en plomb. Des écus à mon effigie.\n— Ils ne valent plus rien.\n— Ils valaient une fortune. Je suis sorti du chaudron qui bouillait, juste sous son nez. Il a eu si peur qu'il est tombé dedans, la tête la première.",
   "clues": [
     {
       "who": "a",

@@ -236,6 +236,7 @@
   "id": "tour--cousine",
   "place": "tour",
   "intro": "La cousine Adélaïde était venue à la Tour de l'Archimage réclamer un héritage. On l'a retrouvée au pied d'une étagère de grimoires, sans vie. Six habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec elle. Ici, même les escaliers mentent.",
+  "introBody": "La cousine Adélaïde réclamait sa part d'un héritage sans très bien savoir en quoi il consistait, alors elle a décidé que sa part serait la première chose qu'elle attraperait. Elle a attrapé quelque chose. Les grimoires d'à côté n'ont pas survécu non plus.",
   "epilogue": "— Il n'y avait que vous et Adélaïde.\n— Elle se disait cousine de Gontran et réclamait sa part de l'héritage : moi.\n— Vous vous êtes défendu ?\n— Pardon, j'ai dit. Puis elle m'a pris par la queue. Je chauffe, quand on me prend par la queue. Les grimoires aussi.",
   "clues": [
     {

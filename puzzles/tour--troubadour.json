@@ -233,6 +233,7 @@
   "id": "tour--troubadour",
   "place": "tour",
   "intro": "Le troubadour Couplet était venu à la Tour de l'Archimage donner un concert. On l'a retrouvé au pied d'une étagère de grimoires, sans vie. Six habitants de la tour prétendent n'avoir rien entendu. L'un d'eux était avec lui. Ici, même les escaliers mentent.",
+  "introBody": "Le troubadour Couplet donnait un concert au pied des grimoires, et il réclamait une ambiance à la hauteur de sa voix. Il chantait juste, ce qui est rare dans la baronnie. Il a tendu sa partition au mauvais moment.",
   "epilogue": "— Que s'est-il passé avec Couplet ?\n— Il chantait mieux que tout le monde, au pied des grimoires. Il m'a demandé une flamme, pour l'ambiance.\n— Vous la lui avez donnée.\n— J'ai dit pardon avant, comme toujours. Il a cru que c'était de la modestie, et il a tendu sa partition. Elle a pris feu. Lui aussi.",
   "clues": [
     {

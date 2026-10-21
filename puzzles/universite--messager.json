@@ -377,6 +377,7 @@
   "id": "universite--messager",
   "place": "universite",
   "intro": "La veille de la remise des diplômes, l'Université des Sortilèges a perdu le messager Éperon, venu apporter une lettre du baron. Dix membres de l'université travaillaient tard, ou faisaient semblant. L'un d'eux était seul avec lui. L'Académie d'en face nie tout en bloc, avant même que je demande.",
+  "introBody": "Le messager Éperon apportait les résultats du concours des diplômes, et l'Université n'était pas la gagnante. Il venait tout droit de l'Académie, et il ne s'en cachait pas. On lui a offert un remontant pour la route.",
   "epilogue": "— Que s'est-il passé avec Éperon ?\n— Il m'a annoncé que l'Académie avait gagné le concours des diplômes. L'Académie de Fizzlebarbe.\n— Ce n'était pas sa faute.\n— *Il renifle.* Il sentait l'Académie. Je lui ai offert un remontant. Zéro sur vingt, à l'odeur ; je l'avais préparé exprès.",
   "clues": [
     {

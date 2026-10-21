@@ -252,6 +252,7 @@
   "id": "cimetiere--chasseuse--golem--i2",
   "place": "cimetiere",
   "intro": "Au Cimetière de Minuit, on a retrouvé la chasseuse de primes Ronce, venue toucher une prime. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Six habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec elle. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
+  "introBody": "La chasseuse de primes Ronce était venue capturer une tête mise à prix, et pour surprendre sa cible, elle s'est cachée dans le meilleur endroit du cimetière. Elle a attendu longtemps. On l'a retrouvée là, au même endroit.",
   "epilogue": "— Vous étiez seul avec Ronce.\n— Elle s'était cachée dans une fosse pour me surprendre. Ma tête valait trois écus.\n— Et vous l'avez trouvée.\n— Je l'avais vue se cacher. J'ai rebouché la fosse en sifflotant. Ça couvre les cris.",
   "clues": [
     {

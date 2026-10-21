@@ -226,6 +226,7 @@
   "id": "foire--touriste",
   "place": "foire",
   "intro": "La Foire aux Sortilèges a perdu un client : le touriste Visitin, venu visiter la baronnie. Six forains juraient qu'ils tenaient leur stand. L'un d'eux était seul avec lui. Le bonimenteur m'a déjà proposé un élixir de vérité. Deux écus, garanti sans effet.",
+  "introBody": "Le touriste Visitin dessinait les forains pour vendre leurs portraits sur place, et il exigeait de ses modèles une immobilité parfaite. Tous n'y arrivaient pas. On l'a retrouvé le fusain en travers de la gorge.",
   "epilogue": "— Que s'est-il passé avec Visitin ?\n— Il voulait me dessiner pour la foire. « Surtout, ne chantez pas. »\n— Vous avez tenu ?\n— Une heure. Puis il a dit que j'étais bien plus beau la bouche fermée. Je lui ai fermé la sienne. Avec son fusain.",
   "clues": [
     {

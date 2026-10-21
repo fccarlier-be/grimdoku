@@ -280,6 +280,7 @@
   "id": "bal--huissier",
   "place": "bal",
   "intro": "Bal masqué au château : l'huissier Grappin, venu saisir des biens, n'a pas survécu jusqu'à minuit. Sept invités dansaient, ou le prétendent. L'un d'eux était seul avec lui. Le plus dur, ici, c'est de savoir qui est sous quel masque. Et qui ment dessous.",
+  "introBody": "L'huissier Grappin venait saisir des biens pour éponger des dettes, et il avait dressé la liste de ce qu'il emporterait. Il parlait volontiers de trancher dans le vif. Quelqu'un l'a entendu de travers.",
   "epilogue": "— Racontez-moi, pour Grappin, Majesté.\n— Il voulait saisir la couronne, pour les dettes du royaume.\n— Le trésor est vide.\n— C'est pas faux. Il a dit qu'il fallait trancher. Je n'avais pas compris qu'il parlait des dettes.",
   "clues": [
     {

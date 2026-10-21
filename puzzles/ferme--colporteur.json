@@ -189,6 +189,7 @@
   "id": "ferme--colporteur",
   "place": "ferme",
   "intro": "On dit la Ferme Hantée, et le colporteur Bricabrac, venu vendre sa camelote, va sûrement y contribuer. Cinq habitants de la ferme étaient là cette nuit. L'un d'eux était seul avec lui. Les poules, elles, refusent de témoigner.",
+  "introBody": "Le colporteur Bricabrac revendait à ses clients ce qu'il leur avait déjà vendu, en jurant que cette fois, ça marcherait. Il a beaucoup insisté sur la garantie. Un client a voulu vérifier.",
   "epilogue": "— Racontez-moi, pour Bricabrac.\n— Il voulait me revendre la baguette qu'il m'avait déjà vendue. À crédit, les deux fois.\n— Vous ne l'aviez jamais payée.\n— Pour une fois, je la lui ai rendue tout de suite : un sort en pleine poitrine. Elle marchait très bien.",
   "clues": [
     {

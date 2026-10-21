@@ -266,6 +266,7 @@
   "id": "cimetiere--dresseuse",
   "place": "cimetiere",
   "intro": "Au Cimetière de Minuit, on a retrouvé la dresseuse Griffette, venue recruter des bêtes pour son cirque. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Sept habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec elle. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
+  "introBody": "La dresseuse Griffette cherchait au cimetière une bête rare pour son cirque, et elle avait repéré la plus rare de toutes. Quelqu'un tenait à la garder. On a retrouvé ses vêtements, vides.",
   "epilogue": "— Que s'est-il passé avec Griffette ?\n— Elle voulait emmener Ambroise dans son cirque. Mon Ambroise. Je le garde pour une grande occasion.\n— Quelle occasion ?\n— Une recette. Elle, je l'ai changée en grenouille, pour qu'elle voie l'effet. Puis elle a coassé près de ma marmite.",
   "clues": [
     {

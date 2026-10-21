@@ -240,6 +240,7 @@
   "id": "navire--percepteur",
   "place": "navire",
   "intro": "Le Navire Fantôme ne quitte jamais le port, et le percepteur Tondulard, venu à bord lever l'impôt de fin d'année, non plus, désormais. Six membres de l'équipage traînaient sur le pont. L'un d'eux était seul avec lui. Le capitaine m'assure que c'est la faute de la tempête. Il n'y a pas de tempête.",
+  "introBody": "Le percepteur Tondulard voulait taxer tout ce qui se buvait à bord, et il exigeait de vérifier chaque déclaration lui-même. Il a insisté sur une cave un peu particulière. On l'a retrouvé au matin, la déclaration à la main.",
   "epilogue": "— C'était vous, avec Tondulard.\n— Il voulait taxer ma cave.\n— Vous ne buvez jamais de vin.\n— Jamais… de vin. C'est ce que j'ai déclaré. Il a voulu vérifier lui-même ce que je bois. Je lui ai montré, au cou.",
   "clues": [
     {

@@ -256,7 +256,8 @@
   "id": "mine--colporteur",
   "place": "mine",
   "intro": "À la Mine des Nains, le colporteur Ballot, venu vendre sa camelote, est descendu plus bas que prévu. Sept mineurs et visiteurs étaient au fond. L'un d'eux était seul avec lui. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
-  "epilogue": "— C'était vous, avec Ballot.\n— Il voulait me revendre les gants ignifugés qu'il m'avait déjà vendus. Ils avaient brûlé au premier essayage.\n— Alors vous vous êtes fâché.\n— Pardon. Pardon. Je me suis excusé avant, comme toujours. Il n'a pas reculé à temps.",
+  "introBody": "Le colporteur Ballot vendait aux mineurs une cape « garantie contre le feu et les coups de pioche », démonstration gratuite à l'appui. Il cherchait un volontaire pour l'essayer. Il en a trouvé un.",
+  "epilogue": "— C'était vous, avec Ballot.\n— Il vendait des capes ignifugées. Pour la démonstration, il m'a demandé de le serrer dans mes bras. Personne ne m'avait jamais demandé ça.\n— Et la cape ?\n— J'ai dit pardon avant, comme toujours, et je l'ai serré fort. La cape a tenu. Lui, non.",
   "clues": [
     {
       "who": "a",

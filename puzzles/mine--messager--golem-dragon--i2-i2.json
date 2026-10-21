@@ -243,6 +243,7 @@
   "id": "mine--messager--golem-dragon--i2-i2",
   "place": "mine",
   "intro": "À la Mine des Nains, le messager Ventrapat, venu apporter une lettre du baron, est descendu plus bas que prévu. Six mineurs et visiteurs étaient au fond. L'un d'eux était seul avec lui. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
+  "introBody": "Le messager Ventrapat apportait une lettre du baron que personne n'avait envie d'entendre : la mine devait fermer. Il l'a lue à voix haute, au fond, devant ceux qui creusaient. Il a eu le temps de finir sa lecture, pas celui de remonter.",
   "epilogue": "— Ventrapat. Racontez-moi.\n— Il m'a annoncé que le baron fermait la mine.\n— Et vous ?\n— Une mine fermée, ça se rouvre en creusant. Je n'y peux rien s'il était en dessous du trou que je creusais...",
   "clues": [
     {

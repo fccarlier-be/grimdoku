@@ -242,7 +242,8 @@
   "id": "mine--percepteur--dragon--i2",
   "place": "mine",
   "intro": "À la Mine des Nains, le percepteur Sangsuard, venu lever l'impôt de fin d'année, est descendu plus bas que prévu. Six mineurs et visiteurs étaient au fond. L'un d'eux était seul avec lui. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
-  "epilogue": "— Racontez-moi, pour Sangsuard.\n— Il voulait l'impôt sur tout ce que je possède. Il a demandé où je cachais mes pépites.\n— Vous les lui avez montrées ?\n— J'ai dit : « On creuse ? » J'ai commencé sous ses pieds. Je réfléchis toujours après.",
+  "introBody": "Le percepteur Sangsuard est descendu lever l'impôt de fin d'année, persuadé que les nains cachaient leurs pépites quelque part. Il a interrogé chaque mineur, chaque visiteur, et jusqu'au dragon. Il a fini par trouver le bon endroit.",
+  "epilogue": "— Racontez-moi, pour Sangsuard.\n— Il voulait l'impôt sur mes pépites. Il ne me croyait pas quand je disais qu'elles étaient sous ses pieds.\n— Alors vous lui avez montré.\n— J'ai dit : « On creuse ? » Il a dit oui, sans bouger. Je creuse plus vite que je ne réfléchis : le trou faisait vingt toises avant que je pense à lui dire de se pousser.",
   "clues": [
     {
       "who": "a",

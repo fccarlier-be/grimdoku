@@ -243,6 +243,7 @@
   "id": "navire--inspecteur",
   "place": "navire",
   "intro": "Le Navire Fantôme ne quitte jamais le port, et l'inspecteur des tavernes Trinquet, venu à bord inspecter les lieux, non plus, désormais. Six membres de l'équipage traînaient sur le pont. L'un d'eux était seul avec lui. Le capitaine m'assure que c'est la faute de la tempête. Il n'y a pas de tempête.",
+  "introBody": "L'inspecteur des tavernes Trinquet a collé un blâme au navire, faute de taverne, et il voulait goûter le contenu de chaque tonneau avant de partir. On l'a encouragé à se pencher. On l'a retrouvé la tête la première dans le dernier tonneau.",
   "epilogue": "— Que s'est-il passé avec Trinquet ?\n— Blâme ! Coco ! Blâme !\n— Il a mis un blâme au navire.\n— Goûte ! Tonneau ! Plus près ! Plus près ! Plouf !",
   "clues": [
     {

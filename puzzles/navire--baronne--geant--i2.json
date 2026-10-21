@@ -229,6 +229,7 @@
   "id": "navire--baronne--geant--i2",
   "place": "navire",
   "intro": "Le Navire Fantôme ne quitte jamais le port, et la baronne Fanfreluche, venue à bord rendre une visite de courtoisie, non plus, désormais. Cinq membres de l'équipage traînaient sur le pont. L'un d'eux était seul avec elle. Le capitaine m'assure que c'est la faute de la tempête. Il n'y a pas de tempête.",
+  "introBody": "La baronne Fanfreluche voulait racheter le navire et mettre l'équipage dehors, et elle avait un faible pour tout ce qui brillait. Quelqu'un lui a signalé un bijou perdu dans un recoin. Elle s'est glissée dessous pour le prendre.",
   "epilogue": "— Fanfreluche. Racontez-moi.\n— Racheter ! Navire ! Dehors !\n— Elle voulait racheter le navire et vous mettre dehors.\n— Bijou ! Brille ! Sous le géant ! Retourne ! Pardon, plafond !",
   "clues": [
     {

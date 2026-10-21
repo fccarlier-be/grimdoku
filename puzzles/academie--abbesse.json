@@ -247,6 +247,7 @@
   "id": "academie--abbesse",
   "place": "academie",
   "intro": "À l'Académie de Magie, l'abbesse Ursule, venue faire la quête, a été retrouvée un soir d'examens. Six élèves et professeurs révisaient, paraît-il. L'un d'eux était seul avec elle. Ça sent le soufre, mais ici, ça sent toujours le soufre.",
+  "introBody": "L'abbesse Ursule faisait la quête un soir d'examens, et elle accompagnait chaque pièce d'un sermon contre la boisson. Les élèves révisaient ; elle ne les a pas laissés réviser. On l'a retrouvée en plein sermon, figée au milieu d'un mot.",
   "epilogue": "— Pourquoi Ursule ?\n— Elle m'a fait la morale sur la bière, un soir d'examens. À moi, qui suis allergique au houblon.\n— Vous lui avez expliqué ?\n— Elle me l'a faite de très près, en me soufflant au visage. Elle avait bu. J'ai éternué, et le sort que je révisais est parti tout seul.",
   "clues": [
     {

@@ -296,6 +296,7 @@
   "hiddenShapes": true,
   "hiddenMax": 4,
   "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : le percepteur Dîmeaux, venu lever l'impôt de fin d'année, est mort sur les quais. Sept habitués erraient dans la brume. L'un d'eux était seul avec lui.",
+  "introBody": "Le percepteur Dîmeaux voulait taxer tout ce qui flottait au port, et même ce qui ne flottait plus. On lui a fait visiter un pont fraîchement lavé. Il a glissé.",
   "epilogue": "— Et Dîmeaux ?\n— Il voulait taxer mon navire comme un entrepôt, puisqu'il ne quitte jamais le port.\n— C'est le cas.\n— J'ai affronté cent tempêtes ! Je lui en ai montré une, sur le pont, à coups de seau. Il a glissé. Une vraie, celle-là.",
   "clues": [
     {

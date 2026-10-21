@@ -277,6 +277,7 @@
   "id": "bal--abbesse",
   "place": "bal",
   "intro": "Bal masqué au château : l'abbesse Charité, venue faire la quête, n'a pas survécu jusqu'à minuit. Sept invités dansaient, ou le prétendent. L'un d'eux était seul avec elle. Le plus dur, ici, c'est de savoir qui est sous quel masque. Et qui ment dessous.",
+  "introBody": "L'abbesse Charité faisait la quête parmi les masques, et elle exigeait qu'on donne jusqu'à ce que ça fasse mal. Elle a insisté auprès de chaque invité. On l'a retrouvée à côté d'un chandelier en or, un peu cabossé.",
   "epilogue": "— C'était vous, avec Charité, Majesté.\n— Elle m'a fait la morale : un roi doit donner jusqu'à ce que ça fasse mal.\n— Et vous avez donné ?\n— C'est pas faux, j'ai dit. Je lui ai donné le chandelier en or. Sur la tête. Puis je l'ai repris.",
   "clues": [
     {

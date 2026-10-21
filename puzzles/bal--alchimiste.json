@@ -280,6 +280,7 @@
   "id": "bal--alchimiste",
   "place": "bal",
   "intro": "Bal masqué au château : l'alchimiste Arsénio, venu proposer ses services, n'a pas survécu jusqu'à minuit. Sept invités dansaient, ou le prétendent. L'un d'eux était seul avec lui. Le plus dur, ici, c'est de savoir qui est sous quel masque. Et qui ment dessous.",
+  "introBody": "L'alchimiste Arsénio était venu proposer ses services, masqué pour passer inaperçu, et on l'a pris pour quelqu'un d'autre toute la soirée. À minuit, il a ôté son masque en riant. On le lui a remis, un peu trop serré.",
   "epilogue": "— Il n'y avait que vous et Arsénio.\n— Sous son masque, je l'ai pris pour Goémone. Je lui ai chanté ma plus belle chanson.\n— Et à minuit, il a enlevé son masque.\n— Il a ri. Personne ne rit de mes chansons pour Goémone. Je lui ai rattaché son masque. Très serré, sur le nez et la bouche.",
   "clues": [
     {

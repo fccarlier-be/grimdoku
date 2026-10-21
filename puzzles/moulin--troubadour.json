@@ -189,6 +189,7 @@
   "id": "moulin--troubadour",
   "place": "moulin",
   "intro": "Au Moulin de Bois-Tordu, le troubadour Mandolin, venu donner un concert, a fini plus plat qu'une galette. Cinq voisins traînaient dans le coin. L'un d'eux était seul avec lui. Le meunier m'a proposé de peser les suspects. J'ai refusé.",
+  "introBody": "Le troubadour Mandolin chantait partout une chanson sur les petits secrets du voisinage, et il chantait juste, ce qui aggravait les choses. Il s'était installé sous la meule, pour l'acoustique. C'était une mauvaise idée.",
   "epilogue": "— Racontez-moi, pour Mandolin.\n— Il chantait partout une chanson sur mes trois tournées. Juste, en plus.\n— Et vous ?\n— J'ai seulement emprunté la cale de la meule, juste au-dessus de lui. Je la rends demain.",
   "clues": [
     {

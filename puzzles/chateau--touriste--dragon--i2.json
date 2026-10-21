@@ -233,7 +233,8 @@
   "id": "chateau--touriste--dragon--i2",
   "place": "chateau",
   "intro": "Le touriste Promenin était venu au Château de Mortebrune visiter la baronnie. On m'a fait appeler au nom du roi, ce qui veut dire que c'est grave, ou qu'il s'ennuie. Cinq membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec lui.",
-  "epilogue": "— C'était vous, avec Promenin.\n— Il m'a dessiné en train de chanter. Il voulait vendre ça à la foire, sous le titre « Le barde qui chante faux ».\n— C'est votre luth, là, en morceaux sur sa tête ?\n— Il était faux, ce luth. Depuis le début. Ça s'entendait.",
+  "introBody": "Le touriste Promenin avait commencé sa visite de la baronnie par le château, et il dessinait tout : les tours, les tapisseries, les habitants, surtout ceux qui ne voulaient pas. On a retrouvé son carnet de croquis ouvert sur une page blanche. La page d'avant a été arrachée.",
+  "epilogue": "— C'était vous, avec Promenin.\n— Il m'a dessiné en train de chanter, pour vendre ça à la foire sous le titre « Le barde qui chante faux ». J'ai arraché la page.\n— C'est votre luth, là, en morceaux sur sa tête ?\n— Il était faux, ce luth. Depuis le début. Ça s'entendait.",
   "clues": [
     {
       "who": "a",

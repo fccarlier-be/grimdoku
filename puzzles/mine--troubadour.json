@@ -256,7 +256,8 @@
   "id": "mine--troubadour",
   "place": "mine",
   "intro": "À la Mine des Nains, le troubadour Chantefable, venu donner un concert, est descendu plus bas que prévu. Sept mineurs et visiteurs étaient au fond. L'un d'eux était seul avec lui. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
-  "epilogue": "— Racontez-moi, pour Chantefable.\n— Il chantait mieux que tout le monde. Les mineurs s'arrêtaient pour l'écouter : trois pauses en une heure.\n— C'est beaucoup ?\n— C'est trois de trop. Je l'ai envoyé chanter au fond de la galerie qu'on n'étaie plus. J'ai compté jusqu'à la fin du refrain, puis j'ai retiré le dernier étai.",
+  "introBody": "Le troubadour Chantefable donnait un concert au fond de la mine, et il chantait si bien que les mineurs posaient leur pioche pour l'écouter. Personne n'avait jamais vu autant de pauses. On ne l'a plus entendu après le dernier refrain.",
+  "epilogue": "— Racontez-moi, pour Chantefable.\n— Il chantait mieux que tout le monde. Les mineurs s'arrêtaient pour l'écouter : trois pauses en une heure.\n— C'est beaucoup ?\n— C'est trois de trop. Je l'ai envoyé chanter au bout du filon qu'on n'étaie plus. J'ai compté jusqu'à la fin du refrain, puis j'ai retiré le dernier étai.",
   "clues": [
     {
       "who": "a",

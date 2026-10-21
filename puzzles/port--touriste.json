@@ -247,7 +247,8 @@
   "id": "port--touriste",
   "place": "port",
   "intro": "Au Port des Contrebandiers, le touriste Souvenard, venu visiter la baronnie, a été repêché à marée basse. Six habitués traînaient sur les quais. L'un d'eux était seul avec lui. Ici, tout le monde a quelque chose à cacher, généralement dans un tonneau.",
-  "epilogue": "— Et Souvenard ?\n— Il voulait vendre mon portrait à la foire : « Le capitaine qui n'a jamais quitté le port ».\n— Vous lui avez prouvé le contraire ?\n— Je l'ai fait embarquer pour la traversée. Moi, je suis resté sur le quai, pour lui faire signe. La barque n'était pas finie.",
+  "introBody": "Le touriste Souvenard voulait voir la baronnie depuis la mer, et on lui a trouvé au port une barque prête à partir, à en croire son propriétaire. Il a embarqué seul. Tout le monde lui a fait signe.",
+  "epilogue": "— Et Souvenard ?\n— Il voulait vendre mon portrait à la foire : « Le capitaine qui n'a jamais quitté le port ».\n— Vous lui avez prouvé le contraire ?\n— Je l'ai fait embarquer pour la traversée. Moi, je suis resté à terre, pour lui faire signe. La barque n'était pas finie.",
   "clues": [
     {
       "who": "a",

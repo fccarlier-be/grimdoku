@@ -247,6 +247,7 @@
   "id": "port--troubadour",
   "place": "port",
   "intro": "Au Port des Contrebandiers, le troubadour Ritournel, venu donner un concert, a été repêché à marée basse. Six habitués traînaient sur les quais. L'un d'eux était seul avec lui. Ici, tout le monde a quelque chose à cacher, généralement dans un tonneau.",
+  "introBody": "Le troubadour Ritournel chantait sur le port une chanson qui en disait beaucoup trop sur certaines caisses. On lui a proposé un contrat très généreux. Il l'a signé sans le lire.",
   "epilogue": "— Racontez-moi, pour Ritournel.\n— Il chantait mieux que tout le monde. Surtout une chanson sur mes caisses sans étiquette.\n— Elle était juste ?\n— Trop. Je l'ai engagé pour chanter sous l'eau, payé à la note tenue. Il a signé sans lire les petites lignes.",
   "clues": [
     {

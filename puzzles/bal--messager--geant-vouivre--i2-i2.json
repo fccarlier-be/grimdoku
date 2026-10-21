@@ -267,6 +267,7 @@
   "id": "bal--messager--geant-vouivre--i2-i2",
   "place": "bal",
   "intro": "Bal masqué au château : le messager Rapidon, venu apporter une lettre du baron, n'a pas survécu jusqu'à minuit. Six invités dansaient, ou le prétendent. L'un d'eux était seul avec lui. Le plus dur, ici, c'est de savoir qui est sous quel masque. Et qui ment dessous.",
+  "introBody": "Le messager Rapidon exigeait qu'on s'incline devant la lettre du baron, chacun à son tour et bien bas. Il a fait le tour des invités. Le dernier s'est incliné avec beaucoup trop de bonne volonté.",
   "epilogue": "— Personne d'autre n'était avec Rapidon. Sauf vous.\n— Il m'a ordonné de m'incliner devant la lettre du baron.\n— Vous êtes couché.\n— Je me suis incliné quand même. Pardon, plafond. Il était entre moi et le parquet.",
   "clues": [
     {

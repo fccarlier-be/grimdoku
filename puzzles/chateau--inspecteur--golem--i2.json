@@ -233,7 +233,8 @@
   "id": "chateau--inspecteur--golem--i2",
   "place": "chateau",
   "intro": "L'inspecteur des tavernes Gouleyant était venu au Château de Mortebrune inspecter les lieux. On m'a fait appeler au nom du roi, ce qui veut dire que c'est grave, ou qu'il s'ennuie. Cinq membres de la cour étaient au château cette nuit-là. L'un d'eux était seul avec lui.",
-  "epilogue": "— Vous étiez seul avec Gouleyant.\n— Il goûtait tout, il notait tout. Il voulait coller un blâme à la cave du roi.\n— Vous aviez quelque chose à cacher, dans cette cave ?\n— Une bouteille, marquée « Ne pas boire ». Il l'a bue. Techniquement, c'est légal : il était prévenu.",
+  "introBody": "L'inspecteur des tavernes Gouleyant n'avait aucune taverne à inspecter au château, alors il a inspecté tout ce qui se boit, en notant chaque verre dans son registre. La dernière ligne est illisible. Cinq témoins, cinq versions de la soirée : une seule est la bonne.",
+  "epilogue": "— Vous étiez seul avec Gouleyant.\n— Il goûtait tout, il notait tout. Il voulait coller un blâme à la cave du roi.\n— Vous aviez quelque chose à cacher, dans cette cave ?\n— Une bouteille, marquée « Ne pas boire ». Il l'a bue, et il a commencé à la noter. Techniquement, c'est légal : il était prévenu.",
   "clues": [
     {
       "who": "a",

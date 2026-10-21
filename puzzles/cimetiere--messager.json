@@ -266,6 +266,7 @@
   "id": "cimetiere--messager",
   "place": "cimetiere",
   "intro": "Au Cimetière de Minuit, on a retrouvé le messager Furtif, venu apporter une lettre du baron. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Sept habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec lui. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
+  "introBody": "Le messager Furtif apportait un nouvel édit du baron sur les enterrements, et il est arrivé un samedi soir, en retard. Il voulait repartir avant minuit. Il est resté.",
   "epilogue": "— Parlons de Furtif.\n— Il m'a annoncé que le baron interdisait les enterrements le dimanche.\n— Ce n'est qu'un jour par semaine.\n— Il est arrivé un samedi soir. Je l'ai enterré avant minuit, pour être en règle.",
   "clues": [
     {

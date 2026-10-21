@@ -242,7 +242,8 @@
   "id": "mine--nageuse--golem--i2",
   "place": "mine",
   "intro": "À la Mine des Nains, la maîtresse-nageuse Bulle, venue donner des cours de natation, est descendue plus bas que prévu. Six mineurs et visiteurs étaient au fond. L'un d'eux était seul avec elle. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
-  "epilogue": "— Parlons de Bulle.\n— Elle voulait m'apprendre à nager dans la galerie inondée.\n— Vous avez refusé.\n— Pardon, j'ai dit, avant. Elle m'a jeté à l'eau quand même. La galerie a bouilli d'un coup, avec elle dedans.",
+  "introBody": "La nageuse Bulle avait trouvé la seule eau de la mine, un boyau inondé, noir et glacé. Elle y a quand même installé son cours de natation, à vingt toises sous terre. Elle a passé la soirée à chercher comment rendre l'eau plus accueillante.",
+  "epilogue": "— Parlons de Bulle.\n— Elle trouvait l'eau trop froide pour sa leçon. Elle m'a demandé de la réchauffer.\n— Et vous l'avez fait.\n— J'ai dit pardon, avant, et j'ai trempé une griffe. Elle a crié « Encore ! » : on ne me dit jamais encore. J'ai trempé la patte entière. Elle a cuit avant la fin de sa brasse.",
   "clues": [
     {
       "who": "a",

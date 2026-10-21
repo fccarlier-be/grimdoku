@@ -295,6 +295,7 @@
   "id": "grand-port--touriste--golem-geant--i3-i2",
   "place": "grand-port",
   "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : le touriste Théophile, venu visiter la baronnie, est mort sur les quais. Sept habitués erraient dans la brume. L'un d'eux était seul avec lui.",
+  "introBody": "Le touriste Théophile dessinait les figures du port pour vendre leurs portraits à la foire, et il ne vérifiait jamais les détails. Un de ses modèles l'a remarqué. On l'a repêché au matin, son carnet trempé.",
   "epilogue": "— Pourquoi Théophile ?\n— Il allait vendre à la foire un portrait de moi, le bandeau sur l'œil droit. C'est le gauche que j'ai perdu.\n— Vous en êtes sûr ?\n— Je l'étais en le poussant à l'eau. C'est après que j'ai compris qu'un portrait, ça se regarde de face.",
   "clues": [
     {

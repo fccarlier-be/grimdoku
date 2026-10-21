@@ -243,6 +243,7 @@
   "id": "bibliotheque--baronne",
   "place": "bibliotheque",
   "intro": "À la Bibliothèque Interdite, la baronne Hautecuisse, venue rendre une visite de courtoisie, a été retrouvée entre deux rayonnages. On m'a demandé d'enquêter en silence. Six lecteurs étaient là. L'un d'eux était seul avec elle. Je chuchote mes questions ; on me répond en hurlant « chut ».",
+  "introBody": "La baronne Hautecuisse rendait une visite de courtoisie et commentait la mine de chaque lecteur, à voix haute. Personne n'avait bonne mine, selon elle. On l'a retrouvée au milieu d'éclats de verre doré.",
   "epilogue": "— Personne d'autre n'était avec Hautecuisse. Sauf vous.\n— Elle m'a tendu son miroir doré, devant tous les lecteurs : « Regardez-vous donc ! »\n— Vous ne vous reflétez pas.\n— C'est ce qu'elle voulait montrer. Je le lui ai cassé sur la tête. Sept ans de malheur ; pour elle, beaucoup moins.",
   "clues": [
     {

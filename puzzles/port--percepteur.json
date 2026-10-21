@@ -247,6 +247,7 @@
   "id": "port--percepteur",
   "place": "port",
   "intro": "Au Port des Contrebandiers, le percepteur Rognard, venu lever l'impôt de fin d'année, a été repêché à marée basse. Six habitués traînaient sur les quais. L'un d'eux était seul avec lui. Ici, tout le monde a quelque chose à cacher, généralement dans un tonneau.",
+  "introBody": "Le percepteur Rognard voulait l'impôt sur tout ce que possédaient les gens du port, et il s'est fait remettre une carte au trésor en paiement. Il a demandé son chemin. On le lui a indiqué.",
   "epilogue": "— C'était vous, avec Rognard.\n— Il voulait l'impôt sur tout ce que je possède.\n— Vous ne possédez rien.\n— Une carte au trésor. Je la lui ai donnée, avec mes indications. Il les a suivies à la lettre. Personne ne fait jamais ça.",
   "clues": [
     {

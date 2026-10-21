@@ -182,6 +182,7 @@
   "id": "marais--percepteur",
   "place": "marais",
   "intro": "Le Marais des Brumes a rendu le corps de le percepteur Liardin, venu lever l'impôt de fin d'année. Il garde le reste. Cinq habitants du marais pataugeaient dans le coin. L'un d'eux était seul avec lui. J'ai de la vase jusqu'aux genoux et zéro témoin fiable.",
+  "introBody": "Le percepteur Liardin voulait taxer le marais au litre, et pour son calcul, il lui fallait la profondeur exacte. Il a demandé conseil sur place. On lui a donné le mauvais.",
   "epilogue": "— Personne d'autre n'était avec Liardin. Sauf vous.\n— Il voulait taxer l'eau du marais, au litre, parce que j'y vis.\n— Et il est tombé dedans.\n— Il a voulu mesurer la profondeur. Je lui ai dit qu'il avait pied partout. *Blop.*",
   "clues": [
     {

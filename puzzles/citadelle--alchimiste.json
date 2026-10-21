@@ -268,6 +268,7 @@
   "id": "citadelle--alchimiste",
   "place": "citadelle",
   "intro": "Le pont-levis est resté coincé toute la nuit, enfermant l'alchimiste Fumagal, venu proposer ses services, avec les huit occupants de la Citadelle. Au matin, il n'avait plus aucune envie de sortir. L'un d'eux était seul avec lui. Au moins, personne n'a pu s'enfuir.",
+  "introBody": "L'alchimiste Fumagal méprisait les potions des autres, qu'il traitait de bricolage, et il se vantait de faire de la vraie science. Il a goûté tout ce qu'on lui a servi, pour juger. Il a eu tort de reprendre.",
   "epilogue": "— Parlons de Fumagal.\n— Il a dit que mes potions, c'était de la cuisine. Que lui, il faisait de la science.\n— Vous l'avez mal pris.\n— Je lui ai servi ma soupe, pour qu'il juge. Il en a repris trois fois : « De la chimie très ordinaire. » Il ne savait pas lire les étiquettes de mes bocaux. Moi non plus.",
   "clues": [
     {

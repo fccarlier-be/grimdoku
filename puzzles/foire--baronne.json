@@ -226,6 +226,7 @@
   "id": "foire--baronne",
   "place": "foire",
   "intro": "La Foire aux Sortilèges a perdu un client : la baronne Clinquante, venue rendre une visite de courtoisie. Six forains juraient qu'ils tenaient leur stand. L'un d'eux était seul avec elle. Le bonimenteur m'a déjà proposé un élixir de vérité. Deux écus, garanti sans effet.",
+  "introBody": "La baronne Clinquante voulait racheter la foire et renvoyer les forains les moins rentables. Elle admirait surtout les décorations, la tête en l'air. On l'a retrouvée sous une pluie de cristal.",
   "epilogue": "— Il n'y avait que vous et Clinquante.\n— Elle voulait racheter la foire et me mettre dehors. Moi, le seul artiste de la foire.\n— Vous lui avez chanté quelque chose.\n— Mon contre-ut, visé sur le grand lustre de cristal. Elle était juste en dessous, à l'admirer.",
   "clues": [
     {

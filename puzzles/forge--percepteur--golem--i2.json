@@ -219,6 +219,7 @@
   "id": "forge--percepteur--golem--i2",
   "place": "forge",
   "intro": "La Forge du Dragon fume plus que d'habitude : le percepteur Gabelou, venu lever l'impôt de fin d'année, n'en est pas ressorti. Cinq habitués de la forge étaient au travail, paraît-il. L'un d'eux était seul avec lui. Le dragon dort. J'aimerais qu'il continue.",
+  "introBody": "Le percepteur Gabelou estimait chaque objet de la forge au poids du métal, et il ne se gênait pas pour donner son avis. Certains habitués ont été estimés très bas. Le creuset, lui, a été estimé de très près.",
   "epilogue": "— Parlons de Gabelou.\n— Il voulait l'impôt sur tout ce que je possède. Il a dit que mon armure valait moins que son métal fondu.\n— Vous l'avez fait estimer ?\n— J'ai annoncé : « Je vous montre ce que vaut le métal fondu. » Le creuset était juste derrière lui.",
   "clues": [
     {

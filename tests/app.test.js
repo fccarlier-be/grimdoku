@@ -567,6 +567,38 @@ test('Aagrid, le tavernier : toujours ce nom, « SYMPA » mis en évidence dans 
   assert.deepEqual(errors, []);
 });
 
+test('intros : l\'ouverture du lieu suit le rang de l\'affaire, le corps est propre à chaque grille', () => {
+  const INTROS = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'lore', 'intros.json'), 'utf8'));
+  const { w, d, openCase, errors, PUZZLES } = open();
+  for (const p of PUZZLES.filter(q => q.introBody)) assert.ok(!/[{}]/.test(p.introBody), p.id + ' : gabarit oublié');
+  for (const pl of Object.keys(INTROS.lieux)) {
+    const bodies = PUZZLES.filter(q => q.place === pl && !q.off).map(q => q.introBody);
+    assert.ok(bodies.every(Boolean), pl + ' : chaque grille active a son intro');
+    assert.equal(new Set(bodies).size, bodies.length, pl + ' : pas deux intros identiques');
+    const ends = bodies.map(b => b.split(/(?<=[.!?…])\s+/).pop().replace(/\d+|[A-ZÀ-Ý]\w+/g, ''));
+    assert.equal(new Set(ends).size, ends.length, pl + ' : pas deux intros qui finissent pareil (François, 2026-10-21)');
+  }
+  // une intro ne nomme aucune pièce de sa carte (ce serait un indice de position), sauf celle qui porte le nom du lieu
+  for (const p of PUZZLES.filter(q => q.introBody)) {
+    const rooms = Object.values(p.rooms).map(r => r.name).filter(n => !p.title.toLowerCase().includes(n.toLowerCase()));
+    const named = rooms.filter(n => new RegExp(`(^|[^\\p{L}])${n}($|[^\\p{L}])`, 'iu').test(p.introBody));
+    assert.deepEqual(named, [], p.id + ' : l\'intro nomme une pièce');
+  }
+  const o = INTROS.lieux.chateau, cases = PUZZLES.filter(q => q.place === 'chateau' && !q.off);
+  const intro = () => [...d.querySelectorAll('details')].find(x => x.querySelector('summary')?.textContent === 'L\'affaire').querySelector('p').textContent;
+  openCase(cases[0].id);
+  assert.ok(d.querySelector('.story-text').textContent.startsWith(o.premiere), 'première venue : à la première ouverture');
+  assert.ok(intro().endsWith(cases[0].introBody));
+  solve(w, cases[0]); openCase(cases[1].id);
+  assert.ok(intro().startsWith(o.retours[0]), 'deuxième affaire : premier retour');
+  cases.slice(1, -1).forEach(p => solve(w, p)); openCase(cases[cases.length - 1].id);
+  assert.ok(intro().startsWith(o.derniere), 'la seule qui reste : la dernière');
+  w.localStorage.setItem('grimdoku:p:' + cases[0].id, JSON.stringify(Object.assign(JSON.parse(w.localStorage.getItem('grimdoku:p:' + cases[0].id)), { rank: 'premiere' })));
+  openCase(cases[0].id);
+  assert.ok(intro().startsWith(o.premiere), 'une affaire résolue garde son ouverture');
+  assert.deepEqual(errors, []);
+});
+
 test('appui long : la roue des personnages, on y choisit qui placer (sans l\'avoir choisi avant)', async () => {
   const { d, cell, hold, openCase, errors, PUZZLES } = open();
   const p = PUZZLES.find(q => !q.final && !q.characters.some(c => c.shape));

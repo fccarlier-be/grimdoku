@@ -5,20 +5,20 @@
     "note": ""
   },
   "chateau--cousine": {
-    "status": "valide",
-    "note": "Réécrit d'après ta note (« Partager ne veut pas dire tuer ») : elle réclame l'épée de famille, il la lui « donne », pointe la première."
+    "status": "relire",
+    "note": "Accordé à la nouvelle intro (2026-10-21), chute gardée. Avant : Réécrit d'après ta note (« Partager ne veut pas dire tuer ») : elle réclame l'épée de famille, il la lui « donne », pointe la première. | « — Elle réclamait sa part de l'héritage familial : l'épée de mes ancêtres. »"
   },
   "chateau--dresseuse": {
-    "status": "valide",
-    "note": "Réécrit d'après ta note (« Gontran tuerait Fanfare juste parce que Flammèche lui obéit ? ») : le mobile devient l'honneur du chevalier. Elle veut un combat truqué ; un chevalier ne fait jamais semblant."
+    "status": "relire",
+    "note": "Accordé à la nouvelle intro (2026-10-21), chute gardée. Avant : Réécrit d'après ta note (« Gontran tuerait Fanfare juste parce que Flammèche lui obéit ? ») : le mobile devient l'honneur du chevalier. Elle veut un combat truqué ; un chevalier ne fait jamais semblant. | « — Elle voulait m'emmener dans son cirque, pour le numéro du chevalier qui terrasse le dragon. »"
   },
   "chateau--inspecteur--golem--i2": {
-    "status": "valide",
-    "note": ""
+    "status": "relire",
+    "note": "Accordé à la nouvelle intro (2026-10-21), chute gardée. Avant : « Il l'a bue. »"
   },
   "chateau--touriste--dragon--i2": {
-    "status": "valide",
-    "note": "Repassé après la relecture extérieure : rouvert malgré ta validation, car on ne comprenait pas le meurtre. Seule la question de l'enquêteur change (« en morceaux sur sa tête »), ta chute est gardée."
+    "status": "relire",
+    "note": "Accordé à la nouvelle intro (2026-10-21), chute gardée. Avant : Repassé après la relecture extérieure : rouvert malgré ta validation, car on ne comprenait pas le meurtre. Seule la question de l'enquêteur change (« en morceaux sur sa tête »), ta chute est gardée. | « — Il m'a dessiné en train de chanter. Il voulait vendre ça à la foire, sous le titre « Le barde qui chante faux ». »"
   },
   "academie--chasseuse--golem--i2": {
     "status": "relire",
@@ -29,8 +29,8 @@
     "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
   },
   "banquet--huissier": {
-    "status": "valide",
-    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+    "status": "relire",
+    "note": "Accordé à la nouvelle intro (2026-10-21, la balance), chute gardée. Avant : « Puis je l'ai revendu aux cuisines, au poids. » | Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
   },
   "banquet--nageuse": {
     "status": "valide",
@@ -46,7 +46,7 @@
   },
   "taverne--nageuse": {
     "status": "valide",
-    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+    "note": ""
   },
   "bibliotheque--nageuse": {
     "status": "relire",
@@ -190,7 +190,7 @@
   },
   "port--messager": {
     "status": "relire",
-    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+    "note": "Ne cite plus une autre pièce que celle du crime (2026-10-21). Avant : « — Debout sur le quai : » | Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
   },
   "tour--troubadour": {
     "status": "relire",
@@ -198,7 +198,7 @@
   },
   "grand-port--nageuse": {
     "status": "relire",
-    "note": "Repassé : accident absurde ou trait mieux respecté."
+    "note": "Ne cite plus une autre pièce que celle du crime (2026-10-21). Avant : « j'ai sauté du quai. » | Repassé : accident absurde ou trait mieux respecté."
   },
   "palais--baronne": {
     "status": "relire",
@@ -229,8 +229,8 @@
     "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
   },
   "mine--abbesse": {
-    "status": "revoir",
-    "note": "Pas drôle, pas absurde, nul."
+    "status": "relire",
+    "note": "Réécrit avec la nouvelle intro (2026-10-21), d'après ta note : « Pas drôle, pas absurde, nul. »"
   },
   "tour--baronne": {
     "status": "relire",
@@ -278,7 +278,7 @@
   },
   "bibliotheque--abbesse": {
     "status": "relire",
-    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+    "note": "Il n'y a pas d'étagère dans la pièce du crime : un pupitre (2026-10-21). Avant : « — Je suis entré dans l'étagère pour la semer. Elle a tiré sur les grimoires pour me déloger. L'étagère est venue avec. » | Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
   },
   "cimetiere--inspecteur": {
     "status": "relire",
@@ -290,7 +290,7 @@
   },
   "tour--alchimiste": {
     "status": "relire",
-    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+    "note": "Il n'y a pas d'étagère dans la pièce du crime : le chaudron (2026-10-21). Avant : « Je l'ai regardé à travers l'étagère ; il a reculé dessus. Elle était moins solide que ma réputation. » | Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
   },
   "tour--inspecteur--vouivre--i2": {
     "status": "relire",
@@ -298,7 +298,7 @@
   },
   "tour--messager--golem--i2": {
     "status": "relire",
-    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+    "note": "Il n'y a pas d'étagère dans la pièce du crime : la statue (2026-10-21). Avant : « Il est tombé à la renverse contre l'étagère, et les grimoires ont suivi. » | Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
   },
   "thermes--inspecteur": {
     "status": "relire",
@@ -337,8 +337,8 @@
     "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
   },
   "mine--nageuse--golem--i2": {
-    "status": "revoir",
-    "note": "Pas drôle, et un dragonnet dans l'eau ne doit pas pouvoir faire grand chose..."
+    "status": "relire",
+    "note": "Réécrit avec la nouvelle intro (2026-10-21), d'après ta note : « Pas drôle, et un dragonnet dans l'eau ne doit pas pouvoir faire grand chose... »"
   },
   "academie--colporteur--geant--i2": {
     "status": "relire",
@@ -422,7 +422,7 @@
   },
   "tour--colporteur": {
     "status": "relire",
-    "note": "Repassé : accident absurde ou trait mieux respecté."
+    "note": "Ne cite plus une autre pièce que celle du crime (2026-10-21). Avant : « Il a glissé dessus, dans l'escalier de la Tour. » | Repassé : accident absurde ou trait mieux respecté."
   },
   "tour--chasseuse": {
     "status": "relire",
@@ -430,7 +430,7 @@
   },
   "grand-port--baronne": {
     "status": "relire",
-    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+    "note": "Ne cite plus une autre pièce que celle du crime (2026-10-21). Avant : « Je l'ai raccompagnée au bout du quai, » | Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
   },
   "navire--nageuse": {
     "status": "relire",
@@ -446,15 +446,15 @@
   },
   "bibliotheque--touriste": {
     "status": "relire",
-    "note": "Repassé : nouvelle grille (coupable imposé pour rééquilibrer : Dewey ou Granit)."
+    "note": "Accordé à la nouvelle intro (2026-10-21) ; ne nomme plus la pièce. Avant : « Il dessinait la réserve interdite, page par page, » | Repassé : nouvelle grille (coupable imposé pour rééquilibrer : Dewey ou Granit)."
   },
   "universite--percepteur": {
     "status": "relire",
     "note": "Repassé : nouvelle grille (coupable imposé pour rééquilibrer : Dewey ou Granit)."
   },
   "mine--troubadour": {
-    "status": "valide",
-    "note": "Repassé : nouvelle grille (coupable imposé pour rééquilibrer : Dewey ou Granit)."
+    "status": "relire",
+    "note": "Ne cite plus une autre pièce que celle du crime (2026-10-21). Avant : « au fond de la galerie qu'on n'étaie plus » | Repassé : nouvelle grille (coupable imposé pour rééquilibrer : Dewey ou Granit)."
   },
   "banquet--cousine": {
     "status": "valide",
@@ -468,8 +468,8 @@
     "note": ""
   },
   "taverne--messager": {
-    "status": "valide",
-    "note": ""
+    "status": "relire",
+    "note": "Ne cite plus une autre pièce que celle du crime (2026-10-21). Avant : « — Je l'ai bordé moi-même. » | Ne cite plus une autre pièce que celle du crime (2026-10-21). Avant : « Puis il a demandé une chambre, gratuite, puisqu'il apportait la nouvelle. »"
   },
   "taverne--percepteur": {
     "status": "valide"
@@ -483,11 +483,27 @@
     "note": "Repassé : accident absurde ou trait mieux respecté."
   },
   "mine--colporteur": {
-    "status": "revoir",
-    "note": "Pourquoi vendre des gants ignifugés à un dragon?..."
+    "status": "relire",
+    "note": "Réécrit avec la nouvelle intro (2026-10-21), d'après ta note : « Pourquoi vendre des gants ignifugés à un dragon?... »"
   },
   "mine--percepteur--dragon--i2": {
-    "status": "revoir",
-    "note": "Il y a de l'idée mais la dernière réponse ne semble pas naturelle/cohérente avec le reste du dialogue."
+    "status": "relire",
+    "note": "Réécrit avec la nouvelle intro (2026-10-21), d'après ta note : « Il y a de l'idée mais la dernière réponse ne semble pas naturelle/cohérente avec le reste du dialogue. »"
+  },
+  "citadelle--inspecteur--dragon--l3": {
+    "status": "relire",
+    "note": "Ne nomme plus la pièce (2026-10-21). Avant : « Mort, je lui ai seulement fait visiter les oubliettes. C'est la pièce qu'on montre en dernier. »"
+  },
+  "port--touriste": {
+    "status": "relire",
+    "note": "Ne cite plus une autre pièce que celle du crime (2026-10-21). Avant : « Moi, je suis resté sur le quai, pour lui faire signe. »"
+  },
+  "grand-port--chasseuse": {
+    "status": "relire",
+    "note": "Ne cite plus une autre pièce que celle du crime (2026-10-21). Avant : « Pour une fois, je savais très bien où était le bord du quai. »"
+  },
+  "grand-port--abbesse--dragon--t4": {
+    "status": "relire",
+    "note": "Ne cite plus une autre pièce que celle du crime (2026-10-21). Avant : « Je l'ai raccompagnée jusqu'au bord du quai. Un pas, deux pas, trois pas, quatre. Le quai en fait trois. »"
   }
 }

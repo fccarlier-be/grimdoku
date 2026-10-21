@@ -189,6 +189,7 @@
   "id": "ferme--abbesse",
   "place": "ferme",
   "intro": "On dit la Ferme Hantée, et l'abbesse Austérine, venue faire la quête, va sûrement y contribuer. Cinq habitants de la ferme étaient là cette nuit. L'un d'eux était seul avec elle. Les poules, elles, refusent de témoigner.",
+  "introBody": "L'abbesse Austérine faisait la quête de ferme en ferme, et elle sermonnait chaque donateur sur ses mauvaises habitudes. À la Ferme Hantée, les mauvaises habitudes ne manquaient pas. Son dernier sermon a duré une heure, et il a bien été le dernier.",
   "epilogue": "— Pourquoi Austérine ?\n— Elle m'a fait la morale sur les ragots. Une heure. Je n'ai rien dit.\n— Rien du tout ?\n— Seulement que le four était peut-être encore chaud. Elle s'est penchée pour vérifier ; j'ai refermé la porte, pour garder la chaleur. Je dis ça, je dis rien.",
   "clues": [
     {

@@ -268,6 +268,7 @@
   "id": "citadelle--colporteur",
   "place": "citadelle",
   "intro": "Le pont-levis est resté coincé toute la nuit, enfermant le colporteur Toutvend, venu vendre sa camelote, avec les huit occupants de la Citadelle. Au matin, il n'avait plus aucune envie de sortir. L'un d'eux était seul avec lui. Au moins, personne n'a pu s'enfuir.",
+  "introBody": "Le colporteur Toutvend revendait des chaînes « garanties incassables », et il en a fait essayer à tout le monde. On lui en a rendu une. Il la portait encore autour du cou au matin.",
   "epilogue": "— C'était vous, avec Toutvend.\n— Il voulait me revendre les chaînes qu'il m'avait déjà vendues. Des chaînes de fantôme, garanties bruyantes.\n— Elles ne marchaient pas ?\n— Elles traversaient tout, comme moi. Je les lui ai rendues, autour du cou. Lui, au moins, elles ne l'ont pas traversé.",
   "clues": [
     {

@@ -189,6 +189,7 @@
   "id": "taverne--inspecteur",
   "place": "taverne",
   "intro": "On m'a tiré du lit à l'aube. L'inspecteur des tavernes Rinçon, venu au Sanglier Borgne inspecter les lieux, ne se réveillera plus. Cinq clients juraient dormir comme des loirs. L'un d'eux était avec lui. J'ai demandé un café ; on m'a servi une bière.",
+  "introBody": "L'inspecteur des tavernes Rinçon a goûté chaque plat de la carte, puis il a accroché trois étoiles au-dessus du comptoir. Trois étoiles au Sanglier Borgne : tout le monde n'a pas apprécié. On a retrouvé son assiette propre comme un sou neuf.",
   "epilogue": "— Racontez-moi, pour Rinçon.\n— Il a donné trois étoiles au Sanglier Borgne. Moi, je lui avais mis deux sur dix.\n— Vous n'étiez pas d'accord.\n— Je l'ai mis au défi de finir le seul plat que j'avais noté zéro. Il a tout fini, pour me donner tort. Il avait tort : ça méritait bien zéro.",
   "clues": [
     {

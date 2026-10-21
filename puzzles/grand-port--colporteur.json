@@ -323,6 +323,7 @@
   "id": "grand-port--colporteur",
   "place": "grand-port",
   "intro": "Brouillard à couper au couteau sur le Grand Port de Brumeval. Quelqu'un ne s'est pas contenté du brouillard : le colporteur Bradeur, venu vendre sa camelote, est mort sur les quais. Neuf habitués erraient dans la brume. L'un d'eux était seul avec lui.",
+  "introBody": "Le colporteur Bradeur revendait des coffres au trésor « garantis pleins », à condition de ne pas les ouvrir avant d'être rentré chez soi. Un acheteur a ouvert le sien sur place. Quand on a retrouvé le coffre, il n'était plus vide.",
   "epilogue": "— C'était vous, avec Bradeur.\n— Il voulait me revendre le coffre qu'il m'avait déjà vendu. Vide.\n— Le trésor du royaume aussi est vide.\n— C'était le même coffre. Je l'ai payé une deuxième fois, en le mettant dedans. Cette fois, il n'était pas vide.",
   "clues": [
     {

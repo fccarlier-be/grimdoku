@@ -268,6 +268,7 @@
   "id": "citadelle--dresseuse",
   "place": "citadelle",
   "intro": "Le pont-levis est resté coincé toute la nuit, enfermant la dresseuse Bastringue, venue recruter des bêtes pour son cirque, avec les huit occupants de la Citadelle. Au matin, elle n'avait plus aucune envie de sortir. L'un d'eux était seul avec elle. Au moins, personne n'a pu s'enfuir.",
+  "introBody": "La dresseuse Bastringue voulait emmener au cirque ce qu'elle trouverait de plus impressionnant à la Citadelle, en cage s'il le fallait. Elle a fait la tournée des candidats. L'un d'eux n'a pas apprécié le mot « cage ».",
   "epilogue": "— C'était vous, avec Bastringue.\n— Elle voulait m'emmener dans son cirque, en cage, entre l'ours et le singe.\n— Une cage, pour un chevalier.\n— J'ai annoncé : « En garde. » Elle n'avait pas d'épée. Ce n'est pas ma faute : j'annonce toujours.",
   "clues": [
     {

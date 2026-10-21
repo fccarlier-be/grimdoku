@@ -1097,6 +1097,17 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
   const isSolved = (p) => !!(store.get('p:' + p.id, null) || {}).solved;
   const solvedIn = (list) => list.filter(isSolved).length;
   const placeCases = (pl) => CASES.filter(p => p.place === pl); // de la plus petite carte à la plus grande, puis la plus facile
+  // intro d'une enquête (lore/intros.json) : l'ouverture du lieu selon le rang de l'affaire — aucune autre résolue dans le
+  // lieu : première venue ; toutes les autres : la dernière ; sinon un retour (2e, 3e…) — puis le corps propre à la grille.
+  // Le rang est fixé à la résolution (S.rank) ; sans texte écrit, l'intro « auto » du décor
+  const rankOf = (p) => { const others = placeCases(p.place).filter(q => q.id !== p.id), n = others.filter(isSolved).length;
+    return n === 0 ? 'premiere' : n === others.length ? 'derniere' : 'retour' + (n - 1); };
+  const introOf = (p, st) => {
+    const o = (LORE.intros || {})[p.place];
+    if (!p.introBody || !o) return p.intro;
+    const r = (st && st.rank) || rankOf(p);
+    return (r === 'premiere' ? o.premiere : r === 'derniere' ? o.derniere : o.retours[Math.min(+r.slice(6), o.retours.length - 1)]) + ' ' + p.introBody;
+  };
   const pageHead = (backAria, title) => `
       <header class="top">
         <button class="iconbtn" id="back" aria-label="${backAria}">‹</button>
@@ -1540,7 +1551,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     if (!store.get('seen:' + id, false)) { store.set('seen:' + id, true); introSheet(); }
   }
   const introSheet = () => story(`${MEDIA.decors.includes(P.decor) ? `<div class="story-img" style="background-image:url(media/decor-${P.decor}.webp)"></div>` : ''}
-      <h2>${esc(P.title)}</h2><p class="story-text">${esc(P.intro)}</p><div class="row"><button class="btn primary" data-close>À l'enquête</button></div>`, 'intro');
+      <h2>${esc(P.title)}</h2><p class="story-text">${esc(introOf(P, S))}</p><div class="row"><button class="btn primary" data-close>À l'enquête</button></div>`, 'intro');
   const save = () => { S.t = Date.now(); store.set('p:' + P.id, S); }; // t : la sauvegarde la plus récente l'emporte entre appareils
   const WHEEL_MS = 450; // appui long : la roue des personnages s'ouvre au bout de WHEEL_MS
   // une couleur par personnage (lettres au crayon, pastilles) ; la victime en rouge
@@ -1767,7 +1778,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
       <div class="play">
       <div class="casehead">
         <h2>${esc(P.title)}</h2>
-        <details><summary>L'affaire</summary><p>${esc(P.intro)}</p></details>
+        <details><summary>L'affaire</summary><p>${esc(introOf(P, S))}</p></details>
       </div>
       <div class="boardwrap">
         <div class="board" id="board" style="--n:${n}">${cells}${wallsSvg()}</div>
@@ -2099,6 +2110,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
       if (v.size) { settings.live = true; store.set('settings', settings); render(); return toast(`${v.size} indice${v.size > 1 ? 's' : ''} ne colle${v.size > 1 ? 'nt' : ''} pas. Ils sont surlignés en rouge.`, true); }
       return toast("Tout semble coller… mais ce n'est pas la bonne scène. Un indice t'a peut-être échappé.", true);
     }
+    S.rank = rankOf(P); // l'intro garde l'ouverture sous laquelle l'affaire a été résolue
     S.solved = true; selected = null; save();
     stat('resolue', P);
     render.newLetter = pendingLetter(P.place) ? P.place : null; // glissée sous la porte : à ouvrir

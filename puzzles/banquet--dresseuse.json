@@ -196,6 +196,7 @@
   "id": "banquet--dresseuse",
   "place": "banquet",
   "intro": "Au Banquet des Gobelins, la dresseuse Croquette, venue recruter des bêtes pour son cirque, est passée de la liste des invités à la carte du menu. On l'a retrouvée avant le dessert. Cinq invités se goinfraient. L'un d'eux était seul avec elle. On m'a servi une soupe. Je ne l'ai pas touchée.",
+  "introBody": "La dresseuse Croquette était venue avec trois petits dragons en cage, à la recherche d'un numéro qui leur ferait peur. Entre le fromage et le dessert, elle a annoncé des auditions. On l'a retrouvée roussie, et ses dragons tremblaient encore.",
   "epilogue": "— Pourquoi Croquette ?\n— Elle voulait m'emmener dans son cirque. Pas pour chanter : pour faire peur à ses dragons.\n— Vous l'avez mal pris.\n— J'ai accepté une audition. J'ai chanté, ses petits dragons ont pris peur et craché du feu. Heureusement j'étais derrière elle...",
   "clues": [
     {

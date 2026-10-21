@@ -330,6 +330,7 @@
   "id": "grands-bains--dresseuse",
   "place": "grands-bains",
   "intro": "Aux Grands Bains de Brumeval, on vient soigner ses rhumatismes, ses nerfs ou sa réputation. La dresseuse Cerceline, venue recruter des bêtes pour son cirque, n'est pas ressortie du bain. Neuf curistes et employés barbotaient dans les parages. L'un d'eux était seul avec elle. Il fait quarante degrés, tout le monde transpire, et personne ne sait rien.",
+  "introBody": "La dresseuse Cerceline cherchait un juge pour les numéros de son cirque, et elle a voulu montrer le sien : trente secondes sous l'eau. Personne n'a été impressionné. Elle a recommencé, plus longtemps.",
   "epilogue": "— Racontez-moi, pour Cerceline.\n— Elle voulait m'emmener dans son cirque, pour juger les numéros.\n— Ça vous allait.\n— Elle m'a montré le sien : trente secondes sous l'eau. Deux sur dix. Elle a protesté. Je l'ai renvoyée sous l'eau travailler son numéro, et je l'y ai tenue.",
   "clues": [
     {

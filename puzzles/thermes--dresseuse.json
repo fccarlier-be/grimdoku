@@ -189,6 +189,7 @@
   "id": "thermes--dresseuse",
   "place": "thermes",
   "intro": "Aux Thermes Enchantés, la dresseuse Pirouette, venue recruter des bêtes pour son cirque, a pris son dernier bain. Cinq baigneurs se prélassaient. L'un d'eux était seul avec elle. J'enquête en peignoir ; c'est le règlement, paraît-il.",
+  "introBody": "La dresseuse Pirouette cherchait aux Thermes de quoi remplir une cage dorée pour son cirque. Elle a fini par trouver quelque chose à mettre dedans. On a retrouvé la cage au fond d'un bain.",
   "epilogue": "— Pourquoi Pirouette ?\n— Elle voulait m'emmener dans son cirque, dans une cage à oiseaux.\n— Vous avez refusé.\n— Je l'ai rapetissée, pour qu'elle essaie sa cage elle-même. Puis la cage est tombée dans le bain. Je la repêche demain.",
   "clues": [
     {

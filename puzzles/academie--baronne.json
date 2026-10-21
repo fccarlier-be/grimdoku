@@ -247,6 +247,7 @@
   "id": "academie--baronne",
   "place": "academie",
   "intro": "À l'Académie de Magie, la baronne Grisemotte, venue rendre une visite de courtoisie, a été retrouvée un soir d'examens. Six élèves et professeurs révisaient, paraît-il. L'un d'eux était seul avec elle. Ça sent le soufre, mais ici, ça sent toujours le soufre.",
+  "introBody": "La baronne Grisemotte voulait racheter l'Académie et mettre dehors tous ceux qui lui devaient de l'argent. Elle a passé la soirée à dresser la liste, de très près, en postillonnant. Elle ne l'a jamais finie.",
   "epilogue": "— Parlons de Grisemotte.\n— Elle voulait racheter l'Académie et me mettre dehors, avec mes dettes.\n— Vous lui avez répondu ?\n— Elle s'est penchée sur moi pour me menacer. Elle sentait la bière. J'ai éternué, et le sort que je tenais prêt est parti. Je le tenais prêt pour elle, remarquez.",
   "clues": [
     {

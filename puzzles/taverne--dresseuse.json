@@ -189,6 +189,7 @@
   "id": "taverne--dresseuse",
   "place": "taverne",
   "intro": "On m'a tiré du lit à l'aube. La dresseuse Câline, venue au Sanglier Borgne recruter des bêtes pour son cirque, ne se réveillera plus. Cinq clients juraient dormir comme des loirs. L'un d'eux était avec elle. J'ai demandé un café ; on m'a servi une bière.",
+  "introBody": "La dresseuse Câline cherchait de quoi calmer ses bêtes avant le spectacle. Elle a lancé un appel à la cantonade, et tout le Sanglier Borgne a eu une idée. Au matin, on l'a retrouvée endormie pour de bon.",
   "epilogue": "— Il n'y avait que vous et Câline.\n— Elle voulait m'emmener dans son cirque, pour endormir ses bêtes avec mes chansons.\n— Venant d'une dresseuse, c'est presque un compliment.\n— Elle a ronflé au deuxième couplet. J'ai fini la chanson en lui tenant le nez, pour qu'elle arrête. C'était une longue chanson...",
   "clues": [
     {

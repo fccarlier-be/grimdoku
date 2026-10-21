@@ -182,6 +182,7 @@
   "id": "marais--huissier",
   "place": "marais",
   "intro": "Le Marais des Brumes a rendu le corps de l'huissier Inventorin, venu saisir des biens. Il garde le reste. Cinq habitants du marais pataugeaient dans le coin. L'un d'eux était seul avec lui. J'ai de la vase jusqu'aux genoux et zéro témoin fiable.",
+  "introBody": "L'huissier Inventorin est venu saisir des biens dans un marais, ce qui demande de l'imagination. Il a tout noté, les nénuphars compris, et décrété que le reste ne valait rien. On l'a retrouvé là où il avait envoyé tout le reste.",
   "epilogue": "— Il n'y avait que vous et Inventorin.\n— Inventorin.\n— Il saisissait quoi, dans un marais ?\n— Il a tout noté, puis il a dit : « Ça, je le saisis. Le reste, au marais ! » Bâfrin jeté lui. Au marais.",
   "clues": [
     {

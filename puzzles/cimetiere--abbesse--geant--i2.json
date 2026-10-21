@@ -252,6 +252,7 @@
   "id": "cimetiere--abbesse--geant--i2",
   "place": "cimetiere",
   "intro": "Au Cimetière de Minuit, on a retrouvé l'abbesse Radegonde, venue faire la quête. Pour une fois, le fossoyeur n'a pas eu à se déplacer. Six habitués du lieu rôdaient entre les tombes. L'un d'eux était seul avec elle. Les autres jurent qu'ils étaient déjà morts, ce qui n'aide pas.",
+  "introBody": "L'abbesse Radegonde faisait la quête entre les tombes, et elle reprochait aux habitués leurs drôles de manies. Elle trouvait le cimetière beaucoup trop accueillant. On lui a pourtant trouvé une place.",
   "epilogue": "— Et Radegonde ?\n— Elle m'a fait la morale : on ne prend pas les mesures des vivants.\n— Vous aviez pris les siennes ?\n— En la voyant arriver. Ç'aurait été dommage de gâcher une si belle tombe.",
   "clues": [
     {

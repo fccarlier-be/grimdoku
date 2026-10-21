@@ -52,7 +52,7 @@ function context(ids) {
     out[id] = {
       id, place: p.place, placeTitle: p.title.split(' — ')[0], title: p.title, rank: order.indexOf(p.place), active: actives.has(id),
       victim: { name: v.name, title: g.title || '', desc: g.desc || '', motif: g.motif || '', menace: g.menace || '', gender: g.gender },
-      culprit: { name: a.name, desc: a.desc, tic: a.tic, gender: a.gender }, intro: p.intro
+      culprit: { name: a.name, desc: a.desc, tic: a.tic, gender: a.gender }, intro: p.introBody || p.intro, introWritten: !!p.introBody
     };
   }
   return out;
@@ -113,6 +113,8 @@ main { max-width: 900px; margin: 0 auto; padding: 16px; display: flex; flex-dire
 .ctx b { color: var(--ink); }
 .ctx i { color: var(--muted); }
 details { font-size: 14px; color: #4b3822; margin: 4px 0 8px; }
+.intro { margin: 6px 0 10px; padding: 8px 12px; border-left: 3px solid #b58a4a; background: rgba(181, 138, 74, .1); font-size: 15px; line-height: 1.45; color: #3b2a18; }
+.intro .lbl { display: block; font: 600 12px/1.4 sans-serif; text-transform: uppercase; letter-spacing: .05em; color: #8a6a3e; margin-bottom: 2px; }
 summary { cursor: pointer; color: var(--muted); }
 .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 @media (max-width: 720px) { .cols { grid-template-columns: 1fr; } }
@@ -167,7 +169,9 @@ function card(it) {
       '<div><b>Victime</b> : ' + esc(it.victim.name) + ', ' + esc(it.victim.title) + ' <i>(' + esc(it.victim.desc) + ')</i> — venu' + (it.victim.gender === 'f' ? 'e ' : ' ') + esc(it.victim.motif) + ' ; menace : « ' + esc(it.victim.menace) + ' »</div>' +
       '<div><b>Coupable</b> : ' + esc(it.culprit.name) + ' <i>(' + esc(it.culprit.desc) + ')</i> — tic : ' + esc(it.culprit.tic) + '</div>' +
     '</div>' +
-    '<details><summary>Introduction de l\'enquête</summary>' + esc(it.intro) + '</details>' +
+    // l'intro juste avant l'épilogue (François, 2026-10-21 : difficile à relire sans elle) ; écrite pour la grille, ou
+    // ancienne intro commune du lieu ; l'ouverture du lieu (selon le rang de l'affaire) n'est pas reprise
+    '<div class="intro"><span class="lbl">' + (it.introWritten ? 'Mise en situation' : 'Mise en situation (ancienne, commune au lieu)') + '</span>' + esc(it.intro) + '</div>' +
     '<div class="cols"><textarea class="ed" spellcheck="true">' + esc(it.text) + '</textarea><div class="preview">' + preview(it.text) + '</div></div>' +
     '<div class="checks">' + esc(checks(it, it.text)) + '</div>' +
     '<textarea class="note" placeholder="Note (facultative) : ce qui ne va pas, une idée…">' + esc(it.note) + '</textarea>' +

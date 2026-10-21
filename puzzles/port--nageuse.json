@@ -247,6 +247,7 @@
   "id": "port--nageuse",
   "place": "port",
   "intro": "Au Port des Contrebandiers, la maîtresse-nageuse Clapote, venue donner des cours de natation, a été repêchée à marée basse. Six habitués traînaient sur les quais. L'un d'eux était seul avec elle. Ici, tout le monde a quelque chose à cacher, généralement dans un tonneau.",
+  "introBody": "La nageuse Clapote voulait apprendre à nager aux gens du port, en commençant par les plus têtus. Elle a emmené son premier élève au large. Elle n'est revenue qu'avec la marée.",
   "epilogue": "— Racontez-moi, pour Clapote.\n— Elle voulait m'apprendre à nager. À moi, un capitaine.\n— Vous savez nager ?\n— J'ai affronté cent tempêtes. Je lui ai montré comment on survit à la pire : on s'accroche à quelqu'un qui sait nager. Elle a coulé la première.",
   "clues": [
     {
