@@ -6,7 +6,7 @@
 set -e
 cd "$(dirname "$0")/.."
 FILES="tests deploy/grimdoku/api"
-[ "$1" = "--page" ] && FILES="tests app build-app.js deploy/grimdoku/api lore/lieux-zones.json lore/epilogues.json assets/decors/grand assets/characters/*-[0-9]*.webp"
+[ "$1" = "--page" ] && FILES="tests app build-app.js deploy/grimdoku/api lore assets/decors/grand assets/characters/*-[0-9]*.webp"
 PACK=$(mktemp -t grimdoku-retest).tgz
 COPYFILE_DISABLE=1 tar -czf "$PACK" $FILES
 sh tools/pc.sh --scp "$PACK" grimdoku-gen/retest.tgz

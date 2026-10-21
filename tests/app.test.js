@@ -812,6 +812,21 @@ test('fil rouge : le mur à la 3e lettre, visites puis déclic au bureau, déduc
   assert.ok(!/Augure/.test(shown()), 'mur');
   for (const v of FR.visites) assert.ok(!/Augure/.test(v.texte + v.note));
   for (const dc of FR.declics) assert.ok(!/Augure/.test(dc.texte + (dc.question || '')));
+  // après l'affaire finale : le mur est élucidé, les archives du Palier zéro le confirment, la brume s'est levée
+  const fin = w.eval('PUZZLES').find(p => p.final);
+  setLetters(Object.keys(FR.pieces)); solve(w, fin);
+  w.grimGo('bureau'); await sleep(30);
+  while (story()) { d.querySelector('[data-close]').click(); await sleep(30); }
+  assert.equal(d.querySelector('.desk-brume'), null, 'brume levée');
+  w.grimGo('mur');
+  assert.equal(d.querySelectorAll('.mur-ded').length, Object.keys(FR.questions).length, 'toutes les questions déduites');
+  assert.ok(d.querySelector('.mur-arch'), 'confirmées au Palier zéro');
+  d.getElementById('murArchives').click();
+  for (let i = 0; i < FR.archives.length; i++) {
+    assert.ok(story().classList.contains('archive-story') && shown().includes(FR.archives[i].titre), 'archive ' + (i + 1));
+    (d.getElementById('archNext') || d.querySelector('[data-close]')).click();
+  }
+  assert.equal(story(), null, 'on remonte');
   assert.deepEqual(errors, []);
 });
 

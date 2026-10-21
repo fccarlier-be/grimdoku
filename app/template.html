@@ -1027,6 +1027,7 @@ html.plaques .tbtn.pen[aria-pressed="true"] { background: none; box-shadow: none
 .mur-pin.vide { background: transparent; box-shadow: none; border: 1px dashed rgba(255, 244, 220, .5); color: rgba(255, 244, 220, .7); text-align: center; }
 .mur-pin.vide::before { display: none; }
 .mur-ded { margin: 10px 0 0; padding: 8px 10px; border-left: 3px solid #a3201a; background: rgba(251, 243, 224, .92); color: #7a1a12; font: 400 17px/1.4 var(--f-hand); }
+.mur-arch { margin: 6px 0 0; padding: 6px 10px; background: rgba(40, 22, 8, .35); color: #fbeed3; font: 400 14px/1.35 var(--f-body); border-radius: 3px; }
 .mur-visites { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
 /* prologue et fil rouge */
 .story-img.map { height: 190px; background-size: contain; background-color: transparent; box-shadow: none; }
@@ -2355,6 +2356,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     $app.classList.remove('game');
     if (!murOpen()) return bureauPage();
     const got = letters(), n = got.length, q = murQuestion();
+    const solved = !!(FINAL && isSolved(FINAL)); // après l'affaire finale : chaque question est confirmée par une archive
     const notes = FR.declics.filter(d => d.lettres <= n).map(d => `<p>${esc(d.texte)}</p>`).join('');
     const secs = Object.entries(FR.questions).map(([k, Q]) => {
       const all = Object.entries(FR.pieces).filter(([, p]) => p.question === k), mine = all.filter(([pl]) => got.includes(pl));
@@ -2362,7 +2364,8 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
       const full = mine.length === all.length;
       return `<section class="mur-sec"><h3>${esc(Q.titre)} <small>${mine.length} / ${all.length}</small></h3>
         ${mine.map(([pl, p]) => `<div class="mur-pin"><small>${esc(placeTitle(pl))}</small>${esc(p.etiquette)}</div>`).join('')}
-        ${full ? `<p class="mur-ded">${esc(Q.deduction)}</p>` : `<div class="mur-pin vide">${all.length - mine.length} pièce${all.length - mine.length > 1 ? 's' : ''} à trouver</div>`}</section>`;
+        ${full ? `<p class="mur-ded">${esc(Q.deduction)}</p>` : `<div class="mur-pin vide">${all.length - mine.length} pièce${all.length - mine.length > 1 ? 's' : ''} à trouver</div>`}
+        ${solved ? (FR.archives || []).filter(a => a.repond.includes(k)).map(a => `<p class="mur-arch">Confirmé au Palier zéro : <b>${esc(a.titre)}</b></p>`).join('') : ''}</section>`;
     }).join('');
     const vues = FR.visites.filter(v => frSeen().includes('visite-' + v.lettres));
     $app.innerHTML = pageHead('Retour au bureau', "L'affaire de la Tour") + `
@@ -2370,10 +2373,11 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
         <h2 class="mur-q">${esc(q.question)}</h2>
         <div class="mur-notes">${notes}</div>
         <div class="mur-qs">${secs}</div>
-        ${vues.length ? `<div class="mur-visites">${vues.map(v => `<button class="btn" data-visite="${v.lettres}">Relire : ${esc(v.titre)}</button>`).join('')}</div>` : ''}
+        ${vues.length || solved ? `<div class="mur-visites">${vues.map(v => `<button class="btn" data-visite="${v.lettres}">Relire : ${esc(v.titre)}</button>`).join('')}${solved && (FR.archives || []).length ? '<button class="btn primary" id="murArchives">Les archives du Palier zéro</button>' : ''}</div>` : ''}
       </div></div>`;
     document.getElementById('back').onclick = () => go('bureau');
     $app.querySelectorAll('[data-visite]').forEach(b => b.onclick = () => visiteStory(FR.visites.find(v => v.lettres === +b.dataset.visite)));
+    const ar = document.getElementById('murArchives'); if (ar) ar.onclick = () => archivesStory(0);
   }
 
   const placeTitle = (place) => { const p = PUZZLES.find(q => q.place === place && !q.final); return p ? p.title.split(' — ')[0] : place; };
@@ -2466,7 +2470,19 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
       <p class="story-letter">${esc(R.billet)}</p>
       <p class="story-sign">— A.</p>
       <p class="story-count">${esc(R.apres)}</p>
-      <div class="row"><button class="btn primary" data-close>Fermer le dossier</button></div>`, 'letter-story billet-story');
+      <div class="row">${(FR.archives || []).length ? '<button class="btn primary" id="toArchives">Fouiller le Palier zéro</button><button class="btn" data-close>Fermer le dossier</button>' : '<button class="btn primary" data-close>Fermer le dossier</button>'}</div>`, 'letter-story billet-story');
+    const a = document.getElementById('toArchives'); if (a) a.onclick = () => archivesStory(0);
+  }
+  // les archives du Palier zéro (lore/fil-rouge.json, « archives »), après la révélation : elles confirment ce que le
+  // mur faisait deviner ; une à la fois, puis consultables depuis le mur
+  function archivesStory(i) {
+    const A = FR.archives[i], last = i === FR.archives.length - 1;
+    frMark('archives');
+    const ov = story(`<small class="story-from">Archives du Palier zéro · ${i + 1} / ${FR.archives.length}</small>
+      <h2>${esc(A.titre)}</h2><p class="story-text"><i>${esc(A.sous)}</i></p>
+      ${A.texte.split('\n').map(par => `<p class="story-letter">${esc(par)}</p>`).join('')}
+      <div class="row">${last ? '<button class="btn primary" data-close>Remonter</button>' : '<button class="btn primary" id="archNext">Archive suivante</button><button class="btn" data-close>Remonter</button>'}</div>`, 'letter-story archive-story');
+    const n = ov.querySelector('#archNext'); if (n) n.onclick = () => archivesStory(i + 1);
   }
   function letterStory(place) {
     const n = letters().length, total = Object.keys(LORE.letters).length;
