@@ -630,15 +630,46 @@ def quad_cells(img):
     return out
 
 
-PIECES_DIR = ROOT / 'pieces'  # pièces à conviction : planche-1..6.png (2×2, ordre de lore/pieces.json, puis la caisse)
+PIECES_DIR = ROOT / 'pieces'  # pièces à conviction : planche-1..6.png (2×2, ordre de lore/pieces.json, puis papier-2 du bureau)
 MUR_DIR = ROOT / 'mur'        # page du mur : tableau.png (liège encadré vide), papiers.png (note, carte, bande, punaise)
+
+
+# objets du bureau en vue zénithale (François, 2026-10-21 : maquette lore/bureau.png, objets posés à plat) : planches 2×2
+# générées dans Gemini, découpées en <objet>.webp (mêmes noms que les anciennes images, archivées dans desk/archives/)
+ZENITH = {'a': ['dossiers', 'lettres', 'carnet', 'enveloppe'], 'b': ['mur', 'jour', 'deco-1-loupe', 'deco-2-encrier'],
+          'c': ['deco-3-bougie', 'papier-1', 'papier-3', 'support-papier']}
+
+
+def zenith():
+    for sheet, names in ZENITH.items():
+        src = DESK_DIR / 'zenith' / f'planche-{sheet}.png'
+        if not src.exists():
+            continue
+        for name, img in zip(names, quad_cells(key_out_outside(Image.open(src)))):
+            img.thumbnail((640, 640), Image.LANCZOS)
+            img.save(DESK_DIR / f'{name}.webp', 'WEBP', quality=88, method=6)
+        print(f'bureau (vue du dessus) planche-{sheet} → {", ".join(names)}')
+
+
+PIECES_HALO = {'navire'}  # objets lumineux dont la lueur s'est mêlée au fond magenta
+
+
+def drop_pink(img):
+    # lueur rosée (halo d'un objet lumineux mêlé au fond magenta) : transparente
+    px = img.load()
+    for y in range(img.height):
+        for x in range(img.width):
+            r, g, b, a = px[x, y]
+            if a and r > g and b > g + 20:  # violet : magenta mêlé à une lueur
+                px[x, y] = (r, g, b, 0)
+    return img
 
 
 def pieces():
     import json
     if not PIECES_DIR.exists():
         return
-    names = list(json.loads((ROOT.parent / 'lore' / 'pieces.json').read_text())['pieces']) + ['caisse']
+    names = list(json.loads((ROOT.parent / 'lore' / 'pieces.json').read_text())['pieces']) + ['papier-2']
     sheets = sorted(PIECES_DIR.glob('planche-*.png'), key=lambda f: int(f.stem.split('-')[1]))
     for sheet in sheets:
         n = int(sheet.stem.split('-')[1])
@@ -647,8 +678,10 @@ def pieces():
             if k >= len(names):
                 break
             name = names[k]
-            img.thumbnail((520, 520) if name == 'caisse' else (256, 256), Image.LANCZOS)
-            out = (DESK_DIR if name == 'caisse' else PIECES_DIR) / f'{name}.webp'
+            if name in PIECES_HALO:
+                img = drop_pink(img)
+            img.thumbnail((520, 520) if name == 'papier-2' else (256, 256), Image.LANCZOS)
+            out = (DESK_DIR if name == 'papier-2' else PIECES_DIR) / f'{name}.webp'
             img.save(out, 'WEBP', quality=86, method=6)
         print(f'pièces à conviction {sheet.name} → {", ".join(names[(n - 1) * 4:n * 4])}')
 
@@ -686,6 +719,7 @@ def main():
     decors()
     carte()
     desk()
+    zenith()
     pieces()
     mur()
     icons()

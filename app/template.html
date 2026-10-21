@@ -1015,13 +1015,33 @@ html.plaques .tbtn.pen[aria-pressed="true"] { background: none; box-shadow: none
 .gazette { position: relative; display: block; aspect-ratio: 3 / 4; background: repeating-linear-gradient(#efe4cc 0 6px, #d8c9a8 6px 7px), #efe4cc; border: 2px solid #8a6a3e; border-radius: 2px; }
 .gazette::before { content: "Affaire du jour"; position: absolute; left: 6%; right: 6%; top: 6%; padding: 3px 0; background: #efe4cc; font: 400 clamp(10px, 1.1vw, 15px)/1.1 var(--f-display); color: #3b2a18; text-align: center; border-bottom: 2px solid #3b2a18; }
 /* gazette illustrée : le titre est écrit dans le bandeau vide du haut de la feuille */
-.desk-item.dk-jour:has(> img)::after { content: "Affaire du jour"; position: absolute; left: 30%; top: 12%; width: 58%; transform: rotate(11deg); font: 400 clamp(6px, .62vw, 11px)/1 var(--f-display); white-space: nowrap; color: #3b2a18; text-align: center; pointer-events: none; }
+.desk-item.dk-jour:has(> img)::after { content: "Affaire du jour"; position: absolute; left: 16%; top: 6.5%; width: 68%; transform: none; font: 400 clamp(8px, 1.15vw, 18px)/1 var(--f-display); white-space: nowrap; color: #3b2a18; text-align: center; pointer-events: none; }
 .desk-item.dk-jour:has(> img) .newmark { top: 50%; right: 40%; }
 @media (max-aspect-ratio: 1/1) { .desk-item.dk-jour:has(> img)::after { font-size: clamp(7px, 2.3vw, 11px); } }
 @media (max-aspect-ratio: 1/1) { .desk-item.dk-jour { grid-area: bc; transform: rotate(3deg); } .bureau:has(.dk-jour) .desk-deco.s1 { display: none; } }
 .desk-piece { position: absolute; z-index: 3; pointer-events: none; height: auto; filter: drop-shadow(3px 4px 2px rgba(0, 0, 0, .45)) drop-shadow(10px 14px 12px rgba(0, 0, 0, .4)); }
 /*__PIECES__*/
 @media (max-aspect-ratio: 1/1) { .desk-piece { display: none; } }
+/* disposition du bureau d'après la maquette de François (lore/bureau.png, 2026-10-21) : vue du dessus, objets à plat,
+   moins symétrique ; ordinateur seulement (le téléphone garde sa grille) */
+@media (min-aspect-ratio: 1/1) {
+  .desk-deco.s2 { left: -20%; top: -4%; right: auto; bottom: auto; width: 11%; transform: rotate(0deg); }
+  .desk-deco.s1 { left: 99%; top: -2%; right: auto; bottom: auto; width: 12%; transform: rotate(0deg); }
+  .desk-deco.s0 { left: 69%; top: 88%; right: auto; bottom: auto; width: 17%; transform: rotate(-90deg); }
+  .desk-paper.img.p0 { left: -22%; top: 13%; right: auto; bottom: auto; width: 25%; transform: rotate(-5deg); }
+  .desk-paper.img.p1 { left: 97%; top: 30%; right: auto; bottom: auto; width: 14%; transform: rotate(6deg); }
+  .desk-paper.img.p2 { left: 32%; top: -11.5%; right: auto; bottom: auto; width: 24%; transform: rotate(5deg); }
+  .desk-photo.ph1 { left: 13.8%; top: -10.8%; right: auto; bottom: auto; width: 15.6%; transform: rotate(-3deg); }
+  .desk-photo.ph0 { left: 75%; top: -10%; right: auto; bottom: auto; width: 18%; transform: rotate(8deg); }
+  .desk-item.dk-dossiers { left: -20.6%; top: 81%; right: auto; bottom: auto; width: 25%; transform: rotate(-8deg); }
+  .desk-item.dk-lettres { left: -18%; top: 35.7%; right: auto; bottom: auto; width: 22%; transform: rotate(-6deg); }
+  .desk-item.dk-carnet { left: 101%; top: 83%; right: auto; bottom: auto; width: 17%; transform: rotate(10deg); }
+  .desk-item.dk-enveloppe { left: 100%; top: 63%; right: auto; bottom: auto; width: 16%; transform: rotate(-8deg); }
+  .desk-item.dk-mur { left: 98%; top: 16%; right: auto; bottom: auto; width: 21.6%; transform: rotate(3deg); }
+  .desk-item.dk-jour { left: 94%; top: 43%; right: auto; bottom: auto; width: 21.6%; transform: rotate(8deg); }
+}
+.desk-photo.img { aspect-ratio: 378 / 271; }
+.desk-photo.img span { left: 9%; right: 9%; top: 14%; bottom: 9%; }
 /* page du mur illustrée : cadre et liège en border-image (liège raccordable répété à sa taille : étiré, il se déformait), papiers vierges, punaises */
 .mur-img .mur-board { border-style: solid; border-width: 38px; border-radius: 0; border-image: var(--mur-tableau) 46 / 38px stretch; background: var(--mur-liege) 0 0 / 409px auto repeat; box-shadow: none; filter: drop-shadow(0 12px 18px rgba(0, 0, 0, .5)); }
 .mur-img .mur-notes, .mur-img .mur-pin:not(.vide) { background: var(--mur-carte) center / 100% 100% no-repeat; box-shadow: none; filter: drop-shadow(1px 3px 3px rgba(0, 0, 0, .45)); }
