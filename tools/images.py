@@ -662,12 +662,17 @@ def mur():
         img = img.crop(img.getchannel('A').point(lambda v: 255 if v > 24 else 0).getbbox())
         img.thumbnail((1400, 1400), Image.LANCZOS)
         img.save(MUR_DIR / 'tableau.webp', 'WEBP', quality=86, method=6)
+        # liège seul, raccordable, répété au centre du tableau à sa taille d'origine (étiré, il se déformait)
+        src_img = Image.open(src).convert('RGB')
+        w, h = src_img.size
+        cork = src_img.crop((w * 3 // 10, h // 4, w * 7 // 10, h * 3 // 4))
+        seamless(cork).save(MUR_DIR / 'liege.webp', 'WEBP', quality=86, method=6)
     src = MUR_DIR / 'papiers.png'
     if src.exists():
         for name, img in zip(['note', 'carte', 'bande', 'punaise'], quad_cells(key_out_outside(Image.open(src)))):
             img.thumbnail((96, 96) if name == 'punaise' else (640, 640), Image.LANCZOS)
             img.save(MUR_DIR / f'{name}.webp', 'WEBP', quality=86, method=6)
-    print('mur : tableau, note, carte, bande, punaise')
+    print('mur : tableau, liège, note, carte, bande, punaise')
 
 
 def main():

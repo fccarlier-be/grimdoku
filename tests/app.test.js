@@ -641,25 +641,22 @@ test('carnet : les découvertes se débloquent au fil des rencontres, signalées
   assert.deepEqual(errors, []);
 });
 
-test('pièces à conviction : une par lieu terminé, dans la caisse du bureau', () => {
+test('pièces à conviction : un souvenir par lieu terminé, posé sur le bureau, pas cliquable', () => {
   const { w, d, errors } = open({ settings: { tuto: { choisir: true } } });
   const ALL = w.eval('PUZZLES'), chateau = ALL.filter(p => p.place === 'chateau' && !p.off && !p.final);
+  const solve = (p) => w.localStorage.setItem('grimdoku:p:' + p.id, JSON.stringify({ pos: p.solution.positions, pencil: {}, marks: [], done: [], solved: true, sig: sigOf(p) }));
+  const img = w.eval('MEDIA').pieces.includes('chateau'); // images absentes du PC de test : seule la logique compte alors
   w.grimGo('bureau');
-  assert.equal(d.getElementById('deskCaisse'), null, 'pas de caisse avant le premier lieu terminé');
-  for (const p of chateau.slice(0, -1)) w.localStorage.setItem('grimdoku:p:' + p.id, JSON.stringify({ pos: p.solution.positions, pencil: {}, marks: [], done: [], solved: true, sig: sigOf(p) }));
+  assert.equal(JSON.stringify(w.grimPieces()), '[]', 'rien au départ');
+  assert.equal(d.querySelectorAll('.desk-piece').length, 0);
+  chateau.slice(0, -1).forEach(solve);
+  assert.equal(JSON.stringify(w.grimPieces()), '[]', 'lieu pas encore terminé');
+  solve(chateau[chateau.length - 1]);
+  assert.equal(JSON.stringify(w.grimPieces()), '["chateau"]', 'le souvenir du château est gagné');
   w.grimGo('bureau');
-  assert.equal(d.getElementById('deskCaisse'), null, 'lieu pas encore terminé');
-  const last = chateau[chateau.length - 1];
-  w.localStorage.setItem('grimdoku:p:' + last.id, JSON.stringify({ pos: last.solution.positions, pencil: {}, marks: [], done: [], solved: true, sig: sigOf(last) }));
-  w.grimGo('bureau');
-  assert.ok(d.querySelector('#deskCaisse .newmark'), 'la caisse apparaît, avec une pièce nouvelle');
-  d.getElementById('deskCaisse').click();
-  assert.match(w.location.hash, /#\/pieces$/);
-  const txt = d.getElementById('app').textContent;
-  assert.ok(txt.includes('Le gobelet ébréché du roi') && txt.includes('1 / 23'), 'la pièce du château, sur 23');
-  assert.equal(d.querySelectorAll('.piece-slot:not(.vide)').length, 1);
-  w.grimGo('bureau');
-  assert.equal(d.querySelector('#deskCaisse .newmark'), null, 'vue : plus de signal');
+  const pc = d.querySelectorAll('.desk-piece');
+  assert.equal(pc.length, img ? 1 : 0, 'posé sur le bureau (si son image existe)');
+  if (img) assert.ok(pc[0].classList.contains('pc-chateau') && !pc[0].closest('button, a'), 'décor seulement, ni bouton ni lien');
   assert.deepEqual(errors, []);
 });
 

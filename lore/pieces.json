@@ -1,28 +1,235 @@
 {
-  "_doc": "Pièces à conviction (phase 3, bureau qui évolue) : une par lieu, déposée dans la caisse du bureau quand toutes les enquêtes du lieu sont résolues (placeDone). « image » = description pour Gemini (assets/desk/pieces/<lieu>.webp). Jamais d'indice sur un coupable. À valider par François.",
+  "_doc": "Pièces à conviction (phase 3, bureau qui évolue ; François, 2026-10-21) : un souvenir par lieu terminé (placeDone), posé directement sur le bureau, sans lien avec une enquête, ni cliquable. « place » = [gauche, haut, largeur] en % de la carte et angle en degrés (CSS écrit par build-app.js). « image » = description pour Gemini (planches 2×2 assets/pieces/planche-N.png, découpées par tools/images.py pieces).",
   "pieces": {
-    "chateau": { "nom": "Le gobelet ébréché du roi", "note": "Dagobert m'a prié de le garder « à titre de preuve ». Je crois surtout qu'il ne voulait plus boire dedans.", "image": "a chipped royal silver goblet" },
-    "taverne": { "nom": "La chope cabossée", "note": "Chope du Sanglier Borgne. Aagrid jure qu'elle était neuve ce matin-là. Aagrid jure beaucoup.", "image": "a dented pewter tavern tankard" },
-    "moulin": { "nom": "Un sac de farine", "note": "Il contient de la farine : j'ai vérifié. C'est le seul objet du moulin dont je puisse en dire autant.", "image": "a small tied burlap sack of flour" },
-    "tour": { "nom": "Le sablier qui remonte", "note": "Le sable y remonte au lieu de descendre. Fizzlebarbe dit que c'est normal. Fizzlebarbe dit beaucoup de choses.", "image": "an ornate hourglass with glowing blue sand" },
-    "foire": { "nom": "Une balle de jongleur", "note": "Elle retombe toujours, mais rarement là où on l'attend. Comme les témoignages de la Foire.", "image": "a striped juggling ball with little stars" },
-    "marais": { "nom": "Le témoin en bocal", "note": "Une grenouille du marais. Elle a tout vu. Elle n'a rien voulu dire.", "image": "a glass jar with a grumpy green frog inside" },
-    "bibliotheque": { "nom": "Le livre enchaîné", "note": "Je ne l'ai pas ouvert. Lui a essayé.", "image": "a thick old book bound shut with an iron chain and padlock" },
-    "mine": { "nom": "Une lampe de nain", "note": "Encore tiède. Elle éclaire très bien les choses qu'on préférerait ne pas voir.", "image": "a small dwarven miner's oil lamp" },
-    "navire": { "nom": "La lanterne de proue", "note": "Elle s'allume seule à minuit. Je l'ai rangée au fond de la caisse ; elle s'allume quand même.", "image": "a ship lantern glowing with an eerie green light" },
-    "academie": { "nom": "Une baguette cassée", "note": "Baguette d'élève, cassée net. Elle crache encore des étincelles quand on prononce le mot « examen ».", "image": "a broken wooden magic wand in two pieces with a few sparks" },
-    "banquet": { "nom": "Un pilon entamé", "note": "Rescapé du Banquet des Gobelins. Le seul convive qui ne m'ait pas menti.", "image": "a gnawed roast drumstick bone" },
-    "cimetiere": { "nom": "La clochette de cercueil", "note": "On l'attache au doigt des défunts, au cas où. Elle a sonné une fois pendant l'enquête. Je préfère ne pas savoir pourquoi.", "image": "a small brass coffin bell on a short cord" },
-    "bal": { "nom": "Un masque oublié", "note": "Personne n'est venu le réclamer : il aurait fallu avouer qu'on était au bal.", "image": "an elegant venetian masquerade mask with feathers" },
-    "ferme": { "nom": "La fourche tordue", "note": "Elle était droite quand je suis arrivé à la ferme. Je n'y ai pas touché.", "image": "a short bent pitchfork" },
-    "port": { "nom": "La fausse longue-vue", "note": "Une cachette à tabac de contrebandier. Je l'ai découvert en regardant au travers.", "image": "a brass spyglass with a little tobacco spilling out" },
-    "forge": { "nom": "Une écaille de dragon", "note": "Elle chauffe encore. Les nuits d'hiver, je pose mon encrier dessus.", "image": "a single large glowing red dragon scale" },
-    "palais": { "nom": "La lampe aux vœux", "note": "Je ne l'ai pas frottée. On ne m'a pas dit combien coûte un vœu, et je connais le trésorier.", "image": "an ornate golden oriental oil lamp" },
-    "thermes": { "nom": "L'éponge pétrifiée", "note": "Changée en pierre par une eau trop enchantée. On ne s'en sert plus : on la regarde.", "image": "a sea sponge turned to grey stone" },
-    "citadelle": { "nom": "La clé sans porte", "note": "Une clé de la Citadelle, grande comme un avant-bras. Personne ne sait ce qu'elle ouvre ; on me l'a confiée pour que ce soit mon problème.", "image": "a huge ornate iron key" },
-    "grand-port": { "nom": "Le sceau de douane", "note": "Il tamponne « inspecté » sur tout ce qu'on lui présente. Le port n'a jamais été aussi bien inspecté.", "image": "a wooden-handled customs stamp with a lead seal" },
-    "universite": { "nom": "Un diplôme en blanc", "note": "On m'a assuré que c'était l'usage, à l'Université : on remplit le nom après l'examen, ou à la place.", "image": "a rolled parchment diploma tied with a red ribbon" },
-    "grande-foire": { "nom": "Le cheval de manège", "note": "Un cheval de bois du grand manège. Il a continué de tourner trois jours après la fermeture.", "image": "a small painted wooden carousel horse on a brass pole" },
-    "grands-bains": { "nom": "Un canard de bois", "note": "Il flotte, ce qu'on ne peut pas dire de tout le monde aux Grands Bains.", "image": "a carved wooden bath duck" }
+    "chateau": {
+      "nom": "Le gobelet ébréché du roi",
+      "image": "a chipped royal silver goblet",
+      "place": [
+        9,
+        95,
+        5,
+        -8
+      ]
+    },
+    "taverne": {
+      "nom": "La chope cabossée",
+      "image": "a dented pewter tavern tankard",
+      "place": [
+        19,
+        100,
+        6,
+        10
+      ]
+    },
+    "moulin": {
+      "nom": "Un sac de farine",
+      "image": "a small tied burlap sack of flour",
+      "place": [
+        36,
+        97,
+        6,
+        -5
+      ]
+    },
+    "tour": {
+      "nom": "Le sablier qui remonte",
+      "image": "an ornate hourglass with glowing blue sand",
+      "place": [
+        2,
+        3,
+        4,
+        -6
+      ]
+    },
+    "foire": {
+      "nom": "Une balle de jongleur",
+      "image": "a striped juggling ball with little stars",
+      "place": [
+        50,
+        98,
+        4,
+        0
+      ]
+    },
+    "marais": {
+      "nom": "Le témoin en bocal",
+      "image": "a glass jar with a grumpy green frog inside",
+      "place": [
+        60,
+        97,
+        5,
+        6
+      ]
+    },
+    "bibliotheque": {
+      "nom": "Le livre enchaîné",
+      "image": "a thick old book bound shut with an iron chain and padlock",
+      "place": [
+        -21,
+        38,
+        8,
+        -10
+      ]
+    },
+    "mine": {
+      "nom": "Une lampe de nain",
+      "image": "a small dwarven miner's oil lamp",
+      "place": [
+        -19,
+        65,
+        5,
+        6
+      ]
+    },
+    "navire": {
+      "nom": "La lanterne de proue",
+      "image": "a ship lantern glowing with an eerie green light",
+      "place": [
+        -20,
+        16,
+        5,
+        -4
+      ]
+    },
+    "academie": {
+      "nom": "Une baguette cassée",
+      "image": "a broken wooden magic wand in two pieces with a few sparks",
+      "place": [
+        54,
+        -10,
+        8,
+        30
+      ]
+    },
+    "banquet": {
+      "nom": "Un pilon entamé",
+      "image": "a gnawed roast drumstick bone",
+      "place": [
+        67,
+        -11,
+        5,
+        -10
+      ]
+    },
+    "cimetiere": {
+      "nom": "La clochette de cercueil",
+      "image": "a small brass coffin bell on a short cord",
+      "place": [
+        113,
+        -1,
+        4,
+        10
+      ]
+    },
+    "bal": {
+      "nom": "Un masque oublié",
+      "image": "an elegant venetian masquerade mask with feathers",
+      "place": [
+        6,
+        -9,
+        7,
+        -12
+      ]
+    },
+    "ferme": {
+      "nom": "La fourche tordue",
+      "image": "a short bent pitchfork",
+      "place": [
+        100,
+        71,
+        10,
+        -10
+      ]
+    },
+    "port": {
+      "nom": "La fausse longue-vue",
+      "image": "a brass spyglass with a little tobacco spilling out",
+      "place": [
+        -21,
+        96,
+        7,
+        20
+      ]
+    },
+    "forge": {
+      "nom": "Une écaille de dragon",
+      "image": "a single large glowing red dragon scale",
+      "place": [
+        112,
+        38,
+        4,
+        20
+      ]
+    },
+    "palais": {
+      "nom": "La lampe aux vœux",
+      "image": "an ornate golden oriental oil lamp",
+      "place": [
+        -11,
+        59,
+        7,
+        0
+      ]
+    },
+    "thermes": {
+      "nom": "L'éponge pétrifiée",
+      "image": "a sea sponge turned to grey stone",
+      "place": [
+        112,
+        68,
+        4,
+        0
+      ]
+    },
+    "citadelle": {
+      "nom": "La clé sans porte",
+      "image": "a huge ornate iron key",
+      "place": [
+        -22,
+        85,
+        9,
+        -75
+      ]
+    },
+    "grand-port": {
+      "nom": "Le sceau de douane",
+      "image": "a wooden-handled customs stamp with a lead seal",
+      "place": [
+        28,
+        100,
+        4,
+        12
+      ]
+    },
+    "universite": {
+      "nom": "Un diplôme en blanc",
+      "image": "a rolled parchment diploma tied with a red ribbon",
+      "place": [
+        74,
+        -8,
+        7,
+        8
+      ]
+    },
+    "grande-foire": {
+      "nom": "Le cheval de manège",
+      "image": "a small painted wooden carousel horse on a brass pole",
+      "place": [
+        113,
+        52,
+        4,
+        0
+      ]
+    },
+    "grands-bains": {
+      "nom": "Un canard de bois",
+      "image": "a carved wooden bath duck",
+      "place": [
+        94,
+        101,
+        4,
+        -10
+      ]
+    }
   }
 }

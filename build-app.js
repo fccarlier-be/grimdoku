@@ -145,14 +145,14 @@ for (let d = 0; d <= 5; d++) {
   if (fs.existsSync(f)) { copyMedia(f, `niveau-${d}.webp`); media.levels[d] = `media/niveau-${d}.webp`; } else missing.push('vignette niveau ' + d);
 }
 // objets du bureau de l'enquêteur (assets/desk/<objet>.webp, préparés par tools/images.py) : sans image, dessin CSS
-for (const obj of ['dossiers', 'lettres', 'carnet', 'enveloppe', 'mur', 'jour', 'piece', 'caisse', 'papier-1', 'papier-2', 'papier-3', 'support-papier', 'clou-fer', 'clou-laiton', 'clou-rouille', 'clou-tete', 'corde-rouge', 'bouton-retour', 'bouton-son', 'bouton-muet', 'bouton-aide', 'bouton-options', 'bouton-principal', 'bouton-secondaire', 'outil-indice', 'outil-crayon', 'outil-annuler', 'outil-effacer']) {
+for (const obj of ['dossiers', 'lettres', 'carnet', 'enveloppe', 'mur', 'jour', 'piece', 'papier-1', 'papier-2', 'papier-3', 'support-papier', 'clou-fer', 'clou-laiton', 'clou-rouille', 'clou-tete', 'corde-rouge', 'bouton-retour', 'bouton-son', 'bouton-muet', 'bouton-aide', 'bouton-options', 'bouton-principal', 'bouton-secondaire', 'outil-indice', 'outil-crayon', 'outil-annuler', 'outil-effacer']) {
   const f = `assets/desk/${obj}.webp`;
   if (fs.existsSync(f)) { copyMedia(f, `desk-${obj}.webp`); media.desk[obj] = `media/desk-${obj}.webp`; }
 }
 const PIECES = JSON.parse(fs.readFileSync('lore/pieces.json', 'utf8')).pieces; // pièces à conviction (phase 3)
 // page du mur (assets/mur/<élément>.webp : tableau de liège encadré, papiers vierges, punaise) et pièces à conviction
 // (assets/pieces/<lieu>.webp), préparés par tools/images.py ; sans image, dessin CSS ou nom seul
-for (const k of ['tableau', 'note', 'carte', 'bande', 'punaise']) {
+for (const k of ['tableau', 'liege', 'note', 'carte', 'bande', 'punaise']) {
   const f = `assets/mur/${k}.webp`;
   if (fs.existsSync(f)) { copyMedia(f, `mur-${k}.webp`); media.mur[k] = `media/mur-${k}.webp`; }
 }
@@ -261,7 +261,9 @@ const out = t.replace('/*__ENGINE__*/', () => engine)
   .replace('/*__LORE__*/', () => JSON.stringify(lore))
   .replace('<!--__SPRITE__-->', () => sprite)
   .replace('<!--__ICONS__-->', () => iconTags)
-  .replace('/*__FLOORS__*/', () => floorCss.join('\n'));
+  .replace('/*__FLOORS__*/', () => floorCss.join('\n'))
+  // place de chaque pièce à conviction sur le bureau : [gauche, haut, largeur] en % de la carte, angle en degrés
+  .replace('/*__PIECES__*/', () => Object.entries(PIECES).filter(([, p]) => p.place).map(([pl, p]) => `.desk-piece.pc-${pl} { left: ${p.place[0]}%; top: ${p.place[1]}%; width: ${p.place[2]}%; transform: rotate(${p.place[3]}deg); }`).join('\n'));
 fs.mkdirSync('dist', { recursive: true });
 fs.writeFileSync('dist/grimdoku.html', out);
 console.log('dist/grimdoku.html', out.length, 'octets,', symbols.length, 'dessins, dont', objImages, 'objet(s) et', images, 'portrait(s) illustrés');
