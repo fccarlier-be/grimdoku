@@ -1000,6 +1000,10 @@ html.plaques .tbtn.pen[aria-pressed="true"] { background: none; box-shadow: none
 }
 /* le mur de l'affaire de la Tour (phase 2) : un tableau de liège sur le bureau, et sa page */
 .desk-item.dk-mur { width: 15%; right: -15%; top: 17%; transform: rotate(4deg); }
+.desk-item.dk-jour { width: 12%; left: 44%; bottom: -14%; transform: rotate(-4deg); }
+.gazette { position: relative; display: block; aspect-ratio: 3 / 4; background: repeating-linear-gradient(#efe4cc 0 6px, #d8c9a8 6px 7px), #efe4cc; border: 2px solid #8a6a3e; border-radius: 2px; }
+.gazette::before { content: "Affaire du jour"; position: absolute; left: 6%; right: 6%; top: 6%; padding: 3px 0; background: #efe4cc; font: 400 clamp(10px, 1.1vw, 15px)/1.1 var(--f-display); color: #3b2a18; text-align: center; border-bottom: 2px solid #3b2a18; }
+@media (max-aspect-ratio: 1/1) { .desk-item.dk-jour { grid-area: bc; transform: rotate(3deg); } .bureau:has(.dk-jour) .desk-deco.s1 { display: none; } }
 .liege { position: relative; display: block; aspect-ratio: 4 / 3; border-radius: 3px; border: 5px solid #6b4423;
   background: radial-gradient(circle at 30% 30%, #c99a63, #a87a48 70%); box-sizing: border-box; }
 .liege::before, .liege::after { content: ""; position: absolute; background: #f3e6c8; box-shadow: 1px 2px 2px rgba(0, 0, 0, .35); }
@@ -1245,6 +1249,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
         ${item(`dk-lettres ${nu ? 'unread' : ''}`, 'deskLettres', `Lettres anonymes (${nl})`, img('lettres', 'liasse'), nu ? `<span class="newmark" aria-label="${nu} non lue${nu > 1 ? 's' : ''}"></span>` : '')}
         ${item('dk-carnet', 'deskCarnet', "Carnet d'enquête", img('carnet', 'cuir'), newDecouvertes().length ? `<span class="newmark" aria-label="nouvelles découvertes"></span>` : '')}
         ${murOpen() ? item('dk-mur', 'deskMur', "L'affaire de la Tour", img('mur', 'liege')) : ''}
+        ${dailyCase() ? item('dk-jour', 'deskJour', `L'affaire du jour${jour().serie ? ` · série : ${jour().serie}` : ''}`, img('jour', 'gazette'), isSolved(dailyCase()) ? '' : '<span class="newmark" aria-label="affaire du jour à résoudre"></span>') : ''}
         ${fin ? item(`dk-enveloppe ${isSolved(FINAL) ? '' : 'fresh'}`, 'deskFinal', 'Une enveloppe scellée', img('enveloppe', 'env')) : ''}
         <span class="desk-glow" aria-hidden="true"></span>
        </div>
@@ -1258,6 +1263,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     document.getElementById('deskLettres').onclick = () => pendingLetters().length ? openLetter(pendingLetters()[0]) : go('lettres');
     document.getElementById('deskCarnet').onclick = () => go('carnet');
     const mur = document.getElementById('deskMur'); if (mur) mur.onclick = () => go('mur');
+    const dj = document.getElementById('deskJour'); if (dj) dj.onclick = () => { caseBack = 'bureau'; go('affaire/' + dailyCase().id); };
     setTimeout(filRougeNext, 0); // une visite ou un déclic dû : au retour au bureau
     const f = document.getElementById('deskFinal'); if (f) f.onclick = () => { caseBack = 'bureau'; go('affaire/' + FINAL.id); };
     // l'encrier : le registre de Brumeval (inscription, ou sa sauvegarde une fois inscrit)
@@ -1271,7 +1277,10 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     $app.innerHTML = pageHead('Retour au bureau', 'Dossiers') + `
       ${started.length ? `<section class="carnet-sec"><h2>En cours <small>${started.length}</small></h2><div class="cases">${started.map(caseHtml).join('')}</div></section>` : ''}
       <section class="carnet-sec"><h2>Classés <small>${solved.length} / ${CASES.length}</small></h2>
-        ${solved.length ? `<div class="cases">${solved.map(caseHtml).join('')}</div>` : '<p class="lead">Aucun dossier classé pour l\'instant. Le château attend.</p>'}</section>`;
+        ${solved.length ? `<div class="cases">${solved.map(caseHtml).join('')}</div>` : '<p class="lead">Aucun dossier classé pour l\'instant. Le château attend.</p>'}</section>
+      ${archivesOpen() ? `<section class="carnet-sec"><h2>Archives non classées <small>${OFF.filter(isSolved).length} / ${OFF.length}</small></h2>
+        <p class="lead">Des affaires que personne n'avait jugées dignes d'un dossier. Maintenant que la Tour a livré ses secrets, il reste du temps pour elles.</p>
+        <div class="cases">${OFF.map(caseHtml).join('')}</div></section>` : ''}`;
     document.getElementById('back').onclick = () => go('bureau');
     document.getElementById('rulesBtn').onclick = rules;
     $app.querySelectorAll('.case').forEach(b => b.onclick = () => { caseBack = 'dossiers'; go('affaire/' + b.dataset.id); });
@@ -1625,7 +1634,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     else if (page === 'mur') murPage();
     else if (page === 'lieu' && placeCases(arg).length && unlockedPlaces().has(arg)) lieuPage(arg);
     else if (page === 'affaire' && FINAL && arg === FINAL.id && !finalUnlocked()) bureauPage(); // pas encore arrivée
-    else if (page === 'affaire' && PUZZLES.some(p => p.id === arg && !p.off)) open(arg);
+    else if (page === 'affaire' && playable(arg)) open(arg);
     else home();
     window.scrollTo(0, 0);
   }
@@ -1945,7 +1954,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
   }
 
   function bind() {
-    document.getElementById('back').onclick = () => go(P.final ? 'bureau' : caseBack === 'dossiers' ? 'dossiers' : 'lieu/' + P.place);
+    document.getElementById('back').onclick = () => go(P.final || caseBack === 'bureau' ? 'bureau' : caseBack === 'dossiers' ? 'dossiers' : P.off ? 'bureau' : 'lieu/' + P.place);
     document.getElementById('rulesBtn').onclick = rules;
     document.getElementById('opts').onclick = options;
     document.getElementById('introBtn').onclick = introSheet;
@@ -2326,6 +2335,7 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
     }
     S.rank = rankOf(P); // l'intro garde l'ouverture sous laquelle l'affaire a été résolue
     S.solved = true; selected = null; save();
+    if ((dailyCase() || {}).id === P.id) dailySolved();
     stat('resolue', P, Math.round((S.play || 0) / 1000));
     render.newLetter = pendingLetter(P.place) ? P.place : null; // glissée sous la porte : à ouvrir
     render.newPlaces = [];
@@ -2362,6 +2372,29 @@ if (MEDIA.desk && MEDIA.desk['bouton-principal'] && MEDIA.desk['bouton-secondair
       btn.classList.add('opening');
       if (calm) letterStory(pl); else setTimeout(() => letterStory(pl), 1400);
     };
+  }
+
+  // ---------- l'affaire du jour et les archives non classées (phase 4 de la roadmap) ----------
+  // Les grilles désactivées (off, lore/actives.json) servent d'affaire du jour : la même pour tous à une date (tirage
+  // déterministe sur la date locale), dès la première lettre reçue ; une série compte les jours consécutifs résolus
+  // (grimdoku:jour). Après l'affaire finale, toutes deviennent jouables dans les dossiers : les archives non classées.
+  const OFF = PUZZLES.filter(p => p.off && !p.final);
+  const dayKeyOf = (d) => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+  const today = () => dayKeyOf(new Date());
+  const yesterday = () => dayKeyOf(new Date(Date.now() - 864e5));
+  const dayHash = (k) => [...k].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7);
+  const dailyOpen = () => OFF.length > 0 && letters().length >= 1;
+  const dailyCase = () => (dailyOpen() ? OFF[dayHash(today()) % OFF.length] : null);
+  const jour = () => store.get('jour', { serie: 0, last: null });
+  const archivesOpen = () => !!(FINAL && isSolved(FINAL));
+  const playable = (id) => { const p = PUZZLES.find(q => q.id === id); return !!p && (!p.off || archivesOpen() || (dailyCase() || {}).id === id); }; // la finale : déblocage vérifié avant
+  window.grimJour = { dailyCase, yesterday }; // tests
+  function dailySolved() { // à la résolution : la série du jour
+    const j = jour();
+    if (j.last === today()) return;
+    j.serie = j.last === yesterday() ? j.serie + 1 : 1; j.last = today();
+    store.set('jour', j);
+    setTimeout(() => toast(`Affaire du jour classée. Série : ${j.serie} jour${j.serie > 1 ? 's' : ''} d'affilée.`), 600);
   }
 
   // ---------- le fil rouge pendant le jeu (phase 2 de la roadmap) ----------

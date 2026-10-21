@@ -639,6 +639,39 @@ test('carnet : les découvertes se débloquent au fil des rencontres, signalées
   assert.deepEqual(errors, []);
 });
 
+test('affaire du jour (grille désactivée, même pour tous à une date, série) ; archives non classées après la finale', () => {
+  const { w, d, errors } = open({ settings: { tuto: { choisir: true } } });
+  const ALL = w.eval('PUZZLES'), OFF = ALL.filter(p => p.off && !p.final), fin = ALL.find(p => p.final);
+  w.grimGo('bureau');
+  assert.equal(d.getElementById('deskJour'), null, 'pas avant la première lettre');
+  w.localStorage.setItem('grimdoku:lettres', JSON.stringify(['chateau']));
+  w.grimGo('bureau');
+  assert.ok(d.querySelector('#deskJour .newmark'), 'l\'affaire du jour attend sur le bureau');
+  d.getElementById('deskJour').click();
+  const id = w.location.hash.split('/').pop(), p = OFF.find(q => q.id === id);
+  assert.ok(p, 'une grille désactivée, ouverte');
+  assert.equal(w.grimJour.dailyCase().id, id, 'la même pour tous ce jour-là');
+  d.querySelector('[data-close]')?.click();
+  // résolue : la série commence (hier déjà résolue : elle continue)
+  const y = w.grimJour.yesterday();
+  w.localStorage.setItem('grimdoku:jour', JSON.stringify({ serie: 4, last: y }));
+  w.localStorage.setItem('grimdoku:p:' + id, JSON.stringify({ pos: p.solution.positions, pencil: {}, marks: [], done: [], solved: false, sig: sigOf(p) }));
+  w.grimGo('bureau'); d.getElementById('deskJour').click(); d.querySelector('[data-close]')?.click();
+  d.getElementById('accuse').click();
+  assert.equal(JSON.parse(w.localStorage.getItem('grimdoku:jour')).serie, 5, 'série prolongée');
+  // une autre grille désactivée : pas jouable avant la finale ; après, dans les archives
+  const other = OFF.find(q => q.id !== id);
+  w.grimGo('affaire/' + other.id);
+  assert.ok(!w.location.hash.includes(other.id) || !d.getElementById('board'), 'pas jouable avant la finale');
+  solve(w, fin);
+  w.grimGo('dossiers');
+  assert.match(d.getElementById('app').textContent, /Archives non classées/);
+  assert.equal(d.querySelectorAll('.case').length >= OFF.length, true, 'toutes listées');
+  w.grimGo('affaire/' + other.id);
+  assert.ok(d.getElementById('board'), 'jouable après la finale');
+  assert.deepEqual(errors, []);
+});
+
 test('conseils de l\'enquêteur : un à la fois, « pourquoi » pendant la première enquête, plus ensuite', async () => {
   const { w, d, pick, hold, openCase, errors, PUZZLES } = open();
   const p = PUZZLES.find(q => q.place === 'chateau' && !q.characters.some(c => c.shape));
