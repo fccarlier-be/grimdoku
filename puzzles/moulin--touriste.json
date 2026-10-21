@@ -189,8 +189,8 @@
   "id": "moulin--touriste",
   "place": "moulin",
   "intro": "Au Moulin de Bois-Tordu, le touriste Gaston, venu visiter la baronnie, a fini plus plat qu'une galette. Cinq voisins traînaient dans le coin. L'un d'eux était seul avec lui. Le meunier m'a proposé de peser les suspects. J'ai refusé.",
-  "introBody": "Le touriste Gaston dessinait les curiosités de la baronnie pour les vendre à la foire, et au moulin, il n'a pas manqué de modèles. On l'a retrouvé sous la meule, son fusain à la main. Son dernier dessin n'est pas fini.",
-  "epilogue": "— Racontez-moi, pour Gaston.\n— Il voulait me dessiner pour la foire : « Le zombie du moulin ». Je me suis énervé, j'ai perdu une oreille.\n— Et lui ?\n— Il s'est glissé sous la meule pour la ramasser. Il tenait à un modèle complet. Moi, j'ai remis la meule en marche.",
+  "introBody": "Le touriste Gaston dessinait les curiosités de la baronnie pour les vendre à la foire, et au moulin, il n'a pas manqué de modèles. On l'a retrouvé aplati, son fusain à la main. Son dernier dessin n'est pas fini.",
+  "epilogue": "— Racontez-moi, pour Gaston.\n— Il voulait me dessiner pour la foire : « Le zombie du moulin ». Je me suis énervé, j'ai perdu une oreille.\n— Et lui ?\n— Elle avait roulé sous la statue. Il s'est glissé dessous pour la ramasser : il tenait à un modèle complet. Je me suis énervé encore, et j'ai donné un coup de pied dans le socle.",
   "clues": [
     {
       "who": "a",

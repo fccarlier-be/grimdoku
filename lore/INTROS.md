@@ -53,7 +53,7 @@ Généré par `node tools/intros-md.js` depuis `lore/intros.json` (ne pas édite
 - *l'affaire Câline* : La dresseuse Câline cherchait de quoi calmer ses bêtes avant le spectacle. Elle a lancé un appel à la cantonade, et tout le Sanglier Borgne a eu une idée. Au matin, on l'a retrouvée endormie pour de bon.
 - *l'affaire Rinçon* : L'inspecteur des tavernes Rinçon a goûté chaque plat de la carte, puis il a accroché trois étoiles au-dessus du comptoir. Trois étoiles au Sanglier Borgne : tout le monde n'a pas apprécié. On a retrouvé son assiette propre comme un sou neuf.
 - *l'affaire Hérautin* : Le messager Hérautin a lu à voix haute une lettre du baron annonçant un nouvel impôt sur la bière, devant une salle pleine de buveurs. Ensuite, au nom du baron, il a réclamé tout ce qui était gratuit dans la maison : une bière, un repas, un lit. On ne l'a revu qu'au matin, très bien bordé.
-- *l'affaire Apnée* : La nageuse Apnée n'a pas trouvé de lac à Brumeval, alors elle a donné sa leçon dans le plus grand bac de la taverne. Elle voulait des élèves, de gré ou de force. Le cours a duré bien plus longtemps que prévu.
+- *l'affaire Apnée* : La nageuse Apnée n'a pas trouvé de lac à Brumeval, alors elle a donné sa leçon dans le plus grand baquet de la taverne. Elle voulait des élèves, de gré ou de force. Le cours a duré bien plus longtemps que prévu.
 - *l'affaire Corvéon* : Le percepteur Corvéon est venu lever l'impôt de fin d'année et dresser la liste de ce que chacun possède au Sanglier Borgne. La liste était courte : des dettes, surtout. Cinq habitués, pas un sou à saisir entre eux, et il a quand même trouvé quelque chose.
 
 ## La Mine des Nains
@@ -91,9 +91,9 @@ Généré par `node tools/intros-md.js` depuis `lore/intros.json` (ne pas édite
 
 - *l'affaire Scholastique* : L'abbesse Scholastique faisait la quête au moulin, et elle voulait l'argent tout de suite, pas plus tard. Elle a poursuivi son dernier donateur jusqu'à la meule. Quelqu'un a lâché le frein.
 - *l'affaire Orpiment* : L'alchimiste Orpiment proposait de changer en or tout ce qu'on lui confiait, et il se payait d'avance. Au moulin, personne n'avait d'économies. Il a donc cherché autre chose à transformer.
-- *l'affaire Ondine* : La nageuse Ondine enseignait à sa façon : elle jetait l'élève dans le bief, puis plongeait le repêcher. Au Moulin de Bois-Tordu, elle a plongé une fois de trop.
-- *l'affaire Pressoux* : Le percepteur Pressoux voulait taxer tout ce qui se trouvait au moulin : le grain, la farine, et jusqu'aux pommes. On l'a retrouvé sous la roue. Les cinq voisins ont tous entendu un bruit, mais aucun le même.
-- *l'affaire Gaston* : Le touriste Gaston dessinait les curiosités de la baronnie pour les vendre à la foire, et au moulin, il n'a pas manqué de modèles. On l'a retrouvé sous la meule, son fusain à la main. Son dernier dessin n'est pas fini.
+- *l'affaire Ondine* : La nageuse Ondine enseignait à sa façon : les mouvements d'abord, à sec, et l'eau seulement ensuite. Au Moulin de Bois-Tordu, son dernier élève a mis beaucoup trop d'énergie dans la brasse.
+- *l'affaire Pressoux* : Le percepteur Pressoux voulait taxer tout ce qui se trouvait au moulin : le grain, la farine, et jusqu'aux pommes. On l'a retrouvé la tête contre une pierre. Les cinq voisins ont tous entendu un bruit, mais aucun le même.
+- *l'affaire Gaston* : Le touriste Gaston dessinait les curiosités de la baronnie pour les vendre à la foire, et au moulin, il n'a pas manqué de modèles. On l'a retrouvé aplati, son fusain à la main. Son dernier dessin n'est pas fini.
 - *l'affaire Mandolin* : Le troubadour Mandolin chantait partout une chanson sur les petits secrets du voisinage, et il chantait juste, ce qui aggravait les choses. Il s'était installé sous la meule, pour l'acoustique. C'était une mauvaise idée.
 
 ## La Bibliothèque Interdite
@@ -132,7 +132,7 @@ Généré par `node tools/intros-md.js` depuis `lore/intros.json` (ne pas édite
 - *l'affaire Ostentine* : La baronne Ostentine rendait une visite de courtoisie, et elle demandait le prix de tout ce qui brillait, en proposant d'acheter le reste. On l'a promenée d'un feu à l'autre. On a fini par lui montrer quelque chose d'inestimable.
 - *l'affaire Trimballe* : Le colporteur Trimballe revendait à la forge des outils qui cassaient au premier coup, et il jurait le contraire. Il a tenu à faire une démonstration. Il s'était placé du mauvais côté.
 - *l'affaire Gondeberge* : La cousine Gondeberge réclamait sa part d'un héritage, et à la forge, elle réclamait sa part de tout ce qu'elle voyait, et même de ce qu'elle ne voyait pas. On l'a retrouvée sous un tas de pierres.
-- *l'affaire Gabelou* : Le percepteur Gabelou estimait chaque objet de la forge au poids du métal, et il ne se gênait pas pour donner son avis. Certains habitués ont été estimés très bas. Le creuset, lui, a été estimé de très près.
+- *l'affaire Gabelou* : Le percepteur Gabelou estimait chaque objet de la forge au poids du métal, et il ne se gênait pas pour donner son avis. Certains habitués ont été estimés très bas. Il a fini par essayer une estimation sur lui-même.
 - *l'affaire Trottin* : Le messager Trottin apportait une mauvaise nouvelle du baron, et il avait l'habitude de faire asseoir les gens avant de la lire. Il a demandé à tout le monde de s'asseoir. Quelqu'un a mis du temps.
 - *l'affaire Flânard* : Le touriste Flânard dessinait les habitants de la forge pour les vendre à la foire, et il aimait les détails, vus de très près. Il n'a pas su s'arrêter à temps. Son carnet a été retrouvé ; lui, pas tout à fait.
 
@@ -151,7 +151,7 @@ Généré par `node tools/intros-md.js` depuis `lore/intros.json` (ne pas édite
 
 - *l'affaire Austérine* : L'abbesse Austérine faisait la quête de ferme en ferme, et elle sermonnait chaque donateur sur ses mauvaises habitudes. À la Ferme Hantée, les mauvaises habitudes ne manquaient pas. Son dernier sermon a duré une heure, et il a bien été le dernier.
 - *l'affaire Salpêtre* : L'alchimiste Salpêtre proposait de changer en or les économies des habitants : il suffisait de tout mettre dans son chaudron et de touiller. Il a refait la démonstration plusieurs fois dans la soirée. La dernière a mal tourné.
-- *l'affaire Morgueline* : La baronne Morgueline rendait une visite de courtoisie, et entre deux politesses, elle proposait de racheter la ferme, habitants dehors. Elle a fait le tour du propriétaire en notant ce qu'elle garderait. On l'a retrouvée au fond du puits, sa liste à la main.
+- *l'affaire Morgueline* : La baronne Morgueline rendait une visite de courtoisie, et entre deux politesses, elle proposait de racheter la ferme, habitants dehors. Elle a fait le tour du propriétaire en notant ce qu'elle garderait. On l'a retrouvée au matin, sa liste à la main, et elle n'avait rien gardé du tout.
 - *l'affaire Épine* : La chasseuse de primes Épine cherchait quelqu'un à la ferme, pour une prime de trois écus. Elle a accepté de négocier, ce qui n'est jamais bon signe dans son métier. On l'a retrouvée écrasée sous quelque chose de bien plus lourd que prévu.
 - *l'affaire Bricabrac* : Le colporteur Bricabrac revendait à ses clients ce qu'il leur avait déjà vendu, en jurant que cette fois, ça marcherait. Il a beaucoup insisté sur la garantie. Un client a voulu vérifier.
 - *l'affaire Pastourel* : Le troubadour Pastourel a chanté toute la nuit, juste et sans s'arrêter, devant des habitants qui voulaient dormir. Sa dernière chanson réclamait qu'on le fasse taire. Quelqu'un l'a pris au mot.
@@ -191,7 +191,7 @@ Généré par `node tools/intros-md.js` depuis `lore/intros.json` (ne pas édite
 
 - *l'affaire Ursule* : L'abbesse Ursule faisait la quête un soir d'examens, et elle accompagnait chaque pièce d'un sermon contre la boisson. Les élèves révisaient ; elle ne les a pas laissés réviser. On l'a retrouvée en plein sermon, figée au milieu d'un mot.
 - *l'affaire Chiffonnet* : Le colporteur Chiffonnet vendait aux élèves des chaudrons « garantis incassables », et il remboursait volontiers, après démonstration. Quelqu'un a demandé la démonstration.
-- *l'affaire Azotin* : L'alchimiste Azotin proposait aux élèves de transformer leurs économies, ou de réussir leurs potions d'examen, contre paiement. Il donnait son diagnostic d'un simple coup d'œil. Le dernier s'est révélé faux.
+- *l'affaire Azotin* : L'alchimiste Azotin proposait aux élèves de transformer leurs économies, et il leur dictait ses formules pour qu'ils s'entraînent. Quelqu'un a récité de travers. On l'a retrouvé lourd comme du plomb, et pour cause.
 - *l'affaire Grisemotte* : La baronne Grisemotte voulait racheter l'Académie et mettre dehors tous ceux qui lui devaient de l'argent. Elle a passé la soirée à dresser la liste, de très près, en postillonnant. Elle ne l'a jamais finie.
 - *l'affaire Ponctionnin* : Le percepteur Ponctionnin voulait taxer tout le matériel de l'Académie, pièce par pièce, et emporter un gage sur-le-champ. Il a choisi un gage encore chaud.
 - *l'affaire Sifflette* : La dresseuse Sifflette cherchait un numéro spectaculaire pour son cirque. Elle a cru l'avoir trouvé, et elle a lancé un « Hop ! » sonore. Le plafond n'a pas apprécié.
@@ -238,7 +238,7 @@ Généré par `node tools/intros-md.js` depuis `lore/intros.json` (ne pas édite
 - *l'affaire Antimoine* : L'alchimiste Antimoine promettait de changer les économies des forains en or, et il jurait que ça portait chance. Il a fait sa tournée d'attraction en attraction. Sa chance a tourné avant la fin de la tournée.
 - *l'affaire Fiscalin* : Le percepteur Fiscalin voulait taxer tout ce qui se vendait à la foire, et même ce qui ne se vendait pas. Pour tout voir, il est monté le plus haut possible. La vue était parfaite ; la descente, beaucoup moins.
 - *l'affaire Marchandin* : Le colporteur Marchandin vendait des méthodes miracles en dix leçons, et il ne remboursait jamais : selon lui, c'était toujours la faute de l'élève. Un ancien client est venu réclamer.
-- *l'affaire Sanguine* : La chasseuse de primes Sanguine était venue capturer quelqu'un pour une prime de trois écus, et elle comptait bien attacher sa prise solidement. Elle a voulu serrer le nœud elle-même. Elle était du mauvais côté au mauvais moment.
+- *l'affaire Sanguine* : La chasseuse de primes Sanguine était venue capturer quelqu'un pour une prime de trois écus, et elle comptait bien attacher sa prise solidement. Elle a voulu serrer le nœud elle-même. Elle s'est prise dedans.
 
 ## Le Cimetière de Minuit
 
@@ -325,7 +325,7 @@ Généré par `node tools/intros-md.js` depuis `lore/intros.json` (ne pas édite
 - *l'affaire Rognard* : Le percepteur Rognard voulait l'impôt sur tout ce que possédaient les gens du port, et il s'est fait remettre une carte au trésor en paiement. Il a demandé son chemin. On le lui a indiqué.
 - *l'affaire Ritournel* : Le troubadour Ritournel chantait sur le port une chanson qui en disait beaucoup trop sur certaines caisses. On lui a proposé un contrat très généreux. Il l'a signé sans le lire.
 - *l'affaire Flacon* : L'inspecteur des tavernes Flacon voulait coller un blâme à tout le rhum sans étiquette du port. Il a exigé de goûter avant de rédiger. Il a beaucoup goûté.
-- *l'affaire Clapote* : La nageuse Clapote voulait apprendre à nager aux gens du port, en commençant par les plus têtus. Elle a emmené son premier élève au large. Elle n'est revenue qu'avec la marée.
+- *l'affaire Clapote* : La nageuse Clapote voulait apprendre à nager aux gens du port, en commençant par les plus têtus. Son premier élève a voulu lui donner une leçon à son tour. Elle n'a pas aimé la sienne.
 - *l'affaire Souvenard* : Le touriste Souvenard voulait voir la baronnie depuis la mer, et on lui a trouvé au port une barque prête à partir, à en croire son propriétaire. Il a embarqué seul. Tout le monde lui a fait signe.
 
 ## Le Bal Masqué
@@ -369,8 +369,8 @@ Généré par `node tools/intros-md.js` depuis `lore/intros.json` (ne pas édite
 - *l'affaire Clownette* : La dresseuse Clownette cherchait un monstre pour son numéro le plus effrayant, et elle trouvait que personne, à la foire, ne faisait assez peur. Elle l'a dit à voix haute. On l'a retrouvée aplatie comme une crêpe.
 - *l'affaire Componcte* : L'abbesse Componcte faisait la quête avec un seau d'eau bénite, pour guérir tous ceux qui en avaient besoin, de force s'il le fallait. Elle a trouvé quelqu'un qui en avait grand besoin, selon elle. On l'a retrouvée près de son seau vide.
 - *l'affaire Tastevin* : L'inspecteur des tavernes Tastevin a goûté tous les breuvages vendus à la foire, et il les a tous déclarés faux. Il ne lui restait qu'un flacon à vérifier. Il s'est endormi avant de rédiger son blâme.
-- *l'affaire Marée* : La nageuse Marée voulait donner une leçon dans le grand bassin de la foire, et elle a demandé autour d'elle si l'idée était bonne. On lui a répondu que non. Elle a plongé quand même.
-- *l'affaire Velours* : La baronne Velours voulait racheter la foire, et surtout tout ce qui brillait. Elle est montée tout en haut pour voir le bouquet final de plus près. Elle est redescendue beaucoup plus vite.
+- *l'affaire Marée* : La nageuse Marée voulait réussir le plongeon le plus spectaculaire de la foire, et elle a demandé autour d'elle d'où soufflerait le vent. On lui a répondu. Elle n'a jamais atteint l'eau.
+- *l'affaire Velours* : La baronne Velours voulait racheter la foire, et surtout tout ce qui brillait. Elle est montée sur ce qu'elle a trouvé de plus haut pour voir le bouquet final par-dessus la foule. Elle est redescendue beaucoup plus vite.
 
 ## Le Grand Port de Brumeval
 
@@ -392,7 +392,7 @@ Généré par `node tools/intros-md.js` depuis `lore/intros.json` (ne pas édite
 - *l'affaire Théophile* : Le touriste Théophile dessinait les figures du port pour vendre leurs portraits à la foire, et il ne vérifiait jamais les détails. Un de ses modèles l'a remarqué. On l'a repêché au matin, son carnet trempé.
 - *l'affaire Pompadoure* : La baronne Pompadoure rendait une visite de courtoisie, et elle tenait à passer la première partout, au nom du protocole. Dans le brouillard, on l'a laissée passer devant. Elle est passée devant jusqu'au bout.
 - *l'affaire Tempérance* : L'abbesse Tempérance faisait la quête sur le port, et elle trouvait qu'un écu, ce n'était vraiment rien. On l'a raccompagnée poliment dans le brouillard. Elle n'est jamais arrivée.
-- *l'affaire Dîmeaux* : Le percepteur Dîmeaux voulait taxer tout ce qui flottait au port, et même ce qui ne flottait plus. On lui a fait visiter un pont fraîchement lavé. Il a glissé.
+- *l'affaire Dîmeaux* : Le percepteur Dîmeaux voulait taxer tout ce qui flottait au port, et même ce qui ne flottait plus. On lui a fait traverser un sol fraîchement lavé. Il a glissé.
 
 ## Le Navire Fantôme
 
@@ -412,9 +412,9 @@ Généré par `node tools/intros-md.js` depuis `lore/intros.json` (ne pas édite
 - *l'affaire Mouillette* : La nageuse Mouillette se moquait, devant tout l'équipage, de ceux qui ne savaient pas nager. Quelqu'un a voulu lui offrir un bain. On l'a retrouvée à sec, ce qui pour une nageuse est une drôle de fin.
 - *l'affaire Trinquet* : L'inspecteur des tavernes Trinquet a collé un blâme au navire, faute de taverne, et il voulait goûter le contenu de chaque tonneau avant de partir. On l'a encouragé à se pencher. On l'a retrouvé la tête la première dans le dernier tonneau.
 - *l'affaire Tondulard* : Le percepteur Tondulard voulait taxer tout ce qui se buvait à bord, et il exigeait de vérifier chaque déclaration lui-même. Il a insisté sur une cave un peu particulière. On l'a retrouvé au matin, la déclaration à la main.
-- *l'affaire Cinabrin* : L'alchimiste Cinabrin voulait changer en plomb les économies de l'équipage, et il cherchait surtout où elles étaient cachées. Quelqu'un lui a soufflé une cachette. Il est allé la fouiller sans faire de bruit, mais pas assez.
-- *l'affaire Fanfreluche* : La baronne Fanfreluche voulait racheter le navire et mettre l'équipage dehors, et elle avait un faible pour tout ce qui brillait. Quelqu'un lui a signalé un bijou perdu dans un recoin. Elle s'est glissée dessous pour le prendre.
-- *l'affaire Fouine* : La chasseuse de primes Fouine cherchait à bord une tête mise à prix, et elle fouillait chaque cachette du navire. On lui en a indiqué une excellente, très sombre et très humide. Elle y est entrée.
+- *l'affaire Cinabrin* : L'alchimiste Cinabrin voulait changer en plomb les économies de l'équipage, et il cherchait surtout où elles étaient cachées. Quelqu'un lui a soufflé une cachette. Il est allé y regarder de très près.
+- *l'affaire Fanfreluche* : La baronne Fanfreluche voulait racheter le navire et mettre l'équipage dehors, et elle avait un faible pour tout ce qui brillait. Quelqu'un lui a signalé un bijou caché tout au fond d'un coffre. Elle s'est penchée pour le prendre.
+- *l'affaire Fouine* : La chasseuse de primes Fouine cherchait à bord une tête mise à prix, et elle fouillait chaque cachette du navire. Elle a fini par entendre sa proie lui répondre. Elle a suivi la voix.
 
 ## Les Thermes Enchantés
 
@@ -433,7 +433,7 @@ Généré par `node tools/intros-md.js` depuis `lore/intros.json` (ne pas édite
 - *l'affaire Pirouette* : La dresseuse Pirouette cherchait aux Thermes de quoi remplir une cage dorée pour son cirque. Elle a fini par trouver quelque chose à mettre dedans. On a retrouvé la cage au fond d'un bain.
 - *l'affaire Récupérin* : L'huissier Récupérin est venu saisir des biens aux Thermes, et il tenait à tout inventorier, même sous l'eau. Il a plongé pour l'inventaire du fond. Il y est resté.
 - *l'affaire Pichet* : L'inspecteur des tavernes Pichet a collé un blâme aux Thermes, et quelqu'un l'a invité à dîner pour en discuter. Il a tout mangé. Il n'a jamais rédigé son rapport.
-- *l'affaire Bottin* : Le messager Bottin apportait une nouvelle chanson de la part du barde, et il tenait à la chanter lui-même, devant tous les baigneurs. Il chantait faux, par fidélité à l'auteur. On l'a retrouvé au fond d'un bain, la bouche encore ouverte.
+- *l'affaire Bottin* : Le messager Bottin apportait une nouvelle chanson de la part du barde, et il tenait à la chanter lui-même, devant tous les baigneurs. Il chantait faux, par fidélité à l'auteur. On l'a retrouvé allongé, la bouche encore ouverte.
 - *l'affaire Éclaboussine* : La nageuse Éclaboussine voulait faire plonger tous les baigneurs en même temps, pour l'ambiance. Elle a donné le signal. Elle était au mauvais endroit pour l'éclaboussure.
 
 ## Le Palais des Mille Vœux
@@ -450,9 +450,9 @@ Généré par `node tools/intros-md.js` depuis `lore/intros.json` (ne pas édite
 
 **Mises en situation**
 
-- *l'affaire Pincebec* : La baronne Pincebec voulait racheter le palais, et elle répétait qu'elle comptait bien y finir ses jours. Elle a été exaucée plus vite que prévu. On l'a retrouvée le soir même dans une fontaine.
+- *l'affaire Pincebec* : La baronne Pincebec voulait racheter le palais, et elle répétait qu'elle comptait bien y finir ses jours. Elle a été exaucée plus vite que prévu. On l'a retrouvée le soir même, et elle n'est jamais repartie.
 - *l'affaire Traquette* : La chasseuse de primes Traquette venait arrêter quelqu'un pour une vieille affaire, une prime à la clé, et elle donnait des ordres à tout le monde. Elle a ordonné à quelqu'un de rentrer chez lui. On ne l'a retrouvée nulle part, mais on l'entend parfois, de très loin.
-- *l'affaire Pinardon* : L'inspecteur des tavernes Pinardon a goûté le vin du palais et l'a trouvé coupé à l'eau. Il a lancé une expression malheureuse devant la mauvaise personne. On l'a retrouvé dans une cuve, noyé dans le vin qu'il critiquait.
+- *l'affaire Pinardon* : L'inspecteur des tavernes Pinardon a goûté le vin du palais et l'a trouvé coupé à l'eau. Il a lancé une expression malheureuse devant la mauvaise personne. On l'a retrouvé noyé dans le vin qu'il critiquait.
 - *l'affaire Brunehaut* : La cousine Brunehaut réclamait sa part d'un héritage avant même qu'il y ait un mort pour le laisser. Elle a demandé un peu trop tôt. On l'a retrouvée changée en pierre, l'air très patient.
 - *l'affaire Prudence* : L'abbesse Prudence faisait la quête au palais, et elle sermonnait tous ceux qui vendaient du rêve. Elle a fini par acheter un vœu, pour montrer l'exemple. Il a été exaucé.
 - *l'affaire Calcinus* : L'alchimiste Calcinus se vantait de pouvoir changer n'importe quoi en or, et même n'importe qui. On l'a laissé essayer sur lui-même. Il a brillé un instant, puis plus du tout.
@@ -474,8 +474,8 @@ Généré par `node tools/intros-md.js` depuis `lore/intros.json` (ne pas édite
 
 - *l'affaire Pacotillon* : Le colporteur Pacotillon vendait aux curistes de l'eau de mer en bouteille, « venue de très loin ». Quelqu'un a reconnu l'eau. On lui a rendu sa marchandise, avec lui dedans.
 - *l'affaire Jalousie* : La baronne Jalousie voulait racheter les Bains, et elle enviait tout ce qui brillait chez les autres. Elle a obtenu de quelqu'un un prêt d'une heure. Elle n'a pas surveillé l'heure.
-- *l'affaire Cerceline* : La dresseuse Cerceline cherchait un juge pour les numéros de son cirque, et elle a voulu montrer le sien : trente secondes sous l'eau. Personne n'a été impressionné. Elle a recommencé, plus longtemps.
-- *l'affaire Cunégonde* : La cousine Cunégonde réclamait sa part d'un héritage en se découvrant des ancêtres chez à peu près tout le monde. On lui a demandé une preuve. Elle a voulu la donner sous l'eau.
+- *l'affaire Cerceline* : La dresseuse Cerceline cherchait un juge pour les numéros de son cirque, et elle a voulu montrer le sien, sur une corde tendue. Personne n'a été impressionné. Elle a recommencé, plus haut.
+- *l'affaire Cunégonde* : La cousine Cunégonde réclamait sa part d'un héritage en se découvrant des ancêtres chez à peu près tout le monde. On lui a demandé une preuve. Elle l'a donnée avec beaucoup trop de confiance.
 - *l'affaire Rapace* : La chasseuse de primes Rapace venait arrêter quelqu'un pour un délit très ancien, et elle n'en demandait que trois écus. On n'a retrouvé d'elle qu'un savon, qui fondait doucement.
 - *l'affaire Clémence* : L'abbesse Clémence faisait la quête aux Bains, et elle sermonnait les curistes sur la gourmandise. Quelqu'un a voulu faire la paix autour d'un gâteau. Elle a accepté une part.
 - *l'affaire Presto* : Le messager Presto annonçait la fermeture des Bains par ordre du baron, et il criait ses ordres à qui voulait l'entendre. Il a ordonné de tout fermer. Quelqu'un a obéi sans discuter.

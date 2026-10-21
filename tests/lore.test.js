@@ -19,6 +19,11 @@ test('aucune variable de gabarit oubliée dans les textes générés', () => {
   for (const p of PUZZLES) assert.doesNotMatch(p.title + p.intro + (p.introBody || '') + p.epilogue, /\{[A-Za-z]+\}/, p.id);
 });
 
+test('élision devant un nom qui commence par une voyelle (« Parlons d\'Ostentine », pas « de Ostentine »)', () => {
+  for (const p of PUZZLES) assert.doesNotMatch(p.intro + (p.introBody || '') + p.epilogue,
+    /(^|[^\p{L}])(de|que|jusque) [AEIOUYÀÂÉÈÊËÎÏÔÛ][a-zàâéèêëîïôûç]/u, p.id);
+});
+
 test('le titre et le nom de la victime ne se répètent pas (« la baronne de Grisemotte Grisemotte »)', () => {
   for (const p of PUZZLES) {
     const v = victimOf(p).name;

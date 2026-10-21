@@ -247,8 +247,8 @@
   "id": "palais--baronne",
   "place": "palais",
   "intro": "Au Palais des Mille Vœux, la baronne Pincebec, venue rendre une visite de courtoisie, a fait un vœu de trop, ou en a croisé un. Six hôtes du palais étaient là. L'un d'eux était seul avec elle. La djinn m'a proposé de tout résoudre d'un claquement de doigts. J'ai lu les petites lignes.",
-  "introBody": "La baronne Pincebec voulait racheter le palais, et elle répétait qu'elle comptait bien y finir ses jours. Elle a été exaucée plus vite que prévu. On l'a retrouvée le soir même dans une fontaine.",
-  "epilogue": "— C'était vous, avec Pincebec.\n— Elle voulait racheter le palais. Je lui ai prédit qu'elle y finirait ses jours.\n— Ça l'a rassurée.\n— Elle a demandé quand. Je l'ai vu dans ma boule : ce soir, dans la fontaine. J'ai couru la prévenir, les yeux dans la boule, et je l'ai bousculée dedans. Je l'avais vu venir, après.",
+  "introBody": "La baronne Pincebec voulait racheter le palais, et elle répétait qu'elle comptait bien y finir ses jours. Elle a été exaucée plus vite que prévu. On l'a retrouvée le soir même, et elle n'est jamais repartie.",
+  "epilogue": "— C'était vous, avec Pincebec.\n— Elle voulait racheter le palais. Je lui ai prédit qu'elle y finirait ses jours.\n— Ça l'a rassurée.\n— Elle a demandé quand. Dans ma boule, j'ai vu : ce soir, sous une statue. J'ai couru la prévenir, les yeux dans la boule, et je l'ai bousculée contre la statue. Je l'avais vu venir, après.",
   "clues": [
     {
       "who": "a",

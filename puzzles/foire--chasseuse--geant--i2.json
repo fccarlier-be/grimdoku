@@ -212,8 +212,8 @@
   "id": "foire--chasseuse--geant--i2",
   "place": "foire",
   "intro": "La Foire aux Sortilèges a perdu un client : la chasseuse de primes Sanguine, venue toucher une prime. Cinq forains juraient qu'ils tenaient leur stand. L'un d'eux était seul avec elle. Le bonimenteur m'a déjà proposé un élixir de vérité. Deux écus, garanti sans effet.",
-  "introBody": "La chasseuse de primes Sanguine était venue capturer quelqu'un pour une prime de trois écus, et elle comptait bien attacher sa prise solidement. Elle a voulu serrer le nœud elle-même. Elle était du mauvais côté au mauvais moment.",
-  "epilogue": "— Personne d'autre n'était avec Sanguine. Sauf vous.\n— Elle voulait me livrer au baron, contre trois écus.\n— Pour un géant ?\n— Elle est montée sur moi pour serrer le nœud. Je me suis retourné pour m'excuser auprès du plafond. Elle était de l'autre côté.",
+  "introBody": "La chasseuse de primes Sanguine était venue capturer quelqu'un pour une prime de trois écus, et elle comptait bien attacher sa prise solidement. Elle a voulu serrer le nœud elle-même. Elle s'est prise dedans.",
+  "epilogue": "— Personne d'autre n'était avec Sanguine. Sauf vous.\n— Elle voulait me livrer au baron, contre trois écus. Elle est montée sur moi pour me passer une corde autour du cou.\n— Il en faut beaucoup, pour un géant.\n— Elle s'est prise dedans en redescendant, et elle est restée pendue à mon épaule. Je n'ai pas osé bouger, de peur de la faire tomber. Toute la nuit.",
   "clues": [
     {
       "who": "a",

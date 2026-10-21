@@ -45,8 +45,8 @@
     "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
   },
   "taverne--nageuse": {
-    "status": "valide",
-    "note": ""
+    "status": "relire",
+    "note": "Accordé à la pièce du crime de la solution (2026-10-21). Avant : « — Dans le bac à vaisselle. »"
   },
   "bibliotheque--nageuse": {
     "status": "relire",
@@ -66,7 +66,7 @@
   },
   "moulin--nageuse": {
     "status": "relire",
-    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+    "note": "Accordé à la pièce du crime de la solution (2026-10-21) (pas de bief ni de roue dans la pièce) ; réécrit."
   },
   "academie--abbesse": {
     "status": "relire",
@@ -74,7 +74,7 @@
   },
   "ferme--abbesse": {
     "status": "relire",
-    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+    "note": "Accordé à la pièce du crime de la solution (2026-10-21). Avant : « — Seulement que le four était peut-être encore chaud. Elle s'est penchée pour vérifier ; j'ai refermé la porte, pour garder la chaleur. Je dis ça, je dis rien. » | Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
   },
   "ferme--alchimiste": {
     "status": "relire",
@@ -82,7 +82,7 @@
   },
   "ferme--baronne": {
     "status": "relire",
-    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+    "note": "Accordé à la pièce du crime de la solution (2026-10-21). Avant : « Elle a reculé en hurlant, jusqu'au puits. Moi, j'ai ramassé ma tête. Elle, personne ne l'a ramassée. » | Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
   },
   "ferme--colporteur": {
     "status": "relire",
@@ -118,7 +118,7 @@
   },
   "cimetiere--touriste": {
     "status": "relire",
-    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+    "note": "Accordé à la pièce du crime de la solution (2026-10-21). Avant : « Moi, je regardais la fosse. » » | Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
   },
   "cimetiere--chasseuse--golem--i2": {
     "status": "relire",
@@ -186,11 +186,11 @@
   },
   "grande-foire--baronne--dragon-golem--t4-i2--cache": {
     "status": "relire",
-    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+    "note": "Clairvoya : formule gardée pour deux scènes ; mort sur place (2026-10-21). Avant : « — Et Velours ? / — Elle voulait racheter la foire, et ma boule de cristal avec, parce qu'elle brille. / — Vous lui avez tiré les cartes. / — La Tour : chute brutale. Elle a ri, puis elle est montée voir le bouquet final d'en haut. J'ai aidé la carte, d'une main dans le dos. Je l'avais vu venir, après. »"
   },
   "port--messager": {
     "status": "relire",
-    "note": "Ne cite plus une autre pièce que celle du crime (2026-10-21). Avant : « — Debout sur le quai : » | Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+    "note": "Accordé à la pièce du crime de la solution (2026-10-21). Avant : « Bâfrin jeté lui. Par-dessus bord. » | Ne cite plus une autre pièce que celle du crime (2026-10-21). Avant : « — Debout sur le quai : » | Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
   },
   "tour--troubadour": {
     "status": "relire",
@@ -202,7 +202,7 @@
   },
   "palais--baronne": {
     "status": "relire",
-    "note": "Repassé : accident absurde ou trait mieux respecté."
+    "note": "Pas de fontaine dans la pièce du crime : une statue (2026-10-21). Avant : « — C'était vous, avec Pincebec. / — Elle voulait racheter le palais. Je lui ai prédit qu'elle y finirait ses jours. / — Ça l'a rassurée. / — Elle a demandé quand. Je l'ai vu dans ma boule : ce soir, dans la fontaine. J'ai couru la prévenir, les yeux dans la boule, et je l'ai bousculée dedans. Je l'avais vu venir, après. »"
   },
   "palais--dresseuse": {
     "status": "relire",
@@ -214,7 +214,7 @@
   },
   "grands-bains--dresseuse": {
     "status": "relire",
-    "note": "Repassé avec les règles du château : mobile assez fort, la chute fait comprendre le meurtre, aucun gag plaqué."
+    "note": "Aëlys : jugement gardé, ni note sur dix ni noyade ; la pièce du crime n'a pas d'eau (2026-10-21). Avant : « — Racontez-moi, pour Cerceline. / — Elle voulait m'emmener dans son cirque, pour juger les numéros. / — Ça vous allait. / — Elle m'a montré le sien : trente secondes sous l'eau. Deux sur dix. Elle a protesté. Je l'ai renvoyée sous l'eau travailler son numéro, et je l'y ai tenue. »"
   },
   "grands-bains--touriste": {
     "status": "relire",
@@ -226,11 +226,11 @@
   },
   "grands-bains--messager--vouivre--l4--cache": {
     "status": "relire",
-    "note": "Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
+    "note": "Accordé à la pièce du crime de la solution (2026-10-21). Avant : « Bâfrin fermé tout. Couvercle du bassin. Lui dessous. » | Repassé après la relecture extérieure : meurtre explicite, tic moins répétitif."
   },
   "mine--abbesse": {
     "status": "relire",
-    "note": "Réécrit avec la nouvelle intro (2026-10-21), d'après ta note : « Pas drôle, pas absurde, nul. »"
+    "note": "Accordé à la pièce du crime de la solution (2026-10-21). Avant : « Elle a fait trois pas dans le noir ; au quatrième, il n'y avait plus de sol. » | Réécrit avec la nouvelle intro (2026-10-21), d'après ta note : « Pas drôle, pas absurde, nul. »"
   },
   "tour--baronne": {
     "status": "relire",
@@ -350,7 +350,7 @@
   },
   "academie--percepteur": {
     "status": "relire",
-    "note": "Repassé : accident absurde ou trait mieux respecté."
+    "note": "Brindille : tic gardé pour deux scènes, accidents variés (2026-10-21). Avant : « — Il n'y avait que vous et Ponctionnin. / — Il voulait taxer mes chaudrons. Même les trois qui ont explosé. / — Ils n'existent plus. / — Il a exigé le quatrième, celui qui chauffait. Il l'a serré dans ses bras pour l'emporter. J'ai demandé : « C'est normal que ça fume ? » Ça a fait quatre. »"
   },
   "forge--colporteur": {
     "status": "relire",
@@ -362,7 +362,7 @@
   },
   "forge--percepteur--golem--i2": {
     "status": "relire",
-    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+    "note": "Accordé à la pièce du crime de la solution (2026-10-21). Avant : « — J'ai annoncé : « Je vous montre ce que vaut le métal fondu. » Le creuset était juste derrière lui. » | Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
   },
   "cimetiere--messager": {
     "status": "relire",
@@ -418,7 +418,7 @@
   },
   "grande-foire--nageuse": {
     "status": "relire",
-    "note": "Repassé : accident absurde ou trait mieux respecté."
+    "note": "Clairvoya : formule gardée pour deux scènes ; la pièce du crime a le canon, pas le bassin (2026-10-21). Avant : « — Pourquoi Marée ? / — Elle voulait m'apprendre à nager. Je lui ai tiré les cartes, pour savoir comment finirait la leçon. / — Et alors ? / — Elles disaient que la leçon finirait mal. Elle a ri et elle a plongé. Moi, je regardais encore les cartes ; je n'ai pas vu qu'elle ne remontait pas. Je l'avais vu venir, après. »"
   },
   "tour--colporteur": {
     "status": "relire",
@@ -438,11 +438,11 @@
   },
   "palais--chasseuse": {
     "status": "relire",
-    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+    "note": "Fumerolle : formule gardée pour deux scènes (2026-10-21). Avant : « — Et Traquette ? / — Elle avait un avis de recherche à mon nom : « vœux abusifs ». Elle m'a crié : « Rentrez dans votre lampe ! » / — Une façon de parler. / — Pas devant une djinn. Je ne rentre dans ma lampe que si on m'y fait de la place. Je lui ai fait de la place : je l'y ai mise, elle. »"
   },
   "grands-bains--baronne": {
     "status": "relire",
-    "note": "Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
+    "note": "Accordé à la pièce du crime de la solution (2026-10-21). Avant : « Elle s'est envolée au-dessus du grand bain. » | Repassé : nouvelle grille active (rééquilibrage des coupables), épilogue écrit avec les règles."
   },
   "bibliotheque--touriste": {
     "status": "relire",
@@ -450,7 +450,7 @@
   },
   "universite--percepteur": {
     "status": "relire",
-    "note": "Repassé : nouvelle grille (coupable imposé pour rééquilibrer : Dewey ou Granit)."
+    "note": "Accordé à la pièce du crime de la solution (2026-10-21). Avant : « Au troisième rayon, je l'ai fait taire. » | Repassé : nouvelle grille (coupable imposé pour rééquilibrer : Dewey ou Granit)."
   },
   "mine--troubadour": {
     "status": "relire",
@@ -492,7 +492,7 @@
   },
   "citadelle--inspecteur--dragon--l3": {
     "status": "relire",
-    "note": "Ne nomme plus la pièce (2026-10-21). Avant : « Mort, je lui ai seulement fait visiter les oubliettes. C'est la pièce qu'on montre en dernier. »"
+    "note": "Accordé à la pièce du crime de la solution (2026-10-21). Avant : « Mort, je lui ai seulement fait visiter les marches qu'on ne remonte pas. C'est la visite qu'on garde pour la fin. » | Ne nomme plus la pièce (2026-10-21). Avant : « Mort, je lui ai seulement fait visiter les oubliettes. C'est la pièce qu'on montre en dernier. »"
   },
   "port--touriste": {
     "status": "relire",
@@ -504,6 +504,82 @@
   },
   "grand-port--abbesse--dragon--t4": {
     "status": "relire",
-    "note": "Ne cite plus une autre pièce que celle du crime (2026-10-21). Avant : « Je l'ai raccompagnée jusqu'au bord du quai. Un pas, deux pas, trois pas, quatre. Le quai en fait trois. »"
+    "note": "Accordé à la pièce du crime de la solution (2026-10-21). Avant : « Je l'ai raccompagnée jusqu'au bord de l'eau. Un pas, deux pas, trois pas, quatre. Il n'en restait que trois. » | Ne cite plus une autre pièce que celle du crime (2026-10-21). Avant : « Je l'ai raccompagnée jusqu'au bord du quai. Un pas, deux pas, trois pas, quatre. Le quai en fait trois. »"
+  },
+  "port--huissier": {
+    "status": "relire",
+    "note": "Écho-Écho : désordre lisible (relecture extérieure) (2026-10-21). Avant : « — Pourquoi Raflard ? / — Saisir ! Affaires ! Mes ! Saisir ! / — Il voulait saisir vos affaires. / — Planche ! Belle ! Marchez ! Sur la ! Coco ! »"
+  },
+  "navire--abbesse": {
+    "status": "relire",
+    "note": "Écho-Écho : désordre lisible (relecture extérieure) (2026-10-21). Avant : « — Pourquoi Mortifia ? / — Morale ! Coco ! Pas beau ! Répéter ! / — Elle vous a dit de ne pas répéter les secrets. / — Couvent ! Pas de ! Argent ! Pour moi ! Attrape ! Bastingage ! Raté ! »"
+  },
+  "navire--inspecteur": {
+    "status": "relire",
+    "note": "Écho-Écho : désordre lisible (relecture extérieure) (2026-10-21). Avant : « — Que s'est-il passé avec Trinquet ? / — Blâme ! Coco ! Blâme ! / — Il a mis un blâme au navire. / — Goûte ! Tonneau ! Plus près ! Plus près ! Plouf ! »"
+  },
+  "navire--alchimiste--dragon--i2": {
+    "status": "relire",
+    "note": "Écho-Écho : désordre lisible ; le dragon n'est pas dans la pièce du crime (2026-10-21). Avant : « — Racontez-moi, pour Cinabrin. / — Plomb ! Économies ! Coco ! / — Il voulait changer vos économies en plomb. / — Trésor ! Sous le dragon ! Réveille ! Pas ! Réveille ! »"
+  },
+  "navire--baronne--geant--i2": {
+    "status": "relire",
+    "note": "Écho-Écho : désordre lisible ; le géant n'est pas dans la pièce du crime (2026-10-21). Avant : « — Fanfreluche. Racontez-moi. / — Racheter ! Navire ! Dehors ! / — Elle voulait racheter le navire et vous mettre dehors. / — Bijou ! Brille ! Sous le géant ! Retourne ! Pardon, plafond ! »"
+  },
+  "navire--chasseuse--dragon--i2": {
+    "status": "relire",
+    "note": "Écho-Écho : désordre lisible ; le dragon n'est pas dans la pièce du crime (2026-10-21). Avant : « — Et Fouine ? / — Prime ! Trois écus ! Coco ! / — Elle voulait vous livrer au baron. / — Cachette ! Gueule ! Dragon ! Ouvre ! Ferme ! »"
+  },
+  "foire--chasseuse--geant--i2": {
+    "status": "relire",
+    "note": "Escabeau : l'excuse au plafond gardée pour une seule scène (2026-10-21). Avant : « — Personne d'autre n'était avec Sanguine. Sauf vous. / — Elle voulait me livrer au baron, contre trois écus. / — Pour un géant ? / — Elle est montée sur moi pour serrer le nœud. Je me suis retourné pour m'excuser auprès du plafond. Elle était de l'autre côté. »"
+  },
+  "bal--messager--geant-vouivre--i2-i2": {
+    "status": "relire",
+    "note": "Escabeau : l'excuse au plafond gardée pour une seule scène (2026-10-21). Avant : « — Personne d'autre n'était avec Rapidon. Sauf vous. / — Il m'a ordonné de m'incliner devant la lettre du baron. / — Vous êtes couché. / — Je me suis incliné quand même. Pardon, plafond. Il était entre moi et le parquet. »"
+  },
+  "academie--alchimiste": {
+    "status": "relire",
+    "note": "Brindille : tic gardé pour deux scènes, accidents variés (2026-10-21). Avant : « — C'était vous, avec Azotin. / — Il voulait changer mes économies en plomb. Je lui ai demandé de me montrer, sur mon chaudron d'examen. / — Et alors ? / — J'ai demandé : « C'est normal que ça fume ? » Il a dit oui. C'était son dernier diagnostic. »"
+  },
+  "universite--alchimiste": {
+    "status": "relire",
+    "note": "Brindille : tic gardé pour deux scènes, accidents variés (2026-10-21). Avant : « — Il n'y avait que vous et Athanor. / — Il voulait changer mes économies en plomb. Pour le remercier, je lui ai fait goûter ma potion de diplôme. / — Elle était réussie ? / — Elle fumait. J'ai demandé si c'était normal. Il a bu pour vérifier. »"
+  },
+  "grands-bains--cousine": {
+    "status": "relire",
+    "note": "Aëlys : ni note sur dix ni noyade dans l'eau (2026-10-21). Avant : « — Pourquoi Cunégonde ? / — Elle se disait ma cousine, par une grand-tante elfe. Elle réclamait sa part de mon héritage. / — Vous l'avez crue ? / — J'ai demandé une preuve. Je lui ai dit que les elfes respirent sous l'eau. Ce n'est pas vrai. Zéro sur dix pour la culture. »"
+  },
+  "foire--alchimiste": {
+    "status": "relire",
+    "note": "Clairvoya : formule gardée pour deux scènes (2026-10-21). Avant : « — C'était vous, avec Antimoine. / — Il voulait changer mes économies en plomb. Il m'a juré que ça porterait chance. / — Vous ne l'avez pas vu venir ? / — Si. Après. Ma boule de cristal, elle, l'a vu arriver en pleine tête. »"
+  },
+  "moulin--percepteur": {
+    "status": "relire",
+    "note": "Accordé à la pièce du crime de la solution (2026-10-21). Avant : « — Vous l'avez poussé sous la roue ?\n— Il a glissé tout seul. *Blop.* Tout seul. *Blop, blop.* »"
+  },
+  "moulin--touriste": {
+    "status": "relire",
+    "note": "Accordé à la pièce du crime de la solution (2026-10-21). Avant : « — Il s'est glissé sous la meule pour la ramasser. Il tenait à un modèle complet. Moi, j'ai remis la meule en marche. »"
+  },
+  "port--nageuse": {
+    "status": "relire",
+    "note": "Accordé à la pièce du crime de la solution (2026-10-21). Avant : « — J'ai affronté cent tempêtes. Je lui ai montré comment on survit à la pire : on s'accroche à quelqu'un qui sait nager. Elle a coulé la première. »"
+  },
+  "grand-port--percepteur--vouivre--l4--cache": {
+    "status": "relire",
+    "note": "Accordé à la pièce du crime de la solution (2026-10-21). Avant : « Je lui en ai montré une, sur le pont, à coups de seau. »"
+  },
+  "thermes--messager": {
+    "status": "relire",
+    "note": "Accordé à la pièce du crime de la solution (2026-10-21). Avant : « — Il a tenu à me la chanter. Je lui ai montré comment on chante juste, sous l'eau. Il n'a pas tenu la note. »"
+  },
+  "palais--alchimiste--dragon--i2": {
+    "status": "relire",
+    "note": "Accordé à la pièce du crime de la solution (2026-10-21). Avant : « Je l'ai laissé essayer sur lui-même, devant le dragon. Le dragon aime l'or. »"
+  },
+  "palais--nageuse--dragon--i2": {
+    "status": "relire",
+    "note": "Accordé à la pièce du crime de la solution (2026-10-21). Avant : « « Respirer sous l'eau. » »"
   }
 }

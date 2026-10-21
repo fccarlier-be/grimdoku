@@ -257,7 +257,7 @@
   "place": "mine",
   "intro": "À la Mine des Nains, l'abbesse Bénédicte, venue faire la quête, est descendue plus bas que prévu. Sept mineurs et visiteurs étaient au fond. L'un d'eux était seul avec elle. Ici, tout le monde a une pioche, et personne n'a d'alibi.",
   "introBody": "L'abbesse Bénédicte faisait la quête au fond de la mine, une lanterne dans une main et sa boîte à aumônes dans l'autre. Les mineurs donnaient peu ; certains demandaient même à emprunter. On a retrouvé la boîte à aumônes ; la lanterne, non.",
-  "epilogue": "— Pourquoi Bénédicte ?\n— Elle quêtait au fond de la mine. Je n'avais rien à donner, alors j'ai emprunté.\n— Emprunté quoi ?\n— Sa lanterne, pour aller lui chercher une pépite. Elle a fait trois pas dans le noir ; au quatrième, il n'y avait plus de sol. La lanterne, je la lui rends demain.",
+  "epilogue": "— Pourquoi Bénédicte ?\n— Elle quêtait au fond de la mine. Je n'avais rien à donner, alors j'ai emprunté.\n— Emprunté quoi ?\n— Sa lanterne, pour aller lui chercher une pépite. Elle a fait trois pas dans le noir ; au quatrième, elle a trouvé l'enclume, avec la tête. La lanterne, je la lui rends demain.",
   "clues": [
     {
       "who": "a",

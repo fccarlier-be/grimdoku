@@ -6,6 +6,8 @@ const ROOT = process.argv[2] || path.join(__dirname, '..'); // usage : node tool
 const J = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8'));
 const cast = J('cast.json'); delete cast._doc;
 const lettres = J('lore/lettres.json');
+const actives = J('lore/actives.json');
+const INTROS = fs.existsSync(path.join(ROOT, 'lore/intros.json')) ? J('lore/intros.json').lieux : {}; // ouvertures par lieu
 const carte = J('lore/carte.json');
 const testament = J('scenes/testament.json');
 const big = J('big-cases.json').cases;
@@ -122,7 +124,7 @@ P('## 6. Les invités de passage (les victimes)',
   'Dans chaque lieu, les invités sont tous différents d\'une enquête à l\'autre ; le titre d\'une enquête est « <lieu> — l\'affaire <invité> ».');
 
 P('## 7. Les lieux, un par un',
-  'Pour chaque lieu : sa taille de carte, ses pièces, ses habitués (les suspects possibles : dans chaque enquête, l\'un d\'eux est absent et un invité est la victime), ses invités, son introduction (voix de l\'enquêteur) et sa lettre d\'Augure.',
+  'Pour chaque lieu : sa taille de carte, ses pièces, ses habitués (les suspects possibles : dans chaque enquête, l\'un d\'eux est absent et un invité est la victime), ses invités, les ouvertures de ses intros (voix de l\'enquêteur) et sa lettre d\'Augure.',
   'Gabarits des introductions : `{Titre}`/`{titre}` = titre de l\'invité (« le percepteur »), `{victime}` = son nom, `{motif}` = son motif, `{e}`/`{lui}` = accords, `{Nombre}` = nombre de suspects en toutes lettres.');
 const order = carte.contrees.flatMap(c => c.lieux);
 for (const name of order) {
@@ -136,9 +138,13 @@ for (const name of order) {
     `- **Contrée** : ${contree} · **carte** : ${s.size}×${s.size} · **enquêtes** : ${nb}${s.decor && s.decor !== name ? ` · illustration reprise de « ${s.decor} »` : ''}`,
     `- **Pièces** : ${Object.values(s.rooms).map(r => r.name).join(', ')} (la plus petite est fusionnée avec une voisine quand il y a plus de pièces que de suspects : chaque pièce doit être occupée)`,
     `- **Habitués** : ${s.characters.map(c => cast[c.archetype].name).join(', ')}`,
-    `- **Invités** (enquêtes normales) : ${cases.map(c => cast[c.guest].name + ' (' + cast[c.guest].title + ')').join(', ')}`,
+    // victimes des enquêtes actives, sous le nom tiré pour chaque grille (le nom par défaut de cast.json n'apparaît pas en jeu)
+    `- **Victimes des enquêtes actives** : ${(actives[name] || []).map(id => puzzles.find(p => p.id === id)).filter(Boolean).map(p => { const v = p.characters.find(c => c.role === 'victim'); return `${v.name} (${cast[v.archetype].title})`; }).join(', ')}`,
     ...(bigs.length ? [`- **Enquêtes à grands monstres** : ${bigs.map(b => `${b.big.map(t => cast[t].name).join(' et ')} (forme ${b.shapes.join(', ')}${b.hidden ? ', cachée' : ''}) — victime ${cast[b.victim].name}`).join(' ; ')}`] : []),
-    '- **Introduction** :', quote(s.auto.intro),
+    // ouvertures selon le rang de l'affaire dans le lieu (lore/intros.json) ; à défaut, l'ancienne intro commune du décor
+    ...(INTROS[name] ? ['- **Ouvertures des intros** (selon le nombre d\'affaires déjà résolues dans le lieu ; suivies de la mise en situation propre à chaque enquête) :',
+      `  - première venue : ${INTROS[name].premiere}`, ...INTROS[name].retours.map((t, i) => `  - ${i + 2}e affaire : ${t}`), `  - dernière : ${INTROS[name].derniere}`]
+      : ['- **Introduction** :', quote(s.auto.intro)]),
     '- **Lettre d\'Augure** :', quote((lettres.letters[name] || '—') + ' — A.'));
 }
 

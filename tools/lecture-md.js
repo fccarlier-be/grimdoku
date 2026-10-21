@@ -29,7 +29,11 @@ for (const pl of order) {
   ps.forEach((p, k) => {
     const m = p.characters.find(c => c.id === p.solution.murderer);
     const st = (rev[p.id] || {}).status || 'relire';
+    // pièce du crime (celle de la victime) et ses meubles : un épilogue ne doit pas situer la mort ailleurs
+    const v = p.characters.find(c => c.role === 'victim'), pos = p.solution.positions[v.id], [r, c] = Array.isArray(pos[0]) ? pos[0] : pos;
+    const room = p.layout[r][c], meubles = p.objects.filter(o => p.layout[o.at[0]][o.at[1]] === room).map(o => o.type);
     out.push(`### ${n}.${k + 1}. ${p.title.split(' — ')[1] || p.title} (${p.size}×${p.size}) — coupable : ${m.name}`, '',
+      `*Pièce du crime : ${p.rooms[room].name}${meubles.length ? ' (meubles : ' + [...new Set(meubles)].join(', ') + ')' : ''}. Suspects : ${p.characters.filter(c => c.role !== 'victim').map(c => c.name).join(', ')}.*`, '',
       `**Intro** : ${p.introBody || p.intro}`, '', '**Épilogue** :', '',
       ...p.epilogue.split('\n').map(l => `> ${l}  `), '', `*Relecture : ${STATUT[st] || st}*`, '');
   });

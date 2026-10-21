@@ -147,7 +147,9 @@ for (const entry of MANIFEST) {
   const fill = (t) => t.replace(/\{motif\}/g, va.motif || '').replace(/\{menace\}/g, va.menace || 'me nuire').replace(/\{victime\}/g, victim.name).replace(/\{coupable\}/g, nameOf(s.murderer))
     .replace(/\{titre\}/g, title).replace(/\{Titre\}/g, cap(title)).replace(/\{e\}/g, f ? 'e' : '')
     .replace(/\{il\}/g, f ? 'elle' : 'il').replace(/\{Il\}/g, f ? 'Elle' : 'Il').replace(/\{lui\}/g, f ? 'elle' : 'lui')
-    .replace(/\{nombre\}/g, nb).replace(/\{Nombre\}/g, cap(nb));
+    .replace(/\{nombre\}/g, nb).replace(/\{Nombre\}/g, cap(nb))
+    // élision devant un nom propre qui commence par une voyelle : « Parlons d'Ostentine », « qu'Aurifex » (relecture, 2026-10-21)
+    .replace(/\b([Dd]e|[Qq]ue|[Jj]usque) (?=[AEIOUYÀÂÉÈÊËÎÏÔÛ][a-zàâéèêëîïôûç])/g, (m, w) => w.slice(0, -1) + "'");
   p.intro = fill(texts.intro);
   if (INTROS[entry.id]) p.introBody = fill(INTROS[entry.id]);
   // épilogue : le dialogue du coupable avec l'enquêteur (cast.json, propre au personnage, avec son tic) ; une scène écrite

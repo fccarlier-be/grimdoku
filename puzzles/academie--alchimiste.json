@@ -247,8 +247,8 @@
   "id": "academie--alchimiste",
   "place": "academie",
   "intro": "À l'Académie de Magie, l'alchimiste Azotin, venu proposer ses services, a été retrouvé un soir d'examens. Six élèves et professeurs révisaient, paraît-il. L'un d'eux était seul avec lui. Ça sent le soufre, mais ici, ça sent toujours le soufre.",
-  "introBody": "L'alchimiste Azotin proposait aux élèves de transformer leurs économies, ou de réussir leurs potions d'examen, contre paiement. Il donnait son diagnostic d'un simple coup d'œil. Le dernier s'est révélé faux.",
-  "epilogue": "— C'était vous, avec Azotin.\n— Il voulait changer mes économies en plomb. Je lui ai demandé de me montrer, sur mon chaudron d'examen.\n— Et alors ?\n— J'ai demandé : « C'est normal que ça fume ? » Il a dit oui. C'était son dernier diagnostic.",
+  "introBody": "L'alchimiste Azotin proposait aux élèves de transformer leurs économies, et il leur dictait ses formules pour qu'ils s'entraînent. Quelqu'un a récité de travers. On l'a retrouvé lourd comme du plomb, et pour cause.",
+  "epilogue": "— C'était vous, avec Azotin.\n— Il voulait changer mes économies en plomb. Il m'a dicté la formule, pour que je m'entraîne.\n— Vous l'avez apprise ?\n— Je l'ai récitée à l'envers, comme d'habitude. Mes économies n'ont pas bougé. Lui, il pèse maintenant son poids de plomb.",
   "clues": [
     {
       "who": "a",
